@@ -28,7 +28,7 @@ These are temporary group players that are configured via the [Player List](ui.m
 
 These are permanent group players that are configured via the MA settings. These should be used when the make up of the group will rarely change.
 
-![image](assets/screenshots/syncgroup.png)
+![image](../assets/screenshots/syncgroup.png)
 
 ### Features
 
