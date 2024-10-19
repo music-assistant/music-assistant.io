@@ -32,6 +32,7 @@ Authentication with Deezer happens through an Access and ARL Token. Unfortunatel
 9. Copy the cookie value and use this in Music Assistant as the 'ARL TOKEN'
 
 **If this does not work ensure that you:**
+
 - Are on the same network as Music Assistant
 - Can access Music Assistant using its IP address
 - Have a Hifi/Premium/Family account
