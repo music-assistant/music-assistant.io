@@ -28,18 +28,19 @@ Temporary Sync Group players are configured via the [Player List](ui.md#player-l
 
 ## Sync Groups
 
-These are permanent group players that are configured via the MA settings. These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. A player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then use the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
+These are permanent group players that are configured via the MA settings. These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. A player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
 
 ![image](../assets/screenshots/syncgroup.png)
 
-After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. At least one player must be added to the group before the group can be saved. It is recommended that a custom name be used as the automatically generated name is unique but not memorable.
+After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. If multiple HA players are available to MA and those players can be grouped in HA then that functionality will also be available in MA. The player type will be seen as a new option in the GROUP TYPE option of the ADD GROUP PLAYER dialog. It is recommended that a custom name be used as the automatically generated name is unique but not memorable.
 
 !!! tip
     Remember Chromecast devices must be grouped in the Google Home app for perfect sync
 
 ### Features
 
-- The native player types shown (i.e. not the Universal Group option) support perfect sync (this is a requirement to be shown in the list)
+- The native player types shown (i.e. not the Universal Group or HA player options) support perfect sync
+- Some HA player groups may also support perfect sync
 - In addition to playing in sync the group will hold the queue regardless of which player(s) in the group are powered off
   
 ### Known Issues / Notes
