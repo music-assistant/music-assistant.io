@@ -1,3 +1,8 @@
+---
+title: Player Support - Home Assistant Players
+description: Features and instructions for the use of HA media player entitities in Music Assistant
+---
+
 # Home Assistant ![Preview image](../assets/icons/ha-logo.png){ width=70 align=right }
 
 Music Assistant has support for playing to media player entities in Home Assistant.
