@@ -1,6 +1,6 @@
 ---
 title: Player Support - Home Assistant Players
-description: Features of and instructions for the use of HA media player entitities in Music Assistant
+description: Features of, and instructions for, the use of HA media player entitities in Music Assistant
 ---
 
 # Home Assistant ![Preview image](../assets/icons/ha-logo.png){ width=70 align=right }
