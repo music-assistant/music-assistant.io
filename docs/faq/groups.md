@@ -10,7 +10,7 @@ description: Player Grouping Functionality in Music Assistant
     
 ## Temporary Sync Group
 
-Temporary Sync Group players are configured via the [Player List](ui.md#player-list) or HA action. They provide a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
+Temporary Sync Group players are configured via the [Player List](ui.md#player-list) or HA action. If multiple HA players are available to MA and those players can be grouped in HA then that functionality will also be available via this method. This type of group provides a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
 
 ### Features
 
@@ -32,15 +32,14 @@ These are permanent group players that are configured via the MA settings. These
 
 ![image](../assets/screenshots/syncgroup.png)
 
-After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. If multiple HA players are available to MA and those players can be grouped in HA then that functionality will also be available in MA. The player type will be seen as a new option in the GROUP TYPE option of the ADD GROUP PLAYER dialog. It is recommended that a custom name be used as the automatically generated name is unique but not memorable.
+After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. It is recommended that a custom name be used as the automatically generated name is unique but not memorable.
 
 !!! tip
     Remember Chromecast devices must be grouped in the Google Home app for perfect sync
 
 ### Features
 
-- The native player types shown (i.e. not the Universal Group or HA player options) support perfect sync
-- Some HA player groups may also support perfect sync
+- The native player types shown (i.e. not the Universal Group option) support perfect sync
 - In addition to playing in sync the group will hold the queue regardless of which player(s) in the group are powered off
   
 ### Known Issues / Notes
