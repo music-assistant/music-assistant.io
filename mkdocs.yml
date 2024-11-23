@@ -55,6 +55,8 @@ nav:
     - Slimproto: player-support/slimproto.md
     - Snapcast: player-support/snapcast.md
     - Sonos: player-support/sonos.md
+  - Plugins:
+    - plugins/spotify-connect.md
   - Support: support.md
   - I Want to Help / Donate: 
     - help/index.md
