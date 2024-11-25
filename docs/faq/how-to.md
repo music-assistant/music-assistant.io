@@ -207,17 +207,41 @@ See [here](https://github.com/orgs/music-assistant/discussions/1123#discussionco
 
 The [Nextcloud Music App](https://apps.nextcloud.com/apps/music) supports [Subsonic](../music-providers/subsonic.md) so you can use that provider in MA to connect. 
 
-# Access the Now Playing view directly via URL
+# Access the MA views directly via URL
 
 You will need to expose the webserver port to enable this feature. See [here](../installation/#server-notes) for the instructions and considerations before doing so.
 
-Display the Now Playing view for a specific player (or the last known) by adding "player=" to the home URL. You can use a player name or `true` to open the last known. Player names are not case sensitive.
+The keys described below can be combined. For example, `http://192.168.1.1:8095/#/home?player=media_player.ma_picoreplayer&showFullscreenPlayer=true&frameless=true`
+
+## Player Selection
+
+A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a player friendly name, entity_id or `true` to open the last known. Player names are not case sensitive.
 
 Examples
 
 - http://192.168.1.1:8095/#/home?player=true
-- http://192.168.1.1:8095/#?player=true
+- http://192.168.1.1:8095/#?player=media_player.ma_picoreplayer
 - http://192.168.1.1:8095/#/home?player=Livingroom
+
+## Frameless View
+
+Display the relevant view without the [Player Bar](https://music-assistant.io/ui/#player-bar) or [Main Menu](https://music-assistant.io/ui/#main-menu) 
+
+Examples
+
+- http://192.168.1.1:8095/#/albums?frameless=true
+- http://192.168.1.1:8095/#/playlists?player=media_player.ma_picoreplayer&frameless=true
+
+## Now Playing View
+
+Display the Now Playing view 
+
+Examples
+
+- http://192.168.1.1:8095/#/home?player=true&showFullscreenPlayer=true
+- http://192.168.1.1:8095/#?player=true&showFullscreenPlayer=true
+- http://192.168.1.1:8095/#/home?player=Livingroom&showFullscreenPlayer=true
+- http://192.168.1.1:8095/#/home?player=media_player.ma_picoreplayer&showFullscreenPlayer=true
 
 # Play a Playlist (or any item) in a Different Order
 
