@@ -43,6 +43,9 @@ As of Nov 2024, Google has removed OAuth authentication from YT Music. This mean
 - For cookie, paste the value you obtained above.
 - Click 'Save'
 
+!!! warning "Error on Saving"
+    If `__Secure-3PAPISID` is seen after saving this means the cookie is not from an authenticated request. Navigate to some more pages inside YT Music that require authentication (e.g. your library). To confirm the right cookie has been obtained paste it into a text editor and search for "__Secure-3PAPISID". If difficulties are encountered obtaining a cookie with this value, try a different browser.
+
 ## Using brand accounts
 A brand account is a sub-account that lives under your main Google account. You need to find your brand account id if you want to login using your brand account.
 

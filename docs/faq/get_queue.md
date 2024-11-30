@@ -1,3 +1,5 @@
+![HACS only](../assets/HACS-only.png)
+
 # MA get_queue Action
 
 This action allows you to retrieve the full details of a queue
@@ -23,3 +25,4 @@ script:
           entity_id: input_text.now_playing
           value: '{{ queue_info['media_player.ma_kitchen_speaker'].current_item.name[:50] }}'
 ```
+![HACS only](../assets/HACS-only.png)

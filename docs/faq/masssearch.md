@@ -1,3 +1,5 @@
+![HACS only](../assets/HACS-only.png)
+
 # MA search Action
 
 This action does a global search across all providers 
@@ -30,3 +32,4 @@ script:
           entity_id: input_text.jukebox_artist_1
           value: '{{ results.tracks[0].artists[0].name }}'
 ```
+![HACS only](../assets/HACS-only.png)

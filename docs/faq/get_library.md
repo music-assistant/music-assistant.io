@@ -1,3 +1,5 @@
+![HACS only](../assets/HACS-only.png)
+
 # MA get_library Action
 
 This action allows you to retrieve the full details of the items from the library
@@ -34,3 +36,4 @@ script:
               target:
                 entity_id: media_player.ma_kitchen_speaker
 ```
+![HACS only](../assets/HACS-only.png)
