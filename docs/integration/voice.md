@@ -1,3 +1,5 @@
+![HACS only](../assets/HACS-only.png)
+
 # Voice Control
 
 This section describes what is required to add a PLAY command which will be understood by Assist and will start playback to a specific player or an area. 
@@ -158,3 +160,5 @@ In some cases it is still advantageous to also setup the `MA Specific Conversati
 - If when trying to play to an area you receive “An unexpected error occurred while handling the intent” then:
     - Check the log for errors related to `No entities matched`. If found then make sure you don't have any entities named identically to your area
     - Ensure you aren't trying to play to an AREA and that area has multiple media players
+
+![HACS only](../assets/HACS-only.png)
