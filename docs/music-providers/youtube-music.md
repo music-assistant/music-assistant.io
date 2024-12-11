@@ -17,8 +17,11 @@ The highest available stream from Youtube Music will be selected for playback (s
 As of Nov 2024, Google has removed OAuth authentication from YT Music. This means using this (somewhat cumbersome) method of cookie authentication is the **only** way to get YT Music working.
 
 !!! note
-    Cookies will expire after some time. This means that you will have to run this process again if YT Music stops working and you see `401: Unauthorized` in your logs.
+    Cookies will expire after some time. This means that you will have to run this process again if YT Music stops working and you see `401: Unauthorized` in your logs. Maximise the cookie life by using this [method to obtain the cookie](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
 
+!!! note
+    If a Family Account is in use then setting up a dedicated account for MA will assist in maximising cookie life 
+    
 ### Obtaining the Cookies
 - Open <a href="http://music.youtube.com/" target="_blank">YT Music</a> in your browser.
 - Open the developer tools via View -> Developer -> Developer Tools. Note that this might be named differently based on your browser. It should open a window similar to this:
