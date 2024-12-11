@@ -12,15 +12,19 @@ Two fields need to be completed to use this provider, Client id and Authorizatio
 4. Go to the page `Network` on the inspect terminal.
 5. Login.
 6. Search for `auth`.
-7. In one of the requests you will find `client_id` and `Authorization`
+7. In one of the requests you will find the `client_id`
+8. And for the OAuth token we need the `oauth_token` cookie on the soundcloud.com domain prepended with "OAuth "
 
 `client_id`: string of 32 bytes alphanumeric
+`oauth_token`: string inside the cookie value
 
-`Authorization`: string that begins with OAuth and a string (the o-auth token is "OAuth . . .")
+### Client id
+![screenshot](../assets/screenshots/soundcloud-clientid.jpg){ width=1005 align=center }
 
-![screenshot](../assets/screenshots/soundcloud-auth-token.png){ width=1005 align=center }
+### OAuth token
+![screenshot](../assets/screenshots/soundcloud-token.jpg){ width=1005 align=center }
 
-Example code snippet (OAuth and client_id are NOT real, use yours):
+Example snippet for the Music Provider configuration step (OAuth and client_id are NOT real, use yours):
 
 ```
 client_id = jHvc9wa0Ejf092wj3f3920w3F920as02
