@@ -60,11 +60,11 @@ This app is on the arch aur with the name `music-assistant-desktop` or `music-as
 
 You can install it with yay: `yay music-assistant-desktop-bin`
 
-### Debian (And debian based distrobutions)
+### Debian (and Debian based distributions)
 
 You can download the .deb from the [releases](https://github.com/music-assistant/companion/releases/latest/).
 
-### All the other linux distros
+### All the other Linux distros
 
 You can download the AppImage from the [releases](https://github.com/music-assistant/companion/releases/latest/).
 
