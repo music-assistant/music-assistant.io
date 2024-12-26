@@ -211,16 +211,15 @@ The [Nextcloud Music App](https://apps.nextcloud.com/apps/music) supports [Subso
 
 You will need to expose the webserver port to enable this feature. See [here](../installation/#server-notes) for the instructions and considerations before doing so.
 
-The keys described below can be combined. For example, `http://192.168.1.1:8095/#/home?player=media_player.ma_picoreplayer&showFullscreenPlayer=true&frameless=true`
+The keys described below can be combined. For example, `http://192.168.1.1:8095/#/home?player=kitchen%20speaker&showFullscreenPlayer=true&frameless=true`
 
 ## Player Selection
 
-A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a player friendly name, entity_id or `true` to open the last known. Player names are not case sensitive.
+A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a MA player name or `true` to open the last known. Player names are not case sensitive.
 
 Examples
 
 - http://192.168.1.1:8095/#/home?player=true
-- http://192.168.1.1:8095/#?player=media_player.ma_picoreplayer
 - http://192.168.1.1:8095/#/home?player=Livingroom
 
 ## Frameless View
@@ -230,7 +229,7 @@ Display the relevant view without the [Player Bar](https://music-assistant.io/ui
 Examples
 
 - http://192.168.1.1:8095/#/albums?frameless=true
-- http://192.168.1.1:8095/#/playlists?player=media_player.ma_picoreplayer&frameless=true
+- http://192.168.1.1:8095/#/playlists?player=kitchen%20speaker&frameless=true
 
 ## Now Playing View
 
@@ -241,7 +240,6 @@ Examples
 - http://192.168.1.1:8095/#/home?player=true&showFullscreenPlayer=true
 - http://192.168.1.1:8095/#?player=true&showFullscreenPlayer=true
 - http://192.168.1.1:8095/#/home?player=Livingroom&showFullscreenPlayer=true
-- http://192.168.1.1:8095/#/home?player=media_player.ma_picoreplayer&showFullscreenPlayer=true
 
 # Play a Playlist (or any item) in a Different Order
 
