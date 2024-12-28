@@ -32,6 +32,7 @@ nav:
     - Apple Music: music-providers/apple-music.md
     - Builtin: music-providers/builtin.md
     - Deezer: music-providers/deezer.md
+    - iBroadcast: music-providers/ibroadcast.md
     - Jellyfin: music-providers/jellyfin.md
     - Local Files: music-providers/filesystem.md
     - Plex: music-providers/plex.md
