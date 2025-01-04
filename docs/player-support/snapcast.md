@@ -1,3 +1,8 @@
+---
+title: Snapcast Player Provider
+description: Details for the Snapcast Player Provider
+---
+
 # Snapcast ![Preview image](../assets/icons/snapcast-icon.svg){ width=70 align=right }
 
 Music Assistant supports Snapcast, a powerful solution for synchronized multi-room audio streaming. Snapcast enables seamless playback across various devices, creating an immersive audio experience.
@@ -27,3 +32,6 @@ MA includes a built-in Snapserver although an external server can also be used. 
 - The Snapcast app for iOS is broken as it uses an old version of Snapclient. Using it brings problems with this provider
 - Ensure that the ports 1704 and 1705 on the Snapserver host are open. Also make sure that the ports between 4953 and 5153 inclusive are open
 - Try the default Snapcast settings and then make changes as necessary
+- Buffer Size [ms] (default 1000ms) is the total buffer size (or better buffer duration) between recording the signal on the server and playing it out on the client. This can be translated directly to the total latency of the audio signal. If play is pressed or a track is paused or skipped, a delay of 1000ms will be noticed because of this buffer
+- Chunk Size [ms] (default 26ms). The server will continously read this number of milliseconds from the source into buffer and pass this buffer to the encoder. The encoded buffer is sent to the clients. Some codecs have a higher latency and will need more data, e.g. Flac will need ~26ms chunks and thus this is the default
+- Idle threshold stream parameter [ms] (default 60000ms) will switch the stream state from playing to idle after receiving this many milliseconds of silence

@@ -12,7 +12,7 @@ description: A Walkthrough of the Music Assistant User Interface
 This menu's appearance can be configured in the settings. It can be placed vertically (as shown) on the left or horizontally at the bottom. Any of the icons can be hidden. If the settings icon is hidden from this menu it is available in the top right of the HOME screen.
 
 !!! warning
-    If you remove both the Home and Settings icons then you will be locked out. In that case you will need to manually enter the path or clear the browser cookies to regain access to the settings page.
+    If you remove both the Home and Settings icons then you will be locked out. In that case you will need to manually enter the path (e.g. `http://192.168.1.166:8095/#/settings/frontend`) or clear the browser cookies to regain access to the settings page.
 
 When visiting Browse you will only see what is already in the Library of the Streaming Providers. For the local Providers you will see all files and if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
 ***************************************************************

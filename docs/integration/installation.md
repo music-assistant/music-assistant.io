@@ -1,20 +1,16 @@
-## Installation of the Home Assistant Integration
-
 !!! note
     Ensure the MA server is up and running properly with music and player providers added before trying to link it to HA via the integration
 
-- Make sure that you have the [Home Assistant Community Store](https://hacs.xyz/) installed.
-- Within HACS, search for `Music Assistant` and click the entry in the search results.
-- Click the big (blue) button at the bottom for `Download`.
-- Click the button again and in the dialog make sure `Show beta versions` is selected if you want to use those versions.
-- Download the desired version
-- Restart Home Assistant.
-- The MA server will normally be discovered automatically by HA and you can just click on CONFIGURE.
-- If for some reason you need to add the integration manually then go to HA Settings>>Devices & services>>Integrations and click the big `+ ADD INTEGRATION` button. Look for Music Assistant and click to add it. You will need to add the server IP and port (usually 8095). Look for the relevant line in the server logs. For example, `Starting server on 172.30.32.1:8095`. 
+## Installation of the HA Integration
+
+The Integration to connect Music Assistant to Home Assistant is available in HA core. 
+
+- The MA server will normally be discovered automatically by HA and is installed by clicking on CONFIGURE.
+- If for some reason you need to add the integration manually then go to HA SETTINGS >>  DEVICES & SERVICES >> INTEGRATIONS and click the big `+ ADD INTEGRATION` button. Search for Music Assistant and click to add it. You will need to add the server IP and port (usually 8095). Search for the relevant line in the server logs. For example, `Starting server on 172.30.32.1:8095`. 
 - Click SUBMIT and the Music Assistant integration is ready for use.
 
 !!! note 
-    The HA integration will create new media_player entities for those player types which are supported natively by MA. To see the names of those players go to `HA settings>>Devices & services>>Integrations>>Music Assistant` and view the entities. It is these players that need to be targeted in automations.
+    The HA integration will create new media_player entities for those player types which are supported natively by MA. To see the names of those players go to `HA SETTINGS >>  DEVICES & SERVICES >> INTEGRATIONS >> MUSIC ASSISTANT` and view the entities. It is these players that need to be targeted in automations and scripts
 
 ## Installation of the Home Assistant Player Provider
 
@@ -36,11 +32,13 @@ Next install the Home Assistant Player Provider
 
 ## Actions
 
-The integration adds six actions for use in scripts and automations. 
+### HA Integration
 
-- [mass.play_media](../faq/massplaymedia.md)
-- [mass.play_annnouncement](../faq/massannounce.md)
-- [mass.search](../faq/masssearch.md)
-- [mass.get_library](../faq/get_library.md)
-- [mass.get_queue](../faq/get_queue.md)
-- [mass.transfer_queue](../faq/masstransfer.md)
+The HA integration adds six actions for use in scripts and automations. 
+
+- [music_assistant.play_media](../faq/massplaymedia.md)
+- [music_assistant.play_annnouncement](../faq/massannounce.md)
+- [music_assistant.transfer_queue](../faq/masstransfer.md) 
+- [music_assistant.search](../faq/masssearch.md) (Coming in HA 2025.1.0)
+- [music_assistant.get_library](../faq/get_library.md) (Coming in HA 2025.1.0)
+- [music_assistant.get_queue](../faq/get_queue.md) (Coming in HA 2025.1.0)

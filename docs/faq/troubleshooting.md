@@ -64,7 +64,7 @@ Review the list of player providers. If your device doesn't support one of the l
 
 If your device does support one of the supported protocols then review the documentation for that player provider for known issues and troubleshooting tips.
 
-If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identiying why the player isnt working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github [Issues](https://github.com/music-assistant/hass-music-assistant/issues), [Discussions](https://github.com/orgs/music-assistant/discussions) and [Discord](https://discord.gg/kaVm8hGpne)) as likely someone has asked your question before.
+If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identiying why the player isnt working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github [Issues](https://github.com/music-assistant/support/issues), [Discussions](https://github.com/orgs/music-assistant/discussions) and [Discord](https://discord.gg/kaVm8hGpne)) as likely someone has asked your question before.
 
 # All my media is missing 
 

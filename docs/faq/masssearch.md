@@ -16,7 +16,7 @@ script:
     mode: queued
     alias: "Jukebox MA search"
     sequence:
-      - action: mass.search
+      - action: music_assistant.search
         data:
           limit: 8
           name: "{{ states.input_text.jukebox_search.state}}"

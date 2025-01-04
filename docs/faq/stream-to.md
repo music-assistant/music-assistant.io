@@ -4,12 +4,15 @@ Install the [squeezelite addon](https://github.com/pssc/ha-addon-squeezelite) wh
 
 ## My random connected device
 
-Install a [squeeze lite compatible application](https://sourceforge.net/projects/lmsclients/files/squeezelite/) to your mobile or other devices which MA will be able to stream to.
+### Streaming to a Squeezelite compatible client
 
-See here for info on [how to run squeezelite on Windows](https://github.com/orgs/music-assistant/discussions/1123#discussioncomment-6652948)
+Install any [Squeezelite compatible application](https://sourceforge.net/projects/lmsclients/files/squeezelite/) (i.e. a [Squeezelite software client](https://en.wikipedia.org/wiki/Squeezelite), sometimes also refered to as "Squeeze Lite" apps) to your mobile or other devices and then MA should be able to stream to it.
 
-The [MA Companion App](../companion-app.md) can also be configured to run a squeezelite client which will allow playback to the device running it.
+If you have Squeezelite compatible clients on your local network then MA will be able to automatically detect and stream to them, (this works via Squeezelite compatibility without you needing to add any specific configuration or credentials for it). Note that Squeezelite clients usually do not have any user interface of their own and as such must be controlled via Music Assistant.
 
+See here for an example on on [how to run squeezelite on Windows](https://github.com/orgs/music-assistant/discussions/1123#discussioncomment-6652948)
+
+The [Music Assistant Companion App](../companion-app.md) can also be configured to run a squeezelite client which will allow playback to the device running it.
 
 ## My ESP32 based device
 

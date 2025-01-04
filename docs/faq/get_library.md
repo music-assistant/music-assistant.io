@@ -17,7 +17,7 @@ script:
   create_random_queue:
     mode: single
     sequence:
-      - service: mass.get_library
+      - service: music_assistant.get_library
         data:
           limit: 10
           media_type: track
@@ -26,7 +26,7 @@ script:
       - repeat:
           count: "{{ random_tracks | length + 1}}"
           sequence:
-            - action: mass.play_media
+            - action: music_assistant.play_media
               data:
                 media_id: "{{ random_tracks.tracks[repeat.index - 1].uri }}"
                 media_type: track

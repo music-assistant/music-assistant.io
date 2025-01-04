@@ -1,3 +1,8 @@
+---
+title: Release Cycle
+description: Details of the release cycle for the stable and beta versions of the server 
+---
+
 # Release Cycle
 
 ## Stable Releases
@@ -20,7 +25,3 @@ There is also a dev/nightly add-on which can be run to get the absolute latest v
 ### Running Parallel Server Versions
 
 It is possible to run the stable, beta or dev server add-ons side by side as they don't share any data. Thus you can temporarily run the beta add-on to try out new features and then revert to the stable version. You can do this by manually stopping and starting the relevant server. Don't have two servers running on the same host at the same time.
-
-## HA Integration
-
-For the HA integration there will also be stable and beta releases if there is a need. For example, if there are any breaking changes (or new features) in the beta add-on, that will be a reason to also have a beta release of the HA integration. People running the MA server on the beta channel are advised to also run the HA integration in beta to prevent compatibility issues and vice versa.
