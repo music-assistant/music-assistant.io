@@ -10,7 +10,7 @@ nav:
   - Home Assistant Integration:
     - integration/index.md
     - Installation: integration/installation.md
-    - Voice Control: integration/voice.md
+    - Migrating from HACS: integration/migrate.md
     - Announcements: integration/announcements.md
     - Play Media Action: faq/massplaymedia.md
     - Play Announcement Action: faq/massannounce.md
@@ -23,6 +23,8 @@ nav:
     - General: usage.md
     - UI: ui.md
     - Groups: faq/groups.md
+    - DSP Parametric EQ: dsp/parametriceq.md
+    - DSP Tone Controls: dsp/tonecontrols.md
     - How Do I...: faq/how-to.md
     - I Want To Stream To: faq/stream-to.md
     - Technical Info: faq/tech-info.md
