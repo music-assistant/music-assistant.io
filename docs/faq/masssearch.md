@@ -1,5 +1,3 @@
-![HACS only](../assets/HACS-only.png)
-
 # MA search Action
 
 This action does a global search across all providers 
@@ -18,7 +16,7 @@ script:
     mode: queued
     alias: "Jukebox MA search"
     sequence:
-      - action: mass.search
+      - action: music_assistant.search
         data:
           limit: 8
           name: "{{ states.input_text.jukebox_search.state}}"
@@ -32,4 +30,3 @@ script:
           entity_id: input_text.jukebox_artist_1
           value: '{{ results.tracks[0].artists[0].name }}'
 ```
-![HACS only](../assets/HACS-only.png)

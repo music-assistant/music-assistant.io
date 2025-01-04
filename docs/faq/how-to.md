@@ -5,7 +5,7 @@ description: Common Uses for Music Assistant
 
 # Use Assist and AI to Play my Music?
 
-See [here](../integration/voice.md). This adds a PLAY command to a specific player. The core HA voice intents support NEXT TRACK, (PREVIOUS TRACK is coming), PAUSE, UNPAUSE and VOLUME to a specific player or to an area. HA does not intend to add any more media player actions at this time so you will need to use custom sentences to cover any other of your requirements. See this [discussion for how](https://github.com/orgs/music-assistant/discussions/2176).
+The core HA voice intents support NEXT TRACK, (PREVIOUS TRACK is coming), PAUSE, UNPAUSE and VOLUME to a specific player or to an area. HA does not intend to add any more media player actions at this time so you will need to use custom sentences to cover any other of your requirements. See this [discussion for how](https://github.com/orgs/music-assistant/discussions/2176).
 
 # Use volume normalization? How does it work?
 
@@ -43,15 +43,15 @@ data:
 
 See here for [enqueue options](https://www.home-assistant.io/integrations/media_player/)
 
-See also [mass.play_media action](./massplaymedia.md)
+See also [music_assistant.play_media action](./massplaymedia.md)
 
 # Start a playlist with a script
 
-Use the `media_player.play_media` action shown above or `mass.play_media` action as described [here](./massplaymedia.md).
+Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](./massplaymedia.md).
 
 # Start a radio stream with an automation
 
-Use the `mass.play_media` action and set the `media_id` as the station name.
+Use the `music_assistant.play_media` action and set the `media_id` as the station name.
 
 # Play a Random Item
 
@@ -59,14 +59,14 @@ Use get_library and an script/automation such as this:
 
 ``` yaml
 sequence:
-  - action: mass.get_library
+  - action: music_assistant.get_library
     data:
       media_type: track
       search: ARTISTNAME
       limit: 1
       order_by: random
     response_variable: random_track
-  - action: mass.play_media
+  - action: music_assistant.play_media
     data:
       media_id: "{{ random_track.tracks[0].uri }}"
       media_type: track
@@ -80,7 +80,7 @@ If you want a queue of tracks then:
 
 ``` yaml
 sequence:
-  - action: mass.get_library
+  - action: music_assistant.get_library
     data:
       media_type: track
       search: ARTISTNAME
@@ -90,7 +90,7 @@ sequence:
   - repeat:
       count: "{{ random_tracks | length + 1}}"
       sequence:
-        - action: mass.play_media
+        - action: music_assistant.play_media
           data:
             media_id: "{{ random_tracks.tracks[repeat.index - 1].uri }}"
             media_type: track
@@ -103,7 +103,7 @@ This could be modified for other item types (e.g. radio stations or playlists).
 
 # Clear the queue with a script or automation
 
-Use the HA action of `media_player.clear_playlist` or the new `mass.play_media` action and select the appropriate enqueue option if wanting to clear the queue and play something else.
+Use the HA action of `media_player.clear_playlist` or the new `music_assistant.play_media` action and select the appropriate enqueue option if wanting to clear the queue and play something else.
 
 # Add radio stations to MA
 
@@ -184,7 +184,7 @@ data:
 
 Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
 
-You can also use the `mass.search` or `mass.get_library` actions and the URI will be shown in the results.
+You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results.
 
 !!! note
     URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.

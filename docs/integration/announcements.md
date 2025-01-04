@@ -5,7 +5,7 @@ description: Details of the announcements functionality
 
 # Announcements
 
-Announcements are either Text-to-Speech or audio files that are sent (from Home Assistant) to the MA players via the [`tts.xxxxxx`](https://www.home-assistant.io/integrations/tts/) or [`mass.play_announcement`](../faq/massannounce.md) HA actions. 
+Announcements are either Text-to-Speech or audio files that are sent (from Home Assistant) to the MA players via the [`tts.xxxxxx`](https://www.home-assistant.io/integrations/tts/) or [`music_assistant.play_announcement`](../faq/massannounce.md) HA actions. 
 
 ## Overview
 

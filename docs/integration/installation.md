@@ -3,42 +3,14 @@
 
 ## Installation of the HA Integration
 
-As of HA 2024.12 the Integration to connect Music Assistant to Home Assistant is available in HA core. 
+The Integration to connect Music Assistant to Home Assistant is available in HA core. 
 
 - The MA server will normally be discovered automatically by HA and is installed by clicking on CONFIGURE.
 - If for some reason you need to add the integration manually then go to HA SETTINGS >>  DEVICES & SERVICES >> INTEGRATIONS and click the big `+ ADD INTEGRATION` button. Search for Music Assistant and click to add it. You will need to add the server IP and port (usually 8095). Search for the relevant line in the server logs. For example, `Starting server on 172.30.32.1:8095`. 
 - Click SUBMIT and the Music Assistant integration is ready for use.
 
-### Migrating from the HACS Integration to the HA Integration
-
-!!! warning "Note"
-    Not all of the functionality of the custom HACS component is available in core as yet. The items below marked with a 📦 require the HACS Integration. If your use case requires those items then install the HACS Integration
-    
-Migration can be done by:
-
-- Uninstalling the existing HACS Integration by navigating to HA SETTINGS >>  DEVICES & SERVICES >> INTEGRATIONS >> MUSIC ASSISTANT and selecting Delete from the ⋮ menu
-- Uninstalling the custom integration from HACS by navigating to HACS, searching for Music Assistant and selecting ✖ Remove from the ⋮ menu
-- Restarting Home Assistant
-- Installing the HA Integration as described at the start of this section
-- Adjusting the MA actions in scripts and automations by replacing `mass.` with `music_assistant.` 
-
-!!! note "Note"
-    There was a problem with the 2024.12.0 version of the Integration as it relates to the repair. If you have a persistent repair notification or if you ignored the notification and want to remove it from the ignored list then install the 2024.12.1 version of the HACS Integration using ALL of the steps below and then go through the steps above to remove it
-    
-## Installation of the Deprecated HACS Integration 📦
-
-- Make sure that you have the [Home Assistant Community Store](https://hacs.xyz/) installed.
-- Within HACS, search for `Music Assistant` and click the entry in the search results.
-- Click the big (blue) button at the bottom for `Download`.
-- Click the button again and in the dialog make sure `Show beta versions` is selected if you want to use those versions.
-- Download the desired version
-- Restart Home Assistant.
-- The MA server will normally be discovered automatically by HA and is installed by clicking on CONFIGURE.
-- If for some reason you need to add the integration manually then go to HA SETTINGS >>  DEVICES & SERVICES >> INTEGRATIONS and click the big `+ ADD INTEGRATION` button. Search for Music Assistant and click to add it. You will need to add the server IP and port (usually 8095). Look for the relevant line in the server logs. For example, `Starting server on 172.30.32.1:8095`. 
-- Click SUBMIT and the Music Assistant integration is ready for use.
-
 !!! note 
-    Regardless of how it is installed the HA integration will create new media_player entities for those player types which are supported natively by MA. To see the names of those players go to `HA SETTINGS >>  DEVICES & SERVICES >> INTEGRATIONS >> MUSIC ASSISTANT` and view the entities. It is these players that need to be targeted in automations and scripts
+    The HA integration will create new media_player entities for those player types which are supported natively by MA. To see the names of those players go to `HA SETTINGS >>  DEVICES & SERVICES >> INTEGRATIONS >> MUSIC ASSISTANT` and view the entities. It is these players that need to be targeted in automations and scripts
 
 ## Installation of the Home Assistant Player Provider
 
@@ -62,19 +34,11 @@ Next install the Home Assistant Player Provider
 
 ### HA Integration
 
-The HA integration adds three actions for use in scripts and automations. 
+The HA integration adds six actions for use in scripts and automations. 
 
 - [music_assistant.play_media](../faq/massplaymedia.md)
 - [music_assistant.play_annnouncement](../faq/massannounce.md)
 - [music_assistant.transfer_queue](../faq/masstransfer.md) 
-
-### HACS Integration📦
-
-The HACS integration adds six actions for use in scripts and automations. 
-
-- [mass.play_media](../faq/massplaymedia.md)📦
-- [mass.play_annnouncement](../faq/massannounce.md)📦
-- [mass.transfer_queue](../faq/masstransfer.md) 📦
-- [mass.search](../faq/masssearch.md) 📦
-- [mass.get_library](../faq/get_library.md) 📦
-- [mass.get_queue](../faq/get_queue.md) 📦
+- [music_assistant.search](../faq/masssearch.md) (Coming in HA 2025.1.0)
+- [music_assistant.get_library](../faq/get_library.md) (Coming in HA 2025.1.0)
+- [music_assistant.get_queue](../faq/get_queue.md) (Coming in HA 2025.1.0)
