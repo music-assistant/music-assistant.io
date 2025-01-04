@@ -55,7 +55,8 @@ Music Assistant has support for grouping dissimilar playback devices. Configurat
 
 ### Features
 
-- All devices can be grouped but not all will play in sync. See the individual player providers page for any specific limitations
+- All devices can be grouped and will play the same audio but will not play the audio in sync. Use this playertype only for players that are not in close range to eachother.
+- See the individual player providers page for any specific limitations
 
 ### Known Issues / Notes
 
