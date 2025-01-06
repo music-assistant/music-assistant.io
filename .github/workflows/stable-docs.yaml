@@ -26,4 +26,3 @@ jobs:
       - name: Build Docs Website
         run: |
           mike deploy --push --update-aliases 2.3 stable
-          mike set-default --push stable
