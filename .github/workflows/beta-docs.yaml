@@ -1,33 +1,26 @@
-# name: Build/Publish Latest Beta Docs
-
-# on:
-#   release:
-#     types: [prereleased]
-
-# permissions:
-#   contents: write
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#         with:
-#           fetch-depth: 0
-#           fetch-tags: true
-#       - name: Get Latest Pre-release Tag
-#         id: prerelease
-#         run: |
-#           LATEST_TAG=$(git tag -l | grep -E '^v.*-beta.*$' | sort -V | tail -n 1)
-#           echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
-#       - uses: actions/setup-python@v4
-#         with:
-#           python-version: 3.x
-#       - name: Install Dependencies
-#         run: |
-#           pip install -r requirements.txt
-#       - name: Setup Docs Deploy
-#         run: |
-#           git config user.name github-actions[bot]
-#           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-#       - name: Build Docs Website
-#         run: mike deploy --push --update-aliases ${{ steps.prerelease.outputs.tag }} beta
+name: Build/Publish Beta Docs 
+on:
+  push:
+    branches:
+      - beta
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt 
+      - name: Setup Docs Deploy
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - name: Build Docs Website
+        run: mike deploy --push beta
