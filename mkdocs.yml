@@ -102,6 +102,9 @@ plugins:
   - minify:
       minify_html: true 
 extra:
+  version:
+    provider: mike
+    alias: true
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/music-assistant
@@ -111,7 +114,7 @@ extra:
       name: Music Assistant on Discord
     - icon: lokalise-logo-colour
       link: https://lokalise.com/
-      name: Translations by Lokalise  
+      name: Translations by Lokalise 
     #- icon: fontawesome/brands/dev
     #  link: ./developer-docs/dev-docs/
     #  name: Developer Docs
