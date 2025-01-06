@@ -1,8 +1,9 @@
-name: Build/Publish Beta Docs 
+name: Build/Publish Beta Docs
 on:
   push:
     branches:
       - beta
+
 permissions:
   contents: write
 jobs:
