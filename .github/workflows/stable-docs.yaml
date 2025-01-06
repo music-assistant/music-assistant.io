@@ -24,4 +24,4 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: Build Docs Website
-        run: mike deploy --push --update-aliases stable
+        run: mike deploy --push --update-aliases 2.3 stable
