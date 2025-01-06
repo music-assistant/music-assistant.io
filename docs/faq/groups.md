@@ -7,7 +7,9 @@ description: Player Grouping Functionality in Music Assistant
 
 !!! warning "Note"
     Do not delete or disable a player which is in a group while the group is playing
-    
+
+See also the section on Announcements [Group Behaviour](../integration/announcements/#group-behaviour).
+
 ## Temporary Sync Group
 
 Temporary Sync Group players are configured via the [Player List](ui.md#player-list) or HA action. They provide a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
