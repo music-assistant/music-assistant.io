@@ -1,6 +1,6 @@
 # SoundCloud Provider ![Preview image](../assets/icons/soundcloud-icon.svg){ width=70 align=right }
 
-Music Assistant has support for Soundcloud. Contributed by [gieljnssns](https://github.com/gieljnssns)
+Music Assistant has support for Soundcloud. Contributed by [gieljnssns](https://github.com/gieljnssns). Maintained by [robsonke](https://github.com/robsonke)
 
 ## Configuration
 

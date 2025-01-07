@@ -2,7 +2,8 @@
 
 Music Assistant has full support for Spotify media listing and playback.
 
-!!! note A Spotify Premium account is required for this music provider. Free accounts will not work.
+!!! note 
+    A Spotify Premium account is required for this music provider. Free accounts will not work.
 
 ## Features
 
