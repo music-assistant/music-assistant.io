@@ -99,6 +99,9 @@ plugins:
   - search:
   - minify:
       minify_html: true
+  - redirects:
+      redirect_maps:
+        "callback.md": "https://music-assistant.github.io/callback/"
 extra:
   social:
     - icon: fontawesome/brands/github
