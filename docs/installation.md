@@ -29,12 +29,12 @@ An alternative way to run the Music Assistant server is by running the docker im
 docker run -v <dir>:/data --network host --cap-add=DAC_READ_SEARCH --cap-add=SYS_ADMIN --security-opt apparmor:unconfined ghcr.io/music-assistant/server
 ```
 
-You must run the docker container with host network mode. The data volume is `/data` - replace `<dir>` with a writable directory to ensure the data volume persists between updates. If you want access to your local music files from within MA, make sure to also mount that local directory, e.g. /media.
+You must run the docker container with **host network mode**. The data volume is `/data` - replace `<dir>` with a writable directory to ensure the data volume persists between updates. If you want access to your local music files from within MA, make sure to also mount that local directory, e.g. /media.
 
 Note that accessing remote (SMB) shares is done from within MA by using the SMB File provider.
 The additional privileges are only required if you want to use a remote (Samba/NFS) share within Music Assistant.
 
-Docker compose:
+**Docker compose:**
 
 ```
 services:
@@ -77,9 +77,7 @@ If you may run into any issues when using a docker install vs the recommended/st
 
 - Because the server heavily relies on multicast techniques like mDNS and uPnP to discover players in your network it MUST be run in the same Layer 2 network as your player devices.
 
-- The server itself hosts a very simple webserver to stream audio to devices. This webinterface must be accessible via HTTP (no HTTPS) by IP-address from local players. See the server's logging at startup to see if the server has correctly auto-detected the local IP.
-
-- You cannot run the slimproto integration in Home Assistant if the slimproto provider is enabled.
+- The server itself hosts a webserver to stream audio to devices. This webinterface must be accessible via HTTP by IP-address from local players. See the server's logging at startup to see if the server has correctly auto-detected the local IP.
 
 - The webinterface of the server can be reached on TCP port 8095 if enabled in the settings. By default, on HAOS based installations, the webserver is internal only and not exposed to the outside world. It is protected by HA authentication using the Ingress feature of Home Assistant (you also get the sidepanel shortcut for free!)
 
@@ -102,15 +100,15 @@ You can keep the server more secure by NOT exposing the webserver and let the ad
 
 - Music from your music sources will be automatically loaded into the Music Assistant library. If you have multiple sources, they will be merged as one library
 
-- In this first implementation the UI centres around the concept of the [Library](usage.md), so your artists, albums, tracks, playlists and radio stations. You can BROWSE the various providers to add aditional items to your Library. In a later release options will be provided to browse the recommendations of the various streaming providers
+- This first implementation of the Music Assistant UI centres around the concept of the [Library](usage.md), so your artists, albums, tracks, playlists and radio stations. You can BROWSE the various providers to add aditional items to your Library. In a later release options will be provided to browse the recommendations of the various streaming providers
 
 - Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will notify you about tasks that are in progress. This can be seen by this symbol ![icon](assets/icons/sync-icon.png) next to the Music Provider entry in MA settings
 
-- Music sources are synced at addon (re)start and every 3 hours (or other interval as selected in the settings)
+- Music sources are synced at addon (re)start and at regular intervals (which can be selected in the settings).
 
-- MA is designed to work on a Raspberry Pi which is also running Home Assistant. For this reason it does not make large demands on resources. Additionally, there are limits on the free API calls used for artwork and other metadata. The result of this is that initial syncs of large libraries can take a long time. Subsequent syncs should be noticeably faster
+- MA is designed to work on a Raspberry Pi (4+) which is also running Home Assistant. For this reason it does not make large demands on resources. Additionally, there are limits on the free API calls used for artwork and other metadata. The result of this is that initial syncs of large libraries can take a long time. Subsequent syncs should be noticeably faster
 
-- If a song is available on multiple providers (e.g. Spotify and a flac file on disk), the file/stream with the highest quality is always preferred when starting a stream. Highest quality is based on sample rate, bit depth and codec and local is preferred over cloud
+- If a song is available on multiple providers (e.g. Spotify and a flac file on disk), the file/stream with the highest quality is always preferred when starting a stream. Highest quality is based on sample rate, bit depth and codec and local is always preferred over cloud if the quality is equal.
 
 - Music Assistant uses a custom stream port (TCP 8097 by default) to stream audio to players. Players must be able to reach the Home Assistant instance and this port. If you're running one of the recommended HAOS installation methods, this is all handled for you, otherwise you will have to make sure you're running MA in a container with HOST network mode and with the privileges shown in the example docker compose above. Note: If the default port 8097 is occupied, the next port will be tried, and so on
 - Any restriction of the available ports (e.g. trying to run MA through a firewall) is not supported as protocols like airplay open random tcp and/or udp ports
