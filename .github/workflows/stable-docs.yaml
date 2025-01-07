@@ -1,15 +1,14 @@
-name: Build/Publish Latest Release Docs
-
+name: Build/Publish Stable Docs 
 on:
-  release:
-    types: [released]
+  push:
+    branches:
+      - main
 
 permissions:
   contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ !github.event.release.prerelease }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -19,10 +18,11 @@ jobs:
           python-version: 3.x
       - name: Install Dependencies
         run: |
-          pip install -r requirements.txt
+          pip install -r requirements.txt 
       - name: Setup Docs Deploy
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - name: Build Docs Website
-        run: mike deploy --push --update-aliases ${{ github.event.release.tag_name }} latest
+        run: |
+          mike deploy --push --update-aliases 2.3 stable

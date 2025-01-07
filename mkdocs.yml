@@ -103,6 +103,8 @@ extra:
   version:
     provider: mike
     alias: true
+    default: stable
+
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/music-assistant
@@ -117,7 +119,6 @@ extra:
     #  link: ./developer-docs/dev-docs/
     #  name: Developer Docs
 
-      
 markdown_extensions:
   - md_in_html
   - pymdownx.highlight:
