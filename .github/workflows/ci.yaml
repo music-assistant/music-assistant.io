@@ -1,5 +1,6 @@
-name: ci
+name: deploy-pages
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
