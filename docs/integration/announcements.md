@@ -36,7 +36,7 @@ Currently the only (known) player type that supports native announcements is Son
 If a player does not support native announcements, MA will take care of it by stopping any playing music, adjust the volume (as configured), play the announcement, and then restore the previous state.
 
 !!! note
-The MA announcement feature will ONLY work reliably if the player reports the state (e.g. playing, paused, idle) and the progress report (elapsed time) correctly. If any of those are not updated correctly then announcements will work poorly.
+    The MA announcement feature will ONLY work reliably if the player reports the state (e.g. playing, paused, idle) and the progress report (elapsed time) correctly. If any of those are not updated correctly then announcements will work poorly.
 
 ESPHome and Snapcast can be unreliable with state updates so issues may occur with those player types. The same applies to some HA media players. Future updates of those platforms should improve performance.
 
@@ -55,9 +55,9 @@ If an announcement is sent to a player that is currently synced to another playe
 In all cases the playback should resume after the announcement.
 
 !!! note
-If the announcement is sent to one player of a group, the playback needs to resume afterwards and for airplay and slimproto that will be noticeable
+    If the announcement is sent to one player of a group, the playback needs to resume afterwards and for airplay and slimproto that will be noticeable
 
 !!! note
-If the announcement is sent to one player of a group, and that player is the sync leader of a permanent Sync Group, then this will be treated the same as sending the request to the whole Sync Group. All players will play the announcement and the whole group will resume afterwards.
+    If the announcement is sent to one player of a group, and that player is the sync leader of a permanent Sync Group, then this will be treated the same as sending the request to the whole Sync Group. All players will play the announcement and the whole group will resume afterwards.
 
 Any case not mentioned above is not supported
