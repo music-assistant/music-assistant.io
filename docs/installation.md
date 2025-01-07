@@ -70,7 +70,6 @@ Everything else is considered unsupported. We have the right to close support re
 If you may run into any issues when using a docker install vs the recommended/standard Home Assistant add-on, you may try to simply run Home Assistant OS on a VM on your computer or a spare RPi and see if you can reproduce the issue with that setup.
 
 ---
-
 ## Server Notes
 
 - MA requires a 64bit Operating System and a minimum of 2GB of RAM on the physical device or the container (physical devices are recommended to have 4GB+ if they are running anything else)
@@ -88,7 +87,7 @@ If you may run into any issues when using a docker install vs the recommended/st
   2. To access the frontend behind a reverse proxy you will have to configure the reverse proxy to point at the 8095 port and expose it to whatever is desired (and add an ssl certificate). How that works differs for each implemention.
 
 !!! tip
-You can keep the server more secure by NOT exposing the webserver and let the addon talk directly to the webserver on the internal docker network. In that case the internal dns name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
+    You can keep the server more secure by NOT exposing the webserver and let the addon talk directly to the webserver on the internal docker network. In that case the internal dns name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
 
 ## Usage and Notes
 
