@@ -54,7 +54,7 @@ Transferring the queue will also transfer the shuffle and repeat setting to the 
 
 ![Preview image](assets/screenshots/queue3.png)
 
-The Don't Stop The Music (DSTM) option can be enabled if a provider is available which supports dynamic tracks (e.g Spotify, YTM, Apple and Tidal). When DSTM is on, radio mode will be automatically enabled when the last track of the queue is reached and if any dynamic tracks can be resolved from one of the providers. The added tracks will be based on the played items in the queue.
+The Don't Stop The Music (DSTM) option can be enabled if a provider is available which supports dynamic tracks (e.g Spotify, YTM, Apple, Subsonic and Tidal). When DSTM is on, radio mode will be automatically enabled when the last track of the queue is reached and if any dynamic tracks can be resolved from one of the providers. The added tracks will be based on the played items in the queue.
 
 !!! note
     If a queue is paused for more than 30 seconds it's status will change to stopped 
