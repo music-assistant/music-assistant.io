@@ -14,7 +14,7 @@ The Home Assistant integration consists of 2 parts:
 2. The Home Assistant Player Provider. This allows you to use your HA players within MA.
 
 !!! warning "Be Aware"
-This player provider relies on the upstream HA integrations which have not necessarily been written or optimised for music playback. Therefore, if there is any way to use a MA provider you need to do so. Problems with HA providers will be addressed as resources allow.
+    This player provider relies on the upstream HA integrations which have not necessarily been written or optimised for music playback. Therefore, if there is any way to use a MA provider you need to do so. Problems with HA providers will be addressed as resources allow.
 
 ## Features
 
@@ -37,7 +37,7 @@ Next install the Home Assistant Player Provider
 - MA players will also be filtered out
 
 !!! note
-Features are most likely limited with these players. Always prefer a native player provider if it exists in MA as that is optimised
+    Features are most likely limited with these players. Always prefer a native player provider if it exists in MA as that is optimised
 
 ## Known Issues / Notes
 
