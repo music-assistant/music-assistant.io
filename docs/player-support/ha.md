@@ -1,3 +1,8 @@
+---
+title: Player Support - Home Assistant Players
+description: Features of, and instructions for, the use of HA media player entitities in Music Assistant
+---
+
 # Home Assistant ![Preview image](../assets/icons/ha-logo.png){ width=70 align=right }
 
 Music Assistant has support for playing to media player entities in Home Assistant.
@@ -8,6 +13,7 @@ Music Assistant has support for playing to media player entities in Home Assista
 ## Features
 
 - All media player entities that are available in HA, for which there is no dedicated MA provider, will be available in MA
+- All media player types that can be grouped in HA can be grouped in MA via the [Player List](../ui.md#player-list) or HA action
 
 ## Known Issues / Notes
 
@@ -18,4 +24,4 @@ Music Assistant has support for playing to media player entities in Home Assista
 - Synchronisation between this player type and any others is not possible
 - In order to support a greater number of players, different streaming profiles are available. If the player doesn't work, stops mid stream or has other playback issues then change the player setting `HTTP Profile used for sending audio` and try each option until the player works
 - If there is no metadata sent to the player then you can trying enabling the option `Try to ingest metadata into stream`
-- ESPHome based Media Players are in general not recommended for playback of music. Short audio announcements and maybe even webradio could work but it is really not suitable for playing music from Music Assistant. TIP: you may have to enable the "fixed content length" HTTP profile in the player's settings. The ESPHome is working on an improved media player which can be used on ESP32 modules with PSRAM, which will work correctly with Music Assistant.  
+- ESPHome based Media Players are in general not recommended for playback of music. Short audio announcements or possibly webradio could work but it is really not suitable for playing music from MA. TIP: you may have to enable the "fixed content length" HTTP profile in the player's settings. Having said that, more powerful ESPHome based players such as the HA Voice PE work well, support FLAC and have some other optimisations.
