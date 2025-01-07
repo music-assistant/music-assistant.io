@@ -29,4 +29,4 @@ There is also a dev/nightly add-on which can be run to get the absolute latest v
 It is possible to run the stable, beta or dev server add-ons side by side as they don't share any data. Thus you can temporarily run the beta add-on to try out new features and then revert to the stable version. You can do this by manually stopping and starting the relevant server. Don't have two servers running on the same host at the same time.
 
 !!! warning
-Be careful that you don't accidentally remove an add-on, because that will make you loose all your data (if you didnt back it up). The same applies to docker users: be careful with the data folder and be aware that the data folder is not backwards compatible. Don't try to use it between channels!
+    Be careful that you don't accidentally remove an add-on, because that will make you loose all your data (if you didnt back it up). The same applies to docker users: be careful with the data folder and be aware that the data folder is not backwards compatible. Don't try to use it between channels!
