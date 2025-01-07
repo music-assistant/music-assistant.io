@@ -1,4 +1,4 @@
-name: deploy-pages
+name: build-docs
 on:
   workflow_dispatch:
   push:
