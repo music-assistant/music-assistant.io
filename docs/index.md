@@ -30,8 +30,10 @@ Music Assistant is a music library manager for your offline and online music sou
 Music Assistant consists of multiple building blocks:
 
 - Music Assistant Server ([Installation Instructions](installation.md))
-- Music Assistant Integration for Home Assistant ([Installation Instructions](integration/installation.md))
-    - An optional sub-component of the Integraton is the Home Assistant Plugin for Music Assistant. This allows the importing of Home Assistant media players into the Music Assistant engine to use as targets for playback
+- Home Assistant Integration ([Installation Instructions](integration/installation.md))
+- Music Providers: Import your music from various sources into Music Assistant.
+- Player Providers: Play your music on a wide collection of player ecosystems.
+- An optional Home Assistant Plugin for Music Assistant, which allows the importing of Home Assistant media players into the Music Assistant engine to use as targets for playback
 
 ## Music Assistant Server
 
@@ -39,20 +41,19 @@ The Music Assistant server is a free, opensource Media library manager that conn
 
 ![MA Banner](assets/MA_banner.png)
 
-## Music Assistant Integration
+## Home Assistant Integration
 
 Connects Home Assistant to your Music Assistant Server to allow control from your HA instance, allow you to automate your music and allows voice control! The Integration also allows the exposure of HA media players to MA furthering the options you have for playback.
 
 ## Preview
 
-![Preview image](assets/screenshots/screen2.png){width=800 } 
+![Preview image](assets/screenshots/screen2.png){width=800 }
 
 ??? note "Click to show more screenshots"
 
-    ![Preview image](assets/screenshots/screen3.png){width=800 } 
+    ![Preview image](assets/screenshots/screen3.png){width=800 }
 
-    ![Preview image](assets/screenshots/screen1.png){width=800 } 
-
+    ![Preview image](assets/screenshots/screen1.png){width=800 }
 
 ## The Team
 
