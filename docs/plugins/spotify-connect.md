@@ -14,5 +14,5 @@ Music Assistant has the ability to add [Spotify Connect](https://connect.spotify
 ## Known Issues / Notes
 
 - To use Spotify Connect, all devices must be connected to the same network. Refer to the [Spotify Connect Support Article](https://support.spotify.com/au/article/spotify-connect/) for more information
-- You cannot send an announcement to a player that is currently being streamed to via Spotify Connect. Doing so will.....
+- If the device does not natively support announcements then playback will be interrupted if an announcement is sent to a player that is being streamed to via Spotify Connect. Currently this means that, announcements will only work on the Voice PE devices (and derivatives) and Sonos S2 devices
 - The MA volume normalization functionality is not available
