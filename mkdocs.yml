@@ -38,9 +38,9 @@ nav:
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
       - Plex: music-providers/plex.md
+      - Podcast RSS Feed: music-providers/podcastfeed.md
       - Qobuz: music-providers/qobuz.md
       - Radio Browser: music-providers/radio-browser.md
-      - RSS Feed Podcasts: music-providers/rss.md
       - SiriusXM: music-providers/siriusxm.md
       - SoundCloud: music-providers/soundcloud.md
       - Spotify: music-providers/spotify.md
