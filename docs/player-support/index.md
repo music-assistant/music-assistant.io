@@ -32,7 +32,7 @@ All providers have the option to apply [Digital Signal Processing](https://en.wi
 
 The DSP option is found in the MA settings for each player which means that each player has its own independently configurable DSP settings.
 
-DSP settings will be disabled for all groups except AirPlay and Snapcast.
+DSP settings will be disabled for all groups except AirPlay, Slimproto and Universal.
 
 The DSP path consists of an INPUT pre-amplifier for initial gain control, followed by optional audio filters that can be added between input and output (multiple times if desired). The following filters are available:
 
