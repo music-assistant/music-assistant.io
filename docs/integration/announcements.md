@@ -1,11 +1,11 @@
 ---
 title: Announcements
-description: Details of the announcements functionality  
+description: Details of the announcements functionality
 ---
 
 # Announcements
 
-Announcements are either Text-to-Speech or audio files that are sent (from Home Assistant) to the MA players via the [`tts.xxxxxx`](https://www.home-assistant.io/integrations/tts/) or [`music_assistant.play_announcement`](../faq/massannounce.md) HA actions. 
+Announcements are either Text-to-Speech or audio files that are sent (from Home Assistant) to the MA players via the [`tts.xxxxxx`](https://www.home-assistant.io/integrations/tts/) or [`music_assistant.play_announcement`](../faq/massannounce.md) HA actions.
 
 ## Overview
 
@@ -29,7 +29,7 @@ If an announcement is sent to a single player that supports native announcements
 
 Native announcement support usually means that the player can "overlay" the announcement on top of any music that is playing. It will "duck" the volume of the music, play the announcement with a volume boost and then revert the music volume. Music keeps playing and the entire announcement will be handled by the player itself.
 
-Currently the only (known) player type that supports native announcements is Sonos S2 speakers.  Hopefully more player types will follow.
+Currently the only (known) player type that supports native announcements is Sonos S2 speakers. Hopefully more player types will follow.
 
 ## MA Player Support
 
@@ -40,7 +40,7 @@ If a player does not support native announcements, MA will take care of it by st
 
 ESPHome and Snapcast can be unreliable with state updates so issues may occur with those player types. The same applies to some HA media players. Future updates of those platforms should improve performance.
 
-If a player does not resume after playing an announcement, or it takes a very long time, check the HTTP profile settings. `Fixed content length` may need to be used. For example, (the current) ESPHome devices have this issue.
+If a player does not resume after playing an announcement, or it takes a very long time, check the HTTP profile settings. `Fixed content length` may need to be used. For example, ESPHome devices may have this issue.
 
 ## Group Behaviour
 
@@ -52,12 +52,12 @@ If an announcement is sent to a Sync Group (temporary or permananent) of which A
 
 If an announcement is sent to a player that is currently synced to another player (and does not support native announcements), it will be temporarily unsynced, the announcement played and then added back to the group.
 
-In all cases the playback should resume after the announcement. 
+In all cases the playback should resume after the announcement.
 
 !!! note
     If the announcement is sent to one player of a group, the playback needs to resume afterwards and for airplay and slimproto that will be noticeable
 
 !!! note
     If the announcement is sent to one player of a group, and that player is the sync leader of a permanent Sync Group, then this will be treated the same as sending the request to the whole Sync Group. All players will play the announcement and the whole group will resume afterwards.
- 
+
 Any case not mentioned above is not supported

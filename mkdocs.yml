@@ -8,45 +8,46 @@ nav:
   - Home: index.md
   - Installation: installation.md
   - Home Assistant Integration:
-    - integration/index.md
-    - Installation: integration/installation.md
-    - Migrating from HACS: integration/migrate.md
-    - Announcements: integration/announcements.md
-    - Play Media Action: faq/massplaymedia.md
-    - Play Announcement Action: faq/massannounce.md
-    - Search Action: faq/masssearch.md
-    - Get Library Action: faq/get_library.md
-    - Get Queue Action: faq/get_queue.md
-    - Transfer Queue Action: faq/masstransfer.md
+      - integration/index.md
+      - Installation: integration/installation.md
+      - Migrating from HACS: integration/migrate.md
+      - Announcements: integration/announcements.md
+      - Play Media Action: faq/massplaymedia.md
+      - Play Announcement Action: faq/massannounce.md
+      - Search Action: faq/masssearch.md
+      - Get Library Action: faq/get_library.md
+      - Get Queue Action: faq/get_queue.md
+      - Transfer Queue Action: faq/masstransfer.md
   - Companion App: companion-app.md
-  - Usage: 
-    - General: usage.md
-    - UI: ui.md
-    - Groups: faq/groups.md
-    - DSP Parametric EQ: dsp/parametriceq.md
-    - DSP Tone Controls: dsp/tonecontrols.md
-    - How Do I...: faq/how-to.md
-    - I Want To Stream To: faq/stream-to.md
-    - Technical Info: faq/tech-info.md
-    - Troubleshooting: faq/troubleshooting.md
+  - Usage:
+      - General: usage.md
+      - UI: ui.md
+      - Groups: faq/groups.md
+      - DSP Parametric EQ: dsp/parametriceq.md
+      - DSP Tone Controls: dsp/tonecontrols.md
+      - How Do I...: faq/how-to.md
+      - I Want To Stream To: faq/stream-to.md
+      - Technical Info: faq/tech-info.md
+      - Troubleshooting: faq/troubleshooting.md
   - Music Providers:
-    - music-providers/index.md
-    - Apple Music: music-providers/apple-music.md
-    - Builtin: music-providers/builtin.md
-    - Deezer: music-providers/deezer.md
-    - iBroadcast: music-providers/ibroadcast.md
-    - Jellyfin: music-providers/jellyfin.md
-    - Local Files: music-providers/filesystem.md
-    - Plex: music-providers/plex.md
-    - Qobuz: music-providers/qobuz.md
-    - Radio Browser: music-providers/radio-browser.md
-    - SiriusXM: music-providers/siriusxm.md
-    - SoundCloud: music-providers/soundcloud.md
-    - Spotify: music-providers/spotify.md
-    - Subsonic: music-providers/subsonic.md
-    - Tidal: music-providers/tidal.md
-    - TuneIn: music-providers/tunein.md
-    - YouTube Music: music-providers/youtube-music.md
+      - music-providers/index.md
+      - Apple Music: music-providers/apple-music.md
+      - Builtin: music-providers/builtin.md
+      - Deezer: music-providers/deezer.md
+      - iBroadcast: music-providers/ibroadcast.md
+      - Jellyfin: music-providers/jellyfin.md
+      - Local Files: music-providers/filesystem.md
+      - Plex: music-providers/plex.md
+      - Podcast RSS Feed: music-providers/podcastfeed.md
+      - Qobuz: music-providers/qobuz.md
+      - Radio Browser: music-providers/radio-browser.md
+      - SiriusXM: music-providers/siriusxm.md
+      - SoundCloud: music-providers/soundcloud.md
+      - Spotify: music-providers/spotify.md
+      - Subsonic: music-providers/subsonic.md
+      - Tidal: music-providers/tidal.md
+      - TuneIn: music-providers/tunein.md
+      - YouTube Music: music-providers/youtube-music.md
   - Player Providers:
     - player-support/index.md
     - AirPlay: player-support/airplay.md
@@ -61,9 +62,9 @@ nav:
   - Plugins:
     - plugins/spotify-connect.md
   - Support: support.md
-  - I Want to Help / Donate: 
-    - help/index.md
-    - Translations: help/lokalise.md
+  - I Want to Help / Donate:
+      - help/index.md
+      - Translations: help/lokalise.md
   - Release Cycle: release.md
 
 theme:
@@ -74,15 +75,15 @@ theme:
   font:
     text: Roboto
     code: JetBrains Mono
-    
+
   features:
     - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
     - navigation.top
-    
+
     - toc.integrate
-    
+
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -92,7 +93,7 @@ theme:
   palette:
     scheme: music-assistant
 extra_css:
-  - stylesheets/extra.css  
+  - stylesheets/extra.css
 
 plugins:
   - social:
@@ -100,13 +101,8 @@ plugins:
         font_family: JetBrains Mono
   - search:
   - minify:
-      minify_html: true 
+      minify_html: true
 extra:
-  version:
-    provider: mike
-    alias: true
-    default: stable
-
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/music-assistant
@@ -116,7 +112,7 @@ extra:
       name: Music Assistant on Discord
     - icon: lokalise-logo-colour
       link: https://lokalise.com/
-      name: Translations by Lokalise 
+      name: Translations by Lokalise
     #- icon: fontawesome/brands/dev
     #  link: ./developer-docs/dev-docs/
     #  name: Developer Docs
