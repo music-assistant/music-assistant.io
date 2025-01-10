@@ -2,9 +2,6 @@
 
 Music Assistant has support for streaming podcasts from RSS feeds. Contributed and maintained by [sauegetier](https://github.com/saeugetier)
 
-!!! note
-    Both the free and paid subscription options are supported
-
 The Podcast RSS Provider allows subscribing to podcast feeds. The RSS Feed only provides a single podcast. No aggregated feeds are possible. For multiple podcasts, multiple providers with each a unique feed must be configured.
 
 ## Features
