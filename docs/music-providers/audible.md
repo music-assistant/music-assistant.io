@@ -1,4 +1,4 @@
-# Audible Provider ![Preview image](../assets/icons/audible-icon.jpg){ width=70 align=right }
+# Audible Provider ![Preview image](../assets/icons/audible-icon.png){ width=70 align=right }
 
 Music Assistant has support for streaming from Audible. Contributed and maintained by [ztripez](https://github.com/ztripez)
 
