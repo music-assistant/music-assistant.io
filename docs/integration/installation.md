@@ -21,6 +21,7 @@ Once the HA Integration is installed it is possible to stream to HA media player
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
   
 Next install the Home Assistant Player Provider
+
 - You need the HA plug-in first before you can use/install this provider
 - In the provider settings, you can select which players you want to utilise
 - You can only use players that support "play_media", other players will be filtered out
