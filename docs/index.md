@@ -66,6 +66,7 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 [![Santiago](assets/team/santiago.png){ width=100 }](https://github.com/santiagosotoc "Santiago. Author of the Snapcast provider")
 [![khers](assets/team/khers.png){ width=100 }](https://github.com/khers "Eric. Author of the Subsonic provider")
 [![robsonke](assets/team/robsonke.png){ width=100 }](https://github.com/robsonke "Rob. Author of the iBroadcast provider and maintainer of Soundcloud")
+[![maxim](assets/team/maxim.png){ width=100 }](https://github.com/maximmaxim345 "Maxim. DSP Guru and Core Developer")
 [![Lokiberra](assets/team/lokiberra.png){ width=100 }](https://github.com/lokiberra "Kevin. Author of the Jellyfin provider")
 [![Mel](assets/team/melharbour.png){ width=100 }](https://github.com/melharbour "Mel. Core developer team")
 [![Giel](assets/team/gieljnssns.png){ width=100 }](https://github.com/gieljnssns "Giel. Author of the Soundcloud provider")
