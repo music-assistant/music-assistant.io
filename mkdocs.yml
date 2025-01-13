@@ -31,8 +31,8 @@ nav:
       - Troubleshooting: faq/troubleshooting.md
   - Music Providers:
       - music-providers/index.md
-      - audiobookshelf: music-providers/audiobookshelf.md
       - Apple Music: music-providers/apple-music.md
+      - audiobookshelf: music-providers/audiobookshelf.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - iBroadcast: music-providers/ibroadcast.md
