@@ -34,7 +34,7 @@ The codec shown in the UI to the right of the track title is the codec of the or
 ## Now Playing View
 ![image](assets/screenshots/now-playing-view.png)
 
-This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right.
+This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
 
 You can also access the [Now Playing view directly via URL](faq/how-to/#access-the-now-playing-view-directly-via-url)
 ***************************************************************
