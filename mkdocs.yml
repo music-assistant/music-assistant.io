@@ -49,16 +49,18 @@ nav:
       - TuneIn: music-providers/tunein.md
       - YouTube Music: music-providers/youtube-music.md
   - Player Providers:
-      - player-support/index.md
-      - AirPlay: player-support/airplay.md
-      - Bluesound: player-support/bluesound.md
-      - DLNA: player-support/dlna.md
-      - Fully Kiosk: player-support/fully-kiosk.md
-      - Google Cast: player-support/google-cast.md
-      - Home Assistant: player-support/ha.md
-      - Slimproto: player-support/slimproto.md
-      - Snapcast: player-support/snapcast.md
-      - Sonos: player-support/sonos.md
+    - player-support/index.md
+    - AirPlay: player-support/airplay.md
+    - Bluesound: player-support/bluesound.md
+    - DLNA: player-support/dlna.md
+    - Fully Kiosk: player-support/fully-kiosk.md
+    - Google Cast: player-support/google-cast.md
+    - Home Assistant: player-support/ha.md
+    - Slimproto: player-support/slimproto.md
+    - Snapcast: player-support/snapcast.md
+    - Sonos: player-support/sonos.md
+  - Plugins:
+    - plugins/spotify-connect.md
   - Support: support.md
   - I Want to Help / Donate:
       - help/index.md
