@@ -18,6 +18,7 @@ nav:
       - Get Library Action: faq/get_library.md
       - Get Queue Action: faq/get_queue.md
       - Transfer Queue Action: faq/masstransfer.md
+  - Home Assistant Plugin: ha-plugin.md
   - Companion App: companion-app.md
   - Usage:
       - General: usage.md

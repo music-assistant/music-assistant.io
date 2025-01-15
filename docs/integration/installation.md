@@ -12,24 +12,6 @@ The Integration to connect Music Assistant to Home Assistant is available as an 
 !!! note
     The HA integration will create new media_player entities for those player types which are supported natively by MA. To see the names of those players go to `HA SETTINGS >>  DEVICES & SERVICES >> INTEGRATIONS >> MUSIC ASSISTANT` and view the entities. It is these players that need to be targeted in automations and scripts
 
-## Installation of the Home Assistant Player Provider
-
-Once the HA Integration is installed it is possible to stream to HA media player entities. In order to do so the HA Player Provider needs to be installed.  However, before that can be done the Home Assistant Plug-in provider needs to be installed.
-
-- Navigate to MA SETTINGS>>PROVIDERS and add the plug-in provider
-- If using the Music Assistant add-on (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
-- If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
-  
-Next install the Home Assistant Player Provider
-
-- You need the HA plug-in first before you can use/install this provider
-- In the provider settings, you can select which players you want to utilise
-- You can only use players that support "play_media", other players will be filtered out
-- MA players will also be filtered out
-
-!!! note
-    Features are most likely limited with these players. Always prefer a native player provider if it exists in MA as that is optimised
-  
 ## Actions
 
 Music Assistant provides (next to the standard media player actions), several custom actions to allow control over the players and media. See the [Home Assistant documentation](https://www.home-assistant.io/integrations/music_assistant/#additional-actions) for information.
