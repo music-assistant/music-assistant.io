@@ -34,6 +34,7 @@ nav:
       - music-providers/index.md
       - Apple Music: music-providers/apple-music.md
       - Audible: music-providers/audible.md
+      - Audiobookshelf: music-providers/audiobookshelf.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - iBroadcast: music-providers/ibroadcast.md
