@@ -18,6 +18,7 @@ nav:
       - Get Library Action: faq/get_library.md
       - Get Queue Action: faq/get_queue.md
       - Transfer Queue Action: faq/masstransfer.md
+  - Home Assistant Plugin: ha-plugin.md
   - Companion App: companion-app.md
   - Usage:
       - General: usage.md
@@ -32,13 +33,15 @@ nav:
   - Music Providers:
       - music-providers/index.md
       - Apple Music: music-providers/apple-music.md
-      - audiobookshelf: music-providers/audiobookshelf.md
+      - Audible: music-providers/audible.md
+      - Audiobookshelf: music-providers/audiobookshelf.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - iBroadcast: music-providers/ibroadcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
       - Plex: music-providers/plex.md
+      - Podcast RSS Feed: music-providers/podcastfeed.md
       - Qobuz: music-providers/qobuz.md
       - Radio Browser: music-providers/radio-browser.md
       - SiriusXM: music-providers/siriusxm.md
@@ -49,16 +52,18 @@ nav:
       - TuneIn: music-providers/tunein.md
       - YouTube Music: music-providers/youtube-music.md
   - Player Providers:
-      - player-support/index.md
-      - AirPlay: player-support/airplay.md
-      - Bluesound: player-support/bluesound.md
-      - DLNA: player-support/dlna.md
-      - Fully Kiosk: player-support/fully-kiosk.md
-      - Google Cast: player-support/google-cast.md
-      - Home Assistant: player-support/ha.md
-      - Slimproto: player-support/slimproto.md
-      - Snapcast: player-support/snapcast.md
-      - Sonos: player-support/sonos.md
+    - player-support/index.md
+    - AirPlay: player-support/airplay.md
+    - Bluesound: player-support/bluesound.md
+    - DLNA: player-support/dlna.md
+    - Fully Kiosk: player-support/fully-kiosk.md
+    - Google Cast: player-support/google-cast.md
+    - Home Assistant: player-support/ha.md
+    - Slimproto: player-support/slimproto.md
+    - Snapcast: player-support/snapcast.md
+    - Sonos: player-support/sonos.md
+  - Plugins:
+    - plugins/spotify-connect.md
   - Support: support.md
   - I Want to Help / Donate:
       - help/index.md

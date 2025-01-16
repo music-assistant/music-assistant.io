@@ -31,9 +31,9 @@ Music Assistant consists of multiple building blocks:
 
 - Music Assistant Server ([Installation Instructions](installation.md))
 - Home Assistant Integration ([Installation Instructions](integration/installation.md))
-- Music Providers: Import your music from various sources into Music Assistant.
-- Player Providers: Play your music on a wide collection of player ecosystems.
-- An optional Home Assistant Plugin for Music Assistant, which allows the importing of Home Assistant media players into the Music Assistant engine to use as targets for playback
+- [Music Providers](music-providers/index.md): Import your music from various sources into Music Assistant.
+- [Player Providers](player-support/index.md): Play your music on a wide collection of player ecosystems.
+- An optional [Home Assistant Plugin](ha-plugin.md) for Music Assistant, which allows the importing of Home Assistant media players into the Music Assistant engine to use as targets for playback
 
 ## Music Assistant Server
 
@@ -62,15 +62,17 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 [![Jonathan](assets/team/jonathan.png){ width=100 }](https://github.com/arctixdev "Jonathan. Author of the Deezer provider and the Companion App")
 [![Gavin](assets/team/gavin.png){ width=100 }](https://github.com/OzGav "Gavin. Community Support and Documentation")
 [![Marvin](assets/team/marvin.png){ width=100 }](https://github.com/marvinschenkel "Marvin. Author of the YouTube and Apple Music providers")
-[![Giel](assets/team/gieljnssns.png){ width=100 }](https://github.com/gieljnssns "Giel. Author of the Soundcloud provider")
+[![jc2k](assets/team/jc2k.png){ width=100 }](https://github.com/jc2k "John. Jellyfin Maintainer and Core Developer")
 [![Santiago](assets/team/santiago.png){ width=100 }](https://github.com/santiagosotoc "Santiago. Author of the Snapcast provider")
 [![khers](assets/team/khers.png){ width=100 }](https://github.com/khers "Eric. Author of the Subsonic provider")
+[![robsonke](assets/team/robsonke.png){ width=100 }](https://github.com/robsonke "Rob. Author of the iBroadcast provider and maintainer of Soundcloud")
+[![maxim](assets/team/maxim.png){ width=100 }](https://github.com/maximmaxim345 "Maxim. DSP Guru and Core Developer")
 [![Lokiberra](assets/team/lokiberra.png){ width=100 }](https://github.com/lokiberra "Kevin. Author of the Jellyfin provider")
 [![Mel](assets/team/melharbour.png){ width=100 }](https://github.com/melharbour "Mel. Core developer team")
-[![jc2k](assets/team/jc2k.png){ width=100 }](https://github.com/jc2k "John. Jellyfin Maintainer")
+[![Giel](assets/team/gieljnssns.png){ width=100 }](https://github.com/gieljnssns "Giel. Author of the Soundcloud provider")
 [![diede](assets/team/diede.png){ width=100 }](https://github.com/Cyanogenbot "Diede. Author of the Bluesound provider")
 [![btoconnor](assets/team/btoconnor.png){ width=100 }](https://github.com/btoconnor "Brian. Author of the SiriusXM provider")
-[![robsonke](assets/team/robsonke.png){ width=100 }](https://github.com/robsonke "Rob. Author of the iBroadcast provider")
+[![ztripez](assets/team/ztripez.png){ width=100 }](https://github.com/ztripez "Ztripez. Author of the Audible provider")
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon
