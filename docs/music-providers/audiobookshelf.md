@@ -11,11 +11,11 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
 
 ## Configuration
 
-- For setup you need
+- The following is needed to setup this provider:
   - the URL of an Audiobookshelf instance
-  - username of an Audiobookshelf user
-  - password of this user
-- You may optionally disable ssl verification
+  - the username of an Audiobookshelf user
+  - the password of this user
+- Optionally, SSL verification may be disabled
 
 ## Known Issues / Notes
 
