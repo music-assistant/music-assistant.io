@@ -20,6 +20,7 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
 ## Known Issues / Notes
 
 - Audiobookshelf supports multiple files (e.g. one file per chapter) per Audiobook. Music Assistant however expects a single file. To workaround this limitation the multiple files need to be merged into a single file. This can be achieved in Audiobookshelf by selecting the Audiobook, clicking EDIT, then TOOLS and then OPEN MANAGER. The merge option will then be found. Do not forget to take a backup of your initial files
+- Restarting Audiobookshelf terminates all open sessions. Music Assistant has no way to know this, so you must reload the provider. Otherwise the stream of your audiobook will be not available
 
 ## Not Yet Supported
 
