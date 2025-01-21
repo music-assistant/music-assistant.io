@@ -20,6 +20,7 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
 ## Known Issues / Notes
 
 - Restarting Audiobookshelf terminates all open sessions. Music Assistant has no way to know this, so you must reload the provider. Otherwise the stream of your audiobook will be not available
+- In the first instance of any problems ensure the server is running the [latest version of the audiobookshelf software](https://github.com/advplyr/audiobookshelf/releases)
 
 ## Not Yet Supported
 
