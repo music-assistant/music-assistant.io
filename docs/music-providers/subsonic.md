@@ -19,3 +19,7 @@ There is also a toggle for podcasts which will have no effect now but will allow
 - If you find a mismatch between what is displayed by your Subsonic compatible server and Music Assistant then refer to and contribute [here to help find a solution](https://github.com/music-assistant/support/issues/2192)
 - Not all Open Subsonic implementations handle tracks/albums with multiple contributing artists particularly well. If you see strange artists listed in Music Assistant, please verify that your implementation has an artist ID for all artists listed on a track or album. See the discussione [here](https://github.com/music-assistant/hass-music-assistant/issues/2965).
 - If problems are encountered seeking within tracks try the "Force player provider seek" option in the subsonic provider settings 
+- It is not possible to playback m4a files. Options to workaround this are
+  - Don't use this format
+  - Force the subsonic server to transcode all m4a files before serving to a format that works
+  - Don't serve these files from a subsonic server
