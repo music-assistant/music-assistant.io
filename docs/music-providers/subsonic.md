@@ -17,9 +17,10 @@ There is also a toggle for podcasts which will have no effect now but will allow
 - Not all server implementations accept an empty string as a search query, however this is considered valid input per the API documentation. If search or track enumeration fails, ask the authors of your server implementation about handling empty query strings.
 - This provider makes use of https://github.com/khers/py-opensonic for communicating with the server, if something is failing to work properly in Music Assistant, try to use that library to interact with your server (can you ping it?, fetch artist and albums?, can you search?).
 - If you find a mismatch between what is displayed by your Subsonic compatible server and Music Assistant then refer to and contribute [here to help find a solution](https://github.com/music-assistant/support/issues/2192)
-- Not all Open Subsonic implementations handle tracks/albums with multiple contributing artists particularly well. If you see strange artists listed in Music Assistant, please verify that your implementation has an artist ID for all artists listed on a track or album. See the discussione [here](https://github.com/music-assistant/hass-music-assistant/issues/2965).
+- Not all Open Subsonic implementations handle tracks/albums with multiple contributing artists particularly well. If you see strange artists listed in Music Assistant, please verify that your implementation has an artist ID for all artists listed on a track or album. See the discussion [here](https://github.com/music-assistant/hass-music-assistant/issues/2965).
 - If problems are encountered seeking within tracks try the "Force player provider seek" option in the subsonic provider settings 
 - It is not possible to playback m4a files. Options to workaround this are
     - Don't use this format
     - Force the subsonic server to transcode all m4a files before serving to a format that works
     - Don't serve these files from a subsonic server
+    - It may be possible to force an encoder to place the moov atom at the beginning of the file. This would make the files playable, but MA provides no support for this.
