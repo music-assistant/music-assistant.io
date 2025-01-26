@@ -37,6 +37,8 @@ The codec shown in the UI to the right of the track title is the codec of the or
 This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right.
 
 You can also access the [Now Playing view directly via URL](faq/how-to/#access-the-now-playing-view-directly-via-url)
+
+The [Stream Details](streamdetails.md) label shows, via a coloured icon and two letters, the quality of the stream (Standard Quality, High Quality and Hi-Res). An orange circle and SQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate](player-support/index.md/#audio-quality). 
 ***************************************************************
 
 ## Player List
