@@ -35,15 +35,21 @@ Try power cycling the physical player(s) if they won't connect or if there is no
 
 If after an update something isn't working then trying clearing the cache MA SETTINGS>>CORE>>CACHE CONTROLLER>>CONFIGURE>>CLEAR CACHE. If that doesn't fix it then check the GitHub Issues and Discord to see if it is a known problem. If not try restarting MA, try restarting HA, and try a full HOST REBOOT (in that order). If it is an integration problem then trying removing it from HA settings and HACS then restart HA then reinstall.
 
-Before you raise an issue [read this first](../support.md). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. DOWNLOAD and ATTACH complete logs from MA settings>>CORE. You can also look in the Browser console when you have front end issues which in Chrome browser is --> F12 for developer tools --> console. Please include the following in ALL reports:
+Before you raise an issue [read this first](../support.md). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
 
-- What music provider is in use when the problem is observed? What other music providers have you tried (if you have no others then make that clear)
-- What player provider is in use when the problem is observed? What other player providers have you tried (if you have no others then make that clear)
+DOWNLOAD and ATTACH complete logs from MA SETTINGS>>CORE. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider basis.
+
+You can also look in the Browser console when you have front end issues which in Chrome browser is --> F12 for developer tools --> console. 
+
+The following is required in ALL reports as the MA team is small and you need to narrow down the problem before raising an issue:
+
+- What music provider is in use when the problem is observed? What other music providers have you tried (if you have no others then make that clear - you can always try radio stations)
+- What player provider is in use when the problem is observed? What other player providers have you tried (if you have no others then make that clear - you can always use SnapCast)
 - Are the players grouped?
 - How is playback being instigated (e.g. automation or via the UI)
 - If you aren't using HAOS then exactly how you have installed MA
 - What is working (e.g. player works with music provider X but not Y)
-- What you have tried from this page that hasn't helped
+- What you have tried from this page that hasn't helped (This is very important!)
 
 !!! note
     You can retrieve the full MA logs by going to the MA settings and clicking on CORE
