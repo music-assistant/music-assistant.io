@@ -22,10 +22,10 @@ When streaming providers are also availabe in MA linking will only occur when th
 
 **Your files are on a disk/folder of the device running Music Assistant Server**
 
-If your files are actually stored on the device running Music Assistant, for example the /media folder in Home Assistant OS, you should select the filesystem (local disk) option and enter the path to the files. 
+If your files are actually stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, you should select the filesystem (local disk) option and enter the path to the files. 
 
 !!! note
-    For Home Assistant OS you can only access the /media folder. Docker users can mount their own folder paths. You can not mount a folder from Home Assistant into the /media path.
+    For Home Assistant OS you can only access the `/media` folder. Docker users can mount their own folder paths. You can not mount a folder from Home Assistant into the `/media` path.
 
 **Your files are on a remote share, such as a NAS or other (SMB/CIFS) server**
 
