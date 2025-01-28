@@ -10,7 +10,7 @@ description: A Description of the Stream Details View
 
 This view shows the complete path that the stream travels. A blue dot on the line on the left shows that a modification has been made to the stream at that point.
 
-The view is broken into two sections, Input and Output. The coloured dot on the section title indicates the Audio Quality available as the stream leaves the section. Orange indicates a lossy codec is in use. Green Indicates a lossless codec is in use. Cyan indicates a lossless codec is in use and either the sample rate is above 48kHz or the bit depth is above 16.
+The view is broken into two sections, Input and Output. The coloured dot on the section title indicates the Audio Quality available as the stream leaves the section. Orange indicates a lossy codec is in use. Green Indicates a lossless codec is in use. Cyan indicates a lossless codec is in use and either the sample rate is above 48kHz or the bit depth is above 16 (also known as "hi res").
 
 The Input section shows the origin of the stream and the codec, sample rate and bit depth. All tracks are processed internally as raw [PCM](https://diyodemag.com/education/what_is_pcm_pulse_code_modulation) by Music Assistant and are decoded to 32 bits floating point in the sample rate of the source. 
 
