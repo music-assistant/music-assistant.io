@@ -23,6 +23,7 @@ nav:
   - Usage:
       - General: usage.md
       - UI: ui.md
+      - Audio Pipeline: audiopipeline.md
       - Groups: faq/groups.md
       - DSP Parametric EQ: dsp/parametriceq.md
       - DSP Tone Controls: dsp/tonecontrols.md
