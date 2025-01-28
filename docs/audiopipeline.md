@@ -8,7 +8,7 @@ description: A Description of the Audio Pipeline View
 ## Basic View
 ![image](assets/screenshots/streamdetails-basic.png)
 
-This view shows the complete path that the audio takes. A blue dot on the line on the left shows a processing stage in the pipeline.
+This view shows the complete path that the audio takes. A blue dot on the line on the left shows a processing point in the pipeline.
 
 The view is broken into two sections, Input and Output. The coloured dot on the section title indicates the quality as the audio leaves the section. Orange indicates a lossy codec is in use. Green Indicates a lossless codec is in use. Cyan indicates a lossless codec is in use and either the sample rate is above 48kHz or the bit depth is above 16 (also known as "Hi-Res").
 
