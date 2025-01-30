@@ -35,4 +35,4 @@ Also of note in this example is the icon shown in the input section where the co
 
 The view will expand as necessary to show all [grouped players](faq/groups.md). In the example above three players are shown with a variety of filters, output qualities and player types.
 
-A point to note in this example is the orange dot beside the third Output section label. Whilst no quality would have been lost due to the Output Limiter or [the upsampling to 48kHz](https://www.youtube.com/watch?v=tIIK2wuXHuY) the change to the [lossy MP3 codec](https://www.adobe.com/au/creativecloud/video/discover/best-audio-format.html) necessitates the indication that this is now only Standard Quality.
+A point to note in this example is the orange dot beside the third Output section label. Whilst no quality would have been lost due to the Output Limiter or [the upsampling to 48kHz](https://www.youtube.com/watch?v=tIIK2wuXHuY) the change to the [lossy MP3 codec](https://www.adobe.com/au/creativecloud/video/discover/best-audio-format.html) necessitates the indication that this is now only Low Quality.
