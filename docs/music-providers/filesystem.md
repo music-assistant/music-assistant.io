@@ -22,10 +22,10 @@ When streaming providers are also availabe in MA linking will only occur when th
 
 **Your files are on a disk/folder of the device running Music Assistant Server**
 
-If your files are actually stored on the device running Music Assistant, for example the /media folder in Home Assistant OS, you should select the filesystem (local disk) option and enter the path to the files. 
+If your files are actually stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, you should select the filesystem (local disk) option and enter the path to the files. 
 
 !!! note
-    For Home Assistant OS you can only access the /media folder. Docker users can mount their own folder paths. You can not mount a folder from Home Assistant into the /media path.
+    For Home Assistant OS you can only access the `/media` folder. Docker users can mount their own folder paths. You can not mount a folder from Home Assistant into the `/media` path.
 
 **Your files are on a remote share, such as a NAS or other (SMB/CIFS) server**
 
@@ -54,7 +54,7 @@ Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS
 - It is very important that all of your audio files contain proper [ID3 tag](https://en.wikipedia.org/wiki/ID3) information. The more comprehensive the tagging the better the results will be when using MA. For this reason it is strongly recommended that all files are tagged with [MusicBrainz Picard](https://picard.musicbrainz.org). This will ensure consistency and completeness of the tags that MA needs to work best. Other programs such as [Mp3Tag](https://www.mp3tag.de/en/) are often also based on the Musicbrainz catalog and can work as well provided they include ISRC and all MBID tags
 - MA requires the Album Artist tag to be set. If you do not have that tag set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider 
 - Music Assistant puts you in control by fully trusting the ID3 tags you provide, only additional information is scraped from metadata providers
-- Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and .nfo files with enhanced metadata are also supported
+- Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and `.nfo` files with enhanced metadata are also supported
 - Files simply dumped into a random structure will also be imported but no other data will be retrieved from the folder structure
 - To minimise the chance of problems with MA you should follow the Kodi guidelines here https://kodi.wiki/view/Music_tagging Just about all the tips, tricks and suggestions on that page are applicable to MA and if you follow it all to the letter you will have a much better experience
 - For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
