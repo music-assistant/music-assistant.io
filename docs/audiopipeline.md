@@ -20,7 +20,7 @@ The Output section is then shown which, in this example, is simple and just show
 
 MA, by default, sends lossless audio to the player. The exact codec, sample rate or bit depth that are sent to the player depends on the player / provider and is always shown. Changes to the original audio quality may occur if the MP3 option has been selected in the player settings (See the [Groups](#groups) example below) or if the audio is resampled to match the players maximum or native sample rate or bit depth. PCM could be sent to the player although typically FLAC is used to save some bandwidth.
 
-The maximum sample rate that can be expected can be found in the [Player Providers summary table](player-providers/index.md). This can be further limited if changes were made to the default options for the player's `Sample Rates Supported by this Player` advanced setting.
+The maximum sample rate that can be expected can be found in the [Player Providers summary table](player-support/index.md). This can be further limited if changes were made to the default options for the player's `Sample Rates Supported by this Player` advanced setting.
 ***************************************************************
 ## Digital Signal Processing
 ![image](assets/screenshots/audiopipeline-dsp.png){ width=500 }
