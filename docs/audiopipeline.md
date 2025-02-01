@@ -6,7 +6,7 @@ description: A Description of the Audio Pipeline View
 # Audio Pipeline
 
 ## Basic View
-![image](assets/screenshots/audiopipeline-basic.png) { width = 500 }
+![image](assets/screenshots/audiopipeline-basic.png){ width = 500 }
 
 This view shows the complete path that the audio takes. A blue dot on the line on the left shows a processing point in the pipeline.
 
@@ -23,7 +23,7 @@ MA, by default, sends lossless audio to the player. The exact codec, sample rate
 The maximum sample rate that can be expected can be found in the [Player Providers summary table](player-providers/index.md). This can be further limited if changes were made to the default options for the player's `Sample Rates Supported by this Player` advanced setting.
 ***************************************************************
 ## Digital Signal Processing
-![image](assets/screenshots/audiopipeline-dsp.png) { width = 500 }
+![image](assets/screenshots/audiopipeline-dsp.png){ width = 500 }
 
 In this example [DSP](player-support/index.md/#dsp-settings) has been enabled. High level information about the DSP filters which have been applied are shown. A tooltip is available to explain why the DSP is not supported if that is the case (See the example below in [Groups](#groups)).
 
@@ -31,7 +31,7 @@ Also of note in this example is the icon shown in the input section where the co
 
 ***************************************************************
 ## Groups
-![image](assets/screenshots/audiopipeline-groups.png) { width = 500 }
+![image](assets/screenshots/audiopipeline-groups.png){ width = 500 }
 
 The view will expand as necessary to show all [grouped players](faq/groups.md). In the example above three players are shown with a variety of filters, output qualities and player types.
 
