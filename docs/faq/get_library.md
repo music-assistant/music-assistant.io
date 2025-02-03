@@ -24,11 +24,11 @@ script:
           order_by: random
         response_variable: random_tracks
       - repeat:
-          count: "{{ random_tracks | length + 1}}"
+          count: 10
           sequence:
             - action: music_assistant.play_media
               data:
-                media_id: "{{ random_tracks['items'][repeat.index - 1].uri }}"
+                media_id: "{{ random_tracks['tracks'][repeat.index - 1].uri }}"
                 media_type: track
                 enqueue: add
               target:
