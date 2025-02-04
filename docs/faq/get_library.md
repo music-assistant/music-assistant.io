@@ -21,10 +21,11 @@ script:
         data:
           limit: 10
           media_type: track
+          config_entry_id: 01JEXNDHT21V0BHJXM7A5SZANV
           order_by: random
         response_variable: random_tracks
       - repeat:
-          count: 10
+          count: {{ random_tracks['items'] | length }}
           sequence:
             - action: music_assistant.play_media
               data:
