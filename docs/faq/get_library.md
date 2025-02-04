@@ -25,7 +25,7 @@ script:
           order_by: random
         response_variable: random_tracks
       - repeat:
-          count: 10
+          count: {{ random_tracks['items'] | length }}
           sequence:
             - action: music_assistant.play_media
               data:
