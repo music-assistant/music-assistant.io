@@ -23,7 +23,11 @@ Unlimited bands can be added to the PEQ. For each band it is possible to control
 
 - **Q (Quality Factor):** This determines the width of the frequency range affected. A higher Q means a narrower, more focused adjustment, while a lower Q creates a broader, gentler change.
 
-- **Filter Type:** This determines the [shape of the adjustment](https://www.musicguymixing.com/eq-filters/). The available options are Peak (aka Bell), High Shelf, Low Shelf, High Pass, Low Pass, and Notch. 
+- **Filter Type:** This determines the [shape of the adjustment](https://www.musicguymixing.com/eq-filters/). The available options are Peak (aka Bell), High Shelf, Low Shelf, High Pass, Low Pass, and Notch.
+
+### Preamp
+
+The PEQ also allows for a preamp gain adjustment. Whilst this will create the same effect as the the gain adjustment in the input stage, having it here means that the value can be imported and exported. Additionally, if a PEQ setting overall makes the signal quieter, then adjusting the gain here means that when enabling/disabling the eq, the volume will stay the same.
 
 ### Presets
 
