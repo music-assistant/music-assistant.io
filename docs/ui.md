@@ -41,6 +41,8 @@ This view will change depending on screen width. With wider displays you will be
 You can also access the [Now Playing view directly via URL](faq/how-to/#access-the-now-playing-view-directly-via-url)
 
 The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
+
+When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`
 ***************************************************************
 
 ## Player List
