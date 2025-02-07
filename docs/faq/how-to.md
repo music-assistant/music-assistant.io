@@ -211,8 +211,6 @@ The [Nextcloud Music App](https://apps.nextcloud.com/apps/music) supports [Subso
 
 You will need to expose the webserver port to enable this feature. See [here](../installation/#server-notes) for the instructions and considerations before doing so.
 
-The keys described below can be combined. For example, `http://192.168.1.1:8095/#/home?player=kitchen%20speaker&showFullscreenPlayer=true&frameless=true`
-
 ## Player Selection
 
 A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a MA player name or `true` to open the last known. Player names are not case sensitive.
