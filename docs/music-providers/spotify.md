@@ -27,7 +27,7 @@ Music Assistant has full support for Spotify media listing and playback.
 - When using a personal ClientID, automatically generated playlists such as "Discover Weekly" and radio mode will no longer work
 
 !!! note 
-    If you want to have access to official "by Spotify" playlists, do not use a ClientID for authentification. Otherwise, MA will only have access to playlists created by you and other users.
+    Official "by Spotify" playlists are not available when using a personal ClientID for authentification.
 
 ## Not yet supported
 
