@@ -90,6 +90,10 @@ Art embedded in music tracks will always be picked up but folder.jpg images will
 
 For local files, you can either fully tag your music (this is preferred and it is recommended to use [Picard](https://picard.musicbrainz.org/)) or have an artist folder with the artist.nfo in there (just like the images) and that will be preferred. Online metadata providers are only queried when there is no local data. https://kodi.wiki/view/NFO_files
 
+# Some of the playlists are missing
+
+For certain providers (Spotify is a known example) the authentication method used may impact visibility of playlists of certain type. For a Spotify provider, see details [here](https://www.music-assistant.io/music-providers/spotify/#known-issues-notes)
+
 # I have updated but MA looks like the old version or isn’t working
 
 Possibly your browser is using a cached version of the front end. Try forcing a refresh Chrome, Firefox, or Edge for Windows: Press Ctrl+F5 (If that doesn’t work, try Shift+F5 or Ctrl+Shift+R).
