@@ -26,6 +26,9 @@ Music Assistant has full support for Spotify media listing and playback.
 - Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work
 - When using a personal ClientID, automatically generated playlists such as "Discover Weekly" and radio mode will no longer work
 
+!!! note 
+    If you want to have access to official "by Spotify" playlists, do not use a ClientID for authentification. Otherwise, MA will only have access to playlists created by you and other users.
+
 ## Not yet supported
 
 - Podcasts support ([see this feature request](https://github.com/music-assistant/hass-music-assistant/discussions/429))
