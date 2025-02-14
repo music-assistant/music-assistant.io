@@ -30,7 +30,7 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 ## Player Bar
 ![image](assets/screenshots/UI-playercontrols-bar.png)
 
-The codec shown in the UI to the right of the track title is the codec of the original source. MA re-encodes the track to FLAC when it is sent to the player (Unless the force lossy MP3 option is selected in the player settings (only available for some player types)). 
+The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated. 
 ***************************************************************
 
 ## Player List
