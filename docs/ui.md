@@ -31,14 +31,6 @@ Results, limited to a maximum of 25 items, are returned in the six categories of
 The codec shown in the UI to the right of the track title is the codec of the original source. MA re-encodes the track to FLAC when it is sent to the player (Unless the force lossy MP3 option is selected in the player settings (only available for some player types)). 
 ***************************************************************
 
-## Now Playing View
-![image](assets/screenshots/now-playing-view.png)
-
-This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right.
-
-You can also access the [Now Playing view directly via URL](faq/how-to/#access-the-now-playing-view-directly-via-url)
-***************************************************************
-
 ## Player List
 
 ![image](assets/screenshots/UI-speakers-menu.png)
@@ -70,10 +62,26 @@ With TEMPORARY SYNC GROUPs the number of players being streamed to can be seen d
 
 !!! note "Note"
     If a player is taken over by another app, MA will not have knowledge of that, and the group may no longer function correctly. Additionally, if a player of a syncgroup tries to join late (e.g. it was unpowered) it will not be synced to the group.
-
 ***************************************************************
 
-## Artist / Album / Track View
+## Now Playing
+![image](assets/screenshots/now-playing-view.png)
+
+This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right.
+
+You can also access the [Now Playing view directly via URL](faq/how-to/#access-the-now-playing-view-directly-via-url)
+***************************************************************
+
+## Track Menu
+
+In any of the following views, Right click or long press on a track to get the following menus
+
+![image](assets/screenshots/UI-track-menu.png)
+
+The START RADIO option will only be seen if there is a provider that supports it. Start Radio populates the queue with tracks based on the selected track. The tracks are selected by the provider not MA. 
+***************************************************************
+
+## View - Artist / Album / Track
 
 ![image](assets/screenshots/UI-artist-view.png)
 
@@ -98,7 +106,7 @@ will bring up this menu
 The behaviour described above will work on any view where you see the "x item(s) selected" text.
 ***************************************************************
 
-## Individual Artist View
+## View - Individual Artist
 
 ![image](assets/screenshots/UI-individual-artist.png)
 
@@ -111,20 +119,20 @@ Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. 
 The PROVIDER DETAILS section shows from where the albums and tracks listed above were obtained. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc.  The ID shown against the streaming provider may be used in automations and scripts.
 ***************************************************************
 
-## Track Menu
-
-Right click or long press on a track to get the following
-
-![image](assets/screenshots/UI-track-menu.png)
-
-If the provider supports it you will also see the START RADIO option. This will populate the queue with tracks based on the selected track. The tracks are selected by the provider not MA. 
-
-![image](assets/screenshots/UI-start-radio.jpeg)
-***************************************************************
-
-## Track "Show Info" View
+## View - Track "Show Info"
 
 ![image](assets/screenshots/UI-track-show-info.png)
 
 !!! note
     The PROVIDER DETAILS section in this view also has the functionality to play a short part of the track as a preview
+***************************************************************
+
+## View - Browse
+
+Entering the Browse view will present a list of the installed [Music Providers](music-providers/index.md). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
+
+!!! warning "Caution"
+    Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
+
+It is this view that is used to select radio stations from the [Radio Browser](music-providers/radio-browser.md) provider.
+
