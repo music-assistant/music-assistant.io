@@ -11,7 +11,7 @@ The core HA voice intents support NEXT TRACK, (PREVIOUS TRACK is coming), PAUSE,
 
 After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -17 LUFS (and -17 is the default starting point). **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
 
-More details [here](normalization.md)
+More details [here](tech-info.md#volume-normalization)
 
 # Have my music continue if I change rooms
 
@@ -207,17 +207,37 @@ See [here](https://github.com/orgs/music-assistant/discussions/1123#discussionco
 
 The [Nextcloud Music App](https://apps.nextcloud.com/apps/music) supports [Subsonic](../music-providers/subsonic.md) so you can use that provider in MA to connect. 
 
-# Access the Now Playing view directly via URL
+# Access the MA Views directly via URL
 
 You will need to expose the webserver port to enable this feature. See [here](../installation/#server-notes) for the instructions and considerations before doing so.
 
-Display the Now Playing view for a specific player (or the last known) by adding "player=" to the home URL. You can use a player name or `true` to open the last known. Player names are not case sensitive.
+## Player Selection
+
+A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a MA player name or `true` to open the last known. Player names are not case sensitive.
 
 Examples
 
 - http://192.168.1.1:8095/#/home?player=true
-- http://192.168.1.1:8095/#?player=true
 - http://192.168.1.1:8095/#/home?player=Livingroom
+
+## Frameless View
+
+Display the relevant view without the [Player Bar](https://music-assistant.io/ui/#player-bar) or [Main Menu](https://music-assistant.io/ui/#main-menu)
+
+Examples
+
+- http://192.168.1.1:8095/#/albums?frameless=true
+- http://192.168.1.1:8095/#/playlists?player=kitchen%20speaker&frameless=true
+
+## Now Playing View
+
+Display the Now Playing view 
+
+Examples
+
+- http://192.168.1.1:8095/#/home?player=true&showFullscreenPlayer=true
+- http://192.168.1.1:8095/#?player=true&showFullscreenPlayer=true
+- http://192.168.1.1:8095/#/home?player=Livingroom&showFullscreenPlayer=true
 
 # Play a Playlist (or any item) in a Different Order
 
