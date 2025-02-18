@@ -19,9 +19,9 @@ There are two options.
 1. Start streaming to any type of group that includes all the rooms you will move between. Mute all the rooms except the one you are in. When you move rooms just mute and unmute the required players.
 2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](groups.md) 
 
-# Shuffle Spotify/playlist/YouTube etc
+# Shuffle Spotify/Playlist/YouTube etc
 
-You don't shuffle the music providers you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon in the Player frontend or you can select the QUEUE at the bottom, then the context menu Top Right then SETTINGS then SHUFFLE ON or you can do it with yaml as follows:
+You don't shuffle the music providers you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](../ui.md/#player-bar) or you can select the [NOW PLAYING View](../ui.md/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
 ``` yaml
 action: media_player.shuffle_set
 target:
@@ -123,10 +123,10 @@ If wanting to create playlists manually acceptable formats are:
 (file in same folder as playlist):
 05 Blue Christmas.flac
 
-and this (file is in subfolder relative to playlist file):
+and this (file is in subfolder relative to the playlist file):
 Elvis Presley/Blue Christmas/05 Blue Christmas.flac
 
-and this (file has absolute path):
+and this (file has an absolute path):
 /Users/marcel/media/music/b05 Blue Christmas.flac
 
 and this (full uri):
@@ -135,9 +135,9 @@ or
 filesystem_smb://track/blah
 ```
 
-Relative paths to the playlist (e.g.` ../Mariah Carey/Merry Christmas/02 All I Want for Christmas Is You.flac` ) should also work.
+Relative paths to the playlist (e.g.` ../Mariah Carey/Merry Christmas/02 All I Want for Christmas Is You.flac` ) also work.
 
-M3U, M3U8 and PLS playlists are supported.
+M3U, M3U8 and PLS playlists are supported. [VLC can be used to easily create playlists](https://www.iptvx.info/?p=1002) that MA can use.
 
 # Go to next/previous radio station via a script
 
@@ -244,3 +244,7 @@ Examples
 # Play a Playlist (or any item) in a Different Order
 
 Playlists will be played in the order that they were created. Changing the displayed order has no impact on the played order. If playing in the displayed order is desired then select the multi-select button in the menu  bar and then use CTRL-A or manually select the tracks and then in the floating ACTIONS menu play the tracks.
+
+# Create Multiple ShairportSync-Instances on the same Host
+
+A tutorial is available [here](https://github.com/orgs/music-assistant/discussions/3562)
