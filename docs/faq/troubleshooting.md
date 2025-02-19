@@ -116,9 +116,17 @@ This is likely a tagging problem. See [here](../music-providers/filesystem.md/#t
 
 If the MA player is "powered on" from the MA UI then MA understands that it is allowed to take control of the player. This may then happen even though you have started playback via another app but have not started playback via MA. To avoid this situation "power off" the MA player.
 
-# MA is crashing on start
+# MA is failing to start
 
-Start MA in safe mode
+If the following error (or similar) is seen in the log:
+  ```
+  File "/app/venv/lib/python3.12/site-packages/zeroconf/_utils/net.py", line 293, in add_multicast_member
+      listen_socket.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, _value)
+  OSError: [Errno 105] No buffer space available
+  ```
+  this is likely to be due to hitting the multicast group limit on the host system. See https://unix.stackexchange.com/questions/23832/is-there-a-way-to-increase-the-20-multicast-group-limit-per-socket for more info
+
+If the above is not the issue the start MA in safe mode
 - With the addon select the toggle in the configration
 - With Docker run the container with the environmental variable MASS_SAFE_MODE set to a boolean true value, e.g. "1" or "true"
 
