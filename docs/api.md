@@ -101,7 +101,7 @@ Argument types are as follows
 | music/favorites/remove_item| media_types<br>library_item |Remove (library) item from the favorites  |
 | music/library/remove_item  | media_type<br>library_item_id |Remove item from the library. DESTRUCTIVE! Will remove the item and all dependants  |
 | music/library/add_item     | item | Add item (uri or mediaitem) to the library |
-| music/refresh_item         | media_item |Try to refresh a mediaitem by requesting it's full object or search for substitutes  |
+| music/refresh_item         | media_item |Try to refresh a media item by requesting it's full object or search for substitutes  |
 | music/mark_played          | media_item<br>fully_played*<br>seconds_played |Mark item as played in playlog. fully_played defaults to true if omitted  |
 | music/mark_unplayed        | media_item |Mark item as unplayed in playlog |
 
@@ -113,8 +113,9 @@ Argument types are as follows
 
 | Argument        | Type            | Example           |Valid Options |
 | --------------- | ----------------|------------------ |------------------ |
+| media_type      | string          |artist             |track, artist, album, playlist, radio, audiobook, podcast, folder|
 | media_types     | list of strings |["track", "album"] |track, artist, album, playlist, radio, audiobook, podcast, folder|
-| providers       | list of strings |["Spotify", "filesystem_smb"] |
+| providers       | list of strings |["spotify--XGURxcPP", "filesystem--1234"] |
 | search_query    | string          |Queen |
 | limit           | int             |10 |
 | library_only    | boolean         |true |
@@ -160,4 +161,220 @@ Argument types are as follows
 | item            | string          | ???????????       |
 | force_refresh   | boolean         | true              | 
 
+</details>
+
+## Examples
+
+<details><summary>Get All Available Player Settings</summary>
+
+```
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--data '{
+  "message_id": "1",
+  "command": "config/players/get",
+  "args": {
+    "player_id": "RINCON_48A6B820191201400"
+  }
+}'
+```
+```
+rest_command:
+  ma_get_player_settings:
+    url: http://d5369777-music-assistant-beta:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "config/players/get",
+        "args": {
+          "player_id": "{{ player_id }}"
+        }
+      }
+    content_type:  'application/json; charset=utf-8'
+```
+
+</details>
+
+<details><summary>Set One or More Player Settings</summary>
+
+```
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--data '{
+  "message_id": "1",
+  "command": "config/players/save",
+  "args": {
+    "player_id": "RINCON_48A6B820191201400",
+    "values": {
+        "airplay_mode": true
+    }
+  }
+}'
+```
+```
+rest_command:
+  ma_set_player_settings:
+    url: http://d5369777-music-assistant-beta:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "config/players/save",
+        "args": {
+          "player_id": "{{ player_id }}",
+          "values": {{ values|to_json }}
+        }
+      }
+    content_type:  'application/json; charset=utf-8'
+```
+
+</details>
+
+<details><summary>Add Item to Favorites</summary>
+
+item needs to be a URI or share URL
+
+```
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--data '{
+  "message_id": "1",
+  "command": "music/favorites/add_item",
+  "args": {
+    "item": "spotify://track/1234567"
+  }
+}'
+```
+</details>
+
+<details><summary>Get Album Tracks</summary>
+
+```
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--data '{
+  "message_id": "1",
+  "command": "music/albums/album_tracks",
+  "args": {
+    "item_id": "1",
+    "provider_instance_id_or_domain": "library",
+    "in_library_only": true
+  }
+}'
+```
+```
+rest_command:
+  ma_album_tracks:
+    url: http://d5369777-music-assistant-beta:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "music/albums/album_tracks",
+        "args": {
+          "item_id": "{{ item_id }}",
+          "provider_instance_id_or_domain": "{{ provider_instance_id_or_domain }}",
+          "in_library_only": {{ in_library_only }}
+        }
+      }
+    content_type:  'application/json; charset=utf-8'
+```
+</details>
+
+<details><summary>Get Full Item Details (By Providing a URI)</summary>
+
+```
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--data '{
+  "message_id": "1",
+  "command": "music/item_by_uri",
+  "args": {
+    "uri": "spotify://track/1234"
+  }
+}'
+```
+</details>
+
+<details><summary>Get Recently Played Items</summary>
+
+limit and media_types are optional
+```
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--data '{
+  "message_id": "1",
+  "command": "music/recently_played_items",
+  "args": {
+    "limit": 10,
+    "media_types": ["track", "album"]
+  }
+}'
+```
+</details>
+
+<details><summary>Get In Progress Items (Audiobooks, Podcast Episodes)</summary>
+
+Return a list of the Audiobooks and PodcastEpisodes that are in progress.
+limit is optional
+```
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--data '{
+  "message_id": "1",
+  "command": "music/in_progress_items",
+  "args": {
+    "limit": 10
+  }
+}'
+```
+</details>
+
+<details><summary>Starting Sync</summary>
+
+Start running the sync of (all or selected) musicproviders.
+  media_types: only sync these media types. None for all.
+  providers: only sync these provider instances. None for all.
+```
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--data '{
+  "message_id": "1",
+  "command": "music/sync",
+  "args": {
+    "media_types": ["track", "album"],
+    "providers": ["filesystem--1234"]
+  }
+}'
+```
+</details>
+
+<details><summary>Refresh Playlist</summary>
+
+```
+rest_command:
+  ma_refresh_playlist:
+    url: http://localhost:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "music/playlists/playlist_tracks",
+        "args": {
+          "item_id": "1234",
+          "provider_instance_or_domain": "builtin",
+          "force_refresh": true
+        }
+      }
+    content_type:  'application/json; charset=utf-8'
+```
 </details>
