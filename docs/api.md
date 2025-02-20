@@ -1,9 +1,8 @@
 ---
 title: "REST API"
 ---
-Music Assistant provides a RESTful API on the same port as the web frontend (default port is port 8095). Add info about options HERE!!!!!
 
-If you are .....................
+Actions that are provided by the [HA Integration](integration/index.md) address the common tasks that most users require. However, Music Assistant (MA) provides a RESTful API which allows for complete control of the server from external locations. This API is on the same port as the web frontend (default port is port 8095). 
 
 - `http://IP_ADDRESS:8095/` is an interface to control Music Assistant.
 - `http://IP_ADDRESS:8095/api/` is a RESTful API.
@@ -27,6 +26,7 @@ curl --location 'http://192.168.1.1:8095/api' \
 Another option is to use the [RESTful Command integration](https://www.home-assistant.io/integrations/rest_command/) in a Home Assistant automation or script.
 
 ```yaml
+rest_command:
   ma_recently_played:
     url: http://localhost:8095/api
     method: POST
@@ -55,17 +55,6 @@ Successful calls will return status code 200 or 201. Other status codes that can
 
 <details><summary>General Commands</summary>
   
-### Arguments
-  
-Optional arguments are indicated by an asterisk.
-
-Argument types are as follows
-
-| Argument        | Type            | Example           |Valid Options |
-| --------------- | ----------------|------------------ |------------------ |
-| domain          | string          | ?????             |     |
-| provider_type   | string???       | ???????????       |
-
 ### Commands
 
 | Command                            | Arguments                            |Description                          |
@@ -76,6 +65,16 @@ Argument types are as follows
 | providers                          | provider_type*         | Return all loaded/running Providers (instances), optionally filtered by ProviderType (all if omitted) |
 | logging/get                        | Nil                    | Return the application log from file |
 
+Optional arguments are indicated by an asterisk.
+
+### Arguments
+  
+Argument types are as follows
+
+| Argument        | Type            | Example           |Valid Options |
+| --------------- | ----------------|------------------ |------------------ |
+| domain          | string          | ?????             |     |
+| provider_type   | string???       | ???????????       |
 
 </details>
 
@@ -84,29 +83,6 @@ Argument types are as follows
 </details>
 
 <details><summary>Music Commands</summary>
-
-### Arguments
-Optional arguments are indicated by an asterisk. In all cases if media_type is optional then omitting it will return all types. 
-
-Argument types are as follows
-
-| Argument        | Type            | Example           |Valid Options |
-| --------------- | ----------------|------------------ |------------------ |
-| media_types     | list of strings |["track", "album"] |track, artist, album, playlist, radio, audiobook, podcast, folder|
-| providers       | list of strings |["Spotify", "filesystem_smb"] |
-| search_query    | string          |Queen |
-| limit           | int             |10 |
-| library_only    | boolean         |true |
-| path            | string          |filesystem_smb--5iJ4npRi://folder/ABBA |
-| uri             | string          |library://track/3205 |
-| item_id         | string          |???????? |
-| provider_instance_id_or_domain| string          |library|library, builtin |
-| item            | string          |library://track/3205 | Any library or external URI
-| library_item    | string          |library://track/3205 | Any library URI
-| library_item_id | string          |library://track/3205 | Any library URI
-| media_item      | string          | artist | track, artist, album, playlist, radio, audiobook, podcast
-| fully_played    | boolean         | true | 
-| seconds_played  | int             | 10 | 
 
 ### Commands
 
@@ -129,6 +105,30 @@ Argument types are as follows
 | music/mark_played          | media_item<br>fully_played*<br>seconds_played |Mark item as played in playlog. fully_played defaults to true if omitted  |
 | music/mark_unplayed        | media_item |Mark item as unplayed in playlog |
 
+Optional arguments are indicated by an asterisk. In all cases if media_type is optional then omitting it will return all types.
+
+### Arguments
+
+Argument types are as follows
+
+| Argument        | Type            | Example           |Valid Options |
+| --------------- | ----------------|------------------ |------------------ |
+| media_types     | list of strings |["track", "album"] |track, artist, album, playlist, radio, audiobook, podcast, folder|
+| providers       | list of strings |["Spotify", "filesystem_smb"] |
+| search_query    | string          |Queen |
+| limit           | int             |10 |
+| library_only    | boolean         |true |
+| path            | string          |filesystem_smb--5iJ4npRi://folder/ABBA |
+| uri             | string          |library://track/3205 |
+| item_id         | string          |???????? |
+| provider_instance_id_or_domain| string          |library|library, builtin |
+| item            | string          |library://track/3205 | Any library or external URI
+| library_item    | string          |library://track/3205 | Any library URI
+| library_item_id | string          |library://track/3205 | Any library URI
+| media_item      | string          | artist | track, artist, album, playlist, radio, audiobook, podcast
+| fully_played    | boolean         | true | 
+| seconds_played  | int             | 10 | 
+
 </details>
 
 <details><summary>Player Commands</summary>
@@ -141,8 +141,16 @@ Argument types are as follows
 
 <details><summary>Metadata Commands</summary>
 
-### Arguments
+### Commands
+
+| Command                                 | Arguments                            |Description                          |
+| --------------------------------------- | ------------------------------------ |------------------------------------ |
+| metadata/set_default_preferred_language | lang | Set the (default) preferred language. |
+| metadata/update_metadata                | item<br>force_refresh* | Get/update extra/enhanced metadata for/on given MediaItem. force_refresh defaults to false if omitted |
+
 Optional arguments are indicated by an asterisk.
+
+### Arguments
 
 Argument types are as follows
 
@@ -151,12 +159,5 @@ Argument types are as follows
 | lang            | string          | en_AU             | Must be a valid locale identifier that has been configured in Music Assistant|
 | item            | string          | ???????????       |
 | force_refresh   | boolean         | true              | 
-
-### Commands
-
-| Command                                 | Arguments                            |Description                          |
-| --------------------------------------- | ------------------------------------ |------------------------------------ |
-| metadata/set_default_preferred_language | lang | Set the (default) preferred language. |
-| metadata/update_metadata                | item<br>force_refresh* | Get/update extra/enhanced metadata for/on given MediaItem. force_refresh defaults to false if omitted |
 
 </details>
