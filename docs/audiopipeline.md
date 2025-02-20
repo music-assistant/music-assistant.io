@@ -12,7 +12,7 @@ This view shows the complete path that the audio takes. A blue dot on the line o
 
 The view is broken into two sections, Input and Output. The coloured dot on the section title indicates the quality as the audio leaves the section. Orange indicates a lossy codec is in use. Green Indicates a lossless codec is in use. Cyan indicates a lossless codec is in use and either the sample rate is above 48kHz or the bit depth is above 16 (also known as "Hi-Res").
 
-The Input section shows the origin of the stream and the codec, [sample rate and bit depth](https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html). All tracks are processed internally as raw [PCM](https://diyodemag.com/education/what_is_pcm_pulse_code_modulation) by Music Assistant and are decoded to [32 bits floating point](https://www.youtube.com/watch?v=4YRp-FIsNDA) in the sample rate of the source. 
+The Input section shows the origin of the stream and the codec, [sample rate and bit depth](https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html). All tracks are processed internally as raw [PCM](https://diyodemag.com/education/what_is_pcm_pulse_code_modulation) by Music Assistant and are decoded to [32 bits floating point](https://www.youtube.com/watch?v=4YRp-FIsNDA) in the sample rate of the source. Even more details about the original file are available by hovering over the ⓘ including the bitrate.
 
 Next the Volume Normalization value is shown. Details about how Volume Normalization is applied can be found on the [Technical Information](faq/tech-info.md/#volume-normalization) page.
 
