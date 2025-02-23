@@ -78,6 +78,7 @@ With TEMPORARY SYNC GROUPs the number of players being streamed to can be seen d
 The play button is used as a shortcut to play the various items in the UI. It is shown on hover for non-mobile devices or is always in view for mobile devices.  
 
 Clicking/touching the Play Button will either immediately play the item or show the play menu. To ensure the user doesn't accidentally play on the wrong player, the play menu will show:
+
 - the first time the MA view is entered; or
 - if the player is not playing (or paused)
 
