@@ -78,6 +78,20 @@ The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured ic
 When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favourite status may not indicate correctly until playback of the track is restarted.
 ***************************************************************
 
+## Play Button ![image](assets/icons/play-button.png)
+
+The play button is used as a shortcut to play the various items in the UI. It is shown on hover for non-mobile devices or is always in view for mobile devices.  
+
+Clicking/touching the Play Button will either immediately play the item or show the play menu. To ensure the user doesn't accidentally play on the wrong player, the play menu will show:
+
+- the first time the MA view is entered; or
+- if the player is not playing (or paused)
+
+!!! note "Note"
+    If there is ever uncertainty as to whether the item will immediately start playing use a right click or long press to bring up the menu.
+
+***************************************************************
+
 ## Track Menu
 
 In any of the following views, Right click or long press on a track to get the following menus
