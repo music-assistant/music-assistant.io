@@ -73,6 +73,19 @@ With TEMPORARY SYNC GROUPs the number of players being streamed to can be seen d
 
 ***************************************************************
 
+## Play Button ![image](assets/icons/play-button.png)
+
+The play button is used as a shortcut to play the various items in the UI. It is shown on hover for non-mobile devices or is always in view for mobile devices.  
+
+Clicking/touching the Play Button will either immediately play the item or show the play menu. To ensure the user doesn't accidentally play on the wrong player, the play menu will show:
+- the first time the MA view is entered; or
+- if the player is not playing (or paused)
+
+!!! note "Note"
+    If there is ever uncertainty as to whether the item will immediately start playing use a right click or long press to bring up the menu.
+
+***************************************************************
+
 ## Artist / Album / Track View
 
 ![image](assets/screenshots/UI-artist-view.png)
