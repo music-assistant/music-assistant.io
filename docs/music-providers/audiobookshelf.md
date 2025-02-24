@@ -55,7 +55,7 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
 
 The following is needed to setup this provider:
 
-- the URL of an Audiobookshelf instance
+- A server URL (e.g. `https://abs.domain.tld/` or `http://192.168.1.4:13378/` for a local server) of an Audiobookshelf instance. 
 - the username of an Audiobookshelf user
 - the password of this user
 - Optionally podcasts with no episodes yet downloaded may be skipped when syncing
