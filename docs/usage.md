@@ -59,6 +59,9 @@ The Don't Stop The Music (DSTM) option can be enabled if a provider is available
 !!! note
     If a queue is paused for more than 30 seconds it's status will change to stopped 
 
+!!! warning
+    Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less. 
+
 ## Playlists
 
 Playlists must be stored on a provider. A music provider's playlist can only contain tracks from that provider. However, MA has a built-in provider with the ability to create playlists that have tracks from multiple music providers. In this case the playlist will be stored solely within the MA database. These options are automtically presented in the Add to Playlist dialog.
