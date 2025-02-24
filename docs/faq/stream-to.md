@@ -70,16 +70,16 @@ The following table is a non-exhaustive list of possible solutions:
 
 | Device or Software	          | Price# | Supported Protocols              |+Amp^| Pros and Cons |
 |-------------------------------|--------|----------------------------------|------|---------------|
-|[PiCorePlayer*](https://www.picoreplayer.org/)|$	     |Squeezelite, AirPlay, Bluetooth	  |  Y	 |Pros: Cheap, Runs on RPi 1<br>Cons: Requires some technical knowledge to install the free software|
-|[WiiM Pro](https://www.wiimhome.com/wiimpro/overview)|$$      |AirPlay 2, Google Cast Audio, DLNA|  Y   |Pros: Minimal setup, versatile<br>Cons: Cheaper options available, Cast requires app to have sync’ed group|
-|[WiiM Mini](https://www.wiimhome.com/wiimmini/overview)|$	     |AirPlay 2, DLNA	                  |Y	   | As per Wiim Pro |
-|[FiiO SR 11](https://www.fiio.com/sr11)|$$	     |AirPlay	                          |Y	   | As per Wiim Pro |
-|[Louder ESP32](https://sonocotta.com/louder-esp32/)| $	     |Squeezelite, AirPlay, Snapcast	  |N	   |Pros: Cheap<br>Cons: Requires some technical knowledge to install the software|
-|[Home Assistant (HA) Voice PE](https://www.home-assistant.io/voice-pe/)|$      |Home Assistant Integration	      |Y	   |Pros: All local voice control and playback device, Strong Support<br>Cons: Requires HA as well|
-|Amplifiers/Receivers + Cast	  |$$$	   |Google Cast                     	|N	   |Pros: Minimal setup, Higher amplification, High Quality Audio<br>Cons: Expensive, Cast requires app to have sync’ed group|
-|Amplifiers/Receivers + AirPlay	|$$$	   |AirPlay	                          |N	   | As per above |
+|[PiCorePlayer*](https://www.picoreplayer.org/)       |$	     |Squeezelite, AirPlay, Bluetooth	  |  Y	   |Pros: Cheap, Runs on RPi 1<br>Cons: Requires some technical knowledge to install the free software|
+|[WiiM Pro](https://www.wiimhome.com/wiimpro/overview)|$$      |Squeezelite, AirPlay, Google Cast Audio, DLNA|  Y   |Pros: Minimal setup, versatile<br>Cons: Cheaper options available, Cast requires app to have sync’ed group|
+|[WiiM Mini](https://www.wiimhome.com/wiimmini/overview)|$	   |AirPlay, DLNA	                    | Y      | As per Wiim Pro |
+|[FiiO SR 11](https://www.fiio.com/sr11)              |$$	     |AirPlay	                          | Y	     | As per Wiim Pro |
+|[Louder ESP32](https://sonocotta.com/louder-esp32/)  | $	     |Squeezelite, AirPlay, Snapcast	  | N	     |Pros: Cheap<br>Cons: Requires some technical knowledge to install the software|
+|[Home Assistant (HA) Voice PE](https://www.home-assistant.io/voice-pe/)|$ |Home Assistant Integration |Y	 |Pros: All local voice control and playback device, Strong Support<br>Cons: Requires HA as well|
+|Amplifiers/Receivers + Cast	                       |$$$	     |Google Cast      	                | N	     |Pros: Minimal setup, Higher amplification, High Quality Audio<br>Cons: Expensive, Cast requires app to have sync’ed group|
+|Amplifiers/Receivers + AirPlay	                     |$$$	     |  AirPlay	                        | N	     | As per above |
 |[Sonos](https://www.sonos.com/en-us/shop)<br>[Ikea Symfonisk](https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/)|$$ → $$$	|Sonos (Many devices also AirPlay)|N	   |Pros: Minimal setup, High Quality Audio<br>Cons: Potentially Limited to Sonos ecosystem depending upon device|
-|[Bluesound Products](https://www.bluesound.com/usa/all-products)| $$$	   |Bluesound, AirPlay	              |Y/N~  |Pros: Minimal setup, Exceptional Sound Quality<br>Cons: Expensive |
+|[Bluesound Products](https://www.bluesound.com/usa/all-products)| $$$ |Bluesound, AirPlay	      |Y/N~    |Pros: Minimal setup, Exceptional Sound Quality<br>Cons: Expensive |
 
 \# Price: $ <100USD; $$ 101-250USD; $$$ >250USD
 
