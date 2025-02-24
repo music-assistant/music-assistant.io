@@ -126,9 +126,10 @@ If the following error (or similar) is seen in the log:
   ```
   this is likely to be due to hitting the multicast group limit on the host system. See https://unix.stackexchange.com/questions/23832/is-there-a-way-to-increase-the-20-multicast-group-limit-per-socket for more info
 
-If the above is not the issue the start MA in safe mode
+If the above is not the issue then start MA in safe mode:
+
 - With the addon select the toggle in the configration
 - With Docker run the container with the environmental variable MASS_SAFE_MODE set to a boolean true value, e.g. "1" or "true"
 
-If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details
+If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details.
 
