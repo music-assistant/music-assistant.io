@@ -55,7 +55,7 @@ A summary of the capabilities of the player providers available in Music Assista
 In general terms the protocols/devices that should give you minimum to no setup difficulty are:
 
 -	Any player/speaker that supports [Airplay](https://en.wikipedia.org/wiki/AirPlay)
--	Any speaker that supports the [Google Cast protocol](https://en.wikipedia.org/wiki/Google_Cast) (also known as cast builtin)
+-	Any device/speaker that supports the [Google Cast protocol](https://en.wikipedia.org/wiki/Google_Cast) (also known as cast builtin)
 -	[Squeezebox hardware](https://en.wikipedia.org/wiki/Squeezebox_(network_music_player))
 -	Software squeezebox/slimproto based players (e.g. [squeezelite](https://sourceforge.net/projects/lmsclients/files/squeezelite/) )
 -	[Sonos](https://www.sonos.com/en-us/home)
