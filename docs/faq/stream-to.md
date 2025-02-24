@@ -75,7 +75,7 @@ The following table is a non-exhaustive list of possible solutions:
 |[WiiM Mini](https://www.wiimhome.com/wiimmini/overview)|$	     |AirPlay 2, DLNA	                  |Y	   | As per Wiim Pro |
 |[FiiO SR 11](https://www.fiio.com/sr11)|$$	     |AirPlay	                          |Y	   | As per Wiim Pro |
 |[Louder ESP32](https://sonocotta.com/louder-esp32/)| $	     |Squeezelite, AirPlay, Snapcast	  |N	   |Pros: Cheap<br>Cons: Requires some technical knowledge to install the software|
-|[Home Assistant (HA) Voice PE](https://www.home-assistant.io/voice-pe/)|$$      |Home Assistant Integration	      |Y	   |Pros: All local voice control and playback device, Strong Support<br>Cons: Requires HA as well|
+|[Home Assistant (HA) Voice PE](https://www.home-assistant.io/voice-pe/)|$      |Home Assistant Integration	      |Y	   |Pros: All local voice control and playback device, Strong Support<br>Cons: Requires HA as well|
 |Amplifiers/Receivers + Cast	  |$$$	   |Google Cast                     	|N	   |Pros: Minimal setup, Higher amplification, High Quality Audio<br>Cons: Expensive, Cast requires app to have sync’ed group|
 |Amplifiers/Receivers + AirPlay	|$$$	   |AirPlay	                          |N	   | As per above |
 |[Sonos](https://www.sonos.com/en-us/shop)<br>[Ikea Symfonisk](https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/)|$$ → $$$	|Sonos (Many devices also AirPlay)|N	   |Pros: Minimal setup, High Quality Audio<br>Cons: Potentially Limited to Sonos ecosystem depending upon device|
