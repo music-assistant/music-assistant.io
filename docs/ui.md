@@ -31,7 +31,7 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 ![image](assets/screenshots/UI-playercontrols-bar.png)
 
 
-The codec shown in the UI to the right of the track title is the codec of the original source. MA re-encodes the track to FLAC when it is sent to the player (Unless the force lossy MP3 option is selected in the player settings (only available for some player types)). 
+The codec shown in the UI to the right of the track title is the codec of the original source. MA decodes all source audio internally to raw PCM, to preserve the highest quality when processing the audio, and then finally send the audio to the player in a lossless format (unless configured otherwise in the player settings).
 ***************************************************************
 
 ## Now Playing View
