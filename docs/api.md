@@ -378,3 +378,30 @@ rest_command:
     content_type:  'application/json; charset=utf-8'
 ```
 </details>
+
+
+<details><summary>Change crossfade state of a player</summary>
+
+player_id can be found at the top of the individual player settings
+
+```
+rest_command:
+  ma_set_player_settings:
+    url: http://localhost:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "config/players/save",
+        "args": {
+          "player_id": "b8:27:eb:8a:b8:8e",
+          "values": {
+            "crossfade": true
+          }
+        }
+      }
+    content_type:  'application/json; charset=utf-8'
+```
+</details>
