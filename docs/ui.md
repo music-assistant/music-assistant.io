@@ -139,15 +139,15 @@ The album section has an additional filter option. You can choose to filter by o
 
 Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select REFRESH ITEM. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
 
-The PROVIDER DETAILS section shows from where the albums and tracks listed above were obtained. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc.  The ID shown against the streaming provider may be used in automations and scripts.
+The PROVIDER DETAILS section shows from where the albums and tracks listed above were obtained. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc.  The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the chain link icon on the right. The external link icon opens the page for the item on the source provider.
 ***************************************************************
 
-## View - Track "Show Info"
+## View - Individual Track
 
 ![image](assets/screenshots/UI-track-show-info.png)
 
 !!! note
-    The PROVIDER DETAILS section in this view also has the functionality to play a short part of the track as a preview
+    The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device
 ***************************************************************
 
 ## View - Browse
