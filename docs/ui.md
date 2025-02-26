@@ -30,7 +30,20 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 ## Player Bar
 ![image](assets/screenshots/UI-playercontrols-bar.png)
 
-The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated. 
+
+The codec shown in the UI to the right of the track title is the codec of the original source. MA decodes all source audio internally to raw PCM, to preserve the highest quality when processing the audio, and then finally send the audio to the player in a lossless format (unless configured otherwise in the player settings).
+***************************************************************
+
+## Now Playing View
+![image](assets/screenshots/now-playing-view.png)
+
+This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
+
+You can also access the [Now Playing view directly via URL](faq/how-to.md/#access-the-now-playing-view-directly-via-url)
+
+The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
+
+When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favourite status may not indicate correctly until playback of the track is restarted.
 ***************************************************************
 
 ## Player List
@@ -66,23 +79,11 @@ With TEMPORARY SYNC GROUPs the number of players being streamed to can be seen d
     If a player is taken over by another app, MA will not have knowledge of that, and the group may no longer function correctly. Additionally, if a player of a syncgroup tries to join late (e.g. it was unpowered) it will not be synced to the group.
 ***************************************************************
 
-## Now Playing View
-![image](assets/screenshots/now-playing-view.png)
-
-This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
-
-You can also access the [Now Playing view directly via URL](faq/how-to.md/#access-the-now-playing-view-directly-via-url)
-
-The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
-
-When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favourite status may not indicate correctly until playback of the track is restarted.
-***************************************************************
-
 ## Play Button ![image](assets/icons/play-button.png)
 
 The play button is used as a shortcut to play the various items in the UI. It is shown on hover for non-mobile devices or is always in view for mobile devices.  
 
-Clicking/touching the Play Button will either immediately play the item or show the play menu. To ensure the user doesn't accidentally play on the wrong player, the play menu will show:
+Clicking/touching the Play Button will either execute the default play action for the item or show the play menu. To ensure the user doesn't accidentally play on the wrong player, the play menu will show:
 
 - the first time the MA view is entered; or
 - if the player is not playing (or paused)
