@@ -23,7 +23,7 @@ Music Assistant is a music library manager for your offline and online music sou
 - Truly hassle free streaming of your favourite music to players, no advanced knowledge required
 - Rich User interface (Progressive Web App) powered by ![logo](assets/icons/vue-js-logo.png){width=20 }VueJS 3
 
-[![Music Assistant Add-on For Home Assistant.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
+[![Music Assistant Add-on For Home Assistant](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
 ## Architecture
 
