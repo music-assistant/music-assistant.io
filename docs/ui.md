@@ -14,7 +14,6 @@ This menu's appearance can be configured in the settings. It can be placed verti
 !!! warning
     If you remove both the Home and Settings icons then you will be locked out. In that case you will need to manually enter the path (e.g. `http://192.168.1.166:8095/#/settings/frontend`) or clear the browser cookies to regain access to the settings page.
 
-When visiting Browse you will only see what is already in the Library of the Streaming Providers. For the local Providers you will see all files and if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
 ***************************************************************
 
 ## Global Search
@@ -153,6 +152,8 @@ The PROVIDER DETAILS section shows from where the albums and tracks listed above
 ## View - Browse
 
 Entering the Browse view will present a list of the installed [Music Providers](music-providers/index.md). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
+
+When viewing a provider you will only see what is already in the Library of the Streaming Providers. For the local Providers you will see all files and if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
 
 !!! warning "Caution"
     Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
