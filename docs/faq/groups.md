@@ -12,7 +12,7 @@ See also the section on Announcements [Group Behaviour](../integration/announcem
 
 ## Temporary Sync Group
 
-Temporary Sync Group players are configured via the [Player List](ui.md#player-list) or HA action. This type of group provides a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
+Temporary Sync Group players are configured via the [Player List](../ui.md#player-list) or HA action. This type of group provides a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
 
 ### Features
 

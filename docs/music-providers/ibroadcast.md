@@ -1,5 +1,3 @@
-![Preview image](../assets/beta-testing.png)
-
 # iBroadcast Provider ![Preview image](../assets/icons/ibroadcast-logo.png){ width=70 align=right }
 
 Music Assistant has support for streaming your music from [iBroadcast](https://www.ibroadcast.com/). Contributed and maintained by [robsonke](https://github.com/robsonke)
@@ -22,5 +20,3 @@ Use your account username and password to authenticate. This will automatically 
 ## Not Yet Supported
 
 - Folders and tags
-  
-![Preview image](../assets/beta-testing.png)
