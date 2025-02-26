@@ -17,7 +17,7 @@ Most players are discovered using mDNS (broadcast) so if your players do not get
 
 Make sure the HA internal url is set correctly. HA SETTINGS>>SYSTEM>>NETWORK>>Home Assistant URL>>Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to http://your.internal.ip:8123/
 
-MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which is FLAC) so playing a low qualiy MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage.
+MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which by default is usually FLAC) so playing a low qualiy MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage. Players have an option to use a lossy codec which will lower the bandwidth requirements, this is available in the advanced settings for the player.
 
 Check the physical device settings. There have been numerous reports where the issue was actually a setting external to MA such as receivers set to repeat tracks or ESP devices with incorrect arguments passed on install.
 
@@ -90,6 +90,10 @@ Art embedded in music tracks will always be picked up but folder.jpg images will
 
 For local files, you can either fully tag your music (this is preferred and it is recommended to use [Picard](https://picard.musicbrainz.org/)) or have an artist folder with the artist.nfo in there (just like the images) and that will be preferred. Online metadata providers are only queried when there is no local data. https://kodi.wiki/view/NFO_files
 
+# Some of the playlists are missing
+
+For certain providers (Spotify is a known example) the authentication method used may impact visibility of playlists of certain type. For a Spotify provider, see details [here](https://www.music-assistant.io/music-providers/spotify/#known-issues-notes)
+
 # I have updated but MA looks like the old version or isn’t working
 
 Possibly your browser is using a cached version of the front end. Try forcing a refresh Chrome, Firefox, or Edge for Windows: Press Ctrl+F5 (If that doesn’t work, try Shift+F5 or Ctrl+Shift+R).
@@ -102,7 +106,7 @@ For the IOS app see [here](https://community.home-assistant.io/t/anyone-know-how
 
 MA is an INPUT to your amplifier. So you need to power on your amplifier and then select the INPUT that MA is streaming to (e.g. Airplay, DLNA, Chromecast). For this reason MA does not see the amplifier zones it only sees the compatible inputs of the amplifier. 
 
-Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means. The power icons that are seen beside the players must be seen as starting and stopping the stream to the player not as physically powering on or off the device.
+Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](../player-support/index.md#player-controls). 
 
 # My local music isn’t being imported or I’m seeing missing ID3 tag warnings in the logs
 
@@ -112,11 +116,20 @@ This is likely a tagging problem. See [here](../music-providers/filesystem.md/#t
 
 If the MA player is "powered on" from the MA UI then MA understands that it is allowed to take control of the player. This may then happen even though you have started playback via another app but have not started playback via MA. To avoid this situation "power off" the MA player.
 
-# MA is crashing on start
+# MA is failing to start
 
-Start MA in safe mode
+If the following error (or similar) is seen in the log:
+  ```
+  File "/app/venv/lib/python3.12/site-packages/zeroconf/_utils/net.py", line 293, in add_multicast_member
+      listen_socket.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, _value)
+  OSError: [Errno 105] No buffer space available
+  ```
+  this is likely to be due to hitting the multicast group limit on the host system. See https://unix.stackexchange.com/questions/23832/is-there-a-way-to-increase-the-20-multicast-group-limit-per-socket for more info
+
+If the above is not the issue then start MA in safe mode:
+
 - With the addon select the toggle in the configration
 - With Docker run the container with the environmental variable MASS_SAFE_MODE set to a boolean true value, e.g. "1" or "true"
 
-If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details
+If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details.
 

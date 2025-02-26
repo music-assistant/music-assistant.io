@@ -23,7 +23,11 @@ Music Assistant has full support for Spotify media listing and playback.
 
 ## Known Issues / Notes
 
-- Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work.
+- Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work
+- When using a personal ClientID, automatically generated playlists such as "Discover Weekly" and radio mode will no longer work
+
+!!! note 
+    Official "by Spotify" playlists are not available when using a personal ClientID for authentification.
 
 ## Not yet supported
 

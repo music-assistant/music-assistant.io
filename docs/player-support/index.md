@@ -50,3 +50,13 @@ A dot on the line represents a component that changes the signal. The lack of a 
 Using the icons at the top of the view, the additional filters can be reordered, disabled/enabled or deleted.
 
 ![DSP image](../assets/screenshots/dsp.jpg)
+
+## Player Controls
+
+Each player has a number of options available to control the behaviour of the power, volume and mute controls in the MA UI. By default, if a device supports these controls then that native behaviour will be used or if the control is not supported then it will be disabled in the UI (the setting will indicate NONE). It is also possible to manually disable the controls by changing the setting to NONE.
+
+It is possible to map other HA entities to the MA player controls. in order for this to be an option the HA entities need to be first exposed to MA via the settings in the [HA Plugin](../ha-plugin.md/#configuring-the-home-assistant-plugin).
+
+**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. 
+
+**Mute** There is a FAKE option that will set the volume to zero and restore it when mute and unmute is commanded.
