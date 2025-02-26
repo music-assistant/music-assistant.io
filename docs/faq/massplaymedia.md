@@ -29,6 +29,9 @@ Or a list of uris which can even be from different music providers
 !!! note
     The regular `media_player.play_media` service call also accepts all of the above but it cannot take multiple items
 
+!!! note
+    When adding multiple items they must be preceded by a hyphen as shown in the images above
+
 There are additional options as well. Enqueue will appear when an entity that supports it is selected.
 
 ![image](../assets/screenshots/service-call/play7.png)
