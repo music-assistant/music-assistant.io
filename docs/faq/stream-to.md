@@ -1,4 +1,4 @@
-## My local HA device
+## My Local HA Device
 
 Install the [squeezelite addon](https://github.com/pssc/ha-addon-squeezelite) which will then allow streaming over an audio connection from the HA host to your speaker or amplifier
 
