@@ -30,6 +30,10 @@ If you have a spare Raspberry Pi (any model) then [PiCoreplayer](https://www.pic
 
 Use a [Snapserver](../player-support/snapcast.md) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
 
+## My Android Phone
+
+Use the [Snapcast App](https://play.google.com/store/apps/details?id=de.badaix.snapcast) and the [Snapserver Provider](../player-support/snapcast.md)
+
 ## Music Assistant
 
 You could use [Darkcast](http://www.darkice.org/) to capture and [Icecast](https://www.icecast.org/) to build a solution that will digitize and stream audio from your analog audio equipment like a vinyl record player (turntable/phonograph/gramophone) as a web radio stream (URL) that you could add as a radio station in Music Assistant.
