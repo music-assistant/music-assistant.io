@@ -200,8 +200,16 @@ music/{api_base}/artist_tracks
 <details><summary>Player Commands</summary>
 <br>
 All of these commands have an equivalent HA action and therefore these commands are not provided with any further details 
-<br><br>
-players/cmd/sync<br>players/cmd/unsync<br>players/cmd/sync_many<br>players/cmd/unsync_many<br>players/all<br>players/player_controls<br>players/get<br>players/get_by_name<br>players/cmd/stop<br>players/cmd/play<br>players/cmd/pause<br>players/cmd/play_pause<br>players/cmd/seek<br>players/cmd/next<br>players/cmd/previous<br>players/cmd/power<br>players/cmd/volume_set<br>players/cmd/volume_up<br>players/cmd/volume_down<br>players/cmd/group_volume<br>players/cmd/group_volume_up<br>players/cmd/group_volume_down<br>players/cmd/volume_mute<br>players/cmd/play_announcement<br>players/cmd/select_source<br>players/cmd/group<br>players/cmd/group_many<br>players/cmd/ungroup<br>players/cmd/ungroup_many
+
+|                     |                          |                         |                      |
+| ------------------- | ------------------------ |------------------------ | -------------------- |
+| players/cmd/sync    | players/cmd/unsync       | players/cmd/sync_many   | players/cmd/unsync_many|
+| players/all         | players/player_controls  | players/get             | players/get_by_name |
+| players/cmd/stop    | players/cmd/play         | players/cmd/pause       | players/cmd/play_pause |
+| players/cmd/seek    | players/cmd/next         | players/cmd/previous    | players/cmd/power |
+| players/cmd/volume_set| players/cmd/volume_up  | players/cmd/volume_down | players/cmd/group_volume |
+| players/cmd/group_volume_up  |players/cmd/group_volume_down | players/cmd/volume_mute | players/cmd/play_announcement|
+| players/cmd/select_source | players/cmd/group | players/cmd/group_many | players/cmd/ungroup | players/cmd/ungroup_many |
   
 </details>
 
@@ -242,23 +250,14 @@ Argument types are as follows
 | debounce        | boolean         | true              | defaults to false if omitted  |
 
 <br>
-All of these commands have an equivalent HA action and therefore these commands are not provided with any further details 
-<br><br>
-
-player_queues/shuffle<br>
-player_queues/repeat<br>
-player_queues/play_media<br>
-player_queues/clear<br>
-player_queues/stop<br>
-player_queues/play<br>
-player_queues/pause<br>
-player_queues/play_pause<br>
-player_queues/next<br>
-player_queues/previous<br>
-player_queues/skip<br>
-player_queues/seek<br>
-player_queues/resume<br>
-player_queues/transfer
+All of these commands have an equivalent HA action and therefore they are not provided with any further details 
+  
+|                     |                          |                         |                      |
+| ------------------- | ------------------------ |------------------------ | -------------------- |
+|player_queues/shuffle|player_queues/repeat      |player_queues/play_media |player_queues/clear|
+|player_queues/stop   |player_queues/play        |player_queues/pause      |player_queues/play_pause|
+|player_queues/next   |player_queues/previous    |player_queues/skip       |player_queues/seek|
+|player_queues/resume |player_queues/transfer|
 
 </details>
 
