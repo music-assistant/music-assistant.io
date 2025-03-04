@@ -80,6 +80,45 @@ Argument types are as follows
 
 <details><summary>Config Commands</summary>
 
+### Commands
+
+| Command                            | Arguments                            |Description                           |
+| ---------------------------------- | ------------------------------------ |------------------------------------- |
+| config/providers                   |  Nil                                 |                                      |
+| config/providers/get               |  instance_id                         | can be obtained from config/providers|
+| config/providers/get_value         |  instance_id<br>key                  | can be obtained from config/providers|
+| config/providers/reload            |  instance_id                         | can be obtained from config/providers|  
+| config/players                     |  Nil                                 |                                      |
+| config/players/get                 |  player_id                           | can be obtained from config/players  |
+| config/players/get_value           |  player_id<br>key<br>unpack_splitted_values  unpack_splitted_values defaults to false if ommitted  |
+| config/players/save                |  player_id<br>values                 | can be obtained from config/players  |
+
+Optional arguments are indicated by an asterisk.
+
+### Arguments
+  
+Argument types are as follows
+
+| Argument        | Type            | Example           |Valid Options |
+| --------------- | ----------------|------------------ |------------------ |
+| instance_id     | string          | tunein--DYnLmhQx  |     |
+| key             | string          | domain            |     |
+| player_id       | string          | ap4c1b86e07166    |     |
+| unpack_splitted_values  | boolean | true | 
+| values          | dict[str, ConfigValueType] | ??????????????????? | 
+
+config/providers/get_entries
+config/providers/save
+config/providers/remove
+config/players/remove
+config/players/dsp/get
+config/players/dsp/save
+config/core
+config/core/get
+config/core/get_value
+config/core/get_entries
+config/core/save
+
 </details>
 
 <details><summary>Music Commands</summary>
@@ -130,13 +169,96 @@ Argument types are as follows
 | fully_played    | boolean         | true | 
 | seconds_played  | int             | 10 | 
 
+#### Additional API Commands
+
+music/{api_base}/count
+music/{api_base}/library_items
+music/{api_base}/get
+music/{api_base}/get_{self.media_type}
+music/{api_base}/add
+music/{api_base}/update
+music/{api_base}/remove
+music/{api_base}/podcast_episodes
+music/{api_base}/podcast_episode
+music/{api_base}/podcast_versions
+music/{api_base}/album_tracks
+music/{api_base}/album_versions
+music/{api_base}/audiobook_versions
+music/{api_base}/track_versions
+music/{api_base}/track_albums
+music/{api_base}/preview
+music/{api_base}/similar_tracks
+music/{api_base}/create_playlist
+music/playlists/playlist_tracks
+music/playlists/add_playlist_tracks
+music/playlists/remove_playlist_tracks
+music/{api_base}/artist_albums
+music/{api_base}/artist_tracks
+
 </details>
 
 <details><summary>Player Commands</summary>
-
+<br>
+All of these commands have an equivalent HA action and therefore these commands are not provided with any further details 
+<br><br>
+players/cmd/sync<br>players/cmd/unsync<br>players/cmd/sync_many<br>players/cmd/unsync_many<br>players/all<br>players/player_controls<br>players/get<br>players/get_by_name<br>players/cmd/stop<br>players/cmd/play<br>players/cmd/pause<br>players/cmd/play_pause<br>players/cmd/seek<br>players/cmd/next<br>players/cmd/previous<br>players/cmd/power<br>players/cmd/volume_set<br>players/cmd/volume_up<br>players/cmd/volume_down<br>players/cmd/group_volume<br>players/cmd/group_volume_up<br>players/cmd/group_volume_down<br>players/cmd/volume_mute<br>players/cmd/play_announcement<br>players/cmd/select_source<br>players/cmd/group<br>players/cmd/group_many<br>players/cmd/ungroup<br>players/cmd/ungroup_many
+  
 </details>
 
 <details><summary>Player Queues Commands</summary>
+
+### Commands
+
+| Command                            | Arguments                            |Description                          |
+| ---------------------------------- | ------------------------------------ |------------------------------------ |
+| player_queues/get_active_queue     | player_id                            | Return queue details for a player (including queue_id) |
+| player_queues/items                | queue_id<br>limit*<br>offset*        | Return list of items in the queue |
+| player_queues/get                  | queue_id                             | Returns current and next item in the queue |
+| player_queues/all                  | Nil                                  | Return queue details for all players |
+| player_queues/dont_stop_the_music  | queue_id<br>dont_stop_the_music_enabled  |   |
+| player_queues/move_item            | queue_id<br>queue_item_id<br>pos_shift*  | Return list of items in the queue |
+| player_queues/delete_item          | queue_id<br>item_id_or_index         | Return list of items in the queue |
+| player_queues/play_index           | queue_id<br>index<br>seek_position*<br>fade_in*<br>debounce*        | Return list of items in the queue |
+
+Optional arguments are indicated by an asterisk.
+
+### Arguments
+  
+Argument types are as follows
+
+| Argument        | Type            | Example           |Valid Options |
+| --------------- | ----------------|------------------ |------------------ |
+| player_id       | string          | b8:27:eb:8a:b8:8e | valid player id as shown on the settings page for the player |
+| queue_id        | string          | b8:27:eb:8a:b8:8e | will be the same as the player_id unless the player is grouped
+| limt            | int             | 20                | limit defaults to 500 if omitted
+| offset          | int             | 10                | offset defaults to 0 if omitted
+| dont_stop_the_music_enabled | boolean | true          |   |
+| queue_item_id   | string          | 69844735907648deaca0ce36b972023e | can be obtained via player_queues/get |
+| pos_shift       | int             | 3                 | pos_shift defaults to 1 if omitted
+| item_id_or_index| int or string   | 10                | item_id is the queue_item_id which can be obtained via player_queues/get
+| index           | int or string   | 10                | 
+| seek_position   | int             | 50000             | a value in milliseconds. defaults to 0 if ommitted |
+| fade_in         | boolean         | true              | defaults to false if ommitted  |
+| debounce        | boolean         | true              | defaults to false if ommitted  |
+
+<br>
+All of these commands have an equivalent HA action and therefore these commands are not provided with any further details 
+<br><br>
+
+player_queues/shuffle<br>
+player_queues/repeat<br>
+player_queues/play_media<br>
+player_queues/clear<br>
+player_queues/stop<br>
+player_queues/play<br>
+player_queues/pause<br>
+player_queues/play_pause<br>
+player_queues/next<br>
+player_queues/previous<br>
+player_queues/skip<br>
+player_queues/seek<br>
+player_queues/resume<br>
+player_queues/transfer
 
 </details>
 
@@ -160,6 +282,27 @@ Argument types are as follows
 | lang            | string          | en_AU             | Must be a valid locale identifier that has been configured in Music Assistant|
 | item            | string          | ???????????       |
 | force_refresh   | boolean         | true              | 
+
+</details>
+
+<details><summary>Player Group Commands</summary>
+
+### Commands
+
+| Command                                 | Arguments                            |Description                          |
+| --------------------------------------- | ------------------------------------ |------------------------------------ |
+|  player_group/create | group_type<br>name<br>members<br>dynamic | Create a player group |
+
+### Arguments
+
+Argument types are as follows
+
+| Argument        | Type            | Example           |Valid Options      |
+| --------------- | ----------------|------------------ |------------------ |
+| group_type      | string          | UNIVERSAL         | UNIVERSAL, AIRPLAY, SLIMPROTO, SNAPCAST|
+| name            | string          | Upstairs Group    |
+| members         | list of strings | ["3571d082-16ee5c32", "ap4c1686e07166"]| valid player id as shown on the settings page for the player
+| dynamic         | boolean         | true              | 
 
 </details>
 
