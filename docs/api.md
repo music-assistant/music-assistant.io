@@ -550,3 +550,28 @@ rest_command:
     content_type:  'application/json; charset=utf-8'
 ```
 </details>
+
+<details><summary>Get all items in the queue</summary>
+
+`queue_id` will be the same as the `player_id` unless the player is grouped. To confirm create a `rest_command` that calls `player_queues/all` and review the information returned. The `limit` defaults to 500 if you omit it. You are cautioned to not set a value greater then 500 to avoid breaking your system. The practical limit will depend on the resources available on your host. `offset` can also be omitted.
+
+```
+rest_command:
+  ma_queue_test:
+    url: http://localhost:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "player_queues/items",
+        "args": {
+          "queue_id": "b8:27:eb:8a:b8:8e",
+          "limit": 500,
+          "offset": 0
+        }
+      }
+    content_type:  'application/json; charset=utf-8'
+```
+</details>
