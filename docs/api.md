@@ -90,7 +90,7 @@ Argument types are as follows
 | config/providers/reload            |  instance_id                         | can be obtained from config/providers|  
 | config/players                     |  Nil                                 |                                      |
 | config/players/get                 |  player_id                           | can be obtained from config/players  |
-| config/players/get_value           |  player_id<br>key<br>unpack_splitted_values  unpack_splitted_values defaults to false if ommitted  |
+| config/players/get_value           |  player_id<br>key<br>unpack_splitted_values | unpack_splitted_values defaults to false if omitted  |
 | config/players/save                |  player_id<br>values                 | can be obtained from config/players  |
 
 Optional arguments are indicated by an asterisk.
@@ -237,9 +237,9 @@ Argument types are as follows
 | pos_shift       | int             | 3                 | pos_shift defaults to 1 if omitted
 | item_id_or_index| int or string   | 10                | item_id is the queue_item_id which can be obtained via player_queues/get
 | index           | int or string   | 10                | 
-| seek_position   | int             | 50000             | a value in milliseconds. defaults to 0 if ommitted |
-| fade_in         | boolean         | true              | defaults to false if ommitted  |
-| debounce        | boolean         | true              | defaults to false if ommitted  |
+| seek_position   | int             | 50000             | a value in milliseconds. defaults to 0 if omitted |
+| fade_in         | boolean         | true              | defaults to false if omitted  |
+| debounce        | boolean         | true              | defaults to false if omitted  |
 
 <br>
 All of these commands have an equivalent HA action and therefore these commands are not provided with any further details 
