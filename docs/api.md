@@ -369,8 +369,10 @@ rest_command:
         "message_id": "1",
         "command": "config/players/save",
         "args": {
-          "player_id": "{{ player_id }}",
-          "values": {{ values|to_json }}
+          "player_id": "b8:27:eb:8a:b8:8e",
+          "values": {
+            "crossfade": true
+          }
         }
       }
     content_type:  'application/json; charset=utf-8'
