@@ -2,6 +2,8 @@
 title: "REST API"
 ---
 
+# API ![Preview image](assets/icons/api-icon.png){ width=70 align=right }
+
 Actions that are provided by the [HA Integration](integration/index.md) address the common tasks that most users require. However, Music Assistant (MA) provides a RESTful API which allows for complete control of the server from external locations. This API is on the same port as the web frontend (default port is port 8095). 
 
 - `http://IP_ADDRESS:8095/` is an interface to control Music Assistant.
@@ -58,7 +60,7 @@ Successful calls will return status code 200 or 201. Other status codes that can
 ### Commands
 
 | Command                            | Arguments                            |Description                          |
-| ---------------------------------- | ------------------------------------ |------------------------------------ |
+| ---------------------------------- | ---------------------- |------------------------------------ |
 | info                               | Nil                    | Return Info of this server |
 | providers/manifests                | Nil                    | Return all Provider manifests |
 | providers/manifests/get            | domain                 | Return Provider manifests of single provider(domain) |
@@ -71,10 +73,10 @@ Optional arguments are indicated by an asterisk.
   
 Argument types are as follows
 
-| Argument        | Type            | Example           |Valid Options |
+| Argument        | Type            | Example           | Valid Options     |
 | --------------- | ----------------|------------------ |------------------ |
-| domain          | string          | ?????             |     |
-| provider_type   | string???       | ???????????       |
+| domain          | string          | audible           | All available options can be seen by examining the response for providers/manifests |
+| provider_type   | string          | music             | music, player, core |
 
 </details>
 
@@ -82,16 +84,19 @@ Argument types are as follows
 
 ### Commands
 
-| Command                            | Arguments                            |Description                           |
-| ---------------------------------- | ------------------------------------ |------------------------------------- |
-| config/providers                   |  Nil                                 |                                      |
-| config/providers/get               |  instance_id                         | can be obtained from config/providers|
-| config/providers/get_value         |  instance_id<br>key                  | can be obtained from config/providers|
-| config/providers/reload            |  instance_id                         | can be obtained from config/providers|  
-| config/players                     |  Nil                                 |                                      |
-| config/players/get                 |  player_id                           | can be obtained from config/players  |
-| config/players/get_value           |  player_id<br>key<br>unpack_splitted_values | unpack_splitted_values defaults to false if omitted  |
-| config/players/save                |  player_id<br>values                 | can be obtained from config/players  |
+| Command                            | Arguments                            |Description                          |
+| ---------------------------------- | ----------------------------------- |------------------------------------- |
+| config/providers                   | Nil                                 |                                      |
+| config/providers/get               | instance_id                         | can be obtained from config/providers|
+| config/providers/get_value         | instance_id<br>key                  | can be obtained from config/providers|
+| config/providers/get_entries       | provider_domain<br>instance_id*<br>action*<br>values* | can be obtained from config/providers|
+| config/providers/save              | provider_domain<br>values<br>instance_id*| instance_id is omitted for a new instance setup)  |
+| config/providers/reload            | instance_id                         | can be obtained from config/providers|  
+| config/providers/remove            | instance_id                         | can be obtained from config/providers| 
+| config/players                     | Nil                                 |                                      |
+| config/players/get                 | player_id                           | can be obtained from config/players or the top of the player settings view in the MA UI |
+| config/players/get_value           | player_id<br>key<br>unpack_splitted_values | unpack_splitted_values defaults to false if omitted  |
+| config/players/save                | player_id<br>values                 | can be obtained from config/players  |
 
 Optional arguments are indicated by an asterisk.
 
@@ -99,25 +104,23 @@ Optional arguments are indicated by an asterisk.
   
 Argument types are as follows
 
-| Argument                | Type                       | Example           |Valid Options |
-| ----------------------- | ---------------------------|------------------ |------------------ |
-| instance_id             | string                     | tunein--DYnLmhQx  |     |
-| key                     | string                     | domain            |     |
-| player_id               | string                     | ap4c1b86e07166    |     |
-| unpack_splitted_values  | boolean                    | true              | 
-| values                  | dict[str, ConfigValueType] | ??????????????????? | 
+| Argument                | Type                       | Example            | Valid Options     |
+| ----------------------- | ---------------------------|------------------- |------------------ |
+| action                  | string                     |                    | action key called from config entries UI
+| instance_id             | string                     | tunein--DYnLmhQx   |     
+| key                     | string                     | domain             |     
+| player_id               | string                     | ap4c1b86e07166     |     
+| provider_domain         | string                     | tunein             | can be obtained from config/providers
+| unpack_splitted_values  | boolean                    | true               | 
+| values                  | dict[str, ConfigValueType] | "flow_mode": false | valid key: value pairs can be seen when reviewing the output of config/players/get
 
-config/providers/get_entries
-config/providers/save
-config/providers/remove
-config/players/remove
-config/players/dsp/get
-config/players/dsp/save
-config/core
-config/core/get
-config/core/get_value
-config/core/get_entries
-config/core/save
+#### Additional API Commands
+
+The following API commands work similarly to the above and a review of the code will show the arguments required and using the top level API call will show the keys and values that can be used.
+|                         |                            |                        |                   |
+| ----------------------- | ---------------------------|----------------------- |------------------ |
+| config/players/remove   | config/players/dsp/get     | config/players/dsp/save| config/core
+| config/core/get         | config/core/get_value      | config/core/get_entries| config/core/save
 
 </details>
 
@@ -155,49 +158,37 @@ Argument types are as follows
 
 | Argument                      | Type            | Example                                   |Valid Options |
 | ----------------------------- | ----------------|------------------------------------------ |------------------ |
-| media_type                    | string          | artist                                    |track, artist, album, playlist, radio, audiobook, podcast, folder|
-| media_types                   | list of strings | ["track", "album"]                        |track, artist, album, playlist, radio, audiobook, podcast, folder|
-| providers                     | list of strings | ["spotify--XGURxcPP", "filesystem--1234"] |
-| search_query                  | string          | Queen                                     |
-| limit                         | int             | 10                                        |
-| library_only                  | boolean         | true                                      |
-| path                          | string          | filesystem_smb--5iJ4npRi://folder/ABBA    |
-| uri                           | string          | library://track/3205                      |
-| uris                          | string          | ["library://track/3951"]                  |
-| item_id                       | string          | 35                                        |
-| provider_instance_id_or_domain| string          | library                                   | library, builtin                   |
+| db_playlist_id                | string          | 26                                        |  |
+| fully_played                  | boolean         | true                                      | defaults to true if omitted |
+| is_playing                    | boolean         | false                                     | defaults to false if omitted |
 | item                          | string          | library://track/3205                      | Any library or external URI |
+| item_id                       | string          | 35                                        |
 | library_item                  | string          | library://track/3205                      | Any library URI |
 | library_item_id               | string          | 3205                                      |    |
+| library_only                  | boolean         | true                                      |
+| limit                         | int             | 10                                        |
 | media_item                    | string          | artist                                    | track, artist, album, playlist, radio, audiobook, podcast |
-| fully_played                  | boolean         | true                                      | defaults to true if omitted |
-| seconds_played                | int             | 10                                        | defaults to None if omitted |
-| is_playing                    | boolean         | false                                     | defaults to false if omitted |
-| db_playlist_id                | string          | 26                                        |  |
+| media_type                    | string          | artist                                    |track, artist, album, playlist, radio, audiobook, podcast, folder|
+| media_types                   | list of strings | ["track", "album"]                        |track, artist, album, playlist, radio, audiobook, podcast, folder|
+| path                          | string          | filesystem_smb--5iJ4npRi://folder/ABBA    |
 | positions_to_remove           | tuple[int]      | [5, 6, 10]                                |  |
+| providers                     | list of strings | ["spotify--XGURxcPP", "filesystem--1234"] |
+| provider_instance_id_or_domain| string          | library                                   | library, builtin                   |
+| search_query                  | string          | Queen                                     |
+| seconds_played                | int             | 10                                        | defaults to None if omitted |
+| uri                           | string          | library://track/3205                      |
+| uris                          | string          | ["library://track/3951"]                  |
 
 #### Additional API Commands
 
-music/{api_base}/count
-music/{api_base}/library_items
-music/{api_base}/get
-music/{api_base}/get_{self.media_type}
-music/{api_base}/add
-music/{api_base}/update
-music/{api_base}/remove
-music/{api_base}/podcast_episodes
-music/{api_base}/podcast_episode
-music/{api_base}/podcast_versions
-music/{api_base}/album_tracks
-music/{api_base}/album_versions
-music/{api_base}/audiobook_versions
-music/{api_base}/track_versions
-music/{api_base}/track_albums
-music/{api_base}/preview
-music/{api_base}/similar_tracks
-music/{api_base}/create_playlist
-music/{api_base}/artist_albums
-music/{api_base}/artist_tracks
+The following commands are not envisaged to be routinely used and therefore are not included above.
+|                              |                               |                         |                              |
+| ---------------------------- | ----------------------------- |------------------------ | ---------------------------- |
+| music/{api_base}/count | music/{api_base}/library_items | music/{api_base}/get |  music/{api_base}/get_{self.media_type} |
+| music/{api_base}/add | music/{api_base}/update | music/{api_base}/remove | music/{api_base}/podcast_episodes |
+| music/{api_base}/podcast_episode | music/{api_base}/podcast_versions | music/{api_base}/album_tracks | music/{api_base}/album_versions |
+| music/{api_base}/audiobook_versions | music/{api_base}/track_versions | music/{api_base}/track_albums | music/{api_base}/preview |
+| music/{api_base}/similar_tracks | music/{api_base}/create_playlist | music/{api_base}/artist_albums | music/{api_base}/artist_tracks |
 
 </details>
 
@@ -241,20 +232,23 @@ Argument types are as follows
 
 | Argument        | Type            | Example           |Valid Options |
 | --------------- | ----------------|------------------ |------------------ |
-| player_id       | string          | b8:27:eb:8a:b8:8e | valid player id as shown on the settings page for the player |
-| queue_id        | string          | b8:27:eb:8a:b8:8e | will be the same as the player_id unless the player is grouped
+| debounce        | boolean         | true              | defaults to false if omitted  |
+| dont_stop_the_music_enabled | boolean | true          |   |
+| fade_in         | boolean         | true              | defaults to false if omitted  |
+| index           | int or string   | 10                | 
+| item_id_or_index| int or string   | 10                | item_id is the queue_item_id which can be obtained via player_queues/get
 | limt            | int             | 20                | limit defaults to 500 if omitted
 | offset          | int             | 10                | offset defaults to 0 if omitted
-| dont_stop_the_music_enabled | boolean | true          |   |
-| queue_item_id   | string          | 69844735907648deaca0ce36b972023e | can be obtained via player_queues/get |
+| player_id       | string          | b8:27:eb:8a:b8:8e | valid player id as shown on the settings page for the player |
 | pos_shift       | int             | 3                 | pos_shift defaults to 1 if omitted
-| item_id_or_index| int or string   | 10                | item_id is the queue_item_id which can be obtained via player_queues/get
-| index           | int or string   | 10                | 
+| queue_id        | string          | b8:27:eb:8a:b8:8e | will be the same as the player_id unless the player is grouped
+| queue_item_id   | string          | 69844735907648deaca0ce36b972023e | can be obtained via player_queues/get |
 | seek_position   | int             | 50000             | a value in milliseconds. defaults to 0 if omitted |
-| fade_in         | boolean         | true              | defaults to false if omitted  |
-| debounce        | boolean         | true              | defaults to false if omitted  |
 
 <br>
+
+#### Additional API Commands
+
 All of these commands have an equivalent HA action and therefore they are not provided with any further details 
   
 |                     |                          |                         |                      |
@@ -283,9 +277,9 @@ Argument types are as follows
 
 | Argument        | Type            | Example           |Valid Options |
 | --------------- | ----------------|------------------ |------------------ |
-| lang            | string          | en_AU             | Must be a valid locale identifier that has been configured in Music Assistant|
-| item            | string          | ???????????       |
 | force_refresh   | boolean         | true              | 
+| item            | string          | library://artist/2|
+| lang            | string          | en_AU             | Must be a valid locale identifier that has been configured in Music Assistant|
 
 </details>
 
@@ -303,10 +297,10 @@ Argument types are as follows
 
 | Argument        | Type            | Example           |Valid Options      |
 | --------------- | ----------------|------------------ |------------------ |
-| group_type      | string          | UNIVERSAL         | UNIVERSAL, AIRPLAY, SLIMPROTO, SNAPCAST|
-| name            | string          | Upstairs Group    |
-| members         | list of strings | ["3571d082-16ee5c32", "ap4c1686e07166"]| valid player id as shown on the settings page for the player
 | dynamic         | boolean         | true              | 
+| group_type      | string          | UNIVERSAL         | UNIVERSAL, AIRPLAY, SLIMPROTO, SNAPCAST|
+| members         | list of strings | ["3571d082-16ee5c32", "ap4c1686e07166"]| valid player id as shown on the settings page for the player
+| name            | string          | Upstairs Group    |
 
 </details>
 
