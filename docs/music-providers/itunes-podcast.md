@@ -1,4 +1,4 @@
-# iTunes Podcast Search Provider ![Preview image](../assets/icons/itunes-podcast-icon){ width=70 align=right }
+# iTunes Podcast Search Provider ![Preview image](../assets/icons/itunes-podcast-icon.png){ width=70 align=right }
 
 Music Assistant has support for [iTunes Podcast Searching](https://podcasts.apple.com/us/browse). Contributed and maintained by [Fabian Munkes](https://github.com/fmunkes)
 
