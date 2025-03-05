@@ -99,13 +99,13 @@ Optional arguments are indicated by an asterisk.
   
 Argument types are as follows
 
-| Argument        | Type            | Example           |Valid Options |
-| --------------- | ----------------|------------------ |------------------ |
-| instance_id     | string          | tunein--DYnLmhQx  |     |
-| key             | string          | domain            |     |
-| player_id       | string          | ap4c1b86e07166    |     |
-| unpack_splitted_values  | boolean | true | 
-| values          | dict[str, ConfigValueType] | ??????????????????? | 
+| Argument                | Type                       | Example           |Valid Options |
+| ----------------------- | ---------------------------|------------------ |------------------ |
+| instance_id             | string                     | tunein--DYnLmhQx  |     |
+| key                     | string                     | domain            |     |
+| player_id               | string                     | ap4c1b86e07166    |     |
+| unpack_splitted_values  | boolean                    | true              | 
+| values                  | dict[str, ConfigValueType] | ??????????????????? | 
 
 config/providers/get_entries
 config/providers/save
@@ -143,6 +143,9 @@ config/core/save
 | music/refresh_item         | media_item                           | Try to refresh a media item by requesting it's full object or search for substitutes  |
 | music/mark_played          | media_item<br>fully_played*<br>seconds_played*<br>is_playing* |Mark item as played in playlog. fully_played defaults to true if omitted  |
 | music/mark_unplayed        | media_item                           | Mark item as unplayed in playlog |
+| music/playlists/playlist_tracks        | item_id<br>provider_instance_id_or_domain<br>force_refresh* | force_refresh defaults to off if omitted |
+| music/playlists/add_playlist_tracks    | db_playlist_id<br>uris   |  |
+| music/playlists/remove_playlist_tracks | db_playlist_id<br>positions_to_remove   |  |
 
 Optional arguments are indicated by an asterisk. In all cases if media_type is optional then omitting it will return all types.
 
@@ -160,6 +163,7 @@ Argument types are as follows
 | library_only                  | boolean         | true                                      |
 | path                          | string          | filesystem_smb--5iJ4npRi://folder/ABBA    |
 | uri                           | string          | library://track/3205                      |
+| uris                          | string          | ["library://track/3951"]                  |
 | item_id                       | string          | 35                                        |
 | provider_instance_id_or_domain| string          | library                                   | library, builtin                   |
 | item                          | string          | library://track/3205                      | Any library or external URI |
@@ -169,6 +173,8 @@ Argument types are as follows
 | fully_played                  | boolean         | true                                      | defaults to true if omitted |
 | seconds_played                | int             | 10                                        | defaults to None if omitted |
 | is_playing                    | boolean         | false                                     | defaults to false if omitted |
+| db_playlist_id                | string          | 26                                        |  |
+| positions_to_remove           | tuple[int]      | [5, 6, 10]                                |  |
 
 #### Additional API Commands
 
@@ -190,9 +196,6 @@ music/{api_base}/track_albums
 music/{api_base}/preview
 music/{api_base}/similar_tracks
 music/{api_base}/create_playlist
-music/playlists/playlist_tracks
-music/playlists/add_playlist_tracks
-music/playlists/remove_playlist_tracks
 music/{api_base}/artist_albums
 music/{api_base}/artist_tracks
 
@@ -558,7 +561,7 @@ rest_command:
 
 ```
 rest_command:
-  ma_queue_test:
+  ma_get_full_queue:
     url: http://localhost:8095/api
     method: POST
     headers:
