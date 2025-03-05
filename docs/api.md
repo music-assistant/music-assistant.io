@@ -168,7 +168,7 @@ Argument types are as follows
 | provider_instance_id_or_domain| string          | library                                   | library, builtin                   |
 | item                          | string          | library://track/3205                      | Any library or external URI |
 | library_item                  | string          | library://track/3205                      | Any library URI |
-| library_item_id               | string          | library://track/3205                      | Any library URI |
+| library_item_id               | string          | 3205                                      |    |
 | media_item                    | string          | artist                                    | track, artist, album, playlist, radio, audiobook, podcast |
 | fully_played                  | boolean         | true                                      | defaults to true if omitted |
 | seconds_played                | int             | 10                                        | defaults to None if omitted |
