@@ -11,7 +11,7 @@ Music Assistant (in short: MA) is designed to be used side by side with Home Ass
 
 ![easiest label](assets/label-easiest.png)
 
-This is only available when running The full version of Home Assistant, which includes the [Home Assistant Operation System (HAOS)](https://developers.home-assistant.io/docs/operating-system/). Due to its ease of use and full functionality, running the Home Assistant operating System is our recommended way of running Home Assistant and Music Assistant.
+This is only available when running the full version of Home Assistant, which includes the [Home Assistant Operation System (HAOS)](https://developers.home-assistant.io/docs/operating-system/). Due to its ease of use and full functionality, running the Home Assistant Operating System is the recommended way of running Home Assistant and Music Assistant.
 
 The Music Assistant add-on repository is available in Home Assistant. Browse the addon store within Home Assistant to install or click on the following button:
 
@@ -67,43 +67,50 @@ The MA team will support docker installs that are installed per the above instru
 
 Everything else is considered unsupported. We have the right to close support requests if you're running an unsupported installation or we may ask you to try to reproduce the issue on one of our supported installation types.
 
-If you may run into any issues when using a docker install vs the recommended/standard Home Assistant add-on, you may try to simply run Home Assistant OS on a VM on your computer or a spare RPi and see if you can reproduce the issue with that setup.
+If you run into any issues when using a docker install vs the recommended/standard Home Assistant add-on, you may try to simply run Home Assistant OS on a VM on your computer or a spare RPi and see if you can reproduce the issue with that setup.
 
 ---
 ## Server Notes
 
-- MA requires a 64bit Operating System and a minimum of 2GB of RAM on the physical device or the container (physical devices are recommended to have 4GB+ if they are running anything else)
+- MA requires a 64bit Operating System and the following minimum hardware:
+    - Recent 64 bit Intel CPU (max 10 years old, although 15 years may still work)
+    - Recent AMD CPU (max 5 years old, although 10 years old may still work)
+    - Single Board Computer: Raspberry Pi 4 or newer, or equivalent 
+    - Other aarch64 based CPU, supported by Home Assistant (e.g. Rockchip)
+    - a MINIMUM of 2GB of RAM on the physical device or the container (physical devices are recommended to have 4GB+ if they are running anything else)
 
-- Because the server heavily relies on multicast techniques like mDNS and uPnP to discover players in your network it MUST be run in the same Layer 2 network as your player devices.
+- If MA won't start and the CPU is outside the maximum age listed above then it is not supported
 
-- The server itself hosts a webserver to stream audio to devices. This webinterface must be accessible via HTTP by IP-address from local players. See the server's logging at startup to see if the server has correctly auto-detected the local IP.
+- Because the server heavily relies on multicast techniques like mDNS and uPnP to discover players on the network it MUST be run in the same Layer 2 network as the player devices
+
+- The server itself hosts a webserver to stream audio to devices. This webinterface must be accessible via HTTP by IP-address from local players. See the server's logging at startup to see if the server has correctly auto-detected the local IP
 
 - The webinterface of the server can be reached on TCP port 8095 if enabled in the settings. By default, on HAOS based installations, the webserver is internal only and not exposed to the outside world. It is protected by HA authentication using the Ingress feature of Home Assistant (you also get the sidepanel shortcut for free!)
 
-- You can access the frontend over https by following these steps:
+- The frontend can be accessed over https by following these steps:
 
-  1. Expose the webserver via MA settings>>Core>>webserver
+  1. Expose the webserver via MA SETTINGS>> CORE>> WEB SERVER
 
-  2. To access the frontend behind a reverse proxy you will have to configure the reverse proxy to point at the 8095 port and expose it to whatever is desired (and add an ssl certificate). How that works differs for each implemention.
+  2. To access the frontend behind a reverse proxy, the reverse proxy will have to be configured to point at port 8095 and expose it to whatever is desired (and add an SSL certificate). How that works differs for each implemention.
 
 !!! tip
-    You can keep the server more secure by NOT exposing the webserver and let the addon talk directly to the webserver on the internal docker network. In that case the internal dns name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
+    The server can be kept more secure by NOT exposing the webserver and let the addon talk directly to the webserver on the internal docker network. In that case the internal DNS name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
 
 ## Usage and Notes
 
-- When running the Home Assistant add-on, you can access the webinterface from the add-on (a shortcut can be added to the sidebar) which is more secure than via the port (although the port can be exposed (but not changed) in the settings)
+- When running the Home Assistant add-on, the webinterface can be accessed via the add-on (a shortcut can be added to the sidebar) which is more secure than via the port (although the port can be exposed (but not changed) in the settings)
 
-- If you are running Music Assistant in docker, you need to access the webinterface at `http://YOUR_MA_IP_ADDRESS:8095`. The port can be changed in the MA settings. If something else is using port 8095 then that must be shutdown until the MA port is changed
+- If Music Assistant in running in a separate docker container, the webinterface needs to be accessed at `http://YOUR_MA_IP_ADDRESS:8095`. The port can be changed in the MA settings. If something else is using port 8095 then that must be shutdown until the MA port is changed
 
-- No providers are installed initially. You must navigate to the MA settings and add the providers (Music and Players) that you use
+- No providers are installed initially. These must be added by navigating to the MA settings and then adding each provider individually (Music and Players) that are desired
 
-- Music from your music sources will be automatically loaded into the Music Assistant library. If you have multiple sources, they will be merged as one library
+- Music from the music sources will be automatically loaded into the Music Assistant library. If there are multiple sources, they will be merged as one library
 
-- This first implementation of the Music Assistant UI centres around the concept of the [Library](usage.md), so your artists, albums, tracks, playlists and radio stations. You can BROWSE the various providers to add aditional items to your Library. In a later release options will be provided to browse the recommendations of the various streaming providers
+- This first implementation of the Music Assistant UI centres around the concept of the [Library](usage.md), so the artists, albums, tracks, playlists and radio stations. It is possible to BROWSE the various providers to add aditional items to the Library. In a later release options will be provided to browse the recommendations of the various streaming providers
 
-- Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will notify you about tasks that are in progress. This can be seen by this symbol ![icon](assets/icons/sync-icon.png) next to the Music Provider entry in MA settings
+- Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will indicate tasks that are in progress. This can be seen by this symbol ![icon](assets/icons/sync-icon.png) next to the Music Provider entry in MA settings
 
-- Music sources are synced at addon (re)start and at regular intervals (which can be selected in the settings).
+- Music sources are synced at regular intervals (which can be selected in the settings)
 
 - MA is designed to work on a Raspberry Pi (4+) which is also running Home Assistant. For this reason it does not make large demands on resources. Additionally, there are limits on the free API calls used for artwork and other metadata. The result of this is that initial syncs of large libraries can take a long time. Subsequent syncs should be noticeably faster
 

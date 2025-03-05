@@ -22,3 +22,4 @@ Music Assistant has support for Airplay based devices. This includes Apple devic
 - A device password can be set for those devices which require it in the advanced settings
 - If you find your player is going unavailable when still powered on then it may not be sending its keep alive message. A timeout can be configured for each player. Some users have reported they have needed to set it as long as one hour
 - Apple Homekit has been reported to interfere with playback. If problems are enountered then remove the devices from Apple Homekit or try changing the setting in the preferences section of Homekit (IOS) for `Airplay (Speaker & TV)`
+- If the AirPlay device incorrectly responds to change volume commands or randomly changes volume, try selecting the option "Ignore volume reports sent by the device" in the player's Airplay Specific settings

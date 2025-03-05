@@ -23,7 +23,7 @@ Music Assistant is a music library manager for your offline and online music sou
 - Truly hassle free streaming of your favourite music to players, no advanced knowledge required
 - Rich User interface (Progressive Web App) powered by ![logo](assets/icons/vue-js-logo.png){width=20 }VueJS 3
 
-[![Music Assistant Add-on For Home Assistant](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant_beta&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
+[![Music Assistant Add-on For Home Assistant](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
 ## Architecture
 
@@ -72,6 +72,8 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 [![Giel](assets/team/gieljnssns.png){ width=100 }](https://github.com/gieljnssns "Giel. Author of the Soundcloud provider")
 [![diede](assets/team/diede.png){ width=100 }](https://github.com/Cyanogenbot "Diede. Author of the Bluesound provider")
 [![btoconnor](assets/team/btoconnor.png){ width=100 }](https://github.com/btoconnor "Brian. Author of the SiriusXM provider")
+[![fabian](assets/team/fabian.png){ width=100 }](https://github.com/fmunkes "Fabian. Author of the Audiobookshelf provider")
+[![ztripez](assets/team/ztripez.png){ width=100 }](https://github.com/ztripez "Ztripez. Author of the Audible provider")
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon

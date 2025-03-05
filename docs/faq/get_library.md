@@ -6,6 +6,12 @@ This action allows you to retrieve the full details of the items from the librar
 
 As can be seen there are a large number of filter options available.
 
+The favorite option works in three ways:
+
+- If the option is unchecked on the left then favorites and non-favorites will be returned
+- If the option is checked on the left but the switch on the right is off then only non-favorites will be returned
+- If the option is checked on the left but the switch on the right is on then only favorites will be returned 
+
 The returned JSON is extensive. The [returned data can be used in templates](https://www.home-assistant.io/docs/scripts/perform-actions#use-templates-to-handle-response-data).
 
 ## Example
@@ -29,7 +35,7 @@ script:
           sequence:
             - action: music_assistant.play_media
               data:
-                media_id: "{{ random_tracks['items'][repeat.index - 1].uri }}"
+                media_id: "{{ random_tracks['tracks'][repeat.index - 1].uri }}"
                 media_type: track
                 enqueue: add
               target:
