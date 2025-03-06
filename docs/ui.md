@@ -31,6 +31,9 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 
 
 The codec shown in the UI to the right of the track title is the codec of the original source. MA decodes all source audio internally to raw PCM, to preserve the highest quality when processing the audio, and then finally send the audio to the player in a lossless format (unless configured otherwise in the player settings).
+
+The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
+
 ***************************************************************
 
 ## Now Playing View
@@ -38,9 +41,9 @@ The codec shown in the UI to the right of the track title is the codec of the or
 
 This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
 
-You can also access the [Now Playing view directly via URL](faq/how-to.md/#access-the-now-playing-view-directly-via-url)
+The [Audio Pipeline](audiopipeline.md) selectable label is described above in the [Player Bar](#player-bar) section.
 
-The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
+You can also access the [Now Playing view directly via URL](faq/how-to.md/#access-the-now-playing-view-directly-via-url)
 
 When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favourite status may not indicate correctly until playback of the track is restarted.
 ***************************************************************
@@ -136,9 +139,12 @@ The tracks and albums sections are collapsible. The view above shows them both c
 
 The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP or UNKNOWN album types.
 
-Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select REFRESH ITEM. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
+Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select UPDATE METADATA. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
 
 The PROVIDER DETAILS section shows from where the albums and tracks listed above were obtained. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc.  The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the chain link icon on the right. The external link icon opens the page for the item on the source provider.
+
+!!! note
+    Copying the URI to the clipboard via the chain link icon is only allowed when the MA frontend is accessed over HTTPS due to browser security rules
 ***************************************************************
 
 ## View - Individual Track

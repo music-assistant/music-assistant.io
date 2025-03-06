@@ -1,4 +1,4 @@
-## My local HA device
+## My Local HA Device
 
 Install the [squeezelite addon](https://github.com/pssc/ha-addon-squeezelite) which will then allow streaming over an audio connection from the HA host to your speaker or amplifier
 
@@ -29,6 +29,10 @@ If you have a spare Raspberry Pi (any model) then [PiCoreplayer](https://www.pic
 ## My Browser
 
 Use a [Snapserver](../player-support/snapcast.md) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
+
+## My Android Phone
+
+Use the [Snapcast App](https://play.google.com/store/apps/details?id=de.badaix.snapcast) and the [Snapserver Provider](../player-support/snapcast.md)
 
 ## Music Assistant
 
@@ -66,6 +70,8 @@ Bluesound is shown in the [player provider table](../player-support/index.md) as
 
 Note that many Sonos devices can be synced with AirPlay devices which is another plus for AirPlay.
 
+Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [DSP Settings description](https://www.music-assistant.io/player-support/#dsp-settings)
+
 The following table is a non-exhaustive list of possible solutions:
 
 | Device or Software	          | Price# | Supported Protocols              |+Amp^| Pros and Cons |
@@ -87,6 +93,6 @@ The following table is a non-exhaustive list of possible solutions:
 
 ~ Depends on the product
 
-\* If you want better sound quality from your Pi you could add a [HiFiBerry](https://www.hifiberry.com/docs/hardware/comparison-of-hifiberry-cards-for-audio-recording/)
+\* If you want better sound quality from your Pi you could add a [HiFiBerry](https://www.hifiberry.com/docs/hardware/comparison-of-hifiberry-cards-for-audio-recording/) or a [Raspberry PI Media Center Hat](https://sonocotta.com/raspberry-pi-media-center-hats/)
 
 (DIY) Device requires software installation and additional hardware (e.g. powersupply, case)
