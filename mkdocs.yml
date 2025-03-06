@@ -64,7 +64,7 @@ nav:
     - Sonos: player-support/sonos.md
   - Plugins:
     - Home Assistant Plugin: ha-plugin.md
-    - LastFM Audio Scrobbler: plugins/audioscrobbler.md
+    - LastFM Audio Scrobbler: plugins/lastfmscrobbler.md
     - plugins/spotify-connect.md
   - Support: support.md
   - I Want to Help / Donate:
