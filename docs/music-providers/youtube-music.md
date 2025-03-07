@@ -10,7 +10,8 @@ Music Assistant has support for Youtube Music. Contributed and maintained by [Ma
 
 ## Features
 
-The highest available stream from Youtube Music will be selected for playback (similar to configuring 'high' in the web-app). This then gets re-encoded by MA to a lossless FLAC.
+- The highest available stream from Youtube Music will be selected for playback (similar to configuring 'high' in the web-app). This then gets re-encoded by MA to a lossless FLAC
+- Podcasts are supported
 
 ## Configuration
 
