@@ -33,7 +33,7 @@ For voice problems refer to [Voice Troubleshooting](https://music-assistant.io/i
 
 Try power cycling the physical player(s) if they won't connect or if there is no sound.
 
-If after an update something isn't working then trying clearing the cache MA SETTINGS>>CORE>>CACHE CONTROLLER>>CONFIGURE>>CLEAR CACHE. If that doesn't fix it then check the GitHub Issues and Discord to see if it is a known problem. If not try restarting MA, try restarting HA, and try a full HOST REBOOT (in that order). If it is an integration problem then trying removing it from HA settings and HACS then restart HA then reinstall.
+Check the GitHub Issues and Discord to see if it is a known problem. If not try restarting MA, try restarting HA, and try a full HOST REBOOT (in that order). If it is an integration problem then trying removing it from HA settings and HACS then restart HA then reinstall.
 
 Before you raise an issue [read this first](../support.md). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
 
