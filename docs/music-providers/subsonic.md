@@ -10,7 +10,7 @@ Music Assistant has support for music servers which work to the Open Subsonic AP
 ## Configuration:
 You will need to provide the following to Music Assistant:
 
-- A base URL for the server (e.g. https://music.domain.tld)
+- A base URL for the server starting with http:// or https:// (e.g. https://music.domain.tld)
 - A port number (e.g. 80 for plain http, 443 for https, or an port where your server can be reached)
 - A path used to get to the rest API (e.g. mypathroute/ if you are path routing, leave this blank unless you know you need it)
 - A user name for the account you want Music Assistant to use to access your server
