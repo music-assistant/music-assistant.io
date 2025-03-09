@@ -39,7 +39,7 @@ The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured ic
 ## Now Playing View
 ![image](assets/screenshots/now-playing-view.png)
 
-This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
+This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue, and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue, and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
 
 The [Audio Pipeline](audiopipeline.md) selectable label is described above in the [Player Bar](#player-bar) section.
 
@@ -95,6 +95,16 @@ Clicking/touching the Play Button will either execute the default play action fo
 
 ***************************************************************
 
+## Multi Select ![image](assets/icons/multiselect.png)
+
+When the Multi Select icon is selected the Select All icon will appear.  
+
+Clicking/touching the Select All icon will select all of the items in the view (or section of the view as appropiate). For large lists a confirmation dialog will appear as selecting thousands of items can cause unresponsivness depending on the resources of the host.
+
+CTRL-A will also select all items unless the search box is in view in which case it will select all text in that box. Also CTRL-A won't work on views that have multiple sections (e.g. the artist view has albums and tracks) so the Multi Select icon must be used in that case. 
+
+***************************************************************
+
 ## Track Menu
 
 In any of the following views, Right click or long press on a track to get the following menus
@@ -120,7 +130,7 @@ The Sync icon ![image](assets/icons/sync-icon.png) will synchronise the library 
 
 Items in all views can be "right clicked" or "long pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
-Multiple selections of albums / artists / tracks is possible by clicking the multi-select icon. Once one or more items are selected then clicking on the "ACTIONS" at the bottom
+Multiple selections of albums / artists / tracks is possible by clicking the [multi-select icon](#multi-select). Once one or more items are selected then clicking on the "ACTIONS" at the bottom
 
 ![image](assets/screenshots/UI-actions.png)
 
