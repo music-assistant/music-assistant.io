@@ -37,6 +37,6 @@ The view will expand as necessary to show all [grouped players](faq/groups.md). 
 
 A point to note in this example is the orange dot beside the third Output section label. Whilst no quality would have been lost due to the Output Limiter or [the upsampling to 48kHz](https://www.youtube.com/watch?v=tIIK2wuXHuY), the change to the [lossy MP3 codec](https://www.adobe.com/au/creativecloud/video/discover/best-audio-format.html) necessitates the indication that this is now only Low Quality.
 
-When a group of players have the same pipeline then the identical output stages will be collapsed with one player shown followed by a plus sign and the number of other players represented. Clicking on the information icon will expand the list as shown in the following image. Note that in the case of Slimproto or AirPlay a different output pipeline per player is possible, whilst with other player types such as Sonos or Snapcast, the leader determines the stream sent to all the children.
+When a group of players have the same pipeline then the identical output stages will be collapsed with one player shown followed by a plus sign and the number of other players represented. Clicking on the information icon will expand the list as shown in the following image. Note that in the case of Squeezelite or AirPlay a different output pipeline per player is possible, whilst with other player types such as Sonos or Snapcast, the leader determines the stream sent to all the children.
 
 ![image](assets/screenshots/audiopipeline-groups-collapsed.png){ width=500 }
