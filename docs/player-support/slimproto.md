@@ -8,7 +8,7 @@ This means you can use squeezebox players directly with Music Assistant. This ap
 
 - Slimproto devices are auto detected in Music Assistant
 - Slimproto devices will play in sync
-- Any physical control buttons on the device should be supported as long as [flow mode](../faq/normalization.md/#track-queueing) is not enabled
+- Any physical control buttons on the device should be supported as long as [flow mode](../faq/tech-info.md/#track-queueing) is not enabled
 - The player settings include some basic equaliser settings
 - The player settings allow configuration of stereo pairs of speakers
 
