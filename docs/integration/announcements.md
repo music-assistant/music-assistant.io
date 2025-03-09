@@ -55,7 +55,7 @@ If an announcement is sent to a player that is currently synced to another playe
 In all cases the playback should resume after the announcement.
 
 !!! note
-    If the announcement is sent to one player of a group, the playback needs to resume afterwards and for airplay and slimproto that will be noticeable
+    If the announcement is sent to one player of a group, the playback needs to resume afterwards and for AirPlay and Squeezelite that will be noticeable
 
 !!! note
     If the announcement is sent to one player of a group, and that player is the sync leader of a permanent Sync Group, then this will be treated the same as sending the request to the whole Sync Group. All players will play the announcement and the whole group will resume afterwards.

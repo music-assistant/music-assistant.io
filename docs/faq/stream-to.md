@@ -61,7 +61,7 @@ In general terms the protocols/devices that should give you minimum to no setup 
 -	Any device/speaker that supports [Airplay](https://en.wikipedia.org/wiki/AirPlay)
 -	Any device/speaker that supports the [Google Cast protocol](https://en.wikipedia.org/wiki/Google_Cast) (also known as cast builtin)
 -	[Squeezebox hardware](https://en.wikipedia.org/wiki/Squeezebox_(network_music_player))
--	Software squeezebox/slimproto based players (e.g. [squeezelite](https://sourceforge.net/projects/lmsclients/files/squeezelite/) )
+-	[Squeezelite](https://sourceforge.net/projects/lmsclients/files/squeezelite/) based players
 -	[Sonos](https://www.sonos.com/en-us/home)
 
 We don’t believe most people can hear the difference in sample rates above CD quality so AirPlay is highly recommended. It has a good sync protocol and is widely implemented in consumer devices. For most people they should consider what they already have and fit in with that (unless it’s DLNA then consider changing due to the quirks of some devices) and their budget.

@@ -1,4 +1,4 @@
----
+![image](https://github.com/user-attachments/assets/451992e4-a5bd-4a42-b7da-65e993682154)---
 title: Player Support
 description: Information Relevant to all Player Providers 
 ---
@@ -32,7 +32,7 @@ All providers have the option to apply [Digital Signal Processing](https://en.wi
 
 The DSP option is found in the MA settings for each player which means that each player has its own independently configurable DSP settings.
 
-Individual player DSP settings will be used for playback to AirPlay, Slimproto and Universal groups. For all other group types DSP will be disabled.
+Individual player DSP settings will be used for playback to AirPlay, Squeezelite and Universal groups. For all other group types DSP will be disabled.
 
 The DSP path consists of an INPUT pre-amplifier for initial gain control, followed by optional audio filters that can be added between input and output (multiple times if desired). The following filters are available:
 
