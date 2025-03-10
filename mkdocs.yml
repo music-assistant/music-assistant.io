@@ -56,6 +56,7 @@ nav:
     - player-support/index.md
     - AirPlay: player-support/airplay.md
     - Bluesound: player-support/bluesound.md
+    - Builtin: player-support/builtin.md
     - DLNA: player-support/dlna.md
     - Fully Kiosk: player-support/fully-kiosk.md
     - Google Cast: player-support/google-cast.md
@@ -65,7 +66,8 @@ nav:
     - Squeezelite: player-support/squeezelite.md
   - Plugins:
     - Home Assistant Plugin: ha-plugin.md
-    - LastFM Audio Scrobbler: plugins/lastfm_scrobble.md
+    - LastFM Scrobbler: plugins/lastfm_scrobble.md
+    - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
     - plugins/spotify-connect.md
   - Support: support.md
   - I Want to Help / Donate:
