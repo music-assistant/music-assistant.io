@@ -10,10 +10,11 @@ Music Assistant has the ability to [scrobble](https://www.collinsdictionary.com/
 ## Features
 
 - Connect to Listenbrainz and scrobble the songs that are playing
+- Now playing feature is supported
 
 ## Configuration
 
-- tba
+- Obtain your User Token from https://listenbrainz.org/settings/ 
 
 ## Known Issues / Notes
 
