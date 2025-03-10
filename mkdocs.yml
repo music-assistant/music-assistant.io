@@ -38,6 +38,7 @@ nav:
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - iBroadcast: music-providers/ibroadcast.md
+      - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
       - Plex: music-providers/plex.md
@@ -65,6 +66,7 @@ nav:
     - Squeezelite: player-support/squeezelite.md
   - Plugins:
     - Home Assistant Plugin: ha-plugin.md
+    - LastFM Scrobbler: plugins/lastfm_scrobble.md
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
     - plugins/spotify-connect.md
   - Support: support.md
