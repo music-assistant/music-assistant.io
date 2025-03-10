@@ -33,7 +33,7 @@ Music Assistant consists of multiple building blocks:
 - Home Assistant Integration ([Installation Instructions](integration/installation.md))
 - [Music Providers](music-providers/index.md): Import your music from various sources into Music Assistant.
 - [Player Providers](player-support/index.md): Play your music on a wide collection of player ecosystems.
-- An optional [Home Assistant Plugin](ha-plugin.md) for Music Assistant, which allows the importing of Home Assistant media players into the Music Assistant engine to use as targets for playback
+- Plugins: These extend the functionality of Music Assistant. Importantly, the [Home Assistant Plugin](ha-plugin.md) allows the importing of Home Assistant media players into the Music Assistant engine to use as targets for playback
 
 ## Music Assistant Server
 
