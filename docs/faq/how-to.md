@@ -211,7 +211,7 @@ The [Nextcloud Music App](https://apps.nextcloud.com/apps/music) supports [Subso
 
 # Access the MA Views directly via URL
 
-You will need to expose the webserver port to enable this feature. See [here](../installation/#server-notes) for the instructions and considerations before doing so.
+You will need to expose the webserver port to enable this feature. See [here](../installation.md/#server-notes) for the instructions and considerations before doing so.
 
 ## Player Selection
 
