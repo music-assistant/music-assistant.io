@@ -5,8 +5,8 @@ Because this project originated out of a Home Assistant integration, all enduser
 Direct links are:
 
 - [Issue Tracker](https://github.com/music-assistant/support/issues) to create bug reports. Please review the [troubleshooting](faq/troubleshooting.md) page first and check if your issue has already been reported. When raising a report please include detailed info and logfiles.
-- [Feature Requests](https://github.com/music-assistant/discussions/categories/feature-requests-and-ideas): Give your vote to an existing request, join the discussion or add a new request.
-- [Q&A Section](https://github.com/music-assistant/discussions/categories/q-a) Frequently asked questions and tutorials
+- [Feature Requests](https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas): Give your vote to an existing request, join the discussion or add a new request.
+- [Q&A Section](https://github.com/orgs/music-assistant/discussions/categories/q-a) Frequently asked questions and tutorials
 
  Additionally you can seek assistance in the [discord community](https://discord.gg/kaVm8hGpne). Join the community and get support!
 
