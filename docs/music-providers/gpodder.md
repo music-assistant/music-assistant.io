@@ -1,4 +1,4 @@
-# gPodder Provider ![Preview image](../assets/icons/gpodder-icon.svg){ width=70 align=right }
+# gPodder Provider ![Preview image](../assets/icons/gpodder-icon.png){ width=70 align=right }
 
 Music Assistant has support for [gPodder](https://gpodder.github.io). Contributed and maintained by [Fabian Munkes](https://github.com/fmunkes)
 
