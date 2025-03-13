@@ -1,6 +1,6 @@
 # gPodder Provider ![Preview image](../assets/icons/gpodder-icon.svg){ width=70 align=right }
 
-Music Assistant has support for [gPodder](https://podcasts.apple.com/us/browse). Contributed and maintained by [Fabian Munkes](https://github.com/fmunkes)
+Music Assistant has support for [gPodder](https://gpodder.github.io). Contributed and maintained by [Fabian Munkes](https://github.com/fmunkes)
 
 ## Features
 
