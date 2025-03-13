@@ -67,13 +67,14 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 [![khers](assets/team/khers.png){ width=100 }](https://github.com/khers "Eric. Author of the Subsonic provider")
 [![robsonke](assets/team/robsonke.png){ width=100 }](https://github.com/robsonke "Rob. Author of the iBroadcast provider and maintainer of Soundcloud")
 [![maxim](assets/team/maxim.png){ width=100 }](https://github.com/maximmaxim345 "Maxim. DSP Guru and Core Developer")
+[![diede](assets/team/diede.png){ width=100 }](https://github.com/Cyanogenbot "Diede. Author of the Bluesound provider")
+[![btoconnor](assets/team/btoconnor.png){ width=100 }](https://github.com/btoconnor "Brian. Author of the SiriusXM provider")
+[![fabian](assets/team/fabian.png){ width=100 }](https://github.com/fmunkes "Fabian. Author of the Audiobookshelf and iTunes Podcast Search providers")
+[![ztripez](assets/team/ztripez.png){ width=100 }](https://github.com/ztripez "Ztripez. Author of the Audible provider")
+[![wjzijderveld](assets/team/willem-jan.png){ width=100 }](https://github.com/wjzijderveld "Willem-Jan. Author of the LastFM Scrobbler plugin")
 [![Lokiberra](assets/team/lokiberra.png){ width=100 }](https://github.com/lokiberra "Kevin. Author of the Jellyfin provider")
 [![Mel](assets/team/melharbour.png){ width=100 }](https://github.com/melharbour "Mel. Core developer team")
 [![Giel](assets/team/gieljnssns.png){ width=100 }](https://github.com/gieljnssns "Giel. Author of the Soundcloud provider")
-[![diede](assets/team/diede.png){ width=100 }](https://github.com/Cyanogenbot "Diede. Author of the Bluesound provider")
-[![btoconnor](assets/team/btoconnor.png){ width=100 }](https://github.com/btoconnor "Brian. Author of the SiriusXM provider")
-[![fabian](assets/team/fabian.png){ width=100 }](https://github.com/fmunkes "Fabian. Author of the Audiobookshelf provider")
-[![ztripez](assets/team/ztripez.png){ width=100 }](https://github.com/ztripez "Ztripez. Author of the Audible provider")
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon

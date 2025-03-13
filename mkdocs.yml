@@ -38,6 +38,7 @@ nav:
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - iBroadcast: music-providers/ibroadcast.md
+      - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
       - Plex: music-providers/plex.md
@@ -55,6 +56,7 @@ nav:
     - player-support/index.md
     - AirPlay: player-support/airplay.md
     - Bluesound: player-support/bluesound.md
+    - Builtin: player-support/builtin.md
     - DLNA: player-support/dlna.md
     - Fully Kiosk: player-support/fully-kiosk.md
     - Google Cast: player-support/google-cast.md
@@ -64,6 +66,8 @@ nav:
     - Squeezelite: player-support/squeezelite.md
   - Plugins:
     - Home Assistant Plugin: ha-plugin.md
+    - LastFM Scrobbler: plugins/lastfm_scrobble.md
+    - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
     - plugins/spotify-connect.md
   - Support: support.md
   - I Want to Help / Donate:
