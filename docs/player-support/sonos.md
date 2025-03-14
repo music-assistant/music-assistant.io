@@ -30,3 +30,4 @@ If the `Enable Airplay` option is then selected, the playback command(s) will be
 - Using the Sonos HA Integration at the same time as the MA Sonos S1 player provider may cause problems. It is not possible to run the HA provider and Sonos S1 provider on the same host and additionally these speakers do not like too many requests from too many sources. It is therefore recommended to only use the MA Sonos S1 player provider
 - Syncing Sonos devices with Airplay devices requires the enabling of an option on the Sonos player
 - Sonos has removed AirPlay (1) support from the following models: ERA 100, ERA 300, Move 2 and Arc Ultra. As such, AirPlay streaming (from Music Assistant) to these devices is not possible
+- Sonos firmware changes has resulted in crossfade not working when the output codec is lossless (i.e. FLAC or wav). Users can either disable crossfade, switch to the MP3 codec or use AirPlay mode
