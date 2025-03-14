@@ -18,7 +18,7 @@ Music Assistant has support for Youtube Music. Contributed and maintained by [Ma
 As of Nov 2024, Google has removed OAuth authentication from YT Music. This means using this (somewhat cumbersome) method of cookie authentication is the **only** way to get YT Music working.
 
 !!! note
-    Cookies will expire after some time. This means that you will have to run this process again if YT Music stops working and you see `401: Unauthorized` in your logs. Maximise the cookie life by using this [method to obtain the cookie](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
+    Cookies will expire after some time. This means that you will have to run this process again if YT Music stops working and you see `401: Unauthorized` or `Unable to fetch PO Token for web_music client` in the MA log. Maximise the cookie life by using this [method to obtain the cookie](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
 
 !!! note
     If a Family Account is in use then setting up a dedicated account for MA will assist in maximising cookie life 
