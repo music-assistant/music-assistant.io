@@ -46,12 +46,12 @@ The Equalizer can also be exported for use in other applications. For example, t
 
 There are multiple formats for PEQ preset files when separate left and right channels are defined. When importing multi-channel preset files, proceed as follows:
 
-- If there is only a single preset which contains the settings for both channels, then do NOT press the multi-channel controls button and import the file with the `Import APO/REW Preset` button
+- If there is only a single preset which contains the settings for both channels, simply import the file with the `Import APO/REW Preset` button
 - If there are separate preset files for each channel:
     1. Enable Multi-channel controls
     2. Select the Left channel
-    3. Import the preset for the Left channel
+    3. Import the preset for the Left channel with the `Import APO/REW Preset` button
     4. Select the Right channel
-    5. Import the preset for the Right channel
+    5. Import the preset for the Right channel with the `Import APO/REW Preset` button
 
 The `Export APO Preset` button will make a single preset file which contains information about both channels if there are any multi-channel specific options activated.
