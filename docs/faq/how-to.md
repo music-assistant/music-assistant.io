@@ -68,7 +68,7 @@ sequence:
     response_variable: random_track
   - action: music_assistant.play_media
     data:
-      media_id: "{{ random_track.tracks[0].uri }}"
+      media_id: "{{ random_track['items'][0].uri }}"
       media_type: track
       enqueue: play
       radio_mode: true
@@ -92,7 +92,7 @@ sequence:
       sequence:
         - action: music_assistant.play_media
           data:
-            media_id: "{{ random_tracks.tracks[repeat.index - 1].uri }}"
+            media_id: "{{ random_tracks['items'][repeat.index - 1].uri }}"
             media_type: track
             enqueue: add
           target:
