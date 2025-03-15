@@ -23,9 +23,7 @@ The device id can be any ascii string, but keep in mind, that this is used for s
 So another client must use the same device id.
 
 !!! note
-    `gpodder.net` is deliberately _not_ supported. The provider relies on
-frequent API calls, and the service hosted there is known to be either slow or fully
-unresponsive, which will slow down MA. Consider using a locally hosted alternative.
+    `gpodder.net` is deliberately _not_ supported. The provider relies on frequent API calls, and the service hosted there is known to be either slow or fully unresponsive, which will slow down MA. Consider using a locally hosted alternative.
 
 ### nextcloud-gpodder
 The provider supports [nextcloud-gpodder/gpoddersync](https://apps.nextcloud.com/apps/gpoddersync).
