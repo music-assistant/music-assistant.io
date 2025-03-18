@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/451992e4-a5bd-4a42-b7da-65e993682154)---
+---
 title: Player Support
 description: Information Relevant to all Player Providers 
 ---
