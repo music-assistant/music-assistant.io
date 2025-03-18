@@ -12,12 +12,12 @@ Squeezelite clients are available for and run on almost any hardware, including 
 - Squeezelite client devices will play in perfect sync and support sync correction.
   - Speaker sync group support (i.e. support for permanent grouping players).
 - Squeezelite client devices have support for crossfade and gapless playback.
-- Any physical control buttons on the device should be supported as long as [flow mode](../faq/tech-info.md/#track-queueing) is not enabled.
 - Player settings allow the configuration of stereo pairs of speakers.
 - Individual player DSP settings will be used for playback.
 - Up to 384kHz max at 24bit sample rate for PCM if supported by the client device.
 - Lossless Stream support.
-- Squeezelite client device button support.
+- Squeezelite client device buttons support.
+  - Any physical control buttons on the device should be supported as long as [flow mode](../faq/tech-info.md/#track-queueing) is not enabled.
 
 ## Known Issues / Notes
 
