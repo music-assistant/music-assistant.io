@@ -6,16 +6,10 @@ This means it is possible to use Squeezelite client player software and hardware
 
 Squeezelite clients are available for, and can run on, almost any hardware from desktop OS to ESP32-based devices. There is also some legacy support for [the original Logitech branded Squeezebox series of hardware players, (formerly known as SlimDevices), like, for example, the Squeezebox Duet and the Squeezebox Radio](https://lyrion.org/players-and-controllers/hardware-comparison/).
 
-## Features
+## Features not listed on main player provider page
 
 - Squeezelite client devices are automatically detected by Music Assistant.
-- Squeezelite client devices will play in perfect sync and support sync correction.
-  - Speaker sync group support (i.e. support for permanent grouping players).
-- Squeezelite client devices have support for crossfade and gapless playback.
-- Player settings allow the configuration of stereo pairs of speakers.
 - Individual player DSP settings will be used for playback.
-- Up to 384kHz max at 24bit sample rate for PCM if supported by the client device.
-- Lossless Stream support.
 - Squeezelite client device buttons support.
   - Any physical control buttons on the device should be supported as long as [flow mode](../faq/tech-info.md/#track-queueing) is not enabled.
 
