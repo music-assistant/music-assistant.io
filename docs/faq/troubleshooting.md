@@ -66,11 +66,13 @@ Matching items between streaming providers is challenging as they do not all pro
 
 # My media player is not available or not playing
 
-Review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the [GitHub Discussions](https://github.com/orgs/music-assistant/discussions) to see if others have requested support and join in the conversation.
+First check if the player has been discovered but just isn't appearing in the [Player List](../ui.md/#player-list). Do this by navigating to MA SETTINGS >> PLAYERS. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
+
+If the player is not shown in the list of players in the MA SETTINGS then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the [GitHub Discussions](https://github.com/orgs/music-assistant/discussions) to see if others have requested support and join in the conversation.
 
 If your device does support one of the supported protocols then review the documentation for that player provider for known issues and troubleshooting tips.
 
-If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identiying why the player isnt working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github [Issues](https://github.com/music-assistant/support/issues), [Discussions](https://github.com/orgs/music-assistant/discussions) and [Discord](https://discord.gg/kaVm8hGpne)) as likely someone has asked your question before.
+If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identifying why the player isnt working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github [Issues](https://github.com/music-assistant/support/issues), [Discussions](https://github.com/orgs/music-assistant/discussions) and [Discord](https://discord.gg/kaVm8hGpne)) as likely someone has asked your question before.
 
 # All my media is missing 
 
