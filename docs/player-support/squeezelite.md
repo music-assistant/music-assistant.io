@@ -25,4 +25,4 @@ Squeezelite clients are available for, and can run on, almost any hardware from 
   - Some features can be limited or missing if not fully supported by the Squeezelite client player itself.
 - Running LMS on the same server as MA with the MA Squeezelite provider enabled can have undesired effects.
 - Make sure that you do not have the "slimproto" (Squeezebox players) integration running in Home Assistant.
-- Ordinarily do not use queue flow mode unless using older Squeezebox hardware player that has issues transitioning. Enabling queue flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself.
+- Ordinarily do not use queue flow mode unless using older Squeezebox hardware player that has issues transitioning. Enabling queue flow mode may solve playback issues, however, it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
