@@ -83,8 +83,8 @@ The following table is a non-exhaustive list of possible solutions:
 |[Louder ESP32](https://sonocotta.com/louder-esp32/) (DIY) | $ |Squeezelite, AirPlay, Snapcast	  | N	     |Pros: Cheap<br>Cons: Requires some technical knowledge to install the software|
 |[Home Assistant (HA) Voice PE](https://www.home-assistant.io/voice-pe/)|$ |Home Assistant Integration |Y	 |Pros: All local voice control and playback device, Strong Support<br>Cons: Requires HA as well|
 |Amplifiers/Receivers + Cast	                       |$$$	     |Google Cast      	                | N	     |Pros: Minimal setup, Higher amplification, High Quality Audio<br>Cons: Expensive, Cast requires app to have sync’ed group|
-|Amplifiers/Receivers + AirPlay	                     |$$$	     |  AirPlay	                        | N	     | As per above |
-|[Sonos](https://www.sonos.com/en-us/shop)<br>[Ikea Symfonisk](https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/)|$$ → $$$	|Sonos (Many devices also AirPlay)| N |Pros: Minimal setup, High Quality Audio<br>Cons: Potentially Limited to Sonos ecosystem depending upon device|
+|Amplifiers/Receivers + AirPlay	                     |$$$	     |  AirPlay	                        | N	     | Pros: Minimal setup, Higher amplification, High Quality Audio<br>Cons: Expensive |
+|[Sonos](https://www.sonos.com/en-us/shop)<br>[Ikea Symfonisk](https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/)|$$ → $$$	|Sonos (Many devices also AirPlay)| Y/N~ |Pros: Minimal setup, High Quality Audio<br>Cons: Potentially Limited to Sonos ecosystem depending upon device|
 |[Bluesound Products](https://www.bluesound.com/usa/all-products)| $$$ |Bluesound, AirPlay	      |Y/N~    |Pros: Minimal setup, Exceptional Sound Quality<br>Cons: Expensive |
 
 \# Price: $ <100USD; $$ 101-250USD; $$$ >250USD
@@ -95,4 +95,4 @@ The following table is a non-exhaustive list of possible solutions:
 
 \* If you want better sound quality from your Pi you could add a [HiFiBerry](https://www.hifiberry.com/docs/hardware/comparison-of-hifiberry-cards-for-audio-recording/) or a [Raspberry PI Media Center Hat](https://sonocotta.com/raspberry-pi-media-center-hats/)
 
-(DIY) Device requires software installation and additional hardware (e.g. powersupply, case)
+(DIY) Device requires software installation and/or additional hardware (e.g. powersupply, case)
