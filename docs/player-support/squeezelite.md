@@ -8,7 +8,7 @@ Squeezelite clients are available for, and can run on, almost any hardware from 
 
 ## Features
 
-- Squeezelite client devices are automatically detected in Music Assistant.
+- Squeezelite client devices are automatically detected by Music Assistant.
 - Squeezelite client devices will play in perfect sync and support sync correction.
   - Speaker sync group support (i.e. support for permanent grouping players).
 - Squeezelite client devices have support for crossfade and gapless playback.
