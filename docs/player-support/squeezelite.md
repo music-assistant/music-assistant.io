@@ -4,7 +4,7 @@ Music Assistant partly emulates an Logitech Media Server (which is now maintaine
 
 This means it is possible to use Squeezelite client player software and hardware, directly with Music Assistant, as well as control Music Assistant from those Squeezelite client players (as well as other slimproto emulators such as SqueezeSlave, SoftSqueeze, and SqueezePlay).
 
-Squeezelite clients are available for, and can run on, almost any hardware from desktop OS to ESP32-based devices. There is also some legacy support for [the original Logitech branded Squeezebox series of hardware players, (formerly known as SlimDevices), like, for example, the Squeezebox Duet and the Squeezebox Radio](https://lyrion.org/players-and-controllers/hardware-comparison/).
+Squeezelite clients are available for, and can run on, almost any hardware from desktop OS to ESP32-based devices. There is also some legacy support for [the original Logitech branded Squeezebox series of hardware players, (formerly known as SlimDevices)](https://lyrion.org/players-and-controllers/hardware-comparison/), such as the Squeezebox Duet and the Squeezebox Radio.
 
 ## Features
 
