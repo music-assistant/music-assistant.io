@@ -6,7 +6,7 @@ This means it is possible to use Squeezelite client player software and hardware
 
 Squeezelite clients are available for, and can run on, almost any hardware from desktop OS to ESP32-based devices. There is also some legacy support for [the original Logitech branded Squeezebox series of hardware players, (formerly known as SlimDevices), like, for example, the Squeezebox Duet and the Squeezebox Radio](https://lyrion.org/players-and-controllers/hardware-comparison/).
 
-## Extra features not listed on the main player provider page
+## Features
 
 - Squeezelite client devices are automatically detected by Music Assistant
 - Individual player DSP settings will be used for playback
