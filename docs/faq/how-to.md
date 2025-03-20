@@ -49,10 +49,6 @@ See also [music_assistant.play_media action](./massplaymedia.md)
 
 Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](./massplaymedia.md).
 
-# Start a radio stream with an automation
-
-Use the `music_assistant.play_media` action and set the `media_id` as the station name.
-
 # Play a Random Item
 
 Use get_library and an script/automation such as this:
@@ -114,6 +110,36 @@ If you use the [RadioBrowser provider](../music-providers/radio-browser.md) then
 Direct entry of stations can be done by navigating to the radio stations page and selecting the menu top right and ADD ITEM FROM URL
 This will also work for locally hosted streams such as from Icecast. 
 
+# Start a radio stream with an automation
+
+Use the `music_assistant.play_media` action and set the `media_id` as the station name.
+
+# Go to next/previous radio station via a script
+
+Create an `input_select` with the various radio stations as options. Now you can use next and previous actions to switch between the stations.
+
+To generate the list of radio stations dynamically use a suitable automation trigger and a script such as this:
+``` yaml
+script:
+  generate_station_list:  
+    mode: queued
+    alias: "Generate Station List"
+    sequence:
+      - action: music_assistant.get_library
+        data:
+          limit: 40
+          config_entry_id: 01JMYCMQJ55CR9E7YZW3VKEA4F
+          media_type: radio
+          favorite: true
+          order_by: name  
+        response_variable: radio_stations
+      - action: input_select.set_options
+        target:
+          entity_id: input_select.radio_station_list
+        data:
+          options: "{{ radio_stations['items'] | map(attribute='name') | list }}"    
+```
+
 # Create playlists or use M3U files
 
 You can create playlists from the MA UI. Adding items can also be done from the UI.
@@ -138,10 +164,6 @@ filesystem_smb://track/blah
 Relative paths to the playlist (e.g.` ../Mariah Carey/Merry Christmas/02 All I Want for Christmas Is You.flac` ) also work.
 
 M3U, M3U8 and PLS playlists are supported. [VLC can be used to easily create playlists](https://www.iptvx.info/?p=1002) that MA can use.
-
-# Go to next/previous radio station via a script
-
-Create an `input_select` with the various radio stations as options. Now you can use next and previous actions to switch between the stations.
 
 # Stop the music after a period of time aka Sleep Timer
 
