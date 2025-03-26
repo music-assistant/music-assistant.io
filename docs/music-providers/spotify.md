@@ -9,7 +9,7 @@ Music Assistant has full support for Spotify media listing and playback.
 
 - Support for Artists, Albums, Tracks and Playlists
 - Searching the Spotify catalogue
-- Supports Radio mode
+- Supports Radio mode. (Starting a dynamic playlist based on an Artist, Album, Track or Playlist)
 - Max Quality: Lossy OGG Vorbis (320kbps)
 - Items in your Spotify library (including the Liked Songs playlist) will be added to the Library in Music Assistant
 - Adding an item from Spotify to the Music Assistant Library will also add it to "Your Library" in Spotify
