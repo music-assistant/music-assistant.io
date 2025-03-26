@@ -4,6 +4,8 @@ Music Assistant has full support for [Qobuz](https://www.qobuz.com/), including 
 
 ## Features
 - Support for Artists, Albums, Tracks and Playlists
+- Searching the Qobuz catalogue
+- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 - Items in your Qobuz Favourites will be marked as "in library" in Music Assistant
 - Marking an item as "in library" from the Music Assistant interface will also mark it as a favorite in Qobuz
 - On playback, the highest quality is preferered automatically
