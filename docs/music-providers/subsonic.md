@@ -4,6 +4,10 @@ Music Assistant has support for music servers which work to the Open Subsonic AP
 
 ## Features
 
+- Support for Artists, Albums, Tracks and Playlists
+- Searching the Subsonic catalogue
+- Supports Radio mode
+- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 - All music tracks will be imported into MA
 - Podcasts are supported
 

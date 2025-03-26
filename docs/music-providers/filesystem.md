@@ -12,6 +12,8 @@ When streaming providers are also availabe in MA linking will only occur when th
 ## Features
 
 - Support for Artists, Albums, Tracks and Playlists
+- Searching the catalogue
+- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 - Local music is automatically included in the MA Library
 - Files are not favourited by default. You can see all items if you deselect the "favourite" filter (the heart) and decide for yourself what you want in your favourites
 - If you also have any streaming providers connected, your media will be automatically linked and completed with info from the streaming provider(s)
