@@ -5,6 +5,12 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by [micha
 !!! note 
     Please be advised that this provider currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
 
+## Features
+
+- Support for Albums, Artists, Tracks Playlists 
+- Search the Plex server
+- Max Quality: Lossless FLAC (24 bit, 192 kHz)
+
 ## Configuration
 
 ![Preview image](../assets/screenshots/plex/plex-config-opts.png)
