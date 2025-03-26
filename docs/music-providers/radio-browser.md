@@ -7,6 +7,7 @@ Music Assistant has support for [RadioBrowser](https://www.radio-browser.info/) 
 - You can use the search function.
 - You can add radio streams to your library.
 - Browse by country, by tag or by popularity
+- Max Quality: Varies by station
 
 ## Configuration
 
