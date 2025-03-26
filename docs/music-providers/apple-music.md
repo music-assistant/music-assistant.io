@@ -1,4 +1,4 @@
-# Apple Music Provider [![Silver](../assets/medal-silver.png){ width=70 align=right}](../index.md/#quality-scale "Silver")![Preview image](../assets/icons/apple-music.svg){ width=70 align=right }
+# Apple Music Provider [![Silver](../assets/medal-silver.png){ width=70 align=right}](index.md/#quality-scale "Silver")![Preview image](../assets/icons/apple-music.svg){ width=70 }
 
 Music Assistant has support for [Apple Music](https://music.apple.com/)! Contributed and maintained by [MarvinSchenkel](https://github.com/MarvinSchenkel)
 
