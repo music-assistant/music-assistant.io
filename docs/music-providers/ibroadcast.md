@@ -8,6 +8,7 @@ Music Assistant has support for streaming your music from [iBroadcast](https://w
 ## Features
 
 - Support for Artists, Albums, Tracks and Playlists
+- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 
 ## Configuration
 

@@ -2,6 +2,10 @@
 
 Music Assistant has support for Soundcloud. Contributed by [gieljnssns](https://github.com/gieljnssns). Maintained by [robsonke](https://github.com/robsonke)
 
+## Features
+
+-  Max Quality: Lossy AAC (256kbps)
+
 ## Configuration
 
 Two fields need to be completed to use this provider, Client id and Authorization. To obtain these proceed as follows:

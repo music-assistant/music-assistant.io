@@ -11,6 +11,7 @@ Music Assistant has support for streaming from Audible. Contributed and maintain
 - Metadata for audiobooks will be populated
 - Playback can be resumed from the last position reported by Audible
 - Chapter navigation
+- Max Quality: Lossy AAC (Variable quality)
 
 ## Configuration
 

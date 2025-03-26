@@ -7,7 +7,8 @@ Music Assistant has support for streaming live radio stations from SiriusXM. Con
     
 ## Features
 
-Supports streaming live radio from SiriusXM.
+- Supports streaming live radio from SiriusXM
+- Max Quality: Lossy variable bitrate
 
 ## Configuration
 

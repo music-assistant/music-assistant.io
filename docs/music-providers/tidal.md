@@ -5,10 +5,12 @@ Music Assistant has support for [Tidal](https://tidal.com). Contributed and main
 ## Features
 
 - Support for Artists, Albums, Tracks and Playlists
+- Searching the Tidal catalogue
+- Supports Radio mode. (Starting a dynamic playlist based on an Artist, Album, Track or Playlist)
+- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 - Items in your Tidal library will be marked as "Favourites" in Music Assistant
 - Marking an item as a "Favourite" from the Music Assistant interface will also mark it as favourite in Tidal
 - On playback, the highest quality FLAC HiFi version will be selected
-- Radio Mode is supported
 
 ## Configuration
 

@@ -9,7 +9,8 @@ Music Assistant has support for [Apple Music](https://music.apple.com/)! Contrib
 ## Features
 - Support for Artists, Albums, Tracks and Playlists
 - Searching the Apple Music catalogue
-- Radio mode: Starting a dynamic playlist based on an Artist, Album, Track or Playlist
+- Supports Radio mode. (Starting a dynamic playlist based on an Artist, Album, Track or Playlist)
+- Max Quality: Lossy AAC (256kbps)
 
 ## Configuration
 Authentication with Apple Music happens through a Music User Token. Unfortunately, Apple does not officially support 'Login with Apple' for Apple Music, so you will need to obtain your own Music User Token. Instructions were written for Chrome:
@@ -26,7 +27,7 @@ Note the "Expires / Max-Age" column. Your token will expire on that date and App
 
 ## Known Issues / Notes
 - Due to Apple's proprietary encryption (Fairplay), Lossless and Dolby Atmos versions of songs are not supported
-- MA can only play an uploaded track if Apple has linked it to an online version in the Apple Music catalog. If that link is not found, MA will not do the import.
+- MA can only play an uploaded track if Apple has linked it to an online version in the Apple Music catalog. If that link is not found, MA will not do the import
 
 ## Not yet supported
-- Library interaction, such as adding and removing items to your Apple Music library from within Music Assistant.
+- Library interaction, such as adding and removing items to your Apple Music library from within Music Assistant
