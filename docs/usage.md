@@ -29,7 +29,7 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
 !!! note
     If identical items (e.g. an album or track) have not been matched across providers or within a provider then select the item and using the ⋮ menu in the top banner select REFRESH ITEM
     
-![Preview image](assets/screenshots/library.png)
+[![Preview image](assets/screenshots/library.png)](assets/screenshots/library.png)
 
 **Favourites**
 
@@ -68,7 +68,7 @@ Playlists must be stored on a provider. A music provider's playlist can only con
 
 Playlists can be created or added to from various menus in the different views. They can also be created in the Playlist view by clicking on the icon in the top right.
 
-![Preview image](assets/screenshots/playlist-create.png)
+[![Preview image](assets/screenshots/playlist-create.png)](assets/screenshots/playlist-create.png)
 
 Playlists which consist of tracks from the filesystem provider will be stored in the MA database.
 
