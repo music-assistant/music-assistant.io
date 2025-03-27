@@ -16,11 +16,11 @@ Music Assistant has support for [Tidal](https://tidal.com). Contributed and main
 
 In the configuration, there are a series of steps that must be completed in order. Start at the top of the page and work down. 
 
-![Tidal Config](../assets/screenshots/tidal-config.png){ width=800 }
+[![Tidal Config](../assets/screenshots/tidal-config.png){ width=800 }](../assets/screenshots/tidal-config.png)
 
 1. Click on the first button and you will be redirected to the Tidal login page and after logging in you will be taken to an error page which is normal.
 
-    ![Oops Page](../assets/screenshots/oops-page.png){ width=800 }
+    [![Oops Page](../assets/screenshots/oops-page.png){ width=800 }](../assets/screenshots/oops-page.png)
 
 2. Take the full URL in the address bar of the Oops error page and insert it into the configuration screen  
 

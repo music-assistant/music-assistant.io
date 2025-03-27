@@ -30,7 +30,7 @@ Authentication with Deezer happens through an Access and ARL Token. Unfortunatel
 6. Right click on the browser window and select INSPECT. A new window will open
 7. Click the 'Application' tab. You might need to expand your window or click the `>>` button
 8. Under Storage > Cookies, click "https://www.deezer.com" and find the entry labelled "arl"
-  ![Preview image](../assets/screenshots/deezer-arl.png)
+  [![Preview image](../assets/screenshots/deezer-arl.png)](../assets/screenshots/deezer-arl.png)
 9. Copy the cookie value and use this in Music Assistant as the 'ARL TOKEN'
 
 **If this does not work ensure that you:**

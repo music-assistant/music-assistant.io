@@ -17,7 +17,7 @@ This menu's appearance can be configured in the settings. It can be placed verti
 ***************************************************************
 
 ## Global Search
-![image](assets/screenshots/global-search.png)
+[![image](assets/screenshots/global-search.png)](assets/screenshots/global-search.png)
 
 Searches can be done via any combination of words or partial words and also via a URL to a provider such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
 
@@ -27,7 +27,7 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 ***************************************************************
 
 ## Player Bar
-![image](assets/screenshots/UI-playercontrols-bar.png)
+[![image](assets/screenshots/UI-playercontrols-bar.png)](assets/screenshots/UI-playercontrols-bar.png)
 
 
 The codec shown in the UI to the right of the track title is the codec of the original source. MA decodes all source audio internally to raw PCM, to preserve the highest quality when processing the audio, and then finally send the audio to the player in a lossless format (unless configured otherwise in the player settings).
@@ -37,7 +37,7 @@ The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured ic
 ***************************************************************
 
 ## Now Playing View
-![image](assets/screenshots/now-playing-view.png)
+[![image](assets/screenshots/now-playing-view.png)](assets/screenshots/now-playing-view.png)
 
 This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue, and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue, and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
 
@@ -50,7 +50,7 @@ When the favourite icon is solid then selecting that will bring up two options -
 
 ## Player List
 
-![image](assets/screenshots/UI-speakers-menu.png)
+[![image](assets/screenshots/UI-speakers-menu.png)](assets/screenshots/UI-speakers-menu.png)
 
 !!! note
     The volume shown against a player group is the AVERAGE of the volumes of each individal player. When the group volume is changed then each player is changed by a proportionate amount.
@@ -116,7 +116,7 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 ## View - Artist / Album / Track
 
-![image](assets/screenshots/UI-artist-view.png)
+[![image](assets/screenshots/UI-artist-view.png)](assets/screenshots/UI-artist-view.png)
 
 Album and Track Views look the same as the above except there is no album artist filter icon and the track view has an [ADD VIA URL](music-providers/builtin.md) option.
 
@@ -143,7 +143,7 @@ The behaviour described above will work on any view where you see the "x item(s)
 
 ## View - Individual Artist
 
-![image](assets/screenshots/UI-individual-artist.png)
+[![image](assets/screenshots/UI-individual-artist.png)](assets/screenshots/UI-individual-artist.png)
 
 The tracks and albums sections are collapsible. The view above shows them both collapsed. The tracks section shows ALL tracks that are in the library or that are available across all of the providers. A red dot on the library icon ![image](assets/icons/library-icon.png) indicates that the viewed results are filtered to only show items that are in the library. To see what albums any given track is on you can either sort alphabetically or click on one and use the context menu and SHOW INFO.
 
@@ -159,7 +159,7 @@ The PROVIDER DETAILS section shows from where the albums and tracks listed above
 
 ## View - Individual Track
 
-![image](assets/screenshots/UI-track-show-info.png)
+[![image](assets/screenshots/UI-track-show-info.png)](assets/screenshots/UI-track-show-info.png)
 
 !!! note
     The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device

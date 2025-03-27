@@ -30,19 +30,19 @@ As of Nov 2024, Google has removed OAuth authentication from YT Music. This mean
 ### Obtaining the Cookies
 - Open <a href="http://music.youtube.com/" target="_blank">YT Music</a> in your browser.
 - Open the developer tools via View -> Developer -> Developer Tools. Note that this might be named differently based on your browser. It should open a window similar to this:
-![Dev tools](../assets/screenshots/ytmusic-developer-tools.png)
+[![Dev tools](../assets/screenshots/ytmusic-developer-tools.png)](../assets/screenshots/ytmusic-developer-tools.png)
 
 - Navigate to the 'Network' tab
 - In the filter bar, type "/browse"
 - Now navigate to a page in YT Music that requires authentication, for example, on of your library playlists
 - A request will show-up in the table:
 
-![Auth request](../assets/screenshots/ytmusic-auth-request.png)
+[![Auth request](../assets/screenshots/ytmusic-auth-request.png)](../assets/screenshots/ytmusic-auth-request.png)
 
 - Click the request and make sure you are on the 'Headers' tab
 - Find the section called 'Request Headers'
 - Find the item named 'Cookie' and copy the **value**. It is **VERY** important that you copy the exact value. Double check that you do not include any additional spaces or characters at the start/end of the value
-![Cookie value](../assets/screenshots/ytmusic-cookie-value.png)
+[![Cookie value](../assets/screenshots/ytmusic-cookie-value.png)](../assets/screenshots/ytmusic-cookie-value.png)
 
 ### Configuring the provider 
 - Navigate to 'Settings'

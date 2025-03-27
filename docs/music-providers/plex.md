@@ -13,7 +13,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by [micha
 
 ## Configuration
 
-![Preview image](../assets/screenshots/plex/plex-config-opts.png)
+[![Preview image](../assets/screenshots/plex/plex-config-opts.png)](../assets/screenshots/plex/plex-config-opts.png)
 
 - Click the `Use Plex GDM to discover local servers` button, this **should** discover your local server and prefill the `local_server_ip` and `local_server_port` fields.
 - If GDM discovery fails, the 2 fields mentioned above will be filled with **"Discovery failed.... "**. In this case, please add the IP address of your server, and the port that you are exposing it on (usually 32400).
