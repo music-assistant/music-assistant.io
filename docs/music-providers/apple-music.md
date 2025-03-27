@@ -18,10 +18,10 @@ Authentication with Apple Music happens through a Music User Token. Unfortunatel
 1. Navigate to [https://music.apple.com/](https://music.apple.com/)
 2. Go to View > Developer > Developer Tools. A new side window will open.
 3. Click the 'Application' tab. You might need to expand your window or click the `>>` button
-  ![Preview image](../assets/screenshots/apple-music-auth-1.jpg)
+  [![Preview image](../assets/screenshots/apple-music-auth-1.jpg)](../assets/screenshots/apple-music-auth-1.jpg)
 4. Under Storage > Cookies, click "https://music.apple.com" and find the entry called "media-user-token"
 5. Click it and copy the cookie value and use this in Music Assistant as the 'Music user token'
-  ![Preview image](../assets/screenshots/apple-music-auth-2.jpg)
+  [![Preview image](../assets/screenshots/apple-music-auth-2.jpg)](../assets/screenshots/apple-music-auth-2.jpg)
 
 Note the "Expires / Max-Age" column. Your token will expire on that date and Apple Music within Music Assistant will stop working. You will have to repeat the above process to obtain a fresh token. We will try to find an unofficial way to implement 'Login with  Apple' to make it easier to authenticate with Apple Music, but until then, this is the way to authenticate.
 
