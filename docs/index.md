@@ -47,13 +47,13 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 
 ## Preview
 
-![Preview image](assets/screenshots/screen2.png){width=800 }
+[![Preview image](assets/screenshots/screen2.png){width=800 }](assets/screenshots/screen2.png)
 
 ??? note "Click to show more screenshots"
 
-    ![Preview image](assets/screenshots/screen3.png){width=800 }
+    [![Preview image](assets/screenshots/screen3.png){width=800 }](assets/screenshots/screen3.png)
 
-    ![Preview image](assets/screenshots/screen1.png){width=800 }
+    [![Preview image](assets/screenshots/screen1.png){width=800 }](assets/screenshots/screen1.png)
 
 ## The Team
 
