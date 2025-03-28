@@ -47,7 +47,7 @@ As of Nov 2024, Google has removed OAuth authentication from YT Music. This mean
 ### Installing the PO Token addon
 As of March 2025, Google has implemented a new security mechanism called 'PO Tokens' (Proof of Origin). Music Assistant will not be able to resolve stream urls for your music without a valid PO Token. Luckily, we can automatically generate this for you, but you will need to install an add-on (also available as docker image) for this.
 
-- Within Home Assistant, go to Settings > Addons > Addon Store
+- Within Home Assistant, go to Settings > Add-ons > Add-on Store
 - Scroll down to the 'Music Assistant' section.
 - A new addon called 'YT Music PO Token Generator' is available.
 - Install this add-on and make sure it is started before adding the YT Music provider within Music Assistant
