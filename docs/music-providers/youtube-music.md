@@ -50,7 +50,7 @@ As of March 2025, Google has implemented a new security mechanism called 'PO Tok
 - Within Home Assistant, go to Settings > Addons > Addon Store
 - Scroll down to the 'Music Assistant' section.
 - A new addon called 'YT Music PO Token Generator' is available.
-- Install this addon and make sure it is started before adding the YT Music provider within Music Assistant
+- Install this add-on and make sure it is started before adding the YT Music provider within Music Assistant
 
 !!! note
     If you are hosting Music Assistant yourself, you can download the Docker file for the PO Token server [here](https://github.com/Brainicism/bgutil-ytdlp-pot-provider). Install and run it, then head over to Music Assistant and put in the URL to the PO token server when configuring the YT Music Provider.
