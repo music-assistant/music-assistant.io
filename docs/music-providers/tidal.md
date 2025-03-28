@@ -35,4 +35,3 @@ In the configuration, there are a series of steps that must be completed in orde
 ## Not yet supported
 
 - Multiple accounts (this is being worked on and available soon)
-- Mixes
