@@ -49,7 +49,7 @@ As of March 2025, Google has implemented a new security mechanism called 'PO Tok
 
 - Within Home Assistant, go to Settings > Add-ons > Add-on Store
 - Scroll down to the 'Music Assistant' section.
-- A new addon called 'YT Music PO Token Generator' is available.
+- A new add-on called 'YT Music PO Token Generator' is available.
 - Install this add-on and make sure it is started before adding the YT Music provider within Music Assistant
 
 !!! note
