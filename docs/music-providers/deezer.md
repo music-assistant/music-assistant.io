@@ -42,7 +42,7 @@ Authentication with Deezer happens through an Access and ARL Token. Unfortunatel
 - Try different browsers
 
 ## Not yet supported
-- Podcasts support ([see this feature request](https://github.com/music-assistant/hass-music-assistant/discussions/429))
-- Fully featured recommendation/flow ([see this feature request](https://github.com/music-assistant/hass-music-assistant/discussions/535))
+- Podcasts support ([see this feature request](https://github.com/orgs/music-assistant/discussions/429))
+- Fully featured recommendation/flow ([see this feature request](https://github.com/orgs/music-assistant/discussions/535))
 
 Big thanks to [Deezer-python](https://GitHub.com/browniebroke/deezer-python) made by [browniebroke](https://github.com/browniebloke). Without it, this would have taken alot longer to make.
