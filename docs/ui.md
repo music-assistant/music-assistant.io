@@ -120,7 +120,7 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 The Home View provides quick access to all of the different media types. Also shown are recommendations from the providers which support this feature (e.g. Tidal). 
 
-The view is fully configurable. Select the ⋮ menu on the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order.
+The view is fully configurable. Select the ⋮ menu on the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
 
 [![image](assets/screenshots/homescreen_edit.png)](assets/screenshots/homescreen_edit.png)
 ***************************************************************
