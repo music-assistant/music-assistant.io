@@ -37,4 +37,4 @@ There are additional options as well. Enqueue will appear when an entity that su
 ![image](../assets/screenshots/service-call/play7.png)
 
 !!! warning "Radio Mode"
-    You can only use the album, artist, track or playlist media_type if enabling Radio Mode. Radio Mode can only be used if a provider is available which supports dynamic tracks (e.g Spotify, YTM, Apple, Subsonic and Tidal).
+    You can only use the album, artist, track or playlist media_type if enabling Radio Mode. Radio Mode can only be used if a provider is available which supports dynamic tracks (e.g Apple, Deezer, Spotify,  Subsonic, Tidal and YTM).
