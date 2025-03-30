@@ -5,6 +5,7 @@ Music Assistant has support for [iTunes Podcast Searching](https://podcasts.appl
 ## Features
 
 - Search for podcasts via the iTunes API
+- Supports recommendations on the [Home View](../ui.md/#view-home)
 
 ## Configuration
 
