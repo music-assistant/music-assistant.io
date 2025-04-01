@@ -65,6 +65,7 @@ nav:
   - Plugins:
     - Home Assistant Plugin: ha-plugin.md
     - plugins/spotify-connect.md
+  - Community Extensions: community-extensions.md
   - Support: support.md
   - I Want to Help / Donate:
       - help/index.md
