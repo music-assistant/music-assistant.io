@@ -4,14 +4,14 @@ This is a collection of third-party HA cards or dashboards for Music Assistant. 
 
 A web-based song request system that integrates with Home Assistant and Music Assistant to create an interactive jukebox experience for guests!
 
-![image](https://github.com/DanStennett/HAMusicAssistantJukebox/blob/main/readme_image.jpg?raw=true){ height=400 }
+![image](https://github.com/DanStennett/HAMusicAssistantJukebox/blob/main/readme_image.jpg?raw=true){ width=420 }
 
 # [Music Assistant Search Card](https://github.com/fastxl2024/mass-search-card)
 
 The Mass Search Card is an advanced search card for Home Assistant, designed to simplify interaction with Music Assistant. This card allows you to effortlessly search for artists, tracks, albums, playlists, and radio stations and play them on your selected media players.
 
-[![image](https://github.com/user-attachments/assets/2dbd3143-ffd8-4bea-8b63-52519ece9f1d) { width=250 }](https://github.com/user-attachments/assets/2dbd3143-ffd8-4bea-8b63-52519ece9f1d)
-[![image](https://github.com/user-attachments/assets/ce10cadf-bada-444a-87ea-a9d05f0a41db) { width=250 }](https://github.com/user-attachments/assets/ce10cadf-bada-444a-87ea-a9d05f0a41db)
+![image](https://github.com/user-attachments/assets/2dbd3143-ffd8-4bea-8b63-52519ece9f1d) { width=250 }
+![image](https://github.com/user-attachments/assets/ce10cadf-bada-444a-87ea-a9d05f0a41db) { width=250 }
 
 # [Custom Media Card](https://github.com/codemonkey2k5/HomeAssistent-Custom-Media-Card)
 
