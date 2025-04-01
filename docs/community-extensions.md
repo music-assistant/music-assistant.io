@@ -4,7 +4,7 @@ This is a collection of third-party HA cards or dashboards for Music Assistant. 
 
 A web-based song request system that integrates with Home Assistant and Music Assistant to create an interactive jukebox experience for guests!
 
-[![image](https://github.com/DanStennett/HAMusicAssistantJukebox/blob/main/readme_image.jpg?raw=true){ height=400 }](https://github.com/DanStennett/HAMusicAssistantJukebox/blob/main/readme_image.jpg?raw=true)
+![image](https://github.com/DanStennett/HAMusicAssistantJukebox/blob/main/readme_image.jpg?raw=true){ height=400 }
 
 # [Music Assistant Search Card](https://github.com/fastxl2024/mass-search-card)
 
