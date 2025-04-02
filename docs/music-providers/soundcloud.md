@@ -9,9 +9,9 @@ Music Assistant has support for Soundcloud. Contributed by [gieljnssns](https://
 | Subscription FREE | Yes |
 | Local Streaming   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| Recommendations Supported | No |
+| [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| [Radio Mode](../ui.md#track-menu) | No |
 | Maximum Stream Quality | Lossy AAC (256kbps) |
 | Login Method | Cookie |
 
