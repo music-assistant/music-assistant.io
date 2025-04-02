@@ -9,9 +9,9 @@ Music Assistant has support for [Tidal](https://tidal.com). Contributed and main
 | Subscription FREE | No |
 | Local Streaming   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| Recommendations Supported | Yes |
+| [Recommendations](../ui.md#view-home) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | Yes |
+| [Radio Mode](../ui.md#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
 | Login Method | OAuth |
 
