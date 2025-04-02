@@ -4,8 +4,20 @@ Music Assistant has support for [iTunes Podcast Searching](https://podcasts.appl
 
 ## Features
 
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | No |
+| Media Types Supported | Podcasts |
+| Recommendations Supported | Yes |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| Maximum Stream Quality | Lossy, Variable Quality |
+| Login Method | None |
+
+### Other
+
 - Search for podcasts via the iTunes API
-- Supports recommendations on the [Home View](../ui.md/#view-home)
 
 ## Configuration
 
