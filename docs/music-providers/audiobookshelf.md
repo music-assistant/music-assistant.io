@@ -9,9 +9,9 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
 | Subscription FREE | Yes |
 | Local Streaming   | Yes |
 | Media Types Supported | Audiobooks, Podcasts |
-| Recommendations Supported | Yes |
+| [Recommendations](../ui.md#view-home) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| [Radio Mode](../ui.md#track-menu) | No |
 | Maximum Stream Quality | 192kHz 24 bit |
 | Login Method | Password or Token |
 
