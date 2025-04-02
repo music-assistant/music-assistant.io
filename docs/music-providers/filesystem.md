@@ -5,20 +5,31 @@ description: Features, Configuration, Issues and More for the File System Player
 
 # Filesystem Provider ![Preview image](../assets/icons/localfiles-icon.png){ width=70 align=right }
 
-Music Assistant has full support for reading your own (local) music files on disk or a remote server and catalogs it into the library, allowing playback to all player providers supported by Music Assistant. 
+Music Assistant has full support for reading your own (local) music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant. 
 
-When streaming providers are also availabe in MA linking will only occur when the same item is found in the "Library" of that streaming provider. However, additional tracks and albums will be seen in various views or via the global search which can then be added to the MA Library
+When streaming providers are also availabe in MA linking will only occur when the same item is found in the "Library" of that streaming provider. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
 
 ## Features
 
-- Support for Artists, Albums, Tracks and Playlists
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | Yes |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| Maximum Stream Quality | Lossless FLAC 192 kHz, 24 bit |
+| Login Method | Password or None |
+
+### Other
+
 - Searching the catalogue
-- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 - Local music is automatically included in the MA Library
-- Files are not favourited by default. You can see all items if you deselect the "favourite" filter (the heart) and decide for yourself what you want in your favourites
-- If you also have any streaming providers connected, your media will be automatically linked and completed with info from the streaming provider(s)
+- Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
+- If streaming providers are also connected, then the media will be automatically linked and completed with info from those streaming provider(s)
 - On playback, when tracks are linked across providers (or within the same provider) the highest quality version is used automatically
-- You can add multiple filesystem providers
+- It is possible to add multiple filesystem providers
 
 ## Configuration
 
