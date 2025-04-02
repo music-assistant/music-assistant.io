@@ -7,11 +7,22 @@ Music Assistant has support for streaming your music from [Nugsnet](https://www.
     
 ## Features
 
-- Support for Artists, Albums and Playlists
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | No |
+| Local Streaming   | No |
+| Media Types Supported | Artists, Albums, Playlists |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| Maximum Stream Quality | To be advised |
+| Login Method | Password |
+
+### Other
 
 ## Configuration
 
-To configure, you will simply need to input your username and password.
+To configure, input a username and password.
 
 ## Known Issues / Notes
 
