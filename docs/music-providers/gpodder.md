@@ -4,6 +4,18 @@ Music Assistant has support for [gPodder](https://gpodder.github.io). Contribute
 
 ## Features
 
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | No |
+| Media Types Supported | Podcasts |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| Maximum Stream Quality | Lossy, Variable Quality |
+| Login Method | Password or Nextcloud Login |
+
+### Other
 - Progress reporting and acquiring
 - Populates libraries with podcasts
 - Updates playlog on regular provider syncs
