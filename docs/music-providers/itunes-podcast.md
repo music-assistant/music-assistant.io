@@ -9,9 +9,9 @@ Music Assistant has support for [iTunes Podcast Searching](https://podcasts.appl
 | Subscription FREE | Yes |
 | Local Streaming   | No |
 | Media Types Supported | Podcasts |
-| Recommendations Supported | Yes |
+| [Recommendations](../ui.md#view-home) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| [Radio Mode](../ui.md#track-menu) | No |
 | Maximum Stream Quality | Lossy, Variable Quality |
 | Login Method | None |
 
