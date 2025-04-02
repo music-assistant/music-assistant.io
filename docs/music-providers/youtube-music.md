@@ -10,12 +10,20 @@ Music Assistant has support for Youtube Music. Contributed and maintained by [Ma
 
 ## Features
 
-- Support for Artists, Albums, Tracks and Playlists
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | No |
+| Local Streaming   | No |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
+| [Recommendations](../ui.md#view-home) Supported  Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](../ui.md#track-menu) | Yes |
+| Maximum Stream Quality | Lossy, AAC (256kbps) |
+| Login Method | Token + Cookie |
+
+### Other
 - Searching the YouTube Music catalogue
-- Supports Radio mode. (Starting a dynamic playlist based on an Artist, Album, Track or Playlist)
-- Max Quality: Lossy AAC (256kbps)
 - The highest available stream from Youtube Music will be selected for playback (similar to configuring 'high' in the web-app)
-- Podcasts are supported
 
 ## Configuration
 
