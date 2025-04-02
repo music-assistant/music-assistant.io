@@ -15,7 +15,7 @@ Music Assistant has support for Youtube Music. Contributed and maintained by [Ma
 | Subscription FREE | No |
 | Local Streaming   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
-| [Recommendations](../ui.md#view-home) Supported  Supported | No |
+| [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | Yes |
 | Maximum Stream Quality | Lossy, AAC (256kbps) |
