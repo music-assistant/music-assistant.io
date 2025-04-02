@@ -4,12 +4,21 @@ Music Assistant has support for music servers which work to the Open Subsonic AP
 
 ## Features
 
-- Support for Artists, Albums, Tracks and Playlists
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | Yes |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | Yes |
+| Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
+| Login Method | Password |
+
+### Other
+
 - Searching the Subsonic catalogue
-- Supports Radio mode
-- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 - All music tracks will be imported into MA
-- Podcasts are supported
 
 ## Configuration:
 You will need to provide the following to Music Assistant:

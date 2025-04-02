@@ -7,10 +7,22 @@ Music Assistant has support for [Apple Music](https://music.apple.com/)! Contrib
     - Audio playback is not officially supported by Apple, use at your own risk
 
 ## Features
-- Support for Artists, Albums, Tracks and Playlists
+
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | No |
+| Local Streaming   | No |
+| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | Yes |
+| Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
+| Login Method | Cookie |
+
+### Other
+
 - Searching the Apple Music catalogue
-- Supports Radio mode. (Starting a dynamic playlist based on an Artist, Album, Track or Playlist)
-- Max Quality: Lossy AAC (256kbps)
+
 
 ## Configuration
 Authentication with Apple Music happens through a Music User Token. Unfortunately, Apple does not officially support 'Login with Apple' for Apple Music, so you will need to obtain your own Music User Token. Instructions were written for Chrome:

@@ -6,6 +6,19 @@ The Podcast RSS Provider allows subscribing to podcast feeds. The RSS Feed only 
 
 ## Features
 
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | No |
+| Media Types Supported | Podcasts |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| Maximum Stream Quality | Lossy, Variable Quality |
+| Login Method | None |
+
+### Other
+
 - Allows parsing a standardized RSS podcast feed retrieved by a configured URL
 
 ## Configuration
