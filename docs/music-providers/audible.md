@@ -7,11 +7,23 @@ Music Assistant has support for streaming from Audible. Contributed and maintain
 
 ## Features
 
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | No |
+| Local Streaming   | No |
+| Media Types Supported | Podcasts |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| Maximum Stream Quality | Lossy, AAC Variable Bitrate |
+| Login Method | OAuth |
+
+### Other
+
 - The Audible library can be listed
 - Metadata for audiobooks will be populated
 - Playback can be resumed from the last position reported by Audible
 - Chapter navigation
-- Max Quality: Lossy AAC (Variable quality)
 
 ## Configuration
 
