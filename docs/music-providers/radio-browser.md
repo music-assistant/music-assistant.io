@@ -4,10 +4,20 @@ Music Assistant has support for [RadioBrowser](https://www.radio-browser.info/) 
 
 ## Features
 
-- You can use the search function.
-- You can add radio streams to your library.
-- Browse by country, by tag or by popularity
-- Max Quality: Varies by station
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | No |
+| Media Types Supported | Radio |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| Maximum Stream Quality | Varies by station |
+| Login Method | None |
+
+### Other
+
+- Browse by country, by tag, or by popularity
 
 ## Configuration
 
