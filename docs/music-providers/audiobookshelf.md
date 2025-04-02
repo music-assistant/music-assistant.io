@@ -63,14 +63,18 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
     - Newly added and just deleted items are immediately reflected as well
     - BUT: if MA was down while changes in the ABS database occured, those will only be synced if a normal provider sync is triggered
 - Single and multi-file audiobooks are supported
+- Supports recommendations on the [Home View](../ui.md/#view-home)
 
 ## Configuration
 
 The following is needed to setup this provider:
 
 - A server URL (e.g. `https://abs.domain.tld/` or `http://192.168.1.4:13378/` for a local server) of an Audiobookshelf instance. 
-- the username of an Audiobookshelf user
-- the password of this user
+- Authentication without [OIDC](https://www.audiobookshelf.org/guides/oidc_authentication/):
+    - the username of an Audiobookshelf user
+    - the password of this user
+- If [OIDC](https://www.audiobookshelf.org/guides/oidc_authentication/) is configured:
+    - Add the token in the specified field. This token can be obtained by an admin user for any user within the ABS settings -> users
 - Optionally podcasts with no episodes yet downloaded may be skipped when syncing
 - Optionally, SSL verification may be disabled
 

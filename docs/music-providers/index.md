@@ -15,3 +15,13 @@ General Notes:
     If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and using the ⋮ menu in the banner at the top of the view select "Refresh Item". This will trigger the linking process and should result in the same albums and tracks being collapsed together. Submit an issue report if this is required so that it can be investigated.
 
 ![image](../assets/screenshots/add-music-provider.png)
+
+## Summary
+
+The table below provides an at-a-glance summary of all of the music providers. Green ticks indicate a desirable quality or function is available. 
+
+Stream quality is indicated as either [Hi-Res](../player-support/index.md/#audio-quality), [CD quality](https://www.soundguys.com/high-bitrate-audio-is-overkill-cd-quality-is-still-great-16518/) or lossy with the codec and bitrate where available.
+
+The most user friendly login method is a password, followed by [OAuth](https://en.wikipedia.org/wiki/OAuth) and then the cookie method is least desirable.
+
+[![image](../assets/music-provider-summary.png)](../assets/music-provider-summary.png)
