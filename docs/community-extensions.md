@@ -4,7 +4,7 @@ description: A Collection of HA cards or dashboards
 ---
 
 # General
-This is a collection of third-party HA cards or dashboards for Music Assistant. Review the linked repos (the repo title is linked) for instructions and status of these projects. The complexity of these projects varies.
+This is a collection of community developed HA cards or dashboards for Music Assistant. Review the linked repos (the repo title is linked) for instructions and status of these projects. The complexity of these projects varies.
 ***************************************************************
 # [Music Assistant Jukebox](https://github.com/DanStennett/HAMusicAssistantJukebox)
 
