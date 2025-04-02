@@ -70,6 +70,7 @@ nav:
     - LastFM Scrobbler: plugins/lastfm_scrobble.md
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
     - plugins/spotify-connect.md
+  - Community Extensions: community-extensions.md
   - Support: support.md
   - I Want to Help / Donate:
       - help/index.md
