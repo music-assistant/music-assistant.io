@@ -12,9 +12,9 @@ Music Assistant has full support for Spotify media listing and playback.
 | Subscription FREE | No |
 | Local Streaming   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| Recommendations Supported | No |
+| [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | Yes |
+| [Radio Mode](../ui.md#track-menu) | Yes |
 | Maximum Stream Quality | Lossy, OGG Vorbis (320kbps) |
 | Login Method | OAuth |
 
