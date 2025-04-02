@@ -13,9 +13,9 @@ Music Assistant has support for [Deezer](https://www.deezer.com/). Contributed a
 | Subscription FREE | No |
 | Local Streaming   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| Recommendations Supported | No |
+| [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | Yes |
+| [Radio Mode](../ui.md#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (44.1 kHz / 16 bit) |
 | Login Method | OAuth + Cookie |
 
