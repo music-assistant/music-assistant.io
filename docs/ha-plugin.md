@@ -24,6 +24,6 @@ The Home Assistant Plugin can expose HA entities to MA that can then be mapped t
 
 - For mute controls, entities that can be turned on/off and have a boolean state will be shown. (i.e. switch, input_boolean and also media_player (where mute state will be mapped))
 
-- For volume controls, entities that can have a numeric value/state will be shown. (i.e. input_number and media_player (where volume_level will be mapped))
+- For volume controls, entities that can have a numeric value/state will be shown. (i.e. number, input_number and media_player (where volume_level will be mapped))
 
 When an entity is selected it will then appear as an option in an individual player's player control settings.
