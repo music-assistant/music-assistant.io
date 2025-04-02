@@ -16,9 +16,9 @@ When streaming providers are also availabe in MA linking will only occur when th
 | Subscription FREE | Yes |
 | Local Streaming   | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
-| Recommendations Supported | No |
+| [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| [Radio Mode](../ui.md#track-menu) | No |
 | Maximum Stream Quality | Lossless FLAC 192 kHz, 24 bit |
 | Login Method | Password or None |
 
