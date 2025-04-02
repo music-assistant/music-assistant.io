@@ -15,7 +15,7 @@ Music Assistant has support for [Apple Music](https://music.apple.com/)! Contrib
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | Yes |
+| [Radio Mode](../ui.md#track-menu) | Yes |
 | Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
 | Login Method | Cookie |
 
