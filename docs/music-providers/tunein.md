@@ -4,8 +4,20 @@ Music Assistant has support for [Tunein](https://tunein.com/)
 
 ## Features
 
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | No |
+| Media Types Supported | Radio |
+| Recommendations Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
+| Maximum Stream Quality | Varies by station |
+| Login Method | None |
+
+### Other
+
 - The stations which are in your TuneIn library will be imported into the MA library and be visible in the Radio view
-- Max Quality: Varies by station
  
 ## Configuration
 
