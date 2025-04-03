@@ -26,6 +26,9 @@ You will need to provide the following to Music Assistant:
 - A user name for the account you want Music Assistant to use to access your server
 - The password for this account
 
+!!! note
+    It is recommended that IP address is used instead of the domain name to avoid problems if IPv6 name resolution fails 
+
 ## Not Yet Supported:
 - Album types metadata
 
