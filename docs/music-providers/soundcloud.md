@@ -4,7 +4,16 @@ Music Assistant has support for Soundcloud. Contributed by [gieljnssns](https://
 
 ## Features
 
--  Max Quality: Lossy AAC (256kbps)
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | No |
+| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| [Recommendations](../ui.md#view-home) Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](../ui.md#track-menu) | No |
+| Maximum Stream Quality | Lossy AAC (256kbps) |
+| Login Method | Cookie |
 
 ## Configuration
 

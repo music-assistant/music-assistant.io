@@ -7,8 +7,16 @@ Music Assistant has support for streaming your music from [iBroadcast](https://w
     
 ## Features
 
-- Support for Artists, Albums, Tracks and Playlists
-- Max Quality: Lossless FLAC (24 bit, 192 kHz)
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | No |
+| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| [Recommendations](../ui.md#view-home) Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](../ui.md#track-menu) | No |
+| Maximum Stream Quality | Lossless FLAC (192 kHz / 24 bit) |
+| Login Method | Password |
 
 ## Configuration
 

@@ -4,9 +4,20 @@ Music Assistant has support for music servers which work to the Jellyfin definit
 
 ## Features
 
-- Support for Albums, Artists, Tracks Playlists 
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | Yes |
+| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| [Recommendations](../ui.md#view-home) Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](../ui.md#track-menu) | No |
+| Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
+| Login Method | Password |
+
+### Other
+
 - Search from 'Music' libraries on the Jellyfin server
-- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 
 ## Configuration:
 You will need to provide the following to Music Assistant:
@@ -14,6 +25,9 @@ You will need to provide the following to Music Assistant:
 - A server url (e.g. https://music.domain.tld/ or http://192.168.1.4:8096/ for a local server)
 - A user name for the account you want Music Assistant to use to access your server
 - The password for this account
+
+!!! note
+    It is recommended that IP address is used instead of the domain name to avoid problems if IPv6 name resolution fails 
 
 ## Not Yet Supported:
 - Album types metadata

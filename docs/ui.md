@@ -114,6 +114,17 @@ In any of the following views, Right click or long press on a track to get the f
 The START RADIO option will only be seen if there is a provider that supports it. Start Radio populates the queue with tracks based on the selected track. The tracks are selected by the provider not MA. 
 ***************************************************************
 
+## View - Home
+
+[![image](assets/screenshots/homescreen.png)](assets/screenshots/homescreen.png)
+
+The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which provider supports this feature.
+
+The view is fully configurable. Select the ⋮ menu on the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
+
+[![image](assets/screenshots/homescreen_edit.png)](assets/screenshots/homescreen_edit.png)
+***************************************************************
+
 ## View - Artist / Album / Track
 
 [![image](assets/screenshots/UI-artist-view.png)](assets/screenshots/UI-artist-view.png)

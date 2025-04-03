@@ -4,10 +4,20 @@ Music Assistant has support for [Tidal](https://tidal.com). Contributed and main
 
 ## Features
 
-- Support for Artists, Albums, Tracks and Playlists
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | No |
+| Local Streaming   | No |
+| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| [Recommendations](../ui.md#view-home) Supported | Yes |
+| Lyrics Supported | No |
+| [Radio Mode](../ui.md#track-menu) | Yes |
+| Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
+| Login Method | OAuth |
+
+### Other
+
 - Searching the Tidal catalogue
-- Supports Radio mode. (Starting a dynamic playlist based on an Artist, Album, Track or Playlist)
-- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 - Items in your Tidal library will be marked as "Favourites" in Music Assistant
 - Marking an item as a "Favourite" from the Music Assistant interface will also mark it as favourite in Tidal
 - On playback, the highest quality FLAC HiFi version will be selected
@@ -33,6 +43,4 @@ In the configuration, there are a series of steps that must be completed in orde
 
 ## Not yet supported
 
-- Recommendations ([see this feature request](https://github.com/music-assistant/hass-music-assistant/discussions/535))
 - Multiple accounts (this is being worked on and available soon)
-- Mixes

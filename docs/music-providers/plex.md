@@ -7,9 +7,20 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by [micha
 
 ## Features
 
-- Support for Albums, Artists, Tracks Playlists 
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Local Streaming   | Yes |
+| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| [Recommendations](../ui.md#view-home) Supported | No |
+| Lyrics Supported | No |
+| [Radio Mode](../ui.md#track-menu) | No |
+| Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
+| Login Method | Password |
+
+### Other
+
 - Search the Plex server
-- Max Quality: Lossless FLAC (24 bit, 192 kHz)
 
 ## Configuration
 
