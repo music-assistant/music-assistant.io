@@ -3,7 +3,7 @@
 The Builtin provider supports playback directly to the Music Assistant Frontend, enabling easy playback to the current device. It allows playback from outside the network on which the MA server resides. 
 
 !!! note
-    This provider is still in an early stage of development. Functionality may change
+    This provider is still in development. Functionality may change
     
 ## Features
 
@@ -13,7 +13,8 @@ The Builtin provider supports playback directly to the Music Assistant Frontend,
 
 ## Known Issues / Notes
 
-The player appears automatically in the player list and is enabled by pressing the Power button.
+- The player appears automatically in the player list and is enabled by pressing the Power button
+- The player can be disabled on a per client basis via an option in MA SETTINGS >> FRONTEND
 
 ## Not Yet Supported
 
