@@ -10,7 +10,7 @@ Music Assistant has support for streaming your music from [Nugsnet](https://www.
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | No |
-| Local Streaming   | No |
+| Self-Hosted Local Media   | No |
 | Media Types Supported | Artists, Albums, Playlists |
 | Recommendations Supported | No |
 | Lyrics Supported | No |
