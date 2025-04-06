@@ -10,6 +10,6 @@ The Music Assistant integration for Home Assistant provides a connection from MA
 
 - The integration is an official part of Home Assistant, there is no need to install custom components
 
-See also the documentation from Home Assistant about the Music Assistant integration: https://www.home-assistant.io/integrations/music_assistant/
+See also the [documentation from Home Assistant about the Music Assistant integration](https://www.home-assistant.io/integrations/music_assistant/)
 
 Note that there is also a [Home Assistant provider](../player-support/ha.md) within MA which functions the other way around. It enbles Home Assistant functionality (and players) in Music Assistant!
