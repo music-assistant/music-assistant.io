@@ -9,7 +9,7 @@ Announcements are either Text-to-Speech or audio files that are sent (from Home 
 
 ## Overview
 
-If music is playing this will be temporarily paused and restored after the announcement.
+If music is being played by MA then this will be temporarily paused and restored after the announcement.
 
 Players will be powered on before the announcement and then off again if it was not powered/active before the announcement.
 
