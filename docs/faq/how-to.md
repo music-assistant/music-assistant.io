@@ -206,7 +206,7 @@ data:
 
 Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
 
-You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results.
+You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URi is also shown in the [Provider Details section][../ui.md/#view-individual-artist] at the bottom of the item views and can be copied to the clipboard using the chain link icon.
 
 !!! note
     URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
