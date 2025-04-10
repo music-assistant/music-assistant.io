@@ -65,6 +65,7 @@ nav:
     - Snapcast: player-support/snapcast.md
     - Sonos: player-support/sonos.md
     - Squeezelite: player-support/squeezelite.md
+  - Metadata Providers: metadata.md
   - Plugins:
     - Home Assistant Plugin: ha-plugin.md
     - LastFM Scrobbler: plugins/lastfm_scrobble.md
