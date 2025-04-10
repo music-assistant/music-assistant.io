@@ -188,7 +188,7 @@ Thanks to [AAsikki](https://github.com/Aasikki) who showed us [here](https://git
 
 # Use MA with Mopidy
 
-See here https://github.com/music-assistant/hass-music-assistant/discussions/439
+See here https://github.com/orgs/music-assistant/discussions/439
 
 # Get the URI?
 
