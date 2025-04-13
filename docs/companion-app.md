@@ -48,7 +48,7 @@ Example of Discord Rich Presence:
 
 You can download the .msi installer from the [releases](https://github.com/music-assistant/companion/releases/latest/).
 
-### MacOS
+### macOS
 
 You can download the .dmg from the [releases](https://github.com/music-assistant/companion/releases/latest/).
 

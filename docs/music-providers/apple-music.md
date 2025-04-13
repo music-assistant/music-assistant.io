@@ -38,7 +38,7 @@ Authentication with Apple Music happens through a Music User Token. Unfortunatel
 Note the "Expires / Max-Age" column. Your token will expire on that date and Apple Music within Music Assistant will stop working. You will have to repeat the above process to obtain a fresh token. We will try to find an unofficial way to implement 'Login with  Apple' to make it easier to authenticate with Apple Music, but until then, this is the way to authenticate.
 
 ## Known Issues / Notes
-- Due to Apple's proprietary encryption (Fairplay), Lossless and Dolby Atmos versions of songs are not supported
+- Due to Apple's proprietary encryption (FairPlay), Lossless and Dolby Atmos versions of songs are not supported
 - MA can only play an uploaded track if Apple has linked it to an online version in the Apple Music catalog. If that link is not found, MA will not do the import
 
 ## Not yet supported

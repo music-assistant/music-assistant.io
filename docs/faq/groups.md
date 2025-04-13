@@ -51,7 +51,7 @@ After selecting ADD GROUP PLAYER as shown above, the group configuration screen 
 - As mentioned above the group player holds the queue rather than any individual player. However, if the group leader is lost then playback will stop but the queue can be restarted
 - The group will not power on if one of the child players is synced to another group
 - If, in the group settings, the player friendly name has been replaced by an unusual ID then likely the player was seen by the MA logic as unavailable. Check the individual player status
-- When adding a player to an already playing group, Airplay, Snapcast and Sonos will keep playing but all other types will pause for a very brief period to resync
+- When adding a player to an already playing group, AirPlay, Snapcast and Sonos will keep playing but all other types will pause for a very brief period to resync
 
 ## Universal Groups
 

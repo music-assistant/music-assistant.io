@@ -102,11 +102,11 @@ Possibly your browser is using a cached version of the front end. Try forcing a 
 
 if the above doesn’t work look [here for some more options](https://www.webinstinct.com/faq/how-to-disable-browser-cache)
 
-For the IOS app see [here](https://community.home-assistant.io/t/anyone-know-how-to-clear-cache-in-the-ios-app/64569/10)
+For the iOS app see [here](https://community.home-assistant.io/t/anyone-know-how-to-clear-cache-in-the-ios-app/64569/10)
 
 # The second zone of my amplifier is not seen by MA or MA won't turn on my amplifier
 
-MA is an INPUT to your amplifier. So you need to power on your amplifier and then select the INPUT that MA is streaming to (e.g. Airplay, DLNA, Chromecast). For this reason MA does not see the amplifier zones it only sees the compatible inputs of the amplifier. 
+MA is an INPUT to your amplifier. So you need to power on your amplifier and then select the INPUT that MA is streaming to (e.g. AirPlay, DLNA, Chromecast). For this reason MA does not see the amplifier zones it only sees the compatible inputs of the amplifier. 
 
 Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](../player-support/index.md#player-controls). 
 
