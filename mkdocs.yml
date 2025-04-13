@@ -116,7 +116,7 @@ extra:
   social:
     - icon: ohf-logo-colour
       link: https://www.openhomefoundation.org/
-      name: Project from the Open Home Foundation
+      name: MA is a project from the Open Home Foundation
     - icon: fontawesome/brands/github
       link: https://github.com/music-assistant
       name: Music Asisstant on Github
