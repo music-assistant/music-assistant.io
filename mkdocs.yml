@@ -79,7 +79,7 @@ nav:
 
 theme:
   custom_dir: overrides
-  favicon: assets/favicon-orange.png
+  favicon: assets/favicon-blue.png
   logo: assets/transparent-logo.png
   name: material
   font:
@@ -114,6 +114,9 @@ plugins:
       minify_html: true
 extra:
   social:
+    - icon: ohf-logo-colour
+      link: https://www.openhomefoundation.org/
+      name: Project from the Open Home Foundation
     - icon: fontawesome/brands/github
       link: https://github.com/music-assistant
       name: Music Asisstant on Github
@@ -147,4 +150,4 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 copyright: |
-  &copy; 2024 <a href="https://github.com/music-assistant"  target="_blank" rel="noopener">Music Assistant</a>
+  &copy; 2025 <a href="https://www.openhomefoundation.org/"  target="_blank" rel="noopener">Open Home Foundation</a>
