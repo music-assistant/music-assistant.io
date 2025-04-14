@@ -10,7 +10,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by [micha
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
-| Local Streaming   | Yes |
+| Self-Hosted Local Media | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
