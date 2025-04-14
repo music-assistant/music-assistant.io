@@ -7,7 +7,7 @@ Music Assistant has support for Soundcloud. Contributed by [gieljnssns](https://
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
-| Local Streaming   | No |
+| Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
