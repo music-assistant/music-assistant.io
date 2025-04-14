@@ -11,7 +11,7 @@ Music Assistant has support for [Apple Music](https://music.apple.com/)! Contrib
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | No |
-| Local Streaming   | No |
+| Self-Hosted Local Media   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
