@@ -7,7 +7,7 @@ Music Assistant has support for [RadioBrowser](https://www.radio-browser.info/) 
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
-| Local Streaming   | No |
+| Self-Hosted Local Media | No |
 | Media Types Supported | Radio |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
