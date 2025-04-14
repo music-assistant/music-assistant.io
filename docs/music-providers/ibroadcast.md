@@ -10,7 +10,7 @@ Music Assistant has support for streaming your music from [iBroadcast](https://w
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
-| Local Streaming   | No |
+| Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
