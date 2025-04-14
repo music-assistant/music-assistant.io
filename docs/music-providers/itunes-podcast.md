@@ -7,7 +7,7 @@ Music Assistant has support for [iTunes Podcast Searching](https://podcasts.appl
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
-| Local Streaming   | No |
+| Self-Hosted Local Media | No |
 | Media Types Supported | Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | Yes |
 | Lyrics Supported | No |

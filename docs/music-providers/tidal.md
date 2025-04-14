@@ -7,7 +7,7 @@ Music Assistant has support for [Tidal](https://tidal.com). Contributed and main
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | No |
-| Local Streaming   | No |
+| Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](../ui.md#view-home) Supported | Yes |
 | Lyrics Supported | No |

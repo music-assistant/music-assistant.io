@@ -10,7 +10,7 @@ Music Assistant has support for streaming live radio stations from SiriusXM. Con
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | No |
-| Local Streaming   | No |
+| Self-Hosted Local Media | No |
 | Media Types Supported | Radio |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
