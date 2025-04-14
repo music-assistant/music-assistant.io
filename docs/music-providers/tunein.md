@@ -7,7 +7,7 @@ Music Assistant has support for [Tunein](https://tunein.com/)
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
-| Local Streaming   | No |
+| Self-Hosted Local Media | No |
 | Media Types Supported | Radio |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
