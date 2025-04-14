@@ -7,7 +7,7 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
-| Local Streaming   | Yes |
+| Self-Hosted Local Media   | Yes |
 | Media Types Supported | Audiobooks, Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | Yes |
 | Lyrics Supported | No |
