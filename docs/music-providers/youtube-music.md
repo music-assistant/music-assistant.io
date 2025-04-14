@@ -13,7 +13,7 @@ Music Assistant has support for Youtube Music. Contributed and maintained by [Ma
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | No |
-| Local Streaming   | No |
+| Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
