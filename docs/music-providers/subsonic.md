@@ -7,7 +7,7 @@ Music Assistant has support for music servers which work to the Open Subsonic AP
 |           |                     |
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
-| Local Streaming   | Yes |
+| Self-Hosted Local Media | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
