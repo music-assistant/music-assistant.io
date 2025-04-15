@@ -118,6 +118,7 @@ If you run into any issues when using a docker install vs the recommended/standa
 
 - Music Assistant uses a custom stream port (TCP 8097 by default) to stream audio to players. Players must be able to reach the Home Assistant instance and this port. If you're running one of the recommended HAOS installation methods, this is all handled for you, otherwise you will have to make sure you're running MA in a container with HOST network mode and with the privileges shown in the example docker compose above. Note: If the default port 8097 is occupied, the next port will be tried, and so on
 - Any restriction of the available ports (e.g. trying to run MA through a firewall) is not supported as protocols like AirPlay open random tcp and/or udp ports
+- Attempting to create or manipulate a playlist or queue with more than a thousand items can cause unresponsivness or high resource usage depending on the resources of the host
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon
