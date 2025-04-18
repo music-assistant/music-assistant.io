@@ -26,4 +26,4 @@ The Home Assistant Plugin can expose HA entities to MA that can then be mapped t
 
 - For volume controls, entities that can have a numeric value/state will be shown. (i.e. number, input_number and media_player (where volume_level will be mapped))
 
-When an entity is selected it will then appear as an option in an individual player's player control settings.
+When an entity is selected it will then appear as an option in an individual player's [Player Controls](https://www.music-assistant.io/player-support/#player-controls) settings.
