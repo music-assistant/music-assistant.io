@@ -16,6 +16,12 @@ General Notes:
 
 ![image](../assets/screenshots/add-music-provider.png)
 
+## Settings
+
+All Music Providers have settings which can be configured. The settings page will look similar to the following. The text `Check out the documentation` is a hyperlink to the relevant page in this documentation. Specific help for a setting or configurable field is often available and is accessed by selecting the question mark in a box on the right hand side. All providers can be given a custom name and disabled if necessary. The log level can be adjusted for all providers and is found in the advanced settings. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). See the provider pages for provider specific settings.
+
+![image](../assets/screenshots/generic-settings.png)
+
 ## Summary
 
 The table below provides an at-a-glance summary of all of the music providers. Green ticks indicate a desirable quality or function is available. 
