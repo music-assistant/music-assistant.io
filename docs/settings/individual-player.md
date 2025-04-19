@@ -1,6 +1,6 @@
 # Individual Player Settings
 
-Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them
+Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them.
 
 ![image](../assets/screenshots/individual-player-settings.png)
 
@@ -16,7 +16,31 @@ Individual Player Settings are usually quite extensive. The typical headings of 
 - Volume Normalization
 - Limiter
 - Output Channel Mode
-- DSP
+
+### DSP Settings
+
+All providers have the option to apply [Digital Signal Processing](https://en.wikipedia.org/wiki/Digital_signal_processing) (DSP) filters to the audio stream. DSP lets you shape and refine the audio with a variety of filters. Use it to tailor the sound to a room's acoustics, compensate for speaker characteristics, and fine-tune the frequency balance to personal taste.
+
+The DSP option is found in the MA settings for each player which means that each player has its own independently configurable DSP settings.
+
+Individual player DSP settings will be used for playback to AirPlay, Squeezelite and Universal groups. For all other group types DSP will be disabled.
+
+The DSP path consists of an INPUT pre-amplifier for initial gain control, followed by optional audio filters that can be added between input and output (multiple times if desired). The following filters are available:
+
+- [Parametric Equalizer](../dsp/parametriceq.md)
+- [Tone Controls](../dsp/tonecontrols.md)
+
+The path ends with an OUTPUT stage that provides both gain control and a limiter (enabled by default) to prevent signal clipping.
+
+The DSP settings can be enabled and disabled via a toggle which allows easy [A-B testing](https://www.youtube.com/watch?v=KefGjPYyIO4)
+
+The line on the left of the DSP settings represents the audio path, in sequential order, from the audio file (top) to the player (bottom).
+
+A dot on the line represents a component that changes the signal. The lack of a dot indicates that the particular component has been disabled.
+
+Using the icons at the top of the view, the additional filters can be reordered, disabled/enabled or deleted.
+
+![DSP image](../assets/screenshots/dsp.jpg)
 
 ## Advanced Settings
 
