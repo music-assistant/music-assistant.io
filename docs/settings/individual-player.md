@@ -1,14 +1,16 @@
 # Individual Player Settings
 
-Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them.
+Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. Groups have the same sections but less settings available.
 
 ![image](../assets/screenshots/individual-player-settings.png)
 
 ## Generic Settings
 
 - Icon
-- Enable queue flow mode
+- Enable queue flow mode (not available all providers)
 - When to hide the player in the UI
+- dyanmic group members toggle (for sync groups)
+- group member selection
 
 ## Audio
 
@@ -46,10 +48,12 @@ Using the icons at the top of the view, the additional filters can be reordered,
 
 - Crossfade duration
 - Target level for volume normalization
- -Toggle to expose to HA
- -Supported sample rates
- -Output codec
- -HTTP profile
+- Toggle to expose to HA
+- Supported sample rates
+- Output codec
+- HTTP profile
+- Try to ingest metadata into stream (ICY)
+- Audio synchronisation delay correction
 
 - Toggle to use MA Cast App
 
@@ -70,3 +74,8 @@ It is possible to map other HA entities to the MA player controls. in order for 
 **Mute** There is a FAKE option that will set the volume to zero and restore it when mute and unmute is commanded.
 
 Also in this section is the option `Automatically play (resume on power on)` which will automatically start playback if there are items in the queue for the player.
+
+## Provider Specific Settings
+
+- Airplay
+- Squeezelite PRESETS
