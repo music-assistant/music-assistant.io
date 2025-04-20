@@ -17,6 +17,10 @@ MA includes a built-in Snapserver although an external server can also be used. 
 - Synchronized playback across all Snapcast devices
 - Lossless audio quality with options for 48 kHz /16bits PCM
 
+## Settings
+
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider.md) and [Individual Player Settings](../settings/individual-player.md) pages.
+
 ## Known Issues / Notes
 
 - The Snapcast provider will use the built-in Snapserver by default although a switch in the settings allows the use of an external server if desired. When using an external server the server IP and port must be entered
