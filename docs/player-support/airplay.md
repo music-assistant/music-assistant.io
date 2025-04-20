@@ -10,6 +10,16 @@ Music Assistant has support for AirPlay based devices. This includes Apple devic
 - The player settings include some basic equaliser settings
 - The player settings allow configuration of stereo pairs of speakers
 
+## Settings
+
+In addition to the [standard settings](../settings/individual-player.md) the AirPlay provider also has a unique section called `AirPlay Specific Settings`. The available settings are:
+
+- <b>Enable encryption.</b> Enable encrypted communication if required by the player 
+- <b>Enable compression.</b> Enable to save some bandwidth by sending the audio as (lossless) ALAC
+- <b>Device password.</b> If the device requires a password to play then it is added here
+- <b>Audio buffer.</b> Amount of buffer (in milliseconds) the player should keep to absorb network throughput jitter. If audio dropouts are experienced, try increasing this value. The default is 1000
+- <b>Ignore volume reports sent by the device itself.</b> The AirPlay protocol allows devices to report their own volume level. For some devices this is not reliable and can cause unexpected volume changes. Enable this option to ignore these reports
+
 ## Known Issues / Notes
 
 - Music Assistant implements RAOP (AirPlay 1) only, AirPlay 2 devices should be backwards compatible by default. If a device has a bad implementation of AirPlay 1 and/or only supports AirPlay 2 then it won't work

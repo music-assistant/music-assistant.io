@@ -9,6 +9,10 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 - When using Google cast groups then perfect sync across players in that group is possible
 - Any physical control buttons on the device should be supported as well as voice control
 
+## Settings
+
+In addition to the [standard settings](../settings/individual-player.md) the Google Cast provider also has a unique setting in the Advanced section. <b>Use Music Assistant Cast App</b> is on by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
+
 ## Known Issues / Notes
 
 - Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](../faq/tech-info.md/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
