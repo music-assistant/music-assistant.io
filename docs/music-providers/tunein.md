@@ -21,7 +21,7 @@ Music Assistant has support for [Tunein](https://tunein.com/)
  
 ## Configuration
 
-In the configuration, you only need to add your login name.
+In the Generic Settings, add your Username.
 
 ## Known Issues / Notes
 
