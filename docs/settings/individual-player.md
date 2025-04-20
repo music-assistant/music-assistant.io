@@ -15,7 +15,7 @@ Individual Player Settings are usually quite extensive. The typical headings of 
 ## Audio
 
 - <b>Enable Crossfade.</b> This toggle enables the crossfade transition between tracks. The crossfade duration is set in the [Advanced Settings](#advanced-settings)
-- <b>Enable Volume Normalization.</b> This setting should normally remain enabled to avoid differing volume levels between tracks from different sources. Read more about this on the [Technical Information page](../faq/tech-info.md#volume-normalization)
+- <b>Enable Volume Normalization.</b> This setting should normally remain enabled to avoid differing volume levels between tracks from different sources. Read more about this on the [Technical Information page](../faq/tech-info.md#volume-normalization). The target level is set in the [Advanced Settings](#advanced-settings)
 - <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track
 - <b>Output Channel Mode.</b> This setting allows for selection of which channel is sent to a player. The options are `Stereo`, `Left`, `Right`, or `Mono`
 - <b>DSP Settings.</b> The button to enter the DSP settings view is in this section. The functionality of the view is described next
@@ -48,7 +48,7 @@ Using the icons at the top of the view, the additional filters can be reordered,
 ## Advanced Settings
 
 - <b>Crossfade duration.</b> This slider is enabled when crossfade is enabled in the [Audio section](#audio). The default setting is 8 seconds
-- <b>Target level for [Volume Normalization](../faq/tech-info.md#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping.
+- <b>Target level for [Volume Normalization](../faq/tech-info.md#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping. Volume Normalization is enabled and disabled in the [Audio](#audio) section
 - <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
 - <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
 - <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV.
