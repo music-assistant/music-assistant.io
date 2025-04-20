@@ -33,6 +33,8 @@ When streaming providers are also availabe in MA linking will only occur when th
 
 ## Configuration
 
+Separate providers must be added for Music, Audiobooks and Podcasts.
+
 **Your files are on a disk/folder of the device running Music Assistant Server**
 
 If your files are actually stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, you should select the filesystem (local disk) option and enter the path to the files. 
@@ -43,6 +45,15 @@ If your files are actually stored on the device running Music Assistant, for exa
 **Your files are on a remote share, such as a NAS or other (SMB/CIFS) server**
 
 Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS. Select the music provider "Filesystem (remote share)" and configure the (fqdn) hostname (or alternatively the IP address) to your server, the name of the share and optionally any subfolders.
+
+### Settings
+
+In addition to the settings outlined above to configure the provider there are additional settings available for this provider:
+
+- <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly in the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled. By default, `Various Artists' will be used but the other options available are `Track Artist` and 'Folder name (if possible)`.
+- <b>Ignore playlists with album tracks within album folders.</b> Some users have a playlist per album. For large collections this results in an unusable Playlist View. To avoid this situation, this setting, which is enabled by default, will result in playlists which are more than one level below the root folder of the provider to be ignored
+- <b>Content type in media folder(s).</b> This setting defines the content type of the provider and is necessary for Music, Audiobooks and Podcasts to be correctly identified
+- <b>Advanced - Mount options.</b> This field allows the options of the mount command, which is used at the operating system level to provide access to the share, to be specified. The default options should work for the majority of users and thus do not need to be modified
 
 ## Known Issues / Notes
 
