@@ -6,6 +6,10 @@ The Builtin provider supports manually adding track and radio station URLs to th
 
 - You can add tracks accessible via URL or any online station. You can also add your locally created stations using, for example, [Icecast](https://icecast.org/).
 
+## Settings
+
+For each of the builtin playlists there is a toggle to enable or disable them. 
+
 ## Usage
 
 1. In the main menu select 'Tracks' or 'Radio'

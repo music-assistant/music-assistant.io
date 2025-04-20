@@ -22,6 +22,7 @@ Music Assistant has support for [iTunes Podcast Searching](https://podcasts.appl
 ## Configuration
 
 - Configure your country
+- Specify the Maximum number of episodes to be retrieved (use 0 for all)
 - Optionally disable explicit results
 
 ## Known Issues / Notes
