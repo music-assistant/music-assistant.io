@@ -80,4 +80,4 @@ Providers with unique settings are:
 
 - [AirPlay](../player-support/airplay.md/#settings)
 - [Squeezelite](../player-support/squeezelite.md/#settings)
-- [Chromecast](../player-support/google-cast.md/#settings)
+- [Google Cast](../player-support/google-cast.md/#settings)
