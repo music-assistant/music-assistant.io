@@ -53,7 +53,7 @@ As of Nov 2024, Google has removed OAuth authentication from YT Music. This mean
 [![Cookie value](../assets/screenshots/ytmusic-cookie-value.png)](../assets/screenshots/ytmusic-cookie-value.png)
 
 ### Installing the PO Token addon
-As of March 2025, Google has implemented a new security mechanism called 'PO Tokens' (Proof of Origin). Music Assistant will not be able to resolve stream urls for your music without a valid PO Token. Luckily, we can automatically generate this for you, but you will need to install an add-on (also available as docker image) for this.
+As of March 2025, Google has implemented a new security mechanism called 'PO Tokens' (Proof of Origin). Music Assistant will not be able to resolve stream urls for your music without a valid PO Token. Luckily, we can automatically generate this for you, but you will need to install an add-on (also available as a docker image) for this.
 
 - Within Home Assistant, go to Settings > Add-ons > Add-on Store
 - Scroll down to the 'Music Assistant' section.
@@ -65,9 +65,10 @@ As of March 2025, Google has implemented a new security mechanism called 'PO Tok
 
 ### Configuring the provider 
 - Navigate to 'Settings'
-- Under Music Providers, click 'Add new', select 'Youtube Music'
-- For username, just use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
-- For cookie, paste the value you obtained above.
+- Under Music Providers, click 'Add new', select 'Youtube Music' and fill out the fields in the Generic Settings section as follows:
+    - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
+    - <b>Login Cookie.</b> Paste the value obtained above
+    - <b>PO Token Server URL.</b> Leave this setting as the default if running the PO server as an add-on on the same host as the MA add-on. If running the PO token server separately then adjust the IP address and port accordingly
 - Click 'Save'
 
 !!! warning "Error on Saving"
