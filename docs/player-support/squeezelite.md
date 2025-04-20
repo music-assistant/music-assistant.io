@@ -15,10 +15,10 @@ Squeezelite clients are available for, and can run on, almost any hardware from 
 
 ## Settings
 
-In addition to the [standard settings](../settings/individual-player.md) the Squeezelite provider also has a unique setting in the Advanced section and a unique Presets section
+In addition to the [Individual Player Settings](../settings/individual-player.md) the Squeezelite provider also has a unique setting in the Advanced section and a unique Presets section
 
-- <b>Advanced - Enable Display Support.</b> Some Squeezelite hardware have a display and this setting enables support. When enabled, a second option is made available to select the `Visualization type`.
-- <b>Presets.</b> Real Squeezebox hardware or jive(lite) based emulators support presets. This section allows the assignment of [Playlists](../usage.md/#playlists) or Radio Stations to those presets.
+- <b>Advanced - Enable Display Support.</b> Some Squeezelite hardware have a display and this setting enables support. When enabled, a second option is made available to select the `Visualization type`
+- <b>Presets.</b> Real Squeezebox hardware or jive(lite) based emulators support presets. This section allows the assignment of [Playlists](../usage.md/#playlists) or Radio Stations to those presets
 
 ## Known Issues / Notes
 
