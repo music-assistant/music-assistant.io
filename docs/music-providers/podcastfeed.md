@@ -23,7 +23,7 @@ The Podcast RSS Provider allows subscribing to podcast feeds. The RSS Feed only 
 
 ## Configuration
 
-A URL to the RSS feed must be configured.
+In the Generic Settings add the full RSS feed URL.
 
 ## Known Issues / Notes
 
