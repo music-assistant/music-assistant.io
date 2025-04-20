@@ -7,6 +7,10 @@ Music Assistant has support for streaming to devices running the Fully Kiosk Bro
 - This is a basic player
 - Multiple Fully Kiosk browser players can be added
   
+## Settings
+
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider.md) and [Individual Player Settings](../settings/individual-player.md) pages.
+
 ## Known Issues / Notes
 
 - The Fully Kiosk player must be manually added
