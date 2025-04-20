@@ -6,6 +6,10 @@ Music Assistant has support for [Bluesound](https://www.bluesound.com/) (BlueOS)
 
 - Bluesound devices are auto detected by Music Assistant
 
+## Settings
+
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider.md) and [Individual Player Settings](../settings/individual-player.md) pages.
+
 ## Known Issues / Notes
 
 - Alternative inputs might not be detected
