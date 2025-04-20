@@ -14,6 +14,10 @@ Music Assistant has support for uPnP/DLNA based devices. This is a (somewhat) un
 
 - DLNA devices are auto detected in Music Assistant
 
+## Settings
+
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider.md) and [Individual Player Settings](../settings/individual-player.md) pages.
+
 ## Known Issues / Notes
 
 - Some devices need special workarounds to enable playback. If playback is not working, look at the Music Assistant logs for clues and report an issue with these logs provided. Unfortunately due to the difficulty in resolving these issues they are low priority. If your device supports a different protocol then use that instead of raising an issue
