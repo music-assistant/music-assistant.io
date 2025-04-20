@@ -23,6 +23,10 @@ If the `Enable AirPlay` option is then selected, the playback command(s) will be
 !!! note "Note"
     You can also accomplish this by bypassing the whole Sonos integration and only use the AirPlay-equivalent of all the Sonos speakers but this is not preferable as not all Sonos speakers have AirPlay capabilities and syncing a player with the AirPlay protocol introduces a small silence due to the stream restart.
 
+## Settings
+
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider.md) and [Individual Player Settings](../settings/individual-player.md) pages.
+
 ## Known Issues / Notes
 
 - Issues have been reported with the Sonos Arc and Unifi networking equipment. Ensure Multicast DNS and IGMP snooping are turned on if you have problems

@@ -11,7 +11,7 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 
 ## Settings
 
-In addition to the [standard settings](../settings/individual-player.md) the Google Cast provider also has a unique setting in the Advanced section. <b>Use Music Assistant Cast App</b> is on by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
+In addition to the [Individual Player Settings](../settings/individual-player.md) the Google Cast provider also has a unique setting in the Advanced section. <b>Use Music Assistant Cast App</b> is on by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
 
 ## Known Issues / Notes
 

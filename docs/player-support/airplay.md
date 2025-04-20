@@ -12,7 +12,7 @@ Music Assistant has support for AirPlay based devices. This includes Apple devic
 
 ## Settings
 
-In addition to the [standard settings](../settings/individual-player.md) the AirPlay provider also has a unique section called `AirPlay Specific Settings`. The available settings are:
+In addition to the [Individual Player Settings](../settings/individual-player.md) the AirPlay provider also has a unique section called `AirPlay Specific Settings`. The available settings are:
 
 - <b>Enable encryption.</b> Enable encrypted communication if required by the player 
 - <b>Enable compression.</b> Enable to save some bandwidth by sending the audio as (lossless) ALAC

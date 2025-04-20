@@ -27,6 +27,10 @@ Before the Player Provider can be added the [Plugin](../ha-plugin.md) must be in
 !!! note
     Features are most likely limited with these players. Always prefer a native player provider if it exists in MA as that is optimised
 
+## Settings
+
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider.md) and [Individual Player Settings](../settings/individual-player.md) pages.
+
 ## Known Issues / Notes
 
 - This player provider is not enabled by default and must be added via MA settings however before it is available you must setup the Home Assistant Plug-in Provider
