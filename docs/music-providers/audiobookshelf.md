@@ -82,7 +82,7 @@ The following is needed to setup this provider:
 
 ### Advanced Settings
 
-- <b>Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. Enabled is the default setting
+- <b>Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. This is on by default
 - <b>Hide empty podcasts.</b> Podcasts with no episodes yet downloaded may be skipped when syncing
 
 ## Known Issues / Notes
