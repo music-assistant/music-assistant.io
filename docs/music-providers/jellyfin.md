@@ -35,7 +35,7 @@ You will need to provide the following to Music Assistant:
     It is recommended that IP address is used instead of the domain name to avoid problems if IPv6 name resolution fails 
 ### Settings
 
-- <b>Advanced - Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections
+- <b>Advanced - Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. This is on by default
 
 ## Not Yet Supported:
 - Album types metadata
