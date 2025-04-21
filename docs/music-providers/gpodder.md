@@ -26,20 +26,26 @@ A [mygpo](https://github.com/gpodder/mygpo) compatible web service is supported,
 [opodsync](https://github.com/kd2org/opodsync)
 To setup this functionality you need:
 
-- the service URL, e.g. `http://192.168.1.20:14000` or `https://sync.yourdomain.com` 
-- your username
-- your password
-- a device id
+- <b>gPodder Service URL.</b> For example, `http://192.168.1.20:14000` or `https://sync.yourdomain.com` 
+- <b>Username.</b>
+- <b>Password.</b>
+- <b>Device ID.</b>
 
-The device id can be any ascii string, but keep in mind, that this is used for syncing.
-So another client must use the same device id.
+!!! note 
+    The Device ID can be any ASCII string, but keep in mind, that this is used for syncing. Other clients must use the same Device ID
 
 !!! note
     `gpodder.net` is deliberately _not_ supported. The provider relies on frequent API calls, and the service hosted there is known to be either slow or fully unresponsive, which will slow down MA. Consider using a locally hosted alternative.
 
 ### nextcloud-gpodder
 The provider supports [nextcloud-gpodder/gpoddersync](https://apps.nextcloud.com/apps/gpoddersync).
-To setup this functionality, you need your nextcloud URL, and then click the "authenticate with nextcloud" button to start the authentication flow. Click save when you are done.
+
+To setup this functionality, you need the `Nextcloud URL`, and then click the AUTHENTICATE WITH NEXTCLOUD button to start the authentication flow. Click save when finished
+
+### Settings
+
+- <b>Maximum number of episodes.</b> Maximum number of episodes to sync per feed. Use 0 for unlimited
+- <b>Advanced - Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. This is on by default
 
 ## Known Issues / Notes
 
