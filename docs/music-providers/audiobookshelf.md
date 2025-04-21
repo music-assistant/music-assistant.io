@@ -69,16 +69,21 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
 
 The following is needed to setup this provider:
 
-- A server URL (e.g. `https://abs.domain.tld/` or `http://192.168.1.4:13378/` for a local server) of an Audiobookshelf instance. 
+- <b>Server.</b> A server URL (e.g. `https://abs.domain.tld/` or `http://192.168.1.4:13378/` for a local server) of an Audiobookshelf instance. 
 - Authentication without [OIDC](https://www.audiobookshelf.org/guides/oidc_authentication/):
-    - the username of an Audiobookshelf user
-    - the password of this user
-- If [OIDC](https://www.audiobookshelf.org/guides/oidc_authentication/) is configured:
-    - Add the token in the specified field. This token can be obtained by an admin user for any user within the ABS settings -> users
-- Optionally podcasts with no episodes yet downloaded may be skipped when syncing
-- Optionally, SSL verification may be disabled
+    - <b>Username.</b> The username of an Audiobookshelf user
+    - <b>Password.</b> The password of this user
+ 
+!!! note
+    The user must be of type user, admin or root. Guest users are neither tested nor supported
 
-The user must be of type user, admin or root. Guest users are neither tested nor supported. 
+- If [OIDC](https://www.audiobookshelf.org/guides/oidc_authentication/) is configured:
+    - <b>Token instead of user/password.</b> Add the token in the specified field. This token can be obtained by an admin user for any user within the ABS settings -> users
+
+### Advanced Settings
+
+- <b>Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. Enabled is the default setting
+- <b>Hide empty podcasts.</b> Podcasts with no episodes yet downloaded may be skipped when syncing
 
 ## Known Issues / Notes
 
