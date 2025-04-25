@@ -10,7 +10,11 @@ Music Assistant has support for [MusicCast](https://au.yamaha.com/en/products/co
 ## Features
 
 - MusicCast devices are auto detected by Music Assistant
-- MusicCast devices will play in sync when grouped
+- MusicCast devices will play in perfect sync when grouped
+- Crossfading and metadata is supported
+- A source can be specified to switch to when a player leaves a group
+- MA will show metadata if the player is playing non-MA content
+- Source selection of the MusicCast device is possible
 
 ## Settings
 
@@ -22,4 +26,3 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 - If a device has multiple zones (i.e. main + max 3 others) only one of these zones can be streamed to. However, if streaming to main, the other zones can be grouped to that player
 - If a non-main zone is either a group member or a group leader, the main zone cannot join that group
 - The HA integration and MA integration can be used alongside each other
-- The provider enforces queue flow mode, as MusicCast only supports a single stream when controlled externally
