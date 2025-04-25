@@ -43,5 +43,5 @@ Music Assistant has full support for Spotify media listing and playback.
 
 ## Not yet supported
 
-- Podcasts support ([see this feature request](https://github.com/music-assistant/hass-music-assistant/discussions/429))
-- Recommendations ([see this feature request](https://github.com/music-assistant/hass-music-assistant/discussions/535))
+- Podcasts support ([see this feature request](https://github.com/music-assistant/support/discussions/429))
+- Recommendations ([see this feature request](https://github.com/music-assistant/support/discussions/535))
