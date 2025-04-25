@@ -15,7 +15,7 @@ Music Assistant has support for streaming your music from [Nugsnet](https://www.
 | Recommendations Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
-| Maximum Stream Quality | To be advised |
+| Maximum Stream Quality | Lossless FLAC (192 kHz / 24 bit) |
 | Login Method | Password |
 
 ### Other
