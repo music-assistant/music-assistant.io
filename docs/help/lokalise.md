@@ -12,7 +12,7 @@ We would love to support more languages but we need your help to do so.
 
 ## How can I contribute?
 
-- Create an issue in the [issue tracker](https://github.com/music-assistant/hass-music-assistant/issues) stating the Language that want you to contribute.
+- Create an issue in the [issue tracker](https://github.com/music-assistant/support/issues) stating the Language that want you to contribute.
 
 - We will then add this language to the project in Lokalise, and resolve the issue in GitHub
 
