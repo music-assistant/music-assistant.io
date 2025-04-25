@@ -62,7 +62,7 @@ Navigate to MA settings and inspect the provider entry. If there is a red circle
 
 # Why aren't tracks/albums matching between providers
 
-Matching items between streaming providers is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see here https://github.com/music-assistant/hass-music-assistant/discussions/543
+Matching items between streaming providers is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see here https://github.com/music-assistant/support/discussions/543
 
 # My media player is not available or not playing
 
