@@ -6,7 +6,7 @@ The core server settings are set with typical defaults that should work for most
 
 ## Cache Controller
 
-- A button is available to clear the cache used my Music Assistant. Do not routinely use this button as it increases [API usage](../usage.md/#online-metadata-sources) and slows down the MA experience.
+- A button is available to clear the cache used my Music Assistant. Do not routinely use this button as it increases [API usage](../usage.md/#online-metadata-sources) and slows down the MA experience
 
 ## Metadata Controller
 
@@ -39,14 +39,14 @@ All settings in this section should be considered advanced and will not need to 
 
 ### Streamserver Audio Settings
 
-This section contains settings which affect the [Volume Normalization](../faq/tech-info.md/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](individual-player.md/#audio). Extensive online help for these settings is available by selecting the ![image](../assets/icons/question-mark.png) icon in the settings UI for each option
+This section contains settings which affect the [Volume Normalization](../faq/tech-info.md/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](individual-player.md/#audio). Extensive online help for these settings is available by selecting the ![question mark](../assets/icons/question-mark.png) icon in the settings UI for each option
 
 ![image](../assets/screenshots/settings-streamserver-audio.png)
 
 ### Streamserver Advanced Settings
 
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
-- <b>Allow caching of remote/cloudbased audio streams.</b> To ensure smoother playback as well as fster seeking, MA can cache audio streams on disk. This should only be disabled on systems with limited diskspace. Select the ![image](../assets/icons/question-mark.png) icon in the settings UI for more information
+- <b>Allow caching of remote/cloudbased audio streams.</b> To ensure smoother playback as well as faster seeking, MA can cache audio streams on disk. This should only be disabled on systems with limited diskspace. Select the ![question mark](../assets/icons/question-mark.png) icon in the settings UI for more information
 
 ## Webserver (Frontend and API)
 
