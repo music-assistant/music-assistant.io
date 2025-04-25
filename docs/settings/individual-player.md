@@ -7,10 +7,10 @@ Individual Player Settings are usually quite extensive. The typical headings of 
 ## Generic Settings
 
 - <b>Icon.</b> A material design icon is used in some parts of the UI and this can be configured on a per player basis
-- <b>Enable queue flow mode</b> (not available all providers). This can be used for players that do not natively support gapless and/or crossfading or if the player has trouble transitioning betwene tracks. Refer to the player provider page for the pros and cons associated with enabling this option
-- <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the player list. Options are `When unavailable`, `When group active`, `When synced`, `Always`, and `When powered off`
-- <b>Dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](../faq/groups.md). When enabled then it is possible to add and remove members from these group types.
-- <b>Group members.</b> For Group player types the members of the group are configured in this field.
+- <b>Enable queue flow mode</b> (not available all providers). This can be used for players that do not natively support gapless and/or crossfading or if the player has trouble transitioning between tracks. Refer to the player provider page for the pros and cons associated with enabling this option
+- <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the [Player List](../ui.md/#player-list). Options are `When unavailable`, `When group active`, `When synced`, `Always`, and `When powered off`
+- <b>Dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](../faq/groups.md). When enabled, it is then possible to add and remove members from these group types
+- <b>Group members.</b> For Group player types the members of the group are configured in this field
 
 ## Audio
 
