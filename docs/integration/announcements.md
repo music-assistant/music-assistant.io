@@ -15,7 +15,7 @@ Players will be powered on before the announcement and then off again if it was 
 
 Volume can be adjusted while playing the announcement.
 
-If a player type has native support for announcements (e.g. Sonos) then that will be used in preference to the MA functionality providing an even smoother experience.
+If a player type has native support for announcements (e.g. Sonos, Snapcast) then that will be used in preference to the MA functionality providing an even smoother experience.
 
 The functionality works with all players that are supported by Music Assistant.
 
@@ -27,9 +27,9 @@ Each player has settings which allow for adjustment of certain aspects of the an
 
 If an announcement is sent to a single player that supports native announcements, the announcement will be handled by the player itself.
 
-Native announcement support usually means that the player can "overlay" the announcement on top of any music that is playing. It will "duck" the volume of the music, play the announcement with a volume boost and then revert the music volume. Music keeps playing and the entire announcement will be handled by the player itself.
+Native announcement support usually means that the player can "overlay" the announcement on top of any music that is playing. It will "duck" the volume of the music (or silence it completely), play the announcement with a volume boost and then revert the music volume. Music keeps playing and the entire announcement will be handled by the player itself.
 
-Currently the only (known) player type that supports native announcements is Sonos S2 speakers. Hopefully more player types will follow.
+Currently the only (known) player types that support native announcements are Sonos S2 speakers and Snapcast. Hopefully more player types will follow.
 
 ## MA Player Support
 
@@ -38,7 +38,7 @@ If a player does not support native announcements, MA will take care of it by st
 !!! note
     The MA announcement feature will ONLY work reliably if the player reports the state (e.g. playing, paused, idle) and the progress report (elapsed time) correctly. If any of those are not updated correctly then announcements will work poorly.
 
-ESPHome and Snapcast can be unreliable with state updates so issues may occur with those player types. The same applies to some HA media players. Future updates of those platforms should improve performance.
+ESPHome can be unreliable with state updates so issues may occur with this player type. The same applies to some HA media players. Future updates of those platforms should improve performance.
 
 If a player does not resume after playing an announcement, or it takes a very long time, check the HTTP profile settings. `Fixed content length` may need to be used. For example, ESPHome devices may have this issue.
 
