@@ -25,4 +25,4 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 - Supported devices are those from circa 2015 and later
 - If a device has multiple zones (i.e. main + max 3 others) only one of these zones can be streamed to. However, if streaming to main, the other zones can be grouped to that player
 - If a non-main zone is either a group member or a group leader, the main zone cannot join that group
-- The HA integration and MA integration can be used alongside each other
+- The HA integration and MA integration can be used alongside each other but is not advisable to do so as duplicate player entities will get created unnecessarily
