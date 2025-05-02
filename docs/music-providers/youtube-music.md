@@ -36,7 +36,9 @@ As of Nov 2024, Google has removed OAuth authentication from YT Music. This mean
     If a Family Account is in use then setting up a dedicated account for MA will assist in maximising cookie life 
     
 ### Obtaining the Cookies
-- Open <a href="http://music.youtube.com/" target="_blank">YT Music</a> in your browser.
+YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure. To export cookies that will remain working, you will need to export cookies in such a way that they are never rotated. One way to do this is through a private browsing/incognito window.
+
+- Open <a href="http://music.youtube.com/" target="_blank">YT Music</a> in your browser in an incognito window.
 - Open the developer tools via View -> Developer -> Developer Tools. Note that this might be named differently based on your browser. It should open a window similar to this:
 [![Dev tools](../assets/screenshots/ytmusic-developer-tools.png)](../assets/screenshots/ytmusic-developer-tools.png)
 
