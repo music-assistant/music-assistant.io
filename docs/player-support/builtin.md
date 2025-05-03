@@ -15,7 +15,7 @@ The Builtin provider supports playback directly to the Music Assistant Frontend,
 
 - The player appears automatically in the player list and is enabled by pressing the Power button
 - The player can be disabled on a per client basis via an option in MA SETTINGS >> FRONTEND
-- Due to a limitation in the browser engine on iOS devices, the audio may comtinually restart. A solution to this is not yet available
+- Due to a limitation in the browser engine on iOS devices, the audio may continually restart. A solution to this is not yet available
 
 ## Not Yet Supported
 
