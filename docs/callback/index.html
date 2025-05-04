@@ -52,7 +52,7 @@
       const redirect_url = decodeURIComponent(urlParams.get('state'));
       const validOrigin = document.referrer?.includes('spotify.com');
       const validDest = redirect_url.includes(':') && redirect_url.includes('/callback/');
-      const code = urlParams.get('code');
+      const code = encodeURIComponent(urlParams.get('code'));
       const finalUrl = redirect_url + '?code=' + code;
       if (validOrigin && validDest) {
         window.location.replace(finalUrl);
