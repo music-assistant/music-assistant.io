@@ -53,12 +53,7 @@
       const validOrigin = document.referrer?.includes('spotify.com');
       const validDest = redirect_url.includes(':') && redirect_url.includes('/callback/');
       const code = urlParams.get('code');
-      let finalUrl = redirect_url + '?code=' + code;
-      if (code.length > 100) {
-          // overcome stupid limitation of ingress where a query param may not be too long
-          finalUrl = redirect_url + '?code=' + code.substring(0, 100) + '&code2=' + code.substring(100);
-      }
-
+      const finalUrl = redirect_url + '?code=' + code;
       if (validOrigin && validDest) {
         window.location.replace(finalUrl);
       } else {
