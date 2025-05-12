@@ -15,7 +15,6 @@ nav:
   - Home Assistant Integration:
       - integration/index.md
       - Installation: integration/installation.md
-      - Migrating from HACS: integration/migrate.md
       - Announcements: integration/announcements.md
       - Play Media Action: faq/massplaymedia.md
       - Play Announcement Action: faq/massannounce.md
@@ -23,6 +22,7 @@ nav:
       - Get Library Action: faq/get_library.md
       - Get Queue Action: faq/get_queue.md
       - Transfer Queue Action: faq/masstransfer.md
+      - Voice Control: integration/voice.md
   - Companion App: companion-app.md
   - Usage:
       - General: usage.md
