@@ -164,7 +164,7 @@ The album section has an additional filter option. You can choose to filter by o
 
 Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select UPDATE METADATA. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
 
-The PROVIDER DETAILS section shows from where the albums and tracks listed above were obtained. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc.  The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the chain link icon on the right. The external link icon opens the page for the item on the source provider.
+The PROVIDER DETAILS section shows from where the albums and tracks listed above were obtained. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA. The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the chain link icon on the right. The external link icon opens the page for the item on the source provider.
 
 !!! note
     Copying the URI to the clipboard via the chain link icon is only allowed when the MA frontend is accessed over HTTPS due to browser security rules
