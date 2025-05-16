@@ -1,4 +1,4 @@
-# I want to help ![Preview image](assets/icons/help-icon.png){ width=70 align=right }
+# I want to help ![Preview image](../assets/icons/help-icon.png){ width=70 align=right }
 
 With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by donating a few bucks but helping out can also be done in other ways:
 
