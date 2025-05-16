@@ -3,7 +3,7 @@ title: Release Cycle
 description: Details of the release cycle for the stable and beta versions of the server
 ---
 
-# Release Cycle
+# Release Cycle ![Preview image](assets/icons/release-cycle-icon.png){ width=70 align=right }
 
 ## Stable Releases
 
