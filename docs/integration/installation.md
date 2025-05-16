@@ -1,7 +1,7 @@
 !!! note
     Ensure the MA server is up and running properly with music and player providers added before trying to link it to HA via the integration
 
-## Installation of the HA Integration
+## Installation of the HA Integration ![Preview image](../assets/icons/installation-icon.png){ width=70 align=right }
 
 The Integration to connect Music Assistant to Home Assistant is available as an official component in HA core.
 
