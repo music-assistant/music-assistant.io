@@ -1,4 +1,4 @@
-# Support
+# Support ![Preview image](assets/icons/support-icon.png){ width=70 align=right }
 
 Because this project originated out of a Home Assistant integration, all enduser support is maintained in a separate repository. Raise issues and discuss ideas [here](https://github.com/music-assistant/support)
 
