@@ -1,4 +1,4 @@
-# Home Assistant Integration ![Preview image](assets/icons/ha-logo.png){ width=70 align=right }
+# Home Assistant Integration ![Preview image](../assets/icons/ha-logo.png){ width=70 align=right }
 
 The Music Assistant integration for Home Assistant provides a connection from MA to HA. This means that MA players are visible in HA and can be controlled via the HA UI or via automations or scripts.
 
