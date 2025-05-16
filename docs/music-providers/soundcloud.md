@@ -40,8 +40,8 @@ Two fields need to be completed to use this provider, Client id and Authorizatio
 Example snippet for the Music Provider configuration step (OAuth and client_id are NOT real, use yours):
 
 ```
-client_id = jHvc9wa0Ejf092wj3f3920w3F920as02
-Authorization = OAuth 3-26432-21446-asdif2309fj
+client_id = 5Hvc9wa0Ejf092wj3f3920w3F920asuL
+Authorization = OAuth 2-26432-21446-asdif2309fQ
 ```
 ## Known Issues / Notes
 
