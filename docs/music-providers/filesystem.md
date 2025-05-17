@@ -17,7 +17,7 @@ When streaming providers are also availabe in MA linking will only occur when th
 | Self-Hosted Local Media   | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | No |
-| Lyrics Supported | No |
+| Lyrics Supported | Yes |
 | [Radio Mode](../ui.md#track-menu) | No |
 | Maximum Stream Quality | Lossless FLAC 192 kHz, 24 bit |
 | Login Method | Password or None |
@@ -74,6 +74,7 @@ In addition to the settings outlined above to configure the provider there are a
 - Local tracks and albums will be linked to the same tracks or albums on any provider (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
 - A setting, enabled by default, allows the skipping of playlists which are more that one level below the root (normally this is the album folder). This is preferred as these playlists (normally all album tracks in the folder) serve no function in MA and clutter the Playlists view. Excessive numbers of playlists can have a negative impact on other parts of the MA experience
 - Folders commencing with an underscore will be ignored
+- Lyrics are supported. They can be embedded in each track via the `Lyrics` tag or via a [Simple LRC formatted file](https://en.wikipedia.org/wiki/LRC_(file_format)) which is named identically to the track name (and in the same folder) but with a `.lrc` extension
   
 ## Tagging Files 
 
