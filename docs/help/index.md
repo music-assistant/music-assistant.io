@@ -7,7 +7,7 @@ With a large project like this, there is always plenty to do. Not only with actu
 - Help others out on discord or within the discussions part of Github
 - Help out with writing documentation and HOWTO's
 - Just like [erkr](https://github.com/erkr) and [OzGav](https://github.com/OzGav) help out as a moderator on discord and Github with the load of incoming reports, requests and questions. Thanks guys!
-- Make sure to like this project by clicking the "star" button and share it with others!
+- Make sure to [like this project](https://github.com/music-assistant/server) by clicking the ⭐ button and share it with others!
 
 ## Donations
 
