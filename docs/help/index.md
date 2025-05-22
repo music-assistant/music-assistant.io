@@ -1,20 +1,19 @@
 # I want to help ![Preview image](../assets/icons/help-icon.png){ width=70 align=right }
 
-With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by donating a few bucks but helping out can also be done in other ways:
+With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by subscribing to Nabu Casa but helping out can also be done in other ways:
 
-- If you like to help with the development, e.g. implementing a new music provider or fix a player specific quirk, please reach out on discord. There hasn't been time to write extended development docs but once you get the grasp of the structure it is relatively straight forward.
+- If you like to help with the development, e.g. implementing a new music provider or fix a player specific quirk, please reach out on Discord. There hasn't been time to write extended development docs but once you get the grasp of the structure it is relatively straight forward.
 - Provide or update a [translation](lokalise.md)
 - Help others out on discord or within the discussions part of Github
 - Help out with writing documentation and HOWTO's
-- Just like [erkr](https://github.com/erkr) and [OzGav](https://github.com/OzGav) help out as a moderator on discord and Github with the load of incoming reports, requests and questions. Thanks guys!
+- Help [OzGav](https://github.com/OzGav) out as a moderator on Discord and GitHub with the load of incoming reports, requests and questions
 - Make sure to [like this project](https://github.com/music-assistant/server) by clicking the ⭐ button and share it with others!
 
 ## Donations
 
-As explained above you can also show your appreciation in all kinds of ways. Besides that donations are great for buying some test hardware, paying for Apple/Google Developer accounts, paying hosting charges and for streaming provider accounts and contributions to the metadata projects.
+As explained above you can show your appreciation in all kinds of ways. If you wanted to support the project financially then you should support the [Open Home Foundation (OHF)](https://www.openhomefoundation.org/) by subscribing to [Nabu Casa](https://www.nabucasa.com/). You can also support the OHF by purchasing [Home Assistant Hardware](https://www.home-assistant.io/) or [merch!](https://home-assistant-store.creator-spring.com/)
 
-- [Github Sponsors](https://github.com/music-assistant)
-- [Buy me a Coffee](https://www.buymeacoffee.com/marcelveldt)
+If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a Buy Me A Coffee or similar link. There are also links to the main devs GitHub page on the [Home Page.](../index.md/#the-team)
 
 A really big thank you in advance from the whole team!
 
