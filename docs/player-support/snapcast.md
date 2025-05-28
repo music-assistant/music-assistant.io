@@ -6,7 +6,7 @@ description: Details for the Snapcast Player Provider
 # Snapcast ![Preview image](../assets/icons/snapcast-icon.svg){ width=70 align=right }
 
 Music Assistant supports Snapcast, a powerful solution for synchronized multi-room audio streaming. Snapcast enables seamless playback across various devices, creating an immersive audio experience.
-Whether you're using Snapcast-compatible speakers or devices like the Raspberry Pi, you can enjoy synchronized audio playback effortlessly. This component is contributed and maintained by [SantiagoSotoC](https://github.com/Santiagosotoc).
+Whether using Snapcast-compatible speakers or devices like the Raspberry Pi, synchronized audio playback can be enjoyed effortlessly. This component is contributed and maintained by [SantiagoSotoC](https://github.com/Santiagosotoc).
 
 MA includes a built-in Snapserver although an external server can also be used. The diagram below shows a possible combination of outputs. In the diagram a Raspberry Pi runs the server which communicates to MA and all of the clients. The server running Pi is also running Snapclient and is connected to a set of speakers. Then there is another Pi running Snapclient in another room, a phone running Snapdroid and a laptop running Snapweb.
 
@@ -15,11 +15,23 @@ MA includes a built-in Snapserver although an external server can also be used. 
 ## Features
 
 - Synchronized playback across all Snapcast devices
-- Lossless audio quality with options for 48 kHz /16bits PCM
+- Lossless audio quality with options for 48kHz / 16bits PCM
 
 ## Settings
 
-For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider.md) and [Individual Player Settings](../settings/individual-player.md) pages.
+In addition to the [Individual Player Settings](../settings/individual-player.md) the Snapcast provider also has a unique section called `Built-in Snapserver Settings`. The available settings are:
+
+- <b>Buffer Size.</b> (default 1000ms) is the total buffer size (or better buffer duration) between recording the signal on the server and playing it out on the client. This can be translated directly to the total latency of the audio signal. If play is pressed or a track is paused or skipped, a delay of 1000ms will be noticed because of this buffer
+- <b>Chunk Size.</b> (default 26ms). The server will continously read this number of milliseconds from the source into buffer and pass this buffer to the encoder. The encoded buffer is sent to the clients. Some codecs have a higher latency and will need more data, e.g. FLAC will need ~26ms chunks and thus this is the default
+- <b>Snapserver Initial Volume.</b> The initial volume for new clients
+- <b>Send audio to muted clients.</b> Maintains a stream to muted clients
+- <b>Snapserver default transport codec.</b> Options are FLAC [default], OGG, OPUS, and PCM
+
+In the `Advanced Settings` section there is a toggle which will allow use of an external Snapcast server and the following settings:
+
+- <b>Snapcast Server IP.</b> The IP address of the external Snapcast server (e.g. `192.168.1.200`)
+- <b>Snapcast Control Port.</b> The port the external Snapcast server can be reached on
+- <b>Idle threshold stream parameter.</b> (default 60000ms) The stream state will switch from playing to idle after receiving this many milliseconds of silence
 
 ## Known Issues / Notes
 
@@ -36,6 +48,3 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 - The Snapcast app for iOS is broken as it uses an old version of Snapclient. Using it brings problems with this provider
 - Ensure that the ports 1704 and 1705 on the Snapserver host are open. Also make sure that the ports between 4953 and 5153 inclusive are open
 - Try the default Snapcast settings and then make changes as necessary
-- Buffer Size [ms] (default 1000ms) is the total buffer size (or better buffer duration) between recording the signal on the server and playing it out on the client. This can be translated directly to the total latency of the audio signal. If play is pressed or a track is paused or skipped, a delay of 1000ms will be noticed because of this buffer
-- Chunk Size [ms] (default 26ms). The server will continously read this number of milliseconds from the source into buffer and pass this buffer to the encoder. The encoded buffer is sent to the clients. Some codecs have a higher latency and will need more data, e.g. FLAC will need ~26ms chunks and thus this is the default
-- Idle threshold stream parameter [ms] (default 60000ms) will switch the stream state from playing to idle after receiving this many milliseconds of silence
