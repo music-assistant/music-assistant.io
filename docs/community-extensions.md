@@ -3,7 +3,7 @@ title: Community Extensions
 description: A Collection of HA cards or dashboards
 ---
 
-# General
+# General ![Preview image](assets/icons/community-extensions-icon.png){ width=70 align=right }
 This is a collection of community developed HA cards or dashboards for Music Assistant. Review the linked repos (the repo title is linked) for instructions and status of these projects. The complexity of these projects varies.
 ***************************************************************
 # [Music Assistant Jukebox](https://github.com/DanStennett/HAMusicAssistantJukebox)
@@ -19,6 +19,13 @@ The Mass Search Card is an advanced search card for Home Assistant, designed to 
 ![image](https://github.com/user-attachments/assets/2dbd3143-ffd8-4bea-8b63-52519ece9f1d){ width=250 }
 
 ![image](https://github.com/user-attachments/assets/ce10cadf-bada-444a-87ea-a9d05f0a41db){ width=250 }
+***************************************************************
+# [Mediocre Media Player Card](https://github.com/antontanderup/mediocre-hass-media-player-cards)
+
+A bunch of custom media player cards for Home Assistant that let you group speakers and do some custom actions.
+
+![image](https://github.com/user-attachments/assets/2178b5d4-ea8f-46cf-9737-149e1da935c5){ width=250 }
+
 ***************************************************************
 # [Custom Media Card](https://github.com/codemonkey2k5/HomeAssistent-Custom-Media-Card)
 

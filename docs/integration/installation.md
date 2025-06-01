@@ -1,3 +1,5 @@
+# Installation ![Preview image](../assets/icons/installation-icon.png){ width=70 align=right }
+
 !!! note
     Ensure the MA server is up and running properly with music and player providers added before trying to link it to HA via the integration
 

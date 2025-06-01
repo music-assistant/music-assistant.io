@@ -15,7 +15,6 @@ nav:
   - Home Assistant Integration:
       - integration/index.md
       - Installation: integration/installation.md
-      - Migrating from HACS: integration/migrate.md
       - Announcements: integration/announcements.md
       - Play Media Action: faq/massplaymedia.md
       - Play Announcement Action: faq/massannounce.md
@@ -23,6 +22,7 @@ nav:
       - Get Library Action: faq/get_library.md
       - Get Queue Action: faq/get_queue.md
       - Transfer Queue Action: faq/masstransfer.md
+      - Voice Control: integration/voice.md
   - Companion App: companion-app.md
   - Usage:
       - General: usage.md
@@ -47,6 +47,7 @@ nav:
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
+      - Nugs.net: music-providers/nugs.md
       - Plex: music-providers/plex.md
       - Podcast RSS Feed: music-providers/podcastfeed.md
       - Qobuz: music-providers/qobuz.md
@@ -67,13 +68,16 @@ nav:
     - Fully Kiosk: player-support/fully-kiosk.md
     - Google Cast: player-support/google-cast.md
     - Home Assistant: player-support/ha.md
+    - MusicCast: player-support/musiccast.md
     - Snapcast: player-support/snapcast.md
     - Sonos: player-support/sonos.md
     - Squeezelite: player-support/squeezelite.md
+  - Metadata Providers: metadata.md
   - Plugins:
     - Home Assistant Plugin: ha-plugin.md
     - LastFM Scrobbler: plugins/lastfm_scrobble.md
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
+    - Subsonic Scrobbler: plugins/subsonic_scrobble.md
     - plugins/spotify-connect.md
   - Community Extensions: community-extensions.md
   - Support: support.md

@@ -17,7 +17,7 @@ When streaming providers are also availabe in MA linking will only occur when th
 | Self-Hosted Local Media   | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | No |
-| Lyrics Supported | No |
+| Lyrics Supported | Yes |
 | [Radio Mode](../ui.md#track-menu) | No |
 | Maximum Stream Quality | Lossless FLAC 192 kHz, 24 bit |
 | Login Method | Password or None |
@@ -75,6 +75,8 @@ In addition to the settings outlined above to configure the provider there are a
 - A setting, enabled by default, allows the skipping of playlists which are more than one level below the root (normally this is the album folder). This is preferred as these playlists (normally all album tracks in the folder) serve no function in MA and clutter the Playlists view. Excessive numbers of playlists can have a negative impact on other parts of the MA experience
 - Folders commencing with an underscore will be ignored
 - Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
+- To minimise the chance of problems, folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any illegal characters removed (e.g. AC/DC should be in a folder ACDC)
+- Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
   
 ## Tagging Files 
 
@@ -83,7 +85,6 @@ In addition to the settings outlined above to configure the provider there are a
 - For multi-artist tracks it is important that the `ARTISTS` tag (as distinct from `ARTIST`) is set, which is semi-colon delimited list of the artists on the track. If this tag is not set MA will attempt to parse the artist names from the `ARTIST` tag but if unusual or non-English joining words or symbols are used then this process may fail 
 - Music Assistant puts you in control by fully trusting the ID3 tags you provide, only additional information is scraped from metadata providers
 - Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and `.nfo` files with enhanced metadata are also supported
-- Files simply dumped into a random structure will also be imported but no other data will be retrieved from the folder structure
 - To minimise the chance of problems with MA you should follow the Kodi guidelines here https://kodi.wiki/view/Music_tagging Just about all the tips, tricks and suggestions on that page are applicable to MA and if you follow it all to the letter you will have a much better experience
 - For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
 - If there is nothing added to the disc tag then the disc number will not be shown in the display
