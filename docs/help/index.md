@@ -1,6 +1,6 @@
 # I want to help ![Preview image](../assets/icons/help-icon.png){ width=70 align=right }
 
-With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by subscribing to Nabu Casa but helping out can also be done in other ways:
+With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by [subscribing to Nabu Casa](https://www.nabucasa.com) but helping out can also be done in other ways:
 
 - If you like to help with the development, e.g. implementing a new music provider or fix a player specific quirk, please reach out on Discord. There hasn't been time to write extended development docs but once you get the grasp of the structure it is relatively straight forward.
 - Provide or update a [translation](lokalise.md)
