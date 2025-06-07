@@ -43,8 +43,9 @@ You will need to provide the following to Music Assistant:
 - If you find a mismatch between what is displayed by your Subsonic compatible server and Music Assistant then refer to and contribute [here to help find a solution](https://github.com/music-assistant/support/issues/2192)
 - Not all Open Subsonic implementations handle tracks/albums with multiple contributing artists particularly well. If you see strange artists listed in Music Assistant, please verify that your implementation has an artist ID for all artists listed on a track or album. See the discussion [here](https://github.com/music-assistant/support/issues/2965)
 - If problems are encountered seeking within tracks try the `Force player provider seek` option in the subsonic provider settings 
-- It is not possible to playback m4a files. Options to workaround this are
+- It may not be possible to playback m4a files. Options to workaround this are
     - Don't use this format
     - Force the subsonic server to transcode all m4a files before serving to a format that works
     - Don't serve these files from a subsonic server
     - It may be possible to force an encoder to place the moov atom at the beginning of the file. This would make the files playable, but MA provides no support for this
+- Don't Stop the Music mode ([described here](https://www.music-assistant.io/usage/#the-queue)) relies on your subsonic servers implementation of the [getSimilarSongs](https://opensubsonic.netlify.app/docs/endpoints/getsimilarsongs/) end point. Please ensure that you have configured your server for this to work. Both Gonic and Navidrome require the addition of a Last.fm API key to provide similar songs. Please see your subsonic server's documentation.
