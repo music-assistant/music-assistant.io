@@ -54,15 +54,18 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 **Summary:**  
 The API bridge is run as a separate server, a proxy with SSL certificates must be set up, the Alexa skill is imported and configured, and then Music Assistant playback should now be enabled on your Alexa devices.
 
+### 5. Login Process
+
+-  Requires Amazon account credentials (email and password)
+-  Requires one factor authentication code generation for the Amazon account
+    - Fill in required info (email and password) on config screen
+    - Press `Authenticate with Amazon` button
+    - Click `Sign In` radio button and then the big blue `Sign In` button after filling in credentials (this will fail)
+    - Close that tab and click "Click here if the popup didn't open"
+    - Proceed with signing in on the Amazon login page
+
 ## Known Issues / Notes
 
--	Login process is complicated (currently working on configuration in the provider that will simplify the process)
-    - Requires credentials for an Amazon account (email and password)
-    - Requires some moderate understanding of file systems and programming to retrieve the cookie file  
-    - Requires a receiver player such as MPD which makes the stream URL static
-    - Requires an Amazon developer account
-    - Requires a certificate provider to generate SSL certificates
-    - Requires a proxy to provide a HTTPS endpoint for the stream URL	
 -	Commands sometimes fail in controlling devices if used too often (this is a limitation of the Alexa API)
 -	Announcements and custom commands may have limited support depending on the device and region
 
