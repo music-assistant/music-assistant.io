@@ -34,8 +34,10 @@ Authentication with Apple Music happens through a Music User Token. Unfortunatel
 4. Under Storage > Cookies, click "https://music.apple.com" and find the entry called "media-user-token"
 5. Click it and copy the cookie value and use this in Music Assistant as the 'Music user token'
   [![Preview image](../assets/screenshots/apple-music-auth-2.jpg)](../assets/screenshots/apple-music-auth-2.jpg)
+6. Currently in order for the callback to work MA must be accessed via the exposed webserver port when setting up this provider. If MA has been installed as an add-on then the port must be manually exposed as described in the [core settings](../settings/core.md#webserver-frontend-and-api). Thus the URL when setting this provider up must be `http://<YOUR_MA_IP>:8095`. Once successfully configured the webserver port can be disabled again if desired.
 
-Note the "Expires / Max-Age" column. Your token will expire on that date and Apple Music within Music Assistant will stop working. You will have to repeat the above process to obtain a fresh token. We will try to find an unofficial way to implement 'Login with  Apple' to make it easier to authenticate with Apple Music, but until then, this is the way to authenticate.
+!!! note 
+    Take note of the "Expires / Max-Age" column. The token will expire on that date and Apple Music within Music Assistant will stop working. The above process must then be repeated to obtain a fresh token.
 
 ## Known Issues / Notes
 - Due to Apple's proprietary encryption (FairPlay), Lossless and Dolby Atmos versions of songs are not supported
