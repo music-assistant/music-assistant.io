@@ -35,6 +35,7 @@ nav:
       - I Want To Stream To: faq/stream-to.md
       - Technical Info: faq/tech-info.md
       - Troubleshooting: faq/troubleshooting.md
+  - Mobile Devices: mobile/index.md
   - Music Providers:
       - music-providers/index.md
       - Apple Music: music-providers/apple-music.md
