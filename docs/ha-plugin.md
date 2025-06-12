@@ -8,7 +8,12 @@ The Home Assistant Plugin provides a connection from HA to MA. This will allow H
 
 To achieve this functionality both the HA plugin and the [HA Player Provider](player-support/ha.md) need to be installed.
 
-## Installation of the Home Assistant Plugin
+## Features
+
+- Allows HA media players to be players in the MA User Interface
+- Allows HA entities to be linked to power, mute or volume controls of any player available in MA. This can be useful if the player doesn't support the feature natively or in advanced use cases
+ 
+## Configuration
 
 Before the Plugin can be added the HA Integration must be [installed](integration/installation.md). 
 
@@ -16,7 +21,7 @@ Before the Plugin can be added the HA Integration must be [installed](integratio
 - If using the Music Assistant add-on (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 
-## Configuring the Home Assistant Plugin
+## Known Issues / Notes
 
 The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. There are three drop down lists which contain a filtered list of HA entities:
 
