@@ -22,7 +22,3 @@ Music Assistant has support for [Tunein](https://tunein.com/)
 ## Configuration
 
 In the Generic Settings, add your Username.
-
-## Known Issues / Notes
-
-- You cannot search the TuneIn provider from within MA
