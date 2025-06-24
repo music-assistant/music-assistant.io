@@ -1,6 +1,6 @@
 # Alexa Devices ![Preview image](../assets/icons/alexa-icon.png){ width=70 align=right }
 
-![Expert icon](../assets/label-expert.png) ![Experimental icon](../assets/label-experimental.png){ width=150 }
+![Expert icon](../assets/label-expert.png) ![Experimental icon](../assets/label-experimental.png){ width=180 }
 
 Music Assistant has support for Alexa devices. This component is contributed and maintained by [Sameer Alam](https://github.com/alams154).
 
