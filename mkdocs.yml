@@ -63,6 +63,7 @@ nav:
   - Player Providers:
     - player-support/index.md
     - AirPlay: player-support/airplay.md
+    - Alexa: player-support/alexa.md
     - Bluesound: player-support/bluesound.md
     - Builtin: player-support/builtin.md
     - DLNA: player-support/dlna.md
