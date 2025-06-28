@@ -54,6 +54,6 @@ This section contains settings which affect the [Volume Normalization](../faq/te
 - <b> Expose the Webserver (port 8095).</b> For the HA add-on version of the server it runs on a protected internal network only and is accessed securely via Home Assistant's ingress service. Enabling this option allows direct access to the webserver from your local network. See [Server Usage and Notes](../installation.md/#server-notes) for the considerations before enabling this option. Never expose this port directly to the Internet
 
 ### Docker Container
-- <b>Base URL.</b> The (base) URL to reach this webserver on the network. Override this in advanced scenarios where, for example, you are running the webserver behind a resverse proxy
-- <b>TCP Port.</b> The port that the webserver is to be run on
+- <b>Base URL.</b> The (base) URL to reach this webserver on the network. Override this in advanced scenarios where, for example, you are running the webserver behind a reverse proxy
+- <b>TCP Port.</b> The port that the webserver is to be run on. If this setting is changed then ensure the base URL port is changed as well
 - <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. For further information see the help for this setting in the MA UI
