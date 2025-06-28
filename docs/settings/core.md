@@ -39,7 +39,7 @@ All settings in this section should be considered advanced and will not need to 
 
 ### Streamserver Audio Settings
 
-This section contains settings which affect the [Volume Normalization](../faq/tech-info.md/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](individual-player.md/#audio). Extensive online help for these settings is available by selecting the ![question mark](../assets/icons/question-mark.png) icon in the settings UI for each option
+This section contains settings which affect the [Volume Normalization](../faq/tech-info.md/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](individual-player.md/#audio). Extensive online help for these settings is available by selecting the ![question mark](../assets/icons/question-mark.png) icon in the settings UI for each option.
 
 ![image](../assets/screenshots/settings-streamserver-audio.png)
 
