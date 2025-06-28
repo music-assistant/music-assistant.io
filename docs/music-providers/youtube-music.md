@@ -63,7 +63,7 @@ As of March 2025, Google has implemented a new security mechanism called 'PO Tok
 - Install this add-on and make sure it is started before adding the YT Music provider within Music Assistant
 
 !!! note
-    If you are hosting Music Assistant yourself, you can download the Docker file for the PO Token server [here](https://github.com/Brainicism/bgutil-ytdlp-pot-provider). Install and run it, then head over to Music Assistant and put in the URL to the PO token server when configuring the YT Music Provider.
+    If you are hosting Music Assistant yourself, you can download the Docker file for the PO Token server [here](https://github.com/Brainicism/bgutil-ytdlp-pot-provider) but you must run the version currently supported by MA which is 1.1.0. Install the correct version and run it, then return to Music Assistant and add the URL to the PO token server when configuring the YT Music Provider.
 
 ### Configuring the provider 
 - Navigate to 'Settings'
