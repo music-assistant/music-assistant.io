@@ -39,7 +39,7 @@ All settings in this section should be considered advanced and will not need to 
 
 ### Streamserver Audio Settings
 
-This section contains settings which affect the [Volume Normalization](../faq/tech-info.md/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](individual-player.md/#audio). Extensive online help for these settings is available by selecting the ![question mark](../assets/icons/question-mark.png) icon in the settings UI for each option
+This section contains settings which affect the [Volume Normalization](../faq/tech-info.md/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](individual-player.md/#audio). Extensive online help for these settings is available by selecting the ![question mark](../assets/icons/question-mark.png) icon in the settings UI for each option.
 
 ![image](../assets/screenshots/settings-streamserver-audio.png)
 
@@ -50,4 +50,10 @@ This section contains settings which affect the [Volume Normalization](../faq/te
 
 ## Webserver (Frontend and API)
 
+### HAOS Add-On
 - <b> Expose the Webserver (port 8095).</b> For the HA add-on version of the server it runs on a protected internal network only and is accessed securely via Home Assistant's ingress service. Enabling this option allows direct access to the webserver from your local network. See [Server Usage and Notes](../installation.md/#server-notes) for the considerations before enabling this option. Never expose this port directly to the Internet
+
+### Docker Container
+- <b>Base URL.</b> The (base) URL to reach this webserver on the network. Override this in advanced scenarios where, for example, you are running the webserver behind a reverse proxy
+- <b>TCP Port.</b> The port that the webserver is to be run on. If this setting is changed then ensure the base URL port is changed as well
+- <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. For further information see the help for this setting in the MA UI
