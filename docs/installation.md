@@ -77,7 +77,7 @@ If you run into any issues when using a docker install vs the recommended/standa
     - Recent AMD CPU (max 5 years old, although 10 years old may still work)
     - Single Board Computer: Raspberry Pi 4 or newer, or equivalent 
     - Other aarch64 based CPU, supported by Home Assistant (e.g. Rockchip)
-    - a MINIMUM of 2GB of RAM on the physical device or the container (physical devices are recommended to have 4GB+ if they are running anything else)
+    - a MINIMUM of 2GB of RAM on the physical device or the container (physical devices/containers are recommended to have 4GB+ if they are running anything else)
 
 - If MA won't start and the CPU is outside the maximum age listed above then it is not supported
 
