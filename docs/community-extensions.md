@@ -44,3 +44,9 @@ A work in progress Lovelace UI for Music Assistant in Home Assistant using pictu
 This is working concept demonstrator using the ha-floorplan custom component.
 
 ![image](https://github.com/user-attachments/assets/babed2c0-646f-46b6-bdb6-b29f3b34087f){ width=600 }
+***************************************************************
+# [Yet Another Media Player](https://github.com/jianyu-li/yet-another-media-player)
+
+YAMP is a Home Assistant media card for controlling multiple entities with highly customizable actions and ui elements
+
+![image](https://github.com/jianyu-li/yet-another-media-player/blob/main/Preview/largepreview.png?raw=true){ width=600 }
