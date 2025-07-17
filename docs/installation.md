@@ -9,7 +9,7 @@ Music Assistant (in short: MA) is designed to be used side by side with Home Ass
 
 ## Home Assistant Add-on
 
-![easiest label](assets/label-easiest.png)
+![easiest label](assets/label-easiest.png){ width=128 }
 
 This is only available when running the full version of Home Assistant, which includes the [Home Assistant Operation System (HAOS)](https://developers.home-assistant.io/docs/operating-system/). Due to its ease of use and full functionality, running the Home Assistant Operating System is the recommended way of running Home Assistant and Music Assistant.
 
@@ -21,7 +21,7 @@ A HAOS installation is fully supported by the MA team regardless of whether it r
 
 ## Docker image
 
-![expert label](assets/label-expert.png)
+![expert label](assets/label-expert.png){ width=128 }
 
 An alternative way to run the Music Assistant server is by running the docker image:
 
