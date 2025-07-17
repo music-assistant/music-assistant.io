@@ -47,6 +47,6 @@ This is working concept demonstrator using the ha-floorplan custom component.
 ***************************************************************
 # [Yet Another Media Player](https://github.com/jianyu-li/yet-another-media-player)
 
-YAMP is a Home Assistant media card for controlling multiple entities with highly customizable actions and ui elements
+YAMP is a Home Assistant media card for controlling multiple entities with highly customizable actions and UI elements
 
 ![image](https://github.com/jianyu-li/yet-another-media-player/blob/main/Preview/largepreview.png?raw=true){ width=600 }
