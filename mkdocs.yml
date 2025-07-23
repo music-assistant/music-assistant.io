@@ -125,7 +125,7 @@ plugins:
       video_autoplay: True
       video_loop: True
       css_style:
-        width: "50%"
+        width: "100%"
 extra:
   social:
     - icon: ohf-logo-colour
