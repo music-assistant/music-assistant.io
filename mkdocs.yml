@@ -118,6 +118,12 @@ plugins:
   - search:
   - minify:
       minify_html: true
+  - mkdocs-video:
+      is_video: True
+      video_muted: True
+      video_controls: True
+      css_style:
+        width: "50%"
 extra:
   social:
     - icon: ohf-logo-colour
