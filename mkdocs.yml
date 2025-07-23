@@ -123,6 +123,14 @@ plugins:
   - search:
   - minify:
       minify_html: true
+  - mkdocs-video:
+      is_video: True
+      video_muted: True
+      video_controls: False
+      video_autoplay: True
+      video_loop: True
+      css_style:
+        width: "100%"
 extra:
   social:
     - icon: ohf-logo-colour
