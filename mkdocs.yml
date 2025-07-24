@@ -41,6 +41,7 @@ nav:
       - Apple Music: music-providers/apple-music.md
       - Audible: music-providers/audible.md
       - Audiobookshelf: music-providers/audiobookshelf.md
+      - BBC Sounds: music-providers/bbc-sounds.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - gPodder: music-providers/gpodder.md
