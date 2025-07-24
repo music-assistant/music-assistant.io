@@ -1,4 +1,4 @@
-# BBC Sounds Provider ![Preview image](../assets/icons/bbcsounds-icon.png){ width=70 align=right }
+# BBC Sounds Provider ![Preview image](../assets/icons/bbcsounds-logo.png){ width=70 align=right }
 
 Music Assistant has support for streaming from BBC Sounds. Contributed and maintained by [Keiran Hogg](https://github.com/keiranhogg)
 
