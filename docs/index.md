@@ -57,19 +57,22 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 
 ## The Core Team
 
-[![Marcel](assets/team/marcel.png){ width=100 align=center }](https://github.com/marcelveldt "Marcel. Creator of Music Assistant")
+<figure markdown="1">
+    
+[![Marcel](assets/team/marcel.png){ width=100 }](https://github.com/marcelveldt "Marcel. Creator of Music Assistant")
 
-[![Jozef](assets/team/jozef.png){ width=100  align=center }](https://github.com/jozefKruszynski "Jozef. Author of the Tidal provider and Core Developer")
-[![Marvin](assets/team/marvin.png){ width=100  align=center }](https://github.com/marvinschenkel "Marvin. Author of the YouTube and Apple Music providers")
-[![Gavin](assets/team/gavin.png){ width=100  align=center }](https://github.com/OzGav "Gavin. Community Support and Documentation")
-[![maxim](assets/team/maxim.png){ width=100  align=center }](https://github.com/maximmaxim345 "Maxim. DSP Guru and Core Developer")
-[![Jonathan](assets/team/jonathan.png){ width=100  align=center }](https://github.com/arctixdev "Jonathan. Author of the Deezer provider and the Companion App")
+[![Jozef](assets/team/jozef.png){ width=100 }](https://github.com/jozefKruszynski "Jozef. Author of the Tidal provider and Core Developer")
+[![Marvin](assets/team/marvin.png){ width=100 }](https://github.com/marvinschenkel "Marvin. Author of the YouTube and Apple Music providers")
+[![Gavin](assets/team/gavin.png){ width=100 }](https://github.com/OzGav "Gavin. Community Support and Documentation")
+[![maxim](assets/team/maxim.png){ width=100 }](https://github.com/maximmaxim345 "Maxim. DSP Guru and Core Developer")
+[![Jonathan](assets/team/jonathan.png){ width=100 }](https://github.com/arctixdev "Jonathan. Author of the Deezer provider and the Companion App")
 
 [![jc2k](assets/team/jc2k.png){ width=100 }](https://github.com/jc2k "John. Jellyfin Maintainer and Core Developer")
 [![fabian](assets/team/fabian.png){ width=100 }](https://github.com/fmunkes "Fabian. Author of the Audiobookshelf, iTunes Podcast Search and gPodder providers")
 [![Santiago](assets/team/santiago.png){ width=100 }](https://github.com/santiagosotoc "Santiago. Author of the Snapcast provider")
 [![khers](assets/team/khers.png){ width=100 }](https://github.com/khers "Eric. Author of the Subsonic provider")
 [![robsonke](assets/team/robsonke.png){ width=100 }](https://github.com/robsonke "Rob. Author of the iBroadcast provider and maintainer of Soundcloud")
+</figure>
 
 We also give THANKS to all the other contributors to the [Server](https://github.com/music-assistant/server/graphs/contributors), [Frontend](https://github.com/music-assistant/frontend/graphs/contributors), [Voice Support](https://github.com/music-assistant/voice-support/graphs/contributors) and all of the [Repositories](https://github.com/orgs/music-assistant/repositories?type=all) that make up this project!
 
