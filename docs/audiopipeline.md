@@ -5,6 +5,8 @@ description: A Description of the Audio Pipeline View
 
 # Audio Pipeline
 
+![type:video](./videos/audio-pipeline.mp4)
+
 ## Basic View
 ![image](assets/screenshots/audiopipeline-basic.png){ width=500 }
 
