@@ -55,26 +55,21 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 
     [![Preview image](assets/screenshots/screen1.png){width=800 }](assets/screenshots/screen1.png)
 
-## The Team
+## The Core Team
 
 [![Marcel](assets/team/marcel.png){ width=100 }](https://github.com/marcelveldt "Marcel. Creator of Music Assistant")
 [![Jozef](assets/team/jozef.png){ width=100 }](https://github.com/jozefKruszynski "Jozef. Author of the Tidal provider and Core Developer")
-[![Jonathan](assets/team/jonathan.png){ width=100 }](https://github.com/arctixdev "Jonathan. Author of the Deezer provider and the Companion App")
-[![Gavin](assets/team/gavin.png){ width=100 }](https://github.com/OzGav "Gavin. Community Support and Documentation")
 [![Marvin](assets/team/marvin.png){ width=100 }](https://github.com/marvinschenkel "Marvin. Author of the YouTube and Apple Music providers")
+[![Gavin](assets/team/gavin.png){ width=100 }](https://github.com/OzGav "Gavin. Community Support and Documentation")
+[![maxim](assets/team/maxim.png){ width=100 }](https://github.com/maximmaxim345 "Maxim. DSP Guru and Core Developer")
+[![Jonathan](assets/team/jonathan.png){ width=100 }](https://github.com/arctixdev "Jonathan. Author of the Deezer provider and the Companion App")
 [![jc2k](assets/team/jc2k.png){ width=100 }](https://github.com/jc2k "John. Jellyfin Maintainer and Core Developer")
 [![fabian](assets/team/fabian.png){ width=100 }](https://github.com/fmunkes "Fabian. Author of the Audiobookshelf, iTunes Podcast Search and gPodder providers")
 [![Santiago](assets/team/santiago.png){ width=100 }](https://github.com/santiagosotoc "Santiago. Author of the Snapcast provider")
 [![khers](assets/team/khers.png){ width=100 }](https://github.com/khers "Eric. Author of the Subsonic provider")
 [![robsonke](assets/team/robsonke.png){ width=100 }](https://github.com/robsonke "Rob. Author of the iBroadcast provider and maintainer of Soundcloud")
-[![maxim](assets/team/maxim.png){ width=100 }](https://github.com/maximmaxim345 "Maxim. DSP Guru and Core Developer")
-[![diede](assets/team/diede.png){ width=100 }](https://github.com/Cyanogenbot "Diede. Author of the Bluesound provider")
-[![btoconnor](assets/team/btoconnor.png){ width=100 }](https://github.com/btoconnor "Brian. Author of the SiriusXM provider")
-[![ztripez](assets/team/ztripez.png){ width=100 }](https://github.com/ztripez "Ztripez. Author of the Audible provider")
-[![wjzijderveld](assets/team/willem-jan.png){ width=100 }](https://github.com/wjzijderveld "Willem-Jan. Author of the LastFM Scrobbler plugin")
-[![Lokiberra](assets/team/lokiberra.png){ width=100 }](https://github.com/lokiberra "Kevin. Author of the Jellyfin provider")
-[![Mel](assets/team/melharbour.png){ width=100 }](https://github.com/melharbour "Mel. Core developer team")
-[![Giel](assets/team/gieljnssns.png){ width=100 }](https://github.com/gieljnssns "Giel. Author of the Soundcloud provider")
+
+We also give THANKS to all the other contributors to the [Server](https://github.com/music-assistant/server/graphs/contributors), [Frontend](https://github.com/music-assistant/frontend/graphs/contributors), [Voice Support](https://github.com/music-assistant/voice-support/graphs/contributors) and all of the [Repositories](https://github.com/orgs/music-assistant/repositories?type=all) that make up this project!
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon
