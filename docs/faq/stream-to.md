@@ -36,12 +36,10 @@ Use a [Snapserver](../player-support/snapcast.md) and the Snapweb option. If you
 
 ## My Android Phone
 
-![easiest label](../assets/label-easiest.png){ width=64 }
-
+![easiest label](../assets/label-easiest-noshadow.png){ width=64 }
 Play to the built-in THIS DEVICE player.
 
-![intermediate label](../assets/label-intermediate.png){ width=64 }
-
+![intermediate label](../assets/label-intermediate-noshadow.png){ width=64 }
 Use the [Snapcast App](https://play.google.com/store/apps/details?id=de.badaix.snapcast) and the [Snapserver Provider](../player-support/snapcast.md)
 
 ## Music Assistant
