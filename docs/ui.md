@@ -29,9 +29,6 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 ## Player Bar
 [![image](assets/screenshots/UI-playercontrols-bar.png)](assets/screenshots/UI-playercontrols-bar.png)
 
-
-The codec shown in the UI to the right of the track title is the codec of the original source. MA decodes all source audio internally to raw PCM, to preserve the highest quality when processing the audio, and then finally send the audio to the player in a lossless format (unless configured otherwise in the player settings).
-
 The [Audio Pipeline](audiopipeline.md) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
 
 ***************************************************************
@@ -118,7 +115,7 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 [![image](assets/screenshots/homescreen.png)](assets/screenshots/homescreen.png)
 
-The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which provider supports this feature.
+The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which providers supports this feature.
 
 The view is fully configurable. Select the ⋮ menu on the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
 

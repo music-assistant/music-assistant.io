@@ -11,7 +11,7 @@ Music Assistant (in short: MA) is designed to be used side by side with Home Ass
 
 ![easiest label](assets/label-easiest.png){ width=128 }
 
-This is only available when running the full version of Home Assistant, which includes the [Home Assistant Operation System (HAOS)](https://developers.home-assistant.io/docs/operating-system/). Due to its ease of use and full functionality, running the Home Assistant Operating System is the recommended way of running Home Assistant and Music Assistant.
+This is only available when running the full version of Home Assistant, which includes the [Home Assistant Operating System (HAOS)](https://developers.home-assistant.io/docs/operating-system/). Due to its ease of use and full functionality, running the Home Assistant Operating System is the recommended way of running Home Assistant and Music Assistant.
 
 The Music Assistant add-on repository is available in Home Assistant. Browse the addon store within Home Assistant to install or click on the following button:
 
@@ -106,18 +106,18 @@ If you run into any issues when using a docker install vs the recommended/standa
 
 - Music from the music sources will be automatically loaded into the Music Assistant library. If there are multiple sources, they will be merged as one library
 
-- This first implementation of the Music Assistant UI centres around the concept of the [Library](usage.md), so the artists, albums, tracks, playlists and radio stations. It is possible to BROWSE the various providers to add aditional items to the Library. In a later release options will be provided to browse the recommendations of the various streaming providers
+- Music Assistant UI centres around the concept of the [Library](usage.md), so the artists, albums, tracks, playlists, audiobooks, podcasts and radio stations that you are most interested in. It is possible to BROWSE or SEARCH the various providers to add aditional items to the Library.
 
-- Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will indicate tasks that are in progress. This can be seen by this symbol ![icon](assets/icons/sync-icon.png) next to the Music Provider entry in MA settings
+- Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will indicate tasks that are in progress. This can be seen by this symbol ![icon](assets/icons/sync-icon.png) next to the Music Provider entry in the MA settings
 
-- Music sources are synced at regular intervals (which can be selected in the settings)
+- Music sources are synced at regular intervals (which can be changed in the settings)
 
 - MA is designed to work on a Raspberry Pi (4+) which is also running Home Assistant. For this reason it does not make large demands on resources. Additionally, there are limits on the free API calls used for artwork and other metadata. The result of this is that initial syncs of large libraries can take a long time. Subsequent syncs should be noticeably faster
 
 - If a song is available on multiple providers (e.g. Spotify and a FLAC file on disk), the file/stream with the highest quality is always preferred when starting a stream. Highest quality is based on sample rate, bit depth and codec and local is always preferred over cloud if the quality is equal.
 
 - Music Assistant uses a custom stream port (TCP 8097 by default) to stream audio to players. Players must be able to reach the Home Assistant instance and this port. If you're running one of the recommended HAOS installation methods, this is all handled for you, otherwise you will have to make sure you're running MA in a container with HOST network mode and with the privileges shown in the example docker compose above. Note: If the default port 8097 is occupied, the next port will be tried, and so on
-- Any restriction of the available ports (e.g. trying to run MA through a firewall) is not supported as protocols like AirPlay open random tcp and/or udp ports
+- Any restriction of the available ports (e.g. trying to run MA through a firewall) is not supported as protocols like AirPlay open random TCP and/or UDP ports
 - Attempting to create or manipulate a playlist or queue with more than a thousand items can cause unresponsivness or high resource usage depending on the resources of the host
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
