@@ -28,9 +28,21 @@ If you have a spare Raspberry Pi (any model) then [PiCoreplayer](https://www.pic
 
 ## My Browser
 
+![easiest label](../assets/label-easiest.png){ width=64 }
+
+Play to the built-in THIS DEVICE player.
+
+![easiest label](../assets/label-intermediate.png){ width=64 }
+
 Use a [Snapserver](../player-support/snapcast.md) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
 
 ## My Android Phone
+
+![easiest label](../assets/label-easiest.png){ width=64 }
+
+Play to the built-in THIS DEVICE player.
+
+![easiest label](../assets/label-intermediate.png){ width=64 }
 
 Use the [Snapcast App](https://play.google.com/store/apps/details?id=de.badaix.snapcast) and the [Snapserver Provider](../player-support/snapcast.md)
 
@@ -48,7 +60,7 @@ You can indirectly stream to a device which only accepts a URL such as a Web Rad
 
 - Install https://github.com/Poeschl-HomeAssistant-Addons/mpd (this will create an mpd media_player entity)
 - Enable httpd_output in the mpd addon (which allows for web streaming)
-- Use the HA media player plugin in music assistant and select mpd as the output
+- Use the HA media player plugin in Music Assistant and select mpd as the output
 
 Thanks to [Manuel Rüger](https://github.com/mrueg) who showed us [here](https://github.com/orgs/music-assistant/discussions/2410#discussioncomment-10885780)
 
@@ -70,7 +82,7 @@ Bluesound is shown in the [player provider table](../player-support/index.md) as
 
 Note that many Sonos devices can be synced with AirPlay devices which is another plus for AirPlay.
 
-Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [DSP Settings description](https://www.music-assistant.io/player-support/#dsp-settings)
+Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [DSP Settings description](../settings/individual-player.md#dsp-settings)
 
 The following table is a non-exhaustive list of possible solutions:
 
