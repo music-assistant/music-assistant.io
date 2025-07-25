@@ -20,7 +20,7 @@ It is possible to speed the metadata retrieval for an individual item (including
 
 ## The Library
 
-The Music Assistant Library is a database containing details of the music which the user has indicated they are interested in listening to on a regular basis. It consists of information about Artists, Albums, Tracks, Playlists and Radio Stations which allows easy searching, display and cross referencing across the User Interface.
+The Music Assistant Library is a database containing details of the music which the user has indicated they are interested in listening to on a regular basis. It consists of information about Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts and Radio Stations which allows easy searching, display and cross referencing across the User Interface.
 
 For local music providers all artists/albums/tracks/playlists are imported into the MA library when the provider is added and at each sync.
 
@@ -74,7 +74,7 @@ Playlists can be created or added to from various menus in the different views. 
 
 Playlists which consist of tracks from the filesystem provider will be stored in the MA database.
 
-User created playlists from streaming providers will be imported into the MA database and will remain synchronised regardless of whether changes are made from the MA UI or from the streaming provider's native applicatons. Refer to the individual Music Provider pages for any limitations.
+User created playlists from streaming providers will be imported into the MA database and will remain synchronised regardless of whether changes are made from the MA UI or from the streaming provider's native application. Refer to the individual Music Provider pages for any limitations.
 
 Playlists can be copied from one provider to another by opening the source playlist and selecting all of the tracks and then in the ACTIONS menu select `Add to Playlist`.
 

@@ -47,22 +47,24 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 
 ## Preview
 
-[![Preview image](assets/screenshots/screen2.png){width=800 }](assets/screenshots/screen2.png)
+[![Preview image](assets/screenshots/screen2.png){ width=800 }](assets/screenshots/screen2.png)
 
 ??? note "Click to show more screenshots"
 
-    [![Preview image](assets/screenshots/screen3.png){width=800 }](assets/screenshots/screen3.png)
+    [![Preview image](assets/screenshots/screen3.png){ width=800 }](assets/screenshots/screen3.png)
 
-    [![Preview image](assets/screenshots/screen1.png){width=800 }](assets/screenshots/screen1.png)
+    [![Preview image](assets/screenshots/screen1.png){ width=800 }](assets/screenshots/screen1.png)
 
 ## The Core Team
-
+ 
 [![Marcel](assets/team/marcel.png){ width=100 }](https://github.com/marcelveldt "Marcel. Creator of Music Assistant")
+
 [![Jozef](assets/team/jozef.png){ width=100 }](https://github.com/jozefKruszynski "Jozef. Author of the Tidal provider and Core Developer")
 [![Marvin](assets/team/marvin.png){ width=100 }](https://github.com/marvinschenkel "Marvin. Author of the YouTube and Apple Music providers")
 [![Gavin](assets/team/gavin.png){ width=100 }](https://github.com/OzGav "Gavin. Community Support and Documentation")
 [![maxim](assets/team/maxim.png){ width=100 }](https://github.com/maximmaxim345 "Maxim. DSP Guru and Core Developer")
 [![Jonathan](assets/team/jonathan.png){ width=100 }](https://github.com/arctixdev "Jonathan. Author of the Deezer provider and the Companion App")
+
 [![jc2k](assets/team/jc2k.png){ width=100 }](https://github.com/jc2k "John. Jellyfin Maintainer and Core Developer")
 [![fabian](assets/team/fabian.png){ width=100 }](https://github.com/fmunkes "Fabian. Author of the Audiobookshelf, iTunes Podcast Search and gPodder providers")
 [![Santiago](assets/team/santiago.png){ width=100 }](https://github.com/santiagosotoc "Santiago. Author of the Snapcast provider")

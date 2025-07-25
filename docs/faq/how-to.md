@@ -3,9 +3,28 @@ title: Frequently Asked Questions - How Do I...?
 description: Common Uses for Music Assistant
 ---
 
-# Use Assist and AI to Play my Music?
+# Get the URI?
 
-The core HA voice intents support NEXT TRACK, (PREVIOUS TRACK is coming), PAUSE, UNPAUSE and VOLUME to a specific player or to an area. HA does not intend to add any more media player actions at this time so you will need to use custom sentences to cover any other of your requirements. See this [discussion for how](https://github.com/orgs/music-assistant/discussions/2176).
+For playlists, artists, albums and radio you can simply use the name.
+
+For tracks you can use the name but that may result in ambiguous responses so you can limit by artist name by using `Billy Joel - A Matter of Trust`. If that is still ambiguous, then the action has additional options which you can use to further restrict the search. For example:
+
+``` yaml
+data:
+  media_type: track
+  media_id: Running on Ice
+  artist: Billy Joel
+  album: The Bridge
+```
+
+Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
+
+You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](../ui.md/#view-individual-artist) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
+
+!!! note
+    URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
+
+URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system provider added to MA then `filesystem_smb` can be used.
 
 # Use volume normalization? How does it work?
 
@@ -15,9 +34,10 @@ More details [here](tech-info.md#volume-normalization)
 
 # Have my music continue if I change rooms
 
-There are two options.
+There are three options.
 1. Start streaming to any type of group that includes all the rooms you will move between. Mute all the rooms except the one you are in. When you move rooms just mute and unmute the required players.
-2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](groups.md) 
+2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](groups.md)
+3. Use the [Transfer Queue](masstransfer.md) action.
 
 # Shuffle Spotify/Playlist/YouTube etc
 
@@ -189,29 +209,6 @@ Thanks to [AAsikki](https://github.com/Aasikki) who showed us [here](https://git
 # Use MA with Mopidy
 
 See here https://github.com/orgs/music-assistant/discussions/439
-
-# Get the URI?
-
-For playlists, artists, albums and radio you can simply use the name.
-
-For tracks you can use the name but that may result in ambiguous responses so you can limit by artist name by using `Billy Joel - A Matter of Trust`. If that is still ambiguous, then the action has additional options which you can use to further restrict the search. For example:
-
-``` yaml
-data:
-  media_type: track
-  media_id: Running on Ice
-  artist: Billy Joel
-  album: The Bridge
-```
-
-Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
-
-You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](../ui.md/#view-individual-artist) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
-
-!!! note
-    URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
-
-URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system provider added to MA then `filesystem_smb` can be used.
 
 # Run MA when I have SSL setup on my internal network?
 
