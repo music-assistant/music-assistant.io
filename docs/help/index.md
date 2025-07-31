@@ -13,7 +13,7 @@ With a large project like this, there is always plenty to do. Not only with actu
 
 As explained above you can show your appreciation in all kinds of ways. If you wanted to support the project financially then you should support the [Open Home Foundation (OHF)](https://www.openhomefoundation.org/) by subscribing to [Nabu Casa](https://www.nabucasa.com/). You can also support the OHF by purchasing [Home Assistant Hardware](https://www.home-assistant.io/) or [merch!](https://home-assistant-store.creator-spring.com/)
 
-If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a Buy Me A Coffee or similar link. There are also links to the main devs GitHub page on the [Home Page.](../index.md/#the-team)
+If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a Buy Me A Coffee or similar link. There are also links to the main devs GitHub page on the [Home Page.](../index.md/#the-core-team)
 
 A really big thank you in advance from the whole team!
 
