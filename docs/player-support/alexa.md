@@ -22,7 +22,7 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 - Pull from GitHub Container Registry and run the Docker container:
   ```sh
   docker pull ghcr.io/alams154/music-assistant-alexa-api:latest
-  docker run --rm -d -p 3000:3000 ghcr.io/alams154/music-assistant-alexa-api:latest
+  docker run --rm -d -p 3000:3000 -e USERNAME=admin -e PASSWORD=test ghcr.io/alams154/music-assistant-alexa-api:latest
   ```
 
 ### 2. Set Up a Proxy with SSL Certificates
@@ -42,14 +42,14 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 
 ### 4. Customize the Skill
 
-- In the Alexa Developer Console:
-  1. Go to the **Build** tab
-  2. Set the **Invocation Name** to "music assistant" and save
-  3. Go to the **Code** tab and open `index.js`
-  4. Change the `API_HOSTNAME` and `MA_HOSTNAME` constants to point to your API bridge and Music Assistant instance
-  5. Click **Deploy** to deploy the skill
-  6. Go to the **Test** tab and enable skill testing in **Development**
-  7. Go back to the **Build** tab and build the skill
+1. Go to the **Build** tab in the Alexa Developer Console.
+2. Click the **Invocation Name** field and type in **music assistant** and hit save
+3. Go to the **Code** tab and open the `index.js` file.
+4. Change the **API_HOSTNAME** and **MA_HOSTNAME** constants to point to your API and Music Assistant instance.
+5. Change the **API_USERNAME** and **API_PASSWORD** constants regarding the basic auth settings of the alexa api container or your reverse proxy.
+6. Click **Deploy** to deploy the skill
+7. Go to the **Test** and enable skill testing in **Development**
+8. Go to the **Build** tab and build the skill
 
 **Summary:**  
 The API bridge is run as a separate server, a proxy with SSL certificates must be set up, the Alexa skill is imported and configured, and then Music Assistant playback should now be enabled on your Alexa devices.
