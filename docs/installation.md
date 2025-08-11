@@ -85,28 +85,22 @@ If you run into any issues when using a docker install vs the recommended/standa
 
 - The server itself hosts a webserver to stream audio to devices. This webinterface must be accessible via HTTP by IP-address from local players. See the server's logging at startup to see if the server has correctly auto-detected the local IP
 
-- The webinterface of the server can be reached on TCP port 8095 if enabled in the settings. By default, on HAOS based installations, the webserver is internal only and not exposed to the outside world. It is protected by HA authentication using the Ingress feature of Home Assistant (you also get the sidepanel shortcut for free!)
+- The webinterface of the server can be reached on TCP port 8095. For HAOS based installations, the webserver is available via Ingress which means it is protected by HA authentication (you also get the sidepanel shortcut for free!)
 
-- The frontend can be accessed over https by following these steps:
-
-  1. Expose the webserver via MA SETTINGS>> CORE>> WEB SERVER
-
-  2. To access the frontend behind a reverse proxy, the reverse proxy will have to be configured to point at port 8095 and expose it to whatever is desired (and add an SSL certificate). How that works differs for each implemention.
+- To access the frontend behind a reverse proxy, the reverse proxy will have to be configured to point at port 8095 and expose it to whatever is desired (and add an SSL certificate). How that works differs for each implemention.
 
 !!! tip
-    The server can be kept more secure by NOT exposing the webserver and let the addon talk directly to the webserver on the internal docker network. In that case the internal DNS name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
+    The server can be kept more secure by letting the addon (as installed) talk directly to the webserver on the internal docker network. In that case the internal DNS name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
 
 ## Usage and Notes
-
-- When running the Home Assistant add-on, the webinterface can be accessed via the add-on (a shortcut can be added to the sidebar) which is more secure than via the port (although the port can be exposed (but not changed) in the settings)
 
 - If Music Assistant in running in a separate docker container, the webinterface needs to be accessed at `http://YOUR_MA_IP_ADDRESS:8095`. The port can be changed in the MA settings. If something else is using port 8095 then that must be shutdown until the MA port is changed
 
 - No providers are installed initially. These must be added by navigating to the MA settings and then adding each provider individually (Music and Players) that are desired
 
-- Music from the music sources will be automatically loaded into the Music Assistant library. If there are multiple sources, they will be merged as one library
+- Music from the music sources will be automatically loaded into the [Music Assistant library](usage.md#the-library). If there are multiple sources, they will be merged as one library
 
-- Music Assistant UI centres around the concept of the [Library](usage.md), so the artists, albums, tracks, playlists, audiobooks, podcasts and radio stations that you are most interested in. It is possible to BROWSE or SEARCH the various providers to add aditional items to the Library.
+- The Music Assistant UI centres around the concept of the [Library](usage.md#the-library), so the artists, albums, tracks, playlists, audiobooks, podcasts and radio stations that you are most interested in. It is possible to BROWSE or SEARCH the various providers to add aditional items to the Library.
 
 - Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will indicate tasks that are in progress. This can be seen by this symbol ![icon](assets/icons/sync-icon.png) next to the Music Provider entry in the MA settings
 
