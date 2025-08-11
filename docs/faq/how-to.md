@@ -230,8 +230,6 @@ The [Nextcloud Music App](https://apps.nextcloud.com/apps/music) supports [Subso
 
 # Access the MA Views directly via URL
 
-You will need to expose the webserver port to enable this feature. See [here](../installation.md/#server-notes) for the instructions and considerations before doing so.
-
 ## Player Selection
 
 A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a MA player name or `true` to open the last known. Player names are not case sensitive.
