@@ -55,4 +55,4 @@ YAMP is a Home Assistant media card for controlling multiple entities with highl
 
 Music Assistant Queue Card is a custom card which allows you to move the items in a queue up, down, next, or remove them entirely. Requires the custom integration [Music Assistant Queue Actions](https://github.com/droans/mass_queue) to work.
 
-![image](https://github.com/droans/mass_card/blob/main/static/queue_example_mobile.png){ width=600 }
+![image](https://raw.githubusercontent.com/droans/mass_card/main/static/queue_example.png){ width=600 }
