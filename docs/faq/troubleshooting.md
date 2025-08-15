@@ -9,6 +9,8 @@ Look in the logs and try and resolve any errors you see there particularly those
 
 Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you.
 
+Increasingly, we are seeing reports from users which are caused by their use of tools such as AdGuard, Pi-hole, pfSense etc. If your problem relates to being unable to stream or if there are errors in the logs related to unreachable addresses or timeouts then disable all of these tools before seeking help. Just applying a rule is insufficient, the problem must be present with these tools completely disabled.  
+
 For clarity, running installation options other than HAOS or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
 
 There are settings available in MA SETTINGS>>CORE>>STREAMSERVER>>CONFIGURE>>ADVANCED that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](../installation.md#docker-image).
@@ -33,7 +35,7 @@ For voice problems refer to [Voice Troubleshooting](https://music-assistant.io/i
 
 Try power cycling the physical player(s) if they won't connect or if there is no sound.
 
-Check the GitHub Issues and Discord to see if it is a known problem. If not try restarting MA, try restarting HA, and try a full HOST REBOOT (in that order). If it is an integration problem then trying removing it from HA settings and HACS then restart HA then reinstall.
+Check the GitHub Issues and Discord to see if it is a known problem. If not try restarting MA, try restarting HA, and try a full HOST REBOOT (in that order). If it is an integration problem then trying removing it via the HA settings then restart HA then reinstall.
 
 Before you raise an issue [read this first](../support.md). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
 
