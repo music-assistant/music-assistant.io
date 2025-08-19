@@ -2,37 +2,38 @@
 
 Music Assistant has support for streaming from [ARD Audiothek](https://www.ardaudiothek.de/). Contributed and maintained by [Jan Feil](https://github.com/jfeil)
 
-!!! note
-    A paid subscription is required for this provider
-
 ## Features
 
 |           |                     |
 |:-----------------------|:---------------------:|
-| Subscription FREE | No |
+| Subscription FREE | Yes |
 | Self-Hosted Local Media   | No |
-| Media Types Supported | Radio |
+| Media Types Supported | Radio, Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | No |
-| Maximum Stream Quality | ?????? |
-| Login Method | Password or Token |
+| Maximum Stream Quality | Lossy, Variable Quality |
+| Login Method | Password |
 
 ### Other
 
-- The Audible library can be listed
-- Metadata for audiobooks will be populated
-- Playback can be resumed from the last position reported by Audible
-- Chapter navigation
+- Progress reporting and acquiring
+- Populates libraries with subscribed podcasts
+- Updates playlog on regular provider syncs
+
 
 ## Configuration
 
-To 
+Login to the ARD Audiothek app, if syncing is required
+Define maximum stream bitrate
+Configure how much of an episode playback counts as fully played back (this is only used for visualization within Music Assistent) 
 
 ## Known Issues / Notes
 
-- ny 
+- Nil
 
 ## Not Yet Supported
 
-- Brow
+- Subscription management is not supported
+- Podcast recommendations is not implemented
+- For radio streams: Current played song is not displayed
