@@ -49,6 +49,7 @@ nav:
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
       - Plex: music-providers/plex.md
+      - Podcast Index: music-providers/podcast-index.md
       - Podcast RSS Feed: music-providers/podcastfeed.md
       - Qobuz: music-providers/qobuz.md
       - Radio Browser: music-providers/radio-browser.md
