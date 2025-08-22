@@ -1,18 +1,18 @@
 # Music Assistant Companion
 
-[![latest version](https://img.shields.io/github/release/music-assistant/music-assistant-desktop?display_name=tag&include_prereleases&label=Latest%20version)](https://github.com/music-assistant/companion/releases/latest)
+[![latest version](https://img.shields.io/github/release/music-assistant/music-assistant-desktop?display_name=tag&include_prereleases&label=Latest%20version)](https://github.com/music-assistant/tauri-companion-app/releases/latest)
 [![discord](https://img.shields.io/discord/753947050995089438?label=Discord&logo=discord&color=5865F2)](https://discord.gg/kaVm8hGpne)
 [![sponsor](https://img.shields.io/github/sponsors/music-assistant?label=sponsors)](https://github.com/sponsors/music-assistant)
-[![sponsor](https://img.shields.io/static/v1?label=Licence&message=Apache-2.0&color=000)](https://github.com/music-assistant/companion/blob/main/LICENSE)
+[![sponsor](https://img.shields.io/static/v1?label=Licence&message=Apache-2.0&color=000)](https://github.com/music-assistant/tauri-companion-app/blob/main/LICENSE)
 ![sponsor](https://img.shields.io/static/v1?label=Bundled%20Size&message=25.1MB&color=0974B4)
-[![sponsor](https://img.shields.io/static/v1?label=Stage&message=Alpha&color=2BB4AB)](https://github.com/music-assistant/companion/blob/main/LICENSE)
+[![sponsor](https://img.shields.io/static/v1?label=Stage&message=Alpha&color=2BB4AB)](https://github.com/music-assistant/tauri-companion-app/blob/main/LICENSE)
 
 The desktop companion app for Music Assistant!
 
-**Download for** macOS ([Apple Silicon](https://github.com/music-assistant/companion/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_aarch64.dmg) | [Intel](https://github.com/music-assistant/companion/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_x64.dmg)) · [Windows](https://github.com/music-assistant/companion/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_x64_en-US.msi) · Linux ([Debian](https://github.com/music-assistant/companion/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_amd64.deb) | [Other](https://github.com/music-assistant/companion/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_amd64.AppImage))
+**Download for** macOS ([Apple Silicon](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_aarch64.dmg) | [Intel](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_x64.dmg)) · [Windows](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_x64_en-US.msi) · Linux ([Debian](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_amd64.deb) | [Other](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_amd64.AppImage))
 
 !!! tip "This is still in very early alpha. Bugs *will* be present."
-    Please help finding them. You can report any bugs on the [Discord server](https://discord.gg/kaVm8hGpne) or in the [repo issues](https://github.com/music-assistant/companion/issues)
+    Please help finding them. You can report any bugs on the [Discord server](https://discord.gg/kaVm8hGpne) or in the [repo issues](https://github.com/music-assistant/tauri-companion-app/issues)
 
 !!! note
     There aren't apps available yet for Android or iOS
@@ -40,17 +40,17 @@ Like the Spotify app, the Music Assistant app can do Discord Rich Presence.
 
 Example of Discord Rich Presence:
 
-![Example of Discord Rich Presence](https://github.com/music-assistant/companion/assets/74015378/8de18bac-b963-4aba-bb61-5730b41759a9)
+![Example of Discord Rich Presence](https://github.com/music-assistant/tauri-companion-app/assets/74015378/8de18bac-b963-4aba-bb61-5730b41759a9)
 
 ## Installation
 
 ### Windows
 
-You can download the .msi installer from the [releases](https://github.com/music-assistant/companion/releases/latest/).
+You can download the .msi installer from the [releases](https://github.com/music-assistant/tauri-companion-app/releases/latest/).
 
 ### macOS
 
-You can download the .dmg from the [releases](https://github.com/music-assistant/companion/releases/latest/).
+You can download the .dmg from the [releases](https://github.com/music-assistant/tauri-companion-app/releases/latest/).
 
 Or you can download it using homebrew: `brew install music-assistant/tap/companion`
 
@@ -62,11 +62,11 @@ You can install it with yay: `yay music-assistant-desktop-bin`
 
 ### Debian (and Debian based distributions)
 
-You can download the .deb from the [releases](https://github.com/music-assistant/companion/releases/latest/).
+You can download the .deb from the [releases](https://github.com/music-assistant/tauri-companion-app/releases/latest/).
 
 ### All the other Linux distros
 
-You can download the AppImage from the [releases](https://github.com/music-assistant/companion/releases/latest/).
+You can download the AppImage from the [releases](https://github.com/music-assistant/tauri-companion-app/releases/latest/).
 
 ### From source
 
