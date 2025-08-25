@@ -40,7 +40,7 @@ This view will change depending on screen width. With wider displays you will be
 
 The [Audio Pipeline](audiopipeline.md) selectable label is described above in the [Player Bar](#player-bar) section.
 
-You can also access the [Now Playing view directly via URL](faq/how-to.md/#access-the-now-playing-view-directly-via-url)
+You can also access the [Now Playing view directly via URL](faq/how-to.md/#now-playing-view)
 
 When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favourite status may not indicate correctly until playback of the track is restarted.
 
