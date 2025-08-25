@@ -110,7 +110,7 @@ For the iOS app see [here](https://community.home-assistant.io/t/anyone-know-how
 
 MA is an INPUT to your amplifier. So you need to power on your amplifier and then select the INPUT that MA is streaming to (e.g. AirPlay, DLNA, Chromecast). For this reason MA does not see the amplifier zones it only sees the compatible inputs of the amplifier. 
 
-Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](../player-support/index.md#player-controls). 
+Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](../settings/individual-player.md/#player-controls). 
 
 # My local music isn’t being imported or I’m seeing missing ID3 tag warnings in the logs
 
