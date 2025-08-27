@@ -28,7 +28,8 @@ Add the account username, password and region (United States or Canada) into the
 
 ## Known Issues / Notes
 
-Radio stations favorited on SiriusXM are not reflected in Music Assistant. The stations need to be favorited manually via the MA UI to have them show up in the Radio view
+- Radio stations favorited on SiriusXM are not reflected in Music Assistant. The stations need to be favorited manually via the MA UI to have them show up in the Radio view
+- Problems have been reported logging in with an e-mail address. If this occurs obtain a username
 
 ## Not Yet Supported
 
