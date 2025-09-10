@@ -49,7 +49,7 @@ This is working concept demonstrator using the ha-floorplan custom component.
 
 YAMP is a Home Assistant media card for controlling multiple entities with highly customizable actions and UI elements
 
-![image](https://github.com/jianyu-li/yet-another-media-player/blob/main/Preview/largepreview.png?raw=true){ width=600 }
+![image](https://github.com/jianyu-li/yet-another-media-player/blob/main/preview/largepreview.png?raw=true){ width=600 }
 
 # [Music Assistant Queue Card](https://github.com/droans/mass_card)
 
