@@ -2,7 +2,7 @@
 
 Music Assistant has support for streaming podcasts from the [Podcast Index](https://podcastindex.org/). Contributed and maintained by [Gavin](https://github.com/ozgav)
 
-!!! warning
+!!! tip "Donate"
     This provider exists due to the generosity of donators. Why not consider becoming one? [![Preview image](../assets/icons/paypal-donate.png){ width=128 }](https://www.paypal.com/donate?token=nL6aXVd2VV460c2sWxUm0hrWx4sl6X8nbUi_LGcsljfIfAE2c2K47nYZbhvzcuBD_hp9PdmizHVXfWLv)
 
 ## Features
