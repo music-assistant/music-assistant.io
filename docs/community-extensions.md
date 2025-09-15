@@ -55,4 +55,4 @@ YAMP is a Home Assistant media card for controlling multiple entities with highl
 
 Music Assistant Player Card is a custom card which provides a full media player, browser, and player queue for Music Assistant. Requires the custom integration [Music Assistant Queue Actions](https://github.com/droans/mass_queue) to work.
 
-![image](https://raw.githubusercontent.com/droans/mass-player-card/main/static/combined.png){ height=400 }
+![image](https://raw.githubusercontent.com/droans/mass-player-card/main/static/combined.png){ width=600 }
