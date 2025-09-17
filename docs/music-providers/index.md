@@ -22,6 +22,14 @@ All Music Providers have settings which can be configured. The settings page wil
 
 ![image](../assets/screenshots/generic-settings.png)
 
+## Library Import Control
+
+All music providers have options to control the import of media items. The options are `Import into the library [default]`, `Import into the library, and mark as favorite`, and `Do not import into the library`. These relate to the items in the providers library (however called) and not to items which are created in the MA library as a consequence of the import. For example, if an individual track is in the provider's library (but not its associated albuum) and all of the import settings are set to mark as favorite then the individual track will be imported and marked as a favorite but the album, which will be created in the database to support the track, will not be so marked. Similarly, artists which are added to the database because they are found within a provider's playlists will not be marked as a favorite as they are not being "imported".
+
+These settings relate to when the item is added or changed in the MA database (which in turn is updated when changes occur in the provider) so they cannot be used to make bulk changes to the favorite status of items. 
+
+![image](../assets/screenshots/library-import-settings.png)
+
 ## Summary
 
 The table below provides an at-a-glance summary of all of the music providers. Green ticks indicate a desirable quality or function is available. 
