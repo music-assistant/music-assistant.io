@@ -9,7 +9,7 @@
 
 The desktop companion app for Music Assistant!
 
-**Download for** macOS ([Apple Silicon](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_aarch64.dmg) | [Intel](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_x64.dmg)) · [Windows](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_x64_en-US.msi) · Linux ([Debian](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_amd64.deb) | [Other](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.73/Music.Assistant.Companion_0.0.73_amd64.AppImage))
+**Download for** macOS ([Apple Silicon](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_aarch64.dmg) | [Intel](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_x64.dmg)) · [Windows](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_x64_en-US.msi) · Linux ([Debian](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_amd64.deb) | [Other](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_amd64.AppImage))
 
 !!! tip "This is still in very early alpha. Bugs *will* be present."
     Please help finding them. You can report any bugs on the [Discord server](https://discord.gg/kaVm8hGpne) or in the [repo issues](https://github.com/music-assistant/tauri-companion-app/issues)
