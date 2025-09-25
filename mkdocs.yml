@@ -48,6 +48,7 @@ nav:
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
+      - Nugs.net: music-providers/nugs.md
       - Plex: music-providers/plex.md
       - Podcast RSS Feed: music-providers/podcastfeed.md
       - Qobuz: music-providers/qobuz.md
@@ -62,12 +63,14 @@ nav:
   - Player Providers:
     - player-support/index.md
     - AirPlay: player-support/airplay.md
+    - Alexa: player-support/alexa.md
     - Bluesound: player-support/bluesound.md
     - Builtin: player-support/builtin.md
     - DLNA: player-support/dlna.md
     - Fully Kiosk: player-support/fully-kiosk.md
     - Google Cast: player-support/google-cast.md
     - Home Assistant: player-support/ha.md
+    - MusicCast: player-support/musiccast.md
     - Snapcast: player-support/snapcast.md
     - Sonos: player-support/sonos.md
     - Squeezelite: player-support/squeezelite.md
@@ -76,6 +79,7 @@ nav:
     - Home Assistant Plugin: ha-plugin.md
     - LastFM Scrobbler: plugins/lastfm_scrobble.md
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
+    - Subsonic Scrobbler: plugins/subsonic_scrobble.md
     - plugins/spotify-connect.md
   - Community Extensions: community-extensions.md
   - Support: support.md

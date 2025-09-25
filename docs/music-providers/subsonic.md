@@ -9,7 +9,7 @@ Music Assistant has support for music servers which work to the Open Subsonic AP
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
-| [Recommendations](../ui.md#view-home) Supported | No |
+| [Recommendations](../ui.md#view-home) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
@@ -32,8 +32,12 @@ You will need to provide the following to Music Assistant:
 ### Settings
 
 - <b>Enable Podcasts.</b> This toggle controls podcast availability in Music Assistant
-- <b>Enable legacy auth.</b> Some Subsonic implementations require this to be enabled to authenticate
-- <b>Force player provider seek.</b> Some Subsonic implementations advertise that seeking is supported when it isn't. If seeking does not work then enable this option
+- <b>Enable Legacy Auth.</b> Some Subsonic implementations require this to be enabled to authenticate
+- <b>Force Player Provider Seek.</b> Some Subsonic implementations advertise that seeking is supported when it isn't. If seeking does not work then enable this option
+- <b>Recommend Favorites.</b> Should favorited (starred) items be included as recommendations?
+- <b>Recommend New Albums.</b> Should new albums be included as recommendations?
+- <b>Recommend Most Played.</b> Should most played albums be included as recommendations?
+- <b>Recommendation Limit.</b> How many recommendations from each enabled type should be included?
 
 ## Known Issues / Notes
 

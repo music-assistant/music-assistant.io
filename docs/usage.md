@@ -16,6 +16,8 @@ Music Assistant never modifies the tags in the local files. Online metadata retr
 
 For users with local files with local artwork and also streaming providers, preferably add the local provider first and allow the sync to complete and all artwork to appear before adding the streaming providers. Not doing so can result in the streaming provider artwork to be preferred although this can be fixed by using the images section in the artist view.
 
+It is possible to speed the metadata retrieval for an individual item (including lyrics when a track is selected) by using the UPDATE METADATA option in the ⋮ menu in the top right corner.
+
 ## The Library
 
 The Music Assistant Library is a database containing details of the music which the user has indicated they are interested in listening to on a regular basis. It consists of information about Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts and Radio Stations which allows easy searching, display and cross referencing across the User Interface.
@@ -24,7 +26,7 @@ For local music providers all artists/albums/tracks/playlists are imported into 
 
 For streaming providers ONLY the SPECIFIC artists/albums/tracks/playlists that are in the streaming providers library (or favourites or however it is termed in the provider) will be imported into the MA library when the provider is added and at each sync. This means, for example, if you have an artist in the providers library but none of their albums then all you will see in the MA library is the artist with NO associated albums or tracks. You have to subsequently add albums or tracks to the MA library if you want to see them in the library views. Note you can toggle the library / streaming provider filter option to see all that is available in the streaming provider.
 
-In each view there is a ⋮ menu in the top right corner. This menu has various library related functions. Two important ones are UPDATE METADATA amd REFRESH ITEM.  Update metadata only retrieves additional metadata and doesn't alter any of the existing/base details, while refresh item completely re-adds the item into the database, overwriting all existing data. To update the images section you only need to select UPDATE METADATA.
+In each view there is a ⋮ menu in the top right corner. This menu has various library related functions. Two important ones are UPDATE METADATA amd REFRESH ITEM.  Update metadata only retrieves additional metadata for the item being viewed and doesn't alter any of the existing/base details, while refresh item completely re-adds the item into the database, overwriting all existing data. To update the images section or lyrics you only need to select UPDATE METADATA.
 
 !!! note
     If identical items (e.g. an album or track) have not been matched across providers or within a provider then select the item and using the ⋮ menu in the top banner select REFRESH ITEM
