@@ -11,11 +11,11 @@ This provider gives Music Assistant users free access to millions of audio recor
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
-| Media Types Supported | Artists, Albums, Tracks, Audiobooks |
+| Media Types Supported | Artists, Albums, Tracks, Audiobooks, Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | No |
-| Maximum Stream Quality | MP3 (16 bit, 44.1 kHz) |
+| Maximum Stream Quality | FLAC (16 bit, 44.1 kHz) |
 | Login Method | None |
 
 ### Other
@@ -42,3 +42,4 @@ This provider gives Music Assistant users free access to millions of audio recor
 - The provider attempts to filter this out but full concerts may be shown as individual "tracks"
 - Audiobooks are supported however users can only jump between chapters and cannot seek within a chapter
 - This free service does not have optimised API calls and delays can be experienced when browsing and searching. Long time caching is used to speed subsequent viewing
+- Bear in mind that file naming is inconsistent, clear titles are not always available and the same title can be used for different items 
