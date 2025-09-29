@@ -24,11 +24,16 @@ Music Assistant has support for streaming podcasts from the [Podcast Index](http
 
 ## Configuration
 
-- No configuration is required
+- You need to get an API key and secret from https://api.podcastindex.org/signup
+
+### Settings
+
+- <b>API Key</b> Enter your API key here
+- <b>API Secret</b> Enter your API secret here
 
 ## Known Issues / Notes
 
-- Nil
+- There may be podcasts in this index which don't work
 
 ## Not Yet Supported
 
