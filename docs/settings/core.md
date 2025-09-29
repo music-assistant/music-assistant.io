@@ -15,19 +15,17 @@ The core server settings are set with typical defaults that should work for most
 
 ## Music Controller
 
-- <b>Sync Interval.</b> The interval in minutes that all music providers are synchronized with MA
-- <b>Add item to the library as soon as its played.</b> Add a track or radio station to the library when played
 - <b>Advanced - Reset Library Database.</b> Selecting this button will erase the MA database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music providers will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
+
+## Player Controller
+
+- No settings are currently available beyond the log level
 
 ## Player Queues Controller
 
 The behaviour when playing or enqueuing items is determined by the settings in this section.
 
 ![image](../assets/screenshots/settings-player-queues.png)
-
-## Players Controller
-
-- No settings are currently available beyond the log level
 
 ## Streamserver
 
