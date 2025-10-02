@@ -47,6 +47,7 @@ nav:
       - iBroadcast: music-providers/ibroadcast.md
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
+      - JioSaavn: music-providers/jiosaavn.md
       - Local Files: music-providers/filesystem.md
       - Nugs.net: music-providers/nugs.md
       - Plex: music-providers/plex.md
