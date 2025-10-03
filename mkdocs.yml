@@ -39,6 +39,7 @@ nav:
   - Music Providers:
       - music-providers/index.md
       - Apple Music: music-providers/apple-music.md
+      - ARD Audiothek: music-providers/ard-audiothek.md
       - Audible: music-providers/audible.md
       - Audiobookshelf: music-providers/audiobookshelf.md
       - Builtin: music-providers/builtin.md
