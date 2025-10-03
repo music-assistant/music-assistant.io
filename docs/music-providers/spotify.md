@@ -11,7 +11,7 @@ Music Assistant has full support for Spotify media listing and playback.
 |:-----------------------|:---------------------:|
 | Subscription FREE | No |
 | Self-Hosted Local Media | No |
-| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks |
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | Yes |
@@ -43,5 +43,4 @@ Music Assistant has full support for Spotify media listing and playback.
 
 ## Not yet supported
 
-- Podcasts support ([see this feature request](https://github.com/music-assistant/support/discussions/429))
 - Recommendations ([see this feature request](https://github.com/music-assistant/support/discussions/535))
