@@ -35,7 +35,7 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
 
 **Favourites**
 
-As a further means of filtering the library, items can be marked as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favourited by default when imported from the music provider is determined by the [provider settings](../music-provider/index.md). You can see all items if you deselect the heart icon in the top menu.
+As a further means of filtering the library, items can be marked as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favourited by default when imported from the music provider is determined by the [provider settings](../music-providers/index.md). You can see all items if you deselect the heart icon in the top menu.
 
 ## The Queue
 
