@@ -6,7 +6,7 @@ site_url: https://music-assistant.github.io/
 
 nav:
   - Home: index.md
-  - Server Install & Configure: 
+  - Server Install and Configure: 
       - Installation: installation.md
       - Core Settings: settings/core.md
       - Player Provider Settings: settings/player-provider.md
@@ -44,6 +44,7 @@ nav:
       - Audiobookshelf: music-providers/audiobookshelf.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
+      - DI.fm Network: music-providers/digitally-incorporated.md
       - gPodder: music-providers/gpodder.md
       - iBroadcast: music-providers/ibroadcast.md
       - Internet Archive: music-providers/internet-archive.md
