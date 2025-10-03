@@ -52,6 +52,7 @@ nav:
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
       - Nugs.net: music-providers/nugs.md
+      - Phish.in: music-providers/phishin.md
       - Plex: music-providers/plex.md
       - Podcast Index: music-providers/podcast-index.md
       - Podcast RSS Feed: music-providers/podcastfeed.md
