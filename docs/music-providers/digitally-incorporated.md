@@ -1,6 +1,6 @@
 # DI.fm Network Provider ![Preview image](../assets/icons/difm-icon.png){ width=70 align=right }
 
-Music Assistant has support for the DI.fm Radio Network which includes [DI.fm](https://www.di.fm), [Radiotunes](https://www.radiotunes.com), [Zen Radio](https://www.zenradio.com), [Jazz Radio](https://www.jazzradio.com), [Classical Radio](https://www.classicalradio.com), and [Rock Radio](https://www.rockradio.com)
+Music Assistant has support for the DI.fm Radio Network which includes [DI.fm](https://www.di.fm), [Radiotunes](https://www.radiotunes.com), [Zen Radio](https://www.zenradio.com), [Jazz Radio](https://www.jazzradio.com), [Classical Radio](https://www.classicalradio.com), and [Rock Radio](https://www.rockradio.com). Contributed and maintained by [Ben](https://github.com/benklop)
 
 ## Features
 
