@@ -45,6 +45,7 @@ nav:
       - Deezer: music-providers/deezer.md
       - gPodder: music-providers/gpodder.md
       - iBroadcast: music-providers/ibroadcast.md
+      - Internet Archive: music-providers/internet-archive.md
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
