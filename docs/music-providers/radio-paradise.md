@@ -1,6 +1,6 @@
 # Radio Paradise Provider ![Preview image](../assets/icons/radioparadise-icon.png){ width=70 align=right }
 
-Music Assistant has support for [Radio Paradise](https://radioparadise.com/) which allows easy addition of their radio stations to Music Assistant.
+Music Assistant has support for [Radio Paradise](https://radioparadise.com/) which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by [Gavin](https://github.com/ozgav)
 
 !!! tip "Donate"
     Radio Paradise exists due to the generosity of their donors. If you are using this provider consider supporting them https://radioparadise.com/support
