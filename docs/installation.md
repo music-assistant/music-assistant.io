@@ -59,6 +59,10 @@ services:
 
 ```
 
+You can find the latest version number on [the container image releases
+page](https://github.com/music-assistant/server/pkgs/container/server) in case
+you want to pin it.
+
 The MA team will support docker installs that are installed per the above instructions. For clarity, to receive support from the MA team:
 
 - The docker install must be a simple standalone container (e.g. not using kubernetes)
