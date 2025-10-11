@@ -12,7 +12,7 @@ Music Assistant has support for streaming your music from [Nugsnet](https://www.
 | Subscription FREE | No |
 | Self-Hosted Local Media   | No |
 | Media Types Supported | Artists, Albums, Playlists |
-| Recommendations Supported | No |
+| Recommendations Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](https://www.music-assistant.io/ui/#track-menu) | No |
 | Maximum Stream Quality | Lossless FLAC (192 kHz / 24 bit) |
