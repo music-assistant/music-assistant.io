@@ -59,7 +59,7 @@ services:
 
 ```
 
-You can find the latest version number on [the container image releases
+The desired release version can be found on [the container image releases
 page](https://github.com/music-assistant/server/pkgs/container/server) in case
 you want to pin it.
 
