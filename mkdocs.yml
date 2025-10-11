@@ -11,7 +11,7 @@ nav:
       - Core Settings: settings/core.md
       - Player Provider Settings: settings/player-provider.md
       - Individual Player Settings: settings/individual-player.md
-      - Music Provider Settings: music-providers/index.md
+      - Music Provider Settings: settings/music-provider-settings.md
   - Home Assistant Integration:
       - integration/index.md
       - Installation: integration/installation.md
