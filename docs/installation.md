@@ -59,10 +59,12 @@ services:
 
 ```
 
+The desired release version can be found on [the container image releases page](https://github.com/music-assistant/server/pkgs/container/server)
+
 The MA team will support docker installs that are installed per the above instructions. For clarity, to receive support from the MA team:
 
 - The docker install must be a simple standalone container (e.g. not using kubernetes)
-- MA, HA and all players must be on the same flat network with no VLANs
+- MA, HA and all players must be on the same flat network (or VLAN)
 - Music Assistant needs direct (layer 2) access to the network to properly discover and stream to players. So either host networking or macvlan networking is a mandatory requirement for the docker container
 
 Everything else is considered unsupported. We have the right to close support requests if you're running an unsupported installation or we may ask you to try to reproduce the issue on one of our supported installation types.
