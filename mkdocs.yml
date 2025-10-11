@@ -6,7 +6,7 @@ site_url: https://music-assistant.github.io/
 
 nav:
   - Home: index.md
-  - Server Install and Configure: 
+  - Server Install and Configure:
       - Installation: installation.md
       - Core Settings: settings/core.md
       - Player Provider Settings: settings/player-provider.md
