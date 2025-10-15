@@ -23,7 +23,7 @@ nav:
       - Get Queue Action: faq/get_queue.md
       - Transfer Queue Action: faq/masstransfer.md
       - Voice Control: integration/voice.md
-  - Companion App: companion-app.md
+  - Desktop Companion App: companion-app.md
   - Usage:
       - General: usage.md
       - UI: ui.md
