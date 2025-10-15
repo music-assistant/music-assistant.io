@@ -2,7 +2,7 @@
 
 Music Assistant has support for using Plex (MusicLibrary). Contributed by [micha91](https://github.com/micha91)
 
-!!! note 
+!!! warning 
     Please be advised that this provider currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
 
 ## Features
