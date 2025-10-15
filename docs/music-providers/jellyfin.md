@@ -7,6 +7,9 @@ description: Documentation for using the Jellyfin music provider
 
 Music Assistant has support for music servers which work to the Jellyfin definition. This component was contributed by [lokiberra](https://github.com/lokiberra) and maintained by lokiberra and [jc2k](https://github.com/jc2k)
 
+!!! warning 
+    Please be advised that this provider currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
+
 ## Features
 
 |           |                     |
