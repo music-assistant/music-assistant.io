@@ -1,4 +1,4 @@
-# Music Assistant Companion
+# Music Assistant Desktop Companion
 
 [![latest version](https://img.shields.io/github/release/music-assistant/music-assistant-desktop?display_name=tag&include_prereleases&label=Latest%20version)](https://github.com/music-assistant/tauri-companion-app/releases/latest)
 [![discord](https://img.shields.io/discord/753947050995089438?label=Discord&logo=discord&color=5865F2)](https://discord.gg/kaVm8hGpne)
