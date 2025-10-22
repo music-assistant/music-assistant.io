@@ -24,15 +24,13 @@ All Music Providers have settings which can be configured. The settings page wil
 
 ## Library Import Control
 
-All music providers have options to control the import of media items. The options are `Import into the library only`, `Import into the library, and mark as favorite [default]`, and `Do not import into the library`. These relate to the items in the provider's library (however called) and not to items which are created in the MA library as a consequence of the import. For example, if an individual track is in the provider's library (but not its associated album) and all of the import settings are set to mark as favorite then the individual track will be imported and marked as a favorite but the album, which will be created in the database to support the track, will not be so marked. Similarly, artists which are added to the database because they are found within a provider's playlists will not be marked as a favorite as they are not being "imported".
-
-The `Import album tracks` toggle will import all of the tracks of an album even if those tracks have not been added to the library of the provider. Having this option off allows selection of specific tracks from an album to be added to the library.
+All music providers have options to control the import of media items and this is shown in the image below. Note that if an individual track is in the provider's library (but not its associated album) and, for example, all of the import settings are set to sync then the individual track will be imported and the album will be created in the database but all of the other album tracks will not be added. This behaviour can be changed by using the `Import album tracks` toggle.
 
 There are settings which define when the sync occurs for each media item type. 
 
-Finally, there are settings which control when additions to the MA library will be made to the provider library. For clarity, adding an item to the MA library will only be reflected in the source provider for that item. So, for example, if you had the Deezer and Spotify providers installed and you searched for an artist you will likely see that arist listed twice, once from each provider. If you add the artist to the MA library and you have sync back enabled, then the artist will only be added to the provider that was associated with item selected. The list view is required to see the provider icons.
+There is a setting which controls whether additions to the MA library are also made to the provider library. For clarity, adding an item to the MA library will only be reflected in the source provider of the item. So, for example, if you had the Deezer and Spotify providers installed and you searched for an artist you will likely see that arist listed twice, once from each provider. If you add the artist to the MA library and you have sync back enabled, then the artist will only be added to the provider that was associated with item selected. The list view is required to see the provider icons.
 
-These settings relate to when the item is added or changed in the MA database (which in turn is updated when changes occur in the provider) so they cannot be used to make bulk changes to the favorite status of items. 
+Lastly, depsnding on providers installed, there may be additional sync related options at the bottom of the section. Refer to the individual provider settings for more information about these.
 
 ![image](../assets/screenshots/library-import-settings.png)
 
