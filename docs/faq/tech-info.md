@@ -23,7 +23,7 @@ NOTE that all audio is analyzed at playback time. If no Integrated loudness meas
 
 **More technical details**
 
-If volume normalization data is already available for a track via a replay gain tag then that will be used in lieu of the following process.
+If volume normalization data is already available for a track via a replay gain tag then that will be used in lieu of the following process. This is true even if the tag information is added after the measurement has been taken.
 
 All tracks are processed internally as raw pcm by Music Assistant. So everything that is played will be first decoded to raw pcm of 32 bits floating point in the sample rate of the origin (unless explicit resampling is enabled/needed, such as when flow mode is enabled), and the gain adjustment is done while extracting the raw source media so the pcm chunks passed into the streaming engine have the gain adjustment applied. In this way there should be enough headroom within the (final) 16 or 24 bits bit depth. If a playback target does not support bit depths higher than 16 bits, dithering will be applied to bring the signal down again to 16 bits without quality loss.
 
