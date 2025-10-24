@@ -30,7 +30,7 @@ There are settings which define when the sync occurs for each media item type.
 
 There is a setting which controls whether additions to the MA library are also made to the provider library. For clarity, adding an item to the MA library will only be reflected in the source provider of the item. So, for example, if you had the Deezer and Spotify providers installed and you searched for an artist you will likely see that arist listed twice, once from each provider. If you add the artist to the MA library and you have sync back enabled, then the artist will only be added to the provider that was associated with item selected. The list view is required to see the provider icons.
 
-Lastly, depsnding on providers installed, there may be additional sync related options at the bottom of the section. Refer to the individual provider settings for more information about these.
+Lastly, depending on providers installed, there may be additional sync related options at the bottom of the section. Refer to the individual provider settings for more information.
 
 ![image](../assets/screenshots/library-import-settings.png)
 
