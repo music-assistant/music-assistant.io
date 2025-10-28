@@ -23,7 +23,6 @@ nav:
       - Get Queue Action: faq/get_queue.md
       - Transfer Queue Action: faq/masstransfer.md
       - Voice Control: integration/voice.md
-  - Desktop Companion App: companion-app.md
   - Usage:
       - General: usage.md
       - UI: ui.md
@@ -35,7 +34,6 @@ nav:
       - I Want To Stream To: faq/stream-to.md
       - Technical Info: faq/tech-info.md
       - Troubleshooting: faq/troubleshooting.md
-  - Mobile Devices: mobile/index.md
   - Music Providers:
       - music-providers/index.md
       - Apple Music: music-providers/apple-music.md
@@ -88,6 +86,9 @@ nav:
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
     - Subsonic Scrobbler: plugins/subsonic_scrobble.md
     - plugins/spotify-connect.md
+  - Desktop Companion App: companion-app.md
+  - Mobile Devices: mobile/index.md
+  - API: api.md
   - Community Extensions: community-extensions.md
   - Support: support.md
   - I Want to Help / Donate:
