@@ -13,20 +13,24 @@ Patch releases may be pushed if there is a compelling need (e.g. an urgent bugfi
 
 ## Beta Releases
 
-Next to the standard stable channel we also have a beta channel, for which we publish a dedicated Home Assistant add-on (and docker image).
+In addition to the stable channel there is also a beta channel, for which there is a dedicated Home Assistant add-on (and docker image).
 Once a new stable version has been published, a new beta cycle will start (with the minor version increased).
-For example once stable version 2.3 is released, the beta for version 2.4 start.
+For example, once stable version 2.3 is released, the beta for version 2.4 starts.
 
 Beta releases are planned to be released every 1 - 4 weeks, depending on the number of changes.
 In some cases, when a large feature is in development for example, expect multiple beta releases per week.
 
-### DEV Channel/Releases
+### Nightly Releases
 
-There is also a dev/nightly add-on which can be run to get the absolute latest version but this comes with risk of intermittent problems during the development cycle. It is used by the MA Team to test new feature as they are being added.
+Each night, if there are at least two PRs merged, an automated Nightly Release will be built. Install this version if you want to keep up with the latest bleeding edge development of Music Assistant! Use it at your own risk, it might not be recommended for daily/production use because it can be unstable.
+
+### DEV Channel
+
+This is a special development add-on for Music Assistant that allows developers to quickly test specific branches, pull requests, or even forks of Music Assistant directly in Home Assistant.
 
 ## Running Parallel Server Versions
 
-It is possible to run the stable, beta or dev server add-ons side by side as they don't share any data. Thus you can temporarily run the beta add-on to try out new features and then revert to the stable version. You can do this by manually stopping and starting the relevant server. Don't have two servers running on the same host at the same time.
+It is possible to run the stable, beta, nightly or dev server add-ons side by side as they don't share any data. Thus, for example, you can temporarily run the beta add-on to try out new features and then revert to the stable version. You can do this by manually stopping and starting the relevant server. Don't have two servers running on the same host at the same time.
 
 !!! warning
     Be careful that you don't accidentally remove an add-on, because that will result in the loss of all your data (if you didn't back it up). The same applies to docker users: be careful with the data folder and be aware that the data folder is not backwards compatible. Don't try to use it between channels!
