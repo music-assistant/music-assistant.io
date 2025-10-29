@@ -8,12 +8,12 @@ Music Assistant has support for streaming from BBC Sounds. Contributed and maint
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media   | No |
-| Media Types Supported | Radio, Podcasts |
+| Media Types Supported | Tracks, Radio, Podcasts |
 | [Recommendations](../ui.md#view-home) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | No |
 | Maximum Stream Quality | Lossy, AAC-LC(320kbps) |
-| Login Method | None |
+| Login Method | None or Password |
 
 ### Other
 
