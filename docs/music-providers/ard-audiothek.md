@@ -30,7 +30,7 @@ Music Assistant has support for streaming from [ARD Audiothek](https://www.ardau
 - <b>E-Mail address of ARD account.</b>
 - <b>Password of ARD account.</b>
 - <b>Maximum bitrate for streams (0 for unlimited)</b> Define the maximum stream bitrate
-- <b>Percentage required before podcast episode is marked as fully played</b> Configure how much of an episode playback must occur before the podcast is recorded as fully played (this is only used for visualization within Music Assistent) 
+- <b>Percentage required before podcast episode is marked as fully played</b> Configure how much of an episode playback must occur before the podcast is recorded as fully played (this is only used for visualization within Music Assistant) 
 
 ## Known Issues / Notes
 
