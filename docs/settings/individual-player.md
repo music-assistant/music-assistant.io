@@ -46,16 +46,6 @@ Using the icons at the top of the view, the additional filters can be reordered,
 
 ![DSP image](../assets/screenshots/dsp.jpg)
 
-## Advanced Settings
-
-- <b>Target level for [Volume Normalization](../faq/tech-info.md#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping. Volume Normalization is enabled and disabled in the [Audio](#audio) section
-- <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV.
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
-- <b>Audio synchronisation delay correction</b>. Refer to the [Player Summary Table](../player-support/index.md) to identify which types support sync correction
-
 ## Announcements Configuration
 
 There are a number of configurable options for controlling the volume of announcements sent to the MA players. These are well described by the help available by selecting this icon ![image](../assets/icons/question-mark.png) beside each field.
@@ -79,3 +69,15 @@ Providers with unique settings are:
 - [AirPlay](../player-support/airplay.md/#settings)
 - [Squeezelite](../player-support/squeezelite.md/#settings)
 - [Google Cast](../player-support/google-cast.md/#settings)
+
+## Advanced Settings
+
+- <b>Target level for [Volume Normalization](../faq/tech-info.md#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping. Volume Normalization is enabled and disabled in the [Audio](#audio) section
+- <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
+- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
+- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV.
+- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
+- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
+- <b>Audio synchronisation delay correction</b>. Refer to the [Player Summary Table](../player-support/index.md) to identify which types support sync correction
+
+Also in this section is the option `Automatically play (resume on power on)` which will automatically start playback if there are items in the queue for the player.
