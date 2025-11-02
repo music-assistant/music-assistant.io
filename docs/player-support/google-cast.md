@@ -21,3 +21,4 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 - It is possible to group cast players via a [Universal Group](../faq/groups.md#universal-groups) although they may not play in sync
 - TV/Video devices (not the AV dongles) are disabled by default
 - Cast Groups containing only a stereo pair will not work
+- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is, queue flow mode on (generic settings) and HTTP Profile 2 and Output Codec MP3 (advanced settings)
