@@ -64,6 +64,14 @@ The Don't Stop The Music (DSTM) option can be enabled if a provider is available
 !!! warning
     Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less. 
 
+### Radio Mode
+
+#### Starting from a Track or Album:
+Radio Mode retrieves similar tracks using the track's provider mappings (which is shown in the [Provider Details](ui.md#provider-details) section in the UI). When you start from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first provider that supports the similar tracks feature (Apple Music,  Deezer, Spotify, Subsonic, Tidal, or YouTube Music). For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start with a track or album that's not in the library (i.e., directly from a music provider), that provider's similar tracks implementation is used.
+
+#### Starting from an Artist:
+Radio Mode works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all providers where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own provider for similar tracks. This means radio mode started from an artist typically produces a diverse mix of results from multiple providers, as each base track contributes similar tracks from its respective provider (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that provider's top tracks are used as the base.
+
 ## Playlists
 
 Playlists must be stored on a provider. A music provider's playlist can only contain tracks from that provider. However, MA has a built-in provider with the ability to create playlists that have tracks from multiple music providers. In this case the playlist will be stored solely within the MA database. These options are automtically presented in the Add to Playlist dialog.
