@@ -24,7 +24,7 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 - Music Assistant implements [RAOP](https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol) only, AirPlay 2 devices should be backwards compatible by default. If a device has a bad implementation of AirPlay 1 and/or only supports AirPlay 2 without RAOP then it won't work
 - Whilst it is believed to have been fixed, issues have been reported when using Shairport and AirPlay 2. If problems are encountered they try disabling AirPlay 2
 - Playback to Macbooks is not possible due to removal of RAOP support
-- Because Apple TV's require authentication, they are not supported yet (but will be in the future if there's any demand)
+- Apple TVs will be discovered but require pairing. In the player settings there is a pair button which will display a code on the screen of the Apple TV
 - Samsung seems to have implemented AirPlay 2 in a way that it isn't fully backwards compatible. Everything seems to work, changing volume, song info is shown, and you can control the Samsung device as expected, however there is no sound. Users of similar applications such as Roon and anything based on slimproto have the same problem
 - Some devices (such as Kodi or some 3rd party AirPlay receivers) require encryption. You can enable encryption in the advanced player settings if there is no sound
 - Also try compression on and off in the advanced player settings if there is no sound
