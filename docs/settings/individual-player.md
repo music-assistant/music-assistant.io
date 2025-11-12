@@ -14,7 +14,8 @@ Individual Player Settings are usually quite extensive. The typical headings of 
 
 ## Audio
 
-- <b>Enable Crossfade.</b> This toggle enables the crossfade transition between tracks. The crossfade duration is set in the [Advanced Settings](#advanced-settings)
+- <b>Enable Smart Fades.</b> This dropdown enables the crossfade transition functionality between tracks. The crossfade duration is set by the slider below. The options available are `Disabled [Default]`, `Smart Fades` or `Standard Crossfade`. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade.
+- <b>Crossfade duration.</b> This slider is enabled when crossfade is enabled in the [Audio section](#audio). The default setting is 8 seconds
 - <b>Enable Volume Normalization.</b> This setting should normally remain enabled to avoid differing volume levels between tracks from different sources. Read more about this on the [Technical Information page](../faq/tech-info.md#volume-normalization). The target level is set in the [Advanced Settings](#advanced-settings)
 - <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track
 - <b>Output Channel Mode.</b> This setting allows for selection of which channel is sent to a player. The options are `Stereo`, `Left`, `Right`, or `Mono`
@@ -45,17 +46,6 @@ Using the icons at the top of the view, the additional filters can be reordered,
 
 ![DSP image](../assets/screenshots/dsp.jpg)
 
-## Advanced Settings
-
-- <b>Crossfade duration.</b> This slider is enabled when crossfade is enabled in the [Audio section](#audio). The default setting is 8 seconds
-- <b>Target level for [Volume Normalization](../faq/tech-info.md#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping. Volume Normalization is enabled and disabled in the [Audio](#audio) section
-- <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV.
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
-- <b>Audio synchronisation delay correction</b>. Refer to the [Player Summary Table](../player-support/index.md) to identify which types support sync correction
-
 ## Announcements Configuration
 
 There are a number of configurable options for controlling the volume of announcements sent to the MA players. These are well described by the help available by selecting this icon ![image](../assets/icons/question-mark.png) beside each field.
@@ -72,8 +62,6 @@ It is possible to map other HA entities to the MA player controls. in order for 
 
 **Mute** There is a FAKE option that will set the volume to zero and restore it when mute and unmute is commanded.
 
-Also in this section is the option `Automatically play (resume on power on)` which will automatically start playback if there are items in the queue for the player.
-
 ## Provider Specific Settings
 
 Providers with unique settings are:
@@ -81,3 +69,15 @@ Providers with unique settings are:
 - [AirPlay](../player-support/airplay.md/#settings)
 - [Squeezelite](../player-support/squeezelite.md/#settings)
 - [Google Cast](../player-support/google-cast.md/#settings)
+
+## Advanced Settings
+
+- <b>Target level for [Volume Normalization](../faq/tech-info.md#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping. Volume Normalization is enabled and disabled in the [Audio](#audio) section
+- <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
+- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
+- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV.
+- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
+- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
+- <b>Audio synchronisation delay correction</b>. Refer to the [Player Summary Table](../player-support/index.md) to identify which types support sync correction
+
+Also in this section is the option `Automatically play (resume on power on)` which will automatically start playback if there are items in the queue for the player.

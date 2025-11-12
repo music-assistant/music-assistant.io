@@ -23,7 +23,6 @@ nav:
       - Get Queue Action: faq/get_queue.md
       - Transfer Queue Action: faq/masstransfer.md
       - Voice Control: integration/voice.md
-  - Desktop Companion App: companion-app.md
   - Usage:
       - General: usage.md
       - UI: ui.md
@@ -35,24 +34,29 @@ nav:
       - I Want To Stream To: faq/stream-to.md
       - Technical Info: faq/tech-info.md
       - Troubleshooting: faq/troubleshooting.md
-  - Mobile Devices: mobile/index.md
   - Music Providers:
       - music-providers/index.md
       - Apple Music: music-providers/apple-music.md
+      - ARD Audiothek: music-providers/ard-audiothek.md
       - Audible: music-providers/audible.md
       - Audiobookshelf: music-providers/audiobookshelf.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
+      - DI.fm Network: music-providers/digitally-incorporated.md
       - gPodder: music-providers/gpodder.md
       - iBroadcast: music-providers/ibroadcast.md
+      - Internet Archive: music-providers/internet-archive.md
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
       - Nugs.net: music-providers/nugs.md
+      - Phish.in: music-providers/phishin.md
       - Plex: music-providers/plex.md
+      - Podcast Index: music-providers/podcast-index.md
       - Podcast RSS Feed: music-providers/podcastfeed.md
       - Qobuz: music-providers/qobuz.md
       - Radio Browser: music-providers/radio-browser.md
+      - Radio Paradise: music-providers/radio-paradise.md
       - SiriusXM: music-providers/siriusxm.md
       - SoundCloud: music-providers/soundcloud.md
       - Spotify: music-providers/spotify.md
@@ -71,6 +75,7 @@ nav:
     - Google Cast: player-support/google-cast.md
     - Home Assistant: player-support/ha.md
     - MusicCast: player-support/musiccast.md
+    - Roku Media Assistant: player-support/roku.md
     - Snapcast: player-support/snapcast.md
     - Sonos: player-support/sonos.md
     - Squeezelite: player-support/squeezelite.md
@@ -82,6 +87,9 @@ nav:
     - Subsonic Scrobbler: plugins/subsonic_scrobble.md
     - plugins/spotify-connect.md
     - VBAN Receiver: plugins/vban-receiver.md
+  - Desktop Companion App: companion-app.md
+  - Mobile Devices: mobile/index.md
+  - API: api.md
   - Community Extensions: community-extensions.md
   - Support: support.md
   - I Want to Help / Donate:
