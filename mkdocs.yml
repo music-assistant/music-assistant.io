@@ -81,6 +81,7 @@ nav:
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
     - Subsonic Scrobbler: plugins/subsonic_scrobble.md
     - plugins/spotify-connect.md
+    - VBAN Receiver: plugins/vban-receiver.md
   - Community Extensions: community-extensions.md
   - Support: support.md
   - I Want to Help / Donate:
