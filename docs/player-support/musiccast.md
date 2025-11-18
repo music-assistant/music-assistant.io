@@ -22,6 +22,7 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 
 - <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching
 - <b>Turn off the zone when it leaves a group.</b> Toggle defines the power behaviour when the player leaves a group
+- <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should  issues be encountered during playback then toggle this on. This setting is only available on multi-zone players
 
 ## Known Issues / Notes
 
