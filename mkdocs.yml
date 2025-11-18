@@ -81,11 +81,12 @@ nav:
     - Squeezelite: player-support/squeezelite.md
   - Metadata Providers: metadata.md
   - Plugins:
+    - AirPlay Receiver Plugin: plugins/airplay-receiver.md
     - Home Assistant Plugin: ha-plugin.md
     - LastFM Scrobbler: plugins/lastfm_scrobble.md
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
+    - Spotify Connect Plugin: plugins/spotify-connect.md
     - Subsonic Scrobbler: plugins/subsonic_scrobble.md
-    - plugins/spotify-connect.md
   - Desktop Companion App: companion-app.md
   - Mobile Devices: mobile/index.md
   - API: api.md
