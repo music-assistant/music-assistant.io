@@ -12,6 +12,7 @@ Music Assistant has the ability to add [AirPlay Receiver]([https://connect.spoti
     
 ## Features
 
+- Allows any MA player to appear as an AirPlay device in other applications which support AirPlay
 - Any MA player can be exposed including groups
 
 ## Configuration
