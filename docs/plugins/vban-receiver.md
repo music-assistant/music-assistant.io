@@ -7,6 +7,8 @@ description: Features and Notes for the VBAN Receiver Plugin
 
 Music Assistant has the ability to act as a VBAN protocol (PCM audio over UDP) receiver. Contributed and maintained by [sprocket-9](https://github.com/sprocket-9)
 
+VBAN is commonly used to route audio between devices on a local network. In Music Assistant, the VBAN Receiver plugin functions as a network-based auxiliary input, allowing external audio sources to be ingested as a standard MA streaming source. Typical use cases include transmitting system audio, audio from individual applications, or audio captured from soundcard inputs such as microphones or line-in devices on a remote machine. See the [VBAN Senders section below](#vban-senders)for examples of compatible sender implementations.
+
 ## Features
 
 VBAN is an audio-over-IP protocol from [VB-Audio](https://vb-audio.com/Voicemeeter/vban.htm) that uses UDP to transmit high-quality, native PCM audio over a local network.
