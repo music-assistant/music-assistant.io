@@ -45,7 +45,6 @@ Authentication with Apple Music happens through a Music User Token. Unfortunatel
 
 ## Known Issues / Notes
 - Due to Apple's proprietary encryption (FairPlay), Lossless and Dolby Atmos versions of songs are not supported
-- MA can only play an uploaded track if Apple has linked it to an online version in the Apple Music catalog. If that link is not found, MA will not do the import
 
 ## Not yet supported
 - Library interaction, such as adding and removing items to your Apple Music library from within Music Assistant
