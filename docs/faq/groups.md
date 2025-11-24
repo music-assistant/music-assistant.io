@@ -50,6 +50,7 @@ After selecting ADD GROUP PLAYER as shown above, the group configuration screen 
 
 - As mentioned above the group player holds the queue rather than any individual player. However, if the group leader is lost then playback will stop but the queue can be restarted
 - The group will not power on if one of the child players is synced to another group
+- The group will power on even if one or more of the child players is unavailable
 - If, in the group settings, the player friendly name has been replaced by an unusual ID then likely the player was seen by the MA logic as unavailable. Check the individual player status
 - When adding a player to an already playing group, AirPlay, Snapcast and Sonos will keep playing but all other types will pause for a very brief period to resync
 
@@ -68,6 +69,6 @@ Music Assistant has support for grouping dissimilar playback devices. Configurat
 - Universal Groups can include sync groups but not other universal groups
 - When adding a player to an already playing group, MA will try and join seamlessly but there may be a slight pause with some player types
 - The group will not power on if one of the child players is synced to another group
-- The group will power on if one or more of the child players is unavailable
+- The group will power on even if one or more of the child players is unavailable
 - If, in the group settings, the player friendly name has been replaced by an unusual ID then likely the player was seen by the MA logic as unavailable. Check the individual player status
 - Universal Groups are on a best-effort basis and might not work correctly with all player models or give unexpected results
