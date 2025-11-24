@@ -1,6 +1,6 @@
-# Subsonic Provider ![Preview image](../assets/icons/subsonic_icon.png){ width=70 align=right }
+# Open Subsonic Provider ![Preview image](../assets/icons/subsonic_icon.png){ width=70 align=right }
 
-Music Assistant has support for music servers which work to the Open Subsonic API definition. The implementation has been tested against Gonic and Navidrome but should work with any implementation. This component is contributed and maintained by [khers](https://github.com/khers)
+Music Assistant has support for music servers which work to the [Open Subsonic API definition](https://opensubsonic.netlify.app/). The implementation has been tested against Gonic and Navidrome but should work with any implementation. This component is contributed and maintained by [khers](https://github.com/khers)
 
 ## Features
 
@@ -38,6 +38,7 @@ You will need to provide the following to Music Assistant:
 - <b>Recommend New Albums.</b> Should new albums be included as recommendations?
 - <b>Recommend Most Played.</b> Should most played albums be included as recommendations?
 - <b>Recommendation Limit.</b> How many recommendations from each enabled type should be included?
+- <b>Number of items included per server request.</b> Page size per server request, default is 200. Low bandwidth connections should consider lowering. Can be raised up to 500.
 
 ## Known Issues / Notes
 
@@ -53,3 +54,4 @@ You will need to provide the following to Music Assistant:
     - Don't serve these files from a subsonic server
     - It may be possible to force an encoder to place the moov atom at the beginning of the file. This would make the files playable, but MA provides no support for this
 - Don't Stop the Music mode ([described here](https://www.music-assistant.io/usage/#the-queue)) relies on your subsonic servers implementation of the [getSimilarSongs](https://opensubsonic.netlify.app/docs/endpoints/getsimilarsongs/) end point. Please ensure that you have configured your server for this to work. Both Gonic and Navidrome require the addition of a Last.fm API key to provide similar songs. Please see your subsonic server's documentation.
+- Note that this provider is for server implementations that use the Open Subsonic API definitions _only_. This means that it will not work with the original Subsonic or any of its forks (like Airsonic or Airsonic-Advanced) unless those forks have also moved to using the Open Subsonic API specification.
