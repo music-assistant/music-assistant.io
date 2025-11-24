@@ -85,6 +85,7 @@ In addition to the settings outlined above to configure the provider there are a
 - MA requires the Album Artist tag to be set. If you do not have that tag set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
 - For multi-artist tracks it is important that the `ARTISTS` tag (as distinct from `ARTIST`) is set, which is semi-colon delimited list of the artists on the track. If this tag is not set MA will attempt to parse the artist names from the `ARTIST` tag but if unusual or non-English joining words or symbols are used then this process may fail 
 - Music Assistant puts you in control by fully trusting the ID3 tags you provide, only additional information is scraped from metadata providers
+- The only tag splitter supported is the semi-colon
 - Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and `.nfo` files with enhanced metadata are also supported
 - To minimise the chance of problems with MA you should follow the Kodi guidelines here https://kodi.wiki/view/Music_tagging Just about all the tips, tricks and suggestions on that page are applicable to MA and if you follow it all to the letter you will have a much better experience
 - For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
