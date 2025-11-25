@@ -40,6 +40,7 @@ nav:
       - ARD Audiothek: music-providers/ard-audiothek.md
       - Audible: music-providers/audible.md
       - Audiobookshelf: music-providers/audiobookshelf.md
+      - BBC Sounds: music-providers/bbc-sounds.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - DI.fm Network: music-providers/digitally-incorporated.md
