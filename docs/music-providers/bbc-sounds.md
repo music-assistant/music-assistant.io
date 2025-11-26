@@ -29,12 +29,9 @@ Music Assistant has support for streaming from BBC Sounds. Contributed and maint
 The provider works without a login, but you will be restricted to the limited International version of the Sounds menu
 
 ### Settings
-- <b>Enable UK Sounds content.</b> This toggle should be selected on for UK based listeners to unlock the full catalogue
 - <b>Username and Password.</b> A BBC Sounds account is optional, but some UK-only content may not work without being logged in
-- <b>Advanced - Show local radio stations</b> Define the maximum stream bitrate
-- <b>Advanced - Show 'now playing' details</b> Show details of the currently playing track instead of the station details 
-- <b>Advanced - Player update interval (seconds)</b> How often to check for now playing updates
-- <b>Advanced - Show recommendations</b> BBC Sounds has several recommendation categories, configure if and where these are shown 
+- <b>Advanced - Show local radio stations</b>
+- <b>Advanced - Preferred Stream Format</b> Options are `HLS [default]` or `MPEG-DASH`
 
 ## Known Issues / Notes
 
