@@ -11,7 +11,9 @@ Music Assistant has support for AirPlay based devices which support [RAOP](https
 
 ## Settings
 
-In addition to the [Individual Player Settings](../settings/individual-player.md) the AirPlay provider also has a unique section called `AirPlay Specific Settings`. The available settings are:
+The Airplay provider has a setting `Enable late joining` which can be used to allow players to join an existing AirPlay stream instead of restarting the whole stream. This may not work in all conditions so if issues such as unsynced playback occurs, disable this option. Also note that late joining players may take a few seconds to catch up.
+
+In addition to the [Individual Player Settings](../settings/individual-player.md) the AirPlay provider's indivudal players also have a unique section called `AirPlay Specific Settings`. The available settings are:
 
 - <b>Enable encryption.</b> Enable encrypted communication if required by the player 
 - <b>Enable compression.</b> Enable to save some bandwidth by sending the audio as (lossless) ALAC
