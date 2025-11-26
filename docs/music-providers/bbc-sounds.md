@@ -30,7 +30,7 @@ The provider works without a login, but you will be restricted to the limited In
 
 ### Settings
 - <b>Username and Password.</b> A BBC Sounds account is optional, but some UK-only content may not work without being logged in
-- <b>Advanced - Show local radio stations</b>
+- <b>Advanced - Show local radio stations</b>. By default, only national radio stations are listed. Enabling this option will also show local stations.
 - <b>Advanced - Preferred Stream Format</b> Options are `HLS [default]` or `MPEG-DASH`
 
 ## Known Issues / Notes
