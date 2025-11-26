@@ -13,7 +13,7 @@ Music Assistant has support for [Nico Nico Video](nicovideo.jp), a Japanese vide
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | Yes |
 | Maximum Stream Quality | Lossy, MP3 (320kbps) |
-| Login Method | Cookie or Login/MFA |
+| Login Method | Cookie or Password+MFA |
 
 ### Other
 
