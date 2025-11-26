@@ -86,6 +86,7 @@ nav:
     - Home Assistant Plugin: ha-plugin.md
     - LastFM Scrobbler: plugins/lastfm_scrobble.md
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
+    - Plex Connect: plugins/plex-connect.md
     - Spotify Connect Plugin: plugins/spotify-connect.md
     - Subsonic Scrobbler: plugins/subsonic_scrobble.md
     - plugins/spotify-connect.md
