@@ -11,7 +11,7 @@ Music Assistant has support for AirPlay based devices which support [RAOP](https
 
 ## Settings
 
-The Airplay provider has a setting `Enable late joining` which can be used to allow players to join an existing AirPlay stream instead of restarting the whole stream. This may not work in all conditions so if issues such as unsynced playback occurs, disable this option. Also note that late joining players may take a few seconds to catch up. Support exists for devices which require pairing with a PIN before they can be used (e.g. Apple TV's) for the AirPlay 1(RAOP) protocol. Select the `START THE AIRPLAY PAIRING PROCESS` button to register the PIN and when successful, click the `SAVE` button to save the authorisation key.
+The Airplay provider has a setting `Enable late joining` which can be used to allow players to join an existing AirPlay stream instead of restarting the whole stream. This may not work in all conditions so if issues such as unsynced playback occurs, disable this option. Also note that late joining players may take a few seconds to catch up. Support exists for devices which require pairing with a PIN before they can be used (e.g. Apple TV's) for the AirPlay 1 (RAOP) protocol. Select the `START THE AIRPLAY PAIRING PROCESS` button to register the PIN and when successful, click the `SAVE` button to save the authorisation key.
 
 In addition to the [Individual Player Settings](../settings/individual-player.md) the AirPlay provider's indivudal players also have a unique section called `AirPlay Specific Settings`. The available settings are:
 
