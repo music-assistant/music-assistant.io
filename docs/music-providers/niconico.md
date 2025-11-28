@@ -40,13 +40,9 @@ Written for Chrome:
 1. Navigate to https://www.nicovideo.jp/
 2. Go to View > Developer > Developer Tools. A new side window will open.
 3. Click the 'Application' tab. You might need to expand your window or click the >> button
-
  [![Preview image](../assets/screenshots/niconico-auth1.png)](../assets/screenshots/niconico-auth1.png)
-
 4. Under Storage > Cookies, click "https://www.nicovideo.jp" and find the entry called "user_session"
-
  [![Preview image](../assets/screenshots/niconico-auth2.png)](../assets/screenshots/niconico-auth2.png)
-
 5. Click it and copy the cookie value and use this in Music Assistant as the 'User Session'
     - Take note of the "Expires / Max-Age" column. The session will expire on that date and personal features will become unavailable. The above process must then be repeated to obtain a fresh session
 
