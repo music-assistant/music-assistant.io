@@ -50,6 +50,7 @@ nav:
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
+      - Nico Nico Video: music-providers/niconico.md
       - Nugs.net: music-providers/nugs.md
       - Phish.in: music-providers/phishin.md
       - Plex: music-providers/plex.md
