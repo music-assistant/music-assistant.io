@@ -1,4 +1,4 @@
-# Sendspin Provider  ![Preview image](../assets/sendspin-icon.svg){ width=70 align=right }
+# Sendspin Provider  ![Preview image](../assets/icons/sendspin-icon.svg){ width=70 align=right }
 
 The Sendspin provider supports playback directly to the Music Assistant Frontend, enabling easy playback to the current device. It allows playback from outside the network on which the MA server resides. 
 
