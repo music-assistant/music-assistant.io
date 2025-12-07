@@ -1,6 +1,6 @@
 # Sendspin Provider  ![Preview image](../assets/icons/sendspin-icon.svg){ width=70 align=right }
 
-Sendspin is an open standard for synchronized music experience across multiple devices and rooms. It enables speakers, lights, and screens to work together to create a rich and immersive audio environment
+Sendspin is an open standard, being developed by the Open Home Foundation, for synchronized music experience across multiple devices and rooms. It enables speakers, lights, and screens to work together to create a rich and immersive audio environment
 
 The Sendspin provider supports playback directly to the Music Assistant Frontend, enabling easy playback to the current device. It allows playback from outside the network on which the MA server resides. 
 
