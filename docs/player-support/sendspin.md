@@ -66,7 +66,7 @@ Sendspin supports two connection methods:
 
 The Sendspin provider is **built-in and always enabled**. There are no configuration options required to get started.
 
-Individual Sendspin players will appear automatically when clients connect, and standard [player settings](../settings/player-settings.md) apply.
+Individual Sendspin players will appear automatically when clients connect, and standard [player settings](../settings/player-provider.md) apply.
 
 ## Limitations
 
