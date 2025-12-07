@@ -117,9 +117,9 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 [![image](assets/screenshots/homescreen.png)](assets/screenshots/homescreen.png)
 
-The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which providers supports this feature.
+The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which providers supports this.
 
-The view is fully configurable. Select the ⋮ menu on the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
+The view is fully configurable. Select the blue icon in the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
 
 [![image](assets/screenshots/homescreen_edit.png)](assets/screenshots/homescreen_edit.png)
 ***************************************************************
@@ -135,8 +135,6 @@ indicates that the viewed results are subject to filtering by search. This is us
 
 A blue dot on the refresh icon ![image](assets/icons/refresh-icon.png)
 indicates that the viewed results have some sort of update pending. Press the refresh button.
-
-The Sync icon ![image](assets/icons/sync-icon.png) will synchronise the library with all of the providers that support that mediatype.
 
 Items in all views can be "right clicked" or "long pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
