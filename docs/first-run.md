@@ -6,4 +6,4 @@ When the Music Assistant User Interface first starts the user is presented with 
 
 The initial setup follows the following flow
 
-![Preview image](assets/icons/auth-flow.png)
+![Preview image](assets/screenshots/auth-flow.png)
