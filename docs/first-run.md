@@ -2,7 +2,7 @@
 
 Access to the Music Assistant User Interface (UI) requires a login and password.
 
-Upon first startup, the user is presented with a series of initial authentication setup dialogs. It is very important that the administrator user and password, which is the first to be set up, is not forgotten as there is no way to obtain this later. If these are forgotten then the MA server will need to be rebuilt.
+Upon first startup, the user is presented with a series of initial authentication setup dialogs. It is very important that the administrator user and password, which is the first to be set up, is not forgotten as there is no way to obtain this later. If these are forgotten then the MA server will need to be rebuilt (docker users can delete auth.db).
 
 The initial set up follows the following flow
 
