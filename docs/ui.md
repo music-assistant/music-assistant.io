@@ -130,10 +130,10 @@ The view is fully configurable. Select the ⋮ menu on the top right and then ED
 
 Album and Track Views look the same as the above except there is no album artist filter icon and the track view has an [ADD VIA URL](music-providers/builtin.md) option.
 
-A red dot on the search icon ![image](assets/icons/search-icon.png)
+A blue dot on the search icon ![image](assets/icons/search-icon.png)
 indicates that the viewed results are subject to filtering by search. This is useful if the search box has been closed.
 
-A red dot on the refresh icon ![image](assets/icons/refresh-icon.png)
+A blue dot on the refresh icon ![image](assets/icons/refresh-icon.png)
 indicates that the viewed results have some sort of update pending. Press the refresh button.
 
 The Sync icon ![image](assets/icons/sync-icon.png) will synchronise the library with all of the providers that support that mediatype.
@@ -155,7 +155,7 @@ The behaviour described above will work on any view where you see the "x item(s)
 
 [![image](assets/screenshots/UI-individual-artist.png)](assets/screenshots/UI-individual-artist.png)
 
-The tracks and albums sections are collapsible. The view above shows them both collapsed. The tracks section shows ALL tracks that are in the library or that are available across all of the providers. A red dot on the library icon ![image](assets/icons/library-icon.png) indicates that the viewed results are filtered to only show items that are in the library. To see what albums any given track is on you can either sort alphabetically or click on one and use the context menu and SHOW INFO.
+The tracks and albums sections are collapsible. The view above shows them both collapsed. The tracks section shows ALL tracks that are in the library or that are available across all of the providers. A blue dot on the library icon ![image](assets/icons/library-icon.png) indicates that the viewed results are filtered to only show items that are in the library. To see what albums any given track is on you can either sort alphabetically or click on one and use the context menu and SHOW INFO.
 
 The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP or UNKNOWN album types.
 
