@@ -1,9 +1,11 @@
 # Initial Authentication Setup
 
-The Music Assistant User Interface is secured by a login and password.
+Access to the Music Assistant User Interface (UI) requires a login and password.
 
-When the Music Assistant User Interface first starts the user is presented with the initial authentication setup series of dialogs. It is very important that the administrator user and password, which is the first to be setup, is not forgotten as there is no way to obtain this later. If these are forgotten then the MA server will need to be rebuilt.
+Upon first startup, the user is presented with a series of initial authentication setup dialogs. It is very important that the administrator user and password, which is the first to be set up, is not forgotten as there is no way to obtain this later. If these are forgotten then the MA server will need to be rebuilt.
 
-The initial setup follows the following flow
+The initial set up follows the following flow
 
 ![Preview image](assets/screenshots/auth-flow.png)
+
+After successfully logging in, the first required action for the administrator is to add providers for music sources and players.
