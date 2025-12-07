@@ -8,6 +8,7 @@ nav:
   - Home: index.md
   - Server Install and Configure:
       - Installation: installation.md
+      - First Run (Authentication): first-run.md 
       - Core Settings: settings/core.md
       - Player Provider Settings: settings/player-provider.md
       - Individual Player Settings: settings/individual-player.md
