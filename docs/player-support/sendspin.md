@@ -18,6 +18,7 @@ The Sendspin provider supports playback directly to the Music Assistant Frontend
 
 ## Known Issues / Notes
 
+- The Sendspin provider is added by default
 - Currently supported devices
     - The [Home Assistant Voice Preview Edition](https://www.home-assistant.io/voice-pe/) running a [special Sendspin build](https://esphome.github.io/home-assistant-voice-pe-alpha/)
     - Devices displaying the Music Assistant UI
