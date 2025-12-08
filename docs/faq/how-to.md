@@ -233,6 +233,9 @@ The [Nextcloud Music App](https://apps.nextcloud.com/apps/music) supports [Subso
 
 # Access the MA Views directly via URL
 
+If authentication becomes a blocker to some devices then create a long lived access token via MA SETTINGS >> PROFILE and use the following format as the URL
+https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
+
 ## Player Selection
 
 A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a MA player name or `true` to open the last known. Player names are not case sensitive.
