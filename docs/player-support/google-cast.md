@@ -8,10 +8,15 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 - Music Assistant supports playing to cast groups which are created in the Google Home app
 - When using Google cast groups then perfect sync across players in that group is possible
 - Any physical control buttons on the device should be supported as well as voice control
+- Cast speakers can be synchronised with other Sendspin clients (experimental)
 
 ## Settings
 
-In addition to the [Individual Player Settings](../settings/individual-player.md) the Google Cast provider also has a unique setting in the Advanced section. <b>Use Music Assistant Cast App</b> is on by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
+In addition to the [Individual Player Settings](../settings/individual-player.md) the Google Cast provider also has some unique settings as follows:
+
+- <b>Enable experimental Sendspin mode</b>. When enabled, Music Assistant will use the Sendspin protocol for synchronized audio streaming instead of the standard Chromecast protocol. This allows grouping Chromecast devices with other Sendspin compatible players for multi-room synchronized playback
+- <b> Sendspin sync delay.</b> Static delay in milliseconds to adjust audio synchronization. Positive values delay playback, negative values advance it. Use this to compensate for device specific audio latency
+- <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
 
 ## Known Issues / Notes
 
