@@ -53,7 +53,12 @@ In addition to the settings outlined above to configure the provider there are a
 - <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
 - <b>Ignore playlists with album tracks within album folders.</b> Some users have a playlist per album. For large collections this results in an unusable Playlist View. To avoid this situation, this setting, which is enabled by default, will result in playlists which are more than one level below the root folder of the provider to be ignored
 - <b>Content type in media folder(s).</b> This setting defines the content type of the provider and is necessary for Music, Audiobooks and Podcasts to be correctly identified
-- <b>Advanced - Mount options.</b> This field allows the options of the mount command, which is used at the operating system level to provide access to the share, to be specified. The default options should work for the majority of users and thus do not need to be modified
+- <b>Import tracks/files into the Music Assistant library.</b> Define if the import of tracks/files is desired. When not importing into the library, tracks can still be manually browsed using the Browse feature. Note that by adding a Track into the Music Assistant library, the track artists and album will always be imported as well
+- <b>Import playlists (m3u files) into the Music Assistant library.</b> Define if the import of playlists (m3u files) is desired. When not importing into the library, they can still be manually browsed using the Browse feature.
+- <b>Automatic sync interval for Tracks.</b> Various time periods are selectable or it can be disabled
+- <b>Automatic sync interval for Playlists.</b> Various time periods are selectable or it can be disabled
+- <b>SMB Version.</b> The SMB protocol version to use. SMB 3.0 or higher is recommended for better performance and security. Use Auto to let the system negotiate. The options are `Auto`, `SMB 1.0`, `SMB 2.0`, `SMB 2.1`, `SMB 3.0 [default]`, and `SMB 3.1.1`
+- <b>Cache Mode.</b> Cache mode affects performance and consistency. 'Loose' provides better performance for read heavy workloads and is recommended for music libraries.. The options are `Strict`, `Loose (Recommended) [default]`, and `None`
 
 ## Known Issues / Notes
 
