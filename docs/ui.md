@@ -160,6 +160,8 @@ Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. 
 
 The PROVIDER DETAILS section shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the ![icon](assets/icons/database-search.png){ width=20 }icon. Adding a new provider does not trigger linking across existing library items.
 
+Mappings can also be created via a menu option for items shown in the OTHER VERSIONS section of the view.
+
 Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](music-providers/filesystem#tagging-files).
 
 The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
