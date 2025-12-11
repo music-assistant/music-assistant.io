@@ -158,7 +158,11 @@ Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. 
 
 ### Provider Details
 
-The PROVIDER DETAILS section shows what providers are linked to the artist (albums and tracks have a similar section). It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers only occurs when the item is added to the MA library and adding a new provider later does not restart that linking process (in order to link from the new provider add the item to the MA database from that provider). The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the chain link icon on the right. The external link icon opens the page for the item on the source provider.
+The PROVIDER DETAILS section shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the ![icon](assets/icons/database-search.png){ width=20 }icon. Adding a new provider does not trigger linking across existing library items.
+
+Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](music-providers/filesystem#tagging-files).
+
+The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
 
 ***************************************************************
 
