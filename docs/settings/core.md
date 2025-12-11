@@ -1,4 +1,4 @@
-# MA Server Settings ![Preview image](../assets/icons/settings-core-icon.png){ width=70 align=right }
+# MA System Settings ![Preview image](../assets/icons/settings-core-icon.png){ width=70 align=right }
 
 The core server settings are set with typical defaults that should work for most users. However, there are settings available for each of the core controllers and these are outlined below. All controllers have a setting for the log level in the advanced section. There may be slight differences in the settings between the HA add-on and docker versions of the servers.
 
