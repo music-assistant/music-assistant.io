@@ -10,6 +10,7 @@ nav:
       - Installation: installation.md
       - First Run (Authentication): first-run.md
   - Settings:
+      - Profile Settings: settings/profile.md
       - Music Provider Settings: settings/music-provider-settings.md
       - Player Provider Settings: settings/player-provider.md
       - Individual Player Settings: settings/individual-player.md
