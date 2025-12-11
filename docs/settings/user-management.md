@@ -17,10 +17,6 @@ On the right side of each user name is a ⋮ menu which has four menu items
 
 The dialog shown above appears when clicking on a user name or via the ⋮ menu.
 
-Each user can be restricted to only certain players. Additionally, users can be restricted to certain music providers which has the additional benefit of only using those providers when initiaing playback. This can have the benefit of ensuring listening statistics are correct for a user's source streaming account 
+Each user can be restricted to only certain players. Additionally, users can be restricted to certain music providers which has the additional benefit of only using those providers when initiaing playback. This can have the benefit of ensuring listening statistics are correct for a user's source streaming account
 
-
-
-
-
- 
+If a provider filter is added to an administrator account that will work but there may be some visual anomolies in the provider settings however everything will still work. 
