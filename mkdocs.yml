@@ -17,6 +17,7 @@ nav:
       - System Settings: settings/core.md
       - Remote Access: settings/remote-access.md
       - User Interface: settings/user-interface.md
+      - About: settings/about.md
   - Home Assistant Integration:
       - integration/index.md
       - Installation: integration/installation.md
