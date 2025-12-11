@@ -15,6 +15,7 @@ nav:
       - Player Provider Settings: settings/player-provider.md
       - Individual Player Settings: settings/individual-player.md
       - System Settings: settings/core.md
+      - Remote Access: settings/remote-access.md
   - Home Assistant Integration:
       - integration/index.md
       - Installation: integration/installation.md
