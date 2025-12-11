@@ -1,4 +1,4 @@
-# User Interface Settings ![Preview image](../assets/icons/user-interface-icon.png){ width=70 align=right }
+# User Interface Settings ![Preview image](../assets/icons/UI-icon.png){ width=70 align=right }
 
 Customise the user interface from this page
 
