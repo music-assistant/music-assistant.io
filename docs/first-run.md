@@ -6,7 +6,7 @@ Upon first startup, what the the user is presented with depends upon the install
 
 The initial authentication setup dialog will appear as follows
 
-![Preview image](assets/screenshots/auth-flow.png){ width=256 }
+[![Preview image](assets/screenshots/auth-flow.png){ width=256 }](assets/screenshots/screen3.png)
 
 After successfully logging in, the first required action for the administrator is to add providers for [music sources](music-providers/index.md) and [players](player-support/index.md). This banner is shown to support this
 
