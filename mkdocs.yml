@@ -16,6 +16,7 @@ nav:
       - Individual Player Settings: settings/individual-player.md
       - System Settings: settings/core.md
       - Remote Access: settings/remote-access.md
+      - User Interface: settings/user-interface.md
   - Home Assistant Integration:
       - integration/index.md
       - Installation: integration/installation.md
