@@ -15,7 +15,7 @@ For [local file providers](https://www.music-assistant.io/music-providers/filesy
 
 For all providers, if one or more lyric metadata providers are available then lyrics will be attempted to be obtained according to the following rules (note that it is possible that matching lyrics can't be found)
 
-- When a track is first played a task will be queued to fetch the lyrics which then should mean they are available the next time the track is played (these tasks take some time to complete)
+- When a track is first played, a task will be queued to fetch the lyrics which should then mean they are available the next time the track is played (these tasks take some time to complete)
 - A metadata update will occur when the track is played at least 90 days after the previous update
 - If a specific track is viewed and UPDATE METADATA is selected from the top right menu then this will trigger a lyrics update request
 
