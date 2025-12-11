@@ -8,4 +8,6 @@ The initial set up follows the following flow
 
 ![Preview image](assets/screenshots/auth-flow.png)
 
-After successfully logging in, the first required action for the administrator is to add providers for [music sources](music-providers/index.md) and [players](player-support/index.md).
+After successfully logging in, the first required action for the administrator is to add providers for [music sources](music-providers/index.md) and [players](player-support/index.md). This banner is shown to support this
+
+![Preview image](assets/screenshots/setup-banner.png)
