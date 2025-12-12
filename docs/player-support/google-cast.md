@@ -14,8 +14,9 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 
 In addition to the [Individual Player Settings](../settings/individual-player.md) the Google Cast provider also has some unique settings as follows:
 
-- <b>Enable experimental Sendspin mode</b>. When enabled, Music Assistant will use the Sendspin protocol for synchronized audio streaming instead of the standard Chromecast protocol. This allows grouping Chromecast devices with other Sendspin compatible players for multi-room synchronized playback
-- <b> Sendspin sync delay.</b> Static delay in milliseconds to adjust audio synchronization. Positive values delay playback, negative values advance it. Use this to compensate for device specific audio latency
+- <b>Enable experimental Sendspin mode</b>. When enabled, Music Assistant will use the Sendspin protocol for synchronized audio streaming instead of the standard Chromecast protocol. This allows grouping Chromecast devices with other Sendspin compatible players for multi-room synchronized playback. When enabled, a new player will appear named "PlayerName (Sendspin)" - use this Sendspin player when creating groups with other Sendspin clients, not the original Chromecast player
+- <b>Sendspin sync delay.</b> Static delay in milliseconds to adjust audio synchronization. Positive values delay playback, negative values advance it. Use this to compensate for device specific audio latency
+- <b>Sendspin codec.</b> Select the audio codec for Sendspin streaming. Options are FLAC (default), PCM, and Opus. Note that Opus doesn't work natively on Cast devices and requires software decoding, which may be too CPU intensive for Google Cast Audio devices.
 - <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
 
 ## Known Issues / Notes
