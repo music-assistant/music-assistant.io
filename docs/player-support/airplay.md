@@ -38,6 +38,7 @@ AirPlay 1 (RAOP) specific settings are:
 - Also try compression on and off in the advanced player settings if there is no sound
 - A device password can be set for those devices which require it in the advanced settings
 - If you find your player is going unavailable when still powered on then it may not be sending its keep alive message. A timeout can be configured for each player. Some users have reported they have needed to set it as long as one hour
-- Apple Homekit has been reported to interfere with playback. If problems are enountered then remove the devices from Apple Homekit or try changing the setting in the preferences section of Homekit (iOS) for `AirPlay (Speaker & TV)`
+- Apple Homekit has been reported to interfere with playback. If problems are enountered then remove the devices from Apple Homekit or try changing the setting in the preferences section of Homekit (iOS) for `AirPlay (Speaker & TV)`.
+  - In this section specifically check if the `Only people in this home` is not selected. When this option is selected, MusicAssistant cannot play audio on the HomePod (without setting the proper password in the advanced settings of the provider). Select the option `Everyone on the same network` instead.
 - If the AirPlay device incorrectly responds to change volume commands or randomly changes volume, try selecting the option `Ignore volume reports sent by the device` in the player's AirPlay Specific Settings
 - AirPlay 2 implementation is new and has not yet been extensively tested. It is known that PIN-based pairing is not yet supported. There may be additional issues that are not yet known.
