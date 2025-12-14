@@ -18,15 +18,18 @@ Music Assistant has support for streaming from BBC Sounds. Contributed and maint
 ### Other
 
 - Stream live BBC radio shows, podcast series and on-demand audio
-- Shows the currently playing song when streaming radio stations
 - Access your personalised BBC Sounds content*
 - Keeps your My Sounds listen history up to date with your Music Assistant activity*
 
 *Requires a logged in BBC account
 
+## Usage
+
+You can access the main Sounds menu by navigating to *Browse > BBC Sounds*. Relevant content will also be shown on the homepage as recommended items, and available content can also be accessed through search.
+
 ## Configuration
 
-The provider works without a login, but you will be restricted to the limited International version of the Sounds menu
+The provider works without a login, but you will be restricted to a basic version of the Sounds content.
 
 ### Settings
 - <b>Username and Password.</b> A BBC Sounds account is optional, but some UK-only content may not work without being logged in
@@ -40,6 +43,7 @@ The full functionality is enabled when you are a UK-based listener, and signed i
 ## Not Yet Supported
 
 - Pausing and seeking live radio
-- The international menu should show avaiable podcasts, this will be supported in a future release, but is not currently
-- Showing the currently playing song on catch-up
+- International accounts may work, but are not currently supported
+- The international menu should show available podcasts, this has not been implemented yet
+- Showing the currently playing song for stations and catch-up is implemented but not yet released
 - For signed-in users, accessing your subscribed content through the library is not yet supported, but is planned
