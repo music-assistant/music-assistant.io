@@ -93,6 +93,10 @@ In addition to the settings outlined above to configure the provider there are a
 
 ![image](../assets/screenshots/no-disc-tag.png)
 
+### Tags used by MA
+
+[![Preview image](assets/tag-usage.png){ width=800 }](assets/tag-usage.png)
+
 ### Manually Adjusting Tags
 
 !!! danger
