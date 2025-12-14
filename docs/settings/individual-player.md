@@ -48,7 +48,7 @@ Using the icons at the top of the view, the additional filters can be reordered,
 
 ## Announcements Configuration
 
-There are a number of configurable options for controlling the volume of announcements sent to the MA players. These are well described by the help available by selecting this icon ![image](../assets/icons/question-mark.png) beside each field.
+There are a number of configurable options for controlling the volume of announcements sent to the MA players. These are well described by the help available by selecting this icon ![image](../assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
 
 ![image](../assets/screenshots/announcements-settings.png)
 
