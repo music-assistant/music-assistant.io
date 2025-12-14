@@ -30,9 +30,8 @@ Sendspin is a flexible protocol that supports multiple roles. A single device ca
 | **Controller** | Manages playback commands like play, pause, skip, volume, and shuffle. |
 | **Metadata** | Displays information about the current track (title, artist, album). |
 | **Artwork** | Shows album art and other visual imagery. Supports format and size preferences. |
-| **Visualizer** | Creates audio-reactive visual effects based on the music being played. |
 
-A device can combine multiple roles - for example, a smart display could implement Player, Metadata, Artwork, and Visualizer simultaneously.
+A device can combine multiple roles - for example, a smart display could implement Player, Metadata, and Artwork simultaneously.
 
 ## Supported Clients
 
@@ -40,10 +39,12 @@ Several client types can connect to Music Assistant via Sendspin:
 
 | Client | Description |
 |--------|-------------|
-| **Web Browser** | The built-in Music Assistant web player uses Sendspin (via WebRTC) for local playback |
+| **Web Browser** | The built-in Music Assistant web player uses Sendspin for local playback |
+| **[Google Cast (Sendspin mode)](google-cast.md)** | Experimental Sendspin mode for Chromecast devices |
+| **[Home Assistant Voice PE](https://esphome.github.io/home-assistant-voice-pe-alpha/)** | Alpha firmware for the Home Assistant Voice Preview Edition |
+| **[Sendspin Python Client](https://github.com/Sendspin/sendspin)** | Cross-platform client for Windows, Linux, and macOS |
 | **Mobile Apps** | Sendspin-compatible apps can connect and receive synchronized audio |
 | **Hardware Devices** | Dedicated Sendspin receivers and speakers |
-| **Home Assistant Voice PE** | Alpha firmware is available for the Home Assistant Voice Preview Edition |
 
 ## How It Works
 
@@ -53,14 +54,26 @@ Sendspin devices on your local network are automatically discovered via mDNS and
 
 ### The Web Player
 
-The built-in web player in the Music Assistant frontend uses Sendspin for audio playback. When you open the web interface and use the local playback option, you're using Sendspin via WebRTC.
+The built-in web player in the Music Assistant frontend uses Sendspin for audio playback. When on a local network, the web player will attempt to use a direct WebSocket connection for best performance; otherwise it falls back to WebRTC.
+
+The sync delay can be adjusted under **Settings → User Interface → Sendspin sync delay**. This value is auto-selected based on your platform but may need manual adjustment.
+
+#### Codec Support
+
+The audio codec used depends on your connection and platform:
+
+- **Local connections** (on the same network): FLAC (lossless) is used on desktop browsers and Android. iOS, iPadOS, and Safari use Opus.
+- **Remote connections** (via WebRTC): All browsers use Opus.
+
+!!! note
+    Firefox on Android does not support remote (WebRTC) playback.
 
 ### Connection Methods
 
 Sendspin supports two connection methods:
 
-1. **WebRTC** (for browsers and remote access): Used by the web player and mobile apps. Works across networks and through firewalls.
-2. **Direct WebSocket** (for local hardware): Hardware devices on your local network connect directly for lowest latency.
+1. **Direct WebSocket**: Used automatically by clients on the same local network as Music Assistant, including the web player and hardware devices.
+2. **WebRTC**: Used for remote access when not on the local network. Works across networks and through firewalls. The web player falls back to this method when a direct connection isn't possible.
 
 ## Configuration
 
@@ -80,3 +93,13 @@ Developers interested in building Sendspin-compatible devices or apps can find t
 
 - [Sendspin Protocol Specification](https://github.com/Sendspin/spec)
 - [aiosendspin](https://github.com/music-assistant/aiosendspin) - Python implementation
+
+## Specification Compliance and Deviations
+
+There are some gaps between this implementation and the specification at [github.com/Sendspin/spec](https://github.com/Sendspin/spec). Both are subject to change. Known deviations include:
+
+- Player Format Changes through `stream/request-format` are not yet supported
+- The `paused` `playback_state` is never used - only `playing` and `stopped` are sent to clients
+- All streams are ended immediately when playback stops, skipping to the next track, or when seeking. Artwork is also cleared during pause, seek, or loading of the next track
+- Multi Server Support messages are implemented but not fully utilized - only a single server per network is supported
+- Only 16-bit audio formats are supported
