@@ -95,7 +95,7 @@ In addition to the settings outlined above to configure the provider there are a
 
 ### Tags used by MA
 
-[![Preview image](assets/tag-usage.png){ width=800 }](assets/tag-usage.png)
+[![Preview image](../assets/tag-usage.png){ width=800 }](../assets/tag-usage.png)
 
 ### Manually Adjusting Tags
 
