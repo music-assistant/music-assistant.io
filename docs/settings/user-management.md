@@ -17,7 +17,7 @@ On the right side of each username is a ⋮ menu which has four menu items
 
 The dialog shown above appears when clicking on a username or via the ⋮ menu.
 
-Each user can be restricted to only certain players. Additionally, users can be restricted to certain music providers benefitting in two ways - only these providers are used when initiating playback and listening statistics are correct for a user's source streaming account.
+Each user can be restricted to a set of specific players. Additionally, restricting users to certain music providers offers two benefits: only these providers are used when initiating playback, and listening statistics are accurately attributed to a user's source streaming account.
 
 ### Audiobook and podcast progress sync in a multi-user environment
 
