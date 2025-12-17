@@ -49,6 +49,7 @@ Music Assistant has full support for Spotify media listing and playback.
 ## Known Issues / Notes
 
 - Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work
+- Upon first saving of the provider a check is done for Audiobook support within thr account. If the check is successful then additional Audiobook related options will be seen when revisiting the provider settings
 
 ## Not yet supported
 
