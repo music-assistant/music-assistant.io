@@ -50,10 +50,9 @@ In the ADVANCED section:
 Most of the [Voicemeeter apps](https://vb-audio.com/index.htm) (from the creator of the VBAN protocol) have VBAN Sender functionality, the "simplest" one being Voicemeeter Banana.  These audio mixer apps are full-featured, fairly complex and configuration highly system dependent.  The documentation and Youtube videos are far better sources of information on how to configure them than can be supplied here. At a basic level the apps will install many Voicemeeter system audio devices.  The Voicemeeter Input device is selected as the default output device to route whole system audio over VBAN, or selected as the output for an application in the Volume Mixer.
 
 Basic tips:
+
 * Make sure to run the install program as Administrator.
-
 * In the Hardware Out section, configure the A1 Output Device as a MME device.
-
 * In some cases, disabling power saving on network cards may be necessary.
 
 Press the VBAN button to configure an Outgoing Stream:
