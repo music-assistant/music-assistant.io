@@ -88,7 +88,7 @@ The following is needed to setup this provider:
 
 The audiobookshelf provider can be set up multiple times for individual users.
 To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](#filter-progress-multi-user).
+user please refer to [user management](../settings/user-management.md/#filter-progress-multi-user).
 
 ### Advanced Settings
 
