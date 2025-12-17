@@ -69,11 +69,11 @@ Music Assistant has support for [audiobookshelf](https://www.audiobookshelf.org/
 
 The following is needed to setup this provider:
 
-- <b>Server.</b> A server URL (e.g. `https://abs.domain.tld/` or `http://192.168.1.4:13378/` for a local server) of an Audiobookshelf instance. 
+- <b>Server.</b> A server URL (e.g. `https://abs.domain.tld/` or `http://192.168.1.4:13378/` for a local server) of an Audiobookshelf instance.
 - Authentication without [OIDC](https://www.audiobookshelf.org/guides/oidc_authentication/):
     - <b>Username.</b> The username of an Audiobookshelf user
     - <b>Password.</b> The password of this user
- 
+
 !!! note
     The user must be of type user, admin or root. Guest users are neither tested nor supported
 
@@ -83,6 +83,12 @@ The following is needed to setup this provider:
 
 !!! note
     Should you insert an old legacy token, your provider will not work anymore once these are removed from ABS.
+
+### Multi-user environment
+
+The audiobookshelf provider can be set up multiple times for individual users.
+To achieve correct syncing of the progress of individual media items with an MA
+user please refer to [user management](../settings/user-management.md/#filter-progress-multi-user).
 
 ### Advanced Settings
 

@@ -29,7 +29,7 @@ If you have a spare Raspberry Pi (any model) then [PiCoreplayer](https://www.pic
 ## My Browser
 
 ![easiest label](../assets/label-easiest-noshadow.png){ width=64 }
-Play to the built-in THIS DEVICE player.
+Play to the built-in Sendspin web player.
 
 ![easiest label](../assets/label-intermediate-noshadow.png){ width=64 }
 Use a [Snapserver](../player-support/snapcast.md) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
@@ -37,7 +37,7 @@ Use a [Snapserver](../player-support/snapcast.md) and the Snapweb option. If you
 ## My Android Phone
 
 ![easiest label](../assets/label-easiest-noshadow.png){ width=64 }
-Play to the built-in THIS DEVICE player.
+Play to the built-in Sendspin web player.
 
 ![intermediate label](../assets/label-intermediate-noshadow.png){ width=64 }
 Use the [Snapcast App](https://play.google.com/store/apps/details?id=de.badaix.snapcast) and the [Snapserver Provider](../player-support/snapcast.md)

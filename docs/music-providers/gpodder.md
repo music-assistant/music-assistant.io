@@ -26,12 +26,12 @@ A [mygpo](https://github.com/gpodder/mygpo) compatible web service is supported,
 [opodsync](https://github.com/kd2org/opodsync)
 To setup this functionality you need:
 
-- <b>gPodder Service URL.</b> For example, `http://192.168.1.20:14000` or `https://sync.yourdomain.com` 
+- <b>gPodder Service URL.</b> For example, `http://192.168.1.20:14000` or `https://sync.yourdomain.com`
 - <b>Username.</b>
 - <b>Password.</b>
 - <b>Device ID.</b>
 
-!!! note 
+!!! note
     The Device ID can be any ASCII string, but keep in mind, that this is used for syncing. Other clients must use the same Device ID
 
 !!! note
@@ -41,6 +41,12 @@ To setup this functionality you need:
 The provider supports [nextcloud-gpodder/gpoddersync](https://apps.nextcloud.com/apps/gpoddersync).
 
 To setup this functionality, you need the `Nextcloud URL`, and then click the AUTHENTICATE WITH NEXTCLOUD button to start the authentication flow. Click save when finished
+
+### Multi-user environment
+
+The gpodder provider can be set up multiple times for individual users.
+To achieve correct syncing of the progress of individual media items with an MA
+user please refer to [user management](../settings/user-management.md/#filter-progress-multi-user).
 
 ### Settings
 

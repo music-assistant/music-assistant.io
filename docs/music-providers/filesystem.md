@@ -48,12 +48,18 @@ Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS
 
 ### Settings
 
-In addition to the settings outlined above to configure the provider there are additional settings available for this provider:
+In addition to the settings outlined above to configure the provider there are additional settings available for this provider (note certain options will be gryed out depending upon the content type selected):
 
+- <b>Content type in media folder(s).</b> This setting defines the content type of the provider and is necessary for Music, Audiobooks and Podcasts to be correctly identified
 - <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
 - <b>Ignore playlists with album tracks within album folders.</b> Some users have a playlist per album. For large collections this results in an unusable Playlist View. To avoid this situation, this setting, which is enabled by default, will result in playlists which are more than one level below the root folder of the provider to be ignored
-- <b>Content type in media folder(s).</b> This setting defines the content type of the provider and is necessary for Music, Audiobooks and Podcasts to be correctly identified
-- <b>Advanced - Mount options.</b> This field allows the options of the mount command, which is used at the operating system level to provide access to the share, to be specified. The default options should work for the majority of users and thus do not need to be modified
+- <b>Sync Library Artists/Albums from this provider to Music Assistant.</b> Whether to synchronize all artists/albums from the local provider. 
+- <b>Import tracks/files into the Music Assistant library.</b> Define if the import of tracks/files is desired. When not importing into the library, tracks can still be manually browsed using the Browse feature. Note that by adding a Track into the Music Assistant library, the track artists and album will always be imported as well
+- <b>Import playlists (m3u files) into the Music Assistant library.</b> Define if the import of playlists (m3u files) is desired. When not importing into the library, they can still be manually browsed using the Browse feature.
+- <b>Import Podcasts/Audiobooks into the Music Assistant library.</b> Define if the import of Podcasts/Audiobooks is desired. When not importing into the library, items can still be manually browsed using the Browse feature.
+- <b>Automatic sync interval for Artists/Albums/Tracks/Playlists/Podcasts/Audiobooks.</b> Various time periods are selectable or it can be disabled
+- <b>SMB Version.</b> The SMB protocol version to use. SMB 3.0 or higher is recommended for better performance and security. Use Auto to let the system negotiate. The options are `Auto`, `SMB 1.0`, `SMB 2.0`, `SMB 2.1`, `SMB 3.0 [default]`, and `SMB 3.1.1`
+- <b>Cache Mode.</b> Cache mode affects performance and consistency. 'Loose' provides better performance for read heavy workloads and is recommended for music libraries.. The options are `Strict`, `Loose (Recommended) [default]`, and `None`
 
 ## Known Issues / Notes
 
@@ -81,11 +87,10 @@ In addition to the settings outlined above to configure the provider there are a
 ## Tagging Files 
 
 - It is very important that all of your audio files contain proper [ID3 tag](https://en.wikipedia.org/wiki/ID3) information. The more comprehensive the tagging the better the results will be when using MA. For this reason it is strongly recommended that all files are tagged with [MusicBrainz Picard](https://picard.musicbrainz.org). This will ensure consistency and completeness of the tags that MA needs to work best. Other programs such as [Mp3Tag](https://www.mp3tag.de/en/) are often also based on the Musicbrainz catalog and can work as well provided they include ISRC and all MBID tags
-- Tags must have mutiple items separated by a semicolon. In Picard this is an option in OPTIONS >> TAGS >> ID3. Also in that section ensure V2.3 is used to avoid problems
+- Tags must have multiple items separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3. Also in that section ensure V2.3 is used to avoid problems
 - MA requires the Album Artist tag to be set. If you do not have that tag set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
 - For multi-artist tracks it is important that the `ARTISTS` tag (as distinct from `ARTIST`) is set, which is semi-colon delimited list of the artists on the track. If this tag is not set MA will attempt to parse the artist names from the `ARTIST` tag but if unusual or non-English joining words or symbols are used then this process may fail 
 - Music Assistant puts you in control by fully trusting the ID3 tags you provide, only additional information is scraped from metadata providers
-- The only tag splitter supported is the semi-colon
 - Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and `.nfo` files with enhanced metadata are also supported
 - To minimise the chance of problems with MA you should follow the Kodi guidelines here https://kodi.wiki/view/Music_tagging Just about all the tips, tricks and suggestions on that page are applicable to MA and if you follow it all to the letter you will have a much better experience
 - For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders

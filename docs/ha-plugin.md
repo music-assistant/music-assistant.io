@@ -23,6 +23,8 @@ Before the Plugin can be added the HA Integration must be [installed](integratio
 
 ## Known Issues / Notes
 
+This plugin will be automatically installed (and cannot be disabled) if the MA server is running as an add-on to Home Assistant.
+ 
 The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. There are three drop down lists which contain a filtered list of HA entities:
 
 - For power controls, entities that can be turned on/off and have a boolean state will be shown. (i.e. switch, input_boolean and media_player)

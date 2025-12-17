@@ -16,7 +16,7 @@ Music Assistant has the ability to add [Spotify Connect](https://connect.spotify
 
 ## Configuration
 
-To make each player appear as a Spotify Connect target in the Spotify app, the Spotify Connect provider needs to be added individually for each player in the Plugins section
+To make each player appear as a Spotify Connect target in the Spotify app, the Spotify Connect provider needs to be added individually for each player in the MA Provider Settings
 
 ## Known Issues / Notes
 

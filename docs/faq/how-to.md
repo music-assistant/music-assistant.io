@@ -35,8 +35,11 @@ More details [here](tech-info.md#volume-normalization)
 # Have my music continue if I change rooms
 
 There are three options.
+
 1. Start streaming to any type of group that includes all the rooms you will move between. Mute all the rooms except the one you are in. When you move rooms just mute and unmute the required players.
+
 2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](groups.md)
+
 3. Use the [Transfer Queue](masstransfer.md) action.
 
 # Shuffle Spotify/Playlist/YouTube etc
@@ -229,6 +232,9 @@ See [here](https://github.com/orgs/music-assistant/discussions/1123#discussionco
 The [Nextcloud Music App](https://apps.nextcloud.com/apps/music) supports [Subsonic](../music-providers/subsonic.md) so you can use that provider in MA to connect. 
 
 # Access the MA Views directly via URL
+
+If authentication becomes a blocker to some devices then create a long lived access token via MA SETTINGS >> PROFILE and use the following format as the URL
+https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
 
 ## Player Selection
 

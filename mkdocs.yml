@@ -8,10 +8,17 @@ nav:
   - Home: index.md
   - Server Install and Configure:
       - Installation: installation.md
-      - Core Settings: settings/core.md
+      - First Run (Authentication): first-run.md
+  - Settings:
+      - Profile Settings: settings/profile.md
+      - Music Provider Settings: settings/music-provider-settings.md
       - Player Provider Settings: settings/player-provider.md
       - Individual Player Settings: settings/individual-player.md
-      - Music Provider Settings: settings/music-provider-settings.md
+      - System Settings: settings/core.md
+      - Remote Access: settings/remote-access.md
+      - User Interface: settings/user-interface.md
+      - User Management: settings/user-management.md
+      - About: settings/about.md
   - Home Assistant Integration:
       - integration/index.md
       - Installation: integration/installation.md
@@ -23,7 +30,6 @@ nav:
       - Get Queue Action: faq/get_queue.md
       - Transfer Queue Action: faq/masstransfer.md
       - Voice Control: integration/voice.md
-  - Desktop Companion App: companion-app.md
   - Usage:
       - General: usage.md
       - UI: ui.md
@@ -35,24 +41,31 @@ nav:
       - I Want To Stream To: faq/stream-to.md
       - Technical Info: faq/tech-info.md
       - Troubleshooting: faq/troubleshooting.md
-  - Mobile Devices: mobile/index.md
   - Music Providers:
       - music-providers/index.md
       - Apple Music: music-providers/apple-music.md
+      - ARD Audiothek: music-providers/ard-audiothek.md
       - Audible: music-providers/audible.md
       - Audiobookshelf: music-providers/audiobookshelf.md
+      - BBC Sounds: music-providers/bbc-sounds.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
+      - DI.fm Network: music-providers/digitally-incorporated.md
       - gPodder: music-providers/gpodder.md
       - iBroadcast: music-providers/ibroadcast.md
+      - Internet Archive: music-providers/internet-archive.md
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
       - Local Files: music-providers/filesystem.md
+      - Nico Nico Video: music-providers/niconico.md
       - Nugs.net: music-providers/nugs.md
+      - Phish.in: music-providers/phishin.md
       - Plex: music-providers/plex.md
+      - Podcast Index: music-providers/podcast-index.md
       - Podcast RSS Feed: music-providers/podcastfeed.md
       - Qobuz: music-providers/qobuz.md
       - Radio Browser: music-providers/radio-browser.md
+      - Radio Paradise: music-providers/radio-paradise.md
       - SiriusXM: music-providers/siriusxm.md
       - SoundCloud: music-providers/soundcloud.md
       - Spotify: music-providers/spotify.md
@@ -65,22 +78,30 @@ nav:
     - AirPlay: player-support/airplay.md
     - Alexa: player-support/alexa.md
     - Bluesound: player-support/bluesound.md
-    - Builtin: player-support/builtin.md
     - DLNA: player-support/dlna.md
     - Fully Kiosk: player-support/fully-kiosk.md
     - Google Cast: player-support/google-cast.md
     - Home Assistant: player-support/ha.md
     - MusicCast: player-support/musiccast.md
+    - Roku Media Assistant: player-support/roku.md
+    - Sendspin: player-support/sendspin.md
     - Snapcast: player-support/snapcast.md
     - Sonos: player-support/sonos.md
     - Squeezelite: player-support/squeezelite.md
   - Metadata Providers: metadata.md
   - Plugins:
+    - AirPlay Receiver Plugin: plugins/airplay-receiver.md
     - Home Assistant Plugin: ha-plugin.md
     - LastFM Scrobbler: plugins/lastfm_scrobble.md
     - Listenbrainz Scrobbler: plugins/listenbrainz_scrobble.md
+    - Plex Connect: plugins/plex-connect.md
+    - Spotify Connect Plugin: plugins/spotify-connect.md
     - Subsonic Scrobbler: plugins/subsonic_scrobble.md
     - plugins/spotify-connect.md
+    - VBAN Receiver: plugins/vban-receiver.md
+  - Desktop Companion App: companion-app.md
+  - Mobile Devices: mobile/index.md
+  - API: api.md
   - Community Extensions: community-extensions.md
   - Support: support.md
   - I Want to Help / Donate:

@@ -117,9 +117,9 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 [![image](assets/screenshots/homescreen.png)](assets/screenshots/homescreen.png)
 
-The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which providers supports this feature.
+The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which providers supports this.
 
-The view is fully configurable. Select the ⋮ menu on the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
+The view is fully configurable. Select the blue icon in the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
 
 [![image](assets/screenshots/homescreen_edit.png)](assets/screenshots/homescreen_edit.png)
 ***************************************************************
@@ -130,13 +130,8 @@ The view is fully configurable. Select the ⋮ menu on the top right and then ED
 
 Album and Track Views look the same as the above except there is no album artist filter icon and the track view has an [ADD VIA URL](music-providers/builtin.md) option.
 
-A red dot on the search icon ![image](assets/icons/search-icon.png)
-indicates that the viewed results are subject to filtering by search. This is useful if the search box has been closed.
-
-A red dot on the refresh icon ![image](assets/icons/refresh-icon.png)
-indicates that the viewed results have some sort of update pending. Press the refresh button.
-
-The Sync icon ![image](assets/icons/sync-icon.png) will synchronise the library with all of the providers that support that mediatype.
+A blue dot on any icon (e.g. search icon ![image](assets/icons/search-icon.png) )
+indicates that the viewed results are subject to filtering.
 
 Items in all views can be "right clicked" or "long pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
@@ -155,7 +150,7 @@ The behaviour described above will work on any view where you see the "x item(s)
 
 [![image](assets/screenshots/UI-individual-artist.png)](assets/screenshots/UI-individual-artist.png)
 
-The tracks and albums sections are collapsible. The view above shows them both collapsed. The tracks section shows ALL tracks that are in the library or that are available across all of the providers. A red dot on the library icon ![image](assets/icons/library-icon.png) indicates that the viewed results are filtered to only show items that are in the library. To see what albums any given track is on you can either sort alphabetically or click on one and use the context menu and SHOW INFO.
+The tracks and albums sections are collapsible. The view above shows them both collapsed. The tracks section shows ALL tracks that are in the library or that are available across all of the providers. A blue dot on the library icon ![image](assets/icons/library-icon.png) indicates that the viewed results are filtered to only show items that are in the library. To see what albums any given track is on you can either sort alphabetically or click on one and use the context menu and SHOW INFO.
 
 The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP or UNKNOWN album types.
 
@@ -163,10 +158,14 @@ Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. 
 
 ### Provider Details
 
-The PROVIDER DETAILS section shows what providers are linked to the artist (albums and tracks have a similar section). It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers only occurs when the item is added to the MA library and adding a new provider later does not restart that linking process (in order to link from the new provider add the item to the MA database from that provider). The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the chain link icon on the right. The external link icon opens the page for the item on the source provider.
+The PROVIDER DETAILS section shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the ![icon](assets/icons/database-search.png){ width=20 }icon. Adding a new provider does not trigger linking across existing library items.
 
-!!! note
-    Copying the URI to the clipboard via the chain link icon is only allowed when the MA frontend is accessed over HTTPS due to browser security rules
+Mappings can also be created via a menu option for items shown in the OTHER VERSIONS section of the view.
+
+Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](music-providers/filesystem#tagging-files).
+
+The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
+
 ***************************************************************
 
 ## View - Individual Track

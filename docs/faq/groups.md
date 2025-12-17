@@ -38,6 +38,9 @@ These are permanent group players that are configured via the MA settings. These
 
 After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. You need to specify a name for the group player. The order that the players are selected when the group is created will be the order that the players are shown when viewing the group in the [Player List](../ui.md#player-list).
 
+!!! note
+    The ADD GROUP PLAYER button is only visible if a player provider which supports perfect sync or the Universal Group player provider, has been added
+
 !!! tip
     Remember Chromecast devices must be grouped in the Google Home app for perfect sync
 
@@ -56,7 +59,7 @@ After selecting ADD GROUP PLAYER as shown above, the group configuration screen 
 
 ## Universal Groups
 
-Music Assistant has support for grouping dissimilar playback devices. Configuration is done in the same manner as described in the Sync Groups section with UNIVERSAL selected as the Group Type. These groups also support the dynamic member option.
+Music Assistant has support for grouping dissimilar playback devices. Configuration is done in the same manner as described in the Sync Groups section with UNIVERSAL selected as the Group Type. These groups also support the dynamic member option. Universal Group functionality is not emabled by default, it must be first added as a provider.
 
 ### Features
 
