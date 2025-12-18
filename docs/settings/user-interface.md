@@ -13,3 +13,4 @@ Customise the user interface from this page
 
 - <b>Web player mode.</b> The options are `Sendspin (experimental) [default]` and `Disabled (controls only)`
 - <b>Sendspin sync delay (ms).</b> Static delay in milliseconds to adjust audio synchronization. Positive values delay playback, negative values advance it. Use this to compensate for device-specific audio latency.
+- <b>Use browser latency detection.</b> Automatically compensate for hardware audio latency (e.g., Bluetooth headphones) using the browser's output latency API. This API is fairly new and may not work reliably on all browsers and operating systems
