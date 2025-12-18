@@ -29,7 +29,7 @@ For streaming providers ONLY the SPECIFIC artists/albums/tracks/playlists that a
 In each view there is a ⋮ menu in the top right corner. This menu has various library related functions. Two important ones are UPDATE METADATA amd REFRESH ITEM.  Update metadata only retrieves additional metadata for the item being viewed and doesn't alter any of the existing/base details, while refresh item completely re-adds the item into the database, overwriting all existing data. To update the images section or lyrics you only need to select UPDATE METADATA.
 
 !!! note
-    If identical items (e.g. an album or track) have not been matched across providers or within a provider then select the item and using the ⋮ menu in the top banner select REFRESH ITEM
+    If identical items (e.g. an album or track) have not been matched across providers or within a provider then navigate to the [Provider Details](ui.md#provider-details) section of the item and use the options there to link them. 
     
 [![Preview image](assets/screenshots/library.png)](assets/screenshots/library.png)
 
