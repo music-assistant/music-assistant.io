@@ -9,16 +9,16 @@ General Notes:
 
 - You have to add providers in order to access your music even if the media is visible to HA.
 - If you remove a provider a cleanup of the database will be done but it takes a little time to complete. If you still see entries from a deleted provider after some time, then try a MA restart to retrigger the cleanup process.
-- Music providers are added by navigating to MA Settings and then clicking on ADD MUSIC PROVIDER at the top of the page
+- Music providers are added by navigating to MA Settings and then Providers and then clicking on ADD A NEW PROVIDER. (In the image below the view is filtered to show just the music providers - this is optional)
 
 !!! tip "Note" 
-    If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and using the ⋮ menu in the banner at the top of the view select "Refresh Item". This will trigger the linking process and should result in the same albums and tracks being collapsed together. Submit an issue report if this is required so that it can be investigated.
+    If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the ![question mark](../assets/icons/database-search.png){ width=20 } icon at the top of the PROVIDER DETAILS section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
 
 ![image](../assets/screenshots/add-music-provider.png)
 
 ## Settings
 
-All Music Providers have settings which can be configured. The settings page will look similar to the following. The text `Check out the documentation` is a hyperlink to the relevant page in this documentation. Specific help for a setting or configurable field is often available and is accessed by selecting this icon ![question mark](../assets/icons/question-mark.png). All providers can be given a custom name and disabled if necessary. The log level can be adjusted for all providers and this is found in the advanced settings. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). See the provider pages for provider specific settings.
+All Music Providers have settings which can be configured. The settings page will look similar to the following. The icon in the top right is a hyperlink to the relevant page in this documentation. Specific help for a setting or configurable field is often available and is accessed by selecting this icon ![question mark](../assets/icons/question-mark.png). All providers can be given a custom name and disabled if necessary. The log level can be adjusted for all providers and this is found in the advanced settings. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). See the provider pages for provider specific settings.
 
 ![image](../assets/screenshots/generic-settings.png)
 
