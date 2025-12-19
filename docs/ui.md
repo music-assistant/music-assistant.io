@@ -133,7 +133,7 @@ Album and Track Views look the same as the above except there is no album artist
 A blue dot on any icon (e.g. search icon ![image](assets/icons/search-icon.png) )
 indicates that the viewed results are subject to filtering.
 
-The provider filter icon will only show when there are two or more music providers installed that support the media type being viewed.
+The provider filter icon will only show when there are two or more music providers installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
 
 Items in all views can be "right clicked" or "long pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
