@@ -6,7 +6,7 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
     Please note that Bandcamp does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis.
 
 !!! note
-    Indentity token cookie needed for library access.
+    Identity token cookie needed for Bandcamp Account Collection access. Without it, library syncing options won't work. 
 
 ## Features
 
@@ -27,7 +27,8 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 
 ## Configuration
 
-- Providing identity cookie is optional, but allows to import owned albums as library items.
+- Providing an identity cookie is optional, but allows importing owned albums as library items.
+- Tweak Search Limit and Top Tracks Limit to balance search speed and quantity of search results.
 
 !!! note
     Cookies may expire after some time. This means that you may have to replace the identity cookie in the provider configuration if library synchronization begins to fail. 
@@ -43,12 +44,12 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 
 ### Configuring the provider 
 - Navigate to 'Settings'
-- Under Music Providers, click 'Add new', select 'Bandcamp' and fill the identity cookie if needed
+- Under Music Providers, click 'Add new', select 'Bandcamp', and fill in the identity cookie if needed
 - Change optional values
 - Click 'Save'
 
 ## Known Issues / Notes
 
-- This provider mimics YouTube Music. Do not expect to see the same search results as you see if using YouTube
+- This provider mimics Bandcamp. Do not expect to see the same search results as you would when using Bandcamp itself
 - Some low quality artwork can be expected when using this provider
 - Tracks lack album art
