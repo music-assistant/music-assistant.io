@@ -48,7 +48,7 @@ You can also look in the Browser console when you have front end issues which in
 The following is required in ALL reports as the MA team is small and you need to narrow down the problem before raising an issue:
 
 - What music provider is in use when the problem is observed? What other music providers have you tried (if you have no others then make that clear - you can always try radio stations)
-- What player provider is in use when the problem is observed? What other player providers have you tried (if you have no others then make that clear - you can always use SnapCast)
+- What player provider is in use when the problem is observed? What other player providers have you tried (if you have no others then make that clear - you can always use Sendspin)
 - Are the players grouped?
 - How is playback being instigated (e.g. automation or via the UI)
 - If you aren't using HAOS then exactly how you have installed MA
