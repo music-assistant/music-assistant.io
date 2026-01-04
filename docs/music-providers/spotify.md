@@ -49,7 +49,8 @@ Music Assistant has full support for Spotify media listing and playback.
 ## Known Issues / Notes
 
 - Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work
-- Upon first saving of the provider a check is done for Audiobook support within thr account. If the check is successful then additional Audiobook related options will be seen when revisiting the provider settings
+- Upon first saving of the provider a check is done for Audiobook support within the account. If the check is successful then additional Audiobook related options will be seen when revisiting the provider settings
+- After adding the developer token there is then two sessions created to a single spotify provider and MA routes the requests appropriately. For example, playlists are requested via the MA global token (which is rate limited but allows playlist retrieval) while other items are retrieved via the dev token. Search is done using the dev token by default as otherwise it is very slow. Playing and browsing playlists is routed through the global token to the originating provider (useful when multiple Spotify accounts are added).
 
 ## Not yet supported
 

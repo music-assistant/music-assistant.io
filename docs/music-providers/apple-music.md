@@ -45,6 +45,7 @@ Authentication with Apple Music happens through a Music User Token. Unfortunatel
 
 ## Known Issues / Notes
 - Due to Apple's proprietary encryption (FairPlay), Lossless and Dolby Atmos versions of songs are not supported
+- Due to limitations in the API favouriting an item will only sync back to Apple Music for albums, playlists and tracks.
 
 ## Not yet supported
 - Library interaction, such as adding and removing items to your Apple Music library from within Music Assistant

@@ -22,3 +22,4 @@ To make each player appear as an AirPlay target, this plugin needs to be added i
 ## Known Issues / Notes
 
 - To use AirPlay, all devices must be connected to the same network
+- Due to buffering a delay of approximately 5 seconds is normal when playing, pausing and resuming

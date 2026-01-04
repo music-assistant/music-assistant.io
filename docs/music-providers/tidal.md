@@ -21,6 +21,7 @@ Music Assistant has support for [Tidal](https://tidal.com). Contributed and main
 - Items in your Tidal library will be marked as "Favourites" in Music Assistant
 - Marking an item as a "Favourite" from the Music Assistant interface will also mark it as favourite in Tidal
 - On playback, the highest quality FLAC HiFi version will be selected
+- Multiple Tidal accounts can be added. 
 
 ## Configuration
 
