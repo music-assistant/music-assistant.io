@@ -42,7 +42,7 @@ The [Audio Pipeline](audiopipeline.md) selectable label is described above in th
 
 You can also access the [Now Playing view directly via URL](faq/how-to.md/#now-playing-view)
 
-When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favourite status may not indicate correctly until playback of the track is restarted.
+When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favourite status may not indicate correctly until playback of the track is restarted. `Add to Playlist` will not actually add to a playlist where Music Assistant does not support adding those Music Providers to Playlists, such as radio Music Providers.
 
 When lyrics are available for the track being played then the LYRICS selectable label will be shown. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song.
 ***************************************************************
