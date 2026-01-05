@@ -23,3 +23,4 @@ To make each player appear as an AirPlay target, this plugin needs to be added i
 
 - To use AirPlay, all devices must be connected to the same network
 - Due to buffering a delay of approximately 5 seconds is normal when playing, pausing and resuming
+- Using a HA Media Player as the `Connected Music Assistant Player` is not supported
