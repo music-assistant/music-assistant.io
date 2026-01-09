@@ -2,42 +2,39 @@
 
 Install the [squeezelite addon](https://github.com/pssc/ha-addon-squeezelite) which will then allow streaming over an audio connection from the HA host to your speaker or amplifier.
 
-<details><summary>Troubleshooting Steps for this Option</summary>
-
-Some problems (listed individually below) may affect this solution and the following settings should avoid all of these issues:
-
-  * Enable “Show unused configuration options” on the SqueezeLite add-on, then set:
-    * build: **pa** (PortAudio) or **alsa**
-    * options: `-a 150ms` (target latency, experiment to find best value)
-  * Ensure that the *Output format* format in the Music Assistant *Advanced Settings* for the player is set to anything *other* than **WAV**.
-
-### Audio too fast or slow on track change (wrong sampling rate)
-
-The PulseAudio version of SqueezeLite has a known issue of [playing back audio with the wrong sampling rate](https://github.com/ralph-irving/squeezelite/issues/177) on track changes.
-
-If this is encountered, enable “Show unused configuration options” in the SqueezeLite settings and change the *build* type to **pa** (PortAudio) or **alsa**.
-
-### Initial audio swallowed or stuttering on track change
-
-The PulseAudio version of SqueezeLite also has known [synchronization problems on track changes](https://github.com/ralph-irving/squeezelite/issues/155).
-
-If this is encountered then, as above, change the *build* type to **pa** (PortAudio) or **alsa**.
-
-### “Helicopter noises” / chopped off playback
-
-If “[helicopter noises](https://github.com/pssc/ha-addon-squeezelite/issues/1)” are heard then adjust the target latency to a higher value.
-
-To do so, enable “Show unused configuration options” and add `-a 150ms` to the *options* text field while using the ALSA or PA (PortAudio) *build*. Experimentation with higher or lower values may be required.
-
-### Static instead of audio playback on some tracks
-
-This is [an issue with Music Assistant](https://github.com/music-assistant/support/issues/4163) and affects all tracks not using the `i16` sampling format (such as 24/32-bit audio) when streaming with the **WAV** *Output codec*.
-
-When encountering this issue, change the *Output format* to **FLAC** (or any other non-WAV format) in the Music Assistant player *Advanced Settings*.
-
-Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite add-on also works around this issue.
-
-</details>
+??? Troubleshooting Steps for this Option
+    Some problems (listed individually below) may affect this solution and the following settings should avoid all of these issues:
+    
+      * Enable “Show unused configuration options” on the SqueezeLite add-on, then set:
+        * build: **pa** (PortAudio) or **alsa**
+        * options: `-a 150ms` (target latency, experiment to find best value)
+      * Ensure that the *Output format* format in the Music Assistant *Advanced Settings* for the player is set to anything *other* than **WAV**.
+    
+    ### Audio too fast or slow on track change (wrong sampling rate)
+    
+    The PulseAudio version of SqueezeLite has a known issue of [playing back audio with the wrong sampling rate](https://github.com/ralph-irving/squeezelite/issues/177) on track changes.
+    
+    If this is encountered, enable “Show unused configuration options” in the SqueezeLite settings and change the *build* type to **pa** (PortAudio) or **alsa**.
+    
+    ### Initial audio swallowed or stuttering on track change
+    
+    The PulseAudio version of SqueezeLite also has known [synchronization problems on track changes](https://github.com/ralph-irving/squeezelite/issues/155).
+    
+    If this is encountered then, as above, change the *build* type to **pa** (PortAudio) or **alsa**.
+    
+    ### “Helicopter noises” / chopped off playback
+    
+    If “[helicopter noises](https://github.com/pssc/ha-addon-squeezelite/issues/1)” are heard then adjust the target latency to a higher value.
+    
+    To do so, enable “Show unused configuration options” and add `-a 150ms` to the *options* text field while using the ALSA or PA (PortAudio) *build*. Experimentation with higher or lower values may be required.
+    
+    ### Static instead of audio playback on some tracks
+    
+    This is [an issue with Music Assistant](https://github.com/music-assistant/support/issues/4163) and affects all tracks not using the `i16` sampling format (such as 24/32-bit audio) when streaming with the **WAV** *Output codec*.
+    
+    When encountering this issue, change the *Output format* to **FLAC** (or any other non-WAV format) in the Music Assistant player *Advanced Settings*.
+    
+    Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite add-on also works around this issue.
 
 ## My Random Connected Device
 
