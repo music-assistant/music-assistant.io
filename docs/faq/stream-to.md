@@ -108,8 +108,6 @@ In general terms the protocols/devices that should give you minimum to no setup 
 
 We don’t believe most people can hear the difference in sample rates above CD quality so AirPlay is highly recommended. It has a good sync protocol and is widely implemented in consumer devices. For most people they should consider what they already have and fit in with that (unless it’s DLNA then consider changing due to the quirks of some devices) and their budget.
 
-Bluesound is shown in the [player provider table](../player-support/index.md) as not supporting sync. That is with the current MA implementation which should change in the future. For clarity, Bluesound devices do support sync.
-
 Note that many Sonos devices can be synced with AirPlay devices which is another plus for AirPlay.
 
 Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [DSP Settings description](../settings/individual-player.md#dsp-settings)
