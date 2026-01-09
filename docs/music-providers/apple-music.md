@@ -25,19 +25,8 @@ Music Assistant has support for [Apple Music](https://music.apple.com/)! Contrib
 
 
 ## Configuration
-Authentication with Apple Music happens through a Music User Token. Unfortunately, Apple does not officially support 'Login with Apple' for Apple Music, so you will need to obtain your own Music User Token. Instructions were written for Chrome:
-
-1. Navigate to [https://music.apple.com/](https://music.apple.com/)
-2. Go to View > Developer > Developer Tools. A new side window will open.
-3. Click the 'Application' tab. You might need to expand your window or click the `>>` button
-  [![Preview image](../assets/screenshots/apple-music-auth-1.jpg)](../assets/screenshots/apple-music-auth-1.jpg)
-4. Under Storage > Cookies, click "https://music.apple.com" and find the entry called "media-user-token"
-5. Click it and copy the cookie value and use this in Music Assistant as the 'Music user token'
-  [![Preview image](../assets/screenshots/apple-music-auth-2.jpg)](../assets/screenshots/apple-music-auth-2.jpg)
-6. Currently in order for the callback to work MA must be accessed via the exposed webserver port when setting up this provider. If MA has been installed as an add-on then the port must be manually exposed as described in the [core settings](../settings/core.md#webserver-frontend-and-api). Thus the URL when setting this provider up must be `http://<YOUR_MA_IP>:8095`. Once successfully configured the webserver port can be disabled again if desired.
-
-!!! note 
-    Take note of the "Expires / Max-Age" column. The token will expire on that date and Apple Music within Music Assistant will stop working. The above process must then be repeated to obtain a fresh token.
+Click **Authenticate with Apple Music**
+[![Preview image](../assets/screenshots/apple-music-auth-0.png)](../assets/screenshots/apple-music-auth-0.png)
 
 ### Settings
 
