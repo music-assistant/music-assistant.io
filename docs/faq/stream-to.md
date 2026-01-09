@@ -3,6 +3,7 @@
 Install the [squeezelite addon](https://github.com/pssc/ha-addon-squeezelite) which will then allow streaming over an audio connection from the HA host to your speaker or amplifier.
 
 <details><summary>Troubleshooting Steps for this Option</summary>
+
 Some problems (listed individually below) may affect this solution and the following settings should avoid all of these issues:
 
   * Enable “Show unused configuration options” on the SqueezeLite add-on, then set:
@@ -35,6 +36,7 @@ This is [an issue with Music Assistant](https://github.com/music-assistant/suppo
 When encountering this issue, change the *Output format* to **FLAC** (or any other non-WAV format) in the Music Assistant player *Advanced Settings*.
 
 Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite add-on also works around this issue.
+
 </details>
 
 ## My Random Connected Device
