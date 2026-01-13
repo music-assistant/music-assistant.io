@@ -22,16 +22,16 @@ Because Sendspin is **license-free and open source**, anyone can build apps, dev
 
 ## Supported Roles
 
-Sendspin is a flexible protocol that supports multiple roles. A single device can implement one or more of these roles:
+Sendspin is a flexible protocol that supports multiple roles. Allowing each and every single device to implement one or more of these Sendspin roles:
 
 | Role | Description |
 |------|-------------|
-| **Player** | Receives and outputs synchronized audio. Supports individual volume and mute settings. |
-| **Controller** | Manages playback commands like play, pause, skip, volume, and shuffle. |
-| **Metadata** | Displays information about the current track (title, artist, album). |
+| **Player** | Receives and outputs synchronized audio (i.e. client-side). Supports individual volume and mute settings. |
+| **Controller** | Manages playback control commands, like play, pause, skip, volume, and shuffle. |
+| **Metadata** | Displays information about the current track (title, artist, album, etc.). |
 | **Artwork** | Shows album art and other visual imagery. Supports format and size preferences. |
 
-A device can combine multiple roles - for example, a smart display could implement Player, Metadata, and Artwork simultaneously.
+Each device can combine multiple roles - for example, a Sendspin capable smart display could implement Player, Metadata, and Artwork simultaneously.
 
 ## Supported Clients
 
