@@ -91,8 +91,24 @@ Individual Sendspin players will appear automatically when clients connect, and 
 
 Developers interested in building Sendspin-compatible devices or apps can find the protocol specification and reference implementations at:
 
-- [Sendspin Protocol Specification](https://github.com/Sendspin/spec)
-- [aiosendspin](https://github.com/music-assistant/aiosendspin) - Python implementation
+- [sendspin-audio.com](https://www.sendspin-audio.com/) - Sendspin official website (including Sendspin spec overview and other references)
+- [Sendspin organization on GitHub](https://github.com/Sendspin/spec) - All official Sendspin code repositories (owned and governed by the Open Home Foundation)
+  - [Sendspin Protocol Specification](https://github.com/Sendspin/spec) - Sendspin Protocol Specification repository
+- [sendspin-cli](https://github.com/Sendspin/sendspin-cli) - Sendspin CLI (Command-Line Interface terminal client, server, and deamon)
+- [aiosendspin](https://github.com/Sendspin/aiosendspin) - Sendspin Python library
+  - aiosendspin is used in the Sendspin provider implementation inside [Music Assistant server](https://github.com/music-assistant/server) as well as in sendspin-cli
+- [sendspin-js](https://github.com/Sendspin/sendspin-js) - Sendspin TypeScript library
+  - sendspin-js is also used in Sendspin's [cast](https://github.com/Sendspin/cast) library which is a Google Cast receiver for Sendspin used by Music Assistant's web interface and [Sendspin Party](https://github.com/Sendspin/sendspin-cli?tab=readme-ov-file#sendspin-party)
+- [SendspinKit](https://github.com/Sendspin/SendspinKit) - Sendspin Swift client library (for Apple platforms)
+- [sendspin-go](https://github.com/Sendspin/sendspin-go) - Sendspin Go library
+- [sendspin-rs](https://github.com/Sendspin/sendspin-rs) - Sendspin Rust library
+- [Sendspin.SDK](https://github.com/chrisuthe/windowsSpin/tree/master/src/Sendspin.SDK) - Unofficial C#/.NET used by [windowsSpin](https://github.com/chrisuthe/windowsSpin)
+
+Note that not all of these linked above are up-to-date and some may use  very early proof-of-concept implementations of the Sendspin protocol, (contributions is wanted to updating them).
+
+For developing your own Sendspin libraries from scratch also see:
+
+- [time-filter](https://github.com/Sendspin/time-filter) - Reference implementation for the Sendspin time synchronization filter (written in C++)
 
 ## Specification Compliance and Deviations
 
