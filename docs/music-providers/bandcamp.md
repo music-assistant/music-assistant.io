@@ -28,7 +28,7 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 ## Configuration
 
 - Providing an identity cookie is optional, but allows importing owned albums as library items.
-- Tweak Search Limit and Top Tracks Limit to balance search speed and quantity of search results.
+- Tweak Top Tracks Limit to balance search speed and quantity of search results.
 
 !!! note
     Cookies may expire after some time. This means that you may have to replace the identity cookie in the provider configuration if library synchronization begins to fail. 
