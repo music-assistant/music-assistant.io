@@ -20,9 +20,7 @@ Music Assistant has support for [SomaFM Radio](https://somafm.com/) which allows
 
 ## Configuration
 
-- Quality can be set to Highest, High, or Low in Settings (default High)
-- Format can be set to MP3 or AAC when Highest quality is selected
-- If quality is set to High or Low, only AAC streams are available
+- Quality can be set to Highest, High, or Low in Advanced Settings (default Highest)
 
 ## Usage
 
