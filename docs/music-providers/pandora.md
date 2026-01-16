@@ -26,4 +26,4 @@ Pandora provides personalized radio stations that play an endless stream of song
 - This provider is limited to Radio Stations only and does not support search or station creation. This constraint is due to Pandora's API structure
 - Users must continue to create stations on the official Pandora app/website, and those stations will then automatically appear in MA after a sync
 - Stream metadata is provided although occassionally there is missing album art 
-- As with radio stations you cannot skip tracks
+- As with all radio stations you cannot skip tracks
