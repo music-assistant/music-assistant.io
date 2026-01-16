@@ -25,6 +25,3 @@ Music Assistant has support for [SomaFM Radio](https://somafm.com/) which allows
 ## Usage
 
 - When the SomaFM Radio provider is added, it will populate the Radio tab with all available SomaFM stations.
-- If you favorite some of the stations, you can use the heart ❤️ filter at the top of the screen to show only your favorites.
-- Deleting a station from the library is not a permanent solution; SomaFM's channels change from time to time, and the removed station will probably come back on the next sync.
-- If the above behavior proves to be too unpopular, we can release a new version to only allow access through the Browse interface and support manual addition of stations to the Radio tab.
