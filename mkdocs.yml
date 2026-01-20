@@ -68,6 +68,7 @@ nav:
       - Qobuz: music-providers/qobuz.md
       - Radio Browser: music-providers/radio-browser.md
       - Radio Paradise: music-providers/radio-paradise.md
+      - SomaFM: music-providers/somafm-radio.md
       - SiriusXM: music-providers/siriusxm.md
       - SoundCloud: music-providers/soundcloud.md
       - Spotify: music-providers/spotify.md
