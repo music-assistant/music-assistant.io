@@ -1,5 +1,8 @@
 # Music Assistant Desktop Companion
 
+!!! warning
+    The desktop companion app is currently unmaintained and doesn't work with MA 2.7 or later
+
 [![latest version](https://img.shields.io/github/release/music-assistant/music-assistant-desktop?display_name=tag&include_prereleases&label=Latest%20version)](https://github.com/music-assistant/tauri-companion-app/releases/latest)
 [![discord](https://img.shields.io/discord/753947050995089438?label=Discord&logo=discord&color=5865F2)](https://discord.gg/kaVm8hGpne)
 [![sponsor](https://img.shields.io/github/sponsors/music-assistant?label=sponsors)](https://github.com/sponsors/music-assistant)
