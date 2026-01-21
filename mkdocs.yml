@@ -59,6 +59,7 @@ nav:
       - Local Files: music-providers/filesystem.md
       - Nico Nico Video: music-providers/niconico.md
       - Nugs.net: music-providers/nugs.md
+      - ORF Radiothek: music-providers/radiothek.md
       - Phish.in: music-providers/phishin.md
       - Plex: music-providers/plex.md
       - Podcast Index: music-providers/podcast-index.md
