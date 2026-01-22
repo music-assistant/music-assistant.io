@@ -14,7 +14,7 @@ This provider allows access to Austrian radio stations and ORF podcasts.
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | No |
-| Maximum Stream Quality | TBA |
+| Maximum Stream Quality | AAC 44.1 kHz / 16 bit |
 | Login Method | None |
 
 ### Other
@@ -30,7 +30,7 @@ No configuration is required for most users as the default settings are typical
 
 - <b>Preferred ORF protocol.</b> Default is `hls`
 - <b>ORF quality.</b> Default is `qxa`
-- <b>Include hidden stations.</b> Default is `false`
+- <b>Include hidden stations.</b> Default is `false`. Reduces clutter in the UI for lesser used stations
 - <b>Catch-up stream type.</b> Default is `progressive`
 - <b>Catch-up stations (optional).</b>
 
