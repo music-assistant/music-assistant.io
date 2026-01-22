@@ -15,7 +15,7 @@ Music Assistant has support for [SomaFM Radio](https://somafm.com/) which allows
 | [Recommendations](../ui.md#view-home) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](../ui.md#track-menu) | No |
-| Maximum Stream Quality | MP3/AAC 320kbps on some channels (16 bit, 44.1 kHz) |
+| Maximum Stream Quality | AAC 130kbps (16 bit, 44.1 kHz) |
 | Login Method | None |
 
 ## Configuration
