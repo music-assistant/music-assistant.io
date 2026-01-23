@@ -29,6 +29,7 @@ Music Assistant has full support for [Qobuz](https://www.qobuz.com/), including 
 ## Known Issues / Notes
 
 - Radio Mode is not supported
+- Qobuz only fetches images for artists/albums that have been directly added to the library (eg not albums of artists) to prevent too many API calls
 
 ## Not yet supported
 
