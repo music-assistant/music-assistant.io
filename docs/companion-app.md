@@ -1,18 +1,15 @@
-# Music Assistant Desktop Companion
+# Music Assistant Desktop App
 
-!!! warning
-    The desktop companion app is currently unmaintained and doesn't work with MA 2.7 or later
-
-[![latest version](https://img.shields.io/github/release/music-assistant/music-assistant-desktop?display_name=tag&include_prereleases&label=Latest%20version)](https://github.com/music-assistant/tauri-companion-app/releases/latest)
+[![latest version](https://img.shields.io/github/release/music-assistant/desktop-app?display_name=tag&include_prereleases&label=Latest%20version)](https://github.com/music-assistant/desktop-app/releases/latest)
 [![discord](https://img.shields.io/discord/753947050995089438?label=Discord&logo=discord&color=5865F2)](https://discord.gg/kaVm8hGpne)
 [![sponsor](https://img.shields.io/github/sponsors/music-assistant?label=sponsors)](https://github.com/sponsors/music-assistant)
-[![sponsor](https://img.shields.io/static/v1?label=Licence&message=Apache-2.0&color=000)](https://github.com/music-assistant/tauri-companion-app/blob/main/LICENSE)
+[![sponsor](https://img.shields.io/static/v1?label=Licence&message=Apache-2.0&color=000)](https://github.com/music-assistant/desktop-app/blob/main/LICENSE)
 ![sponsor](https://img.shields.io/static/v1?label=Bundled%20Size&message=25.1MB&color=0974B4)
 [![sponsor](https://img.shields.io/static/v1?label=Stage&message=Alpha&color=2BB4AB)](https://github.com/music-assistant/tauri-companion-app/blob/main/LICENSE)
 
-The desktop companion app for Music Assistant!
+The desktop app for Music Assistant!
 
-**Download for** macOS ([Apple Silicon](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_aarch64.dmg) | [Intel](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_x64.dmg)) · [Windows](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_x64_en-US.msi) · Linux ([Debian](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_amd64.deb) | [Other](https://github.com/music-assistant/tauri-companion-app/releases/download/v0.0.88/Music.Assistant.Companion_0.0.88_amd64.AppImage))
+**Download for** macOS ([Apple Silicon](https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant-0.1.0-1.aarch64.rpm) | [Intel](https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant-0.1.0-1.x86_64.rpm)) · [Windows](https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_x64_en-US.msi) · Linux ([Debian](https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_amd64.deb) | [Other](https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_amd64.AppImage))
 
 !!! tip "This is still in very early alpha. Bugs *will* be present."
     Please help finding them. You can report any bugs on the [Discord server](https://discord.gg/kaVm8hGpne) or in the [repo issues](https://github.com/music-assistant/tauri-companion-app/issues)
@@ -26,16 +23,13 @@ When starting the app for the first time you are asked for some information abou
 
 ![image](assets/screenshots/companion-app-config.png)
 
-!!! note "The app requires that the webserver is exposed. You can set that in the settings"
-    ![How to fix](assets/screenshots/cant_connect_error.gif)
-
 ## Features
 
-### [Squeezelite](https://en.wikipedia.org/wiki/Squeezelite)
-
-Squeezelite comes embedded in the application. This allows playback of music to your computer. The player name will be the same as your computer name. You can change the name in Music Assistant settings. You can also toggle if you wish to enable squeezelite at all.
-
-To allow playback to the companion app you have to enable the Squeezelite provider in the Music Assistant settings.
+- Native Audio Playback - High-quality audio output via Sendspin protocol with device selection
+- System Tray Integration - Control playback and see what's playing from the system tray
+- OS Media Controls - Integrates with macOS Control Center, Windows Media Controls, and Linux MPRIS
+- Discord Rich Presence - Show what you're listening to on Discord
+- Server Discovery - Automatic discovery of Music Assistant servers via mDNS
 
 ### [Discord Rich Presence](https://discord.com/developers/docs/rich-presence/how-to#so-what-is-it)
 
@@ -49,49 +43,16 @@ Example of Discord Rich Presence:
 
 ### Windows
 
-You can download the .msi installer from the [releases](https://github.com/music-assistant/tauri-companion-app/releases/latest/).
+You can download the .msi installer from the [releases](https://github.com/music-assistant/desktop-app/releases/latest/).
 
 ### macOS
 
-You can download the .dmg from the [releases](https://github.com/music-assistant/tauri-companion-app/releases/latest/).
-
-Or you can download it using homebrew: `brew install music-assistant/tap/companion`
-
-### Arch Linux
-
-This app is on the arch aur with the name `music-assistant-desktop` or `music-assistant-desktop-bin` for just the binary
-
-You can install it with yay: `yay music-assistant-desktop-bin`
+You can download the .dmg from the [releases](https://github.com/music-assistant/desktop-app/releases/latest/).
 
 ### Debian (and Debian based distributions)
 
-You can download the .deb from the [releases](https://github.com/music-assistant/tauri-companion-app/releases/latest/).
+You can download the .deb from the [releases](https://github.com/music-assistant/desktop-app/releases/latest/).
 
 ### All the other Linux distros
 
-You can download the AppImage from the [releases](https://github.com/music-assistant/tauri-companion-app/releases/latest/).
-
-### From source
-
-If you wish to build the app yourself you should first follow [the offical tauri prerequisites](https://tauri.app/v1/guides/getting-started/prerequisites)
-
-Next, make sure you have the frontend submodule cloned. You can do this by running the following command:
-
-```bash
-git submodule --init --recursive
-```
-
-Then clone the repository and install the node dependencies
-
-```bash
-$ git clone https://github.com/music-assistant/music-assistant-desktop --recursive
-$ cd music-assistant-desktop
-$ yarn install
-$ cd frontend
-$ yarn install
-$ cd ..
-```
-
-And then build the app
-
-`$ npx tauri build`
+You can download the AppImage from the [releases](https://github.com/music-assistant/desktop-app/releases/latest/).
