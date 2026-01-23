@@ -47,6 +47,7 @@ nav:
       - ARD Audiothek: music-providers/ard-audiothek.md
       - Audible: music-providers/audible.md
       - Audiobookshelf: music-providers/audiobookshelf.md
+      - Bandcamp: music-providers/bandcamp.md
       - BBC Sounds: music-providers/bbc-sounds.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
@@ -60,6 +61,7 @@ nav:
       - Nico Nico Video: music-providers/niconico.md
       - Nugs.net: music-providers/nugs.md
       - ORF Radiothek: music-providers/radiothek.md
+      - Pandora: music-providers/pandora.md
       - Phish.in: music-providers/phishin.md
       - Plex: music-providers/plex.md
       - Podcast Index: music-providers/podcast-index.md
@@ -67,6 +69,7 @@ nav:
       - Qobuz: music-providers/qobuz.md
       - Radio Browser: music-providers/radio-browser.md
       - Radio Paradise: music-providers/radio-paradise.md
+      - SomaFM: music-providers/somafm-radio.md
       - SiriusXM: music-providers/siriusxm.md
       - SoundCloud: music-providers/soundcloud.md
       - Spotify: music-providers/spotify.md
