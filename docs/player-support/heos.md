@@ -19,7 +19,3 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 ## Known Issues / Notes
 
 - The HEOS app does not show any metadata when playing from MA due to API limitations
-
-## Not Yet Supported
-
-- Auto controller discovery
