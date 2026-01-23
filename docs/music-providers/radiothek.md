@@ -24,17 +24,17 @@ This provider allows access to Austrian radio stations and ORF podcasts.
 
 ## Configuration
 
-No configuration is required for most users as the default settings are typical
+No configuration is required for most users as the default settings are typical. Changing protocols or quality should only be required on poor internet connections.
 
 ### Settings
 
-- <b>Preferred ORF protocol.</b> Default is `hls`
-- <b>ORF quality.</b> Default is `qxa`
-- <b>Include hidden stations.</b> Default is `false`. Reduces clutter in the UI for lesser used stations
-- <b>Catch-up stream type.</b> Default is `progressive`
-- <b>Catch-up stations (optional).</b>
+- <b>Preferred ORF protocol.</b> Default is `hls`. Options are `hls` or `shoutcast`
+- <b>ORF quality.</b> Default is `qxa`. Options are hls: `q1a/q2a/q3a/q4a/qxa` ; shoutcast: `q1a/q2a`, where q1a is the lowest, q4a is the highest and qxa is dynamic.
+- <b>Include hidden stations.</b> Default is `false`. When off this reduces clutter in the UI for lesser used stations
+- <b>Catch-up stream type.</b> Default is `progressive`. Options are `progressive` or `hls`
+- <b>Catch-up stations (optional).</b> A comma separated list where the options are `bgl fm4 ktn noe oe1 oe3 ooe sbg stm tir vbg wie`.
 
 ## Known Issues / Notes
 
 - Station logos are shown where available
-- Metadata is populated via api were possible
+- Metadata is populated via the API when possible
