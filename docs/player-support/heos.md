@@ -18,3 +18,4 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 ## Known Issues / Notes
 
 - The HEOS app does not show any metadata when playing from MA due to API limitations
+- Playback to zone 2 is not supporyed due to API limitations
