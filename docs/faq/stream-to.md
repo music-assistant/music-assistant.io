@@ -58,7 +58,15 @@ There is a [Snapclient port](https://github.com/jorgenkraghjakobsen/snapclient) 
 
 ## My Bluetooth Speaker
 
-If you have a spare Raspberry Pi (any model) then [PiCoreplayer](https://www.picoreplayer.org) is an excellent solution than can also connect to Bluetooth speakers. 
+If you have a spare Raspberry Pi (any model) then [PiCoreplayer](https://www.picoreplayer.org) is an excellent solution than can also connect to Bluetooth speakers.To stream to your Bluetooth device using piCorePlayer, follow these best practices to ensure high-fidelity audio and a stable connection:
+
+* It is highly recommended to use a wired Ethernet connection for your Raspberry Pi rather than Wi-Fi. On most Raspberry Pi models, the Bluetooth and Wi-Fi radios share the same chip and antenna; using both simultaneously often leads to significant audio "stumbles," dropouts, and reduced range. By using Ethernet, you eliminate this radio frequency interference, providing a dedicated, clean pipeline for your music data to reach your Bluetooth transmitter without interruption.
+
+* While using the Raspberry Pi’s inbuilt Bluetooth adapter or a basic USB dongle will work, these options come with several pitfalls. Standard adapters rely entirely on the Pi's software to encode audio, which may limit you to lower-quality codecs like [SBC](https://en.wikipedia.org/wiki/SBC_(codec)) or standard [aptX](https://en.wikipedia.org/wiki/AptX). Furthermore, the processing overhead on older Pi models can cause latency (audio delay), and internal antennas are notoriously weak—especially if the Pi is housed in a metal or thick plastic case which can severely degrade signal strength.
+
+* The best option for high-performance audio is to use a specialized Bluetooth Audio Transmitter such as the [Sennheiser BTD 700](https://www.sennheiser-hearing.com/p/btd-700/) or [Creative BT-W6](https://uk.creative.com/p/speakers/creative-bt-w6). These devices function as a "driverless" external USB sound card, offloading the heavy lifting of audio encoding, specifically high-definition codecs like [aptX Adaptive](https://www.aptx.com/aptx-adaptive) and aptX HD, to the dongle’s own dedicated processor. This allows even an older Raspberry Pi 1 to deliver modern, high-resolution wireless audio that matches the capabilities of premium headphones, all while providing a much more stable connection and a physical pairing button for a simplified setup.
+
+If using a USB dongle with piCorePlayer then some settings on the `Squeezelite Settings` page need to be adjusted. Set the `Audio Output` to `USB Audio` and save. After any necessary restarting, navigate back to that settings page and click on `Card Control` and then in the `Raspberry Pi Built-in Audio` section disable the built-in audio by unticking the box.  
 
 ## My Browser
 
