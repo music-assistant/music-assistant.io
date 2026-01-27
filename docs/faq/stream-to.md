@@ -66,7 +66,7 @@ If you have a spare Raspberry Pi (any model) then [PiCoreplayer](https://www.pic
 
 * The best option for high-performance audio is to use a specialized Bluetooth Audio Transmitter such as the [Sennheiser BTD 700](https://www.sennheiser-hearing.com/p/btd-700/) or [Creative BT-W6](https://uk.creative.com/p/speakers/creative-bt-w6). These devices function as a "driverless" external USB sound card, offloading the heavy lifting of audio encoding, specifically high-definition codecs like [aptX Adaptive](https://www.aptx.com/aptx-adaptive) and aptX HD, to the dongle’s own dedicated processor. This allows even an older Raspberry Pi 1 to deliver modern, high-resolution wireless audio that matches the capabilities of premium headphones, all while providing a much more stable connection and a physical pairing button for a simplified setup.
 
-If using a USB dongle with piCorePlayer then some settings on the `Squeezelite Settings` page need to be adjusted. Set the `Audio Output` to `USB Audio` and save. After any necessary restarting navigate back to that settings page and click on `Card Control` and then in the `Raspberry Pi Built-in Audio` section disable the built-in audio by unticking the box.  
+If using a USB dongle with piCorePlayer then some settings on the `Squeezelite Settings` page need to be adjusted. Set the `Audio Output` to `USB Audio` and save. After any necessary restarting, navigate back to that settings page and click on `Card Control` and then in the `Raspberry Pi Built-in Audio` section disable the built-in audio by unticking the box.  
 
 ## My Browser
 
