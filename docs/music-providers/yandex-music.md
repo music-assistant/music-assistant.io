@@ -46,4 +46,4 @@ Configuration requires obtaining an OAuth token from Yandex Music.
   - `Lossless (FLAC)` - Requires Yandex Music Plus subscription
 
 ### ToDo
-- Multiple Yandex Music accounts can be added
+- Multiple Yandex Music accounts cannot be added as yet
