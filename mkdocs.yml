@@ -85,6 +85,7 @@ nav:
     - DLNA: player-support/dlna.md
     - Fully Kiosk: player-support/fully-kiosk.md
     - Google Cast: player-support/google-cast.md
+    - HEOS: player-support/heos.md
     - Home Assistant: player-support/ha.md
     - MusicCast: player-support/musiccast.md
     - Roku Media Assistant: player-support/roku.md
