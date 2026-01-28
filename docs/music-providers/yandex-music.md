@@ -1,6 +1,8 @@
-# Yandex Music Provider ![Preview image](../assets/icons/yandex-music-icon.svg){ width=70 align=right }
+# Yandex Music Provider ![Preview image](../assets/icons/yandex-music-icon.svg){ width=50 align=right }
 
 Music Assistant has support for [Yandex Music](https://music.yandex.ru). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
+
+This provider is built on top of the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library.
 
 !!! note
     A Yandex Music Plus subscription is required for lossless (FLAC) quality. Standard accounts can stream at high quality (320 kbps).
