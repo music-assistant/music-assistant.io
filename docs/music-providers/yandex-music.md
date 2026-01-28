@@ -26,7 +26,6 @@ This provider is built on top of the [yandex-music-api](https://github.com/Marsh
 - Items in your Yandex Music library will be synced to Music Assistant
 - Adding/removing items to/from the Music Assistant library will sync back to Yandex Music
 - Browse feature to explore Yandex Music catalogue
-- Multiple Yandex Music accounts can be added
 
 ## Configuration
 
@@ -46,3 +45,5 @@ Configuration requires obtaining an OAuth token from Yandex Music.
   - `High (320 kbps)` - Default, available for all accounts
   - `Lossless (FLAC)` - Requires Yandex Music Plus subscription
 
+### ToDo
+- Multiple Yandex Music accounts can be added
