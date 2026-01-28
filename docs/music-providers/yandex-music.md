@@ -46,14 +46,3 @@ Configuration requires obtaining an OAuth token from Yandex Music.
   - `High (320 kbps)` - Default, available for all accounts
   - `Lossless (FLAC)` - Requires Yandex Music Plus subscription
 
-## Known Issues / Notes
-
-- The token may expire and need to be refreshed periodically
-- Lossless quality requires an active Yandex Music Plus subscription
-- The provider is currently in beta stage
-
-## Not yet supported
-
-- Recommendations
-- Radio mode
-- Lyrics
