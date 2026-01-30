@@ -40,7 +40,7 @@ Lastly, depending on providers installed, there may be additional sync related o
 - <b>Automatic sync interval for Artists/Albums/Tracks/Playlists/Podcasts/Audiobooks.</b> Various time periods are selectable or it can be disabled
 - <b>Sync back library additions/removals (2-way sync).</b> This setting determines the behavior when an item is manually added to or removed from the Music Assistant library. Enabling this option ensures that these actions are synchronized back to the original provider. Without synchronization, items removed from the library may reappear during the next automatic sync if they remain present on the provider's side.
 - <b>Sync Podcast Progress from (provider).</b> Automatically sync episode played status from the provider to Music Assistant. Episodes marked as played in the provider will be marked as played in MA. Only enable this if you use both the the provider app and Music Assistant for podcast playback.
-- <b>Sync Audiobook Progress from (provider).</b> Automatically sync audiobook progress from \<provider> to Music Assistant. Progress from Spotify app will sync to MA when audiobooks are accessed. Only enable this if you use both the the provider app and Music Assistant for audiobook playback.
+- <b>Sync Audiobook Progress from (provider).</b> Automatically sync audiobook progress from theprovider to Music Assistant. Progress from the provider app will sync to MA when audiobooks are accessed. Only enable this if you use both the the provider app and Music Assistant for audiobook playback.
 
 ## Summary
 
