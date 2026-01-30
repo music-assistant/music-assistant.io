@@ -41,9 +41,7 @@ Configuration requires obtaining an OAuth token from Yandex Music.
 
 ### Settings
 
-- **Audio quality**: Select preferred audio quality:
-  - `High (320 kbps)` - Default, available for all accounts
-  - `Lossless (FLAC)` - Requires Yandex Music Plus subscription
+- **Audio quality**: Select preferred audio quality. The default is `High (320 kbps)` which is available for all accounts. The other option is `Lossless (FLAC)` which requires a Yandex Music Plus subscription
 
 ## Known Issues / Notes
 
