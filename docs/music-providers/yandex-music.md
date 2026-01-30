@@ -22,10 +22,10 @@ This provider is built on top of the [yandex-music-api](https://github.com/Marsh
 
 ### Other
 
-- Searching the Yandex Music catalogue
-- Items in your Yandex Music library will be synced to Music Assistant
+- Searching the Yandex Music catalogue is possible
+- Items in a users Yandex Music library will be synced to Music Assistant
 - Adding/removing items to/from the Music Assistant library will sync back to Yandex Music
-- Browse feature to explore Yandex Music catalogue
+- Browse is available to explore the Yandex Music catalogue
 
 ## Configuration
 
