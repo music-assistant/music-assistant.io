@@ -23,7 +23,7 @@ Music Assistant has full support for Spotify media listing and playback.
 
 ### Other
 
-- Searching the Spotify catalogue
+- Searching the Spotify catalogue is possible
 - Items in your Spotify library (including the Liked Songs playlist) will be added to the Library in Music Assistant
 - Adding an item from Spotify to the Music Assistant Library will also add it to "Your Library" in Spotify
 - Marking an item as a favourite in Music Assistant will also add it to the MA Library and "Your Library" in Spotify
@@ -50,8 +50,5 @@ Music Assistant has full support for Spotify media listing and playback.
 
 - Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work
 - Upon first saving of the provider a check is done for Audiobook support within the account. If the check is successful then additional Audiobook related options will be seen when revisiting the provider settings
-- After adding the developer token there is then two sessions created to a single spotify provider and MA routes the requests appropriately. For example, playlists are requested via the MA global token (which is rate limited but allows playlist retrieval) while other items are retrieved via the dev token. Search is done using the dev token by default as otherwise it is very slow. Playing and browsing playlists is routed through the global token to the originating provider (useful when multiple Spotify accounts are added).
-
-## Not yet supported
-
-- Recommendations ([see this feature request](https://github.com/music-assistant/support/discussions/535))
+- After adding the developer token there is then two sessions created to a single spotify provider and MA routes the requests appropriately. For example, playlists are requested via the MA global token (which is rate limited but allows playlist retrieval) while other items are retrieved via the dev token. Search is done using the dev token by default as otherwise it is very slow. Playing and browsing playlists is routed through the global token to the originating provider (useful when multiple Spotify accounts are added)
+- The Spotify API does not support the provision of recommendations
