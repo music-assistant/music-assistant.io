@@ -77,7 +77,7 @@ nav:
       - Tidal: music-providers/tidal.md
       - TuneIn: music-providers/tunein.md
       - Yandex Music: music-providers/yandex-music.md
-      - Yousee Musik: music-probiders/youseek-music.md
+      - Yousee Musik: music-probiders/yousee-musik.md
       - YouTube Music: music-providers/youtube-music.md
   - Player Providers:
     - player-support/index.md
