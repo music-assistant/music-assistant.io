@@ -34,6 +34,14 @@ Lastly, depending on providers installed, there may be additional sync related o
 
 ![image](../assets/screenshots/library-import-settings.png)
 
+- <b>Sync Library Artists/Albums/Tracks/Playlists/Audiobooks/Podcasts from this provider to Music Assistant.</b> Whether to synchronize all artists/albums/tracks/playlists/audiobooks/podcasts from the local provider. 
+- <b>Import album tracks.</b> By default, adding albums to the Music Assistant library imports only the album entry rather than the associated tracks. This approach allows for the manual selection of specific tracks to include. To override this behavior, this configuration option can be enabled. Users should note that some streaming providers may already automate this process by adding all tracks to their favorites by default.
+- <b>Import playlist tracks.</b> By default, importing a playlist into Music Assistant adds only the playlist itself to the library. This allows the playlist to be streamed and individual tracks can be added manually as desired. This configuration option overrides that behavior for specific playlists by importing all associated tracks. Entries can be made using either the case-sensitive playlist name or the playlist URI.
+- <b>Automatic sync interval for Artists/Albums/Tracks/Playlists/Podcasts/Audiobooks.</b> Various time periods are selectable or it can be disabled
+- <b>Sync back library additions/removals (2-way sync).</b> This setting determines the behavior when an item is manually added to or removed from the Music Assistant library. Enabling this option ensures that these actions are synchronized back to the original provider. Without synchronization, items removed from the library may reappear during the next automatic sync if they remain present on the provider's side.
+- <b>Sync Podcast Progress from (provider).</b> Automatically sync episode played status from the provider to Music Assistant. Episodes marked as played in the provider will be marked as played in MA. Only enable this if you use both the the provider app and Music Assistant for podcast playback.
+- <b>Sync Audiobook Progress from (provider).</b> Automatically sync audiobook progress from \<provider> to Music Assistant. Progress from Spotify app will sync to MA when audiobooks are accessed. Only enable this if you use both the the provider app and Music Assistant for audiobook playback.
+
 ## Summary
 
 The table below provides an at-a-glance summary of all of the music providers. Green ticks indicate a desirable quality or function is available. 
