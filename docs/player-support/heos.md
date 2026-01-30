@@ -18,4 +18,4 @@ In addition to the [Individual Player Settings](../settings/individual-player.md
 ## Known Issues / Notes
 
 - The HEOS app does not show any metadata when playing from MA due to API limitations
-- Playback to additional zones is supported, but they cannot be turned on/source selected from MA. This needs to be done externally (via Home Assitant for example)
+- Playback to additional zones is supported, but they cannot be turned on/source selected from MA. This needs to be done externally (via Home Assistant for example)
