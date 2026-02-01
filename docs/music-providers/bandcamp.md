@@ -51,5 +51,8 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 ## Known Issues / Notes
 
 - This provider mimics Bandcamp. Do not expect to see the same search results as you would when using Bandcamp itself
-- Some low quality artwork can be expected when using this provider
-- Tracks lack album art
+- **Slow Loading for Large Labels**: When browsing a music label with a large catalog (dozens to hundreds of albums),
+  indexing may take several minutes. This happens because Bandcamp limits how quickly data can be retrieved from
+  their servers. You'll see multiple retry attempts in the logs with messages like "Bandcamp rate limit reached"
+  followed by delays between each attempt. This is a limitation imposed by Bandcamp's service and cannot be
+  bypassed — the system must wait between requests to avoid being blocked entirely.
