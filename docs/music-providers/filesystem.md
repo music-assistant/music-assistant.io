@@ -46,6 +46,9 @@ If your files are actually stored on the device running Music Assistant, for exa
 
 Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS. Select the music provider "Filesystem (remote share)" and configure the (fqdn) hostname (or alternatively the IP address) to your server, the name of the share and optionally any subfolders.
 
+!!! caution
+    When using a password with the remote share provider it cannot contain a comma
+
 ### Settings
 
 In addition to the settings outlined above to configure the provider there are additional settings available for this provider (note certain options will be gryed out depending upon the content type selected):
