@@ -104,7 +104,6 @@ nav:
     - Plex Connect: plugins/plex-connect.md
     - Spotify Connect Plugin: plugins/spotify-connect.md
     - Subsonic Scrobbler: plugins/subsonic_scrobble.md
-    - plugins/spotify-connect.md
     - VBAN Receiver: plugins/vban-receiver.md
   - Desktop Companion App: companion-app.md
   - Mobile Devices: mobile/index.md
