@@ -24,7 +24,7 @@ When streaming providers are also availabe in MA linking will only occur when th
 
 ### Other
 
-- Searching the catalogue
+- Searching for tracks is possible
 - Local music is automatically included in the MA Library
 - Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
 - If streaming providers are also connected, then the media will be automatically linked and completed with info from those streaming provider(s)
@@ -37,7 +37,7 @@ Separate providers must be added for Music, Audiobooks and Podcasts.
 
 **Your files are on a disk/folder of the device running Music Assistant Server**
 
-If your files are actually stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, you should select the filesystem (local disk) option and enter the path to the files. 
+If your files are actually stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, you should select the filesystem (local disk) provider and enter the path to the files. 
 
 !!! note
     For Home Assistant OS you can only access the `/media` folder. Docker users can mount their own folder paths. You can not mount a folder from Home Assistant into the `/media` path.
@@ -83,24 +83,46 @@ In addition to the settings outlined above to configure the provider there are a
 - Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
 - To minimise the chance of problems, folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any illegal characters removed (e.g. AC/DC should be in a folder ACDC)
 - Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
+- Untagged audiobook files must be placed in a folder per book
   
 ## Tagging Files 
 
-- It is very important that all of your audio files contain proper [ID3 tag](https://en.wikipedia.org/wiki/ID3) information. The more comprehensive the tagging the better the results will be when using MA. For this reason it is strongly recommended that all files are tagged with [MusicBrainz Picard](https://picard.musicbrainz.org). This will ensure consistency and completeness of the tags that MA needs to work best. Other programs such as [Mp3Tag](https://www.mp3tag.de/en/) are often also based on the Musicbrainz catalog and can work as well provided they include ISRC and all MBID tags
-- Tags must have multiple items separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3. Also in that section ensure V2.3 is used to avoid problems
+- It is very important that all of your audio files contain correct, and ideally, extensive tag information. The more comprehensive the tagging the better the results will be when using MA. Note the following:
+    - Universal Tag Support: Music Assistant parses metadata from the industry-standard formats used by your files, including ID3 (v1/v2) for MP3s, Vorbis Comments for FLAC/Ogg/Opus, MP4 Atoms for M4A, and APEv2 tags
+    - Primary Source of Truth: Embedded tags are treated as the definitive source for artist, album, and track names. External metadata providers (like MusicBrainz or Fanart.tv) are only used to supplement missing info, such as high-resolution artwork or artist bios
+    - Cross-Platform Linking: MA uses advanced tags like MusicBrainz IDs (MBID) and ISRC codes to seamlessly link your local files with matching tracks on streaming services like Spotify or Tidal
+    - Artwork Handling: It supports both embedded artwork within the file and local folder-based images (e.g., folder.jpg or artist.png)
+    - Recommended Tagger: For the best results in Music Assistant, it is strongly recommended to use [MusicBrainz Picard](https://picard.musicbrainz.org) to ensure the files contain the specific IDs needed for library linking. Other programs such as [Mp3Tag](https://www.mp3tag.de/en/) are often also based on the Musicbrainz catalog and can work as well provided they include the tags shown in the [Tags used by MA](#tags-used-by-ma) table
+
+- Tags must have multiple items separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3
 - MA requires the Album Artist tag to be set. If you do not have that tag set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
-- For multi-artist tracks it is important that the `ARTISTS` tag (as distinct from `ARTIST`) is set, which is semi-colon delimited list of the artists on the track. If this tag is not set MA will attempt to parse the artist names from the `ARTIST` tag but if unusual or non-English joining words or symbols are used then this process may fail 
-- Music Assistant puts you in control by fully trusting the ID3 tags you provide, only additional information is scraped from metadata providers
+- Music Assistant puts you in control by fully trusting the tags you provide, only additional information is scraped from metadata providers.
 - Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and `.nfo` files with enhanced metadata are also supported
-- To minimise the chance of problems with MA you should follow the Kodi guidelines here https://kodi.wiki/view/Music_tagging Just about all the tips, tricks and suggestions on that page are applicable to MA and if you follow it all to the letter you will have a much better experience
 - For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
 - If there is nothing added to the disc tag then the disc number will not be shown in the display
 
 ![image](../assets/screenshots/no-disc-tag.png)
 
+- To minimise the chance of problems with MA you should follow the Kodi guidelines here https://kodi.wiki/view/Music_tagging Just about all the tips, tricks and suggestions on that page are applicable to MA and if you follow it all to the letter you will have a much better experience
+
+### Multi-Artist Tracks
+
+For tracks with multiple artists, MA supports several approaches:
+
+1. ARTISTS tag (recommended) - A dedicated multi-value field listing each artist separately. This is the most reliable
+method.
+2. Multiple ARTIST fields - For FLAC/OGG/Opus files, the Vorbis comment spec allows multiple ARTIST fields (one per
+artist). MA reads all of these.
+3. ARTIST tag parsing - If neither of the above are present, MA will attempt to split the ARTIST string using common
+separators (featuring, feat., ft., &, etc.). MusicBrainz Artist IDs help determine the expected artist count.
+
+In general, ensure the MusicBrainz Artist IDs align with the ARTIST (or ARTISTS) tags - one ID per artist.
+  
 ### Tags used by MA
 
 [![Preview image](../assets/tag-usage.png){ width=800 }](../assets/tag-usage.png)
+
+The left column corresponds to the TAG NAME shown in the [MusicBrainz Picard Tag Mapping](https://picard-docs.musicbrainz.org/downloads/MusicBrainz_Picard_Tag_Map.html) table. Refer then to the appropriate tag name for the format of the file being tagged
 
 ### Manually Adjusting Tags
 
@@ -113,4 +135,4 @@ Normally it is best to leave the Picard tags unchanged. However, some people do 
 - Keep MusicBrainz Artist ID
 - Remove ISRC (as that is also used as strong identifier for tracks)
 - Remove barcode (as that is also used as strong identifier for albums)
-- Because there is no version specific ID3 tag, place the version between brackets in the title. For example, Great Song (Vinyl Rip)
+- Because there is no version specific tag, place the version between brackets in the title. For example, Great Song (Vinyl Rip)
