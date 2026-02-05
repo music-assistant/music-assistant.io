@@ -1,0 +1,10 @@
+[data-md-color-scheme="music-assistant"] {
+    --md-primary-fg-color:        #50A3F3;
+    --md-primary-fg-color--light: #98c9f8;
+    --md-primary-fg-color--dark:  #107de7;
+
+    --md-accent-fg-color:                #f3a050;
+    --md-accent-fg-color--transparent:   #f39f5027;
+    --md-accent-bg-color:                #fdf5ed;
+    --md-accent-bg-color--light:         #fcecdc;
+}
