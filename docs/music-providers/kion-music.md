@@ -34,12 +34,12 @@ Configuration requires obtaining an OAuth token from KION Music.
 ### Obtaining the Token
 
 1. Open your browser and navigate to [music.mts.ru](https://music.mts.ru)
-2. Log in with your MTS account
-3. Open Developer Tools (F12) → **Network** tab
-4. In the filter box type `music.mts.ru` or leave all. Trigger a request (e.g. play a track, open Search, or refresh the page)
-5. Click any request to `music.mts.ru` in the list → **Headers** → **Request Headers**
-6. Find **Authorization**. The value is like `OAuth y0_AgAAAAA...` — the token is the part after `OAuth ` (e.g. `y0_AgAAAAA...`)
-7. Copy the token and paste it into the Music Assistant KION Music provider configuration
+2. Log in to your account
+3. Open Developer Tools (Ctrl+Shift+I)
+4. Go to the **Storage** (Firefox) or **Application** (Chrome) tab
+5. Under **Local Storage**, find the entry for `https://music.mts.ru`
+6. Copy the value of the `ya_token` key
+7. Paste this token into the Music Assistant KION Music provider configuration
 
 ### Settings
 
