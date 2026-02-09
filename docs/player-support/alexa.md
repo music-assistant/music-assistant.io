@@ -35,25 +35,16 @@ Run with Docker Compose (recommended):
   ```
 
 - By default the service will be available at `http://localhost:5000` (or the IP/port you configured).
+- In your browser, open the setup UI at `http://localhost:5000/setup`. The setup page will:
+   - detect existing persistent ASK credentials (if present) and skip the browser-based auth flow
+   - guide you through the ASK CLI authorization flow if credentials are not present
+   - run the automated skill creation/update, interaction model upload, model build polling, and testing enablement.
+- In your browser, open the status UI at `http://localhost:5000/status` to check the status of the skill
 
 ### 2. Set Up a Proxy with SSL Certificates
 - Configure a reverse proxy (such as Nginx or Caddy) in front of both the skill prototype service (default port: 5000) and your Music Assistant streaming port (default port: 8097) [optional if using only APL devices]
 - Obtain and install valid SSL certificates (e.g. using Let's Encrypt) for your domain(s)
 - Ensure both the prototype and Music Assistant streaming [optional if using only APL devices] endpoints are accessible via HTTPS (port: 443), as Alexa requires secure endpoints
-
-### 3. Set up the Alexa Skill in the Alexa Developer Console
-
-1. Go to the [Alexa Developer Console](https://developer.amazon.com/alexa/console/ask) and click **Create Skill**.
-2. Choose a skill name (for example: **Music Assistant**) and select your default language/locale.
-3. Select **Music & Audio** as the experience and **Custom** as the model.
-4. For hosting, choose **Provision your own** (not Alexa-hosted) so you can point the skill to the prototype service.
-5. Choose the **Start from Scratch** template and create the skill.
-6. In the skill settings:
-  - Open **Invocation Name** and set the invocation to `music assistant`, then save.
-  - Open **Endpoint** and set it to **HTTPS**. Fill in your public HTTPS endpoint (the reverse-proxied address for the prototype service) in the Default Region and select the wildcard certificate option if appropriate.
-7. Under **Interaction Model → Intents** add an intent named `PlayAudio` with sample utterances such as `play audio`, `start`, and `play` and then build the model.
-8. Under **Interfaces**, enable the **Audio Player** and **Alexa Presentation Language** interfaces and save the changes.
-9. Go to the **Test** tab and enable testing by switching to **Development**.
 
 **Summary:**  
 The skill prototype is run as a separate server, a proxy with SSL certificates must be set up, the Alexa skill is created and configured, and then Music Assistant playback should now be enabled on your Alexa devices.
