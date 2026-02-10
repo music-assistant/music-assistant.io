@@ -52,11 +52,13 @@ nav:
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - DI.fm Network: music-providers/digitally-incorporated.md
+      - Emby: music-providers/emby.md
       - gPodder: music-providers/gpodder.md
       - iBroadcast: music-providers/ibroadcast.md
       - Internet Archive: music-providers/internet-archive.md
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
+      - Kion Music: music-providers/kion-music.md
       - Local Files: music-providers/filesystem.md
       - Nico Nico Video: music-providers/niconico.md
       - Nugs.net: music-providers/nugs.md
