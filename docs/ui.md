@@ -160,11 +160,17 @@ Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. 
 
 ### Provider Details
 
-The PROVIDER DETAILS section shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the ![icon](assets/icons/database-search.png){ width=20 }icon. Adding a new provider does not trigger linking across existing library items.
+The PROVIDER DETAILS section shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers.
 
-Mappings can also be created via a menu option for items shown in the OTHER VERSIONS section of the view.
+The creation of links within the MA library to other identical items in the MA library (within or across providers) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
 
-Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](music-providers/filesystem#tagging-files).
+Links can also be created manually by pressing this icon ![icon](assets/icons/database-search.png){ width=20 } when seen beside an item. This will create links to matching items across all providers whether they are in the MA library or not. There is no way to trigger this manual linking of items as a bulk operation.
+
+Adding a new provider does not trigger linking of existing library items to items available on that provider except for items in the new providers library (however called) and if the `Sync library <item>  from this provider to Music Assistant` option is on.
+
+Specific linkings can be created via a menu option for items shown in the OTHER VERSIONS section of the view and clicking "Map this provider entry to the current item".
+
+Incorrect linkings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](music-providers/filesystem#tagging-files).
 
 The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
 
