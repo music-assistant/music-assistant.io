@@ -5,7 +5,7 @@ description: Documentation for using the Emby music provider
 
 # Emby Provider ![Preview image](../assets/icons/emby-icon.svg){ width=70 align=right }
 
-Music Assistant has support for using Emby Server. This component was contributed by [hatharry](https://github.com/hatharry).
+Music Assistant has support for accessing music hosted on an [Emby Server](https://emby.media/). This component was contributed and is maintained by [hatharry](https://github.com/hatharry).
 
 ## Features
 
