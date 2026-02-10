@@ -22,7 +22,7 @@ Music Assistant has support for using Emby Server. This component was contribute
 
 ### Other
 
-- Search from 'Music' libraries on the Emby server
+- Searching the 'Music' libraries on an Emby server is possible
 
 ## Configuration:
 The following information must be supplied to configure this provider:
