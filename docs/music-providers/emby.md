@@ -25,7 +25,7 @@ Music Assistant has support for using Emby Server. This component was contribute
 - Search from 'Music' libraries on the Emby server
 
 ## Configuration:
-You will need to provide the following to Music Assistant:
+The following information must be supplied to configure this provider:
 
 - <b>Server.</b> For example, https://music.domain.tld/ or http://192.168.1.4:8096/ (for a local server)
 - <b>Username.</b> The username for the account to be used by Music Assistant to access the server
