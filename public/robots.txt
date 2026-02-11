@@ -1,0 +1,7 @@
+# music-assistant.io robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://music-assistant.io/sitemap-index.xml

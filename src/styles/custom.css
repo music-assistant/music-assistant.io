@@ -1,0 +1,55 @@
+/* Music Assistant Brand Colors */
+:root {
+  --sl-color-accent-low: #50a3f31a;
+  --sl-color-accent: #50a3f3;
+  --sl-color-accent-high: #98c9f8;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #107de71a;
+  --sl-color-accent: #50a3f3;
+  --sl-color-accent-high: #107de7;
+}
+
+.site-title img {
+  max-width: 240px;
+}
+
+/* Preserve image aspect ratios */
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Video styling */
+article video {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Open Home Foundation badge */
+article img[src*="openhomefoundation.org"] {
+  margin-top: 2rem;
+  max-width: 300px;
+}
+
+/* Fix active sidebar link text color - make it white for readability */
+[aria-current='page'],
+[aria-current='page']:hover,
+[aria-current='page']:focus {
+  color: white !important;
+}
+
+/* Ensure sidebar links are readable */
+.sidebar a[aria-current='page'] {
+  color: white !important;
+}
+
+.sl-markdown-content p img,
+.sl-markdown-content li img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  margin: 0;
+}
