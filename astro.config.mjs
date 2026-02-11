@@ -9,12 +9,14 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Music Assistant',
+			titleDelimiter: '-',
 			logo: {
 				light: './src/assets/ma-logo--dark.svg',
 				dark: './src/assets/ma-logo--light.svg',
 				replacesTitle: true,
 			},
 			favicon: '/favicon.svg',
+			pagination: false,
 			social: [
 				{
 					icon: 'github',

@@ -53,3 +53,79 @@ article img[src*="openhomefoundation.org"] {
   display: inline-block;
   margin: 0;
 }
+
+/* Details/Summary Accordion Styling - Scoped to main content only */
+.sl-markdown-content details {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  background: var(--sl-color-bg);
+}
+
+.sl-markdown-content details summary {
+  cursor: pointer;
+  padding: 1rem;
+  margin: 0;
+  font-weight: 600;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--sl-color-white);
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.sl-markdown-content details summary::-webkit-details-marker {
+  display: none;
+}
+
+.sl-markdown-content details summary::before {
+  content: '▶';
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 0.75em;
+  color: var(--sl-color-accent);
+}
+
+.sl-markdown-content details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.sl-markdown-content details summary:hover {
+  background: var(--sl-color-gray-6);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.sl-markdown-content details[open] summary {
+  border-bottom: 1px solid var(--sl-color-gray-6);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.sl-markdown-content details > *:not(summary) {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.sl-markdown-content details ol,
+.sl-markdown-content details ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.sl-markdown-content details li {
+  margin: 0.5rem 0;
+}
+
+.sl-markdown-content details img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem 0;
+}
+
+.sl-markdown-content details a {
+  color: var(--sl-color-accent);
+}
