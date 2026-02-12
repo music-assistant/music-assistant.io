@@ -30,7 +30,7 @@ URIs for folders need to be constructed in the form `filesystem_id://folder/rela
 
 After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -17 LUFS (and -17 is the default starting point). **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
 
-More details [here](/tech-info#volume-normalization)
+More details [here](/faq/tech-info/#volume-normalization)
 
 ## Have my music continue if I change rooms
 
@@ -40,7 +40,7 @@ There are three options.
 
 2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](/faq/groups)
 
-3. Use the [Transfer Queue](/faqs/masstransfer) action.
+3. Use the [Transfer Queue](/faq/masstransfer) action.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
@@ -66,11 +66,11 @@ data:
 
 See here for <a href="https://www.home-assistant.io/integrations/media_player/" target="_blank" rel="noopener noreferrer">enqueue options</a>
 
-See also [music_assistant.play_media action](/faqs/massplaymedia)
+See also [music_assistant.play_media action](/faq/massplaymedia)
 
 ## Start a playlist with a script
 
-Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](/faqs/massplaymedia).
+Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](/faq/massplaymedia).
 
 ## Play a Random Item
 

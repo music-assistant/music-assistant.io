@@ -29,7 +29,7 @@ The maximum sample rate that can be expected can be found in the [Player Provide
 ## Digital Signal Processing
 <img src="/assets/screenshots/audiopipeline-dsp.png" alt="image" style="width: 500px;"  loading="lazy" />
 
-In this example [DSP](settings/individual-player/#dsp-settings) has been enabled. High level information about the DSP filters which have been applied are shown. A tooltip is available to explain why the DSP is not supported if that is the case (See the example below in [Groups](#groups)).
+In this example [DSP](/settings/individual-player/#dsp-settings) has been enabled. High level information about the DSP filters which have been applied are shown. A tooltip is available to explain why the DSP is not supported if that is the case (See the example below in [Groups](#groups)).
 
 Also of note in this example is the icon shown in the input section where the codec icon is normally. This icon will be displayed when MA cannot determine the codec and can occur with container formats such as <a href="https://www.wavpack.com/" target="_blank" rel="noopener noreferrer">wavpack</a>, <a href="https://cloudinary.com/guides/video-formats/what-is-the-m4a-format-understanding-the-difference-between-m4a-mp3-and-wav" target="_blank" rel="noopener noreferrer">m4a</a> or <a href="https://en.wikipedia.org/wiki/Direct_Stream_Digital" target="_blank" rel="noopener noreferrer">DSD64</a>.
 

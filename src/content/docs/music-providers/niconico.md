@@ -4,7 +4,7 @@ title: "Nico Nico Video"
 
 # Nico Nico Provider <img src="/assets/icons/niconico-logo.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for [Nico Nico Video](nicovideo.jp), a Japanese video-sharing website similar to YouTube, famous for its on-screen scrolling comments that overlay the video. Contributed and maintained by <a href="https://github.com/Shi-553" target="_blank" rel="noopener noreferrer">柴田 Shi-553</a>
+Music Assistant has support for [Nico Nico Video](https://www.nicovideo.jp/), a Japanese video-sharing website similar to YouTube, famous for its on-screen scrolling comments that overlay the video. Contributed and maintained by <a href="https://github.com/Shi-553" target="_blank" rel="noopener noreferrer">柴田 Shi-553</a>
 
 ## Features
 

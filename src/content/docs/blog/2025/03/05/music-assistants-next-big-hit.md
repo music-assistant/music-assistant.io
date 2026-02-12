@@ -69,7 +69,7 @@ Another useful feature added was a "[Don't stop the music](https://www.music-ass
 ### "Master of Puppets"
 <h4 style="margin-top: -0.25em; opacity: .67;">Home Assistant improvements</h4>
 
-Home Assistant was always designed to work seamlessly with Music Assistant, and it's only getting better. In the [Home Assistant 2024.12 release](/blog/2024/12/04/release-202412/#new-integrations), we gave the community a Christmas present--Music Assistant moved from HACS to being a native integration ([please migrate if you haven't yet](https://www.music-assistant.io/integration/migrate/)).
+Home Assistant was always designed to work seamlessly with Music Assistant, and it's only getting better. In the [Home Assistant 2024.12 release](https://www.home-assistant.io/blog/2024/12/04/release-202412/#new-integrations), we gave the community a Christmas present--Music Assistant moved from HACS to being a native integration ([please migrate if you haven't yet](https://www.music-assistant.io/integration/migrate/)).
 
 Many people now add all their players to Music Assistant first and then integrate Music Assistant with Home Assistant, eliminating the need to add each device separately. The most recent release added the ability to outsource any player control, including volume or turning it on/off, to a Home Assistant entity. There are other benefits to using them together, like Music Assistant [resuming audio playback](https://www.music-assistant.io/integration/announcements/) after an announcement or using Assist to find and play a song ([with or without LLMs](https://github.com/music-assistant/voice-support)).
 

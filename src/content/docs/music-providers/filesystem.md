@@ -122,7 +122,7 @@ In general, ensure the MusicBrainz Artist IDs align with the ARTIST (or ARTISTS)
   
 ### Tags used by MA
 
-<a href="../assets/tag-usage.png"><img src="/assets/tag-usage.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+<a href="/assets/tag-usage.png"><img src="/assets/tag-usage.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
 The left column corresponds to the TAG NAME shown in the <a href="https://picard-docs.musicbrainz.org/downloads/MusicBrainz_Picard_Tag_Map.html" target="_blank" rel="noopener noreferrer">MusicBrainz Picard Tag Mapping</a> table. Refer then to the appropriate tag name for the format of the file being tagged
 
