@@ -59,17 +59,17 @@ The following is required in ALL reports as the MA team is small and you need to
 You can retrieve the full MA logs by going to the MA settings and clicking on CORE
 :::
 
-# A provider isn't working
+## A provider isn't working
 
 Navigate to MA settings and inspect the provider entry. If there is a red circle with an exclamation mark next to it then hover over that icon to see the error message.
 
 ![image](/assets/screenshots/setup_error.png)
 
-# Why aren't tracks/albums matching between providers
+## Why aren't tracks/albums matching between providers
 
 Matching items between streaming providers is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see here https://github.com/music-assistant/support/discussions/543
 
-# My media player is not available or not playing
+## My media player is not available or not playing
 
 First check if the player has been discovered but just isn't appearing in the [Player List](../ui.md/#player-list). Do this by navigating to MA SETTINGS >> PLAYERS. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
 
@@ -79,29 +79,29 @@ If your device does support one of the supported protocols then review the docum
 
 If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identifying why the player isnt working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issues</a>, <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">Discussions</a> and <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord</a>) as likely someone has asked your question before.
 
-# All my media is missing 
+## All my media is missing 
 
 Ensure the favourites filter is OFF. At the top of each view is a ❤️. Ensure it is hollow.
 
 If you are trying to view playlists through the HA media view then you should note that only favourited playlists will show up and additionally you need to have a MA player selected to see the MA Library. HA's media browser doesn't have any filter or sorting options like MA's frontend has.
 
-# I don't see any tracks or albums for an Artist on a streaming provider
+## I don't see any tracks or albums for an Artist on a streaming provider
 
 See the [Usage and Music Provider notes](../usage)
 
-# My local album art isn’t being picked up
+## My local album art isn’t being picked up
 
 Art embedded in music tracks will always be picked up but folder.jpg images will only be imported if the folder name **exactly** matches the album (except for any characters that are prohibited in folder names. E.g. / )
 
-# There isn't any metadata for my music
+## There isn't any metadata for my music
 
 For local files, you can either fully tag your music (this is preferred and it is recommended to use <a href="https://picard.musicbrainz.org/" target="_blank" rel="noopener noreferrer">Picard</a>) or have an artist folder with the artist.nfo in there (just like the images) and that will be preferred. Online metadata providers are only queried when there is no local data. https://kodi.wiki/view/NFO_files
 
-# Some of the playlists are missing
+## Some of the playlists are missing
 
 For certain providers (Spotify is a known example) the authentication method used may impact visibility of playlists of certain type. For a Spotify provider, see details <a href="https://www.music-assistant.io/music-providers/spotify/#known-issues-notes" target="_blank" rel="noopener noreferrer">here</a>
 
-# I have updated but MA looks like the old version or isn’t working
+## I have updated but MA looks like the old version or isn’t working
 
 Possibly your browser is using a cached version of the front end. Try forcing a refresh Chrome, Firefox, or Edge for Windows: Press Ctrl+F5 (If that doesn’t work, try Shift+F5 or Ctrl+Shift+R).
 
@@ -109,21 +109,21 @@ if the above doesn’t work look <a href="https://www.webinstinct.com/faq/how-to
 
 For the iOS app see <a href="https://community.home-assistant.io/t/anyone-know-how-to-clear-cache-in-the-ios-app/64569/10" target="_blank" rel="noopener noreferrer">here</a>
 
-# The second zone of my amplifier is not seen by MA or MA won't turn on my amplifier
+## The second zone of my amplifier is not seen by MA or MA won't turn on my amplifier
 
 MA is an INPUT to your amplifier. So you need to power on your amplifier and then select the INPUT that MA is streaming to (e.g. AirPlay, DLNA, Chromecast). For this reason MA does not see the amplifier zones it only sees the compatible inputs of the amplifier. 
 
 Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](../settings/individual-player.md/#player-controls). 
 
-# My local music isn’t being imported or I’m seeing missing ID3 tag warnings in the logs
+## My local music isn’t being imported or I’m seeing missing ID3 tag warnings in the logs
 
 This is likely a tagging problem. See [here](../music-providers/filesystem.md/#tagging-files)
 
-# MA is interfering with my Spotify Connect or Other Streaming App
+## MA is interfering with my Spotify Connect or Other Streaming App
 
 If the MA player is "powered on" from the MA UI then MA understands that it is allowed to take control of the player. This may then happen even though you have started playback via another app but have not started playback via MA. To avoid this situation "power off" the MA player.
 
-# MA is failing to start
+## MA is failing to start
 
 If the following error (or similar) is seen in the log:
   ```

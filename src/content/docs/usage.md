@@ -3,7 +3,7 @@ title: General
 description: Information regarding various elements of Music Assistant
 ---
 
-## Online Metadata Sources
+# Online Metadata Sources
 
 Music Assistant relies heavily on metadata to work well and it gets this information from locally tagged files and online sources. The free online resources have limits and MA is often hitting those limits so further restrictions have been put in place. This means that:
 

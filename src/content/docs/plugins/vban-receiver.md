@@ -63,7 +63,7 @@ Press the VBAN button to configure an Outgoing Stream:
 
 If error numbers/red lights appear next to the outgoing VBAN stream in the Voicemeeter VBAN section this is a **sender-side issue, NOT receiver/MA side**.  Something in the mixer configuration is likely wrong.
 
-# Pipewire
+## Pipewire
 Pipewire systems have the <a href="https://docs.pipewire.org/page_module_vban_send.html" target="_blank" rel="noopener noreferrer">vban-send</a> module which creates a system audio sink.  Any audio sent to the sink is converted to VBAN packets and sent to the VBAN Receiver at the destination ip:port which needs set to the IP address of the MA server and listener port in the VBAN Receiver plugin.
 
 `~/.config/pipewire/pipewire.conf.d/01-vban.conf`
