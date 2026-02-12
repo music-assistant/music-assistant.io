@@ -12,7 +12,7 @@ Music Assistant has support for <a href="https://www.bluesound.com/" target="_bl
 
 ## Settings
 
-For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider) and [Individual Player Settings](../settings/individual-player) pages.
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider) and [Individual Player Settings](/settings/individual-player) pages.
 
 ## Known Issues / Notes
 

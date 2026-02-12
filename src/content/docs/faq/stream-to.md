@@ -6,39 +6,43 @@ title: "I Want To Stream To"
 
 Install the <a href="https://github.com/pssc/ha-addon-squeezelite" target="_blank" rel="noopener noreferrer">squeezelite addon</a> which will then allow streaming over an audio connection from the HA host to your speaker or amplifier.
 
-??? Troubleshooting Steps for this Option
-    Some problems (listed individually below) may affect this solution and the following settings should avoid all of these issues:
-    
-      * Enable “Show unused configuration options” on the SqueezeLite add-on, then set:
-        * build: **pa** (PortAudio) or **alsa**
-        * options: `-a 150ms` (target latency, experiment to find best value)
-      * Ensure that the *Output format* format in the Music Assistant *Advanced Settings* for the player is set to anything *other* than **WAV**.
-    
-    ### Audio too fast or slow on track change (wrong sampling rate)
-    
-    The PulseAudio version of SqueezeLite has a known issue of <a href="https://github.com/ralph-irving/squeezelite/issues/177" target="_blank" rel="noopener noreferrer">playing back audio with the wrong sampling rate</a> on track changes.
-    
-    If this is encountered, enable “Show unused configuration options” in the SqueezeLite settings and change the *build* type to **pa** (PortAudio) or **alsa**.
-    
-    ### Initial audio swallowed or stuttering on track change
-    
-    The PulseAudio version of SqueezeLite also has known <a href="https://github.com/ralph-irving/squeezelite/issues/155" target="_blank" rel="noopener noreferrer">synchronization problems on track changes</a>.
-    
-    If this is encountered then, as above, change the *build* type to **pa** (PortAudio) or **alsa**.
-    
-    ### “Helicopter noises” / chopped off playback
-    
-    If “<a href="https://github.com/pssc/ha-addon-squeezelite/issues/1" target="_blank" rel="noopener noreferrer">helicopter noises</a>” are heard then adjust the target latency to a higher value.
-    
-    To do so, enable “Show unused configuration options” and add `-a 150ms` to the *options* text field while using the ALSA or PA (PortAudio) *build*. Experimentation with higher or lower values may be required.
-    
-    ### Static instead of audio playback on some tracks
-    
-    This is <a href="https://github.com/music-assistant/support/issues/4163" target="_blank" rel="noopener noreferrer">an issue with Music Assistant</a> and affects all tracks not using the `i16` sampling format (such as 24/32-bit audio) when streaming with the **WAV** *Output codec*.
-    
-    When encountering this issue, change the *Output format* to **FLAC** (or any other non-WAV format) in the Music Assistant player *Advanced Settings*.
-    
-    Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite add-on also works around this issue.
+<details>
+<summary>Troubleshooting Steps for this Option</summary>
+<div>
+Some problems (listed individually below) may affect this solution and the following settings should avoid all of these issues:
+
+  * Enable “Show unused configuration options” on the SqueezeLite add-on, then set:
+    * build: **pa** (PortAudio) or **alsa**
+    * options: `-a 150ms` (target latency, experiment to find best value)
+  * Ensure that the *Output format* format in the Music Assistant *Advanced Settings* for the player is set to anything *other* than **WAV**.
+
+### Audio too fast or slow on track change (wrong sampling rate)
+
+The PulseAudio version of SqueezeLite has a known issue of <a href="https://github.com/ralph-irving/squeezelite/issues/177" target="_blank" rel="noopener noreferrer">playing back audio with the wrong sampling rate</a> on track changes.
+
+If this is encountered, enable “Show unused configuration options” in the SqueezeLite settings and change the *build* type to **pa** (PortAudio) or **alsa**.
+
+### Initial audio swallowed or stuttering on track change
+
+The PulseAudio version of SqueezeLite also has known <a href="https://github.com/ralph-irving/squeezelite/issues/155" target="_blank" rel="noopener noreferrer">synchronization problems on track changes</a>.
+
+If this is encountered then, as above, change the *build* type to **pa** (PortAudio) or **alsa**.
+
+### “Helicopter noises” / chopped off playback
+
+If “<a href="https://github.com/pssc/ha-addon-squeezelite/issues/1" target="_blank" rel="noopener noreferrer">helicopter noises</a>” are heard then adjust the target latency to a higher value.
+
+To do so, enable “Show unused configuration options” and add `-a 150ms` to the *options* text field while using the ALSA or PA (PortAudio) *build*. Experimentation with higher or lower values may be required.
+
+### Static instead of audio playback on some tracks
+
+This is <a href="https://github.com/music-assistant/support/issues/4163" target="_blank" rel="noopener noreferrer">an issue with Music Assistant</a> and affects all tracks not using the `i16` sampling format (such as 24/32-bit audio) when streaming with the **WAV** *Output codec*.
+
+When encountering this issue, change the *Output format* to **FLAC** (or any other non-WAV format) in the Music Assistant player *Advanced Settings*.
+
+Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite add-on also works around this issue.
+</div>
+</details>
 
 ## My Random Connected Device
 
@@ -50,7 +54,7 @@ If you have Squeezelite compatible clients on your local network then MA will be
 
 See here for an example on on <a href="https://github.com/orgs/music-assistant/discussions/1123#discussioncomment-6652948" target="_blank" rel="noopener noreferrer">how to run squeezelite on Windows</a>
 
-The [Music Assistant Companion App](../companion-app) can also be configured to run a squeezelite client which will allow playback to the device running it.
+The [Music Assistant Companion App](/companion-app) can also be configured to run a squeezelite client which will allow playback to the device running it.
 
 ## My ESP32 Based Device
 
@@ -78,7 +82,7 @@ If using a USB dongle with piCorePlayer then some settings on the `Squeezelite S
 Play to the built-in Sendspin web player.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="easiest label" style="width: 64px;"  loading="lazy" />
-Use a [Snapserver](../player-support/snapcast) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
+Use a [Snapserver](/player-support/snapcast) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
 
 ## My Android Phone
 
@@ -86,7 +90,7 @@ Use a [Snapserver](../player-support/snapcast) and the Snapweb option. If you en
 Play to the built-in Sendspin web player.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
-Use the <a href="https://play.google.com/store/apps/details?id=de.badaix.snapcast" target="_blank" rel="noopener noreferrer">Snapcast App</a> and the [Snapserver Provider](../player-support/snapcast)
+Use the <a href="https://play.google.com/store/apps/details?id=de.badaix.snapcast" target="_blank" rel="noopener noreferrer">Snapcast App</a> and the [Snapserver Provider](/player-support/snapcast)
 
 ## Music Assistant
 
@@ -108,7 +112,7 @@ Thanks to <a href="https://github.com/mrueg" target="_blank" rel="noopener noref
 
 ## A device I am yet to purchase!
 
-A summary of the capabilities of the player providers available in Music Assistant [is available here](../player-support/index).
+A summary of the capabilities of the player providers available in Music Assistant [is available here](/player-support/).
 
 In general terms the protocols/devices that should give you minimum to no setup difficulty are:
 
@@ -122,7 +126,7 @@ We don’t believe most people can hear the difference in sample rates above CD 
 
 Note that many Sonos devices can be synced with AirPlay devices which is another plus for AirPlay.
 
-Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [DSP Settings description](../settings/individual-player#dsp-settings)
+Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [DSP Settings description](/settings/individual-player#dsp-settings)
 
 The following table is a non-exhaustive list of possible solutions:
 

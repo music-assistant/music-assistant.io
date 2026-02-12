@@ -15,11 +15,11 @@ Music Assistant has support for playing to media player entities in Home Assista
 ## Features
 
 - All media player entities that are available in HA, for which there is no dedicated MA provider, will be available in MA
-- All media player types that can be grouped in HA can be grouped in MA via the [Player List](../ui#player-list) or <a href="https://www.home-assistant.io/integrations/media_player/#action-media_playerjoin" target="_blank" rel="noopener noreferrer">HA action</a>
+- All media player types that can be grouped in HA can be grouped in MA via the [Player List](/ui#player-list) or <a href="https://www.home-assistant.io/integrations/media_player/#action-media_playerjoin" target="_blank" rel="noopener noreferrer">HA action</a>
 
 ## Configuration
 
-Before the Player Provider can be added the [Plugin](../ha-plugin) must be installed. The following image shows what a successful installation looks like
+Before the Player Provider can be added the [Plugin](/ha-plugin) must be installed. The following image shows what a successful installation looks like
 
 ![screenshot](/assets/screenshots/plugin-provider.png)
 
@@ -31,7 +31,7 @@ Before the Player Provider can be added the [Plugin](../ha-plugin) must be insta
 
 ## Settings
 
-For information about the settings seen in the MA UI refer to the [Player Provider Settings](../settings/player-provider) and [Individual Player Settings](../settings/individual-player) pages.
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider) and [Individual Player Settings](/settings/individual-player) pages.
 
 ## Known Issues / Notes
 

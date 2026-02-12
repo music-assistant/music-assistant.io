@@ -24,9 +24,9 @@ Music Assistant provides (next to the standard media player actions), several cu
 
 FAQ / Extra Info
 
-- [music_assistant.play_media](../faq/massplaymedia)
-- [music_assistant.play_annnouncement](../faq/massannounce)
-- [music_assistant.transfer_queue](../faq/masstransfer)
-- [music_assistant.search](../faq/masssearch)
-- [music_assistant.get_library](../faq/get_library)
-- [music_assistant.get_queue](../faq/get_queue)
+- [music_assistant.play_media](/faq/massplaymedia)
+- [music_assistant.play_annnouncement](/faq/massannounce)
+- [music_assistant.transfer_queue](/faq/masstransfer)
+- [music_assistant.search](/faq/masssearch)
+- [music_assistant.get_library](/faq/get_library)
+- [music_assistant.get_queue](/faq/get_queue)

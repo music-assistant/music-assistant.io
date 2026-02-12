@@ -4,7 +4,7 @@ title: "Builtin"
 
 # Builtin Provider  <img src="/assets/icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The Builtin provider supports manually adding track and radio station URLs to the database and it also generates various [Playlists](../usage.md/#playlists).
+The Builtin provider supports manually adding track and radio station URLs to the database and it also generates various [Playlists](/usage.md/#playlists).
 
 ## Features
 

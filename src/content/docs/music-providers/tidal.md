@@ -13,9 +13,9 @@ Music Assistant has support for <a href="https://tidal.com" target="_blank" rel=
 | Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](../ui#view-home) Supported | Yes |
+| [Recommendations](/ui#view-home) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](../ui#track-menu) | Yes |
+| [Radio Mode](/ui#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
 | Login Method | OAuth |
 
@@ -31,11 +31,11 @@ Music Assistant has support for <a href="https://tidal.com" target="_blank" rel=
 
 In the configuration, there are a series of steps that must be completed in order. Start at the top of the page and work down. 
 
-<a href="../assets/screenshots/tidal-config.png"><img src="/assets/screenshots/tidal-config.png" alt="Tidal Config" style="width: 800px;"  loading="lazy" /></a>
+<a href="/assets/screenshots/tidal-config.png"><img src="/assets/screenshots/tidal-config.png" alt="Tidal Config" style="width: 800px;"  loading="lazy" /></a>
 
 1. Click on the first button and you will be redirected to the Tidal login page and after logging in you will be taken to an error page which is normal.
 
-    <a href="../assets/screenshots/oops-page.png"><img src="/assets/screenshots/oops-page.png" alt="Oops Page" style="width: 800px;"  loading="lazy" /></a>
+    <a href="/assets/screenshots/oops-page.png"><img src="/assets/screenshots/oops-page.png" alt="Oops Page" style="width: 800px;"  loading="lazy" /></a>
 
 2. Take the full URL in the address bar of the Oops error page and insert it into the configuration screen  
 

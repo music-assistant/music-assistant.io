@@ -31,7 +31,7 @@ All further processing in MA is done at PCM raw audio level, such as the DSP Set
 
 The final part in the chain is that MA needs to send the audio to the player. By default we encode the raw PCM into FLAC because it is lossless while still providing a descent amount of compression. For players that can not handle FLAC very well, or simply to save bandwidth, we provide an option (per player) to encode to MP3 instead.
 
-The [Streamserver Settings](../settings/core.md/#streamserver-audio-settings) contains a number of options which determine how Volume Normalization will perform. Additionally, the [Individual Player Settings](../settings/individual-player.md/#audio) provides access to options to enable and disable this feature as well as adjusting the [target level](../settings/individual-player.md/#advanced-settings).
+The [Streamserver Settings](/settings/core/#streamserver-audio-settings) contains a number of options which determine how Volume Normalization will perform. Additionally, the [Individual Player Settings](/settings/individual-player/#audio) provides access to options to enable and disable this feature as well as adjusting the [target level](/settings/individual-player/#advanced-settings).
 
 ## Track Queueing
 

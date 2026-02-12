@@ -19,9 +19,9 @@ Music Assistant has support for <a href="https://www.deezer.com/" target="_blank
 | Subscription FREE | No |
 | Self-Hosted Local Media  | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](../ui#view-home) Supported | No |
+| [Recommendations](/ui#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](../ui#track-menu) | Yes |
+| [Radio Mode](/ui#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (44.1 kHz / 16 bit) |
 | Login Method | OAuth + Cookie |
 

@@ -16,9 +16,9 @@ This provider gives Music Assistant users free access to millions of audio recor
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Audiobooks, Podcasts |
-| [Recommendations](../ui#view-home) Supported | No |
+| [Recommendations](/ui#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](../ui#track-menu) | No |
+| [Radio Mode](/ui#track-menu) | No |
 | Maximum Stream Quality | FLAC (16 bit, 44.1 kHz) |
 | Login Method | None |
 

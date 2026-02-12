@@ -15,9 +15,9 @@ Phish.in provides a comprehensive platform for fans to discover, stream, and sha
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](../ui#view-home) Supported | No |
+| [Recommendations](/ui#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](../ui#track-menu) | No |
+| [Radio Mode](/ui#track-menu) | No |
 | Maximum Stream Quality | MP3 (16 bit, 44.1 kHz) |
 | Login Method | None |
 

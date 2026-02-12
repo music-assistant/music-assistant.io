@@ -14,7 +14,7 @@ Media Assistant is a utility that allows you to stream/play local and hosted med
 
 ## Settings
 
-In addition to the [Individual Player Settings](../settings/individual-player) the Roku Media Assistant provider also has the following Advanced settings.
+In addition to the [Individual Player Settings](/settings/individual-player) the Roku Media Assistant provider also has the following Advanced settings.
 
 <b>Allow automatic Roku discovery</b> is on by default and enables the automatic discovery of Roku devices.
 

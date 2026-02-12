@@ -16,7 +16,7 @@ General Notes:
 > [!TIP]
 > **Note**
 >
-> If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [PROVIDER DETAILS](../ui#provider-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
+> If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [PROVIDER DETAILS](/ui#provider-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
 
 ![image](/assets/screenshots/add-music-provider.png)
 
@@ -50,7 +50,7 @@ Lastly, depending on providers installed, there may be additional sync related o
 
 The table below provides an at-a-glance summary of all of the music providers. Green ticks indicate a desirable quality or function is available. 
 
-Stream quality is indicated as either [Hi-Res](../player-support/index.md/#audio-quality), <a href="https://www.soundguys.com/high-bitrate-audio-is-overkill-cd-quality-is-still-great-16518/" target="_blank" rel="noopener noreferrer">CD quality</a> or lossy with the codec and bitrate where available.
+Stream quality is indicated as either [Hi-Res](/player-support/index.md/#audio-quality), <a href="https://www.soundguys.com/high-bitrate-audio-is-overkill-cd-quality-is-still-great-16518/" target="_blank" rel="noopener noreferrer">CD quality</a> or lossy with the codec and bitrate where available.
 
 The most user friendly login method is a password, followed by <a href="https://en.wikipedia.org/wiki/OAuth" target="_blank" rel="noopener noreferrer">OAuth</a> and then the cookie method is least desirable.
 

@@ -25,7 +25,7 @@ Because Sendspin is **license-free and open source**, anyone can build apps, dev
 
 The Sendspin provider is **built-in and always enabled**. There are no configuration options required to get started.
 
-Individual Sendspin players will appear automatically when clients connect, and standard [player settings](../settings/player-provider) apply.
+Individual Sendspin players will appear automatically when clients connect, and standard [player settings](/settings/player-provider) apply.
 
 
 ## Known Issues / Notes

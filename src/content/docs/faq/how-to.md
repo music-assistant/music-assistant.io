@@ -19,7 +19,7 @@ data:
 
 Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
 
-You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](../ui.md/#view-individual-artist) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
+You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](/ui.md/#view-individual-artist) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
 
 > [!NOTE]
 > URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
@@ -44,7 +44,7 @@ There are three options.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
-You don't shuffle the music providers you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](../ui.md/#player-bar) or you can select the [NOW PLAYING View](../ui.md/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
+You don't shuffle the music providers you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](/ui.md/#player-bar) or you can select the [NOW PLAYING View](/ui.md/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
 ``` yaml
 action: media_player.shuffle_set
 target:
@@ -126,9 +126,9 @@ Use the HA action of `media_player.clear_playlist` or the new `music_assistant.p
 
 ## Add radio stations to MA
 
-If you use the [TuneIn provider](../music-providers/tunein) then stations that are favourited in your account will appear.
+If you use the [TuneIn provider](/music-providers/tunein) then stations that are favourited in your account will appear.
 
-If you use the [RadioBrowser provider](../music-providers/radio-browser) then BROWSE the provider and select ADD TO LIBRARY for the station desired.
+If you use the [RadioBrowser provider](/music-providers/radio-browser) then BROWSE the provider and select ADD TO LIBRARY for the station desired.
 
 Direct entry of stations can be done by navigating to the radio stations page and selecting the menu top right and ADD ITEM FROM URL
 This will also work for locally hosted streams such as from Icecast. 
@@ -229,7 +229,7 @@ See <a href="https://github.com/orgs/music-assistant/discussions/1123#discussion
 
 ## Access my music on Nextcloud?
 
-The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](../music-providers/subsonic) so you can use that provider in MA to connect. 
+The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](/music-providers/subsonic) so you can use that provider in MA to connect. 
 
 ## Access the MA Views directly via URL
 

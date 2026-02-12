@@ -19,7 +19,7 @@ MA includes a built-in Snapserver although an external server can also be used. 
 
 ## Settings
 
-In addition to the [Individual Player Settings](../settings/individual-player) the Snapcast provider also has a unique section called `Built-in Snapserver Settings`. The available settings are:
+In addition to the [Individual Player Settings](/settings/individual-player) the Snapcast provider also has a unique section called `Built-in Snapserver Settings`. The available settings are:
 
 - <b>Buffer Size.</b> (default 1000ms) is the total buffer size (or better buffer duration) between recording the signal on the server and playing it out on the client. This can be translated directly to the total latency of the audio signal. If play is pressed or a track is paused or skipped, a delay of 1000ms will be noticed because of this buffer
 - <b>Chunk Size.</b> (default 26ms). The server will continously read this number of milliseconds from the source into buffer and pass this buffer to the encoder. The encoded buffer is sent to the clients. Some codecs have a higher latency and will need more data, e.g. FLAC will need ~26ms chunks and thus this is the default

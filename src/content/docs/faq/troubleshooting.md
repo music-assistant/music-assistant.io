@@ -13,7 +13,7 @@ Increasingly, we are seeing reports from users which are caused by their use of 
 
 For clarity, running installation options other than HAOS or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
 
-There are settings available in MA SETTINGS>>CORE>>STREAMSERVER>>CONFIGURE>>ADVANCED that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](../installation#docker-image).
+There are settings available in MA SETTINGS>>CORE>>STREAMSERVER>>CONFIGURE>>ADVANCED that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation#docker-image).
 
 Most players are discovered using mDNS (broadcast) so if your players do not get discovered it means that your network is blocking that traffic (e.g. IGMP or multicast snooping or filtering). You will have to check your settings (e.g. WiFi setup) if multicast is being blocked. Business solutions tend to block multicast traffic as much as possible as it hurts performance when there are many clients. In a home setup is it mandatory to have because all home gear relies on multicast. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
 
@@ -39,7 +39,7 @@ Try power cycling the physical player(s) if they won't connect or if there is no
 
 Check the GitHub Issues and Discord to see if it is a known problem. If not try restarting MA, try restarting HA, and try a full HOST REBOOT (in that order). If it is an integration problem then trying removing it via the HA settings then restart HA then reinstall.
 
-Before you raise an issue [read this first](../support). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
+Before you raise an issue [read this first](/support). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
 
 DOWNLOAD and ATTACH complete logs from MA SETTINGS>>CORE. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider basis.
 
@@ -70,7 +70,7 @@ Matching items between streaming providers is challenging as they do not all pro
 
 ## My media player is not available or not playing
 
-First check if the player has been discovered but just isn't appearing in the [Player List](../ui.md/#player-list). Do this by navigating to MA SETTINGS >> PLAYERS. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
+First check if the player has been discovered but just isn't appearing in the [Player List](/ui.md/#player-list). Do this by navigating to MA SETTINGS >> PLAYERS. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
 
 If the player is not shown in the list of players in the MA SETTINGS then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
 
@@ -86,7 +86,7 @@ If you are trying to view playlists through the HA media view then you should no
 
 ## I don't see any tracks or albums for an Artist on a streaming provider
 
-See the [Usage and Music Provider notes](../usage)
+See the [Usage and Music Provider notes](/usage)
 
 ## My local album art isn’t being picked up
 
@@ -112,11 +112,11 @@ For the iOS app see <a href="https://community.home-assistant.io/t/anyone-know-h
 
 MA is an INPUT to your amplifier. So you need to power on your amplifier and then select the INPUT that MA is streaming to (e.g. AirPlay, DLNA, Chromecast). For this reason MA does not see the amplifier zones it only sees the compatible inputs of the amplifier. 
 
-Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](../settings/individual-player.md/#player-controls). 
+Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](/settings/individual-player.md/#player-controls). 
 
 ## My local music isn’t being imported or I’m seeing missing ID3 tag warnings in the logs
 
-This is likely a tagging problem. See [here](../music-providers/filesystem.md/#tagging-files)
+This is likely a tagging problem. See [here](/music-providers/filesystem.md/#tagging-files)
 
 ## MA is interfering with my Spotify Connect or Other Streaming App
 

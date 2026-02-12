@@ -13,9 +13,9 @@ Music Assistant has support for <a href="https://www.radio-browser.info/" target
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Radio |
-| [Recommendations](../ui#view-home) Supported | No |
+| [Recommendations](/ui#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](../ui#track-menu) | No |
+| [Radio Mode](/ui#track-menu) | No |
 | Maximum Stream Quality | Varies by station |
 | Login Method | None |
 

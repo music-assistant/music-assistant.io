@@ -13,9 +13,9 @@ Music Assistant has support for <a href="https://gpodder.github.io" target="_bla
 | Subscription FREE | Yes |
 | Self-Hosted Local Media  | No |
 | Media Types Supported | Podcasts |
-| [Recommendations](../ui#view-home) Supported | No |
+| [Recommendations](/ui#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](../ui#track-menu) | No |
+| [Radio Mode](/ui#track-menu) | No |
 | Maximum Stream Quality | Lossy, Variable Quality |
 | Login Method | Password or Nextcloud Login |
 
@@ -50,7 +50,7 @@ To setup this functionality, you need the `Nextcloud URL`, and then click the AU
 
 The gpodder provider can be set up multiple times for individual users.
 To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](../settings/user-management.md/#filter-progress-multi-user).
+user please refer to [user management](/settings/user-management.md/#filter-progress-multi-user).
 
 ### Settings
 

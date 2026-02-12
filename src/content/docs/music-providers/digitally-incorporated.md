@@ -13,9 +13,9 @@ Music Assistant has support for the DI.fm Radio Network which includes <a href="
 | Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Radio |
-| [Recommendations](../ui#view-home) Supported | No |
+| [Recommendations](/ui#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](../ui#track-menu) | No |
+| [Radio Mode](/ui#track-menu) | No |
 | Maximum Stream Quality | Lossy MP3 (320kbps) |
 | Login Method | API Key |
 
