@@ -29,5 +29,5 @@ In addition to the [Individual Player Settings](/settings/individual-player) the
 - When configuring you must add the device IP address and the Fully Kiosk password
 - Once added the device name can be changed, if required, in the specific player configuration
 - Some devices cannot handle the FLAC stream so an option in the individual player settings allows for changing to the lossy MP3 codec
-- Crossfade is supported if [flow mode](/faq/tech-info.md/#track-queueing) is enabled in the individual player settings. Enabling flow mode may also solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- Crossfade is supported if [flow mode](/faq/tech-info/#track-queueing) is enabled in the individual player settings. Enabling flow mode may also solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - This player can be grouped via a [Universal Group](/faq/groups#universal-groups) but perfect sync is not possible.

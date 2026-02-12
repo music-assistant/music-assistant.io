@@ -29,7 +29,7 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 ## Player Bar
 [![image](/assets/screenshots/UI-playercontrols-bar.png)](/assets/screenshots/UI-playercontrols-bar.png)
 
-The [Audio Pipeline](audiopipeline) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](player-support/index.md/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
+The [Audio Pipeline](/audiopipeline) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](/player-support/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
 
 ***************************************************************
 
@@ -38,9 +38,9 @@ The [Audio Pipeline](audiopipeline) selectable label shows, via a coloured icon 
 
 This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue, and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue, and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
 
-The [Audio Pipeline](audiopipeline) selectable label is described above in the [Player Bar](#player-bar) section.
+The [Audio Pipeline](/audiopipeline) selectable label is described above in the [Player Bar](#player-bar) section.
 
-You can also access the [Now Playing view directly via URL](faq/how-to.md/#now-playing-view)
+You can also access the [Now Playing view directly via URL](/faq/how-to/#now-playing-view)
 
 When the favourite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favourite status may not indicate correctly until playback of the track is restarted.
 
@@ -54,7 +54,7 @@ When lyrics are available for the track being played then the LYRICS selectable 
 > [!NOTE]
 > The volume shown against a player group is the AVERAGE of the volumes of each individal player. When the group volume is changed then each player is changed by a proportionate amount.
 
-When a [player group](faq/groups) is powered on the members of that group will disappear from the player list and individual playback to those players will not be possible. In order to playback to an individual player then either power off the group or remove the player from the group.
+When a [player group](/faq/groups) is powered on the members of that group will disappear from the player list and individual playback to those players will not be possible. In order to playback to an individual player then either power off the group or remove the player from the group.
 
 > [!NOTE]
 > The MDI icon shown against each player can be changed in the player settings.
@@ -64,9 +64,9 @@ When a [player group](faq/groups) is powered on the members of that group will d
 
 There are four ways to group players
 
-1.   **[TEMPORARY SYNC GROUP.](faq/groups#temporary-sync-group)** As shown in the [Player List](#player-list) section players can be linked via the checkbox in the player list. Only like player types that support synced playback are allowed to be joined. These players will then play in sync. It should be noted that when players are grouped in this way only the main player holds the queue. 
-2.   **[SYNC GROUP.](faq/groups#sync-groups)** Create a (permanent) group player via the settings. In addition to playing in sync the group will also keep the queue on the group player instead of one of its child players.
-3.   **[UNIVERSAL GROUP.](faq/groups#universal-groups)** This allows grouping of dissimilar player provider types but carefully note the potentional limitations on the linked page.
+1.   **[TEMPORARY SYNC GROUP.](/faq/groups#temporary-sync-group)** As shown in the [Player List](#player-list) section players can be linked via the checkbox in the player list. Only like player types that support synced playback are allowed to be joined. These players will then play in sync. It should be noted that when players are grouped in this way only the main player holds the queue. 
+2.   **[SYNC GROUP.](/faq/groups#sync-groups)** Create a (permanent) group player via the settings. In addition to playing in sync the group will also keep the queue on the group player instead of one of its child players.
+3.   **[UNIVERSAL GROUP.](/faq/groups#universal-groups)** This allows grouping of dissimilar player provider types but carefully note the potentional limitations on the linked page.
 4.   **NATIVE GROUP.** Use the native functionality to group players offered by some player provider types (e.g. Google Cast)
 
 With TEMPORARY SYNC GROUPs the number of players being streamed to can be seen due to the naming convention. In the example image below there are three players in the group.
@@ -134,7 +134,7 @@ The view is fully configurable. Select the blue icon in the top right and then E
 
 [![image](/assets/screenshots/UI-artist-view.png)](/assets/screenshots/UI-artist-view.png)
 
-Album and Track Views look the same as the above except there is no album artist filter icon and the track view has an [ADD VIA URL](music-providers/builtin) option.
+Album and Track Views look the same as the above except there is no album artist filter icon and the track view has an [ADD VIA URL](/music-providers/builtin) option.
 
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) )
 indicates that the viewed results are subject to filtering.
@@ -170,7 +170,7 @@ The PROVIDER DETAILS section shows what providers are linked to the artist (albu
 
 Mappings can also be created via a menu option for items shown in the OTHER VERSIONS section of the view.
 
-Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](music-providers/filesystem#tagging-files).
+Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/filesystem#tagging-files).
 
 The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
 
@@ -186,7 +186,7 @@ The ID shown against the streaming provider may be used in automations and scrip
 
 ## View - Browse
 
-Entering the Browse view will present a list of the installed [Music Providers](music-providers/index). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
+Entering the Browse view will present a list of the installed [Music Providers](/music-providers/). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
 
 When viewing a provider you will only see what is already in the Library of the Streaming Providers. For the local Providers you will see all files and if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
 
@@ -195,5 +195,5 @@ When viewing a provider you will only see what is already in the Library of the 
 >
 > Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
 
-It is this view that is used to select radio stations from the [Radio Browser](music-providers/radio-browser) provider.
+It is this view that is used to select radio stations from the [Radio Browser](/music-providers/radio-browser) provider.
 

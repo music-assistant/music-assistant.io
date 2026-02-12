@@ -70,7 +70,7 @@ Matching items between streaming providers is challenging as they do not all pro
 
 ## My media player is not available or not playing
 
-First check if the player has been discovered but just isn't appearing in the [Player List](/ui.md/#player-list). Do this by navigating to MA SETTINGS >> PLAYERS. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
+First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to MA SETTINGS >> PLAYERS. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
 
 If the player is not shown in the list of players in the MA SETTINGS then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
 
@@ -112,11 +112,11 @@ For the iOS app see <a href="https://community.home-assistant.io/t/anyone-know-h
 
 MA is an INPUT to your amplifier. So you need to power on your amplifier and then select the INPUT that MA is streaming to (e.g. AirPlay, DLNA, Chromecast). For this reason MA does not see the amplifier zones it only sees the compatible inputs of the amplifier. 
 
-Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](/settings/individual-player.md/#player-controls). 
+Some amplifiers may auto turn on when a signal is detected so check the amplifier options. If this functionality is not available then you will need to power on the amplifier via another means which could be by [assigning a HA entity to the player control](/settings/individual-player/#player-controls). 
 
 ## My local music isn’t being imported or I’m seeing missing ID3 tag warnings in the logs
 
-This is likely a tagging problem. See [here](/music-providers/filesystem.md/#tagging-files)
+This is likely a tagging problem. See [here](/music-providers/filesystem/#tagging-files)
 
 ## MA is interfering with my Spotify Connect or Other Streaming App
 

@@ -20,7 +20,7 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 | [Recommendations](/ui#view-home) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui#track-menu) | Yes |
-| Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues-notes) |
+| Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
 | Login Method | Cookie |
 
 ### Other

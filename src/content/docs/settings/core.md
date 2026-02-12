@@ -10,7 +10,7 @@ The core server settings are set with typical defaults that should work for most
 
 ## Cache
 
-- A button is available to clear the cache used my Music Assistant. Do not routinely use this button as it increases [API usage](/usage.md/#online-metadata-sources) and slows down the MA experience
+- A button is available to clear the cache used my Music Assistant. Do not routinely use this button as it increases [API usage](/usage/#online-metadata-sources) and slows down the MA experience
 
 ## Metadata
 
@@ -39,7 +39,7 @@ All settings in this section should be considered advanced and will not need to 
 
 <b>Allow (in-memory) buffering of (track) audio.</b> By default, Music Assistant tries to be as resource efficient as possible when streaming audio, especially considering low-end devices such as Raspberry Pis. This means that audio buffering is disabled by default to reduce memory usage. Enabling this option allows for in-memory buffering of audio, which (massively) improves playback (and seeking) performance but it comes at the cost of increased memory usage. If you run Music Assistant on a capable device with enough memory, enabling this option is strongly recommended.
 
-This section contains settings which affect the [Volume Normalization](/faq/tech-info.md/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](individual-player.md/#audio). Extensive online help for these settings is available by selecting the ![question mark](/assets/icons/question-mark.png) icon in the settings UI for each option.
+This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](/settings/individual-player/#audio). Extensive online help for these settings is available by selecting the ![question mark](/assets/icons/question-mark.png) icon in the settings UI for each option.
 
 ![image](/assets/screenshots/settings-streamserver-audio.png)
 

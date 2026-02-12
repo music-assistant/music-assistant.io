@@ -12,7 +12,7 @@ description: Player Grouping Functionality in Music Assistant
 
 Music Assistant uses four types of groups (these are outlined in the [Grouping Players](/ui#grouping-players) section and three of the types are described in detail below) which provides a flexible way to combine players together. When a group is powered on then playback to individual members of the group is no longer possible. To play to an individual member, the group must be powered off or the individal player must be removed from the group. If the group is still powered on then players can only be removed from [Temporary Sync Groups](#temporary-sync-group), or from [Sync Groups](#sync-groups) and [Universal Groups](#universal-groups) which have the dynamic member option enabled. When allowable, players can be removed by using the checkboxes in the [Player List](/ui#player-list) or by using the <a href="https://www.home-assistant.io/integrations/media_player/#media-control-actions" target="_blank" rel="noopener noreferrer">HA media_player.unjoin action</a>.
 
-See also the section on Announcements [Group Behaviour](/integration/announcements.md/#group-behaviour).
+See also the section on Announcements [Group Behaviour](/integration/announcements/#group-behaviour).
 
 ## Temporary Sync Group
 

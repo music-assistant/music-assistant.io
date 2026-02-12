@@ -11,7 +11,7 @@ This page allows management of users, their roles and permissions.
 On the right side of each username is a ⋮ menu which has four menu items
 
 - <b>Edit User.</b> See the section below
-- <b>Manage access tokens.</b> Allows management of login sessions and long lived tokens the same as is shown on an individuals [profile settings](profile)
+- <b>Manage access tokens.</b> Allows management of login sessions and long lived tokens the same as is shown on an individuals [profile settings](/settings/profile)
 - <b>Disable User.</b> Prevents user access. Settings are preserved
 - <b>Delete User.</b> Completely removes a user and all of their settings
 

@@ -56,7 +56,7 @@ Several client types can connect to Music Assistant via Sendspin:
 | Client | Description |
 |--------|-------------|
 | **Web Browser** | The built-in Music Assistant web player uses Sendspin for local playback |
-| **[Google Cast (Sendspin mode)](google-cast)** | Experimental Sendspin mode for Chromecast devices |
+| **[Google Cast (Sendspin mode)](/player-support/google-cast)** | Experimental Sendspin mode for Chromecast devices |
 | **<a href="https://esphome.github.io/home-assistant-voice-pe-alpha/" target="_blank" rel="noopener noreferrer">Home Assistant Voice PE</a>** | Alpha firmware for the Home Assistant Voice Preview Edition |
 | **<a href="https://www.sendspin-audio.com/code/" target="_blank" rel="noopener noreferrer"> Various Sendspin Clients</a>** | Clients are becoming available for various platforms |
 

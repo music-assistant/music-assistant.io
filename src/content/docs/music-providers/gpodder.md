@@ -50,7 +50,7 @@ To setup this functionality, you need the `Nextcloud URL`, and then click the AU
 
 The gpodder provider can be set up multiple times for individual users.
 To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](/settings/user-management.md/#filter-progress-multi-user).
+user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
 
 ### Settings
 

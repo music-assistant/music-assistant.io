@@ -15,6 +15,6 @@ The initial authentication setup dialog will appear as follows
 
 <a href="assets/screenshots/auth-flow.png"><img src="/assets/screenshots/auth-flow.png" alt="Preview image" style="width: 256px;"  loading="lazy" /></a>
 
-After successfully logging in, the first required action for the administrator is to add providers for [music sources](music-providers/index) and [players](player-support/index). This banner is shown to support this
+After successfully logging in, the first required action for the administrator is to add providers for [music sources](/music-providers/) and [players](/player-support/). This banner is shown to support this
 
 ![Preview image](/assets/screenshots/setup-banner.png)

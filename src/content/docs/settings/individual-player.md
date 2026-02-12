@@ -4,7 +4,7 @@ title: "Individual Player Settings"
 
 # Individual Player Settings <img src="/assets/icons/settings-players-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/index) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
+Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
 
 ![image](/assets/screenshots/individual-player-settings.png)
 
@@ -12,7 +12,7 @@ Individual Player Settings are usually quite extensive. The typical headings of 
 
 - <b>Icon.</b> A material design icon is used in some parts of the UI and this can be configured on a per player basis
 - <b>Enable queue flow mode</b> (not available all providers). This can be used for players that do not natively support gapless and/or crossfading or if the player has trouble transitioning between tracks. Refer to the player provider page for the pros and cons associated with enabling this option
-- <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the [Player List](/ui.md/#player-list). Options are `When unavailable`, `When group active`, `When synced`, `Always`, and `When powered off`
+- <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the [Player List](/ui/#player-list). Options are `When unavailable`, `When group active`, `When synced`, `Always`, and `When powered off`
 - <b>Dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups). When enabled, it is then possible to add and remove members from these group types
 - <b>Group members.</b> For Group player types the members of the group are configured in this field
 
@@ -70,9 +70,9 @@ It is possible to map other HA entities to the MA player controls. in order for 
 
 Providers with unique settings are:
 
-- [AirPlay](/player-support/airplay.md/#settings)
-- [Squeezelite](/player-support/squeezelite.md/#settings)
-- [Google Cast](/player-support/google-cast.md/#settings)
+- [AirPlay](/player-support/airplay/#settings)
+- [Squeezelite](/player-support/squeezelite/#settings)
+- [Google Cast](/player-support/google-cast/#settings)
 
 ## Advanced Settings
 
@@ -82,6 +82,6 @@ Providers with unique settings are:
 - <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV.
 - <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
 - <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
-- <b>Audio synchronisation delay correction</b>. Refer to the [Player Summary Table](/player-support/index) to identify which types support sync correction
+- <b>Audio synchronisation delay correction</b>. Refer to the [Player Summary Table](/player-support/) to identify which types support sync correction
 
 Also in this section is the option `Automatically play (resume on power on)` which will automatically start playback if there are items in the queue for the player.

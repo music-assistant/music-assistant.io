@@ -31,13 +31,13 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
 \* <i>imported means metadata is added to the database. No files are moved or downloaded</i>
 
 > [!NOTE]
-> If identical items (e.g. an album or track) have not been matched across providers or within a provider then navigate to the [Provider Details](ui#provider-details) section of the item and use the options there to link them.
+> If identical items (e.g. an album or track) have not been matched across providers or within a provider then navigate to the [Provider Details](/ui#provider-details) section of the item and use the options there to link them.
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
 **Favourites**
 
-As a further means of filtering the library, items can be marked as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favourited by default when imported from the music provider is determined by the [provider settings](music-providers/index). You can see all items if you deselect the heart icon in the top menu.
+As a further means of filtering the library, items can be marked as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favourited by default when imported from the music provider is determined by the [provider settings](/music-providers/). You can see all items if you deselect the heart icon in the top menu.
 
 ## The Queue
 

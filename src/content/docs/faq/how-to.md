@@ -19,7 +19,7 @@ data:
 
 Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
 
-You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](/ui.md/#view-individual-artist) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
+You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](/ui/#view-individual-artist) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
 
 > [!NOTE]
 > URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
@@ -30,7 +30,7 @@ URIs for folders need to be constructed in the form `filesystem_id://folder/rela
 
 After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -17 LUFS (and -17 is the default starting point). **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
 
-More details [here](tech-info#volume-normalization)
+More details [here](/tech-info#volume-normalization)
 
 ## Have my music continue if I change rooms
 
@@ -38,13 +38,13 @@ There are three options.
 
 1. Start streaming to any type of group that includes all the rooms you will move between. Mute all the rooms except the one you are in. When you move rooms just mute and unmute the required players.
 
-2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](groups)
+2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](/faq/groups)
 
-3. Use the [Transfer Queue](masstransfer) action.
+3. Use the [Transfer Queue](/faqs/masstransfer) action.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
-You don't shuffle the music providers you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](/ui.md/#player-bar) or you can select the [NOW PLAYING View](/ui.md/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
+You don't shuffle the music providers you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar) or you can select the [NOW PLAYING View](/ui/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
 ``` yaml
 action: media_player.shuffle_set
 target:
@@ -66,11 +66,11 @@ data:
 
 See here for <a href="https://www.home-assistant.io/integrations/media_player/" target="_blank" rel="noopener noreferrer">enqueue options</a>
 
-See also [music_assistant.play_media action](./massplaymedia)
+See also [music_assistant.play_media action](/faqs/massplaymedia)
 
 ## Start a playlist with a script
 
-Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](./massplaymedia).
+Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](/faqs/massplaymedia).
 
 ## Play a Random Item
 

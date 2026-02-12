@@ -67,7 +67,7 @@ Music Assistant has support for <a href="https://www.audiobookshelf.org/" target
     - Newly added and just deleted items are immediately reflected as well
     - BUT: if MA was down while changes in the ABS database occured, those will only be synced if a normal provider sync is triggered
 - Single and multi-file audiobooks are supported
-- Supports recommendations on the [Home View](/ui.md/#view-home)
+- Supports recommendations on the [Home View](/ui/#view---home)
 
 ## Configuration
 
@@ -92,7 +92,7 @@ The following is needed to setup this provider:
 
 The audiobookshelf provider can be set up multiple times for individual users.
 To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](/settings/user-management.md/#filter-progress-multi-user).
+user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
 
 ### Advanced Settings
 

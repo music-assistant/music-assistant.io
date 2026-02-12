@@ -6,9 +6,9 @@ title: "Home Assistant Integration"
 
 The Music Assistant integration for Home Assistant provides a connection from MA to HA. This means that MA players are visible in HA and can be controlled via the HA UI or via automations or scripts.
 
-- [Announcements](announcements) from HA in the form of Text to Speech or audio files are fully supported.
+- [Announcements](/integration/announcements) from HA in the form of Text to Speech or audio files are fully supported.
 
-- With some additional setup [voice control of MA](voice) via HA is also possible
+- With some additional setup [voice control of MA](/integration/voice) via HA is also possible
 
 - The integration can connect to the MA server which is running either as an HA addon or as a docker container on the same or another host system
 
