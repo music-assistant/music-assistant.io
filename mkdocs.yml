@@ -81,6 +81,7 @@ nav:
       - Yandex Music: music-providers/yandex-music.md
       - Yousee Musik: music-providers/yousee-musik.md
       - YouTube Music: music-providers/youtube-music.md
+      - Zvuk Music: music-providers/zvuk.md
   - Player Providers:
     - player-support/index.md
     - AirPlay: player-support/airplay.md
