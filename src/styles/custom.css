@@ -74,7 +74,7 @@ article img[src*="openhomefoundation.org"] {
 
   .sl-heading-wrapper.level-h1 img {
     width: 50px !important;
-    margin: 0.5rem 0 0;
+    margin: 0;
 
     position: absolute;
     top: 0;
