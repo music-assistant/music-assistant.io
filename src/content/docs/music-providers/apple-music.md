@@ -17,9 +17,9 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 | Subscription FREE | No |
 | Self-Hosted Local Media   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui#view-home) Supported | No |
+| [Recommendations](/ui/#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui#track-menu) | Yes |
+| [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
 | Login Method | Cookie |
 
@@ -60,7 +60,7 @@ The token needs to be retrieved through your browser. Instructions were written 
 
    [![Preview image](/assets/screenshots/apple-music-auth-2.jpg)](/assets/screenshots/apple-music-auth-2.jpg)
 
-6. Currently in order for the callback to work MA must be accessed via the exposed webserver port when setting up this provider. If MA has been installed as an add-on then the port must be manually exposed as described in the [core settings](/settings/core#webserver-frontend-and-api). Thus the URL when setting this provider up must be `http://<YOUR_MA_IP>:8095`. Once successfully configured the webserver port can be disabled again if desired.
+6. Currently in order for the callback to work MA must be accessed via the exposed webserver port when setting up this provider. If MA has been installed as an add-on then the port must be manually exposed as described in the [core settings](/settings/core/#webserver-frontend-and-api). Thus the URL when setting this provider up must be `http://<YOUR_MA_IP>:8095`. Once successfully configured the webserver port can be disabled again if desired.
 
 **Note:** Take note of the "Expires / Max-Age" column. The token will expire on that date and Apple Music within Music Assistant will stop working. The above process must then be repeated to obtain a fresh token.
 

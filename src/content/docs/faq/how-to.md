@@ -38,9 +38,9 @@ There are three options.
 
 1. Start streaming to any type of group that includes all the rooms you will move between. Mute all the rooms except the one you are in. When you move rooms just mute and unmute the required players.
 
-2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](/faq/groups)
+2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](/faq/groups/)
 
-3. Use the [Transfer Queue](/faq/masstransfer) action.
+3. Use the [Transfer Queue](/faq/masstransfer/) action.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
@@ -66,11 +66,11 @@ data:
 
 See here for <a href="https://www.home-assistant.io/integrations/media_player/" target="_blank" rel="noopener noreferrer">enqueue options</a>
 
-See also [music_assistant.play_media action](/faq/massplaymedia)
+See also [music_assistant.play_media action](/faq/massplaymedia/)
 
 ## Start a playlist with a script
 
-Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](/faq/massplaymedia).
+Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](/faq/massplaymedia/).
 
 ## Play a Random Item
 
@@ -126,9 +126,9 @@ Use the HA action of `media_player.clear_playlist` or the new `music_assistant.p
 
 ## Add radio stations to MA
 
-If you use the [TuneIn provider](/music-providers/tunein) then stations that are favourited in your account will appear.
+If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear.
 
-If you use the [RadioBrowser provider](/music-providers/radio-browser) then BROWSE the provider and select ADD TO LIBRARY for the station desired.
+If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired.
 
 Direct entry of stations can be done by navigating to the radio stations page and selecting the menu top right and ADD ITEM FROM URL
 This will also work for locally hosted streams such as from Icecast. 
@@ -229,7 +229,7 @@ See <a href="https://github.com/orgs/music-assistant/discussions/1123#discussion
 
 ## Access my music on Nextcloud?
 
-The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](/music-providers/subsonic) so you can use that provider in MA to connect. 
+The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](/music-providers/subsonic/) so you can use that provider in MA to connect. 
 
 ## Access the MA Views directly via URL
 

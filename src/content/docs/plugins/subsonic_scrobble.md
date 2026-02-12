@@ -5,7 +5,7 @@ description: Scrobbles playback to a Subsonic media server
 
 # Subsonic Scrobbler <img src="/assets/icons/subsonic_icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has the ability to report played tracks to a [Subsonic media server](/music-providers/subsonic). Contributed and maintained by <a href="https://github.com/clusters" target="_blank" rel="noopener noreferrer">Clusters</a>
+Music Assistant has the ability to report played tracks to a [Subsonic media server](/music-providers/subsonic/). Contributed and maintained by <a href="https://github.com/clusters" target="_blank" rel="noopener noreferrer">Clusters</a>
 
 ## Features
 

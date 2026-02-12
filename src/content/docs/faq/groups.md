@@ -10,13 +10,13 @@ description: Player Grouping Functionality in Music Assistant
 >
 > Do not delete or disable a player which is in a group while the group is playing
 
-Music Assistant uses four types of groups (these are outlined in the [Grouping Players](/ui#grouping-players) section and three of the types are described in detail below) which provides a flexible way to combine players together. When a group is powered on then playback to individual members of the group is no longer possible. To play to an individual member, the group must be powered off or the individal player must be removed from the group. If the group is still powered on then players can only be removed from [Temporary Sync Groups](#temporary-sync-group), or from [Sync Groups](#sync-groups) and [Universal Groups](#universal-groups) which have the dynamic member option enabled. When allowable, players can be removed by using the checkboxes in the [Player List](/ui#player-list) or by using the <a href="https://www.home-assistant.io/integrations/media_player/#media-control-actions" target="_blank" rel="noopener noreferrer">HA media_player.unjoin action</a>.
+Music Assistant uses four types of groups (these are outlined in the [Grouping Players](/ui/#grouping-players) section and three of the types are described in detail below) which provides a flexible way to combine players together. When a group is powered on then playback to individual members of the group is no longer possible. To play to an individual member, the group must be powered off or the individal player must be removed from the group. If the group is still powered on then players can only be removed from [Temporary Sync Groups](#temporary-sync-group), or from [Sync Groups](#sync-groups) and [Universal Groups](#universal-groups) which have the dynamic member option enabled. When allowable, players can be removed by using the checkboxes in the [Player List](/ui/#player-list) or by using the <a href="https://www.home-assistant.io/integrations/media_player/#media-control-actions" target="_blank" rel="noopener noreferrer">HA media_player.unjoin action</a>.
 
 See also the section on Announcements [Group Behaviour](/integration/announcements/#group-behaviour).
 
 ## Temporary Sync Group
 
-Temporary Sync Group players are configured via the [Player List](/ui#player-list) or HA action. This type of group provides a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
+Temporary Sync Group players are configured via the [Player List](/ui/#player-list) or HA action. This type of group provides a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
 
 ### Features
 
@@ -26,7 +26,7 @@ Temporary Sync Group players are configured via the [Player List](/ui#player-lis
 
 ### Known Issues / Notes
 
-- Players can be linked via the checkbox in the [Player List](/ui#player-list)
+- Players can be linked via the checkbox in the [Player List](/ui/#player-list)
 - Only like player types that support synced playback are allowed to be joined
 - When players are grouped in this way only the main player holds the queue. For example, player A has an existing queue and players B and C are joined to player A. If player A is turned off players B and C will stop
 - Some player types may pause momentarily as a new device is joined
@@ -38,7 +38,7 @@ These are permanent group players that are configured via the MA settings. These
 
 ![image](/assets/screenshots/syncgroup.png)
 
-After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. You need to specify a name for the group player. The order that the players are selected when the group is created will be the order that the players are shown when viewing the group in the [Player List](/ui#player-list).
+After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. You need to specify a name for the group player. The order that the players are selected when the group is created will be the order that the players are shown when viewing the group in the [Player List](/ui/#player-list).
 
 > [!NOTE]
 > The ADD GROUP PLAYER button is only visible if a player provider which supports perfect sync or the Universal Group player provider, has been added
@@ -70,7 +70,7 @@ Music Assistant has support for grouping dissimilar playback devices. Configurat
 
 ### Known Issues / Notes
 
-- This type of group should be avoided if a [Sync Group or Native Group](/ui#grouping-players) can be used
+- This type of group should be avoided if a [Sync Group or Native Group](/ui/#grouping-players) can be used
 - Universal Groups can include sync groups but not other universal groups
 - When adding a player to an already playing group, MA will try and join seamlessly but there may be a slight pause with some player types
 - The group will not power on if one of the child players is synced to another group

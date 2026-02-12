@@ -31,7 +31,7 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
 \* <i>imported means metadata is added to the database. No files are moved or downloaded</i>
 
 > [!NOTE]
-> If identical items (e.g. an album or track) have not been matched across providers or within a provider then navigate to the [Provider Details](/ui#provider-details) section of the item and use the options there to link them.
+> If identical items (e.g. an album or track) have not been matched across providers or within a provider then navigate to the [Provider Details](/ui/#provider-details) section of the item and use the options there to link them.
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
@@ -69,7 +69,7 @@ The Don't Stop The Music (DSTM) option can be enabled if a provider is available
 ### Radio Mode
 
 #### Starting from a Track or Album:
-Radio Mode retrieves similar tracks using the track's provider mappings (which is shown in the [Provider Details](/ui#provider-details) section in the UI). When you start from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first provider that supports the similar tracks feature (Apple Music,  Deezer, Spotify, Subsonic, Tidal, or YouTube Music). For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start with a track or album that's not in the library (i.e., directly from a music provider), that provider's similar tracks implementation is used.
+Radio Mode retrieves similar tracks using the track's provider mappings (which is shown in the [Provider Details](/ui/#provider-details) section in the UI). When you start from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first provider that supports the similar tracks feature (Apple Music,  Deezer, Spotify, Subsonic, Tidal, or YouTube Music). For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start with a track or album that's not in the library (i.e., directly from a music provider), that provider's similar tracks implementation is used.
 
 #### Starting from an Artist:
 Radio Mode works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all providers where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own provider for similar tracks. This means radio mode started from an artist typically produces a diverse mix of results from multiple providers, as each base track contributes similar tracks from its respective provider (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that provider's top tracks are used as the base.

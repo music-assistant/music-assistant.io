@@ -17,9 +17,9 @@ Music Assistant has support for music servers which work to the Jellyfin definit
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui#view-home) Supported | No |
+| [Recommendations](/ui/#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui#track-menu) | No |
+| [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
 | Login Method | Password |
 

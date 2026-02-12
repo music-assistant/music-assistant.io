@@ -15,9 +15,9 @@ The Podcast RSS Provider allows subscribing to podcast feeds. The RSS Feed only 
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Podcasts |
-| [Recommendations](/ui#view-home) Supported | No |
+| [Recommendations](/ui/#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui#track-menu) | No |
+| [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | Lossy, Variable Quality |
 | Login Method | None |
 

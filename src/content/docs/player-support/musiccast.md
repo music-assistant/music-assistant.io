@@ -18,7 +18,7 @@ Music Assistant has support for <a href="https://au.yamaha.com/en/products/conte
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player) the MusicCast provider also some unique settings in the `Generic settings` section for devices which support multiple zones
+In addition to the [Individual Player Settings](/settings/individual-player/) the MusicCast provider also some unique settings in the `Generic settings` section for devices which support multiple zones
 
 - <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching
 - <b>Turn off the zone when it leaves a group.</b> Toggle defines the power behaviour when the player leaves a group

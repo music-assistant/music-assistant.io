@@ -37,7 +37,7 @@ Also of note in this example is the icon shown in the input section where the co
 ## Groups
 <img src="/assets/screenshots/audiopipeline-groups.png" alt="image" style="width: 500px;"  loading="lazy" />
 
-The view will expand as necessary to show all [grouped players](/faq/groups). In the example above three players are shown with a variety of filters, output qualities and player types.
+The view will expand as necessary to show all [grouped players](/faq/groups/). In the example above three players are shown with a variety of filters, output qualities and player types.
 
 A point to note in this example is the orange dot beside the third Output section label. Whilst no quality would have been lost due to the Output Limiter or <a href="https://www.youtube.com/watch?v=tIIK2wuXHuY" target="_blank" rel="noopener noreferrer">the upsampling to 48kHz</a>, the change to the <a href="https://www.adobe.com/au/creativecloud/video/discover/best-audio-format.html" target="_blank" rel="noopener noreferrer">lossy MP3 codec</a> necessitates the indication that this is now only Low Quality.
 

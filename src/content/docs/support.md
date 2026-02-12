@@ -8,7 +8,7 @@ Because this project originated out of a Home Assistant integration, all enduser
 
 Direct links are:
 
-- <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issue Tracker</a> to create bug reports. Please review the [troubleshooting](/faq/troubleshooting) page first and check if your issue has already been reported. When raising a report please include detailed info and logfiles.
+- <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issue Tracker</a> to create bug reports. Please review the [troubleshooting](/faq/troubleshooting/) page first and check if your issue has already been reported. When raising a report please include detailed info and logfiles.
 - <a href="https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas" target="_blank" rel="noopener noreferrer">Feature Requests</a>: Give your vote to an existing request, join the discussion or add a new request.
 - <a href="https://github.com/orgs/music-assistant/discussions/categories/q-a" target="_blank" rel="noopener noreferrer">Q&A Section</a> Frequently asked questions and tutorials
 

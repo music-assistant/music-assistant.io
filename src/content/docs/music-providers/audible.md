@@ -16,9 +16,9 @@ Music Assistant has support for streaming from Audible. Contributed and maintain
 | Subscription FREE | No |
 | Self-Hosted Local Media   | No |
 | Media Types Supported | Podcasts |
-| [Recommendations](/ui#view-home) Supported | No |
+| [Recommendations](/ui/#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui#track-menu) | No |
+| [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | Lossy, AAC Variable Bitrate |
 | Login Method | OAuth |
 

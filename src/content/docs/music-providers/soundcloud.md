@@ -13,9 +13,9 @@ Music Assistant has support for Soundcloud. Contributed by <a href="https://gith
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui#view-home) Supported | No |
+| [Recommendations](/ui/#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui#track-menu) | No |
+| [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | Lossy AAC (256kbps) |
 | Login Method | Cookie |
 

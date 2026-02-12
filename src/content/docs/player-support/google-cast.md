@@ -16,7 +16,7 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player) the Google Cast provider also has some unique settings as follows:
+In addition to the [Individual Player Settings](/settings/individual-player/) the Google Cast provider also has some unique settings as follows:
 
 - <b>Enable experimental Sendspin mode</b>. When enabled, Music Assistant will use the Sendspin protocol for synchronized audio streaming instead of the standard Chromecast protocol. This allows grouping Chromecast devices with other Sendspin compatible players for multi-room synchronized playback. When enabled, a new player will appear named "PlayerName (Sendspin)" - use this Sendspin player when creating groups with other Sendspin clients, not the original Chromecast player
 - <b>Sendspin sync delay.</b> Static delay in milliseconds to adjust audio synchronization. Positive values delay playback, negative values advance it. Use this to compensate for device specific audio latency
@@ -28,7 +28,7 @@ In addition to the [Individual Player Settings](/settings/individual-player) the
 - Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network/subnet as your Music Assistant server. Additionally, ensure that multicast traffic (more specifically mDNS) can travel freely as that is used for the discovery of players
 - After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
-- It is possible to group cast players via a [Universal Group](/faq/groups#universal-groups) although they may not play in sync
+- It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - TV/Video devices (not the AV dongles) are disabled by default
 - Cast Groups containing only a stereo pair will not work
 - Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is, queue flow mode on (generic settings) and HTTP Profile 2 and Output Codec MP3 (advanced settings)

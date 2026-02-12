@@ -16,7 +16,7 @@ Music Assistant has support for Alexa devices. This component is contributed and
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player) the Alexa provider also has a unique setting in the Advanced section and a unique Presets section
+In addition to the [Individual Player Settings](/settings/individual-player/) the Alexa provider also has a unique setting in the Advanced section and a unique Presets section
 
 - <b>Advanced - Enable Display Support.</b> ...................
 

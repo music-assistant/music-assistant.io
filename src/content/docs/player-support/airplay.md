@@ -19,7 +19,7 @@ The Airplay provider has a setting `Enable late joining` which can be used to al
 
 Support exists for devices which require pairing with a PIN before they can be used (e.g. Apple TV's) for the AirPlay 1 (RAOP) protocol. Select the `START THE AIRPLAY PAIRING PROCESS` button to register the PIN and when successful, click the `SAVE` button to save the authorisation key.
 
-In addition to the [Individual Player Settings](/settings/individual-player) the AirPlay provider's indivudal players also have a unique section called `AirPlay Specific Settings`. The available settings are:
+In addition to the [Individual Player Settings](/settings/individual-player/) the AirPlay provider's indivudal players also have a unique section called `AirPlay Specific Settings`. The available settings are:
 
 - <b>AirPlay version to use for streaming.</b> Most devices will default to AirPlay 1 (RAOP). Devices known to have a bad implementation of AirPlay 1 or are known to only support AirPlay 2 will default to AirPlay 2.
 - <b>Device password.</b> If the device requires a password to play then it is added here

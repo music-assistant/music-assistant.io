@@ -13,6 +13,6 @@ There are three controls available, Bass, Mid and Treble. These correspond to a 
 
 ## Technical Details
 
-The tone controls apply a basic three frequency [Parametric Equaliser](/dsp/parametriceq) filter to the audio signal utilising the Peak (aka Bell) filter type. The following image shows the resultant effect of setting all three controls to +4.0dB
+The tone controls apply a basic three frequency [Parametric Equaliser](/dsp/parametriceq/) filter to the audio signal utilising the Peak (aka Bell) filter type. The following image shows the resultant effect of setting all three controls to +4.0dB
 
 ![Tone Controls](/assets/screenshots/tone-controls.jpg)

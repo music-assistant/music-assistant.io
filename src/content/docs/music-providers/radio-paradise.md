@@ -18,9 +18,9 @@ Music Assistant has support for <a href="https://radioparadise.com/" target="_bl
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Radio |
-| [Recommendations](/ui#view-home) Supported | No |
+| [Recommendations](/ui/#view-home) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui#track-menu) | No |
+| [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | Lossless FLAC (16 bit, 44.1 kHz) |
 | Login Method | None |
 

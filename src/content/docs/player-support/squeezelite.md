@@ -13,13 +13,13 @@ Squeezelite clients are available for, and can run on, almost any hardware from 
 ## Features
 
 - Squeezelite client devices are automatically detected by Music Assistant
-- Individual player [DSP settings](/settings/individual-player/#dsp-settings) will be used for [group](/faq/groups) playback
+- Individual player [DSP settings](/settings/individual-player/#dsp-settings) will be used for [group](/faq/groups/) playback
 - Squeezelite client device buttons support
   - Any physical control buttons on the device should be supported as long as [flow mode](/faq/tech-info/#track-queueing) is not enabled
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player) the Squeezelite provider also has a unique setting in the Advanced section and a unique Presets section
+In addition to the [Individual Player Settings](/settings/individual-player/) the Squeezelite provider also has a unique setting in the Advanced section and a unique Presets section
 
 - <b>Advanced - Enable Display Support.</b> Some Squeezelite hardware have a display and this setting enables support. When enabled, a second option is made available to select the `Visualization type`
 - <b>Presets.</b> Real Squeezebox hardware or jive(lite) based emulators support presets. This section allows the assignment of [Playlists](/usage/#playlists) or Radio Stations to those presets

@@ -6,7 +6,7 @@ description: The Home Assistant Plugin provides a connection from HA to MA
 
 The Home Assistant Plugin provides a connection from HA to MA. This will allow HA players to be visible in MA and be streamed to.
 
-To achieve this functionality both the HA plugin and the [HA Player Provider](/player-support/ha) need to be installed.
+To achieve this functionality both the HA plugin and the [HA Player Provider](/player-support/ha/) need to be installed.
 
 ## Features
 
@@ -15,7 +15,7 @@ To achieve this functionality both the HA plugin and the [HA Player Provider](/p
  
 ## Configuration
 
-Before the Plugin can be added the HA Integration must be [installed](/integration/installation). 
+Before the Plugin can be added the HA Integration must be [installed](/integration/installation/). 
 
 - Navigate to MA SETTINGS>>PROVIDERS and add the plug-in provider
 - If using the Music Assistant add-on (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
