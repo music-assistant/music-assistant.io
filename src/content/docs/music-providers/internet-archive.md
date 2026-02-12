@@ -1,5 +1,5 @@
 ---
-title: "Internet Archive Provider"
+title: "Internet Archive"
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-title: "MA play_announcement Action"
+title: "Play Announcement Action"
 ---
 
 # MA play_announcement Action

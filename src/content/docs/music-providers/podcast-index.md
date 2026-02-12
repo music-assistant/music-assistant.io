@@ -1,5 +1,5 @@
 ---
-title: "Podcast Index Provider"
+title: "Podcast Index"
 ---
 
 # Podcast Index Provider <img src="/assets/icons/podcast-index-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

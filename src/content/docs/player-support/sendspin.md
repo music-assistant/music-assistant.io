@@ -1,5 +1,5 @@
 ---
-title: "Sendspin-audio Provider"
+title: "Sendspin"
 ---
 
 # Sendspin-audio Provider  <img src="/assets/icons/sendspin-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

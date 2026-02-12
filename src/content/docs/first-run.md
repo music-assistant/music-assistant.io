@@ -1,5 +1,5 @@
 ---
-title: "Initial Authentication Setup"
+title: "First Run (Authentication)"
 ---
 
 # Initial Authentication Setup

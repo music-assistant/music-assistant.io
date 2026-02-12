@@ -1,5 +1,5 @@
 ---
-title: "Music Assistant Desktop App"
+title: "Desktop Companion App"
 ---
 
 # Music Assistant Desktop App

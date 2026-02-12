@@ -1,5 +1,5 @@
 ---
-title: "Radio Browser Provider"
+title: "Radio Browser"
 ---
 
 # Radio Browser Provider <img src="/assets/icons/radiobrowser_icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

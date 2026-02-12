@@ -1,5 +1,5 @@
 ---
-title: "ARD Audiothek Provider"
+title: "ARD Audiothek"
 ---
 
 # ARD Audiothek Provider <img src="/assets/icons/ard-audiothek.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

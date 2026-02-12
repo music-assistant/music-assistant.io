@@ -1,5 +1,5 @@
 ---
-title: "BBC Sounds Provider"
+title: "BBC Sounds"
 ---
 
 # BBC Sounds Provider <img src="/assets/icons/bbcsounds-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

@@ -1,5 +1,5 @@
 ---
-title: "Builtin Provider"
+title: "Builtin"
 ---
 
 # Builtin Provider  <img src="/assets/icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

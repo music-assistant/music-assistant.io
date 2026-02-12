@@ -1,5 +1,5 @@
 ---
-title: "Phish.in Provider"
+title: "Phish.in"
 ---
 
 # Phish.in Provider <img src="/assets/icons/phish-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

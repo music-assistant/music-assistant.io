@@ -1,5 +1,5 @@
 ---
-title: "SiriusXM Provider"
+title: "SiriusXM"
 ---
 
 # SiriusXM Provider <img src="/assets/icons/siriusxm-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

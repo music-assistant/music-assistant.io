@@ -1,5 +1,5 @@
 ---
-title: "DI.fm Network Provider"
+title: "DI.fm Network"
 ---
 
 # DI.fm Network Provider <img src="/assets/icons/difm-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

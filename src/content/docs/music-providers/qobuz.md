@@ -1,5 +1,5 @@
 ---
-title: "Qobuz Provider"
+title: "Qobuz"
 ---
 
 # Qobuz Provider <img src="/assets/icons/qobuz-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

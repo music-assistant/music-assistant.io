@@ -1,5 +1,5 @@
 ---
-title: "Nugs.net Provider"
+title: "Nugs.net"
 ---
 
 # Nugs.net Provider <img src="/assets/icons/nugsnet-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

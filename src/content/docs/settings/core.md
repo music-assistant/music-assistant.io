@@ -1,5 +1,5 @@
 ---
-title: "MA System Settings"
+title: "System Settings"
 ---
 
 # MA System Settings <img src="/assets/icons/settings-core-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

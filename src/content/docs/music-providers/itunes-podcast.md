@@ -1,5 +1,5 @@
 ---
-title: "iTunes Podcast Search Provider"
+title: "iTunes Podcast Search"
 ---
 
 # iTunes Podcast Search Provider <img src="/assets/icons/itunes-podcast-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

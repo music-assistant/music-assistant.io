@@ -1,5 +1,5 @@
 ---
-title: "Spotify Provider"
+title: "Spotify"
 ---
 
 # Spotify Provider <img src="/assets/icons/spotify-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

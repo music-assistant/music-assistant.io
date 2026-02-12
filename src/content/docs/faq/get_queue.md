@@ -1,5 +1,5 @@
 ---
-title: "MA get_queue Action"
+title: "Get Queue Action"
 ---
 
 # MA get_queue Action

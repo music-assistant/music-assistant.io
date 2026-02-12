@@ -1,5 +1,5 @@
 ---
-title: "User Interface Settings"
+title: "User Interface"
 ---
 
 # User Interface Settings <img src="/assets/icons/UI-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

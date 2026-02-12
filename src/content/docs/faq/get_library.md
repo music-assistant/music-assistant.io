@@ -1,5 +1,5 @@
 ---
-title: "MA get_library Action"
+title: "Get Library Action"
 ---
 
 # MA get_library Action

@@ -1,5 +1,5 @@
 ---
-title: "YouTube Music Provider"
+title: "YouTube Music"
 ---
 
 # YouTube Music Provider <img src="/assets/icons/ytm-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

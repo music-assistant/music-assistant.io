@@ -1,5 +1,5 @@
 ---
-title: "Remote Access Settings"
+title: "Remote Access"
 ---
 
 # Remote Access Settings <img src="/assets/icons/remote-access-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

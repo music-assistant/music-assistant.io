@@ -1,5 +1,5 @@
 ---
-title: "Deezer Provider"
+title: "Deezer"
 ---
 
 # Deezer Provider <img src="/assets/icons/deezer-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

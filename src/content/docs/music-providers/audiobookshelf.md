@@ -1,5 +1,5 @@
 ---
-title: "audiobookshelf Provider"
+title: "Audiobookshelf"
 ---
 
 # audiobookshelf Provider <img src="/assets/icons/audiobookshelf-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

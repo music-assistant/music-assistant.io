@@ -1,5 +1,5 @@
 ---
-title: "Plex Provider"
+title: "Plex"
 ---
 
 # Plex Provider <img src="/assets/icons/plex-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

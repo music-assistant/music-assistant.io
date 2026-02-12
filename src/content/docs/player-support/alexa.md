@@ -1,5 +1,5 @@
 ---
-title: "Alexa Devices"
+title: "Alexa"
 ---
 
 # Alexa Devices <img src="/assets/icons/alexa-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

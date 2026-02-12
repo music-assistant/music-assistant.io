@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Translations"
 ---
 
 If you're following the frontend repo, you may have seen that we are now using Lokalise as a central translation management portal.

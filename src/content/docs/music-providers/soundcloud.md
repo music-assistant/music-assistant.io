@@ -1,5 +1,5 @@
 ---
-title: "SoundCloud Provider"
+title: "SoundCloud"
 ---
 
 # SoundCloud Provider <img src="/assets/icons/soundcloud-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

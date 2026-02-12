@@ -1,5 +1,5 @@
 ---
-title: "iBroadcast Provider"
+title: "iBroadcast"
 ---
 
 # iBroadcast Provider <img src="/assets/icons/ibroadcast-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

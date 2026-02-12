@@ -1,5 +1,5 @@
 ---
-title: "Tidal Provider"
+title: "Tidal"
 ---
 
 # Tidal Provider <img src="/assets/icons/tidal-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

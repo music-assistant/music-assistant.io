@@ -1,5 +1,5 @@
 ---
-title: "MA transfer_queue Action"
+title: "Transfer Queue Action"
 ---
 
 # MA transfer_queue Action

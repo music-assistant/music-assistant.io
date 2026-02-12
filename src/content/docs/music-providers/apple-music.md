@@ -1,5 +1,5 @@
 ---
-title: "Apple Music Provider"
+title: "Apple Music"
 ---
 
 # Apple Music Provider <img src="/assets/icons/apple-music.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

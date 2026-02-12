@@ -1,5 +1,5 @@
 ---
-title: "MA play_media Action"
+title: "Play Media Action"
 ---
 
 # MA play_media Action

@@ -1,5 +1,5 @@
 ---
-title: "gPodder Provider"
+title: "gPodder"
 ---
 
 # gPodder Provider <img src="/assets/icons/gpodder-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

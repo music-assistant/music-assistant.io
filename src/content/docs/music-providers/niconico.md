@@ -1,5 +1,5 @@
 ---
-title: "Nico Nico Provider"
+title: "Nico Nico Video"
 ---
 
 # Nico Nico Provider <img src="/assets/icons/niconico-logo.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

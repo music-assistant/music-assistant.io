@@ -1,5 +1,5 @@
 ---
-title: "Podcast RSS Feed Provider"
+title: "Podcast RSS Feed"
 ---
 
 # Podcast RSS Feed Provider <img src="/assets/icons/rss-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

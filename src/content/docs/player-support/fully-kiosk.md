@@ -1,5 +1,5 @@
 ---
-title: "Fully Kiosk Browser"
+title: "Fully Kiosk"
 ---
 
 # Fully Kiosk Browser <img src="/assets/icons/fully-kiosk.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

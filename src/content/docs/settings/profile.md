@@ -1,5 +1,5 @@
 ---
-title: "MA Profile Settings"
+title: "Profile Settings"
 ---
 
 # MA Profile Settings <img src="/assets/icons/profile-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

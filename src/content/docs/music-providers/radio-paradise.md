@@ -1,5 +1,5 @@
 ---
-title: "Radio Paradise Provider"
+title: "Radio Paradise"
 ---
 
 # Radio Paradise Provider <img src="/assets/icons/radioparadise-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

@@ -1,5 +1,5 @@
 ---
-title: "TuneIn Provider"
+title: "TuneIn"
 ---
 
 # TuneIn Provider <img src="/assets/icons/tunein-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

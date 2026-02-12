@@ -1,5 +1,5 @@
 ---
-title: "MA search Action"
+title: "Search Action"
 ---
 
 # MA search Action
