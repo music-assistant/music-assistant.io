@@ -3,6 +3,7 @@
   --sl-color-accent-low: #50a3f31a;
   --sl-color-accent: #50a3f3;
   --sl-color-accent-high: #98c9f8;
+  --sl-content-width: 50rem;
 }
 
 :root[data-theme='dark'] {
@@ -52,12 +53,33 @@ article img[src*="openhomefoundation.org"] {
   color: white !important;
 }
 
+.sl-markdown-content ul,
+.sl-markdown-content ol {
+  padding-left: 1rem;
+}
+
 .sl-markdown-content p img,
 .sl-markdown-content li img {
   max-width: 100%;
   height: auto;
   display: inline-block;
   margin: 0;
+}
+
+@media (max-width: 767px) {
+  .sl-heading-wrapper.level-h1:has(img) {
+    position: relative;
+    padding-right: 3.5rem;
+  }
+
+  .sl-heading-wrapper.level-h1 img {
+    width: 50px !important;
+    margin: 0.5rem 0 0;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 /* Details/Summary Accordion Styling - Scoped to main content only */
@@ -77,13 +99,14 @@ article img[src*="openhomefoundation.org"] {
   user-select: none;
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
   color: var(--sl-color-white);
-  flex-wrap: wrap;
   overflow-wrap: break-word;
   word-wrap: break-word;
   box-sizing: border-box;
+  text-wrap: balance;
+  line-height: 1.4;
 }
 
 .sl-markdown-content details summary::-webkit-details-marker {
@@ -96,6 +119,7 @@ article img[src*="openhomefoundation.org"] {
   transition: transform 0.2s ease;
   font-size: 0.75em;
   color: var(--sl-color-accent);
+  margin-right: 0;
 }
 
 .sl-markdown-content details[open] summary::before {
