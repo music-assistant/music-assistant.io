@@ -8,7 +8,7 @@ title: "Music Assistant Desktop App"
 [![discord](https://img.shields.io/discord/753947050995089438?label=Discord&logo=discord&color=5865F2)](https://discord.gg/kaVm8hGpne)
 [![sponsor](https://img.shields.io/github/sponsors/music-assistant?label=sponsors)](https://github.com/sponsors/music-assistant)
 [![sponsor](https://img.shields.io/static/v1?label=Licence&message=Apache-2.0&color=000)](https://github.com/music-assistant/desktop-app/blob/main/LICENSE)
-!<a href="https://img.shields.io/static/v1?label=Bundled%20Size&message=25.1MB&color=0974B4" target="_blank" rel="noopener noreferrer">sponsor</a>
+![sponsor](https://img.shields.io/static/v1?label=Bundled%20Size&message=25.1MB&color=0974B4)
 [![sponsor](https://img.shields.io/static/v1?label=Stage&message=Alpha&color=2BB4AB)](https://github.com/music-assistant/tauri-companion-app/blob/main/LICENSE)
 
 The desktop app for Music Assistant!
