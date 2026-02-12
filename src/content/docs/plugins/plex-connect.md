@@ -7,9 +7,8 @@ description: Features and Notes for the Plex Connect Plugin
 
 Music Assistant has the ability to expose MA players to Plex clients like Plexamp for discovery and control.
 
-:::note
-This plugin requires the Plex music provider to be configured.
-:::
+> [!NOTE]
+> This plugin requires the Plex music provider to be configured.
 
 ## Features
 

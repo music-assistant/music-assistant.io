@@ -6,9 +6,8 @@ title: "SiriusXM"
 
 Music Assistant has support for streaming live radio stations from SiriusXM. Contributed and maintained by <a href="https://github.com/btoconnor" target="_blank" rel="noopener noreferrer">btoconnor</a>
 
-:::note
-- A paid subscription is required to add this Music Provider. 
-:::
+> [!NOTE]
+> - A paid subscription is required to add this Music Provider.
     
 ## Features
 

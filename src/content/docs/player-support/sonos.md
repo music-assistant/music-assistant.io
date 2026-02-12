@@ -24,9 +24,10 @@ In order to use the AirPlay functionality of Sonos devices the AirPlay provider 
 
 If the `Enable AirPlay` option is then selected, the playback command(s) will be redirected to the AirPlay player, meaning that the AirPlay protocol will be used to play the audio on that Sonos speaker. Other Sonos players can be synced with this player and additionally it is possible to group any AirPlay capable speakers/players with the AirPlay-player of the Sonos speaker. This means it is possible to play the same audio in perfect sync to a combination of AirPlay and Sonos speakers.
 
-:::note[Note]
-You can also accomplish this by bypassing the whole Sonos integration and only use the AirPlay-equivalent of all the Sonos speakers but this is not preferable as not all Sonos speakers have AirPlay capabilities and syncing a player with the AirPlay protocol introduces a small silence due to the stream restart.
-:::
+> [!NOTE]
+> **Note**
+>
+> You can also accomplish this by bypassing the whole Sonos integration and only use the AirPlay-equivalent of all the Sonos speakers but this is not preferable as not all Sonos speakers have AirPlay capabilities and syncing a player with the AirPlay protocol introduces a small silence due to the stream restart.
 
 ## Settings
 

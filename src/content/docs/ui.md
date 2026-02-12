@@ -11,9 +11,8 @@ description: A Walkthrough of the Music Assistant User Interface
 
 This menu's appearance can be configured in the settings. It can be placed vertically on the left (as shown) or horizontally at the bottom. The options are displayed in the order they were selected. Any of the options can be hidden. If the settings icon is hidden from this menu it is available in the top right of the HOME screen.
 
-:::caution
-If you remove both the Home and Settings icons then you will be locked out. In that case you will need to manually enter the path (e.g. `http://192.168.1.166:8095/#/settings/frontend`) or clear the browser cookies to regain access to the settings page.
-:::
+> [!CAUTION]
+> If you remove both the Home and Settings icons then you will be locked out. In that case you will need to manually enter the path (e.g. `http://192.168.1.166:8095/#/settings/frontend`) or clear the browser cookies to regain access to the settings page.
 
 ***************************************************************
 
@@ -52,15 +51,13 @@ When lyrics are available for the track being played then the LYRICS selectable 
 
 [![image](/assets/screenshots/UI-speakers-menu.png)](/assets/screenshots/UI-speakers-menu.png)
 
-:::note
-The volume shown against a player group is the AVERAGE of the volumes of each individal player. When the group volume is changed then each player is changed by a proportionate amount.
-:::
+> [!NOTE]
+> The volume shown against a player group is the AVERAGE of the volumes of each individal player. When the group volume is changed then each player is changed by a proportionate amount.
 
 When a [player group](faq/groups) is powered on the members of that group will disappear from the player list and individual playback to those players will not be possible. In order to playback to an individual player then either power off the group or remove the player from the group.
 
-:::note
-The MDI icon shown against each player can be changed in the player settings.
-:::
+> [!NOTE]
+> The MDI icon shown against each player can be changed in the player settings.
 ***************************************************************
 
 ## Grouping Players
@@ -76,13 +73,15 @@ With TEMPORARY SYNC GROUPs the number of players being streamed to can be seen d
 
 ![image](/assets/screenshots/group_indication.png)
 
-:::note[Note]
-If an attempt is made to power on a group and a member of that group is already a member of another powered on group then an error will be shown.
-:::
+> [!NOTE]
+> **Note**
+>
+> If an attempt is made to power on a group and a member of that group is already a member of another powered on group then an error will be shown.
 
-:::note[Note]
-If a player is taken over by another app, MA will not have knowledge of that, and the group may no longer function correctly. Additionally, if a player of a syncgroup tries to join late (e.g. it was unpowered) it will not be synced to the group.
-:::
+> [!NOTE]
+> **Note**
+>
+> If a player is taken over by another app, MA will not have knowledge of that, and the group may no longer function correctly. Additionally, if a player of a syncgroup tries to join late (e.g. it was unpowered) it will not be synced to the group.
 ***************************************************************
 
 ## Play Button ![image](/assets/icons/play-button.png)
@@ -94,9 +93,10 @@ Clicking/touching the Play Button will either execute the default play action fo
 - the first time the MA view is entered; or
 - if the player is not playing (or paused)
 
-:::note[Note]
-If there is ever uncertainty as to whether the item will immediately start playing use a right click or long press to bring up the menu.
-:::
+> [!NOTE]
+> **Note**
+>
+> If there is ever uncertainty as to whether the item will immediately start playing use a right click or long press to bring up the menu.
 
 ***************************************************************
 
@@ -180,9 +180,8 @@ The ID shown against the streaming provider may be used in automations and scrip
 
 [![image](/assets/screenshots/UI-track-show-info.png)](/assets/screenshots/UI-track-show-info.png)
 
-:::note
-The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA. 
-:::
+> [!NOTE]
+> The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
 ***************************************************************
 
 ## View - Browse
@@ -191,9 +190,10 @@ Entering the Browse view will present a list of the installed [Music Providers](
 
 When viewing a provider you will only see what is already in the Library of the Streaming Providers. For the local Providers you will see all files and if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
 
-:::caution[Caution]
-Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
-:::
+> [!CAUTION]
+> **Caution**
+>
+> Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
 
 It is this view that is used to select radio stations from the [Radio Browser](music-providers/radio-browser) provider.
 

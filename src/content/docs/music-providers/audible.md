@@ -6,9 +6,8 @@ title: "Audible"
 
 Music Assistant has support for streaming from Audible. Contributed and maintained by <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a>
 
-:::note
-A paid subscription is required for this provider
-:::
+> [!NOTE]
+> A paid subscription is required for this provider
 
 ## Features
 

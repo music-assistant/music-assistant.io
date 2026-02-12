@@ -6,9 +6,8 @@ title: "iBroadcast"
 
 Music Assistant has support for streaming your music from <a href="https://www.ibroadcast.com/" target="_blank" rel="noopener noreferrer">iBroadcast</a>. Contributed and maintained by <a href="https://github.com/robsonke" target="_blank" rel="noopener noreferrer">robsonke</a>
 
-:::note
-Both the free and paid subscription options are supported
-:::
+> [!NOTE]
+> Both the free and paid subscription options are supported
     
 ## Features
 

@@ -6,10 +6,9 @@ title: "Apple Music"
 
 Music Assistant has support for <a href="https://music.apple.com/" target="_blank" rel="noopener noreferrer">Apple Music</a>! Contributed and maintained by <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener noreferrer">MarvinSchenkel</a>
 
-:::note
-- A paid subscription is required to add this Music Provider. 
-- Audio playback is not officially supported by Apple, use at your own risk
-:::
+> [!NOTE]
+> - A paid subscription is required to add this Music Provider. 
+> - Audio playback is not officially supported by Apple, use at your own risk
 
 ## Features
 
@@ -37,9 +36,8 @@ Click the **Authenticate with Apple Music** button, then in the pop-up window si
 
 [![Preview image](/assets/screenshots/apple-music-auth-0.png)](/assets/screenshots/apple-music-auth-0.png)
 
-:::note
-This token will expire and needs to be re-authenticated manually after 180 days.
-:::
+> [!NOTE]
+> This token will expire and needs to be re-authenticated manually after 180 days.
     
 ### Settings
 

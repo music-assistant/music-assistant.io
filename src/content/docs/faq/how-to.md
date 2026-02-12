@@ -21,9 +21,8 @@ Similarly, if the album name is ambiguous you can specify the artist name first 
 
 You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](../ui.md/#view-individual-artist) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
 
-:::note
-URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
-:::
+> [!NOTE]
+> URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
 
 URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system provider added to MA then `filesystem_smb` can be used.
 

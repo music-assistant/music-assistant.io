@@ -13,9 +13,10 @@ General Notes:
 - If you remove a provider a cleanup of the database will be done but it takes a little time to complete. If you still see entries from a deleted provider after some time, then try a MA restart to retrigger the cleanup process.
 - Music providers are added by navigating to MA Settings and then Providers and then clicking on ADD A NEW PROVIDER. (In the image below the view is filtered to show just the music providers - this is optional)
 
-:::tip[Note]
-If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [PROVIDER DETAILS](../ui#provider-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
-:::
+> [!TIP]
+> **Note**
+>
+> If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [PROVIDER DETAILS](../ui#provider-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
 
 ![image](/assets/screenshots/add-music-provider.png)
 

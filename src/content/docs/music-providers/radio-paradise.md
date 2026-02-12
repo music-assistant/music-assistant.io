@@ -6,9 +6,10 @@ title: "Radio Paradise"
 
 Music Assistant has support for <a href="https://radioparadise.com/" target="_blank" rel="noopener noreferrer">Radio Paradise</a> which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
-:::tip[Donate]
-Radio Paradise exists due to the generosity of their donors. If you are using this provider consider supporting them https://radioparadise.com/support
-:::
+> [!TIP]
+> **Donate**
+>
+> Radio Paradise exists due to the generosity of their donors. If you are using this provider consider supporting them https://radioparadise.com/support
 
 ## Features
 

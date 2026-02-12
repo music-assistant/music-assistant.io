@@ -8,9 +8,10 @@ title: "Sendspin"
 
 Because Sendspin is **license-free and open source**, anyone can build apps, devices, and integrations using the protocol. The specification is available at <a href="https://github.com/Sendspin/spec" target="_blank" rel="noopener noreferrer">github.com/Sendspin/spec</a>.
 
-:::caution[Technical Preview]
-Sendspin and its implementation in Music Assistant are currently in **technical preview**. While functional, the protocol and implementation may change.
-:::
+> [!CAUTION]
+> **Technical Preview**
+>
+> Sendspin and its implementation in Music Assistant are currently in **technical preview**. While functional, the protocol and implementation may change.
     
 ## Features
 
@@ -78,9 +79,8 @@ The audio codec used depends on the connection and platform:
 - **Local connections** (on the same network): FLAC (lossless) is used on desktop browsers and Android. iOS, iPadOS, and Safari use Opus.
 - **Remote connections** (via WebRTC): All browsers use Opus.
 
-:::note
-Firefox on Android does not support remote (WebRTC) playback.
-:::
+> [!NOTE]
+> Firefox on Android does not support remote (WebRTC) playback.
 
 ### Connection Methods
 

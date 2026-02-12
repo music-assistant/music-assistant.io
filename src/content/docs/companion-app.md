@@ -15,13 +15,13 @@ The desktop app for Music Assistant!
 
 **Download for** macOS (<a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_aarch64.dmg" target="_blank" rel="noopener noreferrer">Apple Silicon</a> | <a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_x64.dmg" target="_blank" rel="noopener noreferrer">Intel</a>) · <a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_x64_en-US.msi" target="_blank" rel="noopener noreferrer">Windows</a> · Linux (<a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_amd64.deb" target="_blank" rel="noopener noreferrer">Debian</a> | <a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_amd64.AppImage" target="_blank" rel="noopener noreferrer">Other</a>)
 
-:::tip[This is still in very early alpha. Bugs *will* be present.]
-Please help finding them. You can report any bugs on the <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord server</a> or in the <a href="https://github.com/music-assistant/tauri-companion-app/issues" target="_blank" rel="noopener noreferrer">repo issues</a>
-:::
+> [!TIP]
+> **This is still in very early alpha. Bugs *will* be present.**
+>
+> Please help finding them. You can report any bugs on the <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord server</a> or in the <a href="https://github.com/music-assistant/tauri-companion-app/issues" target="_blank" rel="noopener noreferrer">repo issues</a>
 
-:::note
-There aren't apps available yet for Android or iOS
-:::
+> [!NOTE]
+> There aren't apps available yet for Android or iOS
 
 ## Setup
 

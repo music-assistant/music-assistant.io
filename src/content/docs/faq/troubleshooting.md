@@ -55,9 +55,8 @@ The following is required in ALL reports as the MA team is small and you need to
 - What is working (e.g. player works with music provider X but not Y)
 - What you have tried from this page that hasn't helped (This is very important!)
 
-:::note
-You can retrieve the full MA logs by going to the MA settings and clicking on CORE
-:::
+> [!NOTE]
+> You can retrieve the full MA logs by going to the MA settings and clicking on CORE
 
 ## A provider isn't working
 

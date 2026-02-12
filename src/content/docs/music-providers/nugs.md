@@ -6,9 +6,8 @@ title: "Nugs.net"
 
 Music Assistant has support for streaming your music from <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a>. Contributed and maintained by <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a>
 
-:::note
-A paid subscription is required to use this provider
-:::
+> [!NOTE]
+> A paid subscription is required to use this provider
     
 ## Features
 

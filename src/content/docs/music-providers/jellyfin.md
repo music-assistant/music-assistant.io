@@ -7,9 +7,8 @@ description: Documentation for using the Jellyfin music provider
 
 Music Assistant has support for music servers which work to the Jellyfin definition. This component was contributed by <a href="https://github.com/lokiberra" target="_blank" rel="noopener noreferrer">lokiberra</a>.
 
-:::caution
-Please be advised that this provider currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
-:::
+> [!CAUTION]
+> Please be advised that this provider currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
 
 ## Features
 
@@ -35,9 +34,8 @@ You will need to provide the following to Music Assistant:
 - <b>Username.</b> The username for the account to be used by Music Assistant to access the server
 - <b>Password.</b> The password for the account
 
-:::note
-It is recommended that IP address is used instead of the domain name to avoid problems if IPv6 name resolution fails 
-:::
+> [!NOTE]
+> It is recommended that IP address is used instead of the domain name to avoid problems if IPv6 name resolution fails
 ### Settings
 
 - <b>Advanced - Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. This is on by default

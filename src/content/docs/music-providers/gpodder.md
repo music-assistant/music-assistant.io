@@ -35,13 +35,11 @@ To setup this functionality you need:
 - <b>Password.</b>
 - <b>Device ID.</b>
 
-:::note
-The Device ID can be any ASCII string, but keep in mind, that this is used for syncing. Other clients must use the same Device ID
-:::
+> [!NOTE]
+> The Device ID can be any ASCII string, but keep in mind, that this is used for syncing. Other clients must use the same Device ID
 
-:::note
-`gpodder.net` is deliberately _not_ supported. The provider relies on frequent API calls, and the service hosted there is known to be either slow or fully unresponsive, which will slow down MA. Consider using a locally hosted alternative.
-:::
+> [!NOTE]
+> `gpodder.net` is deliberately _not_ supported. The provider relies on frequent API calls, and the service hosted there is known to be either slow or fully unresponsive, which will slow down MA. Consider using a locally hosted alternative.
 
 ### nextcloud-gpodder
 The provider supports <a href="https://apps.nextcloud.com/apps/gpoddersync" target="_blank" rel="noopener noreferrer">nextcloud-gpodder/gpoddersync</a>.

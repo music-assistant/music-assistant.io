@@ -159,3 +159,43 @@ article img[src*="openhomefoundation.org"] {
 .sl-markdown-content details a {
   color: var(--sl-color-accent);
 }
+
+/* GitHub Alert Styling */
+.markdown-alert {
+  border-left: 4px solid;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0;
+}
+
+.markdown-alert svg {
+  fill: currentColor;
+}
+
+.markdown-alert-note {
+  border-color: var(--sl-color-accent);
+  background: var(--sl-color-accent-low);
+}
+
+.markdown-alert-tip {
+  border-color: #00d100;
+  background: #00d10020;
+}
+
+.markdown-alert-caution {
+  border-color: #ffa500;
+  background: #ffa50020;
+}
+
+.markdown-alert-warning {
+  border-color: #ff4500;
+  background: #ff450020;
+}
+
+.markdown-alert-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}

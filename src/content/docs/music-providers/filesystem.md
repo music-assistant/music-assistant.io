@@ -39,9 +39,8 @@ Separate providers must be added for Music, Audiobooks and Podcasts.
 
 If the files are stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, the filesystem (local disk) provider should be selected and then the path to the files provided. 
 
-:::note
-For Home Assistant OS only the `/media` folder can be accessed. Docker users can mount their own folder paths. It is not possible to mount a folder from Home Assistant into the `/media` path.
-:::
+> [!NOTE]
+> For Home Assistant OS only the `/media` folder can be accessed. Docker users can mount their own folder paths. It is not possible to mount a folder from Home Assistant into the `/media` path.
 
 **Audio files are on a remote share, such as a NAS or other (SMB/CIFS) server**
 
@@ -74,9 +73,10 @@ In addition to the settings outlined above to configure the provider there are a
 - Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
 - Embedded album thumbs will be extracted from audio files. However, performance can be improved and disk space saved by providing a single local artwork file vs. embedding the same artwork in all files
 
-:::tip[Local Artwork is Optimal]
-Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
-:::
+> [!TIP]
+> **Local Artwork is Optimal**
+>
+> Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
 
 - Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
 - Local tracks and albums will be linked to the same tracks or albums on any provider (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
@@ -128,9 +128,8 @@ The left column corresponds to the TAG NAME shown in the <a href="https://picard
 
 ### Manually Adjusting Tags
 
-:::danger
-The following should be considered as advanced. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between providers
-:::
+> [!WARNING]
+> The following should be considered as advanced. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between providers
 
 Normally it is best to leave the Picard tags unchanged. However, some people do not agree with Musicbrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> To separate these out the tags can be edited as follows:
 

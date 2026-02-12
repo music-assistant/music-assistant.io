@@ -6,10 +6,11 @@ title: "Deezer"
 
 Music Assistant has support for <a href="https://www.deezer.com/" target="_blank" rel="noopener noreferrer">Deezer</a>. Contributed and maintained by <a href="https://github.com/arctixdev" target="_blank" rel="noopener noreferrer">arctixdev</a> and <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> 
 
-:::tip[Note]
-- Because of Deezer's TOS only HiFi/Premium/Family accounts are supported
-- It is normal that syncing all the items from Deezer takes some time
-:::
+> [!TIP]
+> **Note**
+>
+> - Because of Deezer's TOS only HiFi/Premium/Family accounts are supported
+> - It is normal that syncing all the items from Deezer takes some time
 
 ## Features
 

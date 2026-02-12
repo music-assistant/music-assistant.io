@@ -7,9 +7,8 @@ description: Features and Notes for the Spotify Connect Plugin
 
 Music Assistant has the ability to add <a href="https://connect.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify Connect</a> support to any MA player.
 
-:::note
-This plugin is still in an early stage of development. Functionality is limited and bugs may occur
-:::
+> [!NOTE]
+> This plugin is still in an early stage of development. Functionality is limited and bugs may occur
     
 ## Features
 
@@ -19,9 +18,8 @@ This plugin is still in an early stage of development. Functionality is limited 
 
 To make each player appear as a Spotify Connect target in the Spotify app, the Spotify Connect provider needs to be added individually for each player in the MA Provider Settings
 
-:::note
-It is inadvisable to try and configure a Home Assistant player. Use only native Music Assistant players
-:::
+> [!NOTE]
+> It is inadvisable to try and configure a Home Assistant player. Use only native Music Assistant players
 
 ## Known Issues / Notes
 

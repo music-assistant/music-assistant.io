@@ -30,9 +30,8 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
 
 \* <i>imported means metadata is added to the database. No files are moved or downloaded</i>
 
-:::note
-If identical items (e.g. an album or track) have not been matched across providers or within a provider then navigate to the [Provider Details](ui#provider-details) section of the item and use the options there to link them. 
-:::
+> [!NOTE]
+> If identical items (e.g. an album or track) have not been matched across providers or within a provider then navigate to the [Provider Details](ui#provider-details) section of the item and use the options there to link them.
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
@@ -50,9 +49,8 @@ Selecting the PLAYED ITEMS option will show the previous items from the queue an
 
 A menu of options to control the queue is available for each upcoming track and is shown in the image above.
 
-:::note
-What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in MA SETTINGS>>CORE>>PLAYER QUEUES CONTROLLER
-:::
+> [!NOTE]
+> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in MA SETTINGS>>CORE>>PLAYER QUEUES CONTROLLER
     
 The options in the menu available in the top right is shown below. Repeat and Shuffle also have buttons at the bottom in the player bar (or in the NOW PLAYING view for narrow mobile devices).
 
@@ -62,13 +60,11 @@ Transferring the queue will also transfer the shuffle and repeat setting to the 
 
 The Don't Stop The Music (DSTM) option can be enabled if a provider is available which supports dynamic tracks (i.e. Apple, Deezer, Spotify, Subsonic, Tidal and YTM). When DSTM is on, radio mode will be automatically enabled when the last track of the queue is reached and if any dynamic tracks can be resolved from one of the providers. The added tracks will be based on the played items in the queue.
 
-:::note
-If a queue is paused for more than 30 seconds it's status will change to stopped 
-:::
+> [!NOTE]
+> If a queue is paused for more than 30 seconds it's status will change to stopped
 
-:::caution
-Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less. 
-:::
+> [!CAUTION]
+> Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less.
 
 ### Radio Mode
 

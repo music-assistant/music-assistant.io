@@ -5,9 +5,8 @@ description: Information Relevant to all Player Providers
 
 # Player Providers
 
-:::note
-Players (devices) are added to Music Assistant by adding their associated player provider. Player providers are added by navigating to MA Settings and then Providers and then clicking on ADD A NEW PROVIDER
-:::
+> [!NOTE]
+> Players (devices) are added to Music Assistant by adding their associated player provider. Player providers are added by navigating to MA Settings and then Providers and then clicking on ADD A NEW PROVIDER
 
 For specific player provider information refer to the relevant section in this document. For a description of possible settings refer to the [Player Provider Settings](../settings/player-provider) and [Individual Player Settings](../settings/individual-player) pages. When a player provider is enabled, then the devices which support that protocol will be automatically discovered by Music Assistant. The following table summarises player capabilities. Note that DLNA and HA players can suffer from poor implementation of required standards. If these player types do not work well and the device supports other protocols then use the other protocol.
 
@@ -19,9 +18,8 @@ Players can only be deleted if they are unavailable or disabled. Deleting a play
 
 ![Preview image](/assets/screenshots/player-disable.png) 
 
-:::note
-If any player is not transitioning between songs then check if the player has the option QUEUE FLOW MODE. Try enabling it if it does.
-:::
+> [!NOTE]
+> If any player is not transitioning between songs then check if the player has the option QUEUE FLOW MODE. Try enabling it if it does.
 
 ## Audio Quality
 

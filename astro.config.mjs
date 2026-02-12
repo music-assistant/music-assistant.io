@@ -2,10 +2,14 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
+import { remarkAlert } from 'remark-github-blockquote-alert';
 
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.music-assistant.io',
+	markdown: {
+		remarkPlugins: [remarkAlert],
+	},
 	integrations: [
 		starlight({
 			title: 'Music Assistant',

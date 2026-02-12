@@ -6,13 +6,13 @@ title: "YouTube Music"
 
 Music Assistant has support for Youtube Music. Contributed and maintained by <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener noreferrer">MarvinSchenkel</a>
 
-:::danger[DISCLAIMER]
-Please note that Youtube does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis. Unexpected behavior will occur whilst using this provider. For this reason if you have another streaming provider you may find it more convenient to use that instead of this one.
-:::
+> [!WARNING]
+> **DISCLAIMER**
+>
+> Please note that Youtube does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis. Unexpected behavior will occur whilst using this provider. For this reason if you have another streaming provider you may find it more convenient to use that instead of this one.
 
-:::note
-Free accounts are NOT supported.
-:::
+> [!NOTE]
+> Free accounts are NOT supported.
 
 ## Features
 
@@ -35,13 +35,11 @@ Free accounts are NOT supported.
 
 As of Nov 2024, Google has removed OAuth authentication from YT Music. This means using this (somewhat cumbersome) method of cookie authentication is the **only** way to get YT Music working.
 
-:::note
-Cookies will expire after some time. This means that you will have to run this process again if YT Music stops working and you see `401: Unauthorized` or `Unable to fetch PO Token for web_music client` in the MA log. Maximise the cookie life by using this <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">method to obtain the cookie</a>
-:::
+> [!NOTE]
+> Cookies will expire after some time. This means that you will have to run this process again if YT Music stops working and you see `401: Unauthorized` or `Unable to fetch PO Token for web_music client` in the MA log. Maximise the cookie life by using this <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">method to obtain the cookie</a>
 
-:::note
-If a Family Account is in use then setting up a dedicated account for MA will assist in maximising cookie life 
-:::
+> [!NOTE]
+> If a Family Account is in use then setting up a dedicated account for MA will assist in maximising cookie life
     
 ### Obtaining the Cookies
 YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure. To export cookies that will remain working, you will need to export cookies in such a way that they are never rotated. One way to do this is through a private browsing/incognito window.
@@ -70,9 +68,8 @@ As of March 2025, Google has implemented a new security mechanism called 'PO Tok
 - A new add-on called 'YT Music PO Token Generator' is available.
 - Install this add-on and make sure it is started before adding the YT Music provider within Music Assistant
 
-:::note
-If you are hosting Music Assistant yourself, you can download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a> but you must run the version currently supported by MA which is 1.2.1. Install the correct version and run it, then return to Music Assistant and add the URL to the PO token server when configuring the YT Music Provider.
-:::
+> [!NOTE]
+> If you are hosting Music Assistant yourself, you can download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a> but you must run the version currently supported by MA which is 1.2.1. Install the correct version and run it, then return to Music Assistant and add the URL to the PO token server when configuring the YT Music Provider.
 
 ### Configuring the provider 
 - Navigate to 'Settings'
@@ -82,9 +79,10 @@ If you are hosting Music Assistant yourself, you can download the Docker file fo
     - <b>PO Token Server URL.</b> Leave this setting as the default if running the PO server as an add-on on the same host as the MA add-on. If running the PO token server separately then adjust the IP address and port accordingly
 - Click 'Save'
 
-:::caution[Error on Saving]
-If `__Secure-3PAPISID` is seen after saving this means the cookie is not from an authenticated request. Navigate to some more pages inside YT Music that require authentication (e.g. your library). To confirm the right cookie has been obtained paste it into a text editor and search for "__Secure-3PAPISID". If difficulties are encountered obtaining a cookie with this value, try a different browser.
-:::
+> [!CAUTION]
+> **Error on Saving**
+>
+> If `__Secure-3PAPISID` is seen after saving this means the cookie is not from an authenticated request. Navigate to some more pages inside YT Music that require authentication (e.g. your library). To confirm the right cookie has been obtained paste it into a text editor and search for "__Secure-3PAPISID". If difficulties are encountered obtaining a cookie with this value, try a different browser.
 
 ## Using brand accounts
 A brand account is a sub-account that lives under your main Google account. You need to find your brand account id if you want to login using your brand account.

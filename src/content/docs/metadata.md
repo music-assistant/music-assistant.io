@@ -21,6 +21,5 @@ For all providers, if one or more lyric metadata providers are available then ly
 
 Tidal has native lyrics support. Due to a convoluted API lookup process, lyrics are only fetched during a full track lookup, which only happens when viewing the info of a track or when the track is played. You also have to refresh the item at this point and then you might still have to hit play again in order to get lyrics to show.
 
-:::note
-The lrclib provider requires matching track name, artist, album and duration within 2 secs in order to return a result
-:::
+> [!NOTE]
+> The lrclib provider requires matching track name, artist, album and duration within 2 secs in order to return a result

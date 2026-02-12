@@ -78,17 +78,15 @@ The following is needed to setup this provider:
     - <b>Username.</b> The username of an Audiobookshelf user
     - <b>Password.</b> The password of this user
 
-:::note
-The user must be of type user, admin or root. Guest users are neither tested nor supported
-:::
+> [!NOTE]
+> The user must be of type user, admin or root. Guest users are neither tested nor supported
 
 - If <a href="https://www.audiobookshelf.org/guides/oidc_authentication/" target="_blank" rel="noopener noreferrer">OIDC</a> is configured:
     - Pre version 2.26, <b>Token instead of user/password.</b> Add the token in the specified field. This token can be obtained by an admin user for any user within the ABS settings -> users
     - From version 2.26 audiobookshelf uses the JWT token system internally. It is possible to create permanent API keys for an external application. Please follow the audiobookshelf docs at https://www.audiobookshelf.org/guides/api-keys/ to create such an API key
 
-:::note
-Should you insert an old legacy token, your provider will not work anymore once these are removed from ABS.
-:::
+> [!NOTE]
+> Should you insert an old legacy token, your provider will not work anymore once these are removed from ABS.
 
 ### Multi-user environment
 

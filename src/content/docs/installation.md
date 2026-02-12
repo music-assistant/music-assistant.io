@@ -91,9 +91,8 @@ If you run into any issues when using a docker install vs the recommended/standa
 
 - To access the frontend behind a reverse proxy, the reverse proxy will have to be configured to point at port 8095 and expose it to whatever is desired (and add an SSL certificate). How that works differs for each implemention.
 
-:::tip
-The server can be kept more secure by letting the addon (as installed) talk directly to the webserver on the internal docker network. In that case the internal DNS name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
-:::
+> [!TIP]
+> The server can be kept more secure by letting the addon (as installed) talk directly to the webserver on the internal docker network. In that case the internal DNS name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
 
 ## Usage and Notes
 

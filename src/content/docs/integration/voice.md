@@ -8,9 +8,8 @@ Home Assistant has very limited (intent) support for music/media control and the
 
 Currently, there is no built-in support in Home Assistant or the Music Assistant integration for initiating music playback by voice. But don't give up hope because in the interim a (community driven) repository has been created with all of the building blocks needed to add that support. The repository can be found at https://github.com/music-assistant/voice-support
 
-:::note
-Queue behaviour when adding items by Assist will follow the settings in MA SETTINGS>>CORE>>PLAYER QUEUES CONTROLLER.
-:::
+> [!NOTE]
+> Queue behaviour when adding items by Assist will follow the settings in MA SETTINGS>>CORE>>PLAYER QUEUES CONTROLLER.
 
 ## Play Media Action
 

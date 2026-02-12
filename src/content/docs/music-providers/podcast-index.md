@@ -6,9 +6,10 @@ title: "Podcast Index"
 
 Music Assistant has support for streaming podcasts from the <a href="https://podcastindex.org/" target="_blank" rel="noopener noreferrer">Podcast Index</a>. Contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
-:::tip[Donate]
-This provider exists due to the generosity of donators. Why not consider becoming one? <a href="https://podcastindex.org/"><img src="/assets/icons/paypal-donate.png" alt="Preview image" style="width: 128px;"  loading="lazy" /></a>
-:::
+> [!TIP]
+> **Donate**
+>
+> This provider exists due to the generosity of donators. Why not consider becoming one? <a href="https://podcastindex.org/"><img src="/assets/icons/paypal-donate.png" alt="Preview image" style="width: 128px;"  loading="lazy" /></a>
 
 ## Features
 

@@ -7,9 +7,8 @@ description: Features and Notes for the AirPlay Receiver Plugin
 
 Music Assistant has the ability to add [AirPlay Receiver](<a href="https://www.apple.com/au/airplay/" target="_blank" rel="noopener noreferrer">https://connect.spotify.com/</a>) audio support to any MA player.
 
-:::note
-This plugin is still in an early stage of development. Functionality is limited and bugs may occur
-:::
+> [!NOTE]
+> This plugin is still in an early stage of development. Functionality is limited and bugs may occur
     
 ## Features
 
