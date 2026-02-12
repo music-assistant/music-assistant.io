@@ -12,7 +12,13 @@
 }
 
 .site-title img {
-  max-width: 240px;
+  max-width: 180px;
+}
+
+@media (min-width: 768px) {
+  .site-title img {
+    max-width: 240px;
+  }
 }
 
 /* Preserve image aspect ratios */
