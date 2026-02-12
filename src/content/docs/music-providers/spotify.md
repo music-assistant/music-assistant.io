@@ -42,7 +42,7 @@ Music Assistant has full support for Spotify media listing and playback.
 
 ### Settings
 
-Refer to the [Library Import Control](index#library-import-control) settings.
+Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
 
 ## Known Issues / Notes
 
