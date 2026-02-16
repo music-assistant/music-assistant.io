@@ -47,18 +47,23 @@ nav:
       - ARD Audiothek: music-providers/ard-audiothek.md
       - Audible: music-providers/audible.md
       - Audiobookshelf: music-providers/audiobookshelf.md
+      - Bandcamp: music-providers/bandcamp.md
       - BBC Sounds: music-providers/bbc-sounds.md
       - Builtin: music-providers/builtin.md
       - Deezer: music-providers/deezer.md
       - DI.fm Network: music-providers/digitally-incorporated.md
+      - Emby: music-providers/emby.md
       - gPodder: music-providers/gpodder.md
       - iBroadcast: music-providers/ibroadcast.md
       - Internet Archive: music-providers/internet-archive.md
       - iTunes Podcast Search: music-providers/itunes-podcast.md
       - Jellyfin: music-providers/jellyfin.md
+      - Kion Music: music-providers/kion-music.md
       - Local Files: music-providers/filesystem.md
       - Nico Nico Video: music-providers/niconico.md
       - Nugs.net: music-providers/nugs.md
+      - ORF Radiothek: music-providers/radiothek.md
+      - Pandora: music-providers/pandora.md
       - Phish.in: music-providers/phishin.md
       - Plex: music-providers/plex.md
       - Podcast Index: music-providers/podcast-index.md
@@ -66,13 +71,17 @@ nav:
       - Qobuz: music-providers/qobuz.md
       - Radio Browser: music-providers/radio-browser.md
       - Radio Paradise: music-providers/radio-paradise.md
+      - SomaFM: music-providers/somafm-radio.md
       - SiriusXM: music-providers/siriusxm.md
       - SoundCloud: music-providers/soundcloud.md
       - Spotify: music-providers/spotify.md
       - Subsonic: music-providers/subsonic.md
       - Tidal: music-providers/tidal.md
       - TuneIn: music-providers/tunein.md
+      - Yandex Music: music-providers/yandex-music.md
+      - Yousee Musik: music-providers/yousee-musik.md
       - YouTube Music: music-providers/youtube-music.md
+      - Zvuk Music: music-providers/zvuk.md
   - Player Providers:
     - player-support/index.md
     - AirPlay: player-support/airplay.md
@@ -81,6 +90,7 @@ nav:
     - DLNA: player-support/dlna.md
     - Fully Kiosk: player-support/fully-kiosk.md
     - Google Cast: player-support/google-cast.md
+    - HEOS: player-support/heos.md
     - Home Assistant: player-support/ha.md
     - MusicCast: player-support/musiccast.md
     - Roku Media Assistant: player-support/roku.md
