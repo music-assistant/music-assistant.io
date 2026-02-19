@@ -4,8 +4,6 @@ Documentation site for Music Assistant built with Astro Starlight.
 
 **🔗 Live Site**: https://music-assistant.io
 
-**📖 Documentation**: 94+ pages covering installation, configuration, music providers, player support, and more.
-
 ## Quick Start
 
 ```bash
@@ -54,13 +52,9 @@ npm run preview
 4. Reference images with absolute paths: `/assets/image.png`
 5. Internal links use extensionless format: `/installation` (not `/installation.md`)
 
-## Migration Notes
-
-This site was migrated from MkDocs to Astro Starlight in February 2026. See [MIGRATION_REPORT.md](MIGRATION_REPORT.md) for full details.
-
 ## Beta Documentation
 
-NOTE that we use a [dedicated fork/repo](https://github.com/music-assistant/beta.music-assistant.io) for the beta docs. This contains changes (new features) specific to the MA beta. All the changes made to the beta docs repo will get upstreamed here as soon as the stable release is published.
+TBC
 
 ---
 
