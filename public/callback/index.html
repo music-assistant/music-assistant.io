@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Assistant oAuth Redirect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        #manual-link {
+            display: none;
+            margin-top: 1rem;
+        }
+        a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Music Assistant oAuth Redirect</h1>
+        <p>Processing your request...</p>
+        <div id="manual-link">
+            <p>If you are not redirected automatically, please click the link below:</p>
+            <a href="#" id="redirect-link">Complete Authentication</a>
+        </div>
+    </div>
+
+  <footer>
+
+    <script>
+      'use strict';
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirect_url = decodeURIComponent(urlParams.get('state'));
+      const validOrigin = document.referrer?.includes('spotify.com');
+      const validDest = redirect_url.includes(':') && redirect_url.includes('/callback/') && !redirect_url.includes('hassio_ingress');
+      const code = encodeURIComponent(urlParams.get('code'));
+      const finalUrl = redirect_url + '?code=' + code;
+      if (validOrigin && validDest) {
+        window.location.replace(finalUrl);
+      } else {
+        // Show manual link if automatic redirect doesn't work
+        document.getElementById('manual-link').style.display = 'block';
+        const linkElement = document.getElementById('redirect-link');
+        linkElement.href = finalUrl;
+      }
+    </script>
+  </footer>
+</body>
+</html>

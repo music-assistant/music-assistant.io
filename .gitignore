@@ -164,3 +164,8 @@ cython_debug/
 
 # exclude the CNAME file (so we can have different one for the beta repo)
 docs/CNAME
+
+# Astro
+node_modules/
+dist/
+.astro/

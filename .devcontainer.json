@@ -1,0 +1,52 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.177.0/containers/typescript-node
+{
+	"name": "Music Assistant Documentation",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
+	"forwardPorts": [
+		4321
+	],
+	"portsAttributes": {
+		"4321": {
+			"label": "Astro Dev Server",
+			"onAutoForward": "notify"
+		}
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"vunguyentuan.vscode-css-variables",
+				"esbenp.prettier-vscode",
+				"yzhang.markdown-all-in-one",
+				"davidanson.vscode-markdownlint",
+				"jock.svg"
+			],
+			"settings": {
+				"files.eol": "\n",
+				"editor.tabSize": 2,
+				"editor.formatOnPaste": false,
+				"editor.formatOnSave": true,
+				"editor.formatOnType": true,
+				"[astro]": {
+					"editor.defaultFormatter": "astro-build.astro-vscode"
+				},
+				"[typescript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[javascript]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[markdown]": {
+					"editor.defaultFormatter": "yzhang.markdown-all-in-one"
+				},
+				"files.trimTrailingWhitespace": true
+			}
+		}
+	},
+	"postCreateCommand": "npm install",
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node"
+	// moved settings under customizations.vscode.settings
+}

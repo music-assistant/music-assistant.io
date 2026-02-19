@@ -1,0 +1,111 @@
+---
+import EditLink from 'virtual:starlight/components/EditLink';
+import LastUpdated from 'virtual:starlight/components/LastUpdated';
+import Pagination from 'virtual:starlight/components/Pagination';
+---
+
+<footer class="sl-flex">
+	<div class="meta sl-flex">
+		<EditLink />
+		<LastUpdated />
+	</div>
+	<Pagination />
+
+	<div class="site-info">
+		<p>© {new Date().getFullYear()} Open Home Foundation</p>
+
+		<div class="site-info--icons">
+			<a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Open Home Foundation">
+				<span class="sr-only">Open Home Foundation</span>
+				<svg width="240" height="356" viewBox="0 0 240 356" fill="none" xmlns="http://www.w3.org/2000/svg" class="ohf-logo">
+					<path class="ohf-roof" d="M130.992 4.56406C124.939 -1.52135 115.034 -1.52135 109.008 4.56406L11.0056 103.09C4.95251 109.175 0 121.188 0 129.776V219.134C0 227.722 6.9964 234.783 15.565 234.783H224.435C232.977 234.783 240 227.749 240 219.134V129.776C240 121.188 235.048 109.175 228.994 103.09L130.992 4.56406Z" fill="#18BCF2"/>
+					<path class="ohf-base" d="M228 274.782C234.627 274.782 240 280.155 240 286.782V343.782C240 350.41 234.627 355.782 228 355.782H213C206.373 355.782 201 350.41 201 343.782V313.782H39V343.782C39 350.41 33.6274 355.782 27 355.782H12C5.37258 355.782 0 350.41 0 343.782V286.782C0 280.155 5.37258 274.782 12 274.782H228Z" fill="#09202E"/>
+				</svg>
+			</a>
+
+			<a href="https://lokalise.com/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Lokalise Translations">
+				<span class="sr-only">Lokalise Translations</span>
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 529.2 600" style="enable-background:new 0 0 529.2 600;" xml:space="preserve"><style type="text/css">.st0{fill:#FF6336;}.st1{fill:#FFC501;}.st2{fill:#A4A14A;}</style><g><polygon class="st0" points="396.9,467.7 529.2,467.7 529.2,374.2 358.1,374.2 264.6,467.7 171,374.2 0,374.2 0,467.7 132.3,467.7 264.6,600"></polygon><rect y="187.1" class="st1" width="529.2" height="93.5"></rect><rect y="0" class="st2" width="529.2" height="93.5"></rect></g></svg>
+			</a>
+		</div>
+	</div>
+</footer>
+
+<style>
+	@layer starlight.core {
+		footer {
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+		.meta {
+			gap: 0.75rem 3rem;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin-top: 3rem;
+			font-size: var(--sl-text-sm);
+			color: var(--sl-color-gray-3);
+		}
+		.meta > :global(p:only-child) {
+			margin-inline-start: auto;
+		}
+
+		.kudos {
+			align-items: center;
+			gap: 0.5em;
+			margin: 1.5rem auto;
+			font-size: var(--sl-text-xs);
+			text-decoration: none;
+			color: var(--sl-color-gray-3);
+
+			&:hover {
+				color: var(--sl-color-white);
+			}
+		}
+
+		.site-info {
+			margin-top: 2rem;
+
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		@media (min-width: 640px) {
+			.site-info {
+				display: flex;
+				flex-direction: row;
+			}
+		}
+
+		.site-info--icons {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 1em;
+		}
+
+		.social-icon {
+			width: 16px;
+			display: block;
+
+			svg {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		/* Dark mode colors for Open Home Foundation logo */
+		:root[data-theme='dark'] .ohf-logo .ohf-base {
+			fill: white;
+		}
+	}
+
+	@layer starlight.components {
+		.kudos :global(svg) {
+			color: var(--sl-color-orange);
+		}
+	}
+</style>
