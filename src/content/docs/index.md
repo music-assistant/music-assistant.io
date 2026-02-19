@@ -13,7 +13,7 @@ Music Assistant is a music library manager for your offline and online music sou
 
 - Supports multiple music sources through a provider implementation
 - Many popular streaming services are supported, as well as local files
-- Automatically matches music on different providers (track linking)
+- Matches music in library from different providers (track linking)
 - Fetches metadata for extended artist information
 - Keeps track of the entire music library in a compact database
 - Gapless, crossfade and volume normalization support for all players

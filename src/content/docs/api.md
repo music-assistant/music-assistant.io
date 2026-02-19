@@ -17,9 +17,10 @@ The API documentation is automatically generated and available at http://YOUR_MA
 
 <details><summary>Get All Available Player Settings</summary>
 
-```
+```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR......I' \
 --data '{
   "message_id": "1",
   "command": "config/players/get",
@@ -28,13 +29,14 @@ curl --location 'http://192.168.1.1:8095/api' \
   }
 }'
 ```
-```
+```yaml
 rest_command:
   ma_get_player_settings:
-    url: http://d5369777-music-assistant-beta:8095/api
+    url: http://192.168.1.1:8095/api
     method: POST
     headers:
       accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
     payload: >
       {
         "message_id": "1",
@@ -50,9 +52,10 @@ rest_command:
 
 <details><summary>Set One or More Player Settings</summary>
 
-```
+```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR......I' \
 --data '{
   "message_id": "1",
   "command": "config/players/save",
@@ -64,13 +67,14 @@ curl --location 'http://192.168.1.1:8095/api' \
   }
 }'
 ```
-```
+```yaml
 rest_command:
   ma_set_player_settings:
-    url: http://d5369777-music-assistant-beta:8095/api
+    url: http://192.168.1.1:8095/api
     method: POST
     headers:
       accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
     payload: >
       {
         "message_id": "1",
@@ -91,9 +95,10 @@ rest_command:
 
 item needs to be a URI or share URL
 
-```
+```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR......I' \
 --data '{
   "message_id": "1",
   "command": "music/favorites/add_item",
@@ -106,9 +111,10 @@ curl --location 'http://192.168.1.1:8095/api' \
 
 <details><summary>Get Album Tracks</summary>
 
-```
+```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR......I' \
 --data '{
   "message_id": "1",
   "command": "music/albums/album_tracks",
@@ -119,13 +125,14 @@ curl --location 'http://192.168.1.1:8095/api' \
   }
 }'
 ```
-```
+```yaml
 rest_command:
   ma_album_tracks:
-    url: http://d5369777-music-assistant-beta:8095/api
+    url: http://192.168.1.1:8095/api
     method: POST
     headers:
       accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
     payload: >
       {
         "message_id": "1",
@@ -133,7 +140,7 @@ rest_command:
         "args": {
           "item_id": "{{ item_id }}",
           "provider_instance_id_or_domain": "{{ provider_instance_id_or_domain }}",
-          "in_library_only": {{ in_library_only }}
+          "in_library_only": "{{ in_library_only }}"
         }
       }
     content_type:  'application/json; charset=utf-8'
@@ -142,9 +149,10 @@ rest_command:
 
 <details><summary>Get Full Item Details (By Providing a URI)</summary>
 
-```
+```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR......I' \
 --data '{
   "message_id": "1",
   "command": "music/item_by_uri",
@@ -158,9 +166,10 @@ curl --location 'http://192.168.1.1:8095/api' \
 <details><summary>Get Recently Played Items</summary>
 
 limit and media_types are optional
-```
+```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR......I' \
 --data '{
   "message_id": "1",
   "command": "music/recently_played_items",
@@ -176,9 +185,10 @@ curl --location 'http://192.168.1.1:8095/api' \
 
 Return a list of the Audiobooks and PodcastEpisodes that are in progress.
 limit is optional
-```
+```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR......I' \
 --data '{
   "message_id": "1",
   "command": "music/in_progress_items",
@@ -194,9 +204,10 @@ curl --location 'http://192.168.1.1:8095/api' \
 Start running the sync of (all or selected) musicproviders.
   media_types: only sync these media types. None for all.
   providers: only sync these provider instances. None for all.
-```
+```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR......I' \
 --data '{
   "message_id": "1",
   "command": "music/sync",
@@ -210,13 +221,14 @@ curl --location 'http://192.168.1.1:8095/api' \
 
 <details><summary>Refresh Playlist</summary>
 
-```
+```yaml
 rest_command:
   ma_refresh_playlist:
-    url: http://localhost:8095/api
+    url: http://192.168.1.1:8095/api
     method: POST
     headers:
       accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
     payload: >
       {
         "message_id": "1",
@@ -236,13 +248,14 @@ rest_command:
 
 player_id can be found at the top of the individual player settings
 
-```
+```yaml
 rest_command:
   ma_set_player_settings:
-    url: http://localhost:8095/api
+    url: http://192.168.1.1:8095/api
     method: POST
     headers:
       accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
     payload: >
       {
         "message_id": "1",
@@ -262,13 +275,14 @@ rest_command:
 
 `queue_id` will be the same as the `player_id` unless the player is grouped. To confirm create a `rest_command` that calls `player_queues/all` and review the information returned. The `limit` defaults to 500 if you omit it. You are cautioned to not set a value greater then 500 to avoid breaking your system. The practical limit will depend on the resources available on your host. `offset` can also be omitted.
 
-```
+```yaml
 rest_command:
   ma_get_full_queue:
-    url: http://localhost:8095/api
+    url: http://192.168.1.1:8095/api
     method: POST
     headers:
       accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
     payload: >
       {
         "message_id": "1",

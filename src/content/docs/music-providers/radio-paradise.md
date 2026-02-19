@@ -49,3 +49,4 @@ After adding to the library, the station will become available in the Radio view
 ## Known Issues / Notes
 
 - Some other applications support skipping tracks. This is not supported in Music Assistant
+- Now playing and upcoming track information can lead or lag reality due to Radio Paradise's own data 

@@ -39,6 +39,11 @@ Run with Docker Compose (recommended):
   ```
 
 - By default the service will be available at `http://localhost:5000` (or the IP/port you configured).
+- In your browser, open the setup UI at `http://localhost:5000/setup`. The setup page will:
+   - detect existing persistent ASK credentials (if present) and skip the browser-based auth flow
+   - guide you through the ASK CLI authorization flow if credentials are not present
+   - run the automated skill creation/update, interaction model upload, model build polling, and testing enablement.
+- In your browser, open the status UI at `http://localhost:5000/status` to check the status of the skill
 
 ### 2. Set Up a Proxy with SSL Certificates
 - Configure a reverse proxy (such as Nginx or Caddy) in front of both the skill prototype service (default port: 5000) and your Music Assistant streaming port (default port: 8097) [optional if using only APL devices]

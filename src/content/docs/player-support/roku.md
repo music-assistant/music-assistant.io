@@ -22,8 +22,8 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 
 ## Configuration
 
-:::note
-Your Roku must be on Roku OS V9.1 or higher to install the Media Assistant App (The app has only been tested on a minimum of OS V13.0).
+> [!NOTE]
+> Your Roku must be on Roku OS V9.1 or higher to install the Media Assistant App (The app has only been tested on a minimum of OS V13.0).
 
 1.	Install the Media Assistant app from the Roku Channel Store or sideload it on your Roku.
 - Roku Channel Store Link (https://channelstore.roku.com/details/625f8ef7740dff93df7d85fc510303b4/media-assistant)
