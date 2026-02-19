@@ -36,7 +36,8 @@ export default defineConfig({
 				},
 			],
 			head: [
-				{ tag: 'meta',
+				{
+					tag: 'meta',
 					attrs: {
 						name: 'robots',
 						content: (isProduction ? 'index, follow' : 'noindex, nofollow')
@@ -91,7 +92,7 @@ export default defineConfig({
 					},
 				},
 				{
-				tag: "meta",
+					tag: "meta",
 					attrs: {
 						name: "twitter:card",
 						content: "summary_large_image",
