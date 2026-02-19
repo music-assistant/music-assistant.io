@@ -4,6 +4,8 @@ Documentation site for Music Assistant built with Astro Starlight.
 
 **🔗 Live Site**: https://music-assistant.io
 
+**🔗 Beta Site**: https://beta.music-assistant.io
+
 ## Quick Start
 
 ```bash
