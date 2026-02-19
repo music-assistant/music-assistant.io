@@ -1,0 +1,214 @@
+/* Music Assistant Brand Colors */
+:root {
+  --sl-color-accent-low: #50a3f31a;
+  --sl-color-accent: #40bcf2;
+  --sl-color-accent-high: #98c9f8;
+  --sl-content-width: 50rem;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #107de71a;
+  --sl-color-accent: #40bcf2;
+  --sl-color-accent-high: #107de7;
+}
+
+.site-title img {
+  max-width: 180px;
+}
+
+@media (min-width: 768px) {
+  .site-title img {
+    max-width: 240px;
+  }
+}
+
+/* Preserve image aspect ratios */
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Video styling */
+article video {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Open Home Foundation badge */
+article img[src*="openhomefoundation.org"] {
+  margin-top: 2rem;
+  max-width: 300px;
+}
+
+/* Header theme selector border */
+header.header .social-icons:after {
+  content: none;
+}
+
+/* Fix active sidebar link text color - make it white for readability */
+[aria-current='page'],
+[aria-current='page']:hover,
+[aria-current='page']:focus {
+  color: white !important;
+}
+
+/* Ensure sidebar links are readable */
+.sidebar a[aria-current='page'] {
+  color: white !important;
+}
+
+.sl-markdown-content ul,
+.sl-markdown-content ol {
+  padding-left: 1rem;
+}
+
+.sl-markdown-content p img,
+.sl-markdown-content li img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  margin: 0;
+}
+
+main > .content-panel:has(.overview-anchor) {
+  padding: 0;
+}
+
+main > .content-panel:has(.overview-anchor) + .content-panel {
+  border-top: none;
+}
+
+@media (max-width: 767px) {
+  .sl-heading-wrapper.level-h1:has(img) {
+    position: relative;
+    padding-right: 3.5rem;
+  }
+
+  .sl-heading-wrapper.level-h1 img {
+    width: 50px !important;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* Details/Summary Accordion Styling - Scoped to main content only */
+.sl-markdown-content details {
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  padding: 0;
+  margin: 1rem 0;
+  background: var(--sl-color-bg);
+}
+
+.sl-markdown-content details summary {
+  cursor: pointer;
+  padding: 1rem;
+  margin: 0;
+  font-weight: 600;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--sl-color-white);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  text-wrap: balance;
+  line-height: 1.4;
+}
+
+.sl-markdown-content details summary::-webkit-details-marker {
+  display: none;
+}
+
+.sl-markdown-content details summary::before {
+  content: '▶';
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 0.75em;
+  color: var(--sl-color-accent);
+  margin-right: 0;
+}
+
+.sl-markdown-content details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.sl-markdown-content details summary:hover {
+  background: var(--sl-color-gray-6);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.sl-markdown-content details[open] summary {
+  border-bottom: 1px solid var(--sl-color-gray-6);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.sl-markdown-content details > *:not(summary) {
+  padding: 0 1rem 1rem 1rem;
+}
+
+.sl-markdown-content details ol,
+.sl-markdown-content details ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.sl-markdown-content details li {
+  margin: 0.5rem 0;
+}
+
+.sl-markdown-content details img {
+  max-width: 100%;
+  height: auto;
+  margin: 0.5rem 0;
+}
+
+.sl-markdown-content details a {
+  color: var(--sl-color-accent);
+}
+
+/* GitHub Alert Styling */
+.markdown-alert {
+  border-left: 4px solid;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0;
+}
+
+.markdown-alert svg {
+  fill: currentColor;
+}
+
+.markdown-alert-note {
+  border-color: var(--sl-color-accent);
+  background: var(--sl-color-accent-low);
+}
+
+.markdown-alert-tip {
+  border-color: #00d100;
+  background: #00d10020;
+}
+
+.markdown-alert-caution {
+  border-color: #ffa500;
+  background: #ffa50020;
+}
+
+.markdown-alert-warning {
+  border-color: #ff4500;
+  background: #ff450020;
+}
+
+.markdown-alert-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
