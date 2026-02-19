@@ -4,6 +4,8 @@ import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 import { remarkAlert } from 'remark-github-blockquote-alert';
 
+const isProduction = process.env.CONTEXT === 'production' || !process.env.CONTEXT;
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.music-assistant.io',
@@ -34,6 +36,12 @@ export default defineConfig({
 				},
 			],
 			head: [
+				{ tag: 'meta',
+					attrs: {
+						name: 'robots',
+						content: (isProduction ? 'index, follow' : 'noindex, nofollow')
+					}
+				},
 				{
 					tag: 'script',
 					attrs: { type: 'application/ld+json' },
