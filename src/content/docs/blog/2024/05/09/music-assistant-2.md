@@ -78,15 +78,15 @@ _Music Assistant is distributed as a <a href="https://www.home-assistant.io/addo
 I started Music Assistant out of frustration about the mainstream available options;
 
 *   You buy into an all-in-one ecosystem (such as Sonos), and then it's up to that ecosystem to decide which music sources to support now and in the future.
-
+    
 *   You choose a music streaming provider, and then somehow that streaming provider decides where/how you play their music.
-
+    
 *   You want to switch between streaming providers and keep your carefully curated playlists, regardless of which provider you want to play it with.
-
+    
 *   You still have your CD music collection that you’ve painstakingly ripped into high-quality files on local storage, and you want to play them, maybe even mix them with choices from streaming providers.
-
+    
 *   Or maybe you fall into the category of users who don’t want any subscriptions and have a carefully curated local media collection you want to play on these shiny new playback devices.
-
+    
 When we pay for our music or devices, we shouldn’t be limited by arbitrary limitations. We are slowly moving into a world of greater walled gardens and more vendor lock-in, and it’s time we took back control. 
 
 <p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/fight-the-power.jpg'/><i>Tidal on a Google Home</i></p>
