@@ -54,7 +54,7 @@ npm run preview
 
 ## Beta Documentation
 
-TBC
+Beta can be worked on from the `beta` branch of the repo and preview on `beta.music-assistant.io`.
 
 ---
 
