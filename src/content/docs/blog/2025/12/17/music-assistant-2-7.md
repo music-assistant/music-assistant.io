@@ -1,4 +1,14 @@
 ---
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: /public/images/blog/2025/12/17/music-assistant-2-7/art.webp
+  - tag: meta
+    attrs:
+      property: og:image:alt
+      content: "Music Assistant is taking over the airwaves"
+
 title: "Music Assistant 2.7 - Taking over the airwaves"
 description: "With a visual overhaul, new features and providers, and a custom-built streaming protocol, it's our biggest update yet!"
 cover:

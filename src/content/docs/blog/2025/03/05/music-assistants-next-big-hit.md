@@ -1,4 +1,14 @@
 ---
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: /public/images/blog/2025/03/05/music-assistants-next-big-hit/art.jpg
+  - tag: meta
+    attrs:
+      property: og:image:alt
+      content: "Music Assistant's next big hit"
+
 title: "Music Assistant's next big hit"
 description: "Spotify Connect, Assist streaming, podcasts, audiobooks, Apple Music, a full EQ, and more!"
 cover: 

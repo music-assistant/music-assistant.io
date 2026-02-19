@@ -1,4 +1,14 @@
 ---
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: /public/images/blog/2024/05/09/music-assistant-2/art.jpg
+  - tag: meta
+    attrs:
+      property: og:image:alt
+      content: "Music Assistant 2.0: Your Music, Your Players"
+
 title: "Music Assistant 2.0: Your Music, Your Players"
 description: "Connecting multiple music libraries to almost any smart speaker."
 cover:
