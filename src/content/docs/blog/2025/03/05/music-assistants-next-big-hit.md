@@ -3,7 +3,7 @@ head:
   - tag: meta
     attrs:
       property: og:image
-      content: /public/images/blog/2025/03/05/music-assistants-next-big-hit/art.jpg
+      content: /images/blog/2025/03/05/music-assistants-next-big-hit/art.jpg
   - tag: meta
     attrs:
       property: og:image:alt
@@ -11,7 +11,7 @@ head:
 
 title: "Music Assistant's next big hit"
 description: "Spotify Connect, Assist streaming, podcasts, audiobooks, Apple Music, a full EQ, and more!"
-cover: 
+cover:
   image: /public/images/blog/2025/03/05/music-assistants-next-big-hit/art.jpg
   alt:   "Music Assistant's next big hit"
 excerpt: "Over the past several months, Music Assistant has been hitting all the right notes with new features, greater stability, and a crescendo of contributors who keep pushing the project forward. If you're unfamiliar with Music Assistant, it allows you to merge your libraries from leading audio streaming providers and local files, letting you play them on the most popular smart speakers. Since our last update, Music Assistant has had a couple of big releases, but our most recent might just be our platinum record 💿, with a lot of new functionality coming in version 2.4."
