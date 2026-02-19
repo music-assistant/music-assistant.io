@@ -3,7 +3,7 @@ head:
   - tag: meta
     attrs:
       property: og:image
-      content: /public/images/blog/2025/03/05/music-assistants-next-big-hit/art.jpg
+      content: /images/blog/2025/03/05/music-assistants-next-big-hit/art.jpg
   - tag: meta
     attrs:
       property: og:image:alt
