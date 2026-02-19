@@ -71,6 +71,14 @@ header.header .social-icons:after {
   margin: 0;
 }
 
+main > .content-panel:has(.overview-anchor) {
+  padding: 0;
+}
+
+main > .content-panel:has(.overview-anchor) + .content-panel {
+  border-top: none;
+}
+
 @media (max-width: 767px) {
   .sl-heading-wrapper.level-h1:has(img) {
     position: relative;

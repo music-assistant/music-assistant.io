@@ -8,5 +8,5 @@ const isBlogPost = Astro.url.pathname.startsWith('/blog/');
 {isBlogPost ? (
 	<Default {...Astro.props} />
 ) : (
-	<div id={PAGE_TITLE_ID}></div>
+	<div id={PAGE_TITLE_ID} class="overview-anchor"></div>
 )}
