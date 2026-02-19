@@ -1,14 +1,14 @@
 /* Music Assistant Brand Colors */
 :root {
   --sl-color-accent-low: #50a3f31a;
-  --sl-color-accent: #50a3f3;
+  --sl-color-accent: #40bcf2;
   --sl-color-accent-high: #98c9f8;
   --sl-content-width: 50rem;
 }
 
 :root[data-theme='dark'] {
   --sl-color-accent-low: #107de71a;
-  --sl-color-accent: #50a3f3;
+  --sl-color-accent: #40bcf2;
   --sl-color-accent-high: #107de7;
 }
 
@@ -39,6 +39,11 @@ article video {
 article img[src*="openhomefoundation.org"] {
   margin-top: 2rem;
   max-width: 300px;
+}
+
+/* Header theme selector border */
+header.header .social-icons:after {
+  content: none;
 }
 
 /* Fix active sidebar link text color - make it white for readability */
