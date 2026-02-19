@@ -1,7 +1,7 @@
 ---
 head:
   - tag: meta
-    attrs: 
+    attrs:
       property: og:image
       content: /public/images/blog/2025/12/17/music-assistant-2-7/art.webp
   - tag: meta
