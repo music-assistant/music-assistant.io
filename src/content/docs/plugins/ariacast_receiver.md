@@ -3,8 +3,7 @@ title: AriaCast Receiver Plugin
 description: Features and Notes for the AriaCast Receiver Plugin
 ---
 
-# AriaCast Receiver ![AriaCast Icon](https://raw.githubusercontent.com/music-assistant/music-assistant.io/refs/heads/main/public/assets/icons/ariacast-icon.svg){ width=70 align=right }
-
+# AriaCast Receiver <img src="/assets/icons/ariacast-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 The **AriaCast Receiver** plugin allows you to stream high-quality audio wirelessly from Android devices to any Music Assistant player.
 
 > [!NOTE]
