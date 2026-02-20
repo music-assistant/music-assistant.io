@@ -7,8 +7,8 @@ description: Features and Notes for the AriaCast Receiver Plugin
 
 The **AriaCast Receiver** plugin allows you to stream high-quality audio wirelessly from Android devices to any Music Assistant player.
 
-!!! info "Status: Active Development"
-    This plugin is under active development.
+> [!NOTE]
+> This plugin is still in an early stage of development. Functionality is limited and bugs may occur
 
 --- 
 
