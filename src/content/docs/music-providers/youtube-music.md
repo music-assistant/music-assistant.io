@@ -49,7 +49,7 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 [![Dev tools](/assets/screenshots/ytmusic-developer-tools.png)](/assets/screenshots/ytmusic-developer-tools.png)
 
 - Navigate to the 'Network' tab
-- In the filter bar, type "/browse"
+- In the filter bar, type "/browse". Reload the page if no results are shown.
 - Now navigate to a page in YT Music that requires authentication, for example, on of your library playlists
 - A request will show-up in the table:
 
