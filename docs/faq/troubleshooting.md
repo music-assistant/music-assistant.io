@@ -143,4 +143,4 @@ If MA now starts, you can start any of the providers by clicking "reload" in the
 
 If you are using a reverse proxy to serve Music Assistant and you are getting frequent page reloads due to a dropped web socket connection (typically less than a minute of idle time), you'll need to look at the time out/keepalive settings for your reverse proxy and set them to at least 60 seconds. 
 
-Currently, the default configuration for HAProxy within pfSense defaults to a 30 second time out. Other reverse proxies may have similar defaults tha can cause this issue.
+Currently, the default configuration for HAProxy within pfSense defaults to a 30 second time out. Other reverse proxies may have similar defaults that can cause this issue.
