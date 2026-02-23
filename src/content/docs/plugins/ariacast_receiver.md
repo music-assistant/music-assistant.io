@@ -13,7 +13,6 @@ The **AriaCast Receiver** plugin allows for streaming of high-quality audio wire
 
 ## Configuration
 1. Add the **AriaCast Receiver** plugin in the Music Assistant settings.
-2. The plugin will automatically start the helper binary.
 3. Configure the playback settings:
    - **Connected Player**: Select a specific player or set to "Auto" to use the currently active player.
    - **Allow manual player switching**: If enabled, allows the stream to be moved to a different player within Music Assistant
