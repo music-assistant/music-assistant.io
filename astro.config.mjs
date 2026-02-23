@@ -236,6 +236,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'AirPlay Receiver Plugin', slug: 'plugins/airplay-receiver' },
+						{ label: 'Ariacast Receiver Plugin', slug: 'plugins/ariacast_receiver' },
 						{ label: 'Home Assistant Plugin', slug: 'ha-plugin' },
 						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
 						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
