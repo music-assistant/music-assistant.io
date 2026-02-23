@@ -31,9 +31,3 @@ The **AriaCast Receiver** plugin allows for streaming of high-quality audio wire
 - **No Audio Playback**: If the app shows as connected but no audio is playing, try disconnecting and reconnecting from the Android app to reset the stream.
 - **Binary Issues**: If the plugin fails to start, check the Music Assistant logs for errors related to the AriaCast binary execution.
 
-## Internal Architecture
-
-This plugin acts as a bridge between Music Assistant and the standalone AriaCast binary.
-- The binary handles the protocol emulation and audio decoding.
-- Audio is piped from the binary to Music Assistant via standard output (stdout).
-- Metadata and playback state are synchronized via a local WebSocket connection.
