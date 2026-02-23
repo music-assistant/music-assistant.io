@@ -27,7 +27,7 @@ The **AriaCast Receiver** plugin allows for streaming of high-quality audio wire
 
 ## Troubleshooting
 
-- **Server Not Found**: Ensure both devices are on the same network. The plugin uses a helper binary that listens for discovery broadcasts.
+- **Server Not Found**: Ensure the Android device and MA server are on the same network. The plugin uses a helper binary that listens for discovery broadcasts
 - **No Audio Playback**: If the app shows as connected but no audio is playing, try disconnecting and reconnecting from the Android app to reset the stream.
 - **Binary Issues**: If the plugin fails to start, check the Music Assistant logs for errors related to the AriaCast binary execution.
 
