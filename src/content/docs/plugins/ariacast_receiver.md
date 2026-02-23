@@ -18,7 +18,7 @@ The **AriaCast Receiver** plugin allows for streaming of high-quality audio wire
    - **Connected Player**: Select a specific player or set to "Auto" to use the currently active player.
    - **Allow manual player switching**: If enabled, allows you to move the stream to a different player within Music Assistant.
 
-### Usage
+## Usage
 1. Install the [AriaCast Android app](https://github.com/AirPlr/AriaCast-app).
 2. Open the app — it will automatically discover servers on your network (ensure your device is on the same network).
 3. Select your Music Assistant server and start playing content.
