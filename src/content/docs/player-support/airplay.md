@@ -35,7 +35,7 @@ AirPlay 1 (RAOP) specific advanced settings are:
 
 AirPlay 2 specific advanced settings are:
 
-- <b>Milliseconds of data to buffer.</b> The number of milliseconds of data to buffer in the cliap2 binary. Try increasing the value if playback is unreliable. <b>NOTE:</b> This adds to the latency experiencd for commencement of playback.
+- <b>Milliseconds of data to buffer.</b> The number of milliseconds of data to buffer in the cliap2 binary. Try increasing the value if playback is unreliable. <b>NOTE:</b> This adds to the latency experienced for commencement of playback.
 
 ## Known Issues / Notes
 
