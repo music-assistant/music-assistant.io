@@ -16,6 +16,9 @@ export default defineConfig({
 		starlight({
 			title: 'Music Assistant',
 			titleDelimiter: '-',
+			editLink: isProduction ? {
+				baseUrl: 'https://github.com/music-assistant/music-assistant.io/edit/main/',
+			} : {},
 			logo: {
 				light: './src/assets/ma-logo--dark.svg',
 				dark: './src/assets/ma-logo--light.svg',
