@@ -23,7 +23,7 @@ Music Assistant has support for both versions of the AirPlay protocol. AirPlay 1
 
 Advanced Protocol Settings applicable to both versions of the AirPlay protocol are:
 
-- <b>Audio synchronization delay correction.</b> If this player is playing audio synced with other players and you always hear the audio too early or late on this player, you can shift the audio a bit.
+- <b>Audio synchronization delay correction.</b> If audio played by this player is synchronized with other players and is found to be slightly out of sync, a fixed delay of up to ±500 ms can be adjusted using this setting.
 - <b>Output Channel Mode.</b> You can configure this player to play only the left or right channel, for example to create a stereo pair with 2 players.
 
 
