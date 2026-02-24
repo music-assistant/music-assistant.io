@@ -15,7 +15,7 @@ Music Assistant has support for AirPlay based devices which support <a href="htt
 
 ## Protocol Settings
 
-Support exists for devices which require pairing with a PIN before they can be used (e.g. Apple TV's). Select the `START  AIRPLAY PAIRING` button to register the PIN and when successful, click the `SAVE` button to save the authorisation key.
+Support exists for devices which require pairing with a PIN before they can be used (e.g. Apple TV's). Select the `START AIRPLAY PAIRING` button to register the PIN and when successful, click the `SAVE` button to save the authorisation key.
 
 Music Assistant has support for both versions of the AirPlay protocol. AirPlay 1 is also known as RAOP. Under normal circumstances, the AirPlay protocol version to use for streaming can be left as `Automatically select [default]`. The default for most devices is AirPlay 1 (RAOP). Devices which are known to have issues with AirPlay 1 (RAOP) and known to work with AirPlay 2 will automatically use AirPlay 2 for streaming.
 
@@ -26,16 +26,14 @@ Advanced Protocol Settings applicable to both versions of the AirPlay protocol a
 - <b>Audio synchronization delay correction.</b> If this player is playing audio synced with other players and you always hear the audio too early or late on this player, you can shift the audio a bit.
 - <b>Output Channel Mode.</b> You can configure this player to play only the left or right channel, for example to create a stereo pair with 2 players.
 
-Advanced Protocol Settings applicable to AirPlay 1 (RAOP) protocol are:
 
-
-AirPlay 1 (RAOP) specific settings are:
+AirPlay 1 (RAOP) specific advanced settings are:
 
 - <b>Enable encryption.</b> Enable encrypted communication if required by the player. AirPlay 1 only.
 - <b>Enable compression.</b> Enable to save some bandwidth by sending the audio as (lossless) ALAC
 - <b>Device password.</b> If the device requires a password to play then it is added here
 
-AirPlay 2 specific settings are:
+AirPlay 2 specific advanced settings are:
 
 - <b>Milliseconds of data to buffer.</b> The number of milliseconds of data to buffer in the cliap2 binary. Try increasing the value if playback is unreliable. <b>NOTE:</b> This adds to the latency experiencd for commencement of playback.
 
