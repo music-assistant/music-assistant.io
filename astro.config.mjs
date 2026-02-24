@@ -265,6 +265,7 @@ export default defineConfig({
 				{ label: 'Blog', link: '/blog/' },
 			],
 			components: {
+				Head: './src/components/Head.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				Footer: './src/components/Footer.astro',
 				ThemeProvider: './src/components/ThemeProvider.astro',
