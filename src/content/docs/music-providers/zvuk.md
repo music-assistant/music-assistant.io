@@ -108,3 +108,9 @@ The Zvuk Music provider requires an authentication token (X-Auth-Token) from you
 
 - If lossless quality is unavailable (no subscription), the provider will automatically fall back to the highest available quality (320 kbps)
 
+
+## Provider Documentation
+
+Full documentation including detailed feature descriptions, development guides, and troubleshooting is available at:
+
+**[trudenboy.github.io/ma-provider-zvuk-music](https://trudenboy.github.io/ma-provider-zvuk-music/)**
