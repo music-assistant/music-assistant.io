@@ -8,21 +8,21 @@ Music Assistant has support for [Yandex Music](https://music.yandex.ru). Contrib
 
 This provider is built on top of the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library.
 
-> [!WARNING]
+> [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
+
+> [!WARNING]
+> A Yandex Music Plus subscription is required for full functional of provider and lossless (FLAC) quality.
+> Without a subscription, the provider's full-fledged operation is not guaranteed.
 
 > [!NOTE]
 > Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-music](https://trudenboy.github.io/ma-provider-yandex-music/)**
 
-> [!NOTE]
-> A Yandex Music Plus subscription is required for full functional of provider and lossless (FLAC) quality.
-> Without a subscription, the provider's full-fledged operation is not guaranteed.
 
 ## Features
 
 |           |                     |
 |:-----------------------|:---------------------:|
-| Subscription FREE | Yes (with limitations) |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view-home) Supported | Yes |
