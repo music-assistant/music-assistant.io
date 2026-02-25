@@ -8,6 +8,9 @@ Music Assistant has support for [Zvuk Music](https://zvuk.com). Contributed and 
 
 This provider is built on top of the [zvuk-music](https://github.com/trudenboy/zvuk-music) library.
 
+> [!CAUTION]
+> This is an **unofficial** implementation with no affiliation to [Zvuk](https://zvuk.com) or its owners.
+
 > [!NOTE]
 > Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-zvuk-music](https://trudenboy.github.io/ma-provider-zvuk-music/)**
 
