@@ -9,6 +9,9 @@ Music Assistant has support for [Zvuk Music](https://zvuk.com). Contributed and 
 This provider is built on top of the [zvuk-music](https://github.com/trudenboy/zvuk-music) library.
 
 > [!NOTE]
+> Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-zvuk-music](https://trudenboy.github.io/ma-provider-zvuk-music/)**
+
+> [!NOTE]
 > A Zvuk Music subscription is required for lossless (FLAC) quality. Free accounts can stream at high quality (320 kbps) with limitations.
 
 ## Features
@@ -108,9 +111,3 @@ The Zvuk Music provider requires an authentication token (X-Auth-Token) from you
 
 - If lossless quality is unavailable (no subscription), the provider will automatically fall back to the highest available quality (320 kbps)
 
-
-## Provider Documentation
-
-Full documentation including detailed feature descriptions, development guides, and troubleshooting is available at:
-
-**[trudenboy.github.io/ma-provider-zvuk-music](https://trudenboy.github.io/ma-provider-zvuk-music/)**
