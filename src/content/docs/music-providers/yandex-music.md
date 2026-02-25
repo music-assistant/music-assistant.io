@@ -8,7 +8,7 @@ Music Assistant has support for [Yandex Music](https://music.yandex.ru). Contrib
 
 This provider is built on top of the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library.
 
-> [!CAUTION]
+> [!WARNING]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
 
 > [!NOTE]
