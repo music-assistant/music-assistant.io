@@ -15,7 +15,8 @@ This provider is built on top of the [yandex-music-api](https://github.com/Marsh
 > Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-music](https://trudenboy.github.io/ma-provider-yandex-music/)**
 
 > [!NOTE]
-> A Yandex Music Plus subscription is required for lossless (FLAC) quality. Standard accounts can stream at up to 320 kbps.
+> A Yandex Music Plus subscription is required for full functional of provider and lossless (FLAC) quality.
+> Without a subscription, the provider's full-fledged operation is not guaranteed.
 
 ## Features
 
