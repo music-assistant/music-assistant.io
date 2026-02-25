@@ -15,7 +15,8 @@ This provider is built on top of the [zvuk-music](https://github.com/trudenboy/z
 > Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-zvuk-music](https://trudenboy.github.io/ma-provider-zvuk-music/)**
 
 > [!NOTE]
-> A Zvuk Music subscription is required for lossless (FLAC) quality. Free accounts can stream at high quality (320 kbps) with limitations.
+> A Zvuk Prime subscription is required for full functionality of provider and lossless (FLAC) quality.
+> Without a subscription, the provider's full-fledged operation is not guaranteed.
 
 ## Features
 
