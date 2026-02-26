@@ -127,12 +127,15 @@ Use the HA action of `media_player.clear_playlist` or the new `music_assistant.p
 
 ## Add radio stations to MA
 
-If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear.
+If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear in the *Radio* page.
 
-If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired.
+If you use the [RadioBrowser provider](/music-providers/radio-browser/) then *Browse* to the RadioBrowser folder, find the station you wish to add, and select *Add to Library* from the three vertical dots menu to the right of the play button. 
 
-Direct entry of stations can be done by navigating to the radio stations page and selecting the menu top right and ADD ITEM FROM URL
+Direct entry of stations can be done by navigating to the *Radio* page and selecting the icon in the top right - *Add Item from URL*
 This will also work for locally hosted streams such as from Icecast. 
+
+> [!NOTE]
+> You will need to click the refresh arrow at the top of the *Radio* page before you will see the newly added station(s). 
 
 ## Start a radio stream with an automation
 
