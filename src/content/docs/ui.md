@@ -184,6 +184,16 @@ The ID shown against the streaming provider may be used in automations and scrip
 > The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
 ***************************************************************
 
+## View - Radio
+
+The Radio view shows streaming radio stations (this is not the [Radio Mode](usage/#radio-mode) of the Player Queue). Stations can be added to this view in the following ways:
+
+* Add to URL - A URL for a streaming radio station (including self-hosted icecast stations) can be added to the library by selecting Add to URL from the menu in the top right of the Radio view. Whe filtering by provider, they will appear with "Music Assistant" as the provider. 
+
+* [RadioBrowser Provider](/music-providers/radio-browser/) - If the RadioBrowser provider is enabled, individual stations can be added to the library from the Browse view.  
+
+* [TuneIn Radio Provider](music-providers/tunein/) - If the TuneIn provider is enabled, stations that are added to your TuneIn library from their website will appear in this list.
+
 ## View - Browse
 
 Entering the Browse view will present a list of the installed [Music Providers](/music-providers/). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
@@ -195,5 +205,5 @@ When viewing a provider you will only see what is already in the Library of the 
 >
 > Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
 
-It is this view that is used to select radio stations from the [Radio Browser](/music-providers/radio-browser/) provider.
+All radio stations from the [Radio Browser](/music-providers/radio-browser/) provider are available in this view. Individual stations that have been added to the library are available in the Radio view.
 
