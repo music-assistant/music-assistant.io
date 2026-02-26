@@ -129,7 +129,7 @@ Use the HA action of `media_player.clear_playlist` or the new `music_assistant.p
 
 If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear.
 
-If you use the [RadioBrowser provider](/music-providers/radio-browser/) then *Browse* to the RadioBrowser folder, find the station you wish to add, and select *Add to Library* from the three vertical dots menu to the right of the play button. 
+If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired. 
 
 Direct entry of stations can be done by navigating to the *Radio* page and selecting the icon in the top right - *Add Item from URL*
 This will also work for locally hosted streams such as from Icecast. 
