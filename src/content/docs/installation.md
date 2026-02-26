@@ -5,17 +5,17 @@ description: Installation guide for Music Assistant
 
 # Installing the Server <img src="/assets/icons/installation-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant (in short: MA) is designed to be used side by side with Home Assistant and is built with automation in mind. The recommended installation method is to run the server as a Home assistant Add-on and then optionally <a href="https://music-assistant.io/integration/installation/" target="_blank" rel="noopener noreferrer">add the HA integration</a>. There is also a docker option for those not using Home Assistant Operating System (HAOS).
+Music Assistant (in short: MA) is designed to be used side by side with Home Assistant and is built with automation in mind. The recommended installation method is to run the server as a Home assistant App and then optionally <a href="https://music-assistant.io/integration/installation/" target="_blank" rel="noopener noreferrer">add the HA integration</a>. There is also a docker option for those not using Home Assistant Operating System (HAOS).
 
-## Home Assistant Add-on
+## Home Assistant App
 
 <img src="/assets/label-easiest.png" alt="easiest label" style="width: 128px;"  loading="lazy" />
 
 This is only available when running the full version of Home Assistant, which includes the <a href="https://developers.home-assistant.io/docs/operating-system/" target="_blank" rel="noopener noreferrer">Home Assistant Operating System (HAOS)</a>. Due to its ease of use and full functionality, running the Home Assistant Operating System is the recommended way of running Home Assistant and Music Assistant.
 
-The Music Assistant add-on repository is available in Home Assistant. Browse the addon store within Home Assistant to install or click on the following button:
+The Music Assistant App repository is available in Home Assistant. Browse the App store within Home Assistant to install or click on the following button:
 
-[![Add Music Assistant as an Add-on to Home Assistant.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
+[![Add Music Assistant as an App to Home Assistant.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
 A HAOS installation is fully supported by the MA team regardless of whether it runs on dedicated hardware or in a Virtual Machine (VM). The only other requirement is that the HA/MA host and all player devices must be on the same flat network with no VLANs.
 
@@ -47,7 +47,7 @@ services:
     volumes:
       - ${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
     # privileged caps (and security-opt) needed to mount smb folders within the container
-    cap_add:
+    cap_:
       - SYS_ADMIN
       - DAC_READ_SEARCH
     security_opt:
@@ -69,7 +69,7 @@ The MA team will support docker installs that are installed per the above instru
 
 Everything else is considered unsupported. We have the right to close support requests if you're running an unsupported installation or we may ask you to try to reproduce the issue on one of our supported installation types.
 
-If you run into any issues when using a docker install vs the recommended/standard Home Assistant add-on, you may try to simply run Home Assistant OS on a VM on your computer or a spare RPi and see if you can reproduce the issue with that setup.
+If you run into any issues when using a docker install vs the recommended/standard Home Assistant App, you may try to simply run Home Assistant OS on a VM on your computer or a spare RPi and see if you can reproduce the issue with that setup.
 
 ---
 ## Server Notes
