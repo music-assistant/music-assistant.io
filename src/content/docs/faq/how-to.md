@@ -127,7 +127,7 @@ Use the HA action of `media_player.clear_playlist` or the new `music_assistant.p
 
 ## Add radio stations to MA
 
-If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear in the *Radio* page.
+If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear.
 
 If you use the [RadioBrowser provider](/music-providers/radio-browser/) then *Browse* to the RadioBrowser folder, find the station you wish to add, and select *Add to Library* from the three vertical dots menu to the right of the play button. 
 
