@@ -62,4 +62,4 @@ Configuration requires obtaining an OAuth token from Yandex Music.
 
 - The token may expire and need to be refreshed periodically
 - Lossless FLAC quality requires an active Yandex Music Plus subscription; without it the provider falls back to the highest available quality
-- Lossless FLAC streams are subject to a Yandex CDN per-connection limit of ~6–7 MB. The provider automatically resumes the stream on each drop (up to 6 retries), covering most tracks up to ~56 MB (~7 minutes of FLAC). Tracks longer than ~56 MB may occasionally experience a playback interruption if all retries are exhausted
+- Lossless FLAC streams are fetched in 4 MB windows to work around Yandex CDN per-connection limits, ensuring uninterrupted playback for tracks of any length
