@@ -47,7 +47,7 @@ services:
     volumes:
       - ${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
     # privileged caps (and security-opt) needed to mount smb folders within the container
-    cap_:
+    cap_add:
       - SYS_ADMIN
       - DAC_READ_SEARCH
     security_opt:
