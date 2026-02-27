@@ -1,0 +1,12 @@
+---
+import Default from "@astrojs/starlight/components/Head.astro";
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+<script>
+  document.querySelector('a.site-title')?.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    window.open("https://drive.google.com/drive/folders/12mVVrwGh0x9i8MMmo2PpZ8GWAhdTA-eZ", "_blank");
+  });
+</script>

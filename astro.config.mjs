@@ -16,6 +16,9 @@ export default defineConfig({
 		starlight({
 			title: 'Music Assistant',
 			titleDelimiter: '-',
+			editLink: isProduction ? {
+				baseUrl: 'https://github.com/music-assistant/music-assistant.io/edit/main/',
+			} : {},
 			logo: {
 				light: './src/assets/ma-logo--dark.svg',
 				dark: './src/assets/ma-logo--light.svg',
@@ -194,6 +197,7 @@ export default defineConfig({
 						{ label: 'Local Files', slug: 'music-providers/filesystem' },
 						{ label: 'Nico Nico Video', slug: 'music-providers/niconico' },
 						{ label: 'Nugs.net', slug: 'music-providers/nugs' },
+						{ label: 'Open Subsonic', slug: 'music-providers/subsonic' },
 						{ label: 'Phish.in', slug: 'music-providers/phishin' },
 						{ label: 'Plex', slug: 'music-providers/plex' },
 						{ label: 'Podcast Index', slug: 'music-providers/podcast-index' },
@@ -204,7 +208,6 @@ export default defineConfig({
 						{ label: 'SiriusXM', slug: 'music-providers/siriusxm' },
 						{ label: 'SoundCloud', slug: 'music-providers/soundcloud' },
 						{ label: 'Spotify', slug: 'music-providers/spotify' },
-						{ label: 'Subsonic', slug: 'music-providers/subsonic' },
 						{ label: 'Tidal', slug: 'music-providers/tidal' },
 						{ label: 'TuneIn', slug: 'music-providers/tunein' },
 						{ label: 'YouTube Music', slug: 'music-providers/youtube-music' },
@@ -263,6 +266,7 @@ export default defineConfig({
 				{ label: 'Blog', link: '/blog/' },
 			],
 			components: {
+				Head: './src/components/Head.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				Footer: './src/components/Footer.astro',
 				ThemeProvider: './src/components/ThemeProvider.astro',

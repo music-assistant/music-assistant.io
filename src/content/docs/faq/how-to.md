@@ -2,8 +2,9 @@
 title: Frequently Asked Questions - How Do I...?
 description: Common Uses for Music Assistant
 ---
+# How do I...?
 
-# Get the URI?
+## Get the URI?
 
 For playlists, artists, albums and radio you can simply use the name.
 

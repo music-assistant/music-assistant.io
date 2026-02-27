@@ -70,7 +70,7 @@ The token needs to be retrieved through your browser. Instructions were written 
 ## Known Issues / Notes
 - Due to Apple's proprietary encryption (FairPlay), Lossless and Dolby Atmos versions of songs are not supported
 - Due to limitations in the API, favouriting an item will only sync back to Apple Music for albums, playlists and tracks
-- Due to lack of an offical API, it can take up to 5 secsonds to transition between tracks
+- Due to lack of an offical API, it can take up to 5 seconds to transition between tracks
 
 ## Not yet supported
 - Library interaction, such as adding and removing items to your Apple Music library from within Music Assistant

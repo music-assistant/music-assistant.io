@@ -61,4 +61,4 @@ Authentication with Deezer happens through an Access and ARL Token. Unfortunatel
 - Podcasts
 - Fully featured recommendation/flow
 
-Big thanks to <a href="https://GitHub.com/browniebroke/deezer-python" target="_blank" rel="noopener noreferrer">Deezer-python</a> made by <a href="https://github.com/browniebloke" target="_blank" rel="noopener noreferrer">browniebroke</a>. Without it, this would have taken alot longer to make.
+Big thanks to <a href="https://GitHub.com/browniebroke/deezer-python" target="_blank" rel="noopener noreferrer">Deezer-python</a> made by <a href="https://github.com/browniebloke" target="_blank" rel="noopener noreferrer">browniebroke</a>. Without it, this would have taken a lot longer to make.
