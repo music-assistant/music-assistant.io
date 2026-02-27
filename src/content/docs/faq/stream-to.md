@@ -4,14 +4,14 @@ title: "I Want To Stream To"
 
 ## My Local HA Device
 
-Install the <a href="https://github.com/pssc/ha-addon-squeezelite" target="_blank" rel="noopener noreferrer">squeezelite addon</a> which will then allow streaming over an audio connection from the HA host to your speaker or amplifier.
+Install the <a href="https://github.com/pssc/ha-addon-squeezelite" target="_blank" rel="noopener noreferrer">squeezelite app</a> which will then allow streaming over an audio connection from the HA host to your speaker or amplifier.
 
 <details>
 <summary>Troubleshooting Steps for this Option</summary>
 <div>
 Some problems (listed individually below) may affect this solution and the following settings should avoid all of these issues:
 
-  * Enable “Show unused configuration options” on the SqueezeLite add-on, then set:
+  * Enable “Show unused configuration options” on the SqueezeLite app, then set:
     * build: **pa** (PortAudio) or **alsa**
     * options: `-a 150ms` (target latency, experiment to find best value)
   * Ensure that the *Output format* format in the Music Assistant *Advanced Settings* for the player is set to anything *other* than **WAV**.
@@ -40,7 +40,7 @@ This is <a href="https://github.com/music-assistant/support/issues/4163" target=
 
 When encountering this issue, change the *Output format* to **FLAC** (or any other non-WAV format) in the Music Assistant player *Advanced Settings*.
 
-Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite add-on also works around this issue.
+Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite App also works around this issue.
 </div>
 </details>
 
@@ -105,7 +105,7 @@ You can find a generic tutorial <a href="https://maker.pro/raspberry-pi/projects
 You can indirectly stream to a device which only accepts a URL such as a Web Radio. In order to do so you will need to be running Home Assistant and do this:
 
 - Install https://github.com/Poeschl-HomeAssistant-Addons/mpd (this will create an mpd media_player entity)
-- Enable httpd_output in the mpd addon (which allows for web streaming)
+- Enable httpd_output in the mpd app (which allows for web streaming)
 - Use the HA media player plugin in Music Assistant and select mpd as the output
 
 Thanks to <a href="https://github.com/mrueg" target="_blank" rel="noopener noreferrer">Manuel Rüger</a> who showed us <a href="https://github.com/orgs/music-assistant/discussions/2410#discussioncomment-10885780" target="_blank" rel="noopener noreferrer">here</a>
