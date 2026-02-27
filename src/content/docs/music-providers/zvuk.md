@@ -8,8 +8,15 @@ Music Assistant has support for [Zvuk Music](https://zvuk.com). Contributed and 
 
 This provider is built on top of the [zvuk-music](https://github.com/trudenboy/zvuk-music) library.
 
+> [!CAUTION]
+> This is an **unofficial** implementation with no affiliation to [Zvuk](https://zvuk.com) or its owners.
+
+> [!WARNING]
+> A Zvuk Prime subscription is required for full functionality of provider and lossless (FLAC) quality.
+> Without a subscription, the provider's full-fledged operation is not guaranteed.
+
 > [!NOTE]
-> A Zvuk Music subscription is required for lossless (FLAC) quality. Free accounts can stream at high quality (320 kbps) with limitations.
+> Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-zvuk-music](https://trudenboy.github.io/ma-provider-zvuk-music/)**
 
 ## Features
 
@@ -18,9 +25,9 @@ This provider is built on top of the [zvuk-music](https://github.com/trudenboy/z
 | Subscription FREE | Yes (with limitations) |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui/#view-home) Supported | No |
-| Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Recommendations](/ui/#view-home) Supported | Yes |
+| Lyrics Supported | Yes |
+| [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (with subscription) |
 | Login Method | Token |
 
@@ -30,6 +37,10 @@ This provider is built on top of the [zvuk-music](https://github.com/trudenboy/z
 - Items in a users Zvuk Music library will be synced to Music Assistant
 - Adding/removing items to/from the Music Assistant library will sync back to Zvuk Music
 - Playlist creation and editing is supported
+- Browse is available to explore the Zvuk Music catalogue
+- Lyrics are displayed when available (synced line-by-line when provided by the service, otherwise plain text)
+- Personalized playlists ("Плейлисты для вас") appear in the Recommendations section on the Home screen
+- Similar tracks are available from the track context menu (used by Radio Mode)
 
 ## Configuration
 
@@ -104,8 +115,3 @@ The Zvuk Music provider requires an authentication token (X-Auth-Token) from you
 
 - If lossless quality is unavailable (no subscription), the provider will automatically fall back to the highest available quality (320 kbps)
 
-## Not yet supported
-
-- Recommendations and personalized content
-- Lyrics display
-- Radio mode
