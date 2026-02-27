@@ -186,7 +186,7 @@ The ID shown against the streaming provider may be used in automations and scrip
 
 ## View - Radio
 
-The Radio view shows streaming radio stations (this is not the [Radio Mode](usage/#radio-mode) of the Player Queue). Stations can be added to this view in the following ways:
+The Radio view shows streaming radio stations that are available in the MA library (this is not the [Radio Mode](usage/#radio-mode) of the Player Queue). Stations can be added to the library in the following ways:
 
 * Add to URL - A URL for a streaming radio station (including self-hosted icecast stations) can be added to the library by selecting Add to URL from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 
