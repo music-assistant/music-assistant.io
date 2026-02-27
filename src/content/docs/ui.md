@@ -9,7 +9,7 @@ description: A Walkthrough of the Music Assistant User Interface
 
 ![image](/assets/screenshots/UI-main-menu.png)
 
-This menu's appearance can be configured in the settings. It can be placed vertically on the left (as shown) or horizontally at the bottom. The options are displayed in the order they were selected. Any of the options can be hidden. If the settings icon is hidden from this menu it is available in the top right of the HOME screen.
+This menu's appearance can be configured in Settings / User Interface. On a desktop, it can be placed vertically on the left (as shown) or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Home, Search, and Library will appear, and other items will be available under "Library". The enabled menu items (Views) are displayed in the order they were selected. Any of the views can be hidden. If the Settings view is hidden from the menu it can be accessed by navigating to `YOUR_MA_IP_ADDRESS:8095/#/settings`
 
 > [!CAUTION]
 > If you remove both the Home and Settings icons then you will be locked out. In that case you will need to manually enter the path (e.g. `http://192.168.1.166:8095/#/settings/frontend`) or clear the browser cookies to regain access to the settings page.
