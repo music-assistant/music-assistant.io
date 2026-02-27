@@ -135,7 +135,7 @@ Direct entry of stations can be done by navigating to the *Radio* page and selec
 This will also work for locally hosted streams such as from Icecast. 
 
 > [!NOTE]
-> You will need to click the refresh arrow at the top of the *Radio* page before you will see the newly added station(s). 
+> The newly added station(s) will not appear until the Radio view listing is refreshed manually from the top right menu. 
 
 ## Start a radio stream with an automation
 
