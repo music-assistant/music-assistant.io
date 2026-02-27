@@ -13,7 +13,7 @@ Patch releases may be pushed if there is a compelling need (e.g. an urgent bugfi
 
 ## Beta Releases
 
-In addition to the stable channel there is also a beta channel, for which there is a dedicated Home Assistant add-on (and docker image).
+In addition to the stable channel there is also a beta channel, for which there is a dedicated Home Assistant App (and docker image).
 Once a new stable version has been published, a new beta cycle will start (with the minor version increased).
 For example, once stable version 2.3 is released, the beta for version 2.4 starts.
 
@@ -26,11 +26,11 @@ Each night, if there are at least two PRs merged, an automated Nightly Release w
 
 ### DEV Channel
 
-This is a special development add-on for Music Assistant that allows developers to quickly test specific branches, pull requests, or even forks of Music Assistant directly in Home Assistant.
+This is a special development App for Music Assistant that allows developers to quickly test specific branches, pull requests, or even forks of Music Assistant directly in Home Assistant.
 
 ## Running Parallel Server Versions
 
-It is possible to run the stable, beta, nightly or dev server add-ons side by side as they don't share any data. Thus, for example, you can temporarily run the beta add-on to try out new features and then revert to the stable version. You can do this by manually stopping and starting the relevant server. Don't have two servers running on the same host at the same time.
+It is possible to run the stable, beta, nightly or dev server Apps side by side as they don't share any data. Thus, for example, you can temporarily run the beta Apps to try out new features and then revert to the stable version. You can do this by manually stopping and starting the relevant server. Don't have two servers running on the same host at the same time.
 
 > [!CAUTION]
-> Be careful that you don't accidentally remove an add-on, because that will result in the loss of all your data (if you didn't back it up). The same applies to docker users: be careful with the data folder and be aware that the data folder is not backwards compatible. Don't try to use it between channels!
+> Be careful that you don't accidentally remove an App, because that will result in the loss of all your data (if you didn't back it up). The same applies to docker users: be careful with the data folder and be aware that the data folder is not backwards compatible. Don't try to use it between channels!
