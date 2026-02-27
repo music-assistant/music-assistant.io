@@ -134,7 +134,7 @@ If the following error (or similar) is seen in the log:
 
 If the above is not the issue then start MA in safe mode:
 
-- With the addon select the toggle in the configration
+- With the HA app, select the toggle in the configration
 - With Docker run the container with the environmental variable MASS_SAFE_MODE set to a boolean true value, e.g. "1" or "true"
 
 If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details.
