@@ -190,10 +190,7 @@ The Radio view shows streaming radio stations that are available in the MA libra
 
 * Add to URL - A URL for a streaming radio station (including self-hosted icecast stations) can be added to the library by selecting Add to URL from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 
-* [RadioBrowser Provider](/music-providers/radio-browser/) - If the RadioBrowser provider is enabled, individual stations can be added to the library from the Browse view.  
-
-* [TuneIn Radio Provider](music-providers/tunein/) - If the TuneIn provider is enabled, stations that are added to your TuneIn library from their website will appear in this list.
-
+Music providers that support Radio items will have those items shown here when they are added to the library
 ## View - Browse
 
 Entering the Browse view will present a list of the installed [Music Providers](/music-providers/). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
