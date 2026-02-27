@@ -43,7 +43,7 @@ Administrators can add new genres manually using the **Add Genre** option in the
 - **Sort name** (optional — used for custom sort ordering)
 - **Description** (optional)
 
-![image](/assets/screenshots/genres/genre-add-new.png)
+![image](/assets/screenshots/genres/add-new.png)
 
 ## Genre Detail Page
 
@@ -69,8 +69,7 @@ Administrators see additional action buttons in the header:
 
 These actions are also available in the three-dot overflow menu.
 
-<!-- Screenshot: Genre detail header showing the merge and delete icons next to the provider icon -->
-![image](/assets/screenshots/genres/genre-detail-header.png)
+![image](/assets/screenshots/genres/info-header.png)
 
 ### Overview Rows
 
@@ -88,7 +87,7 @@ Each row can be expanded to browse the linked items.
 
 Administrators can manage genre aliases from the detail page. Aliases allow multiple names to resolve to the same genre, which is useful when different providers use different names for the same style of music.
 
-![image](/assets/screenshots/genres/genre-alias-mappings.png)
+![image](/assets/screenshots/genres/alias-mappings.png)
 
 The alias manager supports:
 
@@ -124,7 +123,9 @@ To delete genres:
 2. Choose **Delete genre** from the context menu or the header action
 3. Confirm the deletion in the two-step confirmation dialog
 
-![image](/assets/screenshots/genres/genre-delete.png)
+![image](/assets/screenshots/genres/delete-genre.png)
+
+![image](/assets/screenshots/genres/delete-genre-sure.png)
 
 CAUTION: Deleting a genre is permanent and cannot be undone.
 
@@ -147,4 +148,4 @@ NOTE: The link to genre option is only available for items that are in your libr
 
 When viewing an artist, album, or track detail page, the genres associated with that item are displayed as clickable chips below the description. Clicking a genre chip navigates to that genre's detail page.
 
-![image](/assets/screenshots/genres/genre-infoheader-chips.png)
+![image](/assets/screenshots/genres/mediaitem-infoheader-chips.png)

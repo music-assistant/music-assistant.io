@@ -79,7 +79,7 @@ The genre scanner automatically maps media items to genres based on metadata fro
 
 The scanner status is polled automatically every 30 seconds.
 
-![image](/assets/screenshots/genres/genre-management-background-scanner.png)
+![image](/assets/screenshots/genres/background-scanner.png)
 
 ### Genre Statistics
 
