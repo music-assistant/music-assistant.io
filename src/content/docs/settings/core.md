@@ -61,3 +61,36 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 ## Server Logging
 
 This opens a view where the tail of the Music Assistant log can be seen or the full log can be downloaded.
+
+## Genre Management
+
+Administrators can access the **Genre Management** page from the settings menu. This page provides tools for maintaining the genre database.
+
+![image](/assets/screenshots/genres/genre-management-overview.png)
+
+### Background Scanner
+
+The genre scanner automatically maps media items to genres based on metadata from your music providers. The scanner panel shows:
+
+- **Scanner status** — Whether the scanner is currently running or idle
+- **Last scan time** — When the last scan completed
+- **Items mapped** — How many items were mapped during the last scan
+- **Scan Now** button — Manually trigger a scan
+
+The scanner status is polled automatically every 30 seconds.
+
+![image](/assets/screenshots/genres/background-scanner.png)
+
+### Genre Statistics
+
+Displays the total number of genres in your library, with a link to view all genres.
+
+### Restore Missing Defaults
+
+Checks for any built-in default genres that are missing from your library and restores them. This does not affect any existing genres or their mappings.
+
+### Full Restore
+
+A destructive operation that completely rebuilds the genre database from defaults. This removes all custom genres and restores the full set of built-in genres.
+
+CAUTION: Full restore deletes all custom genres, aliases, and media mappings. This action requires a two-step confirmation to prevent accidental data loss.
