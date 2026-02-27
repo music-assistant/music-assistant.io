@@ -131,7 +131,7 @@ If you use the [TuneIn provider](/music-providers/tunein/) then stations that ar
 
 If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired. 
 
-Direct entry of stations can be done by navigating to the *Radio* page and selecting the icon in the top right - *Add Item from URL*
+Direct entry of stations can be done by navigating to the Radio view and selecting ADD ITEM FROM URL in the menu at the top right.
 This will also work for locally hosted streams such as from Icecast. 
 
 > [!NOTE]
