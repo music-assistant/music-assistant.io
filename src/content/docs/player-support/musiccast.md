@@ -24,6 +24,10 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Turn off the zone when it leaves a group.</b> Toggle defines the power behaviour when the player leaves a group
 - <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should  issues be encountered during playback then toggle this on. This setting is only available on multi-zone players
 
+## Player Options
+
+MusicCast has support for [player options](/player-support/#player-options).
+
 ## Known Issues / Notes
 
 - Supported devices are those from circa 2015 and later
