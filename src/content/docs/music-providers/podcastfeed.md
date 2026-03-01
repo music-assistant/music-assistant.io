@@ -33,7 +33,3 @@ In the Generic Settings add the full RSS feed URL.
 
 - Only feeds strictly following the standardized podcast feed format are supported
 - No checking is done to identify two or more providers configured with the same feed
-
-## Not Yet Supported
-
-- Automatic synchronization at a given interval. Podcast feed information must be refreshed manually
