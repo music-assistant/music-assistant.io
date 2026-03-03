@@ -34,17 +34,7 @@ Music Assistant has support for <a href="https://radioparadise.com/" target="_bl
 
 ## Usage
 
-The Radio Paradise provider doesn't add stations to the 'Radio' tab by default.
-
-1. In the menu you need to select 'Browse'
-2. Then click 'Radio Paradise'
-
-    <img src="/assets/screenshots/radioparadise-browse.png" alt="Preview image" style="width: 400px;"  loading="lazy" />
-
-3. Then navigate to the radio station you want to listen to
-4. Click play now or add to library 
-
-After adding to the library, the station will become available in the Radio view
+The Radio Paradise provider adds all stations to the library and 'Radio' view by default.
 
 ## Known Issues / Notes
 

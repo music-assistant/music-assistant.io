@@ -9,7 +9,7 @@ description: A Walkthrough of the Music Assistant User Interface
 
 ![image](/assets/screenshots/UI-main-menu.png)
 
-This menu's appearance can be configured in the settings. It can be placed vertically on the left (as shown) or horizontally at the bottom. The options are displayed in the order they were selected. Any of the options can be hidden. If the settings icon is hidden from this menu it is available in the top right of the HOME screen.
+This menu's appearance can be configured in Settings / User Interface. On a desktop, it can be placed vertically on the left (as shown) or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Home, Search, and Library will appear, and other items will be available under "Library". The enabled menu items (Views) are displayed in the order they were selected. Any of the views can be hidden. If the Settings view is hidden from the menu it can be accessed by navigating to `YOUR_MA_IP_ADDRESS:8095/#/settings`
 
 > [!CAUTION]
 > If you remove both the Home and Settings icons then you will be locked out. In that case you will need to manually enter the path (e.g. `http://192.168.1.166:8095/#/settings/frontend`) or clear the browser cookies to regain access to the settings page.
@@ -184,6 +184,13 @@ The ID shown against the streaming provider may be used in automations and scrip
 > The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
 ***************************************************************
 
+## View - Radio
+
+The Radio view shows streaming radio stations that are available in the MA library (this is not the [Radio Mode](usage/#radio-mode) of the Player Queue). Stations can be added to the library in the following ways:
+
+* Add to URL - A URL for a streaming radio station (including self-hosted icecast stations) can be added to the library by selecting Add to URL from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
+
+Music providers that support Radio items will have those items shown here when they are added to the library
 ## View - Browse
 
 Entering the Browse view will present a list of the installed [Music Providers](/music-providers/). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
@@ -195,5 +202,5 @@ When viewing a provider you will only see what is already in the Library of the 
 >
 > Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
 
-It is this view that is used to select radio stations from the [Radio Browser](/music-providers/radio-browser/) provider.
+All radio stations from the [Radio Browser](/music-providers/radio-browser/) provider are available in this view. Individual stations that have been added to the library are available in the Radio view.
 

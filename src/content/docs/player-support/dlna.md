@@ -23,7 +23,7 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 ## Known Issues / Notes
 
 - Some devices need special workarounds to enable playback. If playback is not working, look at the Music Assistant logs for clues and report an issue with these logs provided. Unfortunately due to the difficulty in resolving these issues they are low priority. If your device supports a different protocol then use that instead of raising an issue
-- If your device is not found then try turning on the option `allow network scan for discovery`
+- If your device is not found then try turning on the option `allow network scan for discovery`. Note it can take up to 5 mins for players to be discovered (this also applies if a device is turned back on)
 - DLNA speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, [queue flow mode](/faq/tech-info/#track-queueing) must be enabled in the player's settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - It is possible to group DLNA players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - Although Sonos devices are strictly also based on DLNA, they created their own extra layer on top of that such as crossfade support and many other goodies. It is therefore advised to use the Sonos Player provider with Music Assistant instead of the DLNA provider. MA disables any discovered Sonos DLNA devices by default

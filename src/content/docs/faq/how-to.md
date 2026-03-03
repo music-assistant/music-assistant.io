@@ -2,8 +2,9 @@
 title: Frequently Asked Questions - How Do I...?
 description: Common Uses for Music Assistant
 ---
+# How do I...?
 
-# Get the URI?
+## Get the URI?
 
 For playlists, artists, albums and radio you can simply use the name.
 
@@ -128,10 +129,13 @@ Use the HA action of `media_player.clear_playlist` or the new `music_assistant.p
 
 If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear.
 
-If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired.
+If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired. 
 
-Direct entry of stations can be done by navigating to the radio stations page and selecting the menu top right and ADD ITEM FROM URL
+Direct entry of stations can be done by navigating to the Radio view and selecting ADD ITEM FROM URL in the menu at the top right.
 This will also work for locally hosted streams such as from Icecast. 
+
+> [!NOTE]
+> The newly added station(s) will not appear until the Radio view listing is refreshed manually from the top right menu. 
 
 ## Start a radio stream with an automation
 
@@ -219,7 +223,7 @@ Trying to run MA with SSL is not recommended. Having said that, whilst you can n
 
 ## Get the MA icon in the HA sidebar?
 
-If you are running the addon within the HA host go to SETTINGS>>ADDONS>>MUSIC ASSISTANT and select "Show in sidebar".
+If you are running the MA app within the HA host go to SETTINGS>>ADDONS>>MUSIC ASSISTANT and select "Show in sidebar".
 
 If you are using docker then you can use an <a href="https://www.home-assistant.io/dashboards/iframe/" target="_blank" rel="noopener noreferrer">iframe panel</a> or you can use another custom integration called <a href="https://github.com/lovelylain/hass_ingress" target="_blank" rel="noopener noreferrer">hass_ingress</a> which allows you to add additional ingress panels to your Home Assistant frontend. 
 

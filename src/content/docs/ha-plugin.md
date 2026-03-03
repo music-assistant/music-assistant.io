@@ -18,12 +18,12 @@ To achieve this functionality both the HA plugin and the [HA Player Provider](/p
 Before the Plugin can be added the HA Integration must be [installed](/integration/installation/). 
 
 - Navigate to MA SETTINGS>>PROVIDERS and add the plug-in provider
-- If using the Music Assistant add-on (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
+- If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 
 ## Known Issues / Notes
 
-This plugin will be automatically installed (and cannot be disabled) if the MA server is running as an add-on to Home Assistant.
+This plugin will be automatically installed (and cannot be disabled) if the MA server is running as a Home Assistant App.
  
 The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. There are three drop down lists which contain a filtered list of HA entities:
 

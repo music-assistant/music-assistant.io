@@ -13,7 +13,9 @@ title: "Desktop Companion App"
 
 The desktop app for Music Assistant!
 
-**Download for** macOS (<a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_aarch64.dmg" target="_blank" rel="noopener noreferrer">Apple Silicon</a> | <a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_x64.dmg" target="_blank" rel="noopener noreferrer">Intel</a>) · <a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_x64_en-US.msi" target="_blank" rel="noopener noreferrer">Windows</a> · Linux (<a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_amd64.deb" target="_blank" rel="noopener noreferrer">Debian</a> | <a href="https://github.com/music-assistant/desktop-app/releases/download/v0.1.0/Music.Assistant_0.1.0_amd64.AppImage" target="_blank" rel="noopener noreferrer">Other</a>)
+Available for macOS, Windows, and Linux (Debian, AppImage, or RPM; for both x64 and ARM).
+
+[**Download the latest release here**](https://github.com/music-assistant/desktop-app/releases/latest)
 
 > [!TIP]
 > **This is still in very early alpha. Bugs *will* be present.**

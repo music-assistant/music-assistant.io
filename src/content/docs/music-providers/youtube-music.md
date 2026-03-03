@@ -76,7 +76,7 @@ As of March 2025, Google has implemented a new security mechanism called 'PO Tok
 - Under Music Providers, click 'Add new', select 'Youtube Music' and fill out the fields in the Generic Settings section as follows:
     - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
     - <b>Login Cookie.</b> Paste the value obtained above
-    - <b>PO Token Server URL.</b> Leave this setting as the default if running the PO server as an add-on on the same host as the MA add-on. If running the PO token server separately then adjust the IP address and port accordingly
+    - <b>PO Token Server URL.</b> Leave this setting as the default if running the PO server as an App on the same host as the MA App. If running the PO token server separately then adjust the IP address and port accordingly
 - Click 'Save'
 
 > [!CAUTION]
