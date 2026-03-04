@@ -26,3 +26,9 @@ Players can only be deleted if they are unavailable or disabled. Deleting a play
 Audio quality is the principal reason why native MA players are developed. These players provide the highest quality playback experience. HA players should work and may work well but they may also have been written with a basic objective such as enabling text to speech. Therefore, if there is a MA player available and a HA integration then you should always choose the MA player. 
 
 A sample rate above 48kHz or a bit depth above 16 is considered High Resolution (Hi Res)
+
+## Player Options
+
+A player provider may optionally expose additional player specific settings (e.g. the ability to adjust the player's native bass or treble value). These options can be accessed either within the player's settings, or via the three-dot menu in the full-screen player view via "Player Options."
+
+It is planned to expose these options as entities such as number, switch, text or select entities to Home Assistant in the future.
