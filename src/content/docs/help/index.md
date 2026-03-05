@@ -6,9 +6,12 @@ title: "I want to help"
 
 With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by <a href="https://www.nabucasa.com" target="_blank" rel="noopener noreferrer">subscribing to Nabu Casa</a> but helping out can also be done in other ways:
 
-- If you like to help with the development, e.g. implementing a new music provider or fix a player specific quirk, please reach out on Discord. There hasn't been time to write extended development docs but once you get the grasp of the structure it is relatively straight forward. The current documentation can be found here <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">Music Assistant Developer</a>. There are also <a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">Example Providers</a>
+- If you like to help with the development, e.g. implementing a new music provider or fix a player specific quirk, please reach out on Discord. There hasn't been time to write extended development docs but once you get the grasp of the structure it is relatively straight forward. The current documentation can be found here <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">Music Assistant Developer</a>. There are also <a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">Example Providers</a>. For ideas of what to do you can:
+    - look at the [issues](https://github.com/music-assistant/support/issues)
+    - look at the [backlog](https://github.com/orgs/music-assistant/projects/2/views/1)
+    - look at the [feature requests](https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas?discussions_q=is%3Aopen+category%3A%22Feature+requests+and+ideas%22+sort%3Atop)
 - Provide or update a [translation](/help/lokalise/)
-- Help others out on discord or within the discussions part of Github
+- Help others out on discord or within the [discussions part of Github](https://github.com/orgs/music-assistant/discussions/categories/q-a)
 - Help out with writing documentation and HOWTO's
 - Help <a href="https://github.com/OzGav" target="_blank" rel="noopener noreferrer">OzGav</a> out as a moderator on Discord and GitHub with the load of incoming reports, requests and questions
 - Make sure to <a href="https://github.com/music-assistant/server" target="_blank" rel="noopener noreferrer">like this project</a> by clicking the ⭐ button and share it with others!
