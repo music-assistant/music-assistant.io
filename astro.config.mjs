@@ -255,6 +255,7 @@ export default defineConfig({
 						{ label: 'Home Assistant Plugin', slug: 'ha-plugin' },
 						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
 						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
+						{ label: 'Party Mode', slug: 'plugins/party-mode' },
 						{ label: 'Plex Connect', slug: 'plugins/plex-connect' },
 						{ label: 'Spotify Connect Plugin', slug: 'plugins/spotify-connect' },
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
