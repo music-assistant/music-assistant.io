@@ -62,3 +62,10 @@ YAMP is a Home Assistant media card for controlling multiple entities with highl
 Music Assistant Player Card is a custom card which provides a full media player, browser, and player queue for Music Assistant. Requires the custom integration <a href="https://github.com/droans/mass_queue" target="_blank" rel="noopener noreferrer">Music Assistant Queue Actions</a> to work.
 
 <img src="https://raw.githubusercontent.com/droans/mass-player-card/main/static/combined.png" alt="image" style="width: 600px;"  loading="lazy" />
+
+***************************************************************
+## <a href="https://github.com/trudenboy/sendspin-bt-bridge" target="_blank" rel="noopener noreferrer">Sendspin Bluetooth Bridge</a>
+
+Turn any Bluetooth speaker into a Music Assistant player using the Sendspin protocol. Supports multiple simultaneous devices, multiroom sync groups, and comes with a real-time web dashboard. Deploys as an HA addon, Docker Compose, Proxmox LXC, or OpenWrt LXC.
+
+<img src="https://raw.githubusercontent.com/trudenboy/sendspin-bt-bridge/main/docs-site/public/screenshots/screenshot-dashboard-full.png" alt="Sendspin BT Bridge dashboard" style="width: 600px;"  loading="lazy" />
