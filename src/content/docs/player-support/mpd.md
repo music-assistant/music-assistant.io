@@ -4,7 +4,7 @@ description: A Description of the MPD Player Provider
 ---
 # MPD Player <img src="/assets/icons/mpd-icon.svg" alt="MPD icon" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for devices running <a href="https://www.musicpd.org/" target="_blank" rel="noopener noreferrer">Music Player Daemon (MPD)</a>. Contributed and maintained by <a href="https://github.com/OzGav" target="_blank" rel="noopener noreferrer">OzGav</a>
+Music Assistant has support for devices running <a href="https://www.musicpd.org/" target="_blank" rel="noopener noreferrer">Music Player Daemon (MPD)</a>. Contributed and maintained by <a href="https://github.com/OzGav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
 ## Features
 
@@ -48,3 +48,4 @@ In addition to the [Individual Player Settings](/settings/individual-player/), t
 - FLAC is not available as an output codec. MPD requires a seekable stream to probe the FLAC header, which is incompatible with MA's continuous HTTP stream
 - Flow mode is always enabled and cannot be disabled; this is required for MA to deliver audio to MPD via HTTP
 - Volume control requires a mixer to be configured in MPD. If no mixer is available, volume control will not be shown
+- MPD itself imposes no limit on audio quality — it will pass the stream to the hardware as-is. The effective quality ceiling is therefore determined by the output hardware and the codec selected in MA. WAV (uncompressed PCM) will deliver the highest quality
