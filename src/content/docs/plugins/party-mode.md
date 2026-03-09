@@ -59,8 +59,9 @@ Party Mode lets your guests add their favorite songs to the queue just by scanni
 
 Rate limiting uses a "token bucket" system. Each guest has a pool of tokens that refill over time. When tokens run out, they must wait for them to refill.
 
-:::tip "Disabling Rate Limiting"
-    Set "Enable Rate Limiting" to off to give guests unlimited requests. Individual features (Add, Boost, Skip) can still be disabled separately.
+> [!TIP] 
+> **Disabling Rate Limiting**
+> Set "Enable Rate Limiting" to off to give guests unlimited requests. Individual features (Add, Boost, Skip) can still be disabled separately.
 
 #### Add to Queue
 
@@ -107,8 +108,9 @@ Access via `/party` in the Music Assistant interface. This view is designed for 
 - Optional album art background with blur effect
 - Optional player controls for the host
 
-:::tip "Clean Display Mode"
-    For a completely frameless dashboard without side navigation, enable **Force Mobile View** in Settings → User Interface. This removes all navigation elements, leaving only the party view content - perfect for dedicated displays or kiosk mode.
+> [!TIP]
+> **Clean Display Mode**
+> For a completely frameless dashboard without side navigation, enable **Force Mobile View** in Settings → User Interface. This removes all navigation elements, leaving only the party view content - perfect for dedicated displays or kiosk mode.
 
 ![Party Mode Dashboard with Boost](../../../assets/screenshots/party-mode/party-mode-dashboard-boost.png)
 
