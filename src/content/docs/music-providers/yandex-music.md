@@ -8,19 +8,26 @@ Music Assistant has support for [Yandex Music](https://music.yandex.ru). Contrib
 
 This provider is built on top of the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library.
 
+> [!CAUTION]
+> This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
+
+> [!WARNING]
+> A Yandex Music Plus subscription is required for full functional of provider and lossless (FLAC) quality.
+> Without a subscription, the provider's full-fledged operation is not guaranteed.
+
 > [!NOTE]
-> A Yandex Music Plus subscription is required for lossless (FLAC) quality. Standard accounts can stream at high quality (320 kbps).
+> Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-music](https://trudenboy.github.io/ma-provider-yandex-music/)**
+
 
 ## Features
 
 |           |                     |
 |:-----------------------|:---------------------:|
-| Subscription FREE | Yes (with limitations) |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui/#view-home) Supported | No |
-| Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Recommendations](/ui/#view-home) Supported | Yes |
+| Lyrics Supported | Yes |
+| [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (with Plus subscription) |
 | Login Method | Token |
 
@@ -30,6 +37,10 @@ This provider is built on top of the [yandex-music-api](https://github.com/Marsh
 - Items in a users Yandex Music library will be synced to Music Assistant
 - Adding/removing items to/from the Music Assistant library will sync back to Yandex Music
 - Browse is available to explore the Yandex Music catalogue
+- Lyrics are displayed when available (synced line-by-line when provided by the service, otherwise plain text)
+- Personalized recommendations (My Wave, Made for You, Chart, New Releases and more) appear in the Recommendations section on the Home screen
+- Similar tracks are available from the track context menu (used by Radio Mode)
+- Multiple Yandex Music accounts can be added simultaneously
 
 ## Configuration
 
@@ -45,11 +56,10 @@ Configuration requires obtaining an OAuth token from Yandex Music.
 
 ### Settings
 
-- **Audio quality**: Select preferred audio quality. The default is `High (320 kbps)` which is available for all accounts. The other option is `Lossless (FLAC)` which requires a Yandex Music Plus subscription
+- **Audio quality**: Select preferred audio quality. Options: `Efficient (AAC ~64 kbps)`, `Balanced (AAC ~192 kbps)` (default), `High (MP3 320 kbps)`, `Lossless (FLAC)` (requires Yandex Music Plus subscription)
 
 ## Known Issues / Notes
 
 - The token may expire and need to be refreshed periodically
-
-## Not yet supported
-- Multiple Yandex Music accounts cannot be added as yet
+- Lossless FLAC quality requires an active Yandex Music Plus subscription; without it the provider falls back to the highest available quality
+- Lossless FLAC streams are fetched in 4 MB windows to work around Yandex CDN per-connection limits, ensuring uninterrupted playback for tracks of any length
