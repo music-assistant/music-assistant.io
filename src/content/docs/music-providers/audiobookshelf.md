@@ -76,7 +76,7 @@ Music Assistant has support for <a href="https://www.audiobookshelf.org/" target
     - BUT: if MA was down while changes in the ABS database occured, those will only be synced if a normal provider sync is triggered
 - Single and multi-file audiobooks are supported
 - Supports recommendations on the [Home View](/ui/#view---home)
-- Supports editing and creation of playlists only, if the Audiobookshelf user has at max one audiobook library and one podcast library. This restriction is in place, as Audiobookshelf supports multiple libraries, whereas Music Assistant has a single one. For multiple libraries the mapping would be ambiguous.
+- Playlist creation and editing are supported only when Audiobookshelf contains a single audiobook library and a single podcast library. This limitation exists because Music Assistant uses a single-library model, whereas Audiobookshelf supports multiple libraries, making library mapping ambiguous
 
 ## Configuration
 
