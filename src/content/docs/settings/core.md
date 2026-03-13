@@ -23,7 +23,7 @@ The core server settings are set with typical defaults that should work for most
 
 ## Players
 
-- No settings are currently available beyond the log level
+- <b>Advanced - MDNS/Zeroconf discovery interface(s).</b> For advanced users the default is `Default Interface` and the other option is `All interfaces`
 
 ## Player Queues
 
@@ -43,11 +43,12 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 ![image](/assets/screenshots/settings-streamserver-audio.png)
 
+- <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
+
 ### Streamserver Advanced Settings
 
 - The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically. If there are issues with playback then confirm the IP address shown is reachable by the players on the local network. The port must be available
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
-
 - <b>SmartFades Log Level.</b> Specific log level for the Smart Fades mixer and analyzer
 
 ## Webserver
