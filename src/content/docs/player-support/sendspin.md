@@ -31,6 +31,7 @@ Individual Sendspin players will appear automatically when clients connect
 
 Standard [player settings](/settings/player-provider/) apply. Specific settings available for this player type are:
 
+- <b>Sync delay (ms).</b> Not all devices allow this correction but when available is allows a for static delay to be applied for audio synchronisation
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 
 ## Known Issues / Notes
