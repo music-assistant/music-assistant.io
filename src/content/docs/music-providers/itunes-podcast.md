@@ -28,6 +28,7 @@ Music Assistant has support for <a href="https://podcasts.apple.com/us/browse" t
 - Configure your country
 - Specify the Maximum number of episodes to be retrieved (use 0 for all)
 - Optionally disable explicit results
+- Sync options: Configure sync interval of podcasts which are part of the library. The sync will update the episode list. If a podcast feed is not accessible during the sync, this podcast will remain in its previous state.
 
 ## Known Issues / Notes
 
