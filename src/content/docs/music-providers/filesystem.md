@@ -114,9 +114,9 @@ In addition to the settings outlined above to configure the provider there are a
 
 For tracks with multiple artists, MA supports several approaches:
 
-1. ARTISTS tag (recommended) - A dedicated multi-value field listing each artist separately. This is the most reliable
-method.
-2. Multiple ARTIST fields - For FLAC/OGG/Opus files, the Vorbis comment spec allows multiple ARTIST fields (one per
+1. ARTISTS tag (recommended for ID3) - A dedicated multi-value field listing each artist separately. This is the most reliable
+method for ID3.
+2. Multiple ARTIST fields (recommended for FLAC/OGG/Opus). The [Vorbis comment spec](https://xiph.org/vorbis/doc/v-comment.html) allows multiple ARTIST fields (one per
 artist). MA reads all of these.
 3. ARTIST tag parsing - If neither of the above are present, MA will attempt to split the ARTIST string using common
 separators (featuring, feat., ft., &, etc.). MusicBrainz Artist IDs help determine the expected artist count.
