@@ -105,7 +105,7 @@ In addition to the settings outlined above to configure the provider there are a
     - Artwork Handling: It supports both embedded artwork within the file and local folder-based images (e.g., folder.jpg or artist.png)
     - Recommended Tagger: For the best results in Music Assistant, it is strongly recommended to use <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a> to ensure the files contain the specific IDs needed for library linking. Other programs such as <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a> are often also based on the Musicbrainz catalog and can work as well provided they include the tags shown in the [Tags used by MA](#tags-used-by-ma) table
 
-- Tags must have multiple items separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3
+- For ID3v2.3, MP4 and APEv2 tags, multiple items should be separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3
 - MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
 - Music Assistant puts you in control by fully trusting the tags you provide, only additional information is scraped from metadata providers.
 - Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and `.nfo` files with enhanced metadata are also supported
@@ -120,15 +120,15 @@ In addition to the settings outlined above to configure the provider there are a
 
 For tracks with multiple artists, MA supports several approaches:
 
-1. ARTISTS tag (recommended) - A dedicated multi-value field listing each artist separately. This is the most reliable
-method.
-2. Multiple ARTIST fields - For FLAC/OGG/Opus files, the Vorbis comment spec allows multiple ARTIST fields (one per
-artist). MA reads all of these.
-3. ARTIST tag parsing - If neither of the above are present, MA will attempt to split the ARTIST string using common
-separators (featuring, feat., ft., &, etc.). MusicBrainz Artist IDs help determine the expected artist count.
+1. ARTISTS tag (recommended for ID3) - A dedicated multi-value field listing each artist separately. This is the most reliable method for ID3.
+2. Multiple ARTIST fields (recommended for FLAC/OGG/Opus). The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note: taggers may attempt to add multiple ARTISTS (plural) fields. This should be changed if observed)
+3. ARTIST tag parsing - If neither of the above are present, MA will attempt to split the ARTIST string using common separators (featuring, feat., ft., &, semi-colon, etc.). MusicBrainz Artist IDs help determine the expected artist count.
 
 In general, ensure the MusicBrainz Artist IDs align with the ARTIST (or ARTISTS) tags - one ID per artist.
-  
+
+> [!NOTE]
+> If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database.
+
 ### Tags used by MA
 
 <a href="/assets/tag-usage.png"><img src="/assets/tag-usage.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
