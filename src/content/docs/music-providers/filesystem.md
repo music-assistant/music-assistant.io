@@ -37,18 +37,25 @@ Separate providers must be added for Music, Audiobooks and Podcasts.
 
 **Audio files are on a disk/folder of the device running the Music Assistant Server**
 
-If the files are stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, the filesystem (local disk) provider should be selected and then the path to the files provided. 
+If the files are stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, the Filesystem (local disk) provider should be selected and then the path to the files provided. 
 
 > [!NOTE]
 > For Home Assistant OS only the `/media` folder can be accessed. Docker users can mount their own folder paths. It is not possible to mount a folder from Home Assistant into the `/media` path.
 
-**Audio files are on a remote share, such as a NAS or other (SMB/CIFS) server**
+**Audio files are on a remote share served via SMB/CIFS**
 
-Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS. Select the music provider "Filesystem (remote share)" and configure the (fqdn) hostname (or alternatively the IP address) to the server, the name of the share and optionally any subfolders.
+Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS. Select the music provider "Filesystem (remote share)" and configure the (fqdn) hostname (or alternatively the IP address) to the server, the name of the share and optionally any subfolder. Advanced options are:
+
+- <b>SMB Version.</b> The SMB protocol version to use. SMB 3.0 or higher is recommended for better performance and security. Use Auto to let the system negotiate. The options are `Auto`, `SMB 1.0`, `SMB 2.0`, `SMB 2.1`, `SMB 3.0 [default]`, and `SMB 3.1.1`
+- <b>Cache Mode.</b> Cache mode affects performance and consistency. 'Loose' provides better performance for read heavy workloads and is recommended for music libraries.. The options are `Strict`, `Loose (Recommended) [default]`, and `None`
+
+**Audio files are on a remote share served via NFS**
+
+Music Assistant has support for NFS shares. Select the music provider "Filesystem (NFS share)" and configure the IP address (without leading `http://`) of the server, the absolute export path of the share (e.g. `/volume1/music`) and optionally any subfolder.
 
 ### Settings
 
-In addition to the settings outlined above to configure the provider there are additional settings available for this provider (note certain options will be gryed out depending upon the content type selected):
+In addition to the settings outlined above to configure the provider there are additional settings available for this provider (note certain options will be greyed out depending upon the content type selected):
 
 - <b>Content type in media folder(s).</b> This setting defines the content type of the provider and is necessary for Music, Audiobooks and Podcasts to be correctly identified
 - <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
@@ -56,10 +63,9 @@ In addition to the settings outlined above to configure the provider there are a
 - <b>Sync Library Artists/Albums from this provider to Music Assistant.</b> Whether to synchronize all artists/albums from the local provider. 
 - <b>Import tracks/files into the Music Assistant library.</b> Define if the import of tracks/files is desired. When not importing into the library, tracks can still be manually browsed using the Browse feature. Note that by adding a Track into the Music Assistant library, the track artists and album will always be imported as well
 - <b>Import playlists (m3u files) into the Music Assistant library.</b> Define if the import of playlists (m3u files) is desired. When not importing into the library, they can still be manually browsed using the Browse feature.
-- <b>Import Podcasts/Audiobooks into the Music Assistant library.</b> Define if the import of Podcasts/Audiobooks is desired. When not importing into the library, items can still be manually browsed using the Browse feature.
 - <b>Automatic sync interval for Artists/Albums/Tracks/Playlists/Podcasts/Audiobooks.</b> Various time periods are selectable or it can be disabled
-- <b>SMB Version.</b> The SMB protocol version to use. SMB 3.0 or higher is recommended for better performance and security. Use Auto to let the system negotiate. The options are `Auto`, `SMB 1.0`, `SMB 2.0`, `SMB 2.1`, `SMB 3.0 [default]`, and `SMB 3.1.1`
-- <b>Cache Mode.</b> Cache mode affects performance and consistency. 'Loose' provides better performance for read heavy workloads and is recommended for music libraries.. The options are `Strict`, `Loose (Recommended) [default]`, and `None`
+- <b>Import Podcasts/Audiobooks into the Music Assistant library.</b> Define if the import of Podcasts/Audiobooks is desired. When not importing into the library, items can still be manually browsed using the Browse feature.
+- <b>Propagate track genres to albums and artists.</b> Derive albums and artist genres from their tracks when album/artist have no genre metadata of their own
 
 ## Known Issues / Notes
 
