@@ -18,10 +18,10 @@ Music Assistant is a music library manager for your offline and online music sou
 - Keeps track of the entire music library in a compact database
 - Gapless, crossfade and volume normalization support for all players
 - Playback synchronisation is possible for supported players
-- Announcements during playback supported
-- Transfer of playback between players supported
+- Announcements during playback is supported
+- Transfer of playback between players is supported
 - Truly hassle free streaming of your favourite music to players, no advanced knowledge required
-- Rich User interface (Progressive Web App) powered by <img src="/assets/icons/vue-js-logo.png" alt="logo" style="width: 20px;"  loading="lazy" /> VueJS 3
+- Rich User interface (Progressive Web App)
 
 [![Music Assistant Add-on For Home Assistant](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
