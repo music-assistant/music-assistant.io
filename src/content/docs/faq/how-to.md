@@ -240,7 +240,7 @@ The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopene
 If authentication becomes a blocker to some devices then create a long lived access token via MA SETTINGS >> PROFILE and use the following format as the URL
 https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
 
-## Player Selection
+## Open the UI with a Specific Player Selected
 
 A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a MA player name or `true` to open the last known. Player names are not case sensitive.
 
@@ -249,7 +249,7 @@ Examples
 - http://192.168.1.1:8095/#/home?player=true
 - http://192.168.1.1:8095/#/home?player=Livingroom
 
-## Frameless View
+## Open the UI Without Menu or Player Bar
 
 Display the relevant view without the <a href="https://music-assistant.io/ui/#player-bar" target="_blank" rel="noopener noreferrer">Player Bar</a> or <a href="https://music-assistant.io/ui/#main-menu" target="_blank" rel="noopener noreferrer">Main Menu</a>
 
@@ -258,7 +258,7 @@ Examples
 - http://192.168.1.1:8095/#/albums?frameless=true
 - http://192.168.1.1:8095/#/playlists?player=kitchen%20speaker&frameless=true
 
-## Now Playing View
+## Open the UI with the Now Playing View Showing
 
 Display the Now Playing view 
 
