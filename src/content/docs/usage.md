@@ -5,7 +5,7 @@ description: Information regarding various elements of Music Assistant
 
 ## Streaming Protocols
 
-Music Assistant supports a wide variety of playback protocols. Many devices support more than one protocol. Music Assistant combines all of the different protocols that it discovers into one player. Each player has a default protocol which is [selectable in the settings](./settings/individual-player/#output-protocols) that will always be used when playback is intitiated to the individual player. However, when grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without needing user intervention. In some cases there might be an interruption to playback if the stream must be restarted.
+Music Assistant supports a wide variety of playback protocols. Many devices support more than one protocol. Music Assistant combines all of the different protocols that it discovers into one player. Each player has a default protocol which is [selectable in the settings](/settings/individual-player/#output-protocols) that will always be used when playback is intitiated to the individual player. However, when grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without needing user intervention. In some cases there might be an interruption to playback if the stream must be restarted.
 
 ## Online Metadata Sources
 
