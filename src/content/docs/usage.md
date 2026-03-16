@@ -5,7 +5,7 @@ description: Information regarding various elements of Music Assistant
 
 ## Streaming Protocols
 
-Music Assistant supports a wide variety of playback protocols. Many devices support more than one protocol. Music Assistant combines all of the different protocols that it discovers into one player. Each player has a default protocol which is selectable in the settings that will always be used when playback is intitiated to the individual player. HOwever, when grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback and will switch to that protocol without needing user intervention. In some cases there might be an interruption to playback if the stream has to be restarted.
+Music Assistant supports a wide variety of playback protocols. Many devices support more than one protocol. Music Assistant combines all of the different protocols that it discovers into one player. Each player has a default protocol which is [selectable in the settings](settings/individual-player/#output-protocols) that will always be used when playback is intitiated to the individual player. However, when grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without needing user intervention. In some cases there might be an interruption to playback if the stream must be restarted.
 
 ## Online Metadata Sources
 
@@ -13,14 +13,14 @@ Music Assistant relies heavily on metadata to work well and it gets this informa
 
 - Online resources will be queried very slowly in the background
 - Users with local files that are badly tagged or without images in the music folders will see a significant delay until artist thumbs appear
-- If a track has no album artist tag, there will no longer be an attempt to look it up in musicbrainz
+- If a track has no album artist tag, there will no attempt to retrieve it from a metadata provider
 - Various artists will be the default option if the album artist tag is missing in local files
 
-Music Assistant never modifies the tags in the local files. Online metadata retrieval occurs when local data is lacking. MusicBrainz is only used for streaming providers (so not for local files) OR when the musicbrainz IDs are missing in local files and audiodb and/or fanarttv are enabled. At this time MusicBrainz is only used to get the musicbrainz id's, not for metadata itself.
+Music Assistant never modifies the tags in the local files. Online metadata retrieval occurs when local data is lacking. MusicBrainz is only used for streaming providers (so not for local files) OR when the Musicbrainz IDs are missing in local files and audiodb and/or fanarttv are enabled. At this time MusicBrainz is only used to get the Musicbrainz id's, not for metadata itself.
 
-For users with local files with local artwork and also streaming providers, preferably add the local provider first and allow the sync to complete and all artwork to appear before adding the streaming providers. Not doing so can result in the streaming provider artwork to be preferred although this can be fixed by using the images section in the artist view.
+For users with local files with local artwork and also streaming providers, preferably add the local provider first and allow the sync to complete and all artwork to appear before adding the streaming providers. Not doing so can result in the streaming provider artwork to be preferred although this can be fixed by using the [images section](ui.md/#view-artist-album-track) in the artist view.
 
-It is possible to speed the metadata retrieval for an individual item (including lyrics when a track is selected) by using the UPDATE METADATA option in the ⋮ menu in the top right corner.
+It is possible to speed the metadata retrieval for an individual item (including lyrics when a track is selected) by using the UPDATE METADATA option in the ⋮ menu in the top right corner of the [individual artist, album, or track view](ui.md/#view-artist-album-track).
 
 ## The Library
 
