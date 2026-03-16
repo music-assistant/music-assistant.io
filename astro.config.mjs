@@ -210,6 +210,7 @@ export default defineConfig({
 						{ label: 'Subsonic', slug: 'music-providers/subsonic' },
 						{ label: 'Tidal', slug: 'music-providers/tidal' },
 						{ label: 'TuneIn', slug: 'music-providers/tunein' },
+						{ label: 'YouTube', slug: 'music-providers/youtube' },
 						{ label: 'YouTube Music', slug: 'music-providers/youtube-music' },
 					],
 				},
