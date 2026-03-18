@@ -107,7 +107,7 @@ In addition to the settings outlined above to configure the provider there are a
 
 - Fields with multiple values can be handled as follows:
     - For ID3v2.3 and MP4 tags, multiple items should be separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3.
-    - For Vorbis (FLAC, OGG), use multiple fields per the Vorbis spec
+    - For Vorbis (FLAC, OGG), use multiple fields per the [Vorbis spec](https://xiph.org/vorbis/doc/v-comment.html)
     - For ID3v2.4 and APEv2 tags, multiple artists and album artists can be separated by the null character
 - MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
 - Music Assistant puts you in control by fully trusting the tags you provide, only additional information is scraped from metadata providers.
