@@ -116,6 +116,13 @@ In addition to the settings outlined above to configure the provider there are a
 
 - To minimise the chance of problems with MA the <a href="https://kodi.wiki/view/Music_tagging" target="_blank" rel="noopener noreferrer">Kodi guidelines</a> should be followed. Just about all the tips, tricks and suggestions on that page are applicable to MA and if it is followed to the letter the UX will be much better
 
+> [!NOTE]
+> As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
+> - Vorbis (FLAC, OGG): Multiple (more than 1) ARTIST fields (one per artist)
+> - ID3v2.4 (MP3): Multiple (more than 1) null-separated values in TPE1
+> - APEv2 (WavPack, Musepack, etc.): Multiple (more than 1) null-separated values in Artist field
+> - All formats: Single artist field with exactly one MusicBrainz Artist ID
+
 ### Multi-Artist Tracks
 
 For tracks with multiple artists, MA supports several approaches:
