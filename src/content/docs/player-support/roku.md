@@ -4,7 +4,7 @@ title: "Roku Media Assistant"
 
 # Roku Media Assistant <img src="/assets/icons/roku-media-assistant-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Media Assistant is a utility that allows you to stream/play local and hosted media on your Roku device through Deeplinks. More information including examples and documentation can be found on the <a href="https://medievalapple.net/Media-Assistant" target="_blank" rel="noopener noreferrer">Media Assistant website</a>.
+Media Assistant is a utility that allows you to stream/play local and hosted media on your Roku device through Deeplinks. More information including examples and documentation can be found on the <a href="https://medievalapple.net/Media-Assistant" target="_blank" rel="noopener noreferrer">Media Assistant website</a>. This provider is contributed and maintained by [Medieval Apple](https://github.com/MedievalApple).
 
 ## Features
 
