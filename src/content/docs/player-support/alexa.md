@@ -16,7 +16,7 @@ Music Assistant has support for Alexa devices. This component is contributed and
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Alexa provider also has several unique settings
+In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>URL: Amazon subdomain (region-specific), e.g. amazon.com, amazon.co.uk</b>
 - <b>E-mail: Amazon account linked to Echo devices</b>
