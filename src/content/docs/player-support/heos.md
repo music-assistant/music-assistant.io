@@ -30,5 +30,5 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
   
 ## Known Issues / Notes
 
-- Any build-in displays on devices and the HEOS app will show 'URL stream' as metadata when playing anything from Music Assistant due to limitations to the HEOS API.
+- Metadata on built-in displays on devices and the HEOS app will show 'URL stream' when playing anything from Music Assistant due to limitations with the HEOS API.
 - Playback to additional zones is supported, but they cannot be turned on/source selected from MA. This needs to be done externally (via Home Assistant for example).
