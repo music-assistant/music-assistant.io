@@ -30,5 +30,5 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
   
 ## Known Issues / Notes
 
-- The HEOS app or any build-in displays devices on do not show any metadata when playing from MA due to API limitations
-- Playback to additional zones is supported, but they cannot be turned on/source selected from MA. This needs to be done externally (via Home Assistant for example)
+- Any build-in displays on devices and the HEOS app will show 'URL stream' as metadata when playing anything from Music Assistant due to limitations to the HEOS API.
+- Playback to additional zones is supported, but they cannot be turned on/source selected from MA. This needs to be done externally (via Home Assistant for example).
