@@ -47,18 +47,10 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 |---------|-------------|
 | **Enable Guest Access** | Master toggle for the entire feature. When disabled, all active guest sessions are immediately destroyed and guests will need to re-scan the QR code when re-enabled. |
 | **Party Player** | Select which player/queue receives guest requests. If not set, uses the active player. |
-| **Album Art Background** | Display blurred album art or a solid color as the background. |
 | **Display Lyrics** | Show synchronized lyrics on the party dashboard alongside the QR code. When synced (LRC) lyrics are available, they scroll in time with the music. Hidden on mobile-sized screens in normal mode. |
 | **Karaoke Mode** | When enabled (requires Display Lyrics), lyrics are displayed prominently in the center of the screen with the track list minimized to the current and next song at the bottom. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. |
 | **Highlight Lyrics Ahead** | When enabled (requires Display Lyrics), the lyric line highlight transition finishes exactly when the line's timestamp arrives, giving a smooth anticipation effect. When disabled, the transition starts at the timestamp instead. Enabled by default. |
 | **Anti Burn-in** | Periodically swaps the position of UI elements every 10 minutes to prevent burn-in on OLED or plasma displays. In normal mode, the QR code and track list sides are swapped. With lyrics enabled, the QR code and lyrics swap positions. In karaoke mode, the QR code alternates between the top-left and top-right corners. Enabled by default. |
-
-### QR Code Settings
-
-| Setting | Description |
-|---------|-------------|
-| **Show Instruction Text** | Display helper text below the QR code |
-| **Instruction Text** | Customizable text (default: "Scan to join!") |
 
 ### Rate Limiting (Advanced)
 
@@ -109,7 +101,6 @@ Access via `/party` in the Music Assistant interface. This view is designed for 
 - Large QR code for easy scanning (click to copy the party URL to clipboard)
 - Animated track stack showing previous, current, and upcoming songs
 - Guest request badges visible on queue items
-- Optional album art background with blur effect
 - Optional synchronized lyrics display alongside the QR code
 - **Karaoke Mode** - A dedicated layout that puts lyrics front-and-center with the track stack minimized at the bottom and the QR code in the top-left corner. Great for sing-along parties!
 - **Anti Burn-in** - Automatically swaps UI element positions every 10 minutes to protect OLED and plasma displays
