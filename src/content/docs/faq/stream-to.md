@@ -33,14 +33,6 @@ If this is encountered then, as above, change the *build* type to **pa** (PortAu
 If “<a href="https://github.com/pssc/ha-addon-squeezelite/issues/1" target="_blank" rel="noopener noreferrer">helicopter noises</a>” are heard then adjust the target latency to a higher value.
 
 To do so, enable “Show unused configuration options” and add `-a 150ms` to the *options* text field while using the ALSA or PA (PortAudio) *build*. Experimentation with higher or lower values may be required.
-
-### Static instead of audio playback on some tracks
-
-This is <a href="https://github.com/music-assistant/support/issues/4163" target="_blank" rel="noopener noreferrer">an issue with Music Assistant</a> and affects all tracks not using the `i16` sampling format (such as 24/32-bit audio) when streaming with the **WAV** *Output codec*.
-
-When encountering this issue, change the *Output format* to **FLAC** (or any other non-WAV format) in the Music Assistant player *Advanced Settings*.
-
-Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite App also works around this issue.
 </div>
 </details>
 
