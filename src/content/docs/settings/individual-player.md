@@ -54,7 +54,7 @@ All providers have the option to apply <a href="https://en.wikipedia.org/wiki/Di
 
 The DSP option is found in the MA settings for each player which means that each player has its own independently configurable DSP settings.
 
-Individual player DSP settings will be used for playback to AirPlay, Squeezelite and Universal groups. For all other group types DSP will be disabled.
+When playing in a group, individual player DSP settings will only be used for Universal groups and when playing via AirPlay, Squeezelite or Sendspin. Groups using all other protocols will have DSP disabled.
 
 The DSP path consists of an INPUT pre-amplifier for initial gain control, followed by optional audio filters that can be added between input and output (multiple times if desired). The following filters are available:
 

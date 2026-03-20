@@ -15,7 +15,7 @@ Players will be powered on before the announcement and then off again if it was 
 
 Volume can be adjusted while playing the announcement.
 
-If a player type has native support for announcements (e.g. Sonos, Snapcast) then that will be used in preference to the MA functionality providing an even smoother experience.
+If a player type has native support for announcements (i.e. Sonos, Snapcast, Sendspin) then that will be used in preference to the MA functionality providing an even smoother experience.
 
 The functionality works with all players that are supported by Music Assistant.
 
@@ -29,7 +29,7 @@ If an announcement is sent to a single player that supports native announcements
 
 Native announcement support usually means that the player can "overlay" the announcement on top of any music that is playing. It will "duck" the volume of the music (or silence it completely), play the announcement with a volume boost and then revert the music volume. Music keeps playing and the entire announcement will be handled by the player itself.
 
-Currently the only (known) player types that support native announcements are Sonos S2 speakers and Snapcast. Hopefully more player types will follow.
+Currently the only player types that support native announcements are Sonos S2 speakers, Snapcast, and Sendspin.
 
 ## MA Player Support
 
