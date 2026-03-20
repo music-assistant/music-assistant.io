@@ -5,7 +5,7 @@ description: Common Problems and Fixes
 
 # First things to try and how to report issues
 
-Look in the logs and try and resolve any errors you see there particularly those related to <a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">tagging</a>. Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking)or container misconfiguration.
+Look in the logs and try and resolve any errors you see there particularly those related to <a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">tagging</a>. Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
 
 Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers (except when using our recommended docker compose) is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Some options have been added to core to help people who are running non-standard setups but these are supplied on a non-support basis. Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you.
 
@@ -13,11 +13,11 @@ Increasingly, we are seeing reports from users which are caused by their use of 
 
 For clarity, running installation options other than HAOS or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
 
-There are settings available in MA SETTINGS>>CORE>>STREAMSERVER>>CONFIGURE>>ADVANCED that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
+There are settings available in MA SETTINGS>> SYSTEM>> STREAMS (Show advanced settings) that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
 
 Most players are discovered using mDNS (broadcast) so if your players do not get discovered it means that your network is blocking that traffic (e.g. IGMP or multicast snooping or filtering). You will have to check your settings (e.g. WiFi setup) if multicast is being blocked. Business solutions tend to block multicast traffic as much as possible as it hurts performance when there are many clients. In a home setup is it mandatory to have because all home gear relies on multicast. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
 
-Make sure the HA internal url is set correctly. HA SETTINGS>>SYSTEM>>NETWORK>>Home Assistant URL>>Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to http://your.internal.ip:8123/
+Make sure the HA internal url is set correctly. HA SETTINGS>>SYSTEM>>NETWORK>>Home Assistant URL>>Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to `http://your.internal.ip:8123/`
 
 MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which by default is usually FLAC) so playing a low qualiy MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage. Players have an option to use a lossy codec which will lower the bandwidth requirements, this is available in the advanced settings for the player.
 
@@ -41,7 +41,7 @@ Check the GitHub Issues and Discord to see if it is a known problem. If not try 
 
 Before you raise an issue [read this first](/support/). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
 
-DOWNLOAD and ATTACH complete logs from MA SETTINGS>>CORE. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider basis.
+DOWNLOAD and ATTACH complete logs from MA SETTINGS>> SYSTEM>> SERVER LOGGING. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider basis.
 
 You can also look in the Browser console when you have front end issues which in Chrome browser is --> F12 for developer tools --> console. 
 
@@ -56,7 +56,7 @@ The following is required in ALL reports as the MA team is small and you need to
 - What you have tried from this page that hasn't helped (This is very important!)
 
 > [!NOTE]
-> You can retrieve the full MA logs by going to the MA settings and clicking on CORE
+> You can retrieve the full MA logs by going to the MA settings and clicking on SYSTEM
 
 ## A provider isn't working
 
