@@ -138,6 +138,8 @@ In general, ensure the MusicBrainz Artist IDs align with the ARTIST (or ARTISTS)
 
 > [!NOTE]
 > If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database.
+>
+> The album artist tag must be semi-colon separated
 
 ### Tags used by MA
 
