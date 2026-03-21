@@ -8,13 +8,13 @@ description: Information Relevant to all Player Providers
 > [!NOTE]
 > Players (devices) are added to Music Assistant by adding their associated player provider. Player providers are added by navigating to MA Settings and then Providers and then clicking on ADD A NEW PROVIDER
 
-For specific player provider information refer to the relevant section in this document. For a description of possible settings refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages. When a player provider is enabled, then the devices which support that protocol will be automatically discovered by Music Assistant. The following table summarises player capabilities. Note that DLNA and HA players can suffer from poor implementation of required standards. If these player types do not work well and the device supports other protocols then use the other protocol.
+For specific player provider information refer to the relevant section in this document. For a description of possible settings refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages. When a player provider is enabled which supports auto-discovery, then the devices which support that protocol will be continuously discovered. The following table summarises player capabilities. Note that DLNA and HA players can suffer from poor implementation of required standards. If these player types do not work well and the device supports other protocols then use the other protocol.
 
 [![Preview image](/assets/player-provider-summary.png)](/assets/player-provider-summary.png)
 
-If a device supports multiple protocols then multiple players for the device will be seen. In the [Individual Player Settings](/settings/individual-player/) you can disable or hide any players you do not use. 
+If a device supports multiple protocols then these will be combined into one player and will be shown as chips near the player name in the settings. In the [Individual Player Settings](settings/individual-player/#output-protocols) you can set the default protocol, or disable any protocols you do not use. 
 
-Only players provided by certain providers — that is, Home Assistant Players, Snapcast, and Universal Player — support deletion, and even then only when the player is unavailable or disabled. Deleting a player can be useful to reset a problematic player’s configuration. For providers that support deletion, deleted players that are still on the network will be rediscovered automatically on the next Music Assistant restart or player provider reload.
+Only players provided by certain providers — that is, Home Assistant Players, Snapcast, and Universal Player — support deletion. Deleting a player can be useful to reset a problematic player’s configuration. For providers that support deletion, deleted players that are still on the network will be rediscovered automatically on the next Music Assistant restart or player provider reload.
 
 ![Preview image](/assets/screenshots/player-disable.png) 
 
