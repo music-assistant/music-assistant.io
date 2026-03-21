@@ -14,7 +14,7 @@ For specific player provider information refer to the relevant section in this d
 
 If a device supports multiple protocols then multiple players for the device will be seen. In the [Individual Player Settings](/settings/individual-player/) you can disable or hide any players you do not use. 
 
-Players can only be deleted if they are unavailable or disabled. Deleting a player can be useful if there is a problem with it. Deleted players which become or are still available will get rediscovered and will return to the list on MA restart or player provider reload.
+Only players provided by certain providers — that is, Home Assistant Players, Snapcast, and Universal Player — support deletion, and even then only when the player is unavailable or disabled. Deleting a player can be useful to reset a problematic player’s configuration. For providers that support deletion, deleted players that are still on the network will be rediscovered automatically on the next Music Assistant restart or player provider reload.
 
 ![Preview image](/assets/screenshots/player-disable.png) 
 
