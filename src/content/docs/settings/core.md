@@ -63,6 +63,12 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 This opens a view where the tail of the Music Assistant log can be seen or the full log can be downloaded.
 
+## Background Tasks
+
+This opens a view where the completed and upcoming background tasks can be seen. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task.
+
+![image](/assets/screenshots/background-tasks.png)
+
 ## Genre Management
 
 Administrators can access the **Genre Management** page from the settings menu. This page provides tools for maintaining the genre database.
