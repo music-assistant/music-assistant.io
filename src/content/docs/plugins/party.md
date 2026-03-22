@@ -160,4 +160,4 @@ When remote access is disabled, guests must be on the same network as your Music
 3. **Adjust rate limits** - For smaller gatherings, you might disable rate limiting entirely
 4. **Use a dedicated player** - Configure a specific player for party to avoid conflicts with other rooms
 5. **Enable remote access** - If some guests might be on cellular data, enable remote access so the QR code works for everyone
-6. **Enable Karaoke Mode** - For sing-along parties, turn on Display Lyrics and Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
+6. **Enable Karaoke Mode** - For sing-along parties, turn on Display Lyrics and Karaoke Mode to show lyrics prominently on the big screen. Works best with music sources that supply synced (LRC) lyrics
