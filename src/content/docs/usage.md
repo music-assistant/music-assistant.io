@@ -54,7 +54,7 @@ Selecting the PLAYED ITEMS option will show the previous items from the queue an
 A menu of options to control the queue is available for each upcoming track and is shown in the image above.
 
 > [!NOTE]
-> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in MA SETTINGS>>CORE>>PLAYER QUEUES CONTROLLER
+> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in MA SETTINGS>> SYSTEM>> PLAYER QUEUES
     
 The options in the menu available in the top right is shown below. Repeat and Shuffle also have buttons at the bottom in the player bar (or in the NOW PLAYING view for narrow mobile devices).
 
