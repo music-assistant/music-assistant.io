@@ -25,7 +25,7 @@ You can also use the `music_assistant.search` or `music_assistant.get_library` a
 > [!NOTE]
 > URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
 
-URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system provider added to MA then `filesystem_smb` can be used.
+URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system source added to MA then `filesystem_smb` can be used.
 
 ## Use volume normalization? How does it work?
 
@@ -233,7 +233,7 @@ See <a href="https://github.com/orgs/music-assistant/discussions/1123#discussion
 
 ## Access my music on Nextcloud?
 
-The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](/music-providers/subsonic/) so you can use that provider in MA to connect. 
+The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](/music-providers/subsonic/) so you can use that source in MA to connect. 
 
 ## Access the MA Views directly via URL
 
