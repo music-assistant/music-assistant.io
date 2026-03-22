@@ -26,7 +26,7 @@ You can also have a list of items
 
 ![image](/assets/screenshots/service-call/play5.png)
 
-Or a list of uris which can even be from different music providers
+Or a list of uris which can even be from different music sources
 
 ![image](/assets/screenshots/service-call/play6.png)
 
@@ -43,4 +43,4 @@ There are additional options as well. Enqueue will appear when an entity that su
 > [!CAUTION]
 > **Radio Mode**
 >
-> You can only use the album, artist, track or playlist media_type if enabling Radio Mode. Radio Mode can only be used if a provider is available which supports dynamic tracks (e.g Apple, Deezer, Spotify,  Subsonic, Tidal and YTM).
+> You can only use the album, artist, track or playlist media_type if enabling Radio Mode. Radio Mode can only be used if a source is available which supports dynamic tracks (e.g Apple, Deezer, Spotify,  Subsonic, Tidal and YTM).
