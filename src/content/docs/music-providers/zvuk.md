@@ -6,17 +6,17 @@ title: "Zvuk Music"
 
 Music Assistant has support for [Zvuk Music](https://zvuk.com). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 
-This provider is built on top of the [zvuk-music](https://github.com/trudenboy/zvuk-music) library.
+This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvuk-music) library.
 
 > [!CAUTION]
 > This is an **unofficial** implementation with no affiliation to [Zvuk](https://zvuk.com) or its owners.
 
 > [!WARNING]
-> A Zvuk Prime subscription is required for full functionality of provider and lossless (FLAC) quality.
-> Without a subscription, the provider's full-fledged operation is not guaranteed.
+> A Zvuk Prime subscription is required for full functionality of this source and for lossless (FLAC) quality.
+> Without a subscription, this source's full-fledged operation is not guaranteed.
 
 > [!NOTE]
-> Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-zvuk-music](https://trudenboy.github.io/ma-provider-zvuk-music/)**
+> Full source documentation (RU/EN): **[trudenboy.github.io/ma-provider-zvuk-music](https://trudenboy.github.io/ma-provider-zvuk-music/)**
 
 ## Features
 
@@ -48,7 +48,7 @@ Configuration requires obtaining an X-Auth-Token from Zvuk Music.
 
 ### Obtaining the Token
 
-The Zvuk Music provider requires an authentication token (X-Auth-Token) from your Zvuk account.
+The Zvuk Music source requires an authentication token (X-Auth-Token) from your Zvuk account.
 
 **Steps:**
 
@@ -82,7 +82,7 @@ The Zvuk Music provider requires an authentication token (X-Auth-Token) from you
 
 5. **Paste the token** into Music Assistant
 
-   - Go to Music Assistant Settings → Music Providers → Zvuk Music
+   - Go to Music Assistant Settings → Music sources → Add a music source → Zvuk Music
    - Paste the token into the "X-Auth-Token" field
    - Save the configuration
 
@@ -113,5 +113,5 @@ The Zvuk Music provider requires an authentication token (X-Auth-Token) from you
 
 ### Quality Issues
 
-- If lossless quality is unavailable (no subscription), the provider will automatically fall back to the highest available quality (320 kbps)
+- If lossless quality is unavailable (no subscription), this source will automatically fall back to the highest available quality (320 kbps)
 
