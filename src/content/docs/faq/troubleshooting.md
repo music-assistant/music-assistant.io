@@ -52,7 +52,7 @@ The following is required in ALL reports as the MA team is small and you need to
 - Are the players grouped?
 - How is playback being instigated (e.g. automation or via the UI)
 - If you aren't using HAOS then exactly how you have installed MA
-- What is working (e.g. player works with music provider X but not Y)
+- What is working (e.g. player works with music source X but not Y)
 - What you have tried from this page that hasn't helped (This is very important!)
 
 > [!NOTE]
