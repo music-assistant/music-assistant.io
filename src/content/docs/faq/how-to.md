@@ -45,7 +45,7 @@ There are three options.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
-You don't shuffle the music providers you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar) or you can select the [NOW PLAYING View](/ui/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
+You don't shuffle the music sources you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar) or you can select the [NOW PLAYING View](/ui/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
 ``` yaml
 action: media_player.shuffle_set
 target:
