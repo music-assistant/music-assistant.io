@@ -2,7 +2,7 @@
 title: "Qobuz"
 ---
 
-# Qobuz Provider <img src="/assets/icons/qobuz-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Qobuz <img src="/assets/icons/qobuz-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has full support for <a href="https://www.qobuz.com/" target="_blank" rel="noopener noreferrer">Qobuz</a>, including Qobuz's excellent HiRes catalogue!
 
