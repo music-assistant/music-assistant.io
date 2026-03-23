@@ -2,7 +2,7 @@
 title: "Plex"
 ---
 
-# Plex Provider <img src="/assets/icons/plex-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Plex <img src="/assets/icons/plex-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for using Plex (MusicLibrary). Contributed by <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> and maintained by <a href="https://github.com/anatosun" target="_blank" rel="noopener noreferrer">anatosun</a>
 
@@ -41,6 +41,6 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 
 ## Known Issues / Notes
 
-- A Plex provider is always bound to a user account and a library
+- A Plex source is always bound to a user account and a library
 - If you have multiple libraries, you need to add the Plex provider multiple times
 - If you have multiple Plex accounts, which have their own playlists, you can also add them as separate provider instances
