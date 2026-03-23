@@ -112,11 +112,11 @@ In any of the following views, Right click or long press on a track to get the f
 The START RADIO option will only be seen if there is a provider that supports it. Start Radio populates the queue with tracks based on the selected track. The tracks are selected by the provider not MA. 
 ***************************************************************
 
-## View - Home
+## View - Discover
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
 
-The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which providers supports this.
+The Discover View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the specific music source pages to identify which sources supports this.
 
 The view is fully configurable. Select the user name in the navigation menu and then EDIT HOME SCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
 
@@ -132,7 +132,7 @@ Album and Track Views look the same as the above except there is no album artist
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) )
 indicates that the viewed results are subject to filtering.
 
-The provider filter icon will only show when there are two or more music providers installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
+The provider filter icon will only show when there are two or more music sources installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
 
 Items in all views can be "right clicked" or "long pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
@@ -183,7 +183,8 @@ The Radio view shows streaming radio stations that are available in the MA libra
 
 * Add to URL - A URL for a streaming radio station (including self-hosted icecast stations) can be added to the library by selecting Add to URL from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 
-Music providers that support Radio items will have those items shown here when they are added to the library
+Music sources that support Radio items will have those items shown here when they are added to the library
+
 ## View - Browse
 
 Entering the Browse view will present a list of the installed [Music Providers](/music-providers/). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
@@ -191,8 +192,6 @@ Entering the Browse view will present a list of the installed [Music Providers](
 When viewing a provider you will only see what is already in the Library of the Streaming Providers. For the local Providers you will see all files and if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
 
 > [!CAUTION]
-> **Caution**
->
 > Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
 
 All radio stations from the [Radio Browser](/music-providers/radio-browser/) provider are available in this view. Individual stations that have been added to the library are available in the Radio view.
