@@ -14,11 +14,17 @@ Media Assistant is a utility that allows you to stream/play local and hosted med
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Roku Media Assistant provider also has the following Advanced settings.
+In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-<b>Allow automatic Roku discovery</b> is on by default and enables the automatic discovery of Roku devices.
+- <b>Allow automatic Roku discovery.</b> This is on by default and enables the automatic discovery of Roku devices
+- <b>App ID of Media Assistant.</b> This is only used if the Media Assistant app was sideloaded onto the device
 
-<b>App ID of Media Assistant</b> is only used if the Media Assistant app was sideloaded onto the device. 
+In addition to the [Individual Player Settings](/settings/individual-player/) the Roku players have the following settings:
+
+- <b>Enable queue flow mode.</b> Enable queue flow mode. Enabling this option will send all tracks as a continuous audio stream. This allows for support of gapless or crossfading. This can also help if your Roku is having have difficulty transitioning between tracks. This does have the side effect of losing some displayed metadata
+- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
+- <b>Sample rates supported by this player.</b> This setting defaults to Roku's stated max sample rates of 44.1kHz / 16 bits and 48kHz / 16 bits but the sample rates and bit depths supported by the Roku can be manually set. Unsupported sample rates may work depending on the Roku device
+- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`. Some codecs may load faster than others depending on the Roku device
 
 ## Configuration
 
@@ -38,4 +44,4 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 
 
 ## Not Yet Supported
-- Volume currently has to be controlled on the device.
+- Volume currently has to be controlled on the device
