@@ -2,21 +2,21 @@
 title: "Yandex Music"
 ---
 
-# Yandex Music Provider <img src="/assets/icons/yandex-music-icon.svg" alt="Preview image" style="width: 50px; float: right;" loading="lazy" />
+# Yandex Music <img src="/assets/icons/yandex-music-icon.svg" alt="Preview image" style="width: 50px; float: right;" loading="lazy" />
 
 Music Assistant has support for [Yandex Music](https://music.yandex.ru). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 
-This provider is built on top of the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library.
+This source is built on top of the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
 
 > [!WARNING]
-> A Yandex Music Plus subscription is required for full functional of provider and lossless (FLAC) quality.
-> Without a subscription, the provider's full-fledged operation is not guaranteed.
+> A Yandex Music Plus subscription is required for full functional of source and lossless (FLAC) quality.
+> Without a subscription, the source's's full-fledged operation is not guaranteed.
 
 > [!NOTE]
-> Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-music](https://trudenboy.github.io/ma-provider-yandex-music/)**
+> Full source documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-music](https://trudenboy.github.io/ma-provider-yandex-music/)**
 
 
 ## Features
@@ -52,7 +52,7 @@ Configuration requires obtaining an OAuth token from Yandex Music.
 2. Log in with your Yandex account if prompted
 3. After authorization, you will be redirected to a URL containing `access_token=YOUR_TOKEN`
 4. Copy the token value (the part after `access_token=` and before `&`)
-5. Paste this token into the Music Assistant Yandex Music provider configuration
+5. Paste this token into the Music Assistant Yandex Music source configuration
 
 ### Settings
 
@@ -61,5 +61,5 @@ Configuration requires obtaining an OAuth token from Yandex Music.
 ## Known Issues / Notes
 
 - The token may expire and need to be refreshed periodically
-- Lossless FLAC quality requires an active Yandex Music Plus subscription; without it the provider falls back to the highest available quality
+- Lossless FLAC quality requires an active Yandex Music Plus subscription; without it the source falls back to the highest available quality
 - Lossless FLAC streams are fetched in 4 MB windows to work around Yandex CDN per-connection limits, ensuring uninterrupted playback for tracks of any length
