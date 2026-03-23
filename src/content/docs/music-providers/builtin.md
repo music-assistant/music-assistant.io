@@ -16,6 +16,10 @@ For each of the builtin playlists there is a toggle to enable or disable them.
 
 ## Usage
 
+This provider is added automatically and cannot be disabled or deleted.
+
+To manually add items follow these steps:
+
 1. In the main menu select 'Tracks' or 'Radio'
 2. Then click on the icon in the top right corner
 
@@ -23,4 +27,4 @@ For each of the builtin playlists there is a toggle to enable or disable them.
 
 3. Add the full URL including http:// or https:// and optionally a custom name and image URL.
 
-After completing step 3 the track or station will become available in the respective view.
+After completing step 3 the track or station will become available in the respective view (A press of the refresh icon ![screenshot](/assets/icons//icon-refresh-plain.png) may be required).

@@ -94,11 +94,11 @@ If you run into any issues when using a docker install vs the recommended/standa
 ## Usage and Notes
 
 - If Music Assistant in running in a separate docker container, the webinterface needs to be accessed at `http://YOUR_MA_IP_ADDRESS:8095`. The port can be changed in the MA settings. If something else is using port 8095 then that must be shutdown until the MA port is changed
-- No music providers are installed initially. These must be added by navigating to the MA settings and then adding each provider individually that are desired
+- No music sources are installed initially. These must be added by navigating to the MA settings and then adding each provider individually that are desired
 - The AirPlay, Chromecast, DLNA, Sendspin, and Sonos player providers are added automatically on initial install. Other than Sendspin, if you do not have any players which support those protocols then they can be deleted
 - Music from the music sources will be automatically loaded into the [Music Assistant library](/usage/#the-library). If there are multiple sources, they will be merged as one library
 - The Music Assistant UI centres around the concept of the [Library](/usage/#the-library), so the artists, albums, tracks, playlists, audiobooks, podcasts and radio stations that you are most interested in. It is possible to BROWSE or SEARCH the various providers to add aditional items to the Library
-- Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will indicate tasks that are in progress. This can be seen by this symbol ![icon](/assets/icons/sync-icon.png) next to the Music Provider entry in the MA settings
+- Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will indicate tasks that are in progress. This can be seen by this symbol ![icon](/assets/icons/sync-icon.png) next to the music source entry in the MA settings
 - Music sources are synced at regular intervals (which can be changed in the settings)
 - MA is designed to work on a Raspberry Pi (4+) which is also running Home Assistant. For this reason it does not make large demands on resources. Additionally, there are limits on the free API calls used for artwork and other metadata. The result of this is that initial syncs of large libraries can take a long time. Subsequent syncs should be noticeably faster
 - If a song is [linked across multiple providers](/ui/#provider-details) (e.g. Spotify and a FLAC file on disk), the file/stream with the highest quality is always preferred when starting a stream. Highest quality is based on sample rate, bit depth and codec and local is always preferred over cloud if the quality is equal.

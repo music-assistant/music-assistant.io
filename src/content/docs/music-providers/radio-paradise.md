@@ -2,14 +2,14 @@
 title: "Radio Paradise"
 ---
 
-# Radio Paradise Provider <img src="/assets/icons/radioparadise-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Radio Paradise <img src="/assets/icons/radioparadise-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://radioparadise.com/" target="_blank" rel="noopener noreferrer">Radio Paradise</a> which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
 > [!TIP]
 > **Donate**
 >
-> Radio Paradise exists due to the generosity of their donors. If you are using this provider consider supporting them https://radioparadise.com/support
+> Radio Paradise exists due to the generosity of their donors. If you are using this source consider supporting them https://radioparadise.com/support
 
 ## Features
 
@@ -34,7 +34,7 @@ Music Assistant has support for <a href="https://radioparadise.com/" target="_bl
 
 ## Usage
 
-The Radio Paradise provider adds all stations to the library and 'Radio' view by default.
+Use the browse view to find stations to add to the library.
 
 ## Known Issues / Notes
 

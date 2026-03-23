@@ -2,12 +2,12 @@
 title: "Nugs.net"
 ---
 
-# Nugs.net Provider <img src="/assets/icons/nugsnet-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Nugs.net <img src="/assets/icons/nugsnet-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for streaming your music from <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a>. Contributed and maintained by <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a>
 
 > [!NOTE]
-> A paid subscription is required to use this provider
+> A paid subscription is required to use this source
     
 ## Features
 

@@ -1,14 +1,14 @@
 ---
-title: Music Assistant Jellyfin Provider
-description: Documentation for using the Jellyfin music provider
+title: Music Assistant Jellyfin Source
+description: Documentation for using the Jellyfin music source
 ---
 
-# Jellyfin Provider <img src="/assets/icons/jellyfin-logo.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Jellyfin <img src="/assets/icons/jellyfin-logo.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for music servers which work to the Jellyfin definition. This component was contributed by <a href="https://github.com/lokiberra" target="_blank" rel="noopener noreferrer">lokiberra</a>.
 
 > [!CAUTION]
-> Please be advised that this provider currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
+> Please be advised that this source currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
 
 ## Features
 

@@ -16,11 +16,11 @@ This menu's appearance can be configured in Settings / User Interface. On a desk
 ## Global Search
 [![image](/assets/screenshots/global-search.png)](/assets/screenshots/global-search.png)
 
-Searches can be done via any combination of words or partial words and also via a URL to a provider such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
+Searches can be done via any combination of words or partial words and also via a URL to a source such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
 
 Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. 
 
-Selecting a specific category will then show a maximum of 50 items. Context sensitive menus are available for each. If the item desired is not found then narrow the search term or navigate to the artist and all available albums and tracks should be shown in that view (although some providers may be limited in the number of items that can be returned).
+Selecting a specific category will then show a maximum of 50 items. Context sensitive menus are available for each. If the item desired is not found then narrow the search term or navigate to the artist and all available albums and tracks should be shown in that view (although some sources may be limited in the number of items that can be returned).
 ***************************************************************
 
 ## Player Bar
@@ -112,11 +112,11 @@ In any of the following views, Right click or long press on a track to get the f
 The START RADIO option will only be seen if there is a provider that supports it. Start Radio populates the queue with tracks based on the selected track. The tracks are selected by the provider not MA. 
 ***************************************************************
 
-## View - Home
+## View - Discover
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
 
-The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which providers supports this.
+The Discover View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the specific music source pages to identify which sources supports this.
 
 The view is fully configurable. Select the user name in the navigation menu and then EDIT HOME SCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
 
@@ -132,7 +132,7 @@ Album and Track Views look the same as the above except there is no album artist
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) )
 indicates that the viewed results are subject to filtering.
 
-The provider filter icon will only show when there are two or more music providers installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
+The provider filter icon will only show when there are two or more music sources installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
 
 Items in all views can be "right clicked" or "long pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
@@ -184,6 +184,8 @@ The Radio view shows streaming radio stations that are available in the MA libra
 * Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 
 * Music providers that support Radio items will have those items shown here when they are added to the library
+
+Music sources that support Radio items will have those items shown here when they are added to the library
 
 ## View - Browse
 

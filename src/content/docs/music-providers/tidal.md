@@ -2,7 +2,7 @@
 title: "Tidal"
 ---
 
-# Tidal Provider <img src="/assets/icons/tidal-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Tidal <img src="/assets/icons/tidal-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://tidal.com" target="_blank" rel="noopener noreferrer">Tidal</a>. Contributed and maintained by <a href="https://github.com/jozefKruszynski" target="_blank" rel="noopener noreferrer">jozefKruszynski</a>
 
