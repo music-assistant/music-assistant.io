@@ -16,7 +16,7 @@ Music Assistant relies heavily on metadata to work well and it gets this informa
 - If a track has no album artist tag, there will no attempt to retrieve it from a metadata provider
 - Various artists will be the default option if the album artist tag is missing in local files
 
-Music Assistant never modifies the tags in the local files. Online metadata retrieval occurs when local data is lacking. MusicBrainz is only used for streaming providers (so not for local files) OR when the Musicbrainz IDs are missing in local files and audiodb and/or fanarttv are enabled. At this time MusicBrainz is only used to get the Musicbrainz id's, not for metadata itself.
+Music Assistant never modifies the tags in the local files. Online metadata retrieval occurs when local data is lacking. MusicBrainz is only used for streaming sources (so not for local files) OR when the Musicbrainz IDs are missing in local files and audiodb and/or fanarttv are enabled. At this time MusicBrainz is only used to get the Musicbrainz id's, not for metadata itself.
 
 For users with local files with local artwork and also streaming sources, preferably add the local source first and allow the sync to complete and all artwork to appear before adding the streaming sources. Not doing so can result in the streaming source artwork to be preferred although this can be fixed by using the [images section](/ui/#view---individual-artist) in the artist view.
 
@@ -88,7 +88,7 @@ Playlists can be created or added to from various menus in the different views. 
 
 Playlists which consist of tracks from the filesystem source will be stored in the MA database.
 
-User created playlists from streaming sources will be imported into the MA database and will remain synchronised regardless of whether changes are made from the MA UI or from the streaming source's native application. Refer to the individual Music Provider pages for any limitations.
+User created playlists from streaming sources will be imported into the MA database and will remain synchronised regardless of whether changes are made from the MA UI or from the streaming source's native application. Refer to the individual Music Source pages for any limitations.
 
 Playlists can be copied from one source to another by opening the original playlist and selecting all of the tracks and then in the ACTIONS menu select `Add to Playlist`.
 
