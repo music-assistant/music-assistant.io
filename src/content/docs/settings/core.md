@@ -19,7 +19,7 @@ The core server settings are set with typical defaults that should work for most
 
 ## Music
 
-- <b>Advanced - Reset Library Database.</b> Selecting this button will erase the MA database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music providers will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
+- <b>Advanced - Reset Library Database.</b> Selecting this button will erase the MA database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music sources will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
 
 ## Players
 
@@ -63,6 +63,12 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 This opens a view where the tail of the Music Assistant log can be seen or the full log can be downloaded.
 
+## Background Tasks
+
+This opens a view where the completed and upcoming background tasks can be seen. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task.
+
+![image](/assets/screenshots/background-tasks.png)
+
 ## Genre Management
 
 Administrators can access the **Genre Management** page from the settings menu. This page provides tools for maintaining the genre database.
@@ -71,7 +77,7 @@ Administrators can access the **Genre Management** page from the settings menu. 
 
 ### Background Scanner
 
-The genre scanner automatically maps media items to genres based on metadata from your music providers. The scanner panel shows:
+The genre scanner automatically maps media items to genres based on metadata from your music sources. The scanner panel shows:
 
 - **Scanner status** — Whether the scanner is currently running or idle
 - **Last scan time** — When the last scan completed

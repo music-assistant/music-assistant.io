@@ -2,7 +2,7 @@
 title: "Audiobookshelf"
 ---
 
-# audiobookshelf Provider <img src="/assets/icons/audiobookshelf-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# audiobookshelf <img src="/assets/icons/audiobookshelf-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://www.audiobookshelf.org/" target="_blank" rel="noopener noreferrer">audiobookshelf</a>. Contributed and maintained by <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a>
 

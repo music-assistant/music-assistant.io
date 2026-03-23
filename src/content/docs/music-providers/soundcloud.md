@@ -2,7 +2,7 @@
 title: "SoundCloud"
 ---
 
-# SoundCloud Provider <img src="/assets/icons/soundcloud-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# SoundCloud <img src="/assets/icons/soundcloud-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for Soundcloud. Contributed by <a href="https://github.com/gieljnssns" target="_blank" rel="noopener noreferrer">gieljnssns</a>. Maintained by <a href="https://github.com/robsonke" target="_blank" rel="noopener noreferrer">robsonke</a>
 
@@ -21,7 +21,7 @@ Music Assistant has support for Soundcloud. Contributed by <a href="https://gith
 
 ## Configuration
 
-Two fields need to be completed to use this provider, Client id and Authorization. To obtain these proceed as follows:
+Two fields need to be completed to use this source, Client id and Authorization. To obtain these proceed as follows:
 
 1. Delete your cookies for Soundcloud.
 2. Go to <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">Soundcloud</a>.
@@ -41,7 +41,7 @@ Two fields need to be completed to use this provider, Client id and Authorizatio
 ### OAuth token
 <img src="/assets/screenshots/soundcloud-token.jpg" alt="screenshot" style="width: 1005px; float: center;"  loading="lazy" />
 
-Example snippet for the Music Provider configuration step (OAuth and client_id are NOT real, use yours):
+Example snippet for the Music Source configuration step (OAuth and client_id are NOT real, use yours):
 
 ```
 client_id = 5Hvc9wa0Ejf092wj3f3920w3F920asuL

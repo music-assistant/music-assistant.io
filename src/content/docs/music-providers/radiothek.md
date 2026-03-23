@@ -3,11 +3,11 @@ title: "ORF Radiothek"
 ---
 
 
-# ORF Radiothek Provider <img src="/assets/icons/orf_radiothek-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# ORF Radiothek <img src="/assets/icons/orf_radiothek-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant has support for [ORF Radiothek](https://sound.orf.at) which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by [DButter](https://github.com/)
 
-This provider allows access to Austrian radio stations and ORF podcasts.
+This source allows access to Austrian radio stations and ORF podcasts.
 
 ## Features
 

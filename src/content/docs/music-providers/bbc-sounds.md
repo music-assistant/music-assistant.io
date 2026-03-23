@@ -2,7 +2,7 @@
 title: "BBC Sounds"
 ---
 
-# BBC Sounds Provider <img src="/assets/icons/bbcsounds-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# BBC Sounds <img src="/assets/icons/bbcsounds-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for streaming from BBC Sounds. Contributed and maintained by <a href="https://github.com/kieranhogg" target="_blank" rel="noopener noreferrer">Kieran Hogg</a>
 

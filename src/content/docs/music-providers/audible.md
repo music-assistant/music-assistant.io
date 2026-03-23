@@ -2,7 +2,7 @@
 title: "Audible"
 ---
 
-# Audible Provider <img src="/assets/icons/audible-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Audible <img src="/assets/icons/audible-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for streaming from Audible. Contributed and maintained by <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a>
 

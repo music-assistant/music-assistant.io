@@ -14,7 +14,7 @@ Music Assistant has the ability to report played tracks to a [Subsonic media ser
 
 ## Configuration
 
-- No plugin specific configuration is necessary, but a Subsonic music provider must be configured for the plugin to work
+- No plugin specific configuration is necessary, but a Subsonic music source must be configured for the plugin to work
 
 ## Known Issues / Notes
 

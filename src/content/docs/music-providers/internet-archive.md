@@ -3,11 +3,11 @@ title: "Internet Archive"
 ---
 
 
-# Internet Archive Provider <img src="/assets/icons/internet-archive-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Internet Archive <img src="/assets/icons/internet-archive-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for the Internet Archive. This component is contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
-This provider gives Music Assistant users free access to millions of audio recordings including live concerts, historical content, LibriVox audiobooks, and rare archival material from the Internet Archive.
+This source gives Music Assistant users free access to millions of audio recordings including live concerts, historical content, LibriVox audiobooks, and rare archival material from the Internet Archive.
 
 ## Features
 
@@ -43,7 +43,7 @@ This provider gives Music Assistant users free access to millions of audio recor
 - Results are capped. Searches return a maximum of 200 items per query (Internet Archive API limit)
 - Searches are optimized for music and audiobooks, however, other audio content may appear in results
 - "Tracks" searches actually return the most downloaded recordings/concerts
-- The provider attempts to filter this out but full concerts may be shown as individual "tracks"
+- The source attempts to filter this out but full concerts may be shown as individual "tracks"
 - Audiobooks are supported however users can only jump between chapters and cannot seek within a chapter
 - This free service does not have optimised API calls and delays can be experienced when browsing and searching. Long time caching is used to speed subsequent viewing
 - Bear in mind that file naming is inconsistent, clear titles are not always available and the same title can be used for different items

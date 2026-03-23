@@ -21,8 +21,8 @@ Before the Player Provider can be added the [Plugin](/ha-plugin/) must be instal
 
 ![screenshot](/assets/screenshots/plugin-provider.png)
 
-- In the MA SETTINGS >> PROVIDERS select ADD A NEW PROVIDER then HOME ASSISTANT MEDIA PLAYERS
-- In the provider settings, select which players are desired to be utilised. These can be changed at any time
+- In the MA SETTINGS select PLAYER PROVIDERS then ADD A PLAYER PROVIDER then HOME ASSISTANT MEDIA PLAYERS
+- In the provider settings, select which players are desired to be utilised. These can be changed at any time.
 
 > [!CAUTION]
 > Features are most likely limited with these players. Always prefer a native player provider, if it exists in MA, as that is optimised

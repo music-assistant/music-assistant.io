@@ -2,12 +2,12 @@
 title: "SiriusXM"
 ---
 
-# SiriusXM Provider <img src="/assets/icons/siriusxm-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# SiriusXM <img src="/assets/icons/siriusxm-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for streaming live radio stations from SiriusXM. Contributed and maintained by <a href="https://github.com/btoconnor" target="_blank" rel="noopener noreferrer">btoconnor</a>
 
 > [!NOTE]
-> - A paid subscription is required to add this Music Provider.
+> - A paid subscription is required to add this music source.
     
 ## Features
 
