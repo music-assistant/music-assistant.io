@@ -37,9 +37,11 @@ In the configuration, there are a series of steps that must be completed in orde
 
     <a href="/assets/screenshots/oops-page.png"><img src="/assets/screenshots/oops-page.png" alt="Oops Page" style="width: 800px;"  loading="lazy" /></a>
 
-2. Take the full URL in the address bar of the Oops error page and insert it into the configuration screen  
+2. Take the full URL in the address bar of the `Page not found` page and insert it into the configuration screen  
 
-3. Click on the last button to complete the setup
+3. Click on the `Complete the Auth Process via PKCE on Tidal.com` button to complete the setup
+
+4. Click on `Save`
 
 ### Settings
 
