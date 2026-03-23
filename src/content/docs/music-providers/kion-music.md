@@ -6,17 +6,17 @@ title: "KION Music"
 
 Music Assistant has support for [KION Music](https://music.mts.ru) (MTS Music). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 
-KION Music is a music streaming service by MTS (Mobile TeleSystems), one of the largest telecom operators in Russia and CIS countries. The provider uses the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library adapted for the KION API endpoint.
+KION Music is a music streaming service by MTS (Mobile TeleSystems), one of the largest telecom operators in Russia and CIS countries. This source uses the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library adapted for the KION API endpoint.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by MTS or KION.
 
 > [!WARNING]
-> A KION Music subscription is required for full functionality of the provider and lossless (FLAC) quality.
-> Without a subscription, the provider's full-fledged operation is not guaranteed.
+> A KION Music subscription is required for full functionality of the source and lossless (FLAC) quality.
+> Without a subscription, the source's full-fledged operation is not guaranteed.
 
 > [!NOTE]
-> Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-kion-music](https://trudenboy.github.io/ma-provider-kion-music/)**
+> Full source documentation (RU/EN): **[trudenboy.github.io/ma-provider-kion-music](https://trudenboy.github.io/ma-provider-kion-music/)**
 
 ## Features
 
@@ -53,7 +53,7 @@ Configuration requires obtaining a token from KION Music.
 4. Go to the **Storage** (Firefox) or **Application** (Chrome) tab
 5. Under **Local Storage**, find the entry for `https://music.mts.ru`
 6. Copy the value of the `ya_token` key
-7. Paste this token into the Music Assistant KION Music provider configuration
+7. Paste this token into the Music Assistant KION Music source configuration
 
 ### Settings
 
@@ -62,6 +62,6 @@ Configuration requires obtaining a token from KION Music.
 ## Known Issues / Notes
 
 - The token may expire and need to be refreshed periodically
-- Lossless FLAC quality requires an active KION Music subscription; without it the provider falls back to the highest available quality
+- Lossless FLAC quality requires an active KION Music subscription; without it the source falls back to the highest available quality
 - KION Music is primarily available in Russia and CIS countries
 
