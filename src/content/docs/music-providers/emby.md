@@ -1,9 +1,9 @@
 ---
 title: Music Assistant Emby Provider
-description: Documentation for using the Emby music provider
+description: Documentation for using the Emby music source
 ---
 
-# Emby Provider <img src="/assets/icons/emby-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# Emby <img src="/assets/icons/emby-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant has support for accessing music hosted on an [Emby Server](https://emby.media/). This component was contributed and is maintained by [hatharry](https://github.com/hatharry).
 
