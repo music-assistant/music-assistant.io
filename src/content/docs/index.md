@@ -1,6 +1,6 @@
 ---
 title: Music Assistant
-description: Music Assistant is a music library manager for local and streaming providers
+description: Music Assistant is a music library manager for local and streaming sources
 ---
 
 # Music Assistant
@@ -13,7 +13,7 @@ Music Assistant is a music library manager for your offline and online music sou
 
 - Supports multiple music sources through a provider implementation
 - Many popular streaming services are supported, as well as local files
-- Matches music in library from different providers (track linking)
+- Matches music in library from different sources (track linking)
 - Fetches metadata for extended artist information
 - Keeps track of the entire music library in a compact database
 - Gapless, crossfade and volume normalization support for all players
@@ -37,7 +37,7 @@ Music Assistant consists of multiple building blocks:
 
 ## Music Assistant Server
 
-The Music Assistant server is a free, opensource Media library manager that connects to your streaming services and a wide range of connected speakers. The server is the beating heart, the core of Music Assistant and it keeps track of your music sources. It must run on an always-on device like a Raspberry Pi, a NAS or an Intel NUC or alike. The server can access multiple music providers and stream to multiple player types.
+The Music Assistant server is a free, opensource Media library manager that connects to your streaming services and a wide range of connected speakers. The server is the beating heart, the core of Music Assistant and it keeps track of your music sources. It must run on an always-on device like a Raspberry Pi, a NAS or an Intel NUC or alike. The server can access multiple music sources and stream to multiple player types.
 
 ![MA Banner](/assets/MA_banner.png)
 
@@ -60,15 +60,15 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 ## The Core Team
 
 <a href="https://github.com/marcelveldt" title="Marcel. Creator of Music Assistant" target="_blank" rel="noopener noreferrer"><img src="/assets/team/marcel.png" alt="Marcel" style="width: 100px;" loading="lazy" /></a>
-<a href="https://github.com/marvinschenkel" title="Marvin. Project Lead. Author of the YouTube and Apple Music providers" target="_blank" rel="noopener noreferrer"><img src="/assets/team/marvin.png" alt="Marvin" style="width: 100px;" loading="lazy" /></a>
-<a href="https://github.com/maximmaxim345" title="Maxim. DSP Guru and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/maxim.png" alt="maxim" style="width: 100px;" loading="lazy" /></a>
+<a href="https://github.com/marvinschenkel" title="Marvin. Project Lead. Author of the YouTube and Apple Music sources" target="_blank" rel="noopener noreferrer"><img src="/assets/team/marvin.png" alt="Marvin" style="width: 100px;" loading="lazy" /></a>
+<a href="https://github.com/maximmaxim345" title="Maxim. DSP and Sendspin Guru and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/maxim.png" alt="maxim" style="width: 100px;" loading="lazy" /></a>
 <a href="https://github.com/stvncode" title="Steven. Frontend Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/steven.png" alt="steven" style="width: 100px; border-radius: 50%; border: 2px solid black;" loading="lazy" /></a>
 
 <a href="https://github.com/OzGav" title="Gavin. Community Support, Documentation and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/gavin.png" alt="Gavin" style="width: 100px;" loading="lazy" /></a>
-<a href="https://github.com/jozefKruszynski" title="Jozef. Author of the Tidal provider and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/jozef.png" alt="Jozef" style="width: 100px;" loading="lazy" /></a>
-<a href="https://github.com/fmunkes" title="Fabian. Author of the Audiobookshelf, iTunes Podcast Search and gPodder providers and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/fabian.png" alt="fabian" style="width: 100px;" loading="lazy" /></a>
-<a href="https://github.com/khers" title="Eric. Author of the Subsonic provider" target="_blank" rel="noopener noreferrer"><img src="/assets/team/khers.png" alt="khers" style="width: 100px;" loading="lazy" /></a>
-<a href="https://github.com/robsonke" title="Rob. Author of the iBroadcast provider and maintainer of Soundcloud" target="_blank" rel="noopener noreferrer"><img src="/assets/team/robsonke.png" alt="robsonke" style="width: 100px;" loading="lazy" /></a>
+<a href="https://github.com/jozefKruszynski" title="Jozef. Author of the Tidal music source and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/jozef.png" alt="Jozef" style="width: 100px;" loading="lazy" /></a>
+<a href="https://github.com/fmunkes" title="Fabian. Author of the Audiobookshelf, iTunes Podcast Search and gPodder music sources and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/fabian.png" alt="fabian" style="width: 100px;" loading="lazy" /></a>
+<a href="https://github.com/khers" title="Eric. Author of the Subsonic source" target="_blank" rel="noopener noreferrer"><img src="/assets/team/khers.png" alt="khers" style="width: 100px;" loading="lazy" /></a>
+<a href="https://github.com/robsonke" title="Rob. Author of the iBroadcast music source and maintainer of Soundcloud" target="_blank" rel="noopener noreferrer"><img src="/assets/team/robsonke.png" alt="robsonke" style="width: 100px;" loading="lazy" /></a>
 
 We also give THANKS to all the other contributors to the <a href="https://github.com/music-assistant/server/graphs/contributors" target="_blank" rel="noopener noreferrer">Server</a>, <a href="https://github.com/music-assistant/frontend/graphs/contributors" target="_blank" rel="noopener noreferrer">Frontend</a>, <a href="https://github.com/music-assistant/voice-support/graphs/contributors" target="_blank" rel="noopener noreferrer">Voice Support</a> and all of the <a href="https://github.com/orgs/music-assistant/repositories?type=all" target="_blank" rel="noopener noreferrer">Repositories</a> that make up this project!
 
