@@ -120,7 +120,7 @@ The Discover View provides quick access to all of the different media types. Als
 
 The view is fully configurable. Select the user name in the navigation menu and then EDIT HOME SCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
 
-[![image](/assets/screenshots/)](/assets/screenshots/homescreen_edit.png)
+[![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
 ***************************************************************
 
 ## View - Artist / Album / Track

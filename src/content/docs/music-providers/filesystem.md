@@ -105,8 +105,11 @@ In addition to the settings outlined above to configure this source there are ad
     - Artwork Handling: It supports both embedded artwork within the file and local folder-based images (e.g., folder.jpg or artist.png)
     - Recommended Tagger: For the best results in Music Assistant, it is strongly recommended to use <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a> to ensure the files contain the specific IDs needed for library linking. Other programs such as <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a> are often also based on the Musicbrainz catalog and can work as well provided they include the tags shown in the [Tags used by MA](#tags-used-by-ma) table
 
-- For ID3v2.3, MP4 and APEv2 tags, multiple items should be separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3
-- MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the source is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local source
+- Fields with multiple values can be handled as follows:
+    - For ID3v2.3 and MP4 tags, multiple items should be separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3.
+    - For Vorbis (FLAC, OGG), use multiple fields per the [Vorbis spec](https://xiph.org/vorbis/doc/v-comment.html)
+    - For ID3v2.4 and APEv2 tags, multiple artists and album artists can be separated by the null character
+- MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
 - Music Assistant puts you in control by fully trusting the tags you provide, only additional information is scraped from metadata providers.
 - Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and `.nfo` files with enhanced metadata are also supported
 - For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
@@ -115,6 +118,13 @@ In addition to the settings outlined above to configure this source there are ad
 ![image](/assets/screenshots/no-disc-tag.png)
 
 - To minimise the chance of problems with MA the <a href="https://kodi.wiki/view/Music_tagging" target="_blank" rel="noopener noreferrer">Kodi guidelines</a> should be followed. Just about all the tips, tricks and suggestions on that page are applicable to MA and if it is followed to the letter the UX will be much better
+
+> [!NOTE]
+> As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
+> - Vorbis (FLAC, OGG): Multiple (more than 1) ARTIST fields (one per artist)
+> - ID3v2.4 (MP3): Multiple (more than 1) null-separated values in TPE1
+> - APEv2 (WavPack, Musepack, etc.): Multiple (more than 1) null-separated values in Artist field
+> - All formats: Single artist field with exactly one MusicBrainz Artist ID
 
 ### Multi-Artist Tracks
 
@@ -127,7 +137,9 @@ For tracks with multiple artists, MA supports several approaches:
 In general, ensure the MusicBrainz Artist IDs align with the ARTIST (or ARTISTS) tags - one ID per artist.
 
 > [!NOTE]
-> If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database.
+> - If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database.
+>
+> - The album artist tag must be semi-colon separated
 
 ### Tags used by MA
 

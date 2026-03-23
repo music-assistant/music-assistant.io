@@ -232,7 +232,7 @@ export default defineConfig({
 						{ label: 'AirPlay', slug: 'player-support/airplay' },
 						{ label: 'Alexa', slug: 'player-support/alexa' },
 						{ label: 'Bluesound', slug: 'player-support/bluesound' },
-						{ label: 'Dashie Kiosk', slug: 'player-support/fully-kiosk' },
+						{ label: 'Dashie Kiosk', slug: 'player-support/dashie-kiosk' },
 						{ label: 'DLNA', slug: 'player-support/dlna' },
 						{ label: 'Fully Kiosk', slug: 'player-support/fully-kiosk' },
 						{ label: 'Google Cast', slug: 'player-support/google-cast' },
