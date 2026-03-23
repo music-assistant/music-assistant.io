@@ -18,14 +18,14 @@ Music Assistant has support for Alexa devices. This component is contributed and
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-- <b>URL: Amazon subdomain (region-specific), e.g. amazon.com, amazon.co.uk</b>
-- <b>E-mail: Amazon account linked to Echo devices</b>
-- <b>Password: Password for the Amazon account</b>
-- <b>OTP Secret: OTP secret for the Amazon account</b>
-- <b>API URL: URL of the local API used to communicate with Alexa (e.g. http://localhost:3000)</b>
-- <b>API Basic Auth Username: Username for basic auth if the API is protected</b>
-- <b>API Basic Auth Password: Password for API basic auth</b>
-- <b>Alexa Language: Locale used for Alexa, e.g. en-US</b>
+- <b>URL.</b> Amazon subdomain (region-specific) (e.g. amazon.com, amazon.co.uk)
+- <b>E-mail.</b> Amazon account linked to Echo devices
+- <b>Password.</b> Password for the Amazon account
+- <b>OTP Secret.</b> OTP secret for the Amazon account
+- <b>API URL.</b> URL of the local API used to communicate with Alexa (e.g. http://localhost:3000)
+- <b>API Basic Auth Username.</b> Username for basic auth if the API is protected
+- <b>API Basic Auth Password.</b> Password for API basic auth
+- <b>Alexa Language.</b> Locale used for Alexa (e.g. en-US)
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the Alexa players have the following settings:
 

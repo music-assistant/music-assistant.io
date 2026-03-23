@@ -5,7 +5,7 @@ description: Common Problems and Fixes
 
 # First things to try and how to report issues
 
-Look in the logs and try and resolve any errors you see there particularly those related to <a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">tagging</a>. Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking)or container misconfiguration.
+Look in the logs and try and resolve any errors you see there particularly those related to <a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">tagging</a>. Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
 
 Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers (except when using our recommended docker compose) is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Some options have been added to core to help people who are running non-standard setups but these are supplied on a non-support basis. Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you.
 
@@ -56,7 +56,7 @@ The following is required in ALL reports as the MA team is small and you need to
 - What you have tried from this page that hasn't helped (This is very important!)
 
 > [!NOTE]
-> You can retrieve the full MA logs by going to the MA settings and clicking on CORE
+> You can retrieve the full MA logs by going to the MA settings and clicking on SYSTEM
 
 ## A provider or source isn't working
 
