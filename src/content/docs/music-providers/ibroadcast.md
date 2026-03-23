@@ -2,7 +2,7 @@
 title: "iBroadcast"
 ---
 
-# iBroadcast Provider <img src="/assets/icons/ibroadcast-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# iBroadcast <img src="/assets/icons/ibroadcast-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for streaming your music from <a href="https://www.ibroadcast.com/" target="_blank" rel="noopener noreferrer">iBroadcast</a>. Contributed and maintained by <a href="https://github.com/robsonke" target="_blank" rel="noopener noreferrer">robsonke</a>
 
