@@ -181,17 +181,15 @@ The ID shown against the streaming provider may be used in automations and scrip
 
 The Radio view shows streaming radio stations that are available in the MA library (this is not the [Radio Mode](usage/#radio-mode) of the Player Queue). Stations can be added to the library in the following ways:
 
-* Add to URL - A URL for a streaming radio station (including self-hosted icecast stations) can be added to the library by selecting Add to URL from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
+* Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 
-Music providers that support Radio items will have those items shown here when they are added to the library
+* Music providers that support Radio items will have those items shown here when they are added to the library
+
 ## View - Browse
 
-Entering the Browse view will present a list of the installed [Music Providers](/music-providers/). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
+Entering the Browse view will present a list of the installed [Music Sources](/music-providers/) that have a browse capability. Selecting one of those will show a relevant list of the items from that source that can be browsed. 
 
-When viewing a provider you will only see what is already in the Library of the Streaming Providers. For the local Providers you will see all files and if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
+When viewing a source which has a native library then only what is in that library will be seen. For the local sources and other sources that do not have a native library, you will see all items available from the source. For local sources, if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
 
 > [!CAUTION]
-> Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
-
-All radio stations from the [Radio Browser](/music-providers/radio-browser/) provider are available in this view. Individual stations that have been added to the library are available in the Radio view.
-
+> Be careful once browsing within the source as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
