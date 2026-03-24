@@ -9,7 +9,7 @@ description: Details of the release cycle for the stable and beta versions of th
 
 Stable releases will be published every 3 months. These stable releases will come after a beta cycle has been concluded.
 
-Patch releases may be pushed if there is a compelling need (e.g. an urgent bugfix) once per two weeks
+Patch releases may be pushed, if there is a compelling need (e.g. an urgent bugfix), once per two weeks
 
 ## Beta Releases
 
