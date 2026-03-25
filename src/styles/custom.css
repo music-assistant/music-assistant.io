@@ -28,6 +28,12 @@ article img {
   height: auto;
 }
 
+/* Blog post image borders */
+.sl-markdown-content > p > img,
+.sl-markdown-content > figure > img {
+  border-radius: 10px;
+}
+
 /* Video styling */
 article video {
   max-width: 100%;

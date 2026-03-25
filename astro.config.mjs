@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 import { remarkAlert } from 'remark-github-blockquote-alert';
+import { authors } from './src/authors.mjs';
 
 const isProduction = process.env.CONTEXT === 'production' || !process.env.CONTEXT;
 
@@ -109,14 +110,7 @@ export default defineConfig({
 					prefix: 'blog',
 					postCount: 10,
 					recentPostCount: 5,
-					authors: {
-						'marcel': {
-							name: 'Marcel van der Veldt',
-							title: 'Lead Developer',
-							picture: 'https://avatars.githubusercontent.com/marcelveldt?size=64',
-							url: 'https://github.com/marcelveldt',
-						},
-					},
+					authors,
 				}),
 			],
 			sidebar: [
