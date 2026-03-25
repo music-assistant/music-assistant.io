@@ -14,7 +14,7 @@ description: "Music Assistant 2.8 is here! Discover our lineup of new features, 
 cover:
     image: /public/images/blog/2026/03/25/music-assistant-2-8/art.webp
     alt: "Music Assistant 2.8: Let's get this party started!"
-excerpt: "After months of working with the community on new and exciting arrangements, Music Assistant is ready to take centre stage once again. Today, we're thrilled to present … drum roll 🥁… version 2.8!"
+excerpt: "After months of working with the community on new and exciting arrangements, Music Assistant is ready to take center stage once again. Today, we're thrilled to present… drum roll 🥁… version 2.8!"
 date: 2026-03-25T00:00:00.000Z
 authors:
   - marvin
@@ -23,11 +23,11 @@ tags:
   - announcement
 ---
 
-After months of working with the community on new and exciting arrangements, [Music Assistant](/) is ready to take centre stage once again. Today, we're thrilled to present … drum roll 🥁…**version 2.8**!
+After months of working with the community on new and exciting arrangements, [Music Assistant](/) is ready to take center stage once again. Today, we're thrilled to present… drum roll 🥁… **version 2.8**!
 
 Since our last major update, the team has been listening to your feedback, squashing bugs, and building features that *bridge* the gap between different audio ecosystems. Today, we're releasing *key changes* to make your home audio smarter, more social, and more unified than ever before. This release is a testament to our community's passion, and we can't wait for you to hear what's queued up.
 
-On that note, the <a href="https://sotoh.openhomefoundation.org/" target="_blank" rel="noopener">State of the Open Home 2026</a> is just around the corner, and this year it's going *live* 🎉. On 8 April, 2026, the community will gather in Utrecht, the Netherlands, to celebrate what we've built, share successes, and look to what's ahead. Join our audience and you may just get to see Sendspin (more on that below) in action too 👀. <a href="https://events.openhomefoundation.org/sotoh26/" target="_blank" rel="noopener">Grab your tickets here</a> and secure your spot today.
+On that note, the <a href="https://sotoh.openhomefoundation.org/" target="_blank" rel="noopener">State of the Open Home 2026</a> is just around the corner, and this year it's going *live* 🎉. On April 8, 2026, the community will gather in Utrecht, the Netherlands, to celebrate what we've built, share successes, and look to what's ahead. Join our audience and you may just get to see Sendspin (more on that below) in action too 👀. <a href="https://events.openhomefoundation.org/sotoh26/" target="_blank" rel="noopener">Grab your tickets here</a> and secure your spot today.
 
 <!--more-->
 
