@@ -131,8 +131,8 @@ In addition to the settings outlined above to configure this source there are ad
 For tracks with multiple artists, MA supports several approaches:
 
 1. ARTISTS tag (recommended for ID3) - A dedicated multi-value field listing each artist separately. This is the most reliable method for ID3.
-2. Multiple ARTIST fields (recommended for FLAC/OGG/Opus). The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note: taggers may attempt to add multiple ARTISTS (plural) fields. This should be changed if observed)
-3. ARTIST tag parsing - If neither of the above are present, MA will attempt to split the ARTIST string using common separators (featuring, feat., ft., &, semi-colon, etc.). MusicBrainz Artist IDs help determine the expected artist count.
+2. Multiple ARTIST fields (recommended for FLAC/OGG/Opus). The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note that taggers may add multiple ARTISTS (plural) fields. This is not standard according to the Vorbis spec but MA will handle this case)
+3. ARTIST tag parsing - If neither of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected.
 
 In general, ensure the MusicBrainz Artist IDs align with the ARTIST (or ARTISTS) tags - one ID per artist.
 
