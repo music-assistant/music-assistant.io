@@ -25,8 +25,14 @@ Because Sendspin is **license-free and open source**, anyone can build apps, dev
 
 The Sendspin provider is **built-in and always enabled**. There are no configuration options required to get started.
 
-Individual Sendspin players will appear automatically when clients connect, and standard [player settings](/settings/player-provider/) apply.
+Individual Sendspin players will appear automatically when clients connect
 
+## Settings
+
+Standard [player settings](/settings/player-provider/) apply. Specific settings available for this player type are:
+
+- <b>Sync delay (ms).</b> Not all devices allow this correction but when available is allows a for static delay to be applied for audio synchronisation
+- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 
 ## Known Issues / Notes
 
@@ -58,6 +64,7 @@ Several client types can connect to Music Assistant via Sendspin:
 | **Web Browser** | The built-in Music Assistant web player uses Sendspin for local playback |
 | **[Google Cast (Sendspin mode)](/player-support/google-cast/)** | Experimental Sendspin mode for Chromecast devices |
 | **<a href="https://esphome.github.io/home-assistant-voice-pe-alpha/" target="_blank" rel="noopener noreferrer">Home Assistant Voice PE</a>** | Alpha firmware for the Home Assistant Voice Preview Edition |
+| **<a href="https://github.com/trudenboy/sendspin-bt-bridge" target="_blank" rel="noopener noreferrer">Sendspin Bluetooth Bridge</a>** | Bridges Bluetooth speakers as MA players — multi-device, multiroom sync, web dashboard. Deploys as HA addon, Docker, or LXC |
 | **<a href="https://www.sendspin-audio.com/code/" target="_blank" rel="noopener noreferrer"> Various Sendspin Clients</a>** | Clients are becoming available for various platforms |
 
 ## How It Works

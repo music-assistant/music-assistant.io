@@ -2,7 +2,7 @@
 title: "Deezer"
 ---
 
-# Deezer Provider <img src="/assets/icons/deezer-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Deezer <img src="/assets/icons/deezer-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://www.deezer.com/" target="_blank" rel="noopener noreferrer">Deezer</a>. Contributed and maintained by <a href="https://github.com/arctixdev" target="_blank" rel="noopener noreferrer">arctixdev</a> and <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> 
 
@@ -38,7 +38,7 @@ Music Assistant has support for <a href="https://www.deezer.com/" target="_blank
 
 Authentication with Deezer happens through an Access and ARL Token. Unfortunately, Deezer does not officially support third party logins, so you will need to obtain your own ARL Token. Instructions were written for Chrome:
 
-1. in the MA SETTINGS select ADD MUSIC PROVIDER and then DEEZER.
+1. in the MA SETTINGS select MUSIC SOURCES, then ADD A MUSIC SOURCE and then DEEZER.
 2. Launch the authentication process by pressing the `Authenticate` button
 3. Login to Deezer on the popup window
 4. After logging in the MA settings page will have the ACCESS TOKEN automatically populated but the ARL TOKEN now needs to be manually obtained

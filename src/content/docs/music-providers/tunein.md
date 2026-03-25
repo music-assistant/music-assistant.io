@@ -2,7 +2,7 @@
 title: "TuneIn"
 ---
 
-# TuneIn Provider <img src="/assets/icons/tunein-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# TuneIn <img src="/assets/icons/tunein-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://tunein.com/" target="_blank" rel="noopener noreferrer">Tunein</a>
 
@@ -21,8 +21,8 @@ Music Assistant has support for <a href="https://tunein.com/" target="_blank" re
 
 ### Other
 
-- The stations which are in your TuneIn library will be imported into the MA library and be visible in the Radio view
+- The stations which are in the TuneIn library of the configured account will be imported into the MA library and be visible in the Radio view
  
 ## Configuration
 
-In the Generic Settings, add your Username.
+In the Generic Settings, add a Username.

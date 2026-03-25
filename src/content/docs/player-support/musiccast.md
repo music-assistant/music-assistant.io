@@ -20,9 +20,18 @@ Music Assistant has support for <a href="https://au.yamaha.com/en/products/conte
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the MusicCast provider also some unique settings in the `Generic settings` section for devices which support multiple zones
 
+- <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should  issues be encountered during playback then toggle this on. This setting is only available on multi-zone players
 - <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching
 - <b>Turn off the zone when it leaves a group.</b> Toggle defines the power behaviour when the player leaves a group
-- <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should  issues be encountered during playback then toggle this on. This setting is only available on multi-zone players
+- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
+- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
+- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
+- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`.
+- <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a contnuous audio stream. Use for players that dont natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+
+## Player Options
+
+MusicCast has support for [player options](/player-support/#player-options). Refer to the MA UI and the devices manual for information about the options available
 
 ## Known Issues / Notes
 

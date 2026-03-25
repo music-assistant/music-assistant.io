@@ -19,11 +19,11 @@ The core server settings are set with typical defaults that should work for most
 
 ## Music
 
-- <b>Advanced - Reset Library Database.</b> Selecting this button will erase the MA database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music providers will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
+- <b>Advanced - Reset Library Database.</b> Selecting this button will erase the MA database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music sources will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
 
 ## Players
 
-- No settings are currently available beyond the log level
+- <b>Advanced - MDNS/Zeroconf discovery interface(s).</b> For advanced users the default is `Default Interface` and the other option is `All interfaces`
 
 ## Player Queues
 
@@ -43,11 +43,12 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 ![image](/assets/screenshots/settings-streamserver-audio.png)
 
+- <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
+
 ### Streamserver Advanced Settings
 
 - The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically. If there are issues with playback then confirm the IP address shown is reachable by the players on the local network. The port must be available
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
-
 - <b>SmartFades Log Level.</b> Specific log level for the Smart Fades mixer and analyzer
 
 ## Webserver
@@ -61,3 +62,42 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 ## Server Logging
 
 This opens a view where the tail of the Music Assistant log can be seen or the full log can be downloaded.
+
+## Background Tasks
+
+This opens a view where the completed and upcoming background tasks can be seen. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task.
+
+![image](/assets/screenshots/background-tasks.png)
+
+## Genre Management
+
+Administrators can access the **Genre Management** page from the settings menu. This page provides tools for maintaining the genre database.
+
+![image](/assets/screenshots/genres/genre-management-overview.png)
+
+### Background Scanner
+
+The genre scanner automatically maps media items to genres based on metadata from your music sources. The scanner panel shows:
+
+- **Scanner status** — Whether the scanner is currently running or idle
+- **Last scan time** — When the last scan completed
+- **Items mapped** — How many items were mapped during the last scan
+- **Scan Now** button — Manually trigger a scan
+
+The scanner status is polled automatically every 30 seconds.
+
+![image](/assets/screenshots/genres/background-scanner.png)
+
+### Genre Statistics
+
+Displays the total number of genres in your library, with a link to view all genres.
+
+### Restore Missing Defaults
+
+Checks for any built-in default genres that are missing from your library and restores them. This does not affect any existing genres or their mappings.
+
+### Full Restore
+
+A destructive operation that completely rebuilds the genre database from defaults. This removes all custom genres and restores the full set of built-in genres.
+
+CAUTION: Full restore deletes all custom genres, aliases, and media mappings. This action requires a two-step confirmation to prevent accidental data loss.

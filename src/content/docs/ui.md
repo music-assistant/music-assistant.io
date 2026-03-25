@@ -9,25 +9,24 @@ description: A Walkthrough of the Music Assistant User Interface
 
 ![image](/assets/screenshots/UI-main-menu.png)
 
-This menu's appearance can be configured in Settings / User Interface. On a desktop, it can be placed vertically on the left (as shown) or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Home, Search, and Library will appear, and other items will be available under "Library". The enabled menu items (Views) are displayed in the order they were selected. Any of the views can be hidden. If the Settings view is hidden from the menu it can be accessed by navigating to `YOUR_MA_IP_ADDRESS:8095/#/settings`
-
-> [!CAUTION]
-> If you remove both the Home and Settings icons then you will be locked out. In that case you will need to manually enter the path (e.g. `http://192.168.1.166:8095/#/settings/frontend`) or clear the browser cookies to regain access to the settings page.
+This menu's appearance can be configured in Settings / User Interface. On a desktop, it can be placed vertically on the left (as shown) or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. The enabled menu items (Views) are displayed in the order they were selected in the User Interface settings. Any of the views can be hidden. If the Settings view is hidden from the menu it can be accessed by navigating to `YOUR_MA_IP_ADDRESS:8095/#/settings`
 
 ***************************************************************
 
 ## Global Search
 [![image](/assets/screenshots/global-search.png)](/assets/screenshots/global-search.png)
 
-Searches can be done via any combination of words or partial words and also via a URL to a provider such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
+Searches can be done via any combination of words or partial words and also via a URL to a source such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
 
-Initially, the view defaults to ALL which is limited to a maximum of 8 items in the seven categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks and Radio. 
+Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. 
 
-Selecting a specific category will then show a maximum of 50 items. Context sensitive menus are available for each. If the item desired is not found then narrow the search term or navigate to the artist and all available albums and tracks should be shown in that view.
+Selecting a specific category will then show a maximum of 50 items. Context sensitive menus are available for each. If the item desired is not found then narrow the search term or navigate to the artist and all available albums and tracks should be shown in that view (although some sources may be limited in the number of items that can be returned).
 ***************************************************************
 
 ## Player Bar
 [![image](/assets/screenshots/UI-playercontrols-bar.png)](/assets/screenshots/UI-playercontrols-bar.png)
+
+When playing to a group, tapping near the volume control will open a dialog to control the individual players.
 
 The [Audio Pipeline](/audiopipeline/) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](/player-support/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
 
@@ -74,13 +73,9 @@ With TEMPORARY SYNC GROUPs the number of players being streamed to can be seen d
 ![image](/assets/screenshots/group_indication.png)
 
 > [!NOTE]
-> **Note**
->
 > If an attempt is made to power on a group and a member of that group is already a member of another powered on group then an error will be shown.
 
 > [!NOTE]
-> **Note**
->
 > If a player is taken over by another app, MA will not have knowledge of that, and the group may no longer function correctly. Additionally, if a player of a syncgroup tries to join late (e.g. it was unpowered) it will not be synced to the group.
 ***************************************************************
 
@@ -94,8 +89,6 @@ Clicking/touching the Play Button will either execute the default play action fo
 - if the player is not playing (or paused)
 
 > [!NOTE]
-> **Note**
->
 > If there is ever uncertainty as to whether the item will immediately start playing use a right click or long press to bring up the menu.
 
 ***************************************************************
@@ -119,13 +112,13 @@ In any of the following views, Right click or long press on a track to get the f
 The START RADIO option will only be seen if there is a provider that supports it. Start Radio populates the queue with tracks based on the selected track. The tracks are selected by the provider not MA. 
 ***************************************************************
 
-## View - Home
+## View - Discover
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
 
-The Home View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the Music Provider pages to identify which providers supports this.
+The Discover View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the specific music source pages to identify which sources supports this.
 
-The view is fully configurable. Select the blue icon in the top right and then EDIT HOMESCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
+The view is fully configurable. Select the user name in the navigation menu and then EDIT HOME SCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
 
 [![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
 ***************************************************************
@@ -139,7 +132,7 @@ Album and Track Views look the same as the above except there is no album artist
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) )
 indicates that the viewed results are subject to filtering.
 
-The provider filter icon will only show when there are two or more music providers installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
+The provider filter icon will only show when there are two or more music sources installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
 
 Items in all views can be "right clicked" or "long pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
@@ -160,13 +153,13 @@ The behaviour described above will work on any view where you see the "x item(s)
 
 The tracks and albums sections are collapsible. The view above shows them both collapsed. The tracks section shows ALL tracks that are in the library or that are available across all of the providers. A blue dot on the library icon ![image](/assets/icons/library-icon.png) indicates that the viewed results are filtered to only show items that are in the library. To see what albums any given track is on you can either sort alphabetically or click on one and use the context menu and SHOW INFO.
 
-The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP or UNKNOWN album types.
+The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP, LIVE, SOUNDTRACK or UNKNOWN album types.
 
-Expanding the IMAGES section allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select UPDATE METADATA. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
+Expanding the IMAGES section (only visible to users with the Administrators role) allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select UPDATE METADATA. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
 
 ### Provider Details
 
-The PROVIDER DETAILS section shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new provider does not trigger linking across existing library items.
+The PROVIDER DETAILS section (read only for other than users with the Administrator role) shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new provider does not trigger linking across existing library items.
 
 The creation of links within the MA library to other identical items in the MA library (within or across providers) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
 
@@ -188,19 +181,17 @@ The ID shown against the streaming provider may be used in automations and scrip
 
 The Radio view shows streaming radio stations that are available in the MA library (this is not the [Radio Mode](usage/#radio-mode) of the Player Queue). Stations can be added to the library in the following ways:
 
-* Add to URL - A URL for a streaming radio station (including self-hosted icecast stations) can be added to the library by selecting Add to URL from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
+* Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 
-Music providers that support Radio items will have those items shown here when they are added to the library
+* Music providers that support Radio items will have those items shown here when they are added to the library
+
+Music sources that support Radio items will have those items shown here when they are added to the library
+
 ## View - Browse
 
-Entering the Browse view will present a list of the installed [Music Providers](/music-providers/). Selecting one of those will show a relevant list of the items from that provider that can be browsed. 
+Entering the Browse view will present a list of the installed [Music Sources](/music-providers/) that have a browse capability. Selecting one of those will show a relevant list of the items from that source that can be browsed. 
 
-When viewing a provider you will only see what is already in the Library of the Streaming Providers. For the local Providers you will see all files and if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
+When viewing a source which has a native library then only what is in that library will be seen. For the local sources and other sources that do not have a native library, you will see all items available from the source. For local sources, if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
 
 > [!CAUTION]
-> **Caution**
->
-> Be careful once browsing within the provider as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
-
-All radio stations from the [Radio Browser](/music-providers/radio-browser/) provider are available in this view. Individual stations that have been added to the library are available in the Radio view.
-
+> Be careful once browsing within the source as selecting PLAY on a folder will play everything in that folder and all sub-folders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.

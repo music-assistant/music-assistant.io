@@ -2,14 +2,14 @@
 title: "YouTube Music"
 ---
 
-# YouTube Music Provider <img src="/assets/icons/ytm-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# YouTube Music <img src="/assets/icons/ytm-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for Youtube Music. Contributed and maintained by <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener noreferrer">MarvinSchenkel</a>
 
 > [!WARNING]
 > **DISCLAIMER**
 >
-> Please note that Youtube does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis. Unexpected behavior will occur whilst using this provider. For this reason if you have another streaming provider you may find it more convenient to use that instead of this one.
+> Please note that Youtube does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis. Unexpected behavior will occur whilst using this source. For this reason if you have another streaming source you may find it more convenient to use that instead of this one.
 
 > [!NOTE]
 > Free accounts are NOT supported.
@@ -66,14 +66,14 @@ As of March 2025, Google has implemented a new security mechanism called 'PO Tok
 - Within Home Assistant, go to Settings > Add-ons > Add-on Store
 - Scroll down to the 'Music Assistant' section.
 - A new add-on called 'YT Music PO Token Generator' is available.
-- Install this add-on and make sure it is started before adding the YT Music provider within Music Assistant
+- Install this add-on and make sure it is started before adding the YT Music source within Music Assistant
 
 > [!NOTE]
-> If you are hosting Music Assistant yourself, you can download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a> but you must run the version currently supported by MA which is 1.2.1. Install the correct version and run it, then return to Music Assistant and add the URL to the PO token server when configuring the YT Music Provider.
+> If you are hosting Music Assistant yourself, you can download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a> but you must run the version currently supported by MA which is 1.2.1. Install the correct version and run it, then return to Music Assistant and add the URL to the PO token server when configuring the YT Music source.
 
-### Configuring the provider 
+### Configuring the source 
 - Navigate to 'Settings'
-- Under Music Providers, click 'Add new', select 'Youtube Music' and fill out the fields in the Generic Settings section as follows:
+- Under Music Sources, click 'Add a new source', select 'Youtube Music' and fill out the fields in the Generic Settings section as follows:
     - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
     - <b>Login Cookie.</b> Paste the value obtained above
     - <b>PO Token Server URL.</b> Leave this setting as the default if running the PO server as an App on the same host as the MA App. If running the PO token server separately then adjust the IP address and port accordingly
@@ -90,13 +90,13 @@ A brand account is a sub-account that lives under your main Google account. You 
 - Go to <a href="https://myaccount.google.com/" target="_blank>https://myaccount.google.com/</a>
 - From the top right menu, select your brand account
 - Look at the URL and copy the 21-digit number
-- Use this number in the 'Username' field when setting up the provider
+- Use this number in the 'Username' field when setting up the source
 
 ## Known Issues / Notes
 
-- This provider mimics YouTube Music. Do not expect to see the same search results as you see if using YouTube
+- This source mimics YouTube Music. Do not expect to see the same search results as you see if using YouTube
 - There is no support for the disc and track number in album tracks listings. Currently, the disc number is always 0 and the track number is the order number in which the tracks were returned by Youtube Music. This should generally give the desired result, but could mess up multi-disc albums
 - Whether music videos are selected for playback fully depends on what you are playing. If you have saved a specific album in your library, then that exact version will show up in MA and thus you will have the album version. However, if you start a radio on, for example, a playlist, then Youtube Music decides which songs will be played in a 'dynamic radio' playlist which could include videos
 - Uploaded Music should be able to be found when it is in a playlist. If it's just a single track being searched for then it may not be found, since often those uploaded songs don't have proper metadata. It will be hard to find them via the UI in MA
-- Some low quality artwork can be expected when using this provider. YTM is very inconsistent when it comes to delivering thumbnails. When a Playlist or album is retrieved, the thumbs for the tracks are usually in low quality for all songs. However, when a single track is played the HQ version should be displayed. This provider tries to work around the problem for albums and playlists by loading details for the next enqueued track, but some low quality album art is still expected to be encountered
+- Some low quality artwork can be expected when using this source. YTM is very inconsistent when it comes to delivering thumbnails. When a Playlist or album is retrieved, the thumbs for the tracks are usually in low quality for all songs. However, when a single track is played the HQ version should be displayed. This source tries to work around the problem for albums and playlists by loading details for the next enqueued track, but some low quality album art is still expected to be encountered
 - By default, only the liked music and 'episodes for later' playlists are added to the YTM library and thus will appear in MA. In order to see other personal playlists in the MA library, you have to go into the YT Music web app and add those personal playlists to your library

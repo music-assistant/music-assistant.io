@@ -169,3 +169,6 @@ docs/CNAME
 node_modules/
 dist/
 .astro/
+
+# Blog post drafts
+/create-blog-post/

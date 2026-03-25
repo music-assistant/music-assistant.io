@@ -16,9 +16,24 @@ Music Assistant has support for Alexa devices. This component is contributed and
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Alexa provider also has a unique setting in the Advanced section and a unique Presets section
+In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-- <b>Advanced - Enable Display Support.</b> ...................
+- <b>URL.</b> Amazon subdomain (region-specific) (e.g. amazon.com, amazon.co.uk)
+- <b>E-mail.</b> Amazon account linked to Echo devices
+- <b>Password.</b> Password for the Amazon account
+- <b>OTP Secret.</b> OTP secret for the Amazon account
+- <b>API URL.</b> URL of the local API used to communicate with Alexa (e.g. http://localhost:3000)
+- <b>API Basic Auth Username.</b> Username for basic auth if the API is protected
+- <b>API Basic Auth Password.</b> Password for API basic auth
+- <b>Alexa Language.</b> Locale used for Alexa (e.g. en-US)
+
+In addition to the [Individual Player Settings](/settings/individual-player/) the Alexa players have the following settings:
+
+- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
+- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
+- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
+- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
+- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting
 
 ## Configuration
 
