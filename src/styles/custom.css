@@ -32,7 +32,8 @@ article img {
 .sl-markdown-content > img,
 .sl-markdown-content > p > img,
 .sl-markdown-content > p.img > img,
-.sl-markdown-content > figure > img {
+.sl-markdown-content > figure > img,
+article > header > figure > img {
   border-radius: 10px;
 }
 
