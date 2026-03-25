@@ -29,7 +29,9 @@ article img {
 }
 
 /* Blog post image borders */
+.sl-markdown-content > img,
 .sl-markdown-content > p > img,
+.sl-markdown-content > p.img > img,
 .sl-markdown-content > figure > img {
   border-radius: 10px;
 }
