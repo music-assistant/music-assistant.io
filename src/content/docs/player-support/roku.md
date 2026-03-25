@@ -35,7 +35,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - Roku Channel Store Link (https://channelstore.roku.com/details/625f8ef7740dff93df7d85fc510303b4/media-assistant)
 - Sideload Link (https://github.com/MedievalApple/Media-Assistant)
 2.	If you sideloaded the app, you will need to change the Player Provider Setting in Advanced >> `App ID of Media Assistant` to `dev`.
-3.	On newer Roku OS versions, in order for Music Assistant to communicate with the Roku, you must ensure mobile app control is enabled. To check this, go to the Roku's settings and navigate to (Settings >> System >> Advanced system settings >> Control by mobile apps >> Network access) and check if `Network access` is set to `Enabled`.
+3.	On newer Roku OS versions, in order for Music Assistant to communicate with the Roku, you must ensure mobile app control is enabled. To check this, go to the Roku's settings and navigate to (Settings >> System >> Advanced system settings >> Control by mobile apps >> Network access) and check if `Network access` is set to `Enabled`
 
 ## Known Issues / Notes
 
