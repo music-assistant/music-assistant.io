@@ -86,12 +86,12 @@ Playlists can be created or added to from various menus in the different views. 
 
 [![Preview image](/assets/screenshots/playlist-create.png)](/assets/screenshots/playlist-create.png)
 
-Playlists which consist of tracks from the filesystem source will be stored in the MA database.
+Playlists which consist solely of tracks from the filesystem source can be stored on the local filesystem if MA has write access. Music Assistant playlists are stored as files within the container.
 
-User created playlists from streaming sources will be imported into the MA database and will remain synchronised regardless of whether changes are made from the MA UI or from the streaming source's native application. Refer to the individual Music Source pages for any limitations.
+User created playlists from streaming sources will be imported into the MA database and will remain synchronised regardless of whether changes are made from the MA UI or from the streaming source's native application (assuming the streaming source has the functionality for two way sync). Refer to the individual Music Source pages for any limitations.
 
 Playlists can be copied from one source to another by opening the original playlist and selecting all of the tracks and then in the ACTIONS menu select `Add to Playlist`.
 
 Automatically generated playlists from streaming sources may be supported. See the specific source documentation for further information.
 
-MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set in MA SETTINGS>> SYSTEM>> MUSIC or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting REFRESH ITEM.
+MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in MA SETTINGS>> SYSTEM>> BACKGROUND TASKS or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting REFRESH ITEM.

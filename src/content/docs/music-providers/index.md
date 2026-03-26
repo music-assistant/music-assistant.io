@@ -26,11 +26,11 @@ All Music Sources have settings which can be configured. The settings page will 
 
 ## Library Import Control
 
-All music sources have options to control the import of media items and this is shown in the image below. Note that if an individual track is in the source's library (but not its associated album) and, for example, all of the import settings are set to sync then the individual track will be imported and the album will be created in the database but all of the other album tracks will not be added. This behaviour can be changed by using the `Import album tracks` toggle.
+All music sources have options to control the import of media items and this is shown in the image below. The image shows a typical streaming provider on the left and a typical filessytem provider on the right. Note that if an individual track is in the source's library (but not its associated album) and, for example, all of the import settings are set to sync then the individual track will be imported and the album will be created in the database but all of the other album tracks will not be added. This behaviour can be changed by using the `Import album tracks` toggle.
 
-There are settings which define when the sync occurs for each media item type. 
+Control of the synchronisation timing between the provider and MA is done in the [Background Tasks](/settings/core/#background-tasks) view in MA SETTINGS >> SYSTEM. 
 
-There is a setting which controls whether additions to the MA library are also made to the source library. For clarity, adding an item to the MA library will only be reflected in the originating source of the item. So, for example, if you had the Deezer and Spotify sources installed and you searched for an artist you will likely see that arist listed twice, once from each source. If you add the artist to the MA library and you have sync back enabled, then the artist will only be added to the source that was associated with item selected. The list view is required to see the source's icons.
+There is a setting which controls whether additions to the MA library are also made to the source library. For clarity, adding an item to the MA library will only be reflected in the originating source of the item. So, for example, if you had the Deezer and Spotify sources installed and you searched for an artist you will likely see that artist listed twice, once from each source. If you add the artist to the MA library and you have sync back enabled, then the artist will only be added to the source that was associated with item selected. The list view is required to see the source's icons.
 
 Lastly, depending on sources installed, there may be additional sync related options at the bottom of the section. Refer to the individual source settings for more information.
 
@@ -39,10 +39,12 @@ Lastly, depending on sources installed, there may be additional sync related opt
 - <b>Sync Library Artists/Albums/Tracks/Playlists/Audiobooks/Podcasts from this source to Music Assistant.</b> Whether to synchronize all artists/albums/tracks/playlists/audiobooks/podcasts from the local source. 
 - <b>Import album tracks.</b> By default, adding albums to the Music Assistant library imports only the album entry rather than the associated tracks. This approach allows for the manual selection of specific tracks to include. To override this behavior, this configuration option can be enabled. Users should note that some streaming sources may already automate this process by adding all tracks to their favorites by default.
 - <b>Import playlist tracks.</b> By default, importing a playlist into Music Assistant adds only the playlist itself to the library. This allows the playlist to be streamed and individual tracks can be added manually as desired. This configuration option overrides that behavior for specific playlists by importing all associated tracks. Entries can be made using either the case-sensitive playlist name or the playlist URI.
-- <b>Automatic sync interval for Artists/Albums/Tracks/Playlists/Podcasts/Audiobooks.</b> Various time periods are selectable or it can be disabled
 - <b>Sync back library additions/removals (2-way sync).</b> This setting determines the behavior when an item is manually added to or removed from the Music Assistant library. Enabling this option ensures that these actions are synchronized back to the original source. Without synchronization, items removed from the library may reappear during the next automatic sync if they remain present on the source's side.
 - <b>Sync Podcast Progress from (source).</b> Automatically sync episode played status from the source to Music Assistant. Episodes marked as played in the source will be marked as played in MA. Only enable this if you use both the the source's app and Music Assistant for podcast playback.
 - <b>Sync Audiobook Progress from (source).</b> Automatically sync audiobook progress from the source to Music Assistant. Progress from the source's app will sync to MA when audiobooks are accessed. Only enable this if you use both the the source's app and Music Assistant for audiobook playback.
+- <b>Propagate track genres to albums and artists.</b> As the file system has no way to attach genres to the albums and artists this setting will take all genres found in an album or artist's tracks and attach them to the album or artist
+
+Information for other options not listed above is available in the MA UI.
 
 ## Summary
 
