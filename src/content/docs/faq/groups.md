@@ -12,6 +12,10 @@ Music Assistant uses four types of groups (these are outlined in the [Grouping P
 
 See also the section on Announcements [Group Behaviour](/integration/announcements/#group-behaviour).
 
+For temporary and permanent sync groups the [protocol linking](/usage/#streaming-protocols) feature and Sendspin bridges available to Music Assistant lead to powerful options for group creation. The Sendspin bridges create a link between the Sendspin protocol, and the AirPlay and Google Cast protocols which allows for creation of groups of different provider types which will all play in sync. For users with Sonos devices with [AirPlay functionality](/player-support/sonos/#airplay-functionality) then this will further allow Sonos devices to also be played in sync. Even more impressively, Sonos devices without AirPlay functionality can be grouped with a player that does and then that player grouped to an AirPlay group. All of this functionality is illustrated in the following diagram. On the left is the traditional model where each provider type is isolated (and this remains the case for many of the providers available in MA) and then on the left is shown the potential broad linking of disparate types that is available across the Sendspin, AirPlay, Google Cast and Sonos ecosystems.
+
+<a href="assets/group-diagram.png"><img src="/assets/group-diagram.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+
 ## Temporary Sync Group
 
 Temporary Sync Group players are configured via the [Player List](/ui/#player-list) or HA action. This type of group provides a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
