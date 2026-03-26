@@ -61,11 +61,17 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 ## Server Logging
 
-This opens a view where the tail of the Music Assistant log can be seen or the full log can be downloaded.
+This opens a view where the 150 line tail of the Music Assistant log can be seen or the full log can be downloaded.
 
 ## Background Tasks
 
-This opens a view where the completed and upcoming background tasks can be seen. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task.
+This opens a view where the completed and upcoming background tasks can be seen. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task. There is a ⋮ menu on the right when allows for:
+- Viewing the task details
+- Editing the task schedule. Frequency can be Hourly, Daily or Weekly. A precise time can be specified for the task for Daily and Weekly frequencies
+- Running of the task now
+- Disabling the schedule
+
+Administrators can see all tasks on the server whereas Users can only see tasks created by them (e.g. playlist creation).
 
 ![image](/assets/screenshots/background-tasks.png)
 
