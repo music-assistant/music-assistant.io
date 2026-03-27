@@ -91,6 +91,7 @@ After playing a channel, it will appear in the **Radio** view.
 ## Known Issues / Notes
 
 - **Pre-roll ads on stream start**: When a stream begins, the first few HLS segments (~10-15 seconds) may be pre-roll ads. These will play through as audio. This is a limitation of how Twitch delivers the initial stream segments.
+- **Brief audio interruption on stream start**: There may be a short audio interruption shortly after a stream begins playing, as the HLS stream transitions from initial segments to the live content. Playback should be smooth after this initial settling period.
 - **Stream discontinuity warning**: You may see a `stream discontinuity` warning in the logs when transitioning from initial segments to the live content. This is expected and does not affect playback.
 - **Offline channels**: If a channel goes offline while you are listening, playback will stop. The provider does not automatically switch to another channel unless a raid occurs.
 - **Ad detection**: Ad detection is based on Streamlink's HLS segment metadata. The accuracy depends on how Twitch marks ad segments, which can vary.
