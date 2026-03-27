@@ -28,7 +28,7 @@ Music Assistant has support for audio-only streaming from live Twitch channels. 
 - Search for any Twitch channel by name
 - Audio-only streaming via Streamlink (no video overhead)
 - Automatic raid following: when a streamer raids another channel, playback automatically switches to the raid target
-- Ad handling with two modes: silence injection or passthrough
+- Ad break detection with stream title indicator
 
 ## Configuration
 
@@ -73,15 +73,6 @@ Enter this token in the **Twitch Website Token** field in the provider settings.
 > [!CAUTION]
 > This token grants full access to your Twitch account. Keep it secret and do not share it. See the <a href="https://streamlink.github.io/cli/plugins/twitch.html#authentication" target="_blank" rel="noopener noreferrer">Streamlink Twitch plugin documentation</a> for more details.
 
-### Ad Handling
-
-The provider offers two modes for handling Twitch ads during live streams:
-
-- **Silence** (default): Replaces ad audio segments with silence. You will hear a brief pause during ads instead of the ad audio.
-- **Passthrough**: Plays ad audio as-is. The ads will be heard through your speakers.
-
-You can change the ad handling mode in the provider settings at any time.
-
 ### Auto-Follow Raids
 
 When enabled (the default), playback automatically switches to the raid target channel when a streamer you are listening to raids another channel. This uses Twitch's EventSub WebSocket API to receive raid notifications in real time.
@@ -99,7 +90,7 @@ After playing a channel, it will appear in the **Radio** view.
 
 ## Known Issues / Notes
 
-- **Startup silence**: When a stream begins, the first few HLS segments (~10-15 seconds) may be classified as ad segments. In **silence** mode this results in a brief silence before music starts playing. In **passthrough** mode the segments play through, which may include a pre-roll ad. This is a limitation of how Twitch delivers the initial stream segments.
+- **Pre-roll ads on stream start**: When a stream begins, the first few HLS segments (~10-15 seconds) may be pre-roll ads. These will play through as audio. This is a limitation of how Twitch delivers the initial stream segments.
 - **Stream discontinuity warning**: You may see a `stream discontinuity` warning in the logs when transitioning from initial segments to the live content. This is expected and does not affect playback.
 - **Offline channels**: If a channel goes offline while you are listening, playback will stop. The provider does not automatically switch to another channel unless a raid occurs.
 - **Ad detection**: Ad detection is based on Streamlink's HLS segment metadata. The accuracy depends on how Twitch marks ad segments, which can vary.
