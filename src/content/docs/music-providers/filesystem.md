@@ -87,16 +87,16 @@ In addition to the settings outlined above to configure this source there are ad
 - Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
 - Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
 - A setting, enabled by default, allows the skipping of playlists which are more than one level below the root (normally this is the album folder). This is preferred as these playlists (normally all album tracks in the folder) serve no function in MA and clutter the Playlists view. Excessive numbers of playlists can have a negative impact on other parts of the MA experience
-- Folders commencing with an underscore will be ignored
+- In regard to folder and filenames note the following:
+    - Folders commencing with an underscore will be ignored
+    - Music Assistant requires all music file and folder names to be valid UTF-8. Files with non-UTF-8 characters in their names will be skipped during library sync and a warning will be logged identifying the affected file. This most commonly affects files originally tagged or named on Windows using legacy encodings such as Windows-1252, where characters like curly quotes or accented letters may have been written as non-UTF-8 bytes
+    - Due to a kernel limitation, emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
 - Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
 - To minimise the chance of problems, folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any illegal characters removed (e.g. AC/DC should be in a folder ACDC)
 - Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
 - Untagged audiobook files must be placed in a folder per book
   
 ## Tagging Files 
-
-> [!NOTE]
-> Due to a kernel limitation, emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync.
 
 - It is very important that all audio files contain correct, and ideally, extensive tag information. The more comprehensive the tagging the better the results will be when using MA. Note the following:
     - Universal Tag Support: Music Assistant parses metadata from the industry-standard formats, including ID3 (v1/v2) for MP3s, Vorbis Comments for FLAC/Ogg/Opus, MP4 Atoms for M4A, and APEv2 tags
