@@ -232,6 +232,7 @@ export default defineConfig({
 						{ label: 'Google Cast', slug: 'player-support/google-cast' },
 						{ label: 'HEOS', slug: 'player-support/heos' },
 						{ label: 'Home Assistant', slug: 'player-support/ha' },
+						{ label: 'MSX Bridge', slug: 'player-support/msx-bridge' },
 						{ label: 'MusicCast', slug: 'player-support/musiccast' },
 						{ label: 'Roku Media Assistant', slug: 'player-support/roku' },
 						{ label: 'Sendspin', slug: 'player-support/sendspin' },
