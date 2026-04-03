@@ -69,3 +69,11 @@ Music Assistant Player Card is a custom card which provides a full media player,
 Turn any Bluetooth speaker into a Music Assistant player using the Sendspin protocol. Supports multiple simultaneous devices, multiroom sync groups, and comes with a real-time web dashboard. Deploys as an HA addon, Docker Compose, Proxmox LXC, or OpenWrt LXC.
 
 <img src="https://raw.githubusercontent.com/trudenboy/sendspin-bt-bridge/main/docs-site/public/screenshots/screenshot-dashboard-full.png" alt="Sendspin BT Bridge dashboard" style="width: 600px;"  loading="lazy" />
+
+***************************************************************
+## <a href="https://github.com/eliseo-juan/mass-coverwall-card" target="_blank" rel="noopener noreferrer">Music Assistant Cover Wall Card</a>
+
+A responsive cover wall for the Home Assistant Sections view that displays your Music Assistant playlists, albums, or artists as a tap-to-play grid. Supports multiroom playback, 16 sort options, and a manual pinning mode to always keep your go-to covers front and center.
+
+<img src="https://github.com/user-attachments/assets/9b4fbb2e-db2a-47d0-9b81-2b1d56204fd4" alt="MASS Cover Wall Example" style="width: 600px;"  loading="lazy"/>
+
