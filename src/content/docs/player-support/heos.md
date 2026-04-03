@@ -31,4 +31,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 ## Known Issues / Notes
 
 - Metadata on built-in displays on devices and the HEOS app will show 'URL stream' when playing anything from Music Assistant due to limitations with the HEOS API.
-- Playback to additional zones is supported, but they cannot be turned on/source selected from MA. This needs to be done externally (via Home Assistant for example).
+- HEOS-enabled AVRs with multiple zones are represented as 1 player in Music Assistant, similar to how they show on the HEOS app. Playing any content to that player will internally forward the playback to any active zone that has its source set to HEOS. Managing these zones, such as turning them on/off, changing source and managing zone volume needs to be done externally, e.g. via Home Assistant or the Denon app (if supported), this is a limitation of the HEOS protocol. You can map a Home Assistant entity as the power control for the player in the [Individual Player Settings](/settings/individual-player/#player-controls), then use Home Assistant to turn the zones on and switch them to the correct input when that entity changes state. The AVR will behave in the following manner by default:
+  - Changing the volume on the Music Assistant player adjusts the volume on all active HEOS zones.
+  - Starting a stream on the Music Assistant player when at least 1 HEOS zone is active, will start playing the stream on those active zones.
+  - Starting a stream on the Music Assistant player when no HEOS zones are active, will turn on the main zone, set it's source to HEOS and start playing on the main zone.
