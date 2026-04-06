@@ -91,18 +91,40 @@ In addition to the settings outlined above to configure this source there are ad
 > Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
 
 - Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
-- Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
 - A setting, enabled by default, allows the skipping of playlists which are more than one level below the root (normally this is the album folder). This is preferred as these playlists (normally all album tracks in the folder) serve no function in MA and clutter the Playlists view. Excessive numbers of playlists can have a negative impact on other parts of the MA experience
-- Folders commencing with an underscore will be ignored
-- Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
-- To minimise the chance of problems, folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any illegal characters removed (e.g. AC/DC should be in a folder ACDC)
-- Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
-- Untagged audiobook files must be placed in a folder per book
-  
-## Tagging Files 
+- In regard to folder and filenames note the following:
+    - Folders commencing with an underscore will be ignored
+    - Music Assistant requires all file and folder names to be valid UTF-8. Files with non-UTF-8 characters in their names will be skipped during library sync and a warning will be logged identifying the affected file. This most commonly affects files originally tagged or named on Windows using legacy encodings such as Windows-1252, where characters like curly quotes or accented letters may have been written as non-UTF-8 bytes
+    - Due to a kernel limitation, emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
+ 
+### Music
 
-> [!NOTE]
-> Due to a kernel limitation, emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync.
+- Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
+- Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
+- To minimise the chance of problems, music folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any illegal characters removed (e.g. AC/DC should be in a folder ACDC)
+- Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
+
+### Audiobooks
+
+- Supported file formats are: `.aa`, `.aax`, `.m4b`, `.m4a`, `.mp3`, `.mp4`, `.flac`, `.ogg`, `.opus`
+- Audiobooks in their own folder are always supported and is the preferred option. For untagged files this is mandatory, and filenames must sort alphabetically in chapter order
+- A single file with embedded chapters (e.g. `.m4b`) works in any folder
+- Multiple books can share a single folder if each file has an album tag (used as the book title to group chapters) and a track number tag. Multi-disc books also need a disc number tag. The title tag is used as the chapter name if present
+- Author is read from the writer, album artist, or artist tag (in that order). Optional but recommended
+- Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
+- A `.txt` file in the folder will be used as the book description
+
+### Podcasts
+
+- Supported file formats are: `.aa`, `.aax`, `.m4b`, `.m4a`, `.mp3`, `.mp4`, `.flac`, `.ogg`, `.opus`
+- Podcasts must be placed in their own folder. Every file in the folder is an episode of that podcast
+- Podcast name is obtained from the `album` tag of the episodes; if absent, the folder name is used
+- Episode name is obtained from the `title` tag. Episode order is set by the track number tag
+- Embedded chapters within individual episode files are supported
+- A `metadata.json` file in the folder can provide additional podcast-level metadata: title, sorttitle, description, publisher, genres, and image URL.
+- Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
+
+## Tagging Files 
 
 - It is very important that all audio files contain correct, and ideally, extensive tag information. The more comprehensive the tagging the better the results will be when using MA. Note the following:
     - Universal Tag Support: Music Assistant parses metadata from the industry-standard formats, including ID3 (v1/v2) for MP3s, Vorbis Comments for FLAC/Ogg/Opus, MP4 Atoms for M4A, and APEv2 tags
