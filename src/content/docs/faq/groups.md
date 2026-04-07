@@ -16,6 +16,9 @@ For temporary and permanent sync groups the [protocol linking](/usage/#streaming
 
 <a href="/assets/group-diagram.png"><img src="/assets/group-diagram.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
+> [!NOTE]
+> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay - Sendspin bridges should always work
+
 ## Temporary Sync Group
 
 Temporary Sync Group players are configured via the [Player List](/ui/#player-list) or HA action. This type of group provides a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
