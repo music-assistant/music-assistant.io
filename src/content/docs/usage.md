@@ -95,3 +95,5 @@ Playlists can be copied from one source to another by opening the original playl
 Automatically generated playlists from streaming sources may be supported. See the specific source documentation for further information.
 
 MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in MA SETTINGS>> SYSTEM>> BACKGROUND TASKS or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting REFRESH ITEM.
+
+There are also two pseudo-playlists - Infinite Mix. Viewing these playlists will show no tracks however playing the playlist will result in an endless queue where 25 random tracks (from the whole library or the favourites) will be added to the queue and will be refreshed as the queue comes to an end.
