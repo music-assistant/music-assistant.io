@@ -94,7 +94,7 @@ In addition to the settings outlined above to configure this source there are ad
 
 - Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
 - Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
-- To minimise the chance of problems, music folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any illegal characters removed (e.g. AC/DC should be in a folder ACDC)
+- To minimise the chance of problems, music folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any non-[alphanumeric characters](https://en.wikipedia.org/wiki/Alphanumericals) removed (e.g. AC/DC should be in a folder ACDC)
 - Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
 
 ### Audiobooks
