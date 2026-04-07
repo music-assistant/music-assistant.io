@@ -63,7 +63,6 @@ In addition to the settings outlined above to configure this source there are ad
 - <b>Sync Library Artists/Albums from this source to Music Assistant.</b> Whether to synchronize all artists/albums from the local source. 
 - <b>Import tracks/files into the Music Assistant library.</b> Define if the import of tracks/files is desired. When not importing into the library, tracks can still be manually browsed using the Browse feature. Note that by adding a Track into the Music Assistant library, the track artists and album will always be imported as well
 - <b>Import playlists (m3u files) into the Music Assistant library.</b> Define if the import of playlists (m3u files) is desired. When not importing into the library, they can still be manually browsed using the Browse feature.
-- <b>Automatic sync interval for Artists/Albums/Tracks/Playlists/Podcasts/Audiobooks.</b> Various time periods are selectable or it can be disabled
 - <b>Import Podcasts/Audiobooks into the Music Assistant library.</b> Define if the import of Podcasts/Audiobooks is desired. When not importing into the library, items can still be manually browsed using the Browse feature.
 - <b>Propagate track genres to albums and artists.</b> Derive albums and artist genres from their tracks when album/artist have no genre metadata of their own
 
