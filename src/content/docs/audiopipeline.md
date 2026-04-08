@@ -20,9 +20,9 @@ The Input section shows the origin of the stream and the codec, <a href="https:/
 
 Next the Volume Normalization value is shown. Details about how Volume Normalization is applied can be found on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 
-The Output section is then shown which, in this example, is simple and just shows the Output Limiter, that no change to the audio sample rate or bit depth has occurred and then finally the icon of the player provider and the name of the player is shown.
+The Output section is then shown which, in this example, is simple and just shows the Output Limiter, that no change to the audio sample rate or bit depth has occurred and then finally the icon of the output protocol and the name of the player is shown.
 
-MA, by default, sends lossless audio to the player. The exact codec, sample rate or bit depth that are sent to the player depends on the player / provider and is always shown. Changes to the original audio quality may occur if the MP3 option has been selected in the player settings (See the [Groups](#groups) example below) or if the audio is resampled to match the players maximum or native sample rate or bit depth. PCM could be sent to the player although typically FLAC is used to save some bandwidth.
+MA, by default, sends lossless audio to the player. The exact codec, sample rate or bit depth that are sent to the player depends on the player / output protocol and is always shown. Changes to the original audio quality may occur if the MP3 option has been selected in the player settings (See the [Groups](#groups) example below) or if the audio is resampled to match the players maximum or native sample rate or bit depth. PCM could be sent to the player although typically FLAC is used to save some bandwidth.
 
 The maximum sample rate that can be expected can be found in the [Player Providers summary table](/player-support/). This can be further limited if changes were made to the default options for the player's `Sample Rates Supported by this Player` advanced setting.
 ***************************************************************
