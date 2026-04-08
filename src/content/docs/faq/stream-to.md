@@ -108,6 +108,7 @@ A summary of the capabilities of the player providers available in Music Assista
 
 In general terms the protocols/devices that should give you minimum to no setup difficulty are:
 
+- Any device/speaker that supports <a href="https://www.sendspin-audio.com/" target="_blank" rel="noopener noreferrer">Sendspin</a> (a new experimental open standard from the Open Home Foundation)
 -	Any device/speaker that supports <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay</a>
 -	Any device/speaker that supports the <a href="https://en.wikipedia.org/wiki/Google_Cast" target="_blank" rel="noopener noreferrer">Google Cast protocol</a> (also known as cast builtin)
 -	<a href="https://en.wikipedia.org/wiki/Squeezebox_(network_music_player" target="_blank" rel="noopener noreferrer">Squeezebox hardware</a>
