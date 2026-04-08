@@ -33,21 +33,8 @@ QQ Music is one of the most widely used streaming music platforms in Mainland Ch
 
 - Search support for tracks, artists, albums, and playlists
 - Library sync for liked tracks, followed artists, liked albums, and playlists
-- Library sync is currently documented and validated as one-way (QQ Music → Music Assistant)
+- Library sync is currently one-way (QQ Music → Music Assistant)
 - Quality fallback handling when selected quality is unavailable for a specific track
-
-## Library Sync
-
-This provider can sync your QQ Music library data into Music Assistant, including:
-
-- Liked/Favorite tracks
-- Liked/Favorite albums
-- Followed artists
-- User playlists
-
-> [!NOTE]
-> Sync behavior is currently treated as one-way (QQ Music → Music Assistant).  
-> Sync-back behavior from Music Assistant to QQ Music has not been fully validated yet.
 
 ## Configuration
 
@@ -61,11 +48,7 @@ This provider can sync your QQ Music library data into Music Assistant, includin
 
 ### Settings
 
-- <b>Preferred quality.</b> Available options:
-  - MP3 128kbps
-  - MP3 320kbps
-  - FLAC
-  - Hi-Res (with fallback to lower qualities when unavailable)
+- <b>Preferred quality.</b> Options are `MP3 128kbps (most compatible)`, `MP3 320kbps [Default]`, `FLAC (fallback to MP3)`, and `Hi-Res (Master, fallback to FLAC/MP3)`.
 
 ## Known Issues / Notes
 

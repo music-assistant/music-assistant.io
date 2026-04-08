@@ -203,7 +203,6 @@ export default defineConfig({
 						{ label: 'Podcast Index', slug: 'music-providers/podcast-index' },
 						{ label: 'Podcast RSS Feed', slug: 'music-providers/podcastfeed' },
 						{ label: 'QQ Music', slug: 'music-providers/qqmusic' },
-						{ label: 'QQ Music (中文)', slug: 'music-providers/qqmusic-zh' },
 						{ label: 'Qobuz', slug: 'music-providers/qobuz' },
 						{ label: 'Radio Browser', slug: 'music-providers/radio-browser' },
 						{ label: 'Radio Paradise', slug: 'music-providers/radio-paradise' },
