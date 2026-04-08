@@ -6,13 +6,6 @@ description: A Collection of HA cards or dashboards
 # General <img src="/assets/icons/community-extensions-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 This is a collection of community developed HA cards or dashboards for Music Assistant. Review the linked repos (the repo title is linked) for instructions and status of these projects. The complexity of these projects varies.
 ***************************************************************
-## <a href="https://github.com/DanStennett/HAMusicAssistantJukebox" target="_blank" rel="noopener noreferrer">Music Assistant Jukebox</a>
-
-A web-based song request system that integrates with Home Assistant and Music Assistant to create an interactive jukebox experience for guests!
-
-<img src="https://github.com/DanStennett/HAMusicAssistantJukebox/blob/main/readme_image.jpg?raw=true" alt="image" style="width: 420px;"  loading="lazy" />
-
-***************************************************************
 ## <a href="https://github.com/fastxl2024/mass-search-card" target="_blank" rel="noopener noreferrer">Music Assistant Search Card</a>
 
 The Mass Search Card is an advanced search card for Home Assistant, designed to simplify interaction with Music Assistant. This card allows you to effortlessly search for artists, tracks, albums, playlists, and radio stations and play them on your selected media players.

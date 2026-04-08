@@ -19,7 +19,7 @@ If a player type has native support for announcements (i.e. Sonos, Snapcast, Sen
 
 The functionality works with all players that are supported by Music Assistant.
 
-Each player has settings which allow for adjustment of certain aspects of the announcement playback. Groups only have a setting for the pre-announcement sound.
+Each player has settings which allow for adjustment of certain aspects of the announcement playback. Groups only have a setting for the pre-announcement sound. See also [Announcements Configuration](/settings/individual-player/#announcements-configuration)
 
 ![image](/assets/screenshots/announcement-settings.png)
 
