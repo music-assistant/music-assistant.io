@@ -11,7 +11,7 @@ Music Assistant has support for AirPlay based devices which support <a href="htt
 - AirPlay devices are auto detected in Music Assistant, plug and play
 - AirPlay devices will play in sync, even when there is a combination of AirPlay 1 (RAOP) and AirPlay 2 devices in the sync group
 - Audio quality is lossless 44.1 kHz/16bits PCM and optionally compressed as (lossless) ALAC
-- The player settings allow configuration of stereo pairs of speakers
+- The player settings allow configuration of [stereo pairs](/faq/how-to/#create-a-stereo-pair) of speakers
 
 ## Protocol Settings
 
