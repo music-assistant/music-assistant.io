@@ -275,3 +275,7 @@ Playlists will be played in the order that they were created. Changing the displ
 ## Create Multiple ShairportSync-Instances on the same Host
 
 A tutorial is available <a href="https://github.com/orgs/music-assistant/discussions/3562" target="_blank" rel="noopener noreferrer">here</a>
+
+## Create a Stereo Pair
+
+If a [Player Provider](/player-support/) supports stereo pairs natively, and these can be setup in the native app, and MA can detect these unique "players" then this should work. Otherwise, for the player providers that support perfect sync and show the `Output Channel Mode` in the Protocol Settings for the individual player then each player of the stereo pair can be assigned an individual channel and then the two players grouped as a [Sync Group](/faq/groups/#sync-groups).
