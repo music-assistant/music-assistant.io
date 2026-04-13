@@ -33,7 +33,7 @@ Pandora provides personalized radio stations that play an endless stream of song
 ## Settings
 - <b>Username and Password.</b> Account credentials for your Pandora account
 - <b>Audio quality.</b> Select preference between standard (AAC 64kbps) and high quality (MP3 192kbps) audio. A paid account is required for high quality audio, free accounts will use standard quality audio despite this setting.
-- <b>Take Over Stream.</b> Request that Pandora disconnect any other devices that are streaming and instead allow streaming via MA (See Notes for more information)
+- <b>Take Over Stream.</b> Request that Pandora disconnect any other devices that are streaming and instead allow streaming via MA (See [Notes](#known-issues--notes) for more information)
 - [Standard sync options](../#library-import-control) are available
 
 ## Known Issues / Notes
