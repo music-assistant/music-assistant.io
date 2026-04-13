@@ -13,13 +13,9 @@ Music Assistant has support for devices running <a href="https://www.musicpd.org
 
 ## Setup
 
-MPD players are not auto-discovered. Each MPD server must be added manually as a separate provider instance.
+MPD players are not auto-discovered. Each MPD server must be added in the provider settings. Entry is done by adding either IP or IP:PORT into the MPD SERVERS field. If no port is added then 6600 is assumed. As each server is added click outside of the entry box to cause the entry to be accepted.
 
-For each MPD server, configure the following:
-
-- **Host** — Hostname or IP address of the MPD server
-- **Port** — TCP port MPD is listening on (default: `6600`)
-- **Password** — MPD password, if one is configured
+If the MPD server requires a password then the player will be setup but will be inactive until the password is set on the individual player
 
 MPD is available for Linux, Windows, and macOS. See the <a href="https://www.musicpd.org/download.html" target="_blank" rel="noopener noreferrer">MPD download page</a> for installation instructions.
 
@@ -48,8 +44,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/), t
 
 ## Known Issues / Notes
 
-- MPD players must be added manually — one provider instance per MPD server
 - FLAC is not available as an output codec. MPD requires a seekable stream to probe the FLAC header, which is incompatible with MA's continuous HTTP stream
 - Flow mode is always enabled and cannot be disabled; this is required for MA to deliver audio to MPD via HTTP
 - Volume control requires a mixer to be configured in MPD. If no mixer is available, volume control will not be shown
-- MPD itself imposes no limit on audio quality — it will pass the stream to the hardware as-is. The effective quality ceiling is therefore determined by the output hardware and the codec selected in MA. WAV (uncompressed PCM) will deliver the highest quality
+- MPD itself imposes no limit on audio quality — it will pass the stream to the hardware as-is. The effective quality ceiling is therefore determined by the output hardware and the codec selected in MA. WAV (uncompressed PCM) will deliver the highest quality but will require significnt bandwidth. 
