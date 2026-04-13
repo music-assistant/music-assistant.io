@@ -29,6 +29,7 @@ Pandora provides personalized radio stations that play an endless stream of song
 - In the configuration, enter the user name and password and click the save button
 - [Standard sync options](index.md/#library-import-control) are available
 - Audio quality preference can be selected and high quality audio can be used with a paid subscription.
+- A "Take Over Stream" button can be used to request that Pandora disconnect any other devices that are streaming and instead allow streaming via MA (See Notes for more information)
 
 ## Known Issues / Notes
 
