@@ -24,7 +24,7 @@ Pandora provides personalized radio stations that play an endless stream of song
 
 ## Configuration:
 - In the configuration, enter the user name and password and click the save button
-- [Standard sync options](/index.md/#library-import-control) are available
+- [Standard sync options](index.md/#library-import-control) are available
 
 ## Known Issues / Notes
 
