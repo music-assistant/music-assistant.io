@@ -18,6 +18,8 @@ For each of the builtin playlists there is a toggle to enable or disable them.
 
 This provider is added automatically and cannot be disabled or deleted.
 
+### Adding Items
+
 To manually add items follow these steps:
 
 1. In the main menu select 'Tracks' or 'Radio'
@@ -28,3 +30,9 @@ To manually add items follow these steps:
 3. Add the full URL including http:// or https:// and optionally a custom name and image URL.
 
 After completing step 3 the track or station will become available in the respective view (A press of the refresh icon ![screenshot](/assets/icons//icon-refresh-plain.png) may be required).
+
+### Editing Items
+
+The custom name and image URL can be changed by navigating to the detail page for the item and then opening the ⋮ menu in the top right and selecting EDIT \<ITEM\> where \<ITEM\> is Track, Playlist or Radio Station.
+
+The URI cannot be changed. If that is required then the existing item must be removed from the library and the new one added.
