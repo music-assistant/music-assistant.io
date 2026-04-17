@@ -196,6 +196,7 @@ export default defineConfig({
 						{ label: 'Local Files', slug: 'music-providers/filesystem' },
 						{ label: 'Nico Nico Video', slug: 'music-providers/niconico' },
 						{ label: 'Nugs.net', slug: 'music-providers/nugs' },
+						{ label: 'NTS Radio', slug: 'music-providers/nts' },
 						{ label: 'ORF Radiothek', slug: 'music-providers/radiothek' },
 						{ label: 'Pandora', slug: 'music-providers/pandora' },
 						{ label: 'Phish.in', slug: 'music-providers/phishin' },
