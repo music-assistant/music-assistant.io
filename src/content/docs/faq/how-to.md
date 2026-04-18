@@ -25,7 +25,7 @@ You can also use the `music_assistant.search` or `music_assistant.get_library` a
 > [!NOTE]
 > URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
 
-URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system provider added to MA then `filesystem_smb` can be used.
+URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system source added to MA then `filesystem_smb` can be used.
 
 ## Use volume normalization? How does it work?
 
@@ -45,7 +45,7 @@ There are three options.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
-You don't shuffle the music providers you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar) or you can select the [NOW PLAYING View](/ui/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
+You don't shuffle the music sources you enable shuffle on the queue for the player and then whatever gets added to the queue gets shuffled. You enable shuffle on the queue from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar) or you can select the [NOW PLAYING View](/ui/#now-playing-view), then the context menu Top Right then ENABLE SHUFFLE or you can do it with yaml as follows:
 ``` yaml
 action: media_player.shuffle_set
 target:
@@ -225,7 +225,7 @@ Trying to run MA with SSL is not recommended. Having said that, whilst you can n
 
 If you are running the MA app within the HA host go to SETTINGS>>ADDONS>>MUSIC ASSISTANT and select "Show in sidebar".
 
-If you are using docker then you can use an <a href="https://www.home-assistant.io/dashboards/iframe/" target="_blank" rel="noopener noreferrer">iframe panel</a> or you can use another custom integration called <a href="https://github.com/lovelylain/hass_ingress" target="_blank" rel="noopener noreferrer">hass_ingress</a> which allows you to add additional ingress panels to your Home Assistant frontend. 
+If you are using docker then you can use an <a href="https://www.home-assistant.io/dashboards/iframe/" target="_blank" rel="noopener noreferrer">iframe panel</a> or you can use another custom integration called <a href="https://github.com/lovelylain/hass_ingress" target="_blank" rel="noopener noreferrer">hass_ingress</a> which allows you to add additional ingress panels to your Home Assistant frontend. If using direct URLs a [long lived access token](#access-the-ma-views-directly-via-url) will be required.
 
 ## Add a rotary encoder with push button to a piCorePlayer
 
@@ -233,14 +233,14 @@ See <a href="https://github.com/orgs/music-assistant/discussions/1123#discussion
 
 ## Access my music on Nextcloud?
 
-The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](/music-providers/subsonic/) so you can use that provider in MA to connect. 
+The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](/music-providers/subsonic/) so you can use that source in MA to connect. 
 
 ## Access the MA Views directly via URL
 
 If authentication becomes a blocker to some devices then create a long lived access token via MA SETTINGS >> PROFILE and use the following format as the URL
 https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
 
-## Player Selection
+## Open the UI with a Specific Player Selected
 
 A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a MA player name or `true` to open the last known. Player names are not case sensitive.
 
@@ -249,7 +249,7 @@ Examples
 - http://192.168.1.1:8095/#/home?player=true
 - http://192.168.1.1:8095/#/home?player=Livingroom
 
-## Frameless View
+## Open the UI Without Menu or Player Bar
 
 Display the relevant view without the <a href="https://music-assistant.io/ui/#player-bar" target="_blank" rel="noopener noreferrer">Player Bar</a> or <a href="https://music-assistant.io/ui/#main-menu" target="_blank" rel="noopener noreferrer">Main Menu</a>
 
@@ -258,7 +258,7 @@ Examples
 - http://192.168.1.1:8095/#/albums?frameless=true
 - http://192.168.1.1:8095/#/playlists?player=kitchen%20speaker&frameless=true
 
-## Now Playing View
+## Open the UI with the Now Playing View Showing
 
 Display the Now Playing view 
 

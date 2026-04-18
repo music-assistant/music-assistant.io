@@ -33,14 +33,6 @@ If this is encountered then, as above, change the *build* type to **pa** (PortAu
 If “<a href="https://github.com/pssc/ha-addon-squeezelite/issues/1" target="_blank" rel="noopener noreferrer">helicopter noises</a>” are heard then adjust the target latency to a higher value.
 
 To do so, enable “Show unused configuration options” and add `-a 150ms` to the *options* text field while using the ALSA or PA (PortAudio) *build*. Experimentation with higher or lower values may be required.
-
-### Static instead of audio playback on some tracks
-
-This is <a href="https://github.com/music-assistant/support/issues/4163" target="_blank" rel="noopener noreferrer">an issue with Music Assistant</a> and affects all tracks not using the `i16` sampling format (such as 24/32-bit audio) when streaming with the **WAV** *Output codec*.
-
-When encountering this issue, change the *Output format* to **FLAC** (or any other non-WAV format) in the Music Assistant player *Advanced Settings*.
-
-Alternatively, enabling “Show unused configuration options” and adding `-W` to the *options* field of the SqueezeLite App also works around this issue.
 </div>
 </details>
 
@@ -82,7 +74,7 @@ If using a USB dongle with piCorePlayer then some settings on the `Squeezelite S
 Play to the built-in Sendspin web player.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="easiest label" style="width: 64px;"  loading="lazy" />
-Use a [Snapserver](/player-support/snapcast/) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
+Use a [Snapserver](../player-support/snapcast/) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
 
 ## My Android Phone
 
@@ -90,7 +82,7 @@ Use a [Snapserver](/player-support/snapcast/) and the Snapweb option. If you ena
 Play to the built-in Sendspin web player.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
-Use the <a href="https://play.google.com/store/apps/details?id=de.badaix.snapcast" target="_blank" rel="noopener noreferrer">Snapcast App</a> and the [Snapserver Provider](/player-support/snapcast/)
+Use the <a href="https://play.google.com/store/apps/details?id=de.badaix.snapcast" target="_blank" rel="noopener noreferrer">Snapcast App</a> and the [Snapserver Provider](../player-support/snapcast/)
 
 ## Music Assistant
 
@@ -118,7 +110,7 @@ In general terms the protocols/devices that should give you minimum to no setup 
 
 -	Any device/speaker that supports <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay</a>
 -	Any device/speaker that supports the <a href="https://en.wikipedia.org/wiki/Google_Cast" target="_blank" rel="noopener noreferrer">Google Cast protocol</a> (also known as cast builtin)
--	<a href="https://en.wikipedia.org/wiki/Squeezebox_(network_music_player" target="_blank" rel="noopener noreferrer">Squeezebox hardware</a>)
+-	<a href="https://en.wikipedia.org/wiki/Squeezebox_(network_music_player" target="_blank" rel="noopener noreferrer">Squeezebox hardware</a>
 -	<a href="https://sourceforge.net/projects/lmsclients/files/squeezelite/" target="_blank" rel="noopener noreferrer">Squeezelite</a> based players
 -	<a href="https://www.sonos.com/en-us/home" target="_blank" rel="noopener noreferrer">Sonos</a>
 

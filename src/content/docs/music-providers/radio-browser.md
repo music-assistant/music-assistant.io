@@ -2,7 +2,7 @@
 title: "Radio Browser"
 ---
 
-# Radio Browser Provider <img src="/assets/icons/radiobrowser_icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Radio Browser <img src="/assets/icons/radiobrowser_icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://www.radio-browser.info/" target="_blank" rel="noopener noreferrer">RadioBrowser</a> which allows easy addition of online radio stations to Music Assistant.
 

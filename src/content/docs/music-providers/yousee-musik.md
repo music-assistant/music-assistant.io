@@ -2,12 +2,12 @@
 title: "YouSee Musik"
 ---
 
-# YouSee Musik Music Provider <img src="/assets/icons/yousee.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# YouSee Musik Music <img src="/assets/icons/yousee.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant has support for [YouSee Musik](https://musik.yousee.dk). Contributed and maintained by [math625f](https://github.com/math625f)
 
 > [!NOTE]
-> A paid subscription is required to add this Music Provider.
+> A paid subscription is required to add this music source.
 
 ## Features
 
@@ -30,10 +30,10 @@ Music Assistant has support for [YouSee Musik](https://musik.yousee.dk). Contrib
 - Played tracks are logged in YouSee Musik, which is especially useful for generating appropriate recommendations
 - Any track that YouSee Musik has lyrics for is automatically fetched in MA. If timestamps are available for a track, proper "karaoke style" lyrics are used, otherwise it falls back to raw text-only lyrics
 
-### Configuring the provider
+### Configuring the source
 
 - Navigate to 'Settings'
-- Under Music Providers, click 'Add new', select 'YouSee Musik', and fill in a `Username` and `Password`
+- Under Music Sources, click 'Add a music source', select 'YouSee Musik', and fill in a `Username` and `Password`
 - Adjust the settings described below as necessary
 - Click 'Save'
 

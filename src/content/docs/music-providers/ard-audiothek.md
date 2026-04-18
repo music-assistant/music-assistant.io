@@ -2,7 +2,7 @@
 title: "ARD Audiothek"
 ---
 
-# ARD Audiothek Provider <img src="/assets/icons/ard-audiothek.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# ARD Audiothek <img src="/assets/icons/ard-audiothek.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for streaming from <a href="https://www.ardaudiothek.de/" target="_blank" rel="noopener noreferrer">ARD Audiothek</a>. Contributed and maintained by <a href="https://github.com/jfeil" target="_blank" rel="noopener noreferrer">Jan Feil</a>
 

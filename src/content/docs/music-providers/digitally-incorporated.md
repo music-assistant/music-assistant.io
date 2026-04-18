@@ -2,7 +2,7 @@
 title: "DI.fm Network"
 ---
 
-# DI.fm Network Provider <img src="/assets/icons/difm-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# DI.fm Network <img src="/assets/icons/difm-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for the DI.fm Radio Network which includes <a href="https://www.di.fm" target="_blank" rel="noopener noreferrer">DI.fm</a>, <a href="https://www.radiotunes.com" target="_blank" rel="noopener noreferrer">Radiotunes</a>, <a href="https://www.zenradio.com" target="_blank" rel="noopener noreferrer">Zen Radio</a>, <a href="https://www.jazzradio.com" target="_blank" rel="noopener noreferrer">Jazz Radio</a>, <a href="https://www.classicalradio.com" target="_blank" rel="noopener noreferrer">Classical Radio</a>, and <a href="https://www.rockradio.com" target="_blank" rel="noopener noreferrer">Rock Radio</a>. Contributed and maintained by <a href="https://github.com/benklop" target="_blank" rel="noopener noreferrer">Ben</a>
 

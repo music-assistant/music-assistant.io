@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 import { remarkAlert } from 'remark-github-blockquote-alert';
+import { authors } from './src/authors.mjs';
 
 const isProduction = process.env.CONTEXT === 'production' || !process.env.CONTEXT;
 
@@ -109,14 +110,7 @@ export default defineConfig({
 					prefix: 'blog',
 					postCount: 10,
 					recentPostCount: 5,
-					authors: {
-						'marcel': {
-							name: 'Marcel van der Veldt',
-							title: 'Lead Developer',
-							picture: 'https://avatars.githubusercontent.com/marcelveldt?size=64',
-							url: 'https://github.com/marcelveldt',
-						},
-					},
+					authors,
 				}),
 			],
 			sidebar: [
@@ -133,14 +127,15 @@ export default defineConfig({
 					label: 'Settings',
 					collapsed: true,
 					items: [
-						{ label: 'Profile Settings', slug: 'settings/profile' },
-						{ label: 'Music Provider Settings', slug: 'settings/music-provider-settings' },
-						{ label: 'Player Provider Settings', slug: 'settings/player-provider' },
-						{ label: 'Individual Player Settings', slug: 'settings/individual-player' },
-						{ label: 'System Settings', slug: 'settings/core' },
-						{ label: 'Remote Access', slug: 'settings/remote-access' },
+						{ label: 'Music Sources', slug: 'settings/music-provider-settings' },
+						{ label: 'Player Providers', slug: 'settings/player-provider' },
+						{ label: 'Metadata Providers', slug: 'metadata' },
+						{ label: 'Players', slug: 'settings/individual-player' },
+						{ label: 'Profile', slug: 'settings/profile' },
 						{ label: 'User Interface', slug: 'settings/user-interface' },
 						{ label: 'User Management', slug: 'settings/user-management' },
+						{ label: 'Remote Access', slug: 'settings/remote-access' },
+						{ label: 'System Settings', slug: 'settings/core' },
 						{ label: 'About', slug: 'settings/about' },
 					],
 				},
@@ -168,13 +163,13 @@ export default defineConfig({
 						{ label: 'UI', slug: 'ui' },
 						{ label: 'Audio Pipeline', slug: 'audiopipeline' },
 						{ label: 'Groups', slug: 'faq/groups' },
+						{ label: 'Genres', slug: 'genres' },
 						{ label: 'DSP Parametric EQ', slug: 'dsp/parametriceq' },
 						{ label: 'DSP Tone Controls', slug: 'dsp/tonecontrols' },
 						{ label: 'How Do I...', slug: 'faq/how-to' },
 						{ label: 'I Want To Stream To', slug: 'faq/stream-to' },
 						{ label: 'Technical Info', slug: 'faq/tech-info' },
 						{ label: 'Troubleshooting', slug: 'faq/troubleshooting' },
-						{ label: 'Genres', slug: 'genres' },
 					],
 				},
 				{
@@ -199,6 +194,7 @@ export default defineConfig({
 						{ label: 'Jellyfin', slug: 'music-providers/jellyfin' },
 						{ label: 'KION Music', slug: 'music-providers/kion-music' },
 						{ label: 'Local Files', slug: 'music-providers/filesystem' },
+						{ label: 'Mother Earth Radio', slug: 'music-providers/motherearthradio' },
 						{ label: 'Nico Nico Video', slug: 'music-providers/niconico' },
 						{ label: 'Nugs.net', slug: 'music-providers/nugs' },
 						{ label: 'ORF Radiothek', slug: 'music-providers/radiothek' },
@@ -207,6 +203,7 @@ export default defineConfig({
 						{ label: 'Plex', slug: 'music-providers/plex' },
 						{ label: 'Podcast Index', slug: 'music-providers/podcast-index' },
 						{ label: 'Podcast RSS Feed', slug: 'music-providers/podcastfeed' },
+						{ label: 'QQ Music', slug: 'music-providers/qqmusic' },
 						{ label: 'Qobuz', slug: 'music-providers/qobuz' },
 						{ label: 'Radio Browser', slug: 'music-providers/radio-browser' },
 						{ label: 'Radio Paradise', slug: 'music-providers/radio-paradise' },
@@ -231,13 +228,14 @@ export default defineConfig({
 						{ label: 'AirPlay', slug: 'player-support/airplay' },
 						{ label: 'Alexa', slug: 'player-support/alexa' },
 						{ label: 'Bluesound', slug: 'player-support/bluesound' },
-						{ label: 'Dashie Kiosk', slug: 'player-support/fully-kiosk' },
+						{ label: 'Dashie Kiosk', slug: 'player-support/dashie-kiosk' },
 						{ label: 'DLNA', slug: 'player-support/dlna' },
 						{ label: 'Fully Kiosk', slug: 'player-support/fully-kiosk' },
 						{ label: 'Google Cast', slug: 'player-support/google-cast' },
 						{ label: 'HEOS', slug: 'player-support/heos' },
 						{ label: 'Home Assistant', slug: 'player-support/ha' },
-						{ label: 'Music Player Daemon (MPD)', slug: 'player-support/mpd' },
+						{ label: 'MSX Bridge', slug: 'player-support/msx-bridge' },
+            { label: 'Music Player Daemon (MPD)', slug: 'player-support/mpd' },
 						{ label: 'MusicCast', slug: 'player-support/musiccast' },
 						{ label: 'Roku Media Assistant', slug: 'player-support/roku' },
 						{ label: 'Sendspin', slug: 'player-support/sendspin' },
@@ -256,7 +254,7 @@ export default defineConfig({
 						{ label: 'Home Assistant Plugin', slug: 'ha-plugin' },
 						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
 						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
-						{ label: 'Party Mode', slug: 'plugins/party-mode' },
+						{ label: 'Party', slug: 'plugins/party' },
 						{ label: 'Plex Connect', slug: 'plugins/plex-connect' },
 						{ label: 'Spotify Connect Plugin', slug: 'plugins/spotify-connect' },
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },

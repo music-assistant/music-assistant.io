@@ -25,8 +25,14 @@ Because Sendspin is **license-free and open source**, anyone can build apps, dev
 
 The Sendspin provider is **built-in and always enabled**. There are no configuration options required to get started.
 
-Individual Sendspin players will appear automatically when clients connect, and standard [player settings](/settings/player-provider/) apply.
+Individual Sendspin players will appear automatically when clients connect
 
+## Settings
+
+Standard [player settings](/settings/player-provider/) apply. Specific settings available for this player type are:
+
+- <b>Sync delay (ms).</b> Not all devices allow this correction but when available is allows a for static delay to be applied for audio synchronisation
+- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 
 ## Known Issues / Notes
 

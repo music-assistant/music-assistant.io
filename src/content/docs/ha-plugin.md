@@ -17,7 +17,7 @@ To achieve this functionality both the HA plugin and the [HA Player Provider](/p
 
 Before the Plugin can be added the HA Integration must be [installed](/integration/installation/). 
 
-- Navigate to MA SETTINGS>>PROVIDERS and add the plug-in provider
+- Navigate to MA SETTINGS>> PLUGINS and add the plug-in
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 

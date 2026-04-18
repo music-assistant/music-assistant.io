@@ -6,13 +6,18 @@ description: Player Grouping Functionality in Music Assistant
 # Groups
 
 > [!CAUTION]
-> **Note**
->
 > Do not delete or disable a player which is in a group while the group is playing
 
 Music Assistant uses four types of groups (these are outlined in the [Grouping Players](/ui/#grouping-players) section and three of the types are described in detail below) which provides a flexible way to combine players together. When a group is powered on then playback to individual members of the group is no longer possible. To play to an individual member, the group must be powered off or the individal player must be removed from the group. If the group is still powered on then players can only be removed from [Temporary Sync Groups](#temporary-sync-group), or from [Sync Groups](#sync-groups) and [Universal Groups](#universal-groups) which have the dynamic member option enabled. When allowable, players can be removed by using the checkboxes in the [Player List](/ui/#player-list) or by using the <a href="https://www.home-assistant.io/integrations/media_player/#media-control-actions" target="_blank" rel="noopener noreferrer">HA media_player.unjoin action</a>.
 
 See also the section on Announcements [Group Behaviour](/integration/announcements/#group-behaviour).
+
+For temporary and permanent sync groups the [protocol linking](/usage/#streaming-protocols) feature and Sendspin bridges available to Music Assistant lead to powerful options for group creation. The Sendspin bridges create a link between the Sendspin protocol, and the AirPlay and Google Cast protocols which allows for creation of groups of different provider types which will all play in sync. For users with Sonos devices with [AirPlay functionality](/player-support/sonos/#airplay-functionality) then this will further allow Sonos devices to also be played in sync. Even more impressively, Sonos devices without AirPlay functionality can be grouped with a player that does and then that player grouped to an AirPlay group. All of this functionality is illustrated in the following diagram. On the left is the traditional model where each provider type is isolated (and this remains the case for many of the providers available in MA) and then on the left is shown the potential broad linking of disparate types that is available across the Sendspin, AirPlay, Google Cast and Sonos ecosystems.
+
+<a href="/assets/group-diagram.png"><img src="/assets/group-diagram.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+
+> [!NOTE]
+> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay - Sendspin bridges should always work
 
 ## Temporary Sync Group
 
@@ -34,14 +39,14 @@ Temporary Sync Group players are configured via the [Player List](/ui/#player-li
 
 ## Sync Groups
 
-These are permanent group players that are configured via the MA settings. These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. A player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
+These are permanent group players that are configured via the MA settings. These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. Normally a player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
 
 ![image](/assets/screenshots/syncgroup.png)
 
 After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. You need to specify a name for the group player. The order that the players are selected when the group is created will be the order that the players are shown when viewing the group in the [Player List](/ui/#player-list).
 
 > [!NOTE]
-> The ADD GROUP PLAYER button is only visible if a player provider which supports perfect sync or the Universal Group player provider, has been added
+> The ADD GROUP PLAYER button is only visible if a players which supports perfect sync or the Universal Group player provider, have been added
 
 > [!TIP]
 > Remember Chromecast devices must be grouped in the Google Home app for perfect sync
@@ -50,6 +55,7 @@ After selecting ADD GROUP PLAYER as shown above, the group configuration screen 
 
 - The native player types shown (i.e. not the Universal Group option) support perfect sync
 - In addition to playing in sync the group will hold the queue regardless of which player(s) in the group are powered off
+- The list of players available for sync will change dynamically depending upon the selections made 
   
 ### Known Issues / Notes
 
@@ -61,7 +67,7 @@ After selecting ADD GROUP PLAYER as shown above, the group configuration screen 
 
 ## Universal Groups
 
-Music Assistant has support for grouping dissimilar playback devices. Configuration is done in the same manner as described in the Sync Groups section with UNIVERSAL selected as the Group Type. These groups also support the dynamic member option. Universal Group functionality is not emabled by default, it must be first added as a provider.
+Music Assistant has support for grouping dissimilar playback devices. Configuration is done in the same manner as described in the Sync Groups section with UNIVERSAL GROUP PLAYER selected as the Group Type. These groups also support the dynamic member option. Universal Group functionality is not emabled by default, it must be first added as a provider.
 
 ### Features
 
@@ -77,3 +83,4 @@ Music Assistant has support for grouping dissimilar playback devices. Configurat
 - The group will power on even if one or more of the child players is unavailable
 - If, in the group settings, the player friendly name has been replaced by an unusual ID then likely the player was seen by the MA logic as unavailable. Check the individual player status
 - Universal Groups are on a best-effort basis and might not work correctly with all player models or give unexpected results
+- It is not possible to add a fixed sync delay option that will provide an acceptable user experience for the majority of users

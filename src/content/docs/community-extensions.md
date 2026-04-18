@@ -6,13 +6,6 @@ description: A Collection of HA cards or dashboards
 # General <img src="/assets/icons/community-extensions-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 This is a collection of community developed HA cards or dashboards for Music Assistant. Review the linked repos (the repo title is linked) for instructions and status of these projects. The complexity of these projects varies.
 ***************************************************************
-## <a href="https://github.com/DanStennett/HAMusicAssistantJukebox" target="_blank" rel="noopener noreferrer">Music Assistant Jukebox</a>
-
-A web-based song request system that integrates with Home Assistant and Music Assistant to create an interactive jukebox experience for guests!
-
-<img src="https://github.com/DanStennett/HAMusicAssistantJukebox/blob/main/readme_image.jpg?raw=true" alt="image" style="width: 420px;"  loading="lazy" />
-
-***************************************************************
 ## <a href="https://github.com/fastxl2024/mass-search-card" target="_blank" rel="noopener noreferrer">Music Assistant Search Card</a>
 
 The Mass Search Card is an advanced search card for Home Assistant, designed to simplify interaction with Music Assistant. This card allows you to effortlessly search for artists, tracks, albums, playlists, and radio stations and play them on your selected media players.
@@ -69,3 +62,11 @@ Music Assistant Player Card is a custom card which provides a full media player,
 Turn any Bluetooth speaker into a Music Assistant player using the Sendspin protocol. Supports multiple simultaneous devices, multiroom sync groups, and comes with a real-time web dashboard. Deploys as an HA addon, Docker Compose, Proxmox LXC, or OpenWrt LXC.
 
 <img src="https://raw.githubusercontent.com/trudenboy/sendspin-bt-bridge/main/docs-site/public/screenshots/screenshot-dashboard-full.png" alt="Sendspin BT Bridge dashboard" style="width: 600px;"  loading="lazy" />
+
+***************************************************************
+## <a href="https://github.com/eliseo-juan/mass-coverwall-card" target="_blank" rel="noopener noreferrer">Music Assistant Cover Wall Card</a>
+
+A responsive cover wall for the Home Assistant Sections view that displays your Music Assistant playlists, albums, or artists as a tap-to-play grid. Supports multiroom playback, 16 sort options, and a manual pinning mode to always keep your go-to covers front and center.
+
+<img src="https://github.com/user-attachments/assets/9b4fbb2e-db2a-47d0-9b81-2b1d56204fd4" alt="MASS Cover Wall Example" style="width: 600px;"  loading="lazy"/>
+

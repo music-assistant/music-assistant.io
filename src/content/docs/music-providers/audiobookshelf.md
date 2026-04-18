@@ -2,7 +2,7 @@
 title: "Audiobookshelf"
 ---
 
-# audiobookshelf Provider <img src="/assets/icons/audiobookshelf-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# audiobookshelf <img src="/assets/icons/audiobookshelf-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://www.audiobookshelf.org/" target="_blank" rel="noopener noreferrer">audiobookshelf</a>. Contributed and maintained by <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a>
 
@@ -23,6 +23,7 @@ Music Assistant has support for <a href="https://www.audiobookshelf.org/" target
 
 - Populates Audiobooks from all libraries accessible by the supplied user
 - Populates Podcasts from all libraries accessible by the supplied user
+- Populates Playlists from all libraries accessible by the supplied user
 - Browse Feature has the following structure:
 
 ```
@@ -52,12 +53,19 @@ Music Assistant has support for <a href="https://www.audiobookshelf.org/" target
                 Collection_2
                     Audiobook_3
                     Audiobook_4
+            Playlists
+                Playlist_1
+                Playlist_2
             Audiobooks
                 Audiobook_1
                 Audiobook_2
         Library_Name_B (Podcasts)
-            Podcast_1
-            Podcast_2
+            Playlists
+                Playlist_1
+                Playlist_2
+            Podcasts
+                Podcast_1
+                Podcast_2
 ```
 
 - The Audiobook search function supports searching for Authors and Narrators
@@ -68,6 +76,7 @@ Music Assistant has support for <a href="https://www.audiobookshelf.org/" target
     - BUT: if MA was down while changes in the ABS database occured, those will only be synced if a normal provider sync is triggered
 - Single and multi-file audiobooks are supported
 - Supports recommendations on the [Home View](/ui/#view---home)
+- Playlist creation and editing are supported only when Audiobookshelf contains a single audiobook library and a single podcast library. This limitation exists because Music Assistant uses a single-library model, whereas Audiobookshelf supports multiple libraries, making library mapping ambiguous
 
 ## Configuration
 
@@ -107,6 +116,5 @@ user please refer to [user management](/settings/user-management/#filter-progres
 
 ## Not Yet Supported
 
-- Playlists
-- Edit provider feature
+- Edit provider feature is only supported for playlists, and only with the above restrictions.
 - Creation/deletion of a new library (i.e. not media items in a known library) is not reflected in an event driven way. Instead, use a normal sync

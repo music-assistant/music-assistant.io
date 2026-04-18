@@ -2,7 +2,7 @@
 title: "Phish.in"
 ---
 
-# Phish.in Provider <img src="/assets/icons/phish-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Phish.in <img src="/assets/icons/phish-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://phish.in/" target="_blank" rel="noopener noreferrer">Phish.in</a>. This component is contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 

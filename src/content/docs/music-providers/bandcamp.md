@@ -2,7 +2,7 @@
 title: "Bandcamp"
 ---
 
-# Bandcamp Music Provider <img src="/assets/icons/bandcamp.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# Bandcamp Music <img src="/assets/icons/bandcamp.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua](https://github.com/ALERTua)
 
@@ -49,7 +49,7 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 
 ### Configuring the provider 
 - Navigate to 'Settings'
-- Under Music Providers, click 'Add new', select 'Bandcamp', and fill in the identity cookie if needed
+- Under Music Sources, click 'Add a music source', select 'Bandcamp', and fill in the identity cookie if needed
 - Change optional values
 - Click 'Save'
 

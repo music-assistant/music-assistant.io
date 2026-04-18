@@ -87,33 +87,24 @@ If you run into any issues when using a docker install vs the recommended/standa
 
 - The server itself hosts a webserver to stream audio to devices. This webinterface must be accessible via HTTP by IP-address from local players. See the server's logging at startup to see if the server has correctly auto-detected the local IP
 
-- The webinterface of the server can be reached on TCP port 8095. For HAOS based installations, the webserver is available via Ingress which means it is protected by HA authentication (you also get the sidepanel shortcut for free!)
+- The webinterface of the server can be reached on TCP port 8095. For HAOS based installations, the webserver is also available via Ingress which allows for an easy to configure sidepanel shortcut
 
 - To access the frontend behind a reverse proxy, the reverse proxy will have to be configured to point at port 8095 and expose it to whatever is desired (and add an SSL certificate). How that works differs for each implemention.
-
-> [!TIP]
-> The server can be kept more secure by letting the addon (as installed) talk directly to the webserver on the internal docker network. In that case the internal DNS name of the addon would be, for example, `http://YOUR_HA_IP_ADDRESS:8123/d5369777_music_assistant`
 
 ## Usage and Notes
 
 - If Music Assistant in running in a separate docker container, the webinterface needs to be accessed at `http://YOUR_MA_IP_ADDRESS:8095`. The port can be changed in the MA settings. If something else is using port 8095 then that must be shutdown until the MA port is changed
-
-- No providers are installed initially. These must be added by navigating to the MA settings and then adding each provider individually (Music and Players) that are desired
-
+- No music sources are installed initially. These must be added by navigating to the MA settings and then adding each provider individually that are desired
+- The AirPlay, Chromecast, DLNA, Sendspin, and Sonos player providers are added automatically on initial install. Other than Sendspin, if you do not have any players which support those protocols then they can be deleted
 - Music from the music sources will be automatically loaded into the [Music Assistant library](/usage/#the-library). If there are multiple sources, they will be merged as one library
-
-- The Music Assistant UI centres around the concept of the [Library](/usage/#the-library), so the artists, albums, tracks, playlists, audiobooks, podcasts and radio stations that you are most interested in. It is possible to BROWSE or SEARCH the various providers to add aditional items to the Library.
-
-- Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will indicate tasks that are in progress. This can be seen by this symbol ![icon](/assets/icons/sync-icon.png) next to the Music Provider entry in the MA settings
-
+- The Music Assistant UI centres around the concept of the [Library](/usage/#the-library), so the artists, albums, tracks, playlists, audiobooks, podcasts and radio stations that you are most interested in. It is possible to BROWSE or SEARCH the various providers to add aditional items to the Library
+- Note that at the first startup it can take a while before data is available (first sync), the Music Assistant UI will indicate tasks that are in progress. This can be seen by this symbol ![icon](/assets/icons/sync-icon.png) next to the music source entry in the MA settings
 - Music sources are synced at regular intervals (which can be changed in the settings)
-
 - MA is designed to work on a Raspberry Pi (4+) which is also running Home Assistant. For this reason it does not make large demands on resources. Additionally, there are limits on the free API calls used for artwork and other metadata. The result of this is that initial syncs of large libraries can take a long time. Subsequent syncs should be noticeably faster
-
 - If a song is [linked across multiple providers](/ui/#provider-details) (e.g. Spotify and a FLAC file on disk), the file/stream with the highest quality is always preferred when starting a stream. Highest quality is based on sample rate, bit depth and codec and local is always preferred over cloud if the quality is equal.
 
 - Music Assistant uses a custom stream port (TCP 8097 by default) to stream audio to players. Players must be able to reach the Home Assistant instance and this port. If you're running one of the recommended HAOS installation methods, this is all handled for you, otherwise you will have to make sure you're running MA in a container with HOST network mode and with the privileges shown in the example docker compose above. Note: If the default port 8097 is occupied, the next port will be tried, and so on
-- Any restriction of the available ports (e.g. trying to run MA through a firewall) is not supported as protocols like AirPlay open random TCP and/or UDP ports
+- Any restriction of the available ports (e.g. trying to run MA through a firewall) is not supported as protocols such as AirPlay open random TCP and/or UDP ports
 - Attempting to create or manipulate a playlist or queue with more than a thousand items can cause unresponsivness or high resource usage depending on the resources of the host
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
