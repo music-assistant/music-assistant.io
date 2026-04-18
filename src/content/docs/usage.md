@@ -80,7 +80,7 @@ Radio Mode works differently when starting from an artist. For an artist in the 
 
 ## Playlists
 
-Playlists must be stored on a source. A music source's playlist can only contain tracks from that source. However, MA has a built-in provider with the ability to create playlists that have tracks from multiple music sources. In this case the playlist will be stored solely within the MA database. These options are automtically presented in the Add to Playlist dialog.
+Playlists must be stored on a source. A music source's playlist can only contain tracks from that source. However, MA has a built-in provider with the ability to create playlists that have tracks from multiple music sources. In this case the playlist will be stored solely within the MA database. These options are automatically presented in the Add to Playlist dialog.
 
 Playlists can be created or added to from various menus in the different views. They can also be created in the Playlist view by clicking on the icon in the top right.
 
