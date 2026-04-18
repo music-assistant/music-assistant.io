@@ -235,6 +235,7 @@ export default defineConfig({
 						{ label: 'HEOS', slug: 'player-support/heos' },
 						{ label: 'Home Assistant', slug: 'player-support/ha' },
 						{ label: 'MSX Bridge', slug: 'player-support/msx-bridge' },
+            { label: 'Music Player Daemon (MPD)', slug: 'player-support/mpd' },
 						{ label: 'MusicCast', slug: 'player-support/musiccast' },
 						{ label: 'Roku Media Assistant', slug: 'player-support/roku' },
 						{ label: 'Sendspin', slug: 'player-support/sendspin' },
