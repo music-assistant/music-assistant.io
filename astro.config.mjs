@@ -244,7 +244,7 @@ export default defineConfig({
 						{ label: 'Squeezelite', slug: 'player-support/squeezelite' },
 					],
 				},
-				{ label: 'Metadata Providers', slug: 'metadata' },
+				{ label: 'Metadata', slug: 'metadata' },
 				{
 					label: 'Plugins',
 					collapsed: true,
