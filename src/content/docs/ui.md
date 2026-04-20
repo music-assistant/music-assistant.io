@@ -127,7 +127,7 @@ The view is fully configurable. Select the user name in the navigation menu and 
 
 [![image](/assets/screenshots/UI-artist-view.png)](/assets/screenshots/UI-artist-view.png)
 
-Album and Track Views look the same as the above except there is no album artist filter icon and the track view has an [ADD VIA URL](/music-providers/builtin/) option.
+Album, Track and Playlist Views look similar to the above except there is no album artist filter icon and the track view has an [ADD VIA URL](/music-providers/builtin/) option. Playlists have a `Create new playlist on" icon as well as a `Import playlist` icon which allows the manual importation of plain text M3U and M3U8 playlist files. 
 
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) )
 indicates that the viewed results are subject to filtering.
