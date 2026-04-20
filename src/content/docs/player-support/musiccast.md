@@ -18,7 +18,7 @@ Music Assistant has support for <a href="https://au.yamaha.com/en/products/conte
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the MusicCast provider also some unique settings in the `Generic settings` section for devices which support multiple zones
+In addition to the [Individual Player Settings](/settings/individual-player/) the MusicCast provider also some unique settings in the `Output Protocol(s)` section for the player:
 
 - <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should  issues be encountered during playback then toggle this on. This setting is only available on multi-zone players
 - <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching
@@ -28,6 +28,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 - <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`.
 - <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a contnuous audio stream. Use for players that dont natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audo glitches occur during track transition
 
 ## Player Options
 
