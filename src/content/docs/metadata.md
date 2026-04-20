@@ -9,7 +9,7 @@ The metadata providers available in Music Assistant are used to supplement metad
 
 ## Artwork
 
-Music Assistant has access to a number of artwork providers. Specifically, in priority order, [Fanart.tv](https://fanart.tv/), [theaudiodb](https://www.theaudiodb.com/) and the [Cover Art Archive](https://coverartarchive.org/). This artwork is used throughout the Music Assistant UI. 
+Music Assistant has access to a number of artwork providers. Specifically, in priority order, [Fanart.tv](https://fanart.tv/), [theaudiodb](https://www.theaudiodb.com/), iTunes Artwork and the [Cover Art Archive](https://coverartarchive.org/). This artwork is used throughout the Music Assistant UI. 
 
 ## Radio Stations
 
