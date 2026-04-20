@@ -195,6 +195,7 @@ export default defineConfig({
 						{ label: 'KION Music', slug: 'music-providers/kion-music' },
 						{ label: 'Local Files', slug: 'music-providers/filesystem' },
 						{ label: 'Mother Earth Radio', slug: 'music-providers/motherearthradio' },
+						{ label: 'MusicMe', slug: 'music-providers/musicme' },
 						{ label: 'Nico Nico Video', slug: 'music-providers/niconico' },
 						{ label: 'Nugs.net', slug: 'music-providers/nugs' },
 						{ label: 'ORF Radiothek', slug: 'music-providers/radiothek' },
