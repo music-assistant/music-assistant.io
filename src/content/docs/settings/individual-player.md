@@ -40,13 +40,19 @@ There are a number of configurable options for controlling the volume of announc
 
 ## Player Controls
 
-Each player has a number of options available to control the behaviour of the power, volume and mute controls in the MA UI. By default, if a device supports these controls then that native behaviour will be used or if the control is not supported then it will be disabled in the UI (the setting will indicate NONE). It is also possible to manually disable the controls by changing the setting to NONE.
+Each player has a number of options available to control the behaviour of the power, volume and mute controls in the MA UI. By default, if a device supports these controls then that native behaviour will be used or if the control is not supported then it will be disabled in the UI (the setting will indicate NONE). It is also possible to manually disable the controls by changing the setting to NONE. Some of the options require the advanced toggle to be enabled before they can be seen.
 
 It is possible to map other HA entities to the MA player controls. in order for this to be an option the HA entities need to be first exposed to MA via the settings in the [HA Plugin](/ha-plugin/).
 
-**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. 
+**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality.
+
+**Volume** This allows the volume control to be defined or disabled.
 
 **Mute** There is a FAKE option that will set the volume to zero and restore it when mute and unmute is commanded.
+
+**Minimum and Maximum Volume** Two sliders allow the application of limits to the maximum and minimum values that are sent to the player. The volume sliders in the UI are rescaled so the full 0-100 range will still be seen.
+
+**Auomatically play/resume on power on** If the player supports power control then this option will cause the player to immediately start playing any items in the queue on power on.
 
 ## DSP Settings
 
