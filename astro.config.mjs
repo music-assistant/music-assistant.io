@@ -202,7 +202,6 @@ export default defineConfig({
 						{ label: 'Plex', slug: 'music-providers/plex' },
 						{ label: 'Podcast Index', slug: 'music-providers/podcast-index' },
 						{ label: 'Podcast RSS Feed', slug: 'music-providers/podcastfeed' },
-						{ label: 'NetEase Cloud Music', slug: 'music-providers/netease-cloud-music' },
 						{ label: 'Qobuz', slug: 'music-providers/qobuz' },
 						{ label: 'Radio Browser', slug: 'music-providers/radio-browser' },
 						{ label: 'Radio Paradise', slug: 'music-providers/radio-paradise' },
