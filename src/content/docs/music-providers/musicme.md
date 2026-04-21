@@ -43,10 +43,5 @@ MusicMe is a French music streaming service operated by ApachNetwork with a cata
 
 - MusicMe does not allow simultaneous playback from multiple devices; playing from the MusicMe website while using Music Assistant will interrupt one of the sessions
 - MusicMe's search API is an autocomplete that only returns popular/exact matches; niche artists may not appear in search results but can be found by browsing
-- Artist cover art is not always available on MusicMe's CDN; missing covers will show a 404 warning in MA logs (cosmetic only)
-
-## Not yet supported
-
-- Library sync (favorites) — MusicMe's library API is not exposed through their data service
-- Radio Mode
-- Lyrics
+- Artist cover art is not always available from MusicMe; missing covers will show a 404 warning in MA logs (cosmetic only)
+- Library sync (favorites) is not available — MusicMe does not expose this through their service
