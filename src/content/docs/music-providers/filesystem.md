@@ -194,9 +194,9 @@ Normally it is best to leave the Picard tags unchanged. However, some people do 
 
 When the filesystem provider encounters a `.cue` file, each logical track described by the sheet becomes its own library track. The referenced audio file itself is not imported as a separate track.
 
-Information for each track is built from two sources: the CUE sheet and the tags in the referenced audio file. Where both describe the same album-level field, the CUE sheet wins.
+Information for each track is built from two sources: the CUE Sheet and the tags in the referenced audio file. Where both describe the same album-level field, the CUE Sheet wins.
 
-The original Cue Sheet specification only had [13 directives](https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/). This is not sufficient for Music Assistant to work optimally so additional support has been added through various REM fields to allow the provision of the equivalent [tags listed above](#tags-used-by-ma). This metadata can be provided through any combination of tags in the file and fields in the cue sheet as described below.  
+The original Cue Sheet specification only had [13 directives](https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/). These are not sufficient for Music Assistant to work optimally, so additional support has been added through various REM fields to allow the provision of the equivalent [tags listed above](#tags-used-by-ma). This metadata can be provided through any combination of tags in the file and fields in the Cue Sheet as described below. Because mainstream CUE Sheet authoring tools do not emit these REM fields (they follow the original 13-directive spec), users who want the full metadata available to Music Assistant will need to add them manually to the CUE Sheet — or, for album-level metadata, tag the audio file itself. The naming follows [Picard's variable conventions](https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html), so anyone already tagging their library with Picard will find the fields familiar.
 
 ### Multi-value strategy
 
@@ -334,7 +334,7 @@ Each track requires:
 
 The sheet requires:
 
-- `FILE` — can be omitted if the CUE file shares the audio file's stem (e.g. `album.cue` alongside `album.flac`).
+- `FILE` — can be omitted if the CUE Sheet shares the audio file's stem (e.g. `album.cue` alongside `album.flac`).
 
 Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
 
