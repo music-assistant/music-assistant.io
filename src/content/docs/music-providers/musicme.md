@@ -11,7 +11,7 @@ MusicMe is a French music streaming service operated by ApachNetwork with a cata
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by MusicMe.
 
-> [!WARNING]
+> [!NOTE]
 > A MusicMe subscription is required for full streaming functionality.
 > MusicMe is primarily available in France.
 
