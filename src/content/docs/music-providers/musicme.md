@@ -4,7 +4,7 @@ title: "MusicMe"
 
 # MusicMe <img src="/assets/icons/musicme-icon.svg" alt="Preview image" style="width: 50px; float: right;" loading="lazy" />
 
-Music Assistant has support for [MusicMe](https://www.musicme.com). Contributed and maintained by [JulienDeveaux](https://github.com/JulienDeveaux).
+Music Assistant has support for [MusicMe](https://www.musicme.com). Contributed and maintained by [Julien Deveaux](https://github.com/JulienDeveaux).
 
 MusicMe is a French music streaming service operated by ApachNetwork with a catalogue of 13M+ tracks from major and independent labels.
 
