@@ -16,7 +16,7 @@ When streaming sources are also availabe in MA linking will only occur when the 
 | Subscription FREE | Yes |
 | Self-Hosted Local Media   | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
-| [Recommendations](/ui/#view-home) Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | Lossless FLAC 192 kHz, 24 bit |

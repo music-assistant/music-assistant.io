@@ -109,7 +109,7 @@ In any of the following views, Right click or long press on a track to get the f
 
 ![image](/assets/screenshots/UI-track-menu.png)
 
-The START RADIO option will only be seen if there is a provider that supports it. Start Radio populates the queue with tracks based on the selected track. The tracks are selected by the provider not MA. 
+The START RADIO option will only be seen if there is a provider that supports it. [Start Radio populates the queue with tracks based on the selected track](/usage/#radio-mode). The tracks are selected by the provider not MA. 
 ***************************************************************
 
 ## View - Discover
