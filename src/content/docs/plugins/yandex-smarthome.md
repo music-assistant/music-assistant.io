@@ -7,7 +7,7 @@ description: Features and Notes for the Yandex Smart Home Plugin
 
 Music Assistant can expose its players to [Yandex Alice](https://alice.yandex.ru/) via the [Yandex Smart Home API](https://yandex.ru/dev/dialogs/smart-home/), so they can be controlled by voice as smart home media devices. Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 
-This plugin is built on top of the [ya-passport-auth](https://github.com/trudenboy/ya-passport-auth) library and uses the [dext0r/yandex_smart_home](https://github.com/dext0r/yandex_smart_home) protocol implementation as a reference.
+Cloud connection modes use the [yaha-cloud.ru](https://yaha-cloud.ru/) relay. The protocol implementation follows the [dext0r/yandex_smart_home](https://github.com/dext0r/yandex_smart_home) reference integration.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
@@ -58,7 +58,7 @@ This plugin is built on top of the [ya-passport-auth](https://github.com/trudenb
 
 The plugin supports three connection modes — pick the one that matches your network setup:
 
-- **Cloud** — uses the public [yaha-cloud.ru](https://dialogs.yandex.ru/store/skills/7e26cc81-uma-assistant) skill as a relay. Easiest setup, no public URL required.
+- **Cloud** — uses the public [yaha-cloud.ru](https://yaha-cloud.ru/) skill as a relay. Easiest setup, no public URL required.
 - **Cloud Plus** — uses a private skill via the same relay. Required if Yaha Cloud is already linked to another integration (e.g. Home Assistant) on the same Yandex account.
 - **Direct** — Yandex calls your MA server directly over HTTPS. No relay required, but your Music Assistant webserver must be reachable on a public HTTPS URL.
 
