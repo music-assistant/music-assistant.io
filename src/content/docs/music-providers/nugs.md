@@ -16,7 +16,7 @@ Music Assistant has support for streaming your music from <a href="https://www.n
 | Subscription FREE | No |
 | Self-Hosted Local Media   | No |
 | Media Types Supported | Artists, Albums, Playlists |
-| Recommendations Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | <a href="https://www.music-assistant.io/ui/#track-menu" target="_blank" rel="noopener noreferrer">Radio Mode</a> | No |
 | Maximum Stream Quality | Lossless FLAC (192 kHz / 24 bit) |
