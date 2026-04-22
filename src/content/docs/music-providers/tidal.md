@@ -13,7 +13,7 @@ Music Assistant has support for <a href="https://tidal.com" target="_blank" rel=
 | Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui/#view-home) Supported | Yes |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |

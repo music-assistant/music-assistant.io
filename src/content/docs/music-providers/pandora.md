@@ -16,7 +16,7 @@ Pandora provides personalized radio stations that play an endless stream of song
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Radio |
-| [Recommendations](/ui/#view-home) Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | AAC (16 bit, 44.1 kHz) |
