@@ -244,6 +244,7 @@ export default defineConfig({
 						{ label: 'Snapcast', slug: 'player-support/snapcast' },
 						{ label: 'Sonos', slug: 'player-support/sonos' },
 						{ label: 'Squeezelite', slug: 'player-support/squeezelite' },
+						{ label: 'WiiM', slug: 'player-support/wiim' },
 					],
 				},
 				{ label: 'Metadata', slug: 'metadata' },
