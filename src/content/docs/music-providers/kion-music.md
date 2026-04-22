@@ -24,7 +24,7 @@ KION Music is a music streaming service by MTS (Mobile TeleSystems), one of the 
 |:-----------------------|:---------------------:|
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui/#view-home) Supported | Yes |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (with subscription) |
