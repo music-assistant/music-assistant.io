@@ -196,6 +196,7 @@ export default defineConfig({
 						{ label: 'Local Files', slug: 'music-providers/filesystem' },
 						{ label: 'Mother Earth Radio', slug: 'music-providers/motherearthradio' },
 						{ label: 'MusicMe', slug: 'music-providers/musicme' },
+						{ label: 'NetEase Cloud Music', slug: 'music-providers/netease-cloud-music' },
 						{ label: 'Nico Nico Video', slug: 'music-providers/niconico' },
 						{ label: 'Nugs.net', slug: 'music-providers/nugs' },
 						{ label: 'ORF Radiothek', slug: 'music-providers/radiothek' },
