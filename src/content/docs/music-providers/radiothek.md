@@ -16,7 +16,7 @@ This source allows access to Austrian radio stations and ORF podcasts.
 | Subscription FREE | Yes (some content may be region-locked) |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Radio, Podcasts |
-| [Recommendations](/ui/#view-home) Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | AAC 44.1 kHz / 16 bit |
