@@ -17,7 +17,7 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 | Subscription FREE | No |
 | Self-Hosted Local Media   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Radio |
-| [Recommendations](/ui/#view-home) Supported | Yes |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
