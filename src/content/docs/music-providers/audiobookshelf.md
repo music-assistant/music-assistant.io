@@ -13,7 +13,7 @@ Music Assistant has support for <a href="https://www.audiobookshelf.org/" target
 | Subscription FREE | Yes |
 | Self-Hosted Local Media   | Yes |
 | Media Types Supported | Audiobooks, Podcasts |
-| [Recommendations](/ui/#view-home) Supported | Yes |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
 | Maximum Stream Quality | 192kHz 24 bit |
