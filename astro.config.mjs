@@ -245,6 +245,7 @@ export default defineConfig({
 						{ label: 'Sonos', slug: 'player-support/sonos' },
 						{ label: 'Squeezelite', slug: 'player-support/squeezelite' },
 						{ label: 'WiiM', slug: 'player-support/wiim' },
+						{ label: 'Yandex Station', slug: 'player-support/yandex-station' },
 					],
 				},
 				{ label: 'Metadata', slug: 'metadata' },
