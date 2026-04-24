@@ -68,7 +68,7 @@ When enabled in **Settings → Players → \<Your Station\> → Show advanced �
 
 ## Known Issues / Notes
 
-- Stations must reach the Music Assistant stream server over plain **HTTP** — HTTPS URLs for local addresses are rejected by the station. Make sure the [Stream server base URL]
+- Stations must reach the Music Assistant in same local LAN
 - Voice commands «next» / «previous» cannot advance the MA queue — Alice does not see the external stream bypass Music Assistant uses, so the station's own "next / previous" targets Alice's content, not the MA queue. Use the MA UI or other voice assistants for queue navigation.
 - Seek via voice is not supported for the same reason.
 - The "stop" command behaves as "pause" on the station (the station keeps the current track loaded).
