@@ -20,7 +20,7 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 | Subscription FREE                               |           Yes           |
 | Self-Hosted Local Media                         |           No            |
 | Media Types Supported                           | Artists, Albums, Tracks |
-| [Recommendations](/ui/#view-home) Supported |           No            |
+| [Recommendations](/ui/#view---discover) Supported |           No            |
 | Lyrics Supported                                |           Yes           |
 | [Radio Mode](/ui/#track-menu)               |           No            |
 | Maximum Stream Quality                          |  Lossy, MP3 (128kbps)   |

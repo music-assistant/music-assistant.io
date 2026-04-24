@@ -16,6 +16,7 @@ The core server settings are set with typical defaults that should work for most
 
 - <b>Language.</b> Preferred language for metadata. If the selected language is unavailable then English will be used
 - <b>Enable metadata retrieval from online metadata providers.</b> Enables the lookup of information that is not available locally. MA does not modify any existing metadata but supplements it
+- <b>Enable artist/track artwork lookup for radio streams.</b> By default this is enabled and allows artwork to be displayed for radio stations that don't supply it natively. Requires the station to supply appropriate `Artist - Track` metadata
 
 ## Music
 
@@ -35,9 +36,9 @@ The behaviour when playing or enqueuing items is determined by the settings in t
 
 All settings in this section should be considered advanced and will not need to be adjusted in the majority of cases. Users with complicated network setups will find settings in this section that will be useful. If MA appears to be setup correctly but no playback occurs then check the settings in this section.
 
-### Streamserver Audio Settings
+### Queue Playback
 
-<b>Allow (in-memory) buffering of (track) audio.</b> By default, Music Assistant tries to be as resource efficient as possible when streaming audio, especially considering low-end devices such as Raspberry Pis. This means that audio buffering is disabled by default to reduce memory usage. Enabling this option allows for in-memory buffering of audio, which (massively) improves playback (and seeking) performance but it comes at the cost of increased memory usage. If you run Music Assistant on a capable device with enough memory, enabling this option is strongly recommended.
+<b>Audio buffer size.</b> Controls how much audio is buffered in memory. A larger buffer improves playback stability and seeking but uses more memory. The options are `Maxmimum [default]`, `Minimal` and `Balanced`
 
 This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](/settings/individual-player/#audio). Extensive online help for these settings is available by selecting the ![question mark](/assets/icons/question-mark.png) icon in the settings UI for each option.
 
@@ -45,16 +46,16 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 - <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
 
-### Streamserver Advanced Settings
+### Streamserver Advanced Settings (Generic section)
 
-- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically. If there are issues with playback then confirm the IP address shown is reachable by the players on the local network. The port must be available
+- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically. This is the address Music Assistant advertises to stream clients (including Sendspin) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network — not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
 - <b>SmartFades Log Level.</b> Specific log level for the Smart Fades mixer and analyzer
 
 ## Webserver
 
 - <b>Allow User Self-Registration.</b> Allows users to create accounts via Home Assistant OAuth
-- <b>Base URL.</b> The (base) URL to reach this webserver on the network. Override this in advanced scenarios where, for example, you are running the webserver behind a reverse proxy
+- <b>Base URL.</b> The (base) URL used to reach the web UI and API on the network. Override this in advanced scenarios — for example, when running the webserver behind a reverse proxy — by entering the full public URL (e.g. `https://music.example.com`). This setting is for the frontend only; it is separate from Streams >> Published IP Address, which must remain a local IP so players can reach the stream server directly.
 - <b>TCP Port.</b> The port that the webserver is to be run on. If this setting is changed then ensure the base URL port is changed as well
 - <b> Enable SSL/TLS.</b> When enabled two additional fields are revealed which is where the `SSL Certificate` and `SSL Private Key` are added (both must be in PEM format)
 - <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. For further information see the help for this setting in the MA UI
