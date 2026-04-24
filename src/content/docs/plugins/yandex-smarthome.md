@@ -5,9 +5,11 @@ description: Features and Notes for the Yandex Smart Home Plugin
 
 # Yandex Smart Home
 
-Music Assistant can expose its players to [Yandex Alice](https://alice.yandex.ru/) via the [Yandex Smart Home API](https://yandex.ru/dev/dialogs/smart-home/), so they can be controlled by voice as smart home media devices. Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
+Music Assistant can expose its players to [Yandex Smart Home](https://alice.yandex.ru/smart-home) , so they can be controlled by Alice voice assistant as smart home multimedia devices. 
 
-Cloud connection modes use the [yaha-cloud.ru](https://yaha-cloud.ru/) relay. The protocol implementation follows the [dext0r/yandex_smart_home](https://github.com/dext0r/yandex_smart_home) reference integration.
+Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
+Cloud connection modes use the [yaha-cloud.ru](https://yaha-cloud.ru/) relay. 
+The implementation follows the [dext0r/yandex_smart_home](https://github.com/dext0r/yandex_smart_home) reference integration.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
@@ -22,32 +24,29 @@ Cloud connection modes use the [yaha-cloud.ru](https://yaha-cloud.ru/) relay. Th
 
 ## Features
 
-|           |                     |
+|     Function      |          Note           |
 |:-----------------------|:---------------------:|
-| Exposes MA players to Yandex Alice | Yes |
-| Device type | `devices.types.media_device.receiver` |
+| Exposes MA players to Yandex SmartHome | Yes |
+| Device type | Multimedia |
 | Connection modes | Cloud, Cloud Plus, Direct |
-| Multiple instances | No |
-| Player filter (expose a subset) | Yes |
-| State reporting to Yandex | Yes (debounced + heartbeat) |
 
 ### Supported voice commands
 
 | Voice command | Action |
 |---|---|
-| «Алиса, включи музыку на \<name\>» | Play / resume the current queue |
-| «Алиса, выключи \<name\>» | Stop playback |
-| «Алиса, сделай громче / тише на \<name\>» | Volume up / down (±10) |
-| «Алиса, поставь громкость 50 на \<name\>» | Set volume to 50% |
-| «Алиса, пауза на \<name\>» | Pause |
-| «Алиса, дальше / назад на \<name\>» | Next / previous track |
-| «Алиса, переключи на \<source\> на \<name\>» | Select input source (if the player exposes a source list) |
+| «Alice, play music on \<name\>» | Play / resume the current queue |
+| «Alice, power off \<name\>» | Stop playback |
+| «Alice, turn up / turn down on \<name\>» | Volume up / down (±10) |
+| «Alice, set volume to 50 on \<name\>» | Set volume to 50% |
+| «Alice, pause on \<name\>» | Pause |
+| «Alice, next / previous on \<name\>» | Next / previous track |
+| «Alice, change input on \<source\> на \<name\>» | Select input source (if the player exposes a source list) |
 
 ### Yandex Smart Home capabilities
 
 | Yandex capability | Mapped MA action | Notes |
 |---|---|---|
-| `on_off` | `play()` / `stop()` | "включи" resumes the current queue, "выключи" stops |
+| `on_off` | `play()` / `stop()` | "power on" resumes the current queue, "power off" stops |
 | `range(volume)` | `volume_set()` | Absolute and relative (±) |
 | `toggle(mute)` | `volume_mute()` | Only if the player supports mute |
 | `toggle(pause)` | `play()` / `pause()` | |
@@ -84,8 +83,7 @@ The plugin supports three connection modes — pick the one that matches your ne
 
 ## Known Issues / Notes
 
-- `play_media` is not supported by the Yandex Smart Home API, so Alice cannot start a specific song/album/playlist on an MA player — "включи музыку" only resumes the current queue.
-- The `mode` capability supports up to 10 values, so only the first 10 entries of a player's source list are exposed to Alice.
+- `play_media` is not supported by the Yandex Smart Home API, so Alice cannot start a specific song/album/playlist on an MA player — "play music" only resumes the current queue.
 - Seek is not supported by the Yandex Smart Home API for third-party media devices.
 - Track name, artist and artwork cannot be pushed to Yandex — the API does not expose those fields for third-party devices.
 - Direct mode requires a publicly reachable HTTPS endpoint for the MA webserver (via port forwarding, reverse proxy or similar); otherwise use one of the cloud modes.
