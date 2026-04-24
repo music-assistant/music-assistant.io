@@ -5,9 +5,10 @@ description: Features and Notes for the Yandex Station Player Provider
 
 # Yandex Station
 
-Music Assistant can play music on [Yandex Station](https://station.yandex.ru/) smart speakers over the local [Glagol](https://yandex.ru/dev/dialogs/smart-home/doc/concepts/quasar-devices-overview.html) WebSocket protocol — no cloud roundtrip for audio. Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
+Music Assistant can play music on [Yandex Station](https://station.yandex.ru/) smart speakers over the local protocol — no cloud roundtrip for audio. 
 
-The Glagol protocol implementation and authentication flow are based on the [AlexxIT/YandexStation](https://github.com/AlexxIT/YandexStation) Home Assistant integration.
+Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
+The implementation are based on the [AlexxIT/YandexStation](https://github.com/AlexxIT/YandexStation) Home Assistant integration.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
@@ -61,16 +62,13 @@ When enabled in **Settings → Players → \<Your Station\> → Show advanced �
 
 | Voice command | Behaviour |
 |---|---|
-| «Алиса, стоп» | Pauses the Music Assistant queue (resume via the UI). |
-| «Алиса, какая погода?» *(or any query)* | Pauses MA while Alice speaks, then auto-resumes playback. |
-| «Алиса, громче / тише» | Adjusts volume during playback and auto-resumes the queue. |
+| «Alice, stop» | Pauses the Music Assistant queue (resume via the UI). |
+| «Alice, whats about weather ?» *(or any query)* | Pauses MA while Alice speaks, then auto-resumes playback. |
+| «Alice, turn up / turn down» | Adjusts volume during playback and auto-resumes the queue. |
 
 ## Known Issues / Notes
 
-- Stations must reach the Music Assistant stream server over plain **HTTP** — HTTPS URLs for local addresses are rejected by the station. Make sure the [Stream server base URL](/settings/core/#streams) is an `http://` URL on the LAN.
-- The MA stream server must serve a valid `Content-Length` header. Chunked transfer encoding is not accepted by the station and results in silence.
-- Stream URLs must carry a file extension the station recognises (`.flac`, `.mp3`). MA's `resolve_stream_url()` already provides this.
-- Voice commands «дальше» / «назад» cannot advance the MA queue — Alice does not see the external stream bypass Music Assistant uses, so the station's own "next / previous" targets Alice's content, not the MA queue. Use the MA UI or other voice assistants for queue navigation.
+- Stations must reach the Music Assistant stream server over plain **HTTP** — HTTPS URLs for local addresses are rejected by the station. Make sure the [Stream server base URL]
+- Voice commands «next» / «previous» cannot advance the MA queue — Alice does not see the external stream bypass Music Assistant uses, so the station's own "next / previous" targets Alice's content, not the MA queue. Use the MA UI or other voice assistants for queue navigation.
 - Seek via voice is not supported for the same reason.
-- The Glagol "stop" command behaves as "pause" on the station (the station keeps the current track loaded). The provider treats both MA `pause()` and `stop()` as a Glagol pause.
-- Power on/off relies on Yandex scenarios created in the Yandex app; if scenarios are unavailable for a given station model, the power button in MA will not work .
+- The "stop" command behaves as "pause" on the station (the station keeps the current track loaded).
