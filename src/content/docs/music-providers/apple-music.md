@@ -16,19 +16,16 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 |:-----------------------|:---------------------:|
 | Subscription FREE | No |
 | Self-Hosted Local Media   | No |
-| Media Types Supported | Artists, Albums, Tracks, Playlists, Radio |
-| [Recommendations](/ui/#view---discover) Supported | Yes |
+| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
-| Login Method | OAuth or Cookie |
+| Login Method | Cookie |
 
 ### Other
 
 - Searching the Apple Music catalogue
-- Browsing playlists organised in folders
-- Artist radio stations available via Browse and the [Discover view](/ui/#view---discover); live broadcast stations are not supported
-
 
 ## Configuration
 
@@ -73,4 +70,6 @@ The token needs to be retrieved through your browser. Instructions were written 
 - Due to Apple's proprietary encryption (FairPlay), Lossless and Dolby Atmos versions of songs are not supported
 - Due to limitations in the API, favouriting an item will only sync back to Apple Music for albums, playlists and tracks
 - Due to lack of an offical API, it can take up to 5 seconds to transition between tracks
-- Only user-created playlists can be edited; shared and curated playlists are read-only
+
+## Not yet supported
+- Library interaction, such as adding and removing from within Music Assistant
