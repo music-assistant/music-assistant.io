@@ -17,7 +17,7 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 | Subscription FREE | No |
 | Self-Hosted Local Media   | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Radio |
-| [Recommendations](/ui/#view---discover) Supported | Yes |
+| [Recommendations](/ui/#view-home) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
@@ -27,7 +27,7 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 
 - Searching the Apple Music catalogue
 - Browsing playlists organised in folders
-- Artist radio stations available via Browse and the [Discover view](/ui/#view---discover); live broadcast stations are not supported
+- Artist radio stations available via Browse and the [Recommendations](/ui/#view-home) section; live broadcast stations are not supported
 
 
 ## Configuration
