@@ -73,4 +73,4 @@ When enabled in **Settings → Players → \<Your Station\> → Show advanced �
 - Voice commands «дальше» / «назад» cannot advance the MA queue — Alice does not see the external stream bypass Music Assistant uses, so the station's own "next / previous" targets Alice's content, not the MA queue. Use the MA UI or other voice assistants for queue navigation.
 - Seek via voice is not supported for the same reason.
 - The Glagol "stop" command behaves as "pause" on the station (the station keeps the current track loaded). The provider treats both MA `pause()` and `stop()` as a Glagol pause.
-- Power on/off relies on Yandex scenarios created in the Yandex app; if scenarios are unavailable for a given station model, the power button in MA will be a no-op.
+- Power on/off relies on Yandex scenarios created in the Yandex app; if scenarios are unavailable for a given station model, the power button in MA will not work .
