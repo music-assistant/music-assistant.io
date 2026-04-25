@@ -27,7 +27,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 - <b>Manual IP addresses for discovery.</b> Not recommended for normal use. Refer to the description in the MA UI
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the HEOS players have the following settings:
+In addition to the [Individual Player Settings](/settings/individual-player/) the Sonos players have the following settings:
 
 - <b>HTTP profile used for send audio.</b> This is considered to be an advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
 - <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Please note some older (Generation 1) devices only support up to 48kHz/16bit. Content with unsupported sample rates will be resampled
