@@ -53,6 +53,19 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 - Change optional values
 - Click 'Save'
 
+## Artists, Labels, and Search
+
+Bandcamp uses the term **artist** for any page on `bandcamp.com` — a performing artist, a band, a label, or a collective.
+A label's page hosts albums by various performers, and those performers may not have their own Bandcamp page.
+This Provider mirrors this directly.
+
+What this means in practice:
+
+- **Artist search returns pages, not performers.** A performer without their own Bandcamp page will not appear in artist search results. To find their releases, search by **album** name, or by the **label** that hosts them. Examples Below.
+- **A label's page lists every album on it**, regardless of the credited performer.
+- **Names can collide.** The same name may exist as both a standalone artist page and as a credited performer on a label-hosted album (e.g. *Apollo Brown* on their own [page](https://apollobrown.bandcamp.com/) vs. on [*Hip Dozer*](https://hipdozer.bandcamp.com/album/night-moves) compilations). These are distinct entries on Bandcamp and will appear separately.
+- **Track and album metadata is correct.** The credited performer is what's displayed in the player and scrobbled, even when the parent page is a label.
+
 ## Known Issues / Notes
 
 - This provider mimics Bandcamp. Do not expect to see the same search results as you would when using Bandcamp itself
