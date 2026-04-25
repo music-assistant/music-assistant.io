@@ -1,44 +1,11 @@
 ---
-title: Metadata
-description: A Description of the Metadata sources available to Music Assistant
+title: Metadata Providers
+description: A Description of the Metadata providers available
 ---
 
-# Metadata Providers
+# Metadata Providers - General
 
 The metadata providers available in Music Assistant are used to supplement metadata which is missing from the items obtained from the music sources. They do NOT change anything (e.g. ID3 tags) obtained from the original item therefore they should not normally be disabled.
-
-## Artwork
-
-Music Assistant has access to a number of artwork providers. Specifically, in priority order, [Fanart.tv](https://fanart.tv/), [theaudiodb](https://www.theaudiodb.com/), iTunes Artwork and the [Cover Art Archive](https://coverartarchive.org/). This artwork is used throughout the Music Assistant UI. 
-
-## Radio Stations
-
-### Radio Stream Metadata
-
-MA will parse the metadata from streams in the following formats:
-
-- ICY
-- HLS EXTINF
-- Ogg container metadata (Vorbis comments) - supports Vorbis, Opus, and FLAC codecs
-
-Legacy SHOUTcast v1 servers using non-standard HTTP responses are not currently supported.
-
-> [!NOTE]
-> See the page for the various radio stream providers for any further information in this regard
-
-### Radio Stream Artist Artwork
-
-When playing radio streams, Music Assistant can display album or artist images instead of the station logo. If the radio provider supplies its own artwork then this is used exclusively. For other stations artwork will be attempted to be sourced according to the following:
-
-- "Artist - Title" format in the stream metadata is required
-- Artwork for the single release is preferred first
-- If no single artwork is found, then album artwork is tried
-- If no album artwork is found, then artist imagery is tried
-- Station logo is displayed when:
-    - No artist/title metadata is available from the stream
-    - The artist/track cannot be matched in the library or on MusicBrainz
-    - No artwork is found from any source
-    - An advertisement is detected in the stream
 
 ## Lyrics
 

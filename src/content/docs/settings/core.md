@@ -16,7 +16,6 @@ The core server settings are set with typical defaults that should work for most
 
 - <b>Language.</b> Preferred language for metadata. If the selected language is unavailable then English will be used
 - <b>Enable metadata retrieval from online metadata providers.</b> Enables the lookup of information that is not available locally. MA does not modify any existing metadata but supplements it
-- <b>Enable artist/track artwork lookup for radio streams.</b> By default this is enabled and allows artwork to be displayed for radio stations that don't supply it natively. Requires the station to supply appropriate `Artist - Track` metadata
 
 ## Music
 
