@@ -51,7 +51,7 @@ When lyrics are available for the track being played then the LYRICS selectable 
 [![image](/assets/screenshots/UI-speakers-menu.png)](/assets/screenshots/UI-speakers-menu.png)
 
 > [!NOTE]
-> The volume shown against a player group is the AVERAGE of the volumes of each individal player. When the group volume is changed then each player is changed by a proportionate amount.
+> The volume shown against a player group is the MAXIMUM of the volumes of the child players. When the group volume is changed then each player is changed by a proportionate amount such that all speakers reach 0 when the group slider hits 0 and 100 when it hits 100. The relative balance between speakers is preserved such that returning the group slider to the original value will revert each child player to their original volumes
 
 When a [player group](/faq/groups/) is powered on the members of that group will disappear from the player list and individual playback to those players will not be possible. In order to playback to an individual player then either power off the group or remove the player from the group.
 
@@ -127,7 +127,7 @@ The view is fully configurable. Select the user name in the navigation menu and 
 
 [![image](/assets/screenshots/UI-artist-view.png)](/assets/screenshots/UI-artist-view.png)
 
-Album and Track Views look the same as the above except there is no album artist filter icon and the track view has an [ADD VIA URL](/music-providers/builtin/) option.
+Album, Track and Playlist Views look similar to the above except there is no album artist filter icon and the track view has an [ADD VIA URL](/music-providers/builtin/) option. Playlists have a `Create new playlist on" icon as well as a `Import playlist` icon which allows the manual importation of plain text M3U and M3U8 playlist files. 
 
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) )
 indicates that the viewed results are subject to filtering.
