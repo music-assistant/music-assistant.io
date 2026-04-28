@@ -4,7 +4,7 @@ title: Media items
 
 # Media Item Metadata <img src="/assets/icons/metadata-mediaitem-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Different media item types collect different metadata. Music Assistant always prefers local data (file tags, `.nfo` files, music providers) over online sources of metadata.
+Music Assistant draws on two layers of metadata. Source metadata comes from wherever the media item actually lives — embedded file tags, `.lrc` and `.nfo` files, and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. Online metadata providers (Fanart.tv, The Audio DB, MusicBrainz, Cover Art Archive, iTunes Artwork, LRCLIB, Genius) are dedicated third-party services queried only to fill in fields the source did not supply. Source metadata is always preferred; online metadata is complementary.
 
 ## Artists
 
@@ -17,7 +17,7 @@ Different media item types collect different metadata. Music Assistant always pr
 | Images (thumb, logo, banner, fanart, cutout, landscape, clearart) | Embedded tags, folder images, music providers, **Fanart.tv**, **The Audio DB** |
 | Links (website, Facebook, Twitter, Last.fm) | **The Audio DB** |
 
-The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. If Music Assistant can't determine an MBID for an artist (typically because none of your tracks or albums for that artist matched), no online bio or imagery will be fetched for them. Adding the MBID to your tags or to an `artist.nfo` is the most reliable fix.
+The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. When no MBID can be determined for an artist (typically because none of the artist's tracks or albums matched), no online bio or imagery is fetched. Adding the MBID to file tags or to an `artist.nfo` is the most reliable fix.
 
 ## Albums
 
