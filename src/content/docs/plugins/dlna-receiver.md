@@ -32,6 +32,5 @@ After adding it to Music Assistant, configure the following:
 ## Known Issues / Notes
 
 - To listen to the plugin audio, navigate to the desired player's NOW PLAYING view and then in the menu in the top right, select Source, and choose the desired DLNA Receiver.
-- **Docker:** `network_mode: host` is required. Bridge networking blocks DLNA discovery and control points will not see any renderer.
 - A small delay between *Play* in the controlling app and audio on the target player is normal — it depends on the target player's buffering.
 - For security, only `http://` and `https://` stream URLs are accepted. Other schemes and URLs that resolve to private or loopback addresses are rejected.
