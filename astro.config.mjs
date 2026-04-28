@@ -254,7 +254,7 @@ export default defineConfig({
 						{ label: 'Overview', slug: 'metadata' },
 						{ label: 'Artwork', slug: 'metadata/artwork' },
 						{ label: 'Lyrics', slug: 'metadata/lyrics' },
-						{ label: 'Media Items', slug: 'metadata/mediaitems' },
+						{ label: 'Media Items', slug: 'metadata/media-items' },
 					],
 				{
 					label: 'Plugins',
