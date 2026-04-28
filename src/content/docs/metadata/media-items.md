@@ -1,0 +1,57 @@
+---
+title: Media items
+---
+
+# Media Item Metadata <img src="/assets/icons/metadata-mediaitem-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+
+Different media item types collect different metadata. Music Assistant always prefers local data (file tags, `.nfo` files, music providers) over online sources of metadata.
+
+## Artists
+
+| Metadata Type | Source(s) |
+| --- | --- |
+| Name, sort name, genres | File tags, `artist.nfo`, music providers |
+| MusicBrainz ID (MBID) | File tags, `artist.nfo`, music providers, derived via MusicBrainz lookup if missing |
+| Biography | `artist.nfo` (`<biography>`), music providers, **The Audio DB** |
+| Style, mood, label | **The Audio DB** |
+| Images (thumb, logo, banner, fanart, cutout, landscape, clearart) | Embedded tags, folder images, music providers, **Fanart.tv**, **The Audio DB** |
+| Links (website, Facebook, Twitter, Last.fm) | **The Audio DB** |
+
+The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. If Music Assistant can't determine an MBID for an artist (typically because none of your tracks or albums for that artist matched), no online bio or imagery will be fetched for them. Adding the MBID to your tags or to an `artist.nfo` is the most reliable fix.
+
+## Albums
+
+| Metadata Type | Source(s) |
+| --- | --- |
+| Name, sort name, year, genres, album type | File tags, `album.nfo`, music providers |
+| MusicBrainz Release Group / Album ID | File tags, `album.nfo`, music providers |
+| Description / review | `album.nfo` (`<review>`), music providers, **The Audio DB** |
+| Style, mood, label | **The Audio DB** |
+| Links (Wikipedia, AllMusic, Last.fm, social) | **The Audio DB** |
+| Front cover, disc art, CD art, 3D case art | See [Artwork](./artwork) |
+
+## Tracks
+
+| Metadata Type | Source(s) |
+| --- | --- |
+| Title, version, artists, album, disc / track number, duration, year | File tags, music providers |
+| MusicBrainz Recording ID, ISRC, barcode | File tags, music providers |
+| Genres, mood, style, description | File tags, music providers, **The Audio DB** |
+| Explicit flag, copyright, grouping, comment | File tags, music providers |
+| Lyrics | See [Lyrics](./lyrics) |
+| Loudness and audio analysis | See [Audio Analysis](../plugins/audio-analysis) |
+
+## Playlists
+
+Playlists don't have rich metadata of their own; instead Music Assistant derives:
+
+- **Thumbnail** MA will use the artwork supplied from the streaming providers. For local providers MA will create a collage based on the track's thumbnails in the playlist. For the local file system providers, local images will be used if found.
+- The **top genres** present across the playlist's tracks (the eight most common, requiring at least five occurrences each).
+
+## Audiobooks
+
+Audiobook items collect publisher, authors, narrators, duration, description and chapter list — sourced from embedded tags or the audiobook provider (Audiobookshelf, Audible, etc.). Cover artwork follows the same precedence as albums.
+
+## Podcasts
+
+Podcast shows track publisher and total episode count from the podcast provider (Audiobookshelf, Podcast Index, RSS feed, etc.). Per-episode metadata — title, description, artwork — comes directly from the show's feed.
