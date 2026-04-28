@@ -256,7 +256,7 @@ export default defineConfig({
 					],
 				},
 				{ 
-					label: 'Metadata', slug: 'metadata' },
+					label: 'Metadata',
 					collapsed: true,
 					items: [
 						{ label: 'Overview', slug: 'metadata' },
