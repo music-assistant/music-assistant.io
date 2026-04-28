@@ -15,7 +15,7 @@ This section describes which providers contribute which fields and when lookups 
 - [Artwork](./artwork) — sources and ordering for thumbnails, fanart, disc art and radio stream artwork.
 - [Lyrics](./lyrics) — what lyrics are available.
 
-For audio fingerprint-style data (loudness, BPM, key) see the [Audio Analysis](../plugins/audio-analysis) plugin page.
+For loudness measurement, see the [Loudness Analysis](../audio-analysis/loudness-analysis) provider page.
 
 ## How metadata gets fetched
 
@@ -35,7 +35,7 @@ For library items backed by a local music collection, the following are read aut
 
 - **Embedded tags** in audio files — title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, ReplayGain values, etc.
 - **`.lrc` sidecar files** with the same name as the audio file — used as synchronized lyrics. This is the format produced by tools such as LRCGET.
-- **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files/music)) — title, sort name, biography, genres, MusicBrainz artist ID.
+- **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) — title, sort name, biography, genres, MusicBrainz artist ID.
 - **`album.nfo`** in an album folder — title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs.
 - **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, etc.) — used as thumbnails for albums and artists.
 
@@ -49,7 +49,7 @@ By design the music collection is treated as **read-only**:
 - Bios, descriptions, genres, artwork and lyrics are never written back to files.
 - `.nfo` files are never created or modified.
 
-The single exception is the [Audio Analysis](../plugins/audio-analysis) plugin's optional "Write REPLAYGAIN_TRACK_GAIN tags back to files" setting (default **off**). When enabled, a `REPLAYGAIN_TRACK_GAIN` tag is written into each track after its loudness is measured, so other apps on the network can use it for volume normalization. Read-only files are silently skipped.
+The single exception is the [Loudness Analysis](../audio-analysis/loudness-analysis) plugin's optional "Write REPLAYGAIN_TRACK_GAIN tags back to files" setting (default **off**). When enabled, a `REPLAYGAIN_TRACK_GAIN` tag is written into each track after its loudness is measured, so other apps on the network can use it for volume normalization. Read-only files are silently skipped.
 
 ## Provider summary
 
@@ -63,4 +63,4 @@ The single exception is the [Audio Analysis](../plugins/audio-analysis) plugin's
 | **LRCLIB** | Synchronized and plain lyrics (default lyrics provider). | Track name, artist, album, duration |
 | **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
 
-Individual metadata sources can be turned off in Settings>> Providers, or all at once via the [settings](./settings/metadata) "Enable metadata retrieval from online metadata providers".
+Individual metadata sources can be turned off in Settings>> Providers, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
