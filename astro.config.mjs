@@ -129,7 +129,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Music Sources', slug: 'settings/music-provider-settings' },
 						{ label: 'Player Providers', slug: 'settings/player-provider' },
-						{ label: 'Metadata Providers', slug: 'settings/metadata' },
+						{ label: 'Metadata Providers', slug: 'metadata' },
 						{ label: 'Players', slug: 'settings/individual-player' },
 						{ label: 'Profile', slug: 'settings/profile' },
 						{ label: 'User Interface', slug: 'settings/user-interface' },
