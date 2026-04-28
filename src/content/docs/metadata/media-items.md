@@ -28,7 +28,7 @@ The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. 
 | Description / review | `album.nfo` (`<review>`), music providers, **The Audio DB** |
 | Style, mood, label | **The Audio DB** |
 | Links (Wikipedia, AllMusic, Last.fm, social) | **The Audio DB** |
-| Front cover, disc art, CD art, 3D case art | See [Artwork](./artwork) |
+| Front cover, disc art, CD art, 3D case art | See [Artwork](/metadata/artwork) |
 
 ## Tracks
 
@@ -38,14 +38,14 @@ The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. 
 | MusicBrainz Recording ID, ISRC, barcode | File tags, music providers |
 | Genres, mood, style, description | File tags, music providers, **The Audio DB** |
 | Explicit flag, copyright, grouping, comment | File tags, music providers |
-| Lyrics | See [Lyrics](./lyrics) |
-| Loudness and audio analysis | See [Audio Analysis](../plugins/audio-analysis) |
+| Lyrics | See [Lyrics](/metadata/lyrics) |
+| Volume normalization value | See [Loudness Analysis](/plugins/loudness-analysis) |
 
 ## Playlists
 
 Playlists don't have rich metadata of their own; instead Music Assistant derives:
 
-- **Thumbnail** See [Artwork](./artwork.md)
+- **Thumbnail** See [Artwork](/metadata/artwork.md)
 - The **top genres** present across the playlist's tracks (the eight most common, requiring at least five occurrences each).
 
 ## Audiobooks
