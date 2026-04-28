@@ -173,7 +173,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Music Providers',
+					label: 'Music Sources',
 					collapsed: true,
 					items: [
 						{ label: 'Overview', slug: 'music-providers' },
