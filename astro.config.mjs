@@ -129,7 +129,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Music Sources', slug: 'settings/music-provider-settings' },
 						{ label: 'Player Providers', slug: 'settings/player-provider' },
-						{ label: 'Metadata Providers', slug: 'metadata' },
+						{ label: 'Metadata Providers', slug: 'settings/metadata' },
 						{ label: 'Players', slug: 'settings/individual-player' },
 						{ label: 'Profile', slug: 'settings/profile' },
 						{ label: 'User Interface', slug: 'settings/user-interface' },
@@ -247,13 +247,22 @@ export default defineConfig({
 						{ label: 'WiiM', slug: 'player-support/wiim' },
 					],
 				},
-				{ label: 'Metadata', slug: 'metadata' },
+				{ 
+					label: 'Metadata', slug: 'metadata' },
+					collapsed: true,
+					items: [
+						{ label: 'Overview', slug: 'metadata' },
+						{ label: 'Artwork', slug: 'metadata/artwork' },
+						{ label: 'Lyrics', slug: 'metadata/lyrics' },
+						{ label: 'Media Items', slug: 'metadata/mediaitems' },
+					],
 				{
 					label: 'Plugins',
 					collapsed: true,
 					items: [
 						{ label: 'AirPlay Receiver Plugin', slug: 'plugins/airplay-receiver' },
 						{ label: 'Ariacast Receiver Plugin', slug: 'plugins/ariacast-receiver' },
+						{ label: 'Audio Analysis Plugin', slug: 'plugins/audio-analysis' },
 						{ label: 'Home Assistant Plugin', slug: 'ha-plugin' },
 						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
 						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
