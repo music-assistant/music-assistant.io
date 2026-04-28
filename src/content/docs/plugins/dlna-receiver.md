@@ -19,7 +19,7 @@ Once an external app sends a stream URL via the standard DLNA protocol, Music As
 
 ## Configuration
 
-The plugin is single-instance. After adding it in Music Assistant, configure the following settings:
+The plugin is single-instance. After adding it to Music Assistant, configure the following:
 
 ### Settings
 
