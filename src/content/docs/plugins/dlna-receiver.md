@@ -13,13 +13,11 @@ Once an external app sends a stream URL via the standard DLNA protocol, Music As
 
 - Exposes Music Assistant players as DLNA MediaRenderers on the local network
 - Works as either a single virtual renderer or one renderer per MA player
-- Renderer names and identity persist across MA restarts, so DLNA apps remember their bookmarks
 - Reports playback progress and volume back to the controlling app
-- Tested with [BubbleUPnP](https://bubblesoftapps.com/bubbleupnp/)
 
 ## Configuration
 
-The plugin is single-instance. After adding it to Music Assistant, configure the following:
+After adding it to Music Assistant, configure the following:
 
 ### Settings
 
