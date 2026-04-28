@@ -264,6 +264,7 @@ export default defineConfig({
 						{ label: 'Lyrics', slug: 'metadata/lyrics' },
 						{ label: 'Media Items', slug: 'metadata/media-items' },
 					],
+				},
 				{
 					label: 'Plugins',
 					collapsed: true,
