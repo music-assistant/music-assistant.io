@@ -28,7 +28,7 @@ The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. 
 | Description / review | `album.nfo` (`<review>`), music providers, **The Audio DB** |
 | Style, mood, label | **The Audio DB** |
 | Links (Wikipedia, AllMusic, Last.fm, social) | **The Audio DB** |
-| Front cover, disc art, CD art, 3D case art | See [Artwork](/metadata/artwork) |
+| Front cover, disc art | See [Artwork](/metadata/artwork) |
 
 ## Tracks
 
