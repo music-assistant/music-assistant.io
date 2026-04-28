@@ -7,7 +7,6 @@ description: Features and Notes for the Yandex Smart Home Plugin
 
 Music Assistant can expose its players to [Yandex Smart Home](https://alice.yandex.ru/smart-home), so they can be controlled by Alice voice assistant as smart home multimedia devices.
 
-Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 Cloud connection modes use the [yaha-cloud.ru](https://yaha-cloud.ru/) relay.
 The implementation follows the [dext0r/yandex_smart_home](https://github.com/dext0r/yandex_smart_home) reference integration.
 
@@ -16,7 +15,7 @@ The implementation follows the [dext0r/yandex_smart_home](https://github.com/dex
 
 > [!WARNING]
 > The Yandex Smart Home API does not support `play_media` for third-party devices.
-> Voice commands like «Алиса, включи музыку» will only resume the current Music Assistant queue — a specific track, album or playlist cannot be started by voice through this plugin.
+> Voice commands like «Alice, play music» will only resume the current Music Assistant queue — a specific track, album or playlist cannot be started by voice through this plugin.
 
 > [!NOTE]
 > Full plugin documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-smarthome](https://trudenboy.github.io/ma-provider-yandex-smarthome/)**
@@ -24,12 +23,8 @@ The implementation follows the [dext0r/yandex_smart_home](https://github.com/dex
 
 ## Features
 
-|     Function      |          Note           |
-|:-----------------------|:---------------------:|
-| Exposes MA players to Yandex SmartHome | Yes |
-| Device type | Multimedia |
-| Connection modes | Cloud, Cloud Plus, Direct |
-| Automatic skill creation | Yes (Cloud Plus / Direct) |
+- Any MA player can be exposed to Yandex Alice for voice control as a smart home media device
+- Automatic creation of the private Yandex Dialogs skill for `cloud_plus` and `direct` modes — no manual setup in the Yandex.Dialogs console
 
 ### Supported voice commands
 
@@ -41,7 +36,7 @@ The implementation follows the [dext0r/yandex_smart_home](https://github.com/dex
 | «Alice, set volume to 50 on \<name\>» | Set volume to 50% |
 | «Alice, pause on \<name\>» | Pause |
 | «Alice, next / previous on \<name\>» | Next / previous track |
-| «Alice, change input on \<source\> на \<name\>» | Select input source (if the player exposes a source list) |
+| «Alice, change input on \<name\> to \<source\>» | Select input source (if the player exposes a source list) |
 
 ### Yandex Smart Home capabilities
 
@@ -58,9 +53,9 @@ The implementation follows the [dext0r/yandex_smart_home](https://github.com/dex
 
 The plugin supports three connection modes — pick the one that matches your network setup:
 
-- **Cloud** — uses the public [yaha-cloud.ru](https://yaha-cloud.ru/) skill as a relay. Easiest setup, no public URL required. Only one instance per Yandex account — if Yaha Cloud is already linked (e.g. from Home Assistant), use **Cloud Plus** instead.
-- **Cloud Plus** — uses a private skill via the same relay. Required for multi-integration setups on the same account.
-- **Direct** — Yandex calls your MA server directly over HTTPS. No relay required, but your Music Assistant webserver must be reachable on a public HTTPS URL.
+- **Cloud** — uses the public [yaha-cloud.ru](https://yaha-cloud.ru/) skill as a relay. Easiest setup, no public URL required. Only one instance per Yandex account — if Yaha Cloud is already linked (e.g. from Home Assistant), use **Cloud Plus** instead. Follow [Cloud setup](#cloud-setup) below.
+- **Cloud Plus** — uses a private skill via the same relay. Required for multi-integration setups on the same account. Follow [Automatic skill creation](#automatic-skill-creation-cloud-plus--direct) and then [Cloud Plus setup](#cloud-plus-setup) below.
+- **Direct** — Yandex calls your MA server directly over HTTPS. No relay required, but your Music Assistant webserver must be reachable on a public HTTPS URL. Follow [Automatic skill creation](#automatic-skill-creation-cloud-plus--direct) and then [Direct setup](#direct-setup) below.
 
 ### Automatic skill creation (Cloud Plus / Direct)
 
@@ -77,6 +72,8 @@ Partial failures are resumable: the plugin persists step-level artifacts and a r
 
 ### Cloud setup
 
+The simplest mode — no skill creation, no public URL. You register your MA instance against the shared Yaha Cloud skill and link it in the Yandex app with a one-time code:
+
 1. Add the **Yandex Smart Home** plugin in Music Assistant settings and select `cloud` as the connection type.
 2. Click **Register with cloud** — the plugin creates an instance on the `yaha-cloud.ru` relay.
 3. Click **Get OTP code** to receive a one-time linking code.
@@ -84,27 +81,28 @@ Partial failures are resumable: the plugin persists step-level artifacts and a r
 
 ### Cloud Plus setup
 
-The config form is split into three numbered steps:
+Use this when Yaha Cloud is already linked on your Yandex account (e.g. from Home Assistant) or when you want a private skill on the relay. The config form is split into three numbered steps and walks you through creating a private skill, registering on the relay and linking it in the Yandex app:
 
 1. **Register with cloud** — creates an instance on the `yaha-cloud.ru` relay.
-2. **Create skill** — launches the automatic skill-creation flow described above (Device Flow login + skill creation). On success the Skill ID is filled in automatically; paste your Skill OAuth Token from [Yandex OAuth](https://oauth.yandex.ru/).
+2. **Create skill** — launches the automatic skill-creation flow described above (Device Flow login + skill creation). On success the Skill ID is filled in automatically and the form unfolds an **OAuth URL** field. Open exactly that URL in your browser, approve access, then copy the `access_token` value from the resulting URL into **Skill OAuth Token**.
 3. **Get OTP code + link in Yandex app** — click **Get OTP code**, then in the Yandex app: **Devices → Add device → Smart Home**, find your private skill and enter the OTP.
 
 Each step only appears once the previous one is complete. Later steps are hidden until they're actually relevant.
 
 ### Direct setup
 
+No relay involved — Yandex calls your MA server directly, so you need a publicly reachable HTTPS URL. Your MA acts as the skill backend; the plugin still creates the private skill for you and you only need to link the account in the Yandex app at the end:
+
 1. Add the **Yandex Smart Home** plugin and select `direct`. Ensure your MA **Base URL** (Settings → Core → Webserver → Base URL) is a publicly reachable HTTPS URL.
-2. Click **Create skill** — the plugin runs the automatic skill-creation flow (Device Flow login + skill creation) against Yandex.Dialogs using your MA server as the backend.
-3. Paste your Skill OAuth Token from [Yandex OAuth](https://oauth.yandex.ru/) and save.
-4. Link the account in the Yandex app: **Devices → Add device → Smart Home** → select your published skill.
+2. Click **Create skill** — the plugin runs the automatic skill-creation flow (Device Flow login + skill creation) against Yandex.Dialogs using your MA server as the backend. On success the form unfolds an **OAuth URL** field — open exactly that URL in your browser, approve access, then copy the `access_token` value from the resulting URL into **Skill OAuth Token** and save.
+3. Link the account in the Yandex app: **Devices → Add device → Smart Home** → select your published skill.
 
 ### Settings
 
 - **Instance Name** — how this MA instance appears in the Yandex Smart Home app. Alice uses this name to address devices.
 - **Connection Type** — `cloud`, `cloud_plus`, or `direct` (see above).
 - **Exposed Players** — select which MA players to expose to Alice. Leave empty to expose all players.
-- **Skill ID** and **Skill OAuth Token** — required for `cloud_plus` and `direct` modes. **Skill ID** is filled in automatically after auto-create succeeds; **Skill OAuth Token** is obtained from [Yandex OAuth](https://oauth.yandex.ru/) and pasted manually. Once both are set, the plugin UI collapses them into a single **Open skill in Yandex.Dialogs** link to keep the default view clean; they remain editable under **Advanced**.
+- **Skill ID** and **Skill OAuth Token** — required for `cloud_plus` and `direct` modes. **Skill ID** is filled in automatically after auto-create succeeds; **Skill OAuth Token** is obtained by opening the **OAuth URL** link the form shows next to the field (a pre-filled `oauth.yandex.ru/authorize?...` link tied to the Yandex.Dialogs skill-management OAuth app), approving access, and pasting the resulting `access_token` here. Once both are set, the plugin UI collapses them into a single **Open skill in Yandex.Dialogs** link to keep the default view clean; they remain editable under **Advanced**.
 
 ## Known Issues / Notes
 
