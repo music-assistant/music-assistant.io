@@ -173,7 +173,7 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Music Providers',
+					label: 'Music Sources',
 					collapsed: true,
 					items: [
 						{ label: 'Overview', slug: 'music-providers' },
@@ -247,7 +247,14 @@ export default defineConfig({
 						{ label: 'WiiM', slug: 'player-support/wiim' },
 					],
 				},
-				{ label: 'Metadata', slug: 'metadata' },
+				{
+					label: 'Audio Analysis Providers',
+					collapsed: true,
+					items: [
+						{ label: 'Loudness Analysis', slug: 'audio-analysis/loudness-analysis' },
+						{ label: 'Smart Fades', slug: 'audio-analysis/smart-fades' },
+					],
+				},
 				{
 					label: 'Plugins',
 					collapsed: true,
@@ -262,6 +269,16 @@ export default defineConfig({
 						{ label: 'Spotify Connect Plugin', slug: 'plugins/spotify-connect' },
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
 						{ label: 'VBAN Receiver', slug: 'plugins/vban-receiver' },
+					],
+				},
+				{ 
+					label: 'Metadata',
+					collapsed: true,
+					items: [
+						{ label: 'Overview', slug: 'metadata' },
+						{ label: 'Artwork', slug: 'metadata/artwork' },
+						{ label: 'Lyrics', slug: 'metadata/lyrics' },
+						{ label: 'Media Items', slug: 'metadata/media-items' },
 					],
 				},
 				{ label: 'Desktop Companion App', slug: 'companion-app' },

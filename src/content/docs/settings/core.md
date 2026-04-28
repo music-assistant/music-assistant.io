@@ -16,6 +16,8 @@ The core server settings are set with typical defaults that should work for most
 
 - <b>Language.</b> Preferred language for metadata. If the selected language is unavailable then English will be used
 - <b>Enable metadata retrieval from online metadata providers.</b> Enables the lookup of information that is not available locally. MA does not modify any existing metadata but supplements it
+- <b>Enable artist/track artwork lookup for radio streams.</b> Enables the lookup of album or artist imagery when the station supplies `Artist - Track` metadata
+- <b>Maximum thumbnail cache size(MB).</b> When the cache exceeds this value the oldest thumbnails are automatically removed
 
 ## Music
 
