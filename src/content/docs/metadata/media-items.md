@@ -45,7 +45,7 @@ The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. 
 
 Playlists don't have rich metadata of their own; instead Music Assistant derives:
 
-- **Thumbnail** See [Artwork](/metadata/artwork)
+- **Thumbnail** See [Artwork](/metadata/artwork/#playlists)
 - The **top genres** present across the playlist's tracks (the eight most common, requiring at least five occurrences each).
 
 ## Audiobooks
