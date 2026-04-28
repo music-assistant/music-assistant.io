@@ -247,6 +247,14 @@ export default defineConfig({
 						{ label: 'WiiM', slug: 'player-support/wiim' },
 					],
 				},
+				{
+					label: 'Audio Analysis Providers',
+					collapsed: true,
+					items: [
+						{ label: 'Loudness Analysis', slug: 'audio-analysis/loudness-analysis' },
+						{ label: 'Smart Fades', slug: 'audio-analysis/smart-fades' },
+					],
+				},
 				{ 
 					label: 'Metadata', slug: 'metadata' },
 					collapsed: true,
@@ -262,7 +270,6 @@ export default defineConfig({
 					items: [
 						{ label: 'AirPlay Receiver Plugin', slug: 'plugins/airplay-receiver' },
 						{ label: 'Ariacast Receiver Plugin', slug: 'plugins/ariacast-receiver' },
-						{ label: 'Audio Analysis Plugin', slug: 'plugins/audio-analysis' },
 						{ label: 'Home Assistant Plugin', slug: 'ha-plugin' },
 						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
 						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
