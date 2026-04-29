@@ -33,13 +33,19 @@ The language used for descriptions and bios is set under Settings → Metadata �
 
 For library items backed by a local music collection, the following are read automatically during the library scan:
 
-- **Embedded tags** in audio files — title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, ReplayGain values, etc.
+- **Embedded tags** in audio files — title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, ReplayGain values, etc. The `genre` tag is applied to the track only; album and artist genres are sourced separately (see below).
 - **`.lrc` sidecar files** with the same name as the audio file — used as synchronized lyrics. This is the format produced by tools such as LRCGET.
 - **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) — title, sort name, biography, genres, MusicBrainz artist ID.
 - **`album.nfo`** in an album folder — title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs.
 - **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, etc.) — used as thumbnails for albums and artists.
 
 These are part of the source metadata layer and always take priority over online lookups. They are also the most reliable way to fix problems with online matching: adding a MusicBrainz ID to a tag or `.nfo` file immediately unlocks the rest of the online providers for that item.
+
+### Album and artist genres
+
+The file genre tag is applied to the track, but not to the album or the artist. By default an album's genre comes from an `album.nfo`, a music provider that supplies one, or an online metadata provider; an artist's genre comes from an `artist.nfo`, a music provider, or an online metadata provider once a MusicBrainz Artist ID has been resolved.
+
+The local filesystem providers offer an opt-in `Propagate track genres to albums and artists` setting that fills the gap by deriving the album's and artist's genres from their tracks' genre tags. Propagation only fills genres that are still empty — it never overwrites a genre that came from an `NFO` file, a music provider, or an online metadata provider.
 
 ## What Music Assistant writes to local files
 
