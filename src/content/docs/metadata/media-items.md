@@ -10,14 +10,17 @@ Music Assistant draws on two layers of metadata. Source metadata comes from wher
 
 | Metadata Type | Source(s) |
 | --- | --- |
-| Name, sort name, genres | File tags, `artist.nfo`, music providers |
+| Name, sort name | File tags, `artist.nfo`, music providers |
+| Genres | artist.nfo, music providers, The Audio DB, derived from track tags when the filesystem provider's `Propagate track genres` option is enabled |
 | MusicBrainz ID (MBID) | File tags, `artist.nfo`, music providers, derived via MusicBrainz lookup if missing |
 | Biography | `artist.nfo` (`<biography>`), music providers, **The Audio DB** |
 | Style, mood, label | **The Audio DB** |
 | Images (thumb, logo, banner, fanart, cutout, landscape, clearart) | Embedded tags, folder images, music providers, **Fanart.tv**, **The Audio DB** |
 | Links (website, Facebook, Twitter, Last.fm) | **The Audio DB** |
 
-The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. When no MBID can be determined for an artist (typically because none of the artist's tracks or albums matched), no online bio or imagery is fetched. Adding the MBID to file tags or to an `artist.nfo` is the most reliable fix.
+The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. When no MBID can be determined for an artist (typically because none of the artist's tracks or albums matched), no online bio or imagery is fetched. Adding the MBID to file tags or to an artist.nfo is the most reliable fix.
+
+Note that the embedded genre tag in audio files is applied to the track and album, not to the artist. To get genres on the artist itself, either supply an `artist.nfo` file, rely on the online metadata providers (which requires a MBID), or enable `Propagate track genres to albums and artists` on the local filesystem provider, which derives the artist's genres from its tracks' tags. None of these methods overwrites a genre that's already set; whichever source fills the field first wins.
 
 ## Albums
 
