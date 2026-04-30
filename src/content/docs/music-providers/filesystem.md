@@ -186,3 +186,173 @@ Normally it is best to leave the Picard tags unchanged. However, some people do 
 - Remove ISRC (as that is also used as strong identifier for tracks)
 - Remove barcode (as that is also used as strong identifier for albums)
 - Because there is no version specific tag, place the version between brackets in the title. For example, Great Song (Vinyl Rip)
+
+
+---
+
+## CUE Sheet Support
+
+When the filesystem provider encounters a `.cue` file, each logical track described by the sheet becomes its own library track. The referenced audio file itself is not imported as a separate track.
+
+Information for each track is built from two sources: the CUE Sheet and the tags in the referenced audio file. Where both describe the same album-level field, the CUE Sheet wins.
+
+The original Cue Sheet specification only had [13 directives](https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/). These are not sufficient for Music Assistant to work optimally, so additional support has been added through various REM fields to allow the provision of the equivalent [tags listed above](#tags-used-by-ma). This metadata can be provided through any combination of tags in the file and fields in the Cue Sheet as described below. Because mainstream CUE Sheet authoring tools do not emit these REM fields (they follow the original 13-directive spec), users who want the full metadata available to Music Assistant will need to add them manually to the CUE Sheet — or, for album-level metadata, tag the audio file itself. The naming follows [Picard's variable conventions](https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html), so anyone already tagging their library with Picard will find the fields familiar.
+
+### Multi-value strategy
+
+Multi-value fields follow the Vorbis convention: repeat the line rather than delimiter-joining. This keeps names like `AC/DC` or `Wait, Wait... Don't Tell Me!` intact. Multi-value capable directives are indicated in the table below.
+
+Where both artists and a companion field (sort names, MB artist IDs) are multi-value, Music Assistant aligns them by index — the Nth `REM ARTISTSORT` goes with the Nth `PERFORMER`.
+
+### Fields read from the CUE sheet — sheet (album) level
+
+Written at the top of the file, before any `TRACK`. The **Standard** column indicates whether the directive is commonly emitted by mainstream ripping/authoring tools (EAC, CUETools, foobar2000, XLD), not necessarily part of the original 13-directive CDRWIN spec. Fields marked **No** are Music Assistant extensions — other players may ignore them.
+
+Standard directives FLAGS, PREGAP, POSTGAP, SONGWRITER, and CDTEXTFILE are accepted but silently ignored — they're CD-burning or CD-Text binary-file concerns that don't map to Music Assistant's library model.
+
+| Directive | Standard | Multi? | Feeds |
+|-----------|:---:|:---:|-------|
+| `FILE "..." WAVE\|MP3\|...` | Yes | no | Path to the referenced audio file |
+| `TITLE "..."` | Yes | no | Album title (overrides audio album) |
+| `PERFORMER "..."` | Yes | yes | Album artists (overrides audio albumartist(s)) |
+| `CATALOG <upc>` | Yes | no | Disc UPC/EAN — album barcode |
+| `REM DATE YYYY` | Yes | no | Album year |
+| `REM GENRE "..."` / `GENRE "..."` | Yes | yes | Album genres |
+| `REM ALBUMSORT "..."` | No | no | Album sort name |
+| `REM ALBUMARTISTSORT "..."` | No | yes | Album artist sort names (aligned with `PERFORMER`) |
+| `REM MUSICBRAINZ_ALBUMARTISTID ...` | No | yes | Album artist MBIDs (aligned with `PERFORMER`) |
+| `REM MUSICBRAINZ_ALBUMID <uuid>` | No | no | Album MBID also known as the RELEASE ID |
+| `REM MUSICBRAINZ_RELEASEGROUPID <uuid>` | No | no | Release group MBID |
+| `REM RELEASETYPE ...` | No | yes | Album type (e.g. `album`, `compilation`, `live`) |
+
+### Fields read from the CUE sheet — track level
+
+Written inside each `TRACK NN AUDIO` block:
+
+| Directive | Standard | Multi? | Feeds |
+|-----------|:---:|:---:|-------|
+| `TRACK NN AUDIO` | Yes | no | Track number |
+| `INDEX 01 MM:SS:FF` | Yes | no | Track start position (`INDEX 00` pregap is ignored) |
+| `TITLE "..."` | Yes | no | Track name |
+| `PERFORMER "..."` | Yes | yes | Track artists (falls back to sheet-level `PERFORMER`) |
+| `ISRC ...` | Yes | yes | Track ISRCs |
+| `REM GENRE "..."` / `GENRE "..."` | Yes | yes | Per-track genres (overrides album genre for this track) |
+| `REM TITLESORT "..."` | No | no | Track sort name |
+| `REM ARTISTSORT "..."` | No | yes | Track artist sort names (aligned by index with `PERFORMER`) |
+| `REM MUSICBRAINZ_ARTISTID ...` | No | yes | Track artist MBIDs (aligned by index with `PERFORMER`) |
+| `REM MUSICBRAINZ_RECORDINGID <uuid>` | No | no | Unique identifier for the original recording of the track |
+| `REM MUSICBRAINZ_TRACKID <uuid>` | No | no | Unique identifier for the track on this release |
+| `REM COPYRIGHT "..."` | No | no | Track copyright metadata |
+| `REM GROUPING "..."` | No | no | Track grouping metadata |
+| `REM COMMENT "..."` | No | no | Track description metadata |
+| `REM ITUNESADVISORY 0\|1` | No | no | Explicit flag |
+
+Track duration is computed from the next track's `INDEX 01` minus this track's `INDEX 01`. For the final track, it is computed from the audio file's total duration.
+
+### Fields read from the audio file
+
+`ffprobe` tags on the referenced audio file supply everything that applies to the album as a whole, plus the technical format used for playback:
+
+- **Format** (shared by every CUE track) — sample rate, bit depth, channels, bit rate, container/codec, embedded cover art, disc number.
+- **Album metadata** (used unless overridden by the CUE sheet) — album, albumsort, albumartist/albumartists, albumartistsort, musicbrainzalbumartistid, album_type, date/year, genre, barcode, musicbrainzalbumid, musicbrainzreleasegroupid.
+- **Loudness normalisation** — run a ReplayGain scanner against the audio file (e.g. `metaflac --add-replay-gain album.flac` or `rsgain easy album.flac`). Music Assistant reads `REPLAYGAIN_ALBUM_GAIN` from the audio file tags automatically; for a single-file CUE rip, file gain *is* album gain.
+
+Track-specific audio tags (title, artists, lyrics, per-track loudness, etc.) are not applied per CUE track — a single-file rip only carries one copy of those, so Music Assistant relies on the CUE sheet for anything that varies between tracks.
+
+Track artists (PERFORMER) fall back to sheet-level PERFORMER rather than audio tags. If there are no PERFORMER directives found then [unknown] will be applied.
+
+### Reference CUE sheet
+
+Every directive Music Assistant currently parses:
+
+```
+PERFORMER "Pink Floyd"
+TITLE "The Dark Side of the Moon"
+CATALOG 5099902987620
+FILE "pink_floyd_dsotm.flac" WAVE
+REM GENRE "Progressive Rock"
+GENRE "Art Rock"
+REM DATE 1973
+REM RELEASETYPE album
+REM ALBUMSORT "Dark Side of the Moon, The"
+REM MUSICBRAINZ_ALBUMID a1b2c3d4-e5f6-7890-abcd-ef1234567890
+REM MUSICBRAINZ_RELEASEGROUPID rg000000-0000-0000-0000-000000000000
+REM ALBUMARTISTSORT "Pink Floyd"
+REM MUSICBRAINZ_ALBUMARTISTID aa000000-0000-0000-0000-000000000000
+  TRACK 01 AUDIO
+    TITLE "Speak to Me"
+    REM TITLESORT "Speak to Me"
+    PERFORMER "Pink Floyd"
+    REM ARTISTSORT "Pink Floyd"
+    REM MUSICBRAINZ_ARTISTID aa000000-0000-0000-0000-000000000000
+    ISRC GBCEN0500001
+    REM MUSICBRAINZ_TRACKID 11111111-1111-1111-1111-111111111111
+    REM COPYRIGHT "(P) 1973 Pink Floyd Music Ltd"
+    REM GROUPING "Part I"
+    REM COMMENT "Opening collage"
+    REM ITUNESADVISORY 0
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Breathe (In the Air)"
+    PERFORMER "Pink Floyd"
+    PERFORMER "Clare Torry"
+    REM ARTISTSORT "Pink Floyd"
+    REM ARTISTSORT "Torry, Clare"
+    REM MUSICBRAINZ_ARTISTID aa000000-0000-0000-0000-000000000000
+    REM MUSICBRAINZ_ARTISTID ab000000-0000-0000-0000-000000000000
+    REM MUSICBRAINZ_RECORDINGID ef000000-0110-0000-0000-000222000000
+    REM GENRE "Ambient Rock"
+    ISRC GBCEN0500002
+    INDEX 01 01:05:50
+  TRACK 03 AUDIO
+    TITLE "On the Run"
+    PERFORMER "Pink Floyd"
+    ISRC GBCEN0500003
+    GENRE "Ambient Rock"
+    INDEX 01 03:52:15
+```
+
+### Minimum viable CUE sheet
+
+Assuming the audio file has proper `album`/`albumartist` tags of its own:
+
+```
+FILE "album.flac" WAVE
+  TRACK 01 AUDIO
+    TITLE "First Song"
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Second Song"
+    INDEX 01 03:45:00
+```
+
+Each track requires:
+
+- `TRACK NN AUDIO`
+- `TITLE "..."` — tracks without a title are skipped with a warning
+- `INDEX 01 MM:SS:FF`
+
+The sheet requires:
+
+- `FILE` — can be omitted if the CUE Sheet shares the audio file's stem (e.g. `album.cue` alongside `album.flac`).
+
+Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
+
+If the audio file also has no album/artist tags, the minimum grows to:
+
+```
+PERFORMER "The Band"
+TITLE "Album Name"
+FILE "album.flac" WAVE
+  TRACK 01 AUDIO
+    TITLE "First Song"
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Second Song"
+    INDEX 01 03:45:00
+```
+
+Without either a CUE `TITLE` or an audio-file album tag, tracks are still imported but without an album attachment — a warning is logged.
+
+---
+
