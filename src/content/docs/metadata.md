@@ -43,9 +43,11 @@ These are part of the source metadata layer and always take priority over online
 
 ### Album and artist genres
 
-The file genre tag is applied to the track, but not to the album or the artist. By default an album's genre comes from an `album.nfo`, a music provider that supplies one, or an online metadata provider; an artist's genre comes from an `artist.nfo`, a music provider, or an online metadata provider once a MusicBrainz Artist ID has been resolved.
+The file `genre` tag is applied to the track, but not to the album or the artist. By default an album's genre comes from an `album.nfo`, a music provider that supplies one, or an online metadata provider; an artist's genre comes from an `artist.nfo`, a music provider, or an online metadata provider once a MusicBrainz Artist ID has been resolved.
 
-The local filesystem providers offer an opt-in `Propagate track genres to albums and artists` setting that fills the gap by deriving the album's and artist's genres from their tracks' genre tags. Propagation only fills genres that are still empty — it never overwrites a genre that came from an `NFO` file, a music provider, or an online metadata provider.
+The local filesystem providers offer an opt-in `Propagate track genres to albums and artists` setting that fills the gap by deriving the album's and artist's genres from their tracks' `genre` tags. Propagation only fills genres that are still empty — it never overwrites a genre that came from an `NFO` file, a music provider, or an online metadata provider.
+
+Apart from propagation, sources merge their genres into whatever is already there rather than replacing or being suppressed. An `artist.nfo` genre plus genres returned by The Audio DB will both end up on the artist. 
 
 ## What Music Assistant writes to local files
 
