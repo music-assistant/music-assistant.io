@@ -15,7 +15,7 @@ The implementation follows the [dext0r/yandex_smart_home](https://github.com/dex
 
 > [!WARNING]
 > The Yandex Smart Home API does not support `play_media` for third-party devices, so Alice cannot start an arbitrary song or album by voice through this plugin.
-> «Alice, play music» on its own only resumes the current Music Assistant queue. As a workaround, you can pre-pick up to 10 playlists in the plugin settings — they appear as `mode(input_source)` slots that you can label in the Yandex app and trigger by name (e.g. «Alice, switch \<name\> to Rock»). See [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources).
+> «Alice, play music» on its own only resumes the current Music Assistant queue. As a workaround, you can pre-pick up to 10 playlists in the plugin settings — they map to fixed `mode(input_source)` slots `one`..`ten`, and Alice triggers them by ordinal: «Alice, switch \<player\> source to **five**». See [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources).
 
 > [!NOTE]
 > Full plugin documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-smarthome](https://trudenboy.github.io/ma-provider-yandex-smarthome/)**
@@ -25,7 +25,7 @@ The implementation follows the [dext0r/yandex_smart_home](https://github.com/dex
 
 - Any MA player can be exposed to Yandex Alice for voice control as a smart home media device
 - Automatic creation of the private Yandex Dialogs skill for `cloud_plus` and `direct` modes — no manual setup in the Yandex.Dialogs console
-- Pre-picked MA library playlists exposed as named `mode(input_source)` slots, so Alice can start a specific playlist by voice (workaround for the lack of `play_media` in the Yandex Smart Home API)
+- Pre-picked MA library playlists exposed as `mode(input_source)` slots `one`..`ten`, so Alice can start a specific playlist by ordinal voice command (workaround for the lack of `play_media` in the Yandex Smart Home API)
 
 ### Supported voice commands
 
@@ -37,8 +37,7 @@ The implementation follows the [dext0r/yandex_smart_home](https://github.com/dex
 | «Alice, set volume to 50 on \<name\>» | Set volume to 50% |
 | «Alice, pause on \<name\>» | Pause |
 | «Alice, next / previous on \<name\>» | Next / previous track |
-| «Alice, change input on \<name\> to \<source\>» | Select input source (player source list and/or pre-picked playlist) |
-| «Alice, switch \<name\> to Rock» (or any custom alias) | Start the playlist you mapped to that mode in the Yandex app — see [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources) |
+| «Alice, switch \<name\> source to \<one…ten\>» | Select input source by ordinal — covers both the player's native source list and pre-picked playlists (see [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources)) |
 
 ### Yandex Smart Home capabilities
 
@@ -104,22 +103,27 @@ No relay involved — Yandex calls your MA server directly, so you need a public
 - **Instance Name** — how this MA instance appears in the Yandex Smart Home app. Alice uses this name to address devices.
 - **Connection Type** — `cloud`, `cloud_plus`, or `direct` (see above).
 - **Exposed Players** — select which MA players to expose to Alice. Leave empty to expose all players.
-- **Exposed Playlists** — multi-select of playlists from your MA library (any music provider), capped at 10. Each picked playlist becomes a `mode(input_source)` slot on every exposed player. If your MA library is empty when the form opens, save and reopen once your music providers have finished syncing. See [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources) for the full flow.
+- **Exposed Playlists** — multi-select of playlists from your MA library (any music provider), capped at 10. Each picked playlist becomes a `mode(input_source)` slot `one`..`ten` on every exposed player, in the order you select them. If your MA library is empty when the form opens, save and reopen once your music providers have finished syncing. See [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources) for the full flow.
 - **Skill ID** and **Skill OAuth Token** — required for `cloud_plus` and `direct` modes. **Skill ID** is filled in automatically after auto-create succeeds; **Skill OAuth Token** is obtained by opening the **OAuth URL** link the form shows next to the field (a pre-filled `oauth.yandex.ru/authorize?...` link tied to the Yandex.Dialogs skill-management OAuth app), approving access, and pasting the resulting `access_token` here. Once both are set, the plugin UI collapses them into a single **Open skill in Yandex.Dialogs** link to keep the default view clean; they remain editable under **Advanced**.
 
 ### Playlists as voice-triggered input sources
 
-Because the Yandex Smart Home API has no `play_media` for third-party devices, the plugin uses the `mode(input_source)` capability as a workaround for voice-triggered playlist playback:
+Because the Yandex Smart Home API has no `play_media` for third-party devices, the plugin uses the `mode(input_source)` capability as a workaround for voice-triggered playlist playback. The mechanism is **ordinal-only**: Alice recognises the fixed mode values `one`, `two`, …, `ten` and there is no way to assign a custom voice phrase to a specific slot — neither in the API nor in the *Home with Alice* app. You need to remember which playlist you put in which slot.
 
-1. In the plugin settings, pick up to 10 playlists in **Exposed Playlists**. Native player sources keep priority — playlists fill the remaining slots up to 10.
-2. After saving, open the device in the Yandex app and assign voice aliases to the mode values (`one`, `two`, …, `ten`) — e.g. label `one` "Rock", `two` "Jazz". The mode values themselves are fixed by the API; the human-readable names are an Yandex-app feature.
-3. Say «Alice, switch \<player\> to Rock» (or whatever alias you set). The plugin powers the player on if needed and starts the corresponding playlist via `mass.player_queues.play_media`.
+1. In the plugin settings, pick up to 10 playlists in **Exposed Playlists**. Native player sources keep priority and fill the first slots; playlists fill the remainder up to 10. The order you pick them in **is** the order Alice will address them by ordinal.
+2. Say «Alice, switch \<player\> source to **five**» (or whichever ordinal corresponds to the playlist's slot). The plugin powers the player on if needed and starts the corresponding playlist via `mass.player_queues.play_media`.
 
-This is the only voice path for selecting specific content. Arbitrary song or album requests by voice are still not possible — the Yandex API doesn't expose them to third parties.
+> [!TIP]
+> Keep your **Exposed Playlists** list short and stable, and use a memorable order (most-used playlist as `one`, second-most as `two`, …). If you reshuffle the multi-select, the ordinals shift with it.
+
+> [!NOTE]
+> Why ordinals only: the Yandex Smart Home API for `mode(input_source)` only accepts a fixed catalogue of values (`one`..`ten`) — `ModeValue` has no `display_name`/`alias`/`synonym` field, and the *Home with Alice* app does not let users rename mode values. This is a Yandex-side constraint, not a plugin limitation.
+
+Arbitrary song or album requests by voice are still not possible — the Yandex API doesn't expose `play_media` to third parties.
 
 ## Known Issues / Notes
 
-- `play_media` is not supported by the Yandex Smart Home API for arbitrary songs or albums. The plugin works around this for **playlists** via `mode(input_source)` (see [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources)), but ad-hoc track or album requests by voice are not possible.
+- `play_media` is not supported by the Yandex Smart Home API for arbitrary songs or albums. The plugin works around this for **playlists** via `mode(input_source)`, but the trigger is ordinal only (`one`..`ten`) — the Yandex app has no UI to alias mode values, and `ModeValue` in the API has no `display_name`/`synonym` field. See [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources).
 - Seek is not supported by the Yandex Smart Home API for third-party media devices.
 - Track name, artist and artwork cannot be pushed to Yandex — the API does not expose those fields for third-party devices.
 - Direct mode requires a publicly reachable HTTPS endpoint for the MA webserver (via port forwarding, reverse proxy or similar); otherwise use one of the cloud modes.
