@@ -26,6 +26,7 @@ The implementation follows the [dext0r/yandex_smart_home](https://github.com/dex
 - Any MA player can be exposed to Yandex Alice for voice control as a smart home media device
 - Automatic creation of the private Yandex Dialogs skill for `cloud_plus` and `direct` modes — no manual setup in the Yandex.Dialogs console
 - Pre-picked MA library playlists exposed as `mode(input_source)` slots `one`..`ten`, so Alice can start a specific playlist by ordinal voice command (workaround for the lack of `play_media` in the Yandex Smart Home API)
+- **Experimental** free-form voice playback via a separate Yandex Dialogs *custom skill* — say *«Алиса, попроси \<name\> включи Metallica на кухне»* and the plugin parses the phrase, searches MA, and starts playback (direct mode only — see [Experimental: Dialogs voice skill](#experimental-dialogs-voice-skill-free-form-playback))
 
 ### Supported voice commands
 
@@ -119,7 +120,51 @@ Because the Yandex Smart Home API has no `play_media` for third-party devices, t
 > [!NOTE]
 > Why ordinals only: the Yandex Smart Home API for `mode(input_source)` only accepts a fixed catalogue of values (`one`..`ten`) — `ModeValue` has no `display_name`/`alias`/`synonym` field, and the *Home with Alice* app does not let users rename mode values. This is a Yandex-side constraint, not a plugin limitation.
 
-Arbitrary song or album requests by voice are still not possible — the Yandex API doesn't expose `play_media` to third parties.
+Arbitrary song or album requests by voice are still possible via the experimental **Dialogs voice skill** below — it bypasses the Smart Home `play_media` limit by registering a *separate* Yandex Dialogs skill that receives the user's raw voice phrase as a webhook call.
+
+### Experimental: Dialogs voice skill (free-form playback)
+
+A second, optional skill type — Yandex Dialogs *custom skill* («Навык») — adds free-form voice playback. Activation phrase: **«Алиса, попроси \<skill name\> …»**. The skill registers a webhook endpoint on MA's webserver; Yandex POSTs the user's transcribed phrase there, the plugin parses it server-side, searches MA, and starts playback.
+
+> [!IMPORTANT]
+> This feature is **direct-mode only** and **experimental**. The toggle and form fields appear only when `Connection Type = direct` and only after you've opted in via **Enable Dialogs voice skill (experimental)**. Cloud / Cloud Plus modes hide the section entirely.
+
+Setup:
+
+1. Pick **Connection Type = direct** and complete the Smart Home skill auto-create first (if you haven't already).
+2. Toggle **Enable Dialogs voice skill (experimental)** on.
+3. Choose a **Skill activation name** — at least two words, globally unique across all Yandex skills (Yandex enforces both). Russian names work best for voice recognition: `Музыкальный Ассистент`, `Домашняя Музыка`, `Мой Плеер` etc. Activation phrase becomes `«Алиса, попроси <name> …»`.
+4. Press **Create Dialogs voice skill**. The plugin runs the same Device Flow login as Smart Home auto-create — first time you'll go through `ya.ru/device`, subsequent runs reuse the cached token. Pipeline: create app → upload logo → save draft (name, examples, category) → create OAuth app → request publish.
+5. After the action returns, the form shows a **Skill in Yandex Dialogs dev console** link. Yandex's actual deploy is asynchronous — for private skills it usually completes in a few seconds, but under load can take up to ~10 minutes. The skill is unusable on Alice until the dev console shows «На воздухе» / `onAir: true`.
+
+Once published, voice phrases work as follows:
+
+| You say (after «Алиса, попроси \<name\> …»)              | What happens                                                |
+|----------------------------------------------------------|-------------------------------------------------------------|
+| `включи Metallica`                                       | search → first artist → start artist radio                  |
+| `включи Metallica на кухне`                              | same, but on the player named "Кухня"                       |
+| `включи песню Yesterday`                                 | track search → first match → play that track                |
+| `включи альбом Black Album`                              | album search → first match → play that album                |
+| `включи группу Beatles`                                  | artist radio explicitly                                     |
+| `включи плейлист утренний джаз`                          | playlist search → first match → play that playlist          |
+| `включи мою волну`                                       | yandex_music personal radio (`user:onyourwave`)             |
+| `включи жанр джаз` / `включи радио рок`                  | genre rotor → fall back to artist radio                     |
+| `включи Metallica на проигрывателе` / `на колонке` / …   | generic word for "speaker" → falls back to default player   |
+
+Verbs the parser understands (Yandex's voice-to-text returns various forms, all are accepted): `включи / включите / включай / включайте / включить`, `поставь / поставьте / поставить`, `запусти / запустите / запустить`, `сыграй / сыграйте / сыграть`, `играй / играйте`, `послушай / послушайте / послушать`. The optional trailing `на <player>` suffix is stripped before kind classification, so word order is fixed to `<verb> <what> [на <where>]`.
+
+Player names are matched against MA's `player.name` (case-insensitive, with Russian inflections normalised — *"Кухня"* matches *"на кухне"*). Aliases set in the *Home with Alice* app **do not** propagate into the dialog skill payload — Yandex only forwards the raw phrase. To use a custom voice name, rename the player in MA itself. Generic words like *колонка*, *плеер*, *проигрыватель*, *динамик* fall through to the previously-used player in the same conversation, or to the only exposed player.
+
+Search prioritisation when no marker is given (`включи X`): **artist > album > track > playlist** with `radio_mode=True` — picking the artist matches the typical "play X music" intent and starts continuous playback. If you specifically want a playlist, say `плейлист X`; for an album, `альбом X`; for a single track, `песню X`.
+
+If the parser cannot resolve to a player or a media item, Alice replies in Russian with a hint (`«Не нашёл такую музыку…»` / `«Не нашёл колонку …»`). For diagnostics, set log level for `music_assistant.providers.yandex_smarthome.dialogs_nlu` to `DEBUG` — every voice request will log the parsed kind, query, hint, candidate players, and the picked match tier.
+
+Security:
+
+- The webhook URL embeds a **random 32-character secret** (`/api/yandex_dialogs/webhook/<secret>`); knowing the secret requires access to the skill's Backend URL in the Yandex Dialogs dev console. Comparison is constant-time.
+- The handler also checks `body.session.skill_id` against the configured skill ID before processing — a payload from a different skill returns `401`.
+- The plugin uses MA's standard logging redaction; the secret is only logged as the last 4 characters of the path on startup.
+- If you publish MA via a reverse proxy, expose only the prefixes `/api/yandex_smarthome/` (Smart Home) and `/api/yandex_dialogs/webhook/` (Dialogs). Block `/` to keep the rest of the MA API/UI off the public internet.
 
 ## Known Issues / Notes
 
