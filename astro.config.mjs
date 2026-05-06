@@ -269,6 +269,7 @@ export default defineConfig({
 						{ label: 'Spotify Connect Plugin', slug: 'plugins/spotify-connect' },
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
 						{ label: 'VBAN Receiver', slug: 'plugins/vban-receiver' },
+						{ label: 'Yandex Smart Home Plugin', slug: 'plugins/yandex-smarthome' },
 					],
 				},
 				{ 
