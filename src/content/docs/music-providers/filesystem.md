@@ -79,6 +79,7 @@ In addition to the settings outlined above to configure this source there are ad
     - Album thumb: folder.jpg or cover.jpg (or png)
     - Fan Art (used as background in banners): fanart.jpg (or png)
     - Logo (used on Artist view): logo.png
+    - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
 - Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
 - Embedded album thumbs will be extracted from audio files. However, performance can be improved and disk space saved by providing a single local artwork file vs. embedding the same artwork in all files
 - WebDAV is HTTP-based so every file operation requires a network request. Library sync will be slower than local or SMB, particularly for large libraries or servers accessed over the internet
