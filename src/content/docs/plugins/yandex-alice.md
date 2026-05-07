@@ -13,9 +13,6 @@ Music Assistant has the ability to be controlled by voice through [Yandex Alice]
 > [!WARNING]
 > Music Assistant must be reachable on a **public HTTPS URL** — Yandex sends voice phrases directly to your MA server. There is no cloud relay for Dialogs custom skills.
 
-> [!NOTE]
-> This is the voice-control side of the Yandex integration. For device-bridge integration (volume, on/off, playlists exposed as input sources) see the [Yandex Smart Home Plugin](/plugins/yandex-smarthome). The two plugins can run side by side on the same MA instance.
-
 ## Features
 
 - Free-form Russian voice playback: search and play artists, albums, tracks, playlists and genres
