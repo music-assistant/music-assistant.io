@@ -5,7 +5,7 @@ description: Features and Notes for the Yandex Alice Plugin
 
 # Yandex Alice
 
-Music Assistant has the ability to be controlled by voice through [Yandex Alice](https://alice.yandex.ru/), Yandex's Russian-language voice assistant, by registering a custom skill in [Yandex Dialogs](https://dialogs.yandex.ru/developer). Users speak free-form Russian phrases like "Alice, ask &lt;skill name&gt; to play jazz" and Music Assistant resolves the player and the requested media server-side.
+Music Assistant has the ability to be controlled by voice through [Yandex Alice](https://alice.yandex.ru/) by registering a custom skill in [Yandex Dialogs](https://dialogs.yandex.ru/developer). Users speak free-form phrases like "Alice, ask &lt;skill name&gt; to play jazz" and Music Assistant resolves the player and the requested media server-side.
 
 > [!CAUTION]
 > This is an unofficial integration and is not affiliated with or endorsed by Yandex.
@@ -15,11 +15,11 @@ Music Assistant has the ability to be controlled by voice through [Yandex Alice]
 
 ## Features
 
-- Free-form Russian voice playback: search and play artists, albums, tracks, playlists and genres
+- Free-form voice playback: search and play artists, albums, tracks, playlists and genres
 - Transport and queue control: pause / resume / next / previous / seek, shuffle, repeat, add to queue, what's playing
 - Multi-room: address a specific player by name, transfer the queue to another player, list players
 - Voice-first disambiguation when a player name is ambiguous (the skill asks "first, second, or third?")
-- Russian NLU handles morphologically inflected forms and fuzzy player-name matching
+- Morphologically aware natural language understanding with fuzzy player-name matching
 - One-click skill registration in the config form via Yandex Passport sign-in (no manual setup in the Yandex Dialogs developer console required)
 
 ## Configuration
