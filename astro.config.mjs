@@ -199,6 +199,7 @@ export default defineConfig({
 						{ label: 'NetEase Cloud Music', slug: 'music-providers/netease-cloud-music' },
 						{ label: 'Nico Nico Video', slug: 'music-providers/niconico' },
 						{ label: 'Nugs.net', slug: 'music-providers/nugs' },
+						{ label: 'NTS Radio', slug: 'music-providers/nts' },
 						{ label: 'ORF Radiothek', slug: 'music-providers/radiothek' },
 						{ label: 'Pandora', slug: 'music-providers/pandora' },
 						{ label: 'Phish.in', slug: 'music-providers/phishin' },
@@ -270,6 +271,7 @@ export default defineConfig({
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
 						{ label: 'VBAN Receiver', slug: 'plugins/vban-receiver' },
 						{ label: 'Yandex Alice Plugin', slug: 'plugins/yandex-alice' },
+						{ label: 'Yandex Music Connect (Ynison) Plugin', slug: 'plugins/yandex-ynison' },
 					],
 				},
 				{ 
