@@ -1,6 +1,5 @@
 ---
 title: Hue Lights Sync Plugin
-description: Features and Notes for the Hue Lights Sync Plugin
 ---
 
 # Hue Lights Sync <img src="/assets/icons/hue-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
