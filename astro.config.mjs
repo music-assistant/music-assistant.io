@@ -263,7 +263,7 @@ export default defineConfig({
 						{ label: 'AirPlay Receiver', slug: 'plugins/airplay-receiver' },
 						{ label: 'Ariacast Receiver', slug: 'plugins/ariacast-receiver' },
 						{ label: 'Home Assistant', slug: 'ha-plugin' },
-						{ label: 'Hue Entertainment', slug: 'hue-entertainment' },
+						{ label: 'Hue Entertainment', slug: 'plugins/hue-entertainment' },
 						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
 						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
 						{ label: 'Party', slug: 'plugins/party' },
