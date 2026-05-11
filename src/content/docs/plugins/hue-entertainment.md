@@ -43,4 +43,3 @@ Music Assistant can sync <a href="https://www.philips-hue.com/" target="_blank" 
 - Beat detection is driven by bass energy from the visualizer spectrum data — it works well for beat-heavy music but is less precise for acoustic or vocal-only tracks
 - Entertainment areas are discovered when the plugin (re)loads — adding a new entertainment area in the Hue app requires reloading the plugin before it will appear as an MA player
 - The Hue bridge only allows one entertainment area to stream at a time, so only one Hue light player per bridge can be active at any given moment
-- Audio is delivered to the bridge via the MA Sendspin visualizer pipeline with Hue-specific latency compensation. A small amount of delay between the audio and the lights is normal
