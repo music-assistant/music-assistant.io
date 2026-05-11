@@ -155,6 +155,14 @@ When remote access is disabled, guests must be on the same network as your Music
 - Rate limiting tokens are stored in the guest's browser - clearing browser data resets their limits
 - The Party Dashboard works best on landscape displays; the guest view is optimized for portrait (mobile)
 
+### ⚠️ Opening the QR link on a signed-in device
+
+The QR code (and the matching shareable link) issues the browser a **guest token**, which is stored in `localStorage`. When the link is opened in a browser that is already signed in to Music Assistant as a normal user, the guest token **replaces** the existing session, and the UI will continue redirecting back to the guest dashboard — there is currently no in-app "log out of guest mode" button.
+
+**Recommendation:** the QR code should always be scanned on the guest's own device, or the link should be opened in a **private/incognito window**. It should not be opened in the same browser profile that is used to administer Music Assistant.
+
+**Recovery from guest mode:** with the Music Assistant frontend open, the browser's DevTools should be launched, `localStorage.clear()` should be run in the Console, and the page reloaded. The normal login screen will then be presented.
+
 ## Tips for Hosting
 
 1. **Display the Party Dashboard** - Use a spare tablet, TV, or monitor to show the QR code and queue
