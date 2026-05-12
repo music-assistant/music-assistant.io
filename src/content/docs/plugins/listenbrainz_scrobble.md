@@ -20,6 +20,7 @@ Music Assistant has the ability to <a href="https://www.collinsdictionary.com/di
 
 - <b>Suffix version to track names.</b> This adds the version, as stored in the Music Assistant database, to the end of the track name when it is sent to Last.fm. This may be useful if Musicbrainz IDs are not available to disambiguate same named tracks from an artist
 - <b>Scrobble for users.</b> This allows selection of which logged-in user will be scrobbled by this plugiin. Multiple instances of this plugin can be added
+- <b>Scrobble for players.</b> This allows selection of which players will register scrobbles
 
 ## Known Issues / Notes
 

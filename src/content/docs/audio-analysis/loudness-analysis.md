@@ -27,8 +27,6 @@ Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or who
 
 ## Settings
 
-### Write `REPLAYGAIN_TRACK_GAIN` tags back to files
-
-**Default: off.** When enabled, a `REPLAYGAIN_TRACK_GAIN` tag is written into each audio file after its loudness has been measured. This is the only situation in which Music Assistant ever modifies an audio file.
+- <b>Write `REPLAYGAIN_TRACK_GAIN` tags back to files.</b> When enabled, a `REPLAYGAIN_TRACK_GAIN` tag is written into each audio file after its loudness has been measured. This is the only situation in which Music Assistant ever modifies an audio file and by default this is off.
 
 This is useful when other apps on the network read these tags for their own volume normalization. Write access to the file is required; read-only files are silently skipped.
