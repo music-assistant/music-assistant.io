@@ -1,0 +1,50 @@
+---
+title: AcoustID Lookup
+---
+
+# AcoustID Lookup Provider  <img src="/assets/icons/acoustid-lookup-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+
+The **AcoustID Lookup** provider identifies local audio files by their acoustic fingerprint and resolves the matching MusicBrainz recording. The identifiers it discovers unlock the existing metadata pipeline for tracks and albums whose tags are incomplete or missing, so artwork, descriptions, and biographies can appear without the files having been carefully tagged in advance.
+
+It is an opt-in provider. A free API key from [acoustid.org](https://acoustid.org/api-key) is required before any lookups will run.
+
+## Who should enable it
+
+This provider is intended for libraries containing local audio files that have not been tagged with [MusicBrainz Picard](https://picard.musicbrainz.org/) or an equivalent tool. Files that already carry a MusicBrainz Recording Id tag are skipped, so libraries that have been well tagged will see no activity — and no benefit — from enabling it.
+
+The largest visible improvement is for albums that currently show no cover art in Music Assistant because their tags do not include a MusicBrainz identifier. Once a release-group is identified, art and metadata are fetched automatically by the existing Cover Art Archive, fanart.tv, and TheAudioDB providers.
+
+## What is identified
+
+For each analysed track:
+
+- **AcoustID** - A unique "fingerprint" created by analysing the actual sound waves
+- **MusicBrainz Recording Id** - A unique identifier for the recording **ISRC(s)** — Stands for International Standard Recording Code, a unique 12-character alphanumeric code assigned by labels and distributors to identify specific sound recordings. Having one linked to a track improves matching against streaming providers that expose ISRC in their catalogue
+- **MusicBrainz Artist Id(s)** — A unique identifier for an artist. These are only written to file tags (see the *Write tags back* setting)
+
+For each analysed album, once enough of its tracks have been identified:
+
+- **MusicBrainz Release Group Id** — A unique identifier for a group of album releases. This is identified from the analysed tracks on the album and cross-checked against the album name already in the tags. This is what unlocks artwork and album metadata
+
+Only local audio files are analysed; streaming-provider tracks are skipped.
+
+## When analysis runs
+
+- During the nightly audio-analysis scan, around local midnight
+- During playback of an eligible local file
+
+Large libraries may take several nights to be fully analysed.  Well tagged libraries see little or no activity because most tracks will be skipped.
+
+## Limitations
+
+- **Wrong identifications are difficult to reverse automatically.** Once a track's MusicBrainz Recording Id is set, AcoustID skips that file on future scans. Using Refresh Item may clear the stored Id from the library and allow a fresh lookup, but two things limit the recovery: the file's own tags reassert themselves on the next scan if *Write tags back* was on, and AcoustID's lookup is cached for 30 days so the same audio returns the same result inside that window. The most reliable correction is to fix the source file's tags directly (for example, by running MusicBrainz Picard against the album) and then rescan in Music Assistant
+- **Release-group identification is a best-effort match.** The album name in the file tags must agree with one of the candidate release-group titles returned by AcoustID. When the album is untagged, abbreviated, or differs significantly from MusicBrainz's canonical form, no release-group is written and album-level metadata remains unenriched
+- **Country and edition variants may not match exactly.** Multiple pressings of the same album (UK, US, Japan, anniversary editions, remasters) often share the same recordings and are acoustically indistinguishable. The artwork variant Music Assistant chooses may differ from the user's specific pressing, although the album name and tracks will still be correct
+- **At least half of an album's tracks must be analysed before the release-group is set.** Single-track folders only ever receive track-level identification; their album row stays unenriched unless the album name agrees closely with the AcoustID candidate
+- **Mis-identified tracks are possible.** Very short tracks, generic loops, and low-quality recordings can match the wrong recording. The minimum match score reduces but does not eliminate this risk
+
+## Settings
+
+- <b>AcoustID API key.</b> Required. Obtained free of charge from [acoustid.org/api-key](https://acoustid.org/api-key). Without a key, no lookups are performed
+- <b>Minimum match score.</b> Confidence threshold below which a match is discarded. The default of 0.85 is a balance between identification rate and false-positive risk. Raising it reduces the chance of an incorrect match at the cost of leaving some tracks unidentified
+- <b>Write AcoustID/MusicBrainz tags back to files.</b> When enabled, the Acoustid Id, MusicBrainz Recording Id, ISRC, and (where resolvable) MusicBrainz Artist Id tags are written back into the source audio file once identification succeeds. Useful when other applications on the network read these tags for their own metadata or to save re-scans if the MA library database is wiped. Write access to the file is required; read-only files are skipped. By default this is off, and identifiers are only stored in the Music Assistant library database
