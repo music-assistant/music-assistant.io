@@ -252,6 +252,7 @@ export default defineConfig({
 					label: 'Audio Analysis Providers',
 					collapsed: true,
 					items: [
+						{ label: 'AcoustID Lookup', slug: 'audio-analysis/acoustid' },
 						{ label: 'Loudness Analysis', slug: 'audio-analysis/loudness-analysis' },
 						{ label: 'Smart Fades', slug: 'audio-analysis/smart-fades' },
 					],
