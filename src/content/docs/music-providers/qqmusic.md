@@ -27,7 +27,7 @@ QQ Music is one of the most widely used streaming music platforms in Mainland Ch
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
 | Maximum Stream Quality | Lossless FLAC (up to 24-bit/192kHz) |
-| Login Method | QQ App QR Code |
+| Login Method | QQ or WeChat App QR Code |
 
 ### Other
 
@@ -38,13 +38,16 @@ QQ Music is one of the most widely used streaming music platforms in Mainland Ch
 
 ## Configuration
 
-### QR Login Flow (QQ App Only)
+### QR Login Flow
 
 1. Open **Settings → Music Sources → Add Music Source → QQ Music**.
-2. Click **QR Login**. A new QR page will open.
-3. Scan the QR code with the **QQ app** and tap **Login/Confirm** in the app.
+2. Click **QQ Login** or **WeChat Login**. A new QR page will open.
+3. Scan the QR code with the matching **QQ** or **WeChat** app and tap **Login/Confirm** in the app.
 4. Close the QR page.
 5. Click **Save**.
+
+> [!NOTE]
+> Use the same app as the login button you selected. A WeChat QR code must be scanned with WeChat, and a QQ QR code must be scanned with QQ.
 
 ### Settings
 
