@@ -25,7 +25,7 @@ For each analysed track:
 
 For each analysed album, once enough of its tracks have been identified:
 
-- **MusicBrainz Release Group Id** — A unique identifier for a group of album releases. This is identified from the analysed tracks on the album and cross-checked against the album name already in the tags. This is what unlocks artwork and album metadata
+- **MusicBrainz Release Group Id** — A unique identifier for a group of album releases. This is identified from the analysed tracks on the album and cross-checked against the album name already in the tags. This is what unlocks artwork and album metadata, Release group will only be confirmed when at least half of the tracks in the library from the album have been analysed. This is to try and maximise the chance of idntifying the correct release group. For this reason, it is ideal if all of the tracks that are intended to be added to the library are added before tracks are played (and therefore analysed)
 
 ## When analysis runs
 
