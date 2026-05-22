@@ -254,6 +254,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Loudness Analysis', slug: 'audio-analysis/loudness-analysis' },
 						{ label: 'Smart Fades', slug: 'audio-analysis/smart-fades' },
+						{ label: 'Sonic Analysis', slug: 'audio-analysis/sonic-analysis' },
 					],
 				},
 				{
