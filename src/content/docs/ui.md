@@ -28,7 +28,7 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 
 When playing to a group, tapping near the volume control will open a dialog to control the individual players.
 
-The [Audio Pipeline](/audiopipeline/) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec in use, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](/player-support/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
+The [Audio Pipeline](/audiopipeline/) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, Standard Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec below 256 kbps, a light-green dot with SQ (Standard Quality) indicates a lossy codec at 256 kbps or higher, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](/player-support/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
 
 ***************************************************************
 

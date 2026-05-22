@@ -70,3 +70,9 @@ A responsive cover wall for the Home Assistant Sections view that displays your 
 
 <img src="https://github.com/user-attachments/assets/9b4fbb2e-db2a-47d0-9b81-2b1d56204fd4" alt="MASS Cover Wall Example" style="width: 600px;"  loading="lazy"/>
 
+***************************************************************
+## <a href="https://github.com/r11a/homeii-music-flow" target="_blank" rel="noopener noreferrer">HOMEii Flow</a>
+
+HOMEii Flow is a premium, minimalist music app experience for Music Assistant, fully responsive and optimized for **Desktop, Tablet, and Mobile**. It features a high-end UI with glassmorphism effects, dynamic backgrounds, and a specialized Studio Mode for a seamless experience across all your devices.
+
+<img src="https://raw.githubusercontent.com/r11a/homeii-music-flow/main/HOMEii%20Flow%20Main.png" alt="HOMEii Flow - Responsive UI for Mobile, Tablet and Desktop" style="width: 600px;"  loading="lazy" />

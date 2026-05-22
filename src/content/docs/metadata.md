@@ -71,4 +71,4 @@ The single exception is the [Loudness Analysis](../audio-analysis/loudness-analy
 | **LRCLIB** | Synchronized and plain lyrics (default lyrics provider). | Track name, artist, album, duration |
 | **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
 
-Individual metadata sources can be turned off in Settings>> Providers, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
+Individual metadata sources can be turned off in Settings>> Metadata Providers, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
