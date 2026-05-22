@@ -18,18 +18,23 @@ We would love to support more languages but we need your help to do so.
 
 ## How can I contribute?
 ### MA Frontend
-- Create an issue in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a> stating the Language that want you to contribute to MA Frontend.
 
-- We will then add this language to the project in Lokalise, and resolve the issue in GitHub
+- Use the <a href="https://app.lokalise.com/public/321419046440c0f2bba414.05634832/" target="_blank" rel="noopener noreferrer">sign-up link</a> to join the MA Frontend project as a translator and see if the language you want to contribute to has already been added to the project. If so, you can start translating immediately.
+
+- If the language hasn't been added yet, create an issue in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a> stating that you want to contribute to MA Frontend and specify the language you want to contribute to.
+
+- We will then add this language to the project in Lokalise and resolve the issue in GitHub.
 
 - Once the issue is resolved, you'll be able to use this <a href="https://app.lokalise.com/public/321419046440c0f2bba414.05634832/" target="_blank" rel="noopener noreferrer">sign-up link</a> to join the project as a translator.
 
 ### MA Mobile App
 
-- Create an issue in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a> stating the Language that want you to contribute to MA Mobile App.
-  
-- We will then add this language to the project in Lokalise, and resolve the issue in GitHub
-  
+- Use the <a href="https://app.lokalise.com/public/695520566a0e9085a45b61.13739013/" target="_blank" rel="noopener noreferrer">sign-up link</a> to join the MA Mobile App project as a translator and see if the language you want to contribute to has already been added to the project. If so, you can start translating immediately.
+
+- If the language hasn't been added yet, create an issue in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a> stating that you want to contribute to MA Mobile App and specify the language you want to contribute to.
+
+- We will then add this language to the project in Lokalise and resolve the issue in GitHub.
+
 - Once the issue is resolved, you'll be able to use this <a href="https://app.lokalise.com/public/695520566a0e9085a45b61.13739013/" target="_blank" rel="noopener noreferrer">sign-up link</a> to join the project as a translator.
 
 Please only select the language that you intend to contribute to when requesting to join the team on Lokalise.
