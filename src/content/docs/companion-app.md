@@ -20,7 +20,7 @@ Available for macOS, Windows, and Linux (Debian, AppImage, or RPM; for both x64 
 > [!TIP]
 > **This is still in very early alpha. Bugs *will* be present.**
 >
-> Please help finding them. You can report any bugs on the <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord server</a> or in the <a href="https://github.com/music-assistant/tauri-companion-app/issues" target="_blank" rel="noopener noreferrer">repo issues</a>
+> Please help finding them. You can report any bugs on the <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord server</a> or in the <a href="https://github.com/music-assistant/desktop-app/issues" target="_blank" rel="noopener noreferrer">repo issues</a>
 
 > [!NOTE]
 > There aren't apps available yet for Android or iOS
