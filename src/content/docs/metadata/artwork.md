@@ -35,11 +35,10 @@ MA will parse the metadata from streams in the following formats:
 - ICY
 - HLS EXTINF
 - Ogg container metadata (Vorbis comments) - supports Vorbis, Opus, and FLAC codecs
-
-Legacy SHOUTcast v1 servers using non-standard HTTP responses are not currently supported.
+- Legacy SHOUTcast v1
 
 > [!NOTE]
-> See the page for the various radio stream providers for any further information in this regard
+> See also the page for the various radio stream providers as they may provide artwork directly
 
 ## Radio Stream Artist Artwork
 
