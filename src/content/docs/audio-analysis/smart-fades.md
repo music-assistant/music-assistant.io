@@ -43,7 +43,10 @@ Once a track has been analysed, the result is reused on every subsequent play â€
 
 ## Performance notes
 
-Smart Fades performs real machine-learning inference on the audio stream and is more CPU-intensive than the rest of Music Assistant. On systems with **only one CPU core** the provider shows a warning at setup, because analysis can compete with normal playback. On a multi-core host (two or more cores) it runs comfortably alongside playback.
+Smart Fades performs real machine-learning inference on the audio stream and is more CPU- and memory-intensive than the rest of Music Assistant.
+
+- CPU: On systems with only one CPU core the provider shows a warning at setup, because analysis can compete with normal playback. On a multi-core host (two or more cores) it runs comfortably alongside playback. On a single-core host the provider is not enabled automatically, so if Smart Fades is missing from the player dropdown, check your core count first
+- RAM: Smart Fades keeps its analysis models loaded in memory the whole time the server is running, so expect it to use a few hundred MB more RAM than usual. On machines with very little memory the models may fail to load. If that happens, you'll see a WARNING from the provider in the log at startup
 
 If a server feels sluggish after enabling Smart Fades, switching the affected players to Standard Crossfade (or Disabled) restores normal behaviour while leaving the provider installed.
 
