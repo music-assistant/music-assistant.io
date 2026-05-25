@@ -23,7 +23,7 @@ Library items are enriched on a **90-day refresh cycle**. Refreshes are triggere
 
 - **A daily background scan**, which picks up items with missing or stale metadata and refreshes them in small batches to avoid hammering free APIs.
 - **On-demand lookup**, scheduled in the background when an item is opened in the UI and its metadata is older than 90 days.
-- **Manual refresh** via the "Update metadata" action, which bypasses the 90-day cooldown and forces a fresh lookup immediately.
+- **Manual refresh** via the "Update metadata" action, which bypasses the 90-day restriction and forces a fresh lookup immediately.
 
 For each item, source metadata is collected first (sorted so local providers — file system, Plex, Jellyfin, Subsonic, etc. — outrank streaming providers), then the online metadata providers are queried when "Enable metadata retrieval from online metadata providers" is on (default).
 
