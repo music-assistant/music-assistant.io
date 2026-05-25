@@ -19,7 +19,7 @@ Enable the **Smart Playlists** plugin in **Settings → Providers → Add Provid
 
 ## Creating a Smart Playlist
 
-In the Playlists view, select the add button in the top right and choose **Create Smart Playlist**.
+In the Playlists view, select the <img src="/assets/screenshots/smart_playlist/create_button.png" alt="Create Smart Playlist button" style="height: 1.4em; vertical-align: middle;" loading="lazy" /> button in the top right and choose **Create Smart Playlist**.
 
 ![Create Smart Playlist menu](/assets/screenshots/smart_playlist/menu_entry.png)
 
