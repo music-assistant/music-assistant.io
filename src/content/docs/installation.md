@@ -83,7 +83,7 @@ If you run into any issues when using a docker install vs the recommended/standa
 
 - If MA won't start and the CPU is outside the maximum age listed above then it is not supported
 
-- The [Smart Fades](/smart-fades/#performance-notes) feature is resource intensive and will not be enabled automatically on single core installations
+- The [Smart Fades](/smart-fades/#performance-notes) feature is resource intensive and requires at least 4GB or RAM and will not be enabled automatically on single core installations
 
 - Because the server heavily relies on multicast techniques like mDNS and uPnP to discover players on the network it MUST be run in the same Layer 2 network as the player devices
 
