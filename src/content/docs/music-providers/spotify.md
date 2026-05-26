@@ -51,3 +51,4 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 - After adding the developer token there is then two sessions created to a single spotify source and MA routes the requests appropriately. For example, playlists are requested via the MA global token (which is rate limited but allows playlist retrieval) while other items are retrieved via the dev token. Search is done using the dev token by default as otherwise it is very slow. Playing and browsing playlists is routed through the global token to the originating source (useful when multiple Spotify accounts are added)
 - The Spotify API does not support the provision of recommendations
 - The Spotify API does not return genre information
+- Spotify has curtailed the usability of Client IDs for recently created accounts. If 403 errors are seen in the log then remove the Client ID

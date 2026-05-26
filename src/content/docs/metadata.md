@@ -7,13 +7,13 @@ description: A Description of the Metadata sources available to Music Assistant
 
 Music Assistant draws on two layers of metadata. **Source metadata** comes from wherever a track actually lives — embedded file tags, `.lrc` and [`.nfo` files](https://kodi.wiki/view/NFO_files), and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. **Online metadata providers** (Fanart.tv, The Audio DB, MusicBrainz, Cover Art Archive, iTunes Artwork, LRCLIB, Genius) are dedicated third-party services queried only to fill in fields the source did not supply.
 
-Source metadata is always preferred; online metadata is complementary. Original files are never modified.
+Source metadata is always preferred; online metadata is complementary.
 
 This section describes which providers contribute which fields and when lookups occur.
 
-- [Media items](./media-items) — what is gathered for artists, albums, tracks, playlists, audiobooks and podcasts.
-- [Artwork](./artwork) — sources and ordering for thumbnails, fanart, disc art and radio stream artwork.
-- [Lyrics](./lyrics) — what lyrics are available.
+- [Media items](./media-items) — what is gathered for artists, albums, tracks, playlists, audiobooks and podcasts
+- [Artwork](./artwork) — sources and ordering for thumbnails, fanart, disc art and radio stream artwork
+- [Lyrics](./lyrics) — what lyrics are available
 
 For loudness measurement, see the [Loudness Analysis](../audio-analysis/loudness-analysis) provider page.
 
@@ -21,9 +21,9 @@ For loudness measurement, see the [Loudness Analysis](../audio-analysis/loudness
 
 Library items are enriched on a **90-day refresh cycle**. Refreshes are triggered by:
 
-- **A daily background scan**, which picks up items with missing or stale metadata and refreshes them in small batches to avoid hammering free APIs.
-- **On-demand lookup**, scheduled in the background when an item is opened in the UI and its metadata is older than 90 days.
-- **Manual refresh** via the "Update metadata" action, which bypasses the 90-day restriction and forces a fresh lookup immediately.
+- **A daily background scan**, which picks up items with missing or stale metadata and refreshes them in small batches to avoid hammering free APIs
+- **On-demand lookup**, scheduled in the background when an item is opened in the UI and its metadata is older than 90 days
+- **Manual refresh** via the "Update metadata" action, which bypasses the 90-day restriction and forces a fresh lookup immediately
 
 For each item, source metadata is collected first (sorted so local providers — file system, Plex, Jellyfin, Subsonic, etc. — outrank streaming providers), then the online metadata providers are queried when "Enable metadata retrieval from online metadata providers" is on (default).
 
@@ -34,10 +34,10 @@ The language used for descriptions and bios is set under Settings → Metadata �
 For library items backed by a local music collection, the following are read automatically during the library scan:
 
 - **Embedded tags** in audio files — title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, ReplayGain values, etc. The `genre` tag is applied to the track only; album and artist genres are sourced separately (see below).
-- **`.lrc` sidecar files** with the same name as the audio file — used as synchronized lyrics. This is the format produced by tools such as LRCGET.
-- **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) — title, sort name, biography, genres, MusicBrainz artist ID.
-- **`album.nfo`** in an album folder — title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs.
-- **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, etc.) — used as thumbnails for albums and artists.
+- **`.lrc` sidecar files** with the same name as the audio file — used as synchronized lyrics. This is the format produced by tools such as LRCGET
+- **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) — title, sort name, biography, genres, MusicBrainz artist ID
+- **`album.nfo`** in an album folder — title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs
+- **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, etc.) — used as thumbnails for albums and artists
 
 These are part of the source metadata layer and always take priority over online lookups. They are also the most reliable way to fix problems with online matching: adding a MusicBrainz ID to a tag or `.nfo` file immediately unlocks the rest of the online providers for that item.
 
@@ -53,11 +53,13 @@ Apart from propagation, sources merge their genres into whatever is already ther
 
 By design the music collection is treated as **read-only**:
 
-- MusicBrainz IDs are never written back to file tags or `.nfo` files. When an item's tags do not contain an MBID, one is derived in Music Assistant's own database for online lookups; the source file is left alone.
-- Bios, descriptions, genres, artwork and lyrics are never written back to files.
-- `.nfo` files are never created or modified.
+- MusicBrainz IDs are normally not written back to file tags. When an item's tags do not contain a MBID, one is derived in Music Assistant's own database for online lookups or via the AcoustID Lookup provider if that is enabled
+- Bios, descriptions, genres, artwork and lyrics are never written back to files
+- `.nfo` files are never created or modified
 
-The single exception is the [Loudness Analysis](../audio-analysis/loudness-analysis) plugin's optional "Write REPLAYGAIN_TRACK_GAIN tags back to files" setting (default **off**). When enabled, a `REPLAYGAIN_TRACK_GAIN` tag is written into each track after its loudness is measured, so other apps on the network can use it for volume normalization. Read-only files are silently skipped.
+When write access is available the exceptions to this are :
+- [Loudness Analysis](../audio-analysis/loudness-analysis) plugin's optional "Write REPLAYGAIN_TRACK_GAIN tags back to files" setting (default **off**). When enabled, a `REPLAYGAIN_TRACK_GAIN` tag is written into each track after its loudness is measured, so other apps on the network can use it for volume normalization
+- [AcoustID Lookup](../audio-analysis/acoustid) plugin's optional "Write AcoustID/MusicBrainz tags back to files" setting (default **off**). When enabled, the Acoustid Id, MusicBrainz Recording Id, ISRC, and (where resolvable) MusicBrainz Artist Id tags are written back into the source audio file once identification succeeds
 
 ## Provider summary
 

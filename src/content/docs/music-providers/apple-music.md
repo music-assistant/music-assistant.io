@@ -28,6 +28,8 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 - Searching the Apple Music catalogue
 - Browsing playlists organised in folders
 - Artist radio stations available via Browse and the [Discover view](/ui/#view---discover); live broadcast stations are not supported
+- Similar tracks are supported, shown in the track detail view and available for Radio Mode
+- Similar artists are supported and shown in the artist detail view
 
 
 ## Configuration
