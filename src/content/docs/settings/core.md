@@ -110,3 +110,10 @@ Checks for any built-in default genres that are missing from your library and re
 A destructive operation that completely rebuilds the genre database from defaults. This removes all custom genres and restores the full set of built-in genres.
 
 CAUTION: Full restore deletes all custom genres, aliases, and media mappings. This action requires a two-step confirmation to prevent accidental data loss.
+
+## Audio Analysis
+
+Administrators can access the **Audio Analysis** page from the settings menu. This page provides allows for examining the progress of the installed audio analysis providers.
+
+![image](/assets/screenshots/genres/audio-analysis-view.png)
+

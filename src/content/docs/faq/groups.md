@@ -74,6 +74,10 @@ Music Assistant has support for grouping dissimilar playback devices. Configurat
 - All devices can be grouped and will play the same audio but will not play the audio in sync. Use this playertype only for players that are not in close range to each other
 - See the individual player providers page for any specific limitations
 
+### Settings
+
+- <b>Output format for Universal Group playback.</b> Universal Groups deliver the exact same encoded stream to every member, regardless of each member's capabilities. Pick the format that all members can play. Yje options are `MP3 (320 kbps) — broadest compatibility`, `MP3 (320 kbps) — broadest compatibility` and  `MP3 (320 kbps) — broadest compatibility`. Use the FLAC options only when every member supports FLAC playback
+
 ### Known Issues / Notes
 
 - This type of group should be avoided if a [Sync Group or Native Group](/ui/#grouping-players) can be used

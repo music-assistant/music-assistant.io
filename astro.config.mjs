@@ -271,6 +271,7 @@ export default defineConfig({
 						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
 						{ label: 'Party', slug: 'plugins/party' },
 						{ label: 'Plex Connect', slug: 'plugins/plex-connect' },
+						{ label: 'Smart Playlist', slug: 'plugins/smart_playlist' },
 						{ label: 'Spotify Connect', slug: 'plugins/spotify-connect' },
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
 						{ label: 'VBAN Receiver', slug: 'plugins/vban-receiver' },
