@@ -272,6 +272,7 @@ export default defineConfig({
 						{ label: 'Party', slug: 'plugins/party' },
 						{ label: 'Plex Connect', slug: 'plugins/plex-connect' },
 						{ label: 'Smart Playlist', slug: 'plugins/smart_playlist' },
+						{ label: 'Sonic Similarity', slug: 'plugins/sonic-similarity' },
 						{ label: 'Spotify Connect', slug: 'plugins/spotify-connect' },
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
 						{ label: 'VBAN Receiver', slug: 'plugins/vban-receiver' },
