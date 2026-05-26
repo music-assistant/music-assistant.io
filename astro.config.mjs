@@ -263,6 +263,7 @@ export default defineConfig({
 					items: [
 						{ label: 'AirPlay Receiver', slug: 'plugins/airplay-receiver' },
 						{ label: 'Ariacast Receiver', slug: 'plugins/ariacast-receiver' },
+						{ label: 'FastMCP Server', slug: 'plugins/fastmcp-server' },
 						{ label: 'Home Assistant', slug: 'ha-plugin' },
 						{ label: 'Hue Entertainment', slug: 'plugins/hue-entertainment' },
 						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
