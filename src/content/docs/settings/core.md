@@ -12,9 +12,14 @@ The core server settings are set with typical defaults that should work for most
 
 - A button is available to clear the cache used my Music Assistant. Do not routinely use this button as it increases [API usage](/usage/#online-metadata-sources) and slows down the MA experience
 
+## Discovery
+
+- <b>Allow network discovery for UPnP discovery.</b> When enabled, additional broadcast based SSDP discovery is utilised. Use this is some UPnP/DLNA devices fo not regular discovery
+- <b>MDNS/Zeroconf discovery interface(s).</b>Options are `Default interface [default]` and `All interfaces`. Used in advanced network setups when multiple network interfaces are used. Setting is only visible when the advanced toggle is on
+
 ## Metadata
 
-- <b>Language.</b> Preferred language for metadata. If the selected language is unavailable then English will be used
+- <b>Preferred language.</b> Preferred language for metadata. If the selected language is unavailable then English will be used
 - <b>Enable metadata retrieval from online metadata providers.</b> Enables the lookup of information that is not available locally. MA does not modify any existing metadata but supplements it
 - <b>Use local genre metadata only when available.</b> Online metadata providers will not add genres to items that already have a genre from a local source such as a file tag or NFO file. Items with no local genre still receive genres from online providers as usual
 - <b>Enable artist/track artwork lookup for radio streams.</b> Enables the lookup of album or artist imagery when the station supplies `Artist - Track` metadata
@@ -26,7 +31,7 @@ The core server settings are set with typical defaults that should work for most
 
 ## Players
 
-- <b>Advanced - MDNS/Zeroconf discovery interface(s).</b> For advanced users the default is `Default Interface` and the other option is `All interfaces`
+- No specific options
 
 ## Player Queues
 
@@ -48,11 +53,17 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 - <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
 
-### Streamserver Advanced Settings (Generic section)
+### Streamserver Advanced Settings 
+
+#### Generic
 
 - The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically. This is the address Music Assistant advertises to stream clients (including Sendspin) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network — not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
+
+#### Audio Analysis
+
 - <b>SmartFades Log Level.</b> Specific log level for the Smart Fades mixer and analyzer
+- <b>Background analysis concurrency.</b> Maximum number of tracks analsed concurrently during the nightly background scan. Default is 1 and should only be increased on more powerful systems
 
 ## Webserver
 
@@ -109,11 +120,12 @@ Checks for any built-in default genres that are missing from your library and re
 
 A destructive operation that completely rebuilds the genre database from defaults. This removes all custom genres and restores the full set of built-in genres.
 
-CAUTION: Full restore deletes all custom genres, aliases, and media mappings. This action requires a two-step confirmation to prevent accidental data loss.
+> [!CAUTION]
+> Full restore deletes all custom genres, aliases, and media mappings. This action requires a two-step confirmation to prevent accidental data loss.
 
 ## Audio Analysis
 
-Administrators can access the **Audio Analysis** page from the settings menu. This page provides allows for examining the progress of the installed audio analysis providers.
+Administrators can access the **Audio Analysis** page from the settings menu. This page allows examinination of the progress of the installed audio analysis providers. The stale number is the number of tracks that need to be re-analysed due to a version change
 
 ![image](/assets/screenshots/genres/audio-analysis-view.png)
 

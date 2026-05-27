@@ -6,7 +6,7 @@ title: AcoustID Lookup
 
 The **AcoustID Lookup** provider identifies local and streaming provider audio files by their acoustic fingerprint and resolves the matching MusicBrainz recording. The identifiers it discovers unlock the existing metadata pipeline for tracks and albums whose metadata is incomplete or missing, so artwork, descriptions, and biographies can appear without the files having been carefully tagged in advance and cross provider matching will work more reliably.
 
-It is an opt-in provider. A free API key from [acoustid.org](https://acoustid.org/api-key) is required before any lookups will run.
+It is an opt-in provider. A free API key from [acoustid.org](https://acoustid.org/my-applications) is required before any lookups will run.
 
 ## Who should enable it
 
