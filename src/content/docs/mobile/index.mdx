@@ -3,6 +3,9 @@ title: Mobile Device General Information
 description: Information Relevant to all Mobile Devices 
 ---
 
+import Swiper from '../../../components/Swiper.astro';
+import SwiperSlide from '../../../components/SwiperSlide.astro';
+
 # Mobile Devices
 
 ## Notification Screen Support
@@ -14,3 +17,28 @@ Whilst this functionality has been tested to work when using the iOS HA App to a
 Android users should also note that they may observe a label "This Phone" when observing playback on a remote device. This is a limitation of the Android OS.
 
 If the media player widget is not seen then a different, supported browser will need to be used.
+
+<Swiper class="mobile-screens" slidesPerView={1} pagination loop>
+	<SwiperSlide>
+		<img src="/assets/screenshots/mobile/image1.webp" alt="Music Assistant on mobile — screen 1" />
+	</SwiperSlide>
+	<SwiperSlide>
+		<img src="/assets/screenshots/mobile/image2.webp" alt="Music Assistant on mobile — screen 2" />
+	</SwiperSlide>
+	<SwiperSlide>
+		<img src="/assets/screenshots/mobile/image3.webp" alt="Music Assistant on mobile — screen 3" />
+	</SwiperSlide>
+	<SwiperSlide>
+		<img src="/assets/screenshots/mobile/image4.webp" alt="Music Assistant on mobile — screen 4" />
+	</SwiperSlide>
+	<SwiperSlide>
+		<img src="/assets/screenshots/mobile/image5.webp" alt="Music Assistant on mobile — screen 5" />
+	</SwiperSlide>
+</Swiper>
+
+<style>{`
+	.mobile-screens {
+		max-width: 300px;
+		margin-inline: auto;
+	}
+`}</style>

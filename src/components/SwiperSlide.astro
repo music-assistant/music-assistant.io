@@ -1,0 +1,10 @@
+---
+interface Props {
+	class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={['swiper-slide', className]}>
+	<slot />
+</div>
