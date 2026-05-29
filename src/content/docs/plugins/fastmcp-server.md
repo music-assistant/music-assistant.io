@@ -5,7 +5,7 @@ description: Features and Notes for the FastMCP Server Plugin
 
 # FastMCP Server <img src="/assets/icons/fastmcp-server-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has the ability to expose its library, queue, playback and player controls as a <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP)</a> server, so AI assistants like Claude, ChatGPT, Cursor and Codex can search your library, control playback and manage queues on your behalf using natural language.
+Music Assistant has the ability to expose its library, queue, playback and player controls as a <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP)</a> server, so AI assistants and agent frameworks like Claude, ChatGPT, Cursor, Codex, OpenClaw and Hermes can search your library, control playback and manage queues on your behalf using natural language.
 
 > [!NOTE]
 > This plugin is still in an early stage of development. Bugs may occur.
@@ -13,9 +13,10 @@ Music Assistant has the ability to expose its library, queue, playback and playe
 ## Features
 
 - Any MCP-aware AI client can connect to your Music Assistant library through a single URL
-- One-click Connect Wizard with ready-to-paste configuration for Claude Desktop, Claude Code, Cursor, Windsurf, VSCode, ChatGPT Connectors, Codex CLI, Gemini CLI, Cline and Zed
+- One-click Connect Wizard with ready-to-paste configuration for Claude Desktop, Claude Code, Cursor, Windsurf, VSCode, ChatGPT Connectors, Codex CLI, Gemini CLI, Cline, Zed, OpenClaw and Hermes
 - Each connected client gets its own access token, revocable individually under Profile → Long-lived access tokens
-- Nineteen fine-grained permission toggles let you decide what each connected AI client may do — browse the library, control playback, manage queues, edit playlists, remove favourites, and choose which URI-addressable resources the client can see
+- Fine-grained permission toggles let you decide what each connected AI client may do — browse the library, control playback, manage queues, edit playlists, remove favourites, and choose which URI-addressable resources the client can see
+- Two optional, off-by-default capability namespaces for power users: a **debug** namespace (introspection for troubleshooting) and a **config** namespace (view and edit Music Assistant settings over MCP)
 - Optional confirmation prompt before destructive actions like clearing a queue or removing a track from the library
 - Reuses the Music Assistant webserver — no extra port to open, works behind reverse proxies and Home Assistant ingress out of the box
 - Permission changes take effect immediately without restarting Music Assistant
@@ -35,11 +36,20 @@ Once the plugin has been added, the Connect Wizard becomes available from the pl
 
 Regenerating the snippet for a client revokes the previous token for that same client, so stale credentials are never left behind.
 
+For multi-agent orchestrators the wizard emits the native form for each: an `openclaw mcp set …` command for OpenClaw and a `~/.hermes/config.yaml` block for Hermes. Both point at the same streamable-HTTP endpoint with the minted bearer token, exactly like every other client.
+
 ### Settings
 
 - <b>Require authentication.</b> Reject MCP clients that do not present a valid Music Assistant token. Strongly recommended to leave enabled.
 - <b>Confirm destructive operations.</b> Ask the client to confirm before clearing a queue, removing a library item or deleting a playlist. Falls through to the matching permission toggle on clients that do not yet support confirmation prompts.
-- <b>Permissions.</b> Nineteen toggles in total — sixteen action toggles split across Query Permissions, Control Permissions, Edit Permissions and Delete Permissions, plus three MCP Resources toggles that control which library, player/queue and prompt resources are advertised to clients. The defaults enable read-only access only; every action that mutates state is off by default.
+- <b>Permissions.</b> Twenty-nine toggles in total — sixteen action toggles split across Query Permissions, Control Permissions, Edit Permissions and Delete Permissions; three MCP Resources toggles that control which library, player/queue and prompt resources are advertised to clients; five Debug toggles; and five Config toggles. The defaults enable read-only library and resource access only; every action that mutates state, and every Debug and Config capability, is off by default.
+
+#### Optional capability namespaces (advanced)
+
+Both namespaces ship entirely off by default — a standard installation exposes no debug or config tools at all. Enable a toggle only for the capability you need, and prefer leaving them off in production.
+
+- <b>Debug.</b> Five toggles (`Debug: inspect`, `Debug: logs`, `Debug: events`, `Debug: providers`, `Debug: reload`) expose read-mostly introspection for troubleshooting a running instance over MCP: raw player/queue/provider state, a tail of `musicassistant.log` (with common secrets redacted), a bounded ring buffer of recent events, a provider/health roll-up, and — gated separately — reloading a provider instance. The event buffer's capacity is configurable in the ADVANCED section.
+- <b>Config.</b> Five toggles (`Config: read settings`, `Config: edit provider settings`, `Config: edit core settings`, `Config: edit player settings`, and `Config: allow writing secret values`) let a client view and edit Music Assistant core, provider and player configuration over MCP. Reads mask `SECURE_STRING` values; writes are validated and delegated to Music Assistant's own atomic save (validate → encrypt → persist → reload, with rollback), so the plugin never hand-rolls persistence. Writing a secret value requires the dedicated secret flag in addition to the relevant category flag.
 
 In the ADVANCED section:
 
@@ -47,10 +57,11 @@ In the ADVANCED section:
 - <b>Enforce token audience (RFC 8707).</b> Rejects tokens that are not bound to this MCP server's URL. Leave off until Music Assistant issues audience-bound tokens by default.
 - <b>Additional allowed Origins (CSV).</b> Comma-separated list of additional Origin headers to accept, on top of the Music Assistant hosts that are auto-detected.
 - <b>Connect Wizard external URL (fallback).</b> Explicit base URL the Connect Wizard should use in the generated snippets. Only needed when the wizard cannot detect the public URL from the active client's request headers.
+- <b>Debug: event buffer capacity.</b> Maximum number of recent events kept in memory when the `Debug: events` toggle is enabled. Older events are dropped FIFO; has no effect when events are off.
 
 ## Known Issues / Notes
 
 - The plugin is experimental and the Model Context Protocol itself is still evolving, so behaviour may change between Music Assistant releases.
 - AI clients vary in how strictly they implement MCP. Clients that do not support confirmation prompts will instead be gated entirely by the relevant permission toggle.
-- All write permissions are disabled by default. Enable only the actions you want each connected AI client to be able to perform.
+- All write permissions are disabled by default, as are the Debug and Config namespaces. Enable only the actions you want each connected AI client to be able to perform.
 - Tokens minted by the Connect Wizard are long-lived. Revoke any client you no longer trust from Profile → Long-lived access tokens.
