@@ -77,8 +77,8 @@ Set it to **Off** to disable de-duplication.
 
 The dialog shows a live estimate while you edit rules:
 
-- **Library mode**: matching track count + duration estimate.
-- **Discover mode**: sample-size guidance.
+- **From my library mode**: live matching track count + duration estimate, updated as rules change.
+- **Discover mode**: no live matching-count calculation; the UI only shows guidance that up to 50 tracks are fetched from your streaming provider.
 
 The screenshot below shows **From my library** mode (rule-based smart playlist).
 
@@ -90,7 +90,7 @@ The screenshot below shows the Track Count hint for **Discover mode**.
 
 ## Playlist detail
 
-After saving, open the smart playlist to view the generated tracks and refresh the result when needed.
+After saving, open the smart playlist to view a current sample output based on your rules.
 
 ![Smart Playlist detail view](/assets/screenshots/smart_playlist/playlist_detail.png)
 
