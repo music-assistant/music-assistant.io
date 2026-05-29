@@ -11,6 +11,16 @@ description: A Walkthrough of the Music Assistant User Interface
 
 This menu's appearance can be configured in Settings / User Interface. On a desktop, it can be placed vertically on the left (as shown) or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. The enabled menu items (Views) are displayed in the order they were selected in the User Interface settings. Any of the views can be hidden. If the Settings view is hidden from the menu it can be accessed by navigating to `YOUR_MA_IP_ADDRESS:8095/#/settings`
 
+### Sidebar Shortcuts
+
+Use shortcuts to pin frequently used library items to the main menu for quick access.
+
+- Add a shortcut from an item's context menu (⋮ menu, right click, or long press) by selecting **Add to shortcuts**.
+- Remove it from the same menu with **Remove from shortcuts**.
+- Shortcuts are stored per user account.
+- If a pinned item is updated (for example renamed), the shortcut is updated automatically.
+- If a pinned item is deleted, it is removed from shortcuts automatically.
+
 ***************************************************************
 
 ## Global Search

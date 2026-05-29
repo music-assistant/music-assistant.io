@@ -15,16 +15,6 @@ Customise the user interface from this page
 - <b>Force mobile layout.</b> The mobile layout has the menu at the bottom and has icons for HOME, and SEARCH and the remainder of the items are accessed via a single library icon
 - <b>Mobile sidebar side.</b> Which side the navigation menu opens from. Default is left
 
-## Sidebar Shortcuts
-
-Use shortcuts to pin frequently used library items to the sidebar for quick access.
-
-- Pin an item from its context menu (`...` or right-click) by selecting **Add to shortcuts**.
-- Remove it from the same menu with **Remove from shortcuts**.
-- Shortcuts are stored per user account.
-- If a pinned item is updated (for example renamed), the shortcut is updated automatically.
-- If a pinned item is deleted, it is removed from shortcuts automatically.
- 
 ## Web Player
 
 - <b>Enable built-in (Sendspin) Web Player.</b> Allows playback to THIS DEVICE
