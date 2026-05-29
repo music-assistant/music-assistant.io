@@ -4,7 +4,7 @@ title: Media items
 
 # Media Item Metadata <img src="/assets/icons/metadata-mediaitem-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant draws on two layers of metadata. Source metadata comes from wherever the media item actually lives — embedded file tags, `.lrc` and `.nfo` files, and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. Online metadata providers (Fanart.tv, The Audio DB, MusicBrainz, Cover Art Archive, iTunes Artwork, LRCLIB, Genius) are dedicated third-party services queried only to fill in fields the source did not supply. Source metadata is always preferred; online metadata is complementary.
+Music Assistant draws on two layers of metadata. Source metadata comes from wherever the media item actually lives — embedded file tags, `.lrc` and `.nfo` files, and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. Online metadata providers (Fanart.tv, The Audio DB, MusicBrainz, Cover Art Archive, iTunes Artwork, LRCLIB, Genius, Wikipedia) are dedicated third-party services queried only to fill in fields the source did not supply. Source metadata is always preferred; online metadata is complementary.
 
 ## Artists
 
@@ -13,7 +13,7 @@ Music Assistant draws on two layers of metadata. Source metadata comes from wher
 | Name, sort name | File tags, `artist.nfo`, music providers |
 | Genres | `artist.nfo`, music providers, **The Audio DB**, derived from track tags when the filesystem provider's `Propagate track genres` option is enabled |
 | MusicBrainz ID (MBID) | File tags, `artist.nfo`, music providers, derived via MusicBrainz lookup if missing |
-| Biography | `artist.nfo` (`<biography>`), music providers, **The Audio DB** |
+| Biography | `artist.nfo` (`<biography>`), music providers, **The Audio DB**, **Wikipedia** |
 | Style, mood, label | **The Audio DB** |
 | Images (thumb, logo, banner, fanart, cutout, landscape, clearart) | Embedded tags, folder images, music providers, **Fanart.tv**, **The Audio DB** |
 | Links (website, Facebook, Twitter, Last.fm) | **The Audio DB** |

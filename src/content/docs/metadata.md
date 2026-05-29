@@ -5,7 +5,7 @@ description: A Description of the Metadata sources available to Music Assistant
 
 # Metadata <img src="/assets/icons/metadata-general-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant draws on two layers of metadata. **Source metadata** comes from wherever a track actually lives — embedded file tags, `.lrc` and [`.nfo` files](https://kodi.wiki/view/NFO_files), and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. **Online metadata providers** (Fanart.tv, The Audio DB, MusicBrainz, Cover Art Archive, iTunes Artwork, LRCLIB, Genius) are dedicated third-party services queried only to fill in fields the source did not supply.
+Music Assistant draws on two layers of metadata. **Source metadata** comes from wherever a track actually lives — embedded file tags, `.lrc` and [`.nfo` files](https://kodi.wiki/view/NFO_files), and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. **Online metadata providers** (Fanart.tv, The Audio DB, MusicBrainz, Cover Art Archive, iTunes Artwork, LRCLIB, Genius, Wikipedia) are dedicated third-party services queried only to fill in fields the source did not supply.
 
 Source metadata is always preferred; online metadata is complementary.
 
@@ -72,5 +72,6 @@ When write access is available the exceptions to this are :
 | **iTunes Artwork** | High-resolution album artwork. | Album barcode (UPC / EAN) |
 | **LRCLIB** | Synchronized and plain lyrics (default lyrics provider). | Track name, artist, album, duration |
 | **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
+| **Wikipedia** | Multi-lingual artist biographies, in your preferred language where available. | Artist MBID (used to resolve the Wikipedia article via Wikidata) |
 
 Individual metadata sources can be turned off in Settings>> Metadata Providers, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
