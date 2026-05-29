@@ -4,7 +4,7 @@ title: Media items
 
 # Media Item Metadata <img src="/assets/icons/metadata-mediaitem-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant draws on two layers of metadata. Source metadata comes from wherever the media item actually lives — embedded file tags, `.lrc` and `.nfo` files, and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. Online metadata providers (Fanart.tv, The Audio DB, MusicBrainz, Cover Art Archive, iTunes Artwork, LRCLIB, Genius, Wikipedia) are dedicated third-party services queried only to fill in fields the source did not supply. Source metadata is always preferred; online metadata is complementary.
+This page lists what metadata is gathered for each kind of media item — artists, albums, tracks, playlists, audiobooks and podcasts — and where each field comes from. As [elsewhere](/metadata/), source metadata always takes priority and the online providers only fill in the gaps.
 
 ## Artists
 
