@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
+import mdx from '@astrojs/mdx';
 import { remarkAlert } from 'remark-github-blockquote-alert';
 import { authors } from './src/authors.mjs';
 
@@ -281,5 +282,6 @@ export default defineConfig({
 				ThemeSelect: './src/components/ThemeSelect.astro',
 			}
 		}),
+		mdx(),
 	],
 });
