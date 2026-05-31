@@ -4,7 +4,7 @@ title: "Samsung WAM"
 
 # Samsung WAM <img src="/assets/icons/samsung-wam.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for Samsung's Wireless Audio Multiroom (WAM) speakers.
+Music Assistant has support for Samsung's Wireless Audio Multiroom (WAM) speakers. This provider is contributed and maintained by [Oliver Stevens](https://github.com/Oliver-Stevens)
 
 ## Features
 
