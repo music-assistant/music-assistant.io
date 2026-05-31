@@ -277,7 +277,8 @@ export default defineConfig({
 						{ label: 'Spotify Connect', slug: 'plugins/spotify-connect' },
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
 						{ label: 'VBAN Receiver', slug: 'plugins/vban-receiver' },
-						{ label: 'Yandex Music Connect (Ynison)', slug: 'plugins/yandex-ynison' },
+						{ label: 'Yandex Alice Plugin', slug: 'plugins/yandex-alice' },
+						{ label: 'Yandex Music Connect (Ynison) Plugin', slug: 'plugins/yandex-ynison' },
 					],
 				},
 				{ 
