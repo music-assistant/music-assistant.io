@@ -10,11 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
     "@astrojs/starlight": "^0.37.6",
     "astro": "^5.6.1",
     "remark-github-blockquote-alert": "^1.2.2",
     "sharp": "^0.34.2",
     "starlight-blog": "^0.25.2",
     "swiper": "^12.2.0"
-  }
+  },
+  "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1"
 }

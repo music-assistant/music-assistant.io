@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@astrojs/mdx':
+        specifier: ^4.3.14
+        version: 4.3.14(astro@5.18.1(@types/node@24.12.0)(rollup@4.60.0)(typescript@5.9.3))
       '@astrojs/starlight':
         specifier: ^0.37.6
         version: 0.37.7(astro@5.18.1(@types/node@24.12.0)(rollup@4.60.0)(typescript@5.9.3))
