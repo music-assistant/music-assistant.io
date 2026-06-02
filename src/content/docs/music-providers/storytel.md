@@ -2,9 +2,9 @@
 title: "Storytel"
 ---
 
-# Storytel (Mofibo) <img src="/assets/icons/storytel.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# Storytel <img src="/assets/icons/storytel.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for [Storytel](https://www.storytel.com). In some regions the service is also known as [Mofibo](https://www.mofibo.com).
+Music Assistant has support for [Storytel](https://www.storytel.com). In some regions the service is also known as [Mofibo](https://www.mofibo.com). This provider will allow streaming of audiobooks and podcasts from one of the world's largest subscription listening services. This provider is contributed and maintained by [Jonas Pedersen](https://github.com/jonasbp2011)
 
 > [!NOTE]
 > A valid Storytel subscription and account are required to add this provider.
@@ -37,7 +37,7 @@ Music Assistant has support for [Storytel](https://www.storytel.com). In some re
 To set up the Storytel provider, follow these steps:
 
 1. Navigate to `Settings`.
-2. Under Music Sources, click `Add a music source`, select `Storytel (Mofibo)`, and fill in your `Username or email` and `Password`.
+2. Under Music Sources, click `Add a music source`, select `Storytel`, and fill in your `Username or email` and `Password`.
 3. Select the content languages you want to use for search and recommendations.
 4. Click `Save`.
 
@@ -49,5 +49,4 @@ In addition to `Username or email` and `Password`, there is also:
 
 ## Known Issues / Notes
 
-- Storytel is still beta in Music Assistant. Please report any issues or unexpected behaviour.
 - Browse support is not currently implemented for Storytel. Instead, use the audiobook and podcast libraries to access your media.
