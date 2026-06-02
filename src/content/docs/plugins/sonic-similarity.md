@@ -22,7 +22,7 @@ This plugin is in early development. The configuration options and behaviour may
 
 ## Requirements
 
-The plugin builds on top of the [Sonic Analysis](/audio-analysis/sonic-analysis) provider and the [Smart Fades](audio-analysis/smart-fades), both of which must be configured and have analysed at least a few tracks. Similar Tracks results and the discover row appear once Sonic Similarity has built its index from the available analyses.
+The plugin builds on top of the [Sonic Analysis](/audio-analysis/sonic-analysis) provider and the [Smart Fades](/audio-analysis/smart-fades) provider, both of which must be configured and have analysed at least a few tracks. Similar Tracks results and the discover row appear once Sonic Similarity has built its index from the available analyses.
 
 ## What you'll see in Music Assistant
 
@@ -62,20 +62,25 @@ The first time free-text search is loaded, about 500 MB of language model files 
 
 The plugin appears in **Settings → Providers → Add Provider → Plugins** once installed. All settings live on a single configuration page made up of three panels: **Generic**, **Status**, and **Discover**.
 
-![Sonic Similarity settings: Generic toggles and Status panel](/assets/screenshots/sonic-similarity/setup-screen-1.png)
-
 ### Generic
+
+![Sonic Similarity Generic panel](/assets/screenshots/sonic-similarity/setup-screen-generic.png)
 
 | Setting | Description |
 |---|---|
 | **Enable CLAP embedding index** | Builds a second on-disk index over the CLAP audio fingerprints already produced by Sonic Analysis. Off by default. |
+| **Similar Tracks engine** | Which engine powers library-wide Similar Tracks. The **18-dim weighted** option ranks by measurable features (BPM, energy, loudness, key, etc.); the **CLAP 1024-dim semantic** option ranks by the audio fingerprint and returns no results for tracks that do not yet have one. Only appears when the CLAP index is enabled. Defaults to 18-dim. |
+| **Similar Tracks preset** | Weight preset applied when the 18-dim engine is in use. See [Similarity presets](#similarity-presets) below for what each preset favours. Only appears when the 18-dim engine is selected. Defaults to Balanced. |
+| **Similar Tracks diversity** | A value from 0 to 1. `0.0` keeps results closest to the seed; `1.0` maximises variety. Only appears when the 18-dim engine is selected. Defaults to `0.0`. |
 | **Enable free-text search** | Enables natural-language track search. The first use lazily downloads about 500 MB of language model files to the server. Turning this on implicitly enables the CLAP index above, since both features share the same model. Off by default. |
 
-Toggling either of these requires the plugin to reload before the new feature set takes effect.
+Toggling **Enable CLAP embedding index** or **Enable free-text search** requires the plugin to reload before the new feature set takes effect.
 
 ### Status
 
 The Status panel shows the current health of each engine and gives you a manual rebuild button. Both engines build their indexes in the background — refresh the page after starting a rebuild to see updated counts.
+
+![Sonic Similarity Status panel](/assets/screenshots/sonic-similarity/setup-screen-status.png)
 
 | Element | Meaning |
 |---|---|
@@ -107,7 +112,7 @@ The 18-dim engine groups its features and applies a per-group weight when rankin
 | **Genre + Era** | Key and harmonic features, plus genre and era bonuses, dominate. Stays close to the seed's genre and decade. |
 | **Discover (novelty-leaning)** | Timbre and mood matter most; genre and era are deliberately downweighted so the row is allowed to drift outside the seed's neighbourhood. |
 
-The discover row's preset is configurable independently of the preset used by the Similar Tracks menu and radio mode.
+The **Similar Tracks** action (configured in the Generic panel) and the **Inspired by recently played** discover row (configured in the Discover panel) select a preset and diversity independently, so they can lean different ways — for instance, Similar Tracks can stay close to the seed while the discover row drifts toward novelty.
 
 ## Known Issues / Notes
 
