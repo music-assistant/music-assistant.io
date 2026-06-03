@@ -52,7 +52,7 @@ No extra downloads are required; the fingerprints are already on disk from Sonic
 
 ### Free-text search (opt-in)
 
-Turns a natural-language phrase like *"super dancy disco track"* into the same kind of fingerprint used for tracks, then returns the tracks whose sound is closest. Enabling this implicitly turns on the Character index above, since both features share the same model.
+Turns a natural-language phrase like *"super dancy disco track"* into the same kind of fingerprint used for tracks, then returns the tracks whose sound is closest. Enabling this implicitly turns on the Character engine above, since both features share the same model.
 
 The first time free-text search is loaded, about 500 MB of language model files download to the server. 
 
