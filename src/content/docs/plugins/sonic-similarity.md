@@ -106,7 +106,7 @@ Shows the current health of each engine — number of tracks indexed, coverage, 
 
 | Element | Meaning |
 |---|---|
-| **Traits engine status row** | Shows how many tracks are indexed, how many signatures are cached, whether the engine is ready to serve queries (shown in the UI as *corpus stats ready*), and — when available — how its coverage compares to Sonic Analysis' analysed / pending counts. |
+| **Traits engine status row** | Shows how many tracks are indexed, how many signatures are cached, whether the engine is ready to serve queries (shown in the UI as *corpus stats ready*), and, when available, how its coverage compares to Sonic Analysis' analysed / pending counts. |
 | **Rebuild Traits index** *(Advanced)* | Re-scans all stored signatures and rebuilds the Traits search index from scratch. Runs in the background. Only present when **Advanced** settings are shown. |
 | **Character engine status row** | Shows the number of fingerprints indexed and the current coverage. Only present when the Character engine is enabled. |
 | **Rebuild Character index** *(Advanced)* | Incrementally adds any new fingerprints to the Character index. Runs in the background. Only present when **Advanced** settings are shown and the Character engine is enabled. |
