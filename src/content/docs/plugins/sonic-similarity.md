@@ -36,7 +36,7 @@ And — unless it is disabled in the settings — an **Inspired by recently play
 
 ## How it works
 
-Three engines run inside the plugin. The Traits engine is always on; the Character and free-text engines are independently toggleable from the configuration page.
+Three engines run inside the plugin. The Traits engine is always on; the Character and Free-Text Search engines are independently toggleable from the configuration page.
 
 ### Traits engine (always on)
 
