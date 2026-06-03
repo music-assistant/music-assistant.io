@@ -69,7 +69,7 @@ The plugin is installed via **Settings → Plugins → Add a Plugin**. All setti
 | Setting | Description |
 |---|---|
 | **Enable Character index** | Builds a second on-disk index over the audio fingerprints already produced by Sonic Analysis. Off by default. |
-| **Enable free-text search** | Enables natural-language track search. The first use lazily downloads about 500 MB of language model files to the server. Turning this on implicitly enables the Character index above, since both features share the same model. Off by default. |
+| **Enable free-text search** | Enables natural-language track search. On first use about 500 MB of language model files are lazily downloaded to the server. |
 
 Toggling either of these requires the plugin to reload before the new feature set takes effect.
 
