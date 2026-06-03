@@ -12,8 +12,8 @@ Music Assistant can sync <a href="https://www.philips-hue.com/" target="_blank" 
 ## Features
 
 - Sync Philips Hue lights to playing music with low latency using the Hue Entertainment API
-- Three selectable effect modes: Spectrum, Bass Boost and Ambient
-- Bass-driven beat detection with energy-adaptive color cycling and white strobe on peaks
+- Four selectable visualization modes: Smooth, Ambient, Flashing and Energetic
+- Beat-synced colour cycling driven by the Sendspin visualizer role, falling back to peak and onset detection when beat data isn't available
 - Auto-discovery of Hue bridges on the local network via mDNS
 - Multiple bridges supported — add the plugin once per bridge
 - Each entertainment area on a bridge is exposed as its own MA light player
@@ -31,15 +31,19 @@ Music Assistant can sync <a href="https://www.philips-hue.com/" target="_blank" 
 ### Settings
 
 - <b>Brightness.</b> Overall light brightness (0–100). Default `100`.
-- <b>Intensity.</b> Beat reactivity and flash intensity (0–100). Default `70`. Higher values produce more pronounced flashes on detected beats.
-- <b>Color mode.</b> Selects the effect:
-    - <b>Spectrum</b> — frequency bands are spread across the lights with a vibrant rotating palette. Channel assignments and colors rotate on detected beats. White strobes are triggered on high-energy peaks.
-    - <b>Bass Boost</b> — all lights pulse together with bass energy in warm tones. Beats flash with cycling palette colors, with a white strobe on peaks.
-    - <b>Ambient</b> — slow hue rotation with gentle energy modulation and a per-channel hue offset for depth. Best for relaxed listening.
+- <b>Mode.</b> Selects the visualization style:
+    - <b>Smooth</b> (default) — gentle spectrum-driven brightness with a slowly drifting palette that cycles colour on the beat.
+    - <b>Ambient</b> — colour cycling on the beat with saturation reacting to the bass, no brightness modulation. Best for relaxed listening.
+    - <b>Flashing</b> — strong brightness pulse on every beat, stronger on downbeats.
+    - <b>Energetic</b> — large brightness swings on the beat plus fast palette and hue rotation.
+- <b>Light latency (ms).</b> Milliseconds to render light updates ahead of the audio, to offset the Hue bridge and network delay (0–3000). Default `20`. Increase if the lights lag the music, decrease if they run ahead of it.
+
+> [!CAUTION]
+> The **Flashing** and **Energetic** modes produce rapid flashing. Avoid them if you or anyone present is sensitive to flashing lights.
 
 ## Known Issues / Notes
 
 - Hue light players are virtual `LIGHT` players that use the Sendspin visualizer stream — they can only be joined to Sendspin players or groups
-- Beat detection is driven by bass energy from the visualizer spectrum data — it works well for beat-heavy music but is less precise for acoustic or vocal-only tracks
+- Beat effects use the track's beat analysis from the [Smart Fades](/audio-analysis/smart-fades) provider when available, otherwise the lights fall back to peak and onset detection. Beats may be unavailable when the analysis hasn't been computed yet, or on lower-powered devices that can't compute beats in time
 - Entertainment areas are discovered when the plugin (re)loads — adding a new entertainment area in the Hue app requires reloading the plugin before it will appear as an MA player
 - The Hue bridge only allows one entertainment area to stream at a time, so only one Hue light player per bridge can be active at any given moment
