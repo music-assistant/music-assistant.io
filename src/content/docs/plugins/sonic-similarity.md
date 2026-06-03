@@ -60,7 +60,7 @@ The first time free-text search is loaded, about 500 MB of language model files 
 
 ## Configuration
 
-The plugin appears in **Settings → Providers → Add Provider → Plugins** once installed. All settings live on a single configuration page made up of four panels: **Generic**, **Similarity search**, **Discover**, and **Status**.
+The plugin is installed via **Settings → Plugins → Add a Plugin**. All settings live on a single configuration page made up of four panels: **Generic**, **Similarity search**, **Discover**, and **Status**.
 
 ### Generic
 
