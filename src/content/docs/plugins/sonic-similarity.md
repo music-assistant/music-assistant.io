@@ -110,7 +110,7 @@ Shows the current health of each engine — number of tracks indexed, coverage, 
 | **Rebuild Traits index** *(Advanced)* | Re-scans all stored signatures and rebuilds the Traits search index from scratch. Runs in the background. Only present when **Advanced** settings are shown. |
 | **Character engine status row** | Shows the number of fingerprints indexed and the current coverage. Only present when the Character engine is enabled. |
 | **Rebuild Character index** *(Advanced)* | Incrementally adds any new fingerprints to the Character index. Runs in the background. Only present when **Advanced** settings are shown and the Character engine is enabled. |
-| **Text encoder status row** | Shows whether the text encoder is loaded (*warm*) or *cold*. When cold, the language model files (~500 MB) will be downloaded on the next free-text query. Only present when free-text search is enabled. |
+| **Text encoder status row** | Shows whether the text encoder is loaded; *warm* or *cold*. When cold, the language model files (~500 MB) will be downloaded on the next free-text query. Only present when free-text search is enabled. |
 
 ## Similarity presets
 
