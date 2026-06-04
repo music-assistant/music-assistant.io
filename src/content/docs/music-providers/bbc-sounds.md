@@ -46,7 +46,7 @@ The full functionality is enabled when you are a UK-based listener, and signed i
 
 ## Not Yet Supported
 
-- Pausing and seeking live radio
+- Playing live radio
 - International accounts may work, but are not currently supported
 - The international menu should show available podcasts, this has not been implemented yet
 - Showing the currently playing song for stations and catch-up is implemented but not yet released
