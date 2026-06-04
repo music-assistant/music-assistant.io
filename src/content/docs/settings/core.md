@@ -127,5 +127,5 @@ A destructive operation that completely rebuilds the genre database from default
 
 Administrators can access the **Audio Analysis** page from the settings menu. This page allows examinination of the progress of the installed audio analysis providers. The stale number is the number of tracks that need to be re-analysed due to a version change
 
-![image](/assets/screenshots/genres/audio-analysis-view.png)
+![image](/assets/screenshots/audio-analysis-view.png)
 
