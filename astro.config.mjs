@@ -251,13 +251,10 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Audio Analysis Providers',
+					label: 'Metadata Providers',
 					collapsed: true,
 					items: [
-						{ label: 'AcoustID Lookup', slug: 'audio-analysis/acoustid' },
-						{ label: 'Loudness Analysis', slug: 'audio-analysis/loudness-analysis' },
-						{ label: 'Smart Fades', slug: 'audio-analysis/smart-fades' },
-						{ label: 'Sonic Analysis', slug: 'audio-analysis/sonic-analysis' },
+						{ label: 'LastFM Recommendations', slug: 'metadata-providers/lastfm-recommendations' },
 					],
 				},
 				{
@@ -279,6 +276,16 @@ export default defineConfig({
 						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
 						{ label: 'VBAN Receiver', slug: 'plugins/vban-receiver' },
 						{ label: 'Yandex Music Connect (Ynison)', slug: 'plugins/yandex-ynison' },
+					],
+				},
+				{
+					label: 'Audio Analysis Providers',
+					collapsed: true,
+					items: [
+						{ label: 'AcoustID Lookup', slug: 'audio-analysis/acoustid' },
+						{ label: 'Loudness Analysis', slug: 'audio-analysis/loudness-analysis' },
+						{ label: 'Smart Fades', slug: 'audio-analysis/smart-fades' },
+						{ label: 'Sonic Analysis', slug: 'audio-analysis/sonic-analysis' },
 					],
 				},
 				{ 
