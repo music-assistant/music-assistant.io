@@ -98,7 +98,7 @@ MA automatically generates some dynamic playlists. These playlists will be updat
 
 There are also two pseudo-playlists - Infinite Mix. Viewing these playlists will show no tracks however playing the playlist will result in an endless queue where 25 random tracks (from the whole library or the favourites) will be added to the queue and will be refreshed as the queue comes to an end.
 
-### Artwork
+### Playlist Artwork
 
 MA will use the artwork supplied from the streaming providers. For local providers MA will create a collage based on the tracks in the playlist. Alternatively, for the local file system providers, an image which has the same prefix as the playlist will be used (eg. mix.m3u and mix.jpg)
 
