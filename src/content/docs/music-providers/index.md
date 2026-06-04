@@ -9,9 +9,9 @@ For specific music source information refer to the relevant section.
 
 General Notes:
 
-- You have to add sources in order to access your music even if the media is visible to HA.
-- If you remove a source a cleanup of the database will be done but it takes a little time to complete. If you still see entries from a deleted source after some time, then try a MA restart to retrigger the cleanup process.
-- Music sources are added by navigating to MA Settings and then MUSIC SOURCES and then clicking on ADD A MUSIC SOURCE. (In the image below the view is filtered to show just the music source - this is optional)
+- You have to add sources in order to access your music even if the media is visible to HA
+- If you remove a source a cleanup of the database will be done but it takes a little time to complete. If you still see entries from a deleted source after some time, then try a MA restart to retrigger the cleanup process
+- Music sources are added by navigating to MA Settings and then MUSIC SOURCES and then clicking on ADD A MUSIC SOURCE
 
 > [!TIP]
 > If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [PROVIDER DETAILS](/ui/#provider-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
