@@ -45,6 +45,7 @@ Smart playlists use include/exclude style rules:
 - **Genre**: is / is not (one or more genres)
 - **Artist**: is / is not (library mode, one or more artists)
 - **Album**: is / is not (library mode, one or more albums)
+- **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
 - **Favorite**: yes (library mode)
 - **Year**: between from/to (you can also use only `from` or only `to`).
 
@@ -52,6 +53,15 @@ Year examples:
 
 - `from: 1969` means 1969 or newer.
 - `to: 1980` means 1980 or older.
+
+Album type examples:
+
+- **Album type is "Album"**: only full-length albums (excludes singles, EPs, compilations)
+- **Album type is not "Single"**: excludes all single releases
+- **Album type is "Album" or "EP"**: includes full albums and EPs (excludes singles and compilations)
+- **Album type is "Live"**: only live recordings/concerts
+
+Available album types: **Album**, **Single**, **EP**, **Compilation**, **Live**, **Soundtrack**, **Audiobook**, **Podcast**, **Unknown album type** (albums without a specific type classification or where the music provider does not provide type information).
 
 In **From my library** mode you can choose whether tracks must match **all** rules or **any** rule.
 
@@ -96,6 +106,4 @@ After saving, open the smart playlist to view a current sample output based on y
 
 ## Notes
 
-- In the current UI, smart playlists support editing rules, but not renaming from the smart playlist editor.
 - Smart playlists only exist as long as the Smart Playlists plugin is installed. Removing the plugin also removes associated smart playlists from the MA library.
-- Renaming a smart playlist in the MA library is automatically reflected in the stored smart playlist entry (name + rules).
