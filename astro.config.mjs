@@ -250,10 +250,14 @@ export default defineConfig({
 						{ label: 'WiiM', slug: 'player-support/wiim' },
 					],
 				},
-				{
+				{ 
 					label: 'Metadata Providers',
 					collapsed: true,
 					items: [
+						{ label: 'Overview', slug: 'metadata' },
+						{ label: 'Artwork', slug: 'metadata/artwork' },
+						{ label: 'Lyrics', slug: 'metadata/lyrics' },
+						{ label: 'Media Items', slug: 'metadata/media-items' },
 						{ label: 'LastFM Recommendations', slug: 'metadata-providers/lastfm-recommendations' },
 					],
 				},
@@ -286,16 +290,6 @@ export default defineConfig({
 						{ label: 'Loudness Analysis', slug: 'audio-analysis/loudness-analysis' },
 						{ label: 'Smart Fades', slug: 'audio-analysis/smart-fades' },
 						{ label: 'Sonic Analysis', slug: 'audio-analysis/sonic-analysis' },
-					],
-				},
-				{ 
-					label: 'Metadata',
-					collapsed: true,
-					items: [
-						{ label: 'Overview', slug: 'metadata' },
-						{ label: 'Artwork', slug: 'metadata/artwork' },
-						{ label: 'Lyrics', slug: 'metadata/lyrics' },
-						{ label: 'Media Items', slug: 'metadata/media-items' },
 					],
 				},
 				{ label: 'Desktop Companion App', slug: 'companion-app' },
