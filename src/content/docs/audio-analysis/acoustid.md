@@ -32,7 +32,9 @@ For each analysed album, once enough of its tracks have been identified:
 - During the nightly audio-analysis scan, around local midnight. Local audio files only
 - During playback of an eligible track. Local files are always eligible; streaming-provider tracks are eligible when *Analyse tracks from streaming providers* is enabled and the track is in the library
 
-Large libraries may take several nights to be fully analysed. Well tagged libraries see little or no activity because most tracks will be skipped. Streaming-provider tracks are picked up gradually as they are played, rather than in a batch.
+Large libraries may take several nights to be fully analysed. Well tagged libraries see little or no activity because most tracks will be skipped. Streaming-provider tracks are picked up gradually as they are played, rather than in a batch. 
+
+The stale number shown for this provider indicates the number of tracks that could not be found in the AcoustID database. These tracks will be re-analysed every 60 days.
 
 ## Limitations
 
