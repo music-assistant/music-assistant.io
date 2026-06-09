@@ -25,7 +25,9 @@ Because Sendspin is **license-free and open source**, anyone can build apps, dev
 
 The Sendspin provider is **built-in and always enabled**. There are no configuration options required to get started.
 
-Individual Sendspin players will appear automatically when clients connect
+Individual Sendspin players will appear automatically when clients connect.
+
+External Sendspin clients can connect using the `/sendspin` WebSocket endpoint on port `8927`, so a full connection URL will look like `ws://100.64.2.30:8927/sendspin` (replacing 100.64.2.30 with the IP address of Music Assistant).
 
 ## Settings
 
