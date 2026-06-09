@@ -37,4 +37,5 @@ Add the account username, password and region (United States or Canada) into the
 
 ## Not Yet Supported
 
-On Demand Content
+- On Demand Content
+- XTRA Channels
