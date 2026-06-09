@@ -32,10 +32,11 @@ AirPlay 1 (RAOP) specific advanced settings are:
 - <b>Enable encryption.</b> Enable encrypted communication if required by the player. AirPlay 1 only.
 - <b>Enable compression.</b> Enable to save some bandwidth by sending the audio as (lossless) ALAC
 - <b>Device password.</b> If the device requires a password to play then it is added here
+- <b>Milliseconds of data to buffer.</b> Try increasing this value if playback is unreliable. This adds to the latency experienced for the commencement of playback.
 
 AirPlay 2 specific advanced settings are:
 
-- <b>Milliseconds of data to buffer.</b> The number of milliseconds of data to buffer in the cliap2 binary. Try increasing the value if playback is unreliable. <b>NOTE:</b> This adds to the latency experienced for commencement of playback.
+- <b>Expected milliseconds to establish streaming session with the AirPlay device.</b> The number of milliseconds of data to buffer in the cliap2 binary. Try increasing the value if playback is unreliable (out of sync or not working). <b>NOTE:</b> This adds to the latency experienced for the commencement of playback.
 
 ## Known Issues / Notes
 
