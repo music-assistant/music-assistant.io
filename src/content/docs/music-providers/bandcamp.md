@@ -29,6 +29,7 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 ### Other
 - Searching the Bandcamp catalogue
 - The highest available stream from Bandcamp will be selected for playback
+- Bandcamp Feed and Wishlist are available in the browse view
 
 ## Configuration
 
