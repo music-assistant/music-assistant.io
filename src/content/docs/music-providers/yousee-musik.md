@@ -21,7 +21,7 @@ Music Assistant has support for [YouSee Musik](https://musik.yousee.dk). Contrib
 | [Radio Mode](/ui/#track-menu)                   |                Yes                 |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
-| Similar Tracks Support                          |            No                      |
+| Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality                          |        Lossy, MP4 (320kbps)        |
 | Login Method                                    |         Password                   |
 
