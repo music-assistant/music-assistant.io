@@ -24,6 +24,9 @@ Contributed and maintained by <a href="https://github.com/xiasi0" target="_blank
 | [Recommendations](/ui/#view-home) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                     | 
 | Maximum Stream Quality | Hi-Res FLAC (upstream response dependent) |
 | Login Method | NetEase App QR Code |
 
