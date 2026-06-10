@@ -1,44 +1,77 @@
 ---
-title: Metadata Providers
-description: A Description of the Metadata providers available
+title: Metadata
+description: A Description of the Metadata sources available to Music Assistant
 ---
 
-# Metadata Providers - General
+# Metadata <img src="/assets/icons/metadata-general-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The metadata providers available in Music Assistant are used to supplement metadata which is missing from the items obtained from the music sources. They do NOT change anything (e.g. ID3 tags) obtained from the original item therefore they should not normally be disabled.
+Music Assistant draws on two layers of metadata. **Source metadata** comes from wherever a track actually lives — embedded file tags, `.lrc` and [`.nfo` files](https://kodi.wiki/view/NFO_files), and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. **Online metadata providers** (Fanart.tv, The Audio DB, MusicBrainz, Cover Art Archive, iTunes Artwork, LRCLIB, Genius, Wikipedia) are dedicated third-party services queried only to fill in fields the source did not supply.
 
-## Lyrics
+Source metadata is always preferred; online metadata is complementary.
 
-Lyrics can be obtained from a variety of sources depending on the music source.
+This section describes which providers contribute which fields and when lookups occur.
 
-For <a href="https://www.music-assistant.io/music-providers/filesystem/#known-issues-notes" target="_blank" rel="noopener noreferrer">local file sources</a>, lyrics can be embedded in tags or in `.lrc` files. This is the most reliable way to have lyrics shown.
+- [Media items](./media-items) — what is gathered for artists, albums, tracks, playlists, audiobooks and podcasts
+- [Artwork](./artwork) — sources and ordering for thumbnails, fanart, disc art and radio stream artwork
+- [Lyrics](./lyrics) — what lyrics are available
 
-For all music sources, if one or more lyric metadata providers are available then lyrics will be attempted to be obtained according to the following rules (note that it is possible that matching lyrics can't be found)
+For loudness measurement, see the [Loudness Analysis](../audio-analysis/loudness-analysis) provider page.
 
-- **First play of a track:** As soon as the track is queued, Music Assistant starts a lyrics lookup in the background. Because metadata updates are throttled to one every ~30 seconds, lyrics usually won't appear during that first playback — they'll be in place the next time the track is played
-- **Opening the Now Playing view:** Music Assistant returns whatever is already stored for the track. For tracks playing directly from a source (i.e. not in your library), if nothing is stored it will try the track's own music provider first (e.g. Tidal) and then fall back to the lyrics metadata providers on demand
-- **Periodic refresh:** Stored metadata, including lyrics, is considered fresh for 90 days. After that, the next play triggers a fresh lookup
-- **Manual refresh:** Selecting Update Metadata from a track's menu bypasses the 90-day check and re-runs the lookup immediately
+## How metadata gets fetched
 
-Tidal has native lyrics support, but due to its API lyrics are only fetched as part of a full track lookup, which happens when you open a track's info page or play it. You may need to refresh the item and play again before lyrics appear.
+Library items are enriched on a **90-day refresh cycle**. Refreshes are triggered by:
 
-### Lyrics providers
+- **A daily background scan**, which picks up items with missing or stale metadata and refreshes them in small batches to avoid hammering free APIs
+- **On-demand lookup**, scheduled in the background when an item is opened in the UI and its metadata is older than 90 days
+- **Manual refresh** via the "Update metadata" action, which bypasses the 90-day restriction and forces a fresh lookup immediately
 
-Music Assistant currently has two dedicated lyrics metadata providers. They run in addition to any lyrics delivered by the music source itself (Tidal, local tags, .lrc files, etc.) and are skipped when a track already has lyrics. If both providers are enabled, LRCLIB runs first and Genius fills in only when LRCLIB returned nothing.
+For each item, source metadata is collected first (sorted so local providers — file system, Plex, Jellyfin, Subsonic, etc. — outrank streaming providers), then the online metadata providers are queried when "Enable metadata retrieval from online metadata providers" is on (default).
 
-#### LRCLIB
+The language used for descriptions and bios is set under [Settings → System Settings → Metadata](/settings/core/#metadata) → "Preferred language". English is always used as fallback.
 
-This provider is enabled by default and is the primary source for synchronized lyrics, backed by the community database at lrclib.net. It returns synced lyrics when available, otherwise falls back to plain lyrics.
+## What Music Assistant reads from local file libraries
 
-The LRCLIB API only returns a result when track name, artist, album, and duration (within ~2 seconds) all match an entry in the database — tracks without artist or duration info are skipped.
+For library items backed by a local music collection, the following are read automatically during the library scan:
 
-Requests are throttled to 1 every 30 seconds, so a newly added library will populate gradually. Advanced users can point the provider at their own LRCLIB instance via the API URL option; throttling is relaxed automatically in that case.
+- **Embedded tags** in audio files — title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, ReplayGain values, etc. The `genre` tag is applied to the track only; album and artist genres are sourced separately (see below).
+- **`.lrc` sidecar files** with the same name as the audio file — used as synchronized lyrics. This is the format produced by tools such as LRCGET
+- **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) — title, sort name, biography, genres, MusicBrainz artist ID
+- **`album.nfo`** in an album folder — title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs
+- **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, etc.) — used as thumbnails for albums and artists
 
-#### Genius Lyrics
+These are part of the source metadata layer and always take priority over online lookups. They are also the most reliable way to fix problems with online matching: adding a MusicBrainz ID to a tag or `.nfo` file immediately unlocks the rest of the online providers for that item.
 
-This provider is optional and is a fallback source for plain (unsynchronized) lyrics, scraped from genius.com. It only ever returns plain text — Genius does not provide timed lyrics.
+### Album and artist genres
 
-It matches on title + artist only (no album/duration check), so it finds lyrics for more tracks than LRCLIB but occasionally picks the wrong version (e.g. a remix or cover) for ambiguous titles.
+The file `genre` tag is applied to the track, but not to the album or the artist. By default an album's genre comes from an `album.nfo`, a music provider that supplies one, or an online metadata provider; an artist's genre comes from an `artist.nfo`, a music provider, or an online metadata provider once a MusicBrainz Artist ID has been resolved.
 
-No configuration is required for this provider
+The local filesystem providers offer an opt-in `Propagate track genres to albums and artists` setting that fills the gap by deriving the album's and artist's genres from their tracks' `genre` tags. Propagation only fills genres that are still empty — it never overwrites a genre that came from an `NFO` file, a music provider, or an online metadata provider.
 
+Apart from propagation, sources merge their genres into whatever is already there rather than replacing or being suppressed. An `artist.nfo` genre plus genres returned by The Audio DB will both end up on the artist. 
+
+## What Music Assistant writes to local files
+
+By design the music collection is treated as **read-only**:
+
+- MusicBrainz IDs are normally not written back to file tags. When an item's tags do not contain a MBID, one is derived in Music Assistant's own database for online lookups or via the AcoustID Lookup provider if that is enabled
+- Bios, descriptions, genres, artwork and lyrics are never written back to files
+- `.nfo` files are never created or modified
+
+When write access is available the exceptions to this are :
+- [Loudness Analysis](../audio-analysis/loudness-analysis) plugin's optional "Write REPLAYGAIN_TRACK_GAIN tags back to files" setting (default **off**). When enabled, a `REPLAYGAIN_TRACK_GAIN` tag is written into each track after its loudness is measured, so other apps on the network can use it for volume normalization
+- [AcoustID Lookup](../audio-analysis/acoustid) plugin's optional "Write AcoustID/MusicBrainz tags back to files" setting (default **off**). When enabled, the Acoustid Id, MusicBrainz Recording Id, ISRC, and (where resolvable) MusicBrainz Artist Id tags are written back into the source audio file once identification succeeds
+
+## Provider summary
+
+| Provider | Used for | Requires |
+| --- | --- | --- |
+| **MusicBrainz** | Looking up MBIDs from artist / album / track names. Cannot be disabled — it is used for identification only and never replaces information that already exists. | — |
+| **Fanart.tv** | High-quality artist and album imagery (thumb, logo, banner, fanart, CD art). | Artist or release-group MBID |
+| **The Audio DB** | Bios, descriptions, genres / style / mood, label, links, images. | Artist MBID for artist metadata; release-group / recording MBID preferred for albums and tracks (with artist + name fallback). |
+| **Cover Art Archive** | Album front covers from MusicBrainz's official archive. | Release-group MBID |
+| **iTunes Artwork** | High-resolution album artwork. | Album barcode (UPC / EAN) |
+| **LRCLIB** | Synchronized and plain lyrics (default lyrics provider). | Track name, artist, album, duration |
+| **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
+| **Wikipedia** | Multi-lingual artist biographies, in your preferred language where available. | Artist MBID (used to resolve the Wikipedia article via Wikidata) |
+
+Individual metadata sources can be turned off in Settings>> Metadata Providers, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".

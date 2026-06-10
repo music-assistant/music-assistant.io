@@ -11,6 +11,16 @@ description: A Walkthrough of the Music Assistant User Interface
 
 This menu's appearance can be configured in Settings / User Interface. On a desktop, it can be placed vertically on the left (as shown) or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. The enabled menu items (Views) are displayed in the order they were selected in the User Interface settings. Any of the views can be hidden. If the Settings view is hidden from the menu it can be accessed by navigating to `YOUR_MA_IP_ADDRESS:8095/#/settings`
 
+### Sidebar Shortcuts
+
+Use shortcuts to pin frequently used library items to the main menu for quick access.
+
+- Add a shortcut from an item's context menu (⋮ menu, right click, or long press) by selecting **Add to shortcuts**.
+- Remove it from the same menu with **Remove from shortcuts**.
+- Shortcuts are stored per user account.
+- If a pinned item is updated (for example renamed), the shortcut is updated automatically.
+- If a pinned item is deleted, it is removed from shortcuts automatically.
+
 ***************************************************************
 
 ## Global Search
@@ -29,6 +39,8 @@ Selecting a specific category will then show a maximum of 50 items. Context sens
 When playing to a group, tapping near the volume control will open a dialog to control the individual players.
 
 The [Audio Pipeline](/audiopipeline/) selectable label shows, via a coloured icon and two letters, the quality of the audio output (Low Quality, Standard Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec below 256 kbps, a light-green dot with SQ (Standard Quality) indicates a lossy codec at 256 kbps or higher, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](/player-support/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
+
+The overflow menu holds a number of useful options. Of note, for podcasts and audiobooks, there is a `Change playback speed` option which when selected will open a dialog with five preset speeds and a slider. The slider ranges from 0.5x to 2.0x and a preset is available for a boosted speed of 3.0x.
 
 ***************************************************************
 
@@ -51,7 +63,7 @@ When lyrics are available for the track being played then the LYRICS selectable 
 [![image](/assets/screenshots/UI-speakers-menu.png)](/assets/screenshots/UI-speakers-menu.png)
 
 > [!NOTE]
-> The volume shown against a player group is the AVERAGE of the volumes of each individal player. When the group volume is changed then each player is changed by a proportionate amount.
+> The volume shown against a player group is the MAXIMUM of the volumes of the child players. When the group volume is changed then each player is changed by a proportionate amount such that all speakers reach 0 when the group slider hits 0 and 100 when it hits 100. The relative balance between speakers is preserved such that returning the group slider to the original value will revert each child player to their original volumes
 
 When a [player group](/faq/groups/) is powered on the members of that group will disappear from the player list and individual playback to those players will not be possible. In order to playback to an individual player then either power off the group or remove the player from the group.
 
@@ -118,7 +130,7 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 The Discover View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the specific music source pages to identify which sources supports this.
 
-The view is fully configurable. Select the user name in the navigation menu and then EDIT HOME SCREEN. There is then the ability to show or hide each row and adjust the order. Return to the menu to disable the edit mode.
+The view is fully configurable. Select the user name in the navigation menu and then EDIT HOME SCREEN. There is then the ability to show or hide each row and adjust the order. Select `Leave edit mode` to return to the normal view.
 
 [![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
 ***************************************************************
@@ -127,7 +139,7 @@ The view is fully configurable. Select the user name in the navigation menu and 
 
 [![image](/assets/screenshots/UI-artist-view.png)](/assets/screenshots/UI-artist-view.png)
 
-Album and Track Views look the same as the above except there is no album artist filter icon and the track view has an [ADD VIA URL](/music-providers/builtin/) option.
+Album, Track and Playlist Views look similar to the above except there is no album artist filter icon and the track view has an [ADD VIA URL](/music-providers/builtin/) option. Playlists have a `Create new playlist on" icon as well as a `Import playlist` icon which allows the manual importation of plain text M3U and M3U8 playlist files. 
 
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) )
 indicates that the viewed results are subject to filtering.

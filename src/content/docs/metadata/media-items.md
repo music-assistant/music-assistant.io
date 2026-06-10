@@ -1,0 +1,63 @@
+---
+title: Media items
+---
+
+# Media Item Metadata <img src="/assets/icons/metadata-mediaitem-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+
+This page lists what metadata is gathered for each kind of media item — artists, albums, tracks, playlists, audiobooks and podcasts — and where each field comes from. As [elsewhere](/metadata/), source metadata always takes priority and the online providers only fill in the gaps.
+
+## Artists
+
+| Metadata Type | Source(s) |
+| --- | --- |
+| Name, sort name | File tags, `artist.nfo`, music providers |
+| Genres | `artist.nfo`, music providers, **The Audio DB**, derived from track tags when the filesystem provider's `Propagate track genres` option is enabled |
+| MusicBrainz ID (MBID) | File tags, `artist.nfo`, music providers, derived via MusicBrainz lookup if missing |
+| Biography | `artist.nfo` (`<biography>`), music providers, **The Audio DB**, **Wikipedia** |
+| Style, mood, label | **The Audio DB** |
+| Images (thumb, logo, banner, fanart, cutout, landscape, clearart) | Embedded tags, folder images, music providers, **Fanart.tv**, **The Audio DB** |
+| Links (website, Facebook, Twitter, Last.fm) | **The Audio DB** |
+
+The MusicBrainz Artist ID is the key that unlocks all online artist enrichment. When no MBID can be determined for an artist (typically because none of the artist's tracks or albums matched), no online bio or imagery is fetched. Adding the MBID to file tags or to an `artist.nfo` is the most reliable fix.
+
+Note that the embedded `genre` tag in audio files is applied to the track only, not to the album or the artist. To get genres on an album or artist itself, either supply an `album.nfo` / `artist.nfo`, rely on an online metadata provider (which for artists requires an MBID), or enable `Propagate track genres to albums and artists` on the local filesystem provider, which derives them from the tracks' tags.
+
+Propagation only fills genres that are still empty and never overwrites a genre that came from another source. Apart from propagation, sources merge their genres into whatever is already there — an `artist.nfo` genre plus genres returned by The Audio DB will both end up on the artist.
+
+## Albums
+
+| Metadata Type | Source(s) |
+| --- | --- |
+| Name, sort name, year, album type | File tags, `album.nfo`, music providers |
+| Genres | `album.nfo`, music providers, **The Audio DB**, derived from track tags when the filesystem provider's `Propagate track genres` option is enabled |
+| MusicBrainz Release Group / Album ID | File tags, `album.nfo`, music providers |
+| Description / review | `album.nfo` (`<review>`), music providers, **The Audio DB** |
+| Style, mood, label | **The Audio DB** |
+| Links (Wikipedia, AllMusic, Last.fm, social) | **The Audio DB** |
+| Front cover, disc art | See [Artwork](/metadata/artwork) |
+
+## Tracks
+
+| Metadata Type | Source(s) |
+| --- | --- |
+| Title, version, artists, album, disc / track number, duration, year | File tags, music providers |
+| MusicBrainz Recording ID, ISRC, barcode | File tags, music providers |
+| Genres, mood, style, description | File tags, music providers, **The Audio DB** |
+| Explicit flag, copyright, grouping, comment | File tags, music providers |
+| Lyrics | See [Lyrics](/metadata/lyrics) |
+| Volume normalization value | See [Loudness Analysis](/audio-analysis/loudness-analysis) |
+
+## Playlists
+
+Playlists don't have rich metadata of their own; instead Music Assistant derives:
+
+- **Thumbnail** See [Artwork](/metadata/artwork/#playlists)
+- The **top genres** present across the playlist's tracks (the eight most common, requiring at least five occurrences each).
+
+## Audiobooks
+
+Audiobook items collect publisher, authors, narrators, duration, description and chapter list — sourced from embedded tags or the audiobook provider (Audiobookshelf, Audible, etc.). Cover artwork follows the same precedence as albums.
+
+## Podcasts
+
+Podcast shows track publisher and total episode count from the podcast provider (Audiobookshelf, Podcast Index, RSS feed, etc.). Per-episode metadata — title, description, artwork — comes directly from the show's feed.

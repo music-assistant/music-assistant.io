@@ -14,7 +14,7 @@ Customise the user interface from this page
 - <b>Enable browser media controls</b> Allow control of playback using the browser's built in media controls (e.g. keyboard media keys)
 - <b>Force mobile layout.</b> The mobile layout has the menu at the bottom and has icons for HOME, and SEARCH and the remainder of the items are accessed via a single library icon
 - <b>Mobile sidebar side.</b> Which side the navigation menu opens from. Default is left
- 
+
 ## Web Player
 
 - <b>Enable built-in (Sendspin) Web Player.</b> Allows playback to THIS DEVICE

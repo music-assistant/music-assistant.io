@@ -5,7 +5,7 @@ description: Features, Configuration, Issues and More for the File System Music 
 
 # Filesystem Sources <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has full support for reading local music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant. 
+Music Assistant has full support for reading local music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant. Network support is limited to SMB/CIFS, NFS and WebDAV.
 
 When streaming sources are also availabe in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
 
@@ -53,6 +53,10 @@ Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS
 
 Music Assistant has support for NFS shares. Select the music source "Filesystem (NFS share)" and configure the IP address (without leading `http://`) of the server, the absolute export path of the share (e.g. `/volume1/music`) and optionally any subfolder.
 
+**Audio files are on a remote share served via WebDAV**
+
+Music Assistant has support for WebDAV shares. Select the music source "WebDAV" and configure the full URL of the WebDAV endpoint including the full path to the content folder (e.g. https://example.com/webdav/music). Provide username and password if authentication is required. SSL certificate verification is optional and disabled by default.
+
 ### Settings
 
 In addition to the settings outlined above to configure this source there are additional settings available (note certain options will be greyed out depending upon the content type selected):
@@ -75,8 +79,11 @@ In addition to the settings outlined above to configure this source there are ad
     - Album thumb: folder.jpg or cover.jpg (or png)
     - Fan Art (used as background in banners): fanart.jpg (or png)
     - Logo (used on Artist view): logo.png
+    - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
 - Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
 - Embedded album thumbs will be extracted from audio files. However, performance can be improved and disk space saved by providing a single local artwork file vs. embedding the same artwork in all files
+- WebDAV is HTTP-based so every file operation requires a network request. Library sync will be slower than local or SMB, particularly for large libraries or servers accessed over the internet
+- Writing to the WebDAV server is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
 
 > [!TIP]
 > **Local Artwork is Optimal**
@@ -123,7 +130,7 @@ In addition to the settings outlined above to configure this source there are ad
     - Universal Tag Support: Music Assistant parses metadata from the industry-standard formats, including ID3 (v1/v2) for MP3s, Vorbis Comments for FLAC/Ogg/Opus, MP4 Atoms for M4A, and APEv2 tags
     - Primary Source of Truth: Embedded tags are treated as the definitive source for artist, album, and track names. External metadata providers (like MusicBrainz or Fanart.tv) are only used to supplement missing info, such as high-resolution artwork or artist bios
     - Cross-Platform Linking: MA uses advanced tags like MusicBrainz IDs (MBID) and ISRC codes to seamlessly link local files with matching tracks on streaming services like Spotify or Tidal
-    - Artwork Handling: It supports both embedded artwork within the file and local folder-based images (e.g., folder.jpg or artist.png)
+    - Artwork Handling: MA supports both embedded artwork within the file and local folder-based images (e.g., folder.jpg or artist.png)
     - Recommended Tagger: For the best results in Music Assistant, it is strongly recommended to use <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a> to ensure the files contain the specific IDs needed for library linking. Other programs such as <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a> are often also based on the Musicbrainz catalog and can work as well provided they include the tags shown in the [Tags used by MA](#tags-used-by-ma) table
 
 - Fields with multiple values can be handled as follows:
@@ -142,25 +149,26 @@ In addition to the settings outlined above to configure this source there are ad
 
 > [!NOTE]
 > As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
+> - All formats: Single MusicBrainz Artist ID
 > - Vorbis (FLAC, OGG): Multiple (more than 1) ARTIST fields (one per artist)
 > - ID3v2.4 (MP3): Multiple (more than 1) null-separated values in TPE1
 > - APEv2 (WavPack, Musepack, etc.): Multiple (more than 1) null-separated values in Artist field
-> - All formats: Single artist field with exactly one MusicBrainz Artist ID
 
 ### Multi-Artist Tracks
 
-For tracks with multiple artists, MA supports several approaches:
+For tracks with multiple artists, MA supports several approaches. The most reliable way is to provide a semi-colon delimited list of MusicBrainz IDs for ARTIST ID and RELEASE ARTIST ID alongside your artist tags. When the MBID count matches the parsed artist count, the tag names are used as-is. If the counts disagree (for example an artist whose real name contains a separator character), MA will query MusicBrainz to resolve the canonical names from the IDs instead.
 
-1. ARTISTS tag (recommended for ID3) - A dedicated multi-value field listing each artist separately. This is the most reliable method for ID3.
-2. Multiple ARTIST fields (recommended for FLAC/OGG/Opus). The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note that taggers may add multiple ARTISTS (plural) fields. This is not standard according to the Vorbis spec but MA will handle this case)
-3. ARTIST tag parsing - If neither of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected.
+Whether or not MBIDs are present, the artist names themselves need to be encoded in your tags using one of the following:
 
-In general, ensure the MusicBrainz Artist IDs align with the ARTIST (or ARTISTS) tags - one ID per artist.
+1. ID3v2.3 and MP4: Use an ARTISTS tag - A dedicated multi-value field listing each artist delimited by a semi-colon. (It is not possible to have artists with a semi-colon in their name with this method)
+2. FLAC/OGG/Opus: Use multiple ARTIST fields. The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note that taggers may add multiple ARTISTS (plural) fields. This is not standard according to the Vorbis spec but MA will handle this case)
+3. ID3v2.4 and APEv2: Use a null separated list of names in the ARTIST tag
+4. ARTIST tag parsing - If none of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., presents, etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected
 
 > [!NOTE]
-> - If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database.
+> - If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database
 >
-> - The album artist tag must be semi-colon separated
+> - The album artist tag is parsed the same way as ARTIST — same multi-value rules, same splitters (including featuring-style and MBID-guided), and the same MusicBrainz fallback when the parsed count doesn't match the MBID count
 
 ### Tags used by MA
 

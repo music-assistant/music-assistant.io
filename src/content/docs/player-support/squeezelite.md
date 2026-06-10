@@ -38,4 +38,4 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - Make sure that you do not have the "slimproto" (Squeezebox players) integration running in Home Assistant
 - Ordinarily do not use queue flow mode unless using older Squeezebox hardware player that has issues transitioning. Enabling queue flow mode may solve playback issues, however, it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - Squeezelite devices have no native mute functionality. If desired the "fake mute" control option can be used and this is found in the `Player Controls` section for each individual player
-- Squeezelite groups use a fixed output format of 96 kHz / 24 bit
+- queezelite sync groups send a flow stream to all members. The master format is chosen from the leader player's Flow Mode sample rate setting (bounded by the leader's supported rates); each member then receives that rate, or its own maximum supported rate if lower
