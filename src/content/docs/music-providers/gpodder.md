@@ -16,6 +16,9 @@ Music Assistant has support for <a href="https://gpodder.github.io" target="_bla
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy, Variable Quality |
 | Login Method | Password or Nextcloud Login |
 
