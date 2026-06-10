@@ -22,6 +22,9 @@ Pandora provides personalized radio stations that play an endless stream of song
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy, MP3 (192kbps) |
 | Login Method | Password |
 

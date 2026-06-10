@@ -28,6 +28,9 @@ This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvu
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | Lossless FLAC (with subscription) |
 | Login Method | Token |
 

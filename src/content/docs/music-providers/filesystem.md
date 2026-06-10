@@ -19,6 +19,9 @@ When streaming sources are also availabe in MA linking will only occur when the 
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes with Sonic Similarity Plugin                      | 
 | Maximum Stream Quality | Lossless FLAC 192 kHz, 24 bit |
 | Login Method | Password or None |
 

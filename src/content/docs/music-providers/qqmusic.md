@@ -26,6 +26,9 @@ QQ Music is one of the most widely used streaming music platforms in Mainland Ch
 | [Recommendations](/ui/#view-home) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | Lossless FLAC (up to 24-bit/192kHz) |
 | Login Method | QQ or WeChat App QR Code |
 

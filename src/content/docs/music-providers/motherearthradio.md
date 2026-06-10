@@ -23,6 +23,9 @@ Mother Earth Radio is a one-person, ad-free radio service built around the idea 
 | [Recommendations](/ui/#view-home) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
 | Login Method | None |
 

@@ -16,6 +16,9 @@ Music Assistant has support for the DI.fm Radio Network which includes <a href="
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy MP3 (320kbps) |
 | Login Method | API Key |
 

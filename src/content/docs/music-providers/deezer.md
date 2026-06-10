@@ -22,6 +22,9 @@ Music Assistant has support for <a href="https://www.deezer.com/" target="_blank
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                     | 
 | Maximum Stream Quality | Lossless FLAC (44.1 kHz / 16 bit) |
 | Login Method | OAuth + Cookie |
 
