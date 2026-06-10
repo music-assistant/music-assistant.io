@@ -20,6 +20,8 @@ The provider can create up to nine recommendation rows, grouped via four toggles
 - Geographic (2 rows) — Top Artists + Top Tracks for a country you pick from the list
 
 The rows surface music you don't currently have and each item is resolved to a streaming provider you already have configured (e.g. Spotify) so it's playable with one click.
+
+This provider also has support for populating Similar Artists, Similar Tracks and Artist Top Tracks throughout the UI.
                                                                                                                                    
 ### How each row is built                                                                                                              
                                                                                                                                    
