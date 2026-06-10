@@ -18,6 +18,9 @@ Phish.in provides a comprehensive platform for fans to discover, stream, and sha
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                     | 
 | Maximum Stream Quality | MP3 (16 bit, 44.1 kHz) |
 | Login Method | None |
 

@@ -16,6 +16,9 @@ Music Assistant has support for streaming from BBC Sounds. Contributed and maint
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy, AAC-LC(320kbps) |
 | Login Method | None or Password |
 

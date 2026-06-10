@@ -25,6 +25,9 @@ MusicMe is a French music streaming service operated by ApachNetwork with a cata
 | [Recommendations](/ui/#view-home) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                     | 
 | Maximum Stream Quality | AAC in MP4 (44.1 kHz) |
 | Login Method | Email + Password |
 

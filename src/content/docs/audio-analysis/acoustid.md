@@ -32,7 +32,9 @@ For each analysed album, once enough of its tracks have been identified:
 - During the nightly audio-analysis scan, around local midnight. Local audio files only
 - During playback of an eligible track. Local files are always eligible; streaming-provider tracks are eligible when *Analyse tracks from streaming providers* is enabled and the track is in the library
 
-Large libraries may take several nights to be fully analysed. Well tagged libraries see little or no activity because most tracks will be skipped. Streaming-provider tracks are picked up gradually as they are played, rather than in a batch.
+Large libraries may take several nights to be fully analysed. Well tagged libraries see little or no activity because most tracks will be skipped. Streaming-provider tracks are picked up gradually as they are played, rather than in a batch. 
+
+The stale number shown for this provider indicates the number of tracks that could not be found in the AcoustID database. These tracks will be re-analysed every 60 days.
 
 ## Limitations
 
@@ -44,7 +46,7 @@ Large libraries may take several nights to be fully analysed. Well tagged librar
 
 ## Settings
 
-- <b>AcoustID API key.</b> Required. Obtained free of charge from [acoustid.org/api-key](https://acoustid.org/api-key). Without a key, no lookups are performed
+- <b>AcoustID API key.</b> Only visible when the advanced toggle is on. The provider comes with a builtin API key but if rate limits are hit or for any other reason a personal API key is desired then obtain one free of charge from [acoustid.org/api-key](https://acoustid.org/api-key)
 - <b>Minimum match score.</b> Confidence threshold below which a match is discarded. The default of 0.85 is a balance between identification rate and false-positive risk. Raising it reduces the chance of an incorrect match at the cost of leaving some tracks unidentified (Only visible when advanced toggle is on)
 - <b>Analyse tracks from streaming providers.</b> When enabled, tracks played from streaming providers (Spotify, Tidal, Qobuz, YouTube Music, …) that are in the library and lack a MusicBrainz Recording Id are also fingerprinted and identified. Particularly useful for streaming providers like YouTube Music whose catalogues have thin metadata. Note that streaming-provider tracks are only analysed during playback, not in the nightly background scan
 - <b>Write AcoustID/MusicBrainz tags back to files.</b> When enabled, the Acoustid Id, MusicBrainz Recording Id, ISRC, and (where resolvable) MusicBrainz Artist Id tags are written back into the source audio file once identification succeeds. Useful when other applications on the network read these tags for their own metadata or to save re-scans if the MA library database is wiped. Write access to the file is required; read-only files are skipped. By default this is off, and identifiers are only stored in the Music Assistant library database

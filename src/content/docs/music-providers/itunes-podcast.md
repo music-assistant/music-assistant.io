@@ -16,6 +16,9 @@ Music Assistant has support for <a href="https://podcasts.apple.com/us/browse" t
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy, Variable Quality |
 | Login Method | None |
 
