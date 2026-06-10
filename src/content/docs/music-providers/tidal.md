@@ -16,6 +16,9 @@ Music Assistant has support for <a href="https://tidal.com" target="_blank" rel=
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
 | Login Method | OAuth |
 
