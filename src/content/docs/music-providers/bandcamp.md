@@ -23,6 +23,9 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 | [Recommendations](/ui/#view---discover) Supported |           No            |
 | Lyrics Supported                                |           Yes           |
 | [Radio Mode](/ui/#track-menu)               |           No            |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality                          |  Lossy, MP3 (128kbps)   |
 | Login Method                                    |    Cookie (optional)    |
 
