@@ -16,11 +16,14 @@ Music Assistant has support for [YouSee Musik](https://musik.yousee.dk). Contrib
 | Subscription FREE                               |                 No                 |
 | Self-Hosted Local Media                         |                 No                 |
 | Media Types Supported                           | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui/#view---discover) Supported |                Yes                 |
+| [Recommendations](/ui/#view---discover) Supported |                Yes               |
 | Lyrics Supported                                |                Yes                 |
-| [Radio Mode](/ui/#track-menu)               |                Yes                 |
+| [Radio Mode](/ui/#track-menu)                   |                Yes                 |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      |
 | Maximum Stream Quality                          |        Lossy, MP4 (320kbps)        |
-| Login Method                                    |         Password          |
+| Login Method                                    |         Password                   |
 
 ### Other
 
