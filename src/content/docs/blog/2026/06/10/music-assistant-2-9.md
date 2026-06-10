@@ -35,7 +35,7 @@ Version 2.9 translates complex sonic code to bring you a simpler, more personal 
 
 **Your personal Discover page**
 
-<img src="/images/blog/2026/06/10/music-assistant-2-9/image1.webp" alt="Screenshot of the Music Assistant Discover page showing personalized Top Picks, a Hits section with genre playlists from Tidal, a New Tracks section with recent releases, and a New Albums section, with album art displayed throughout.">
+<img src="/images/blog/2026/06/10/music-assistant-2-9/image4.webp" alt="Screenshot of the Music Assistant Discover page showing personalized Top Picks, a Hits section with genre playlists from Tidal, a New Tracks section with recent releases, and a New Albums section, with album art displayed throughout.">
 
 *A page built just for you*
 
@@ -73,7 +73,7 @@ From displaying a track's art and info, to matching your lights to your music â€
 
 **Quick access to your favorites**
 
-<img src="/images/blog/2026/06/10/music-assistant-2-9/image3.webp" alt="Screenshot of a Music Assistant track listing with a context menu open, highlighting the option to add a track to Shortcuts for quick access.">
+<img src="/images/blog/2026/06/10/music-assistant-2-9/image1.webp" alt="Screenshot of a Music Assistant track listing with a context menu open, highlighting the option to add a track to Shortcuts for quick access.">
 
 *Straight to the good stuff*
 
@@ -85,7 +85,7 @@ Be it a go-to track, an album on rotation, or a playlist that puts you in the ri
 
 **Introducing Smart Playlists**
 
-<img src="/images/blog/2026/06/10/music-assistant-2-9/image4.webp" alt="Screenshot of the Music Assistant Playlists page with the Create Smart Playlist dialog open, showing options to name the playlist, choose between From My Library or Discover sources, and add rules to filter tracks.">
+<img src="/images/blog/2026/06/10/music-assistant-2-9/image3.webp" alt="Screenshot of the Music Assistant Playlists page with the Create Smart Playlist dialog open, showing options to name the playlist, choose between From My Library or Discover sources, and add rules to filter tracks.">
 
 *Set the rules, and the playlist does the rest ðŸŽ¶*
 
