@@ -19,6 +19,9 @@ This source gives Music Assistant users free access to millions of audio recordi
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | FLAC (16 bit, 44.1 kHz) |
 | Login Method | None |
 
