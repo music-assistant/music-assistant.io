@@ -1,15 +1,15 @@
 ---
 name: create-blog-post
-description: Use this if the user wants to convert a blog post from Google Docs markdown to the format used in the Music Assistant website.
+description: Use this if the user wants to convert a blog post from Google Docs markdown to the format used in the Home Assistant website.
 ---
 
 # Create Blog Post
 
-Convert a draft markdown file into a properly formatted Music Assistant blog post.
+Convert a draft markdown file into a properly formatted Home Assistant blog post.
 
 ## Usage
 
-Place your draft blog post markdown file in the project root `create-blog-post/` directory (e.g., `/workspaces/music-assistant.io/create-blog-post/`), then run:
+Place your draft blog post markdown file in the project root `create-blog-post/` directory (e.g., `/workspaces/home-assistant.io/create-blog-post/`), then run:
 
 ```shell
 /create-blog-post
@@ -17,15 +17,15 @@ Place your draft blog post markdown file in the project root `create-blog-post/`
 
 ## What This Skill Does
 
-Automates conversion of a draft markdown file with metadata into a production-ready Music Assistant blog post:
+Automates conversion of a draft markdown file with metadata into a production-ready Home Assistant blog post:
 
-- Extracts metadata (blog title, author, publish date, tags, Social/OpenGraph fields)
+- Extracts metadata (blog title, author, publish date, category, Social/OpenGraph fields)
 - Removes "# Blog notes/preparations" section and lines with ☝️ emoji
 - Converts `### **– Summary break / Read more –**` to `<!--more-->`
 - Processes hero image and any additional images
 - Converts external links to HTML `<a>` tags with `target="_blank"`
 - Formats content (removes bold from headings, fixes link references)
-- Creates properly formatted blog post in `src/content/docs/blog/` with Astro/Starlight front matter
+- Creates properly formatted blog post in `source/_posts/` with Jekyll front matter
 
 ## Required Files in `create-blog-post/` Directory
 
@@ -44,7 +44,7 @@ Automates conversion of a draft markdown file with metadata into a production-re
 
 **Publish date:** DD-MM-YYYY
 
-**Tags:** release, announcement
+**Category:** Category Name
 
 **Social/OpenGraph title** (Usually same as the blog title, visibility mostly limited to 50-60 characters)**:**
 A short title.
@@ -78,9 +78,9 @@ Rest of content...
 
 Creates a production-ready blog post at:
 
-- `src/content/docs/blog/YYYY/MM/DD/slug.md` - The formatted blog post
-- `public/images/blog/YYYY/MM/DD/slug/art.webp` - OG/hero image (moved from `create-blog-post/`)
-- `public/images/blog/YYYY/MM/DD/slug/image2.webp`, `image3.webp`, etc. - Additional images (converted to WebP)
+- `source/_posts/YYYY-MM-DD-slug.markdown` - The formatted blog post
+- `source/images/blog/YYYY-MM-slug/art.webp` - OG/hero image (moved from `create-blog-post/`)
+- `source/images/blog/YYYY-MM-slug/image2.webp`, `image3.webp`, etc. - Additional images (converted from PNGs)
 
 ## Conversion Process
 
@@ -106,7 +106,7 @@ sed -i '/^\[image[0-9]*\]: <data:/d' "create-blog-post/draft.md"
 
 ### 2. Parse Metadata
 
-- Extract blog title, author, publish date, tags (convert to YAML list), Social/OpenGraph title and description
+- Extract blog title, author, publish date, category (convert to YAML list), Social/OpenGraph title and description
 - Auto-generate URL slug from blog title (lowercase, hyphens for spaces, remove special characters)
 - Remove "# Blog notes/preparations" section and all content under it (up to "# Blog content")
 - Remove all lines that start with ☝️ emoji (instruction lines)
@@ -124,21 +124,20 @@ which cwebp || sudo apt-get install -y webp
 **Hero image (`art.*`):**
 
 - Find the `art` image in `create-blog-post/` (any extension: `.webp`, `.png`, `.jpg`, `.jpeg`)
-- If the source is already `.webp`, copy it to `public/images/blog/YYYY/MM/DD/slug/art.webp`
-- If the source is any other format, convert to WebP: `cwebp -resize 1200 630 -q 85 input -o public/images/blog/YYYY/MM/DD/slug/art.webp`
+- If the source is already `.webp`, copy it to `source/images/blog/YYYY-MM-slug/art.webp`
+- If the source is any other format, convert to WebP: `cwebp -resize 1200 630 -q 85 input -o source/images/blog/YYYY-MM-slug/art.webp`
 - The OG image must be exactly 1200x630 pixels — the source image should already be this size, so use `-resize 1200 630` to ensure correctness
-- Replace `![][image1]` reference in "# Blog content" section with: `<img src="/images/blog/YYYY/MM/DD/slug/art.webp" alt="Blog Title">`
+- Replace `![][image1]` reference in "# Blog content" section with: `<img src="/images/blog/YYYY-MM-slug/art.webp" alt="Blog Title" style="border: 0;box-shadow: none;">`
 - CRITICAL: Use double quotes for all HTML attributes (prevents breaking on apostrophes in alt text)
-- Do NOT add inline styles (no `style` attribute) on image tags
 - Alt text uses the Social/OpenGraph title or blog title
 - No wrapper tags (no `<p>` tag)
 
 **Additional images (if any):**
 
 - Find `image2.*`, `image3.*`, etc. in `create-blog-post/` (any extension: `.webp`, `.png`, `.jpg`, `.jpeg`)
-- Convert to WebP with a max width of 800px: `cwebp -resize 800 0 -q 85 input -o output.webp` (the `0` for height preserves the aspect ratio)
-- If the source is already `.webp`, still re-encode it with the resize: `cwebp -resize 800 0 -q 85 input.webp -o output.webp`
-- Output to `public/images/blog/YYYY/MM/DD/slug/image2.webp`, `image3.webp`, etc.
+- Convert to WebP with a max width of 900px: `cwebp -resize 900 0 -q 85 input -o output.webp` (the `0` for height preserves the aspect ratio)
+- If the source is already `.webp`, still re-encode it with the resize: `cwebp -resize 900 0 -q 85 input.webp -o output.webp`
+- Output to `source/images/blog/YYYY-MM-slug/image2.webp`, `image3.webp`, etc.
 - Update references in content
 
 ### 4. Transform Links
@@ -146,87 +145,63 @@ which cwebp || sudo apt-get install -y webp
 **External links** (different domains/subdomains):
 
 - Convert to: `<a href="URL" target="_blank" rel="noopener">text</a>`
+- Includes: `my.home-assistant.io`, `partner.home-assistant.io`, etc.
 
-**Internal links** (`www.music-assistant.io` and `music-assistant.io` only):
+**Internal links** (`www.home-assistant.io` only):
 
-- Convert to relative path Markdown links: `[text](/path)` (strip the domain, always use relative paths)
+- Keep as Markdown links: `[text](/path)`
 
-### 5. Clean Content
+### 5. Device List (Works with Home Assistant posts only)
+
+If the blog post category is `Works-with-Home-Assistant`, look for a section that lists certified/supported devices. Replace any manually written device list with the dynamic device list shortcode:
+
+```liquid
+{% include integrations/device_list.html brand="brandname" %}
+```
+
+- The `brand` value must match a brand in `source/_data/wwha_devices.json` (for example: `"eve"`, `"heatit"`, `"shelly"`, `"zooz"`)
+- The brand name is typically the lowercase company/brand name from the draft
+- If the draft contains a manually listed set of devices (often as a bullet list or table), replace that list with the shortcode
+- Keep any introductory or closing text around the device list — only replace the list itself
+
+### 6. Clean Content
 
 - **Headings**: Remove bold formatting (`## **Title**` → `## Title`)
 - **Heading levels**: If content starts with H1 (`#`), demote all headings one level (content should start at H2)
-- **Subheadings**: Convert H3 (`###`) subheadings that appear directly under H2 section headings to **bold text** instead (e.g., `### Subtitle` → `**Subtitle**`)
 - **Backticks**: Strip erroneous `\`` characters (preserve code blocks/inline code)
 - **Text content**: Do not change the author's wording, phrasing, or writing style. The blog text should stay as-is. If you spot obvious typos or locale spelling issues (such as British English instead of American English), do not fix them silently — collect them and ask the user for confirmation before applying any changes.
 - **Emojis**: Preserve all emojis that appear in the blog content. Do not strip them out.
 
-### 6. Build Blog Post
+### 7. Build Blog Post
 
-- Create `src/content/docs/blog/YYYY/MM/DD/slug.md`
-- Astro/Starlight front matter with:
-  - `head` (OG image meta tags)
-  - `title`
-  - `description`
-  - `cover` (image path and alt)
-  - `excerpt`
-  - `date` (ISO 8601 format: `YYYY-MM-DDT00:00:00.000Z`)
-  - `authors` (YAML list — must match a key in `src/authors.mjs`)
-  - `tags` (YAML list)
+- Create `source/_posts/YYYY-MM-DD-slug.markdown`
+- Jekyll front matter (layout, title, description, date, date_formatted, author, categories, og_image)
 - Hero image (no wrapper)
 - Intro paragraph
 - `<!--more-->` tag after first paragraph
 - Remaining content
 
-### Front Matter Example
-
-```yaml
----
-head:
-  - tag: meta
-    attrs:
-      property: og:image
-      content: /images/blog/YYYY/MM/DD/slug/art.webp
-  - tag: meta
-    attrs:
-      property: og:image:alt
-      content: "Social/OpenGraph title"
-
-title: "Blog Title"
-description: "Social/OpenGraph description"
-cover:
-  image: /public/images/blog/YYYY/MM/DD/slug/art.webp
-  alt: "Social/OpenGraph title"
-excerpt: "First paragraph of blog content"
-date: YYYY-MM-DDT00:00:00.000Z
-authors:
-  - authorname
-tags:
-  - release
-  - announcement
----
-```
-
 ## Example
 
 1. Place in project root `create-blog-post/`:
-   - `draft-release-update.md` - Your draft file
-   - `art.webp` - OG/hero image (or `art.png`, `art.jpg`, etc.)
-   - `image2.png`, `image3.png` - Additional images (any common image format)
+   - `draft-partner-update.md` - Your draft file
+   - `art.webp` - OG/hero image
+   - `image2.png`, `image3.png` - Additional images (if any)
 2. Run `/create-blog-post`
 
 This would create:
 
-- `src/content/docs/blog/2026/01/13/release-update.md`
-- `public/images/blog/2026/01/13/release-update/art.webp`
-- `public/images/blog/2026/01/13/release-update/image2.webp`, `image3.webp` (if additional images exist)
+- `source/_posts/2026-01-13-partner-update.markdown`
+- `source/images/blog/2026-01-partner/art.webp`
+- `source/images/blog/2026-01-partner/image2.webp`, `image3.webp` (if additional images exist)
 
 ## Important Notes
 
 **Image references:**
 
 - Draft: `![][image1]` (at start of "# Blog content" section) → Output: `art.webp` hero image (1200x630, OG image)
-- Draft: `![][image2]` → Look for `image2.*` (any format), convert to `image2.webp` (max 800px wide)
-- Draft: `![][image3]` → Look for `image3.*` (any format), convert to `image3.webp` (max 800px wide)
+- Draft: `![][image2]` → Look for `image2.*` (any format), convert to `image2.webp` (max 900px wide)
+- Draft: `![][image3]` → Look for `image3.*` (any format), convert to `image3.webp` (max 900px wide)
 - Source images can be any common format (`.webp`, `.png`, `.jpg`, `.jpeg`) — all are converted/re-encoded to `.webp`
 
 **Requirements:**
@@ -240,16 +215,22 @@ This would create:
 - Remove all lines starting with ☝️ emoji (instruction lines)
 - Convert `### **– Summary break / Read more –**` to `<!--more-->`
 
+**Device lists (Works with Home Assistant posts):**
+
+- WWHA blog posts (category `Works-with-Home-Assistant`) typically include a list of certified devices in the draft (as bullet points, tables, or similar)
+- Strip out the manually written device list entirely and replace it with: `{% include integrations/device_list.html brand="brandname" %}`
+- The `brand` value must match an entry in `source/_data/wwha_devices.json` — verify the brand exists in that file before using it
+- Keep any surrounding text that introduces or follows the device list (for example "Here's what's made the cut from Heatit:") — only replace the device list itself
+
 **Output format:**
 
-- Filename: `slug.md`
-- Blog post path: `src/content/docs/blog/YYYY/MM/DD/slug.md`
-- Image directory: `public/images/blog/YYYY/MM/DD/slug/`
-- Tags in YAML list format (even single tag)
+- Filename: `YYYY-MM-DD-slug.markdown`
+- Image directory: `source/images/blog/YYYY-MM-slug/`
+- Categories in YAML list format (even single category)
 
 **Link handling:**
 
-- `www.music-assistant.io` and `music-assistant.io` links must be converted to relative paths (e.g., `https://www.music-assistant.io/foo` → `/foo`)
+- Only `www.home-assistant.io` and `home-assistant.io` stay as Markdown links
 - All other domains/subdomains → HTML `<a>` tags with `target="_blank" rel="noopener"`
 
 ## Post-processing summary
@@ -257,24 +238,21 @@ This would create:
 After the blog post has been created, output a summary to the user covering:
 
 **Metadata:**
-
-- Title, author (and whether they were verified in `src/authors.mjs`), date, tags
+- Title, author (and whether they were verified in `people.yml`), date, category
 
 **Images:**
-
 - Each source image, its original dimensions/format, and where it was output (with the conversion applied)
 
 **Content transformations:**
-
 - A bulleted list of every notable transformation applied, such as:
   - Sections/content removed (base64 data, blog template, notes, instruction lines)
   - Image references replaced
   - Summary break conversion
+  - Device list replacement (if WWHA, including brand used and number of devices)
   - Link conversions (external to HTML, internal to relative markdown)
   - Quote/blockquote formatting
-  - Heading changes (reformatted, promoted/demoted, bold removed, H3 → bold subheadings)
+  - Heading changes (reformatted, promoted/demoted, bold removed)
   - Escape character cleanup
 
 **Proposed text changes (requires user approval):**
-
 - If any typos or locale spelling issues were spotted (such as British to American English), list each one and ask the user whether to apply them. Do not apply these changes until the user confirms.
