@@ -24,6 +24,9 @@ Music Assistant has support for Youtube Music. Contributed and maintained by <a 
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | Lossy, AAC (256kbps) |
 | Login Method | Token + Cookie |
 
