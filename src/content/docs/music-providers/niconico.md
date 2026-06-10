@@ -16,6 +16,9 @@ Music Assistant has support for [Nico Nico Video](https://www.nicovideo.jp/), a 
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                     | 
 | Maximum Stream Quality | Lossy, AAC (up to ~576 kbps) |
 | Login Method | Cookie or Password+MFA |
 
