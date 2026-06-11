@@ -75,6 +75,9 @@ In addition to the settings outlined above to configure this source there are ad
 
 ## Known Issues / Notes
 
+> [!CAUTION]
+> Removing a file system provider will result in a full database reset due to the complexity  of the database relationships
+
 - Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
 - When using the remote share connection, be aware that use of SMB1 (which is very old) is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB1 can be disabled
 - Use the following naming convention for local artwork
