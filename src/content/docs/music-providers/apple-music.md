@@ -23,7 +23,6 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     | 
-
 | Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
 | Login Method | OAuth or Cookie |
 
