@@ -25,7 +25,7 @@ Advanced Protocol Settings applicable to both versions of the AirPlay protocol a
 
 - <b>Audio synchronization delay correction.</b> If audio played by this player is synchronized with other players and is found to be slightly out of sync, a fixed delay of up to ±500 ms can be adjusted using this setting.
 - <b>Output Channel Mode.</b> You can configure this player to play only the left or right channel, for example to create a stereo pair with 2 players.
-
+- <b>Manual IP addresses for discovery.</b> Normally AirPlay devices are automatically discovered via mDNS. If automatic discovery does not work due to the network setup, the IP address or hostname of a Sendspin client can be manually entered. Accepted values are a plain IP address or hostname, such as `192.168.1.50`, `fd00::10`, or `speaker.local`. Custom ports and URLs are not supported. Music Assistant probes the default AirPlay and RAOP endpoints and will only add the player if the device reports a stable AirPlay device ID.
 
 AirPlay 1 (RAOP) specific advanced settings are:
 
