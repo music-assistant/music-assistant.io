@@ -6,7 +6,7 @@ title: AcoustID Lookup
 
 The **AcoustID Lookup** provider identifies local and streaming provider audio files by their acoustic fingerprint and resolves the matching MusicBrainz recording. The identifiers it discovers unlock the existing metadata pipeline for tracks and albums whose metadata is incomplete or missing, so artwork, descriptions, and biographies can appear without the files having been carefully tagged in advance and cross provider matching will work more reliably.
 
-It is an opt-in provider. A free API key from [acoustid.org](https://acoustid.org/my-applications) is required before any lookups will run.
+It is an opt-in provider. The provider is shipped with a built-in API key or a free API key can be obtained from [acoustid.org](https://acoustid.org/my-applications).
 
 ## Who should enable it
 
@@ -30,9 +30,9 @@ For each analysed album, once enough of its tracks have been identified:
 ## When analysis runs
 
 - During the nightly audio-analysis scan, around local midnight. Local audio files only
-- During playback of an eligible track. Local files are always eligible; streaming-provider tracks are eligible when *Analyse tracks from streaming providers* is enabled and the track is in the library
+- During playback of an eligible track. Local files are always eligible; streaming-provider tracks are eligible when *Analyse tracks from streaming providers* is enabled and the track is in the MA library
 
-Large libraries may take several nights to be fully analysed. Well tagged libraries see little or no activity because most tracks will be skipped. Streaming-provider tracks are picked up gradually as they are played, rather than in a batch. 
+Large libraries may take several nights to be fully analysed. Well tagged libraries see little or no activity because tracks will be skipped if they contain the MB Recording ID or ISRC. Streaming-provider tracks are picked up gradually as they are played, rather than in a batch. 
 
 The stale number shown for this provider indicates the number of tracks that could not be found in the AcoustID database. These tracks will be re-analysed every 60 days.
 
