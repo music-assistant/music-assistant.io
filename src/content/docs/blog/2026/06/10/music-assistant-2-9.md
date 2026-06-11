@@ -63,7 +63,7 @@ While Audio Analysis makes sure your listening session is smooth sailing, Sendsp
 
 Since launching in 2.7, Sendspin has become instrumental to how Music Assistant keeps your home in sync – and we're not the only ones making a song and dance about it! The open source streaming protocol now ships in ESPHome, LedFx, and across a growing community of third-party clients on Android, desktop, ESP32 and beyond – meaning more choice to set up your system exactly as you like. And with audio sync rock solid, we're building even more ways for you to enjoy your music. In 2.9, that means Sendspin gets *visual*.
 
-<img src="/images/blog/2026/06/10/music-assistant-2-9/image2.webp" alt="An ultrawide monitor in a dimly lit room displaying Music Assistant across two panels: the left showing the album Getz/Gilberto by Stan Getz playing 'The Girl from Ipanema,' and the right showing a green frequency visualizer on a red background. Warm orange ambient lighting glows behind the screen.">
+<img src="/images/blog/2026/06/10/music-assistant-2-9/image1.webp" alt="An ultrawide monitor in a dimly lit room displaying Music Assistant across two panels: the left showing the album Getz/Gilberto by Stan Getz playing 'The Girl from Ipanema,' and the right showing a green frequency visualizer on a red background. Warm orange ambient lighting glows behind the screen.">
 
 *Music that lights up the room 🔥*
 
@@ -73,7 +73,7 @@ From displaying a track's art and info, to matching your lights to your music �
 
 **Quick access to your favorites**
 
-<img src="/images/blog/2026/06/10/music-assistant-2-9/image1.webp" alt="Screenshot of a Music Assistant track listing with a context menu open, highlighting the option to add a track to Shortcuts for quick access.">
+<img src="/images/blog/2026/06/10/music-assistant-2-9/image3.webp" alt="Screenshot of a Music Assistant track listing with a context menu open, highlighting the option to add a track to Shortcuts for quick access.">
 
 *Straight to the good stuff*
 
@@ -85,7 +85,7 @@ Be it a go-to track, an album on rotation, or a playlist that puts you in the ri
 
 **Introducing Smart Playlists**
 
-<img src="/images/blog/2026/06/10/music-assistant-2-9/image3.webp" alt="Screenshot of the Music Assistant Playlists page with the Create Smart Playlist dialog open, showing options to name the playlist, choose between From My Library or Discover sources, and add rules to filter tracks.">
+<img src="/images/blog/2026/06/10/music-assistant-2-9/image2.webp" alt="Screenshot of the Music Assistant Playlists page with the Create Smart Playlist dialog open, showing options to name the playlist, choose between From My Library or Discover sources, and add rules to filter tracks.">
 
 *Set the rules, and the playlist does the rest 🎶*
 
