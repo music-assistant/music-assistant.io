@@ -12,7 +12,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | Yes |
-| Media Types Supported | Artists, Albums, Tracks, Playlists |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
@@ -25,6 +25,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 ### Other
 
 - Search the Plex server
+- Keep resume position for audiobooks across Plex clients
 
 ## Configuration
 
@@ -36,6 +37,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 - If you login to Plex via MYPLEX.TV, click the `Authenticate on MYPLEX.TV` button, this may trigger your browser `pop-up` detection, so watch out for that, authenticate as you normally would for Plex
 - If you have configured Plex to allow local connection without authentication (see below), click the `Authenticate Locally` button
 - Select the Music library that you would like to use
+- Optionally, select an Audiobook library if you would like to include one
 - Save the settings
 
 ## Plex Configuration
@@ -44,7 +46,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 
 ## Known Issues / Notes
 
-- A Plex source is always bound to a user account and a library
+- A Plex source is always bound to a user account and a library (with the option for an additional Audiobook library)
 - If you have multiple libraries, you need to add the Plex provider multiple times
 - If you have multiple Plex accounts, which have their own playlists, you can also add them as separate provider instances
 - If a Plex Media Server is running on the same host as MA, the Plex Connect plugin will fail to start because both attempt to bind to the GDM discovery port (32412). This is a known incompatibility. To resolve this it is necessary to run MA in Docker and remap the port, or run Plex and MA on separate hosts
