@@ -67,6 +67,7 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 <a href="https://github.com/OzGav" title="Gavin. Community Support, Documentation and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/gavin.png" alt="Gavin" style="width: 100px;" loading="lazy" /></a>
 <a href="https://github.com/jozefKruszynski" title="Jozef. Author of the Tidal music source and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/jozef.png" alt="Jozef" style="width: 100px;" loading="lazy" /></a>
 <a href="https://github.com/fmunkes" title="Fabian. Author of the Audiobookshelf, iTunes Podcast Search and gPodder music sources and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/fabian.png" alt="fabian" style="width: 100px;" loading="lazy" /></a>
+<a href="https://github.com/chrisuthe" title="Chris. Audio Analysis Guru and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/chris.png" alt="chris" style="width: 100px;" loading="lazy" /></a>
 <a href="https://github.com/khers" title="Eric. Author of the Subsonic source" target="_blank" rel="noopener noreferrer"><img src="/assets/team/khers.png" alt="khers" style="width: 100px;" loading="lazy" /></a>
 <a href="https://github.com/robsonke" title="Rob. Author of the iBroadcast music source and maintainer of Soundcloud" target="_blank" rel="noopener noreferrer"><img src="/assets/team/robsonke.png" alt="robsonke" style="width: 100px;" loading="lazy" /></a>
 
