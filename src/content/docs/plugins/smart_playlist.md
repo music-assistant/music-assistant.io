@@ -80,6 +80,8 @@ In **Discover mode**, filters are applied to the provider result after similar c
 
 ## Discover mode
 
+Discover mode fetches similar content from your streaming providers based on seed items.
+
 :::note[Best Effort Service]
 Discover mode relies on external music provider APIs for content recommendations. Results depend on:
 - Provider availability and API limits
