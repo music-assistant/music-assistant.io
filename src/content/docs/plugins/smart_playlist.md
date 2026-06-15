@@ -70,7 +70,7 @@ Explicit content filter options:
 - **Explicit only**: include only tracks marked as explicit content
 - **Not allowed**: exclude all tracks marked as explicit content
 
-Note: Explicit content filtering depends on your music provider supplying explicit markers in their metadata. Not all music providers include this information, and availability varies by provider and region. If your provider does not supply explicit markers, this filter will have no effect.
+**Note:** Explicit content filtering depends on your music provider supplying explicit markers in their metadata. Not all music providers include this information, and availability varies by provider and region. If your provider does not supply explicit markers, this filter will have no effect.
 
 In **From my library** mode you can choose whether tracks must match **all** rules or **any** rule.
 
