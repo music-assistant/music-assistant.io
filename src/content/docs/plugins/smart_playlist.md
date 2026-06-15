@@ -46,7 +46,7 @@ Smart playlists use include/exclude style rules:
 - **Artist**: is / is not (library mode, one or more artists)
 - **Album**: is / is not (library mode, one or more albums)
 - **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
-- **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed)
+- **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed; provider-dependent)
 - **Favorite**: yes (library mode)
 - **Year**: between from/to (you can also use only `from` or only `to`).
 
@@ -70,7 +70,7 @@ Explicit content filter options:
 - **Explicit only**: include only tracks marked as explicit content
 - **Not allowed**: exclude all tracks marked as explicit content
 
-Note: Explicit markers depend on your music provider's metadata and may not be available for all tracks.
+Note: Explicit content filtering depends on your music provider supplying explicit markers in their metadata. Not all music providers include this information, and availability varies by provider and region. If your provider does not supply explicit markers, this filter will have no effect.
 
 In **From my library** mode you can choose whether tracks must match **all** rules or **any** rule.
 
