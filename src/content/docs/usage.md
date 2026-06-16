@@ -5,7 +5,7 @@ description: Information regarding various elements of Music Assistant
 
 ## Streaming Protocols
 
-Music Assistant supports a wide variety of playback protocols. Many devices support more than one protocol. Music Assistant combines all of the different protocols that it discovers into one player. Each player has a default protocol which is [selectable in the settings](/settings/individual-player/#output-protocols) that will always be used when playback is intitiated to the individual player. However, when grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without needing user intervention. In some cases there might be an interruption to playback if the stream must be restarted.
+Music Assistant supports a wide variety of playback protocols. Many devices support more than one protocol. Music Assistant combines all of the different protocols that it discovers into one player. Each player has a default protocol which is [selectable in the settings](/settings/individual-player/#output-protocols) that will always be used when playback is initiated to the individual player. However, when grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without needing user intervention. In some cases there might be an interruption to playback if the stream must be restarted.
 
 ## Online Metadata Sources
 
@@ -16,7 +16,7 @@ Music Assistant relies heavily on metadata to work well and it gets this informa
 - If a track has no album artist tag, there will no attempt to retrieve it from a metadata provider
 - Various artists will be the default option if the album artist tag is missing in local files
 
-Music Assistant never modifies the tags in the local files. Online metadata retrieval occurs when local data is lacking. MusicBrainz is only used for streaming sources (so not for local files) OR when the Musicbrainz IDs are missing in local files and audiodb and/or fanarttv are enabled. At this time MusicBrainz is only used to get the Musicbrainz id's, not for metadata itself.
+Music Assistant never modifies the tags in the local files. Online metadata retrieval occurs when local data is lacking. MusicBrainz is only used for streaming sources (so not for local files) OR when the Musicbrainz IDs are missing in local files and audiodb and/or fanarttv are enabled. At this time MusicBrainz is only used to get the Musicbrainz IDs, not for metadata itself.
 
 For users with local files with local artwork and also streaming sources, preferably add the local source first and allow the sync to complete and all artwork to appear before adding the streaming sources. Not doing so can result in the streaming source artwork to be preferred although this can be fixed by using the [images section](/ui/#view---individual-artist) in the artist view.
 
@@ -28,20 +28,20 @@ The Music Assistant Library is a database containing details of the music which 
 
 For local music sources all artists/albums/tracks/playlists are imported* into the MA library when the source is added and at each sync.
 
-For streaming sources ONLY the SPECIFIC artists/albums/tracks/playlists that are in the streaming sources library (or favourites or however it is termed in the source) will be imported* into the MA library when the source is added and at each sync. This means, for example, if there is an artist in the sources library but none of their albums then all that will be seen in the MA library is the artist with NO associated albums or tracks. You have to subsequently add albums or tracks to the MA library if it is desired to see them in the library views. Note it is possible to toggle the library / streaming source filter option to see all that is available in the streaming source.
+For streaming sources ONLY the SPECIFIC artists/albums/tracks/playlists that are in the streaming sources library (or favorites or however it is termed in the source) will be imported* into the MA library when the source is added and at each sync. This means, for example, if there is an artist in the sources library but none of their albums then all that will be seen in the MA library is the artist with NO associated albums or tracks. You have to subsequently add albums or tracks to the MA library if it is desired to see them in the library views. Note it is possible to toggle the library / streaming source filter option to see all that is available in the streaming source.
 
-In each view there is a ⋮ menu in the top right corner. This menu has various library related functions. Two important ones are UPDATE METADATA amd REFRESH ITEM.  Update metadata only retrieves additional metadata for the item being viewed and doesn't alter any of the existing/base details, while refresh item completely re-adds the item into the database, overwriting all existing data. To update the images section or lyrics it is only necessary to select UPDATE METADATA.
+In each view there is a ⋮ menu in the top right corner. This menu has various library related functions. Two important ones are UPDATE METADATA and REFRESH ITEM.  Update metadata only retrieves additional metadata for the item being viewed and doesn't alter any of the existing/base details, while refresh item completely re-adds the item into the database, overwriting all existing data. To update the images section or lyrics it is only necessary to select UPDATE METADATA.
 
-\* <i>imported means metadata is added to the database. No files are moved or downloaded</i>
+\* <i>imported means metadata is added to the database. No files are moved or downloaded.</i>
 
 > [!NOTE]
 > If identical items (e.g. an album or track) have not been matched across sources or within a source then navigate to the [Provider Details](/ui/#provider-details) section of the item and use the options there to link them.
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
-**Favourites**
+**Favorites**
 
-As a further means of filtering the library, items can be marked as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favourited by default when imported from the music source is determined by the [source settings](/music-providers/). All items can be seen if the heart icon is deselected in the top menu.
+As a further means of filtering the library, items can be marked as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favorited by default when imported from the music source is determined by the [source settings](/music-providers/). All items can be seen if the heart icon is deselected in the top menu.
 
 ## The Queue
 
@@ -65,7 +65,7 @@ Transferring the queue will also transfer the shuffle and repeat setting to the 
 The Don't Stop The Music (DSTM) option can be enabled if a source is available which supports dynamic tracks (i.e. Apple, Deezer, Spotify, Subsonic, Tidal and YTM). When DSTM is on, radio mode will be automatically enabled when the last track of the queue is reached and if any dynamic tracks can be resolved from one of the sources. The added tracks will be based on the played items in the queue.
 
 > [!NOTE]
-> If a queue is paused for more than 30 seconds it's status will change to stopped
+> If a queue is paused for more than 30 seconds its status will change to stopped
 
 > [!CAUTION]
 > Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less.
@@ -73,7 +73,7 @@ The Don't Stop The Music (DSTM) option can be enabled if a source is available w
 ### Radio Mode
 
 #### Starting from a Track or Album:
-Radio Mode retrieves similar tracks using the track's provider mappings (which is shown in the [Provider Details](/ui/#provider-details) section in the UI). When radio mode is started from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature (Apple Music,  Deezer, Spotify, Subsonic, Tidal, or YouTube Music). For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If radio ode is started with a track or album that's not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
+Radio Mode retrieves similar tracks using the track's provider mappings (which is shown in the [Provider Details](/ui/#provider-details) section in the UI). When radio mode is started from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature (Apple Music,  Deezer, Spotify, Subsonic, Tidal, or YouTube Music). For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If radio mode is started with a track or album that's not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
 
 #### Starting from an Artist:
 Radio Mode works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all sources where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own source for similar tracks. This means radio mode started from an artist typically produces a diverse mix of results from multiple sources, as each base track contributes similar tracks from its respective source (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that source's top tracks are used as the base.
@@ -88,7 +88,7 @@ Playlists can be created or added to from various menus in the different views. 
 
 Playlists which consist solely of tracks from the filesystem source can be stored on the local filesystem if MA has write access. Music Assistant playlists are stored as files within the container.
 
-User created playlists from streaming sources will be imported into the MA database and will remain synchronised regardless of whether changes are made from the MA UI or from the streaming source's native application (assuming the streaming source has the functionality for two way sync). Refer to the individual Music Source pages for any limitations.
+User created playlists from streaming sources will be imported into the MA database and will remain synchronized regardless of whether changes are made from the MA UI or from the streaming source's native application (assuming the streaming source has the functionality for two way sync). Refer to the individual Music Source pages for any limitations.
 
 Playlists can be copied from one source to another by opening the original playlist and selecting all of the tracks and then in the ACTIONS menu select `Add to Playlist` and can also be imported and exported as described below.
 
@@ -96,7 +96,7 @@ Automatically generated playlists from streaming sources may be supported. See t
 
 MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in MA SETTINGS>> SYSTEM>> BACKGROUND TASKS or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting REFRESH ITEM.
 
-There are also two pseudo-playlists - Infinite Mix. Viewing these playlists will show no tracks however playing the playlist will result in an endless queue where 25 random tracks (from the whole library or the favourites) will be added to the queue and will be refreshed as the queue comes to an end.
+There are also two pseudo-playlists - Infinite Mix. Viewing these playlists will show no tracks however playing the playlist will result in an endless queue where 25 random tracks (from the whole library or the favorites) will be added to the queue and will be refreshed as the queue comes to an end.
 
 ### Playlist Artwork
 
@@ -116,9 +116,9 @@ Only playlists that live in the Music Assistant library can be exported — prov
 
 **Importing a playlist**
 
-On the Playlists page, there is an option in the toolbar menu to `Import playlist`, selec it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
+On the Playlists page, there is an option in the toolbar menu to `Import playlist`, select it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
 
-In the import dialog, a `Search for tracks on` list will be seen with a checkbox for each installed music provider. These are the providers MA will search when a track in the file can't be played directly (for example, the file references a Spotify track but Spotify is no longer installed, or a M3U is being iported that someone else exported).
+In the import dialog, a `Search for tracks on` list will be seen with a checkbox for each installed music provider. These are the providers MA will search when a track in the file can't be played directly (for example, the file references a Spotify track but Spotify is no longer installed, or a M3U is being imported that someone else exported).
 
 MA searches for the best available version on those providers, preferring exact matches on ISRC or MusicBrainz ID and falling back to title/artist/duration when those IDs aren't present. A "Playlist created" notification will be seen as soon as the import finishes, with an Open playlist shortcut. If MA can't find a confident match for a track, the original reference is kept in the playlist so it can be seen what the original item was and this should be able to be fixed by hand.
 
