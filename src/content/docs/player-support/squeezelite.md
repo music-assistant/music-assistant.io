@@ -24,7 +24,6 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Presets.</b> Real Squeezebox hardware or jive(lite) based emulators support presets. This section allows the assignment of [Playlists](/usage/#playlists) or Radio Stations to those presets
 - <b>Audio synchronisation delay correction</b>. Refer to the [Player Summary Table](/player-support/) to identify which types support sync correction
 - <b>Enable Display Support.</b> Some Squeezelite hardware have a display and this setting enables support. When enabled, a second option is then used to select the `Visualization type`
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
 - <b>Allow gapless playback (and crossfades) between tracks of different sample rates.</b> Only enable this if the player supports this option
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 - <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`.
