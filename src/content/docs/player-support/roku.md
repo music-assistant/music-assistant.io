@@ -24,6 +24,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Enable queue flow mode.</b> Enable queue flow mode. Enabling this option will send all tracks as a continuous audio stream. This allows for support of gapless or crossfading. This can also help if your Roku is having have difficulty transitioning between tracks. This does have the side effect of losing some displayed metadata
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 - <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`. Some codecs may load faster than others depending on the Roku device
+- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled.
 
 ## Configuration
 
