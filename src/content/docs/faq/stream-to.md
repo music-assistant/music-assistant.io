@@ -134,10 +134,10 @@ The following table is a non-exhaustive list of possible solutions:
 |Amplifiers/Receivers + AirPlay	                     |$$$	     |  AirPlay	                        | N	     | Pros: Minimal setup, Higher amplification, High Quality Audio<br>Cons: Expensive |
 |<a href="https://www.sonos.com/en-us/shop" target="_blank" rel="noopener noreferrer">Sonos</a><br><a href="https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/" target="_blank" rel="noopener noreferrer">Ikea Symfonisk</a>|$$ → $$$	|Sonos (Many devices also AirPlay)| Y/N~ |Pros: Minimal setup, High Quality Audio<br>Cons: Potentially Limited to Sonos ecosystem depending upon device|
 |<a href="https://www.bluesound.com/usa/all-products" target="_blank" rel="noopener noreferrer">Bluesound Products</a>| $$$ |Bluesound, AirPlay	      |Y/N~    |Pros: Minimal setup, Exceptional Sound Quality<br>Cons: Expensive |
-| [Guition Silver Puck v2](https://aliexpress.com/item/1005007338590852.html) | $ | Sendspin native (ESPhome) | Pros: Small device to add Sendspin to any existing unit with Audio In. <br>Cons: Requires some technical knowledge to install the software|
-| [Guition Knob v2](https://aliexpress.com/item/1005008823969298.html) | $ | Sendspin native (ESPhome) | Pros: As above, additionally has full metal encoder ring and its own battery and small speaker. <br>Cons: Requires some technical knowledge to install the software |
-| [RaspiAudio Luxe 2](https://raspiaudio.com/product/esp-muse-luxe/) | $ | Sendspin native (ESPhome)  | Pros: Battery backed, can also be used as Voice assistant. <br>Cons: Sensitive to noisy WiFi, requires some technical knowledge to install the software |
-| [FutureProof Homes Satellite 1](https://futureproofhomes.net/products/satellite1-smart-speaker) | $$ | Sendspin native (ESPhome) | Pro: Bookshelf ready version available; alternately kit parts. |
+| [Guition Silver Puck v2](https://aliexpress.com/item/1005007338590852.html) | $ | Sendspin native (ESPhome) | Y | Pros: Small device to add Sendspin to any existing unit with Audio In. <br>Cons: Requires some technical knowledge to install the software|
+| [Guition Knob v2](https://aliexpress.com/item/1005008823969298.html) | $ | Sendspin native (ESPhome) | Y (small speaker built-in) | Pros: As above, additionally has full metal encoder ring and its own battery and small speaker. <br>Cons: Requires some technical knowledge to install the software |
+| [RaspiAudio Luxe 2](https://raspiaudio.com/product/esp-muse-luxe/) | $ | Sendspin native (ESPhome)  | N | Pros: Battery backed, can also be used as Voice assistant. <br>Cons: Sensitive to noisy WiFi, requires some technical knowledge to install the software |
+| [FutureProof Homes Satellite 1](https://futureproofhomes.net/products/satellite1-smart-speaker) | $$ | Sendspin native (ESPhome) | N | Pro: Bookshelf ready version available; alternately kit parts. |
 
 \# Price: $ <100USD; $$ 101-250USD; $$$ >250USD
 
