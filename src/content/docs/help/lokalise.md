@@ -19,6 +19,7 @@ We would love to support more languages but we need your help to do so.
 Use the sign-up link for your project to join as a translator and check if your language is already available; if so, you can start immediately.
 - [MA Frontend](https://app.lokalise.com/public/321419046440c0f2bba414.05634832/)
 - [MA Mobile App](https://app.lokalise.com/public/695520566a0e9085a45b61.13739013/)
+- [MA Desktop App](https://app.lokalise.com/public/701408876a3161720d8f59.60695778/)
 - [MA Server](https://app.lokalise.com/public/264744796a2c5fd1b48fb5.28236063/)
 
 If the language hasn't been added yet, create an issue in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a> and specify the language you want to contribute. We will then add this language to the project in Lokalise and resolve the issue in GitHub. You can then use the sign-up link above to join.
