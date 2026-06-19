@@ -29,7 +29,7 @@ For each analysed album, once enough of its tracks have been identified:
 
 ## When analysis runs
 
-- During the nightly audio-analysis scan, around local midnight. Local audio files only
+- During the nightly audio-analysis scan, around local midnight. Local audio files only (i.e. SM<B, NFS, and WebDAV)
 - During playback of an eligible track. Local files are always eligible; streaming-provider tracks are eligible when *Analyse tracks from streaming providers* is enabled and the track is in the MA library
 
 Large libraries may take several nights to be fully analysed. Well tagged libraries see little or no activity because tracks will be skipped if they contain the MB Recording ID or ISRC. Streaming-provider tracks are picked up gradually as they are played, rather than in a batch. 

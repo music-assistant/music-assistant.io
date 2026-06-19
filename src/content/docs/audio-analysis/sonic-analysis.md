@@ -32,10 +32,10 @@ Alongside these scores, a compact **audio fingerprint** is saved for every track
 
 ## When analysis runs
 
-- **Live during playback.** When a track that has not been analysed yet is played, it is analysed live during playback.
-- **Background scan.** A background job also works through the rest of the library over time, so coverage grows even without active listening.
-- **Once per track.** Once a track has been analysed, the result is reused on every subsequent play — the analysis is not repeated unless the underlying file changes or a newer model version supersedes the previous one.
-- **Tracks without a known duration are skipped** — a known length is required for the analysis to be consistent.
+- **Live during playback.** When an in-MA library track that has not been analysed yet is played, it is analysed live during playback
+- **Background scan.** A background job also works through the rest of the local files (SMB, NFS, and WebDAV) over time, so coverage grows even without active listening
+- **Once per track.** Once a track has been analysed, the result is reused on every subsequent play — the analysis is not repeated unless the underlying file changes or a newer model version supersedes the previous one
+- **Tracks without a known duration are skipped** — a known length is required for the analysis to be consistent
 
 ## Tracking progress
 
@@ -47,14 +47,14 @@ Each row shows the provider's overall coverage, the count of analysed vs. total 
 
 ## How the data is used
 
-- **Find similar music** — other plugins use the audio fingerprint to suggest tracks that sound like the one currently playing. The [Sonic Similarity](/plugins/sonic-similarity) plugin uses these fingerprints to power library-wide Similar Tracks, radio mode, an "Inspired by recently played" discover row, and optional natural-language search.
-- **Mood-based playlists** — the "feel" scores allow playlists to be built around moods, such as "upbeat and danceable" or "calm and acoustic".
+- **Find similar music** — other plugins use the audio fingerprint to suggest tracks that sound like the one currently playing. The [Sonic Similarity](/plugins/sonic-similarity) plugin uses these fingerprints to power library-wide Similar Tracks, radio mode, an "Inspired by recently played" discover row, and optional natural-language search
+- **Mood-based playlists** — the "feel" scores allow playlists to be built around moods, such as "upbeat and danceable" or "calm and acoustic"
 
 ## Settings
 
-- <b>Analysis quality.</b> Controls how many short snippets of each track are analysed. More snippets give more accurate "feel" scores but take longer to process.
-  - **Fast** — one snippet per track. Lowest CPU use; good enough for most libraries.
-  - **Balanced** — three snippets per track (about 2.4× the CPU of Fast).
-  - **Thorough** — eight snippets per track (about 6.6× the CPU of Fast). Most useful when accurate *instrumentalness* matters, since a single snippet can miss vocals on tracks with long intros.
+- <b>Analysis quality.</b> Controls how many short snippets of each track are analysed. More snippets give more accurate "feel" scores but take longer to process
+  - **Fast** — one snippet per track. Lowest CPU use; good enough for most libraries
+  - **Balanced** — three snippets per track (about 2.4× the CPU of Fast)
+  - **Thorough** — eight snippets per track (about 6.6× the CPU of Fast). Most useful when accurate *instrumentalness* matters, since a single snippet can miss vocals on tracks with long intros
 
 By default, the first snippet is taken about 45 seconds into the track, so intros are skipped. Shorter tracks are handled automatically.
