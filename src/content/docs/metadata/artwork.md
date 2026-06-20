@@ -10,10 +10,12 @@ Artwork for artists, albums, tracks, playlists and radio streams is gathered fro
 
 For artists and albums, the first available image is used in the UI, in this order:
 
-1. **Embedded tags** in the audio file (front cover).
-2. **Folder images** next to the album or artist (`cover.jpg`, `folder.jpg`, `artist.jpg`, etc.).
+1. **Folder images** next to the album or artist (`cover.jpg`, `folder.jpg`, `artist.jpg`, etc.).
+2. **Embedded tags** in the audio file (front cover).
 3. **The track's music provider** (Spotify, Tidal, Plex, Jellyfin, Subsonic, …).
-4. **Online metadata providers**, prioritised: **Fanart.tv**, **iTunes Artwork**, **The Audio DB**, **Cover Art Archive**.
+4. **Online metadata providers**, prioritised: **Fanart.tv**, **The Audio DB**, **iTunes Artwork**, **Cover Art Archive**.
+
+For tracks, embedded artwork will be attached to the track but it is only seen in lists in the UI. When looking at the full detail or now playing view then the album artwork will be seen.
 
 Artwork from the music source always wins over artwork from online metadata providers. To change the artwork shown in the UI, a higher-quality image can be placed into the album or artist folder; the new image is picked up on the next library scan. Also the Images section of the Artist and Album view can be used to select the desired image. 
 
@@ -22,7 +24,7 @@ Artwork from the music source always wins over artwork from online metadata prov
 Beyond a single thumbnail, the metadata providers expose several artwork variants used in different parts of the UI:
 
 - **Thumb** — the primary square cover used in lists and details (all providers).
-- **Fanart / background** — wide background imagery (Fanart.tv, The Audio DB).
+- **Fanart / Background** — wide background imagery (Fanart.tv, The Audio DB).
 - **Banner**, **logo**, **clearart**, **cutout**, **landscape** — used in artist detail views (Fanart.tv, The Audio DB).
 - **Disc art / CD art / 3D case art** — extra album imagery (Fanart.tv, The Audio DB).
 
