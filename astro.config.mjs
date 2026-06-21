@@ -231,6 +231,7 @@ export default defineConfig({
 						{ label: 'Overview', slug: 'player-support' },
 						{ label: 'AirPlay', slug: 'player-support/airplay' },
 						{ label: 'Alexa', slug: 'player-support/alexa' },
+						{ label: 'Amplipi', slug: 'player-support/amplipi' },
 						{ label: 'Bluesound', slug: 'player-support/bluesound' },
 						{ label: 'DLNA', slug: 'player-support/dlna' },
 						{ label: 'Fully Kiosk', slug: 'player-support/fully-kiosk' },
