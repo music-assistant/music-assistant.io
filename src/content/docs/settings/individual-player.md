@@ -31,7 +31,6 @@ Each available protocol then has its own configuration section. Protocols can be
 - <b>Fallback Crossfade duration.</b> This slider is enabled when crossfade is enabled in the [Audio section](#audio). The default setting is 8 seconds
 - <b>Enable Volume Normalization.</b> This setting should normally remain enabled to avoid differing volume levels between tracks from different sources. Read more about this on the [Technical Information page](/faq/tech-info/#volume-normalization). The target level is set in the [Advanced Settings](#advanced-settings)
 - <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track
-- <b>Target level for [Volume Normalization](/faq/tech-info/#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping. Volume Normalization is enabled and disabled in the [Audio](#audio) section
 
 ## Announcements Configuration
 
