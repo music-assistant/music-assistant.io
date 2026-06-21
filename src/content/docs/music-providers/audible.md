@@ -44,6 +44,15 @@ To set up the Audible provider, follow these steps:
 
 Note: If you need to re-authenticate or change the marketplace, you will have to go through the authentication process again.
 
+## Whispersync Progress Sync
+
+Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+
+- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
+- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+
+No configuration is needed — this works automatically once the Audible provider is set up.
+
 ## Known Issues / Notes
 
 - Last playback position is not currently reported back to Audible
