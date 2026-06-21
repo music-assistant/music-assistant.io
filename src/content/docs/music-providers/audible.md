@@ -25,11 +25,19 @@ Music Assistant has support for streaming from Audible. Contributed and maintain
 | Maximum Stream Quality | Lossy, AAC Variable Bitrate |
 | Login Method | OAuth |
 
+### Whispersync Progress Sync
+
+Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+
+- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
+- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+
+No configuration is needed — this works automatically once the Audible provider is set up.
+
 ### Other
 
 - The Audible library can be listed
 - Metadata for audiobooks will be populated
-- Playback can be resumed from the last position reported by Audible
 - Chapter navigation
 - Multiple Audible accounts can be added.
 
