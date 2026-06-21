@@ -46,6 +46,7 @@ Smart playlists use include/exclude style rules:
 - **Artist**: is / is not (library mode, one or more artists)
 - **Album**: is / is not (library mode, one or more albums)
 - **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
+- **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed; provider-dependent)
 - **Favorite**: yes (library mode)
 - **Year**: between from/to (you can also use only `from` or only `to`).
 
@@ -63,6 +64,14 @@ Album type examples:
 
 Available album types: **Album**, **Single**, **EP**, **Compilation**, **Live**, **Soundtrack**, **Audiobook**, **Podcast**, **Unknown album type** (albums without a specific type classification or where the music provider does not provide type information).
 
+Explicit content filter options:
+
+- **Allowed**: include both explicit and non-explicit tracks (no filtering)
+- **Explicit only**: include only tracks marked as explicit content
+- **Not allowed**: exclude all tracks marked as explicit content
+
+**Note:** Explicit content filtering depends on your music provider supplying explicit markers in their metadata. Not all music providers include this information, and availability varies by provider and region. If your provider does not supply explicit markers, this filter will have no effect.
+
 In **From my library** mode you can choose whether tracks must match **all** rules or **any** rule.
 
 In **Discover mode**, filters are applied to the provider result after similar content is fetched.
@@ -70,6 +79,17 @@ In **Discover mode**, filters are applied to the provider result after similar c
 ![Rule examples in From my library mode](/assets/screenshots/smart_playlist/rules_example.png)
 
 ## Discover mode
+
+Discover mode fetches similar content from your streaming providers based on seed items.
+
+:::note[Best Effort Service]
+Discover mode relies on external music provider APIs for content recommendations. Results depend on:
+- Provider availability and API limits
+- Seed track/artist/album recognition by the provider
+- Provider-specific recommendation algorithms
+
+Quality and availability of results may vary between providers and over time.
+:::
 
 When using **Discover mode**:
 
