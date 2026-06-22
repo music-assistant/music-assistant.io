@@ -4,7 +4,7 @@ title: "AmpliPi"
 
 # AmpliPi <img src="/assets/icons/amplipi-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for the <a href="https://www.amplipi.com/" target="_blank" rel="noopener noreferrer">AmpliPi</a> multi-zone audio controller from MicroNova. Each enabled zone of the controller is exposed as an individual Music Assistant player, with native AmpliPi zone grouping and source management.
+Music Assistant has support for the <a href="https://www.amplipi.com/" target="_blank" rel="noopener noreferrer">AmpliPi</a> multi-zone audio controller from MicroNova. Each enabled zone of the controller is exposed as an individual Music Assistant player, with native AmpliPi zone grouping and source management. This provider is contributed and maintained by [Nathaniel McAuliffe](https://github.com/mcaulifn)
 
 > [!NOTE]
 > This provider is currently considered **experimental**.
