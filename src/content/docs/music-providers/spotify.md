@@ -31,6 +31,7 @@ Music Assistant has full support for Spotify media listing and playback.
 ### Other
 
 - Searching the Spotify catalogue is possible
+- "New Releases" and "Genres and Moods" folders are available in the Browse view
 - Items in your Spotify library (including the Liked Songs playlist) will be added to the Library in Music Assistant
 - Adding an item from Spotify to the Music Assistant Library will also add it to "Your Library" in Spotify
 - Marking an item as a favourite in Music Assistant will also add it to the MA Library and "Your Library" in Spotify
