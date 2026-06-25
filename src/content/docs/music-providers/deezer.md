@@ -61,5 +61,3 @@ Authentication with Deezer happens through an ARL cookie token. Unfortunately, D
 - Have a Hifi/Premium/Family account
 - Are on the latest Music Assistant version
 - Try different browsers
-
-Big thanks to <a href="https://github.com/music-assistant/deezer-python-gql" target="_blank" rel="noopener noreferrer">deezer-python-gql</a>, the typed async GraphQL client that powers this provider.
