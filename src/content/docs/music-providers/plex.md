@@ -12,7 +12,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | Yes |
-| Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
@@ -22,7 +22,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 ### Other
 
 - Search the Plex server
-- Keep resume position for audiobooks across Plex clients
+- Track progress for audiobooks/podcasts across Plex clients
 
 ## Configuration
 
@@ -33,8 +33,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 - Select the `SSL (HTTPS)` toggle if required. If this setting is enabled an option in the Advanced Settings will be activated which requires the certificate to be verified (default is on)
 - If you login to Plex via MYPLEX.TV, click the `Authenticate on MYPLEX.TV` button, this may trigger your browser `pop-up` detection, so watch out for that, authenticate as you normally would for Plex
 - If you have configured Plex to allow local connection without authentication (see below), click the `Authenticate Locally` button
-- Select the Music library that you would like to use
-- Optionally, select an Audiobook library if you would like to include one
+- Select the library and type (Music, Audiobook, or Podcast) that you would like to use; options will be auto-selected based on your existing configuration, but you can change as needed.
 - Save the settings
 
 ## Plex Configuration
@@ -43,6 +42,6 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 
 ## Known Issues / Notes
 
-- A Plex source is always bound to a user account and a library (with the option for an additional Audiobook library)
-- If you have multiple libraries, you need to add the Plex provider multiple times
+- A Plex source is always bound to a user account and a library
+- If you have multiple libraries and/or library types, you need to add the Plex provider multiple times
 - If you have multiple Plex accounts, which have their own playlists, you can also add them as separate provider instances
