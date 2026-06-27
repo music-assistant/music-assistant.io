@@ -296,3 +296,55 @@ rest_command:
     content_type:  'application/json; charset=utf-8'
 ```
 </details>
+
+<details><summary>Play latesst podcast episode</summary>
+
+Pass 'latest` or `newest` as the `start_item` parameter.
+
+```yaml
+rest_command:
+  ma_podcast_latest:
+    url: http://192.168.1.58:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "player_queues/play_media",
+        "args": {
+          "queue_id": "115ee854-3ac5-38c1-277d-7bdb4f3c126d",
+          "media": "library://podcast/2",
+          "start_item": "latest"
+        }
+      }
+    content_type:  'application/json; charset=utf-8' 
+```
+</details>
+
+<details><summary>Play from a specific playlist item or podcast episode</summary>
+
+Pass a 3 character or more string as the `start_item`. For example, passing `Mirrors` will find the first item in the playlist with that word (case insensitive) within and then play the playlist from that point.
+
+```yaml
+rest_command:
+  ma_playlist_specific:
+    url: http://192.168.1.58:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "player_queues/play_media",
+        "args": {
+          "queue_id": "115ee854-3ac5-38c1-277d-7bdb4f3c126d",
+          "media": "library://playlist/13",
+          "start_item": "Mirrors"
+        }
+      }
+    content_type:  'application/json; charset=utf-8' 
+```
+</details>
