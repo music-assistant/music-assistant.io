@@ -3,7 +3,7 @@ title: Bose SoundTouch
 ---
 
 
-# Bose SoundTouch <img src="/assets/icons/bose-soundtouch-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# Bose SoundTouch <img src="/assets/icons/bose-soundtouch-icon.png" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant has support for [Bose SoundTouch](https://www.bose.com/) speakers. Following Bose's end of life of the SoundTouch platform, this provider keeps the speakers usable within Music Assistant by exposing native control and mapping their physical preset buttons to Music Assistant content. Contributed and maintained by [Odn0](https://github.com/Odn0).
 
