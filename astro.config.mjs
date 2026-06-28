@@ -255,6 +255,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'LastFM Recommendations', slug: 'metadata-providers/lastfm-recommendations' },
+						{ label: 'MusicBrainz', slug: 'metadata-providers/musicbrainz' },
 					],
 				},
 				{
