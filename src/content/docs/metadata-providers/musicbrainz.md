@@ -1,5 +1,5 @@
 ---
-title: MusicBrainz Recommendations Metadata Provider
+title: MusicBrainz Metadata Provider
 description: Features and Notes for the MusicBrainz Metadata Provider
 ---
 
@@ -49,11 +49,10 @@ The provider has one configurable setting:
 
 ## Known Issues / Notes
 
-- Only artists with complete birth/death dates in MusicBrainz are included. Artists with partial dates (year-only, year-month-only) are excluded
-- The feature requires artists from your library to have MusicBrainz Artist IDs. These are typically resolved automatically, but can be manually added to `.nfo` files or file tags if needed
+- Only artists with complete birth/death dates (YYYY-MM-DD format) in MusicBrainz are included. Artists with partial dates (year-only, year-month-only) are excluded
+- The feature requires artists from your library to have MusicBrainz Artist IDs. Music Assistant resolves these automatically via metadata lookups. If an artist isn't showing up, you can manually add the ID via file tags (`MUSICBRAINZ_ARTISTID` for FLAC/Vorbis, `TXXX:MusicBrainz Artist Id` for MP3) or Kodi-format `.nfo` files (`<musicbrainzartistid>` in `artist.nfo`)
 - At least one streaming provider that exposes library/search (e.g. Spotify, Tidal, Apple Music) must be configured to play the recommended artists
 - Obscure or non-mainstream artists may not have complete date information in MusicBrainz
-- The provider uses MusicBrainz's life-span data (begin/end dates) to identify matching artists
 
 ### Choosing a scan window
 
@@ -67,10 +66,3 @@ Long windows (7–15 days):
 - More recommendations, covers a broader time range
 - Useful if you have a smaller library or want to see upcoming/past dates further out
 - May result in many folders if your library has artists with dates spread throughout the year
-
-## Technical Details
-
-- Uses MusicBrainz life-span data (begin-date/end-date fields)
-- Only artists with day-level precision are included
-- Recommendation folders use `translation_key` + `translation_params` for proper i18n support
-- Debug logging helps troubleshoot missing dates or matching issues
