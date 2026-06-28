@@ -34,18 +34,7 @@ Only artists with complete dates (year, month, and day) are included. Artists wi
 
 The provider has one configurable setting:
 
-- **Recommendation Days** (default: 3, range: 1-15) — How many days before and after today to scan for birthdays and memorials
-
-### Example configurations
-
-- **1 day** — Shows only yesterday, today, and tomorrow
-- **3 days** (default) — Shows 3 days ago through 3 days ahead (7 days total window)
-- **7 days** — Shows a full week before and after (15 days total window)
-- **15 days** (maximum) — Shows 2 weeks before and after (31 days total window)
-
-### Settings
-
-- **Recommendation Days** — Adjust the scan window from 1 to 15 days before/after today
+- **Recommendation Days** (default: 3, range: 1-15) — How many days before and after today to scan for birthdays and memorials. For example, 3 days scans from 3 days ago through 3 days ahead (7 days total window).
 
 ## Known Issues / Notes
 
