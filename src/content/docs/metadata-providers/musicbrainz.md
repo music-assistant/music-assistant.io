@@ -45,9 +45,11 @@ The provider has one configurable setting:
 ## Known Issues / Notes
 
 - Only artists with complete birth/death dates (YYYY-MM-DD format) in MusicBrainz are included. Artists with partial dates (year-only, year-month-only) are excluded
-- The feature requires artists from your library to have MusicBrainz Artist IDs. Music Assistant resolves these automatically via metadata lookups. If an artist isn't showing up, you can manually add the ID via file tags (`MUSICBRAINZ_ARTISTID` for FLAC/Vorbis, `TXXX:MusicBrainz Artist Id` for MP3) or Kodi-format `.nfo` files (`<musicbrainzartistid>` in `artist.nfo`)
-- At least one streaming provider that exposes library/search (e.g. Spotify, Tidal, Apple Music) must be configured to play the recommended artists
+- The feature only shows artists already in your library. It scans library artists with MusicBrainz Artist IDs to check for matching dates
+- For memorial recommendations, MusicBrainz must have the artist marked as deceased (life-span ended flag set)
+- Music Assistant resolves MusicBrainz IDs automatically via metadata lookups. If an artist isn't showing up, you can manually add the ID via file tags (`MUSICBRAINZ_ARTISTID` for FLAC/Vorbis, `TXXX:MusicBrainz Artist Id` for MP3) or Kodi-format `.nfo` files (`<musicbrainzartistid>` in `artist.nfo`)
 - Obscure or non-mainstream artists may not have complete date information in MusicBrainz
+- For large libraries with many MusicBrainz-tagged artists, the scan can take a while as it makes an API call for each artist
 
 ### Choosing a scan window
 
