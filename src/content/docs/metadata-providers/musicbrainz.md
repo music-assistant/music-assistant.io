@@ -29,6 +29,11 @@ Artists are then grouped into folders by their relative date:
 - **Yesterday** / **2/3 days ago** — Recent past dates
 - **Tomorrow** / **In 2/3 days** — Upcoming dates
 
+**Notes:**
+- For memorial recommendations, MusicBrainz must have the artist marked as deceased (life-span ended flag set)
+- Obscure or non-mainstream artists may not have complete date information in MusicBrainz
+- For large libraries with many MusicBrainz-tagged artists, the scan can take a while as it makes an API call for each artist
+
 ## Configuration
 
 The provider has one configurable setting:
@@ -49,10 +54,3 @@ Long windows (7–15 days):
 - More recommendations, covers a broader time range
 - Useful if you have a smaller library or want to see upcoming/past dates further out
 - May result in many entries if your library has artists with dates spread throughout the year
-
-## Known Issues / Notes
-
-- Only artists with complete birth/death dates (YYYY-MM-DD format) in MusicBrainz are included. Artists with partial dates (year-only, year-month-only) are excluded
-- For memorial recommendations, MusicBrainz must have the artist marked as deceased (life-span ended flag set)
-- Obscure or non-mainstream artists may not have complete date information in MusicBrainz
-- For large libraries with many MusicBrainz-tagged artists, the scan can take a while as it makes an API call for each artist
