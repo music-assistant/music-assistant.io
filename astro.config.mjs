@@ -235,6 +235,7 @@ export default defineConfig({
 						{ label: 'Alexa', slug: 'player-support/alexa' },
 						{ label: 'Amplipi', slug: 'player-support/amplipi' },
 						{ label: 'Bluesound', slug: 'player-support/bluesound' },
+						{ label: 'Bose Soundtouch', slug: 'player-support/bose-soundtouch' },
 						{ label: 'DLNA', slug: 'player-support/dlna' },
 						{ label: 'Fully Kiosk', slug: 'player-support/fully-kiosk' },
 						{ label: 'Google Cast', slug: 'player-support/google-cast' },
