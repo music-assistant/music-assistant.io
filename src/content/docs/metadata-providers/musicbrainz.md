@@ -5,10 +5,9 @@ description: Features and Notes for the MusicBrainz Metadata Provider
 
 # MusicBrainz Metadata Provider <img src="/assets/icons/musicbrainz-icon.svg" alt="MusicBrainz logo" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant can generate recommendation rows based on artist birthday and memorial data from MusicBrainz. This feature surfaces artists from your library whose birthdays or passing dates fall within a configurable time window.
+MusicBrainz is an open music encyclopedia of music metadata. Music Assistant uses it primarily to identify media items via MusicBrainz IDs (MBIDs), which act as a canonical reference for matching the same artist, album, or track across your different providers. It's a built-in provider that can't be disabled. Lookups are only performed when this information isn't already available locally.
 
-> [!NOTE]
-> This provider requires streaming providers to also be installed so that the recommendations can be linked to a playable source
+Additionally, Music Assistant can generate recommendation rows based on artist birthday and memorial data from MusicBrainz. This feature surfaces artists from your library whose birthdays or passing dates fall within a configurable time window.
 
 ## Features
 
@@ -30,8 +29,6 @@ Artists are then grouped into folders by their relative date:
 - **Yesterday** / **2/3 days ago** — Recent past dates
 - **Tomorrow** / **In 2/3 days** — Upcoming dates
 
-Only artists with complete dates (year, month, and day) are included. Artists with partial dates (e.g., only year) are excluded to ensure accuracy.
-
 ## Configuration
 
 The provider has one configurable setting:
@@ -39,17 +36,6 @@ The provider has one configurable setting:
 <img width="4512" height="1380" alt="Advanced configuration settings" src="/images/metadata-providers/musicbrainz-config.png" loading="lazy" />
 
 - **Recommendation Days** (default: 3, range: 1-15) — How many days before and after today to scan for birthdays and memorials. For example, 3 days scans from 3 days ago through 3 days ahead (7 days total window).
-
-
-
-## Known Issues / Notes
-
-- Only artists with complete birth/death dates (YYYY-MM-DD format) in MusicBrainz are included. Artists with partial dates (year-only, year-month-only) are excluded
-- The feature only shows artists already in your library. It scans library artists with MusicBrainz Artist IDs to check for matching dates
-- For memorial recommendations, MusicBrainz must have the artist marked as deceased (life-span ended flag set)
-- Music Assistant resolves MusicBrainz IDs automatically via metadata lookups. If an artist isn't showing up, you can manually add the ID via file tags (`MUSICBRAINZ_ARTISTID` for FLAC/Vorbis, `TXXX:MusicBrainz Artist Id` for MP3) or Kodi-format `.nfo` files (`<musicbrainzartistid>` in `artist.nfo`)
-- Obscure or non-mainstream artists may not have complete date information in MusicBrainz
-- For large libraries with many MusicBrainz-tagged artists, the scan can take a while as it makes an API call for each artist
 
 ### Choosing a scan window
 
@@ -62,4 +48,11 @@ Short windows (1–2 days):
 Long windows (7–15 days):
 - More recommendations, covers a broader time range
 - Useful if you have a smaller library or want to see upcoming/past dates further out
-- May result in many folders if your library has artists with dates spread throughout the year
+- May result in many entries if your library has artists with dates spread throughout the year
+
+## Known Issues / Notes
+
+- Only artists with complete birth/death dates (YYYY-MM-DD format) in MusicBrainz are included. Artists with partial dates (year-only, year-month-only) are excluded
+- For memorial recommendations, MusicBrainz must have the artist marked as deceased (life-span ended flag set)
+- Obscure or non-mainstream artists may not have complete date information in MusicBrainz
+- For large libraries with many MusicBrainz-tagged artists, the scan can take a while as it makes an API call for each artist
