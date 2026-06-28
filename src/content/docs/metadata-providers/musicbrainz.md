@@ -15,7 +15,9 @@ Music Assistant can generate recommendation rows based on artist birthday and me
 The provider creates two types of recommendation folders:
 
 - **Artist Birthdays** — Shows artists from your library whose birthdays fall within the configured day window
+<img width="2160" height="550" alt="Birthday recommendation example" src="/images/metadata-providers/musicbrainz-birthday-example.png" loading="lazy" />
 - **In Memoriam** — Shows artists from your library whose passing dates (death anniversaries) fall within the configured day window
+<img width="2160" height="550" alt="In Memoriam recommendation example" src="/images/metadata-providers/musicbrainz-memoriam-example.png" loading="lazy" />
 
 Each recommendation folder groups artists by relative date (e.g., "Birthdays · Today", "In Memoriam · Yesterday", "Birthdays · In 2 days").
 
@@ -34,7 +36,11 @@ Only artists with complete dates (year, month, and day) are included. Artists wi
 
 The provider has one configurable setting:
 
+<img width="4512" height="1380" alt="Advanced configuration settings" src="/images/metadata-providers/musicbrainz-config.png" loading="lazy" />
+
 - **Recommendation Days** (default: 3, range: 1-15) — How many days before and after today to scan for birthdays and memorials. For example, 3 days scans from 3 days ago through 3 days ahead (7 days total window).
+
+
 
 ## Known Issues / Notes
 
