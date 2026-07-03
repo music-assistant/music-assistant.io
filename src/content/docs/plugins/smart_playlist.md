@@ -111,12 +111,6 @@ When using **Discover mode**:
 - Seed lookups depend on provider support for the selected seed types.
 - Results are sampled from provider output and refreshed on each play.
 
-## De-duplication
-
-Use **Do not repeat the same song for X hours** to prevent recently played tracks from being selected again.
-
-Set it to **Off** to disable de-duplication.
-
 ## Track count and duration hint
 
 The dialog shows a live estimate while you edit rules:
