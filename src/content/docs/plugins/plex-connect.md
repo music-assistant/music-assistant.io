@@ -14,6 +14,7 @@ Music Assistant has the ability to expose MA players to Plex clients like Plexam
 
 - Any MA player can be exposed as a Plex Connect target, including groups
 - Players are automatically discovered by Plex clients via GDM (Good Day Mate) broadcasts on the local network
+- Players can optionally be linked with your Plex account (plex.tv), which helps them show up in the Plexamp mobile apps (iOS/Android) on networks where local discovery does not reach them
 - Standard playback controls: play, pause, skip, seek
 - Queue management: add tracks, reorder, clear queue
 - Access to Plex features: Sonic Adventures, Radio, DJs, Mixes
@@ -36,9 +37,20 @@ To make each player appear as a Plex Connect target in Plex clients, the Plex Co
 - **Device Class**: how the player shows up in Plex apps. Choose from Speaker, Phone, Tablet, Set-Top Box, TV, PC or Cloud.
 - **Network Port** (advanced): the TCP port this player is reachable on. Leave it empty to have Music Assistant pick a free port and remember it, so the instance keeps the same port after a restart.
 
+### Linking with your Plex account (if players don't show up on mobile)
+
+On most networks the Plexamp mobile apps (iOS/Android) discover Plex Connect players on the local network, just like the desktop and web clients. On some networks, though, the mobile apps only list players registered on plex.tv. If your player does not appear in the mobile cast menu, link it with your Plex account:
+
+1. In the plugin instance settings, click **Get plex.tv link code**.
+2. Open [plex.tv/link](https://plex.tv/link) (signed in to your Plex account) and enter the 4-character code shown in the settings dialog.
+3. Back in Music Assistant, click **I have entered the code** and save the configuration.
+
+The player then appears in the cast menu of Plexamp on your phone within seconds. Linking is a one-time step per plugin instance: Music Assistant stores a device token and refreshes the registration automatically on startup. Use **Unlink from plex.tv** in the settings to undo it. Unlinking or removing the plugin instance does not remove the device entry from your Plex account - remove it under [Authorized Devices](https://app.plex.tv/desktop/#!/settings/devices/all) if desired.
+
 ## Known Issues / Notes
 
-- To use Plex Connect, all devices must be connected to the same network
+- To use Plex Connect, all devices (including phones casting to the player) must be connected to the same network. Linking a player with plex.tv only affects whether the mobile apps *see* it; playback control always happens over the local network
+- On some networks the Plexamp mobile apps do not pick up players via local (GDM) discovery. Linking with a Plex account is the workaround for those setups; it is not needed where local discovery already works
 - Timeline reporting to the Plex server is done on a per-player basis
 - A queue loaded from Plex is capped at 100 tracks to keep loading and syncing responsive
 - Each plugin instance keeps the same network port across restarts. If you run several instances, give each one a different port, or leave the port empty and let Music Assistant pick and remember a free one for each
