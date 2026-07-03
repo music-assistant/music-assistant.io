@@ -48,12 +48,9 @@ Smart playlists use include/exclude style rules:
 - **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
 - **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed; provider-dependent)
 - **Favorite**: yes (library mode)
-- **Year**: between from/to (you can also use only `from` or only `to`).
-
-Year examples:
-
-- `from: 1969` means 1969 or newer.
-- `to: 1980` means 1980 or older.
+- **Year**: between from/to (you can also use only `from` or only `to`)
+- **Duration**: between from/to in MM:SS format (filter tracks by length)
+- **Last played**: filter tracks by how recently they were played (e.g., "1 days ago", "2 weeks ago")
 
 Album type examples:
 
@@ -71,6 +68,23 @@ Explicit content filter options:
 - **Not allowed**: exclude all tracks marked as explicit content
 
 **Note:** Explicit content filtering depends on your music provider supplying explicit markers in their metadata. Not all music providers include this information, and availability varies by provider and region. If your provider does not supply explicit markers, this filter will have no effect.
+
+Year examples:
+
+- `from: 1969` means 1969 or newer.
+- `to: 1980` means 1980 or older.
+
+Duration examples:
+
+- `from: 0:30` means 30 seconds or longer (excludes very short tracks like interludes).
+- `to: 5:00` means 5 minutes or shorter.
+- `between: 3:00 and 6:00` means tracks between 3 and 6 minutes.
+
+Last played examples:
+
+- `1 days ago` means tracks played within the last day.
+- `7 days ago` means tracks played within the last week.
+- Use this to create "recently played" playlists or to exclude tracks you've heard too recently.
 
 In **From my library** mode you can choose whether tracks must match **all** rules or **any** rule.
 
