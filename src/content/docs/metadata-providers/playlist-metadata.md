@@ -50,18 +50,13 @@ The Playlist Metadata Provider generates artwork for your library playlists usin
 
 ### How It Works
 
-When the metadata controller refreshes a playlist, this provider:
+When a playlist is refreshed, this provider:
 
-1. **For Smart Playlists**: First attempts to collect images from the Smart Playlist rules (artist seeds, album seeds, genre filters). If the rules contain sufficient image data (at least 4 unique images), those are used directly
-2. **Fallback**: If not a Smart Playlist, or if the rules don't provide enough images, the provider analyzes the playlist's tracks to identify the most prominent artists and albums based on track frequency
-3. Fetches high-quality images for these artists/albums
-4. Generates a custom cover image using the selected template
-5. Stores the generated image and makes it available to the playlist
+1. **For Smart Playlists**: Uses images from the playlist rules (artist/album seeds, genre filters) if available
+2. **Otherwise**: Analyzes tracks to identify the most prominent artists and albums
+3. Generates artwork using the selected template
 
-The provider automatically handles:
-- Image caching and cleanup of stale images (runs every 2 hours)
-- Fallback for playlists with insufficient artwork
-- Support for library playlists, built-in playlists, and **Smart Playlists** (with intelligent rule-based image selection)
+Image cleanup runs automatically every 2 hours.
 
 ## Configuration
 
@@ -72,12 +67,9 @@ The provider automatically handles:
   
 - **Skip Provider Playlists** (default: enabled) — When enabled, skips artwork generation for playlists that already have provider-supplied images (e.g., playlists synced from Spotify or Tidal). This avoids overwriting official artwork from streaming services
 
-## Known Issues / Notes
+## Notes
 
-- The provider runs automatically during playlist metadata refresh — there is no manual refresh button
-- Generated images are stored in the Music Assistant cache directory under `playlist_metadata_images/`
-- Old playlist images are automatically cleaned up when a playlist is refreshed with new artwork, and orphaned files are removed every 2 hours
-- If a playlist has very few tracks or tracks with missing artwork, the generated cover may be simple or use fallback patterns
-- The provider generates artwork for **library playlists**, **built-in playlists**, and **Smart Playlists**. Provider playlists (e.g., from Spotify) are skipped by default to preserve official artwork (configurable via "Skip Provider Playlists" setting)
-- Smart Playlists benefit from rule-based image selection: if your Smart Playlist uses artist or album seed filters, the provider will use those images directly instead of analyzing tracks, resulting in more relevant artwork
-- Artist-based templates work best with playlists that have diverse artists; album-based templates work better for compilation-style playlists
+- Artwork is generated automatically during playlist metadata refresh
+- Smart Playlists with artist or album seed filters will use those images directly for more relevant artwork
+- Provider playlists (Spotify, Tidal, etc.) are skipped by default to preserve official artwork (configurable via "Skip Provider Playlists" setting)
+- Artist templates work best with diverse-artist playlists; album templates work better for compilation-style playlists
