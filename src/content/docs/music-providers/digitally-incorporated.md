@@ -16,24 +16,31 @@ Music Assistant has support for the DI.fm Radio Network which includes <a href="
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy MP3 (320kbps) |
 | Login Method | API Key |
 
 ### Other
 
 - All six networks are available with the one subscription and the provider allows selection of which network(s) are desired to be subscribed to
-- Hundreds of curated radio streams from the six networks are available
+- Hundreds of curated radio streams from the six networks are available to browse and search
 - Channel artwork, genre information, and detailed channel descriptions are available
+- The library is populated with the favorite stations marked on the DI network websites. Favorites are **read-only** in Music Assistant — they are added or removed from the settings/favorites panel of any site in the network, and the change is synced into Music Assistant
+
+### Managing Favorites
+
+- Favorite stations are loaded from each selected network and added to the library
+- Favorites are read-only within Music Assistant. The stations that appear are changed by adding or removing favorites on the website of any network in the DI.fm family
+- Changes made on the website may take a few minutes to appear in Music Assistant, as favorites are cached for 5 minutes
 
 ## Configuration
 
-- In the configuration, you need to add an API key and select the desired networks
+- An API key must be added and the desired networks selected in the configuration
 
 > [!NOTE]
-> This provider requires a premium subscription and a "listen key" which is retrievable from the settings panel of any of the sites in the network. The key from all sites is identical and subscribing to one provides access to all.
-
-> [!CAUTION]
-> Consider the Sync / Import options for this provider. Leaving the MA default of `Import into the library and mark as favorite` will result in all stations from all selected networks being added to the MA library which may not be desirable.
+> This provider requires a premium subscription and a "listen key" which is retrievable from the settings panel of any of the sites in the network. The key from all sites is identical and subscribing to one provides access to all. The listen key is used both for playback and for loading favorites.
 
 ## Known Issues / Notes
 
@@ -41,4 +48,4 @@ Music Assistant has support for the DI.fm Radio Network which includes <a href="
 
 ## Not Yet Supported
 
-More metadata is available in the API but is not yet exposed.
+- More metadata is available in the API but is not yet exposed

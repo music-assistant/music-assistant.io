@@ -6,7 +6,7 @@ title: Loudness Analysis
 
 The **Loudness Analysis** provider measures each track's loudness using FFmpeg's EBU R128 implementation, so Music Assistant can keep perceived volume consistent across tracks from very different sources.
 
-It is built in, always on, and cannot be disabled. Measurements run automatically on tracks that do not yet have one stored.
+It is built in, always on, and cannot be disabled. Measurements run automatically on tracks that do not yet have one stored. Scanning is done as a background task for local file system (i.e. SMB, NFS, or WebDAV) provided tracks and all in-library tracks are scanned during playback.
 
 ## What is measured
 

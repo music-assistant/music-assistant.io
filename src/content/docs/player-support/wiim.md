@@ -2,7 +2,7 @@
 title: "WiiM"
 ---
 
-# Sonos <img src="/assets/icons/wiim.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# WiiM <img src="/assets/icons/wiim.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for streaming music to [WiiM devices](https://www.wiimhome.com/). 
 

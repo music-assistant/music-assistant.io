@@ -16,6 +16,9 @@ Music Assistant has support for [NTS Radio](https://www.nts.live/). This compone
 |[Recommendations](/ui/#view-discover) Supported|No|
 |Lyrics Supported|No|
 |[Radio Mode](/ui/#track-menu)|No|
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 |Maximum Stream Quality|AAC|
 |Login Method|None|
 
