@@ -12,21 +12,21 @@ Music Assistant includes a built-in metadata provider that generates custom artw
 
 ## Features
 
-The Playlist Metadata Provider generates artwork for your library playlists using seven different layout templates. Each template uses images from the playlist's content to create a unique visual representation:
+The Playlist Metadata Provider generates artwork for library playlists using seven different layout templates. Each template uses images from the playlist's content to create a unique visual representation.
 
 ### Available Templates
 
 **Album-Based Templates**
 
-- **Album Grid** (default) — Classic album-cover grid layout, similar to Spotify's default playlist covers. Shows up to 4 album covers in a 2×2 grid
+- **Album Grid** (default) — Classic album-cover grid layout. Shows up to 4 album covers in a 2×2 grid
 
 ![Album Grid Example](/assets/screenshots/playlist_metadata/album_grid.png)
 
-- **Album Fan** — Up to three album covers displayed as framed photo-print cards in a rotated, stacked arrangement (Apple Music collage style)
+- **Album Fan** — Up to three album covers displayed as framed photo-print cards in a rotated, stacked arrangement
 
 ![Album Fan Example](/assets/screenshots/playlist_metadata/album_fan.png)
 
-- **Album Grid Tilted** — Album covers in a grid with white gaps between tiles, with the entire composition rotated approximately 15° for a dynamic look (Apple Music tilted collage style)
+- **Album Grid Tilted** — Album covers in a grid with white gaps between tiles, with the entire composition rotated approximately 15° for a dynamic look
 
 ![Album Grid Tilted Example](/assets/screenshots/playlist_metadata/album_grid_tilted.png)
 
@@ -44,7 +44,7 @@ The Playlist Metadata Provider generates artwork for your library playlists usin
 
 ![Artist Radio Example](/assets/screenshots/playlist_metadata/artist_radio.png)
 
-- **Artist Banner** — Full-bleed artist image with playlist name as text overlay (Tidal / Apple Music Essentials style)
+- **Artist Banner** — Full-bleed artist image with playlist name as text overlay
 
 ![Artist Banner Example](/assets/screenshots/playlist_metadata/artist_banner.png)
 
@@ -71,5 +71,4 @@ Image cleanup runs automatically every 2 hours.
 
 - Artwork is generated automatically during playlist metadata refresh
 - Smart Playlists with artist or album seed filters will use those images directly for more relevant artwork
-- Provider playlists (Spotify, Tidal, etc.) are skipped by default to preserve official artwork (configurable via "Skip Provider Playlists" setting)
 - Artist templates work best with diverse-artist playlists; album templates work better for compilation-style playlists
