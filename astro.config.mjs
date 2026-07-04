@@ -262,6 +262,7 @@ export default defineConfig({
 						{ label: 'Lyrics', slug: 'metadata/lyrics' },
 						{ label: 'Media Items', slug: 'metadata/media-items' },
 						{ label: 'LastFM Recommendations', slug: 'metadata-providers/lastfm-recommendations' },
+						{ label: 'Playlist Metadata', slug: 'metadata-providers/playlist-metadata' },
 					],
 				},
 				{
