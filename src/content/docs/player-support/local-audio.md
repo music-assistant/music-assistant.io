@@ -3,7 +3,7 @@ title: Local Audio Out Provider
 description: A description of the Local Audio Out Player Provider
 ---
 
-# Local Audio Out <img src="/assets/icons/local-audio-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Local Audio Out <img src="/assets/icons/loudness-analysis-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant can play audio directly through soundcards attached to the machine the server runs on, such as USB DACs, built-in audio outputs and HDMI audio. Each detected output device is added as its own player. This is useful for turning the server into a player, for example a small computer connected to an amplifier or a pair of powered speakers.
 
