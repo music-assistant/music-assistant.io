@@ -39,6 +39,18 @@ The behaviour when playing or enqueuing items is determined by the settings in t
 
 ![image](/assets/screenshots/settings-player-queues.png)
 
+Additionally, there are options which can be set on a global level which can be overridden on a per queue basis. 
+
+<a href="assets/screenshots/settings-player-queues2.png"><img src="/assets/screenshots/settings-player-queues2.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+
+Smart Shuffle
+
+Autoplay
+
+Crossfade can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/#smart-fades-provider-) is the default
+
+[Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items.
+
 ## Streams
 
 All settings in this section should be considered advanced and will not need to be adjusted in the majority of cases. Users with complicated network setups will find settings in this section that will be useful. If MA appears to be setup correctly but no playback occurs then check the settings in this section.
