@@ -40,7 +40,7 @@ You will need to provide the following to Music Assistant:
 
 - <b>Enable Podcasts.</b> This toggle controls podcast availability in Music Assistant
 - <b>Enable Legacy Auth.</b> Some Subsonic implementations require this to be enabled to authenticate
-- <b>Enable Internet Radio.</b> This toggle controls internet radio station availability in Music Assistant
+- <b>Enable Internet Radio.</b> Controls whether internet radio stations are synced from the server. When disabled, no new stations are synced, and any previously-synced stations are removed from your library on the next sync attempt.
 - <b>Force Player Provider Seek.</b> Some Subsonic implementations advertise that seeking is supported when it isn't. If seeking does not work then enable this option
 - <b>Recommend Favorites.</b> Should favorited (starred) items be included as recommendations?
 - <b>Recommend New Albums.</b> Should new albums be included as recommendations?
