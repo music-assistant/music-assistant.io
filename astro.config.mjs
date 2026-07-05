@@ -241,6 +241,7 @@ export default defineConfig({
 						{ label: 'Google Cast', slug: 'player-support/google-cast' },
 						{ label: 'HEOS', slug: 'player-support/heos' },
 						{ label: 'Home Assistant', slug: 'player-support/ha' },
+						{ label: 'Local Audio Out', slug: 'player-support/local-audio' },
 						{ label: 'MSX Bridge', slug: 'player-support/msx-bridge' },
             			{ label: 'Music Player Daemon (MPD)', slug: 'player-support/mpd' },
 						{ label: 'MusicCast', slug: 'player-support/musiccast' },
