@@ -45,24 +45,26 @@ As a further means of filtering the library, items can be marked as a "favourite
 
 ## The Queue
 
-Each player has its own queue. Viewing the queue is done by pressing the :material-playlist-play: button. This button can be found on the player bar at the bottom of the UI or for narrow displays in the NOW PLAYING view.
+Each player has its own queue. Viewing the queue is done by pressing the ![Preview image](/assets/icons/queue-button.png) button. This button can be found on the player bar at the bottom of the UI or for narrow displays in the NOW PLAYING view.
 
-Selecting the PLAYED ITEMS option will show the previous items from the queue and selecting any will show a menu and this will allow a restart of the queue from that point.
-
-![Preview image](/assets/screenshots/queue1.png)
-
-A menu of options to control the queue is available for each upcoming track and is shown in the image above.
+The queue order can be adjusted by selecting and dragging the six dot icon or via the options in the ⋮ menu.
 
 > [!NOTE]
 > What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in MA SETTINGS>> SYSTEM>> PLAYER QUEUES
     
-The options in the menu available in the top right is shown below. Repeat and Shuffle also have buttons at the bottom in the player bar (or in the NOW PLAYING view for narrow mobile devices).
+The options in the menu available in the top right is shown below. 
 
 Transferring the queue will also transfer the shuffle and repeat setting to the new player.
 
-![Preview image](/assets/screenshots/queue3.png)
+![Preview image](/assets/screenshots/now_playing_menu.png)
 
-The Autoplay option can be enabled if a source is available which supports dynamic tracks (i.e. Apple, Deezer, Spotify, Subsonic, Tidal and YTM). When Autoplay is on, radio mode will be automatically enabled when the last track of the queue is reached and if any dynamic tracks can be resolved from one of the sources. The added tracks will be based on the played items in the queue.
+The Autoplay option can be enabled if a source is available which supports dynamic tracks (i.e. Apple, Deezer, Spotify, Subsonic, Tidal and YTM). When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached and if any dynamic tracks can be resolved from one of the sources. The added tracks will be based on the played items in the queue.
+
+Each queue has a number of options which affect various behaviours. The options can be set globally in the [player queues settings](/settings/core/#player-queues) or individually via the option in the ⋮ menu. The individual player queue settings are as follows:
+
+![Preview image](/assets/screenshots/queue-settings.png)
+
+See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade. 
 
 > [!NOTE]
 > If a queue is paused for more than 30 seconds its status will change to stopped
