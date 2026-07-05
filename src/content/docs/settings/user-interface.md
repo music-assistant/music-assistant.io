@@ -9,7 +9,7 @@ Customise the user interface from this page. Preferences are stored per user and
 ## Preferences
 
 - <b>Theme.</b> Allow selection of a light or dark theme. Options are `Auto (follow system configuration) [default]`, `Light`, and `Dark`
-- <b>Language.</b> Allow selection of a light or dark theme. Options are `Auto (follow system configuration) [default]`, or a wide variety of languages. Translations are [contributed by the community](/help/lokalise/)
+- <b>Language.</b> Allow selection of a light or dark theme. Options are `Auto (follow system configuration) [default]`, or a wide variety of languages. Translations are [contributed by the community](/help/lokalise/). Note that the AUTO setting takes the language from the Browser's settings
 - <b>Enabled menu items.</b> The menu items which are shown can be configured here
 
 ## Display
