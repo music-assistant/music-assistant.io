@@ -58,7 +58,7 @@ Transferring the queue will also transfer the shuffle and repeat setting to the 
 
 ![Preview image](/assets/screenshots/now_playing_menu.png)
 
-The Autoplay option can be enabled if a source is available which supports dynamic tracks (i.e. Apple, Deezer, Spotify, Subsonic, Tidal and YTM). When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached and if any dynamic tracks can be resolved from one of the sources. The added tracks will be based on the played items in the queue.
+When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the queue settings.
 
 Each queue has a number of options which affect various behaviours. The options can be set globally in the [player queues settings](/settings/core/#player-queues) or individually via the option in the ⋮ menu. The individual player queue settings are as follows:
 
