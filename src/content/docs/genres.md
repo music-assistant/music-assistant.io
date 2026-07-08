@@ -5,15 +5,15 @@ description: A Walkthrough of the Music Assistant Genre Functionality
 
 # Genres
 
-Music Assistant includes a genre system that automatically categorises your library. Genres are split into three categories — **Music**, **Podcasts**, and **Audiobooks** — so genres from each stay separate, even when two categories share a name (like "Comedy" or "History"). Genres are used to organise and discover content across all your providers, making it easy to browse by style, find similar content, and keep your library well-structured.
+Music Assistant includes a genre system that automatically categorises your library. Genres are split into three categories: **Music**, **Podcasts**, and **Audiobooks**. Genres from each stay separate, even when two categories share a name (like "Comedy" or "History"). Genres are used to organise and discover content across all your providers, making it easy to browse by style, find similar content, and keep your library well-structured.
 
 ## The Genre Library
 
-The genre library is accessible from the main navigation and displays your genres as three collapsible sections — Music, Podcasts, and Audiobooks. By default, only genres that have media items linked to them are shown.
+The genre library is accessible from the main navigation and displays your genres as three collapsible sections: Music, Podcasts, and Audiobooks. By default, only genres that have media items linked to them are shown.
 
 ![image](/assets/screenshots/genres/genre-library.png)
 
-Each section loads a batch of genres at a time — select **Load more items** at the bottom of a section to load more.
+Each section loads a batch of genres at a time. Select **Load more items** at the bottom of a section to load more.
 
 ### Sorting
 
@@ -28,11 +28,11 @@ Each section has its own toolbar, so Music, Podcasts, and Audiobooks can be sort
 
 The toolbar provides several filter options:
 
-- **Favorites Only** — Show only genres marked as favorites
-- **Hide Empty Genres** — Cycles through three views each time you select it:
-  - **Hide empty genres** — Default. Hides genres with no linked media items
-  - **Show only default genres** — Hides any custom genres you've added, showing only the built-in ones
-  - **Show all genres** — Shows every genre, including empty and custom ones
+- **Favorites Only**: Show only genres marked as favorites
+- **Hide Empty Genres**: Cycles through three views each time you select it:
+  - **Hide empty genres**: Default. Hides genres with no linked media items
+  - **Show only default genres**: Hides any custom genres you've added, showing only the built-in ones
+  - **Show all genres**: Shows every genre, including empty and custom ones
 
 ![image](/assets/screenshots/genres/genre-toolbar.png)
 
@@ -45,8 +45,8 @@ Use the search button in the toolbar to find genres by name. Genre names are mat
 Administrators can add new genres manually using the **Add Genre** option in the toolbar menu. This opens a dialog where you can provide:
 
 - **Genre name** (required)
-- **Sort name** (optional — used for custom sort ordering)
-- **Media type** — which category the genre belongs to: Music, Podcasts, or Audiobooks. Defaults to Music
+- **Sort name** (optional, used for custom sort ordering)
+- **Media type**: which category the genre belongs to (Music, Podcasts, or Audiobooks). Defaults to Music
 - **Description** (optional)
 
 ![image](/assets/screenshots/genres/add-new.png)
@@ -61,17 +61,17 @@ Selecting a genre from the library opens its detail page. This page provides an 
 
 The header displays:
 
-- **Genre name** — Translated to the user's language for built-in genres
-- **Description** — Sourced from built-in genre descriptions or custom metadata. Clicking the description expands it to full length
-- **Favorite toggle** — Mark or unmark the genre as a favorite
-- **Provider icon** — Indicates where the genre is stored
+- **Genre name**: Translated to the user's language for built-in genres
+- **Description**: Sourced from built-in genre descriptions or custom metadata. Clicking the description expands it to full length
+- **Favorite toggle**: Mark or unmark the genre as a favorite
+- **Provider icon**: Indicates where the genre is stored
 
 ### Admin Actions
 
 Administrators see additional action buttons in the header:
 
-- **Merge** — Merge this genre into another genre (see [Merging Genres](#merging-genres))
-- **Delete** — Delete this genre from the library (see [Deleting Genres](#deleting-genres))
+- **Merge**: Merge this genre into another genre (see [Merging Genres](#merging-genres))
+- **Delete**: Delete this genre from the library (see [Deleting Genres](#deleting-genres))
 
 These actions are also available in the three-dot overflow menu.
 
@@ -97,10 +97,10 @@ Administrators can manage genre aliases from the detail page. Aliases allow mult
 
 The alias manager supports:
 
-- **Add Alias** — Create a new alias for this genre
-- **Link Alias** — Search for and link an existing alias from another genre
-- **Promote Alias** — Convert an alias into its own standalone genre
-- **Remove Alias** — Unlink an alias from this genre
+- **Add Alias**: Create a new alias for this genre
+- **Link Alias**: Search for and link an existing alias from another genre
+- **Promote Alias**: Convert an alias into its own standalone genre
+- **Remove Alias**: Unlink an alias from this genre
 
 A promoted alias always stays in the same category (Music, Podcasts, or Audiobooks) as the genre it came from.
 
@@ -162,14 +162,14 @@ Administrators can manage genres in bulk from **Settings → System → Genre Ma
 
 This table lists every genre in your library across all three categories, and supports:
 
-- **Search** — Find a genre by name
-- **Media type filter** — Narrow the table to Music, Podcasts, or Audiobooks, or view **All** categories at once. When viewing All, a media-type icon next to each genre shows which category it belongs to
-- **Show all genres** — Toggle between all genres, non-empty genres only, or default genres only
-- **View** — Choose which columns are shown
+- **Search**: Find a genre by name
+- **Media type filter**: Narrow the table to Music, Podcasts, or Audiobooks, or view **All** categories at once. When viewing All, a media-type icon next to each genre shows which category it belongs to
+- **Show all genres**: Toggle between all genres, non-empty genres only, or default genres only
+- **View**: Choose which columns are shown
 
 ![image](/assets/screenshots/genres/genre-management-mediatype-filter.png)
 
-Selecting one or more genres in this table gives you the same actions available from the genre library — merge, delete, and restore excluded genres.
+Selecting one or more genres in this table gives you the same actions available from the genre library: merge, delete, and restore excluded genres.
 
 Excluded (globally hidden) genres are listed below the active ones, greyed out, with an option to restore them.
 
@@ -177,11 +177,11 @@ Excluded (globally hidden) genres are listed below the active ones, greyed out, 
 
 Two options are available if you want to bring back genres that were removed or excluded:
 
-- **Restore Missing Defaults** — Adds back any missing default genre, without touching your existing genres or custom mappings. Choose to restore All categories at once, or just Music, Podcasts, or Audiobooks.
+- **Restore Missing Defaults**: Adds back any missing default genre, without touching your existing genres or custom mappings. Choose to restore All categories at once, or just Music, Podcasts, or Audiobooks.
 
 ![image](/assets/screenshots/genres/restore-missing-defaults.png)
 
-- **Full Restore (Reset All)** — Deletes every genre and alias, recreates only the defaults, and remaps all existing media items to the new genres. All custom genres, alias mappings, and media associations are lost. This always restores every category — there's no option to limit it to just one.
+- **Full Restore (Reset All)**: Deletes every genre and alias, recreates only the defaults, and remaps all existing media items to the new genres. All custom genres, alias mappings, and media associations are lost. This always restores every category. There's no option to limit it to just one.
 
 ![image](/assets/screenshots/genres/full-restore.png)
 
