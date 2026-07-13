@@ -47,7 +47,7 @@ The overflow menu holds a number of useful options. Of note, for podcasts and au
 ## Now Playing View
 [![image](/assets/screenshots/now-playing-view.png)](/assets/screenshots/now-playing-view.png)
 
-This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue, and player selection is available at the bottom. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue, and the player selection is available via a smaller speaker icon at the top. Adjustments to the queue can be done with the ⋮ menu on the right.
+This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right.
 
 The [Audio Pipeline](/audiopipeline/) selectable label is described above in the [Player Bar](#player-bar) section.
 
@@ -55,7 +55,14 @@ You can also access the [Now Playing view directly via URL](/faq/how-to/#now-pla
 
 When the favorite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favorite status may not indicate correctly until playback of the track is restarted.
 
-When lyrics are available for the track being played then the LYRICS selectable label will be shown. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song.
+When lyrics are available for the track being played then the LYRICS selectable label will be shown in white. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song. Adjustment to the lyric timing is available in the ⋮ menu.
+
+The Autoplay and Crossfade toggleable buttons allow quick access to the bevaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu.
+
+The contents of the ⋮ menu vary depending upon player and queue state. When a track is playing the full set of options are available and will look like:
+
+[![image](/assets/screenshots/now_playing_menu.png)](/assets/screenshots/now_playing_menu.png)
+
 ***************************************************************
 
 ## Player List
