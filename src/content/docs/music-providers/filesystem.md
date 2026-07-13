@@ -58,7 +58,11 @@ Music Assistant has support for NFS shares. Select the music source "Filesystem 
 
 **Audio files are on a remote share served via WebDAV**
 
-Music Assistant has support for WebDAV shares. Select the music source "WebDAV" and configure the full URL of the WebDAV endpoint including the full path to the content folder (e.g. https://example.com/webdav/music). Provide username and password if authentication is required. SSL certificate verification is optional and disabled by default.
+Music Assistant has support for WebDAV shares. Select the music source "WebDAV" and configure the full URL of the WebDAV endpoint including the full path to the content folder (e.g. `https://example.com/webdav/music`). Provide username and password if authentication is required. SSL certificate verification is optional and disabled by default.
+
+**Audio files are on a remote share served via Google Drive**
+
+Music Assistant has support for Google Drive. Follow the Home Assistant documentation to [obtain a Client ID and Secret](https://www.home-assistant.io/integrations/google_drive/) but use `https://music-assistant.io/callback` as the `Authorized redirect URI`. Then add the music source `Google Drive` and put the client ID and secret in the required fields before pressing `AUTHORIZE WITH GOOGLE`. Finally, add the `Drive Folder ID to Scan` which is the sequence of characters seen at the end of the URL when the drive folder is visited in a browser. For example: `https://drive.google.com/drive/u/0/folders/`<b>abcfJhfIilxCtMj6rItMmAdA3rDz1ab1c</b>
 
 ### Settings
 
