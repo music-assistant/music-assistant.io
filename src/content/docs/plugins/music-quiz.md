@@ -149,7 +149,7 @@ Music Assistant combines the tracks from all selected sources, removes duplicate
 
 ### Include similar music
 
-Enable **Include similar music** to extend the selected pool with playable recommendations related to your sources. This provides more variety than the exact albums, artists, playlists, genres, or tracks you selected. When compatible radio/similar-track support is unavailable, Music Quiz continues with the selected sources only.
+Enable **Include similar music** to extend the selected pool with playable recommendations related to the available sources. This provides more variety than the exact albums, artists, playlists, genres, or tracks selected. When compatible radio/similar-track support is unavailable, Music Quiz continues with the selected sources only.
 
 For predictable games, especially a carefully themed quiz, leave this option disabled.
 
