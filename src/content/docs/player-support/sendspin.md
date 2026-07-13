@@ -39,6 +39,7 @@ Standard [player settings](/settings/player-provider/) apply. Specific settings 
 
 - The Sendspin provider is added by default
 - The web player appears automatically in the player list
+- If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
 
 ### Limitations
 
