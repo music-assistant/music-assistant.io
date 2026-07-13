@@ -220,15 +220,6 @@ When Remote Access is disabled, the join link uses the Music Assistant server's 
 - Some phone browsers suspend background tabs or block audio until the page is tapped. Keep the quiz visible and use **Listen in** again if audio stops.
 - Music Timeline ignores tracks without a usable release year. Compilation or incomplete metadata can also make tracks unsuitable for Trivia.
 - A player who joins during a round cannot answer until the following round.
-- The Music Quiz dashboard requires a compatible frontend. If guests see **Update required**, update or reload the Music Assistant frontend.
-
-### Opening the QR link on a signed-in device
-
-The QR code issues a guest token and stores it in the browser. Opening it in the same browser profile that you use to administer Music Assistant replaces the existing signed-in session and redirects that browser to the guest interface.
-
-Open the join link on the player's own device or in a private/incognito window. Do not open it in the normal browser profile used for the host dashboard.
-
-To recover a browser that is stuck in guest mode, open the browser's developer tools on the Music Assistant page, run `localStorage.clear()` in the Console, and reload the page. The normal login screen will appear again.
 
 ## Hosting tips
 
