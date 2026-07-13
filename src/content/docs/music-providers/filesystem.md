@@ -184,10 +184,11 @@ The left column corresponds to the TAG NAME shown in the <a href="https://picard
 > [!WARNING]
 > The following should be considered as advanced. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between sources
 
-Normally it is best to leave the Picard tags unchanged. However, some people do not agree with Musicbrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> To separate these out the tags can be edited as follows:
+Normally it is best to leave the Picard tags unchanged. However, some people do not agree with Musicbrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> This technique can also be used for personally ripped albums or tracks that are not in the Musicbrainz database. To separate these out the tags can be edited as follows:
 
-- Remove MusicBrainz Release ID and Recording ID
+- Remove MusicBrainz Release ID and Recording ID (Refer to the [Picard tag mapping documentation](https://picard-docs.musicbrainz.org/en/latest/appendices/tag_mapping.html#id39) for the exact tag name as it changes with the music file format)
 - Keep MusicBrainz Artist ID
 - Remove ISRC (as that is also used as strong identifier for tracks)
 - Remove barcode (as that is also used as strong identifier for albums)
-- Because there is no version specific tag, place the version between brackets in the title. For example, Great Song (Vinyl Rip)
+- Because there is no version specific tag, place the version between brackets in the title, for the Album, Track, or both (when using the Album tag, make sure it is identical on all tracks of that release). For example, Great Song (Vinyl Rip Version). Regardless of what other text is in the brackets ensure the word `Version` is also there
+- If the AcoustID Lookup provider is in use, disable it, as it will re-add the Recording ID that was just removed
