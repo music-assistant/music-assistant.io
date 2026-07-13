@@ -5,7 +5,7 @@ description: Host multiplayer music quiz games with QR-code guest access, shared
 
 # Music Quiz Plugin
 
-The Music Quiz plugin turns your Music Assistant library into a multiplayer quiz. Open the host dashboard on a TV, computer, or tablet, let players join by scanning a QR code, and run the game without creating accounts for your guests.
+The Music Quiz plugin turns the Music Assistant library into a multiplayer quiz. Open the host dashboard on a TV, computer, or tablet, let players join by scanning a QR code, and run the game without creating accounts for the guests.
 
 Players answer on their own phones while the dashboard shows the lobby, round progress, answers, scores, and final podium. Music can play through one shared speaker or directly on every player's device.
 
