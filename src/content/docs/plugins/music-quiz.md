@@ -104,7 +104,7 @@ Bonus questions are offered only after a correct placement. Players may answer t
 
 ### Music Trivia
 
-Music Trivia asks AI-worded questions grounded in the title, artist, album, or release-year metadata of tracks from your selected sources. Music Assistant chooses the fact and validates the generated question and incorrect answers; the AI does not decide the correct answer.
+Music Trivia asks AI-worded questions grounded in the title, artist, album, or release-year metadata of tracks from the selected sources. Music Assistant chooses the fact and validates the generated question and incorrect answers; the AI does not decide the correct answer.
 
 | Setting | Default | Range / options | Description |
 |---|---:|---:|---|
