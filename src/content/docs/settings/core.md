@@ -56,7 +56,7 @@ Autoplay has four options as follows:
 
 Crossfade can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/#smart-fades-provider-) is the default
 
-[Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items.
+[Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items and sources. The target level is set in the [Streams Queue Playback Settings](/settings/core/#queue-playback)
 
 ## Streams
 
