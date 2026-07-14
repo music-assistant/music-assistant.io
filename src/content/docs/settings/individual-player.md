@@ -25,6 +25,10 @@ A powerful feature of Music Assistant is that it will combine all of the availab
 
 Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. Refer to the relevant Player provider for settings which are available for each
 
+## Queue Playback
+
+- <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track. This setting is only visible when the advanced toggle is enabled.
+
 ## Announcements Configuration
 
 There are a number of configurable options for controlling the volume of announcements sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
