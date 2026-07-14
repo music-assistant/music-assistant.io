@@ -9,7 +9,9 @@ description: A Walkthrough of the Music Assistant User Interface
 
 ![image](/assets/screenshots/UI-main-menu.png)
 
-This menu's appearance can be configured in Settings / User Interface. On a desktop, it can be placed vertically on the left (as shown) or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. The enabled menu items (Views) are displayed in the order they were selected in the User Interface settings. Any of the views can be hidden. If the Settings view is hidden from the menu it can be accessed by navigating to `YOUR_MA_IP_ADDRESS:8095/#/settings`
+This menu's appearance can be configured by clicking on the ⋮ in the bottom right and selecting `Edit menu`. Items can then be re-ordered, shown or hidden and section titles renamed.
+
+In SETTINGS >> USER INTERFACE there are Display options which affect the UI. On a desktop, the menu can be placed vertically on the left or right or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. 
 
 ### Sidebar Shortcuts
 
@@ -28,9 +30,9 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 
 Searches can be done via any combination of words or partial words and also via a URL to a source such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
 
-Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. 
+Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. Which media types are shown can be selected with the filter. Similarly, the providers used for the search can also be filtered.
 
-Selecting a specific category will then show a maximum of 50 items. Context sensitive menus are available for each. If the item desired is not found then narrow the search term or navigate to the artist and all available albums and tracks should be shown in that view (although some sources may be limited in the number of items that can be returned).
+Selecting an individual media type will then show a maximum of 50 items per provider. Context sensitive menus are available for each. If the item desired is not found then narrow the search term.
 ***************************************************************
 
 ## Player Bar
@@ -137,7 +139,7 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 The Discover View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the specific music source pages to identify which sources support this.
 
-The view is fully configurable. Select the user name in the navigation menu and then EDIT HOME SCREEN. There is then the ability to show or hide each row and adjust the order. Select `Leave edit mode` to return to the normal view.
+The view is fully configurable by selecting the pencil icon in the top righ. There is then the ability to show or hide each row and adjust the order. Select `Leave edit mode` to return to the normal view.
 
 [![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
 ***************************************************************
