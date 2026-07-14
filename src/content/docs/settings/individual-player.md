@@ -25,13 +25,6 @@ A powerful feature of Music Assistant is that it will combine all of the availab
 
 Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. Refer to the relevant Player provider for settings which are available for each
 
-## Queue Playback
-
-- <b>Enable Smart Fades.</b> This dropdown enables the crossfade transition functionality between tracks. The crossfade duration is set by the slider below. The options available are `Disabled [Default]`, `Smart Fades` or `Standard Crossfade`. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade.
-- <b>Fallback Crossfade duration.</b> This slider is enabled when crossfade is enabled in the [Audio section](#audio). The default setting is 8 seconds
-- <b>Enable Volume Normalization.</b> This setting should normally remain enabled to avoid differing volume levels between tracks from different sources. Read more about this on the [Technical Information page](/faq/tech-info/#volume-normalization). The target level is set in the [Advanced Settings](#advanced-settings)
-- <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track
-
 ## Announcements Configuration
 
 There are a number of configurable options for controlling the volume of announcements sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
