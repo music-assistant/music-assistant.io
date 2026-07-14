@@ -78,9 +78,9 @@ In addition to the settings outlined above to configure this source there are ad
 - Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
 - When using the remote share connection, be aware that use of SMB1 (which is very old) is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB1 can be disabled
 - Use the following naming convention for local artwork
-    - Artist thumb: folder.jpg or artist.jpg (or png)
-    - Album thumb: folder.jpg or cover.jpg (or png)
-    - Fan Art (used as background in banners): fanart.jpg (or png)
+    - Artist thumb: cover.jpg, folder.jpg or artist.jpg (or jpeg/png)
+    - Album thumb: cover.jpg, folder.jpg or album.jpg (or jpeg/png)
+    - Fan Art (used as background in banners): fanart.jpg (or jpeg/png)
     - Logo (used on Artist view): logo.png
     - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
 - Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
