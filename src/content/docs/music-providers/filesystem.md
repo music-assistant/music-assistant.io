@@ -5,7 +5,7 @@ description: Features, Configuration, Issues and More for the File System Music 
 
 # Filesystem Sources <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has full support for reading local music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant. Network support is limited to SMB/CIFS, NFS and WebDAV.
+Music Assistant has full support for reading local music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant.  Network support is limited to SMB/CIFS, NFS and WebDAV, plus the cloud storage services Google Drive and Microsoft OneDrive.
 
 When streaming sources are also availabe in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
 
@@ -64,9 +64,89 @@ Music Assistant has support for WebDAV shares. Select the music source "WebDAV" 
 
 Music Assistant has support for Google Drive. Follow the Home Assistant documentation to [obtain a Client ID and Secret](https://www.home-assistant.io/integrations/google_drive/) but use `https://music-assistant.io/callback` as the `Authorized redirect URI`. Then add the music source `Google Drive` and put the client ID and secret in the required fields before pressing `AUTHORIZE WITH GOOGLE`. Finally, add the `Drive Folder ID to Scan` which is the sequence of characters seen at the end of the URL when the drive folder is visited in a browser. For example: `https://drive.google.com/drive/u/0/folders/`<b>abcfJhfIilxCtMj6rItMmAdA3rDz1ab1c</b>
 
+> [!CAUTION]
+> Make sure the OAuth consent screen is set to `In production` (not `Testing`), otherwise Google revokes access after 7 days and you will need to re-authorize weekly.
+
+**Audio files are on a remote share served via One Drive**
+
+Music Assistant has support for Microsoft One Drive. Setup instructions are below.
+
+<details>
+<summary><b>Setting up OneDrive for Music Assistant</b></summary>
+<div>
+<br>
+You need two things from Microsoft: a <b>Client ID</b>, and a <b>Client Secret</b>. Setup takes about 15 minutes.
+
+## 1. Get an Azure directory (first time only)
+
+Microsoft won't let you register an app without a directory.
+
+- Go to https://azure.microsoft.com and **sign up for a free Azure account**
+- The free tier is enough. You may be asked for a card for identity verification, but you won't be charged
+
+## 2. Register the application
+
+1. Go to the **Microsoft Entra admin portal** > **App registrations** > **New registration**.
+2. **Name:** anything, e.g. `Music Assistant`.
+3. **Supported account types:** choose **"Accounts in any organizational directory and personal Microsoft accounts"**.
+4. **Redirect URI:** set type to **Web** and URL to `https://music-assistant.io/callback`
+5. Click **Register**.
+
+## 3. Fix the manifest (important - two settings)
+
+Personal Microsoft accounts won't work until you change two values.
+
+1. In your app, open **Manifest** (left menu).
+2. Set these two properties:
+   ```json
+   "signInAudience": "AzureADandPersonalMicrosoftAccount",
+   "requestedAccessTokenVersion": 2
+   ```
+3. **Save.** Wait ~2 minutes for the change to propagate.
+
+> If you skip this you'll get: *"unauthorized_client: The client does not exist or is not enabled for consumers."*
+
+## 4. Copy the Client ID
+
+- On the app's **Overview** page, copy **Application (client) ID**.
+- This is your **Client ID**.
+
+## 5. Create the Client Secret
+
+1. Left menu > **Certificates & secrets** > **New client secret**.
+2. Add a description, pick an expiry (max ~2 years).
+3. **Copy the Value column immediately** - not the Secret ID. The Value is hidden once you leave the page. This is your **Client Secret**.
+
+> The secret **expires**. When it does, create a new one and re-authorise in Music Assistant.
+
+## 6. (Optional) Choose a folder
+
+Leave the folder as `root` to scan your whole drive, or enter a folder **path** to limit the scan, for example, `Music` or `Documents/Music`
+
+Use the folder name(s) as they appear in OneDrive.
+
+## 7. Setup provider in Music Assistant
+
+1. Add the OneDrive provider.
+2. Paste **Client ID** and **Client Secret**, set **Folder to scan** (or `root`).
+3. Click **Authorize with Microsoft**, sign in, approve access.
+4. Save.
+
+## Common errors
+
+| Error | Fix |
+|---|---|
+| "unable to create app outside a directory" | Sign up for Azure (step 1) |
+| "unauthorized_client ... not enabled for consumers" | Manifest settings (step 3), wait 2 min |
+| "Property api.requestedAccessTokenVersion is invalid" | Set `requestedAccessTokenVersion` to `2` (step 3) |
+| "Folder not found" | Check the folder path spelling (step 6), or use `root` |
+| Authorize shows callback but MA won't save | Try and click `Authorize with Microsoft` again |
+</div>
+</details>
+
 ### Settings
 
-In addition to the settings outlined above to configure this source there are additional settings available (note certain options will be greyed out depending upon the content type selected):
+In addition to the settings outlined above to configure this source, there are additional settings available (note certain options will be greyed out depending upon the content type selected):
 
 - <b>Content type in media folder(s).</b> This setting defines the content type of the source and is necessary for Music, Audiobooks and Podcasts to be correctly identified
 - <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
@@ -89,8 +169,14 @@ In addition to the settings outlined above to configure this source there are ad
     - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
 - Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
 - Embedded album thumbs will be extracted from audio files. However, performance can be improved and disk space saved by providing a single local artwork file vs. embedding the same artwork in all files
-- WebDAV is HTTP-based so every file operation requires a network request. Library sync will be slower than local or SMB, particularly for large libraries or servers accessed over the internet
-- Writing to the WebDAV server is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
+- WebDAV, Google Drive and OneDrive are HTTP/API-based so every file operation requires a network request. Library sync will therefore be slower than local, SMB or NFS, particularly for large libraries and the first sync of a cloud source reads the tags of every file over the internet
+- Writing to WebDAV, Google Drive and OneDrive sources is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
+
+> [!NOTE]
+> **Cloud sources (Google Drive / OneDrive)**
+>
+> - Expect a 1-2 second delay when playback starts or when seeking as the audio has to be fetched from the cloud service on demand
+> - Folder listings are cached for up to five minutes to keep browsing snappy, so changes made on the cloud service can take up to five minutes to appear in the BROWSE view. Library sync always reads fresh listings, so new content is never missed by a sync
 
 > [!TIP]
 > **Local Artwork is Optimal**
