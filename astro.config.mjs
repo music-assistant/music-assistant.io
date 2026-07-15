@@ -218,6 +218,7 @@ export default defineConfig({
 						{ label: 'Spotify', slug: 'music-providers/spotify' },
 						{ label: 'Subsonic', slug: 'music-providers/subsonic' },
 						{ label: 'Sveriges Radio', slug: 'music-providers/sveriges-radio' },
+						{ label: 'TeddyCloud', slug: 'music-providers/teddycloud' },
 						{ label: 'Tidal', slug: 'music-providers/tidal' },
 						{ label: 'TuneIn', slug: 'music-providers/tunein' },
 						{ label: 'Yandex Music', slug: 'music-providers/yandex-music' },
