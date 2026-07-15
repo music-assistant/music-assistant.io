@@ -4,7 +4,7 @@ title: "TeddyCloud"
 
 # TeddyCloud <img src="/assets/icons/teddycloud-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for <a href="https://github.com/toniebox-reverse-engineering/teddycloud" target="_blank" rel="noopener noreferrer">TeddyCloud</a>, the self-hosted, open-source server behind the Toniebox family of children's audio players. Each Tonie in your TeddyCloud library appears in Music Assistant as an audiobook, complete with chapters, that you can play to any of your players. Contributed and maintained by <a href="https://github.com/yoyixms" target="_blank" rel="noopener noreferrer">yoyixms</a>
+Music Assistant has support for <a href="https://github.com/toniebox-reverse-engineering/teddycloud" target="_blank" rel="noopener noreferrer">TeddyCloud</a>, the self-hosted, open-source server behind the Toniebox family of children's audio players. Each Tonie in a TeddyCloud library appears in Music Assistant as an audiobook, complete with chapters, that can be played to any MA players. Contributed and maintained by <a href="https://github.com/yoyixms" target="_blank" rel="noopener noreferrer">yoyixms</a>
 
 ## Features
 
