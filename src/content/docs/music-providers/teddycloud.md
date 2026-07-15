@@ -2,55 +2,38 @@
 title: "TeddyCloud"
 ---
 
-<img src="/assets/icons/teddycloud-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# TeddyCloud <img src="/assets/icons/teddycloud-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for [TeddyCloud](https://github.com/toniebox-reverse-engineering/teddycloud),
-the self-hosted, open-source server behind the Toniebox family of children's audio
-players. Each Tonie in your TeddyCloud library appears in Music Assistant as an audiobook,
-complete with chapters, that you can play to any of your players.
-
-TeddyCloud runs on your own hardware and holds your own content, so this provider streams
-strictly from a source you control.
+Music Assistant has support for <a href="https://github.com/toniebox-reverse-engineering/teddycloud" target="_blank" rel="noopener noreferrer">TeddyCloud</a>, the self-hosted, open-source server behind the Toniebox family of children's audio players. Each Tonie in your TeddyCloud library appears in Music Assistant as an audiobook, complete with chapters, that you can play to any of your players. Contributed and maintained by <a href="https://github.com/yoyixms" target="_blank" rel="noopener noreferrer">yoyixms</a>
 
 ## Features
 
-| | |
-|-|-|
+|           |                     |
+|:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | Yes |
 | Media Types Supported | Audiobooks |
-| Recommendations Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| Radio Mode | No |
-| Maximum Stream Quality | Original (Opus, not re-encoded) |
+| [Radio Mode](/ui/#track-menu) | No |
+| Maximum Stream Quality | Opus, 96 kbps VBR (48 kHz) |
 | Login Method | None |
+
+### Other
+
+- Each Tonie is imported into the Music Assistant library as an audiobook, with the series as the author and the episode as the title
+- Chapters are taken from the Tonie's track marks and story names, so you can skip between stories and seek within them
+- Audio is streamed on demand directly from TeddyCloud in its original Opus quality, with no re-encoding
+- Your Tonies are searchable and browsable alongside the rest of your Music Assistant content
+- It is possible to add multiple TeddyCloud sources
 
 ## Configuration
 
-Add the provider from **Settings -> Providers -> Add Provider -> TeddyCloud** and fill in
-the following:
+The following is needed to setup this provider:
 
-- **Server** — the base URL of your TeddyCloud server, for example `http://teddycloud.local`
-  or `http://192.168.1.50`. Include the port if it is not on 80, e.g.
-  `http://192.168.1.50:8080`.
+- <b>Server.</b> A server URL (e.g. `http://teddycloud.local` or `http://192.168.1.50:8080` for a local server) of your TeddyCloud instance. Include the port if it is not on 80
 
-> [!NOTE]
-> This initial version targets a plain-HTTP TeddyCloud on your local network without
-> authentication. Support for HTTP basic auth and HTTPS is planned for a later release.
+## Known Issues / Notes
 
-After saving, Music Assistant connects to TeddyCloud and syncs your Tonies into the library
-as audiobooks.
-
-## Notes
-
-- Each Tonie is exposed as an audiobook: the series becomes the author, the episode the
-  title, with cover artwork where TeddyCloud provides it.
-- Chapters are derived from the Tonie's track marks and story names, so you can skip
-  between stories and seek within them.
-- Audio is streamed on demand directly from TeddyCloud as OGG/Opus with no re-encoding;
-  nothing is copied into Music Assistant.
-- Your Tonies are synced into the Music Assistant library, so they are searchable and
-  browsable alongside the rest of your content.
-- The provider supports multiple instances, so you can add more than one TeddyCloud server.
-- Tonies configured to stream from an external live source are skipped, as there is no
-  stored file to serve.
+- Series, episode and artwork come from TeddyCloud's tonies.json data — custom or unrecognised Tonies are still playable but show a generic title and no cover
+- Tonies configured to stream from an external live source are skipped, as there is no stored file to serve
