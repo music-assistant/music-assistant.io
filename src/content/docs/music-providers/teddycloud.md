@@ -31,7 +31,7 @@ Music Assistant has support for <a href="https://github.com/toniebox-reverse-eng
 
 The following is needed to setup this provider:
 
-- <b>Server.</b> A server URL (e.g. `http://teddycloud.local` or `http://192.168.1.50:8080` for a local server) of your TeddyCloud instance. Include the port if it is not on 80
+- <b>Server.</b> A server URL (e.g. `http://teddycloud.local` or `http://192.168.1.50:8080` for a local server) of a TeddyCloud instance. Include the port if it is not on 80
 
 ## Known Issues / Notes
 
