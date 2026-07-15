@@ -24,7 +24,7 @@ Music Assistant has support for <a href="https://github.com/toniebox-reverse-eng
 - Each Tonie is imported into the Music Assistant library as an audiobook, with the series as the author and the episode as the title
 - Chapters are taken from the Tonie's track marks and story names, so you can skip between stories and seek within them
 - Audio is streamed on demand directly from TeddyCloud in its original Opus quality, with no re-encoding
-- Your Tonies are searchable and browsable alongside the rest of your Music Assistant content
+- Tonies are searchable and browsable alongside the rest of the Music Assistant content
 - It is possible to add multiple TeddyCloud sources
 
 ## Configuration
