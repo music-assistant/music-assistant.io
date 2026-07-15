@@ -77,14 +77,14 @@ Music Assistant has support for Microsoft One Drive. Setup instructions are belo
 <br>
 You need two things from Microsoft: a <b>Client ID</b>, and a <b>Client Secret</b>. Setup takes about 15 minutes.
 
-## 1. Get an Azure directory (first time only)
+#### 1. Get an Azure directory (first time only)
 
 Microsoft won't let you register an app without a directory.
 
 - Go to https://azure.microsoft.com and **sign up for a free Azure account**
 - The free tier is enough. You may be asked for a card for identity verification, but you won't be charged
 
-## 2. Register the application
+#### 2. Register the application
 
 1. Go to the **Microsoft Entra admin portal** > **App registrations** > **New registration**.
 2. **Name:** anything, e.g. `Music Assistant`.
@@ -92,7 +92,7 @@ Microsoft won't let you register an app without a directory.
 4. **Redirect URI:** set type to **Web** and URL to `https://music-assistant.io/callback`
 5. Click **Register**.
 
-## 3. Fix the manifest (important - two settings)
+#### 3. Fix the manifest (important - two settings)
 
 Personal Microsoft accounts won't work until you change two values.
 
@@ -106,12 +106,12 @@ Personal Microsoft accounts won't work until you change two values.
 
 > If you skip this you'll get: *"unauthorized_client: The client does not exist or is not enabled for consumers."*
 
-## 4. Copy the Client ID
+#### 4. Copy the Client ID
 
 - On the app's **Overview** page, copy **Application (client) ID**.
 - This is your **Client ID**.
 
-## 5. Create the Client Secret
+#### 5. Create the Client Secret
 
 1. Left menu > **Certificates & secrets** > **New client secret**.
 2. Add a description, pick an expiry (max ~2 years).
@@ -119,20 +119,20 @@ Personal Microsoft accounts won't work until you change two values.
 
 > The secret **expires**. When it does, create a new one and re-authorise in Music Assistant.
 
-## 6. (Optional) Choose a folder
+#### 6. (Optional) Choose a folder
 
 Leave the folder as `root` to scan your whole drive, or enter a folder **path** to limit the scan, for example, `Music` or `Documents/Music`
 
 Use the folder name(s) as they appear in OneDrive.
 
-## 7. Setup provider in Music Assistant
+#### 7. Setup provider in Music Assistant
 
 1. Add the OneDrive provider.
 2. Paste **Client ID** and **Client Secret**, set **Folder to scan** (or `root`).
 3. Click **Authorize with Microsoft**, sign in, approve access.
 4. Save.
 
-## Common errors
+#### Common errors
 
 | Error | Fix |
 |---|---|
