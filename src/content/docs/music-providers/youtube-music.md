@@ -87,6 +87,10 @@ As of March 2025, Google has implemented a new security mechanism called 'PO Tok
 >
 > If `__Secure-3PAPISID` is seen after saving this means the cookie is not from an authenticated request. Navigate to some more pages inside YT Music that require authentication (e.g. your library). To confirm the right cookie has been obtained paste it into a text editor and search for "__Secure-3PAPISID". If difficulties are encountered obtaining a cookie with this value, try a different browser.
 
+### Settings
+
+Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+
 ## Using brand accounts
 A brand account is a sub-account that lives under your main Google account. You need to find your brand account id if you want to login using your brand account.
 
