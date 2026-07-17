@@ -61,3 +61,7 @@ Authentication with Deezer happens through an ARL cookie token. Unfortunately, D
 - Have a Hifi/Premium/Family account
 - Are on the latest Music Assistant version
 - Try different browsers
+
+### Settings
+
+Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
