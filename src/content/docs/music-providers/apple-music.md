@@ -73,6 +73,9 @@ The token needs to be retrieved through your browser. Instructions were written 
 
 </div>
 </details>
+
+See also the [Library Import Control](/music-providers/#library-import-control) settings.
+
     
 ## Known Issues / Notes
 - Due to Apple's proprietary encryption (FairPlay), Lossless and Dolby Atmos versions of songs are not supported
