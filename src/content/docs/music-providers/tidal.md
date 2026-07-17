@@ -50,6 +50,8 @@ In the configuration, there are a series of steps that must be completed in orde
 
 - <b>Quality setting for Tidal.</b> Options are `Max [default]` or `High`. Max is up to 24-bit, 192 kHz and High is up to 16-bit, 44.1 kHz.
 
+See also the [Library Import Control](/music-providers/#library-import-control) settings.
+
 ## Known Issues / Notes
 
 - If the authorisation process gets stuck then try a different browser. It is likely the authorisation pop up window is being blocked
