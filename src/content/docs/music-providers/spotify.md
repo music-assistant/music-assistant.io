@@ -10,7 +10,7 @@ Music Assistant has full support for Spotify media listing and playback.
 > A Spotify Premium account is required for this music source. Free accounts will not work.
 
 > [!NOTE]
-> Spotify has made it clear to third party products that lossless support is not to be persued.
+> Spotify has made it clear to third party products that lossless support is not to be pursued.
 
 ## Features
 
