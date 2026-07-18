@@ -32,4 +32,14 @@ Music Assistant has support for [SomaFM Radio](https://somafm.com/) which allows
 
 ## Usage
 
-- When the SomaFM Radio source is added, it will populate the Radio tab with all available SomaFM stations.
+The SomaFM provider doesn't add stations to the 'Radio' tab by default.
+
+1. In the Music Assistant menu you need to select the 'Browse' tab
+2. Then click 'SomaFM Radio'
+
+    <img src="/assets/screenshots/somafm-browse.png" alt="Preview image" style="width: 400px;"  loading="lazy" />
+
+3. Then navigate to a desired radio station
+4. Right-click and choose Play Now or Add to Library in order to easily find it later
+
+After adding to the library, your added stations will appear in the 'Radio' tab on the Music Assistant menu.
