@@ -32,4 +32,4 @@ Music Assistant has support for [SomaFM Radio](https://somafm.com/) which allows
 
 ## Usage
 
-- When the SomaFM Radio source is added, it will populate the Radio tab with all available SomaFM stations.
+Use the browse view to find stations to add to the library.
