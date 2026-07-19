@@ -165,6 +165,7 @@ export default defineConfig({
 						{ label: 'Audio Pipeline', slug: 'audiopipeline' },
 						{ label: 'Groups', slug: 'faq/groups' },
 						{ label: 'Genres', slug: 'genres' },
+						{ label: 'DSP Gain and Balance Controls', slug: 'dsp/gainbalance' },
 						{ label: 'DSP Parametric EQ', slug: 'dsp/parametriceq' },
 						{ label: 'DSP Tone Controls', slug: 'dsp/tonecontrols' },
 						{ label: 'How Do I...', slug: 'faq/how-to' },
