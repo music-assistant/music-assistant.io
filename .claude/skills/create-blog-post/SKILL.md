@@ -134,6 +134,8 @@ https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.
 
 Build that URL from the post's own date/slug (same `YYYY/MM/DD/slug` used for the content and image paths). Use the same generator URL for the `cover.image` field too, so the archive/listing page shows the dynamic image as well. `art.webp` is still required for the inline hero image in the post body, but it is no longer the value of `og:image`/`twitter:image`/`cover.image`.
 
+`assets.openhomefoundation.org` must be listed under `image.domains` in `astro.config.mjs` — Astro blocks remote images (including `cover.image`) from domains it doesn't recognize. This is already configured; only revisit it if the generator's domain ever changes.
+
 ### 4. Process Images
 
 Before processing images, ensure the `cwebp` tool is installed. If not, install it:
