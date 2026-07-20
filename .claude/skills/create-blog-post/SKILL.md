@@ -22,6 +22,7 @@ Automates conversion of a draft markdown file with metadata into a production-re
 - Extracts metadata (blog title, author, publish date, tags, Social/OpenGraph fields)
 - Removes "# Blog notes/preparations" section and lines with ☝️ emoji
 - Converts `### **– Summary break / Read more –**` to `<!--more-->`
+- Determines dynamic OG image text (title1/title2 headline split, category) in confirmation with you
 - Processes hero image and any additional images
 - Converts external links to HTML `<a>` tags with `target="_blank"`
 - Formats content (removes bold from headings, fixes link references)
@@ -112,7 +113,27 @@ sed -i '/^\[image[0-9]*\]: <data:/d' "create-blog-post/draft.md"
 - Remove all lines that start with ☝️ emoji (instruction lines)
 - Convert `### **– Summary break / Read more –**` marker to `<!--more-->`
 
-### 3. Process Images
+### 3. Determine Dynamic OG Image Text
+
+The blog's OG image is rendered dynamically from meta tags rather than being flat art baked into `art.webp`, so it needs its own short headline and category text:
+
+- **`og:image:title1`** — rendered in a **light** font weight, typically a short lead-in phrase (e.g. "What's new in")
+- **`og:image:title2`** — rendered in a **bold** font weight, typically the main headline (e.g. "Music Assistant 2.9")
+- Either line can be used alone, or both together — pick whichever combination best fits the desired look for this post
+- **`og:image:category`** — a short display label for the image (e.g. "Announcements", "Release", "Community"). This is distinct from the YAML `tags` list used for the post itself
+- **`og:image:author`** — reuse the `Author` value already captured from the draft metadata; no extra confirmation needed
+
+Propose a title1/title2 split and a category label based on the blog title, Social/OpenGraph title, and content — then confirm both with the user before writing them into the front matter. These are freeform, creative text rather than values that can be mechanically derived, so do not guess silently.
+
+The `og:image` and `twitter:image` meta tags do not point at `art.webp` directly — they point at the Open Home Foundation OG image generator, which fetches the post's own URL and renders an image from its `og:image:*` meta tags:
+
+```text
+https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/YYYY/MM/DD/slug
+```
+
+Build that URL from the post's own date/slug (same `YYYY/MM/DD/slug` used for the content and image paths). `art.webp` is still required — it's used for the inline hero image and the `cover` field — but it is no longer the value of `og:image`/`twitter:image`.
+
+### 4. Process Images
 
 Before processing images, ensure the `cwebp` tool is installed. If not, install it:
 
@@ -141,7 +162,7 @@ which cwebp || sudo apt-get install -y webp
 - Output to `public/images/blog/YYYY/MM/DD/slug/image2.webp`, `image3.webp`, etc.
 - Update references in content
 
-### 4. Transform Links
+### 5. Transform Links
 
 **External links** (different domains/subdomains):
 
@@ -151,7 +172,7 @@ which cwebp || sudo apt-get install -y webp
 
 - Convert to relative path Markdown links: `[text](/path)` (strip the domain, always use relative paths)
 
-### 5. Clean Content
+### 6. Clean Content
 
 - **Headings**: Remove bold formatting (`## **Title**` → `## Title`)
 - **Heading levels**: If content starts with H1 (`#`), demote all headings one level (content should start at H2)
@@ -160,11 +181,11 @@ which cwebp || sudo apt-get install -y webp
 - **Text content**: Do not change the author's wording, phrasing, or writing style. The blog text should stay as-is. If you spot obvious typos or locale spelling issues (such as British English instead of American English), do not fix them silently — collect them and ask the user for confirmation before applying any changes.
 - **Emojis**: Preserve all emojis that appear in the blog content. Do not strip them out.
 
-### 6. Build Blog Post
+### 7. Build Blog Post
 
 - Create `src/content/docs/blog/YYYY/MM/DD/slug.md`
 - Astro/Starlight front matter with:
-  - `head` (OG image meta tags)
+  - `head` (OG image meta tags: `og:image`/`twitter:image` pointing at the OG image generator URL, plus the title1/title2/category/author values from step 3)
   - `title`
   - `description`
   - `cover` (image path and alt)
@@ -184,12 +205,32 @@ which cwebp || sudo apt-get install -y webp
 head:
   - tag: meta
     attrs:
-      property: og:image
-      content: /images/blog/YYYY/MM/DD/slug/art.webp
+      property: "og:image"
+      content: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/YYYY/MM/DD/slug"
+  - tag: meta
+    attrs:
+      name: "twitter:image"
+      content: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/YYYY/MM/DD/slug"
   - tag: meta
     attrs:
       property: og:image:alt
       content: "Social/OpenGraph title"
+  - tag: meta
+    attrs:
+      property: "og:image:title1"
+      content: "Light-weight lead-in line (optional)"
+  - tag: meta
+    attrs:
+      property: "og:image:title2"
+      content: "Bold headline"
+  - tag: meta
+    attrs:
+      property: "og:image:author"
+      content: "Author Name"
+  - tag: meta
+    attrs:
+      property: "og:image:category"
+      content: "Category Label"
 
 title: "Blog Title"
 description: "Social/OpenGraph description"
@@ -259,6 +300,7 @@ After the blog post has been created, output a summary to the user covering:
 **Metadata:**
 
 - Title, author (and whether they were verified in `src/authors.mjs`), date, tags
+- OG image title1/title2 split and category label, and confirmation that these were reviewed with the user
 
 **Images:**
 
