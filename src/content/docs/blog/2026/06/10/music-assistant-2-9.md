@@ -2,12 +2,32 @@
 head:
   - tag: meta
     attrs:
-      property: og:image
-      content: /images/blog/2026/06/10/music-assistant-2-9/art.webp
+      property: "og:image"
+      content: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2026/06/10/music-assistant-2-9"
+  - tag: meta
+    attrs:
+      name: "twitter:image"
+      content: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2026/06/10/music-assistant-2-9"
   - tag: meta
     attrs:
       property: og:image:alt
       content: "Music Assistant 2.9: Discover Your Sound"
+  - tag: meta
+    attrs:
+      property: "og:image:title1"
+      content: "What's new in"
+  - tag: meta
+    attrs:
+      property: "og:image:title2"
+      content: "Music Assistant 2.9"
+  - tag: meta
+    attrs:
+      property: "og:image:author"
+      content: "Marvin Schenkel"
+  - tag: meta
+    attrs:
+      property: "og:image:category"
+      content: "Announcements"
 
 title: "Music Assistant 2.9: Discover Your Sound"
 description: "Music Assistant 2.9 is here and brimming with updates 🎉 From Smart Playlists to Sendspin visualizers, jump in to discover more 👀"
