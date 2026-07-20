@@ -41,7 +41,7 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 
 ### Advanced Settings
 
-- <b>Extended recommendations.</b> Widens the set of hubs shown on the [Discover](/ui/#view---discover) view to include <b>Mixes For You</b> (the personalised mixes Plex builds from your listening history), recent library playlists and <b>On This Day</b> releases, matching the hubs Plex's own clients show. This is on by default; disable it for the narrower hub set. Changes take effect on the next recommendations refresh
+- <b>Extended recommendations.</b> Enabled by default. Adds extra rows on the [Discover](/ui/#view---discover) view to include <b>Mixes For You</b> (the personalised mixes Plex builds from the listening history), recent library playlists and <b>On This Day</b> releases, matching the rows Plex's own clients show. Changes take effect on the next recommendations refresh
 
 ## Plex Configuration
 
