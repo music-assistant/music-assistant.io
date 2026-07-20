@@ -176,6 +176,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Overview', slug: 'dsp' },
+						{ label: 'Compressor', slug: 'dsp/compressor' },
 						{ label: 'Parametric Equalizer', slug: 'dsp/parametriceq' },
 						{ label: 'Tone Controls', slug: 'dsp/tonecontrols' },
 					],
