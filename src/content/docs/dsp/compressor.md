@@ -21,6 +21,8 @@ In Basic mode, three preset buttons are shown:
 
 Selecting a preset applies a matched combination of the settings described below. The presets are a good starting point and will suit most situations.
 
+![Compressor](/assets/screenshots/dsp-compressor-basic.png)
+
 ### Advanced Mode
 
 In Advanced mode, six controls are shown which allow the behaviour of the compressor to be fine-tuned.
@@ -49,4 +51,4 @@ Controls how gradually the compressor begins working around the threshold. A sof
 
 Compression works by turning down the loudest moments, which often makes the whole signal seem quieter. Makeup Gain turns the overall level back up so that the benefit of compression can be heard without losing volume. Compression can be thought of as gently turning down the loudest moments, with Makeup Gain then turning everything back up so that the quiet and loud parts are more balanced.
 
-![Compressor](/assets/screenshots/compressor.png)
+![Compressor](/assets/screenshots/dsp-compressor-advanced.png)
