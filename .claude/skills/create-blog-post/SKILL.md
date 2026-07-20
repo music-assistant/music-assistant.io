@@ -117,6 +117,7 @@ sed -i '/^\[image[0-9]*\]: <data:/d' "create-blog-post/draft.md"
 
 The blog's OG image is rendered dynamically from meta tags rather than being flat art baked into `art.webp`, so it needs its own short headline and category text:
 
+- **`og:image:alt`** — accessibility text for the OG image; use the Social/OpenGraph title or blog title
 - **`og:image:title1`** — rendered in a **light** font weight, typically a short lead-in phrase (e.g. "What's new in")
 - **`og:image:title2`** — rendered in a **bold** font weight, typically the main headline (e.g. "Music Assistant 2.9")
 - Either line can be used alone, or both together — pick whichever combination best fits the desired look for this post
