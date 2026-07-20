@@ -35,6 +35,9 @@ The maximum sample rate that can be expected can be found in the [Player Provide
 
 In this example [DSP](/dsp/) has been enabled. High level information about the DSP filters which have been applied are shown. A tooltip is available to explain why the DSP is not supported if that is the case (See the example below in [Groups](#groups)).
 
+> [!NOTE]
+> Filters will not be shown in the audio pipeline if they have no effect on the audio path. For example, if the Balance control is set to the middle position then it is not doing anything and will not be shown.
+
 Also of note in this example is the icon shown in the input section where the codec icon is normally. This icon will be displayed when MA cannot determine the codec and can occur with container formats such as <a href="https://www.wavpack.com/" target="_blank" rel="noopener noreferrer">WavPack</a>, <a href="https://cloudinary.com/guides/video-formats/what-is-the-m4a-format-understanding-the-difference-between-m4a-mp3-and-wav" target="_blank" rel="noopener noreferrer">M4A</a> or <a href="https://en.wikipedia.org/wiki/Direct_Stream_Digital" target="_blank" rel="noopener noreferrer">DSD64</a>.
 
 ***************************************************************
