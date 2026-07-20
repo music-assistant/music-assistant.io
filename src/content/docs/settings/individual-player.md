@@ -53,28 +53,9 @@ It is possible to map other HA entities to the MA player controls. in order for 
 
 ## DSP Settings
 
-All providers have the option to apply <a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">Digital Signal Processing</a> (DSP) filters to the audio stream. DSP lets you shape and refine the audio with a variety of filters. Use it to tailor the sound to a room's acoustics, compensate for speaker characteristics, and fine-tune the frequency balance to personal taste.
+All providers have the option to apply <a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">Digital Signal Processing</a> (DSP) filters to the audio stream. This section is where the DSP is configured for each player, which means that each player has its own independently configurable DSP settings.
 
-The DSP option is found in the MA settings for each player which means that each player has its own independently configurable DSP settings.
-
-When playing in a group, individual player DSP settings will only be used for Universal groups and when playing via AirPlay, Squeezelite or Sendspin. Groups using all other protocols will have DSP disabled.
-
-The DSP path consists of an INPUT pre-amplifier for initial gain control, followed by optional audio filters that can be added between input and output (multiple times if desired). The following filters are available:
-
-- [Parametric Equalizer](/dsp/parametriceq/)
-- [Tone Controls](/dsp/tonecontrols/)
-
-The path ends with an OUTPUT stage that provides both gain control and a limiter (enabled by default) to prevent signal clipping.
-
-The DSP settings can be enabled and disabled via a toggle which allows easy <a href="https://www.youtube.com/watch?v=KefGjPYyIO4" target="_blank" rel="noopener noreferrer">A-B testing</a>
-
-The line on the left of the DSP settings represents the audio path, in sequential order, from the audio file (top) to the player (bottom).
-
-A dot on the line represents a component that changes the signal. The lack of a dot indicates that the particular component has been disabled.
-
-Using the icons at the top of the view, the additional filters can be reordered, disabled/enabled or deleted.
-
-![DSP image](/assets/screenshots/dsp.jpg)
+Full details of the DSP capabilities and the filters that are available can be found in the [Digital Signal Processing](/dsp/) section of the documentation.
 
 ## Player Options
 

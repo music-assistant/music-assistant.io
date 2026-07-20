@@ -6,11 +6,14 @@ title: "Spotify"
 
 Music Assistant has full support for Spotify media listing and playback.
 
+> [!WARNING]
+> Spotify is preventing accounts from approximately 2023 from working. Some even older accounts are affected. If the provider does not work and `key error` messages are seen in the log then the account is affected
+
 > [!NOTE]
 > A Spotify Premium account is required for this music source. Free accounts will not work.
 
 > [!NOTE]
-> Spotify has made it clear to third party products that lossless support is not to be persued.
+> Spotify has made it clear to third party products that lossless support is not to be pursued.
 
 ## Features
 

@@ -33,6 +33,10 @@ Music Assistant has full support for <a href="https://www.qobuz.com/" target="_b
 
 - In the configuration, you need to enter your Qobuz username and password
 
+### Settings
+
+Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+
 ## Known Issues / Notes
 
 - Radio Mode is not supported

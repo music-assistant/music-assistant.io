@@ -165,12 +165,19 @@ export default defineConfig({
 						{ label: 'Audio Pipeline', slug: 'audiopipeline' },
 						{ label: 'Groups', slug: 'faq/groups' },
 						{ label: 'Genres', slug: 'genres' },
-						{ label: 'DSP Parametric EQ', slug: 'dsp/parametriceq' },
-						{ label: 'DSP Tone Controls', slug: 'dsp/tonecontrols' },
 						{ label: 'How Do I...', slug: 'faq/how-to' },
 						{ label: 'I Want To Stream To', slug: 'faq/stream-to' },
 						{ label: 'Technical Info', slug: 'faq/tech-info' },
 						{ label: 'Troubleshooting', slug: 'faq/troubleshooting' },
+					],
+				},
+				{
+					label: 'Digital Signal Processing',
+					collapsed: true,
+					items: [
+						{ label: 'Overview', slug: 'dsp' },
+						{ label: 'Parametric Equalizer', slug: 'dsp/parametriceq' },
+						{ label: 'Tone Controls', slug: 'dsp/tonecontrols' },
 					],
 				},
 				{

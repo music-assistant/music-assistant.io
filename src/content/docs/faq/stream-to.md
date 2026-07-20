@@ -118,7 +118,7 @@ We don’t believe most people can hear the difference in sample rates above CD 
 
 Note that many Sonos devices can be synced with AirPlay devices which is another plus for AirPlay.
 
-Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [DSP Settings description](/settings/individual-player/#dsp-settings)
+Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [Digital Signal Processing overview](/dsp/)
 
 The following table is a non-exhaustive list of possible solutions:
 

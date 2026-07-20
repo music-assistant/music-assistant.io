@@ -13,7 +13,7 @@ Squeezelite clients are available for hardware from desktop OS to <a href="https
 ## Features
 
 - Squeezelite client devices are automatically detected by Music Assistant
-- Individual player [DSP settings](/settings/individual-player/#dsp-settings) will be used for [group](/faq/groups/) playback
+- Individual player [DSP settings](/dsp/) will be used for [group](/faq/groups/) playback
 - Squeezelite client device buttons support
   - Any physical control buttons on the device should be supported as long as [flow mode](/faq/tech-info/#track-queueing) is not enabled
 
