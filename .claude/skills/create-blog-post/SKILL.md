@@ -132,7 +132,7 @@ The `og:image` and `twitter:image` meta tags do not point at `art.webp` directly
 https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/YYYY/MM/DD/slug
 ```
 
-Build that URL from the post's own date/slug (same `YYYY/MM/DD/slug` used for the content and image paths). `art.webp` is still required — it's used for the inline hero image and the `cover` field — but it is no longer the value of `og:image`/`twitter:image`.
+Build that URL from the post's own date/slug (same `YYYY/MM/DD/slug` used for the content and image paths). Use the same generator URL for the `cover.image` field too, so the archive/listing page shows the dynamic image as well. `art.webp` is still required for the inline hero image in the post body, but it is no longer the value of `og:image`/`twitter:image`/`cover.image`.
 
 ### 4. Process Images
 
@@ -189,7 +189,7 @@ which cwebp || sudo apt-get install -y webp
   - `head` (OG image meta tags: `og:image`/`twitter:image` pointing at the OG image generator URL, plus the title1/title2/category/author values from step 3)
   - `title`
   - `description`
-  - `cover` (image path and alt)
+  - `cover` (OG image generator URL and alt — shown on the blog archive/listing page)
   - `excerpt`
   - `date` (ISO 8601 format: `YYYY-MM-DDT00:00:00.000Z`)
   - `authors` (YAML list — must match a key in `src/authors.mjs`)
@@ -236,7 +236,7 @@ head:
 title: "Blog Title"
 description: "Social/OpenGraph description"
 cover:
-  image: /public/images/blog/YYYY/MM/DD/slug/art.webp
+  image: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/YYYY/MM/DD/slug"
   alt: "Social/OpenGraph title"
 excerpt: "First paragraph of blog content"
 date: YYYY-MM-DDT00:00:00.000Z

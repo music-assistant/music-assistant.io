@@ -32,7 +32,7 @@ head:
 title: "Music Assistant 2.9: Discover Your Sound"
 description: "Music Assistant 2.9 is here and brimming with updates 🎉 From Smart Playlists to Sendspin visualizers, jump in to discover more 👀"
 cover:
-    image: /public/images/blog/2026/06/10/music-assistant-2-9/art.webp
+    image: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2026/06/10/music-assistant-2-9"
     alt: "Music Assistant 2.9: Discover Your Sound"
 excerpt: "The crew's been hard at work, and we're pretty excited to show what we've been up to… Music Assistant is back and making waves with version 2.9! 🎉"
 date: 2026-06-10T00:00:00.000Z
