@@ -39,6 +39,10 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 - Select the library and type (Music, Audiobook, or Podcast) that you would like to use; options will be auto-selected based on your existing configuration, but you can change as needed.
 - Save the settings
 
+### Advanced Settings
+
+- <b>Extended recommendations.</b> Widens the set of hubs shown on the [Discover](/ui/#view---discover) view to include <b>Mixes For You</b> (the personalised mixes Plex builds from your listening history), recent library playlists and <b>On This Day</b> releases, matching the hubs Plex's own clients show. This is on by default; disable it for the narrower hub set. Changes take effect on the next recommendations refresh
+
 ## Plex Configuration
 
 - If you want to allow Music Assistant to connect to Plex without authentication, go to your Plex configuration, Settings / Network. In the field labeled `List of IP addresses and networks that are allowed without auth` enter the IP address of the computer running Music Assistant, and `Save Changes`
