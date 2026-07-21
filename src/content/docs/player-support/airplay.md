@@ -16,7 +16,7 @@ Music Assistant supports devices that receive [AirPlay 1 (RAOP)](https://en.wiki
 
 ## Protocol selection
 
-AirPlay 1 is also known as RAOP. Protocol selection is automatic and there is no protocol dropdown: AirPlay 2-capable devices use AirPlay 2, while legacy receivers use RAOP.
+AirPlay 1 is also known as RAOP. Music Assistant automatically uses AirPlay 2 for capable devices and RAOP for legacy receivers.
 
 Eligible AirPlay 2-capable non-Apple receivers that also support RAOP expose the advanced **Force RAOP protocol** setting. This is an escape hatch for devices whose AirPlay 2 implementation causes dropouts, silence, or failed playback. Leave it disabled unless the receiver works better with RAOP.
 
@@ -35,7 +35,7 @@ Settings are shown only when they apply to the selected device and protocol.
 - **Audio synchronization delay correction.** Adjusts this player from `-500 ms` to `+500 ms` relative to the other players in a synchronized group. Negative values make it play earlier and positive values make it play later. For example, use `-100 ms` when downstream processing by a TV or AV receiver makes this player lag by about 100 ms.
 - **Output Channel Mode.** Plays both channels or only the left or right channel, for example when creating a stereo pair from two players.
 - **Ignore volume reports sent by the device itself.** Ignores unreliable device volume feedback that can otherwise cause unexpected volume changes.
-- **Enable encryption.** Controls encrypted communication when RAOP applies. Some third-party receivers require a particular setting for playback to work.
+- **Enable encryption.** Controls encrypted communication when RAOP applies. If RAOP playback fails, try toggling this setting.
 - **Device password.** Supplies the playback password required by some RAOP receivers. This is separate from pairing credentials.
 - **Enable hi-res (24-bit) playback.** Enables 24-bit audio at 44.1 or 48 kHz for supported AirPlay 2 devices. Leave it disabled unless the device supports 24-bit rendering; some receivers accept the stream but play silence.
 
@@ -47,9 +47,7 @@ If Music Assistant cannot bind these ports, playback continues using NTP timing,
 
 ## Troubleshooting and known issues
 
-- Samsung devices have known broken AirPlay implementations. Playback can fail or remain silent with both RAOP and AirPlay 2, and there is currently no workaround.
 - If an eligible AirPlay 2 receiver has dropouts, remains silent, or fails to play, try **Force RAOP protocol**.
-- If RAOP playback is silent, verify **Enable encryption** and **Device password** against the receiver's requirements.
+- If RAOP playback fails, try toggling **Enable encryption** and verify **Device password** against the receiver's requirements.
 - If 24-bit playback is silent, disable **Enable hi-res (24-bit) playback**.
 - If volume changes unexpectedly, enable **Ignore volume reports sent by the device itself**. If volume control remains unreliable, set **Volume Control** to **None** in the **Player controls** settings.
-- If a powered-on receiver repeatedly becomes unavailable, increase its availability timeout. Some receivers send keep-alive messages so infrequently that a timeout of up to one hour may be needed.
