@@ -11,7 +11,7 @@ Music Assistant supports devices that receive [AirPlay 1 (RAOP)](https://en.wiki
 - AirPlay devices are detected automatically.
 - Music Assistant automatically uses AirPlay 2 when a device supports it and RAOP for legacy receivers.
 - Timestamped playback keeps AirPlay 1 and AirPlay 2 players synchronized in multi-room groups.
-- The `cliairplay` transport always uses lossless ALAC internally. Playback defaults to 44.1 kHz/16-bit; native AirPlay 2 devices can optionally use 24-bit audio at 44.1 or 48 kHz.
+- The provider's internal `cliairplay` transport always uses lossless ALAC. Playback defaults to 44.1 kHz/16-bit; native AirPlay 2 devices can optionally use 24-bit audio at 44.1 or 48 kHz.
 - The player settings support [stereo pairs](/faq/how-to/#create-a-stereo-pair).
 
 ## Protocol selection
@@ -47,7 +47,7 @@ If Music Assistant cannot bind these ports, playback continues using NTP timing,
 
 ## Troubleshooting and known issues
 
-- Samsung devices are marked as having broken AirPlay support. Playback can fail or remain silent with both RAOP and AirPlay 2, and there is currently no workaround.
+- Samsung devices have known broken AirPlay implementations. Playback can fail or remain silent with both RAOP and AirPlay 2, and there is currently no workaround.
 - If an eligible AirPlay 2 receiver has dropouts, remains silent, or fails to play, try **Force RAOP protocol**.
 - If RAOP playback is silent, verify **Enable encryption** and **Device password** against the receiver's requirements.
 - If 24-bit playback is silent, disable **Enable hi-res (24-bit) playback**.
