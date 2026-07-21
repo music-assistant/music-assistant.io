@@ -15,6 +15,8 @@ For clarity, running installation options other than HAOS or simple docker and/o
 
 There are settings available in MA SETTINGS>> SYSTEM>> STREAMS and then select the "Show advanced settings" toggle, that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
 
+If native AirPlay 2 groups play but drift out of sync in a Docker installation, check the [AirPlay 2 multi-room synchronization requirements](/installation/#airplay-2-multi-room-synchronization). Playback falls back to less precise timing when Music Assistant cannot bind the required PTP ports.
+
 Most players are discovered using mDNS (broadcast) so if your players do not get discovered it means that your network is blocking that traffic (e.g. IGMP or multicast snooping or filtering). You will have to check your settings (e.g. WiFi setup) if multicast is being blocked. Business solutions tend to block multicast traffic as much as possible as it hurts performance when there are many clients. In a home setup is it mandatory to have because all home gear relies on multicast. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
 
 Make sure the HA internal url is set correctly. HA SETTINGS>> SYSTEM>> NETWORK>> Home Assistant URL>> Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to http://your.internal.ip:8123/
@@ -138,4 +140,3 @@ If the above is not the issue then start MA in safe mode:
 - With Docker run the container with the environmental variable MASS_SAFE_MODE set to a boolean true value, e.g. "1" or "true"
 
 If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details.
-

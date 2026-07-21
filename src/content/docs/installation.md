@@ -93,6 +93,21 @@ If you do not use any local/networked players and only stream to software player
 
 Be aware of the trade-off: on a bridge network, player discovery and any players that need direct network access (AirPlay, Chromecast, DLNA, Sonos, and similar) will not work, and this configuration is not supported by the MA team.
 
+### AirPlay 2 multi-room synchronization
+
+Native AirPlay 2 groups use Precision Time Protocol (PTP) for accurate synchronization. Music Assistant must be able to bind UDP ports `319` and `320` in its network namespace.
+
+The official Music Assistant container image runs as root, so no extra permissions are required. If you run a custom container as a non-root user, grant it the `NET_BIND_SERVICE` capability:
+
+```
+    cap_add:
+      - NET_BIND_SERVICE
+```
+
+For `docker run`, use `--cap-add NET_BIND_SERVICE`. The ports must also be free in the container's network namespace. With `network_mode: host`, this means they must be free on the host; with macvlan, they only need to be free in the Music Assistant container. Do not add Docker `ports` mappings for UDP `319` or `320`: publishing them does not grant bind permission or resolve a conflict, and they are not incoming Music Assistant service ports.
+
+If either port cannot be bound, AirPlay playback continues using less precise Network Time Protocol (NTP) timing, but native AirPlay 2 groups may drift out of sync. Check the server logs, container capability, and port usage if this happens.
+
 The MA team will support docker installs that are installed per the above instructions. For clarity, to receive support from the MA team:
 
 - The docker install must be a simple standalone container (e.g. not using kubernetes)

@@ -36,12 +36,12 @@ AirPlay 1 (RAOP) specific advanced settings are:
 
 AirPlay 2 specific advanced settings are:
 
-- <b>Expected milliseconds to establish streaming session with the AirPlay device.</b> The number of milliseconds of data to buffer in the cliap2 binary. Try increasing the value if playback is unreliable (out of sync or not working). <b>NOTE:</b> This adds to the latency experienced for the commencement of playback.
+- <b>Expected milliseconds to establish streaming session with the AirPlay device.</b> The number of milliseconds of data to buffer while establishing an AirPlay 2 stream. Try increasing the value if playback is unreliable (out of sync or not working). <b>NOTE:</b> This adds to the latency experienced for the commencement of playback.
 
 ## Known Issues / Notes
 
 - Music Assistant implements <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> and <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay2</a>. Most devices will default to RAOP because AirPlay 2 devices should be backwards compatible by default. If a device has a bad implementation of AirPlay 1 and/or only supports AirPlay 2 without RAOP then select AirPlay2 as the protocol version.
-- Shairport and AirPlay 2 are currently incompatible due to lack of NTP timing support for AirPlay 2 in Shairport and lack of PTP timing support for AirPlay 2 in Music Assistant.
+- Native AirPlay 2 multi-room synchronization uses PTP timing. Custom non-root Docker deployments must meet the [AirPlay 2 container requirements](/installation/#airplay-2-multi-room-synchronization). If PTP is unavailable, playback falls back to NTP timing and groups may drift out of sync.
 - Playback to Macbooks is not possible due to removal of RAOP support
 - Apple TVs will be discovered but require pairing. In the player settings there is a pair button which will display a code on the screen of the Apple TV
 - Samsung seems to have implemented AirPlay 1 in a way that isn't fully backwards compatible. Everything seems to work, changing volume, song info is shown, and you can control the Samsung device as expected, however there is no sound. Users of similar applications such as Roon and anything based on slimproto have the same problem
@@ -52,4 +52,4 @@ AirPlay 2 specific advanced settings are:
 - Apple Homekit has been reported to interfere with playback. If problems are enountered then remove the devices from Apple Homekit or try changing the setting in the preferences section of Homekit (iOS) for `AirPlay (Speaker & TV)`.
   - In this section specifically check if the `Only people in this home` is not selected. When this option is selected, MusicAssistant cannot play audio on the HomePod (without setting the proper password in the advanced settings of the provider). Select the option `Everyone on the same network` instead.
 - If the AirPlay device incorrectly responds to change volume commands or randomly changes volume, try changing the `Volume Control` option in the `Player controls` section and set it to `None`
-- AirPlay 2 implementation is new and has not yet been extensively tested. It is known that Password-based pairing and PTP timing is not yet supported. There may be additional issues that are not yet known. The AirPlay 2 protocol takes longer to establish initial connection than AirPlay 1 (RAOP) due to more RTSP exchanges. This adds to the delay experienced for commencement of playback.
+- AirPlay 2 implementation is new and has not yet been extensively tested. Password-based pairing is not yet supported, and there may be additional issues that are not yet known. The AirPlay 2 protocol takes longer to establish initial connection than AirPlay 1 (RAOP) due to more RTSP exchanges. This adds to the delay experienced for commencement of playback.
