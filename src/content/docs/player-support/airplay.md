@@ -18,7 +18,7 @@ Music Assistant supports devices that receive [AirPlay 1 (RAOP)](https://en.wiki
 
 AirPlay 1 is also known as RAOP. Music Assistant automatically uses AirPlay 2 for capable devices and RAOP for legacy receivers.
 
-Eligible AirPlay 2-capable non-Apple receivers that also support RAOP expose the advanced **Force RAOP protocol** setting. This is an escape hatch for devices whose AirPlay 2 implementation causes dropouts, silence, or failed playback. Leave it disabled unless the receiver works better with RAOP.
+Some AirPlay 2-capable non-Apple receivers that also support RAOP expose the advanced **Force RAOP protocol** setting. This is an escape hatch for devices whose AirPlay 2 implementation causes dropouts, silence, or failed playback. Leave it disabled unless the receiver works better with RAOP.
 
 ## Pairing and passwords
 
@@ -26,7 +26,7 @@ Devices that advertise authentication requirements, including many Apple TVs and
 
 A pairing password is not the same as the RAOP-only **Device password** setting. Pairing establishes trusted access to a device; **Device password** supplies a password required by some receivers when connecting or playing over RAOP.
 
-Home app access restrictions are supported through the same pairing flow. If speaker and TV access is limited to people in the home, pair the device in Music Assistant. If that restriction is not required, you can instead change the Home access setting to allow devices on the same network.
+Apple Home app access restrictions are supported through the same pairing flow. If speaker and TV access is limited to people in the home, pair the device in Music Assistant. If that restriction is not required, you can instead change the Home access setting to allow devices on the same network.
 
 ## Player settings
 
@@ -47,7 +47,7 @@ If Music Assistant cannot bind these ports, playback continues using NTP timing,
 
 ## Troubleshooting and known issues
 
-- If an eligible AirPlay 2 receiver has dropouts, remains silent, or fails to play, try **Force RAOP protocol**.
+- If an AirPlay 2 receiver that also supports RAOP has dropouts, remains silent, or fails to play, try **Force RAOP protocol**.
 - If RAOP playback fails, try toggling **Enable encryption** and verify **Device password** against the receiver's requirements.
 - If 24-bit playback is silent, disable **Enable hi-res (24-bit) playback**.
 - If volume changes unexpectedly, enable **Ignore volume reports sent by the device itself**. If volume control remains unreliable, set **Volume Control** to **None** in the **Player controls** settings.
