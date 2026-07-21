@@ -11,7 +11,7 @@ Music Assistant supports devices that receive [AirPlay 1 (RAOP)](https://en.wiki
 - AirPlay devices are detected automatically.
 - Music Assistant automatically uses AirPlay 2 when a device supports it and RAOP for legacy receivers.
 - Timestamped playback keeps AirPlay 1 and AirPlay 2 players synchronized in multi-room groups.
-- The provider's internal `cliairplay` transport always uses lossless ALAC. Playback defaults to 44.1 kHz/16-bit; native AirPlay 2 devices can optionally use 24-bit audio at 44.1 or 48 kHz.
+- Audio is streamed losslessly as ALAC. Playback defaults to 44.1 kHz/16-bit; supported AirPlay 2 devices can opt into 24-bit playback at 44.1 or 48 kHz.
 - The player settings support [stereo pairs](/faq/how-to/#create-a-stereo-pair).
 
 ## Protocol selection
@@ -37,13 +37,13 @@ Settings are shown only when they apply to the selected device and protocol.
 - **Ignore volume reports sent by the device itself.** Ignores unreliable device volume feedback that can otherwise cause unexpected volume changes.
 - **Enable encryption.** Controls encrypted communication when RAOP applies. Some third-party receivers require a particular setting for playback to work.
 - **Device password.** Supplies the playback password required by some RAOP receivers. This is separate from pairing credentials.
-- **Enable hi-res (24-bit) playback.** Opts a native AirPlay 2 device into 24-bit audio at 44.1 or 48 kHz. Leave it disabled unless the device supports 24-bit rendering; some receivers accept the stream but play silence.
+- **Enable hi-res (24-bit) playback.** Enables 24-bit audio at 44.1 or 48 kHz for supported AirPlay 2 devices. Leave it disabled unless the device supports 24-bit rendering; some receivers accept the stream but play silence.
 
-## Native AirPlay 2 group synchronization
+## AirPlay 2 group synchronization
 
-Native AirPlay 2 group synchronization uses PTP timing and requires permission to bind UDP ports `319` and `320`. Custom containers that run Music Assistant as a non-root user need the `NET_BIND_SERVICE` capability. This is a local bind-permission requirement; the ports do not need to be published.
+AirPlay 2 devices that use PTP timing require Music Assistant to bind UDP ports `319` and `320` for synchronized group playback. Custom containers that run Music Assistant as a non-root user need the `NET_BIND_SERVICE` capability. This is a local bind-permission requirement; the ports do not need to be published.
 
-If Music Assistant cannot bind these ports, playback continues using NTP timing, but native AirPlay 2 groups may drift out of sync.
+If Music Assistant cannot bind these ports, playback continues using NTP timing, but these groups may drift out of sync.
 
 ## Troubleshooting and known issues
 
