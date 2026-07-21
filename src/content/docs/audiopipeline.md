@@ -5,10 +5,6 @@ description: A Description of the Audio Pipeline View
 
 # Audio Pipeline
 
-<video controls autoplay loop muted playsinline style="width: 100%; max-width: 800px;">
-  <source src="/videos/audio-pipeline.mp4" type="video/mp4" />
-</video>
-
 ## Basic View
 <img src="/assets/screenshots/audiopipeline-basic.png" alt="image" style="width: 500px;"  loading="lazy" />
 
