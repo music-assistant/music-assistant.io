@@ -22,7 +22,7 @@ Eligible AirPlay 2-capable non-Apple receivers that also support RAOP expose the
 
 ## Pairing and passwords
 
-Some devices, including Apple TV and macOS AirPlay receivers, require pairing before playback. Start pairing from the player's settings and follow the prompts. Depending on the device, Music Assistant asks for either the PIN displayed by the device or its pairing password, then stores the resulting credentials.
+Devices that advertise authentication requirements, including many Apple TVs and macOS AirPlay receivers, must be paired before playback. Start pairing from the player's settings and follow the prompts. Depending on the device, Music Assistant asks for either the PIN displayed by the device or its pairing password, then stores the resulting credentials.
 
 A pairing password is not the same as the RAOP-only **Device password** setting. Pairing establishes trusted access to a device; **Device password** supplies a password required by some receivers when connecting or playing over RAOP.
 
