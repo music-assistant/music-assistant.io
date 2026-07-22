@@ -25,6 +25,26 @@ Some filters work on the relationship between the left and right channels and th
 
 ![DSP image](/assets/screenshots/dsp.jpg)
 
+## Where to Start
+
+DSP is entirely optional and most people will never need to touch it. If a player sounds fine, leaving DSP switched off is a perfectly good choice, as it means the audio reaches the player exactly as it was in the source file.
+
+For anyone approaching it for the first time, the Tone Controls and Balance filters are the place to begin. They are the two simplest filters, they behave in the way the equivalent controls on an amplifier do, and neither of them can do any harm. The Parametric Equalizer is far more capable, but it is also the easiest to get lost in, so it is worth becoming familiar with the simple controls first.
+
+Three habits make the process much easier. Change one thing at a time, so that it is always clear what caused a difference. Use the enable toggle to compare the processed and unprocessed sound, as the ear adjusts surprisingly quickly and a change that seemed like an improvement often turns out not to be. Finally, prefer cutting to boosting: reducing the frequencies that are too prominent generally sounds more natural than raising the ones that are not, and it avoids any risk of clipping.
+
+It is also worth remembering that DSP is configured per player, so corrections made for the kitchen speaker have no effect on the living room system, and each player can be treated entirely on its own terms.
+
+### Choosing a Filter
+
+- **The music is too bassy, too dull or too bright**:  Start with [Tone Controls](/dsp/tonecontrols). If a specific narrow problem remains, such as one boomy note in a room, move on to the [Parametric Equalizer](/dsp/parametriceq/).
+- **The sound is pulled towards one side, or the listening position is off-centre**: Use Balance.
+- **One player is noticeably quieter or louder than the others**: Use Gain to bring it into line.
+- **Listening on headphones**: Crossfeed will make a speaker mix sound more natural, and hard-panned older recordings can be brought in further with Stereo Width. If a correction preset exists for the headphones, for example from [AutoEQ](https://autoeq.app/), it can be imported directly into the [Parametric Equalizer](/dsp/parametriceq/).
+- **Small speakers distorting or straining on bass**: Add a High Pass filter at around 80 Hz to remove the deep bass they cannot reproduce anyway.
+- **Quiet passages disappear in a noisy room, or for background listening**: The Compressor will even out the difference between loud and quiet.
+- **A boost has introduced clipping or harshness on peaks**: Add a Safety Limiter after the filter responsible.
+
 ## Available Filters
 
 The following filters can be added to the DSP path. The simpler filters are explained below, while the more advanced filters are described on their own dedicated pages.
