@@ -45,6 +45,16 @@ Crossfeed has no neutral setting, so it is switched off by disabling the filter 
 
 Raises or lowers the overall volume by a fixed amount, from −15 dB to +15 dB (0 dB leaves the volume unchanged). It is useful for levelling a player against others, or for reclaiming headroom before other processing is applied.
 
+### High and Low Pass
+
+Removes everything above or below a chosen frequency, rather than turning it up or down. A high-pass filter passes the high frequencies and removes the low ones, and a low-pass filter does the opposite. Which of the two applies is chosen with the Mode buttons, so a single filter covers both; adding two of these filters, one of each mode, will restrict the audio to a band in between.
+
+The Cutoff sets the frequency at which the filter starts to take effect. The transition is gradual rather than a wall, so the cutoff is the point at which the signal has been reduced by 3 dB, with frequencies further beyond it reduced progressively more. This means a high-pass set to 80 Hz still lets a little content through below 80 Hz, and the deeper the frequency the more it is removed.
+
+The Slope sets how sharply the audio is removed beyond the cutoff, in decibels per octave, where an octave is a halving or doubling of frequency. At 12 dB per octave, a high-pass set to 80 Hz reduces 40 Hz by around 12 dB; at 48 dB per octave, the same 40 Hz is reduced by around 48 dB and is effectively gone. Gentler slopes blend more naturally into the rest of the music, while steeper slopes remove unwanted content more completely at the cost of a more abrupt transition. Only 12, 24 and 48 dB per octave are offered, as the filter is built from stages that each contribute 12 dB per octave.
+
+The most common use is a high-pass to relieve small speakers of deep bass they cannot reproduce anyway, which removes rumble and cone movement that only adds distortion, typically somewhere between 60 Hz and 100 Hz. A low-pass is useful for taming harshness or hiss at the top end, or for feeding a speaker that is only meant to handle the lower part of the range. For gentler shaping of a frequency region rather than removing it outright, the Parametric Equalizer is the better tool.
+
 ### Parametric Equalizer
 
 Allows precise adjustment of specific frequency ranges and is the most powerful of the available filters. It is described in detail on the [Parametric Equalizer](/dsp/parametriceq/) page.
