@@ -2,17 +2,37 @@
 head:
   - tag: meta
     attrs:
-      property: og:image
-      content: /images/blog/2026/03/25/music-assistant-2-8/art.webp
+      property: "og:image"
+      content: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2026/03/25/music-assistant-2-8"
+  - tag: meta
+    attrs:
+      name: "twitter:image"
+      content: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2026/03/25/music-assistant-2-8"
   - tag: meta
     attrs:
       property: og:image:alt
       content: "Music Assistant 2.8: Let's get this party started!"
+  - tag: meta
+    attrs:
+      property: "og:image:title1"
+      content: "What's new in"
+  - tag: meta
+    attrs:
+      property: "og:image:title2"
+      content: "Music Assistant 2.8"
+  - tag: meta
+    attrs:
+      property: "og:image:author"
+      content: "Marvin Schenkel"
+  - tag: meta
+    attrs:
+      property: "og:image:category"
+      content: "Announcements"
 
 title: "Music Assistant 2.8: Let's get this party started!"
 description: "Music Assistant 2.8 is here! Discover our lineup of new features, from a Party Plugin to Player Merging and more. Your home audio just levelled up."
 cover:
-    image: /public/images/blog/2026/03/25/music-assistant-2-8/art.webp
+    image: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2026/03/25/music-assistant-2-8"
     alt: "Music Assistant 2.8: Let's get this party started!"
 excerpt: "After months of working with the community on new and exciting arrangements, Music Assistant is ready to take center stage once again. Today, we're thrilled to present… drum roll 🥁… version 2.8!"
 date: 2026-03-25T00:00:00.000Z

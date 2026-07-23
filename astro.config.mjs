@@ -11,6 +11,9 @@ const isProduction = process.env.CONTEXT === 'production' || !process.env.CONTEX
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.music-assistant.io',
+	image: {
+		domains: ['assets.openhomefoundation.org'],
+	},
 	markdown: {
 		remarkPlugins: [remarkAlert],
 	},
