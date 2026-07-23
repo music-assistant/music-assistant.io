@@ -35,7 +35,9 @@ Choosing a file and giving it a name adds it to the library. The name is only a 
 
 Most common audio formats are accepted, with WAV and FLAC being the usual choices. On upload the file is converted to a standard format and stored on the server, and is checked in the process, so a file that is not valid audio will be rejected with an explanation rather than failing silently later during playback. Files may be up to 50 MB in size, which is far larger than any normal impulse response requires.
 
-The sample rate of the file does not need to match the audio being played, as the impulse response is resampled to suit the stream. A mono response is applied to both channels, whereas a stereo response applies each of its channels to the matching side of the audio, which is what measurement software produces when the left and right speakers are measured separately.
+The sample rate of the file does not need to match the audio being played, as the impulse response is resampled to suit the stream. A mono response is applied identically to both channels, whereas a stereo response applies each of its channels to the matching side of the audio, which is what measurement software produces when the left and right speakers are measured separately.
+
+Only mono and stereo files are accepted. So-called **true stereo** impulse responses, which carry four channels to describe how each speaker reaches each ear, are rejected on upload with a message explaining why. Applying one would require reducing it to two channels first, which blends the four measurements together and does not reproduce the intended effect, so a mono or two channel version of the same measurement should be used instead.
 
 ### Deleting
 
