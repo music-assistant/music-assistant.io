@@ -179,6 +179,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Overview', slug: 'dsp' },
+						{ label: 'Convolution', slug: 'dsp/convolution' },
 						{ label: 'Parametric Equalizer', slug: 'dsp/parametriceq' },
 						{ label: 'Tone Controls', slug: 'dsp/tonecontrols' },
 					],
