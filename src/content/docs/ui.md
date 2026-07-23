@@ -139,13 +139,13 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 The Discover view provides quick access to different media types and recommendations. Recommendation rows load independently, so content appears one row at a time as it becomes available. Each enabled music provider can supply its own rows.
 
-Select the pencil icon in the top right to enter edit mode. From there, show or hide rows and drag them into your preferred order. Some specialised or slower-loading rows are hidden by default to keep Discover fast; enable them in edit mode if you want to use them. Select `Leave edit mode` to return to the normal view.
+Select the pencil icon in the top right to enter edit mode. From there, show or hide rows and drag them into your preferred order. Some specialized or slower-loading rows are hidden by default to keep Discover fast; enable them in edit mode if you want to use them. Select `Leave edit mode` to return to the normal view.
 
 [![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
 
 Music Assistant provides three listening history rows:
 
-- **Recently Played** reflects the item you chose to play, such as an album, playlist, artist, or genre, instead of listing its individual tracks. Podcast episodes appear as their show and audiobook chapters as their book.
+- **Recently Played** reflects the item you chose to play, such as an album, playlist, artist, or genre, instead of listing its individual tracks. For podcasts and audiobooks, it shows the parent show or book instead of individual episodes or chapters.
 - **Recent Artists** shows recently played artists.
 - **Recent Tracks** shows recently played tracks.
 ***************************************************************
