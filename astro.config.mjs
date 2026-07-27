@@ -188,6 +188,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Overview', slug: 'music-providers' },
+						{ label: 'Ambient Sounds', slug: 'music-providers/ambient-sounds' },
 						{ label: 'Apple Music', slug: 'music-providers/apple-music' },
 						{ label: 'ARD Audiothek', slug: 'music-providers/ard-audiothek' },
 						{ label: 'Audible', slug: 'music-providers/audible' },
