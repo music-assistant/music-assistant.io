@@ -12,7 +12,7 @@ Music Assistant has support for music servers which work to the <a href="https:/
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | Yes |
-| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Radio Stations |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
@@ -39,6 +39,7 @@ You will need to provide the following to Music Assistant:
 ### Settings
 
 - <b>Enable Podcasts.</b> This toggle controls podcast availability in Music Assistant
+- <b>Enable Radio Stations.</b> This toggle controls radio stations availability in Music Assistant
 - <b>Enable Legacy Auth.</b> Some Subsonic implementations require this to be enabled to authenticate
 - <b>Recommend Favorites.</b> Should favorited (starred) items be included as recommendations?
 - <b>Recommend New Albums.</b> Should new albums be included as recommendations?
