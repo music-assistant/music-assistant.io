@@ -24,6 +24,13 @@ Music Assistant has support for [Bose SoundTouch](https://www.bose.com/) speaker
 
 SoundTouch has no usable API to play an arbitrary stream, so Music Assistant does not send audio to the speaker directly. Instead, the SoundTouch provider handles control and discovery while audio is routed through a **linked playback protocol** on the same device, typically [DLNA](/player-support/dlna/). Thus, the SoundTouch provider depends on the DLNA provider and will enable it automatically.
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Bose SoundTouch`.
+2. Your SoundTouch speakers will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:

@@ -14,6 +14,13 @@ Music Assistant has support for Denon & Marantz devices with [HEOS](https://www.
 - MA will follow group being created/updated/removed from the HEOS app
 - MA will show metadata if the player is playing non-MA content
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `HEOS`.
+2. Your HEOS devices will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:

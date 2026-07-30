@@ -21,6 +21,13 @@ If the WiiM device is grouped with an AirPlay device, or if the default [output 
 > [!NOTE]
 > If, as a result of grouping, a switch is required to the AirPlay protocol then a small silence due to the stream restart is to be expected.
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `WiiM`.
+2. Your WiiM devices will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:

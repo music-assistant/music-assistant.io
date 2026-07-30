@@ -17,6 +17,13 @@ Music Assistant has support for Samsung's Wireless Audio Multiroom (WAM) speaker
 - Announcements are supported
 - Changing the player name in Music Assistant also updates the friendly name on the device
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Samsung WAM`.
+2. Your Samsung WAM speakers will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:

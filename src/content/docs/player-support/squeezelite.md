@@ -15,6 +15,13 @@ MA achieves this by partly emulating a Logitech Media Server (which is now maint
 - Squeezelite client device buttons support
   - Any physical control buttons on the device should be supported as long as [flow mode](/faq/tech-info/#track-queueing) is not enabled
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Squeezelite`.
+2. Your Squeezelite players will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Settings
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the Squeezelite provider also has a unique setting in the Advanced section and a unique Presets section

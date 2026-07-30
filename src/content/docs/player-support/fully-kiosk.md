@@ -11,6 +11,12 @@ Music Assistant has support for streaming to devices running the Fully Kiosk Bro
 - This is a basic player
 - Multiple Fully Kiosk browser players can be added
   
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Fully Kiosk Browser` (Fully Kiosk players are not discovered automatically).
+2. Enter the IP address (or hostname) and the password of the device running Fully Kiosk. See Settings below for the remaining options.
+3. To add more Fully Kiosk devices, add the provider again for each one.
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
