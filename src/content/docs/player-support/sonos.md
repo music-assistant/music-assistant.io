@@ -37,7 +37,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 
 ## Known Issues / Notes
 
-- Issues have been reported with the Sonos Arc and Unifi networking equipment. If you have problems, ensure `Multicast DNS` and `IGMP snooping` are turned ON in your UniFi network settings — these are router settings that control the announcement messages speakers use to be discovered; see [Networking Basics](/faq/networking/) for an explanation and a full checklist
+- Issues have been reported with the Sonos Arc and Unifi networking equipment. If you have problems, ensure `Multicast DNS` and `IGMP snooping` are turned ON in your UniFi network settings. These are router settings that control the announcement messages speakers use to be discovered; see [Networking Basics](/faq/networking/) for an explanation and a full checklist
 - Issues have been reported with playback not starting on the `Sonos Connect Amp` and `Play:1`. If this is encountered then set `Enable Queue Flow Mode` to ON in the [individual player settings](/settings/individual-player/)
 - S1 and S2 devices cannot be grouped together in the same Sync Group. S1 and S2 devices can be grouped via a Universal Group but will not play in sync
 - Using the Sonos HA Integration at the same time as the MA Sonos S1 player provider may cause problems. It is not possible to run the HA provider and Sonos S1 provider on the same host and additionally these speakers do not like too many requests from too many sources. It is therefore recommended to only use the MA Sonos S1 player provider
