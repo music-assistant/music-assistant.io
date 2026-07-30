@@ -7,7 +7,7 @@ title: "Spotify"
 Music Assistant has full support for Spotify media listing and playback.
 
 > [!WARNING]
-> Spotify is preventing accounts from approximately 2023 from working. Some even older accounts are affected. If the provider does not work and `key error` messages are seen in the log then the account is affected
+> Spotify has blocked accounts created around 2024 and later from working with third party apps like Music Assistant, and some older accounts are also affected. If the provider does not work and you see `Key Error` messages in the log, your account is affected. There is currently no remedy; consider using [another streaming source that we support](/music-providers/) instead
 
 > [!NOTE]
 > A Spotify Premium account is required for this music source. Free accounts will not work.
@@ -65,6 +65,7 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 
 ## Known Issues / Notes
 
+- Spotify has blocked accounts created around 2024 and later, and some older accounts are also affected. If you see `Key Error` messages in the log, your account is affected. There is currently no remedy; consider changing to [another streaming source that we support](/music-providers/)
 - Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work
 - When you first save the source, MA checks whether the account supports audiobooks. If it does, additional audiobook related options appear when you revisit the source's settings
 - After you add the developer token, MA maintains two sessions to a single Spotify source and routes requests appropriately. For example, MA requests playlists via its global token (which is rate limited but allows playlist retrieval) while it retrieves other items via the dev token. Search uses the dev token by default as it is otherwise very slow. Playing and browsing playlists is routed through the global token to the originating source (useful when multiple Spotify accounts are added)
