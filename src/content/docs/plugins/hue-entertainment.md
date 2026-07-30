@@ -22,7 +22,7 @@ Music Assistant can sync <a href="https://www.philips-hue.com/" target="_blank" 
 
 - The Sendspin plugin must be installed and at least one Sendspin player or group available — Hue light players can only be joined to Sendspin players
 - Create an Entertainment Area in the Philips Hue app (SETTINGS >> ENTERTAINMENT AREAS) before adding the plugin
-- In Music Assistant, go to MA SETTINGS >> PLUGINS >> ADD A PLUGIN >> HUE LIGHTS SYNC
+- In Music Assistant, go to `SETTINGS >> PLUGINS >> ADD A PLUGIN` and select `HUE LIGHTS SYNC`
 - Enter the IP address of the Hue bridge, or let mDNS auto-discover it
 - Press the physical link button on the Hue bridge, then click `Pair` in the MA UI
 - Click SAVE to complete configuration — each entertainment area on the bridge will appear as a Light player
