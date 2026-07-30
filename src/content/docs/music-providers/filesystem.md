@@ -150,14 +150,12 @@ In addition to the settings outlined above to configure this source there are ad
 
 - To minimise the chance of problems with MA the <a href="https://kodi.wiki/view/Music_tagging" target="_blank" rel="noopener noreferrer">Kodi guidelines</a> should be followed. Just about all the tips, tricks and suggestions on that page are applicable to MA and if it is followed to the letter the UX will be much better
 
-> [!NOTE]
-> As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
-> - All formats: Single MusicBrainz Artist ID
-> - Vorbis (FLAC, OGG): Multiple (more than 1) ARTIST fields (one per artist)
-> - ID3v2.4 (MP3): Multiple (more than 1) null-separated values in TPE1
-> - APEv2 (WavPack, Musepack, etc.): Multiple (more than 1) null-separated values in Artist field
-
 ### Multi-Artist Tracks
+
+For tracks with multiple artists, the simple summary is: tag your files with MusicBrainz Picard and let it write the ARTISTS tag and the MusicBrainz IDs; MA will then link the artists correctly. If your artists are being split incorrectly (or not split at all), the details below explain exactly how MA reads multi-artist tags for each file format.
+
+<details>
+<summary>How MA parses multi-artist tags (per file format)</summary>
 
 For tracks with multiple artists, MA supports several approaches. The most reliable way is to provide a semi-colon delimited list of MusicBrainz IDs for ARTIST ID and RELEASE ARTIST ID alongside your artist tags. When the MBID count matches the parsed artist count, the tag names are used as-is. If the counts disagree (for example an artist whose real name contains a separator character), MA will query MusicBrainz to resolve the canonical names from the IDs instead.
 
@@ -171,7 +169,16 @@ Whether or not MBIDs are present, the artist names themselves need to be encoded
 > [!NOTE]
 > - If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database
 >
-> - The album artist tag is parsed the same way as ARTIST — same multi-value rules, same splitters (including featuring-style and MBID-guided), and the same MusicBrainz fallback when the parsed count doesn't match the MBID count
+> - The album artist tag is parsed the same way as ARTIST - same multi-value rules, same splitters (including featuring-style and MBID-guided), and the same MusicBrainz fallback when the parsed count doesn't match the MBID count
+
+> [!NOTE]
+> As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
+> - All formats: Single MusicBrainz Artist ID
+> - Vorbis (FLAC, OGG): Multiple (more than 1) ARTIST fields (one per artist)
+> - ID3v2.4 (MP3): Multiple (more than 1) null-separated values in TPE1
+> - APEv2 (WavPack, Musepack, etc.): Multiple (more than 1) null-separated values in Artist field
+
+</details>
 
 ### Tags used by MA
 
@@ -201,26 +208,75 @@ When the filesystem provider encounters a `.cue` file, each logical track descri
 
 Information for each track is built from two sources: the CUE Sheet and the tags in the referenced audio file. Where both describe the same album-level field, the CUE Sheet wins.
 
-The original Cue Sheet specification only had [13 directives](https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/). These are not sufficient for Music Assistant to work optimally, so additional support has been added through various REM fields to allow the provision of the equivalent [tags listed above](#tags-used-by-ma). This metadata can be provided through any combination of tags in the file and fields in the Cue Sheet as described below. Because mainstream CUE Sheet authoring tools do not emit these REM fields (they follow the original 13-directive spec), users who want the full metadata available to Music Assistant will need to add them manually to the CUE Sheet — or, for album-level metadata, tag the audio file itself. The naming follows [Picard's variable conventions](https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html), so anyone already tagging their library with Picard will find the fields familiar.
+For most users, a standard CUE sheet produced by a mainstream ripping tool (EAC, CUETools, foobar2000, XLD) will just work. The section below shows the minimum MA needs; the full field reference is for those who want to hand-tune their sheets.
 
-### Multi-value strategy
+### Minimum viable CUE sheet
+
+Assuming the audio file has proper `album`/`albumartist` tags of its own:
+
+```
+FILE "album.flac" WAVE
+  TRACK 01 AUDIO
+    TITLE "First Song"
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Second Song"
+    INDEX 01 03:45:00
+```
+
+Each track requires:
+
+- `TRACK NN AUDIO`
+- `TITLE "..."` - tracks without a title are skipped with a warning
+- `INDEX 01 MM:SS:FF`
+
+The sheet requires:
+
+- `FILE` - can be omitted if the CUE Sheet shares the audio file's stem (e.g. `album.cue` alongside `album.flac`).
+
+Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
+
+If the audio file also has no album/artist tags, the minimum grows to:
+
+```
+PERFORMER "The Band"
+TITLE "Album Name"
+FILE "album.flac" WAVE
+  TRACK 01 AUDIO
+    TITLE "First Song"
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Second Song"
+    INDEX 01 03:45:00
+```
+
+Without either a CUE `TITLE` or an audio-file album tag, tracks are still imported but without an album attachment - a warning is logged.
+
+### Full field reference (advanced)
+
+<details>
+<summary>Every directive Music Assistant parses, and how metadata is combined</summary>
+
+The original Cue Sheet specification only had [13 directives](https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/). These are not sufficient for Music Assistant to work optimally, so additional support has been added through various REM fields to allow the provision of the equivalent [tags listed above](#tags-used-by-ma). This metadata can be provided through any combination of tags in the file and fields in the Cue Sheet as described below. Because mainstream CUE Sheet authoring tools do not emit these REM fields (they follow the original 13-directive spec), users who want the full metadata available to Music Assistant will need to add them manually to the CUE Sheet - or, for album-level metadata, tag the audio file itself. The naming follows [Picard's variable conventions](https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html), so anyone already tagging their library with Picard will find the fields familiar.
+
+**Multi-value strategy**
 
 Multi-value fields follow the Vorbis convention: repeat the line rather than delimiter-joining. This keeps names like `AC/DC` or `Wait, Wait... Don't Tell Me!` intact. Multi-value capable directives are indicated in the table below.
 
-Where both artists and a companion field (sort names, MB artist IDs) are multi-value, Music Assistant aligns them by index — the Nth `REM ARTISTSORT` goes with the Nth `PERFORMER`.
+Where both artists and a companion field (sort names, MB artist IDs) are multi-value, Music Assistant aligns them by index - the Nth `REM ARTISTSORT` goes with the Nth `PERFORMER`.
 
-### Fields read from the CUE sheet — sheet (album) level
+**Fields read from the CUE sheet (album level)**
 
-Written at the top of the file, before any `TRACK`. The **Standard** column indicates whether the directive is commonly emitted by mainstream ripping/authoring tools (EAC, CUETools, foobar2000, XLD), not necessarily part of the original 13-directive CDRWIN spec. Fields marked **No** are Music Assistant extensions — other players may ignore them.
+Written at the top of the file, before any `TRACK`. The **Standard** column indicates whether the directive is commonly emitted by mainstream ripping/authoring tools (EAC, CUETools, foobar2000, XLD), not necessarily part of the original 13-directive CDRWIN spec. Fields marked **No** are Music Assistant extensions - other players may ignore them.
 
-Standard directives FLAGS, PREGAP, POSTGAP, SONGWRITER, and CDTEXTFILE are accepted but silently ignored — they're CD-burning or CD-Text binary-file concerns that don't map to Music Assistant's library model.
+Standard directives FLAGS, PREGAP, POSTGAP, SONGWRITER, and CDTEXTFILE are accepted but silently ignored - they're CD-burning or CD-Text binary-file concerns that don't map to Music Assistant's library model.
 
 | Directive | Standard | Multi? | Feeds |
 |-----------|:---:|:---:|-------|
 | `FILE "..." WAVE\|MP3\|...` | Yes | no | Path to the referenced audio file |
 | `TITLE "..."` | Yes | no | Album title (overrides audio album) |
 | `PERFORMER "..."` | Yes | yes | Album artists (overrides audio albumartist(s)) |
-| `CATALOG <upc>` | Yes | no | Disc UPC/EAN — album barcode |
+| `CATALOG <upc>` | Yes | no | Disc UPC/EAN - album barcode |
 | `REM DATE YYYY` | Yes | no | Album year |
 | `REM GENRE "..."` / `GENRE "..."` | Yes | yes | Album genres |
 | `REM ALBUMSORT "..."` | No | no | Album sort name |
@@ -230,7 +286,7 @@ Standard directives FLAGS, PREGAP, POSTGAP, SONGWRITER, and CDTEXTFILE are accep
 | `REM MUSICBRAINZ_RELEASEGROUPID <uuid>` | No | no | Release group MBID |
 | `REM RELEASETYPE ...` | No | yes | Album type (e.g. `album`, `compilation`, `live`) |
 
-### Fields read from the CUE sheet — track level
+**Fields read from the CUE sheet (track level)**
 
 Written inside each `TRACK NN AUDIO` block:
 
@@ -254,19 +310,19 @@ Written inside each `TRACK NN AUDIO` block:
 
 Track duration is computed from the next track's `INDEX 01` minus this track's `INDEX 01`. For the final track, it is computed from the audio file's total duration.
 
-### Fields read from the audio file
+**Fields read from the audio file**
 
 `ffprobe` tags on the referenced audio file supply everything that applies to the album as a whole, plus the technical format used for playback:
 
-- **Format** (shared by every CUE track) — sample rate, bit depth, channels, bit rate, container/codec, embedded cover art, disc number.
-- **Album metadata** (used unless overridden by the CUE sheet) — album, albumsort, albumartist/albumartists, albumartistsort, musicbrainzalbumartistid, album_type, date/year, genre, barcode, musicbrainzalbumid, musicbrainzreleasegroupid.
-- **Loudness normalisation** — run a ReplayGain scanner against the audio file (e.g. `metaflac --add-replay-gain album.flac` or `rsgain easy album.flac`). Music Assistant reads `REPLAYGAIN_ALBUM_GAIN` from the audio file tags automatically; for a single-file CUE rip, file gain *is* album gain.
+- **Format** (shared by every CUE track) - sample rate, bit depth, channels, bit rate, container/codec, embedded cover art, disc number.
+- **Album metadata** (used unless overridden by the CUE sheet) - album, albumsort, albumartist/albumartists, albumartistsort, musicbrainzalbumartistid, album_type, date/year, genre, barcode, musicbrainzalbumid, musicbrainzreleasegroupid.
+- **Loudness normalisation** - run a ReplayGain scanner against the audio file (e.g. `metaflac --add-replay-gain album.flac` or `rsgain easy album.flac`). Music Assistant reads `REPLAYGAIN_ALBUM_GAIN` from the audio file tags automatically; for a single-file CUE rip, file gain *is* album gain.
 
-Track-specific audio tags (title, artists, lyrics, per-track loudness, etc.) are not applied per CUE track — a single-file rip only carries one copy of those, so Music Assistant relies on the CUE sheet for anything that varies between tracks.
+Track-specific audio tags (title, artists, lyrics, per-track loudness, etc.) are not applied per CUE track - a single-file rip only carries one copy of those, so Music Assistant relies on the CUE sheet for anything that varies between tracks.
 
 Track artists (PERFORMER) fall back to sheet-level PERFORMER rather than audio tags. If there are no PERFORMER directives found then [unknown] will be applied.
 
-### Reference CUE sheet
+**Reference CUE sheet**
 
 Every directive Music Assistant currently parses:
 
@@ -317,47 +373,7 @@ REM MUSICBRAINZ_ALBUMARTISTID aa000000-0000-0000-0000-000000000000
     INDEX 01 03:52:15
 ```
 
-### Minimum viable CUE sheet
-
-Assuming the audio file has proper `album`/`albumartist` tags of its own:
-
-```
-FILE "album.flac" WAVE
-  TRACK 01 AUDIO
-    TITLE "First Song"
-    INDEX 01 00:00:00
-  TRACK 02 AUDIO
-    TITLE "Second Song"
-    INDEX 01 03:45:00
-```
-
-Each track requires:
-
-- `TRACK NN AUDIO`
-- `TITLE "..."` — tracks without a title are skipped with a warning
-- `INDEX 01 MM:SS:FF`
-
-The sheet requires:
-
-- `FILE` — can be omitted if the CUE Sheet shares the audio file's stem (e.g. `album.cue` alongside `album.flac`).
-
-Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
-
-If the audio file also has no album/artist tags, the minimum grows to:
-
-```
-PERFORMER "The Band"
-TITLE "Album Name"
-FILE "album.flac" WAVE
-  TRACK 01 AUDIO
-    TITLE "First Song"
-    INDEX 01 00:00:00
-  TRACK 02 AUDIO
-    TITLE "Second Song"
-    INDEX 01 03:45:00
-```
-
-Without either a CUE `TITLE` or an audio-file album tag, tracks are still imported but without an album attachment — a warning is logged.
+</details>
 
 ---
 
