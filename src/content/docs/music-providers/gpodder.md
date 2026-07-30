@@ -1,11 +1,22 @@
 ---
 title: "gPodder"
-description: "Sync podcast subscriptions and playback progress with Music Assistant using a gPodder compatible server, such as nextcloud-gpodder or opodsync. Also covers syncing with AntennaPod and other gPodder podcast apps."
+description: "Sync podcast subscriptions and listening progress between Music Assistant and other podcast apps, such as AntennaPod, using a gPodder compatible server."
 ---
 
 # gPodder <img src="/assets/icons/gpodder-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for <a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a>. Contributed and maintained by <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a>
+
+gPodder is a synchronisation service for podcast apps rather than a place to discover podcasts. It keeps a
+shared record of the podcasts you subscribe to and how far through each episode you are, so that several apps
+can stay in step with one another.
+
+This provider connects Music Assistant to that shared record. Your existing subscriptions turn up as podcasts
+you can play, and your listening progress is written back as you go, so an episode started elsewhere can be
+finished on a speaker, or the other way round.
+
+Music Assistant does not host the shared record itself. You run a gPodder compatible server and point this
+provider at it, as described under [Configuration](#configuration).
 
 ## Features
 
@@ -28,41 +39,10 @@ Music Assistant has support for <a href="https://gpodder.github.io" target="_bla
 - Populates libraries with podcasts
 - Updates playlog on regular provider syncs
 
-## What syncs, and in which direction
-
-Music Assistant is a gPodder *client*, in the same way that AntennaPod is. It does not sync with other
-apps directly; everything passes through the gPodder compatible server that both apps are pointed at.
-
-|                     |                     |
-|:-----------------------|:---------------------:|
-| Subscriptions | Server → Music Assistant only |
-| Playback progress / resume position | Both ways |
-| Mark as unplayed | Both ways |
-| Episode deleted in another client | Server → Music Assistant |
-
-> [!IMPORTANT]
-> Subscriptions are only read from the server. Adding or removing a podcast **inside Music Assistant is
-> not sent back**, so manage your subscriptions in AntennaPod, in another gPodder client, or on the
-> server itself.
-
-Audio is never fetched through the sync server. Music Assistant reads the podcast's RSS feed and streams
-the episode directly from the feed's own URL, so the server only ever carries feed URLs and progress.
-
 ## Configuration
 ### gpodder.net compatible webservice
 A <a href="https://github.com/gpodder/mygpo" target="_blank" rel="noopener noreferrer">mygpo</a> compatible web service is supported, and this provider is tested against
 <a href="https://github.com/kd2org/opodsync" target="_blank" rel="noopener noreferrer">opodsync</a>
-
-Several self-hosted servers implement this API:
-
-|                     |                     |
-|:-----------------------|:---------------------:|
-| <a href="https://github.com/kd2org/opodsync" target="_blank" rel="noopener noreferrer">opodsync</a> (PHP) | Tested with Music Assistant |
-| <a href="https://github.com/thrillfall/nextcloud-gpodder" target="_blank" rel="noopener noreferrer">nextcloud-gpodder</a> (PHP) | Tested with Music Assistant |
-| <a href="https://github.com/bobrippling/podsync" target="_blank" rel="noopener noreferrer">podsync</a> (Rust) | Implements the required endpoints, untested here |
-| <a href="https://github.com/eliassoares/malipod-selfhosted" target="_blank" rel="noopener noreferrer">malipod</a> (Python) | Implements the required endpoints, untested here |
-| <a href="https://github.com/cbrgm/gopodder" target="_blank" rel="noopener noreferrer">goPodder</a> (Go) | Not verified against this provider |
-
 To setup this functionality you need:
 
 - <b>gPodder Service URL.</b> For example, `http://192.168.1.20:14000` or `https://sync.yourdomain.com`
@@ -81,36 +61,6 @@ The provider supports <a href="https://apps.nextcloud.com/apps/gpoddersync" targ
 
 To setup this functionality, you need the `Nextcloud URL`, and then click the AUTHENTICATE WITH NEXTCLOUD button to start the authentication flow. Click save when finished
 
-### Syncing with AntennaPod and other podcast apps
-
-<a href="https://antennapod.org" target="_blank" rel="noopener noreferrer">AntennaPod</a> has no server of its own, so
-there is no AntennaPod source to add to Music Assistant. Instead, point AntennaPod and Music Assistant at the
-same gPodder compatible server and they will share subscriptions and listening progress through it. The same
-approach works for any other app that supports gPodder sync.
-
-Using Nextcloud is the simpler of the two routes:
-
-- Install the <a href="https://apps.nextcloud.com/apps/gpoddersync" target="_blank" rel="noopener noreferrer">gPodder Sync</a> app on your Nextcloud
-- In AntennaPod, go to `Settings` » `Synchronization` and choose Nextcloud
-- In Music Assistant, set this provider up with the `nextcloud-gpodder` method described above
-
-There is no Device ID in this setup, so nothing further needs to be matched up.
-
-If you instead use opodsync or another mygpo compatible server, both apps must be configured with the
-**same Device ID**:
-
-- Create the device on the server first. AntennaPod expects the device to already exist and lets you pick
-  it from a list at the end of login, rather than typing one in
-- Enter that same value in the `Device ID` field in Music Assistant
-
-> [!IMPORTANT]
-> If the Device IDs do not match, each app will only ever see its own listening progress. The server
-> returns episode actions filtered by device, so a mismatch looks like syncing silently doing nothing.
-
-> [!NOTE]
-> `gpodder.net` cannot be used as the shared server, even though AntennaPod supports it. Music Assistant
-> rejects that URL during setup, for the reasons given above. Use a self-hosted server instead.
-
 ### Multi-user environment
 
 The gpodder provider can be set up multiple times for individual users.
@@ -125,3 +75,34 @@ user please refer to [user management](/settings/user-management/#filter-progres
 ## Known Issues / Notes
 
 - Nil
+
+## Syncing with other podcast apps
+
+Music Assistant does not talk to other podcast apps directly. Every app reads from and writes to the same
+gPodder compatible server, and picks up whatever the others have left there, so anything that supports
+gPodder sync can share a set of subscriptions and a listening position with Music Assistant.
+
+What travels in each direction:
+
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscriptions | From the server only |
+| Playback progress and resume position | Both ways |
+| Mark as unplayed | Both ways |
+| Episode deleted in another app | From the server only |
+
+> [!IMPORTANT]
+> Subscriptions are only read from the server. Adding or removing a podcast inside Music Assistant is not
+> sent back, so subscribe and unsubscribe from another app or on the server itself.
+
+Podcast audio does not pass through the sync server. Music Assistant reads the podcast's RSS feed and streams
+the episode from the feed's own address, so the server only ever holds feed addresses and listening progress.
+
+On a mygpo compatible server, every app must use the same Device ID, as noted above. Progress is returned per
+device, so a mismatch leaves each app seeing only what it recorded itself. Nextcloud has no Device ID, and
+needs nothing matched up.
+
+Apps that support gPodder sync include <a href="https://antennapod.org" target="_blank" rel="noopener noreferrer">AntennaPod</a> (Android),
+<a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a> (desktop),
+<a href="https://apps.kde.org/kasts/" target="_blank" rel="noopener noreferrer">Kasts</a> (Linux, Android and Windows) and
+<a href="https://github.com/madeofpendletonwool/PinePods" target="_blank" rel="noopener noreferrer">PinePods</a> (self-hosted). This list is not exhaustive.
