@@ -45,7 +45,7 @@ article video {
 }
 
 /* Open Home Foundation badge */
-article img[src*="openhomefoundation.org"] {
+article:not(.preview) img[src*="openhomefoundation.org"] {
   margin-top: 2rem;
   max-width: 300px;
 }
