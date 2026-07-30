@@ -40,10 +40,10 @@ MA ships with an API key inbuilt but if a personal API key is desired to be used
 Each row holds up to 10 items. They are constructed as follows:
 
 **Personalized (Similar Artists / Similar Tracks)**
-Similar Artists seeds from up to five artists, and Similar Tracks from up to twenty tracks, ranked by how often they appear across your recent listening. Last.fm is asked for similar items for each seed; the combined list is deduplicated and sorted by Last.fm's similarity match score, and the top-scoring items are resolved against available streaming providers. The row is fully deterministic given the listening history: two refreshes with the same play history produce the same row. It only shifts when listening habits change or Last.fm updates its similarity data.
+Similar Artists seeds from up to five artists, and Similar Tracks from up to twenty tracks, ranked by how often they appear across your recent listening. Last.fm is asked for similar items for each seed; the combined list is deduplicated and sorted by Last.fm's similarity match score, and the top-scoring items are resolved against available streaming providers. The row is fully deterministic given the listening history. Two refreshes with the same play history produce the same row. It only shifts when listening habits change or Last.fm updates its similarity data.
 
 **Global Charts (Top Artists / Top Tracks)**
-Takes Last.fm's worldwide chart in order, resolves the top 15, and shows the first 10 that match something on the available streaming providers. No randomisation: the order is exactly Last.fm's chart ranking. The row changes when Last.fm's chart changes.
+Takes Last.fm's worldwide chart in order, resolves the top 15, and shows the first 10 that match something on the available streaming providers. No randomisation. The order is exactly Last.fm's chart ranking. The row changes when Last.fm's chart changes.
 
 **Genre (Top Artists / Albums / Tracks)**
 Cycles through your top three Last.fm genres, a different one each day. For the day's genre it fetches Last.fm's top 60, drops any already in your library, then picks items via "top 3 + random 7": the first three are fixed to Last.fm's top three, the other seven are a random sample from the rest. The random portion rotates each time the update task runs while the top three stay put.

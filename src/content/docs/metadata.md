@@ -7,7 +7,7 @@ description: A Description of the Metadata sources available to Music Assistant
 
 Metadata is everything Music Assistant shows around your music: artwork, artist biographies, genres, lyrics and more. If you are here because artwork or artist info is missing, the short version is: your own tags and files always win, free online services fill in the gaps slowly in the background, and adding a MusicBrainz ID to a tag or `.nfo` file fixes most matching problems.
 
-Music Assistant draws on two layers of metadata. **Source metadata** comes from wherever a track actually lives: embedded file tags, `.lrc` and [`.nfo` files](https://kodi.wiki/view/NFO_files), and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. **Online metadata providers** are dedicated third-party services queried only to fill in fields the source did not supply; they are listed in the [provider summary](#provider-summary) below.
+Music Assistant draws on two layers of metadata. **Source metadata** comes from wherever a track actually lives - embedded file tags, `.lrc` and [`.nfo` files](https://kodi.wiki/view/NFO_files), and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. **Online metadata providers** are dedicated third-party services queried only to fill in fields the source did not supply; they are listed in the [provider summary](#provider-summary) below.
 
 Source metadata is always preferred; online metadata is complementary.
 
@@ -35,11 +35,11 @@ The language used for descriptions and bios is set under [Settings → System Se
 
 For library items backed by a local music collection, the following are read automatically during the library scan:
 
-- **Embedded tags** in audio files: title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, ReplayGain values, etc. The `genre` tag is applied to the track only; album and artist genres are sourced separately (see below).
+- **Embedded tags** in audio files - title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, ReplayGain values, etc. The `genre` tag is applied to the track only; album and artist genres are sourced separately (see below).
 - **`.lrc` sidecar files** with the same name as the audio file, used as synchronized lyrics. This is the format produced by tools such as LRCGET
-- **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)): title, sort name, biography, genres, MusicBrainz artist ID
-- **`album.nfo`** in an album folder: title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs
-- **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, [etc.](/music-providers/filesystem/#known-issues--notes)): used as thumbnails and other artwork for albums and artists
+- **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) - title, sort name, biography, genres, MusicBrainz artist ID
+- **`album.nfo`** in an album folder - title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs
+- **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, [etc.](/music-providers/filesystem/#known-issues--notes)) - used as thumbnails and other artwork for albums and artists
 
 These are part of the source metadata layer and always take priority over online lookups. They are also the most reliable way to fix problems with online matching: adding a MusicBrainz ID to a tag or `.nfo` file immediately unlocks the rest of the online providers for that item.
 
