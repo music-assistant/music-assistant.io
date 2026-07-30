@@ -36,7 +36,7 @@ Music Assistant has support for Youtube Music. Contributed and maintained by <a 
 
 ## Configuration
 
-As of Nov 2024, Google has removed OAuth authentication from YT Music. This means this (somewhat cumbersome) method of cookie authentication is the **only** way to get YT Music working. Setup has three parts: install the PO Token app, obtain your login cookie, then configure the source.
+Cookie authentication is the **only** way to get YT Music working; Google does not support any other login method for third party apps. The process is somewhat cumbersome, but you only need to repeat it when the cookie expires. Setup has three parts: install the PO Token app, obtain your login cookie, then configure the source.
 
 > [!NOTE]
 > Cookies expire after some time. If YT Music stops working and you see `401: Unauthorized` or `Unable to fetch PO Token for web_music client` in the MA log, run the cookie steps again
