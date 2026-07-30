@@ -6,6 +6,13 @@ title: "Google Cast"
 
 Music Assistant has full support for Google Cast based devices. This includes Google's own hardware like the Google Nest speakers but also a wide range of other brands have "Chromecast builtin" support, like Harman Kardon, JBL, Canton and many others. 
 
+## Setup
+
+1. In Music Assistant, go to `Settings >> Providers` and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click `ADD A NEW PROVIDER` and select `Google Cast`.
+2. Your Cast devices, and any speaker groups created in the Google Home app, will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Features
 
 - Cast speakers are auto detected by Music Assistant

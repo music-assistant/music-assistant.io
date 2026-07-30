@@ -4,7 +4,14 @@ title: "Sonos"
 
 # Sonos <img src="/assets/icons/sonos-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for Sonos devices. There are two providers available. "Sonos S1" for the S1 devices and "Sonos" for S2.
+Music Assistant has support for Sonos devices. There are two providers available: "Sonos" for modern (S2) devices and "Sonos S1" for the older S1 generation. If your speakers use the current Sonos app they are S2.
+
+## Setup
+
+1. In Music Assistant, go to `Settings >> Providers` and check whether `Sonos` is already listed; it is added automatically on new installs. If it is missing, click `ADD A NEW PROVIDER` and select `Sonos`, or `Sonos S1` for the older device generation.
+2. Your Sonos devices will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Features
 
