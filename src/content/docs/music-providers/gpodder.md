@@ -98,9 +98,10 @@ What travels in each direction:
 Podcast audio does not pass through the sync server. Music Assistant reads the podcast's RSS feed and streams
 the episode from the feed's own address, so the server only ever holds feed addresses and listening progress.
 
-On a mygpo compatible server, every app must use the same Device ID, as noted above. Progress is returned per
-device, so a mismatch leaves each app seeing only what it recorded itself. Nextcloud has no Device ID, and
-needs nothing matched up.
+If you connect through a [gPodder or opodsync server](#gpoddernet-compatible-webservice), every app must be
+set to the same Device ID. Progress is stored against the device that recorded it, so a mismatch leaves each
+app seeing only its own listening history. Connecting through [Nextcloud](#nextcloud-gpodder) instead has no
+Device ID, so there is nothing to match up.
 
 Apps that support gPodder sync include:
 
