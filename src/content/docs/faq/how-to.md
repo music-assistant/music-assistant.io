@@ -72,6 +72,31 @@ Relative paths to the playlist (e.g.` ../Mariah Carey/Merry Christmas/02 All I W
 
 M3U, M3U8 and PLS playlists are supported. <a href="https://www.iptvx.info/?p=1002" target="_blank" rel="noopener noreferrer">VLC can be used to easily create playlists</a> that MA can use.
 
+## Stop the music after a period of time aka Sleep Timer
+
+MA has a built-in sleep timer: open the [Now Playing View](/ui/#now-playing-view) and select the sleep timer option from the menu in the top right.
+
+For Home Assistant users, an automation can achieve a similar result, for example stopping after the current track finishes:
+
+``` yaml
+sequence:
+  - wait_for_trigger:
+      - platform: state
+        entity_id:
+          - media_player.mass_all_rooms
+        attribute: media_title
+    continue_on_timeout: false
+  - action: media_player.turn_off
+    data: {}
+    target:
+      entity_id:
+        - media_player.mass_all_rooms
+mode: single
+alias: Stop after current track
+```
+
+Thanks to <a href="https://github.com/Aasikki" target="_blank" rel="noopener noreferrer">AAsikki</a> who showed us <a href="https://github.com/orgs/music-assistant/discussions/830#discussioncomment-3355921" target="_blank" rel="noopener noreferrer">here</a>
+
 ## Create a Stereo Pair
 
 If a [Player Provider](/player-support/) supports stereo pairs natively, and these can be setup in the native app, and MA can detect these unique "players" then this should work. Otherwise, for the player providers that support perfect sync and show the `Output Channel Mode` in the Protocol Settings for the individual player then each player of the stereo pair can be assigned an individual channel and then the two players grouped as a [Sync Group](/faq/groups/#sync-groups).
@@ -268,23 +293,3 @@ script:
 > [!NOTE]
 > Replace the `config_entry_id` value with the one for your own MA integration; the example above will not work as-is. The easiest way to get yours is to build the action once with the UI editor in Home Assistant's Developer Tools > Actions and then switch to YAML view.
 
-### Stop the music after a period of time aka Sleep Timer
-
-``` yaml
-sequence:
-  - wait_for_trigger:
-      - platform: state
-        entity_id:
-          - media_player.mass_all_rooms
-        attribute: media_title
-    continue_on_timeout: false
-  - action: media_player.turn_off
-    data: {}
-    target:
-      entity_id:
-        - media_player.mass_all_rooms
-mode: single
-alias: Stop after current track
-```
-
-Thanks to <a href="https://github.com/Aasikki" target="_blank" rel="noopener noreferrer">AAsikki</a> who showed us <a href="https://github.com/orgs/music-assistant/discussions/830#discussioncomment-3355921" target="_blank" rel="noopener noreferrer">here</a>
