@@ -77,7 +77,7 @@ The contents of the ⋮ menu vary depending upon player and queue state. When a 
 When a [player group](/faq/groups/) is powered on the members of that group will disappear from the player list and individual playback to those players will not be possible. In order to playback to an individual player, then either power off the group or remove the player from the group.
 
 > [!NOTE]
-> The MDI icon shown against each player can be changed in the player settings.
+> The icon shown against each player (a <a href="https://pictogrammers.com/library/mdi/" target="_blank" rel="noopener noreferrer">Material Design Icon</a>) can be changed in the player settings.
 ***************************************************************
 
 ## Grouping Players

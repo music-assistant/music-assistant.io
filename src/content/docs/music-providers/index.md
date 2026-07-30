@@ -52,6 +52,6 @@ The table below provides an at-a-glance summary of all of the music sources. Gre
 
 Stream quality is indicated as either [Hi-Res](/player-support/#audio-quality), <a href="https://www.soundguys.com/high-bitrate-audio-is-overkill-cd-quality-is-still-great-16518/" target="_blank" rel="noopener noreferrer">CD quality</a> or lossy with the codec and bitrate where available.
 
-The most user friendly login method is a password, followed by <a href="https://en.wikipedia.org/wiki/OAuth" target="_blank" rel="noopener noreferrer">OAuth</a> and then the cookie method is least desirable.
+The most user friendly login method is a password. Next best is OAuth, where you log in on the service's own website and grant MA access to your account. The cookie method, where you copy a hidden value out of your browser, is the least desirable.
 
 [![music provider summary](/assets/music-provider-summary.png)](/assets/music-provider-summary.png)

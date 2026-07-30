@@ -55,4 +55,4 @@ See also the [Library Import Control](/music-providers/#library-import-control) 
 ## Known Issues / Notes
 
 - If the authorisation process gets stuck then try a different browser. It is likely the authorisation pop up window is being blocked
-- If login is normally accomplished with "Proceed with Google" then a workaround is required as this option is not shown on the login page used my MA for authentication. In this case login to Tidal normally using a browser. In the same browser start the authentication process via MA. A prompt should be observed to use the existing login. Accepting that should result in the error page mentioned in step 1 above. From that point proceed with steps 2 and 3 above.
+- If login is normally accomplished with "Proceed with Google" then a workaround is required as this option is not shown on the login page used by MA for authentication. In this case login to Tidal normally using a browser. In the same browser start the authentication process via MA. A prompt should be observed to use the existing login. Accepting that should result in the error page mentioned in step 1 above. From that point proceed with steps 2 and 3 above.

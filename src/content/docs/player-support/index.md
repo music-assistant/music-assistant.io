@@ -19,7 +19,7 @@ Only players provided by certain providers — that is, Home Assistant Players, 
 ![Preview image](/assets/screenshots/player-disable.png) 
 
 > [!NOTE]
-> If any player is not transitioning between songs then check if the player has the option QUEUE FLOW MODE. Try enabling it if it does.
+> If any player is not transitioning between songs then check if the player has the option [QUEUE FLOW MODE](/faq/tech-info/#track-queueing). Try enabling it if it does.
 
 ## Audio Quality
 
