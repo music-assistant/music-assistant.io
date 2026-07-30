@@ -14,7 +14,7 @@ The core server settings are set with typical defaults that should work for most
 
 ## Discovery
 
-- <b>Allow network discovery for UPnP discovery.</b> When enabled, MA uses an additional broadcast based discovery method (SSDP). Turn this on if some UPnP/DLNA players are not being found by regular discovery (see the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered))
+- <b>Allow network discovery for UPnP discovery.</b> When enabled, MA uses an additional broadcast based discovery method ([SSDP](/faq/networking/#the-jargon-translated)). Turn this on if some UPnP/DLNA players are not being found by regular discovery (see the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered))
 - <b>MDNS/Zeroconf discovery interface(s).</b> Options are `Default interface [default]` and `All interfaces`. Used in custom network setups when multiple network interfaces are used. Setting is only visible when the advanced toggle is on
 
 ## Metadata
