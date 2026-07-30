@@ -5,7 +5,7 @@ description: Features and Notes for the VBAN Receiver Plugin
 
 # VBAN Receiver <img src="/assets/icons/vban-icon.svg" alt="Preview image" style="width: 126px; float: right;"  loading="lazy" />
 
-The VBAN Receiver plugin gives Music Assistant a network-based auxiliary input: audio playing on another device can be sent into MA and treated as a standard streaming source. Typical use cases include transmitting system audio, audio from individual applications, or audio captured from soundcard inputs such as microphones or line-in devices on a remote machine. Contributed and maintained by <a href="https://github.com/sprocket-9" target="_blank" rel="noopener noreferrer">sprocket-9</a>
+The VBAN Receiver plugin gives Music Assistant a network-based auxiliary input - audio playing on another device can be sent into MA and treated as a standard streaming source. Typical use cases include transmitting system audio, audio from individual applications, or audio captured from soundcard inputs such as microphones or line-in devices on a remote machine. Contributed and maintained by <a href="https://github.com/sprocket-9" target="_blank" rel="noopener noreferrer">sprocket-9</a>
 
 VBAN itself is an audio-over-IP protocol from <a href="https://vb-audio.com/Voicemeeter/vban.htm" target="_blank" rel="noopener noreferrer">VB-Audio</a> that uses UDP to transmit high-quality, native PCM audio over a local network. See the [VBAN Senders section below](#vban-senders) for examples of compatible sender implementations.
 
