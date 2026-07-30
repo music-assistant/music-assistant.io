@@ -132,7 +132,7 @@ In addition to the settings outlined above to configure this source there are ad
 - It is very important that all audio files contain correct, and ideally, extensive tag information. The more comprehensive the tagging the better the results will be when using MA. Note the following:
     - Universal Tag Support: Music Assistant parses metadata from the industry-standard formats, including ID3 (v1/v2) for MP3s, Vorbis Comments for FLAC/Ogg/Opus, MP4 Atoms for M4A, and APEv2 tags
     - Primary Source of Truth: Embedded tags are treated as the definitive source for artist, album, and track names. External metadata providers (like MusicBrainz or Fanart.tv) are only used to supplement missing info, such as high-resolution artwork or artist bios
-    - Cross-Platform Linking: MA uses advanced tags like MusicBrainz IDs (MBID) and ISRC codes to seamlessly link local files with matching tracks on streaming services like Spotify or Tidal
+    - Cross-Platform Linking: MA uses identifier tags such as MusicBrainz IDs (MBID) and ISRC codes to seamlessly link local files with matching tracks on streaming services like Spotify or Tidal
     - Artwork Handling: MA supports both embedded artwork within the file and local folder-based images (e.g., folder.jpg or artist.png)
     - Recommended Tagger: For the best results in Music Assistant, it is strongly recommended to use <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a> to ensure the files contain the specific IDs needed for library linking. Other programs such as <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a> are often also based on the Musicbrainz catalog and can work as well provided they include the tags shown in the [Tags used by MA](#tags-used-by-ma) table
 
@@ -189,7 +189,7 @@ The left column corresponds to the TAG NAME shown in the <a href="https://picard
 ### Manually Adjusting Tags
 
 > [!WARNING]
-> The following should be considered as advanced. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between sources
+> Manual tag editing is for users who deliberately want different behaviour from the MusicBrainz defaults. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between sources
 
 Normally it is best to leave the Picard tags unchanged. However, some people do not agree with Musicbrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> This technique can also be used for personally ripped albums or tracks that are not in the Musicbrainz database. To separate these out the tags can be edited as follows:
 
@@ -252,7 +252,7 @@ FILE "album.flac" WAVE
 
 Without either a CUE `TITLE` or an audio-file album tag, tracks are still imported but without an album attachment - a warning is logged.
 
-### Full field reference (advanced)
+### Full field reference for hand-tuned CUE sheets
 
 <details>
 <summary>Every directive Music Assistant parses, and how metadata is combined</summary>

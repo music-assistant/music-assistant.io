@@ -59,7 +59,7 @@ See the [player queues settings](/settings/core/#player-queues) section for more
 Radio Mode keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music).
 
 <details>
-<summary>How Radio Mode picks tracks (technical detail)</summary>
+<summary>How Radio Mode picks tracks</summary>
 
 **Starting from a Track or Album:**
 Radio Mode retrieves similar tracks using the track's provider mappings (shown in the [Provider Details](/ui/#provider-details) section in the UI). When you start radio mode from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature. For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start radio mode with a track or album that is not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
