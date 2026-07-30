@@ -41,11 +41,23 @@ Music Assistant has full support for Spotify media listing and playback.
 - Multiple Spotify accounts can be added. All playlists from all accounts will be shown. If a playlist is selected for playback the source Spotify account will be used
 
 ## Configuration
-- The Spotify source can only be configured from a device which is on the same subnet as the MA server (and not via a VPN)
-- Configuration is done with an OAuth callback. Clicking on the AUTHENTICATE WITH SPOTIFY button will open a new tab where permission can be given for MA to access the logged in account
-- Once the intial authentication is done a new option will appear towards the bottom of the view titled `Developer Token`. It is advantageous to add a personal Client ID as this will speed up access to the Spotify API and should eliminate rate limiting. How to obtain a Client ID is explained <a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">here</a>. When entering the information in the various fields the only mandatory item is the REDIRECT URL which must be set to `https://music-assistant.io/callback`. Using a personal Client ID is optional but rate limiting and streaming errors may be seen in the log if it is not supplied
-- If a personal Client ID is added then click on the large button AUTHENTICATE DEVELOPER SESSION
-- Finally the SAVE button must be pressed on the Spotify settings page. If the device being used kills the MA frontend before this is done then the source setup will fail (Use a different, typically non-mobile, device if this happens)
+
+### Basic setup
+
+1. Add the Spotify source via `SETTINGS >> MUSIC SOURCES >> ADD A MUSIC SOURCE`.
+2. Click the `AUTHENTICATE WITH SPOTIFY` button. A new tab opens on Spotify's own website where you give Music Assistant permission to access your account, so make sure your browser allows pop-ups. Use a device that is on the same home network as your MA server and is not connected to a VPN (see [Networking Basics](/faq/networking/)); if the button appears to do nothing, this is the most likely cause.
+3. Click `SAVE` on the Spotify settings page. The setup will fail if you skip this step. If your device closes the MA page before you can click `SAVE` (this can happen on mobile devices), retry from a laptop or PC.
+
+Spotify will now work, but consider the optional step below.
+
+### Optional: add a personal Client ID (recommended)
+
+Spotify limits how quickly third party apps can make requests on its shared access. Adding your own free Client ID gives Music Assistant a dedicated allowance, which speeds up access and should eliminate rate limiting. Without it, you may see rate limiting and streaming errors in the log.
+
+1. Complete the basic setup above, then reopen the Spotify settings. A new option titled `Developer Token` appears towards the bottom of the view.
+2. Create an app on Spotify's <a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">developer dashboard</a>. When filling in the app details, the only field that matters is the `Redirect URL`: set it exactly to `https://music-assistant.io/callback`.
+3. Enter the Client ID from your new app in the `Developer Token` section, then click the large `AUTHENTICATE DEVELOPER SESSION` button.
+4. Click `SAVE` again.
 
 ### Settings
 
@@ -54,8 +66,8 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 ## Known Issues / Notes
 
 - Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work
-- Upon first saving of the source a check is done for Audiobook support within the account. If the check is successful then additional Audiobook related options will be seen when revisiting the source's settings
-- After adding the developer token there is then two sessions created to a single spotify source and MA routes the requests appropriately. For example, playlists are requested via the MA global token (which is rate limited but allows playlist retrieval) while other items are retrieved via the dev token. Search is done using the dev token by default as otherwise it is very slow. Playing and browsing playlists is routed through the global token to the originating source (useful when multiple Spotify accounts are added)
+- When you first save the source, MA checks whether the account supports audiobooks. If it does, additional audiobook related options appear when you revisit the source's settings
+- After you add the developer token, MA maintains two sessions to a single Spotify source and routes requests appropriately. For example, MA requests playlists via its global token (which is rate limited but allows playlist retrieval) while it retrieves other items via the dev token. Search uses the dev token by default as it is otherwise very slow. Playing and browsing playlists is routed through the global token to the originating source (useful when multiple Spotify accounts are added)
 - The Spotify API does not support the provision of recommendations
 - The Spotify API does not return genre information
-- Spotify has curtailed the usability of Client IDs for recently created accounts. If 403 errors are seen in the log then remove the Client ID
+- Spotify has curtailed the usability of Client IDs for recently created accounts. If you see 403 errors in the log, remove the Client ID
