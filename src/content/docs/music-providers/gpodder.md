@@ -98,10 +98,15 @@ What travels in each direction:
 Podcast audio does not pass through the sync server. Music Assistant reads the podcast's RSS feed and streams
 the episode from the feed's own address, so the server only ever holds feed addresses and listening progress.
 
-If you connect through a [gPodder or opodsync server](#gpoddernet-compatible-webservice), every app must be
-set to the same Device ID. Progress is stored against the device that recorded it, so a mismatch leaves each
-app seeing only its own listening history. Connecting through [Nextcloud](#nextcloud-gpodder) instead has no
-Device ID, so there is nothing to match up.
+If you connect through a [gPodder or opodsync server](#gpoddernet-compatible-webservice), pick one Device ID
+and enter that same value in every app, Music Assistant included. It does not matter what you choose, only
+that it is identical everywhere.
+
+A mismatch is the usual reason syncing appears to do nothing: your podcasts still arrive, but episodes never
+resume where another app left off, because each app can only see the progress it recorded itself. If that is
+what you are seeing, compare the Device ID in each app before looking any further.
+
+Connecting through [Nextcloud](#nextcloud-gpodder) has no Device ID, so there is nothing to set.
 
 Apps that support gPodder sync include:
 
