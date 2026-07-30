@@ -62,7 +62,7 @@ If you have a spare Raspberry Pi (any model) then <a href="https://www.picorepla
 
 * It is highly recommended to use a wired Ethernet connection for your Raspberry Pi rather than Wi-Fi. On most Raspberry Pi models, the Bluetooth and Wi-Fi radios share the same chip and antenna; using both simultaneously often leads to significant audio "stumbles," dropouts, and reduced range. By using Ethernet, you eliminate this radio frequency interference, providing a dedicated, clean pipeline for your music data to reach your Bluetooth transmitter without interruption.
 
-* While using the Raspberry Pi’s inbuilt Bluetooth adapter or a basic USB dongle will work, these options come with several pitfalls. Standard adapters rely entirely on the Pi's software to encode audio, which may limit you to lower-quality codecs like <a href="https://en.wikipedia.org/wiki/SBC_(codec" target="_blank" rel="noopener noreferrer">SBC</a>) or standard <a href="https://en.wikipedia.org/wiki/AptX" target="_blank" rel="noopener noreferrer">aptX</a>. Furthermore, the processing overhead on older Pi models can cause latency (audio delay), and internal antennas are notoriously weak—especially if the Pi is housed in a metal or thick plastic case which can severely degrade signal strength.
+* While using the Raspberry Pi’s inbuilt Bluetooth adapter or a basic USB dongle will work, these options come with several pitfalls. Standard adapters rely entirely on the Pi's software to encode audio, which may limit you to lower-quality codecs like <a href="https://en.wikipedia.org/wiki/SBC_(codec" target="_blank" rel="noopener noreferrer">SBC</a> or standard <a href="https://en.wikipedia.org/wiki/AptX" target="_blank" rel="noopener noreferrer">aptX</a>. Furthermore, the processing overhead on older Pi models can cause latency (audio delay), and internal antennas are notoriously weak, especially if the Pi is housed in a metal or thick plastic case which can severely degrade signal strength.
 
 * The best option for high-performance audio is to use a specialized Bluetooth Audio Transmitter such as the <a href="https://www.sennheiser-hearing.com/p/btd-700/" target="_blank" rel="noopener noreferrer">Sennheiser BTD 700</a> or <a href="https://uk.creative.com/p/speakers/creative-bt-w6" target="_blank" rel="noopener noreferrer">Creative BT-W6</a>. These devices function as a "driverless" external USB sound card, offloading the heavy lifting of audio encoding, specifically high-definition codecs like <a href="https://www.aptx.com/aptx-adaptive" target="_blank" rel="noopener noreferrer">aptX Adaptive</a> and aptX HD, to the dongle’s own dedicated processor. This allows even an older Raspberry Pi 1 to deliver modern, high-resolution wireless audio that matches the capabilities of premium headphones, all while providing a much more stable connection and a physical pairing button for a simplified setup.
 
@@ -74,7 +74,7 @@ If using a USB dongle with piCorePlayer then some settings on the `Squeezelite S
 Play to the built-in Sendspin web player.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="easiest label" style="width: 64px;"  loading="lazy" />
-Use a [Snapserver](../player-support/snapcast/) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
+Use a [Snapserver](/player-support/snapcast/) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
 
 ## My Android Phone
 
@@ -82,7 +82,7 @@ Use a [Snapserver](../player-support/snapcast/) and the Snapweb option. If you e
 Play to the built-in Sendspin web player.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
-Use the <a href="https://play.google.com/store/apps/details?id=de.badaix.snapcast" target="_blank" rel="noopener noreferrer">Snapcast App</a> and the [Snapserver Provider](../player-support/snapcast/)
+Use the <a href="https://play.google.com/store/apps/details?id=de.badaix.snapcast" target="_blank" rel="noopener noreferrer">Snapcast App</a> and the [Snapserver Provider](/player-support/snapcast/)
 
 ## Music Assistant
 
