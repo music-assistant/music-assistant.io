@@ -64,7 +64,7 @@ Same as Global Charts, but using Last.fm's per-country chart. Top 15 in chart or
 The default 6 hours is a reasonable middle ground. The right value depends on what you want:
 
 Short intervals (1-3 hours):
-- Personalized rows respond to recent listening faster: tracks you played this morning can influence "Similar Artists" by the afternoon.
+- Personalized rows respond to recent listening faster - tracks you played this morning can influence "Similar Artists" by the afternoon.
 - Global and Geographic rows reflect Last.fm's chart movements sooner.
 - Downside: rows shift while you're browsing. If a track caught your eye but you didn't play it, it may be gone next time. If you like to work through a row at your own pace, a short interval will not be ideal.
 
