@@ -16,6 +16,13 @@ Music Assistant has support for <a href="https://au.yamaha.com/en/products/conte
 - MA will show metadata if the player is playing non-MA content
 - Source selection of the MusicCast device is possible
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `MusicCast`.
+2. Your MusicCast devices will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Settings
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the MusicCast provider also some unique settings in the `Output Protocol(s)` section for the player:

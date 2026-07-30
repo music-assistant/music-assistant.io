@@ -4,6 +4,10 @@ title: "Get Queue Action"
 
 # MA get_queue Action
 
+> [!NOTE]
+> This action is used from Home Assistant scripts and automations and requires the [Home Assistant integration](/integration/installation/). See [Home Assistant scripts and automations](/faq/how-to/#home-assistant-scripts-and-automations) for examples.
+
+
 This action allows you to retrieve the details of a queue
 
 ![image](/assets/screenshots/service-call/get_queue.png)

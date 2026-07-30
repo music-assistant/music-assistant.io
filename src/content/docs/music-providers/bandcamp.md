@@ -46,7 +46,7 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 
 - Open <a href="https://bandcamp.com/" target="_blank">Bandcamp</a> in your browser.
 - Open the cookies storage via View -> Developer -> Developer Tools -> (Application) -> Storage -> Cookies -> `https://bandcamp.com`. Note that this might be named differently based on your browser. It should open a window similar to this:
-[![Dev tools](/assets/screenshots/bandcamp_storage.png)](/assets/screenshots/ytmusic-developer-tools.png)
+[![Dev tools](/assets/screenshots/bandcamp_storage.png)](/assets/screenshots/bandcamp_storage.png)
 
 - Find `identity` cookie
 - Double-click its value and copy its contents

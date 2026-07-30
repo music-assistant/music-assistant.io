@@ -11,7 +11,7 @@ Music Assistant has support for devices running <a href="https://www.musicpd.org
 - Stream music from Music Assistant to any device running MPD
 - Pause, seek, and volume control supported
 
-## Setup
+## Configuration
 
 MPD players are not auto-discovered. Each MPD server must be added in the provider settings. Entry is done by adding either IP or IP:PORT into the MPD SERVERS field. If no port is added then 6600 is assumed. As each server is added click outside of the entry box to cause the entry to be accepted.
 

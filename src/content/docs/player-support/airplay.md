@@ -14,6 +14,14 @@ Music Assistant supports devices that receive [AirPlay 1 (RAOP)](https://en.wiki
 - Audio is streamed losslessly as ALAC. Playback defaults to 44.1 kHz/16-bit; supported AirPlay 2 devices can opt into 24-bit playback at 44.1 or 48 kHz.
 - The player settings support [stereo pairs](/faq/how-to/#create-a-stereo-pair).
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS` and check whether `AirPlay` is already listed; it is added automatically on new installs. If it is missing, click `ADD A NEW PROVIDER` and select `AirPlay`.
+2. Your AirPlay devices will be discovered automatically and will appear in the player list, usually within a minute.
+3. Apple TVs additionally require pairing before they can be used; see [Pairing and passwords](#pairing-and-passwords) below.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Protocol selection
 
 AirPlay 1 is also known as RAOP. Music Assistant automatically uses AirPlay 2 for capable devices and RAOP for legacy receivers.

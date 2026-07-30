@@ -4,11 +4,9 @@ title: "Squeezelite"
 
 # Squeezelite <img src="/assets/icons/slim-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant partly emulates a Logitech Media Server (which is now maintained as <a href="https://lyrion.org" target="_blank" rel="noopener noreferrer">Lyrion Music Server</a>, a.k.a. LMS) and has a full implementation of the <a href="https://lyrion.org/reference/slimproto-protocol/"  target="_blank" rel="noopener noreferrer">SlimProto Protocol</a> in the form of player provider support for <a href="https://github.com/ralph-irving/squeezelite" target="_blank" rel="noopener noreferrer">Squeezelite</a> clients.
+Music Assistant has support for <a href="https://github.com/ralph-irving/squeezelite" target="_blank" rel="noopener noreferrer">Squeezelite</a> players: software and hardware ranging from desktop apps to <a href="https://www.picoreplayer.org">Raspberry Pis</a> and <a href="https://github.com/sle118/squeezelite-esp32" target="_blank" rel="noopener noreferrer">ESP32-based devices</a>. There is also some legacy support for <a href="https://lyrion.org/players-and-controllers/hardware-comparison/" target="_blank" rel="noopener noreferrer">the original Logitech branded Squeezebox series of hardware players (formerly known as SlimDevices)</a>, such as the Squeezebox Duet and the Squeezebox Radio.
 
-This means it is possible to use Squeezelite client player software and hardware, directly with Music Assistant, as well as control Music Assistant from those Squeezelite client players (as well as other slimproto emulators such as SqueezeSlave, SoftSqueeze, and SqueezePlay).
-
-Squeezelite clients are available for hardware from desktop OS to <a href="https://www.picoreplayer.org">Raspberry Pis</a> and <a href="https://github.com/sle118/squeezelite-esp32" target="_blank" rel="noopener noreferrer">ESP32-based devices</a>. There is also some legacy support for <a href="https://lyrion.org/players-and-controllers/hardware-comparison/" target="_blank" rel="noopener noreferrer">the original Logitech branded Squeezebox series of hardware players, (formerly known as SlimDevices)</a>, such as the Squeezebox Duet and the Squeezebox Radio.
+MA achieves this by partly emulating a Logitech Media Server (which is now maintained as <a href="https://lyrion.org" target="_blank" rel="noopener noreferrer">Lyrion Music Server</a>, a.k.a. LMS) with a full implementation of the <a href="https://lyrion.org/reference/slimproto-protocol/"  target="_blank" rel="noopener noreferrer">SlimProto Protocol</a>. You can use Squeezelite players directly with Music Assistant and also control Music Assistant from those players (this also works with other slimproto emulators such as SqueezeSlave, SoftSqueeze, and SqueezePlay).
 
 ## Features
 
@@ -16,6 +14,13 @@ Squeezelite clients are available for hardware from desktop OS to <a href="https
 - Individual player [DSP settings](/dsp/) will be used for [group](/faq/groups/) playback
 - Squeezelite client device buttons support
   - Any physical control buttons on the device should be supported as long as [flow mode](/faq/tech-info/#track-queueing) is not enabled
+
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Squeezelite`.
+2. Your Squeezelite players will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a player does not appear, first check that it is not connected to a different server: these devices can often only connect to one server at a time, so a player bound to another server (for example an existing LMS/Lyrion installation) will not be seen by MA. Otherwise, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
@@ -37,4 +42,4 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - Make sure that you do not have the "slimproto" (Squeezebox players) integration running in Home Assistant
 - Ordinarily do not use queue flow mode unless using older Squeezebox hardware player that has issues transitioning. Enabling queue flow mode may solve playback issues, however, it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - Squeezelite devices have no native mute functionality. If desired the "fake mute" control option can be used and this is found in the `Player Controls` section for each individual player
-- queezelite sync groups send a flow stream to all members. The master format is chosen from the leader player's Flow Mode sample rate setting (bounded by the leader's supported rates); each member then receives that rate, or its own maximum supported rate if lower
+- Squeezelite sync groups send a flow stream to all members. The master format is chosen from the leader player's Flow Mode sample rate setting (bounded by the leader's supported rates); each member then receives that rate, or its own maximum supported rate if lower

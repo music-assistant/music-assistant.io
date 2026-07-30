@@ -8,6 +8,11 @@ Music Assistant provides a powerful API to control your music library, manage pl
 
 The API documentation is automatically generated and available at http://YOUR_MA_SERVER_IP:8095/api-docs
 
+## Before you start
+
+- Every request needs an authentication token. Create a long lived access token in the MA UI via `SETTINGS >> PROFILE` and send it in the `Authorization: Bearer <token>` header (the examples below show a truncated token)
+- The `message_id` is any string of your choosing; it is echoed back in the response so you can match responses to requests
+- Each example below is shown in two forms: a `curl` command you can run from any terminal, and the equivalent Home Assistant <a href="https://www.home-assistant.io/integrations/rest_command/" target="_blank" rel="noopener noreferrer">rest_command</a> YAML for use in automations
 
 ## Examples
 
@@ -273,7 +278,7 @@ rest_command:
 
 <details><summary>Get all items in the queue</summary>
 
-`queue_id` will be the same as the `player_id` unless the player is grouped. To confirm create a `rest_command` that calls `player_queues/all` and review the information returned. The `limit` defaults to 500 if you omit it. You are cautioned to not set a value greater then 500 to avoid breaking your system. The practical limit will depend on the resources available on your host. `offset` can also be omitted.
+`queue_id` will be the same as the `player_id` unless the player is grouped. To confirm create a `rest_command` that calls `player_queues/all` and review the information returned. The `limit` defaults to 500 if you omit it. You are cautioned to not set a value greater than 500 to avoid breaking your system. The practical limit will depend on the resources available on your host. `offset` can also be omitted.
 
 ```yaml
 rest_command:
@@ -297,7 +302,7 @@ rest_command:
 ```
 </details>
 
-<details><summary>Play latesst podcast episode</summary>
+<details><summary>Play latest podcast episode</summary>
 
 Pass 'latest` or `newest` as the `start_item` parameter.
 

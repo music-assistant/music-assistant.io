@@ -17,6 +17,11 @@ Music Assistant has support for the <a href="https://www.amplipi.com/" target="_
 - Power, volume and mute control per zone
 - The AmpliPi controller's own sources can be selected and routed to a zone (and any grouped zones), including its native streams (Spotify Connect, AirPlay, Pandora, DLNA, Internet Radio, Plexamp, Bluetooth, LMS) and its physical inputs (the RCA line inputs and the front-panel Aux input)
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `AmpliPi`.
+2. Enter the hostname or IP address of your AmpliPi controller in the `Host` setting (AmpliPi controllers are not discovered automatically). See Settings below for the details.
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:

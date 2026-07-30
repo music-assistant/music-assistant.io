@@ -10,6 +10,7 @@ Customise the user interface from this page. Preferences are stored per user and
 
 - <b>Theme.</b> Allow selection of a light or dark theme. Options are `Auto (follow system configuration) [default]`, `Light`, and `Dark`
 - <b>Language.</b> Allow selection of a light or dark theme. Options are `Auto (follow system configuration) [default]`, or a wide variety of languages. Translations are [contributed by the community](/help/lokalise/). Note that the AUTO setting takes the language from the Browser's settings
+- <b>Customise Menu.</b> This button enables the edit mode for the menu
 
 ## Display
 
@@ -20,4 +21,4 @@ Customise the user interface from this page. Preferences are stored per user and
 
 ## Web Player
 
-- <b>Enable built-in (Sendspin) Web Player.</b> Allows playback to THIS DEVICE
+- <b>Enable built-in (Sendspin) Web Player.</b> Allows playback to THIS DEVICE using [Sendspin](/player-support/sendspin/), MA's built-in web player
