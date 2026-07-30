@@ -208,7 +208,7 @@ When the filesystem provider encounters a `.cue` file, each logical track descri
 
 Information for each track is built from two sources: the CUE Sheet and the tags in the referenced audio file. Where both describe the same album-level field, the CUE Sheet wins.
 
-For most users, a standard CUE sheet produced by a mainstream ripping tool (EAC, CUETools, foobar2000, XLD) will just work. The section below shows the minimum MA needs; the full field reference is for those who want to hand-tune their sheets.
+A standard CUE sheet produced by a mainstream ripping tool (EAC, CUETools, foobar2000, XLD) will just work, and the section below shows the minimum MA needs. To get the best experience, provide the additional fields in the [full field reference](#full-field-reference): they give MA the same rich metadata that the [recommended tags](#tags-used-by-ma) provide for regular audio files.
 
 ### Minimum viable CUE sheet
 
@@ -252,7 +252,7 @@ FILE "album.flac" WAVE
 
 Without either a CUE `TITLE` or an audio-file album tag, tracks are still imported but without an album attachment - a warning is logged.
 
-### Full field reference for hand-tuned CUE sheets
+### Full field reference
 
 <details>
 <summary>Every directive Music Assistant parses, and how metadata is combined</summary>
