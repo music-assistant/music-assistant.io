@@ -189,6 +189,7 @@ export default defineConfig({
 					collapsed: true,
 					items: [
 						{ label: 'Overview', slug: 'music-providers' },
+						{ label: 'Ambient Sounds', slug: 'music-providers/ambient-sounds' },
 						{ label: 'Apple Music', slug: 'music-providers/apple-music' },
 						{ label: 'ARD Audiothek', slug: 'music-providers/ard-audiothek' },
 						{ label: 'Audible', slug: 'music-providers/audible' },
@@ -228,6 +229,7 @@ export default defineConfig({
 						{ label: 'Spotify', slug: 'music-providers/spotify' },
 						{ label: 'Subsonic', slug: 'music-providers/subsonic' },
 						{ label: 'Sveriges Radio', slug: 'music-providers/sveriges-radio' },
+						{ label: 'TeddyCloud', slug: 'music-providers/teddycloud' },
 						{ label: 'Tidal', slug: 'music-providers/tidal' },
 						{ label: 'TuneIn', slug: 'music-providers/tunein' },
 						{ label: 'Yandex Music', slug: 'music-providers/yandex-music' },
@@ -288,6 +290,7 @@ export default defineConfig({
 						{ label: 'Hue Entertainment', slug: 'plugins/hue-entertainment' },
 						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
 						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
+						{ label: 'Music Quiz', slug: 'plugins/music-quiz' },
 						{ label: 'Party', slug: 'plugins/party' },
 						{ label: 'Plex Connect', slug: 'plugins/plex-connect' },
 						{ label: 'Smart Playlist', slug: 'plugins/smart_playlist' },
