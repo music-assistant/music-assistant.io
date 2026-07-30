@@ -273,7 +273,7 @@ rest_command:
 
 <details><summary>Get all items in the queue</summary>
 
-`queue_id` will be the same as the `player_id` unless the player is grouped. To confirm create a `rest_command` that calls `player_queues/all` and review the information returned. The `limit` defaults to 500 if you omit it. You are cautioned to not set a value greater then 500 to avoid breaking your system. The practical limit will depend on the resources available on your host. `offset` can also be omitted.
+`queue_id` will be the same as the `player_id` unless the player is grouped. To confirm create a `rest_command` that calls `player_queues/all` and review the information returned. The `limit` defaults to 500 if you omit it. You are cautioned to not set a value greater than 500 to avoid breaking your system. The practical limit will depend on the resources available on your host. `offset` can also be omitted.
 
 ```yaml
 rest_command:
@@ -297,7 +297,7 @@ rest_command:
 ```
 </details>
 
-<details><summary>Play latesst podcast episode</summary>
+<details><summary>Play latest podcast episode</summary>
 
 Pass 'latest` or `newest` as the `start_item` parameter.
 

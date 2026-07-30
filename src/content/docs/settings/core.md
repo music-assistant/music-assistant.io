@@ -10,12 +10,12 @@ The core server settings are set with typical defaults that should work for most
 
 ## Cache
 
-- A button is available to clear the cache used my Music Assistant. Do not routinely use this button as it increases [API usage](/usage/#online-metadata-sources) and slows down the MA experience
+- A button is available to clear the cache used by Music Assistant. Do not routinely use this button as it increases [API usage](/usage/#online-metadata-sources) and slows down the MA experience
 
 ## Discovery
 
-- <b>Allow network discovery for UPnP discovery.</b> When enabled, additional broadcast based SSDP discovery is utilised. Use this is some UPnP/DLNA devices fo not regular discovery
-- <b>MDNS/Zeroconf discovery interface(s).</b>Options are `Default interface [default]` and `All interfaces`. Used in advanced network setups when multiple network interfaces are used. Setting is only visible when the advanced toggle is on
+- <b>Allow network discovery for UPnP discovery.</b> When enabled, MA uses an additional broadcast based discovery method (SSDP). Turn this on if some UPnP/DLNA players are not being found by regular discovery (see the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered))
+- <b>MDNS/Zeroconf discovery interface(s).</b> Options are `Default interface [default]` and `All interfaces`. Used in custom network setups when multiple network interfaces are used. Setting is only visible when the advanced toggle is on
 
 ## Metadata
 
@@ -64,7 +64,7 @@ All settings in this section should be considered advanced and will not need to 
 
 ### Queue Playback
 
-<b>Audio buffer size.</b> Controls how much audio is buffered in memory. A larger buffer improves playback stability and seeking but uses more memory. The options are `Maxmimum [default]`, `Minimal` and `Balanced`. The options are filtered depending upon system RAM. Minimal (60s buffer) is always available, Balanced (300s) requires a nominal 4 GB of RAM., and Maximum (1200s) requires a nominal 8 GB of RAM. If total memory can't be determined then all three presets are offered although the default in that case is, conservatively, Minimal.
+<b>Audio buffer size.</b> Controls how much audio is buffered in memory. A larger buffer improves playback stability and seeking but uses more memory. The options are `Maximum [default]`, `Minimal` and `Balanced`. The options are filtered depending upon system RAM. Minimal (60s buffer) is always available, Balanced (300s) requires a nominal 4 GB of RAM, and Maximum (1200s) requires a nominal 8 GB of RAM. If total memory can't be determined then all three presets are offered although the default in that case is, conservatively, Minimal.
 
 This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](/settings/individual-player/#audio). Extensive online help for these settings is available by selecting the ![question mark](/assets/icons/question-mark.png) icon in the settings UI for each option.
 
@@ -76,18 +76,18 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 #### Generic
 
-- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically. This is the address Music Assistant advertises to stream clients (including Sendspin) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network — not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
+- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
 
 #### Audio Analysis
 
 - <b>SmartFades Log Level.</b> Specific log level for the Smart Fades mixer and analyzer
-- <b>Background analysis concurrency.</b> Maximum number of tracks analsed concurrently during the nightly background scan. Default is 1 and should only be increased on more powerful systems
+- <b>Background analysis concurrency.</b> Maximum number of tracks analysed concurrently during the nightly background scan. Default is 1 and should only be increased on more powerful systems
 
 ## Webserver
 
 - <b>Allow User Self-Registration.</b> Allows users to create accounts via Home Assistant OAuth
-- <b>Base URL.</b> The (base) URL used to reach the web UI and API on the network. Override this in advanced scenarios — for example, when running the webserver behind a reverse proxy — by entering the full public URL (e.g. `https://music.example.com`). For direct access (no reverse proxy), include the TCP port (e.g. http://192.168.1.10:8095) — it is not added automatically and must match the TCP Port setting below. If using a reverse proxy, use the hostname configured on the proxy, not a raw IP — proxies match requests by hostname. This setting is for the frontend only; it is separate from Streams >> Published IP Address, which must remain a local IP so players can reach the stream server directly.
+- <b>Base URL.</b> The (base) URL used to reach the web UI and API on the network. Most users can leave this as-is. Include the TCP port (e.g. http://192.168.1.10:8095); it is not added automatically and must match the TCP Port setting below. If you run the webserver behind a [reverse proxy](/faq/networking/#the-jargon-translated), enter the full public URL instead (e.g. `https://music.example.com`), using the hostname configured on the proxy rather than a raw IP, because proxies match requests by hostname. This setting is for the frontend only; it is separate from Streams >> Published IP Address, which must remain a local IP so players can reach the stream server directly.
 - <b>TCP Port.</b> The port that the webserver is to be run on. If this setting is changed then ensure the base URL port is changed as well
 - <b> Enable SSL/TLS.</b> When enabled two additional fields are revealed which is where the `SSL Certificate` and `SSL Private Key` are added (both must be in PEM format)
 - <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. For further information see the help for this setting in the MA UI
@@ -98,7 +98,7 @@ This opens a view where the 150 line tail of the Music Assistant log can be seen
 
 ## Background Tasks
 
-This opens a view where the completed and upcoming background tasks can be seen. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task. There is a ⋮ menu on the right when allows for:
+This opens a view where the completed and upcoming background tasks can be seen. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task. There is a ⋮ menu on the right which allows for:
 - Viewing the task details
 - Editing the task schedule. Frequency can be Hourly, Daily or Weekly. A precise time can be specified for the task for Daily and Weekly frequencies
 - Running of the task now
@@ -144,7 +144,7 @@ A destructive operation that completely rebuilds the genre database from default
 
 ## Audio Analysis
 
-Administrators can access the **Audio Analysis** page from the settings menu. This page allows examinination of the progress of the installed audio analysis providers. The stale number is the number of tracks that need to be re-analysed due to a version change
+Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers. The stale number is the number of tracks that need to be re-analysed due to a version change
 
 ![image](/assets/screenshots/audio-analysis-view.png)
 

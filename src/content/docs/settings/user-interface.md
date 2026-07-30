@@ -20,4 +20,4 @@ Customise the user interface from this page. Preferences are stored per user and
 
 ## Web Player
 
-- <b>Enable built-in (Sendspin) Web Player.</b> Allows playback to THIS DEVICE
+- <b>Enable built-in (Sendspin) Web Player.</b> Allows playback to THIS DEVICE using [Sendspin](/player-support/sendspin/), MA's built-in web player
