@@ -75,7 +75,7 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 [![Cookie value](/assets/screenshots/ytmusic-cookie-value.png)](/assets/screenshots/ytmusic-cookie-value.png)
 
 > [!NOTE]
-> Advanced: if your cookie still expires quickly, the yt-dlp project documents an <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">alternative export method</a> aimed at maximising cookie life
+> If your cookie still expires quickly, the yt-dlp project documents an <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">alternative export method</a> aimed at maximising cookie life. It is written for users of the yt-dlp tool, so expect a more technical walkthrough
 
 ### Step 3: Configure the source
 

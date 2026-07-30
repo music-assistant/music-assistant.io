@@ -51,13 +51,15 @@ This view will change depending on screen width. With wider displays you will be
 
 The [Audio Pipeline](/audiopipeline/) selectable label is described above in the [Player Bar](#player-bar) section.
 
-You can also access the [Now Playing view directly via URL](/faq/how-to/#now-playing-view)
+You can also access the [Now Playing view directly via URL](/faq/how-to/#open-the-ui-with-the-now-playing-view-showing)
 
 When the favorite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favorite status may not indicate correctly until playback of the track is restarted.
 
 When lyrics are available for the track being played then the LYRICS selectable label will be shown in white. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song. Adjustment to the lyric timing is available in the ⋮ menu.
 
-The Autoplay and Crossfade toggleable buttons allow quick access to the bevaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu.
+The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu.
+
+A sleep timer is also available in the ⋮ menu, which will stop playback after the selected period.
 
 The contents of the ⋮ menu vary depending upon player and queue state. When a track is playing the full set of options are available and will look like:
 
