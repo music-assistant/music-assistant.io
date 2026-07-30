@@ -5,6 +5,8 @@ description: A Description of the Audio Pipeline View
 
 # Audio Pipeline
 
+The Audio Pipeline view shows exactly what happens to your audio on its way from the source to your speakers, so you can confirm the quality is being preserved. It is a read-only view; there is nothing to configure here, and you can safely ignore it if you are not interested in the detail. Open it by selecting the quality label on the [Player Bar](/ui/#player-bar) or in the [Now Playing view](/ui/#now-playing-view).
+
 <video controls autoplay loop muted playsinline style="width: 100%; max-width: 800px;">
   <source src="/videos/audio-pipeline.mp4" type="video/mp4" />
 </video>
@@ -14,7 +16,7 @@ description: A Description of the Audio Pipeline View
 
 This view shows the complete path that the audio takes. A blue dot on the line on the left shows a processing point in the pipeline.
 
-The view is broken into two sections, Input and Output. The colored dot on the section title indicates the quality as the audio leaves the section. Orange indicates a lossy codec is in use. Green indicates a lossless codec is in use. Cyan indicates a lossless codec is in use and either the sample rate is above 48kHz or the bit depth is above 16 (also known as "Hi-Res").
+The view is broken into two sections, Input and Output. The colored dot on the section title indicates the quality as the audio leaves the section: orange (LQ, Low Quality) indicates a lossy codec below 256 kbps, light green (SQ, Standard Quality) a lossy codec at 256 kbps or higher, green (HQ, High Quality) a lossless codec, and cyan (HR, Hi-Res) a lossless codec where either the sample rate is above 48kHz or the bit depth is above 16.
 
 The Input section shows the origin of the stream and the codec, <a href="https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html" target="_blank" rel="noopener noreferrer">sample rate and bit depth</a>. All tracks are processed internally as raw <a href="https://diyodemag.com/education/what_is_pcm_pulse_code_modulation" target="_blank" rel="noopener noreferrer">PCM</a> by Music Assistant and are decoded to <a href="https://www.youtube.com/watch?v=4YRp-FIsNDA" target="_blank" rel="noopener noreferrer">32 bits floating point</a> in the sample rate of the source. Even more details about the original file are available by hovering over the ⓘ including the bitrate.
 
