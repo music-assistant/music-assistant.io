@@ -53,11 +53,11 @@ Same as Global Charts, but using Last.fm's per-country chart. Top 15 in chart or
 
 ## Known Issues / Notes
 
-  - Personalized rows need listening history in Music Assistant: a fresh install with no plays will not produce them
+  - Personalized rows need listening history in Music Assistant, so a fresh install with no plays will not produce them
   - Genre rows require your Last.fm username. Without it, the Genre toggle does nothing
   - At least one streaming provider that exposes library/search (e.g. Spotify, Tidal, Apple Music) must be configured, otherwise there's nothing to resolve items against and rows will be empty
   - Obscure artists/tracks may not be found on your streaming providers and are silently dropped from the row. If a row looks short, this is usually why
-  - Clearing the cache and immediately rebuilding will usually produce very similar results: not because cached data is being served, but because Last.fm's own responses for "similar to X" are stable
+  - Clearing the cache and immediately rebuilding will usually produce very similar results - not because cached data is being served, but because Last.fm's own responses for "similar to X" are stable
 
 ### Choosing a refresh interval
 
