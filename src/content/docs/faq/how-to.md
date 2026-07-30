@@ -24,7 +24,7 @@ There are three options.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
-You don't shuffle the music sources; you enable shuffle on the queue for the player, and whatever gets added to the queue then plays shuffled. Enable shuffle from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar), or select the [NOW PLAYING View](/ui/#now-playing-view), then the context menu top right, then ENABLE SHUFFLE.
+You don't shuffle the music sources; you enable shuffle on the queue for the player, and whatever gets added to the queue then plays shuffled. Enable shuffle from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar).
 
 For Home Assistant automations you can also do it with YAML:
 ``` yaml
