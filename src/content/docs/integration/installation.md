@@ -12,7 +12,7 @@ title: "Installation"
 The Integration to connect Music Assistant to Home Assistant is available as an official component in HA core.
 
 - The MA server will normally be discovered automatically by HA and is installed by clicking on CONFIGURE.
-- If for some reason you need to add the integration manually then go to HA SETTINGS >> DEVICES & SERVICES >> INTEGRATIONS and click the big `+ ADD INTEGRATION` button. Search for Music Assistant and click to add it. You will need to add the server IP and port (usually 8095). Search for the relevant line in the server logs. For example, `Starting server on 172.30.32.1:8095`.
+- If for some reason you need to add the integration manually then go to HA SETTINGS >> DEVICES & SERVICES >> INTEGRATIONS and click the big `+ ADD INTEGRATION` button. Search for Music Assistant and click to add it. You will need to add the server IP and port (usually 8095). This is the local network address of the machine running Music Assistant, for example `192.168.1.27`. If unsure, search for the `Starting server on ...` line in the server logs. Note: if MA is running as a Home Assistant App, the logs may show an internal address such as `172.30.32.1` — in that case use the normal network IP address of your Home Assistant machine instead.
 - Click SUBMIT and the Music Assistant integration is ready for use.
 
 > [!NOTE]
