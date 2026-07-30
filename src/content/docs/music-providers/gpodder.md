@@ -86,10 +86,10 @@ What travels in each direction:
 
 |           |                     |
 |:-----------------------|:---------------------:|
-| Subscriptions | From the server only |
+| Subscriptions | To Music Assistant only |
 | Playback progress and resume position | Both ways |
 | Mark as unplayed | Both ways |
-| Episode deleted in another app | From the server only |
+| Episode deleted in another app | To Music Assistant only |
 
 > [!IMPORTANT]
 > Subscriptions are only read from the server. Adding or removing a podcast inside Music Assistant is not
