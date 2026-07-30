@@ -97,7 +97,7 @@ MA will use the artwork supplied from the streaming providers. For local provide
 
 Music Assistant can export in-library playlists to M3U8 files and import them back, preserving far more detail than the standard M3U format allows. Use it to back up playlists, move them between MA instances, or migrate from one streaming provider to another.
 
-Exports stay compatible with normal M3U players (VLC, Kodi, etc.), but MA adds extended tags that carry full metadata: ISRC (a unique ID that identifies a recording), MusicBrainz ID, artist/album info, provider mappings, and artwork. Other players ignore these; MA uses them to rebuild the playlist faithfully on import.
+Exports stay compatible with normal M3U players (VLC, Kodi, etc.), but MA adds extended tags that carry full metadata - ISRC (a unique ID that identifies a recording), MusicBrainz ID, artist/album info, provider mappings, and artwork. Other players ignore these; MA uses them to rebuild the playlist faithfully on import.
 
 **Exporting a playlist**
 
