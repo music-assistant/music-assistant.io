@@ -171,6 +171,7 @@ export default defineConfig({
 						{ label: 'How Do I...', slug: 'faq/how-to' },
 						{ label: 'I Want To Stream To', slug: 'faq/stream-to' },
 						{ label: 'Technical Info', slug: 'faq/tech-info' },
+						{ label: 'Networking Basics', slug: 'faq/networking' },
 						{ label: 'Troubleshooting', slug: 'faq/troubleshooting' },
 					],
 				},

@@ -17,7 +17,7 @@ The Music Assistant App repository is available in Home Assistant. Browse the Ap
 
 [![Add Music Assistant as an App to Home Assistant.](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
-A HAOS installation is fully supported by the MA team regardless of whether it runs on dedicated hardware or in a Virtual Machine (VM). The only other requirement is that the HA/MA host and all player devices must be on the same flat network with no VLANs.
+A HAOS installation is fully supported by the MA team regardless of whether it runs on dedicated hardware or in a Virtual Machine (VM). The only other requirement is that the HA/MA host and all player devices must be on the same [flat network](/faq/networking/#the-jargon-translated) with no VLANs.
 
 ## Docker image
 
@@ -117,7 +117,7 @@ If you run into any issues when using a docker install vs the recommended/standa
 
 - The [Smart Fades](/smart-fades/#performance-notes) feature is resource intensive and requires at least 4GB or RAM and will not be enabled automatically on single core installations
 
-- Because the server heavily relies on multicast techniques like mDNS and uPnP to discover players on the network it MUST be run in the same Layer 2 network as the player devices
+- Because the server heavily relies on multicast techniques like mDNS and uPnP to discover players on the network it MUST be run in the same Layer 2 network as the player devices (see [Networking Basics](/faq/networking/) for what these terms mean)
 
 - The server itself hosts a webserver to stream audio to devices. This webinterface must be accessible via HTTP by IP-address from local players. See the server's logging at startup to see if the server has correctly auto-detected the local IP
 
