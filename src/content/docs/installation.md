@@ -81,7 +81,7 @@ If you do need MA to mount the share itself, add the privileges to the recommend
 
 ### A note on host networking
 
-`network_mode: host` gives the container direct (layer 2) access to your network. Music Assistant relies on this for local player discovery (mDNS/uPnP) and for streaming to and interacting with networked audio devices (AirPlay, Chromecast, DLNA, Sonos), which open random TCP/UDP ports. This is why host networking (or macvlan) is a supported requirement - see the support notes below.
+`network_mode: host` gives the container direct (layer 2) access to your network. Music Assistant relies on this for local player discovery (mDNS/uPnP, [explained in Networking Basics](/faq/networking/)) and for streaming to and interacting with networked audio devices (AirPlay, Chromecast, DLNA, Sonos), which open random TCP/UDP ports. This is why host networking (or macvlan) is a supported requirement - see the support notes below.
 
 If you do not use any local/networked players and only stream to software players, you can instead run the container on a normal bridge network with explicit port mappings, for example the web UI on `8095` and the stream server on `8097`:
 
@@ -123,7 +123,7 @@ If you run into any issues when using a docker install vs the recommended/standa
 
 - The webinterface of the server can be reached on TCP port 8095. For HAOS based installations, the webserver is also available via Ingress which allows for an easy to configure sidepanel shortcut
 
-- To access the frontend behind a reverse proxy, the reverse proxy will have to be configured to point at port 8095 and expose it to whatever is desired (and add an SSL certificate). How that works differs for each implemention.
+- To access the frontend behind a [reverse proxy](/faq/networking/#the-jargon-translated), the reverse proxy will have to be configured to point at port 8095 and expose it to whatever is desired (and add an SSL certificate). How that works differs for each implemention.
 
 ## Usage and Notes
 
@@ -138,7 +138,7 @@ If you run into any issues when using a docker install vs the recommended/standa
 - If a song is [linked across multiple providers](/ui/#provider-details) (e.g. Spotify and a FLAC file on disk), the file/stream with the highest quality is always preferred when starting a stream. Highest quality is based on sample rate, bit depth and codec and local is always preferred over cloud if the quality is equal.
 
 - Music Assistant uses a custom stream port (TCP 8097 by default) to stream audio to players. Players must be able to reach the Home Assistant instance and this port. If you're running one of the recommended HAOS installation methods, this is all handled for you, otherwise you will have to make sure you're running MA in a container with HOST network mode (see the networking note in the Docker section above). Note: If the default port 8097 is occupied, the next port will be tried, and so on
-- Any restriction of the available ports (e.g. trying to run MA through a firewall) is not supported as protocols such as AirPlay open random TCP and/or UDP ports
+- Any restriction of the available ports (e.g. trying to run MA through a [firewall](/faq/networking/#the-jargon-translated)) is not supported as protocols such as AirPlay open random TCP and/or UDP ports
 - Attempting to create or manipulate a playlist or queue with more than a thousand items can cause unresponsivness or high resource usage depending on the resources of the host
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
