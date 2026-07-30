@@ -38,6 +38,7 @@ head:
 
 title: "Making our web analytics open source with Plausible"
 description: "Find out how and why we're implementing analytics on our websites: via open source software with no personal data collection or tracking."
+crosspostSource: "Open Home Foundation"
 cover:
   image: "https://assets.openhomefoundation.org/opengraph?url=https://www.openhomefoundation.org/blog/making-our-web-analytics-open-source-with-plausible/"
   alt: "Making our web analytics open source with Plausible"
