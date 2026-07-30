@@ -55,7 +55,7 @@ Spotify will now work, but consider the optional step below.
 Spotify limits how quickly third party apps can make requests on its shared access. Adding your own free Client ID gives Music Assistant a dedicated allowance, which speeds up access and should eliminate rate limiting. Without it, you may see rate limiting and streaming errors in the log.
 
 1. Complete the basic setup above, then reopen the Spotify settings. A new option titled `Developer Token` appears towards the bottom of the view.
-2. Create an app on Spotify's <a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">developer dashboard</a>. When filling in the app details, the only field that matters is the `Redirect URL` - set it exactly to `https://music-assistant.io/callback`.
+2. Create an app on Spotify's <a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">developer dashboard</a>. When filling in the app details, the only field that matters is the `Redirect URL`. Set it exactly to `https://music-assistant.io/callback`.
 3. Enter the Client ID from your new app in the `Developer Token` section, then click the large `AUTHENTICATE DEVELOPER SESSION` button.
 4. Click `SAVE` again.
 

@@ -20,7 +20,7 @@ MA achieves this by partly emulating a Logitech Media Server (which is now maint
 1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Squeezelite`.
 2. Your Squeezelite players will be discovered automatically and will appear in the player list, usually within a minute.
 
-If a player does not appear, first check that it is not connected to a different server - these devices can often only connect to one server at a time, so a player bound to another server (for example an existing LMS/Lyrion installation) will not be seen by MA. Otherwise, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+If a player does not appear, first check that it is not connected to a different server. These devices can often only connect to one server at a time, so a player bound to another server (for example an existing LMS/Lyrion installation) will not be seen by MA. Otherwise, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
