@@ -20,7 +20,7 @@ description: Features and Notes for the Spotify Connect Plugin
 
 ## Configuration
 
-1. In Music Assistant, go to `Settings >> Providers`, click `ADD A NEW PROVIDER` and select `Spotify Connect`.
+1. In Music Assistant, go to `SETTINGS >> PLUGINS`, click `ADD A PLUGIN` and select `Spotify Connect`.
 2. Choose the Music Assistant player that should receive the Spotify audio, and the name to display in the Spotify app. Alternatively, set the player to `Auto` to send audio to whichever player is currently playing, or the first available player if none is playing.
 3. Repeat for each player you want to appear in the Spotify app; a separate instance of the plugin is added per player.
 
