@@ -23,7 +23,7 @@ Music Assistant has the ability to expose its library, queue, playback and playe
 
 ## Configuration
 
-The plugin is single-instance. Add it to Music Assistant by navigating to the MA Settings then selecting Plugins and then clicking on ADD A PLUGIN.
+The plugin is single-instance. Add it via `SETTINGS >> PLUGINS >> ADD A PLUGIN`.
 
 ### Connecting an AI client
 
