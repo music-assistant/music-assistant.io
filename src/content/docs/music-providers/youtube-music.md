@@ -36,7 +36,7 @@ Music Assistant has support for Youtube Music. Contributed and maintained by <a 
 
 ## Configuration
 
-As of Nov 2024, Google has removed OAuth authentication from YT Music. This means this (somewhat cumbersome) method of cookie authentication is the **only** way to get YT Music working. Setup has three parts: install the PO Token add-on, obtain your login cookie, then configure the source.
+As of Nov 2024, Google has removed OAuth authentication from YT Music. This means this (somewhat cumbersome) method of cookie authentication is the **only** way to get YT Music working. Setup has three parts: install the PO Token app, obtain your login cookie, then configure the source.
 
 > [!NOTE]
 > Cookies expire after some time. If YT Music stops working and you see `401: Unauthorized` or `Unable to fetch PO Token for web_music client` in the MA log, run the cookie steps again
@@ -44,13 +44,13 @@ As of Nov 2024, Google has removed OAuth authentication from YT Music. This mean
 > [!NOTE]
 > If you use a Family Account, setting up a dedicated account for MA will help maximise cookie life
 
-### Step 1: Install the PO Token add-on
+### Step 1: Install the PO Token app
 
-Google requires a 'Proof of Origin' (PO) token before it allows streaming; without one, Music Assistant cannot play your music. This add-on generates the token for you automatically. Install it before adding the YT Music source:
+Google requires a 'Proof of Origin' (PO) token before it allows streaming; without one, Music Assistant cannot play your music. This app generates the token for you automatically. Install it before adding the YT Music source:
 
-1. In Home Assistant, go to `Settings > Add-ons > Add-on Store`.
+1. In Home Assistant, go to `Settings >> Apps >> Install app`.
 2. Scroll down to the 'Music Assistant' section.
-3. Install the add-on called 'YT Music PO Token Generator' and make sure it is started.
+3. Install the app called 'YT Music PO Token Generator' and make sure it is started.
 
 > [!NOTE]
 > If you host Music Assistant yourself, download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a>. You must run the version currently supported by MA, which is 1.2.1. Install and run the correct version, then add its URL when configuring the YT Music source in Step 3.
