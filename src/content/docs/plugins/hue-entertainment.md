@@ -32,10 +32,10 @@ Music Assistant can sync <a href="https://www.philips-hue.com/" target="_blank" 
 
 - <b>Brightness.</b> Overall light brightness (0-100). Default `100`.
 - <b>Mode.</b> Selects the visualization style:
-    - <b>Smooth</b> (default): gentle spectrum-driven brightness with a slowly drifting palette that cycles colour on the beat.
-    - <b>Ambient</b>: colour cycling on the beat with saturation reacting to the bass, no brightness modulation. Best for relaxed listening.
-    - <b>Flashing</b>: strong brightness pulse on every beat, stronger on downbeats.
-    - <b>Energetic</b>: large brightness swings on the beat plus fast palette and hue rotation.
+    - <b>Smooth</b> (default) - gentle spectrum-driven brightness with a slowly drifting palette that cycles colour on the beat.
+    - <b>Ambient</b> - colour cycling on the beat with saturation reacting to the bass, no brightness modulation. Best for relaxed listening.
+    - <b>Flashing</b> - strong brightness pulse on every beat, stronger on downbeats.
+    - <b>Energetic</b> - large brightness swings on the beat plus fast palette and hue rotation.
 - <b>Light latency (ms).</b> Milliseconds to render light updates ahead of the audio, to offset the Hue bridge and network delay (0-3000). Default `20`. Increase if the lights lag the music, decrease if they run ahead of it.
 
 > [!CAUTION]
