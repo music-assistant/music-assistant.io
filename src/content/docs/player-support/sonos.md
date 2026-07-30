@@ -14,7 +14,7 @@ Music Assistant has support for Sonos devices. There are two providers available
 
 ### AirPlay Functionality
 
-Many Sonos devices support the AirPlay 1 <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> protocol and this enables very useful functionality within Music Assistant.
+Many Sonos devices support the AirPlay 1 <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> protocol and this enables very useful functionality within Music Assistant. <a href="https://support.sonos.com/en-au/article/stream-airplay-audio-to-sonos" target="_blank" rel="noopener noreferrer">Sonos's AirPlay guide</a> lists which devices are AirPlay capable.
 
 If the Sonos device is grouped with an AirPlay device, or if the default [output protocol](/settings/individual-player/#output-protocols) is changed to `AirPlay`, then the AirPlay protocol will be used for playback. Other Sonos players can be synced with this player (even if they themselves do not have AirPlay, as the native Sonos protocol will be used for that connection). This means it is possible to play the same audio in perfect sync to a combination of AirPlay and Sonos speakers.
 
@@ -33,7 +33,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-- <b>Manual IP addresses for discovery.</b> Not recommended for normal use. Refer to the description in the MA UI
+- <b>Manual IP addresses for discovery.</b> In normal circumstances Music Assistant will automatically discover all players on the network using multicast discovery (mDNS/UPnP, [explained here](/faq/networking/)). In the case of special network setups, or when issues are encountered with one or more players not being discovered, IP addresses can be manually added here. This setting is not recommended for normal use. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming; in that case ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#streams)
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the Sonos players have the following settings:
 
@@ -49,5 +49,4 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - Issues have been reported with playback not starting on the `Sonos Connect Amp` and `Play:1`. If this is encountered then set `Enable Queue Flow Mode` to ON in the [individual player settings](/settings/individual-player/)
 - S1 and S2 devices cannot be grouped together in the same Sync Group. S1 and S2 devices can be grouped via a Universal Group but will not play in sync
 - Using the Sonos HA Integration at the same time as the MA Sonos S1 player provider may cause problems. It is not possible to run the HA provider and Sonos S1 provider on the same host and additionally these speakers do not like too many requests from too many sources. It is therefore recommended to only use the MA Sonos S1 player provider
-- Syncing Sonos devices with AirPlay devices requires the enabling of an option on the Sonos player
 - Sonos firmware changes has resulted in crossfade not working when the output codec is lossless (i.e. FLAC or WAV). Users can either disable crossfade, switch to the MP3 codec or use AirPlay mode
