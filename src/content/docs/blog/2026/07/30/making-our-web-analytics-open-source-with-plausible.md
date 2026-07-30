@@ -17,7 +17,7 @@ head:
       content: "https://assets.openhomefoundation.org/opengraph?url=https://www.openhomefoundation.org/blog/making-our-web-analytics-open-source-with-plausible/"
   - tag: meta
     attrs:
-      property: og:image:alt
+      property: "og:image:alt"
       content: "Making our web analytics open source with Plausible"
   - tag: meta
     attrs:
