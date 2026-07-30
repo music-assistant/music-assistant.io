@@ -102,7 +102,9 @@ On a mygpo compatible server, every app must use the same Device ID, as noted ab
 device, so a mismatch leaves each app seeing only what it recorded itself. Nextcloud has no Device ID, and
 needs nothing matched up.
 
-Apps that support gPodder sync include <a href="https://antennapod.org" target="_blank" rel="noopener noreferrer">AntennaPod</a> (Android),
-<a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a> (desktop),
-<a href="https://apps.kde.org/kasts/" target="_blank" rel="noopener noreferrer">Kasts</a> (Linux, Android and Windows) and
-<a href="https://github.com/madeofpendletonwool/PinePods" target="_blank" rel="noopener noreferrer">PinePods</a> (self-hosted). This list is not exhaustive.
+Apps that support gPodder sync include:
+
+- <a href="https://antennapod.org" target="_blank" rel="noopener noreferrer">AntennaPod</a> (Android)
+- <a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a> (desktop)
+- <a href="https://apps.kde.org/kasts/" target="_blank" rel="noopener noreferrer">Kasts</a> (Linux, Android and Windows)
+- <a href="https://github.com/madeofpendletonwool/PinePods" target="_blank" rel="noopener noreferrer">PinePods</a> (self-hosted)
