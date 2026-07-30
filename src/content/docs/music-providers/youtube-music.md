@@ -36,56 +36,60 @@ Music Assistant has support for Youtube Music. Contributed and maintained by <a 
 
 ## Configuration
 
-As of Nov 2024, Google has removed OAuth authentication from YT Music. This means using this (somewhat cumbersome) method of cookie authentication is the **only** way to get YT Music working.
+Cookie authentication is the **only** way to get YT Music working; Google does not support any other login method for third party apps. The process is somewhat cumbersome, but you only need to repeat it when the cookie expires. Setup has three parts: install the PO Token app, obtain your login cookie, then configure the source.
 
 > [!NOTE]
-> Cookies will expire after some time. This means that you will have to run this process again if YT Music stops working and you see `401: Unauthorized` or `Unable to fetch PO Token for web_music client` in the MA log. Maximise the cookie life by using this <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">method to obtain the cookie</a>
+> Cookies expire after some time. If YT Music stops working and you see `401: Unauthorized` or `Unable to fetch PO Token for web_music client` in the MA log, run the cookie steps again
 
 > [!NOTE]
-> If a Family Account is in use then setting up a dedicated account for MA will assist in maximising cookie life
-    
-### Obtaining the Cookies
-YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure. To export cookies that will remain working, you will need to export cookies in such a way that they are never rotated. One way to do this is through a private browsing/incognito window.
+> If you use a Family Account, setting up a dedicated account for MA will help maximise cookie life
 
-- Open <a href="http://music.youtube.com/" target="_blank">YT Music</a> in your browser in an incognito window.
-- Open the developer tools via View -> Developer -> Developer Tools. Note that this might be named differently based on your browser. It should open a window similar to this:
+### Step 1: Install the PO Token app
+
+Google requires a 'Proof of Origin' (PO) token before it allows streaming; without one, Music Assistant cannot play your music. This app generates the token for you automatically. Install it before adding the YT Music source:
+
+1. In Home Assistant, go to `Settings >> Apps >> Install app`.
+2. Scroll down to the 'Music Assistant' section.
+3. Install the app called 'YT Music PO Token Generator' and make sure it is started.
+
+> [!NOTE]
+> If you host Music Assistant yourself, download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a>. You must run the version currently supported by MA, which is 1.2.1. Install and run the correct version, then add its URL when configuring the YT Music source in Step 3.
+
+### Step 2: Obtain your login cookie
+
+YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure. To export a cookie that keeps working, export it in a way that never rotates it. One way to do this is through a private browsing/incognito window:
+
+1. Open <a href="http://music.youtube.com/" target="_blank">YT Music</a> in your browser in an incognito window and log in to your account.
+2. Open the developer tools via View -> Developer -> Developer Tools. Note that this might be named differently based on your browser. It should open a window similar to this:
 [![Dev tools](/assets/screenshots/ytmusic-developer-tools.png)](/assets/screenshots/ytmusic-developer-tools.png)
-
-- Navigate to the 'Network' tab
-- In the filter bar, type "/browse". Reload the page if no results are shown.
-- Now navigate to a page in YT Music that requires authentication, for example, on of your library playlists
-- A request will show-up in the table:
+3. Navigate to the 'Network' tab.
+4. In the filter bar, type "/browse". Reload the page if no results are shown.
+5. Now navigate to a page in YT Music that requires authentication, for example, one of your library playlists.
+6. A request will show up in the table:
 
 [![Auth request](/assets/screenshots/ytmusic-auth-request.png)](/assets/screenshots/ytmusic-auth-request.png)
 
-- Click the request and make sure you are on the 'Headers' tab
-- Find the section called 'Request Headers'
-- Find the item named 'Cookie' and copy the **value**. It is **VERY** important that you copy the exact value. Double check that you do not include any additional spaces or characters at the start/end of the value
+7. Click the request and make sure you are on the 'Headers' tab.
+8. Find the section called 'Request Headers'.
+9. Find the item named 'Cookie' and copy the **value**. It is **VERY** important that you copy the exact value. Double check that you do not include any additional spaces or characters at the start/end of the value.
 [![Cookie value](/assets/screenshots/ytmusic-cookie-value.png)](/assets/screenshots/ytmusic-cookie-value.png)
 
-### Installing the PO Token addon
-As of March 2025, Google has implemented a new security mechanism called 'PO Tokens' (Proof of Origin). Music Assistant will not be able to resolve stream urls for your music without a valid PO Token. Luckily, we can automatically generate this for you, but you will need to install an add-on (also available as a docker image) for this.
-
-- Within Home Assistant, go to Settings > Add-ons > Add-on Store
-- Scroll down to the 'Music Assistant' section.
-- A new add-on called 'YT Music PO Token Generator' is available.
-- Install this add-on and make sure it is started before adding the YT Music source within Music Assistant
-
 > [!NOTE]
-> If you are hosting Music Assistant yourself, you can download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a> but you must run the version currently supported by MA which is 1.2.1. Install the correct version and run it, then return to Music Assistant and add the URL to the PO token server when configuring the YT Music source.
+> Advanced: if your cookie still expires quickly, the yt-dlp project documents an <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">alternative export method</a> aimed at maximising cookie life
 
-### Configuring the source 
-- Navigate to 'Settings'
-- Under Music Sources, click 'Add a new source', select 'Youtube Music' and fill out the fields in the Generic Settings section as follows:
+### Step 3: Configure the source
+
+1. In Music Assistant, go to `SETTINGS >> MUSIC SOURCES >> ADD A MUSIC SOURCE` and select 'Youtube Music'.
+2. Fill out the fields in the Generic Settings section as follows:
     - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
-    - <b>Login Cookie.</b> Paste the value obtained above
-    - <b>PO Token Server URL.</b> Leave this setting as the default if running the PO server as an App on the same host as the MA App. If running the PO token server separately then adjust the IP address and port accordingly
-- Click 'Save'
+    - <b>Login Cookie.</b> Paste the value you copied in Step 2
+    - <b>PO Token Server URL.</b> Leave this setting as the default if you run the PO server as an App on the same host as the MA App. If you run the PO token server separately, adjust the IP address and port accordingly
+3. Click 'Save'.
 
 > [!CAUTION]
-> **Error on Saving**
+> **Error on saving?**
 >
-> If `__Secure-3PAPISID` is seen after saving this means the cookie is not from an authenticated request. Navigate to some more pages inside YT Music that require authentication (e.g. your library). To confirm the right cookie has been obtained paste it into a text editor and search for "__Secure-3PAPISID". If difficulties are encountered obtaining a cookie with this value, try a different browser.
+> If the error mentions `__Secure-3PAPISID`, your cookie did not come from a logged-in (authenticated) request. Go back to the incognito window, open a few more pages that require your account (for example your library), and copy the cookie again. You can check a cookie before saving it: paste it into a text editor and search for `__Secure-3PAPISID`; the right cookie contains this value. If you cannot obtain a cookie containing this value, try a different browser.
 
 ### Settings
 
@@ -94,7 +98,7 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 ## Using brand accounts
 A brand account is a sub-account that lives under your main Google account. You need to find your brand account id if you want to login using your brand account.
 
-- Go to <a href="https://myaccount.google.com/" target="_blank>https://myaccount.google.com/</a>
+- Go to <a href="https://myaccount.google.com/" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/</a>
 - From the top right menu, select your brand account
 - Look at the URL and copy the 21-digit number
 - Use this number in the 'Username' field when setting up the source
