@@ -14,7 +14,7 @@ MA includes a built-in Snapserver although an external server can also be used. 
 ## Features
 
 - Synchronized playback across all Snapcast devices
-- Lossless audio quality with options for 48kHz / 16bits PCM
+- Lossless audio quality; default is 48 kHz / 16-bit PCM, with optional higher sample rates and 24-bit (see Settings)
 
 ## Configuration
 
@@ -32,6 +32,8 @@ In the `Show Advanced Settings` toggle is enabled this will allow the use of an 
 - <b>Snapcast Server IP.</b> The IP address of the external Snapcast server (e.g. `192.168.1.200`)
 - <b>Snapcast Control Port.</b> The port the external Snapcast server can be reached on
 - <b>Idle threshold stream parameter.</b> (default 60000ms) The stream state will switch from playing to idle after receiving this many milliseconds of silence
+- <b>Snapcast stream sample rate.</b> (default 48000) Maximum PCM sample rate Music Assistant sends into the Snapcast TCP source. Options are `48000`, `96000`, and `192000`. Higher rates require Snapcast clients that support them
+- <b>Snapcast stream bit depth.</b> (default 16) Maximum PCM bit depth for those TCP sources. Options are `16` and `24`. 24-bit requires a Snapserver build with packed `s24le` TCP ingest support (see [snapcast/snapcast#1532](https://github.com/snapcast/snapcast/pull/1532))
 
 The `Built-in Snapserver Settings`are as follows:
 
@@ -62,4 +64,5 @@ In addition to the [Individual Player Settings](/settings/individual-player/), S
 - The Snapcast app for iOS is broken as it uses an old version of Snapclient. Using it brings problems with this provider
 - Ensure that the ports 1704 and 1705 on the Snapserver host are open. Also make sure that the ports between 4953 and 5153 inclusive are open
 - Try the default Snapcast settings and then make changes as necessary
+- Leaving the stream sample rate / bit depth at the defaults (48 kHz / 16-bit) is recommended unless you know your Snapserver and clients support the chosen format. Changing these settings requires a provider reload (and a Snapserver restart when using the built-in server)
 - The stream name must be `default`
