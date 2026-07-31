@@ -7,7 +7,7 @@ description: Turn a playlist into an AI-hosted radio show, either as a generated
 
 AI Radio turns one of your playlists into a radio-style show with spoken host segments between tracks. The host can introduce songs, bridge from one track to the next, add occasional weather or news breaks, and save the finished program as a playlist or play it live through a Music Assistant player.
 
-:::caution[Beta]
+:::note
 AI Radio is currently in beta. The show editor, prompt presets, generated output, and advanced station format may change between Music Assistant releases.
 :::
 
@@ -38,19 +38,7 @@ AI Radio generates new speech each time a show is started. The exact wording can
 
 ## Installation
 
-1. Go to **Settings → Plugins → Add a Plugin**.
-2. Add **AI Radio**.
-3. Configure the optional plugin settings:
-
-| Setting | Description |
-|---|---|
-| **Timezone** | Used for timestamp placeholders and local date formatting. Defaults to the server timezone. |
-| **Weather city** | City used when a show segment contains weather placeholders. |
-| **Weather country** | Country used together with the city for weather lookup. |
-
-Weather is optional. Shows without weather segments do not need a weather location.
-
-## Setting up AI and TTS with Home Assistant
+### Setting up AI and TTS with Home Assistant
 
 AI Radio does not contain its own LLM or TTS engine. It asks Music Assistant for providers that expose AI-query and text-to-speech features. The most common setup is to use the [Home Assistant plugin](/ha-plugin/) as the bridge to Home Assistant's Assist/LLM and TTS services.
 
@@ -66,6 +54,20 @@ Before configuring AI Radio:
 :::tip
 If AI Radio reports that an AI provider or TTS provider is missing, test the Home Assistant plugin first. AI Radio only sees capabilities that the plugin exposes to Music Assistant.
 :::
+
+### Configure the Plugin
+
+1. Go to **Settings → Plugins → Add a Plugin**.
+2. Add **AI Radio**.
+3. Configure the optional plugin settings:
+
+| Setting | Description |
+|---|---|
+| **Timezone** | Used for timestamp placeholders and local date formatting. Defaults to the server timezone. |
+| **Weather city** | City used when a show segment contains weather placeholders. |
+| **Weather country** | Country used together with the city for weather lookup. |
+
+Weather is optional. Shows without weather segments do not need a weather location.
 
 ## Creating a show
 
