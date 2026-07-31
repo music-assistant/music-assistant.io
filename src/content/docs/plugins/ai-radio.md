@@ -38,7 +38,7 @@ AI Radio generates new speech each time a show is started. The exact wording can
 
 ## Installation
 
-1. Go to **Settings → Providers → Add Provider**.
+1. Go to **Settings → Plugins → Add a Plugin**.
 2. Open the **Plugins** section.
 3. Add **AI Radio**.
 4. Configure the optional plugin settings:
