@@ -40,7 +40,7 @@ AI Radio generates new speech each time a show is started. The exact wording can
 
 1. Go to **Settings → Plugins → Add a Plugin**.
 2. Add **AI Radio**.
-4. Configure the optional plugin settings:
+3. Configure the optional plugin settings:
 
 | Setting | Description |
 |---|---|
