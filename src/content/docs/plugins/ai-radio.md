@@ -26,7 +26,7 @@ AI Radio is currently in beta. The show editor, prompt presets, generated output
 
 ## Requirements
 
-- The **AI Radio** plugin must be enabled in **Settings → Providers → Add Provider → Plugins**.
+- The **AI Radio** plugin must be enabled in **Settings → Plugins → Add a Plugin**.
 - At least one playlist with playable tracks.
 - A configured provider that supports AI queries, such as the [Home Assistant plugin](/ha-plugin/) with LLM access.
 - A configured provider that supports TTS, such as the [Home Assistant plugin](/ha-plugin/) with a working text-to-speech service.
