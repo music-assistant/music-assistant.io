@@ -213,6 +213,7 @@ export default defineConfig({
 						{ label: 'Nugs.net', slug: 'music-providers/nugs' },
 						{ label: 'NTS Radio', slug: 'music-providers/nts' },
 						{ label: 'ORF Radiothek', slug: 'music-providers/radiothek' },
+						{ label: 'Overcast', slug: 'music-providers/overcast' },
 						{ label: 'Pandora', slug: 'music-providers/pandora' },
 						{ label: 'Phish.in', slug: 'music-providers/phishin' },
 						{ label: 'Plex', slug: 'music-providers/plex' },
