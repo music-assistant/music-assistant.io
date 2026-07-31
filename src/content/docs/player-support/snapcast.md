@@ -14,7 +14,7 @@ MA includes a built-in Snapserver although an external server can also be used. 
 ## Features
 
 - Synchronized playback across all Snapcast devices
-- Lossless audio quality; default is 48 kHz / 16-bit PCM, with optional higher sample rates and 24-bit (see Settings)
+- Lossless audio quality. Default is 48 kHz / 16-bit PCM. Higher sample rates and 24-bit are only available when using an external Snapserver (see Settings)
 
 ## Configuration
 
@@ -32,8 +32,8 @@ In the `Show Advanced Settings` toggle is enabled this will allow the use of an 
 - <b>Snapcast Server IP.</b> The IP address of the external Snapcast server (e.g. `192.168.1.200`)
 - <b>Snapcast Control Port.</b> The port the external Snapcast server can be reached on
 - <b>Idle threshold stream parameter.</b> (default 60000ms) The stream state will switch from playing to idle after receiving this many milliseconds of silence
-- <b>Snapcast stream sample rate.</b> (default 48000) Maximum PCM sample rate Music Assistant sends into the Snapcast TCP source. Options are `48000`, `96000`, and `192000`. Higher rates require Snapcast clients that support them
-- <b>Snapcast stream bit depth.</b> (default 16) Maximum PCM bit depth for those TCP sources. Options are `16` and `24`. 24-bit requires a Snapserver build with packed `s24le` TCP ingest support (see [snapcast/snapcast#1532](https://github.com/snapcast/snapcast/pull/1532))
+- <b>Snapcast stream sample rate.</b> (default `48000`) Only shown when **Use existing Snapserver** is enabled. Sets how many samples per second Music Assistant sends into Snapcast (`48000`, `96000`, or `192000`). Your Snapcast clients must support the rate you choose. After changing it, reload the Snapcast provider.
+- <b>Snapcast stream bit depth.</b> (default `16`) Only shown when **Use existing Snapserver** is enabled. Sets how many bits per sample Music Assistant sends (`16` or `24`). **24-bit does not work with Music Assistant’s built-in Snapserver**, and not with Snapservers installed from normal packages/releases. See “Using higher sample rates and 24-bit” below.
 
 The `Built-in Snapserver Settings`are as follows:
 
@@ -42,6 +42,45 @@ The `Built-in Snapserver Settings`are as follows:
 - <b>Snapserver Initial Volume.</b> The initial volume for new clients
 - <b>Send audio to muted clients.</b> Maintains a stream to muted clients
 - <b>Snapserver default transport codec.</b> Options are FLAC [default], OGG, OPUS, and PCM
+
+### Using higher sample rates and 24-bit (external Snapserver only)
+
+With the built-in Snapserver, Music Assistant always streams at 48 kHz / 16-bit. The sample rate and bit depth settings only appear after you enable **Use existing Snapserver**.
+
+**Higher sample rates (still 16-bit)** need Snapcast clients that support that rate.
+
+**24-bit** needs more: Music Assistant sends packed 24-bit PCM, which a normal Snapserver cannot ingest. Until that support ships in an official Snapcast release (and Music Assistant’s built-in server can use it), build an external Snapserver from the branch that adds packed 24-bit PCM ingest:
+
+```sh
+# Debian / Raspberry Pi OS / Ubuntu
+sudo apt-get update
+sudo apt-get install -y git build-essential cmake ninja-build ccache \
+  alsa-utils avahi-daemon libasound2-dev libavahi-client-dev libboost-dev \
+  libexpat1-dev libflac-dev libopus-dev libsoxr-dev libssl-dev \
+  libvorbis-dev libvorbisidec-dev
+
+git clone --branch feature/tcp-packed-s24le --single-branch \
+  https://github.com/rwjack/snapcast.git
+cd snapcast
+mkdir build && cd build
+cmake .. -DBUILD_CLIENT=OFF
+cmake --build .
+
+sudo install -m 755 ../bin/snapserver /usr/local/bin/snapserver
+snapserver -v
+```
+
+Then:
+
+1. Run that `snapserver` on a host on your network (stop any old Snapserver first).
+2. In Music Assistant → Snapcast provider → Advanced Settings:
+   - enable **Use existing Snapserver**
+   - set **Snapcast Server IP** and **Control Port**
+   - set **Snapcast stream sample rate** / **bit depth** as needed
+3. Reload the Snapcast provider.
+4. Point your Snapcast clients at that **external** server (not Music Assistant’s built-in Snapweb on port 1780).
+
+Support for higher rates / 24-bit on the built-in Snapserver is planned once the required Snapcast support is available upstream.
 
 ### Player
 
@@ -64,5 +103,5 @@ In addition to the [Individual Player Settings](/settings/individual-player/), S
 - The Snapcast app for iOS is broken as it uses an old version of Snapclient. Using it brings problems with this provider
 - Ensure that the ports 1704 and 1705 on the Snapserver host are open. Also make sure that the ports between 4953 and 5153 inclusive are open
 - Try the default Snapcast settings and then make changes as necessary
-- Leaving the stream sample rate / bit depth at the defaults (48 kHz / 16-bit) is recommended unless you know your Snapserver and clients support the chosen format. Changing these settings requires a provider reload (and a Snapserver restart when using the built-in server)
+- Stream sample rate and bit depth settings are only available with an external Snapserver. The built-in Snapserver always uses 48 kHz / 16-bit for now. 24-bit additionally requires an external Snapserver built with packed 24-bit PCM support as described above. Changing these settings requires a provider reload.
 - The stream name must be `default`
