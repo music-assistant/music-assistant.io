@@ -312,6 +312,7 @@ export default defineConfig({
           label: "Plugins",
           collapsed: true,
           items: [
+            { label: 'AI Radio', slug: 'plugins/ai-radio' },
             { label: "AirPlay Receiver", slug: "plugins/airplay-receiver" },
             { label: "Ariacast Receiver", slug: "plugins/ariacast-receiver" },
             { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
