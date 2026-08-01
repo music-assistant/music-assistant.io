@@ -17,6 +17,9 @@ importers:
       astro:
         specifier: ^5.6.1
         version: 5.18.1(@types/node@24.12.0)(rollup@4.60.0)(typescript@5.9.3)
+      astro-swiper:
+        specifier: ^2.9.0
+        version: 2.9.0
       remark-github-blockquote-alert:
         specifier: ^1.2.2
         version: 1.3.1
@@ -26,9 +29,6 @@ importers:
       starlight-blog:
         specifier: ^0.25.2
         version: 0.25.3(@astrojs/starlight@0.37.7(astro@5.18.1(@types/node@24.12.0)(rollup@4.60.0)(typescript@5.9.3)))(astro@5.18.1(@types/node@24.12.0)(rollup@4.60.0)(typescript@5.9.3))
-      swiper:
-        specifier: ^12.2.0
-        version: 12.2.0
 
 packages:
 
@@ -882,6 +882,10 @@ packages:
   astro-remote@0.3.4:
     resolution: {integrity: sha512-jL5skNQLA0YBc1R3bVGXyHew3FqGqsT7AgLzWAVeTLzFkwVMUYvs4/lKJSmS7ygcF1GnHnoKG6++8GL9VtWwGQ==}
     engines: {node: '>=18.14.1'}
+
+  astro-swiper@2.9.0:
+    resolution: {integrity: sha512-g2Wywa9w5U5hCmbIqpHxhz6/SHivJHeJTzHlV9KFCLUxoECZ9x5byl6pJn6baTnUyljNsZ1Nu+xO6Zkl4lUj5g==}
+    engines: {node: '>=18', npm: '>=9.6.5', pnpm: '>=7.1.0'}
 
   astro@5.18.1:
     resolution: {integrity: sha512-m4VWilWZ+Xt6NPoYzC4CgGZim/zQUO7WFL0RHCH0AiEavF1153iC3+me2atDvXpf/yX4PyGUeD8wZLq1cirT3g==}
@@ -1813,8 +1817,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  swiper@12.2.0:
-    resolution: {integrity: sha512-K8uXsBZU6ME97Ia3xbBge8IRCnR1lOmIILzvY/jGVic7dSTQ530s3uO8RvXbPUtkkXLWIwmZLRPbtDxRWVAFdg==}
+  swiper@14.0.7:
+    resolution: {integrity: sha512-PDMY+8hNQBh4kAYdfKIF1GNS7u3hg4xl3NVKBey0rENnpUpTsiE/aCcbgpmm1PIf4RMI7loO3XhW9BdxLzQw0A==}
     engines: {node: '>= 4.7.0'}
 
   tiny-inflate@1.0.3:
@@ -1837,6 +1841,7 @@ packages:
   tsconfck@3.1.6:
     resolution: {integrity: sha512-ks6Vjr/jEw0P1gmOVwutM3B7fWxoWBL2KRDb1JfqGVawBmO5UsvmWOQFGHBPl5yxYz4eERr19E6L7NMv+Fej4w==}
     engines: {node: ^18 || >=20}
+    deprecated: unmaintained
     hasBin: true
     peerDependencies:
       typescript: ^5.0.0
@@ -2754,6 +2759,10 @@ snapshots:
       marked-footnote: 1.4.0(marked@12.0.2)
       marked-smartypants: 1.1.11(marked@12.0.2)
       ultrahtml: 1.6.0
+
+  astro-swiper@2.9.0:
+    dependencies:
+      swiper: 14.0.7
 
   astro@5.18.1(@types/node@24.12.0)(rollup@4.60.0)(typescript@5.9.3):
     dependencies:
@@ -4365,7 +4374,7 @@ snapshots:
       picocolors: 1.1.1
       sax: 1.6.0
 
-  swiper@12.2.0: {}
+  swiper@14.0.7: {}
 
   tiny-inflate@1.0.3: {}
 
