@@ -74,7 +74,7 @@ If using a USB dongle with piCorePlayer then some settings on the `Squeezelite S
 Play to the built-in Sendspin web player.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="easiest label" style="width: 64px;"  loading="lazy" />
-Use a [Snapserver](../player-support/snapcast/) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
+Use a [Snapserver](/player-support/snapcast/) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
 
 ## My Android Phone
 
@@ -82,7 +82,7 @@ Use a [Snapserver](../player-support/snapcast/) and the Snapweb option. If you e
 Play to the built-in Sendspin web player.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
-Use the <a href="https://play.google.com/store/apps/details?id=de.badaix.snapcast" target="_blank" rel="noopener noreferrer">Snapcast App</a> and the [Snapserver Provider](../player-support/snapcast/)
+Use the <a href="https://play.google.com/store/apps/details?id=de.badaix.snapcast" target="_blank" rel="noopener noreferrer">Snapcast App</a> and the [Snapserver Provider](/player-support/snapcast/)
 
 ## Music Assistant
 

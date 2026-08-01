@@ -46,13 +46,11 @@ Smart playlists use include/exclude style rules:
 - **Artist**: is / is not (library mode, one or more artists)
 - **Album**: is / is not (library mode, one or more albums)
 - **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
+- **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed; provider-dependent)
 - **Favorite**: yes (library mode)
-- **Year**: between from/to (you can also use only `from` or only `to`).
-
-Year examples:
-
-- `from: 1969` means 1969 or newer.
-- `to: 1980` means 1980 or older.
+- **Year**: between from/to (it is possible to use only `from` or only `to`)
+- **Duration**: between from/to in MM:SS format (filter tracks by length)
+- **Last played**: filter tracks by how recently they were played (e.g., "1 days ago", "2 weeks ago")
 
 Album type examples:
 
@@ -63,6 +61,31 @@ Album type examples:
 
 Available album types: **Album**, **Single**, **EP**, **Compilation**, **Live**, **Soundtrack**, **Audiobook**, **Podcast**, **Unknown album type** (albums without a specific type classification or where the music provider does not provide type information).
 
+Explicit content filter options:
+
+- **Allowed**: include both explicit and non-explicit tracks (no filtering)
+- **Explicit only**: include only tracks marked as explicit content
+- **Not allowed**: exclude all tracks marked as explicit content
+
+**Note:** Explicit content filtering depends on your music provider supplying explicit markers in their metadata. Not all music providers include this information, and availability varies by provider and region. If your provider does not supply explicit markers, this filter will have no effect.
+
+Year examples:
+
+- `from: 1969` means 1969 or newer.
+- `to: 1980` means 1980 or older.
+
+Duration examples:
+
+- `from: 0:30` means 30 seconds or longer (excludes very short tracks such as interludes).
+- `to: 5:00` means 5 minutes or shorter.
+- `between: 3:00 and 6:00` means tracks between 3 and 6 minutes.
+
+Last played examples:
+
+- `1 days ago` means tracks played within the last day.
+- `7 days ago` means tracks played within the last week.
+- Use this to create "recently played" playlists or to exclude tracks played recently.
+
 In **From my library** mode you can choose whether tracks must match **all** rules or **any** rule.
 
 In **Discover mode**, filters are applied to the provider result after similar content is fetched.
@@ -71,17 +94,22 @@ In **Discover mode**, filters are applied to the provider result after similar c
 
 ## Discover mode
 
+Discover mode fetches similar content from your streaming providers based on seed items.
+
+:::note[Best Effort Service]
+Discover mode relies on external music provider APIs for content recommendations. Results depend on:
+- Provider availability and API limits
+- Seed track/artist/album recognition by the provider
+- Provider-specific recommendation algorithms
+
+Quality and availability of results may vary between providers and over time.
+:::
+
 When using **Discover mode**:
 
 - Add one or more seeds from tracks, artists, albums, or playlists.
 - Seed lookups depend on provider support for the selected seed types.
 - Results are sampled from provider output and refreshed on each play.
-
-## De-duplication
-
-Use **Do not repeat the same song for X hours** to prevent recently played tracks from being selected again.
-
-Set it to **Off** to disable de-duplication.
 
 ## Track count and duration hint
 
