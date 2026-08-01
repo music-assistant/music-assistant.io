@@ -61,7 +61,8 @@
       const urlParams = new URLSearchParams(window.location.search);
       const redirectUrl = urlParams.get('state') || '';
       urlParams.delete('state');
-      const finalUrl = redirectUrl + '?' + urlParams.toString();
+      const query = urlParams.toString();
+      const finalUrl = query ? redirectUrl + '?' + query : redirectUrl;
       const referrerHost = document.referrer ? new URL(document.referrer).hostname : '';
       const validOrigin = signInHosts.some(
         (host) => referrerHost === host || referrerHost.endsWith('.' + host),
