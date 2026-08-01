@@ -21,7 +21,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        #manual-link {
+        #manual-link, #error {
             display: none;
             margin-top: 1rem;
         }
@@ -42,25 +42,45 @@
             <p>If you are not redirected automatically, please click the link below:</p>
             <a href="#" id="redirect-link">Complete Authentication</a>
         </div>
+        <div id="error">
+            <p>This page was opened without a valid Music Assistant address to return to,
+               so the sign-in cannot be completed. Close this window and start the sign-in
+               again from within Music Assistant.</p>
+        </div>
     </div>
 
   <footer>
 
     <script>
       'use strict';
+      // Music providers only allow pre-registered redirect URIs, so they all send the
+      // browser here. The Music Assistant instance that started the sign-in passes its
+      // own (session specific) callback URL along in `state`: forward everything the
+      // provider returned - the authorization code, or an error - to that URL.
+      const signInHosts = ['spotify.com', 'google.com', 'microsoftonline.com', 'live.com'];
       const urlParams = new URLSearchParams(window.location.search);
-      const redirect_url = decodeURIComponent(urlParams.get('state'));
-      const validOrigin = document.referrer?.includes('spotify.com');
-      const validDest = redirect_url.includes(':') && redirect_url.includes('/callback/') && !redirect_url.includes('hassio_ingress');
-      const code = encodeURIComponent(urlParams.get('code'));
-      const finalUrl = redirect_url + '?code=' + code;
-      if (validOrigin && validDest) {
-        window.location.replace(finalUrl);
+      const redirectUrl = urlParams.get('state') || '';
+      urlParams.delete('state');
+      const finalUrl = redirectUrl + '?' + urlParams.toString();
+      const referrerHost = document.referrer ? new URL(document.referrer).hostname : '';
+      const validOrigin = signInHosts.some(
+        (host) => referrerHost === host || referrerHost.endsWith('.' + host),
+      );
+      // only forward to something shaped like a Music Assistant callback URL, and never
+      // to a Home Assistant ingress URL (which needs the ingress session to be reachable)
+      const validDest =
+        /^https?:\/\/[^/?#@\s]+\/(?:[^?#\s]*\/)?callback\/[A-Za-z0-9_.-]+$/.test(redirectUrl) &&
+        !redirectUrl.includes('hassio_ingress');
+      if (!validDest) {
+        document.getElementById('error').style.display = 'block';
       } else {
-        // Show manual link if automatic redirect doesn't work
+        if (validOrigin) {
+          window.location.replace(finalUrl);
+        }
+        // manual fallback for when we cannot tell which sign-in page the browser came
+        // from, or when the browser refuses the automatic redirect
         document.getElementById('manual-link').style.display = 'block';
-        const linkElement = document.getElementById('redirect-link');
-        linkElement.href = finalUrl;
+        document.getElementById('redirect-link').href = finalUrl;
       }
     </script>
   </footer>
