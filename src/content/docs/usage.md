@@ -27,7 +27,7 @@ As a further means of filtering the library, you can mark items as a "favourite"
 
 ## The Queue
 
-Each player has its own queue. Viewing the queue is done by pressing the :material-playlist-play: button. This button can be found on the player bar at the bottom of the UI or for narrow displays in the NOW PLAYING view.
+Each player has its own queue. View the queue by pressing the queue icon. This button can be found on the player bar at the bottom of the UI or, for narrow displays, in the NOW PLAYING view.
 
 Selecting the PLAYED ITEMS option will show the previous items from the queue and selecting any will show a menu and this will allow a restart of the queue from that point.
 
