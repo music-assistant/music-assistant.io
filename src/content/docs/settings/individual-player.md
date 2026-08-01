@@ -31,7 +31,11 @@ One setting appears in the protocol sections of many player types and is describ
 
 ## Queue Playback
 
-- <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track. This setting is only visible when the advanced toggle is enabled.
+- <b>Enable Smart Fades.</b> This dropdown enables the crossfade transition functionality between tracks. The crossfade duration is set by the slider below. The options available are `Disabled [Default]`, `Smart Fades` or `Standard Crossfade`. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade.
+- <b>Fallback Crossfade duration.</b> This slider is enabled when crossfade is enabled in the [Audio section](#audio). The default setting is 8 seconds
+- <b>Enable Volume Normalization.</b> This setting should normally remain enabled to avoid differing volume levels between tracks from different sources. Read more about this on the [Technical Information page](/faq/tech-info/#volume-normalization). The target level is set in the [Advanced Settings](#advanced-settings)
+- <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track
+- <b>Target level for [Volume Normalization](/faq/tech-info/#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping. Volume Normalization is enabled and disabled in the [Audio](#audio) section
 
 ## Announcements Configuration
 
