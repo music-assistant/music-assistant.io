@@ -59,11 +59,6 @@ Raises or lowers the overall volume by a fixed amount, from −15 dB to +15 dB (
 
 Allows precise adjustment of specific frequency ranges and is the most powerful of the available filters. It is described in detail on the [Parametric Equalizer](/dsp/parametriceq/) page.
 
-### Safety Limiter
+### Tone Controls
 
-Sets a hard ceiling that the audio is not allowed to exceed, from −24 dB up to 0 dB, with a default of −2 dB. Anything that would peak above the ceiling is turned down just enough to stay beneath it, leaving everything below the ceiling untouched. Its purpose is to catch clipping rather than to shape the sound, so no make-up gain is applied and the overall level is not raised to compensate.
-
-It is most useful placed after a filter that can add level, such as a Parametric Equalizer with boosted bands, the Gain filter, or Stereo Width set above 1.0. Because filters are applied in order, the limiter must sit after the filter it is protecting against in order to have any effect. A ceiling a little below 0 dB, such as the −2 dB default, is generally a safer choice than 0 dB itself, as it leaves a small amount of headroom for the player's own processing. Unlike Gain or Balance, the filter has no neutral setting, so it is switched off by disabling it rather than by returning the ceiling to a particular value. 
-
-
-Provide simple bass, mid and treble adjustments of the audio signal. They are described in detail on the [Tone Controls](/dsp/tonecontrols/) page.
+Provides simple bass, mid and treble adjustments of the audio signal. They are described in detail on the [Tone Controls](/dsp/tonecontrols/) page.
