@@ -62,3 +62,7 @@ Allows precise adjustment of specific frequency ranges and is the most powerful 
 ### Tone Controls
 
 Provides simple bass, mid and treble adjustments of the audio signal. They are described in detail on the [Tone Controls](/dsp/tonecontrols/) page.
+
+### Transpose
+
+Provides a means of shifting the pitch of the music up or down without changing how fast it plays. This can be particularly useful for those that prefer the slightly mellower character of music when the key of A is at 432Hz instead of the typical 440Hz. This filter is described in detail on the [Transpose](/dsp/transpose/) page.
