@@ -16,8 +16,6 @@ If a device supports multiple protocols then these will be combined into one pla
 
 Only players provided by certain providers — that is, Home Assistant Players, Snapcast, and Universal Player — support deletion. Deleting a player can be useful to reset a problematic player’s configuration. For providers that support deletion, deleted players that are still on the network will be rediscovered automatically on the next Music Assistant restart or player provider reload.
 
-![Preview image](/assets/screenshots/player-disable.png) 
-
 > [!NOTE]
 > If any player is not transitioning between songs then check if the player has the option [QUEUE FLOW MODE](/faq/tech-info/#track-queueing). Try enabling it if it does.
 
