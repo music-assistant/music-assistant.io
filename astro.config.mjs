@@ -190,6 +190,7 @@ export default defineConfig({
             { label: "Overview", slug: "dsp" },
             { label: "Parametric Equalizer", slug: "dsp/parametriceq" },
             { label: "Tone Controls", slug: "dsp/tonecontrols" },
+			{ label: "Transpose", slug: "dsp/transpose" },
           ],
         },
         {
