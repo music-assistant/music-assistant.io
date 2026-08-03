@@ -6,6 +6,10 @@ title: "Pocket Casts"
 
 Music Assistant has support for <a href="https://pocketcasts.com" target="_blank" rel="noopener noreferrer">Pocket Casts</a>, giving access to a user's subscribed podcasts, playback progress, and library, with changes synced back to the Pocket Casts account. Contributed and maintained by <a href="https://github.com/yfhyou" target="_blank" rel="noopener noreferrer">yfhyou</a>
 
+Pocket Casts is a podcast app for phones, desktop and the web. What you subscribe to, what is queued up next and how far through each episode you are all live in your account rather than on one device, so your listening carries over between them.
+
+Music Assistant becomes another of those devices, reading from and writing back to the same account.
+
 ## Features
 
 |           |                     |
