@@ -6,9 +6,9 @@ title: "Subsonic"
 
 Music Assistant has support for music servers which work to the <a href="https://opensubsonic.netlify.app/" target="_blank" rel="noopener noreferrer">Open Subsonic API definition</a>. The implementation has been tested against Gonic and Navidrome but should work with any implementation. This component is contributed and maintained by <a href="https://github.com/khers" target="_blank" rel="noopener noreferrer">khers</a>
 
-Subsonic is a way of talking to a music server rather than a service in its own right. You install one of these servers on your own hardware and point it at your music files, and it then serves that collection to any app that speaks the same language.
+Subsonic started life as a music server you install on your own hardware and point at your own music files, with an API that other apps use to browse and stream that collection. Open Subsonic is a newer, community-maintained version of that API, looked after by the people who write the servers and the apps that use them.
 
-This source makes Music Assistant one of those apps, so music already indexed on your server is available without cataloguing it again.
+This source connects to any server that supports the Open Subsonic specification, so music already indexed there is available without cataloguing it again. Note that Open Subsonic is a separate specification from the original Subsonic one, and a server that only implements the original will not work.
 
 ## Features
 
