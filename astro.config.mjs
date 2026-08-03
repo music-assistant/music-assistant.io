@@ -144,7 +144,10 @@ export default defineConfig({
               slug: "settings/music-provider-settings",
             },
             { label: "Player Providers", slug: "settings/player-provider" },
-            { label: "Metadata Providers", slug: "metadata" },
+            {
+              label: "Metadata Providers",
+              slug: "settings/metadata-provider-settings",
+            },
             { label: "Players", slug: "settings/individual-player" },
             { label: "Profile", slug: "settings/profile" },
             { label: "User Interface", slug: "settings/user-interface" },
@@ -168,10 +171,6 @@ export default defineConfig({
             { label: "Get Queue Action", slug: "faq/get_queue" },
             { label: "Transfer Queue Action", slug: "faq/masstransfer" },
             { label: "Voice Control", slug: "integration/voice" },
-            {
-              label: "Community Extensions",
-              slug: "community-extensions",
-            },
           ],
         },
         {
@@ -386,6 +385,10 @@ export default defineConfig({
             { label: "Support", slug: "support" },
             { label: "I Want to Help / Donate", slug: "help" },
             { label: "Translations", slug: "help/lokalise" },
+            {
+              label: "Community Extensions",
+              slug: "community-extensions",
+            },
           ],
         },
         { label: "Blog", link: "/blog/" },
