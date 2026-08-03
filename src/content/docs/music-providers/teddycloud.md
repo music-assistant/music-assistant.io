@@ -41,3 +41,5 @@ The following is needed to setup this provider:
 
 - Series, episode and artwork come from TeddyCloud's tonies.json data — custom or unrecognised Tonies are still playable but show a generic title and no cover
 - Tonies configured to stream from an external live source are skipped, as there is no stored file to serve
+- Your place in a story is not shared with the Toniebox. Music Assistant keeps its own position and the box keeps its own, so a story started on one does not resume where it left off on the other. Nothing is written back to TeddyCloud
+- A Tonie's chapter marks and its story names come from two different places. Where they cannot be lined up with confidence the chapters are numbered instead of named, rather than risk a name landing on the wrong story
