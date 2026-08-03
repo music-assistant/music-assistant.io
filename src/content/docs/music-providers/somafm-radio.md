@@ -12,7 +12,7 @@ This source makes the SomaFM channels available in Music Assistant.
 
 > [!TIP]
 > **Donate**
-> SomaFM Radio has no ads or subscription, relying on listener donations to keep running for over 25 years. If you enjoy using this Music Assistant source, please consider donating at https://somafm.com/support or purchasing something from https://somafm.com/store.
+> SomaFM Radio has no ads or subscription, relying on listener donations to keep running since 2000. If you enjoy using this Music Assistant source, please consider donating at https://somafm.com/support or purchasing something from https://somafm.com/store.
 
 ## Features
 
