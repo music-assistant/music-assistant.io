@@ -134,7 +134,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "Set Up and Configure",
+          label: "First Run and Settings",
           collapsed: true,
           items: [
             { label: "First Run (Authentication)", slug: "first-run" },
