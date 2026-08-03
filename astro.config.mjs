@@ -113,6 +113,7 @@ export default defineConfig({
         },
       ],
       customCss: ["./src/styles/custom.css"],
+      routeMiddleware: "./src/starlightRouteData.ts",
       plugins: [
         starlightBlog({
           title: "Blog",
@@ -125,17 +126,19 @@ export default defineConfig({
       sidebar: [
         { label: "Home", slug: "index" },
         {
-          label: "Server Install and Configure",
-          collapsed: true,
+          label: "I Want To",
           items: [
-            { label: "Installation", slug: "installation" },
-            { label: "First Run (Authentication)", slug: "first-run" },
+            { label: "Install Music Assistant", slug: "installation" },
+            { label: "Install the HA Integration", slug: "integration/installation" },
+            { label: "Listen To...", slug: "faq/listen-to" },
+            { label: "Stream To...", slug: "faq/stream-to" },
           ],
         },
         {
-          label: "Settings",
+          label: "First Run and Settings",
           collapsed: true,
           items: [
+            { label: "First Run (Authentication)", slug: "first-run" },
             {
               label: "Music Sources",
               slug: "settings/music-provider-settings",
@@ -177,8 +180,6 @@ export default defineConfig({
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },
             { label: "How Do I...", slug: "faq/how-to" },
-            { label: "I Want To Listen To", slug: "faq/listen-to" },
-            { label: "I Want To Stream To", slug: "faq/stream-to" },
             { label: "Technical Info", slug: "faq/tech-info" },
             { label: "Networking Basics", slug: "faq/networking" },
             { label: "Troubleshooting", slug: "faq/troubleshooting" },
