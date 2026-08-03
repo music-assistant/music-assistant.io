@@ -6,6 +6,10 @@ title: "Qobuz"
 
 Music Assistant has full support for <a href="https://www.qobuz.com/" target="_blank" rel="noopener noreferrer">Qobuz</a>, including Qobuz's excellent HiRes catalogue!
 
+Qobuz is a French subscription streaming service aimed at people who care about sound quality. Everything streams lossless, and it also sells albums as downloads you keep.
+
+Sign in and your Qobuz favourites appear in Music Assistant, along with the whole catalogue to search through.
+
 ## Features
 
 |           |                     |
@@ -16,6 +20,9 @@ Music Assistant has full support for <a href="https://www.qobuz.com/" target="_b
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                     | 
 | Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
 | Login Method | Password |
 
@@ -29,6 +36,10 @@ Music Assistant has full support for <a href="https://www.qobuz.com/" target="_b
 ## Configuration
 
 - In the configuration, you need to enter your Qobuz username and password
+
+### Settings
+
+Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
 
 ## Known Issues / Notes
 

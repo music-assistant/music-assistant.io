@@ -4,6 +4,10 @@ title: "Search Action"
 
 # MA search Action
 
+> [!NOTE]
+> This action is used from Home Assistant scripts and automations and requires the [Home Assistant integration](/integration/installation/). See [Home Assistant scripts and automations](/faq/how-to/#home-assistant-scripts-and-automations) for examples.
+
+
 This action does a global search across all providers 
 
 ![image](/assets/screenshots/service-call/search1.png)

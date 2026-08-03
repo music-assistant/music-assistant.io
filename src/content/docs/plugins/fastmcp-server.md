@@ -23,7 +23,7 @@ Music Assistant has the ability to expose its library, queue, playback and playe
 
 ## Configuration
 
-The plugin is single-instance. Add it to Music Assistant by navigating to the MA Settings then selecting Plugins and then clicking on ADD A PLUGIN.
+The plugin is single-instance. Add it via `SETTINGS >> PLUGINS >> ADD A PLUGIN`.
 
 ### Connecting an AI client
 
@@ -42,7 +42,7 @@ For multi-agent orchestrators the wizard emits the native form for each: an `ope
 
 - <b>Require authentication.</b> Reject MCP clients that do not present a valid Music Assistant token. Strongly recommended to leave enabled.
 - <b>Confirm destructive operations.</b> Ask the client to confirm before clearing a queue, removing a library item or deleting a playlist. Falls through to the matching permission toggle on clients that do not yet support confirmation prompts.
-- <b>Permissions.</b> Twenty-nine toggles in total — sixteen action toggles split across Query Permissions, Control Permissions, Edit Permissions and Delete Permissions; three MCP Resources toggles that control which library, player/queue and prompt resources are advertised to clients; five Debug toggles; and five Config toggles. The defaults enable read-only library and resource access only; every action that mutates state, and every Debug and Config capability, is off by default.
+- <b>Permissions.</b> The defaults enable read-only library and resource access only; every action that mutates state, and every Debug and Config capability, is off by default, so enable only what you need. There are twenty-nine toggles in total - sixteen action toggles split across Query Permissions, Control Permissions, Edit Permissions and Delete Permissions; three MCP Resources toggles that control which library, player/queue and prompt resources are advertised to clients; five Debug toggles; and five Config toggles.
 
 #### Optional capability namespaces (advanced)
 

@@ -39,6 +39,7 @@ Standard [player settings](/settings/player-provider/) apply. Specific settings 
 
 - The Sendspin provider is added by default
 - The web player appears automatically in the player list
+- If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
 
 ### Limitations
 
@@ -96,3 +97,10 @@ Sendspin supports two connection methods:
 
 1. **Direct WebSocket**: Used automatically by clients on the same local network as Music Assistant, including the web player and hardware devices.
 2. **WebRTC**: Used for remote access when not on the local network. Works across networks and through firewalls. The web player falls back to this method when a direct connection isn't possible.
+
+#### Connecting External Sendspin Clients
+
+Sendspin clients on the local network are discovered automatically, so most users never need to enter a URL. However, if a third-party client asks for a server URL (or you are developing your own client), the Sendspin server listens on the `/sendspin` WebSocket endpoint on port `8927`. A full connection URL looks like `ws://192.168.1.100:8927/sendspin` (replacing the IP address with that of your Music Assistant server).
+
+> [!NOTE]
+> The `/sendspin` path also exists on the main web interface port (8095), but that is an authenticated proxy used internally by the web player and external clients connecting there will be rejected.

@@ -6,7 +6,7 @@ title: Smart Fades
 
 The **Smart Fades** provider analyses each track to find its beats, downbeats, musical key and energy curve, and uses that information to create beat-matched, EQ-aware crossfades between tracks â€” much smoother than a plain time-based fade.
 
-Smart Fades is an optional plugin but is automatically added and enabled.
+Smart Fades is an optional plugin but is automatically added and enabled unless the minimum resources requirements listed below are not met.
 
 ## What it adds to playback
 
@@ -34,6 +34,8 @@ Some players don't natively support gapless or crossfaded playback. For those, M
 
 ## How analysis runs
 
+Scanning is done as a background task for local file system (i.e. SMB, NFS, or WebDAV) provided tracks and all in-library tracks are scanned during playback.
+ 
 Analysis runs in the background while a track is playing through the streaming pipeline. The first time a track is played:
 
 - The analysis is performed and stored with the track.
@@ -43,10 +45,10 @@ Once a track has been analysed, the result is reused on every subsequent play â€
 
 ## Performance notes
 
-Smart Fades performs real machine-learning inference on the audio stream and is more CPU- and memory-intensive than the rest of Music Assistant.
+Smart Fades performs real machine-learning inference on the audio stream and is more CPU and memory intensive than the rest of Music Assistant. Thus, in order to preserve the user experience, the following are hard requirements:
 
-- CPU: On systems with only one CPU core the provider shows a warning at setup, because analysis can compete with normal playback. On a multi-core host (two or more cores) it runs comfortably alongside playback. On a single-core host the provider is not enabled automatically, so if Smart Fades is missing from the player dropdown, check your core count first
-- RAM: Smart Fades keeps its analysis models loaded in memory the whole time the server is running, so expect it to use a few hundred MB more RAM than usual. RAM also affects whether Smart Crossfade actually runs: Smart Crossfade needs more than a Minimal audio buffer, and on systems with 4GB of RAM or less the audio buffer defaults to Minimal. When that happens, players set to Smart Crossfade quietly fall back to Standard Crossfade
+- An [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) capable CPU on x86 (or use an ARM64 cpu). In virtualized environments, if the host CPU supports AVX2, pass the host CPU model through to the VM
+- Minimum 4GB of RAM and 2 CPU cores
 
 If a server feels sluggish after enabling Smart Fades, switching the affected players to Standard Crossfade (or Disabled) restores normal behaviour while leaving the provider installed.
 

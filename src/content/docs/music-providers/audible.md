@@ -6,6 +6,10 @@ title: "Audible"
 
 Music Assistant has support for streaming from Audible. Contributed and maintained by <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a>
 
+Audible is Amazon's audiobook service. A monthly credit or a direct purchase buys you a title, and everything you own stays in your account library.
+
+Connecting your account puts that library inside Music Assistant. Where you got to in a book comes across from Audible's own apps, so you carry on from the same place.
+
 > [!NOTE]
 > A paid subscription is required for this provider
 
@@ -19,14 +23,25 @@ Music Assistant has support for streaming from Audible. Contributed and maintain
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy, AAC Variable Bitrate |
 | Login Method | OAuth |
+
+### Whispersync Progress Sync
+
+Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+
+- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
+- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+
+No configuration is needed — this works automatically once the Audible provider is set up.
 
 ### Other
 
 - The Audible library can be listed
 - Metadata for audiobooks will be populated
-- Playback can be resumed from the last position reported by Audible
 - Chapter navigation
 - Multiple Audible accounts can be added.
 

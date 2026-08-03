@@ -4,6 +4,10 @@ title: "Play Media Action"
 
 # MA play_media Action
 
+> [!NOTE]
+> This action is used from Home Assistant scripts and automations and requires the [Home Assistant integration](/integration/installation/). See [Home Assistant scripts and automations](/faq/how-to/#home-assistant-scripts-and-automations) for examples.
+
+
 This action allows you to finely select the media to play. Create your service call or automation via the HA GUI or YAML
 
 You can use a name together with the media type

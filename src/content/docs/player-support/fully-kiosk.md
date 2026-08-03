@@ -11,6 +11,12 @@ Music Assistant has support for streaming to devices running the Fully Kiosk Bro
 - This is a basic player
 - Multiple Fully Kiosk browser players can be added
   
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Fully Kiosk Browser` (Fully Kiosk players are not discovered automatically).
+2. Enter the IP address (or hostname) and the password of the device running Fully Kiosk. See Settings below for the remaining options.
+3. To add more Fully Kiosk devices, add the provider again for each one.
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
@@ -26,9 +32,9 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 
 - <b>Output codec to use for streaming audio to the player.</b> The default is `MP3` but other options are `FLAC`, `AAC` or `WAV. Trying to send lossless to these devicxes can be problematic
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
 - <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
 - <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting
+- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
   
 ## Known Issues / Notes
 

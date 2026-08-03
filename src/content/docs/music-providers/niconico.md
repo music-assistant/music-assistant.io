@@ -6,6 +6,10 @@ title: "Nico Nico Video"
 
 Music Assistant has support for [Nico Nico Video](https://www.nicovideo.jp/), a Japanese video-sharing website similar to YouTube, famous for its on-screen scrolling comments that overlay the video. Contributed and maintained by <a href="https://github.com/Shi-553" target="_blank" rel="noopener noreferrer">柴田 Shi-553</a>
 
+Much of what is on Nico Nico is uploaded by its own community, so it holds a lot of original songs, remixes and Vocaloid work that never reaches the larger streaming services.
+
+This source lets you search that catalogue and play the audio through Music Assistant. Sign in and the Mylists you have made and the artists you follow come across as well.
+
 ## Features
 
 |           |                     |
@@ -16,6 +20,9 @@ Music Assistant has support for [Nico Nico Video](https://www.nicovideo.jp/), a 
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                     | 
 | Maximum Stream Quality | Lossy, AAC (up to ~576 kbps) |
 | Login Method | Cookie or Password+MFA |
 

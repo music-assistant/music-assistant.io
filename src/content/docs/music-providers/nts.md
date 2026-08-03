@@ -6,6 +6,15 @@ title: "NTS Radio"
 
 Music Assistant has support for [NTS Radio](https://www.nts.live/). This component is contributed and maintained by <a href="https://github.com/mike-sheppard" target="_blank" rel="noopener noreferrer">Mike Sheppard</a>. This is an unofficial, best-effort implementation. NTS is not affiliated with or endorsed by this provider.
 
+NTS is a free online radio station broadcasting from London. Its shows are hosted by DJs, artists and record collectors playing whatever they like, which tends towards music you will not hear on commercial radio.
+
+This source adds the NTS streams to Music Assistant as radio stations.
+
+> [!TIP]
+> **Support NTS**
+>
+> NTS is free to listen to and carries no advertising, funded instead by its listeners through the NTS Supporters scheme. If you are using this source consider joining at https://www.nts.live/supporters
+
 ## Features
 
 |||
@@ -16,6 +25,9 @@ Music Assistant has support for [NTS Radio](https://www.nts.live/). This compone
 |[Recommendations](/ui/#view-discover) Supported|No|
 |Lyrics Supported|No|
 |[Radio Mode](/ui/#track-menu)|No|
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 |Maximum Stream Quality|AAC|
 |Login Method|None|
 

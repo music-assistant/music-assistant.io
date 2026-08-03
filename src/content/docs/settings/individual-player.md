@@ -15,7 +15,7 @@ A powerful feature of Music Assistant is that it will combine all of the availab
 - <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the [Player List](/ui/#player-list) and other areas of the UI
 - <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
 - <b>Icon.</b> A material design icon is used in some parts of the UI and this can be configured on a per player basis
-- <b>Flow Mode sample rate.</b> Controls the sample rate used when the queue is streamed in Flow Mode. The options are `Smart (upsample only)` (this is the default), `Bit-perfect (no resampling)`, `48 kHz (balanced quality and bandwidth)`, `96 kHz (high quality)`, and `Highest supported by player`. Found under advanced settings and only for supported protocols. Smart will anchor the stream quality on that of the first track and only restart for higher rates. Bit-perfect will not do any resampling and will restart the stream on any rate change.
+- <b>Flow Mode sample rate.</b> Controls the sample rate used when the queue is streamed in [Flow Mode](/faq/tech-info/#track-queueing), where MA sends the whole queue as one continuous stream. The options are `Smart (upsample only)` (this is the default), `Bit-perfect (no resampling)`, `48 kHz (balanced quality and bandwidth)`, `96 kHz (high quality)`, and `Highest supported by player`. Found under advanced settings and only for supported protocols. Smart will anchor the stream quality on that of the first track and only restart for higher rates. Bit-perfect will not do any resampling and will restart the stream on any rate change.
 - <b>Dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
 - <b>Group members.</b> For Group player types the members of the group are configured in this field
 
@@ -23,15 +23,15 @@ A powerful feature of Music Assistant is that it will combine all of the availab
 
 - <b>Preferred Output Protocol.</b> Choose from the list of available protocols
 
-Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. Refer to the relevant Player provider for settings which are available for each
+Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. Refer to the relevant Player provider for settings which are available for each.
+
+One setting appears in the protocol sections of many player types and is described here once:
+
+- <b>Try to inject metadata into stream (ICY).</b> ICY is a way of slipping the track name and artist into the audio stream so the player can display them (<a href="https://liquidsoap.readthedocs.io/en/latest/content/icy_metadata.html" target="_blank" rel="noopener noreferrer">more about ICY metadata</a>, written for developers). Not all players handle it correctly, so if there are issues with playback, try disabling this setting
 
 ## Queue Playback
 
-- <b>Enable Smart Fades.</b> This dropdown enables the crossfade transition functionality between tracks. The crossfade duration is set by the slider below. The options available are `Disabled [Default]`, `Smart Fades` or `Standard Crossfade`. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade.
-- <b>Fallback Crossfade duration.</b> This slider is enabled when crossfade is enabled in the [Audio section](#audio). The default setting is 8 seconds
-- <b>Enable Volume Normalization.</b> This setting should normally remain enabled to avoid differing volume levels between tracks from different sources. Read more about this on the [Technical Information page](/faq/tech-info/#volume-normalization). The target level is set in the [Advanced Settings](#advanced-settings)
-- <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track
-- <b>Target level for [Volume Normalization](/faq/tech-info/#volume-normalization)</b>. The default setting of -17 should normally be left undisturbed. If this is set too high it may cause clipping. Volume Normalization is enabled and disabled in the [Audio](#audio) section
+- <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track. This setting is only visible when the advanced toggle is enabled.
 
 ## Announcements Configuration
 
@@ -45,7 +45,7 @@ Each player has a number of options available to control the behaviour of the po
 
 It is possible to map other HA entities to the MA player controls. in order for this to be an option the HA entities need to be first exposed to MA via the settings in the [HA Plugin](/ha-plugin/).
 
-**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality.
+**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Power controls assume the underlying device is in a standby mode and not physically powered off.
 
 **Volume** This allows the volume control to be defined or disabled.
 
@@ -57,28 +57,9 @@ It is possible to map other HA entities to the MA player controls. in order for 
 
 ## DSP Settings
 
-All providers have the option to apply <a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">Digital Signal Processing</a> (DSP) filters to the audio stream. DSP lets you shape and refine the audio with a variety of filters. Use it to tailor the sound to a room's acoustics, compensate for speaker characteristics, and fine-tune the frequency balance to personal taste.
+All providers have the option to apply <a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">Digital Signal Processing</a> (DSP) filters to the audio stream. This section is where the DSP is configured for each player, which means that each player has its own independently configurable DSP settings.
 
-The DSP option is found in the MA settings for each player which means that each player has its own independently configurable DSP settings.
-
-When playing in a group, individual player DSP settings will only be used for Universal groups and when playing via AirPlay, Squeezelite or Sendspin. Groups using all other protocols will have DSP disabled.
-
-The DSP path consists of an INPUT pre-amplifier for initial gain control, followed by optional audio filters that can be added between input and output (multiple times if desired). The following filters are available:
-
-- [Parametric Equalizer](/dsp/parametriceq/)
-- [Tone Controls](/dsp/tonecontrols/)
-
-The path ends with an OUTPUT stage that provides both gain control and a limiter (enabled by default) to prevent signal clipping.
-
-The DSP settings can be enabled and disabled via a toggle which allows easy <a href="https://www.youtube.com/watch?v=KefGjPYyIO4" target="_blank" rel="noopener noreferrer">A-B testing</a>
-
-The line on the left of the DSP settings represents the audio path, in sequential order, from the audio file (top) to the player (bottom).
-
-A dot on the line represents a component that changes the signal. The lack of a dot indicates that the particular component has been disabled.
-
-Using the icons at the top of the view, the additional filters can be reordered, disabled/enabled or deleted.
-
-![DSP image](/assets/screenshots/dsp.jpg)
+Full details of the DSP capabilities and the filters that are available can be found in the [Digital Signal Processing](/dsp/) section of the documentation.
 
 ## Player Options
 

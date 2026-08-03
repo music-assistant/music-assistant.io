@@ -1,320 +1,382 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
-import starlightBlog from 'starlight-blog';
-import mdx from '@astrojs/mdx';
-import { remarkAlert } from 'remark-github-blockquote-alert';
-import { authors } from './src/authors.mjs';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
+import starlightBlog from "starlight-blog";
+import mdx from "@astrojs/mdx";
+import { remarkAlert } from "remark-github-blockquote-alert";
+import { authors } from "./src/authors.mjs";
 
-const isProduction = process.env.CONTEXT === 'production' || !process.env.CONTEXT;
+const isProduction =
+  process.env.CONTEXT === "production" || !process.env.CONTEXT;
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://www.music-assistant.io',
-	markdown: {
-		remarkPlugins: [remarkAlert],
-	},
-	integrations: [
-		starlight({
-			title: 'Music Assistant',
-			titleDelimiter: '-',
-			editLink: isProduction ? {
-				baseUrl: 'https://github.com/music-assistant/music-assistant.io/edit/main/',
-			} : {},
-			logo: {
-				light: './src/assets/ma-logo--dark.svg',
-				dark: './src/assets/ma-logo--light.svg',
-				replacesTitle: true,
-			},
-			favicon: '/favicon.svg',
-			pagination: false,
-			social: [
-				{
-					icon: 'github',
-					label: 'GitHub',
-					href: 'https://github.com/music-assistant',
-				},
-				{
-					icon: 'discord',
-					label: 'Discord',
-					href: 'https://discord.gg/kaVm8hGpne',
-				},
-			],
-			head: [
-				{
-					tag: 'meta',
-					attrs: {
-						name: 'robots',
-						content: (isProduction ? 'index, follow' : 'noindex, nofollow')
-					}
-				},
-				{
-					tag: 'script',
-					attrs: { type: 'application/ld+json' },
-					content: JSON.stringify({
-						'@context': 'https://schema.org',
-						'@type': 'SoftwareApplication',
-						name: 'Music Assistant',
-						applicationCategory: 'MultimediaApplication',
-						operatingSystem: 'Linux',
-						description: 'Music library manager for your offline and online music sources',
-						url: 'https://www.music-assistant.io',
-						author: {
-							'@type': 'Organization',
-							name: 'Open Home Foundation',
-							url: 'https://www.openhomefoundation.org/',
-						},
-					}),
-				},
-				{
-					tag: "link",
-					attrs: {
-						rel: "icon",
-						href: "/favicon.svg",
-					},
-				},
-				{
-					tag: "script",
-					content: `document.addEventListener('keydown', function(e) {
+  site: "https://www.music-assistant.io",
+  image: {
+    domains: ["assets.openhomefoundation.org", "www.openhomefoundation.org"],
+  },
+  markdown: {
+    remarkPlugins: [remarkAlert],
+  },
+  integrations: [
+    starlight({
+      title: "Music Assistant",
+      titleDelimiter: "-",
+      editLink: isProduction
+        ? {
+            baseUrl:
+              "https://github.com/music-assistant/music-assistant.io/edit/main/",
+          }
+        : {},
+      logo: {
+        light: "./src/assets/ma-logo--dark.svg",
+        dark: "./src/assets/ma-logo--light.svg",
+        replacesTitle: true,
+      },
+      favicon: "/favicon.svg",
+      pagination: false,
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/music-assistant",
+        },
+        {
+          icon: "discord",
+          label: "Discord",
+          href: "https://discord.gg/kaVm8hGpne",
+        },
+      ],
+      head: [
+        {
+          tag: "meta",
+          attrs: {
+            name: "robots",
+            content: isProduction ? "index, follow" : "noindex, nofollow",
+          },
+        },
+        {
+          tag: "script",
+          attrs: { type: "application/ld+json" },
+          content: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            name: "Music Assistant",
+            applicationCategory: "MultimediaApplication",
+            operatingSystem: "Linux",
+            description:
+              "Music library manager for your offline and online music sources",
+            url: "https://www.music-assistant.io",
+            author: {
+              "@type": "Organization",
+              name: "Open Home Foundation",
+              url: "https://www.openhomefoundation.org/",
+            },
+          }),
+        },
+        {
+          tag: "link",
+          attrs: {
+            rel: "icon",
+            href: "/favicon.svg",
+          },
+        },
+        {
+          tag: "script",
+          content: `document.addEventListener('keydown', function(e) {
 						if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
 							e.preventDefault();
 							document.querySelector('button[data-open-modal]')?.click();
 						}
 					});`,
-				},
-				{
-					tag: "meta",
-					attrs: {
-						property: "og:image",
-						content: "https://www.music-assistant.io/assets/banner.png",
-					},
-				},
-				{
-					tag: "meta",
-					attrs: {
-						name: "twitter:image",
-						content: "https://www.music-assistant.io/assets/banner.png",
-					},
-				},
-				{
-					tag: "meta",
-					attrs: {
-						name: "twitter:card",
-						content: "summary_large_image",
-					},
-				},
-			],
-			customCss: ['./src/styles/custom.css'],
-			plugins: [
-				starlightBlog({
-					title: 'Blog',
-					prefix: 'blog',
-					postCount: 10,
-					recentPostCount: 5,
-					authors,
-				}),
-			],
-			sidebar: [
-				{ label: 'Home', slug: 'index' },
-				{
-					label: 'Server Install and Configure',
-					collapsed: true,
-					items: [
-						{ label: 'Installation', slug: 'installation' },
-						{ label: 'First Run (Authentication)', slug: 'first-run' },
-					],
-				},
-				{
-					label: 'Settings',
-					collapsed: true,
-					items: [
-						{ label: 'Music Sources', slug: 'settings/music-provider-settings' },
-						{ label: 'Player Providers', slug: 'settings/player-provider' },
-						{ label: 'Metadata Providers', slug: 'metadata' },
-						{ label: 'Players', slug: 'settings/individual-player' },
-						{ label: 'Profile', slug: 'settings/profile' },
-						{ label: 'User Interface', slug: 'settings/user-interface' },
-						{ label: 'User Management', slug: 'settings/user-management' },
-						{ label: 'Remote Access', slug: 'settings/remote-access' },
-						{ label: 'System Settings', slug: 'settings/core' },
-						{ label: 'About', slug: 'settings/about' },
-					],
-				},
-				{
-					label: 'Home Assistant Integration',
-					collapsed: true,
-					items: [
-						{ label: 'Overview', slug: 'integration' },
-						{ label: 'Installation', slug: 'integration/installation' },
-						{ label: 'Announcements', slug: 'integration/announcements' },
-						{ label: 'Play Media Action', slug: 'faq/massplaymedia' },
-						{ label: 'Play Announcement Action', slug: 'faq/massannounce' },
-						{ label: 'Search Action', slug: 'faq/masssearch' },
-						{ label: 'Get Library Action', slug: 'faq/get_library' },
-						{ label: 'Get Queue Action', slug: 'faq/get_queue' },
-						{ label: 'Transfer Queue Action', slug: 'faq/masstransfer' },
-						{ label: 'Voice Control', slug: 'integration/voice' },
-					],
-				},
-				{
-					label: 'Usage',
-					collapsed: true,
-					items: [
-						{ label: 'General', slug: 'usage' },
-						{ label: 'UI', slug: 'ui' },
-						{ label: 'Audio Pipeline', slug: 'audiopipeline' },
-						{ label: 'Groups', slug: 'faq/groups' },
-						{ label: 'Genres', slug: 'genres' },
-						{ label: 'DSP Parametric EQ', slug: 'dsp/parametriceq' },
-						{ label: 'DSP Tone Controls', slug: 'dsp/tonecontrols' },
-						{ label: 'How Do I...', slug: 'faq/how-to' },
-						{ label: 'I Want To Stream To', slug: 'faq/stream-to' },
-						{ label: 'Technical Info', slug: 'faq/tech-info' },
-						{ label: 'Troubleshooting', slug: 'faq/troubleshooting' },
-					],
-				},
-				{
-					label: 'Music Sources',
-					collapsed: true,
-					items: [
-						{ label: 'Overview', slug: 'music-providers' },
-						{ label: 'Apple Music', slug: 'music-providers/apple-music' },
-						{ label: 'ARD Audiothek', slug: 'music-providers/ard-audiothek' },
-						{ label: 'Audible', slug: 'music-providers/audible' },
-						{ label: 'Audiobookshelf', slug: 'music-providers/audiobookshelf' },
-						{ label: 'Bandcamp', slug: 'music-providers/bandcamp' },
-						{ label: 'BBC Sounds', slug: 'music-providers/bbc-sounds' },
-						{ label: 'Builtin', slug: 'music-providers/builtin' },
-						{ label: 'Deezer', slug: 'music-providers/deezer' },
-						{ label: 'DI.fm Network', slug: 'music-providers/digitally-incorporated' },
-						{ label: 'Emby', slug: 'music-providers/emby' },
-						{ label: 'gPodder', slug: 'music-providers/gpodder' },
-						{ label: 'iBroadcast', slug: 'music-providers/ibroadcast' },
-						{ label: 'Internet Archive', slug: 'music-providers/internet-archive' },
-						{ label: 'iTunes Podcast Search', slug: 'music-providers/itunes-podcast' },
-						{ label: 'Jellyfin', slug: 'music-providers/jellyfin' },
-						{ label: 'KION Music', slug: 'music-providers/kion-music' },
-						{ label: 'Local Files', slug: 'music-providers/filesystem' },
-						{ label: 'Mother Earth Radio', slug: 'music-providers/motherearthradio' },
-						{ label: 'MusicMe', slug: 'music-providers/musicme' },
-						{ label: 'NetEase Cloud Music', slug: 'music-providers/netease-cloud-music' },
-						{ label: 'Nico Nico Video', slug: 'music-providers/niconico' },
-						{ label: 'Nugs.net', slug: 'music-providers/nugs' },
-						{ label: 'NTS Radio', slug: 'music-providers/nts' },
-						{ label: 'ORF Radiothek', slug: 'music-providers/radiothek' },
-						{ label: 'Pandora', slug: 'music-providers/pandora' },
-						{ label: 'Phish.in', slug: 'music-providers/phishin' },
-						{ label: 'Plex', slug: 'music-providers/plex' },
-						{ label: 'Podcast Index', slug: 'music-providers/podcast-index' },
-						{ label: 'Podcast RSS Feed', slug: 'music-providers/podcastfeed' },
-						{ label: 'QQ Music', slug: 'music-providers/qqmusic' },
-						{ label: 'Qobuz', slug: 'music-providers/qobuz' },
-						{ label: 'Radio Browser', slug: 'music-providers/radio-browser' },
-						{ label: 'Radio Paradise', slug: 'music-providers/radio-paradise' },
-						{ label: 'SiriusXM', slug: 'music-providers/siriusxm' },
-						{ label: 'SomaFM Radio', slug: 'music-providers/somafm-radio' },
-						{ label: 'SoundCloud', slug: 'music-providers/soundcloud' },
-						{ label: 'Spotify', slug: 'music-providers/spotify' },
-						{ label: 'Subsonic', slug: 'music-providers/subsonic' },
-						{ label: 'Tidal', slug: 'music-providers/tidal' },
-						{ label: 'TuneIn', slug: 'music-providers/tunein' },
-						{ label: 'Yandex Music', slug: 'music-providers/yandex-music' },
-						{ label: 'YouSee Musik', slug: 'music-providers/yousee-musik' },
-						{ label: 'YouTube Music', slug: 'music-providers/youtube-music' },
-						{ label: 'Zvuk Music', slug: 'music-providers/zvuk' },
-					],
-				},
-				{
-					label: 'Player Providers',
-					collapsed: true,
-					items: [
-						{ label: 'Overview', slug: 'player-support' },
-						{ label: 'AirPlay', slug: 'player-support/airplay' },
-						{ label: 'Alexa', slug: 'player-support/alexa' },
-						{ label: 'Bluesound', slug: 'player-support/bluesound' },
-						{ label: 'Dashie Kiosk', slug: 'player-support/dashie-kiosk' },
-						{ label: 'DLNA', slug: 'player-support/dlna' },
-						{ label: 'Fully Kiosk', slug: 'player-support/fully-kiosk' },
-						{ label: 'Google Cast', slug: 'player-support/google-cast' },
-						{ label: 'HEOS', slug: 'player-support/heos' },
-						{ label: 'Home Assistant', slug: 'player-support/ha' },
-						{ label: 'MSX Bridge', slug: 'player-support/msx-bridge' },
-            			{ label: 'Music Player Daemon (MPD)', slug: 'player-support/mpd' },
-						{ label: 'MusicCast', slug: 'player-support/musiccast' },
-						{ label: 'Roku Media Assistant', slug: 'player-support/roku' },
-						{ label: 'Samsung WAM', slug: 'player-support/samsung-wam' },
-						{ label: 'Sendspin', slug: 'player-support/sendspin' },
-						{ label: 'Snapcast', slug: 'player-support/snapcast' },
-						{ label: 'Sonos', slug: 'player-support/sonos' },
-						{ label: 'Squeezelite', slug: 'player-support/squeezelite' },
-						{ label: 'WiiM', slug: 'player-support/wiim' },
-					],
-				},
-				{
-					label: 'Audio Analysis Providers',
-					collapsed: true,
-					items: [
-						{ label: 'AcoustID Lookup', slug: 'audio-analysis/acoustid' },
-						{ label: 'Loudness Analysis', slug: 'audio-analysis/loudness-analysis' },
-						{ label: 'Smart Fades', slug: 'audio-analysis/smart-fades' },
-						{ label: 'Sonic Analysis', slug: 'audio-analysis/sonic-analysis' },
-					],
-				},
-				{
-					label: 'Plugins',
-					collapsed: true,
-					items: [
-						{ label: 'AirPlay Receiver', slug: 'plugins/airplay-receiver' },
-						{ label: 'Ariacast Receiver', slug: 'plugins/ariacast-receiver' },
-						{ label: 'FastMCP Server', slug: 'plugins/fastmcp-server' },
-						{ label: 'Home Assistant', slug: 'ha-plugin' },
-						{ label: 'Hue Entertainment', slug: 'plugins/hue-entertainment' },
-						{ label: 'LastFM Scrobbler', slug: 'plugins/lastfm_scrobble' },
-						{ label: 'Listenbrainz Scrobbler', slug: 'plugins/listenbrainz_scrobble' },
-						{ label: 'Party', slug: 'plugins/party' },
-						{ label: 'Plex Connect', slug: 'plugins/plex-connect' },
-						{ label: 'Smart Playlist', slug: 'plugins/smart_playlist' },
-						{ label: 'Sonic Similarity', slug: 'plugins/sonic-similarity' },
-						{ label: 'Spotify Connect', slug: 'plugins/spotify-connect' },
-						{ label: 'Subsonic Scrobbler', slug: 'plugins/subsonic_scrobble' },
-						{ label: 'VBAN Receiver', slug: 'plugins/vban-receiver' },
-						{ label: 'Yandex Music Connect (Ynison)', slug: 'plugins/yandex-ynison' },
-					],
-				},
-				{ 
-					label: 'Metadata',
-					collapsed: true,
-					items: [
-						{ label: 'Overview', slug: 'metadata' },
-						{ label: 'Artwork', slug: 'metadata/artwork' },
-						{ label: 'Lyrics', slug: 'metadata/lyrics' },
-						{ label: 'Media Items', slug: 'metadata/media-items' },
-					],
-				},
-				{ label: 'Desktop Companion App', slug: 'companion-app' },
-				{ label: 'Mobile Devices', slug: 'mobile' },
-				{ label: 'API', slug: 'api' },
-				{ label: 'Community Extensions', slug: 'community-extensions' },
-				{ label: 'Support', slug: 'support' },
-				{
-					label: 'I Want to Help / Donate',
-					collapsed: true,
-					items: [
-						{ label: 'Overview', slug: 'help' },
-						{ label: 'Translations', slug: 'help/lokalise' },
-					],
-				},
-				{ label: 'Release Cycle', slug: 'release' },
-				{ label: 'Blog', link: '/blog/' },
-			],
-			components: {
-				Head: './src/components/Head.astro',
-				PageTitle: './src/components/PageTitle.astro',
-				Footer: './src/components/Footer.astro',
-				ThemeProvider: './src/components/ThemeProvider.astro',
-				ThemeSelect: './src/components/ThemeSelect.astro',
-			}
-		}),
-		mdx(),
-	],
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image",
+            content: "https://www.music-assistant.io/assets/banner.png",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:image",
+            content: "https://www.music-assistant.io/assets/banner.png",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            name: "twitter:card",
+            content: "summary_large_image",
+          },
+        },
+      ],
+      customCss: ["./src/styles/custom.css"],
+      routeMiddleware: "./src/starlightRouteData.ts",
+      plugins: [
+        starlightBlog({
+          title: "Blog",
+          prefix: "blog",
+          postCount: 10,
+          recentPostCount: 5,
+          authors,
+        }),
+      ],
+      sidebar: [
+        { label: "Home", slug: "index" },
+        {
+          label: "I Want To",
+          items: [
+            { label: "Install Music Assistant", slug: "installation" },
+            { label: "Install the HA Integration", slug: "integration/installation" },
+            { label: "Listen To...", slug: "faq/listen-to" },
+            { label: "Stream To...", slug: "faq/stream-to" },
+          ],
+        },
+        {
+          label: "First Run and Settings",
+          collapsed: true,
+          items: [
+            { label: "First Run (Authentication)", slug: "first-run" },
+            {
+              label: "Music Sources",
+              slug: "settings/music-provider-settings",
+            },
+            { label: "Player Providers", slug: "settings/player-provider" },
+            { label: "Metadata Providers", slug: "metadata" },
+            { label: "Players", slug: "settings/individual-player" },
+            { label: "Profile", slug: "settings/profile" },
+            { label: "User Interface", slug: "settings/user-interface" },
+            { label: "User Management", slug: "settings/user-management" },
+            { label: "Remote Access", slug: "settings/remote-access" },
+            { label: "System Settings", slug: "settings/core" },
+            { label: "About", slug: "settings/about" },
+          ],
+        },
+        {
+          label: "Home Assistant Integration",
+          collapsed: true,
+          items: [
+            { label: "Overview", slug: "integration" },
+            { label: "Installation", slug: "integration/installation" },
+            { label: "Announcements", slug: "integration/announcements" },
+            { label: "Play Media Action", slug: "faq/massplaymedia" },
+            { label: "Play Announcement Action", slug: "faq/massannounce" },
+            { label: "Search Action", slug: "faq/masssearch" },
+            { label: "Get Library Action", slug: "faq/get_library" },
+            { label: "Get Queue Action", slug: "faq/get_queue" },
+            { label: "Transfer Queue Action", slug: "faq/masstransfer" },
+            { label: "Voice Control", slug: "integration/voice" },
+          ],
+        },
+        {
+          label: "Usage",
+          collapsed: true,
+          items: [
+            { label: "General", slug: "usage" },
+            { label: "UI", slug: "ui" },
+            { label: "Audio Pipeline", slug: "audiopipeline" },
+            { label: "Groups", slug: "faq/groups" },
+            { label: "Genres", slug: "genres" },
+            { label: "How Do I...", slug: "faq/how-to" },
+            { label: "Technical Info", slug: "faq/tech-info" },
+            { label: "Networking Basics", slug: "faq/networking" },
+            { label: "Troubleshooting", slug: "faq/troubleshooting" },
+          ],
+        },
+        {
+          label: "Digital Signal Processing",
+          collapsed: true,
+          items: [
+            { label: "Overview", slug: "dsp" },
+            { label: "Parametric Equalizer", slug: "dsp/parametriceq" },
+            { label: "Tone Controls", slug: "dsp/tonecontrols" },
+			{ label: "Transpose", slug: "dsp/transpose" },
+          ],
+        },
+        {
+          label: "Music Sources",
+          collapsed: true,
+          items: [
+            { label: "Overview", slug: "music-providers" },
+            { label: "Ambient Sounds", slug: "music-providers/ambient-sounds" },
+            { label: "Apple Music", slug: "music-providers/apple-music" },
+            { label: "ARD Audiothek", slug: "music-providers/ard-audiothek" },
+            { label: "Audible", slug: "music-providers/audible" },
+            { label: "Audiobookshelf", slug: "music-providers/audiobookshelf" },
+            { label: "Bandcamp", slug: "music-providers/bandcamp" },
+            { label: "BBC Sounds", slug: "music-providers/bbc-sounds" },
+            { label: "Builtin", slug: "music-providers/builtin" },
+            { label: "Deezer", slug: "music-providers/deezer" },
+            {
+              label: "DI.fm Network",
+              slug: "music-providers/digitally-incorporated",
+            },
+            { label: "Emby", slug: "music-providers/emby" },
+            { label: "gPodder", slug: "music-providers/gpodder" },
+            { label: "iBroadcast", slug: "music-providers/ibroadcast" },
+            {
+              label: "Internet Archive",
+              slug: "music-providers/internet-archive",
+            },
+            {
+              label: "iTunes Podcast Search",
+              slug: "music-providers/itunes-podcast",
+            },
+            { label: "Jellyfin", slug: "music-providers/jellyfin" },
+            { label: "KION Music", slug: "music-providers/kion-music" },
+            { label: "Local Files", slug: "music-providers/filesystem" },
+            { label: "MusicMe", slug: "music-providers/musicme" },
+            {
+              label: "NetEase Cloud Music",
+              slug: "music-providers/netease-cloud-music",
+            },
+            { label: "Nico Nico Video", slug: "music-providers/niconico" },
+            { label: "Nugs.net", slug: "music-providers/nugs" },
+            { label: "NTS Radio", slug: "music-providers/nts" },
+            { label: "ORF Radiothek", slug: "music-providers/radiothek" },
+            { label: "Pandora", slug: "music-providers/pandora" },
+            { label: "Phish.in", slug: "music-providers/phishin" },
+            { label: "Plex", slug: "music-providers/plex" },
+            { label: "Pocketcasts", slug: "music-providers/pocketcasts" },
+            { label: "Podcast Index", slug: "music-providers/podcast-index" },
+            { label: "Podcast RSS Feed", slug: "music-providers/podcastfeed" },
+            { label: "QQ Music", slug: "music-providers/qqmusic" },
+            { label: "Qobuz", slug: "music-providers/qobuz" },
+            { label: "Radio Browser", slug: "music-providers/radio-browser" },
+            { label: "Radio Paradise", slug: "music-providers/radio-paradise" },
+            { label: "SiriusXM", slug: "music-providers/siriusxm" },
+            { label: "SomaFM Radio", slug: "music-providers/somafm-radio" },
+            { label: "SoundCloud", slug: "music-providers/soundcloud" },
+            { label: "Spotify", slug: "music-providers/spotify" },
+            { label: "Subsonic", slug: "music-providers/subsonic" },
+            { label: "Sveriges Radio", slug: "music-providers/sveriges-radio" },
+            { label: "TeddyCloud", slug: "music-providers/teddycloud" },
+            { label: "Tidal", slug: "music-providers/tidal" },
+            { label: "TuneIn", slug: "music-providers/tunein" },
+            { label: "Yandex Music", slug: "music-providers/yandex-music" },
+            { label: "YouSee Musik", slug: "music-providers/yousee-musik" },
+            { label: "YouTube Music", slug: "music-providers/youtube-music" },
+            { label: "Zvuk Music", slug: "music-providers/zvuk" },
+          ],
+        },
+        {
+          label: "Player Providers",
+          collapsed: true,
+          items: [
+            { label: "Overview", slug: "player-support" },
+            { label: "AirPlay", slug: "player-support/airplay" },
+            { label: "Alexa", slug: "player-support/alexa" },
+            { label: "Amplipi", slug: "player-support/amplipi" },
+            { label: "Bluesound", slug: "player-support/bluesound" },
+            {
+              label: "Bose SoundTouch",
+              slug: "player-support/bose-soundtouch",
+            },
+            { label: "DLNA", slug: "player-support/dlna" },
+            { label: "Fully Kiosk", slug: "player-support/fully-kiosk" },
+            { label: "Google Cast", slug: "player-support/google-cast" },
+            { label: "HEOS", slug: "player-support/heos" },
+            { label: "Home Assistant", slug: "player-support/ha" },
+            { label: "Local Audio Out", slug: "player-support/local-audio" },
+            { label: "MSX Bridge", slug: "player-support/msx-bridge" },
+            { label: "Music Player Daemon (MPD)", slug: "player-support/mpd" },
+            { label: "MusicCast", slug: "player-support/musiccast" },
+            { label: "Roku Media Assistant", slug: "player-support/roku" },
+            { label: "Samsung WAM", slug: "player-support/samsung-wam" },
+            { label: "Sendspin", slug: "player-support/sendspin" },
+            { label: "Snapcast", slug: "player-support/snapcast" },
+            { label: "Sonos", slug: "player-support/sonos" },
+            { label: "Squeezelite", slug: "player-support/squeezelite" },
+            { label: "WiiM", slug: "player-support/wiim" },
+          ],
+        },
+        {
+          label: "Metadata Providers",
+          collapsed: true,
+          items: [
+            { label: "Overview", slug: "metadata" },
+            { label: "Artwork", slug: "metadata/artwork" },
+            { label: "Lyrics", slug: "metadata/lyrics" },
+            { label: "Media Items", slug: "metadata/media-items" },
+            {
+              label: "LastFM Recommendations",
+              slug: "metadata-providers/lastfm-recommendations",
+            },
+            { label: "MusicBrainz", slug: "metadata-providers/musicbrainz" },
+            {
+              label: "Playlist Metadata",
+              slug: "metadata-providers/playlist-metadata",
+            },
+          ],
+        },
+        {
+          label: "Plugins",
+          collapsed: true,
+          items: [
+            { label: 'AI Radio', slug: 'plugins/ai-radio' },
+            { label: "AirPlay Receiver", slug: "plugins/airplay-receiver" },
+            { label: "Ariacast Receiver", slug: "plugins/ariacast-receiver" },
+            { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
+            { label: "Home Assistant", slug: "ha-plugin" },
+            { label: "Hue Entertainment", slug: "plugins/hue-entertainment" },
+            { label: "LastFM Scrobbler", slug: "plugins/lastfm_scrobble" },
+            {
+              label: "Listenbrainz Scrobbler",
+              slug: "plugins/listenbrainz_scrobble",
+            },
+            { label: "Music Quiz", slug: "plugins/music-quiz" },
+            { label: "Party", slug: "plugins/party" },
+            { label: "Plex Connect", slug: "plugins/plex-connect" },
+            { label: "Smart Playlist", slug: "plugins/smart_playlist" },
+            { label: "Sonic Similarity", slug: "plugins/sonic-similarity" },
+            { label: "Spotify Connect", slug: "plugins/spotify-connect" },
+            { label: "Subsonic Scrobbler", slug: "plugins/subsonic_scrobble" },
+            { label: "VBAN Receiver", slug: "plugins/vban-receiver" },
+            {
+              label: "Yandex Music Connect (Ynison)",
+              slug: "plugins/yandex-ynison",
+            },
+          ],
+        },
+        {
+          label: "Audio Analysis Providers",
+          collapsed: true,
+          items: [
+            { label: "AcoustID Lookup", slug: "audio-analysis/acoustid" },
+            {
+              label: "Loudness Analysis",
+              slug: "audio-analysis/loudness-analysis",
+            },
+            { label: "Smart Fades", slug: "audio-analysis/smart-fades" },
+            { label: "Sonic Analysis", slug: "audio-analysis/sonic-analysis" },
+          ],
+        },
+        { label: "Desktop Companion App", slug: "companion-app" },
+        { label: "Mobile Devices", slug: "mobile" },
+        { label: "API", slug: "api" },
+        { label: "Community Extensions", slug: "community-extensions" },
+        { label: "Support", slug: "support" },
+        {
+          label: "I Want to Help / Donate",
+          collapsed: true,
+          items: [
+            { label: "Overview", slug: "help" },
+            { label: "Translations", slug: "help/lokalise" },
+          ],
+        },
+        { label: "Release Cycle", slug: "release" },
+        { label: "Blog", link: "/blog/" },
+      ],
+      components: {
+        Head: "./src/components/Head.astro",
+        PageTitle: "./src/components/PageTitle.astro",
+        Footer: "./src/components/Footer.astro",
+        ThemeProvider: "./src/components/ThemeProvider.astro",
+        ThemeSelect: "./src/components/ThemeSelect.astro",
+      },
+    }),
+    mdx(),
+  ],
 });

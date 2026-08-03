@@ -6,6 +6,10 @@ title: "Yandex Music"
 
 Music Assistant has support for [Yandex Music](https://music.yandex.ru). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 
+Yandex Music is the streaming service of Yandex, the Russian internet company. It has a large Russian language catalogue alongside international releases, and its My Wave personalised radio is how a lot of people listen to it.
+
+Connecting your account puts your Yandex Music library, the wider catalogue and My Wave itself inside Music Assistant.
+
 This source is built on top of the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library.
 
 > [!CAUTION]
@@ -28,6 +32,9 @@ This source is built on top of the [yandex-music-api](https://github.com/Marshal
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            Yes                     |
+| Similar Tracks Support                          |            Yes                     |
 | Maximum Stream Quality | Lossless FLAC (with Plus subscription) |
 | Login Method | Device Flow / QR Code / Token |
 

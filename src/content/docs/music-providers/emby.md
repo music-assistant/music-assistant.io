@@ -7,6 +7,10 @@ description: Documentation for using the Emby music source
 
 Music Assistant has support for accessing music hosted on an [Emby Server](https://emby.media/). This component was contributed and is maintained by [hatharry](https://github.com/hatharry).
 
+Emby is a media server you run yourself. It indexes the music, films and other media held on your own storage and streams them to apps on your devices.
+
+This source connects Music Assistant to the music libraries on your Emby server, so a collection you have already organised there is available without cataloguing it a second time.
+
 ## Features
 
 |           |                     |
@@ -17,6 +21,9 @@ Music Assistant has support for accessing music hosted on an [Emby Server](https
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                     | 
 | Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
 | Login Method | Password |
 

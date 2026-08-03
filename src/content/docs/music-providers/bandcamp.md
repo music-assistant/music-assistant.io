@@ -6,6 +6,10 @@ title: "Bandcamp"
 
 Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua](https://github.com/ALERTua)
 
+Bandcamp is a shop and streaming site where artists and labels publish their own music and sell it directly to listeners. Most of the catalogue can be streamed for free before you decide to buy.
+
+This source lets you search and play that catalogue from Music Assistant. Add your account cookie as well and the albums you have bought come across as a library of their own.
+
 > [!CAUTION]
 > **DISCLAIMER**
 > Please note that Bandcamp does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis.
@@ -23,12 +27,16 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 | [Recommendations](/ui/#view---discover) Supported |           No            |
 | Lyrics Supported                                |           Yes           |
 | [Radio Mode](/ui/#track-menu)               |           No            |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality                          |  Lossy, MP3 (128kbps)   |
 | Login Method                                    |    Cookie (optional)    |
 
 ### Other
 - Searching the Bandcamp catalogue
 - The highest available stream from Bandcamp will be selected for playback
+- Bandcamp Feed and Wishlist are available in the browse view
 
 ## Configuration
 
@@ -42,7 +50,7 @@ Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua
 
 - Open <a href="https://bandcamp.com/" target="_blank">Bandcamp</a> in your browser.
 - Open the cookies storage via View -> Developer -> Developer Tools -> (Application) -> Storage -> Cookies -> `https://bandcamp.com`. Note that this might be named differently based on your browser. It should open a window similar to this:
-[![Dev tools](/assets/screenshots/bandcamp_storage.png)](/assets/screenshots/ytmusic-developer-tools.png)
+[![Dev tools](/assets/screenshots/bandcamp_storage.png)](/assets/screenshots/bandcamp_storage.png)
 
 - Find `identity` cookie
 - Double-click its value and copy its contents
