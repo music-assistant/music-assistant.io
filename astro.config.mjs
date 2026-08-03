@@ -134,17 +134,10 @@ export default defineConfig({
           ],
         },
         {
-          label: "Server Install and Configure",
+          label: "Set Up and Configure",
           collapsed: true,
           items: [
-            { label: "Installation", slug: "installation" },
             { label: "First Run (Authentication)", slug: "first-run" },
-          ],
-        },
-        {
-          label: "Settings",
-          collapsed: true,
-          items: [
             {
               label: "Music Sources",
               slug: "settings/music-provider-settings",
