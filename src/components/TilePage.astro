@@ -1,34 +1,29 @@
 ---
 import { existsSync } from "node:fs";
 import { getCollection } from "astro:content";
-import {
-  CATEGORY_GROUPS,
-  MUSIC_SOURCES,
-  type Category,
-  type CategoryId,
-} from "../data/music-sources";
+import type { TileCategory, TilePage } from "../data/tile-page";
+
+interface Props {
+  page: TilePage;
+}
+
+const { page } = Astro.props;
 
 // ---------------------------------------------------------------------------
-// Guard rails for src/data/music-sources.ts.
+// Guard rails for the page's data file.
 //
 // Everything below runs while the site is being built. A mistake in the data
 // file stops the build with an explicit message rather than shipping a broken
 // link or a missing image.
 // ---------------------------------------------------------------------------
 
-// Provider pages that intentionally have no tile on this page.
-const KNOWN_UNLISTED = new Set([
-  "music-providers", // the overview page
-  "music-providers/ambient-sounds", // fits none of the listening categories
-  "music-providers/netease-cloud-music-zh", // Chinese version of another page
-  "music-providers/qqmusic-zh", // Chinese version of another page
-]);
+const KNOWN_UNLISTED = new Set(page.knownUnlisted);
 
 const docs = await getCollection("docs");
 const knownSlugs = new Set(docs.map((entry) => entry.id));
 const publicDir = new URL("../../public/", import.meta.url);
 
-const allCategories: Category[] = CATEGORY_GROUPS.flatMap((g) => g.categories);
+const allCategories: TileCategory[] = page.groups.flatMap((g) => g.categories);
 const knownCategoryIds = new Set(allCategories.map((c) => c.id));
 
 const problems: string[] = [];
@@ -40,12 +35,12 @@ for (const category of allCategories) {
       `the category "${category.id}" has the icon "${category.icon}", but ` +
         `that file does not exist. Expected a file at public${category.icon}. ` +
         `Category icons are normally named after the category itself, so ` +
-        `"${category.id}" wants public/assets/icons/listen/${category.id}.svg.`,
+        `"${category.id}" wants an icon named after it.`,
     );
   }
 }
 
-for (const source of MUSIC_SOURCES) {
+for (const source of page.items) {
   const where = `the entry named "${source.name}"`;
 
   if (seenSlugs.has(source.slug)) {
@@ -89,16 +84,16 @@ for (const source of MUSIC_SOURCES) {
     if (!knownCategoryIds.has(id)) {
       problems.push(
         `${where} uses the category "${id}", which is not one of the ` +
-          `categories defined in CATEGORY_GROUPS at the top of ` +
-          `src/data/music-sources.ts. The valid categories are: ` +
+          `categories defined at the top of ${page.dataFile}. ` +
+          `The valid categories are: ` +
           `${[...knownCategoryIds].join(", ")}.`,
       );
     }
   }
 }
 
-const sourcesFor = (id: CategoryId) =>
-  MUSIC_SOURCES.filter((source) => source.categories.includes(id));
+const sourcesFor = (id: string) =>
+  page.items.filter((source) => source.categories.includes(id));
 
 for (const id of knownCategoryIds) {
   if (sourcesFor(id).length === 0) {
@@ -114,11 +109,11 @@ for (const id of knownCategoryIds) {
 // never appear on the page. Adding a source is the moment to categorise it.
 for (const entry of docs) {
   const slug = entry.id;
-  if (!slug.startsWith("music-providers/")) continue;
+  if (!slug.startsWith(page.pathPrefix)) continue;
   if (KNOWN_UNLISTED.has(slug) || seenSlugs.has(slug)) continue;
   problems.push(
     `"${slug}" has a documentation page but no entry in this file, so it ` +
-      `would never appear on the page. Add it to MUSIC_SOURCES, keeping the ` +
+      `would never appear on the page. Add it to ${page.dataFile}, keeping the ` +
       `list alphabetical:\n\n` +
       `       {\n` +
       `         name: "${entry.data.title}",\n` +
@@ -126,39 +121,38 @@ for (const entry of docs) {
       `         icon: "/assets/icons/CHANGE-ME.svg",\n` +
       `         categories: ["CHANGE-ME"],\n` +
       `       },\n\n` +
-      `     Use the same icon as the top of the source's own page, and pick ` +
+      `     Use the same icon as the top of that page, and pick ` +
       `categories from: ${[...knownCategoryIds].join(", ")}. If the source ` +
-      `genuinely belongs in none of them, add its slug to KNOWN_UNLISTED in ` +
-      `src/components/ListenTo.astro instead.`,
+      `genuinely belongs in none of them, add its slug to the knownUnlisted ` +
+      `list at the bottom of ${page.dataFile} instead.`,
   );
 }
 
 if (problems.length > 0) {
   throw new Error(
-    `\n\nsrc/data/music-sources.ts (used by the "I Want To Listen To" page) ` +
-      `has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
+    `\n\n${page.dataFile} has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
       problems.map((problem, i) => `  ${i + 1}. ${problem}`).join("\n\n") +
       `\n\nFix the file and build again.\n`,
   );
 }
 ---
 
-<div class="listen-to not-content">
+<div class="tiles not-content">
   {
-    CATEGORY_GROUPS.map((group) => (
-      <nav class="listen-to__nav" aria-labelledby={`listen-nav-${group.id}`}>
-        <h2 class="listen-to__title" id={`listen-nav-${group.id}`}>
+    page.groups.map((group) => (
+      <nav class="tiles__nav" aria-labelledby={`${page.idPrefix}-nav-${group.id}`}>
+        <h2 class="tiles__title" id={`${page.idPrefix}-nav-${group.id}`}>
           {group.title}
         </h2>
-        <p class="listen-to__blurb">{group.intro}</p>
-        <ul class="listen-to__grid listen-to__grid--wide">
+        <p class="tiles__blurb">{group.intro}</p>
+        <ul class="tiles__grid tiles__grid--wide">
           {group.categories.map((category) => (
             <li>
-              <a class="listen-to__tile" href={`#listen-${category.id}`}>
+              <a class="tiles__tile" href={`#${page.idPrefix}-${category.id}`}>
                 <span
                   class:list={[
-                    "listen-to__logo",
-                    group.id === "country" && "listen-to__logo--flag",
+                    "tiles__logo",
+                    group.id === page.flagGroupId && "tiles__logo--flag",
                   ]}
                 >
                   <img
@@ -168,11 +162,12 @@ if (problems.length > 0) {
                     decoding="async"
                   />
                 </span>
-                <span class="listen-to__name">{category.title}</span>
-                <span class="listen-to__count">
-                  {sourcesFor(category.id).length}
-                  <span class="sr-only"> music</span>
-                  {sourcesFor(category.id).length === 1 ? " source" : " sources"}
+                <span class="tiles__name">{category.title}</span>
+                <span class="tiles__count">
+                  {sourcesFor(category.id).length}{" "}
+                  {sourcesFor(category.id).length === 1
+                    ? page.itemNoun
+                    : `${page.itemNoun}s`}
                 </span>
               </a>
             </li>
@@ -185,18 +180,18 @@ if (problems.length > 0) {
   {
     allCategories.map((category) => (
       <section
-        class="listen-to__section"
-        aria-labelledby={`listen-${category.id}`}
+        class="tiles__section"
+        aria-labelledby={`${page.idPrefix}-${category.id}`}
       >
-        <h2 class="listen-to__title" id={`listen-${category.id}`} tabindex="-1">
+        <h2 class="tiles__title" id={`${page.idPrefix}-${category.id}`} tabindex="-1">
           {category.title}
         </h2>
-        <p class="listen-to__blurb">{category.blurb}</p>
-        <ul class="listen-to__grid" data-pagefind-ignore>
+        <p class="tiles__blurb">{category.blurb}</p>
+        <ul class="tiles__grid" data-pagefind-ignore>
           {sourcesFor(category.id).map((source) => (
             <li>
-              <a class="listen-to__tile" href={`/${source.slug}/`}>
-                <span class="listen-to__logo">
+              <a class="tiles__tile" href={`/${source.slug}/`}>
+                <span class="tiles__logo">
                   <img
                     src={source.icon}
                     alt=""
@@ -205,27 +200,27 @@ if (problems.length > 0) {
                     decoding="async"
                   />
                 </span>
-                <span class="listen-to__name">{source.name}</span>
+                <span class="tiles__name">{source.name}</span>
               </a>
             </li>
           ))}
         </ul>
-        <a class="listen-to__top" href="#_top">Back to the top</a>
+        <a class="tiles__top" href="#_top">Back to the top</a>
       </section>
     ))
   }
 </div>
 
 <style>
-  .listen-to {
+  .tiles {
     margin-block: 2rem;
   }
 
-  .listen-to__nav + .listen-to__nav {
+  .tiles__nav + .tiles__nav {
     margin-top: 2rem;
   }
 
-  .listen-to__title {
+  .tiles__title {
     margin: 0;
     font-size: var(--sl-text-h3);
     font-weight: 600;
@@ -233,39 +228,39 @@ if (problems.length > 0) {
     color: var(--sl-color-white);
   }
 
-  .listen-to__title:focus-visible {
+  .tiles__title:focus-visible {
     outline: 2px solid var(--sl-color-accent);
     outline-offset: 4px;
     border-radius: 0.25rem;
   }
 
-  .listen-to__blurb {
+  .tiles__blurb {
     margin: 0.35rem 0 0;
     font-size: var(--sl-text-sm);
     line-height: 1.5;
     color: var(--sl-color-gray-3);
   }
 
-  .listen-to__tile:focus-visible,
-  .listen-to__top:focus-visible {
+  .tiles__tile:focus-visible,
+  .tiles__top:focus-visible {
     outline: 2px solid var(--sl-color-accent);
     outline-offset: 2px;
   }
 
-  .listen-to__count {
+  .tiles__count {
     margin-top: -0.25rem;
     font-size: var(--sl-text-xs);
     font-weight: 400;
     color: var(--sl-color-gray-3);
   }
 
-  .listen-to__section {
+  .tiles__section {
     margin-top: 2.75rem;
   }
 
   /* auto-fill rather than auto-fit: several categories hold a single source,
      and auto-fit would stretch that one tile across the whole page. */
-  .listen-to__grid {
+  .tiles__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
     grid-auto-rows: 1fr;
@@ -277,11 +272,11 @@ if (problems.length > 0) {
 
   /* Category names run longer than source names, so they get wider tiles.
      9.5rem is the widest that still gives two columns on a 375px phone. */
-  .listen-to__grid--wide {
+  .tiles__grid--wide {
     grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
   }
 
-  .listen-to__tile {
+  .tiles__tile {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -300,14 +295,14 @@ if (problems.length > 0) {
       transform 0.15s ease;
   }
 
-  .listen-to__tile:hover {
+  .tiles__tile:hover {
     border-color: var(--sl-color-accent);
     box-shadow: var(--sl-shadow-sm);
     transform: translateY(-2px);
   }
 
   /* Fixed box so square icons and wide wordmarks both sit correctly. */
-  .listen-to__logo {
+  .tiles__logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -315,7 +310,7 @@ if (problems.length > 0) {
     height: 3rem;
   }
 
-  .listen-to__logo img {
+  .tiles__logo img {
     max-width: 100%;
     max-height: 100%;
     width: auto;
@@ -325,20 +320,20 @@ if (problems.length > 0) {
   }
 
   /* Flags carry white in them, so they need an edge against the white tile. */
-  .listen-to__logo--flag img {
+  .tiles__logo--flag img {
     max-height: 2.1rem;
     border-radius: 2px;
     box-shadow: 0 0 0 1px rgb(0 0 0 / 0.15);
   }
 
-  .listen-to__name {
+  .tiles__name {
     font-size: var(--sl-text-sm);
     font-weight: 600;
     line-height: 1.3;
     overflow-wrap: anywhere;
   }
 
-  .listen-to__top {
+  .tiles__top {
     display: inline-block;
     margin-top: 0.9rem;
     font-size: var(--sl-text-xs);
@@ -346,17 +341,17 @@ if (problems.length > 0) {
     text-decoration: none;
   }
 
-  .listen-to__top:hover {
+  .tiles__top:hover {
     color: var(--sl-color-accent);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .listen-to__chip,
-    .listen-to__tile {
+    .tiles__chip,
+    .tiles__tile {
       transition: none;
     }
 
-    .listen-to__tile:hover {
+    .tiles__tile:hover {
       transform: none;
     }
   }

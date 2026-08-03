@@ -1,26 +1,32 @@
 import { defineRouteMiddleware } from "@astrojs/starlight/route-data";
-import { CATEGORY_GROUPS } from "./data/music-sources";
+import { MUSIC_SOURCES_PAGE } from "./data/music-sources";
+import { PLAYERS_PAGE } from "./data/players";
+import type { TilePage } from "./data/tile-page";
 
-// The "I Want To Listen To" page builds most of its headings inside a
-// component, and Starlight only sees headings written in the page itself, so
-// they never reach the "On this page" panel. Here we add them, built from the
-// same data the page is generated from.
+// The tile pages build most of their headings inside a component, and Starlight
+// only sees headings written in the page itself, so they never reach the "On
+// this page" panel. Here we add them, built from the same data the pages are
+// generated from.
 //
 // Headings written directly in the .mdx are left alone, so renaming one of
 // those does not need a change here.
-const LISTEN_TO_ROUTE = "faq/listen-to";
+const TILE_PAGES: Record<string, TilePage> = {
+  "faq/listen-to": MUSIC_SOURCES_PAGE,
+  "faq/stream-to": PLAYERS_PAGE,
+};
 
 export const onRequest = defineRouteMiddleware((context) => {
   const route = context.locals.starlightRoute;
-  if (route.entry.id !== LISTEN_TO_ROUTE || !route.toc) return;
+  const page = TILE_PAGES[route.entry.id];
+  if (!page || !route.toc) return;
 
-  const generated = CATEGORY_GROUPS.map((group) => ({
+  const generated = page.groups.map((group) => ({
     depth: 2,
-    slug: `listen-nav-${group.id}`,
+    slug: `${page.idPrefix}-nav-${group.id}`,
     text: group.title,
     children: group.categories.map((category) => ({
       depth: 3,
-      slug: `listen-${category.id}`,
+      slug: `${page.idPrefix}-${category.id}`,
       text: category.title,
       children: [],
     })),

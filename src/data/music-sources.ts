@@ -460,3 +460,24 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["streaming", "russia"],
   },
 ];
+
+// ---------------------------------------------------------------------------
+// Everything the "I Want To Listen To" page needs, in one object.
+// Rendered by src/components/TilePage.astro.
+// ---------------------------------------------------------------------------
+export const MUSIC_SOURCES_PAGE = {
+  idPrefix: "listen",
+  dataFile: "src/data/music-sources.ts",
+  itemNoun: "source",
+  pathPrefix: "music-providers/",
+  flagGroupId: "country",
+  // Pages under music-providers/ that intentionally have no tile.
+  knownUnlisted: [
+    "music-providers", // the overview page
+    "music-providers/ambient-sounds", // fits none of the listening categories
+    "music-providers/netease-cloud-music-zh", // Chinese version of another page
+    "music-providers/qqmusic-zh", // Chinese version of another page
+  ],
+  groups: CATEGORY_GROUPS,
+  items: MUSIC_SOURCES,
+};
