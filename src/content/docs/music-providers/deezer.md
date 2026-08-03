@@ -6,6 +6,10 @@ title: "Deezer"
 
 Music Assistant has support for <a href="https://www.deezer.com/" target="_blank" rel="noopener noreferrer">Deezer</a>. Contributed and maintained by <a href="https://github.com/arctixdev" target="_blank" rel="noopener noreferrer">arctixdev</a>, <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> and <a href="https://github.com/jdaberkow" target="_blank" rel="noopener noreferrer">jdaberkow</a>
 
+Deezer is a French subscription streaming service with a catalogue of around 100 million tracks. It is available in most countries and streams lossless on its higher tiers.
+
+Connecting your account puts your Deezer favourites and playlists alongside the rest of your music in Music Assistant, with the whole catalogue there to search.
+
 > [!TIP]
 > **Note**
 >

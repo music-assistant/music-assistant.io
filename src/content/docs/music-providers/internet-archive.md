@@ -7,7 +7,14 @@ title: "Internet Archive"
 
 Music Assistant has support for the Internet Archive. This component is contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
+The Internet Archive is a non-profit digital library. It has been preserving web pages, books, film and audio since 1996 and makes all of it free to the public, with no account needed.
+
 This source gives Music Assistant users free access to millions of audio recordings including live concerts, historical content, LibriVox audiobooks, and rare archival material from the Internet Archive.
+
+> [!TIP]
+> **Donate**
+>
+> The Internet Archive is a non-profit and everything it holds is free to use, paid for by donations. If you are using this source consider supporting them at https://archive.org/donate
 
 ## Features
 
