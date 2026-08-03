@@ -10,6 +10,11 @@ NTS is a free online radio station broadcasting from London. Its shows are hoste
 
 This source adds the NTS streams to Music Assistant as radio stations.
 
+> [!TIP]
+> **Support NTS**
+>
+> NTS is free to listen to and carries no advertising, funded instead by its listeners through the NTS Supporters scheme. If you are using this source consider joining at https://www.nts.live/supporters
+
 ## Features
 
 |||

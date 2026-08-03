@@ -11,6 +11,11 @@ The Internet Archive is a non-profit digital library. It has been preserving web
 
 This source gives Music Assistant users free access to millions of audio recordings including live concerts, historical content, LibriVox audiobooks, and rare archival material from the Internet Archive.
 
+> [!TIP]
+> **Donate**
+>
+> The Internet Archive is a non-profit and everything it holds is free to use, paid for by donations. If you are using this source consider supporting them at https://archive.org/donate
+
 ## Features
 
 |           |                     |
