@@ -8,7 +8,7 @@ Music Assistant has support for streaming podcasts from RSS feeds. Contributed a
 
 Every podcast is published as an RSS feed, which is simply a web address listing the episodes and where the audio for each one sits. Podcast apps all work from these feeds, and most podcasts publish theirs openly.
 
-The Podcast RSS source allows subscribing to podcast feeds. The RSS Feed only provides a single podcast. No aggregated feeds are possible. For multiple podcasts, multiple sources with each a unique feed must be configured.
+This source follows one feed, which means one podcast. To follow several podcasts, add the source once for each of them, each with its own feed address. If you would rather search for podcasts than track down feed addresses yourself, [Podcast Index](/music-providers/podcast-index/) and [iTunes Podcast Search](/music-providers/itunes-podcast/) do that job instead.
 
 ## Features
 
@@ -28,13 +28,15 @@ The Podcast RSS source allows subscribing to podcast feeds. The RSS Feed only pr
 
 ### Other
 
-- Allows parsing a standardized RSS podcast feed retrieved by a configured URL
+- Reads a standard podcast RSS feed from a web address you provide
 
 ## Configuration
 
-In the Generic Settings add the full RSS feed URL.
+In the Generic Settings add the full address of the podcast's RSS feed, including the `https://`.
+
+Most podcasts publish their feed address somewhere on their own website, and podcast directories list it as well.
 
 ## Known Issues / Notes
 
-- Only feeds strictly following the standardized podcast feed format are supported
-- No checking is done to identify two or more sources configured with the same feed
+- Feeds that do not follow the standard podcast feed format may not work
+- Nothing stops the same feed being added twice, which will show the podcast twice
