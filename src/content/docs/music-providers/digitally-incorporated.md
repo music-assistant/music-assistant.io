@@ -6,6 +6,10 @@ title: "DI.fm Network"
 
 Music Assistant has support for the DI.fm Radio Network which includes <a href="https://www.di.fm" target="_blank" rel="noopener noreferrer">DI.fm</a>, <a href="https://www.radiotunes.com" target="_blank" rel="noopener noreferrer">Radiotunes</a>, <a href="https://www.zenradio.com" target="_blank" rel="noopener noreferrer">Zen Radio</a>, <a href="https://www.jazzradio.com" target="_blank" rel="noopener noreferrer">Jazz Radio</a>, <a href="https://www.classicalradio.com" target="_blank" rel="noopener noreferrer">Classical Radio</a>, and <a href="https://www.rockradio.com" target="_blank" rel="noopener noreferrer">Rock Radio</a>. Contributed and maintained by <a href="https://github.com/benklop" target="_blank" rel="noopener noreferrer">Ben</a>
 
+These are subscription internet radio networks, each covering its own ground, from electronic dance music on DI.fm through to jazz, classical, rock and easy listening. Every channel is programmed by a person rather than an algorithm.
+
+This source connects Music Assistant to your subscription so those channels appear as radio stations, playable on any of your speakers.
+
 ## Features
 
 |           |                     |

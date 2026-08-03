@@ -6,6 +6,10 @@ title: "Tidal"
 
 Music Assistant has support for <a href="https://tidal.com" target="_blank" rel="noopener noreferrer">Tidal</a>. Contributed and maintained by <a href="https://github.com/jozefKruszynski" target="_blank" rel="noopener noreferrer">jozefKruszynski</a>
 
+Tidal is a subscription streaming service that streams everything in lossless quality, with hi-res and immersive versions of many albums.
+
+Sign in and your Tidal favourites and playlists appear in Music Assistant, with the whole catalogue there to search and play on your own speakers.
+
 ## Features
 
 |           |                     |

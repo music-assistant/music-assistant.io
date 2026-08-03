@@ -6,6 +6,10 @@ title: "Bandcamp"
 
 Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua](https://github.com/ALERTua)
 
+Bandcamp is a shop and streaming site where artists and labels publish their own music and sell it directly to listeners. Most of the catalogue can be streamed for free before you decide to buy.
+
+This source lets you search and play that catalogue from Music Assistant. Add your account cookie as well and the albums you have bought come across as a library of their own.
+
 > [!CAUTION]
 > **DISCLAIMER**
 > Please note that Bandcamp does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis.

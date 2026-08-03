@@ -6,6 +6,10 @@ title: "Audiobookshelf"
 
 Music Assistant has support for <a href="https://www.audiobookshelf.org/" target="_blank" rel="noopener noreferrer">audiobookshelf</a>. Contributed and maintained by <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a>
 
+Audiobookshelf is a free, self-hosted server for your own audiobooks and podcasts. You run it on your own hardware, it organises the files and remembers where you are in each one, and its apps let you listen from anywhere.
+
+This source points Music Assistant at that server, so the same collection is available on your speakers. Progress travels in both directions, which means a book started in the Audiobookshelf app can be finished on a speaker, or the other way round.
+
 ## Features
 
 |           |                     |

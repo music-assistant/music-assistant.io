@@ -6,6 +6,8 @@ title: "Podcast RSS Feed"
 
 Music Assistant has support for streaming podcasts from RSS feeds. Contributed and maintained by <a href="https://github.com/saeugetier" target="_blank" rel="noopener noreferrer">saeugetier</a>
 
+Every podcast is published as an RSS feed, which is simply a web address listing the episodes and where the audio for each one sits. Podcast apps all work from these feeds, and most podcasts publish theirs openly.
+
 The Podcast RSS source allows subscribing to podcast feeds. The RSS Feed only provides a single podcast. No aggregated feeds are possible. For multiple podcasts, multiple sources with each a unique feed must be configured.
 
 ## Features

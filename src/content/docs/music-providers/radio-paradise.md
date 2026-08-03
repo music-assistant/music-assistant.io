@@ -6,6 +6,10 @@ title: "Radio Paradise"
 
 Music Assistant has support for <a href="https://radioparadise.com/" target="_blank" rel="noopener noreferrer">Radio Paradise</a> which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
+Radio Paradise is a listener-supported internet radio station from California, running since 2000. Its channels are put together by hand rather than by an algorithm, carry no advertising, and stream at high quality including lossless FLAC.
+
+This source adds those channels to Music Assistant as radio stations, playable on any of your speakers.
+
 > [!TIP]
 > **Donate**
 >

@@ -6,6 +6,10 @@ title: "Radio Browser"
 
 Music Assistant has support for <a href="https://www.radio-browser.info/" target="_blank" rel="noopener noreferrer">RadioBrowser</a> which allows easy addition of online radio stations to Music Assistant.
 
+Radio Browser is a free, community-run directory of internet radio stations from around the world. Anyone can add a station and the whole database is open, which makes it the simplest way to find the stream for a station you already listen to.
+
+This source makes the directory searchable from Music Assistant, so any station in it can be played and kept in your radio list.
+
 ## Features
 
 |           |                     |

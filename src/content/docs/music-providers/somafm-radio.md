@@ -6,6 +6,10 @@ title: "SomaFM Radio"
 
 Music Assistant has support for [SomaFM Radio](https://somafm.com/) which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by [@macegr](https://github.com/macegr)
 
+SomaFM is a listener-supported internet radio station from San Francisco, broadcasting since 2000. It runs around forty channels, each with its own character and each put together by a person rather than an algorithm, with no advertising at all.
+
+This source adds the SomaFM channels to Music Assistant, playable on any of your speakers.
+
 > [!TIP]
 > **Donate**
 > SomaFM Radio has no ads or subscription, relying on listener donations to keep running for over 25 years. If you enjoy using this Music Assistant source, please consider donating at https://somafm.com/support or purchasing something from https://somafm.com/store.

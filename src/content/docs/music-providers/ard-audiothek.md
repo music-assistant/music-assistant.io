@@ -6,6 +6,10 @@ title: "ARD Audiothek"
 
 Music Assistant has support for streaming from <a href="https://www.ardaudiothek.de/" target="_blank" rel="noopener noreferrer">ARD Audiothek</a>. Contributed and maintained by <a href="https://github.com/jfeil" target="_blank" rel="noopener noreferrer">Jan Feil</a>
 
+ARD Audiothek is the audio platform of ARD, the group of public broadcasters in Germany. It collects radio programmes, podcasts, radio plays and documentaries from the national and regional stations, all free to listen to.
+
+This source makes that content available inside Music Assistant, so an ARD station or programme can play on your own speakers. An ARD account is optional and mainly useful if you want the podcasts you follow to come across with your listening position.
+
 ## Features
 
 |           |                     |

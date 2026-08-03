@@ -11,6 +11,8 @@ Music Assistant 已支持 <a href="https://music.163.com/" target="_blank" rel="
 
 网易云音乐是中国大陆主要流媒体平台之一，提供中文曲库、推荐内容与歌词能力。
 
+该音乐源会以你的网易云音乐账号登录，你收藏的歌曲与歌单会出现在 Music Assistant 中，整个曲库也可以直接搜索。播放时可以使用 Music Assistant 控制的任意播放器，而不限于网易云音乐自家的 App。使用前需要在本地网络中运行一个 API 服务，详见下文配置说明。
+
 > [!NOTE]
 > - 需要网易云音乐账号。
 > - 当前该提供商依赖本地运行的 NeteaseCloudMusicApi 兼容服务。

@@ -6,6 +6,10 @@ title: "Spotify"
 
 Music Assistant has full support for Spotify media listing and playback.
 
+Spotify is the largest of the music streaming services, with a catalogue of around 100 million tracks alongside podcasts and audiobooks.
+
+Connecting your account puts your saved music and playlists into Music Assistant and makes the catalogue searchable. Playback goes to any speaker Music Assistant controls, which does not have to be a Spotify Connect device.
+
 > [!WARNING]
 > Spotify has blocked accounts created around 2024 and later from working with third party apps like Music Assistant, and some older accounts are also affected. If the provider does not work and you see `Key Error` messages in the log, your account is affected. There is currently no remedy; consider using [another streaming source that we support](/music-providers/) instead
 
