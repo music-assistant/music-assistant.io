@@ -22,14 +22,14 @@ export const PLAYER_GROUPS: TileGroup[] = [
         icon: "/assets/icons/stream/commercial.svg",
         title: "Commercial players",
         blurb:
-          "Speakers, amplifiers and devices you buy ready to use. Most are found automatically once they are on the same network. If yours is not here but Home Assistant can already play to it, use the Home Assistant player under DIY.",
+          "Speakers, amplifiers, tablets and other devices sold ready to use. Most are found automatically once they are on the same network. If yours is not here but Home Assistant can already play to it, use the Home Assistant player under DIY.",
       },
       {
         id: "diy",
         icon: "/assets/icons/stream/diy.svg",
         title: "DIY players",
         blurb:
-          "Software you install yourself, on a Raspberry Pi, a spare computer, a phone, a tablet or an ESP32 board.",
+          "Software you set up yourself, on a Raspberry Pi, a spare computer, an ESP32 board or the Music Assistant server itself.",
       },
     ],
   },
@@ -73,10 +73,11 @@ export const PLAYERS: TileItem[] = [
     categories: ["commercial"],
   },
   {
+    // Established commercial software, sold for off-the-shelf Android tablets.
     name: "Fully Kiosk",
     slug: "player-support/fully-kiosk",
     icon: "/assets/icons/fully-kiosk.png",
-    categories: ["diy"],
+    categories: ["commercial"],
   },
   {
     name: "Google Cast",
@@ -174,7 +175,7 @@ export const PLAYERS: TileItem[] = [
 export const PLAYERS_PAGE = {
   idPrefix: "stream",
   dataFile: "src/data/players.ts",
-  itemNoun: "player",
+  itemNoun: "provider",
   pathPrefix: "player-support/",
   // Pages under player-support/ that intentionally have no tile.
   knownUnlisted: [
