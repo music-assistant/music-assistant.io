@@ -35,8 +35,10 @@ export type CategoryId =
 export interface Category {
   /** Used as the link target, so it must be unique. */
   id: CategoryId;
-  /** Heading above the tiles, and the label on the button that jumps to it. */
+  /** Heading above the tiles, and the label on the tile that jumps to it. */
   title: string;
+  /** A file in public/assets/icons/listen/, written as a path from the site root. */
+  icon: string;
   /** One sentence under the heading. Plain text, no markdown. */
   blurb: string;
 }
@@ -67,40 +69,47 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
     categories: [
       {
         id: "own-files",
+        icon: "/assets/icons/listen/own-files.svg",
         title: "My own music",
         blurb:
           "Music you already own, held on a disk, a NAS or your own media server.",
       },
       {
         id: "streaming",
+        icon: "/assets/icons/listen/streaming.svg",
         title: "Streaming music",
         blurb:
           "Services with a large catalogue to search and play, some paid and some free.",
       },
       {
         id: "radio",
+        icon: "/assets/icons/listen/radio.svg",
         title: "Radio stations",
         blurb:
           "Live internet radio, from a single station through to directories of thousands.",
       },
       {
         id: "podcasts",
+        icon: "/assets/icons/listen/podcasts.svg",
         title: "Podcasts",
         blurb:
           "Follow shows and pick up each episode where you left off.",
       },
       {
         id: "audiobooks",
+        icon: "/assets/icons/listen/audiobooks.svg",
         title: "Audiobooks",
         blurb: "Books to listen to, with chapters and a saved position.",
       },
       {
         id: "live-concerts",
+        icon: "/assets/icons/listen/live-concerts.svg",
         title: "Live concert recordings",
         blurb: "Soundboard and audience recordings of shows, often complete sets.",
       },
       {
         id: "children",
+        icon: "/assets/icons/listen/children.svg",
         title: "Stories for children",
         blurb: "Audio made for younger listeners.",
       },
@@ -114,46 +123,55 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
     categories: [
       {
         id: "germany",
+        icon: "/assets/icons/listen/germany.svg",
         title: "Deutschland / Germany",
         blurb: "Radio and podcasts from the German public broadcasters.",
       },
       {
         id: "austria",
+        icon: "/assets/icons/listen/austria.svg",
         title: "Österreich / Austria",
         blurb: "Austrian radio stations and podcasts.",
       },
       {
         id: "sweden",
+        icon: "/assets/icons/listen/sweden.svg",
         title: "Sverige / Sweden",
         blurb: "Swedish public service radio.",
       },
       {
         id: "denmark",
+        icon: "/assets/icons/listen/denmark.svg",
         title: "Danmark / Denmark",
         blurb: "Danish streaming, with plenty of Danish music alongside the usual catalogue.",
       },
       {
         id: "russia",
+        icon: "/assets/icons/listen/russia.svg",
         title: "Россия / Russia",
         blurb: "Streaming services with large Russian language catalogues.",
       },
       {
         id: "china",
+        icon: "/assets/icons/listen/china.svg",
         title: "中国 / China",
         blurb: "The two large streaming platforms in Mainland China.",
       },
       {
         id: "japan",
+        icon: "/assets/icons/listen/japan.svg",
         title: "日本 / Japan",
         blurb: "Music uploaded by the Nico Nico community, much of it found nowhere else.",
       },
       {
         id: "france",
+        icon: "/assets/icons/listen/france.svg",
         title: "France",
         blurb: "French streaming with a catalogue of major and independent labels.",
       },
       {
         id: "uk",
+        icon: "/assets/icons/listen/uk.svg",
         title: "United Kingdom",
         blurb: "British radio, live and after broadcast.",
       },

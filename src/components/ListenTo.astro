@@ -34,6 +34,17 @@ const knownCategoryIds = new Set(allCategories.map((c) => c.id));
 const problems: string[] = [];
 const seenSlugs = new Set<string>();
 
+for (const category of allCategories) {
+  if (!existsSync(new URL(`.${category.icon}`, publicDir))) {
+    problems.push(
+      `the category "${category.id}" has the icon "${category.icon}", but ` +
+        `that file does not exist. Expected a file at public${category.icon}. ` +
+        `Category icons are normally named after the category itself, so ` +
+        `"${category.id}" wants public/assets/icons/listen/${category.id}.svg.`,
+    );
+  }
+}
+
 for (const source of MUSIC_SOURCES) {
   const where = `the entry named "${source.name}"`;
 
@@ -129,14 +140,28 @@ for (const slug of knownSlugs) {
           {group.title}
         </h2>
         <p class="listen-to__blurb">{group.intro}</p>
-        <ul class="listen-to__chips">
+        <ul class="listen-to__grid listen-to__grid--wide">
           {group.categories.map((category) => (
             <li>
-              <a class="listen-to__chip" href={`#listen-${category.id}`}>
-                {category.title}
+              <a class="listen-to__tile" href={`#listen-${category.id}`}>
+                <span
+                  class:list={[
+                    "listen-to__logo",
+                    group.id === "country" && "listen-to__logo--flag",
+                  ]}
+                >
+                  <img
+                    src={category.icon}
+                    alt=""
+                    aria-hidden="true"
+                    decoding="async"
+                  />
+                </span>
+                <span class="listen-to__name">{category.title}</span>
                 <span class="listen-to__count">
                   {sourcesFor(category.id).length}
-                  <span class="sr-only"> music sources</span>
+                  <span class="sr-only"> music</span>
+                  {sourcesFor(category.id).length === 1 ? " source" : " sources"}
                 </span>
               </a>
             </li>
@@ -210,39 +235,6 @@ for (const slug of knownSlugs) {
     color: var(--sl-color-gray-3);
   }
 
-  .listen-to__chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0.9rem 0 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .listen-to__chip {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.4rem;
-    padding: 0.4rem 0.85rem;
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 999px;
-    background: var(--sl-color-bg);
-    color: var(--sl-color-white);
-    font-size: var(--sl-text-sm);
-    font-weight: 600;
-    line-height: 1.2;
-    text-decoration: none;
-    transition:
-      background-color 0.15s ease,
-      border-color 0.15s ease;
-  }
-
-  .listen-to__chip:hover {
-    background: var(--sl-color-accent-low);
-    border-color: var(--sl-color-accent);
-  }
-
-  .listen-to__chip:focus-visible,
   .listen-to__tile:focus-visible,
   .listen-to__top:focus-visible {
     outline: 2px solid var(--sl-color-accent);
@@ -250,6 +242,7 @@ for (const slug of knownSlugs) {
   }
 
   .listen-to__count {
+    margin-top: -0.25rem;
     font-size: var(--sl-text-xs);
     font-weight: 400;
     color: var(--sl-color-gray-3);
@@ -269,6 +262,12 @@ for (const slug of knownSlugs) {
     margin: 1rem 0 0;
     padding: 0;
     list-style: none;
+  }
+
+  /* Category names run longer than source names, so they get wider tiles.
+     9.5rem is the widest that still gives two columns on a 375px phone. */
+  .listen-to__grid--wide {
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
   }
 
   .listen-to__tile {
@@ -312,6 +311,13 @@ for (const slug of knownSlugs) {
     height: auto;
     margin: 0;
     object-fit: contain;
+  }
+
+  /* Flags carry white in them, so they need an edge against the white tile. */
+  .listen-to__logo--flag img {
+    max-height: 2.1rem;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 0.15);
   }
 
   .listen-to__name {
