@@ -168,6 +168,10 @@ export default defineConfig({
             { label: "Get Queue Action", slug: "faq/get_queue" },
             { label: "Transfer Queue Action", slug: "faq/masstransfer" },
             { label: "Voice Control", slug: "integration/voice" },
+            {
+              label: "Community Extensions",
+              slug: "community-extensions",
+            },
           ],
         },
         {
@@ -353,7 +357,6 @@ export default defineConfig({
                 { label: "Sonic Analysis", slug: "audio-analysis/sonic-analysis" },
               ],
             },
-            { label: "Community Extensions", slug: "community-extensions" },
           ],
         },
         {
