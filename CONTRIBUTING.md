@@ -73,11 +73,26 @@ Five things, and the build will tell you if you miss the last one.
    page. **The build fails without it**, and the Deploy Preview check will go red with a
    ready-made entry for you to paste.
 
-5. **Pick the categories.** Take the "what" categories straight from the `Media Types Supported`
-   row of your own Features table. The country categories are the ones people forget: tag your
-   source with a country if its catalogue is mainly in that language, not merely because the
-   company is based there. The full list of valid categories is at the top of
-   `src/data/music-sources.ts`, and the build lists them if you use one that does not exist.
+5. **Pick the categories.** Your `Media Types Supported` row tells you whether the source offers
+   music, radio, podcasts or audiobooks. Translate that into categories:
+
+   - **Music**, which is what the table means by Artists, Albums, Tracks or Playlists, is either
+     `streaming` for a service with a catalogue to search, or `own-files` for a collection you
+     already own on a disk, a NAS or your own media server.
+   - **Radio** is `radio`, but only for real broadcast stations. Several streaming services list
+     Radio when they mean algorithmic artist stations, and those do not count.
+   - **Podcasts** is `podcasts`.
+   - **Audiobooks** is `audiobooks`.
+
+   Two more are a judgement call rather than something the table can tell you: `live-concerts`
+   for recordings of live shows, and `children` for audio aimed at younger listeners.
+
+   Last are the country categories, and these are the ones people forget. Tag your source with a
+   country if its catalogue is mainly in that language, not merely because the company is based
+   there.
+
+   The full list of valid categories is at the top of `src/data/music-sources.ts`, and the build
+   lists them if you use one that does not exist.
 
 ## Adding a player provider
 
