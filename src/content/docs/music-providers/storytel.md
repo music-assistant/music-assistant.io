@@ -56,4 +56,4 @@ In addition to `Username or email` and `Password`, there is also:
 
 ## Known Issues / Notes
 
-- Browse support is not currently implemented for Storytel. Instead, use the audiobook and podcast libraries to access your media.
+- Browse support is not currently implemented for Storytel. Instead, use the audiobook and podcast libraries to access your media or use search.
