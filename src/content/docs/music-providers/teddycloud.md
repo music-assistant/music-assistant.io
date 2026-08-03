@@ -6,7 +6,9 @@ title: "TeddyCloud"
 
 Music Assistant has support for <a href="https://github.com/toniebox-reverse-engineering/teddycloud" target="_blank" rel="noopener noreferrer">TeddyCloud</a>, the self-hosted, open-source server behind the Toniebox family of children's audio players. Each Tonie in a TeddyCloud library appears in Music Assistant as an audiobook, complete with chapters. Contributed and maintained by <a href="https://github.com/yoyixms" target="_blank" rel="noopener noreferrer">yoyixms</a>
 
-A Toniebox is an audio player made for children. It is a soft cube with no screen, and it is controlled by standing a small figurine called a Tonie on top of it, with each figurine standing for one story or album. TeddyCloud takes the place of the manufacturer's own cloud service with one you run yourself, which means you decide what audio sits behind each figurine.
+A Toniebox is an audio player made for children. It is a soft cube with no screen, and it is controlled by standing a small figurine called a Tonie on top of it, with each figurine standing for one story or album.
+
+The audio is not held in the figurine. It sits on a server, and TeddyCloud is that server, run by you instead of by the manufacturer. Music Assistant connects to the server rather than to the box, so the stories your children already have can be played through your speakers with no Toniebox involved.
 
 ## Features
 
