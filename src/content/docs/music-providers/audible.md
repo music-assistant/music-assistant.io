@@ -19,7 +19,7 @@ Connecting your account puts that library inside Music Assistant. Where you got 
 |:-----------------------|:---------------------:|
 | Subscription FREE | No |
 | Self-Hosted Local Media   | No |
-| Media Types Supported | Podcasts |
+| Media Types Supported | Audiobooks |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
