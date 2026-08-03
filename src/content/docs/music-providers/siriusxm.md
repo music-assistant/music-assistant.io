@@ -8,7 +8,7 @@ Music Assistant has support for streaming live radio stations from SiriusXM. Con
 
 SiriusXM is a subscription radio service in the United States and Canada, best known from car dashboards. It carries hundreds of channels of music, talk, news and sport, most of them presented live.
 
-This source signs Music Assistant in to your subscription so those channels can play on the speakers at home.
+This source signs Music Assistant in to your subscription and adds those channels as radio stations.
 
 > [!NOTE]
 > - A paid subscription is required to add this music source.

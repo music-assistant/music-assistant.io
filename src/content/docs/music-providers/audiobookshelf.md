@@ -8,7 +8,7 @@ Music Assistant has support for <a href="https://www.audiobookshelf.org/" target
 
 Audiobookshelf is a free, self-hosted server for your own audiobooks and podcasts. You run it on your own hardware, it organises the files and remembers where you are in each one, and its apps let you listen from anywhere.
 
-This source points Music Assistant at that server, so the same collection is available on your speakers. Progress travels in both directions, which means a book started in the Audiobookshelf app can be finished on a speaker, or the other way round.
+This source points Music Assistant at that server so the same collection is available to play. Progress travels in both directions, which means a book started in the Audiobookshelf app can be picked up again in Music Assistant, or the other way round.
 
 ## Features
 

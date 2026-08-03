@@ -8,7 +8,7 @@ Music Assistant has support for <a href="https://music.apple.com/" target="_blan
 
 Apple Music is Apple's subscription streaming service, with a catalogue of around 100 million songs plus curated playlists and stations. It is the same library you get in the Music app on an iPhone, iPad or Mac.
 
-This source signs Music Assistant in to your Apple Music account, so your saved artists, albums and playlists sit alongside the rest of your music and the full catalogue is there to search and browse. Anything you play then goes to any speaker Music Assistant controls, rather than only to Apple devices or over AirPlay.
+This source signs Music Assistant in to your Apple Music account, so your saved artists, albums and playlists sit alongside the rest of your music, with the full catalogue there to search and browse.
 
 > [!NOTE]
 > - A paid subscription is required to add this Music Source. 

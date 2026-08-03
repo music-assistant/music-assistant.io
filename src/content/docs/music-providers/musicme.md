@@ -8,7 +8,7 @@ Music Assistant has support for [MusicMe](https://www.musicme.com). Contributed 
 
 MusicMe is a French music streaming service operated by ApachNetwork with a catalogue of 13M+ tracks from major and independent labels.
 
-This source signs Music Assistant in to your MusicMe account, so the catalogue can be searched and browsed and anything you play goes to your own speakers.
+This source signs Music Assistant in to your MusicMe account and makes the catalogue available to search and browse.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by MusicMe.

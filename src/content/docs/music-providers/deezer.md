@@ -8,7 +8,7 @@ Music Assistant has support for <a href="https://www.deezer.com/" target="_blank
 
 Deezer is a French subscription streaming service with a catalogue of around 100 million tracks. It is available in most countries and streams lossless on its higher tiers.
 
-Connecting your account puts your Deezer favourites and playlists alongside the rest of your music in Music Assistant, with the whole catalogue there to search. Playback then goes to any speaker Music Assistant controls.
+Connecting your account puts your Deezer favourites and playlists alongside the rest of your music in Music Assistant, with the whole catalogue there to search.
 
 > [!TIP]
 > **Note**

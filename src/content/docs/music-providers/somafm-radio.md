@@ -8,7 +8,7 @@ Music Assistant has support for [SomaFM Radio](https://somafm.com/) which allows
 
 SomaFM is a listener-supported internet radio station from San Francisco, broadcasting since 2000. It runs around forty channels, each with its own character and each put together by a person rather than an algorithm, with no advertising at all.
 
-This source adds the SomaFM channels to Music Assistant, playable on any of your speakers.
+This source makes the SomaFM channels available in Music Assistant.
 
 > [!TIP]
 > **Donate**

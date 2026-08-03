@@ -8,7 +8,7 @@ Music Assistant has support for the DI.fm Radio Network which includes <a href="
 
 These are subscription internet radio networks, each covering its own ground, from electronic dance music on DI.fm through to jazz, classical, rock and easy listening. Every channel is programmed by a person rather than an algorithm.
 
-This source connects Music Assistant to your subscription so those channels appear as radio stations, playable on any of your speakers.
+This source connects Music Assistant to your subscription so the channels from the networks you have chosen appear as radio stations.
 
 ## Features
 

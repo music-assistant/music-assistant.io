@@ -11,7 +11,7 @@ Music Assistant 已支持 <a href="https://y.qq.com/" target="_blank" rel="noope
 
 QQ 音乐是中国大陆最常用的流媒体音乐平台之一，拥有较完整的中文与国际曲库、歌单与推荐能力。
 
-该音乐源会以你的 QQ 音乐账号登录，你收藏的歌曲、专辑、关注的歌手与歌单会出现在 Music Assistant 中，整个曲库也可以直接搜索。播放时可以使用 Music Assistant 控制的任意播放器，而不限于 QQ 音乐自家的 App。
+该音乐源会以你的 QQ 音乐账号登录，你收藏的歌曲、专辑、关注的歌手与歌单会出现在 Music Assistant 中，整个曲库也可以直接搜索。
 
 > [!NOTE]
 > - 需要 QQ 音乐账号。

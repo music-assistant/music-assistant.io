@@ -9,7 +9,7 @@ Music Assistant has support for personal radio stations from [Pandora](https://w
 
 Pandora provides personalized radio stations that play an endless stream of songs based on the user's musical preferences.
 
-Pandora is only available in the United States. This source brings the stations from your account into Music Assistant, so they can play on any of your speakers instead of only in the Pandora app.
+Pandora is only available in the United States. This source brings the stations from your account into Music Assistant.
 
 > [!NOTE]
 > Both the free and paid subscription options are supported

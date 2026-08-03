@@ -8,7 +8,7 @@ Music Assistant has support for music servers which work to the <a href="https:/
 
 Subsonic is a way of talking to a music server rather than a service in its own right. You install one of these servers on your own hardware and point it at your music files, and it then serves that collection to any app that speaks the same language.
 
-This source makes Music Assistant one of those apps, so music already indexed on your server is playable on your speakers without cataloguing it again.
+This source makes Music Assistant one of those apps, so music already indexed on your server is available without cataloguing it again.
 
 ## Features
 

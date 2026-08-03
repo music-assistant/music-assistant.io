@@ -8,7 +8,7 @@ Music Assistant has support for [KION Music](https://music.mts.ru) (MTS Music). 
 
 KION Music is a music streaming service by MTS (Mobile TeleSystems), one of the largest telecom operators in Russia and CIS countries. This source uses the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library adapted for the KION API endpoint.
 
-Connecting your account puts your KION library and the wider catalogue inside Music Assistant, playable on any of your speakers rather than only in the KION app.
+Connecting your account puts your KION library and the wider catalogue inside Music Assistant.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by MTS or KION.

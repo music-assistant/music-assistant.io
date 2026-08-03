@@ -9,7 +9,7 @@ title: "NetEase Cloud Music"
 Music Assistant has support for <a href="https://music.163.com/" target="_blank" rel="noopener noreferrer">NetEase Cloud Music</a>.  NetEase Cloud Music is a major streaming platform in Mainland China with a large Chinese catalog, recommendations, and lyrics support.
 Contributed and maintained by <a href="https://github.com/xiasi0" target="_blank" rel="noopener noreferrer">xiasi0</a>.
 
-This source signs Music Assistant in to your NetEase account, so the music and playlists you have saved there appear in Music Assistant and the catalogue can be searched. Playback goes to any speaker Music Assistant controls rather than only the NetEase app. It does need a separate API service running on your own network, as described below.
+This source signs Music Assistant in to your NetEase account, so the music and playlists you have saved there appear in Music Assistant and the catalogue can be searched. It does need a separate API service running on your own network, as described below.
 
 > [!NOTE]
 > - A NetEase Cloud Music account is required

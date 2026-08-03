@@ -8,7 +8,7 @@ Music Assistant has support for <a href="https://tidal.com" target="_blank" rel=
 
 Tidal is a subscription streaming service that streams everything in lossless quality, with hi-res and immersive versions of many albums.
 
-Sign in and your Tidal favourites and playlists appear in Music Assistant, with the whole catalogue there to search and play on your own speakers.
+Sign in and your Tidal favourites and playlists appear in Music Assistant, with the rest of the catalogue there to search.
 
 ## Features
 

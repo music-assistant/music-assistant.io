@@ -8,7 +8,7 @@ Music Assistant has support for Youtube Music. Contributed and maintained by <a 
 
 YouTube Music is Google's streaming service, built on top of YouTube itself. As well as the usual catalogue it reaches material uploaded to YouTube, so live sets, covers and rarities that other services do not carry are often there.
 
-With your account connected, your library and playlists appear in Music Assistant and the catalogue can be searched, with playback going to any speaker Music Assistant controls.
+With your account connected, your library and playlists appear in Music Assistant and the catalogue can be searched.
 
 > [!WARNING]
 > **DISCLAIMER**

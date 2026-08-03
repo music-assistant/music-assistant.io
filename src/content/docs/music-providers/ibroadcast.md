@@ -8,7 +8,7 @@ Music Assistant has support for streaming your music from <a href="https://www.i
 
 iBroadcast is a cloud music locker. You upload your own music collection to their servers and it streams back to you on any device, with no storage limit even on the free tier.
 
-This source signs Music Assistant in to your account and imports that collection, so music you uploaded there plays on your speakers alongside your other sources.
+This source signs Music Assistant in to your account and imports that collection, so music you uploaded there sits alongside your other sources.
 
 > [!NOTE]
 > Both the free and paid subscription options are supported

@@ -9,7 +9,7 @@ Music Assistant has support for music servers which work to the Jellyfin definit
 
 Jellyfin is a free, open source media server you run on your own hardware. It catalogues the music, films and other media you already have and streams them to apps on your devices, with nothing held on someone else's servers.
 
-This source connects Music Assistant to the music libraries on your Jellyfin server, so the collection you have organised there is playable on your speakers.
+This source connects Music Assistant to the music libraries on your Jellyfin server, so what you have organised there becomes part of your Music Assistant library.
 
 > [!CAUTION]
 > Please be advised that this source currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead

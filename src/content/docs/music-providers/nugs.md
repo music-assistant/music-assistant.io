@@ -8,7 +8,7 @@ Music Assistant has support for streaming your music from <a href="https://www.n
 
 Nugs.net is a subscription service for live concert recordings, run with the artists themselves. Its catalogue leans towards acts with a long history of taped shows, and many concerts appear soon after they are played.
 
-This source signs Music Assistant in to your account so those recordings can play on your own speakers.
+This source signs Music Assistant in to your account, so the shows you have access to appear in your library.
 
 > [!NOTE]
 > A paid subscription is required to use this source

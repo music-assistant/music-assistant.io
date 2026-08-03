@@ -8,7 +8,7 @@ Music Assistant has support for [NTS Radio](https://www.nts.live/). This compone
 
 NTS is a free online radio station broadcasting from London. Its shows are hosted by DJs, artists and record collectors playing whatever they like, which tends towards music you will not hear on commercial radio.
 
-This source adds the NTS streams to Music Assistant so they can play on any of your speakers.
+This source adds the NTS streams to Music Assistant as radio stations.
 
 ## Features
 

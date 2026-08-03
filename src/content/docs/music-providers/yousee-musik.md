@@ -8,7 +8,7 @@ Music Assistant has support for [YouSee Musik](https://musik.yousee.dk). Contrib
 
 YouSee Musik is a streaming service from YouSee, the Danish telecoms company, included with some of its mobile and broadband subscriptions. It carries the usual international catalogue with a good deal of Danish music alongside it.
 
-Sign in and your YouSee library and playlists show up in Music Assistant, with the catalogue available to search and play on any of your speakers.
+Sign in and your YouSee library and playlists show up in Music Assistant, with the catalogue open to search.
 
 > [!NOTE]
 > A paid subscription is required to add this music source.

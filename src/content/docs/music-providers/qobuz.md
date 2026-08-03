@@ -8,7 +8,7 @@ Music Assistant has full support for <a href="https://www.qobuz.com/" target="_b
 
 Qobuz is a French subscription streaming service aimed at people who care about sound quality. Everything streams lossless, and it also sells albums as downloads you keep.
 
-Sign in and your Qobuz favourites appear in Music Assistant, with the catalogue there to search and play on any of your speakers.
+Sign in and your Qobuz favourites appear in Music Assistant, along with the whole catalogue to search through.
 
 ## Features
 

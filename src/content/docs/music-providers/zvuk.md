@@ -8,7 +8,7 @@ Music Assistant has support for [Zvuk Music](https://zvuk.com). Contributed and 
 
 Zvuk is a Russian music streaming service with a large Russian language catalogue alongside international releases, and lossless audio for subscribers.
 
-Connecting your account brings your Zvuk library and playlists into Music Assistant, with the catalogue available to search and play on your own speakers.
+Connecting your account brings your Zvuk library and playlists into Music Assistant, and the catalogue can be searched from there.
 
 This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvuk-music) library.
 
