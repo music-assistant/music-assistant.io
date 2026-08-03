@@ -3,7 +3,8 @@ title: "I Want To Listen To"
 description: Find the Music Assistant music sources that provide what you want to listen to
 ---
 
-import ListenTo from '../../../components/ListenTo.astro';
+import TilePage from '../../../components/TilePage.astro';
+import { MUSIC_SOURCES_PAGE } from '../../../data/music-sources';
 
 # I Want To Listen To
 
@@ -14,7 +15,7 @@ provide it.
 Pick a heading below to jump to the sources for it. Most sources appear more than once, because
 plenty of them do several jobs at the same time.
 
-<ListenTo />
+<TilePage page={MUSIC_SOURCES_PAGE} />
 
 ## Comparing sources side by side
 

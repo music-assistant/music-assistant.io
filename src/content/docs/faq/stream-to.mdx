@@ -1,6 +1,35 @@
 ---
 title: "I Want To Stream To"
+description: Find the Music Assistant player provider that can drive the device you want to play on
 ---
+
+import TilePage from '../../../components/TilePage.astro';
+import { PLAYERS_PAGE } from '../../../data/players';
+
+# I Want To Stream To
+
+Music Assistant plays to devices through player providers, and there is one for each kind of
+device or protocol. Start from the sort of thing you want to play on and pick the provider that
+drives it.
+
+<TilePage page={PLAYERS_PAGE} />
+
+## Comparing players side by side
+
+The table below summarises what every player provider can do. Note that DLNA and Home Assistant
+players can suffer from poor implementation of the required standards. If one of those does not
+work well and your device supports another protocol, use the other protocol.
+
+[![Preview image](/assets/player-provider-summary.png)](/assets/player-provider-summary.png)
+
+If a device supports several protocols they are combined into one player, shown as chips near the
+player name in the settings. In the [Individual Player Settings](/settings/individual-player/#output-protocols)
+you can set the default protocol, or disable any you do not use.
+
+## Working out a specific setup
+
+The rest of this page covers situations that need more than picking a provider, such as gear you
+already own, a phone, a browser, or something you have yet to buy.
 
 ## My Local HA Device
 
@@ -124,22 +153,22 @@ The following table is a non-exhaustive list of possible solutions:
 
 | Device or Software	          | Price# | Supported Protocols              |+Amp^| Pros and Cons |
 |------------------------------------------------|--------|----------------------------------|------|---------------|
-|<a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">PiCorePlayer*</a> (DIY) |$	     |Squeezelite, AirPlay          	  |  Y	   |Pros: Cheap, Runs on RPi 1, Streams over Bluetooth<br>Cons: Requires some technical knowledge to install the free software|
-|<a href="https://www.wiimhome.com/wiimpro/overview" target="_blank" rel="noopener noreferrer">WiiM Pro</a>|$$      |Squeezelite, AirPlay, Google Cast Audio, DLNA| Y |Pros: Minimal setup, versatile<br>Cons: Cheaper options available, Cast requires app to have sync’ed group|
+|<a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">PiCorePlayer*</a> (DIY) |$	     |Squeezelite, AirPlay          	  |  Y	   |Pros: Cheap, Runs on RPi 1, Streams over Bluetooth<br />Cons: Requires some technical knowledge to install the free software|
+|<a href="https://www.wiimhome.com/wiimpro/overview" target="_blank" rel="noopener noreferrer">WiiM Pro</a>|$$      |Squeezelite, AirPlay, Google Cast Audio, DLNA| Y |Pros: Minimal setup, versatile<br />Cons: Cheaper options available, Cast requires app to have sync’ed group|
 |<a href="https://www.wiimhome.com/wiimmini/overview" target="_blank" rel="noopener noreferrer">WiiM Mini</a>|$	   |AirPlay, DLNA	                    | Y      | As per Wiim Pro |
 |<a href="https://www.fiio.com/sr11" target="_blank" rel="noopener noreferrer">FiiO SR 11</a>              |$$	     |AirPlay	                          | Y	     | As per Wiim Pro |
-|<a href="https://sonocotta.com/louder-esp32/" target="_blank" rel="noopener noreferrer">Louder ESP32</a> (DIY) | $ |Squeezelite, AirPlay, Snapcast	  | N	     |Pros: Cheap<br>Cons: Requires some technical knowledge to install the software|
-|<a href="https://www.home-assistant.io/voice-pe/" target="_blank" rel="noopener noreferrer">Home Assistant (HA) Voice PE</a>|$ |Home Assistant Integration |Y	 |Pros: All local voice control and playback device, Strong Support<br>Cons: Requires HA as well|
-|Amplifiers/Receivers + Cast	                       |$$$	     |Google Cast      	                | N	     |Pros: Minimal setup, Higher amplification, High Quality Audio<br>Cons: Expensive, Cast requires app to have sync’ed group|
-|Amplifiers/Receivers + AirPlay	                     |$$$	     |  AirPlay	                        | N	     | Pros: Minimal setup, Higher amplification, High Quality Audio<br>Cons: Expensive |
-|<a href="https://www.sonos.com/en-us/shop" target="_blank" rel="noopener noreferrer">Sonos</a><br><a href="https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/" target="_blank" rel="noopener noreferrer">Ikea Symfonisk</a>|$$ → $$$	|Sonos (Many devices also AirPlay)| Y/N~ |Pros: Minimal setup, High Quality Audio<br>Cons: Potentially Limited to Sonos ecosystem depending upon device|
-|<a href="https://www.bluesound.com/usa/all-products" target="_blank" rel="noopener noreferrer">Bluesound Products</a>| $$$ |Bluesound, AirPlay	      |Y/N~    |Pros: Minimal setup, Exceptional Sound Quality<br>Cons: Expensive |
-| [Guition Silver Puck v2](https://aliexpress.com/item/1005007338590852.html) (DIY) | $ | Sendspin native (ESPhome) | Y | Pros: Small device to add Sendspin to any existing unit with Audio In. <br>Cons: Requires some technical knowledge to install the software. <br> <br>DIY: Requires USB-C power and a 3.5mm stereo cable. |
-| [Guition Knob v2](https://aliexpress.com/item/1005008823969298.html) (DIY) | $ | Sendspin native (ESPhome) | Y (small speaker built-in) | Pros: As above, additionally has full metal encoder ring and its own battery and small speaker. <br>Cons: Requires some technical knowledge to install the software. <br>DIY: Requires USB-C power and a 3.5mm stereo cable. |
-| [RaspiAudio Luxe 2](https://raspiaudio.com/product/esp-muse-luxe/) (DIY) | $ | Sendspin native (ESPhome)  | N | Pros: Battery backed, can also be used as Voice assistant. <br>Cons: Sensitive to noisy WiFi, requires some technical knowledge to install the software.  |
+|<a href="https://sonocotta.com/louder-esp32/" target="_blank" rel="noopener noreferrer">Louder ESP32</a> (DIY) | $ |Squeezelite, AirPlay, Snapcast	  | N	     |Pros: Cheap<br />Cons: Requires some technical knowledge to install the software|
+|<a href="https://www.home-assistant.io/voice-pe/" target="_blank" rel="noopener noreferrer">Home Assistant (HA) Voice PE</a>|$ |Home Assistant Integration |Y	 |Pros: All local voice control and playback device, Strong Support<br />Cons: Requires HA as well|
+|Amplifiers/Receivers + Cast	                       |$$$	     |Google Cast      	                | N	     |Pros: Minimal setup, Higher amplification, High Quality Audio<br />Cons: Expensive, Cast requires app to have sync’ed group|
+|Amplifiers/Receivers + AirPlay	                     |$$$	     |  AirPlay	                        | N	     | Pros: Minimal setup, Higher amplification, High Quality Audio<br />Cons: Expensive |
+|<a href="https://www.sonos.com/en-us/shop" target="_blank" rel="noopener noreferrer">Sonos</a><br /><a href="https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/" target="_blank" rel="noopener noreferrer">Ikea Symfonisk</a>|$$ → $$$	|Sonos (Many devices also AirPlay)| Y/N~ |Pros: Minimal setup, High Quality Audio<br />Cons: Potentially Limited to Sonos ecosystem depending upon device|
+|<a href="https://www.bluesound.com/usa/all-products" target="_blank" rel="noopener noreferrer">Bluesound Products</a>| $$$ |Bluesound, AirPlay	      |Y/N~    |Pros: Minimal setup, Exceptional Sound Quality<br />Cons: Expensive |
+| [Guition Silver Puck v2](https://aliexpress.com/item/1005007338590852.html) (DIY) | $ | Sendspin native (ESPhome) | Y | Pros: Small device to add Sendspin to any existing unit with Audio In. <br />Cons: Requires some technical knowledge to install the software. <br /> <br />DIY: Requires USB-C power and a 3.5mm stereo cable. |
+| [Guition Knob v2](https://aliexpress.com/item/1005008823969298.html) (DIY) | $ | Sendspin native (ESPhome) | Y (small speaker built-in) | Pros: As above, additionally has full metal encoder ring and its own battery and small speaker. <br />Cons: Requires some technical knowledge to install the software. <br />DIY: Requires USB-C power and a 3.5mm stereo cable. |
+| [RaspiAudio Luxe 2](https://raspiaudio.com/product/esp-muse-luxe/) (DIY) | $ | Sendspin native (ESPhome)  | N | Pros: Battery backed, can also be used as Voice assistant. <br />Cons: Sensitive to noisy WiFi, requires some technical knowledge to install the software.  |
 | [FutureProof Homes Satellite 1](https://futureproofhomes.net/products/satellite1-smart-speaker) | $$ | Sendspin native (ESPhome) | N | Pro: Bookshelf ready version available; alternately kit parts. |
 
-\# Price: $ <100USD; $$ 101-250USD; $$$ >250USD
+\# Price: $ &lt;100USD; $$ 101-250USD; $$$ &gt;250USD
 
 ^ Does the device need a separate amplifier? This will be yes unless the device can drive speakers to fill a room with quality sound.
 
