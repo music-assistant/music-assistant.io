@@ -6,6 +6,10 @@ title: "Audible"
 
 Music Assistant has support for streaming from Audible. Contributed and maintained by <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a>
 
+Audible is Amazon's audiobook service. A monthly credit or a direct purchase buys you a title, and everything you own stays in your account library.
+
+Connecting your account puts that library inside Music Assistant. Where you got to in a book comes across from Audible's own apps, so you carry on from the same place.
+
 > [!NOTE]
 > A paid subscription is required for this provider
 

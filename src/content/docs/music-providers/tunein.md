@@ -6,6 +6,10 @@ title: "TuneIn"
 
 Music Assistant has support for <a href="https://tunein.com/" target="_blank" rel="noopener noreferrer">Tunein</a>
 
+TuneIn is a directory of internet radio carrying tens of thousands of stations from around the world, along with sport, news and talk. A free account lets you save the stations you listen to as presets.
+
+This source connects Music Assistant to your TuneIn account, so those presets and the wider directory are both available.
+
 ## Features
 
 |           |                     |

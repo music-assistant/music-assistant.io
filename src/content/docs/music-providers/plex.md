@@ -6,6 +6,10 @@ title: "Plex"
 
 Music Assistant has support for using Plex (MusicLibrary). Contributed by <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> and maintained by <a href="https://github.com/anatosun" target="_blank" rel="noopener noreferrer">anatosun</a>
 
+Plex is a media server you run yourself, paired with apps for phones, TVs and browsers. It indexes the music and video held on your own storage and streams it to you wherever you are.
+
+This source connects Music Assistant to the music library on your Plex server. Everything you have already organised there becomes part of your Music Assistant library.
+
 ## Features
 
 |           |                     |
