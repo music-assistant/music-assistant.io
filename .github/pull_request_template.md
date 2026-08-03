@@ -12,7 +12,6 @@ Full guide: https://github.com/music-assistant/music-assistant.io/blob/beta/CONT
 ## Checklist
 
 - [ ] This pull request targets `beta`, and my branch was taken from `beta`
-- [ ] `pnpm build` passes locally
 - [ ] Any new page has a sidebar entry in `astro.config.mjs`
 
 ### Only if you are adding a music source or a player provider
@@ -22,3 +21,10 @@ Full guide: https://github.com/music-assistant/music-assistant.io/blob/beta/CONT
 - [ ] Icon added to `public/assets/icons/`, and it is visible against a white background
 - [ ] Entry added to `src/data/music-sources.ts` or `src/data/players.ts`, with categories
 - [ ] The page opens with a short description of the service, then what the Music Assistant source gets you
+
+---
+
+Once this is open, scroll down to the checks and wait for **Deploy Preview**. If it is green,
+click the link to see your change on the site. If it is red, click `Details`, read the error at
+the bottom of the log and push a fix to the same branch. There is no need to open a new pull
+request.

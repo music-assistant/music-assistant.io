@@ -12,20 +12,41 @@ merged without a round of back and forth.
 
 Branch from `beta`, not from `main`. If your branch is older than the last release it will be
 missing files that the build now expects, and you will get errors that have nothing to do with
-your change. If that happens, merge `beta` into your branch and try again.
+your change. If that happens, say so on the pull request and a maintainer will bring your branch
+up to date.
 
-## Run the build before you push
+## Checking your change
+
+You do not need to install anything or build the site yourself. Open the pull request and the
+site is built for you.
+
+Scroll to the checks at the bottom of your pull request and look for **Deploy Preview**.
+
+- **Green.** Click through to the preview link and you will see the whole site, with your change
+  in it, exactly as it will look once merged. Check your page there.
+- **Red.** The build found a problem. Click `Details` to open the log and scroll to the bottom.
+  The error names the file and says what to fix, and where a missing entry is the cause it
+  includes the exact block to paste. Push a fix to the same branch and it builds again on its
+  own.
+
+A red check is normal and nothing to worry about. It is there to catch the easy mistakes before
+a reviewer has to.
+
+<details>
+<summary>Building it yourself, if you already have Node</summary>
+
+Optional, and only worth it if you are making a lot of changes and want a faster loop than
+waiting on the preview.
 
 ```bash
 pnpm install
 pnpm dev      # http://localhost:4321
-pnpm build    # do this before every push
+pnpm build    # the same build the pull request runs
 ```
 
-`pnpm build` is where the checks live. It fails with an explicit message naming the file and what
-to fix. A green build locally means a green build on the site.
-
 Node 22 or newer. The lockfile is pnpm's, so use pnpm rather than npm.
+
+</details>
 
 ## Adding a music source
 
@@ -49,7 +70,8 @@ Five things, and the build will tell you if you miss the last one.
    ```
 
    This puts your source on the [I Want To Listen To](https://music-assistant.io/faq/listen-to/)
-   page. **The build fails without it.** The error message includes a ready-made entry to paste.
+   page. **The build fails without it**, and the Deploy Preview check will go red with a
+   ready-made entry for you to paste.
 
 5. **Pick the categories.** Take the "what" categories straight from the `Media Types Supported`
    row of your own Features table. The country categories are the ones people forget: tag your
