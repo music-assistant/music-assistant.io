@@ -1,0 +1,346 @@
+---
+import { existsSync } from "node:fs";
+import { getCollection } from "astro:content";
+import {
+  CATEGORY_GROUPS,
+  MUSIC_SOURCES,
+  type Category,
+  type CategoryId,
+} from "../data/music-sources";
+
+// ---------------------------------------------------------------------------
+// Guard rails for src/data/music-sources.ts.
+//
+// Everything below runs while the site is being built. A mistake in the data
+// file stops the build with an explicit message rather than shipping a broken
+// link or a missing image.
+// ---------------------------------------------------------------------------
+
+// Provider pages that intentionally have no tile on this page.
+const KNOWN_UNLISTED = new Set([
+  "music-providers", // the overview page
+  "music-providers/ambient-sounds", // fits none of the listening categories
+  "music-providers/netease-cloud-music-zh", // Chinese version of another page
+  "music-providers/qqmusic-zh", // Chinese version of another page
+]);
+
+const docs = await getCollection("docs");
+const knownSlugs = new Set(docs.map((entry) => entry.id));
+const publicDir = new URL("../../public/", import.meta.url);
+
+const allCategories: Category[] = CATEGORY_GROUPS.flatMap((g) => g.categories);
+const knownCategoryIds = new Set(allCategories.map((c) => c.id));
+
+const problems: string[] = [];
+const seenSlugs = new Set<string>();
+
+for (const source of MUSIC_SOURCES) {
+  const where = `the entry named "${source.name}"`;
+
+  if (seenSlugs.has(source.slug)) {
+    problems.push(
+      `${where} uses the slug "${source.slug}", which an earlier entry already ` +
+        `uses. Delete whichever of the two is the duplicate.`,
+    );
+  }
+  seenSlugs.add(source.slug);
+
+  if (!knownSlugs.has(source.slug)) {
+    problems.push(
+      `${where} has the slug "${source.slug}", but there is no documentation ` +
+        `page with that name. Expected a file at src/content/docs/${source.slug}.md — ` +
+        `check the spelling, and remember the slug includes the folder, for ` +
+        `example "music-providers/spotify".`,
+    );
+  }
+
+  if (!source.icon.startsWith("/assets/")) {
+    problems.push(
+      `${where} has the icon "${source.icon}". Icon paths must start with ` +
+        `"/assets/", for example "/assets/icons/spotify-icon.svg".`,
+    );
+  } else if (!existsSync(new URL(`.${source.icon}`, publicDir))) {
+    problems.push(
+      `${where} has the icon "${source.icon}", but that file does not exist. ` +
+        `Expected a file at public${source.icon} — file names are case ` +
+        `sensitive, and note that some icons end in .png and others in .svg.`,
+    );
+  }
+
+  if (source.categories.length === 0) {
+    problems.push(
+      `${where} has an empty "categories" list, so it would not appear ` +
+        `anywhere on the page. Give it at least one category.`,
+    );
+  }
+
+  for (const id of source.categories) {
+    if (!knownCategoryIds.has(id)) {
+      problems.push(
+        `${where} uses the category "${id}", which is not one of the ` +
+          `categories defined in CATEGORY_GROUPS at the top of ` +
+          `src/data/music-sources.ts. The valid categories are: ` +
+          `${[...knownCategoryIds].join(", ")}.`,
+      );
+    }
+  }
+}
+
+const sourcesFor = (id: CategoryId) =>
+  MUSIC_SOURCES.filter((source) => source.categories.includes(id));
+
+for (const id of knownCategoryIds) {
+  if (sourcesFor(id).length === 0) {
+    problems.push(
+      `The category "${id}" is defined but no music source uses it, so it ` +
+        `would appear on the page as an empty heading. Either tag a source ` +
+        `with it or remove the category.`,
+    );
+  }
+}
+
+if (problems.length > 0) {
+  throw new Error(
+    `\n\nsrc/data/music-sources.ts (used by the "I Want To Listen To" page) ` +
+      `has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
+      problems.map((problem, i) => `  ${i + 1}. ${problem}`).join("\n\n") +
+      `\n\nFix the file and build again.\n`,
+  );
+}
+
+// Not fatal: someone may have added a provider page without touching this
+// data file, and their build should not fail because of this page.
+for (const slug of knownSlugs) {
+  if (!slug.startsWith("music-providers/")) continue;
+  if (KNOWN_UNLISTED.has(slug) || seenSlugs.has(slug)) continue;
+  console.warn(
+    `[listen-to] "${slug}" has a documentation page but is not listed in ` +
+      `src/data/music-sources.ts, so it will not appear on /faq/listen-to/. ` +
+      `Add it there, or add it to KNOWN_UNLISTED in ListenTo.astro.`,
+  );
+}
+---
+
+<div class="listen-to not-content">
+  {
+    CATEGORY_GROUPS.map((group) => (
+      <nav class="listen-to__nav" aria-labelledby={`listen-nav-${group.id}`}>
+        <h2 class="listen-to__title" id={`listen-nav-${group.id}`}>
+          {group.title}
+        </h2>
+        <p class="listen-to__blurb">{group.intro}</p>
+        <ul class="listen-to__chips">
+          {group.categories.map((category) => (
+            <li>
+              <a class="listen-to__chip" href={`#listen-${category.id}`}>
+                {category.title}
+                <span class="listen-to__count">
+                  {sourcesFor(category.id).length}
+                  <span class="sr-only"> music sources</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    ))
+  }
+
+  {
+    allCategories.map((category) => (
+      <section
+        class="listen-to__section"
+        aria-labelledby={`listen-${category.id}`}
+      >
+        <h2 class="listen-to__title" id={`listen-${category.id}`} tabindex="-1">
+          {category.title}
+        </h2>
+        <p class="listen-to__blurb">{category.blurb}</p>
+        <ul class="listen-to__grid" data-pagefind-ignore>
+          {sourcesFor(category.id).map((source) => (
+            <li>
+              <a class="listen-to__tile" href={`/${source.slug}/`}>
+                <span class="listen-to__logo">
+                  <img
+                    src={source.icon}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </span>
+                <span class="listen-to__name">{source.name}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a class="listen-to__top" href="#_top">Back to the top</a>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  .listen-to {
+    margin-block: 2rem;
+  }
+
+  .listen-to__nav + .listen-to__nav {
+    margin-top: 2rem;
+  }
+
+  .listen-to__title {
+    margin: 0;
+    font-size: var(--sl-text-h3);
+    font-weight: 600;
+    line-height: var(--sl-line-height-headings);
+    color: var(--sl-color-white);
+  }
+
+  .listen-to__title:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 4px;
+    border-radius: 0.25rem;
+  }
+
+  .listen-to__blurb {
+    margin: 0.35rem 0 0;
+    font-size: var(--sl-text-sm);
+    line-height: 1.5;
+    color: var(--sl-color-gray-3);
+  }
+
+  .listen-to__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.9rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .listen-to__chip {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 999px;
+    background: var(--sl-color-bg);
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .listen-to__chip:hover {
+    background: var(--sl-color-accent-low);
+    border-color: var(--sl-color-accent);
+  }
+
+  .listen-to__chip:focus-visible,
+  .listen-to__tile:focus-visible,
+  .listen-to__top:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
+  .listen-to__count {
+    font-size: var(--sl-text-xs);
+    font-weight: 400;
+    color: var(--sl-color-gray-3);
+  }
+
+  .listen-to__section {
+    margin-top: 2.75rem;
+  }
+
+  /* auto-fill rather than auto-fit: several categories hold a single source,
+     and auto-fit would stretch that one tile across the whole page. */
+  .listen-to__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .listen-to__tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    height: 100%;
+    padding: 0.9rem 0.6rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.6rem;
+    background: var(--sl-color-bg);
+    color: var(--sl-color-white);
+    text-align: center;
+    text-decoration: none;
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .listen-to__tile:hover {
+    border-color: var(--sl-color-accent);
+    box-shadow: var(--sl-shadow-sm);
+    transform: translateY(-2px);
+  }
+
+  /* Fixed box so square icons and wide wordmarks both sit correctly. */
+  .listen-to__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+  }
+
+  .listen-to__logo img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  .listen-to__name {
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .listen-to__top {
+    display: inline-block;
+    margin-top: 0.9rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+  }
+
+  .listen-to__top:hover {
+    color: var(--sl-color-accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .listen-to__chip,
+    .listen-to__tile {
+      transition: none;
+    }
+
+    .listen-to__tile:hover {
+      transform: none;
+    }
+  }
+</style>

@@ -177,6 +177,7 @@ export default defineConfig({
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },
             { label: "How Do I...", slug: "faq/how-to" },
+            { label: "I Want To Listen To", slug: "faq/listen-to" },
             { label: "I Want To Stream To", slug: "faq/stream-to" },
             { label: "Technical Info", slug: "faq/tech-info" },
             { label: "Networking Basics", slug: "faq/networking" },
