@@ -87,12 +87,43 @@ Five things, and the build will tell you if you miss the last one.
    Two more are a judgement call rather than something the table can tell you: `live-concerts`
    for recordings of live shows, and `children` for audio aimed at younger listeners.
 
-   Last are the country categories, and these are the ones people forget. Tag your source with a
-   country if its catalogue is mainly in that language, not merely because the company is based
-   there.
+   Last are the country categories, covered just below. These are the ones people forget.
 
    The full list of valid categories is at the top of `src/data/music-sources.ts`, and the build
    lists them if you use one that does not exist.
+
+### Country categories
+
+**These are about the language people will hear, not where the company is registered.** Tag a
+source with a country when most of what it carries is in that country's language. Deezer and
+Qobuz are both French companies, but their catalogues are international, so neither is tagged
+France. Sveriges Radio broadcasts in Swedish, so it is tagged Sweden.
+
+One source can carry more than one language. Storytel is tagged both Sweden and Denmark, because
+it is sold in Denmark as Mofibo with a full Danish catalogue.
+
+**If the language you need is not on the list, add it.** Three small pieces, in
+`src/data/music-sources.ts` unless stated:
+
+1. Add the id to the `CategoryId` list at the top of the file.
+2. Add an entry to the `country` group, copying the shape of the ones already there. The title
+   is the native name and the English name together, like `Sverige / Sweden`, or a single name
+   where the two are the same.
+3. Add a flag at `public/assets/icons/listen/<id>.svg`, named after the id. Flags themselves are
+   not copyrightable, so you can take one from
+   [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:SVG_flags_by_country), where
+   every national flag is available as an SVG, or from the MIT licensed
+   [flag-icons](https://flagicons.lipis.dev/) set. Prefer a plain one over a highly detailed
+   version: the existing flags are a few hundred bytes each and are only shown about 34 pixels
+   tall. Any aspect ratio is fine and the page draws the border for you.
+
+Then tag your source with it. The build fails if the flag file is missing, and also if a category
+exists that no source uses, so all three have to land together.
+
+Do not worry about getting the flag or the wording exactly right. It will be looked at in review,
+and a rough one is much better than leaving your source out of a language its listeners search
+for. If you cannot find a flag at all, add the category without one, say so on the pull request
+and somebody will sort it out.
 
 ## Adding a player provider
 
