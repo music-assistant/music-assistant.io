@@ -39,7 +39,7 @@ Connecting your account puts your Storytel library inside Music Assistant, with 
 - Library management is supported for adding and removing audiobooks and podcasts.
 - The provider can be configured with one or more content languages to influence search and recommendations.
 
-### Configuration
+## Configuration
 
 To set up the Storytel provider, follow these steps:
 
