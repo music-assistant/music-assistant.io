@@ -23,7 +23,10 @@ Connecting your account puts your Storytel library inside Music Assistant, with 
 | [Recommendations](/ui/#view---discover) Supported |         Yes          |
 | Lyrics Supported                                  |          No          |
 | [Radio Mode](/ui/#track-menu)                     |          No          |
-| Maximum Stream Quality                             |   Lossy, AAC/MP4     |
+| Artist Top Tracks Support                         |          No          |
+| Similar Artists Support                           |          No          |
+| Similar Tracks Support                            |          No          |
+| Maximum Stream Quality                            |   Lossy, AAC/MP4     |
 | Login Method                                      |       Password       |
 
 ### Other
