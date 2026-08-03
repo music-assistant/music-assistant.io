@@ -4,7 +4,11 @@ title: "TeddyCloud"
 
 # TeddyCloud <img src="/assets/icons/teddycloud-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for <a href="https://github.com/toniebox-reverse-engineering/teddycloud" target="_blank" rel="noopener noreferrer">TeddyCloud</a>, the self-hosted, open-source server behind the Toniebox family of children's audio players. Each Tonie in a TeddyCloud library appears in Music Assistant as an audiobook, complete with chapters, that can be played to any MA players. Contributed and maintained by <a href="https://github.com/yoyixms" target="_blank" rel="noopener noreferrer">yoyixms</a>
+Music Assistant has support for <a href="https://github.com/toniebox-reverse-engineering/teddycloud" target="_blank" rel="noopener noreferrer">TeddyCloud</a>, the self-hosted, open-source server behind the Toniebox family of children's audio players. Each Tonie in a TeddyCloud library appears in Music Assistant as an audiobook, complete with chapters. Contributed and maintained by <a href="https://github.com/yoyixms" target="_blank" rel="noopener noreferrer">yoyixms</a>
+
+A Toniebox is an audio player made for children. It is a soft cube with no screen, and it is controlled by standing a small figurine called a Tonie on top of it, with each figurine standing for one story or album.
+
+The audio is not held in the figurine. It sits on a server, and TeddyCloud is that server, run by you instead of by the manufacturer. Music Assistant connects to the server rather than to the box, so the stories your children already have can be played through your speakers with no Toniebox involved.
 
 ## Features
 
@@ -37,3 +41,5 @@ The following is needed to setup this provider:
 
 - Series, episode and artwork come from TeddyCloud's tonies.json data — custom or unrecognised Tonies are still playable but show a generic title and no cover
 - Tonies configured to stream from an external live source are skipped, as there is no stored file to serve
+- Your place in a story is not shared with the Toniebox. Music Assistant keeps its own position and the box keeps its own, so a story started on one does not resume where it left off on the other. Nothing is written back to TeddyCloud
+- A Tonie's chapter marks and its story names come from two different places. Where they cannot be lined up with confidence the chapters are numbered instead of named, rather than risk a name landing on the wrong story
