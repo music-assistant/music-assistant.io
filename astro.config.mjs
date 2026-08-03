@@ -271,7 +271,7 @@ export default defineConfig({
             { label: "Amplipi", slug: "player-support/amplipi" },
             { label: "Bluesound", slug: "player-support/bluesound" },
             {
-              label: "Bose Soundtouch",
+              label: "Bose SoundTouch",
               slug: "player-support/bose-soundtouch",
             },
             { label: "DLNA", slug: "player-support/dlna" },
