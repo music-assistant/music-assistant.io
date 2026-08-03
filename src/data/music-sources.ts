@@ -6,9 +6,11 @@
 // will fail with a clear message if the slug, the icon or a category is wrong,
 // so a mistake here can never reach the live site.
 //
-// A source can belong to as many categories as it needs. Categories are taken
-// from the "Media Types Supported" row of the source's own Features table,
-// with a few deliberate exceptions noted in the comments below.
+// A source can belong to as many categories as it needs. The "Media Types
+// Supported" row of the source's own Features table says whether it offers
+// music, radio, podcasts or audiobooks, which maps onto the categories below;
+// Artists, Albums, Tracks and Playlists all mean music. The country tags and a
+// few deliberate exceptions are judgement calls, noted in the comments below.
 // ---------------------------------------------------------------------------
 
 /** Every category a source can be tagged with. */
