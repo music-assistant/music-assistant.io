@@ -63,7 +63,26 @@ The same, with `src/content/docs/player-support/<slug>.md`, the `Player Provider
 and `src/data/players.ts`. Categories there are `commercial` for devices sold ready to use, and
 `diy` for software you set up yourself.
 
+## Adding a plugin, metadata provider or audio analysis provider
+
+These do not follow a fixed structure, so there is no template to match and nothing to register
+beyond the page itself:
+
+1. **The page**, under `src/content/docs/plugins/`, `src/content/docs/metadata-providers/` or
+   `src/content/docs/audio-analysis/`.
+2. **The sidebar entry**, in the matching group in `astro.config.mjs`.
+
+There are no tiles for these, so nothing fails the build if you forget something. Copy whichever
+existing page is closest in kind to yours and follow its shape. Most open with a heading and
+icon, an attribution line, a short `## Features` list and a `## Configuration` section, but the
+detail varies from page to page and that is fine. The [House style](#house-style) and
+[Icons](#icons) notes below still apply.
+
 ## House style
+
+The opening and the writing style below apply to every page. The fixed `Features` table is
+specific to music sources and player providers; plugins and the other providers use a short
+bullet list instead.
 
 Open the page like this, and look at an existing source page for the full shape:
 
@@ -83,8 +102,8 @@ there to search.
   **one on what the Music Assistant source gets you**. Keep both to a few sentences.
 - Do not restate the Features table in prose. The table already says what is supported.
 - Plain English. Write as you would explain it to someone in person.
-- Keep the standard `Features` table rows even where the answer is `No`, so the pages line up
-  with each other.
+- On a music source or player provider page, keep every standard `Features` table row even
+  where the answer is `No`, so the pages line up with each other.
 - Use `## Configuration`, `## Known Issues / Notes` and the other standard headings at the same
   level as the existing pages.
 - External links use `<a href="..." target="_blank" rel="noopener noreferrer">`. Internal links

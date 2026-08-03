@@ -17,6 +17,8 @@ Full guide: https://github.com/music-assistant/music-assistant.io/blob/beta/CONT
 
 ### Only if you are adding a music source or a player provider
 
+<!-- Plugins, metadata providers and audio analysis providers do not need these. -->
+
 - [ ] Icon added to `public/assets/icons/`, and it is visible against a white background
 - [ ] Entry added to `src/data/music-sources.ts` or `src/data/players.ts`, with categories
 - [ ] The page opens with a short description of the service, then what the Music Assistant source gets you
