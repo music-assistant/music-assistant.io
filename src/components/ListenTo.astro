@@ -110,24 +110,35 @@ for (const id of knownCategoryIds) {
   }
 }
 
+// A new provider page must be added here too, otherwise it would quietly
+// never appear on the page. Adding a source is the moment to categorise it.
+for (const entry of docs) {
+  const slug = entry.id;
+  if (!slug.startsWith("music-providers/")) continue;
+  if (KNOWN_UNLISTED.has(slug) || seenSlugs.has(slug)) continue;
+  problems.push(
+    `"${slug}" has a documentation page but no entry in this file, so it ` +
+      `would never appear on the page. Add it to MUSIC_SOURCES, keeping the ` +
+      `list alphabetical:\n\n` +
+      `       {\n` +
+      `         name: "${entry.data.title}",\n` +
+      `         slug: "${slug}",\n` +
+      `         icon: "/assets/icons/CHANGE-ME.svg",\n` +
+      `         categories: ["CHANGE-ME"],\n` +
+      `       },\n\n` +
+      `     Use the same icon as the top of the source's own page, and pick ` +
+      `categories from: ${[...knownCategoryIds].join(", ")}. If the source ` +
+      `genuinely belongs in none of them, add its slug to KNOWN_UNLISTED in ` +
+      `src/components/ListenTo.astro instead.`,
+  );
+}
+
 if (problems.length > 0) {
   throw new Error(
     `\n\nsrc/data/music-sources.ts (used by the "I Want To Listen To" page) ` +
       `has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
       problems.map((problem, i) => `  ${i + 1}. ${problem}`).join("\n\n") +
       `\n\nFix the file and build again.\n`,
-  );
-}
-
-// Not fatal: someone may have added a provider page without touching this
-// data file, and their build should not fail because of this page.
-for (const slug of knownSlugs) {
-  if (!slug.startsWith("music-providers/")) continue;
-  if (KNOWN_UNLISTED.has(slug) || seenSlugs.has(slug)) continue;
-  console.warn(
-    `[listen-to] "${slug}" has a documentation page but is not listed in ` +
-      `src/data/music-sources.ts, so it will not appear on /faq/listen-to/. ` +
-      `Add it there, or add it to KNOWN_UNLISTED in ListenTo.astro.`,
   );
 }
 ---
