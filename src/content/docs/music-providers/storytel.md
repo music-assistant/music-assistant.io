@@ -4,7 +4,11 @@ title: "Storytel"
 
 # Storytel <img src="/assets/icons/storytel.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for [Storytel](https://www.storytel.com). In some regions the service is also known as [Mofibo](https://www.mofibo.com). This provider will allow streaming of audiobooks and podcasts from one of the world's largest subscription listening services. This provider is contributed and maintained by [Jonas Pedersen](https://github.com/jonasbp2011)
+Music Assistant has support for [Storytel](https://www.storytel.com), which in some countries is sold as [Mofibo](https://www.mofibo.com). Contributed and maintained by [Jonas Pedersen](https://github.com/jonasbp2011)
+
+Storytel is a Swedish subscription service for audiobooks and podcasts, and one of the largest of its kind. A monthly fee covers unlimited listening rather than buying titles one at a time, and the catalogue is strongest in the Nordic languages alongside the usual English titles.
+
+Connecting your account puts your Storytel library inside Music Assistant, with the catalogue there to search. Where you got to in a book travels in both directions, so a title started in the Storytel app can be picked up again in Music Assistant, or the other way round.
 
 > [!NOTE]
 > A valid Storytel subscription and account are required to add this provider.
@@ -19,7 +23,10 @@ Music Assistant has support for [Storytel](https://www.storytel.com). In some re
 | [Recommendations](/ui/#view---discover) Supported |         Yes          |
 | Lyrics Supported                                  |          No          |
 | [Radio Mode](/ui/#track-menu)                     |          No          |
-| Maximum Stream Quality                             |   Lossy, AAC/MP4     |
+| Artist Top Tracks Support                         |          No          |
+| Similar Artists Support                           |          No          |
+| Similar Tracks Support                            |          No          |
+| Maximum Stream Quality                            |   Lossy, AAC/MP4     |
 | Login Method                                      |       Password       |
 
 ### Other
@@ -32,7 +39,7 @@ Music Assistant has support for [Storytel](https://www.storytel.com). In some re
 - Library management is supported for adding and removing audiobooks and podcasts.
 - The provider can be configured with one or more content languages to influence search and recommendations.
 
-### Configuration
+## Configuration
 
 To set up the Storytel provider, follow these steps:
 

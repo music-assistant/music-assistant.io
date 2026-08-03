@@ -250,6 +250,7 @@ export default defineConfig({
             { label: "SomaFM Radio", slug: "music-providers/somafm-radio" },
             { label: "SoundCloud", slug: "music-providers/soundcloud" },
             { label: "Spotify", slug: "music-providers/spotify" },
+            { label: "Storytel", slug: "music-providers/storytel" },
             { label: "Subsonic", slug: "music-providers/subsonic" },
             { label: "Sveriges Radio", slug: "music-providers/sveriges-radio" },
             { label: "TeddyCloud", slug: "music-providers/teddycloud" },

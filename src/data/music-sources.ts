@@ -137,13 +137,13 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "sweden",
         icon: "/assets/icons/listen/sweden.svg",
         title: "Sverige / Sweden",
-        blurb: "Swedish public service radio.",
+        blurb: "Swedish public service radio, and audiobooks in Swedish.",
       },
       {
         id: "denmark",
         icon: "/assets/icons/listen/denmark.svg",
         title: "Danmark / Denmark",
-        blurb: "Danish streaming, with plenty of Danish music alongside the usual catalogue.",
+        blurb: "Danish music streaming, and audiobooks in Danish.",
       },
       {
         id: "russia",
@@ -404,6 +404,14 @@ export const MUSIC_SOURCES: MusicSource[] = [
     slug: "music-providers/spotify",
     icon: "/assets/icons/spotify-icon.svg",
     categories: ["streaming", "podcasts", "audiobooks"],
+  },
+  {
+    name: "Storytel",
+    slug: "music-providers/storytel",
+    icon: "/assets/icons/storytel.svg",
+    // Swedish service, and sold in Denmark as Mofibo, with a large catalogue
+    // in both languages.
+    categories: ["audiobooks", "podcasts", "sweden", "denmark"],
   },
   {
     name: "Subsonic",
