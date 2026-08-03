@@ -1,0 +1,116 @@
+# Contributing to the Music Assistant documentation
+
+Thanks for helping out. This page covers what a documentation pull request needs so it can be
+merged without a round of back and forth.
+
+## Which branch
+
+| Branch | What it is |
+|:--|:--|
+| `beta` | The next release. **Open your pull request against this branch.** Published at [beta.music-assistant.io](https://beta.music-assistant.io) |
+| `main` | The current release, published at [music-assistant.io](https://music-assistant.io). Maintainers merge `beta` into it at release time |
+
+Branch from `beta`, not from `main`. If your branch is older than the last release it will be
+missing files that the build now expects, and you will get errors that have nothing to do with
+your change. If that happens, merge `beta` into your branch and try again.
+
+## Run the build before you push
+
+```bash
+pnpm install
+pnpm dev      # http://localhost:4321
+pnpm build    # do this before every push
+```
+
+`pnpm build` is where the checks live. It fails with an explicit message naming the file and what
+to fix. A green build locally means a green build on the site.
+
+Node 22 or newer. The lockfile is pnpm's, so use pnpm rather than npm.
+
+## Adding a music source
+
+Five things, and the build will tell you if you miss the last one.
+
+1. **The page**, at `src/content/docs/music-providers/<slug>.md`. Copy an existing page and work
+   from that. Structure is covered under [House style](#house-style) below.
+2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
+3. **The sidebar entry**, in the `Music Sources` group in `astro.config.mjs`, in alphabetical
+   order. Nothing checks this, so it is the easiest one to forget. A page with no sidebar entry
+   still builds but is unreachable from the menu.
+4. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
+
+   ```ts
+   {
+     name: "Example",
+     slug: "music-providers/example",
+     icon: "/assets/icons/example-icon.svg",
+     categories: ["streaming", "podcasts"],
+   },
+   ```
+
+   This puts your source on the [I Want To Listen To](https://music-assistant.io/faq/listen-to/)
+   page. **The build fails without it.** The error message includes a ready-made entry to paste.
+
+5. **Pick the categories.** Take the "what" categories straight from the `Media Types Supported`
+   row of your own Features table. The country categories are the ones people forget: tag your
+   source with a country if its catalogue is mainly in that language, not merely because the
+   company is based there. The full list of valid categories is at the top of
+   `src/data/music-sources.ts`, and the build lists them if you use one that does not exist.
+
+## Adding a player provider
+
+The same, with `src/content/docs/player-support/<slug>.md`, the `Player Providers` sidebar group,
+and `src/data/players.ts`. Categories there are `commercial` for devices sold ready to use, and
+`diy` for software you set up yourself.
+
+## House style
+
+Open the page like this, and look at an existing source page for the full shape:
+
+```markdown
+# Example <img src="/assets/icons/example-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+
+Music Assistant has support for [Example](https://example.com). Contributed and maintained by [you](https://github.com/you)
+
+Example is a subscription streaming service from Sweden, with a catalogue of around a million
+tracks. A monthly fee covers unlimited listening.
+
+Connecting your account puts your Example library inside Music Assistant, with the catalogue
+there to search.
+```
+
+- **One short paragraph on what the service is**, for a reader who has never heard of it, then
+  **one on what the Music Assistant source gets you**. Keep both to a few sentences.
+- Do not restate the Features table in prose. The table already says what is supported.
+- Plain English. Write as you would explain it to someone in person.
+- Keep the standard `Features` table rows even where the answer is `No`, so the pages line up
+  with each other.
+- Use `## Configuration`, `## Known Issues / Notes` and the other standard headings at the same
+  level as the existing pages.
+- External links use `<a href="..." target="_blank" rel="noopener noreferrer">`. Internal links
+  use ordinary markdown with a trailing slash, like `[the queue](/usage/#the-queue)`.
+
+## Icons
+
+Put the file in `public/assets/icons/` and reference it as `/assets/icons/<name>`. SVG or PNG are
+both fine.
+
+**Check it is visible against a white background.** The site is light only, and a white logo on
+transparency will be invisible both on your page heading and on its tile. If the only logo you
+have is white, put it on a dark rounded plate, as several existing icons do.
+
+Keep PNGs small. They are served as they are, with no resizing, and they are displayed at about
+48 pixels on the tile pages.
+
+## Editing an `.mdx` page
+
+Most pages are `.md`. A few are `.mdx` because they use components. MDX is stricter than
+markdown and two things bite:
+
+- `<` starts a tag, so a bare `<100` breaks the build. Write `&lt;100`.
+- Every tag must be closed, so `<br>` must be `<br />`.
+
+## Anything else
+
+Ask on [Discord](https://discord.gg/kaVm8hGpne). A pull request that is not quite right is much
+more welcome than no pull request.

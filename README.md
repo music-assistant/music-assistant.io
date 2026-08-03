@@ -6,6 +6,12 @@ Documentation site for Music Assistant built with Astro Starlight.
 
 **🔗 Beta Site**: https://beta.music-assistant.io
 
+## Contributing
+
+Opening a pull request? See **[CONTRIBUTING.md](CONTRIBUTING.md)** first. Documentation pull
+requests go to the `beta` branch, and adding a music source or player provider takes a few steps
+beyond writing the page.
+
 ## Quick Start
 
 ```bash
