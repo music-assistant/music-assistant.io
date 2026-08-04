@@ -6,6 +6,10 @@ title: "Nugs.net"
 
 Music Assistant has support for streaming your music from <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a>. Contributed and maintained by <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a>
 
+Nugs.net is a subscription service for live concert recordings, run with the artists themselves. Its catalogue leans towards acts with a long history of taped shows, and many concerts appear soon after they are played.
+
+This source signs Music Assistant in to your account, so the shows you have access to appear in your library.
+
 > [!NOTE]
 > A paid subscription is required to use this source
     
@@ -19,6 +23,9 @@ Music Assistant has support for streaming your music from <a href="https://www.n
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | <a href="https://www.music-assistant.io/ui/#track-menu" target="_blank" rel="noopener noreferrer">Radio Mode</a> | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossless FLAC (192 kHz / 24 bit) |
 | Login Method | Password |
 

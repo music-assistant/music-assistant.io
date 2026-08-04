@@ -25,7 +25,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 
 ### For the Host
 
-1. Enable the Party plugin in Music Assistant settings
+1. Enable the Party plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`
 2. Configure which player will be used for party (or leave on Auto to use the last active player)
 3. Open the Party dashboard on the screen of your choice to display the live queue and guest join QR code
 
@@ -154,6 +154,14 @@ When remote access is disabled, guests must be on the same network as your Music
 - When a Party instance is disabled or removed, its guest join codes are revoked. The shared guest account is deleted only when the last instance is removed
 - Rate limiting tokens are stored in the guest's browser - clearing browser data resets their limits
 - The Party Dashboard works best on landscape displays; the guest view is optimized for portrait (mobile)
+
+### ⚠️ Opening the QR link on a signed-in device
+
+The QR code (and the matching shareable link) issues the browser a **guest token**, which is stored in `localStorage`. When the link is opened in a browser that is already signed in to Music Assistant as a normal user, the guest token **replaces** the existing session, and the UI will continue redirecting back to the guest dashboard — there is currently no in-app "log out of guest mode" button.
+
+**Recommendation:** the QR code should always be scanned on the guest's own device, or the link should be opened in a **private/incognito window**. It should not be opened in the same browser profile that is used to administer Music Assistant.
+
+**Recovery from guest mode:** with the Music Assistant frontend open, the browser's DevTools should be launched, `localStorage.clear()` should be run in the Console, and the page reloaded. The normal login screen will then be presented.
 
 ## Tips for Hosting
 

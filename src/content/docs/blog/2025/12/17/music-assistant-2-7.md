@@ -2,17 +2,37 @@
 head:
   - tag: meta
     attrs:
-      property: og:image
-      content: /images/blog/2025/12/17/music-assistant-2-7/art.webp
+      property: "og:image"
+      content: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2025/12/17/music-assistant-2-7"
+  - tag: meta
+    attrs:
+      name: "twitter:image"
+      content: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2025/12/17/music-assistant-2-7"
   - tag: meta
     attrs:
       property: og:image:alt
       content: "Music Assistant is taking over the airwaves"
+  - tag: meta
+    attrs:
+      property: "og:image:title1"
+      content: "What's new in"
+  - tag: meta
+    attrs:
+      property: "og:image:title2"
+      content: "Music Assistant 2.7"
+  - tag: meta
+    attrs:
+      property: "og:image:author"
+      content: "Marcel van der Veldt"
+  - tag: meta
+    attrs:
+      property: "og:image:category"
+      content: "Announcements"
 
 title: "Music Assistant 2.7 - Taking over the airwaves"
 description: "With a visual overhaul, new features and providers, and a custom-built streaming protocol, it's our biggest update yet!"
 cover:
-    image: /public/images/blog/2025/12/17/music-assistant-2-7/art.webp
+    image: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2025/12/17/music-assistant-2-7"
     alt: "Music Assistant is taking over the airwaves"
 excerpt: "It's been a busy few months composing behind the scenes, building up to a massive crescendo. Today, the beat finally drops on Music Assistant's biggest update yet. With version 2.7, Music Assistant is getting all jazzed up with a visual overhaul, a chart-topping lineup of new features and providers, along with a brand-new streaming protocol we're spinning up ourselves."
 date: 2025-12-17T00:00:00.000Z

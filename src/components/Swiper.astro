@@ -1,0 +1,165 @@
+---
+interface Breakpoint {
+	slidesPerView?: number | 'auto';
+	spaceBetween?: number;
+}
+
+interface Props {
+	slidesPerView?: number | 'auto';
+	spaceBetween?: number;
+	loop?: boolean;
+	pagination?: boolean;
+	navigation?: boolean;
+	autoplay?: boolean | number;
+	centeredSlides?: boolean;
+	breakpoints?: Record<string, Breakpoint>;
+	class?: string;
+}
+
+const {
+	slidesPerView = 1,
+	spaceBetween = 0,
+	loop = false,
+	pagination = false,
+	navigation = false,
+	autoplay = false,
+	centeredSlides = false,
+	breakpoints,
+	class: className = '',
+} = Astro.props;
+
+const options = {
+	slidesPerView,
+	spaceBetween,
+	loop,
+	pagination,
+	navigation,
+	autoplay,
+	centeredSlides,
+	breakpoints,
+};
+---
+
+<div class:list={['ma-swiper', className]} data-swiper-options={JSON.stringify(options)}>
+	<div class="swiper">
+		<div class="swiper-wrapper">
+			<slot />
+		</div>
+		{pagination && <div class="swiper-pagination"></div>}
+		{
+			navigation && (
+				<>
+					<div class="swiper-button-prev" />
+					<div class="swiper-button-next" />
+				</>
+			)
+		}
+	</div>
+</div>
+
+<script>
+	import Swiper from 'swiper';
+	import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+	import 'swiper/css';
+	import 'swiper/css/navigation';
+	import 'swiper/css/pagination';
+
+	const init = () => {
+		document.querySelectorAll<HTMLElement>('.ma-swiper:not([data-swiper-ready])').forEach((host) => {
+			const swiperEl = host.querySelector<HTMLElement>('.swiper');
+			if (!swiperEl) return;
+
+			let options: any = {};
+			try {
+				options = JSON.parse(host.dataset.swiperOptions || '{}');
+			} catch {
+				options = {};
+			}
+
+			const modules: any[] = [];
+			if (options.pagination) modules.push(Pagination);
+			if (options.navigation) modules.push(Navigation);
+			if (options.autoplay) modules.push(Autoplay);
+
+			new Swiper(swiperEl, {
+				modules,
+				slidesPerView: options.slidesPerView ?? 1,
+				spaceBetween: options.spaceBetween ?? 0,
+				loop: !!options.loop,
+				centeredSlides: !!options.centeredSlides,
+				breakpoints: options.breakpoints,
+				pagination: options.pagination
+					? { el: swiperEl.querySelector('.swiper-pagination'), clickable: true }
+					: false,
+				navigation: options.navigation
+					? {
+							nextEl: swiperEl.querySelector('.swiper-button-next'),
+							prevEl: swiperEl.querySelector('.swiper-button-prev'),
+						}
+					: false,
+				autoplay:
+					typeof options.autoplay === 'number'
+						? { delay: options.autoplay }
+						: options.autoplay
+							? { delay: 3000 }
+							: false,
+			});
+
+			host.dataset.swiperReady = 'true';
+		});
+	};
+
+	init();
+	document.addEventListener('astro:page-load', init);
+</script>
+
+<style is:global>
+	.ma-swiper {
+		--swiper-theme-color: var(--sl-color-accent);
+		--swiper-navigation-color: var(--sl-color-accent);
+		--swiper-pagination-color: var(--sl-color-accent);
+		--swiper-pagination-bullet-inactive-color: var(--sl-color-gray-4);
+		--swiper-pagination-bullet-inactive-opacity: 0.6;
+		--swiper-pagination-bullet-size: 10px;
+		--swiper-pagination-bullet-horizontal-gap: 6px;
+		--swiper-pagination-bottom: 0;
+		--swiper-navigation-size: 40px;
+		margin-block: 1.5rem;
+	}
+	.ma-swiper .swiper {
+		padding-bottom: 2rem;
+	}
+	.ma-swiper .swiper-slide {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: auto;
+	}
+	.ma-swiper .swiper-slide img {
+		display: block;
+		max-width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+	}
+	.ma-swiper .swiper-button-prev,
+	.ma-swiper .swiper-button-next {
+		background-color: var(--sl-color-bg);
+		border-radius: 100%;
+		transition: background-color 0.15s ease, border-color 0.15s ease;
+	}
+	.ma-swiper .swiper-button-prev:hover,
+	.ma-swiper .swiper-button-next:hover {
+		background-color: var(--sl-color-accent-high);
+		border-color: var(--sl-color-accent);
+		color: #ffffff;
+	}
+	.ma-swiper .swiper-navigation-icon {
+		height: 60%;
+	}
+	.ma-swiper .swiper-pagination {
+		margin: 0;
+	}
+	.ma-swiper .swiper-pagination-bullet-active {
+		background-color: var(--sl-color-accent);
+	}
+</style>

@@ -5,10 +5,7 @@ description: Features and Notes for the Yandex Station Player Provider
 
 # Yandex Station
 
-Music Assistant can play music on [Yandex Station](https://station.yandex.ru/) smart speakers over the local protocol — no cloud roundtrip for audio.
-
-Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
-The implementation is based on the [AlexxIT/YandexStation](https://github.com/AlexxIT/YandexStation) Home Assistant integration.
+Music Assistant can play music on <a href="https://station.yandex.ru/" target="_blank" rel="noopener noreferrer">Yandex Station</a> smart speakers over the local protocol — no cloud roundtrip for audio. Contributed and maintained by <a href="https://github.com/trudenboy" target="_blank" rel="noopener noreferrer">Mikhail Nevskiy</a>
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
@@ -16,25 +13,18 @@ The implementation is based on the [AlexxIT/YandexStation](https://github.com/Al
 > [!WARNING]
 > Stations must be on the **same local network** as the Music Assistant server. The Glagol WebSocket endpoint is only exposed on the LAN and streams are served over plain HTTP from the MA stream server — stations reject HTTPS URLs on the local network.
 
-> [!NOTE]
-> Full provider documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-station](https://trudenboy.github.io/ma-provider-yandex-station/)**
-
-
 ## Features
 
-|           |                     |
-|:-----------------------|:---------------------:|
-| Auto-discovery (mDNS `_yandexio._tcp.local.`) | Yes |
-| Transport control (play / pause / stop / seek / next / prev) | Yes |
-| Volume control | Yes (0–100, mapped to Glagol 0.0–1.0) |
-| Real-time state updates | Yes (Glagol WebSocket push) |
-| Lossless audio | Yes (FLAC via MA stream server) |
-| Audio announcements | Yes (streamed via the MA-hosted announcement URL) |
-| Power control (on/off) | Yes (via Yandex scenarios) |
-| Voice-control integration | Yes *(experimental, opt-in)* |
-| Intercept native playback to another MA player | Yes *(experimental, opt-in)* |
-| Multiple instances | No |
-| Login Method | QR / Device Flow / Cookies |
+- Stations are auto-detected by Music Assistant once they are on the same network
+- Play, pause, stop, seek, next and previous, with volume control
+- Lossless FLAC playback, streamed from the Music Assistant server
+- Audio announcements
+- Power on and off, via Yandex scenarios
+- Playback state updates in real time
+- Voice control integration, so talking to Alice during playback pauses and resumes the queue (experimental, off by default)
+- Intercept native Station playback and move it to another Music Assistant player (experimental, off by default)
+- Login with Device Flow, a QR code or cookies
+- Only one instance of this provider can be configured
 
 ### Supported station models
 
@@ -42,17 +32,19 @@ Any Yandex Station that exposes the local Glagol API is supported, including Sta
 
 ## Configuration
 
-Setup requires logging in with a Yandex account that owns the stations. The provider supports three authentication methods, all of which yield the tokens needed for the local Glagol connection.
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Yandex Station`.
+2. Sign in with the Yandex account that owns the stations, using one of the authentication methods below.
+3. Your stations will be discovered automatically and will appear in the player list.
+
+If a station does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ### Authentication
 
-- **Device Flow** *(recommended)* — Music Assistant shows a short code; confirm it at [yandex.com/device](https://yandex.com/device) in a browser signed in to your Yandex account. Yields a refresh token so the session renews silently in the background.
+- **Device Flow** *(recommended)* — Music Assistant shows a short code; confirm it at <a href="https://yandex.com/device" target="_blank" rel="noopener noreferrer">yandex.com/device</a> in a browser signed in to your Yandex account. Yields a refresh token so the session renews silently in the background.
 - **QR code** — Scan the QR shown during setup with the Yandex app (or phone camera) and confirm the login. No refresh token: the session must be renewed manually when it expires.
 - **Cookies (advanced fallback)** — Paste Yandex session cookies as a JSON array exported from browser dev tools. Use when the other two methods are blocked by your network or account.
 
-After login, stations on the same network are auto-discovered via mDNS and registered as players.
-
-### Settings
+## Settings
 
 - **Remember session** — store the refresh token / tokens so the provider survives MA restarts without re-authentication. On by default.
 - **Enable intercept feature** *(provider-level, advanced)* — master switch for the intercept feature (see below). Off by default; without it, no per-player intercept setting takes effect.

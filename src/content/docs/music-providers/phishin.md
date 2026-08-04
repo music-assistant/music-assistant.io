@@ -8,6 +8,8 @@ Music Assistant has support for <a href="https://phish.in/" target="_blank" rel=
 
 Phish.in provides a comprehensive platform for fans to discover, stream, and share live audience recordings of the band Phish, which is known for its improvisational rock music.
 
+It is free to use and needs no account. This source makes those recordings available in Music Assistant as albums, so a show can be browsed and played like anything else in your library.
+
 ## Features
 
 |           |                     |
@@ -18,6 +20,9 @@ Phish.in provides a comprehensive platform for fans to discover, stream, and sha
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                     | 
 | Maximum Stream Quality | MP3 (16 bit, 44.1 kHz) |
 | Login Method | None |
 
