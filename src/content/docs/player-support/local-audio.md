@@ -24,6 +24,11 @@ Music Assistant can play audio directly through soundcards attached to the machi
 - This provider uses the Sendspin provider under the hood for timing and synchronization, so Sendspin must remain enabled
 - The PulseAudio/PipeWire backend requires pactl (from pulseaudio-utils) and the PulseAudio client libraries to be installed on the host
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Local Audio Out`.
+2. The soundcards attached to the machine running the MA server are detected automatically and each output appears as its own player.
+
 ## Settings
 
 For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages. Specific settings available for this provider are:

@@ -6,6 +6,10 @@ title: "Apple Music"
 
 Music Assistant has support for <a href="https://music.apple.com/" target="_blank" rel="noopener noreferrer">Apple Music</a>! Contributed and maintained by <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener noreferrer">MarvinSchenkel</a>
 
+Apple Music is Apple's subscription streaming service, with a catalogue of around 100 million songs plus curated playlists and stations. It is the same library you get in the Music app on an iPhone, iPad or Mac.
+
+This source signs Music Assistant in to your Apple Music account, so your saved artists, albums and playlists sit alongside the rest of your music, with the full catalogue there to search and browse.
+
 > [!NOTE]
 > - A paid subscription is required to add this Music Source. 
 > - Audio playback is not officially supported by Apple, use at your own risk

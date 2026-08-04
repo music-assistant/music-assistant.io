@@ -4,6 +4,10 @@ title: "Play Announcement Action"
 
 # MA play_announcement Action
 
+> [!NOTE]
+> This action is used from Home Assistant scripts and automations and requires the [Home Assistant integration](/integration/installation/). See [Home Assistant scripts and automations](/faq/how-to/#home-assistant-scripts-and-automations) for examples.
+
+
 This action allows you to send audio announcements via a URL to a player. The URL could be accessed in a variety of ways. For example:
 
 - External such as `https://www.soundjay.com/door/doorbell-5.mp3` 

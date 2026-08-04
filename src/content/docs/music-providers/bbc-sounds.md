@@ -6,6 +6,10 @@ title: "BBC Sounds"
 
 Music Assistant has support for streaming from BBC Sounds. Contributed and maintained by <a href="https://github.com/kieranhogg" target="_blank" rel="noopener noreferrer">Kieran Hogg</a>
 
+BBC Sounds is the BBC's free audio service. It carries the live BBC radio stations, programmes to catch up on after broadcast, podcasts and music mixes.
+
+This source brings all of that into Music Assistant. It works without an account, though signing in adds your personalised content and some programmes that are only available in the UK.
+
 ## Features
 
 |           |                     |
