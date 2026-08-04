@@ -11,7 +11,7 @@ MusicBrainz is an open music encyclopedia that helps Music Assistant match the s
 
 Music Assistant can show an **Artist Events** recommendation row with important dates: artist birthdays, memorials (death anniversaries), band founding dates, and disbanded dates. When enabled, this recommendation row appears on your Discover page.
 
-<img width="2160" height="1188" alt="Artist Events recommendation showing timeline of events" src="/images/metadata-providers/musicbrainz-timeline.png" loading="lazy" />
+<img width="2160" height="1188" alt="Artist Events recommendation showing timeline of events" src="/assets/screenshots/musicbrainz/timeline.png" loading="lazy" />
 
 Events are grouped by type:
 
@@ -24,7 +24,7 @@ Events are grouped by type:
 
 The provider has one configurable setting:
 
-<img width="4512" height="1380" alt="Advanced configuration settings" src="/images/metadata-providers/musicbrainz-config.png" loading="lazy" />
+<img width="4512" height="1380" alt="Advanced configuration settings" src="/assets/screenshots/musicbrainz/config.png" loading="lazy" />
 
 - **Recommendation Days** (default: 3, range: 1-15) — How many days before and after today to include in the artist events recommendation row. For example, 3 days shows events from 3 days ago through 3 days ahead (7 days total window).
 
