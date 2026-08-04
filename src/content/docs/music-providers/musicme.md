@@ -8,6 +8,8 @@ Music Assistant has support for [MusicMe](https://www.musicme.com). Contributed 
 
 MusicMe is a French music streaming service operated by ApachNetwork with a catalogue of 13M+ tracks from major and independent labels.
 
+This source signs Music Assistant in to your MusicMe account and makes the catalogue available to search and browse.
+
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by MusicMe.
 
@@ -25,6 +27,9 @@ MusicMe is a French music streaming service operated by ApachNetwork with a cata
 | [Recommendations](/ui/#view-home) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                     | 
 | Maximum Stream Quality | AAC in MP4 (44.1 kHz) |
 | Login Method | Email + Password |
 

@@ -9,6 +9,8 @@ Music Assistant has support for personal radio stations from [Pandora](https://w
 
 Pandora provides personalized radio stations that play an endless stream of songs based on the user's musical preferences.
 
+Pandora is officially available in the United States only. This source brings the stations from your account into Music Assistant.
+
 > [!NOTE]
 > Both the free and paid subscription options are supported
 
@@ -22,6 +24,9 @@ Pandora provides personalized radio stations that play an endless stream of song
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy, MP3 (192kbps) |
 | Login Method | Password |
 

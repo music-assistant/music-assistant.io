@@ -8,14 +8,13 @@ Remote Access allows you to securely connect to your Music Assistant server from
 
 ## Configuration
 
-- Toggle the Remote Access Status to on
-- For those with a Nabu Casa subscription, ensure the option `WebRTC Connections` (in the Home Assistant Cloud settings) is ON
+- Toggle the Remote Access Status to on. Setup is automatic and further instructions are shown in the MA UI
+- If you have a <a href="https://www.nabucasa.com/" target="_blank" rel="noopener noreferrer">Nabu Casa</a> (Home Assistant Cloud) subscription, ensure the option `WebRTC Connections` (in the Home Assistant Cloud settings) is ON
 
-> [!NOTE]
-> A Nabu Casa subscription is not required for this functionality unless running in a complex network environment. For example, double NAT or mobile carriers or corporate networks blocking standard <a href="https://medium.com/@jamesbordane57/what-is-a-stun-server-df3563dbf14a" target="_blank" rel="noopener noreferrer">STUN servers</a>. This is where TURN servers (which Naba Casa provides) are useful as they basically relay the traffic.
-
-Setup is automatic and further instructions are shown in the MA UI
+For most users this is all that is needed.
 
 ## Technical Details
+
+Remote access usually works without a Nabu Casa subscription. The exception is complex network environments, for example double NAT, mobile carriers, or corporate networks blocking standard <a href="https://medium.com/@jamesbordane57/what-is-a-stun-server-df3563dbf14a" target="_blank" rel="noopener noreferrer">STUN servers</a>. This is where TURN servers (which Nabu Casa provides) are useful as they relay the traffic.
 
 Further information is shown in the MA UI.

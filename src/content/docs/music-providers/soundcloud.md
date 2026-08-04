@@ -6,6 +6,10 @@ title: "SoundCloud"
 
 Music Assistant has support for Soundcloud. Contributed by <a href="https://github.com/gieljnssns" target="_blank" rel="noopener noreferrer">gieljnssns</a>. Maintained by <a href="https://github.com/robsonke" target="_blank" rel="noopener noreferrer">robsonke</a>
 
+SoundCloud is a site where anyone can upload and share audio, so a great deal of what is on it comes straight from the artist. It is where DJ mixes, remixes, demos and music that has not been released anywhere else tend to turn up.
+
+Connecting your account puts what you have liked and followed on SoundCloud into Music Assistant, with the wider catalogue there to search.
+
 ## Features
 
 |           |                     |
@@ -16,6 +20,9 @@ Music Assistant has support for Soundcloud. Contributed by <a href="https://gith
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | Lossy AAC (256kbps) |
 | Login Method | Cookie |
 

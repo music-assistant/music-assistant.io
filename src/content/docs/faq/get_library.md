@@ -4,6 +4,10 @@ title: "Get Library Action"
 
 # MA get_library Action
 
+> [!NOTE]
+> This action is used from Home Assistant scripts and automations and requires the [Home Assistant integration](/integration/installation/). See [Home Assistant scripts and automations](/faq/how-to/#home-assistant-scripts-and-automations) for examples.
+
+
 This action allows you to retrieve the full details of the items from the library
 
 ![image](/assets/screenshots/service-call/get_library.png)
@@ -45,3 +49,6 @@ script:
               target:
                 entity_id: media_player.ma_kitchen_speaker
 ```
+
+> [!NOTE]
+> Replace the `config_entry_id` value with the one for your own MA integration; the example above will not work as-is. The easiest way to get yours is to build the action once with the UI editor in Home Assistant's Developer Tools > Actions and then switch to YAML view.

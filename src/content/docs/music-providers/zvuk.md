@@ -6,6 +6,10 @@ title: "Zvuk Music"
 
 Music Assistant has support for [Zvuk Music](https://zvuk.com). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 
+Zvuk is a Russian music streaming service with a large Russian language catalogue alongside international releases, and lossless audio for subscribers.
+
+Connecting your account brings your Zvuk library and playlists into Music Assistant, and the catalogue can be searched from there.
+
 This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvuk-music) library.
 
 > [!CAUTION]
@@ -28,6 +32,9 @@ This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvu
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | Lossless FLAC (with subscription) |
 | Login Method | Token |
 

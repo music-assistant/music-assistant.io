@@ -12,6 +12,7 @@ To achieve this functionality both the HA plugin and the [HA Player Provider](/p
 
 - Allows HA media players to be players in the MA User Interface
 - Allows HA entities to be linked to power, mute or volume controls of any player available in MA. This can be useful if the player doesn't support the feature natively or in advanced use cases
+- Exposes supported Home Assistant AI-query and text-to-speech capabilities to Music Assistant plugins that need them
  
 ## Configuration
 
@@ -20,6 +21,21 @@ Before the Plugin can be added the HA Integration must be [installed](/integrati
 - Navigate to MA SETTINGS>> PLUGINS and add the plug-in
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
+
+## AI and text-to-speech features
+
+Some Music Assistant plugins, such as [AI Radio](/plugins/ai-radio/), use the Home Assistant plugin as a bridge to Home Assistant's AI/conversation and text-to-speech services.
+
+To use these features:
+
+1. Configure an LLM/conversation integration in Home Assistant. Examples include OpenAI Conversation, Google Generative AI, or a local conversation agent.
+2. Configure a text-to-speech entity in Home Assistant and test that it can speak a short message.
+3. In Music Assistant, open the Home Assistant plugin settings.
+4. Under **Features**, select the Home Assistant **Text-to-Speech entity** Music Assistant should use.
+5. Under **Features**, select the Home Assistant **AI Task entity** Music Assistant should use for AI queries.
+6. Open the Music Assistant plugin that needs AI or TTS and retry its setup.
+
+The exact LLM model, TTS voice, language, speed, and audio quality are controlled by the configured Home Assistant services. The Home Assistant plugin only selects which Home Assistant `tts` and `ai_task` entities Music Assistant should call.
 
 ## Known Issues / Notes
 

@@ -14,6 +14,13 @@ Music Assistant has support for Denon & Marantz devices with [HEOS](https://www.
 - MA will follow group being created/updated/removed from the HEOS app
 - MA will show metadata if the player is playing non-MA content
 
+## Configuration
+
+1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `HEOS`.
+2. Your HEOS devices will be discovered automatically and will appear in the player list, usually within a minute.
+
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
@@ -23,7 +30,6 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 In addition to the [Individual Player Settings](/settings/individual-player/) the HEOS players have the following settings:
 
 - <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`.
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Please note some older (Generation 1) devices only support up to 48kHz/16bit. Content with unsupported sample rates will be resampled.
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 - <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues.
 - <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
