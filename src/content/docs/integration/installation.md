@@ -6,7 +6,7 @@ title: "Installing the HA Integration"
 
 The Home Assistant integration is the piece that makes your Music Assistant players appear in Home Assistant, ready to use from the dashboard, in automations and scripts, and by voice. It is also the first step for the reverse direction, since the Home Assistant plugin cannot be added until the integration is in place.
 
-If you are not sure whether this is the piece you need, or how it differs from the Home Assistant plugin, start with [how the pieces fit together](/integration/#how-the-pieces-fit-together) and come back here.
+If you are not sure whether this is the piece you need, or how it differs from the Home Assistant plugin or Home Assistant Media Players, start with [how the pieces fit together](/integration/#how-the-pieces-fit-together) and then come back here.
 
 > [!NOTE]
 > Ensure the MA server is up and running properly with music and player providers added before trying to link it to HA via the integration
