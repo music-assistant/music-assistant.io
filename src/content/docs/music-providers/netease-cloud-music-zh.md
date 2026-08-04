@@ -25,7 +25,7 @@ Music Assistant 已支持 <a href="https://music.163.com/" target="_blank" rel="
 | 免费订阅可用 | 否 |
 | 本地自托管媒体 | 否 |
 | 支持媒体类型 | 歌手、专辑、歌曲、歌单、电台 |
-| [发现推荐](/ui/#view-home) | 支持 |
+| [发现推荐](/ui/#view---discover) | 支持 |
 | 歌词 | 支持 |
 | [电台模式](/ui/#track-menu) | 支持 |
 | 最高音质 | Hi-Res FLAC（取决于上游接口返回） |
