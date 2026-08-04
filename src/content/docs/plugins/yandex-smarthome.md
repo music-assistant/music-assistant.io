@@ -15,7 +15,7 @@ The implementation follows the <a href="https://github.com/dext0r/yandex_smart_h
 
 > [!WARNING]
 > The Yandex Smart Home API does not support `play_media` for third-party devices, so Alice cannot start an arbitrary song or album by voice through this plugin alone.
-> «Alice, play music» on its own only resumes the current Music Assistant queue. As a workaround, you can pre-pick up to 10 playlists in the plugin settings — they map to fixed `mode(input_source)` slots `one`..`ten`, and Alice triggers them by ordinal: «Alice, switch \<player\> source to **five**». See [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources). For free-form voice control (search-and-play arbitrary songs, albums, playlists by phrase) install the dedicated <a href="https://github.com/trudenboy/ma-provider-yandex-alice" target="_blank" rel="noopener noreferrer">`ma-provider-yandex-alice`</a> plugin alongside this one.
+> «Alice, play music» on its own only resumes the current Music Assistant queue. As a workaround, you can pre-pick up to 10 playlists in the plugin settings — they map to fixed `mode(input_source)` slots `one`..`ten`, and Alice triggers them by ordinal: «Alice, switch \<player\> source to **five**». See [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources).
 
 ## Features
 
@@ -23,8 +23,6 @@ The implementation follows the <a href="https://github.com/dext0r/yandex_smart_h
 - Automatic creation of the private Yandex Dialogs Smart Home skill for `cloud_plus` and `direct` modes — no manual setup in the Yandex.Dialogs console
 - Pre-picked MA library playlists exposed as `mode(input_source)` slots `one`..`ten`, so Alice can start a specific playlist by ordinal voice command (workaround for the lack of `play_media` in the Yandex Smart Home API)
 - Resumable auto-create flow: transient failures (Device Flow timeout, Yandex moderation 5xx) checkpoint the partial state and the next click resumes from the last completed step
-
-For free-form voice playback («Алиса, попроси Music Assistant включи Metallica на кухне» — search-and-play arbitrary content by phrase), install the <a href="https://github.com/trudenboy/ma-provider-yandex-alice" target="_blank" rel="noopener noreferrer">Yandex Alice plugin</a>. It's a separate provider that registers a Yandex Dialogs *custom skill* with full Russian NLU and a wider command surface (now-playing, shuffle, repeat, seek, transfer between players, add-to-queue).
 
 ### Supported voice commands
 
@@ -122,8 +120,6 @@ Because the Yandex Smart Home API has no `play_media` for third-party devices, t
 
 > [!NOTE]
 > Why ordinals only: the Yandex Smart Home API for `mode(input_source)` only accepts a fixed catalogue of values (`one`..`ten`) — `ModeValue` has no `display_name`/`alias`/`synonym` field, and the *Home with Alice* app does not let users rename mode values. This is a Yandex-side constraint, not a plugin limitation.
-
-For arbitrary song / album / artist requests by voice (without the ordinal workaround), install the dedicated <a href="https://github.com/trudenboy/ma-provider-yandex-alice" target="_blank" rel="noopener noreferrer">Yandex Alice plugin</a> — it bypasses the Smart Home `play_media` limit by registering a *separate* Yandex Dialogs *custom skill* that receives the user's raw voice phrase as a webhook and runs full Russian NLU server-side.
 
 ## Known Issues / Notes
 
