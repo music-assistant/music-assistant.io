@@ -17,10 +17,6 @@ The implementation follows the <a href="https://github.com/dext0r/yandex_smart_h
 > The Yandex Smart Home API does not support `play_media` for third-party devices, so Alice cannot start an arbitrary song or album by voice through this plugin alone.
 > «Alice, play music» on its own only resumes the current Music Assistant queue. As a workaround, you can pre-pick up to 10 playlists in the plugin settings — they map to fixed `mode(input_source)` slots `one`..`ten`, and Alice triggers them by ordinal: «Alice, switch \<player\> source to **five**». See [Playlists as voice-triggered input sources](#playlists-as-voice-triggered-input-sources). For free-form voice control (search-and-play arbitrary songs, albums, playlists by phrase) install the dedicated <a href="https://github.com/trudenboy/ma-provider-yandex-alice" target="_blank" rel="noopener noreferrer">`ma-provider-yandex-alice`</a> plugin alongside this one.
 
-> [!NOTE]
-> Full plugin documentation (RU/EN): **<a href="https://trudenboy.github.io/ma-provider-yandex-smarthome/" target="_blank" rel="noopener noreferrer">trudenboy.github.io/ma-provider-yandex-smarthome</a>**
-
-
 ## Features
 
 - Any MA player can be exposed to Yandex Alice for voice control as a smart home media device
@@ -54,6 +50,10 @@ For free-form voice playback («Алиса, попроси Music Assistant вк�
 | `mode(input_source)` | `select_source()` or `play_media()` (playlist) | Native player sources first, then pre-picked playlists fill the remaining slots up to 10 |
 
 ## Configuration
+
+Go to **Settings → Plugins → Add a Plugin** and add **Yandex Smart Home**. The rest of the setup happens in the plugin's own settings dialog, described below.
+
+The service this plugin talks to is <a href="https://yandex.ru/dev/dialogs/smart-home/" target="_blank" rel="noopener noreferrer">Yandex Dialogs Smart Home</a>, and it authenticates with a Yandex OAuth token. The plugin exposes players for voice control and does not stream any audio itself.
 
 The plugin supports three connection modes — pick the one that matches your network setup:
 
