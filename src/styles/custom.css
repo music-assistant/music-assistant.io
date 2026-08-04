@@ -225,6 +225,7 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
 .install-buttons {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.75rem;
   margin-block: 1.5rem;
 }
