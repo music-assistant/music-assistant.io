@@ -225,6 +225,10 @@ export default defineConfig({
                   slug: "plugins/listenbrainz_scrobble",
                 },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
+                {
+                  label: "OpenAI Compatible",
+                  slug: "plugins/openai_compatible",
+                },
                 { label: "Party", slug: "plugins/party" },
                 { label: "Plex Connect", slug: "plugins/plex-connect" },
                 { label: "Smart Playlist", slug: "plugins/smart_playlist" },
