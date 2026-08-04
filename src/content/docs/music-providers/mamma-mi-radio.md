@@ -33,29 +33,26 @@ Out of the box the hosts speak with stock copy and fallback voices. Add your own
 
 ### Live metadata
 
-A stream URL added by hand is an opaque bookmark. This provider reads the station's live programme state instead, so Music Assistant can show what is actually on air:
+This source reads the station's live programme state, so Music Assistant can show what is actually on air:
 
 - Music segments show title, artist, album, and artwork; host segments show the hosts by name
 - The now-playing card alternates between the current segment and an "Up next" preview
-- Metadata is polled from the addon's versioned now-playing API using conditional requests (ETag/304), so the polling overhead stays small
 
 ## Requirements
 
-- A running <a href="https://github.com/florianhorner/mammamiradio" target="_blank" rel="noopener noreferrer">Mamma Mi Radio</a> addon, **version 2.13 or newer**, reachable from the Music Assistant host. Older addons do not expose the now-playing API this provider requires; the provider refuses to load and tells you to update the addon.
+- A running <a href="https://github.com/florianhorner/mammamiradio" target="_blank" rel="noopener noreferrer">Mamma Mi Radio</a> addon, **version 2.13 or newer**, reachable from the Music Assistant host.
 - A working music source configured in Mamma Mi Radio.
 - No AI key is required. Without one, the hosts use stock copy and fallback voices.
 
 ## Configuration
 
-- **Mamma Mi Radio URL:** the base URL of your addon (default: `http://localhost:8000`). Do not include an admin token.
+- **Mamma Mi Radio URL:** the base URL of your addon (default: `http://localhost:8000`).
 
 Which URL is right depends on where Music Assistant runs relative to the addon:
 
 - **Music Assistant addon and Mamma Mi Radio addon on the same Home Assistant host:** the default `http://localhost:8000` works, because the Mamma Mi Radio addon uses host networking and is reachable on the host's own interface
 - **Music Assistant on a different machine:** use the Home Assistant host's IP or DNS name, e.g. `http://192.168.1.10:8000`
 - **Behind a reverse proxy:** a path prefix is supported, e.g. `https://myhost.example/mammamiradio` (query strings and credentials in the URL are ignored)
-
-The provider validates the URL and probes the addon once at startup. A wrong URL or an unreachable addon shows an actionable error in the provider settings and is retried automatically.
 
 ## Usage
 
