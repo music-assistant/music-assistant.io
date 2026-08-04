@@ -278,7 +278,7 @@ export default defineConfig({
           label: "Using Music Assistant",
           collapsed: true,
           items: [
-            { label: "General", slug: "usage" },
+            { label: "Overview", slug: "usage" },
             { label: "UI", slug: "ui" },
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },

@@ -5,10 +5,19 @@ description: Information Relevant to all Player Providers
 
 # Player Providers
 
-> [!NOTE]
-> Players (devices) are added to Music Assistant by adding their associated player provider. Player providers are added by navigating to `SETTINGS >> PLAYER PROVIDERS` and then clicking on ADD A NEW PROVIDER
+## What a player provider is
 
-For specific player provider information refer to the relevant section in this document. For a description of possible settings refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages. When a player provider is enabled which supports auto-discovery, then the devices which support that protocol will be continuously discovered.
+A **player provider** is not one speaker. It is the part of Music Assistant that knows how to talk to a whole family of them: one AirPlay provider covers every AirPlay device in the house, one Sonos provider covers all your Sonos.
+
+So you do not add speakers one at a time. You add the provider for the kind of device you own, and where that provider supports auto-discovery it finds them for you and keeps looking, so a speaker you plug in next month turns up on its own. Not every provider can discover devices; some need an address entering by hand. The page for each provider says which it is.
+
+Some devices can be reached more than one way. Anything Home Assistant already knows about can be played to through [Home Assistant Media Players](/player-support/ha/), but **if Music Assistant has a provider of its own for a device, use it**. The Home Assistant route is a fallback for devices with no native provider, not an alternative to one. [Audio Quality](#audio-quality) below explains why.
+
+## Adding a player provider
+
+Go to `SETTINGS >> PLAYER PROVIDERS >> ADD A NEW PROVIDER` and pick the one that matches your devices. Each provider has its own page in this section covering what it supports and how to set it up.
+
+Settings that apply to every provider are described on the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages.
 
 If you know what you want to play on but not which provider drives it, start at [I Want To Stream To](/faq/stream-to/). It groups every provider by whether you buy the device ready to use or set it up yourself, and carries the summary table comparing all of them side by side.
 
