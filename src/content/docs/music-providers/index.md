@@ -11,7 +11,7 @@ Music Assistant holds no music of its own. A **music source** is somewhere your 
 
 You add the sources you already use, and Music Assistant reads from all of them at once. Nothing appears until you add at least one, even if Home Assistant can already see the media.
 
-Everything you add is combined into a single **library**: one set of artists, albums, tracks and playlists, whichever source each item came from. Where the same album exists in several sources, Music Assistant links those copies together so you see one entry rather than three, and plays the [best quality version](/faq/tech-info/#stream-selection) available.
+Everything you add is combined into a single **library**: one set of artists, albums, tracks, playlists, radio stations, podcasts and audiobooks, whichever source each item came from. Where the same album exists in several sources, Music Assistant tries to link those copies together so you see one entry rather than three, and plays the [best quality version](/faq/tech-info/#stream-selection) available. Linking only happens where the sources supply enough metadata to identify a match, so it is not guaranteed; see [Provider Details](/ui/#provider-details) for what to do when copies stay separate.
 
 How much of a source ends up in that library is up to you. Each one has its own settings for what gets synced and how often, which the rest of this page covers.
 
