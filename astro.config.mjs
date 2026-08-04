@@ -227,6 +227,10 @@ export default defineConfig({
             { label: "Jellyfin", slug: "music-providers/jellyfin" },
             { label: "KION Music", slug: "music-providers/kion-music" },
             { label: "Local Files", slug: "music-providers/filesystem" },
+            {
+              label: "Mamma Mi Radio",
+              slug: "music-providers/mamma-mi-radio",
+            },
             { label: "MusicMe", slug: "music-providers/musicme" },
             {
               label: "NetEase Cloud Music",
