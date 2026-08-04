@@ -11,7 +11,7 @@ Full guide: https://github.com/music-assistant/music-assistant.io/blob/beta/CONT
 
 ## Checklist
 
-- [ ] This pull request targets `beta`, and my branch was taken from `beta`
+- [ ] Correct branch: `main` if this fixes something already on the live site, `beta` if it adds anything new
 - [ ] Any new page has a sidebar entry in `astro.config.mjs`
 
 ### Only if you are adding a music source or a player provider
