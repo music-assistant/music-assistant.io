@@ -26,7 +26,7 @@ This plugin is currently marked as **beta**. It works, but it has not been teste
 
 ## Installation
 
-Add the plugin in **Settings → Providers → Add Provider → Plugins** and pick **OpenAI Compatible**.
+Add the plugin in **Settings → Plugins → Add a Plugin** and pick **OpenAI Compatible**.
 
 ### Choose a service
 
