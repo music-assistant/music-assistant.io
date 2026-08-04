@@ -41,7 +41,7 @@ The exact LLM model, TTS voice, language, speed, and audio quality are controlle
 
 ## Linking Home Assistant entities to player controls
 
-The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function; a native player whose amplifier sits on a smart plug can be powered on and off this way. There are three drop down lists which contain a filtered list of HA entities:
+The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function; an amplifier that sits in standby can be woken when playback starts, or a set of active speakers a player feeds into can be switched on with it. There are three drop down lists which contain a filtered list of HA entities:
 
 - For power controls, entities that can be turned on/off and have a boolean state will be shown. (i.e. switch, input_boolean and media_player)
 
@@ -50,6 +50,9 @@ The Home Assistant Plugin can expose HA entities to MA that can then be mapped t
 - For volume controls, entities that can have a numeric value/state will be shown. (i.e. number, input_number and media_player (where volume_level will be mapped))
 
 When an entity is selected it will then appear as an option in an individual player's [Player Controls](/settings/individual-player/#player-controls) settings.
+
+> [!NOTE]
+> This cannot be used to power the player itself. If a player is switched off at the mains it drops off the network, Music Assistant marks it unavailable, and the power control is disabled along with everything else. Switch whatever the player feeds into, not the player.
 
 ## Known Issues / Notes
 

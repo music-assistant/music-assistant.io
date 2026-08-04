@@ -36,4 +36,4 @@ Most people only want the first row. Install the integration and your Music Assi
 
 Add the third row if you also want the reverse: a speaker that Home Assistant knows about, but Music Assistant has no provider for, made available inside Music Assistant. It needs the plugin, and the plugin needs the integration, so all three end up installed, in that order.
 
-You may want the plugin on its own, without the third row. It is what lets you map a Home Assistant switch to the power control of any Music Assistant player, so a native player whose amplifier is on a smart plug can still be turned on and off, and it is how plugins reach Home Assistant's AI and text-to-speech services.
+You may want the plugin on its own, without the third row. It is what lets you map a Home Assistant entity to the power, volume or mute control of any Music Assistant player, so an amplifier sitting in standby can be woken when playback starts, and it is how plugins reach Home Assistant's AI and text-to-speech services.
