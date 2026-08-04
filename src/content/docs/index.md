@@ -19,11 +19,11 @@ It runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or as a H
 - **Plays on almost anything.** Sonos, Chromecast, AirPlay, Squeezelite, DLNA and many more, in sync across the players that support it
 - **One album, not four.** The same release from different sources is linked together, so your library stays clean
 - **Artwork, lyrics and artist information** are filled in for you
-- **Gapless playback, crossfade and volume levelling** on every player
-- **Announcements cut over the music**, then it picks up where it left off
+- **Gapless playback, smart crossfade and volume levelling** on every player
+- **Announcements interrupt the music**, pausing or ducking it depending on the player, then it picks up where it left off
 - **Move playback from room to room** without losing your place in the queue
 - **Runs in any browser** and installs to your phone like an app
-- **Free and open source**, and a project of the Open Home Foundation
+- **Free and open source**. A project of the Open Home Foundation
 
 [![Music Assistant Add-on For Home Assistant](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
