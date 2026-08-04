@@ -20,7 +20,7 @@ It runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or as a H
 - **One album, not four.** The same release from different sources is linked together, so your library stays clean
 - **Artwork, lyrics and artist information** are filled in for you
 - **Gapless playback, smart crossfade and volume levelling** on every player
-- **Announcements interrupt the music**, pausing or ducking it depending on the player, then it picks up where it left off
+- **Announcements interrupt the music**, pausing or ducking it, then it picks up where it left off
 - **Move playback from room to room** without losing your place in the queue
 - **Runs in any browser** and installs to your phone like an app
 - **Free and open source**. A project of the Open Home Foundation
