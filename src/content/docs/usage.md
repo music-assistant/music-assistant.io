@@ -14,7 +14,7 @@ They cover the ideas the interface assumes you already understand, so that when 
 - **[Groups](/faq/groups/)** — playing the same music on more than one speaker at once
 - **[Genres](/genres/)** — how Music Assistant categorises your library, and how to shape that
 
-None of it needs reading end to end. Use the contents list to jump to whatever you are looking at.
+None of it needs reading end to end. Use the contents list to jump to whatever you are looking for.
 
 ## The Library
 
