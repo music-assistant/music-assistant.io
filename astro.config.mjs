@@ -377,6 +377,7 @@ export default defineConfig({
           items: [
             { label: "How Do I...", slug: "faq/how-to" },
             { label: "Troubleshooting", slug: "faq/troubleshooting" },
+            { label: "Support", slug: "support" },
             { label: "Technical Info", slug: "faq/tech-info" },
             { label: "Networking Basics", slug: "faq/networking" },
             { label: "API", slug: "api" },
@@ -387,7 +388,6 @@ export default defineConfig({
           label: "Community",
           collapsed: true,
           items: [
-            { label: "Support", slug: "support" },
             { label: "I Want to Help / Donate", slug: "help" },
             { label: "Translations", slug: "help/lokalise" },
             {
