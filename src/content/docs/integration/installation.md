@@ -24,9 +24,9 @@ The Integration to connect Music Assistant to Home Assistant is available as an 
 
 ## Actions
 
-Music Assistant provides (next to the standard <a href="https://www.home-assistant.io/integrations/media_player/#list-of-actions" target="_blank" rel="noopener noreferrer">media player actions</a>), several custom actions to allow control over the players and media. See the <a href="https://www.home-assistant.io/integrations/music_assistant/#additional-actions" target="_blank" rel="noopener noreferrer">Home Assistant documentation</a> for information.
+Music Assistant players respond to Home Assistant's standard <a href="https://www.home-assistant.io/integrations/media_player/#list-of-actions" target="_blank" rel="noopener noreferrer">media player actions</a>. On top of those, the integration adds several actions of its own for finer control over the players and the queue.
 
-### FAQ / Extra Info
+All of them are listed in the <a href="https://www.home-assistant.io/integrations/music_assistant/#additional-actions" target="_blank" rel="noopener noreferrer">Home Assistant documentation</a>, which is the reference for their parameters. The pages below go further, with worked examples and the details that documentation does not cover.
 
 - [music_assistant.play_media](/faq/massplaymedia/)
 - [music_assistant.play_announcement](/faq/massannounce/)
