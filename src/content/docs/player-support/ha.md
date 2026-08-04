@@ -7,6 +7,8 @@ description: Features of, and instructions for, the use of HA media player entit
 
 Music Assistant has support for playing to media player entities in Home Assistant.
 
+This is the last of the three Home Assistant pieces; it needs the [Home Assistant Plugin](/ha-plugin/), which in turn needs the integration. See [how the pieces fit together](/integration/#how-the-pieces-fit-together) if you are not sure which you need.
+
 > [!CAUTION]
 > This player provider relies on the upstream HA integrations which have not necessarily been written or optimised for music playback. Therefore, if there is any way to use a MA provider you need to do so. Problems with HA providers will be addressed as resources allow.
 

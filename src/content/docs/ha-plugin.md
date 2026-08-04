@@ -4,9 +4,11 @@ description: The Home Assistant Plugin provides a connection from HA to MA
 ---
 # Home Assistant Plugin Provider <img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The Home Assistant Plugin provides a connection from HA to MA. This will allow HA players to be visible in MA and be streamed to.
+The Home Assistant Plugin provides a connection from HA to MA. It is the bridge Music Assistant uses to reach into Home Assistant.
 
-To achieve this functionality both the HA plugin and the [HA Player Provider](/player-support/ha/) need to be installed.
+It does not add any players by itself. To play to Home Assistant media players you also need the [Home Assistant Media Players](/player-support/ha/) provider, which builds on this plugin. The plugin is still worth having on its own, though, for the entity-linked player controls and the AI and text-to-speech features described below.
+
+If you are not sure how this fits with the Home Assistant integration, see [how the pieces fit together](/integration/#how-the-pieces-fit-together).
 
 ## Features
 
@@ -37,11 +39,9 @@ To use these features:
 
 The exact LLM model, TTS voice, language, speed, and audio quality are controlled by the configured Home Assistant services. The Home Assistant plugin only selects which Home Assistant `tts` and `ai_task` entities Music Assistant should call.
 
-## Known Issues / Notes
+## Linking Home Assistant entities to player controls
 
-This plugin will be automatically installed (and cannot be disabled) if the MA server is running as a Home Assistant App.
- 
-The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. There are three drop down lists which contain a filtered list of HA entities:
+The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function; a native player whose amplifier sits on a smart plug can be powered on and off this way. There are three drop down lists which contain a filtered list of HA entities:
 
 - For power controls, entities that can be turned on/off and have a boolean state will be shown. (i.e. switch, input_boolean and media_player)
 
@@ -50,3 +50,7 @@ The Home Assistant Plugin can expose HA entities to MA that can then be mapped t
 - For volume controls, entities that can have a numeric value/state will be shown. (i.e. number, input_number and media_player (where volume_level will be mapped))
 
 When an entity is selected it will then appear as an option in an individual player's [Player Controls](/settings/individual-player/#player-controls) settings.
+
+## Known Issues / Notes
+
+This plugin will be automatically installed (and cannot be disabled) if the MA server is running as a Home Assistant App.
