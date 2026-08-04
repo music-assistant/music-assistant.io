@@ -3,60 +3,55 @@ title: Troubleshooting
 description: Common Problems and Fixes
 ---
 
-# First things to try and how to report issues
+# Troubleshooting
 
-Look in the logs and try and resolve any errors you see there particularly those related to <a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">tagging</a>. Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
+## First things to try
 
-Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers (except when using our recommended docker compose) is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Some options have been added to core to help people who are running non-standard setups but these are supplied on a non-support basis. Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you. See [Networking Basics](/faq/networking/) for a plain-language explanation of these terms.
+**Logs.** Look in the logs and try and resolve any errors you see there particularly those related to [tagging](/music-providers/filesystem/#tagging-files). Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
 
-Increasingly, we are seeing reports from users which are caused by their use of tools such as AdGuard, Pi-hole, pfSense etc. If your problem relates to being unable to stream or if there are errors in the logs related to unreachable addresses or timeouts then disable all of these tools before seeking help. Just applying a rule is insufficient, the problem must be present with these tools completely disabled.  
+**Complex networks.** Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers (except when using our recommended docker compose) is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Some options have been added to core to help people who are running non-standard setups but these are supplied on a non-support basis. Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you. See [Networking Basics](/faq/networking/) for a plain-language explanation of these terms.
 
-For clarity, running installation options other than HAOS (Home Assistant Operating System) or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
+**Ad blockers and DNS filters.** Increasingly, we are seeing reports from users which are caused by their use of tools such as AdGuard, Pi-hole, pfSense etc. If your problem relates to being unable to stream or if there are errors in the logs related to unreachable addresses or timeouts then disable all of these tools before seeking help. Just applying a rule is insufficient, the problem must be present with these tools completely disabled.  
 
-There are settings available in MA SETTINGS>> SYSTEM>> STREAMS and then select the "Show advanced settings" toggle, that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
+**Unsupported installs.** For clarity, running installation options other than HAOS (Home Assistant Operating System) or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
 
-Most players are discovered automatically. They announce themselves on the network and MA listens for those announcements (a technique called mDNS/multicast, [explained in plain language here](/faq/networking/)). If your players do not get discovered it means something on your network is blocking those announcements. Work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered); the most common causes are guest Wi-Fi networks, VPNs, and router settings that filter multicast traffic. Business-grade network equipment tends to block multicast traffic as much as possible as it hurts performance when there are many clients, but in a home setup it is mandatory because all home gear relies on it. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
+**Stream settings.** There are settings available in MA SETTINGS >> SYSTEM >> STREAMS and then select the "Show advanced settings" toggle, that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
 
-Make sure the HA internal url is set correctly. HA SETTINGS>> SYSTEM>> NETWORK>> Home Assistant URL>> Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to http://your.internal.ip:8123/
+**Player discovery.** Most players are discovered automatically. They announce themselves on the network and MA listens for those announcements (a technique called mDNS/multicast, [explained in plain language here](/faq/networking/)). If your players do not get discovered it means something on your network is blocking those announcements. Work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered); the most common causes are guest Wi-Fi networks, VPNs, and router settings that filter multicast traffic. Business-grade network equipment tends to block multicast traffic as much as possible as it hurts performance when there are many clients, but in a home setup it is mandatory because all home gear relies on it. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
 
-MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which by default is usually FLAC) so playing a low qualiy MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage. Players have an option to use a lossy codec which will lower the bandwidth requirements, this is available in the advanced settings for the player.
+**Home Assistant URL.** Make sure the HA internal url is set correctly. HA SETTINGS >> SYSTEM >> NETWORK >> Home Assistant URL >> Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to http://your.internal.ip:8123/
 
-Check the physical device settings. There have been numerous reports where the issue was actually a setting external to MA such as receivers set to repeat tracks or ESP devices with incorrect arguments passed on install.
+**WiFi and bandwidth.** MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which by default is usually FLAC) so playing a low quality MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage. Players have an option to use a lossy codec which will lower the bandwidth requirements, this is available in the advanced settings for the player.
 
-Ensure local files are <a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">tagged properly</a>.
+**Physical devices.** Check the physical device settings. There have been numerous reports where the issue was actually a setting external to MA such as receivers set to repeat tracks or ESP devices with incorrect arguments passed on install.
 
-If it is a playback issue then turn on [QUEUE FLOW MODE](/faq/tech-info/#track-queueing) in the settings for the specific player (where that is available).
+**File tagging.** Ensure local files are [tagged properly](/music-providers/filesystem/#tagging-files).
 
-If it is a music source issue and the source requires authentication then clear the authentication and re-login.
+**Playback.** If it is a playback issue then turn on [QUEUE FLOW MODE](/faq/tech-info/#track-queueing) in the settings for the specific player (where that is available).
 
-If it is a frontend issue or related to logging in to a provider or source which requires redirection to another website then try a different browser. If you are trying on a mobile device then try on a laptop or PC. Firefox and Safari are known to have deficiencies.
+**Authentication.** If it is a music source issue and the source requires authentication then clear the authentication and re-login.
 
-Review the applicable player provider or music source documentation to see if there are known issues or specific troubleshooting steps or fixes. 
+**Browser.** If it is a frontend issue or related to logging in to a provider or source which requires redirection to another website then try a different browser. If you are trying on a mobile device then try on a laptop or PC. Firefox and Safari are known to have deficiencies.
 
-For voice problems refer to <a href="https://music-assistant.io/integration/voice/#troubleshooting" target="_blank" rel="noopener noreferrer">Voice Troubleshooting</a>. If you are not using HOME ASSISTANT as your Conversation Agent then you must seek assistance in the HA forums first. If they direct you back to this project then make it clear in your report that you are using a LLM as the Conversation Agent and include the reasons why the HA support network wasn't able to help.
+**Isolate the fault.** Narrow the fault down to a single player or music source. Play the same content on a different player, then play something from a different music source on the original player. If you only have one player then [Sendspin](/player-support/sendspin/), the built-in web player, is always available; if you only have one music source then try a radio station. Knowing that a player works with one source but not another, or that one player fails where the others are fine, tells you where the problem is not.
 
-Try power cycling the physical player(s) if they won't connect or if there is no sound.
+**Provider documentation.** Review the applicable player provider or music source documentation to see if there are known issues or specific troubleshooting steps or fixes. 
 
-Check the GitHub Issues and Discord to see if it is a known problem. If not try restarting MA, try restarting HA, and try a full HOST REBOOT (in that order). If it is an integration problem then trying removing it via the HA settings then restart HA then reinstall.
+**Voice.** For voice problems refer to <a href="https://www.home-assistant.io/voice_control/troubleshooting/" target="_blank" rel="noopener noreferrer">Home Assistant Voice Troubleshooting</a>, and to [Voice Control](/integration/voice/) for how Music Assistant fits in. If you are not using HOME ASSISTANT as your Conversation Agent then you must seek assistance in the HA forums first. If they direct you back to this project then make it clear in your report that you are using a LLM as the Conversation Agent and include the reasons why the HA support network wasn't able to help.
+
+**Power cycling.** Try power cycling the physical player(s) if they won't connect or if there is no sound.
+
+**Known problems and restarts.** Check the GitHub Issues and Discord to see if it is a known problem. If not try restarting MA, try restarting HA, and try a full HOST REBOOT (in that order). If it is an integration problem then trying removing it via the HA settings then restart HA then reinstall.
+
+## How to report an issue
 
 Before you raise an issue [read this first](/support/). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
 
-DOWNLOAD and ATTACH complete logs from MA SETTINGS>> SYSTEM>> SERVER LOGGING. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider/source basis.
+DOWNLOAD and ATTACH the diagnostics report from MA SETTINGS >> SYSTEM >> DIAGNOSTICS. This is the single most useful thing you can give us and it should be included in every report.
+
+DOWNLOAD and ATTACH complete logs from MA SETTINGS >> SYSTEM >> DIAGNOSTICS. These are optional to begin with as we may ask for more detailed logging once we have read the diagnostics report, but attaching them from the start does no harm. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider/source basis.
 
 You can also look in the Browser console when you have front end issues which in Chrome browser is --> F12 for developer tools --> console. 
-
-The following is required in ALL reports as the MA team is small and you need to narrow down the problem before raising an issue:
-
-- What music source is in use when the problem is observed? What other music sources have you tried (if you have no others then make that clear - you can always try radio stations)
-- What player provider is in use when the problem is observed? What other player providers have you tried (if you have no others then make that clear - you can always use [Sendspin](/player-support/sendspin/), the built-in web player)
-- Are the players grouped?
-- How is playback being instigated (e.g. automation or via the UI)
-- If you aren't using HAOS then exactly how you have installed MA
-- What is working (e.g. player works with music source X but not Y)
-- What you have tried from this page that hasn't helped (This is very important!)
-
-> [!NOTE]
-> You can retrieve the full MA logs by going to the MA settings and clicking on SYSTEM
 
 ## A provider or source isn't working
 
@@ -66,7 +61,7 @@ Navigate to MA settings and inspect the provider or source entry. If there is a 
 
 ## Why aren't tracks/albums matching between sources
 
-Matching items between streaming sources is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see here https://github.com/music-assistant/support/discussions/543
+Matching items between streaming sources is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see <a href="https://github.com/music-assistant/support/discussions/543" target="_blank" rel="noopener noreferrer">this discussion</a>
 
 ## My media player is not available or not playing
 
@@ -76,7 +71,7 @@ If the player is not shown in the list of players in the MA SETTINGS then review
 
 If your device does support one of the supported protocols then review the documentation for that player provider for known issues and troubleshooting tips.
 
-If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identifying why the player isnt working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issues</a>, <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">Discussions</a> and <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord</a>) as likely someone has asked your question before.
+If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identifying why the player isn't working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issues</a>, <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">Discussions</a> and <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord</a> as likely someone has asked your question before.
 
 ## All my media is missing 
 
@@ -94,11 +89,11 @@ Art embedded in music tracks will always be picked up but folder.jpg images will
 
 ## There isn't any metadata for my music
 
-For local files, you can either fully tag your music (this is preferred and it is recommended to use <a href="https://picard.musicbrainz.org/" target="_blank" rel="noopener noreferrer">Picard</a>) or have an artist folder with the artist.nfo in there (just like the images) and that will be preferred. Online metadata providers are only queried when there is no local data. https://kodi.wiki/view/NFO_files
+For local files, you can either fully tag your music (this is preferred and it is recommended to use <a href="https://picard.musicbrainz.org/" target="_blank" rel="noopener noreferrer">Picard</a>) or have an artist folder with the artist.nfo in there (just like the images) and that will be preferred. Online metadata providers are only queried when there is no local data. See <a href="https://kodi.wiki/view/NFO_files" target="_blank" rel="noopener noreferrer">NFO files</a> for the format.
 
 ## Some of the playlists are missing
 
-For certain sources (Spotify is a known example) the authentication method used may impact visibility of playlists of certain type. For a Spotify source, see details <a href="https://www.music-assistant.io/music-providers/spotify/#known-issues-notes" target="_blank" rel="noopener noreferrer">here</a>
+For certain sources (Spotify is a known example) the authentication method used may impact visibility of playlists of certain type. For a Spotify source, see details [here](/music-providers/spotify/#known-issues--notes)
 
 ## I have updated but MA looks like the old version or isn’t working
 
@@ -130,11 +125,11 @@ If the following error (or similar) is seen in the log:
       listen_socket.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, _value)
   OSError: [Errno 105] No buffer space available
   ```
-  this is likely to be due to hitting the multicast group limit on the host system. See https://unix.stackexchange.com/questions/23832/is-there-a-way-to-increase-the-20-multicast-group-limit-per-socket for more info
+  this is likely to be due to hitting the multicast group limit on the host system. See <a href="https://unix.stackexchange.com/questions/23832/is-there-a-way-to-increase-the-20-multicast-group-limit-per-socket" target="_blank" rel="noopener noreferrer">this explanation</a> for more info
 
 If the above is not the issue then start MA in safe mode:
 
-- With the HA app, select the toggle in the configration
+- With the HA app, select the toggle in the configuration
 - With Docker run the container with the environmental variable MASS_SAFE_MODE set to a boolean true value, e.g. "1" or "true"
 
 If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details.
