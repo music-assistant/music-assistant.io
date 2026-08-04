@@ -6,6 +6,10 @@ title: "Qobuz"
 
 Music Assistant has full support for <a href="https://www.qobuz.com/" target="_blank" rel="noopener noreferrer">Qobuz</a>, including Qobuz's excellent HiRes catalogue!
 
+Qobuz is a French subscription streaming service aimed at people who care about sound quality. Everything streams lossless, and it also sells albums as downloads you keep.
+
+Sign in and your Qobuz favourites appear in Music Assistant, along with the whole catalogue to search through.
+
 ## Features
 
 |           |                     |

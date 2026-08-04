@@ -25,7 +25,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 
 ### For the Host
 
-1. Enable the Party plugin in Music Assistant settings
+1. Enable the Party plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`
 2. Configure which player will be used for party (or leave on Auto to use the last active player)
 3. Open the Party dashboard on the screen of your choice to display the live queue and guest join QR code
 

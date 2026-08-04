@@ -46,12 +46,9 @@ Lastly, depending on sources installed, there may be additional sync related opt
 
 Information for other options not listed above is available in the MA UI.
 
-## Summary
+## Not sure which source you need?
 
-The table below provides an at-a-glance summary of all of the music sources. Green ticks indicate a desirable quality or function is available. 
-
-Stream quality is indicated as either [Hi-Res](/player-support/#audio-quality), <a href="https://www.soundguys.com/high-bitrate-audio-is-overkill-cd-quality-is-still-great-16518/" target="_blank" rel="noopener noreferrer">CD quality</a> or lossy with the codec and bitrate where available.
-
-The most user friendly login method is a password, followed by <a href="https://en.wikipedia.org/wiki/OAuth" target="_blank" rel="noopener noreferrer">OAuth</a> and then the cookie method is least desirable.
-
-[![music provider summary](/assets/music-provider-summary.png)](/assets/music-provider-summary.png)
+If you know what you want to listen to but not which source provides it, start at
+[I Want To Listen To](/faq/listen-to/). It groups every source by what it plays, from local
+files and streaming through to radio, podcasts and audiobooks, and by the country its content
+comes from. That page also carries the summary table comparing all of the sources side by side.

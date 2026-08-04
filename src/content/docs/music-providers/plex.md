@@ -6,6 +6,10 @@ title: "Plex"
 
 Music Assistant has support for using Plex (MusicLibrary). Contributed by <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> and maintained by <a href="https://github.com/anatosun" target="_blank" rel="noopener noreferrer">anatosun</a>
 
+Plex is a media server you run yourself, paired with apps for phones, TVs and browsers. It indexes the music and video held on your own storage and streams it to you wherever you are.
+
+This source connects Music Assistant to the music library on your Plex server. Everything you have already organised there becomes part of your Music Assistant library.
+
 ## Features
 
 |           |                     |
@@ -38,6 +42,10 @@ Music Assistant has support for using Plex (MusicLibrary). Contributed by <a hre
 - If you have configured Plex to allow local connection without authentication (see below), click the `Authenticate Locally` button
 - Select the library and type (Music, Audiobook, or Podcast) that you would like to use; options will be auto-selected based on your existing configuration, but you can change as needed.
 - Save the settings
+
+### Advanced Settings
+
+- <b>Extended recommendations.</b> Enabled by default. Adds extra rows on the [Discover](/ui/#view---discover) view to include <b>Mixes For You</b> (the personalised mixes Plex builds from the listening history), recent library playlists and <b>On This Day</b> releases, matching the rows Plex's own clients show. Changes take effect on the next recommendations refresh
 
 ## Plex Configuration
 

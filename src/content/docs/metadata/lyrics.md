@@ -4,6 +4,8 @@ title: Lyrics
 
 # Lyrics <img src="/assets/icons/metadata-lyrics-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
+Music Assistant shows lyrics in the [Now Playing view](/ui/#now-playing-view) when they are available for the playing track; there is nothing to configure by default. This page explains where lyrics come from and how to fix wrong ones.
+
 Two kinds of lyrics are available:
 
 - **Synchronized lyrics** (`.lrc` format with timestamps)

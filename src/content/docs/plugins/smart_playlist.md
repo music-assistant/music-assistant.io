@@ -15,7 +15,7 @@ This plugin is currently marked as **experimental**. Behaviour may change before
 
 ## Installation
 
-Enable the **Smart Playlists** plugin in **Settings → Providers → Add Provider → Plugins**. No additional configuration is required.
+Enable the **Smart Playlists** plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`. No additional configuration is required.
 
 ![Smart Playlists plugin entry](/assets/screenshots/smart_playlist/add_plugin.png)
 

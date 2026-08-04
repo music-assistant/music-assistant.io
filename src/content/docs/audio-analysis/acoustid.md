@@ -25,11 +25,11 @@ For each analysed track:
 
 For each analysed album, once enough of its tracks have been identified:
 
-- **MusicBrainz Release Group Id** — A unique identifier for a group of album releases. This is identified from the analysed tracks on the album and cross-checked against the album name already in the tags. This is what unlocks artwork and album metadata, Release group will only be confirmed when at least half of the tracks in the library from the album have been analysed. This is to try and maximise the chance of idntifying the correct release group. For this reason, it is ideal if all of the tracks that are intended to be added to the library are added before tracks are played (and therefore analysed)
+- **MusicBrainz Release Group Id** — A unique identifier for a group of album releases. This is identified from the analysed tracks on the album and cross-checked against the album name already in the tags. This is what unlocks artwork and album metadata, Release group will only be confirmed when at least half of the tracks in the library from the album have been analysed. This is to try and maximise the chance of identifying the correct release group. For this reason, it is ideal if all of the tracks that are intended to be added to the library are added before tracks are played (and therefore analysed)
 
 ## When analysis runs
 
-- During the nightly audio-analysis scan, around local midnight. Local audio files only (i.e. SM<B, NFS, and WebDAV)
+- During the nightly audio-analysis scan, around local midnight. Local audio files only (including SMB, NFS, and WebDAV shares)
 - During playback of an eligible track. Local files are always eligible; streaming-provider tracks are eligible when *Analyse tracks from streaming providers* is enabled and the track is in the MA library
 
 Large libraries may take several nights to be fully analysed. Well tagged libraries see little or no activity because tracks will be skipped if they contain the MB Recording ID or ISRC. Streaming-provider tracks are picked up gradually as they are played, rather than in a batch. 

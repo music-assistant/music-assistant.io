@@ -33,11 +33,11 @@ When starting the app for the first time you are asked for some information abou
 
 ## Features
 
-- Native Audio Playback - High-quality audio output via Sendspin protocol with device selection
+- Native Audio Playback - High-quality audio output via [Sendspin](/player-support/sendspin/), MA's own streaming technology, with selection of the output device
 - System Tray Integration - Control playback and see what's playing from the system tray
-- OS Media Controls - Integrates with macOS Control Center, Windows Media Controls, and Linux MPRIS
+- OS Media Controls - Integrates with macOS Control Center, Windows Media Controls, and Linux media controls (MPRIS)
 - Discord Rich Presence - Show what you're listening to on Discord
-- Server Discovery - Automatic discovery of Music Assistant servers via mDNS
+- Server Discovery - Finds your Music Assistant server automatically on your network
 
 ### <a href="https://discord.com/developers/docs/rich-presence/how-to#so-what-is-it" target="_blank" rel="noopener noreferrer">Discord Rich Presence</a>
 
