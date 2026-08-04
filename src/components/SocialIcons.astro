@@ -1,0 +1,27 @@
+---
+// Adds a Documentation menu to the header, then renders Starlight's own social
+// icons unchanged. The menu only appears on the landing page: every other page
+// has the sidebar, which already lists these sections.
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+
+const sections = [
+  { label: 'Install Music Assistant', href: '/installation/' },
+  { label: 'Home Assistant Integration', href: '/integration/' },
+  { label: 'Music Sources', href: '/music-providers/' },
+  { label: 'Player Providers', href: '/player-support/' },
+  { label: 'Using Music Assistant', href: '/usage/' },
+  { label: 'Plugins', href: '/plugins/' },
+  { label: 'Troubleshooting', href: '/faq/troubleshooting/' },
+];
+---
+
+<details class="docs-menu">
+  <summary>Documentation</summary>
+  <ul>
+    {sections.map(({ label, href }) => (
+      <li><a href={href}>{label}</a></li>
+    ))}
+  </ul>
+</details>
+
+<Default />

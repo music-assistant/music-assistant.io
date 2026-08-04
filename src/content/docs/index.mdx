@@ -23,29 +23,17 @@ hero:
       icon: right-arrow
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 ## How it all fits together
 
 <CardGrid>
-  <Card title="The server" icon="seti:powershell">
-    The core. It holds your library, talks to your music sources and streams to your players. Runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or a Home Assistant add-on.
-  </Card>
-  <Card title="Music sources" icon="seti:audio">
-    Where the music comes from. Streaming services, your own files, radio, podcasts and audiobooks, all searched together.
-  </Card>
-  <Card title="Player providers" icon="seti:default">
-    How it reaches your speakers. Sonos, Chromecast, AirPlay, Squeezelite, DLNA, or something you built yourself.
-  </Card>
-  <Card title="Metadata" icon="seti:image">
-    Artwork, lyrics and artist information, filled in for you. Audio analysis works out loudness and fades from the audio itself.
-  </Card>
-  <Card title="Plugins" icon="puzzle">
-    Extras that go beyond playback — a party mode your guests queue from, a music quiz, or AI Radio with a generated presenter.
-  </Card>
-  <Card title="Home Assistant" icon="seti:config">
-    Puts your players in Home Assistant, ready for automations, announcements and voice.
-  </Card>
+  <LinkCard title="The server" description="The core. It holds your library, talks to your music sources and streams to your players. Runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or a Home Assistant add-on." href="/installation/" />
+  <LinkCard title="Music sources" description="Where the music comes from. Streaming services, your own files, radio, podcasts and audiobooks, all searched together." href="/faq/listen-to/" />
+  <LinkCard title="Player providers" description="How it reaches your speakers. Sonos, Chromecast, AirPlay, Squeezelite, DLNA, or something you built yourself." href="/faq/stream-to/" />
+  <LinkCard title="Metadata" description="Artwork, lyrics and artist information, filled in for you. Audio analysis works out loudness and fades from the audio itself." href="/metadata/" />
+  <LinkCard title="Plugins" description="Extras that go beyond playback — a party mode your guests queue from, a music quiz, or AI Radio with a generated presenter." href="/plugins/" />
+  <LinkCard title="Home Assistant" description="Puts your players in Home Assistant, ready for automations, announcements and voice." href="/integration/" />
 </CardGrid>
 
 <CardGrid>

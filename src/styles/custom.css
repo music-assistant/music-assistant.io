@@ -250,3 +250,75 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
 .team-row img {
   margin: 0;
 }
+
+/* Documentation menu in the header.
+   Only shown on the landing page: that page uses the splash template, which
+   has no sidebar, so it is the one place with no way into the docs. Every
+   other page already lists these sections in the sidebar.
+   Built on <details> so it needs no JavaScript, and clicking an entry
+   navigates away, which closes it for free. */
+.docs-menu {
+  display: none;
+  position: relative;
+  margin-inline-end: 0.5rem;
+}
+[data-has-hero] .docs-menu {
+  display: block;
+}
+.docs-menu > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.35rem 0.65rem;
+  border-radius: 0.35rem;
+  color: var(--sl-color-text-accent);
+  font-size: var(--sl-text-sm);
+  white-space: nowrap;
+}
+.docs-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.docs-menu > summary::after {
+  content: '';
+  display: inline-block;
+  margin-inline-start: 0.4em;
+  border: 0.3em solid transparent;
+  border-top-color: currentColor;
+  translate: 0 0.15em;
+}
+.docs-menu[open] > summary::after {
+  rotate: 180deg;
+  translate: 0 -0.1em;
+}
+.docs-menu > summary:hover,
+.docs-menu > summary:focus-visible {
+  background: var(--sl-color-gray-6);
+}
+.docs-menu > ul {
+  position: absolute;
+  inset-inline-end: 0;
+  margin-block-start: 0.4rem;
+  padding: 0.35rem;
+  min-width: 15rem;
+  list-style: none;
+  background: var(--sl-color-bg-nav);
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
+  z-index: var(--sl-z-index-navbar, 20);
+}
+.docs-menu > ul li + li {
+  margin-block-start: 0.1rem;
+}
+.docs-menu > ul a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.3rem;
+  color: var(--sl-color-white);
+  text-decoration: none;
+  font-size: var(--sl-text-sm);
+}
+.docs-menu > ul a:hover,
+.docs-menu > ul a:focus-visible {
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-text-accent);
+}
