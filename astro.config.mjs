@@ -281,7 +281,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "Fine Tuning",
+          label: "Fine Tuning the Audio",
           collapsed: true,
           items: [
             { label: "Audio Pipeline", slug: "audiopipeline" },
