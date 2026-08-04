@@ -256,7 +256,10 @@ export default defineConfig({
             { label: "Fully Kiosk", slug: "player-support/fully-kiosk" },
             { label: "Google Cast", slug: "player-support/google-cast" },
             { label: "HEOS", slug: "player-support/heos" },
-            { label: "Home Assistant", slug: "player-support/ha" },
+            {
+              label: "Home Assistant Media Players",
+              slug: "player-support/ha",
+            },
             { label: "Local Audio Out", slug: "player-support/local-audio" },
             { label: "MSX Bridge", slug: "player-support/msx-bridge" },
             { label: "Music Player Daemon (MPD)", slug: "player-support/mpd" },
@@ -304,7 +307,10 @@ export default defineConfig({
                 { label: "AirPlay Receiver", slug: "plugins/airplay-receiver" },
                 { label: "Ariacast Receiver", slug: "plugins/ariacast-receiver" },
                 { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
-                { label: "Home Assistant", slug: "ha-plugin" },
+                {
+                  label: "Home Assistant Plugin",
+                  slug: "ha-plugin",
+                },
                 { label: "Hue Entertainment", slug: "plugins/hue-entertainment" },
                 { label: "LastFM Scrobbler", slug: "plugins/lastfm_scrobble" },
                 {

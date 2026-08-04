@@ -22,10 +22,10 @@ The Integration to connect Music Assistant to Home Assistant is available as an 
 
 Music Assistant provides (next to the standard media player actions), several custom actions to allow control over the players and media. See the <a href="https://www.home-assistant.io/integrations/music_assistant/#additional-actions" target="_blank" rel="noopener noreferrer">Home Assistant documentation</a> for information.
 
-FAQ / Extra Info
+### FAQ / Extra Info
 
 - [music_assistant.play_media](/faq/massplaymedia/)
-- [music_assistant.play_annnouncement](/faq/massannounce/)
+- [music_assistant.play_announcement](/faq/massannounce/)
 - [music_assistant.transfer_queue](/faq/masstransfer/)
 - [music_assistant.search](/faq/masssearch/)
 - [music_assistant.get_library](/faq/get_library/)

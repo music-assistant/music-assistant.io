@@ -6,6 +6,20 @@ title: "Home Assistant Integration"
 
 The Music Assistant integration for Home Assistant provides a connection from MA to HA. This means that MA players are visible in HA and can be controlled via the HA UI or via automations or scripts.
 
+## How the pieces fit together
+
+Music Assistant and Home Assistant can be joined in both directions, and there are three separate pieces involved. Which ones you need depends on which direction you want.
+
+| Piece | You install it in | What it gives you |
+|:--|:--|:--|
+| [Home Assistant Integration](/integration/installation/) | Home Assistant | Your **MA players appear in HA**, ready for the HA UI, automations, scripts, announcements and voice |
+| [Home Assistant Plugin](/ha-plugin/) | Music Assistant | The connection back the other way. On its own it does not add any players; it is the bridge the next row needs |
+| [Home Assistant Media Players](/player-support/ha/) | Music Assistant | Your **HA media players appear in MA** as places you can play music to |
+
+Most people only want the first row. Install the integration and your Music Assistant speakers show up in Home Assistant — that is the whole job.
+
+Add the second and third rows only if you also want the reverse: a speaker that Home Assistant knows about, but Music Assistant has no provider for, made available inside Music Assistant. They must be added in that order, because the media players build on the plugin, and the plugin needs the integration.
+
 - [Announcements](/integration/announcements/) from HA in the form of Text to Speech or audio files are fully supported.
 
 - With some additional setup [voice control of MA](/integration/voice/) via HA is also possible
@@ -16,4 +30,3 @@ The Music Assistant integration for Home Assistant provides a connection from MA
 
 See also the <a href="https://www.home-assistant.io/integrations/music_assistant/" target="_blank" rel="noopener noreferrer">documentation from Home Assistant about the Music Assistant integration</a>
 
-Note that there is also a [Home Assistant provider](/player-support/ha/) within MA which functions the other way around. It enables Home Assistant functionality (and players) in Music Assistant!

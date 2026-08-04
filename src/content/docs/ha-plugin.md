@@ -18,7 +18,7 @@ To achieve this functionality both the HA plugin and the [HA Player Provider](/p
 
 Before the Plugin can be added the HA Integration must be [installed](/integration/installation/). 
 
-- Navigate to MA SETTINGS>> PLUGINS and add the plug-in
+- Navigate to MA SETTINGS >> PLUGINS and add the plug-in
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 
@@ -49,4 +49,4 @@ The Home Assistant Plugin can expose HA entities to MA that can then be mapped t
 
 - For volume controls, entities that can have a numeric value/state will be shown. (i.e. number, input_number and media_player (where volume_level will be mapped))
 
-When an entity is selected it will then appear as an option in an individual player's <a href="https://www.music-assistant.io/player-support/#player-controls" target="_blank" rel="noopener noreferrer">Player Controls</a> settings.
+When an entity is selected it will then appear as an option in an individual player's [Player Controls](/settings/individual-player/#player-controls) settings.
