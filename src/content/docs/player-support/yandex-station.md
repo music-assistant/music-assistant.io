@@ -3,7 +3,7 @@ title: "Yandex Station"
 description: Features and Notes for the Yandex Station Player Provider
 ---
 
-# Yandex Station
+# Yandex Station <img src="/assets/icons/yandex-station-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant can play music on <a href="https://station.yandex.ru/" target="_blank" rel="noopener noreferrer">Yandex Station</a> smart speakers over the local protocol — no cloud roundtrip for audio. Contributed and maintained by <a href="https://github.com/trudenboy" target="_blank" rel="noopener noreferrer">Mikhail Nevskiy</a>
 
