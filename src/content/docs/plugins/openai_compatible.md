@@ -41,7 +41,7 @@ Music Assistant checks the address and key before finishing, so a typo is caught
 
 ### Choose your models
 
-The plugin does not offer any models until you pick them. Open the plugin under **Settings → Providers**, and select the models you want under **Models**.
+The plugin does not offer any models until you pick them. Open the plugin under **Settings → Plugins**, and select the models you want under **Models**.
 
 The list is read from your service. If your service does not publish a list of its models, the field lets you type the model names yourself.
 
