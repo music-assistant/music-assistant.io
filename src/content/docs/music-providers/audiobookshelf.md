@@ -82,7 +82,7 @@ This source points Music Assistant at that server so the same collection is avai
     - Newly added and just deleted items are immediately reflected as well
     - BUT: if MA was down while changes in the ABS database occured, those will only be synced if a normal provider sync is triggered
 - Single and multi-file audiobooks are supported
-- Supports recommendations on the [Home View](/ui/#view---home)
+- Supports recommendations on the [Discover view](/ui/#view---discover)
 - Playlist creation and editing are supported only when Audiobookshelf contains a single audiobook library and a single podcast library. This limitation exists because Music Assistant uses a single-library model, whereas Audiobookshelf supports multiple libraries, making library mapping ambiguous
 
 ## Configuration
