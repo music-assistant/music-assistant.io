@@ -61,7 +61,7 @@ Navigate to MA settings and inspect the provider or source entry. If there is a 
 
 ## Why aren't tracks/albums matching between sources
 
-Matching items between streaming sources is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see <a href="https://github.com/music-assistant/support/discussions/543" target="_blank" rel="noopener noreferrer">this discussion</a>
+Matching items between streaming sources is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see [Metadata](/metadata/)
 
 ## My media player is not available or not playing
 
@@ -81,15 +81,17 @@ If you are trying to view playlists through the HA media view then you should no
 
 ## I don't see any tracks or albums for an Artist on a streaming source
 
-See the [Usage and Music Source notes](/usage/)
+See [Library Import Control](/music-providers/#library-import-control)
 
 ## My local album art isn’t being picked up
 
 Art embedded in music tracks will always be picked up but folder.jpg images will only be imported if the folder name **exactly** matches the album (except for any characters that are prohibited in folder names. E.g. / )
 
+If there is no local artwork then online providers will be queried very slowly in the background. If the tracks also have no unique MusicBrainz IDs then most providers will return no results at all. See the [provider summary](/metadata/#provider-summary) for what each one needs.
+
 ## There isn't any metadata for my music
 
-For local files, you can either fully tag your music (this is preferred and it is recommended to use <a href="https://picard.musicbrainz.org/" target="_blank" rel="noopener noreferrer">Picard</a>) or have an artist folder with the artist.nfo in there (just like the images) and that will be preferred. Online metadata providers are only queried when there is no local data. See <a href="https://kodi.wiki/view/NFO_files" target="_blank" rel="noopener noreferrer">NFO files</a> for the format.
+For local files, you can either fully tag your music (this is preferred and it is recommended to use <a href="https://picard.musicbrainz.org/" target="_blank" rel="noopener noreferrer">Picard</a>) or have an <a href="https://kodi.wiki/view/NFO_files" target="_blank" rel="noopener noreferrer">artist folder with the artist.nfo</a> in there (just like the images) and that will be preferred. Online metadata providers are only queried when there is no local data.
 
 ## Some of the playlists are missing
 
