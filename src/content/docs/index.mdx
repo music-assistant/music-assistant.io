@@ -1,19 +1,59 @@
 ---
 title: Music Assistant
-description: Music Assistant is a music library manager for local and streaming sources
+description: A free, open source music library manager that brings your streaming services and your own files together, and plays them on almost any speaker
+template: splash
+hero:
+  title: Your music. Your way.
+  tagline: One library for your streaming services, your own files, radio, podcasts and audiobooks — playing on almost any speaker in the house.
+  image:
+    alt: Music sources streaming into Music Assistant and out to a wide range of players
+    file: ../../../public/assets/MA_banner.png
+  actions:
+    - text: Add to Home Assistant
+      link: https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon
+      variant: primary
+      icon: external
+    - text: Install with Docker
+      link: /installation/#docker-image
+      variant: secondary
+      icon: seti:docker
+    - text: Hear what it can play
+      link: /faq/listen-to/
+      variant: minimal
+      icon: right-arrow
 ---
 
-# Music Assistant
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-![Music Assistant Add-on For Home Assistant](/assets/banner.png)
+## How it all fits together
 
-Music Assistant is a free, open source music library manager. It brings your streaming services and your own files together into one library, and plays them on almost any speaker in the house.
+<CardGrid>
+  <Card title="The server" icon="seti:powershell">
+    The core. It holds your library, talks to your music sources and streams to your players. Runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or a Home Assistant add-on.
+  </Card>
+  <Card title="Music sources" icon="seti:audio">
+    Where the music comes from. Streaming services, your own files, radio, podcasts and audiobooks, all searched together.
+  </Card>
+  <Card title="Player providers" icon="seti:default">
+    How it reaches your speakers. Sonos, Chromecast, AirPlay, Squeezelite, DLNA, or something you built yourself.
+  </Card>
+  <Card title="Metadata" icon="seti:image">
+    Artwork, lyrics and artist information, filled in for you. Audio analysis works out loudness and fades from the audio itself.
+  </Card>
+  <Card title="Plugins" icon="puzzle">
+    Extras that go beyond playback — a party mode your guests queue from, a music quiz, or AI Radio with a generated presenter.
+  </Card>
+  <Card title="Home Assistant" icon="seti:config">
+    Puts your players in Home Assistant, ready for automations, announcements and voice.
+  </Card>
+</CardGrid>
 
-It runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or as a Home Assistant add-on — and you control it from any browser, or from Home Assistant with automations and voice.
+<CardGrid>
+  <LinkCard title="Start here" description="Install the server, then add your first music source and your first player." href="/installation/" />
+  <LinkCard title="Not sure what you can play?" description="Browse every music source by what you want to listen to, including by language." href="/faq/listen-to/" />
+</CardGrid>
 
-![Music sources flowing into Music Assistant and out to a wide range of players](/assets/MA_banner.png)
-
-## Features
+## What you get
 
 - **All your music in one library.** Streaming services, your own files, radio, podcasts and audiobooks, searched together in one place
 - **Plays on almost anything.** Sonos, Chromecast, AirPlay, Squeezelite, DLNA and many more, in sync across the players that support it
@@ -24,8 +64,6 @@ It runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or as a H
 - **Move playback from room to room** without losing your place in the queue
 - **Runs in any browser** and installs to your phone like an app
 - **Free and open source**. A project of the Open Home Foundation
-
-[![Music Assistant Add-on For Home Assistant](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
 ## Preview
 
@@ -38,15 +76,6 @@ It runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or as a H
 <a href="assets/screenshots/screen1.png"><img src="/assets/screenshots/screen1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
-
-## How Music Assistant fits together
-
-- **The server** is the core. It holds your library, talks to your music sources and streams to your players. It needs to run on an always-on machine — [install it here](/installation/)
-- **[Music sources](/music-providers/)** are where the music comes from: streaming services, your own files, radio, podcasts and audiobooks
-- **[Player providers](/player-support/)** are how it reaches your speakers, from Sonos and Chromecast to something you build yourself
-- **[Metadata providers](/metadata/)** fill in the artwork, biographies and lyrics, and audio analysis works out loudness and fades from the audio itself
-- **Plugins** add extras such as [party mode](/plugins/party/), a [music quiz](/plugins/music-quiz/) or [AI Radio](/plugins/ai-radio/)
-- **The [Home Assistant integration](/integration/)** puts your players in Home Assistant, for automations, announcements and voice
 
 ## The Core Team
 

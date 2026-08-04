@@ -221,3 +221,16 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
   flex-direction: row;
   gap: 0.5rem;
 }
+/* Landing page: let the hero and card grid use the full splash width.
+   --sl-content-width is 50rem for readable prose, which is too narrow for a
+   six-card grid, so it is widened for the page that has a hero. */
+[data-has-hero] {
+  --sl-content-width: 68rem;
+}
+
+/* The hero artwork carries the brand, so give it the same rounded treatment
+   as the other page imagery rather than leaving it a bare rectangle. */
+[data-has-hero] .hero > img,
+[data-has-hero] .hero picture > img {
+  border-radius: 12px;
+}
