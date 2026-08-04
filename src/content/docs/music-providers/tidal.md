@@ -21,10 +21,10 @@ Sign in and your Tidal favourites and playlists appear in Music Assistant, with 
 | Lyrics Supported | Yes |
 | [Radio Mode](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
-| Similar Artists Support                         |            No                      |
+| Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
-| Login Method | OAuth |
+| Login Method | OAuth (device flow) |
 
 ### Other
 
@@ -36,19 +36,17 @@ Sign in and your Tidal favourites and playlists appear in Music Assistant, with 
 
 ## Configuration
 
-In the configuration, there are a series of steps that must be completed in order. Start at the top of the page and work down. 
+Tidal is linked with the OAuth device flow, so there is nothing to copy or paste.
 
-<a href="/assets/screenshots/tidal-config.png"><img src="/assets/screenshots/tidal-config.png" alt="Tidal Config" style="width: 800px;"  loading="lazy" /></a>
+1. Add the Tidal provider. Music Assistant shows your code and an `Open` button, and waits.
 
-1. Click on the first button and you will be redirected to the Tidal login page and after logging in you will be taken to an error page which is normal.
+   [![Preview image](/assets/screenshots/tidal-device-login.png)](/assets/screenshots/tidal-device-login.png)
 
-    <a href="/assets/screenshots/oops-page.png"><img src="/assets/screenshots/oops-page.png" alt="Oops Page" style="width: 800px;"  loading="lazy" /></a>
+2. Click `Open` to go to `link.tidal.com` with the code already filled in, and approve the request while signed in to Tidal. To approve from a phone instead, go to `link.tidal.com` there and type the code shown in Music Assistant.
 
-2. Take the full URL in the address bar of the `Page not found` page and insert it into the configuration screen  
+   [![Preview image](/assets/screenshots/tidal-approve.png)](/assets/screenshots/tidal-approve.png)
 
-3. Click on the `Complete the Auth Process via PKCE on Tidal.com` button to complete the setup
-
-4. Click on `Save`
+3. Setup completes on its own as soon as Tidal reports the approval. Codes are short-lived, so if yours expires before you approve it, start the setup again.
 
 ### Settings
 
@@ -58,5 +56,5 @@ See also the [Library Import Control](/music-providers/#library-import-control) 
 
 ## Known Issues / Notes
 
-- If the authorisation process gets stuck then try a different browser. It is likely the authorisation pop up window is being blocked
-- If login is normally accomplished with "Proceed with Google" then a workaround is required as this option is not shown on the login page used by MA for authentication. In this case login to Tidal normally using a browser. In the same browser start the authentication process via MA. A prompt should be observed to use the existing login. Accepting that should result in the error page mentioned in step 1 above. From that point proceed with steps 2 and 3 above.
+- If nothing opens when you add the provider, the window was most likely blocked by the browser. Use the `Click here if the window did not open` link on the setup screen.
+- The approval link can be opened on any device, not just the one running Music Assistant.
