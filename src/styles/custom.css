@@ -271,7 +271,7 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
   padding: 0.25rem 0.7rem;
   border-radius: 0.35rem;
   color: var(--sl-color-text-accent);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -332,11 +332,26 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
   color: inherit;
   border-radius: 0.5rem;
 }
-.tile-link:hover .card,
-.tile-link:focus-visible .card {
-  border-color: var(--sl-color-accent);
-}
 .tile-link:focus-visible {
   outline: 2px solid var(--sl-color-accent);
   outline-offset: 3px;
+}
+
+/* Give each landing page tile its own icon colour. Starlight cards are all
+   purple by default, which makes six of them read as one block. These are
+   Starlight's own accent tokens, so they follow the light and dark themes. */
+.tile-link:nth-child(1) .card { --sl-card-border: var(--sl-color-blue);   --sl-card-bg: var(--sl-color-blue-low); }
+.tile-link:nth-child(2) .card { --sl-card-border: var(--sl-color-green);  --sl-card-bg: var(--sl-color-green-low); }
+.tile-link:nth-child(3) .card { --sl-card-border: var(--sl-color-orange); --sl-card-bg: var(--sl-color-orange-low); }
+.tile-link:nth-child(4) .card { --sl-card-border: var(--sl-color-purple); --sl-card-bg: var(--sl-color-purple-low); }
+.tile-link:nth-child(5) .card { --sl-card-border: var(--sl-color-red);    --sl-card-bg: var(--sl-color-red-low); }
+.tile-link:nth-child(6) .card { --sl-card-border: var(--sl-color-blue);   --sl-card-bg: var(--sl-color-blue-low); }
+
+/* The icon takes the tile colour; the hover border uses it too. */
+.tile-link .card .icon {
+  color: var(--sl-card-border);
+}
+.tile-link:hover .card,
+.tile-link:focus-visible .card {
+  border-color: var(--sl-card-border);
 }
