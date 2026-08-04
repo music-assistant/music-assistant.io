@@ -12,8 +12,8 @@ importers:
         specifier: ^4.3.14
         version: 4.3.14(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
       '@astrojs/starlight':
-        specifier: ^0.37.6
-        version: 0.37.7(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
+        specifier: ^0.38.0
+        version: 0.38.5(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
       astro:
         specifier: ^6.3.3
         version: 6.3.3(@types/node@24.12.0)(rollup@4.60.0)
@@ -27,8 +27,8 @@ importers:
         specifier: ^0.34.2
         version: 0.34.5
       starlight-blog:
-        specifier: ^0.25.2
-        version: 0.25.3(@astrojs/starlight@0.37.7(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0)))(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
+        specifier: ^0.26.0
+        version: 0.26.1(@astrojs/starlight@0.38.5(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0)))(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
 
 packages:
 
@@ -53,6 +53,12 @@ packages:
     peerDependencies:
       astro: ^5.0.0
 
+  '@astrojs/mdx@5.0.6':
+    resolution: {integrity: sha512-4dKe0ZMmqujofPNDHahzClkwinn9f8jHPcaXcgdGvPAlboD2mjzkUCofli2cBnxYAkdfhC6d50gBJ8i/cH8gHw==}
+    engines: {node: '>=22.12.0'}
+    peerDependencies:
+      astro: ^6.0.0
+
   '@astrojs/prism@3.3.0':
     resolution: {integrity: sha512-q8VwfU/fDZNoDOf+r7jUnMC2//H2l0TuQ6FkGJL8vD8nw/q5KiL3DS1KKBI3QhI9UQhpJ5dc7AtqfbXWuOgLCQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
@@ -64,13 +70,13 @@ packages:
   '@astrojs/rss@4.0.17':
     resolution: {integrity: sha512-eV+wdMbeVKC9+sPaV0LN8JL1LGo9YAh3GKl4Ou4nzMNLmXM/aswYpSGxVEAuHilgBZ6/++/Pv08ICmuOqX107w==}
 
-  '@astrojs/sitemap@3.7.1':
-    resolution: {integrity: sha512-IzQqdTeskaMX+QDZCzMuJIp8A8C1vgzMBp/NmHNnadepHYNHcxQdGLQZYfkbd2EbRXUfOS+UDIKx8sKg0oWVdw==}
+  '@astrojs/sitemap@3.7.3':
+    resolution: {integrity: sha512-f8euLVsyeAmAkSm/1M2Kb8sL8byQmfgbvBNaHFItCheTj/IpiJYSEWVcqDHZ/yEHxiS7+w87mQkzwZaPHmk5GA==}
 
-  '@astrojs/starlight@0.37.7':
-    resolution: {integrity: sha512-KyBnou8aKIlPJUSNx6a1SN7XyH22oj/VAvTGC+Edld4Bnei1A//pmCRTBvSrSeoGrdUjK0ErFUfaEhhO1bPfDg==}
+  '@astrojs/starlight@0.38.5':
+    resolution: {integrity: sha512-35xLSOtZDAMAilHG2zAEZoJ4AaPb+doYOvxuuRTAnmIBSOvujffOAHv3/rr6W/LJtkhBU38PjRDJ4i8QT1uGVw==}
     peerDependencies:
-      astro: ^5.5.0
+      astro: ^6.0.0
 
   '@astrojs/telemetry@3.3.2':
     resolution: {integrity: sha512-j8DNruA8ors99Al39RYZPJK4DC1bKkoNm93mAMuBhY9TCNC4R8n1q7ovFnJ5qhGh5Lsh7pa1gpQVpYpsJPeTHQ==}
@@ -272,17 +278,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@expressive-code/core@0.41.7':
-    resolution: {integrity: sha512-ck92uZYZ9Wba2zxkiZLsZGi9N54pMSAVdrI9uW3Oo9AtLglD5RmrdTwbYPCT2S/jC36JGB2i+pnQtBm/Ib2+dg==}
+  '@expressive-code/core@0.42.0':
+    resolution: {integrity: sha512-MN11+9nfmaC7sYu2BZJXAXqwkBRt8t1xTSqP+Ti1NfTEskgl6xUnzDxoaiQkg0BMzpglA0pys4dpDKquP/cyIw==}
 
-  '@expressive-code/plugin-frames@0.41.7':
-    resolution: {integrity: sha512-diKtxjQw/979cTglRFaMCY/sR6hWF0kSMg8jsKLXaZBSfGS0I/Hoe7Qds3vVEgeoW+GHHQzMcwvgx/MOIXhrTA==}
+  '@expressive-code/plugin-frames@0.42.0':
+    resolution: {integrity: sha512-XtkPm+941Uta7Y+81Acv+OA/20F1NJmJhCX6UYGKpqEIGqplNh3PTOhcURp6tcruhlzJcWcvpWy6Oigz3SrjqA==}
 
-  '@expressive-code/plugin-shiki@0.41.7':
-    resolution: {integrity: sha512-DL605bLrUOgqTdZ0Ot5MlTaWzppRkzzqzeGEu7ODnHF39IkEBbFdsC7pbl3LbUQ1DFtnfx6rD54k/cdofbW6KQ==}
+  '@expressive-code/plugin-shiki@0.42.0':
+    resolution: {integrity: sha512-PMKey/kLmewttAHQezL+Y5Fx3vVssfDi3+FJOYQQS2mXP3tQspFELtKKAfsXfmSXdToZYgwoO69HJndqfE+09g==}
 
-  '@expressive-code/plugin-text-markers@0.41.7':
-    resolution: {integrity: sha512-Ewpwuc5t6eFdZmWlFyeuy3e1PTQC0jFvw2Q+2bpcWXbOZhPLsT7+h8lsSIJxb5mS7wZko7cKyQ2RLYDyK6Fpmw==}
+  '@expressive-code/plugin-text-markers@0.42.0':
+    resolution: {integrity: sha512-l59lUx8fq1v5g6SpmbDjiU0+7IdfbiWnAyRmtTVSpfhyq+nZMN4UcmYyu2b9Mynhzt7Gr+O+cXyEPDNb2AVWVQ==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -749,8 +755,8 @@ packages:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
 
-  astro-expressive-code@0.41.7:
-    resolution: {integrity: sha512-hUpogGc6DdAd+I7pPXsctyYPRBJDK7Q7d06s4cyP0Vz3OcbziP3FNzN0jZci1BpCvLn9675DvS7B9ctKKX64JQ==}
+  astro-expressive-code@0.42.0:
+    resolution: {integrity: sha512-aiTePi2Cn0mJPYWZSzP1GcxCinX9mNtJyCCshVVPSg1yRwM7ADvFJOx0FnS440M9t65hp8JH//dc2qr22Bm4ag==}
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0 || ^6.0.0-beta
 
@@ -974,8 +980,8 @@ packages:
   eventemitter3@5.0.4:
     resolution: {integrity: sha512-mlsTRyGaPBjPedk6Bvw+aqbsXDtoAyAzm5MO7JgU+yVRyMQ5O8bD4Kcci7BS85f93veegeCPkL8R4GLClnjLFw==}
 
-  expressive-code@0.41.7:
-    resolution: {integrity: sha512-2wZjC8OQ3TaVEMcBtYY4Va3lo6J+Ai9jf3d4dbhURMJcU4Pbqe6EcHe424MIZI0VHUA1bR6xdpoHYi3yxokWqA==}
+  expressive-code@0.42.0:
+    resolution: {integrity: sha512-V5DtJLEKuj4wf9O6IRtPtRObkMVy2ggR+S0MdjrTw6m58krZnDioyhW1si3Y04c5YPeooP4nd85Yq9NwEVHS4g==}
 
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
@@ -1201,9 +1207,9 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
-  marked@15.0.12:
-    resolution: {integrity: sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==}
-    engines: {node: '>= 18'}
+  marked@17.0.6:
+    resolution: {integrity: sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==}
+    engines: {node: '>= 20'}
     hasBin: true
 
   mdast-util-definitions@6.0.0:
@@ -1269,8 +1275,8 @@ packages:
   micromark-core-commonmark@2.0.3:
     resolution: {integrity: sha512-RDBrHEMSxVFLg6xvnXmb1Ayr2WzLAWjeSATAoxwKYJV94TeNavgoIdA0a9ytzDSVzBy2YKFK+emCPOEibLeCrg==}
 
-  micromark-extension-directive@3.0.2:
-    resolution: {integrity: sha512-wjcXHgk+PPdmvR58Le9d7zQYWy+vKEU9Se44p2CrCDPiLr2FMyiT4Fyb5UFKFC66wGB3kPlgD7q3TnoqPS7SZA==}
+  micromark-extension-directive@4.0.0:
+    resolution: {integrity: sha512-/C2nqVmXXmiseSSuCdItCMho7ybwwop6RrrRPk0KbOHW21JKoCldC+8rFOaundDoRBUWBnJJcxeA/Kvi34WQXg==}
 
   micromark-extension-gfm-autolink-literal@2.1.0:
     resolution: {integrity: sha512-oOg7knzhicgQ3t4QCjCWgTmfNhvQbDDnJeVu9v81r7NltNCVmhPy1fJRX27pISafdjL+SVc4d3l48Gb6pbRypw==}
@@ -1525,8 +1531,8 @@ packages:
   regex@6.1.0:
     resolution: {integrity: sha512-6VwtthbV4o/7+OaAF9I5L5V3llLEsoPyq9P1JVXkedTP33c7MfCG0/5NOPcSJn0TzXcG9YUrR0gQSWioew3LDg==}
 
-  rehype-expressive-code@0.41.7:
-    resolution: {integrity: sha512-25f8ZMSF1d9CMscX7Cft0TSQIqdwjce2gDOvQ+d/w0FovsMwrSt3ODP4P3Z7wO1jsIJ4eYyaDRnIR/27bd/EMQ==}
+  rehype-expressive-code@0.42.0:
+    resolution: {integrity: sha512-8rp/1YMEVVSYbtz+bFBx+uSx3vA4i4T8RwRm5Q/IWbucQnnQqQ0hDqtmKOr8tv+59Cik6cu5aH3WPo0I7csuTA==}
 
   rehype-format@5.0.1:
     resolution: {integrity: sha512-zvmVru9uB0josBVpr946OR8ui7nJEdzZobwLOOqHb/OOD88W0Vk2SqLwoVOj0fM6IPCCO6TaV9CvQvJMWwukFQ==}
@@ -1546,8 +1552,8 @@ packages:
   rehype@13.0.2:
     resolution: {integrity: sha512-j31mdaRFrwFRUIlxGeuPXXKWQxet52RBQRvCmzl5eCefn/KGbomK5GMHNMsOJf55fgo3qw5tST5neDuarDYR2A==}
 
-  remark-directive@3.0.1:
-    resolution: {integrity: sha512-gwglrEQEZcZYgVyG1tQuA+h58EZfq5CSULw7J90AFuCTyib1thgHPoqQ+h9iFvU6R+vnZ5oNFQR5QKgGpk741A==}
+  remark-directive@4.0.0:
+    resolution: {integrity: sha512-7sxn4RfF1o3izevPV1DheyGDD6X4c9hrGpfdUpm7uC++dqrnJxIZVkk7CoKqcLm0VUMAuOol7Mno3m6g8cfMuA==}
 
   remark-gfm@4.0.1:
     resolution: {integrity: sha512-1quofZ2RQ9EWdeN34S79+KExV1764+wCUGop5CPL1WGdD0ocPpu91lzPGbwWMECpEpd42kJGQwzRfyov9j4yNg==}
@@ -1639,11 +1645,11 @@ packages:
   space-separated-tokens@2.0.2:
     resolution: {integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==}
 
-  starlight-blog@0.25.3:
-    resolution: {integrity: sha512-U0+CYgeJhbXz/6Rcr2vXCUiMq5HyQUq9gP0Nj3Ii2A8GKaDoZTdgHD2HnWJBK4NbXRCJqM7N1BcyeLHS0+O7Aw==}
-    engines: {node: '>=18.20.8'}
+  starlight-blog@0.26.1:
+    resolution: {integrity: sha512-c2aLtkVTNFKHDJrh1DwlxBj+VyOrLqJeHmGkKKHwL6oowUoaqUiC/vyOZLXNmZL1kcYI0hgHDw1t4G/lkg8mZg==}
+    engines: {node: '>=22.12.0'}
     peerDependencies:
-      '@astrojs/starlight': '>=0.33.0'
+      '@astrojs/starlight': '>=0.38.0'
 
   stream-replace-string@2.0.0:
     resolution: {integrity: sha512-TlnjJ1C0QrmxRNrON00JvaFFlNh5TTG00APw23j74ET7gkQpTASi6/L2fuiav8pzK715HXtUeClpBTw2NPSn6w==}
@@ -1971,6 +1977,25 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@astrojs/mdx@5.0.6(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))':
+    dependencies:
+      '@astrojs/markdown-remark': 7.1.2
+      '@mdx-js/mdx': 3.1.1
+      acorn: 8.16.0
+      astro: 6.3.3(@types/node@24.12.0)(rollup@4.60.0)
+      es-module-lexer: 2.3.1
+      estree-util-visit: 2.0.0
+      hast-util-to-html: 9.0.5
+      piccolore: 0.1.3
+      rehype-raw: 7.0.0
+      remark-gfm: 4.0.1
+      remark-smartypants: 3.0.2
+      source-map: 0.7.6
+      unist-util-visit: 5.1.0
+      vfile: 6.0.3
+    transitivePeerDependencies:
+      - supports-color
+
   '@astrojs/prism@3.3.0':
     dependencies:
       prismjs: 1.30.0
@@ -1985,23 +2010,23 @@ snapshots:
       piccolore: 0.1.3
       zod: 4.3.6
 
-  '@astrojs/sitemap@3.7.1':
+  '@astrojs/sitemap@3.7.3':
     dependencies:
       sitemap: 9.0.1
       stream-replace-string: 2.0.0
       zod: 4.3.6
 
-  '@astrojs/starlight@0.37.7(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))':
+  '@astrojs/starlight@0.38.5(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))':
     dependencies:
-      '@astrojs/markdown-remark': 6.3.11
-      '@astrojs/mdx': 4.3.14(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
-      '@astrojs/sitemap': 3.7.1
+      '@astrojs/markdown-remark': 7.1.2
+      '@astrojs/mdx': 5.0.6(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
+      '@astrojs/sitemap': 3.7.3
       '@pagefind/default-ui': 1.4.0
       '@types/hast': 3.0.4
       '@types/js-yaml': 4.0.9
       '@types/mdast': 4.0.4
       astro: 6.3.3(@types/node@24.12.0)(rollup@4.60.0)
-      astro-expressive-code: 0.41.7(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
+      astro-expressive-code: 0.42.0(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.3
       hast-util-select: 6.0.4
@@ -2017,7 +2042,7 @@ snapshots:
       pagefind: 1.4.0
       rehype: 13.0.2
       rehype-format: 5.0.1
-      remark-directive: 3.0.1
+      remark-directive: 4.0.0
       ultrahtml: 1.6.0
       unified: 11.0.5
       unist-util-visit: 5.1.0
@@ -2149,7 +2174,7 @@ snapshots:
   '@esbuild/win32-x64@0.27.4':
     optional: true
 
-  '@expressive-code/core@0.41.7':
+  '@expressive-code/core@0.42.0':
     dependencies:
       '@ctrl/tinycolor': 4.2.0
       hast-util-select: 6.0.4
@@ -2161,18 +2186,18 @@ snapshots:
       unist-util-visit: 5.1.0
       unist-util-visit-parents: 6.0.2
 
-  '@expressive-code/plugin-frames@0.41.7':
+  '@expressive-code/plugin-frames@0.42.0':
     dependencies:
-      '@expressive-code/core': 0.41.7
+      '@expressive-code/core': 0.42.0
 
-  '@expressive-code/plugin-shiki@0.41.7':
+  '@expressive-code/plugin-shiki@0.42.0':
     dependencies:
-      '@expressive-code/core': 0.41.7
-      shiki: 3.23.0
+      '@expressive-code/core': 0.42.0
+      shiki: 4.3.1
 
-  '@expressive-code/plugin-text-markers@0.41.7':
+  '@expressive-code/plugin-text-markers@0.42.0':
     dependencies:
-      '@expressive-code/core': 0.41.7
+      '@expressive-code/core': 0.42.0
 
   '@img/colour@1.1.0': {}
 
@@ -2541,10 +2566,10 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-expressive-code@0.41.7(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0)):
+  astro-expressive-code@0.42.0(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0)):
     dependencies:
       astro: 6.3.3(@types/node@24.12.0)(rollup@4.60.0)
-      rehype-expressive-code: 0.41.7
+      rehype-expressive-code: 0.42.0
 
   astro-remote@0.3.4:
     dependencies:
@@ -2863,12 +2888,12 @@ snapshots:
 
   eventemitter3@5.0.4: {}
 
-  expressive-code@0.41.7:
+  expressive-code@0.42.0:
     dependencies:
-      '@expressive-code/core': 0.41.7
-      '@expressive-code/plugin-frames': 0.41.7
-      '@expressive-code/plugin-shiki': 0.41.7
-      '@expressive-code/plugin-text-markers': 0.41.7
+      '@expressive-code/core': 0.42.0
+      '@expressive-code/plugin-frames': 0.42.0
+      '@expressive-code/plugin-shiki': 0.42.0
+      '@expressive-code/plugin-text-markers': 0.42.0
 
   extend@3.0.2: {}
 
@@ -3188,9 +3213,9 @@ snapshots:
     dependencies:
       marked: 12.0.2
 
-  marked-plaintify@1.1.1(marked@15.0.12):
+  marked-plaintify@1.1.1(marked@17.0.6):
     dependencies:
-      marked: 15.0.12
+      marked: 17.0.6
 
   marked-smartypants@1.1.11(marked@12.0.2):
     dependencies:
@@ -3199,7 +3224,7 @@ snapshots:
 
   marked@12.0.2: {}
 
-  marked@15.0.12: {}
+  marked@17.0.6: {}
 
   mdast-util-definitions@6.0.0:
     dependencies:
@@ -3407,7 +3432,7 @@ snapshots:
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.2
 
-  micromark-extension-directive@3.0.2:
+  micromark-extension-directive@4.0.0:
     dependencies:
       devlop: 1.1.0
       micromark-factory-space: 2.0.1
@@ -3828,9 +3853,9 @@ snapshots:
     dependencies:
       regex-utilities: 2.3.0
 
-  rehype-expressive-code@0.41.7:
+  rehype-expressive-code@0.42.0:
     dependencies:
-      expressive-code: 0.41.7
+      expressive-code: 0.42.0
 
   rehype-format@5.0.1:
     dependencies:
@@ -3870,11 +3895,11 @@ snapshots:
       rehype-stringify: 10.0.1
       unified: 11.0.5
 
-  remark-directive@3.0.1:
+  remark-directive@4.0.0:
     dependencies:
       '@types/mdast': 4.0.4
       mdast-util-directive: 3.1.0
-      micromark-extension-directive: 3.0.2
+      micromark-extension-directive: 4.0.0
       unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
@@ -4065,19 +4090,19 @@ snapshots:
 
   space-separated-tokens@2.0.2: {}
 
-  starlight-blog@0.25.3(@astrojs/starlight@0.37.7(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0)))(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0)):
+  starlight-blog@0.26.1(@astrojs/starlight@0.38.5(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0)))(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0)):
     dependencies:
-      '@astrojs/markdown-remark': 6.3.11
-      '@astrojs/mdx': 4.3.14(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
+      '@astrojs/markdown-remark': 7.1.2
+      '@astrojs/mdx': 5.0.6(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
       '@astrojs/rss': 4.0.17
-      '@astrojs/starlight': 0.37.7(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
+      '@astrojs/starlight': 0.38.5(astro@6.3.3(@types/node@24.12.0)(rollup@4.60.0))
       astro-remote: 0.3.4
       github-slugger: 2.0.0
       hast-util-from-html: 2.0.3
       hast-util-to-html: 9.0.5
       hast-util-to-string: 3.0.1
-      marked: 15.0.12
-      marked-plaintify: 1.1.1(marked@15.0.12)
+      marked: 17.0.6
+      marked-plaintify: 1.1.1(marked@17.0.6)
       mdast-util-mdx-expression: 2.0.1
       unist-util-is: 6.0.1
       unist-util-remove: 4.0.0
