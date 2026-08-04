@@ -5,7 +5,7 @@ description: Capture live audio from a line-in, USB or Bluetooth input on the se
 
 # Local Audio Source <img src="/assets/icons/local-audio-source.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Local Audio Source captures live audio from a device connected to the machine running the Music Assistant server — a Bluetooth receiver, a line-in jack, a USB sound card — and turns it into a source you can play on any Music Assistant player.
+Local Audio Source captures live audio from a device connected to the machine running the Music Assistant server — a Bluetooth receiver, a line-in jack, a USB sound card — and turns it into a source you can play on any Music Assistant player. Contributed and maintained by <a href="https://github.com/meiser79" target="_blank" rel="noopener noreferrer">Peter Meiser</a>
 
 :::note
 This provider is in an early (alpha) stage of development.
@@ -38,7 +38,7 @@ group_add:
   - "audio"
 ```
 
-## Settings
+## Configuration
 
 Specific settings available for this provider are:
 
