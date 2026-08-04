@@ -12,9 +12,9 @@ If you are not sure how this fits with the Home Assistant integration, see [how 
 
 ## Features
 
-- Allows HA media players to be players in the MA User Interface
 - Allows HA entities to be linked to power, mute or volume controls of any player available in MA. This can be useful if the player doesn't support the feature natively or in advanced use cases
 - Exposes supported Home Assistant AI-query and text-to-speech capabilities to Music Assistant plugins that need them
+- Is a prerequisite for the [Home Assistant Media Players](/player-support/ha/) provider, which is what allows HA media players to be players in the MA User Interface
  
 ## Configuration
 
