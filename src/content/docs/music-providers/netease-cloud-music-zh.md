@@ -1,5 +1,7 @@
 ---
 title: "网易云音乐"
+sidebar:
+  hidden: true
 ---
 
 # 网易云音乐 <img src="/assets/icons/netease-cloud-music-icon.png" alt="NetEase Cloud Music icon" style="width: 70px; float: right;" loading="lazy" />

@@ -60,15 +60,18 @@ Node 22 or newer. The lockfile is pnpm's, so use pnpm rather than npm.
 
 ## Adding a music source
 
-Five things, and the build will tell you if you miss the last one.
+Four things, and the build will tell you if you miss the last one.
 
 1. **The page**, at `src/content/docs/music-providers/<slug>.md`. Copy an existing page and work
    from that. Structure is covered under [House style](#house-style) below.
+
+   There is no sidebar entry to add. The `Music Sources` menu is generated from this folder, so
+   the file lands in the menu on its own. Two things follow from that: **name the file after the
+   source**, because the menu is sorted by filename, and **set `title` to the name people know it
+   by**, because that is the label they will see. If the page needs a different title from its
+   menu label, add `sidebar: { label: ... }` to the frontmatter.
 2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
-3. **The sidebar entry**, in the `Music Sources` group in `astro.config.mjs`, in alphabetical
-   order. Nothing checks this, so it is the easiest one to forget. A page with no sidebar entry
-   still builds but is unreachable from the menu.
-4. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
+3. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
 
    ```ts
    {
@@ -83,7 +86,7 @@ Five things, and the build will tell you if you miss the last one.
    page. **The build fails without it**, and the Deploy Preview check will go red with a
    ready-made entry for you to paste.
 
-5. **Pick the categories.** Your `Media Types Supported` row tells you whether the source offers
+4. **Pick the categories.** Your `Media Types Supported` row tells you whether the source offers
    music, radio, podcasts or audiobooks. Translate that into categories:
 
    - **Music**, which is what the table means by Artists, Albums, Tracks or Playlists, is either
