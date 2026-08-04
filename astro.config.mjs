@@ -268,6 +268,7 @@ export default defineConfig({
             { label: "Sonos", slug: "player-support/sonos" },
             { label: "Squeezelite", slug: "player-support/squeezelite" },
             { label: "WiiM", slug: "player-support/wiim" },
+            { label: "Yandex Station", slug: "player-support/yandex-station" },
           ],
         },
         {
@@ -321,6 +322,10 @@ export default defineConfig({
                 {
                   label: "Yandex Music Connect (Ynison)",
                   slug: "plugins/yandex-ynison",
+                },
+                {
+                  label: "Yandex Smart Home",
+                  slug: "plugins/yandex-smarthome",
                 },
               ],
             },
