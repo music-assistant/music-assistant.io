@@ -30,7 +30,7 @@ Music Assistant and Home Assistant can be joined in both directions, and there a
 |:--|:--|:--|
 | [Home Assistant Integration](/integration/installation/) | Home Assistant | Your **MA players appear in HA**, ready for the HA UI, automations, scripts, announcements and voice |
 | [Home Assistant Plugin](/ha-plugin/) | Music Assistant | The connection back the other way. It adds no players by itself, but it lets you drive **any** MA player's power, volume or mute from an HA entity, and it gives plugins such as [AI Radio](/plugins/ai-radio/) access to Home Assistant's AI and text-to-speech |
-| [Home Assistant Media Players](/player-support/ha/) | Music Assistant | Your **HA media players appear in MA** as places you can play music to |
+| [Home Assistant Media Players](/player-support/home-assistant/) | Music Assistant | Your **HA media players appear in MA** as places you can play music to |
 
 Most people only want the first row. Install the integration and your Music Assistant speakers show up in Home Assistant — that is the whole job.
 

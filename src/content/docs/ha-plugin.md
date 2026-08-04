@@ -6,7 +6,7 @@ description: The Home Assistant Plugin provides a connection from HA to MA
 
 The Home Assistant Plugin provides a connection from HA to MA. It is the bridge Music Assistant uses to reach into Home Assistant.
 
-It does not add any players by itself. To play to Home Assistant media players you also need the [Home Assistant Media Players](/player-support/ha/) provider, which builds on this plugin. The plugin is still worth having on its own, though, for the entity-linked player controls and the AI and text-to-speech features described below.
+It does not add any players by itself. To play to Home Assistant media players you also need the [Home Assistant Media Players](/player-support/home-assistant/) provider, which builds on this plugin. The plugin is still worth having on its own, though, for the entity-linked player controls and the AI and text-to-speech features described below.
 
 If you are not sure how this fits with the Home Assistant integration, see [how the pieces fit together](/integration/#how-the-pieces-fit-together).
 
@@ -14,7 +14,7 @@ If you are not sure how this fits with the Home Assistant integration, see [how 
 
 - Allows HA entities to be linked to power, mute or volume controls of any player available in MA. This can be useful if the player doesn't support the feature natively or in advanced use cases
 - Exposes supported Home Assistant AI-query and text-to-speech capabilities to Music Assistant plugins that need them
-- Is a prerequisite for the [Home Assistant Media Players](/player-support/ha/) provider, which is what allows HA media players to be players in the MA User Interface
+- Is a prerequisite for the [Home Assistant Media Players](/player-support/home-assistant/) provider, which is what allows HA media players to be players in the MA User Interface
  
 ## Configuration
 
