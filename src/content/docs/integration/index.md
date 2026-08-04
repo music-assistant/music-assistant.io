@@ -24,7 +24,7 @@ See also the <a href="https://www.home-assistant.io/integrations/music_assistant
 
 Music Assistant and Home Assistant can be joined in both directions, and there are three separate pieces involved. Which ones you need depends on which direction you want.
 
-<a href="/assets/ha-connection-diagram.png"><img src="/assets/ha-connection-diagram.png" alt="Home Assistant Integration, installed in Home Assistant, makes Music Assistant players appear in Home Assistant. The Home Assistant Plugin and Home Assistant Media Players, both installed in Music Assistant, make Home Assistant players appear in Music Assistant. The plugin requires the integration to be installed first." style="width: 800px;" loading="lazy" /></a>
+<a href="/assets/ha-connection-diagram.png"><img src="/assets/ha-connection-diagram.png" alt="The Home Assistant Integration, installed in Home Assistant, makes Music Assistant players appear in Home Assistant, and is all most people need. Installed in Music Assistant, the Home Assistant Plugin exposes Home Assistant control entities plus AI and text to speech, and requires the integration. Home Assistant Media Players makes Home Assistant players appear in Music Assistant, and requires the plugin." style="width: 800px;" loading="lazy" /></a>
 
 | Piece | You install it in | What it gives you |
 |:--|:--|:--|
