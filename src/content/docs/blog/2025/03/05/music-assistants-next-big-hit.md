@@ -23,7 +23,7 @@ tags:
   - features
 ---
 
-Over the past several months, [Music Assistant](https://www.music-assistant.io/) has been hitting all the right notes with new features, greater stability, and a crescendo of contributors who keep pushing the project forward. If you're [unfamiliar with Music Assistant](/blog/2024/05/09/music-assistant-2/#what-is-music-assistant), it allows you to merge your libraries from leading audio streaming providers and local files, letting you play them on the most popular smart speakers. Since our [last update](/blog/2024/05/09/music-assistant-2/), Music Assistant has had a couple of big releases, but our most recent might just be our platinum record 💿, with a lot of new functionality coming in version 2.4. In case you've missed the last few updates, here are the biggest additions.
+Over the past several months, [Music Assistant](https://www.music-assistant.io/) has been hitting all the right notes with new features, greater stability, and a crescendo of contributors who keep pushing the project forward. If you're [unfamiliar with Music Assistant](/blog/2024/05/09/music-assistant-2/#rainbow-connection), it allows you to merge your libraries from leading audio streaming providers and local files, letting you play them on the most popular smart speakers. Since our [last update](/blog/2024/05/09/music-assistant-2/), Music Assistant has had a couple of big releases, but our most recent might just be our platinum record 💿, with a lot of new functionality coming in version 2.4. In case you've missed the last few updates, here are the biggest additions.
 
 **Table of contents**
 - [Optimized for Assist](#say-my-name)
