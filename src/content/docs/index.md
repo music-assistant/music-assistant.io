@@ -7,7 +7,11 @@ description: Music Assistant is a music library manager for local and streaming 
 
 ![Music Assistant Add-on For Home Assistant](/assets/banner.png)
 
-Music Assistant is a music library manager for your offline and online music sources which can easily stream your favourite music to a wide range of supported players and be combined with the power of Home Assistant!
+Music Assistant is a free, open source music library manager. It brings your streaming services and your own files together into one library, and plays them on almost any speaker in the house.
+
+It runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or as a Home Assistant add-on — and you control it from any browser, or from Home Assistant with automations and voice.
+
+![Music sources flowing into Music Assistant and out to a wide range of players](/assets/MA_banner.png)
 
 ## Features
 
@@ -25,26 +29,6 @@ Music Assistant is a music library manager for your offline and online music sou
 
 [![Music Assistant Add-on For Home Assistant](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
-## Architecture
-
-Music Assistant consists of multiple building blocks:
-
-- Music Assistant Server ([Installation Instructions](/installation/))
-- Home Assistant Integration ([Installation Instructions](/integration/installation/))
-- [Music Sources](/music-providers/): Import your music from various sources into Music Assistant.
-- [Player Providers](/player-support/): Play your music on a wide collection of player ecosystems.
-- Plugins: These extend the functionality of Music Assistant with extras such as a [party mode](/plugins/party/) your guests can queue tracks from, a [music quiz](/plugins/music-quiz/), or [AI Radio](/plugins/ai-radio/) with a generated presenter
-
-## Music Assistant Server
-
-The Music Assistant server is a free, opensource Media library manager that connects to your streaming services and a wide range of connected speakers. The server is the beating heart, the core of Music Assistant and it keeps track of your music sources. It must run on an always-on device like a Raspberry Pi, a NAS or an Intel NUC or alike. The server can access multiple music sources and stream to multiple player types.
-
-![MA Banner](/assets/MA_banner.png)
-
-## Home Assistant Integration
-
-Connects Home Assistant to your Music Assistant Server to allow control from your HA instance, allow you to automate your music and allows voice control! The Integration also allows the exposure of HA media players to MA furthering the options you have for playback.
-
 ## Preview
 
 <a href="assets/screenshots/screen2.png"><img src="/assets/screenshots/screen2.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
@@ -56,6 +40,15 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 <a href="assets/screenshots/screen1.png"><img src="/assets/screenshots/screen1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
+
+## How Music Assistant fits together
+
+- **The server** is the core. It holds your library, talks to your music sources and streams to your players. It needs to run on an always-on machine — [install it here](/installation/)
+- **[Music sources](/music-providers/)** are where the music comes from: streaming services, your own files, radio, podcasts and audiobooks
+- **[Player providers](/player-support/)** are how it reaches your speakers, from Sonos and Chromecast to something you build yourself
+- **[Metadata providers](/metadata/)** fill in the artwork, biographies and lyrics, and audio analysis works out loudness and fades from the audio itself
+- **Plugins** add extras such as [party mode](/plugins/party/), a [music quiz](/plugins/music-quiz/) or [AI Radio](/plugins/ai-radio/)
+- **The [Home Assistant integration](/integration/)** puts your players in Home Assistant, for automations, announcements and voice
 
 ## The Core Team
 
