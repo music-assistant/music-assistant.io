@@ -311,6 +311,10 @@ export default defineConfig({
                   label: "Listenbrainz Scrobbler",
                   slug: "plugins/listenbrainz_scrobble",
                 },
+                {
+                  label: "Local Audio Source",
+                  slug: "plugins/local-audio-source",
+                },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
                 { label: "Party", slug: "plugins/party" },
                 { label: "Plex Connect", slug: "plugins/plex-connect" },
