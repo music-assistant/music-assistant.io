@@ -41,19 +41,11 @@ Check the GitHub Issues and Discord to see if it is a known problem. If not try 
 
 Before you raise an issue [read this first](/support/). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
 
-DOWNLOAD and ATTACH complete logs from MA SETTINGS>> SYSTEM>> SERVER LOGGING. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider/source basis.
+DOWNLOAD and ATTACH the diagnostics report from MA SETTINGS>> SYSTEM>> DIAGNOSTICS. This is the single most useful thing you can give us and it should be included in every report.
+
+DOWNLOAD and ATTACH complete logs from MA SETTINGS>> SYSTEM>> DIAGNOSTICS. These are optional to begin with as we may ask for more detailed logging once we have read the diagnostics report, but attaching them from the start does no harm. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider/source basis.
 
 You can also look in the Browser console when you have front end issues which in Chrome browser is --> F12 for developer tools --> console. 
-
-The following is required in ALL reports as the MA team is small and you need to narrow down the problem before raising an issue:
-
-- What music source is in use when the problem is observed? What other music sources have you tried (if you have no others then make that clear - you can always try radio stations)
-- What player provider is in use when the problem is observed? What other player providers have you tried (if you have no others then make that clear - you can always use [Sendspin](/player-support/sendspin/), the built-in web player)
-- Are the players grouped?
-- How is playback being instigated (e.g. automation or via the UI)
-- If you aren't using HAOS then exactly how you have installed MA
-- What is working (e.g. player works with music source X but not Y)
-- What you have tried from this page that hasn't helped (This is very important!)
 
 > [!NOTE]
 > You can retrieve the full MA logs by going to the MA settings and clicking on SYSTEM
