@@ -5,21 +5,33 @@ description: Features and Notes for the Spotify Connect Plugin
 
 # Spotify Connect <img src="/assets/icons/spotify-connect-icon.png" alt="Preview image" style="float: right;"  loading="lazy" />
 
-Music Assistant has the ability to add <a href="https://connect.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify Connect</a> support to any MA player.
+<a href="https://connect.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify Connect</a> lets you press play in the official Spotify app and have the sound come out of your Music Assistant players. With this plugin, any MA player (or group of players) appears in the Spotify app's device list, just like an official Spotify Connect speaker.
 
 > [!NOTE]
 > This plugin is still in an early stage of development. Functionality is limited and bugs may occur
+
+> [!NOTE]
+> A Spotify Premium account is required to use Spotify Connect. Free accounts will not work
     
 ## Features
 
-- Any MA player can be exposed including groups
+- Any MA player can be exposed as a Spotify Connect device, including groups
+- The name shown in the Spotify app is configurable per player
 
 ## Configuration
 
-To make each player appear as a Spotify Connect target in the Spotify app, the Spotify Connect provider needs to be added individually for each player in the MA Provider Settings
+1. In Music Assistant, go to `SETTINGS >> PLUGINS`, click `ADD A PLUGIN` and select `Spotify Connect`.
+2. Choose the Music Assistant player that should receive the Spotify audio, and the name to display in the Spotify app. Alternatively, set the player to `Auto` to send audio to whichever player is currently playing, or the first available player if none is playing.
+3. Repeat for each player you want to appear in the Spotify app; a separate instance of the plugin is added per player.
 
 > [!NOTE]
 > It is inadvisable to try and configure a Home Assistant player. Use only native Music Assistant players
+
+## Usage
+
+1. Open the Spotify app on your phone, tablet or computer. The device must be on the same network as the Music Assistant server.
+2. Start playing something, then open Spotify's device picker (the speaker icon).
+3. Select the Music Assistant player by the name you configured. The audio will now play through that player.
 
 ## Known Issues / Notes
 

@@ -40,7 +40,7 @@ Selecting an individual media type will then show a maximum of 50 items per prov
 
 When playing to a group, tapping near the volume control will open a dialog to control the individual players.
 
-The [Audio Pipeline](/audiopipeline/) selectable label shows, via a colored icon and two letters, the quality of the audio output (Low Quality, Standard Quality, High Quality and Hi-Res). An orange circle and LQ indicate a lossy codec below 256 kbps, a light-green dot with SQ (Standard Quality) indicates a lossy codec at 256 kbps or higher, a green circle and HQ indicates a lossless codec in use, and a cyan circle and HR indicates a lossless codec and [High Resolution sample rate or bit depth](/player-support/#audio-quality). For groups, where the quality varies between players, the highest quality available will be indicated.
+The [Audio Pipeline](/audiopipeline/) selectable label shows, via a colored icon and two letters, the sound quality of the audio output: LQ (Low Quality), SQ (Standard Quality), HQ (High Quality) or HR (Hi-Res). Select the label to see the full path the audio takes; what each quality level means is explained on the [Audio Pipeline](/audiopipeline/) page. For groups, where the quality varies between players, the highest quality available will be indicated.
 
 The overflow menu holds a number of useful options. Of note, for podcasts and audiobooks, there is a `Change playback speed` option which when selected will open a dialog with five preset speeds and a slider. The slider ranges from 0.5x to 2.0x and a preset is available for a boosted speed of 3.0x.
 
@@ -53,13 +53,15 @@ This view will change depending on screen width. With wider displays you will be
 
 The [Audio Pipeline](/audiopipeline/) selectable label is described above in the [Player Bar](#player-bar) section.
 
-You can also access the [Now Playing view directly via URL](/faq/how-to/#now-playing-view)
+You can also access the [Now Playing view directly via URL](/faq/how-to/#open-the-ui-with-the-now-playing-view-showing)
 
 When the favorite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favorite status may not indicate correctly until playback of the track is restarted.
 
 When lyrics are available for the track being played then the LYRICS selectable label will be shown in white. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song. Adjustment to the lyric timing is available in the ⋮ menu.
 
-The Autoplay and Crossfade toggleable buttons allow quick access to the bevaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu.
+The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu.
+
+A sleep timer is also available in the ⋮ menu, which will stop playback after the selected period.
 
 The contents of the ⋮ menu vary depending upon player and queue state. When a track is playing the full set of options are available and will look like:
 
@@ -77,7 +79,7 @@ The contents of the ⋮ menu vary depending upon player and queue state. When a 
 When a [player group](/faq/groups/) is powered on the members of that group will disappear from the player list and individual playback to those players will not be possible. In order to playback to an individual player, then either power off the group or remove the player from the group.
 
 > [!NOTE]
-> The MDI icon shown against each player can be changed in the player settings.
+> The icon shown against each player (a <a href="https://pictogrammers.com/library/mdi/" target="_blank" rel="noopener noreferrer">Material Design Icon</a>) can be changed in the player settings.
 ***************************************************************
 
 ## Grouping Players
@@ -137,11 +139,17 @@ The START RADIO option will only be seen if there is a provider that supports it
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
 
-The Discover View provides quick access to all of the different media types. Also shown are RECOMMENDATIONS from the providers which support this feature (e.g. Tidal). Review the specific music source pages to identify which sources support this.
+The Discover view provides quick access to different media types and recommendations. Recommendation rows load independently, so content appears one row at a time as it becomes available. Each enabled music provider can supply its own rows.
 
-The view is fully configurable by selecting the pencil icon in the top righ. There is then the ability to show or hide each row and adjust the order. Select `Leave edit mode` to return to the normal view.
+Select the pencil icon in the top right to enter edit mode. From there, show or hide rows and drag them into your preferred order. Some specialized or slower-loading rows are hidden by default to keep Discover fast; enable them in edit mode if you want to use them. Select `Leave edit mode` to return to the normal view.
 
 [![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
+
+Music Assistant provides three listening history rows:
+
+- **Recently Played** reflects the item you chose to play, such as an album, playlist, artist, or genre, instead of listing its individual tracks. For podcasts and audiobooks, it shows the parent show or book instead of individual episodes or chapters.
+- **Recent Artists** shows recently played artists.
+- **Recent Tracks** shows recently played tracks.
 ***************************************************************
 
 ## View - Artist / Album / Track

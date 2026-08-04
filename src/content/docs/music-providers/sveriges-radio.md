@@ -6,6 +6,8 @@ title: "Sveriges Radio"
 
 Music Assistant has support for <a href="https://sverigesradio.se" target="_blank" rel="noopener noreferrer">Sveriges Radio</a>, Sweden's public service radio, providing access to its live national and local channels. Contributed and maintained by <a href="https://github.com/romany" target="_blank" rel="noopener noreferrer">romany</a>
 
+Sveriges Radio is funded publicly rather than by advertising. It runs four national channels, P1 for news and speech, P2 for classical and jazz, P3 for pop and younger listeners, and P4 as a network of regional stations, alongside a number of digital-only channels. Listening is free and no account is involved.
+
 ## Features
 
 |           |                     |

@@ -6,6 +6,10 @@ title: "Podcast Index"
 
 Music Assistant has support for streaming podcasts from the <a href="https://podcastindex.org/" target="_blank" rel="noopener noreferrer">Podcast Index</a>. Contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
+The Podcast Index is a free and open directory of podcast feeds, run as a non-profit and paid for by donations. Anyone can add a feed and anyone can search it, with no company in the middle deciding what gets listed.
+
+This source lets you search and browse the index from Music Assistant and add anything you find to your library.
+
 > [!TIP]
 > **Donate**
 >

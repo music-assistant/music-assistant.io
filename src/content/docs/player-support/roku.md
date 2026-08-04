@@ -12,6 +12,17 @@ Media Assistant is a utility that allows you to stream/play local and hosted med
 - Play/pause using physical buttons is supported
 - Audio quality is lossless 48 kHz/16-bit
 
+## Configuration
+
+> [!NOTE]
+> Your Roku must be on Roku OS V9.1 or higher to install the Media Assistant App (The app has only been tested on a minimum of OS V13.0).
+
+1.	Install the Media Assistant app from the Roku Channel Store or sideload it on your Roku.
+- Roku Channel Store Link (https://channelstore.roku.com/details/625f8ef7740dff93df7d85fc510303b4/media-assistant)
+- Sideload Link (https://github.com/MedievalApple/Media-Assistant)
+2.	If you sideloaded the app, you will need to change the Player Provider Setting in Advanced >> `App ID of Media Assistant` to `dev`.
+3.	On newer Roku OS versions, in order for Music Assistant to communicate with the Roku, you must ensure mobile app control is enabled. To check this, go to the Roku's settings and navigate to (Settings >> System >> Advanced system settings >> Control by mobile apps >> Network access) and check if `Network access` is set to `Enabled`
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
@@ -25,17 +36,6 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 - <b>Sample rates supported by this player.</b> This setting defaults to Roku's stated max sample rates of 44.1kHz / 16 bits and 48kHz / 16 bits but the sample rates and bit depths supported by the Roku can be manually set. Unsupported sample rates may work depending on the Roku device
 - <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`. Some codecs may load faster than others depending on the Roku device
-
-## Configuration
-
-> [!NOTE]
-> Your Roku must be on Roku OS V9.1 or higher to install the Media Assistant App (The app has only been tested on a minimum of OS V13.0).
-
-1.	Install the Media Assistant app from the Roku Channel Store or sideload it on your Roku.
-- Roku Channel Store Link (https://channelstore.roku.com/details/625f8ef7740dff93df7d85fc510303b4/media-assistant)
-- Sideload Link (https://github.com/MedievalApple/Media-Assistant)
-2.	If you sideloaded the app, you will need to change the Player Provider Setting in Advanced >> `App ID of Media Assistant` to `dev`.
-3.	On newer Roku OS versions, in order for Music Assistant to communicate with the Roku, you must ensure mobile app control is enabled. To check this, go to the Roku's settings and navigate to (Settings >> System >> Advanced system settings >> Control by mobile apps >> Network access) and check if `Network access` is set to `Enabled`
 
 ## Known Issues / Notes
 
