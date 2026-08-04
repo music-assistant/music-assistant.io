@@ -24,7 +24,7 @@ This source signs Music Assistant in to your MusicMe account and makes the catal
 | Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui/#view-home) Supported | Yes |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            Yes                     |

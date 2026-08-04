@@ -7,13 +7,23 @@ merged without a round of back and forth.
 
 | Branch | What it is |
 |:--|:--|
-| `beta` | The next release. **Open your pull request against this branch.** Published at [beta.music-assistant.io](https://beta.music-assistant.io) |
-| `main` | The current release, published at [music-assistant.io](https://music-assistant.io). Maintainers merge `beta` into it at release time |
+| `main` | The live site at [music-assistant.io](https://music-assistant.io) |
+| `beta` | The next release, at [beta.music-assistant.io](https://beta.music-assistant.io). Maintainers merge it into `main` at release time |
 
-Branch from `beta`, not from `main`. If your branch is older than the last release it will be
-missing files that the build now expects, and you will get errors that have nothing to do with
-your change. If that happens, say so on the pull request and a maintainer will bring your branch
-up to date.
+**Fixing something that is wrong on the live site? Use `main`.** A typo, a broken link, a
+correction, or an instruction that no longer matches what people see should reach readers now
+rather than waiting for the next release.
+
+**Adding anything new? Use `beta`.** New pages, new music sources, new player providers, and
+anything describing a feature that has not been released yet. Putting those on `main` would
+document something readers cannot use.
+
+If you are not sure, open it against `beta` and say so. Moving a pull request to the other branch
+afterwards is one click for a maintainer.
+
+One thing to watch on `beta`: if your branch was taken before the last release it will be missing
+files the build now expects, and you will get errors that have nothing to do with your change. If
+that happens, say so on the pull request and a maintainer will bring your branch up to date.
 
 ## Checking your change
 
