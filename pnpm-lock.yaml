@@ -20,9 +20,6 @@ importers:
       astro-swiper:
         specifier: ^2.9.0
         version: 2.9.0
-      defu:
-        specifier: 6.1.5
-        version: 6.1.5
       remark-github-blockquote-alert:
         specifier: ^1.2.2
         version: 1.3.1
@@ -878,9 +875,6 @@ packages:
 
   defu@6.1.4:
     resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
-
-  defu@6.1.5:
-    resolution: {integrity: sha512-pwdBJxJuJXmqrLO6s0VBmfbRz+G7FUzkjldAsdi9Yrv86mPyzq0ll1o8+8gB4Gsr6GJHbK1Lh3ngllgTInDCjA==}
 
   dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
@@ -2742,8 +2736,6 @@ snapshots:
       character-entities: 2.0.2
 
   defu@6.1.4: {}
-
-  defu@6.1.5: {}
 
   dequal@2.0.3: {}
 
