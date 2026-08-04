@@ -234,3 +234,19 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
 [data-has-hero] .hero picture > img {
   border-radius: 12px;
 }
+
+/* Core team: five portraits per row. In MDX each link is its own top level
+   element rather than being wrapped in a paragraph, so the rows are laid out
+   explicitly instead of relying on inline flow. */
+.team-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+.team-row a {
+  display: inline-flex;
+}
+.team-row img {
+  margin: 0;
+}
