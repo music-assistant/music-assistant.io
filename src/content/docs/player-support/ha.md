@@ -1,11 +1,13 @@
 ---
 title: Player Support - Home Assistant Media Players
-description: Features of, and instructions for, the use of HA media player entitities in Music Assistant
+description: Features of, and instructions for, the use of HA media player entities in Music Assistant
 ---
 
 # Home Assistant Media Players<img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for playing to media player entities in Home Assistant.
+
+This is the last of the three Home Assistant pieces; it needs the [Home Assistant Plugin](/ha-plugin/), which in turn needs the integration. See [how the pieces fit together](/integration/#how-the-pieces-fit-together) if you are not sure which you need.
 
 > [!CAUTION]
 > This player provider relies on the upstream HA integrations which have not necessarily been written or optimised for music playback. Therefore, if there is any way to use a MA provider you need to do so. Problems with HA providers will be addressed as resources allow.
@@ -21,7 +23,7 @@ Before the Player Provider can be added the [Plugin](/ha-plugin/) must be instal
 
 ![screenshot](/assets/screenshots/plugin-provider.png)
 
-- In the MA SETTINGS select PLAYER PROVIDERS then ADD A PLAYER PROVIDER then HOME ASSISTANT MEDIA PLAYERS
+- In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Home Assistant Media Players`
 - In the provider settings, select which players are desired to be utilised. These can be changed at any time.
 
 > [!CAUTION]
