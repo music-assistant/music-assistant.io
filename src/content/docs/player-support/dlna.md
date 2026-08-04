@@ -1,5 +1,5 @@
 ---
-title: DLNA/UPnP Provider
+title: "DLNA"
 description: A description of the DLNA/UPnP Player Provider
 ---
 

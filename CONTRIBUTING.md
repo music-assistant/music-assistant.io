@@ -140,9 +140,12 @@ and somebody will sort it out.
 
 ## Adding a player provider
 
-The same, with `src/content/docs/player-support/<slug>.md`, the `Player Providers` sidebar group,
-and `src/data/players.ts`. Categories there are `commercial` for devices sold ready to use, and
-`diy` for software you set up yourself.
+The same, with `src/content/docs/player-support/<slug>.md` and `src/data/players.ts`. Categories
+there are `commercial` for devices sold ready to use, and `diy` for software you set up yourself.
+
+There is no sidebar entry to add here either. The `Player Providers` menu is generated from that
+folder, so the same two rules apply: name the file after the provider, because the menu is sorted
+by filename, and set `title` to the name people know it by, because that is the label.
 
 ## Adding a plugin, metadata provider or audio analysis provider
 

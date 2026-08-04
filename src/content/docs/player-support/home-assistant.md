@@ -1,5 +1,5 @@
 ---
-title: Player Support - Home Assistant Media Players
+title: "Home Assistant Media Players"
 description: Features of, and instructions for, the use of HA media player entities in Music Assistant
 ---
 

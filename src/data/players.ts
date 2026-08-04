@@ -96,7 +96,7 @@ export const PLAYERS: TileItem[] = [
     // though the devices it reaches are often shop-bought ones. The commercial
     // blurb points here for anyone whose device has no provider of its own.
     name: "Home Assistant",
-    slug: "player-support/ha",
+    slug: "player-support/home-assistant",
     icon: "/assets/icons/ha-logo.png",
     categories: ["diy"],
   },
@@ -114,7 +114,7 @@ export const PLAYERS: TileItem[] = [
   },
   {
     name: "Music Player Daemon (MPD)",
-    slug: "player-support/mpd",
+    slug: "player-support/music-player-daemon",
     icon: "/assets/icons/mpd-icon.svg",
     categories: ["diy"],
   },
