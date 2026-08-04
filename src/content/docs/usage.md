@@ -1,9 +1,9 @@
 ---
-title: General
+title: Overview
 description: Information regarding various elements of Music Assistant
 ---
 
-# General
+# Overview
 
 Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These four pages are not a walkthrough of that.
 
