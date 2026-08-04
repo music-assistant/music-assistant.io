@@ -6,6 +6,20 @@ title: "Home Assistant Integration"
 
 The Music Assistant integration for Home Assistant provides a connection from MA to HA. This means that MA players are visible in HA and can be controlled via the HA UI or via automations or scripts.
 
+## About the integration
+
+- The integration is an official part of Home Assistant, there is no need to install custom components
+
+- The integration can connect to the MA server which is running either as an HA addon or as a docker container on the same or another host system
+
+See also the <a href="https://www.home-assistant.io/integrations/music_assistant/" target="_blank" rel="noopener noreferrer">documentation from Home Assistant about the Music Assistant integration</a>
+
+## What you can do with it
+
+- [Announcements](/integration/announcements/) from HA in the form of Text to Speech or audio files are fully supported.
+
+- With some additional setup [voice control of MA](/integration/voice/) via HA is also possible
+
 ## How the pieces fit together
 
 Music Assistant and Home Assistant can be joined in both directions, and there are three separate pieces involved. Which ones you need depends on which direction you want.
@@ -23,14 +37,3 @@ Most people only want the first row. Install the integration and your Music Assi
 Add the second and third rows only if you also want the reverse: a speaker that Home Assistant knows about, but Music Assistant has no provider for, made available inside Music Assistant. They must be added in that order, because the media players build on the plugin, and the plugin needs the integration.
 
 You may want the plugin on its own, without the third row. It is what lets you map a Home Assistant switch to the power control of any Music Assistant player, so a native player whose amplifier is on a smart plug can still be turned on and off, and it is how plugins reach Home Assistant's AI and text-to-speech services.
-
-- [Announcements](/integration/announcements/) from HA in the form of Text to Speech or audio files are fully supported.
-
-- With some additional setup [voice control of MA](/integration/voice/) via HA is also possible
-
-- The integration can connect to the MA server which is running either as an HA addon or as a docker container on the same or another host system
-
-- The integration is an official part of Home Assistant, there is no need to install custom components
-
-See also the <a href="https://www.home-assistant.io/integrations/music_assistant/" target="_blank" rel="noopener noreferrer">documentation from Home Assistant about the Music Assistant integration</a>
-
