@@ -166,6 +166,12 @@ export const PLAYERS: TileItem[] = [
     icon: "/assets/icons/wiim.svg",
     categories: ["commercial"],
   },
+  {
+    name: "Yandex Station",
+    slug: "player-support/yandex-station",
+    icon: "/assets/icons/yandex-station-icon.svg",
+    categories: ["commercial"],
+  },
 ];
 
 // ---------------------------------------------------------------------------
