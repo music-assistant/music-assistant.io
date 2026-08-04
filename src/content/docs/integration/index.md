@@ -34,6 +34,6 @@ Music Assistant and Home Assistant can be joined in both directions, and there a
 
 Most people only want the first row. Install the integration and your Music Assistant speakers show up in Home Assistant — that is the whole job.
 
-Add the second and third rows only if you also want the reverse: a speaker that Home Assistant knows about, but Music Assistant has no provider for, made available inside Music Assistant. They must be added in that order, because the media players build on the plugin, and the plugin needs the integration.
+Add the third row if you also want the reverse: a speaker that Home Assistant knows about, but Music Assistant has no provider for, made available inside Music Assistant. It needs the plugin, and the plugin needs the integration, so all three end up installed, in that order.
 
 You may want the plugin on its own, without the third row. It is what lets you map a Home Assistant switch to the power control of any Music Assistant player, so a native player whose amplifier is on a smart plug can still be turned on and off, and it is how plugins reach Home Assistant's AI and text-to-speech services.
