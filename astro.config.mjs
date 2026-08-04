@@ -338,6 +338,7 @@ export default defineConfig({
               label: "Yandex Music Connect (Ynison)",
               slug: "plugins/yandex-ynison",
             },
+            { label: "Yandex Smart Home", slug: "plugins/yandex-smarthome" },
           ],
         },
         {
