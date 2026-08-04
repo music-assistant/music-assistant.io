@@ -11,6 +11,8 @@ Contributed and maintained by <a href="https://github.com/xiasi0" target="_blank
 
 QQ Music is one of the most widely used streaming music platforms in Mainland China, offering a large Chinese-language and international catalog, playlists, and personalized recommendations.
 
+This source signs Music Assistant in to your QQ Music account, so the tracks, albums, artists and playlists you have saved there appear in Music Assistant and the catalogue can be searched.
+
 > [!NOTE]
 > - A QQ Music account is required.
 > - Subscription is required for subscription-only tracks/qualities.

@@ -7,15 +7,15 @@ description: Common Problems and Fixes
 
 Look in the logs and try and resolve any errors you see there particularly those related to <a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">tagging</a>. Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
 
-Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers (except when using our recommended docker compose) is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Some options have been added to core to help people who are running non-standard setups but these are supplied on a non-support basis. Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you.
+Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers (except when using our recommended docker compose) is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Some options have been added to core to help people who are running non-standard setups but these are supplied on a non-support basis. Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you. See [Networking Basics](/faq/networking/) for a plain-language explanation of these terms.
 
 Increasingly, we are seeing reports from users which are caused by their use of tools such as AdGuard, Pi-hole, pfSense etc. If your problem relates to being unable to stream or if there are errors in the logs related to unreachable addresses or timeouts then disable all of these tools before seeking help. Just applying a rule is insufficient, the problem must be present with these tools completely disabled.  
 
-For clarity, running installation options other than HAOS or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
+For clarity, running installation options other than HAOS (Home Assistant Operating System) or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
 
 There are settings available in MA SETTINGS>> SYSTEM>> STREAMS and then select the "Show advanced settings" toggle, that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
 
-Most players are discovered using mDNS (broadcast) so if your players do not get discovered it means that your network is blocking that traffic (e.g. IGMP or multicast snooping or filtering). You will have to check your settings (e.g. WiFi setup) if multicast is being blocked. Business solutions tend to block multicast traffic as much as possible as it hurts performance when there are many clients. In a home setup is it mandatory to have because all home gear relies on multicast. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
+Most players are discovered automatically. They announce themselves on the network and MA listens for those announcements (a technique called mDNS/multicast, [explained in plain language here](/faq/networking/)). If your players do not get discovered it means something on your network is blocking those announcements. Work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered); the most common causes are guest Wi-Fi networks, VPNs, and router settings that filter multicast traffic. Business-grade network equipment tends to block multicast traffic as much as possible as it hurts performance when there are many clients, but in a home setup it is mandatory because all home gear relies on it. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
 
 Make sure the HA internal url is set correctly. HA SETTINGS>> SYSTEM>> NETWORK>> Home Assistant URL>> Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to http://your.internal.ip:8123/
 
@@ -25,7 +25,7 @@ Check the physical device settings. There have been numerous reports where the i
 
 Ensure local files are <a href="https://music-assistant.io/music-providers/filesystem/#tagging-files" target="_blank" rel="noopener noreferrer">tagged properly</a>.
 
-If it is a playback issue then turn on QUEUE FLOW MODE in the settings for the specific player (where that is available).
+If it is a playback issue then turn on [QUEUE FLOW MODE](/faq/tech-info/#track-queueing) in the settings for the specific player (where that is available).
 
 If it is a music source issue and the source requires authentication then clear the authentication and re-login.
 
@@ -48,7 +48,7 @@ You can also look in the Browser console when you have front end issues which in
 The following is required in ALL reports as the MA team is small and you need to narrow down the problem before raising an issue:
 
 - What music source is in use when the problem is observed? What other music sources have you tried (if you have no others then make that clear - you can always try radio stations)
-- What player provider is in use when the problem is observed? What other player providers have you tried (if you have no others then make that clear - you can always use Sendspin)
+- What player provider is in use when the problem is observed? What other player providers have you tried (if you have no others then make that clear - you can always use [Sendspin](/player-support/sendspin/), the built-in web player)
 - Are the players grouped?
 - How is playback being instigated (e.g. automation or via the UI)
 - If you aren't using HAOS then exactly how you have installed MA

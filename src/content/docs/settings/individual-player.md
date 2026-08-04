@@ -15,7 +15,7 @@ A powerful feature of Music Assistant is that it will combine all of the availab
 - <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the [Player List](/ui/#player-list) and other areas of the UI
 - <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
 - <b>Icon.</b> A material design icon is used in some parts of the UI and this can be configured on a per player basis
-- <b>Flow Mode sample rate.</b> Controls the sample rate used when the queue is streamed in Flow Mode. The options are `Smart (upsample only)` (this is the default), `Bit-perfect (no resampling)`, `48 kHz (balanced quality and bandwidth)`, `96 kHz (high quality)`, and `Highest supported by player`. Found under advanced settings and only for supported protocols. Smart will anchor the stream quality on that of the first track and only restart for higher rates. Bit-perfect will not do any resampling and will restart the stream on any rate change.
+- <b>Flow Mode sample rate.</b> Controls the sample rate used when the queue is streamed in [Flow Mode](/faq/tech-info/#track-queueing), where MA sends the whole queue as one continuous stream. The options are `Smart (upsample only)` (this is the default), `Bit-perfect (no resampling)`, `48 kHz (balanced quality and bandwidth)`, `96 kHz (high quality)`, and `Highest supported by player`. Found under advanced settings and only for supported protocols. Smart will anchor the stream quality on that of the first track and only restart for higher rates. Bit-perfect will not do any resampling and will restart the stream on any rate change.
 - <b>Dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
 - <b>Group members.</b> For Group player types the members of the group are configured in this field
 
@@ -23,7 +23,11 @@ A powerful feature of Music Assistant is that it will combine all of the availab
 
 - <b>Preferred Output Protocol.</b> Choose from the list of available protocols
 
-Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. Refer to the relevant Player provider for settings which are available for each
+Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. Refer to the relevant Player provider for settings which are available for each.
+
+One setting appears in the protocol sections of many player types and is described here once:
+
+- <b>Try to inject metadata into stream (ICY).</b> ICY is a way of slipping the track name and artist into the audio stream so the player can display them (<a href="https://liquidsoap.readthedocs.io/en/latest/content/icy_metadata.html" target="_blank" rel="noopener noreferrer">more about ICY metadata</a>, written for developers). Not all players handle it correctly, so if there are issues with playback, try disabling this setting
 
 ## Queue Playback
 
