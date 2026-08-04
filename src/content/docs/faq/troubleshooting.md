@@ -31,6 +31,8 @@ If it is a music source issue and the source requires authentication then clear 
 
 If it is a frontend issue or related to logging in to a provider or source which requires redirection to another website then try a different browser. If you are trying on a mobile device then try on a laptop or PC. Firefox and Safari are known to have deficiencies.
 
+Narrow the fault down to a single player or music source. Play the same content on a different player, then play something from a different music source on the original player. If you only have one player then [Sendspin](/player-support/sendspin/), the built-in web player, is always available; if you only have one music source then try a radio station. Knowing that a player works with one source but not another, or that one player fails where the others are fine, tells you where the problem is not.
+
 Review the applicable player provider or music source documentation to see if there are known issues or specific troubleshooting steps or fixes. 
 
 For voice problems refer to <a href="https://music-assistant.io/integration/voice/#troubleshooting" target="_blank" rel="noopener noreferrer">Voice Troubleshooting</a>. If you are not using HOME ASSISTANT as your Conversation Agent then you must seek assistance in the HA forums first. If they direct you back to this project then make it clear in your report that you are using a LLM as the Conversation Agent and include the reasons why the HA support network wasn't able to help.
@@ -46,9 +48,6 @@ DOWNLOAD and ATTACH the diagnostics report from MA SETTINGS>> SYSTEM>> DIAGNOSTI
 DOWNLOAD and ATTACH complete logs from MA SETTINGS>> SYSTEM>> DIAGNOSTICS. These are optional to begin with as we may ask for more detailed logging once we have read the diagnostics report, but attaching them from the start does no harm. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider/source basis.
 
 You can also look in the Browser console when you have front end issues which in Chrome browser is --> F12 for developer tools --> console. 
-
-> [!NOTE]
-> You can retrieve the full MA logs by going to the MA settings and clicking on SYSTEM
 
 ## A provider or source isn't working
 
