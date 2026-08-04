@@ -15,17 +15,15 @@ It runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or as a H
 
 ## Features
 
-- Supports multiple music sources through a provider implementation
-- Many popular streaming services are supported, as well as local files
-- Matches music in library from different sources (track linking)
-- Fetches metadata for extended artist information
-- Keeps track of the entire music library in a compact database
-- Gapless, crossfade and volume normalization support for all players
-- Playback synchronisation is possible for supported players
-- Announcements during playback is supported
-- Transfer of playback between players is supported
-- Truly hassle free streaming of your favourite music to players, no advanced knowledge required
-- Rich User interface (Progressive Web App)
+- **All your music in one library.** Streaming services, your own files, radio, podcasts and audiobooks, searched together in one place
+- **Plays on almost anything.** Sonos, Chromecast, AirPlay, Squeezelite, DLNA and many more, in sync across the players that support it
+- **One album, not four.** The same release from different sources is linked together, so your library stays clean
+- **Artwork, lyrics and artist information** are filled in for you
+- **Gapless playback, crossfade and volume levelling** on every player
+- **Announcements cut over the music**, then it picks up where it left off
+- **Move playback from room to room** without losing your place in the queue
+- **Runs in any browser** and installs to your phone like an app
+- **Free and open source**, and a project of the Open Home Foundation
 
 [![Music Assistant Add-on For Home Assistant](https://my.home-assistant.io/badges/supervisor_addon.svg)](https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon)
 
