@@ -134,7 +134,9 @@ To put the frontend behind a [reverse proxy](/faq/networking/#the-jargon-transla
 
 **Streaming to players.** MA streams audio over a separate port, TCP **8097** by default, and players must be able to reach the server on it. If 8097 is occupied the next port is tried, and so on. The server also needs players to reach its web interface by IP address over HTTP — check the server log at startup to confirm it detected the right local IP.
 
-**Adding your music.** No music sources are installed initially; add each one you want from the MA settings. The AirPlay, Chromecast, DLNA, Sendspin and Sonos player providers are added automatically on first install, and all except Sendspin can be deleted if you have no players using those protocols.
+**Adding your music.** No music sources are installed initially. Add [each one you want](/faq/listen-to/) from the MA settings.
+
+**Your players.** The AirPlay, Chromecast, DLNA, Sendspin and Sonos player providers are added automatically on first install, and all except Sendspin can be deleted if you have no players using those protocols. If the players you own are not covered by those, see [what you can stream to](/faq/stream-to/).
 
 **The first sync.** Music from your sources loads into the [Music Assistant library](/usage/#the-library) automatically, and multiple sources are merged into one library. The first sync can take a while; the UI shows a ![icon](/assets/icons/sync-icon.png) beside a source in the settings while it is working. Sources re-sync at regular intervals, which you can change in the settings.
 
