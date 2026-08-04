@@ -28,9 +28,9 @@ Music Assistant players respond to Home Assistant's standard <a href="https://ww
 
 All of them are listed in the <a href="https://www.home-assistant.io/integrations/music_assistant/#additional-actions" target="_blank" rel="noopener noreferrer">Home Assistant documentation</a>, which is the reference for their parameters. The pages below go further, with worked examples and the details that documentation does not cover.
 
-- [music_assistant.play_media](/faq/massplaymedia/)
-- [music_assistant.play_announcement](/faq/massannounce/)
-- [music_assistant.transfer_queue](/faq/masstransfer/)
-- [music_assistant.search](/faq/masssearch/)
-- [music_assistant.get_library](/faq/get_library/)
-- [music_assistant.get_queue](/faq/get_queue/)
+- [music_assistant.play_media](/faq/massplaymedia/) — play something specific, chosen in as much detail as you like
+- [music_assistant.play_announcement](/faq/massannounce/) — send an audio announcement to a player from a URL
+- [music_assistant.transfer_queue](/faq/masstransfer/) — move a queue from one player to another
+- [music_assistant.search](/faq/masssearch/) — search across all your music sources at once
+- [music_assistant.get_library](/faq/get_library/) — retrieve the full details of items in your library
+- [music_assistant.get_queue](/faq/get_queue/) — retrieve the details of a queue
