@@ -6,6 +6,10 @@ title: "YouSee Musik"
 
 Music Assistant has support for [YouSee Musik](https://musik.yousee.dk). Contributed and maintained by [math625f](https://github.com/math625f)
 
+YouSee Musik is a streaming service from YouSee, the Danish telecoms company, included with some of its mobile and broadband subscriptions. It carries the usual international catalogue with a good deal of Danish music alongside it.
+
+Sign in and your YouSee library and playlists show up in Music Assistant, with the catalogue open to search.
+
 > [!NOTE]
 > A paid subscription is required to add this music source.
 
@@ -16,11 +20,14 @@ Music Assistant has support for [YouSee Musik](https://musik.yousee.dk). Contrib
 | Subscription FREE                               |                 No                 |
 | Self-Hosted Local Media                         |                 No                 |
 | Media Types Supported                           | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui/#view---discover) Supported |                Yes                 |
+| [Recommendations](/ui/#view---discover) Supported |                Yes               |
 | Lyrics Supported                                |                Yes                 |
-| [Radio Mode](/ui/#track-menu)               |                Yes                 |
+| [Radio Mode](/ui/#track-menu)                   |                Yes                 |
+| Artist Top Tracks Support                       |            Yes                     |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality                          |        Lossy, MP4 (320kbps)        |
-| Login Method                                    |         Password          |
+| Login Method                                    |         Password                   |
 
 ### Other
 

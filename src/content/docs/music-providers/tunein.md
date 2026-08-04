@@ -6,6 +6,10 @@ title: "TuneIn"
 
 Music Assistant has support for <a href="https://tunein.com/" target="_blank" rel="noopener noreferrer">Tunein</a>
 
+TuneIn is a directory of internet radio carrying tens of thousands of stations from around the world, along with sport, news and talk. A free account lets you save the stations you listen to as presets.
+
+This source connects Music Assistant to your TuneIn account, so those presets and the wider directory are both available.
+
 ## Features
 
 |           |                     |
@@ -13,15 +17,21 @@ Music Assistant has support for <a href="https://tunein.com/" target="_blank" re
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Radio |
-| [Recommendations](/ui/#view---discover) Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      |
 | Maximum Stream Quality | Varies by station |
 | Login Method | None |
 
 ### Other
 
 - The stations which are in the TuneIn library of the configured account will be imported into the MA library and be visible in the Radio view
+- TuneIn may automatically add local or regional stations to your account presets — these will also be imported. To manage which stations appear, review your presets at [tunein.com](https://tunein.com) under your profile
+- The full TuneIn catalog can be browsed by category (Music, Sports, News, etc.) via the Browse view
+- Trending stations are shown as Recommendations on the Home screen
  
 ## Configuration
 

@@ -31,6 +31,7 @@ Individual Sendspin players will appear automatically when clients connect
 
 Standard [player settings](/settings/player-provider/) apply. Specific settings available for this player type are:
 
+- <b>Manual IP addresses for discovery.</b> Normally Sendspin clients are automatically discovered via mDNS. If automatic discovery does not work due to the network setup, the IP address or hostname of a Sendspin client can be manually entered. Accepted values are a plain IP address or hostname, optionally with a port, such as `192.168.1.50`, `speaker.local`, or `speaker.local:8928`. For clients using a non-default path or protocol, enter the full WebSocket URL, such as `ws://speaker.local:8928/sendspin` or `wss://speaker.example.com/sendspin`. If only an IP address or hostname is entered, Music Assistant assumes the default Sendspin client endpoint `ws://<host>:8928/sendspin`. Music Assistant will connect to the configured clients directly and keep retrying if a client is offline when MA starts.
 - <b>Sync delay (ms).</b> Not all devices allow this correction but when available is allows a for static delay to be applied for audio synchronisation
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 
@@ -38,6 +39,7 @@ Standard [player settings](/settings/player-provider/) apply. Specific settings 
 
 - The Sendspin provider is added by default
 - The web player appears automatically in the player list
+- If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
 
 ### Limitations
 
@@ -71,7 +73,7 @@ Several client types can connect to Music Assistant via Sendspin:
 
 ### Automatic Discovery
 
-Sendspin devices on the local network are automatically discovered via mDNS and will appear in Music Assistant. No manual configuration is required.
+Sendspin devices on the local network are automatically discovered via mDNS and will appear in Music Assistant. If mDNS discovery is unavailable or unreliable, add the client's IP address or hostname to the provider's manual discovery setting.
 
 ### The Web Player
 
@@ -95,3 +97,10 @@ Sendspin supports two connection methods:
 
 1. **Direct WebSocket**: Used automatically by clients on the same local network as Music Assistant, including the web player and hardware devices.
 2. **WebRTC**: Used for remote access when not on the local network. Works across networks and through firewalls. The web player falls back to this method when a direct connection isn't possible.
+
+#### Connecting External Sendspin Clients
+
+Sendspin clients on the local network are discovered automatically, so most users never need to enter a URL. However, if a third-party client asks for a server URL (or you are developing your own client), the Sendspin server listens on the `/sendspin` WebSocket endpoint on port `8927`. A full connection URL looks like `ws://192.168.1.100:8927/sendspin` (replacing the IP address with that of your Music Assistant server).
+
+> [!NOTE]
+> The `/sendspin` path also exists on the main web interface port (8095), but that is an authenticated proxy used internally by the web player and external clients connecting there will be rejected.

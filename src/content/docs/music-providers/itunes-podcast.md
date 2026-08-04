@@ -6,6 +6,10 @@ title: "iTunes Podcast Search"
 
 Music Assistant has support for <a href="https://podcasts.apple.com/us/browse" target="_blank" rel="noopener noreferrer">iTunes Podcast Searching</a>. Contributed and maintained by <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a>
 
+Apple's podcast directory is the largest index of podcasts on the internet, and the one the Podcasts app on an iPhone searches. Anyone publishing a feed can be listed in it, free of charge.
+
+This source lets you search that directory from Music Assistant and add anything you find to your library. The episodes themselves are streamed from the podcast's own feed rather than from Apple.
+
 ## Features
 
 |           |                     |
@@ -16,6 +20,9 @@ Music Assistant has support for <a href="https://podcasts.apple.com/us/browse" t
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy, Variable Quality |
 | Login Method | None |
 

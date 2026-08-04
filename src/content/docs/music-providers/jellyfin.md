@@ -7,6 +7,10 @@ description: Documentation for using the Jellyfin music source
 
 Music Assistant has support for music servers which work to the Jellyfin definition. This component was contributed by <a href="https://github.com/lokiberra" target="_blank" rel="noopener noreferrer">lokiberra</a>.
 
+Jellyfin is a free, open source media server you run on your own hardware. It catalogues the music, films and other media you already have and streams them to apps on your devices, with nothing held on someone else's servers.
+
+This source connects Music Assistant to the music libraries on your Jellyfin server, so what you have organised there becomes part of your Music Assistant library.
+
 > [!CAUTION]
 > Please be advised that this source currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
 
@@ -20,6 +24,9 @@ Music Assistant has support for music servers which work to the Jellyfin definit
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes                     |
 | Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
 | Login Method | Password |
 

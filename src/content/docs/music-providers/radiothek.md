@@ -7,7 +7,7 @@ title: "ORF Radiothek"
 
 Music Assistant has support for [ORF Radiothek](https://sound.orf.at) which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by [DButter](https://github.com/)
 
-This source allows access to Austrian radio stations and ORF podcasts.
+ORF is Austria's public broadcaster and the Radiothek is its audio platform. It carries the national and regional ORF stations live, along with programmes to catch up on after broadcast and official podcasts. Listening is free and no ORF account is involved, though some content may only be available to listeners in Austria.
 
 ## Features
 
@@ -19,12 +19,15 @@ This source allows access to Austrian radio stations and ORF podcasts.
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
 | [Radio Mode](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            No                      |
 | Maximum Stream Quality | AAC 44.1 kHz / 16 bit |
 | Login Method | None |
 
 ### Other
 
-- ORF radio stations are avaialble as well as additional private stations which are included in the ORF Radiothek lineup
+- ORF radio stations are available as well as additional private stations which are included in the ORF Radiothek lineup
 - Official ORF podcasts are supported and this includes recently aired radio shows where available
 
 ## Configuration

@@ -8,11 +8,11 @@ description: Player Grouping Functionality in Music Assistant
 > [!CAUTION]
 > Do not delete or disable a player which is in a group while the group is playing
 
-Music Assistant uses four types of groups (these are outlined in the [Grouping Players](/ui/#grouping-players) section and three of the types are described in detail below) which provides a flexible way to combine players together. When a group is powered on then playback to individual members of the group is no longer possible. To play to an individual member, the group must be powered off or the individal player must be removed from the group. If the group is still powered on then players can only be removed from [Temporary Sync Groups](#temporary-sync-group), or from [Sync Groups](#sync-groups) and [Universal Groups](#universal-groups) which have the dynamic member option enabled. When allowable, players can be removed by using the checkboxes in the [Player List](/ui/#player-list) or by using the <a href="https://www.home-assistant.io/integrations/media_player/#media-control-actions" target="_blank" rel="noopener noreferrer">HA media_player.unjoin action</a>.
+Music Assistant uses four types of groups (these are outlined in the [Grouping Players](/ui/#grouping-players) section and three of the types are described in detail below) which provides a flexible way to combine players together. When a group is powered on then playback to individual members of the group is no longer possible. To play to an individual member, the group must be powered off or the individual player must be removed from the group. If the group is still powered on then players can only be removed from [Temporary Sync Groups](#temporary-sync-group), or from [Sync Groups](#sync-groups) and [Universal Groups](#universal-groups) which have the dynamic member option enabled. When allowable, players can be removed by using the checkboxes in the [Player List](/ui/#player-list) or by using the <a href="https://www.home-assistant.io/integrations/media_player/#media-control-actions" target="_blank" rel="noopener noreferrer">HA media_player.unjoin action</a>.
 
 See also the section on Announcements [Group Behaviour](/integration/announcements/#group-behaviour).
 
-For temporary and permanent sync groups the [protocol linking](/usage/#streaming-protocols) feature and Sendspin bridges available to Music Assistant lead to powerful options for group creation. The Sendspin bridges create a link between the Sendspin protocol, and the AirPlay and Google Cast protocols which allows for creation of groups of different provider types which will all play in sync. For users with Sonos devices with [AirPlay functionality](/player-support/sonos/#airplay-functionality) then this will further allow Sonos devices to also be played in sync. Even more impressively, Sonos devices without AirPlay functionality can be grouped with a player that does and then that player grouped to an AirPlay group. All of this functionality is illustrated in the following diagram. On the left is the traditional model where each provider type is isolated (and this remains the case for many of the providers available in MA) and then on the left is shown the potential broad linking of disparate types that is available across the Sendspin, AirPlay, Google Cast and Sonos ecosystems.
+For temporary and permanent sync groups the [protocol linking](/usage/#streaming-protocols) feature and Sendspin bridges available to Music Assistant lead to powerful options for group creation. The Sendspin bridges create a link between the Sendspin protocol, and the AirPlay and Google Cast protocols which allows for creation of groups of different provider types which will all play in sync. For users with Sonos devices with [AirPlay functionality](/player-support/sonos/#airplay-functionality) then this will further allow Sonos devices to also be played in sync. Even more impressively, Sonos devices without AirPlay functionality can be grouped with a player that does and then that player grouped to an AirPlay group. All of this functionality is illustrated in the following diagram. On the left is the traditional model where each provider type is isolated (and this remains the case for many of the providers available in MA) and then on the right is shown the potential broad linking of disparate types that is available across the Sendspin, AirPlay, Google Cast and Sonos ecosystems.
 
 <a href="/assets/group-diagram.png"><img src="/assets/group-diagram.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
@@ -67,12 +67,16 @@ After selecting ADD GROUP PLAYER as shown above, the group configuration screen 
 
 ## Universal Groups
 
-Music Assistant has support for grouping dissimilar playback devices. Configuration is done in the same manner as described in the Sync Groups section with UNIVERSAL GROUP PLAYER selected as the Group Type. These groups also support the dynamic member option. Universal Group functionality is not emabled by default, it must be first added as a provider.
+Music Assistant has support for grouping dissimilar playback devices. Configuration is done in the same manner as described in the Sync Groups section with UNIVERSAL GROUP PLAYER selected as the Group Type. These groups also support the dynamic member option. Universal Group functionality is not enabled by default, it must be first added as a provider.
 
 ### Features
 
 - All devices can be grouped and will play the same audio but will not play the audio in sync. Use this playertype only for players that are not in close range to each other
 - See the individual player providers page for any specific limitations
+
+### Settings
+
+- <b>Output format for Universal Group playback.</b> Universal Groups deliver the exact same encoded stream to every member, regardless of each member's capabilities. Pick the format that all members can play. MP3 is the safest default. The options are `MP3 (320 kbps)`, `FLAC 44.1 kHz / 16-bit` and `FLAC 48 kHz / 24-bit`. Use the FLAC options only when every member supports FLAC playback
 
 ### Known Issues / Notes
 

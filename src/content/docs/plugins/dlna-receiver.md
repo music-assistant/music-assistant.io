@@ -5,7 +5,7 @@ description: Features and Notes for the DLNA Receiver Plugin
 
 # DLNA Receiver
 
-Music Assistant can act as a UPnP/DLNA MediaRenderer on the local network. External DLNA-aware apps discover it on the network and can cast audio to any MA player.
+Music Assistant can act as a UPnP/DLNA MediaRenderer on the local network. External DLNA-aware apps discover it on the network and can cast audio to any MA player. Contributed and maintained by <a href="https://github.com/trudenboy" target="_blank" rel="noopener noreferrer">Mikhail Nevskiy</a>
 
 Once an external app sends a stream URL via the standard DLNA protocol, Music Assistant proxies the audio through its streaming pipeline to the selected target player — DLNA speakers, AirPlay receivers, Chromecast, Yandex Station, Squeezebox, etc.
 

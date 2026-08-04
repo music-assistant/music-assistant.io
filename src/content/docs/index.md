@@ -63,6 +63,7 @@ Connects Home Assistant to your Music Assistant Server to allow control from you
 <a href="https://github.com/marvinschenkel" title="Marvin. Project Lead. Author of the YouTube and Apple Music sources" target="_blank" rel="noopener noreferrer"><img src="/assets/team/marvin.png" alt="Marvin" style="width: 100px;" loading="lazy" /></a>
 <a href="https://github.com/maximmaxim345" title="Maxim. DSP and Sendspin Guru and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/maxim.png" alt="maxim" style="width: 100px;" loading="lazy" /></a>
 <a href="https://github.com/stvncode" title="Steven. Frontend Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/steven.png" alt="steven" style="width: 100px; border-radius: 50%; border: 2px solid black;" loading="lazy" /></a>
+<a href="https://github.com/chrisuthe" title="Chris. Audio Analysis Guru and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/chris.png" alt="chris" style="width: 100px;" loading="lazy" /></a>
 
 <a href="https://github.com/OzGav" title="Gavin. Community Support, Documentation and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/gavin.png" alt="Gavin" style="width: 100px;" loading="lazy" /></a>
 <a href="https://github.com/jozefKruszynski" title="Jozef. Author of the Tidal music source and Core Developer" target="_blank" rel="noopener noreferrer"><img src="/assets/team/jozef.png" alt="Jozef" style="width: 100px;" loading="lazy" /></a>
