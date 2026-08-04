@@ -268,10 +268,11 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
 .docs-menu > summary {
   cursor: pointer;
   list-style: none;
-  padding: 0.35rem 0.65rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 0.35rem;
   color: var(--sl-color-text-accent);
-  font-size: var(--sl-text-sm);
+  font-size: 1.5rem;
+  font-weight: 600;
   white-space: nowrap;
 }
 .docs-menu > summary::-webkit-details-marker {
@@ -321,4 +322,21 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
 .docs-menu > ul a:focus-visible {
   background: var(--sl-color-gray-6);
   color: var(--sl-color-text-accent);
+}
+
+/* Landing page tiles: the whole card is a link, so drop the link styling and
+   let the card border pick up the hover and focus states. */
+.tile-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.5rem;
+}
+.tile-link:hover .card,
+.tile-link:focus-visible .card {
+  border-color: var(--sl-color-accent);
+}
+.tile-link:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 3px;
 }

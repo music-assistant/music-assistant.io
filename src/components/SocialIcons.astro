@@ -25,3 +25,21 @@ const sections = [
 </details>
 
 <Default />
+
+<script>
+  // <details> has no built-in dismissal, so close the menu on an outside
+  // click or Escape. Choosing an entry navigates away, which closes it anyway.
+  const close = () =>
+    document
+      .querySelectorAll<HTMLDetailsElement>('details.docs-menu[open]')
+      .forEach((menu) => (menu.open = false));
+
+  document.addEventListener('click', (event) => {
+    const menu = document.querySelector('details.docs-menu[open]');
+    if (menu && !menu.contains(event.target as Node)) close();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') close();
+  });
+</script>
