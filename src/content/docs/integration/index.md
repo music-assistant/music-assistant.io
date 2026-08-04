@@ -10,6 +10,8 @@ The Music Assistant integration for Home Assistant provides a connection from MA
 
 Music Assistant and Home Assistant can be joined in both directions, and there are three separate pieces involved. Which ones you need depends on which direction you want.
 
+<a href="/assets/ha-connection-diagram.png"><img src="/assets/ha-connection-diagram.png" alt="Home Assistant Integration, installed in Home Assistant, makes Music Assistant players appear in Home Assistant. The Home Assistant Plugin and Home Assistant Media Players, both installed in Music Assistant, make Home Assistant players appear in Music Assistant. The plugin requires the integration to be installed first." style="width: 800px;" loading="lazy" /></a>
+
 | Piece | You install it in | What it gives you |
 |:--|:--|:--|
 | [Home Assistant Integration](/integration/installation/) | Home Assistant | Your **MA players appear in HA**, ready for the HA UI, automations, scripts, announcements and voice |
