@@ -68,8 +68,10 @@ Four things, and the build will tell you if you miss the last one.
    There is no sidebar entry to add. The `Music Sources` menu is generated from this folder, so
    the file lands in the menu on its own. Two things follow from that: **name the file after the
    source**, because the menu is sorted by filename, and **set `title` to the name people know it
-   by**, because that is the label they will see. If the page needs a different title from its
-   menu label, add `sidebar: { label: ... }` to the frontmatter.
+   by**, because that is the label they will see. Abbreviate the filename and the two drift apart:
+   `ha.md` sorted before `heos.md` while showing as Home Assistant, which belongs after HEOS. If
+   the page needs a different title from its menu label, add `sidebar: { label: ... }` to the
+   frontmatter.
 2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
 3. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
 
