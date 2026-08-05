@@ -65,9 +65,25 @@ Crossfeed has no neutral setting, so it is switched off by disabling the filter 
 
 Raises or lowers the overall volume by a fixed amount, from −15 dB to +15 dB (0 dB leaves the volume unchanged). It is useful for levelling a player against others, or for reclaiming headroom before other processing is applied.
 
+### High and Low Pass
+
+Removes everything above or below a chosen frequency, rather than turning it up or down. A high-pass filter passes the high frequencies and removes the low ones, and a low-pass filter does the opposite. Which of the two applies is chosen with the Mode buttons, so a single filter covers both; adding two of these filters, one of each mode, will restrict the audio to a band in between.
+
+The Cutoff sets the frequency at which the filter starts to take effect. The transition is gradual rather than a wall, so the cutoff is the point at which the signal has been reduced by 3 dB, with frequencies further beyond it reduced progressively more. This means a high-pass set to 80 Hz still lets a little content through below 80 Hz, and the deeper the frequency the more it is removed.
+
+The Slope sets how sharply the audio is removed beyond the cutoff, in decibels per octave, where an octave is a halving or doubling of frequency. At 12 dB per octave, a high-pass set to 80 Hz reduces 40 Hz by around 12 dB; at 48 dB per octave, the same 40 Hz is reduced by around 48 dB and is effectively gone. Gentler slopes blend more naturally into the rest of the music, while steeper slopes remove unwanted content more completely at the cost of a more abrupt transition. Only 12, 24 and 48 dB per octave are offered, as the filter is built from stages that each contribute 12 dB per octave.
+
+The most common use is a high-pass to relieve small speakers of deep bass they cannot reproduce anyway, which removes rumble and cone movement that only adds distortion, typically somewhere between 60 Hz and 100 Hz. A low-pass is useful for taming harshness or hiss at the top end, or for feeding a speaker that is only meant to handle the lower part of the range. For gentler shaping of a frequency region rather than removing it outright, the Parametric Equalizer is the better tool.
+
 ### Parametric Equalizer
 
 Allows precise adjustment of specific frequency ranges and is the most powerful of the available filters. It is described in detail on the [Parametric Equalizer](/dsp/parametriceq/) page.
+
+### Safety Limiter
+
+Sets a hard ceiling that the audio is not allowed to exceed, from −24 dB up to 0 dB, with a default of −2 dB. Anything that would peak above the ceiling is turned down just enough to stay beneath it, leaving everything below the ceiling untouched. Its purpose is to catch clipping rather than to shape the sound, so no make-up gain is applied and the overall level is not raised to compensate.
+
+It is most useful placed after a filter that can add level, such as a Parametric Equalizer with boosted bands, the Gain filter, or Stereo Width set above 1.0. Because filters are applied in order, the limiter must sit after the filter it is protecting against in order to have any effect. A ceiling a little below 0 dB, such as the −2 dB default, is generally a safer choice than 0 dB itself, as it leaves a small amount of headroom for the player's own processing. Unlike Gain or Balance, the filter has no neutral setting, so it is switched off by disabling it rather than by returning the ceiling to a particular value. 
 
 ### Stereo Width
 
