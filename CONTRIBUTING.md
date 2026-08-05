@@ -153,8 +153,7 @@ by filename, and set `title` to the name people know it by, because that is the 
 Both generated menus sort by **filename**, while the label a reader sees comes from the page
 **title**. Name the file after the thing it documents and the two agree on their own. Abbreviate
 it and they drift apart: `ha.md` sorted before `heos.md` while showing as Home Assistant, which
-belongs after HEOS, and `mpd.md` sorted before `msx-bridge.md` while showing as Music Player
-Daemon. Both are now named in full.
+belongs after HEOS.
 
 `sidebar.order` does not rescue a page that has landed in the wrong place. A page carrying `order`
 sorts ahead of **every** page without one, so it leaps to the top of the group rather than down a
