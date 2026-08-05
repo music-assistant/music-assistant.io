@@ -47,4 +47,4 @@ There are additional options as well. Enqueue will appear when an entity that su
 > [!CAUTION]
 > **Radio Mode**
 >
-> You can only use the album, artist, track or playlist media_type if enabling Radio Mode. Radio Mode can only be used if a source is available which supports dynamic tracks (e.g Apple, Deezer, Spotify,  Subsonic, Tidal and YTM).
+> You can only use the album, artist, track or playlist media_type if enabling Radio Mode. Radio Mode can only be used if a source is available which supports similar tracks (e.g Apple, Deezer, Spotify,  Subsonic, Tidal and YTM).

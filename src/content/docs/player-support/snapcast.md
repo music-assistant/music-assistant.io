@@ -1,5 +1,5 @@
 ---
-title: Snapcast Player Provider
+title: "Snapcast"
 description: Details for the Snapcast Player Provider
 ---
 

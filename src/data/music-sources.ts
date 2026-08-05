@@ -283,7 +283,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
   },
   {
     name: "Local Files",
-    slug: "music-providers/filesystem",
+    slug: "music-providers/local-files",
     icon: "/assets/icons/localfiles-icon.png",
     categories: ["own-files", "audiobooks", "podcasts"],
   },
@@ -328,7 +328,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
   },
   {
     name: "ORF Radiothek",
-    slug: "music-providers/radiothek",
+    slug: "music-providers/orf-radiothek",
     icon: "/assets/icons/orf_radiothek-icon.svg",
     categories: ["radio", "podcasts", "austria"],
   },

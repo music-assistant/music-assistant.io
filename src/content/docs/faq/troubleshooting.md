@@ -7,7 +7,7 @@ description: Common Problems and Fixes
 
 ## First things to try
 
-**Logs.** Look in the logs and try and resolve any errors you see there particularly those related to [tagging](/music-providers/filesystem/#tagging-files). Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
+**Logs.** Look in the logs and try and resolve any errors you see there particularly those related to [tagging](/music-providers/local-files/#tagging-files). Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
 
 **Complex networks.** Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers (except when using our recommended docker compose) is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Some options have been added to core to help people who are running non-standard setups but these are supplied on a non-support basis. Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you. See [Networking Basics](/faq/networking/) for a plain-language explanation of these terms.
 
@@ -25,7 +25,7 @@ description: Common Problems and Fixes
 
 **Physical devices.** Check the physical device settings. There have been numerous reports where the issue was actually a setting external to MA such as receivers set to repeat tracks or ESP devices with incorrect arguments passed on install.
 
-**File tagging.** Ensure local files are [tagged properly](/music-providers/filesystem/#tagging-files).
+**File tagging.** Ensure local files are [tagged properly](/music-providers/local-files/#tagging-files).
 
 **Playback.** If it is a playback issue then turn on [QUEUE FLOW MODE](/faq/tech-info/#track-queueing) in the settings for the specific player (where that is available).
 
@@ -113,7 +113,7 @@ Some amplifiers may auto turn on when a signal is detected so check the amplifie
 
 ## My local music isn’t being imported or I’m seeing missing ID3 tag warnings in the logs
 
-This is likely a tagging problem. See [here](/music-providers/filesystem/#tagging-files)
+This is likely a tagging problem. See [here](/music-providers/local-files/#tagging-files)
 
 ## MA is interfering with my Spotify Connect or Other Streaming App
 

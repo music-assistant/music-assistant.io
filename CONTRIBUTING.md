@@ -60,15 +60,20 @@ Node 22 or newer. The lockfile is pnpm's, so use pnpm rather than npm.
 
 ## Adding a music source
 
-Five things, and the build will tell you if you miss the last one.
+Four things, and the build will tell you if you miss the last one.
 
 1. **The page**, at `src/content/docs/music-providers/<slug>.md`. Copy an existing page and work
    from that. Structure is covered under [House style](#house-style) below.
+
+   There is no sidebar entry to add. The `Music Sources` menu is generated from this folder, so
+   the file lands in the menu on its own. Two things follow from that: **name the file after the
+   source**, because the menu is sorted by filename, and **set `title` to the name people know it
+   by**, because that is the label they will see. Abbreviate the filename and the two drift apart:
+   `ha.md` sorted before `heos.md` while showing as Home Assistant, which belongs after HEOS. If
+   the page needs a different title from its menu label, add `sidebar: { label: ... }` to the
+   frontmatter.
 2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
-3. **The sidebar entry**, in the `Music Sources` group in `astro.config.mjs`, in alphabetical
-   order. Nothing checks this, so it is the easiest one to forget. A page with no sidebar entry
-   still builds but is unreachable from the menu.
-4. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
+3. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
 
    ```ts
    {
@@ -83,7 +88,7 @@ Five things, and the build will tell you if you miss the last one.
    page. **The build fails without it**, and the Deploy Preview check will go red with a
    ready-made entry for you to paste.
 
-5. **Pick the categories.** Your `Media Types Supported` row tells you whether the source offers
+4. **Pick the categories.** Your `Media Types Supported` row tells you whether the source offers
    music, radio, podcasts or audiobooks. Translate that into categories:
 
    - **Music**, which is what the table means by Artists, Albums, Tracks or Playlists, is either
@@ -137,9 +142,12 @@ and somebody will sort it out.
 
 ## Adding a player provider
 
-The same, with `src/content/docs/player-support/<slug>.md`, the `Player Providers` sidebar group,
-and `src/data/players.ts`. Categories there are `commercial` for devices sold ready to use, and
-`diy` for software you set up yourself.
+The same, with `src/content/docs/player-support/<slug>.md` and `src/data/players.ts`. Categories
+there are `commercial` for devices sold ready to use, and `diy` for software you set up yourself.
+
+There is no sidebar entry to add here either. The `Player Providers` menu is generated from that
+folder, so the same two rules apply: name the file after the provider, because the menu is sorted
+by filename, and set `title` to the name people know it by, because that is the label.
 
 ## Adding a plugin, metadata provider or audio analysis provider
 
@@ -180,6 +188,9 @@ there to search.
   **one on what the Music Assistant source gets you**. Keep both to a few sentences.
 - Do not restate the Features table in prose. The table already says what is supported.
 - Plain English. Write as you would explain it to someone in person.
+- **Write for the person using Music Assistant, not the person building it.** Keep the page to
+  what a reader needs to know or can act on. How it works inside — the API calls it makes, how it
+  caches, what the sync does behind the scenes — belongs in the code, not on the page.
 - On a music source or player provider page, keep every standard `Features` table row even
   where the answer is `No`, so the pages line up with each other.
 - Use `## Configuration`, `## Known Issues / Notes` and the other standard headings at the same
@@ -202,7 +213,7 @@ Keep PNGs small. They are served as they are, with no resizing, and they are dis
 ## Editing an `.mdx` page
 
 Most pages are `.md`. A few are `.mdx` because they use components. MDX is stricter than
-markdown and two things bite:
+markdown, and two things catch people out:
 
 - `<` starts a tag, so a bare `<100` breaks the build. Write `&lt;100`.
 - Every tag must be closed, so `<br>` must be `<br />`.

@@ -1,7 +1,20 @@
 ---
-title: General
+title: Overview
 description: Information regarding various elements of Music Assistant
 ---
+
+# Overview
+
+Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These four pages are not a walkthrough of that.
+
+They cover the ideas the interface assumes you already understand, so that when something is not self-evident, the explanation is here.
+
+- **This page** — what the library actually holds, how the queue and radio mode behave, what playlists can and cannot do, and where artwork and other metadata come from
+- **[UI](/ui/)** — a tour of the interface itself, view by view
+- **[Groups](/faq/groups/)** — playing the same music on more than one speaker at once
+- **[Genres](/genres/)** — how Music Assistant categorises your library, and how to shape that
+
+None of it needs reading end to end. Use the contents list to jump to whatever you are looking for.
 
 ## The Library
 
