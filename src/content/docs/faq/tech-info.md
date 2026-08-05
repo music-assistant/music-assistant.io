@@ -31,7 +31,15 @@ All further processing in MA is done at PCM raw audio level, such as the DSP Set
 
 The final part in the chain is that MA needs to send the audio to the player. By default MA encodes the raw PCM into FLAC because it is lossless while still providing a descent amount of compression. For players that can not handle FLAC very well, or simply to save bandwidth, MA provides an option (per player) to encode to MP3 instead.
 
-The [Streamserver Settings](/settings/core/#streamserver-audio-settings) contains a number of options which determine how Volume Normalization will perform. Additionally, the [Individual Player Settings](/settings/individual-player/#queue-playback) provides access to options to enable and disable this feature as well as adjusting the [target level](/settings/individual-player/#queue-playback).
+The [Streamserver Settings](/settings/core/#streamserver-advanced-settings) contains a number of options which determine how Volume Normalization will perform. Additionally, the [Individual Player Settings](/settings/individual-player/#queue-playback) provides access to options to enable and disable this feature as well as adjusting the [target level](/settings/individual-player/#queue-playback).
+
+## Stream Selection
+
+When the same track is available from more than one source — say a Spotify stream and a FLAC file on disk — Music Assistant picks one automatically when you press play. It always chooses the highest quality available.
+
+Quality is judged on **sample rate, bit depth and codec**, in that order. Where two sources are of equal quality, the local one is preferred over the cloud one.
+
+You can see which sources hold a given item, and how they are linked together, in the [Provider Details](/ui/#provider-details) section of the item.
 
 ## Track Queueing
 
