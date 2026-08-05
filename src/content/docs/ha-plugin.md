@@ -6,7 +6,7 @@ description: The Home Assistant Plugin provides a connection from HA to MA
 
 The Home Assistant Plugin provides a connection from HA to MA. This will allow HA players to be visible in MA and be streamed to.
 
-To achieve this functionality both the HA plugin and the [HA Player Provider](/player-support/ha/) need to be installed.
+To achieve this functionality both the HA plugin and the [HA Player Provider](/player-support/home-assistant/) need to be installed.
 
 ## Features
 
