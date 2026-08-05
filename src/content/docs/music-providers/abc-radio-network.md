@@ -2,7 +2,7 @@
 title: "ABC Radio Network"
 ---
 
-# ABC Radio Network <img src="/assets/icons/abc-radio-network-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# ABC Radio Network <img src="/assets/icons/abc-radio-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for the <a href="https://www.abc.net.au/listen" target="_blank" rel="noopener noreferrer">ABC Radio Network</a> which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
 
