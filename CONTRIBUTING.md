@@ -155,10 +155,6 @@ Both generated menus sort by **filename**, while the label a reader sees comes f
 it and they drift apart: `ha.md` sorted before `heos.md` while showing as Home Assistant, which
 belongs after HEOS.
 
-`sidebar.order` does not rescue a page that has landed in the wrong place. A page carrying `order`
-sorts ahead of **every** page without one, so it leaps to the top of the group rather than down a
-slot. Ordering one page means ordering all of them. The filename is the only local fix.
-
 ## Adding a plugin, metadata provider or audio analysis provider
 
 These do not follow a fixed structure, so there is no template to match and nothing to register
