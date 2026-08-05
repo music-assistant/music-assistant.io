@@ -41,6 +41,8 @@ It is also worth remembering that DSP is configured per player, so corrections m
 - **The sound is pulled towards one side, or the listening position is off-centre**: Use Balance.
 - **One player is noticeably quieter or louder than the others**: Use Gain to bring it into line.
 - **Listening on headphones**: Crossfeed will make a speaker mix sound more natural, and hard-panned older recordings can be brought in further with Stereo Width. If a correction preset exists for the headphones, for example from [AutoEQ](https://autoeq.app/), it can be imported directly into the [Parametric Equalizer](/dsp/parametriceq/).
+- **Small speakers distorting or straining on bass**: Add a High Pass filter at around 80 Hz to remove the deep bass they cannot reproduce anyway.
+- **Quiet passages disappear in a noisy room, or for background listening**: The Compressor will even out the difference between loud and quiet.
 - **A boost has introduced clipping or harshness on peaks**: Add a Safety Limiter after the filter responsible.
 
 ## Available Filters
@@ -51,6 +53,14 @@ The following filters can be added to the DSP path. The simpler filters are expl
 
 Shifts the stereo image left or right, from −100 (full left) through 0 (centred) to +100 (full right). Rather than the near side being boosted, the opposite side is quietened so the audio never becomes louder than the source and cannot distort. The value is the percentage by which the opposite channel is reduced: at +20 the left channel is played at 80% level, and at +100 the left channel is fully muted. Because the amount is expressed as a percentage of level rather than in decibels, it is best suited to balancing by ear; for a specific decibel trim, it should be noted that roughly every 20 points corresponds to about −2 dB on the opposite channel.
 
+### Crossfeed
+
+Makes headphone listening feel more natural by gently blending the left and right channels, in a similar way to listening on speakers. With speakers, each ear hears both speakers, the sound from the further one arriving slightly later and duller. Headphones remove that blending entirely and send each channel to one ear only, which is why recordings mixed for speakers, particularly older ones with instruments panned hard left or right, can sound unnaturally wide or fatiguing over long listening sessions. Crossfeed reintroduces a small, filtered amount of each channel into the other to recreate what happens naturally in a room.
+
+The amount of blending is set with the Low, Medium and High buttons. Low leaves the stereo image close to the original and simply takes the edge off hard-panned recordings, while High pulls the image furthest in towards the centre for the most speaker-like presentation. Low is a good starting point, with the higher settings suiting older or more extremely panned recordings. There is also a Soundstage control, which sets how much of the frequency range the blending is applied to: lower values confine it to the lower frequencies for a subtler effect, while higher values extend it further up and give a wider, more open impression.
+
+Crossfeed has no neutral setting, so it is switched off by disabling the filter rather than by turning a control down. Because Music Assistant cannot detect whether a player's output is going to headphones or speakers, this filter should only be enabled on players that are actually used with headphones. On speakers, crossfeed already happens acoustically in the room, so applying it again only narrows the image with no benefit.
+
 ### Gain
 
 Raises or lowers the overall volume by a fixed amount, from −15 dB to +15 dB (0 dB leaves the volume unchanged). It is useful for levelling a player against others, or for reclaiming headroom before other processing is applied.
@@ -58,6 +68,14 @@ Raises or lowers the overall volume by a fixed amount, from −15 dB to +15 dB (
 ### Parametric Equalizer
 
 Allows precise adjustment of specific frequency ranges and is the most powerful of the available filters. It is described in detail on the [Parametric Equalizer](/dsp/parametriceq/) page.
+
+### Stereo Width
+
+Adjusts how wide the stereo image sounds, from 0 (mono) through 1.0 (unchanged) to 2.0 (wide). It works on the difference between the two channels rather than on the channels themselves, so anything sitting in the centre of the mix, typically lead vocals, bass and kick drum, is left untouched while panned instruments and ambience are moved further out or pulled further in. Values below 1.0 narrow the image towards mono, and values above 1.0 widen it. The useful musical range is fairly narrow: modest adjustments are effective, whereas pushing towards the top of the range tends to hollow out the centre and sound unnatural.
+
+Narrowing is always safe, but widening adds energy to the signal and can therefore push peaks into clipping. If the width is raised much above 1.0, a Safety Limiter should be added after the Stereo Width filter in the chain, as order matters here. It should be noted that limiting will pull a widened image back in on loud transients, since it is protecting against clipping rather than performing a mastering task.
+
+A width of 0 produces dual mono, meaning the stream still carries two channels but both contain the same summed signal. This is not the same as the player's Output channels option, which actually reduces the number of channels sent to the player; the two are complementary rather than alternatives.
 
 ### Tone Controls
 
