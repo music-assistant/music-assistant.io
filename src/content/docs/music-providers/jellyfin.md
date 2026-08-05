@@ -1,5 +1,5 @@
 ---
-title: Music Assistant Jellyfin Source
+title: "Jellyfin"
 description: Documentation for using the Jellyfin music source
 ---
 

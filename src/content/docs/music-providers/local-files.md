@@ -1,5 +1,5 @@
 ---
-title: File System Source
+title: "Local Files"
 description: Features, Configuration, Issues and More for the File System Music Sources
 ---
 

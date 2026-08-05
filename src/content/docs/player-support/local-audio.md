@@ -1,5 +1,5 @@
 ---
-title: Local Audio Out Provider
+title: "Local Audio Out"
 description: A description of the Local Audio Out Player Provider
 ---
 

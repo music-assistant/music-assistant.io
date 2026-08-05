@@ -1,5 +1,5 @@
 ---
-title: Music Assistant Emby Provider
+title: "Emby"
 description: Documentation for using the Emby music source
 ---
 

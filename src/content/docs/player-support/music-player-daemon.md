@@ -1,5 +1,5 @@
 ---
-title: MPD Player Provider
+title: "Music Player Daemon (MPD)"
 description: A Description of the MPD Player Provider
 ---
 # MPD Player <img src="/assets/icons/mpd-icon.svg" alt="MPD icon" style="width: 70px; float: right;" loading="lazy" />

@@ -1,5 +1,5 @@
 ---
-title: "Pocket Casts"
+title: "Pocketcasts"
 ---
 
 # Pocket Casts <img src="/assets/icons/pocketcasts-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
