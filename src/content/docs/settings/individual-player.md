@@ -2,7 +2,7 @@
 title: "Individual Player Settings"
 ---
 
-# Individual Player Settings <img src="/assets/icons/settings-players-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Individual Player Settings <img src="/assets/icons/settings-individual-player-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. Some items are hidden unless the `Show advanced settings` toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
 

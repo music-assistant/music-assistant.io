@@ -1,5 +1,6 @@
 ---
 import { existsSync } from "node:fs";
+import { pathToFileURL } from "node:url";
 import { getCollection } from "astro:content";
 import type { TileCategory, TilePage } from "../data/tile-page";
 
@@ -21,7 +22,10 @@ const KNOWN_UNLISTED = new Set(page.knownUnlisted);
 
 const docs = await getCollection("docs");
 const knownSlugs = new Set(docs.map((entry) => entry.id));
-const publicDir = new URL("../../public/", import.meta.url);
+// Anchored to the project root rather than to this file. Astro 6 builds the
+// component into dist/.prerender/, so a path relative to import.meta.url looks
+// for the icons somewhere they have never been and reports every one missing.
+const publicDir = new URL("public/", pathToFileURL(`${process.cwd()}/`));
 
 const allCategories: TileCategory[] = page.groups.flatMap((g) => g.categories);
 const knownCategoryIds = new Set(allCategories.map((c) => c.id));
