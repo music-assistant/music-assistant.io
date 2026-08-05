@@ -69,7 +69,8 @@ Four things, and the build will tell you if you miss the last one.
    the file lands in the menu on its own. Two things follow from that: **name the file after the
    source**, because the menu is sorted by filename, and **set `title` to the name people know it
    by**, because that is the label they will see. If the page needs a different title from its
-   menu label, add `sidebar: { label: ... }` to the frontmatter.
+   menu label, add `sidebar: { label: ... }` to the frontmatter. See
+   [Naming and renaming pages](#naming-and-renaming-pages) for why the two have to agree.
 2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
 3. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
 
@@ -146,6 +147,25 @@ there are `commercial` for devices sold ready to use, and `diy` for software you
 There is no sidebar entry to add here either. The `Player Providers` menu is generated from that
 folder, so the same two rules apply: name the file after the provider, because the menu is sorted
 by filename, and set `title` to the name people know it by, because that is the label.
+
+## Naming and renaming pages
+
+Both generated menus sort by **filename**, while the label a reader sees comes from the page
+**title**. Name the file after the thing it documents and the two agree on their own. Abbreviate
+it and they drift apart: `ha.md` sorted before `heos.md` while showing as Home Assistant, which
+belongs after HEOS, and `mpd.md` sorted before `msx-bridge.md` while showing as Music Player
+Daemon. Both were renamed, to `home-assistant.md` and `music-player-daemon.md`.
+
+`sidebar.order` does not rescue a single entry that has landed in the wrong place. A page carrying
+`order` sorts ahead of **every** page without one, so it leaps to the top of the group rather than
+down a slot. Ordering one page means ordering all of them. Renaming the file is the fix.
+
+**Renaming an existing page changes its URL, and that is not free.** Every provider in the server
+repo carries a `documentation` URL in its `manifest.json`, and that URL is what the documentation
+icon in the Music Assistant settings opens. Nothing here warns you when a rename breaks one. So if
+you rename a page under `music-providers/` or `player-support/`, add a 301 to `public/_redirects`
+so the old URL keeps working, and say so on the pull request — the server side needs a matching
+change, and it ships on its own schedule.
 
 ## Adding a plugin, metadata provider or audio analysis provider
 
