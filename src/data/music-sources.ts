@@ -324,6 +324,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "podcasts", "austria"],
   },
   {
+    name: "Overcast",
+    slug: "music-providers/overcast",
+    icon: "/assets/icons/overcast-icon.png",
+    categories: ["podcasts"],
+  },
+  {
     name: "Pandora",
     slug: "music-providers/pandora",
     icon: "/assets/icons/pandora.png",
