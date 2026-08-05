@@ -1,12 +1,12 @@
 ---
-title: "ARD Audiothek"
+title: "ARD Sounds"
 ---
 
-# ARD Audiothek <img src="/assets/icons/ard-audiothek.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# ARD Sounds <img src="/assets/icons/ard-audiothek.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming from <a href="https://www.ardaudiothek.de/" target="_blank" rel="noopener noreferrer">ARD Audiothek</a>. Contributed and maintained by <a href="https://github.com/jfeil" target="_blank" rel="noopener noreferrer">Jan Feil</a>
+Music Assistant has support for streaming from <a href="https://www.ardsounds.de/" target="_blank" rel="noopener noreferrer">ARD Sounds</a>. Contributed and maintained by <a href="https://github.com/jfeil" target="_blank" rel="noopener noreferrer">Jan Feil</a>
 
-ARD Audiothek is the audio platform of ARD, the group of public broadcasters in Germany. It collects radio programmes, podcasts, radio plays and documentaries from the national and regional stations, all free to listen to.
+ARD Sounds (fka ARD Audiothek) is the audio platform of ARD, the group of public broadcasters in Germany. It collects radio programmes, podcasts, radio plays and documentaries from the national and regional stations, all free to listen to.
 
 This source makes that content available inside Music Assistant. An ARD account is optional and mainly useful if you want the podcasts you follow to come across with your listening position.
 
@@ -35,7 +35,7 @@ This source makes that content available inside Music Assistant. An ARD account 
 
 ## Configuration
 
-- Login to the ARD Audiothek app, if syncing is required
+- Login to the ARD Sounds app, if syncing is required
 
 ### Settings
 - <b>E-Mail address of ARD account.</b>
