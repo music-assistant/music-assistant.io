@@ -8,6 +8,10 @@ The core server settings are set with typical defaults that should work for most
 
 ![image](/assets/screenshots/settings-core.png)
 
+## Background Tasks
+
+- <b>Maximum number of concurrent background tasks.</b> Defaults to 2. This controls how many background tasks run simultaneously. Higher numbers mean higher demands on the system's resources and can slow the system down. Setting is only visible when the advanced toggle is on
+
 ## Cache
 
 - A button is available to clear the cache used by Music Assistant. Do not routinely use this button as it increases [API usage](/usage/#online-metadata-sources) and slows down the MA experience
@@ -39,6 +43,25 @@ The behaviour when playing or enqueuing items is determined by the settings in t
 
 ![image](/assets/screenshots/settings-player-queues.png)
 
+Additionally, there are options which can be set on a global level which can be overridden on a per queue basis. 
+
+<a href="/assets/screenshots/settings-player-queues2.png"><img src="/assets/screenshots/settings-player-queues2.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+
+Smart Shuffle enhances standard shuffle behavior by intelligently reducing repetition. Instead of selecting tracks purely at random, songs and artists that have been played recently are deprioritized, resulting in a more evenly distributed listening experience and reducing the likelihood of the same tracks being repeated when playlists are replayed. Smart Shuffle is always applied when playing a dynamic playlist, regardless of this setting.
+
+Autoplay has four options as follows:
+- <b>Automatic — similar tracks, falling back to your library (default).</b> New tracks similar to what was recently played are requested from the music providers. If no provider is able to supply similar-track recommendations (for example, when only local files are used), an endless mix drawn from the library is used instead, so playback will not stop
+
+- <b>Similar to what you played.</b> Tracks that resemble the most recently played items in the queue are fetched from the connected music providers and appended to the queue. This mode relies on a provider that offers similar-track recommendations; if none is available, no tracks are added
+
+- <b>Infinite mix from your library.</b> Tracks are selected from the local library, with preference given to those that have been played the least. The selection is biased towards the genres of the items that were played most recently; when too few matching tracks are found, the mix is topped up with random tracks from across the whole library.
+
+- <b>Tracks from a playlist.</b> The playlist the user has selected in the box below will be played
+
+Crossfade can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/#smart-fades-provider-) is the default. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. This is the only place that the standard crossfade duration can be set.
+
+[Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items and sources. The target level is set in the [Streams Queue Playback Settings](#queue-playback)
+
 ## Streams
 
 All settings in this section should be considered advanced and will not need to be adjusted in the majority of cases. Users with complicated network setups will find settings in this section that will be useful. If MA appears to be setup correctly but no playback occurs then check the settings in this section.
@@ -47,7 +70,22 @@ All settings in this section should be considered advanced and will not need to 
 
 <b>Audio buffer size.</b> Controls how much audio is buffered in memory. A larger buffer improves playback stability and seeking but uses more memory. The options are `Maximum [default]`, `Minimal` and `Balanced`. The options are filtered depending upon system RAM. Minimal (60s buffer) is always available, Balanced (300s) requires a nominal 4 GB of RAM, and Maximum (1200s) requires a nominal 8 GB of RAM. If total memory can't be determined then all three presets are offered although the default in that case is, conservatively, Minimal.
 
-This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual player basis](/settings/individual-player/#audio). Extensive online help for these settings is available by selecting the ![question mark](/assets/icons/question-mark.png) icon in the settings UI for each option.
+This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual queue basis](/usage/#the-queue). There are two of these settings, one for tracks, one for radio, and you set them independently.
+
+The best result comes from a loudness measurement of the audio. Music Assistant measures your local library automatically in a nightly background scan, and it measures everything, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before that measurement exists:
+
+- Fallback Dynamic (default) — use the measurement when there is one, otherwise adjust loudness on the fly. Always evens things out; the on-the-fly path is slightly less precise
+- Fallback Fixed Gain — use the measurement when there is one, otherwise apply the fixed adjustment below
+- Measurement Only — only adjust when a measurement exists. Anything not yet analysed plays at its original loudness
+- Dynamic — always adjust on the fly, ignoring measurements
+- Fixed Gain — never analyse; apply the same fixed adjustment to everything
+- Disabled — leave loudness untouched
+
+Two things worth knowing: live radio is rarely measured, so the radio setting in practice runs on whichever fallback you choose; and volume normalization also has to be switched on for the player itself — these settings control how it's done, not whether.
+
+Fixed/fallback gain adjustment — tracks / radio
+
+How much to raise or lower the volume, in dB, whenever the fixed-gain path is used. That's either the Fixed Gain method, or Fallback Fixed Gain when no measurement is available. Negative values make things quieter. The range is −20 to +10 dB and the default is −6. Other methods ignore it. Again, separate values exist for tracks and radio.
 
 ![image](/assets/screenshots/settings-streamserver-audio.png)
 
@@ -57,7 +95,7 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 #### Generic
 
-- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
+- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically and set to `auto`. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
 
 #### Audio Analysis
@@ -68,14 +106,14 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 ## Webserver
 
 - <b>Allow User Self-Registration.</b> Allows users to create accounts via Home Assistant OAuth
-- <b>Base URL.</b> The (base) URL used to reach the web UI and API on the network. Most users can leave this as-is. Include the TCP port (e.g. http://192.168.1.10:8095); it is not added automatically and must match the TCP Port setting below. If you run the webserver behind a [reverse proxy](/faq/networking/#the-jargon-translated), enter the full public URL instead (e.g. `https://music.example.com`), using the hostname configured on the proxy rather than a raw IP, because proxies match requests by hostname. This setting is for the frontend only; it is separate from Streams >> Published IP Address, which must remain a local IP so players can reach the stream server directly.
+- <b>Base URL.</b> The (base) URL used to reach the web UI and API on the network. Leave this on auto unless you have a reason not to. Music Assistant works out the address itself from the server's IP address and the port set below. Set it manually only when clients need to reach Music Assistant at a different address than the server sees, behind a [reverse proxy](/faq/networking/#the-jargon-translated), for example. In that case enter the full address including the port, such as https://music.example.com:8123. The port field below is separate and still applies as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Base URL 
 - <b>TCP Port.</b> The port that the webserver is to be run on. If this setting is changed then ensure the base URL port is changed as well
 - <b> Enable SSL/TLS.</b> When enabled two additional fields are revealed which is where the `SSL Certificate` and `SSL Private Key` are added (both must be in PEM format)
 - <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. For further information see the help for this setting in the MA UI
 
-## Server Logging
+## Diagnostics
 
-This opens a view where the 150 line tail of the Music Assistant log can be seen or the full log can be downloaded.
+This opens a view where the 150 line tail of the Music Assistant log can be seen and the diagnostics report or full log can be downloaded.
 
 ## Background Tasks
 
@@ -125,7 +163,7 @@ A destructive operation that completely rebuilds the genre database from default
 
 ## Audio Analysis
 
-Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers. The stale number is the number of tracks that need to be re-analysed due to a version change
+Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers. The stale number is the number of tracks that need to be re-analysed due to a version change. There is also a section which shows failures and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned.
 
 ![image](/assets/screenshots/audio-analysis-view.png)
 

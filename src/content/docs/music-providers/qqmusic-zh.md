@@ -1,5 +1,7 @@
 ---
 title: "QQ 音乐"
+sidebar:
+  hidden: true
 ---
 
 # QQ 音乐 <img src="/assets/icons/qqmusic-icon.svg" alt="QQ Music icon" style="width: 70px; float: right;"  loading="lazy" />
@@ -25,7 +27,7 @@ QQ 音乐是中国大陆最常用的流媒体音乐平台之一，拥有较完�
 | 免费订阅可用 | 否 |
 | 本地自托管媒体 | 否 |
 | 支持媒体类型 | 歌手、专辑、歌曲、歌单 |
-| [发现推荐](/ui/#view-home) | 支持 |
+| [发现推荐](/ui/#view---discover) | 支持 |
 | 歌词 | 支持 |
 | [电台模式](/ui/#track-menu) | 支持 |
 | 最高音质 | Lossless FLAC（最高 24-bit/192kHz） |

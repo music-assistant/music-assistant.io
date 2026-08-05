@@ -7,6 +7,8 @@ description: Details of the announcements functionality
 
 Announcements are either Text-to-Speech or audio files that are sent (from Home Assistant) to the MA players via the <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">`tts.xxxxxx`</a> or [`music_assistant.play_announcement`](/faq/massannounce/) HA actions.
 
+Only the [Home Assistant integration](/integration/installation/) is needed for this. The Home Assistant plugin and Home Assistant Media Players play no part in announcements.
+
 ## Overview
 
 If music is being played by MA then this will be temporarily paused and restored after the announcement.

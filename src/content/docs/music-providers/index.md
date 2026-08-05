@@ -1,17 +1,27 @@
 ---
 title: "Music Sources"
+sidebar:
+  label: Overview
 ---
 
 # Music Sources
 ![Logo Banner](/assets/music-provider-logos.png)
 
-For specific music source information refer to the relevant section.
+## What a music source is
 
-General Notes:
+Music Assistant holds no music of its own. A **music source** is somewhere your music actually lives: a streaming service such as Spotify or Tidal, a folder of files on a disk or a NAS, a media server like Plex or Jellyfin, or a directory of radio stations, podcasts or audiobooks.
 
-- You have to add sources in order to access your music even if the media is visible to HA
-- If you remove a source a cleanup of the database will be done but it takes a little time to complete. If you still see entries from a deleted source after some time, then try a MA restart to retrigger the cleanup process
-- Music sources are added by navigating to MA Settings and then MUSIC SOURCES and then clicking on ADD A MUSIC SOURCE
+You add the sources you already use, and Music Assistant reads from all of them at once. Nothing appears until you add at least one, even if Home Assistant can already see the media.
+
+Everything you add is combined into a single **library**: one set of artists, albums, tracks, playlists, radio stations, podcasts and audiobooks, whichever source each item came from. Where the same album exists in several sources, Music Assistant tries to link those copies together so you see one entry rather than three, and plays the [best quality version](/faq/tech-info/#stream-selection) available. Linking only happens where the sources supply enough metadata to identify a match, so it is not guaranteed; see [Provider Details](/ui/#provider-details) for what to do when copies stay separate.
+
+How much of a source ends up in that library is up to you. Each one has its own settings for what gets synced and how often, which the rest of this page covers.
+
+## Adding a source
+
+Go to `SETTINGS >> MUSIC SOURCES >> ADD A MUSIC SOURCE` and pick the one you want. Each source has its own page in this section covering what it offers and how to set it up.
+
+If you remove a source, the database is cleaned up afterwards, which takes a little while. If you still see entries from a deleted source after some time, restart MA to retrigger the cleanup.
 
 > [!TIP]
 > If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [PROVIDER DETAILS](/ui/#provider-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
@@ -46,12 +56,9 @@ Lastly, depending on sources installed, there may be additional sync related opt
 
 Information for other options not listed above is available in the MA UI.
 
-## Summary
+## Not sure which source you need?
 
-The table below provides an at-a-glance summary of all of the music sources. Green ticks indicate a desirable quality or function is available. 
-
-Stream quality is indicated as either [Hi-Res](/player-support/#audio-quality), <a href="https://www.soundguys.com/high-bitrate-audio-is-overkill-cd-quality-is-still-great-16518/" target="_blank" rel="noopener noreferrer">CD quality</a> or lossy with the codec and bitrate where available.
-
-The most user friendly login method is a password. Next best is OAuth, where you log in on the service's own website and grant MA access to your account. The cookie method, where you copy a hidden value out of your browser, is the least desirable.
-
-[![music provider summary](/assets/music-provider-summary.png)](/assets/music-provider-summary.png)
+If you know what you want to listen to but not which source provides it, start at
+[I Want To Listen To](/faq/listen-to/). It groups every source by what it plays, from local
+files and streaming through to radio, podcasts and audiobooks, and by the country its content
+comes from. That page also carries the summary table comparing all of the sources side by side.
