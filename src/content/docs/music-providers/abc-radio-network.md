@@ -8,7 +8,7 @@ Music Assistant has support for the <a href="https://www.abc.net.au/listen" targ
 
 The ABC is Australia's public broadcaster, funded by the government and free of advertising. Alongside its news and talk networks it runs a set of music stations, from triple j for new and Australian music through to ABC Classic, ABC Jazz, ABC Country and a channel just for young children - Kids Listen.
 
-This source adds the eight ABC music stations to Music Assistant as radio stations, with the artist and track playing right now shown as you listen.
+This source adds the eight ABC music stations to Music Assistant as radio stations. You would use this provider over another if you want artist and track name information as well as album art.
 
 ## Features
 
