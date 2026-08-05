@@ -32,7 +32,7 @@ triple j, Double J, triple j Unearthed, ABC Classic, ABC Classic 2, ABC Jazz, AB
 
 ## Configuration
 
-- In the configuration, you only need to click the save button
+In the configuration, you only need to click the save button
 
 ## Usage
 
