@@ -210,7 +210,7 @@ Keep PNGs small. They are served as they are, with no resizing, and they are dis
 ## Editing an `.mdx` page
 
 Most pages are `.md`. A few are `.mdx` because they use components. MDX is stricter than
-markdown and two things bite:
+markdown, and two things catch people out:
 
 - `<` starts a tag, so a bare `<100` breaks the build. Write `&lt;100`.
 - Every tag must be closed, so `<br>` must be `<br />`.
