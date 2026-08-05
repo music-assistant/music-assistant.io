@@ -68,9 +68,10 @@ Four things, and the build will tell you if you miss the last one.
    There is no sidebar entry to add. The `Music Sources` menu is generated from this folder, so
    the file lands in the menu on its own. Two things follow from that: **name the file after the
    source**, because the menu is sorted by filename, and **set `title` to the name people know it
-   by**, because that is the label they will see. If the page needs a different title from its
-   menu label, add `sidebar: { label: ... }` to the frontmatter. See
-   [Naming the file](#naming-the-file) for why the two have to agree.
+   by**, because that is the label they will see. Abbreviate the filename and the two drift apart:
+   `ha.md` sorted before `heos.md` while showing as Home Assistant, which belongs after HEOS. If
+   the page needs a different title from its menu label, add `sidebar: { label: ... }` to the
+   frontmatter.
 2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
 3. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
 
@@ -147,13 +148,6 @@ there are `commercial` for devices sold ready to use, and `diy` for software you
 There is no sidebar entry to add here either. The `Player Providers` menu is generated from that
 folder, so the same two rules apply: name the file after the provider, because the menu is sorted
 by filename, and set `title` to the name people know it by, because that is the label.
-
-## Naming the file
-
-Both generated menus sort by **filename**, while the label a reader sees comes from the page
-**title**. Name the file after the thing it documents and the two agree on their own. Abbreviate
-it and they drift apart: `ha.md` sorted before `heos.md` while showing as Home Assistant, which
-belongs after HEOS.
 
 ## Adding a plugin, metadata provider or audio analysis provider
 
