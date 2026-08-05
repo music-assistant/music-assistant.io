@@ -188,6 +188,9 @@ there to search.
   **one on what the Music Assistant source gets you**. Keep both to a few sentences.
 - Do not restate the Features table in prose. The table already says what is supported.
 - Plain English. Write as you would explain it to someone in person.
+- **Write for the person using Music Assistant, not the person building it.** Keep the page to
+  what a reader needs to know or can act on. How it works inside — the API calls it makes, how it
+  caches, what the sync does behind the scenes — belongs in the code, not on the page.
 - On a music source or player provider page, keep every standard `Features` table row even
   where the answer is `No`, so the pages line up with each other.
 - Use `## Configuration`, `## Known Issues / Notes` and the other standard headings at the same

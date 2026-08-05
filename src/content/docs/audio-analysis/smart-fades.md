@@ -6,7 +6,7 @@ title: Smart Fades
 
 The **Smart Fades** provider analyses each track to find its beats, downbeats, musical key and energy curve, and uses that information to create beat-matched, EQ-aware crossfades between tracks — much smoother than a plain time-based fade.
 
-Smart Fades is an optional plugin but is automatically added and enabled unless the minimum resources requirements listed below are not met.
+Smart Fades is an optional plugin but is automatically added and enabled unless the minimum resources requirements [listed below](#performance-notes) are not met.
 
 ## What it adds to playback
 
