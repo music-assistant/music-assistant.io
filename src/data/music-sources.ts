@@ -192,7 +192,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
   {
     name: "ABC Radio Network",
     slug: "music-providers/abc-radio-network",
-    icon: "/assets/icons/abc-radio-network-icon.svg",
+    icon: "/assets/icons/abc-radio-icon.svg",
     categories: ["radio", "children", "australia"],
   },
   {
