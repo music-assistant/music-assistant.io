@@ -24,32 +24,30 @@ This source connects Music Assistant to your subscription so the channels from t
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | MP3 320kbps |
-| Login Method | API Key |
+| Login Method | Listen Key |
 
 ### Other
 
 - All six networks are available with the one subscription and the provider allows selection of which network(s) are desired to be subscribed to
 - Hundreds of curated radio streams from the six networks are available to browse and search
 - Channel artwork, genre information, and detailed channel descriptions are available
-- The library is populated with the favorite stations marked on the DI network websites. Favorites are **read-only** in Music Assistant — they are added or removed from the settings/favorites panel of any site in the network, and the change is synced into Music Assistant
-
 ### Managing Favorites
 
-- Favorite stations are loaded from each selected network and added to the library
-- Favorites are read-only within Music Assistant. The stations that appear are changed by adding or removing favorites on the website of any network in the DI.fm family
-- Changes made on the website may take a few minutes to appear in Music Assistant, as favorites are cached for 5 minutes
+- Your library is filled with whatever you have marked as a favourite on the network websites
+- Favourites are read-only in Music Assistant. To change which stations appear, add or remove favourites on the website of any network in the DI.fm family
+- A change made on the website takes a few minutes to reach Music Assistant
 
 ## Configuration
 
-- An API key must be added and the desired networks selected in the configuration
+Add your listen key and tick the networks you want.
 
 > [!NOTE]
-> This provider requires a premium subscription and a "listen key" which is retrievable from the settings panel of any of the sites in the network. The key from all sites is identical and subscribing to one provides access to all. The listen key is used both for playback and for loading favorites.
+> This source needs a premium subscription and your **listen key**, which you will find in the settings on any of the network's websites. There is only one key and it is the same on every site, so a subscription to one gets you all six. The same key both plays the stations and fetches your favourites.
 
 ## Known Issues / Notes
 
-- Only one stream at a time from a network is supported. If an attempt is made to play a stream and it stops playing after 30 seconds, this indicates another stream is already playing from the network. Currently playing streaming clients can be found on the settings page of any member in the network
+- You can only listen to one station at a time across the whole network. If a station plays for 30 seconds and then stops, something else is already using your subscription. Any of the network's websites will show you what is currently playing under its settings
 
 ## Not Yet Supported
 
-- More metadata is available in the API but is not yet exposed
+- The networks provide more information about each station than Music Assistant currently shows
