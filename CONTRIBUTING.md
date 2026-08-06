@@ -234,8 +234,12 @@ others, which is what most readers came to that page to do. Better to fill in wh
 and say on the pull request which answers you were unsure about — somebody will know them. Take
 the slug back out when the row lands.
 
-The providers listed there now are ones that control a device rather than stream to it, and one
-too new to have the answers yet.
+The two listed there now are one that controls a device rather than streaming to it, and one too
+new to have the answers yet.
+
+A provider that leans on another one for the audio is a different case, and does belong in the
+table. Bose SoundTouch handles control while the sound goes over DLNA, so its row is the DLNA row
+with a footnote saying so.
 
 ### Adding a column
 

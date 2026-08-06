@@ -55,7 +55,7 @@ export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
   {
     id: "perfectSync",
     label: "Perfect Sync",
-    help: "Grouped players stay in step from timestamped frames rather than from server-side correction, which is the more precise of the two methods.",
+    help: "Players of this kind can be kept in time with each other when they are grouped.",
     href: "/faq/tech-info/#player-perfect-sync",
   },
   {
@@ -105,16 +105,16 @@ export const CAPABILITY_NOTES: string[] = [
   "Can be controlled by Home Assistant",
   "When bridging other protocols",
   "FLAC streaming works on some TVs",
+  "Audio is carried over DLNA, so the capabilities are DLNA's",
 ];
 
 // Providers with a page but no row, so the build does not demand one. Add a
 // slug here only while its capabilities are genuinely unknown, and take it out
 // again once they are.
 export const KNOWN_UNCHARTED: string[] = [
-  // Alexa and Bose SoundTouch control the device rather than stream to it, and
-  // Local Audio Out is new; none of the three has published capability data.
+  // Alexa controls the device rather than streaming to it, and Local Audio Out
+  // is new; neither has published capability data.
   "player-support/alexa",
-  "player-support/bose-soundtouch",
   "player-support/local-audio",
 ];
 
@@ -161,6 +161,25 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
       crossfade: true,
       stereoPair: true,
       deviceButton: false,
+      deviceVoice: false,
+      playerOptions: false,
+    },
+  },
+  {
+    // The provider handles control and discovery only; the audio itself goes
+    // over DLNA on the same device, so this row matches the DLNA one below and
+    // has to keep matching it.
+    slug: "player-support/bose-soundtouch",
+    sampleRate: "192kHz/24 bits",
+    sampleRateNotes: [9],
+    values: {
+      hiRes: true,
+      lossless: true,
+      perfectSync: false,
+      syncCorrection: false,
+      crossfade: true,
+      stereoPair: false,
+      deviceButton: true,
       deviceVoice: false,
       playerOptions: false,
     },
