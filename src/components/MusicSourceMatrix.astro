@@ -286,7 +286,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
       <caption id="msum-caption">What each music source offers</caption>
       <thead>
         <tr>
-          <th scope="col" class="msum__source">Source</th>
+          <th scope="col" class="msum__source"><span class="msum__sronly">Source</span></th>
           {
             YES_NO_COLUMNS.map((column) => (
               <th scope="col" class="msum__flag" data-chip="flag" data-value={column.id}>
@@ -341,7 +341,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
                       </svg>
                     </span>
                   ) : (
-                    <span class="msum__no">No</span>
+                    <span class="msum__sronly">No</span>
                   )}
                   {flag.note && (
                     <sup class="msum__ref">
@@ -755,11 +755,12 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     height: 0.95rem;
   }
 
-  /* "No" is read out but never shown. A cross in every one of these cells is
+  /* Read out but never shown: the "No" in an empty cell, and the heading over
+     the source column, which the logos and names speak for on their own. A cross in every one of these cells is
      noise across four columns and forty-seven rows, and the tick is what anyone
      is scanning for, but an empty cell tells a screen reader nothing at all, so
      the word stays in the markup. */
-  .msum__no {
+  .msum__sronly {
     position: absolute;
     width: 1px;
     height: 1px;
