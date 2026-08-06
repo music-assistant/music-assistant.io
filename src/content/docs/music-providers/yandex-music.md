@@ -32,7 +32,7 @@ This source is built on top of the [yandex-music-api](https://github.com/Marshal
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     |
@@ -50,7 +50,7 @@ This source is built on top of the [yandex-music-api](https://github.com/Marshal
 - **My Wave** personalised radio with Yandex's long-lived rotor session (signals like/dislike, skips and full plays back to the recommendation algorithm)
 - **Wave Modes** — 11 one-click presets for My Wave (Discover / Favorites / Popular, Calm / Active / Fun / Sad, Russian / Non-Russian / Without Words)
 - **My Presets** — save your own named combinations of diversity, mood and language, re-launch them from Browse without fiddling with settings
-- Similar tracks are available from the track context menu (used by Radio Mode); when a wave track plays, Radio Mode continues the same Yandex-curated session instead of branching into an unrelated similar-tracks stream
+- Similar tracks are available from the track context menu (used by Endless Mix); when a wave track plays, Endless Mix continues the same Yandex-curated session instead of branching into an unrelated similar-tracks stream
 - **Podcasts** are synced from your Yandex library, browsable with episodes, and stream natively
 - **Audiobooks** are synced, browsable with chapters, and stream natively. Playback position round-trips between Music Assistant and Yandex's own apps, so resume points stay in sync
 - Multiple Yandex Music accounts can be added simultaneously

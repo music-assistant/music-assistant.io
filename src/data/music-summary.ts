@@ -52,12 +52,14 @@ export const YES_NO_COLUMNS: SummaryColumn[] = [
     featuresLabel: /^Self-Hosted Local Media$/i,
   },
   {
-    id: "radioMode",
-    label: "Radio Mode",
-    head: ["Radio", "Mode"],
+    id: "endlessMix",
+    label: "Endless Mix",
+    // Abbreviated, because the column is a tick and the full name would set a
+    // width the ticks never use. The legend spells it out.
+    head: ["E. Mix"],
     help: "Music Assistant can keep playing in a similar vein once the queue runs out, using this source's own idea of what is similar.",
-    href: "/usage/#radio-mode",
-    featuresLabel: /^Radio Mode$/i,
+    href: "/usage/#endless-mix",
+    featuresLabel: /^Endless Mix$/i,
   },
   {
     id: "recommendations",

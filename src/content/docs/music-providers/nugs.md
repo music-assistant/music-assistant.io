@@ -22,7 +22,7 @@ This source signs Music Assistant in to your account, so the shows you have acce
 | Media Types Supported | Artists, Albums, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| <a href="https://www.music-assistant.io/ui/#track-menu" target="_blank" rel="noopener noreferrer">Radio Mode</a> | No |
+| <a href="https://www.music-assistant.io/ui/#track-menu" target="_blank" rel="noopener noreferrer">Endless Mix</a> | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 

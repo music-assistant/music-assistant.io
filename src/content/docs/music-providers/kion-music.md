@@ -29,7 +29,7 @@ Connecting your account puts your KION library and the wider catalogue inside Mu
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     |
@@ -44,7 +44,7 @@ Connecting your account puts your KION library and the wider catalogue inside Mu
 - Browse is available to explore the KION Music catalogue
 - Lyrics are displayed when available (synced line-by-line when provided by the service, otherwise plain text)
 - Personalized recommendations (My Mix, Made for You, Chart, New Releases and more) appear in the Recommendations section on the Home screen
-- Similar tracks are available from the track context menu (used by Radio Mode)
+- Similar tracks are available from the track context menu (used by Endless Mix)
 - Multiple KION Music accounts can be added simultaneously
 
 ## Configuration

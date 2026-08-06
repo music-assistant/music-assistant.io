@@ -19,7 +19,7 @@ This source points Music Assistant at that server so the same collection is avai
 | Media Types Supported | Audiobooks, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 

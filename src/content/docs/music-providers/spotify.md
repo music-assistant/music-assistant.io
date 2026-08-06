@@ -28,7 +28,7 @@ Connecting your account puts your saved music and playlists into Music Assistant
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |

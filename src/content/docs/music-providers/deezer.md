@@ -24,7 +24,7 @@ Connecting your account puts your Deezer favourites and playlists alongside the 
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks, Radio |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     | 
