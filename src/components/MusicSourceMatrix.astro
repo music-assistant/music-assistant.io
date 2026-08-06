@@ -410,6 +410,10 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   </dl>
 </details>
 
+{/* Each tile section further up the page ends with one of these, and the table
+    is the last thing on a very long page, so it gets one too. */}
+<a class="msum__top" href="#_top">Back to the top</a>
+
 <script>
   // Filtering, added on top of a table that is complete and readable without
   // it. Everything below only runs once the script does, and the controls stay
@@ -952,6 +956,20 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     margin-top: 0.6rem;
     font-weight: 600;
     color: var(--sl-color-white);
+  }
+
+  /* Matches the "Back to the top" links TilePage puts under each section of
+     tiles further up the page. */
+  .msum__top {
+    display: inline-block;
+    margin-top: 0.9rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+  }
+
+  .msum__top:hover {
+    color: var(--sl-color-accent);
   }
 
   .msum__legend dd {

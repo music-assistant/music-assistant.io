@@ -114,8 +114,9 @@ Four things, and the build will tell you if you miss the last one.
    - **Podcasts** is `podcasts`.
    - **Audiobooks** is `audiobooks`.
 
-   Two more are a judgement call rather than something the table can tell you: `live-concerts`
-   for recordings of live shows, and `children` for audio aimed at younger listeners.
+   Three more are a judgement call rather than something the table can tell you: `live-concerts`
+   for recordings of live shows, `classical` for orchestral, chamber and operatic music, and
+   `children` for audio aimed at younger listeners.
 
    Last are the country categories, covered just below. These are the ones people forget.
 
