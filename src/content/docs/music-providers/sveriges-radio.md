@@ -21,7 +21,7 @@ Sveriges Radio is funded publicly rather than by advertising. It runs four natio
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy MP3 |
+| Maximum Stream Quality | MP3 |
 | Login Method | None |
 
 ### Other

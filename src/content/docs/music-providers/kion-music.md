@@ -33,7 +33,7 @@ Connecting your account puts your KION library and the wider catalogue inside Mu
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     |
-| Maximum Stream Quality | Lossless FLAC (with subscription) |
+| Maximum Stream Quality | FLAC |
 | Login Method | Token |
 
 ### Other

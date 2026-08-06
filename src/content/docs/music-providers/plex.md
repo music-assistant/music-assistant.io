@@ -23,7 +23,7 @@ This source connects Music Assistant to the music library on your Plex server. E
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                     | 
-| Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | Password |
 
 ### Other

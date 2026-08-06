@@ -32,7 +32,7 @@ Connecting your account puts your saved music and playlists into Music Assistant
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossy, OGG Vorbis (320kbps) |
+| Maximum Stream Quality | OGG Vorbis 320kbps |
 | Login Method | OAuth |
 
 ### Other

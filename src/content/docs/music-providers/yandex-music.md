@@ -36,7 +36,7 @@ This source is built on top of the [yandex-music-api](https://github.com/Marshal
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     |
-| Maximum Stream Quality | Lossless FLAC (with Plus subscription) |
+| Maximum Stream Quality | FLAC |
 | Login Method | Device Flow / QR Code / Token |
 
 ### Other

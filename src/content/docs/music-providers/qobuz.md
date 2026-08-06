@@ -23,7 +23,7 @@ Sign in and your Qobuz favourites appear in Music Assistant, along with the whol
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 
-| Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | Password |
 
 ### Other

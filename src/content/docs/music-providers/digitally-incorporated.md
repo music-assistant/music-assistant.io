@@ -23,7 +23,7 @@ This source connects Music Assistant to your subscription so the channels from t
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy MP3 (320kbps) |
+| Maximum Stream Quality | MP3 320kbps |
 | Login Method | API Key |
 
 ### Other

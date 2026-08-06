@@ -23,7 +23,7 @@ This source adds the eight ABC music stations to Music Assistant as radio statio
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | AAC 246kbps (44.1 kHz) |
+| Maximum Stream Quality | AAC 246kbps |
 | Login Method | None |
 
 ### Stations

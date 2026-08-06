@@ -35,7 +35,7 @@ This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvu
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossless FLAC (with subscription) |
+| Maximum Stream Quality | FLAC |
 | Login Method | Token |
 
 ### Other

@@ -30,7 +30,7 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality                          |  Lossy, MP3 (128kbps)   |
+| Maximum Stream Quality                          | MP3 128kbps |
 | Login Method                                    |    Cookie (optional)    |
 
 ### Other

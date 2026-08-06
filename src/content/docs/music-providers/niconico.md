@@ -23,7 +23,7 @@ This source lets you search that catalogue and play the audio through Music Assi
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                     | 
-| Maximum Stream Quality | Lossy, AAC (up to ~576 kbps) |
+| Maximum Stream Quality | AAC up to 576kbps |
 | Login Method | Cookie or Password+MFA |
 
 ### Other

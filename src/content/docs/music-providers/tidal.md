@@ -23,7 +23,7 @@ Sign in and your Tidal favourites and playlists appear in Music Assistant, with 
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | OAuth |
 
 ### Other

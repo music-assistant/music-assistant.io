@@ -22,7 +22,7 @@ This source gives Music Assistant users a small catalog of ambient sound loops, 
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | FLAC (16 bit, 44.1 kHz) |
+| Maximum Stream Quality | FLAC 44.1kHz 16 bit |
 | Login Method | None |
 
 ### Included sounds

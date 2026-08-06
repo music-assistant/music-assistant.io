@@ -26,7 +26,7 @@ This source signs Music Assistant in to your account, so the shows you have acce
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossless FLAC (192 kHz / 24 bit) |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | Password |
 
 ### Other

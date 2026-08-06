@@ -26,7 +26,7 @@ Sign in and your YouSee library and playlists show up in Music Assistant, with t
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality                          |        Lossy, MP4 (320kbps)        |
+| Maximum Stream Quality                          | MP4 320kbps |
 | Login Method                                    |         Password                   |
 
 ### Other

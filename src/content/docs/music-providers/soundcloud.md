@@ -23,7 +23,7 @@ Connecting your account puts what you have liked and followed on SoundCloud into
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossy AAC (256kbps) |
+| Maximum Stream Quality | AAC 256kbps |
 | Login Method | Cookie |
 
 ## Configuration

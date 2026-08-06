@@ -106,18 +106,13 @@ const TIER_LABEL: Record<QualityTier, string> = {
   varies: "Varies",
 };
 
-// The page's own wording sits under the chip. Where it opens with the very
-// word the chip already shows — "Lossy AAC (256kbps)" beside a Lossy chip —
-// that word is dropped, and nothing else is touched. Not done for Varies,
-// where the rest of the sentence ("by station") does not stand on its own.
-const detailFor = (value: string, tier: QualityTier) => {
-  if (tier === "varies") return value;
-  const stripped = value.replace(
-    new RegExp(`^${TIER_LABEL[tier]}[,\\s]+`, "i"),
-    "",
-  );
-  return stripped || value;
-};
+// The page's own wording sits under the chip. Where it opens with the very word
+// the chip already shows — "Varies by station" beside a Varies chip — that word
+// is dropped and nothing else is touched. Most rows never hit this: the pages
+// name the codec, and FLAC already means lossless just as AAC already means
+// lossy, so they do not carry a tier word to begin with.
+const detailFor = (value: string, tier: QualityTier) =>
+  value.replace(new RegExp(`^${TIER_LABEL[tier]}\\b[,\\s]*`, "i"), "").trim();
 
 // Footnotes are collected from the pages as they are read, so a source that
 // qualifies an answer ("Yes (with limitations)") keeps the qualification
@@ -853,7 +848,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   }
 
   /* The colours the app itself uses for quality, so the badges here match what
-     people see in the player, at 40%: at full strength there are 26 orange chips
+     people see in the player, at 30%: at full strength there are 26 orange chips
      in this column and they shout.
 
      The alpha is on the background alone rather than on the chip, so the text
@@ -865,19 +860,19 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   }
 
   .msum__tier--hi-res {
-    background: rgb(0 255 255 / 40%);
+    background: rgb(0 255 255 / 30%);
   }
 
   .msum__tier--cd {
-    background: rgb(0 128 0 / 40%);
+    background: rgb(0 128 0 / 30%);
   }
 
   .msum__tier--lossy {
-    background: rgb(255 165 0 / 40%);
+    background: rgb(255 165 0 / 30%);
   }
 
   .msum__tier--varies {
-    background: rgb(128 128 128 / 40%);
+    background: rgb(128 128 128 / 30%);
   }
 
   /* The page's own wording, kept as it is written there. */

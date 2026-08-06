@@ -23,7 +23,7 @@ This source makes that content available inside Music Assistant. An ARD account 
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, Variable Quality |
+| Maximum Stream Quality | Lossy variable bitrate |
 | Login Method | Password |
 
 ### Other

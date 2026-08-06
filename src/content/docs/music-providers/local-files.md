@@ -22,7 +22,7 @@ When streaming sources are also availabe in MA linking will only occur when the 
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes with Sonic Similarity Plugin                      | 
-| Maximum Stream Quality | Lossless FLAC 192 kHz, 24 bit |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | Password or None |
 
 ### Other
