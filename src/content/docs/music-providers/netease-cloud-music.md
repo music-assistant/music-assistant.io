@@ -13,8 +13,8 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 
 > [!NOTE]
 > - A NetEase Cloud Music account is required
-> - This provider currently requires a local NeteaseCloudMusicApi-compatible backend service
-> - This provider does not bypass entitlement checks
+> - You also have to run a small piece of software of your own alongside Music Assistant, described under [Configuration](#configuration)
+> - This source plays only what your account is entitled to. It does not get around any of NetEase's restrictions
 
 ## Features
 
@@ -41,11 +41,11 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 
 ## Configuration
 
-### Backend API Service
+### The extra service you need to run
 
-This provider requires a running NeteaseCloudMusicApi-compatible HTTP service (default: `http://127.0.0.1:3000`).
+NetEase provides no proper way in for other apps, so this source talks to NetEase through a separate piece of software called NeteaseCloudMusicApi, which you run yourself. Music Assistant expects to find it at `http://127.0.0.1:3000` unless you tell it otherwise.
 
-For Home Assistant users, see the companion add-on PR:  
+If you run Music Assistant under Home Assistant, there is a companion add-on in progress:  
 <a href="https://github.com/music-assistant/home-assistant-addon/pull/16" target="_blank" rel="noopener noreferrer">home-assistant-addon#16</a>
 
 ### QR Login Flow (NetEase App)
@@ -59,6 +59,6 @@ For Home Assistant users, see the companion add-on PR:
 
 ## Compliance / Notes
 
-- Playback strictly follows upstream account and track entitlement
-- Non-entitled tracks may return preview/limited playback or no playable URL
-- No unlock/crack/bypass logic is used for subscription-locked content
+- You can play whatever your NetEase account allows you to play, and nothing more
+- A track your account is not entitled to may play only a preview, or not at all
+- Nothing here gets around subscription restrictions
