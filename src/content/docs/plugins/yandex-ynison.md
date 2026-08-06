@@ -12,7 +12,7 @@ Set up the [Yandex Music](/music-providers/yandex-music/) source first. This plu
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
 
-> [!WARNING]
+> [!NOTE]
 > A Yandex Music Plus subscription is required for lossless (FLAC) quality.
 > Without a subscription, playback falls back to the highest quality available for the account.
 
