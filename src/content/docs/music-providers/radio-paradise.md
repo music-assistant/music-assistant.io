@@ -28,7 +28,7 @@ This source adds those channels to Music Assistant as radio stations.
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | Lossless FLAC (16 bit, 44.1 kHz) |
+| Maximum Stream Quality | FLAC 44.1kHz 16 bit |
 | Login Method | None |
 
 ### Other

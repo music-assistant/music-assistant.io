@@ -23,7 +23,7 @@ This source follows one feed, which means one podcast. To follow several podcast
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |    
-| Maximum Stream Quality | Lossy, Variable Quality |
+| Maximum Stream Quality | Lossy variable bitrate |
 | Login Method | None |
 
 ### Other

@@ -26,7 +26,7 @@ Connecting your account puts that library inside Music Assistant. Where you got 
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, AAC Variable Bitrate |
+| Maximum Stream Quality | AAC variable bitrate |
 | Login Method | OAuth |
 
 ### Whispersync Progress Sync

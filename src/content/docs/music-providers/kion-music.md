@@ -24,6 +24,7 @@ Connecting your account puts your KION library and the wider catalogue inside Mu
 
 |           |                     |
 |:-----------------------|:---------------------:|
+| Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
@@ -32,7 +33,7 @@ Connecting your account puts your KION library and the wider catalogue inside Mu
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     |
-| Maximum Stream Quality | Lossless FLAC (with subscription) |
+| Maximum Stream Quality | FLAC |
 | Login Method | Token |
 
 ### Other

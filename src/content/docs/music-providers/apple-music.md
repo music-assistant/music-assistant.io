@@ -27,7 +27,7 @@ This source signs Music Assistant in to your Apple Music account, so your saved 
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     | 
-| Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
+| Maximum Stream Quality | AAC 256kbps |
 | Login Method | OAuth or Cookie |
 
 ### Other

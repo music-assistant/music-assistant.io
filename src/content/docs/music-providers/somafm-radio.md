@@ -27,7 +27,7 @@ This source makes the SomaFM channels available in Music Assistant.
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | AAC 130kbps (16 bit, 44.1 kHz) |
+| Maximum Stream Quality | AAC 130kbps |
 | Login Method | None |
 
 ## Configuration

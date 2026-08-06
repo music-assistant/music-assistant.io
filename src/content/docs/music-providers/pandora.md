@@ -27,7 +27,7 @@ Pandora is officially available in the United States only. This source brings th
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, MP3 (192kbps) |
+| Maximum Stream Quality | MP3 192kbps |
 | Login Method | Password |
 
 ## Configuration:

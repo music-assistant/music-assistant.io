@@ -23,7 +23,7 @@ Music Assistant becomes another of those devices, reading from and writing back 
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Varies (podcast source) |
+| Maximum Stream Quality | Varies by feed |
 | Login Method | Email & Password |
 
 ### Other

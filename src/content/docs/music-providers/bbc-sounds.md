@@ -23,7 +23,7 @@ This source brings all of that into Music Assistant. It works without an account
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, AAC-LC(320kbps) |
+| Maximum Stream Quality | AAC-LC 320kbps |
 | Login Method | None or Password |
 
 ### Other

@@ -62,6 +62,21 @@ Node 22 or newer. The lockfile is pnpm's, so use pnpm rather than npm.
 
 Four things, and the build will tell you if you miss the last one.
 
+> [!NOTE]
+> The `Features` table on a source page is not only documentation. The comparison table on
+> [I Want To Listen To](https://music-assistant.io/faq/listen-to/) is built from those tables
+> while the site builds, so a source appears in the comparison as soon as its page has one. That
+> means the table has to be complete and has to use the standard row labels: the build fails,
+> naming the source and the row, if a row is missing or if a Yes/No row answers something other
+> than Yes or No. Wording after the answer, like `Yes (with limitations)`, becomes a footnote
+> under the comparison rather than being lost.
+>
+> Two things there cannot be read from a page, and live in `src/data/music-summary.ts`. If a
+> source has genuinely nothing to compare — no subscription, no login, no stream quality of its
+> own — its slug goes in `EXCLUDED`. And if `Maximum Stream Quality` does not say whether it is
+> Hi-Res, CD or lossy, the build asks you to settle it in `QUALITY_TIER_OVERRIDES` rather than
+> guessing.
+
 1. **The page**, at `src/content/docs/music-providers/<slug>.md`. Copy an existing page and work
    from that. Structure is covered under [House style](#house-style) below.
 
@@ -99,8 +114,9 @@ Four things, and the build will tell you if you miss the last one.
    - **Podcasts** is `podcasts`.
    - **Audiobooks** is `audiobooks`.
 
-   Two more are a judgement call rather than something the table can tell you: `live-concerts`
-   for recordings of live shows, and `children` for audio aimed at younger listeners.
+   Three more are a judgement call rather than something the table can tell you: `live-concerts`
+   for recordings of live shows, `classical` for orchestral, chamber and operatic music, and
+   `children` for audio aimed at younger listeners.
 
    Last are the country categories, covered just below. These are the ones people forget.
 

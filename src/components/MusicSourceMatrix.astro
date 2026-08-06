@@ -1,0 +1,979 @@
+---
+import { getCollection } from "astro:content";
+import {
+  EXCLUDED,
+  MEDIA_TYPE_ORDER,
+  QUALITY_TIER_OVERRIDES,
+  TEXT_COLUMNS,
+  YES_NO_COLUMNS,
+  type QualityTier,
+} from "../data/music-summary";
+import { MUSIC_SOURCES } from "../data/music-sources";
+
+// ---------------------------------------------------------------------------
+// The music source comparison table, built from the pages themselves.
+//
+// Every source page carries a "## Features" table saying what that source can
+// do. This reads those tables while the site builds, so the comparison is the
+// pages rather than a copy of them. The screenshot this replaced had drifted:
+// it left Apple Music's Recommendations blank where its page says Yes, and it
+// was missing nine sources outright. Nothing can drift now without the page
+// itself being wrong.
+//
+// A page that cannot be read stops the build with a message naming the source
+// and the row, in the same spirit as TilePage.astro and PlayerCapabilities.astro.
+// ---------------------------------------------------------------------------
+
+const problems: string[] = [];
+
+const docs = await getCollection("docs");
+const bodyBySlug = new Map(docs.map((entry) => [entry.id, entry.body ?? ""]));
+const knownSlugs = new Set(MUSIC_SOURCES.map((source) => source.slug));
+const excluded = new Set(EXCLUDED);
+const knownMediaTypes = new Set(MEDIA_TYPE_ORDER);
+
+for (const slug of EXCLUDED) {
+  if (!knownSlugs.has(slug)) {
+    problems.push(
+      `EXCLUDED lists "${slug}", which is not in MUSIC_SOURCES in ` +
+        `src/data/music-sources.ts. It is probably left over from a renamed or ` +
+        `deleted source and can be removed.`,
+    );
+  }
+}
+
+for (const slug of Object.keys(QUALITY_TIER_OVERRIDES)) {
+  if (!knownSlugs.has(slug)) {
+    problems.push(
+      `QUALITY_TIER_OVERRIDES has an entry for "${slug}", which is not in ` +
+        `MUSIC_SOURCES in src/data/music-sources.ts. Remove it.`,
+    );
+  }
+}
+
+/** Markdown links and inline HTML are for the page, not for a summary table. */
+const plain = (value: string) =>
+  value
+    .replace(/<[^>]*>/g, "")
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
+    .trim();
+
+// Rows of a page's Features table, as label and value with the markup taken
+// off both. Matching the cleaned label rather than the raw line matters: the
+// pages link their labels in three different ways — plain text, a markdown
+// link, and on nugs.md an <a> tag — and all three mean the same row.
+const featureRows = (body: string): { label: string; value: string }[] =>
+  body.split("\n").flatMap((line) => {
+    const cells = line.split("|");
+    // "| Label | Value |" splits into ["", " Label ", " Value ", ""].
+    if (cells.length < 4) return [];
+    return [{ label: plain(cells[1]), value: plain(cells[2]) }];
+  });
+
+const featureValue = (
+  rows: { label: string; value: string }[],
+  label: RegExp,
+): string | null => rows.find((row) => label.test(row.label))?.value ?? null;
+
+// The wording on the pages varies, deliberately: the maximum is genuinely
+// harder to pin down for some sources than others. So the tier is only derived
+// where the wording settles it, and anything else has to be decided by hand in
+// QUALITY_TIER_OVERRIDES rather than guessed at here.
+const deriveTier = (value: string): QualityTier | null => {
+  const bits = value.match(/(\d+)[\s-]?bit/i);
+  const rate = value.match(/([\d.]+)\s*k?hz/i);
+  const isHiResFigures =
+    (bits && Number(bits[1]) > 16) || (rate && Number(rate[1]) > 48);
+
+  if (/hi-?res/i.test(value)) return "hi-res";
+  if (/^varies/i.test(value)) return "varies";
+  if (/^lossy/i.test(value)) return "lossy";
+  if (/lossless|flac/i.test(value)) {
+    if (isHiResFigures) return "hi-res";
+    if ((bits && Number(bits[1]) === 16) || (rate && Number(rate[1]) === 44.1))
+      return "cd";
+    return null; // lossless, but nothing said about resolution
+  }
+  // Named codecs that are lossy by definition, whatever the figures alongside.
+  if (/^(aac|mp3|opus|ogg|mp4)\b/i.test(value)) return "lossy";
+  return null;
+};
+
+const TIER_LABEL: Record<QualityTier, string> = {
+  "hi-res": "Hi-Res",
+  cd: "CD",
+  lossy: "Lossy",
+  varies: "Varies",
+};
+
+// The page's own wording sits under the chip. Where it opens with the very word
+// the chip already shows — "Varies by station" beside a Varies chip — that word
+// is dropped and nothing else is touched. Most rows never hit this: the pages
+// name the codec, and FLAC already means lossless just as AAC already means
+// lossy, so they do not carry a tier word to begin with.
+const detailFor = (value: string, tier: QualityTier) =>
+  value.replace(new RegExp(`^${TIER_LABEL[tier]}\\b[,\\s]*`, "i"), "").trim();
+
+// Footnotes are collected from the pages as they are read, so a source that
+// qualifies an answer ("Yes (with limitations)") keeps the qualification
+// instead of it being flattened into a plain tick.
+const notes: string[] = [];
+const noteNumber = (text: string) => {
+  const found = notes.indexOf(text);
+  return (found === -1 ? notes.push(text) : found + 1) as number;
+};
+
+interface Row {
+  name: string;
+  slug: string;
+  icon: string;
+  flags: { value: boolean; note?: number }[];
+  flagIds: string;
+  tier: QualityTier | null;
+  quality: string;
+  mediaTypes: string[];
+  login: string;
+}
+
+const rows: Row[] = [];
+
+for (const source of MUSIC_SOURCES) {
+  if (excluded.has(source.slug)) continue;
+
+  const where = `"${source.name}"`;
+  const body = bodyBySlug.get(source.slug);
+
+  if (body === undefined) {
+    problems.push(
+      `${where} has the slug "${source.slug}" in src/data/music-sources.ts, but ` +
+        `there is no page with that name to read a Features table from.`,
+    );
+    continue;
+  }
+
+  const features = featureRows(body);
+  const missing: string[] = [];
+  const read = (label: RegExp, name: string) => {
+    const value = featureValue(features, label);
+    if (value === null) missing.push(name);
+    return value;
+  };
+
+  const rawFlags = YES_NO_COLUMNS.map((column) => ({
+    column,
+    value: read(column.featuresLabel, column.label.replace(/­/g, "")),
+  }));
+  const rawQuality = read(TEXT_COLUMNS.quality.featuresLabel, "Maximum Stream Quality");
+  const rawTypes = read(TEXT_COLUMNS.mediaTypes.featuresLabel, "Media Types Supported");
+  const rawLogin = read(TEXT_COLUMNS.login.featuresLabel, "Login Method");
+
+  if (missing.length === YES_NO_COLUMNS.length + 3) {
+    problems.push(
+      `${where} has no Features table that can be read, so it has nothing to ` +
+        `show in the comparison. Give src/content/docs/${source.slug}.md a ` +
+        `"## Features" table like the other source pages have, or add its slug ` +
+        `to EXCLUDED in src/data/music-summary.ts if there is genuinely nothing ` +
+        `to compare about it.`,
+    );
+    continue;
+  }
+
+  if (missing.length > 0) {
+    problems.push(
+      `${where} is missing ${missing.length === 1 ? "a row" : "rows"} from the ` +
+        `Features table on src/content/docs/${source.slug}.md: ` +
+        `${missing.join(", ")}. Every source needs the standard rows, even ` +
+        `where the answer is No, so the comparison has no holes in it.`,
+    );
+    continue;
+  }
+
+  const flags = rawFlags.map(({ column, value }) => {
+    const text = plain(value as string);
+    if (/^yes\b/i.test(text)) {
+      const qualifier = text.replace(/^yes\b[\s,:.-]*/i, "").replace(/^\((.*)\)$/, "$1");
+      return {
+        value: true,
+        note: qualifier ? noteNumber(`${source.name}: ${qualifier}`) : undefined,
+      };
+    }
+    if (/^no\b/i.test(text)) return { value: false };
+    problems.push(
+      `${where} answers "${text}" for ${column.label.replace(/­/g, "")} on ` +
+        `src/content/docs/${source.slug}.md, and the comparison shows that ` +
+        `column as a tick or a cross. Start the answer with Yes or No; extra ` +
+        `wording after it becomes a footnote under the table.`,
+    );
+    return { value: false };
+  });
+
+  const quality = plain(rawQuality as string);
+  const tier = QUALITY_TIER_OVERRIDES[source.slug] ?? deriveTier(quality);
+  if (!tier) {
+    problems.push(
+      `${where} gives its Maximum Stream Quality as "${quality}", which does not ` +
+        `say whether that is Hi-Res, CD or lossy. Rather than have this guess, ` +
+        `add a line to QUALITY_TIER_OVERRIDES in src/data/music-summary.ts:\n\n` +
+        `       "${source.slug}": "hi-res",   // or "cd", "lossy", "varies"\n\n` +
+        `     Or reword the row on the page so it says.`,
+    );
+  }
+
+  const mediaTypes = plain(rawTypes as string)
+    .split(",")
+    .map((type) => type.trim())
+    .filter(Boolean);
+
+  for (const type of mediaTypes) {
+    if (!knownMediaTypes.has(type)) {
+      problems.push(
+        `${where} lists the media type "${type}", which is not one of the types ` +
+          `the comparison knows about: ${MEDIA_TYPE_ORDER.join(", ")}. Either ` +
+          `use one of those on src/content/docs/${source.slug}.md, or add the ` +
+          `new type to MEDIA_TYPE_ORDER in src/data/music-summary.ts.`,
+      );
+    }
+  }
+
+  rows.push({
+    name: source.name,
+    slug: source.slug,
+    icon: source.icon,
+    flags,
+    flagIds: YES_NO_COLUMNS.filter((_, i) => flags[i].value).map((c) => c.id).join("|"),
+    tier: tier ?? null,
+    quality,
+    mediaTypes: [...mediaTypes].sort(
+      (a, b) => MEDIA_TYPE_ORDER.indexOf(a) - MEDIA_TYPE_ORDER.indexOf(b),
+    ),
+    login: plain(rawLogin as string),
+  });
+}
+
+if (problems.length > 0) {
+  throw new Error(
+    `\n\nThe music source comparison on /faq/listen-to/ has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
+      problems.map((problem, i) => `  ${i + 1}. ${problem}`).join("\n\n") +
+      `\n\nFix and build again.\n`,
+  );
+}
+
+const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
+const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
+---
+
+<figure class="msum not-content">
+  <p class="msum__filters" hidden>
+    <span data-count="" aria-live="polite">Showing all {rows.length} sources</span>
+    <span class="msum__hintline">
+      &mdash; click a chip, or a {YES_NO_COLUMNS.map((c) => c.head.join(" ")).join(" / ")} heading, to filter
+    </span>
+    <button type="button" class="msum__clear" data-clear="" hidden>Clear filters</button>
+  </p>
+
+  <div
+    class="msum__scroll"
+    role="region"
+    tabindex="0"
+    aria-labelledby="msum-caption"
+  >
+    <table>
+      <caption id="msum-caption">What each music source offers</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="msum__source"><span class="msum__sronly">Source</span></th>
+          {
+            YES_NO_COLUMNS.map((column) => (
+              <th scope="col" class="msum__flag" data-chip="flag" data-value={column.id}>
+                {column.head.map((line) => (
+                  <span>{line}</span>
+                ))}
+              </th>
+            ))
+          }
+          {
+            [TEXT_COLUMNS.quality, TEXT_COLUMNS.mediaTypes, TEXT_COLUMNS.login].map(
+              (column) => (
+                <th scope="col" class={`msum__${column.id === "mediaTypes" ? "types" : column.id}`}>
+                  {column.head.map((line) => (
+                    <span>{line}</span>
+                  ))}
+                </th>
+              ),
+            )
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map((row) => (
+            <tr data-types={row.mediaTypes.join("|")} data-tier={row.tier} data-flags={row.flagIds}>
+              <th scope="row" class="msum__source">
+                <a href={`/${row.slug}/`}>
+                  <img
+                    src={row.icon}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>{row.name}</span>
+                </a>
+              </th>
+              {row.flags.map((flag) => (
+                <td class="msum__flag">
+                  {flag.value ? (
+                    <span class="msum__yes" role="img" aria-label="Yes">
+                      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <path
+                          d="M2.5 8.5 6 12 13.5 4"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  ) : (
+                    <span class="msum__sronly">No</span>
+                  )}
+                  {flag.note && (
+                    <sup class="msum__ref">
+                      <a href={`#msum-note-${flag.note}`}>{flag.note}</a>
+                    </sup>
+                  )}
+                </td>
+              ))}
+              <td class="msum__quality">
+                <span class:list={["msum__tier", `msum__tier--${row.tier}`]} data-chip="tier" data-value={row.tier}>
+                  {TIER_LABEL[row.tier as QualityTier]}
+                </span>
+                <span class="msum__detail">
+                  {detailFor(row.quality, row.tier as QualityTier)}
+                </span>
+              </td>
+              <td class="msum__types">
+                <ul>
+                  {row.mediaTypes.map((type) => (
+                    <li data-chip="type" data-value={type}>{type}</li>
+                  ))}
+                </ul>
+              </td>
+              <td class="msum__login">{row.login}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <p class="msum__empty" hidden>
+    No source matches all of those. Try turning one of the filters off.
+  </p>
+
+  <p class="msum__hint">Scroll the table sideways to see every column.</p>
+
+  {
+    notes.length > 0 && (
+      <ol class="msum__notes">
+        {notes.map((note, i) => (
+          <li id={`msum-note-${i + 1}`}>{note}</li>
+        ))}
+      </ol>
+    )
+  }
+</figure>
+
+{/* Outside the figure, and so outside its "not-content" class, on purpose.
+    Every Starlight rule that styles a <summary> is written as
+    `:not(:where(.not-content *))`, including the one that masks the marker into
+    the site's chevron. Inside the figure this would keep the ▶ from custom.css
+    unmasked, which the emoji font draws as an orange tile. */}
+<details class="msum__legend">
+  <summary>What the columns mean</summary>
+  <dl>
+    {
+      LEGEND.map((column) => (
+        <>
+          <dt>
+            {column.href ? (
+              <a href={column.href}>{column.label}</a>
+            ) : (
+              column.label
+            )}
+          </dt>
+          <dd>{column.help}</dd>
+        </>
+      ))
+    }
+  </dl>
+</details>
+
+{/* Each tile section further up the page ends with one of these, and the table
+    is the last thing on a very long page, so it gets one too. */}
+<a class="msum__top" href="#_top">Back to the top</a>
+
+<script>
+  // Filtering, added on top of a table that is complete and readable without
+  // it. Everything below only runs once the script does, and the controls stay
+  // hidden until then, so nothing here is load-bearing.
+  const root = document.querySelector(".msum");
+  if (root) {
+    const filters = root.querySelector(".msum__filters");
+    const rows = [...root.querySelectorAll("tbody tr")];
+    const count = root.querySelector("[data-count]");
+    const clear = root.querySelector("[data-clear]");
+    const empty = root.querySelector(".msum__empty");
+    const hint = root.querySelector(".msum__hintline");
+    const scroll = root.querySelector(".msum__scroll");
+    const table = root.querySelector("table");
+    const heads = [...root.querySelectorAll("thead th")];
+    const GROUPS = ["type", "tier", "flag"];
+    const DATA = { type: "types", tier: "tier", flag: "flags" };
+
+    // One set per group. Within a group any match will do, which is the only
+    // thing that makes sense for quality, where a source has exactly one. The
+    // "only show" group is the exception: those read as requirements, so a
+    // source has to satisfy all of them at once.
+    const chosen = { type: new Set(), tier: new Set(), flag: new Set() };
+
+    const valuesOf = (row, group) =>
+      (row.dataset[DATA[group]] || "").split("|").filter(Boolean);
+
+    const matches = (row) => {
+      if (chosen.type.size && !valuesOf(row, "type").some((v) => chosen.type.has(v)))
+        return false;
+      if (chosen.tier.size && !valuesOf(row, "tier").some((v) => chosen.tier.has(v)))
+        return false;
+      const flags = valuesOf(row, "flag");
+      for (const flag of chosen.flag) if (!flags.includes(flag)) return false;
+      return true;
+    };
+
+    const apply = () => {
+      let shown = 0;
+      for (const row of rows) {
+        const ok = matches(row);
+        row.hidden = !ok;
+        if (ok) shown++;
+      }
+
+      const active = chosen.type.size + chosen.tier.size + chosen.flag.size;
+      count.textContent = active
+        ? `Showing ${shown} of ${rows.length} sources`
+        : `Showing all ${rows.length} sources`;
+      clear.hidden = active === 0;
+      hint.hidden = active !== 0;
+      empty.hidden = shown > 0;
+
+        for (const chip of root.querySelectorAll("[data-chip]")) {
+        const pressed = chosen[chip.dataset.chip].has(chip.dataset.value);
+        chip.setAttribute("aria-pressed", String(pressed));
+      }
+
+      // A query string rather than a hash: the footnote markers under the table
+      // already use hashes, and the two would fight over the same part of the URL.
+      const params = new URLSearchParams();
+      for (const group of GROUPS) {
+        if (chosen[group].size) params.set(group, [...chosen[group]].join(","));
+      }
+      const query = params.toString();
+      history.replaceState(
+        null,
+        "",
+        (query ? `?${query}` : location.pathname) + location.hash,
+      );
+    };
+
+    // Hiding rows re-cuts the widths, because every column except the four tick
+    // ones is sized from the content of the rows on screen: the source column
+    // drops 10px the moment "iTunes Podcast Search" is filtered out, and the
+    // three text columns re-share the leftover width every time. So measure the
+    // widths the table works out for itself with everything showing, then hold
+    // them. The measure un-hides, reads and re-hides in one go — the browser
+    // paints at the end of a task, so none of it is visible.
+    const lockColumns = () => {
+      const hiddenRows = rows.filter((row) => row.hidden);
+      hiddenRows.forEach((row) => (row.hidden = false));
+      table.style.tableLayout = "";
+      heads.forEach((th) => (th.style.width = ""));
+      const widths = heads.map((th) => th.getBoundingClientRect().width);
+      hiddenRows.forEach((row) => (row.hidden = true));
+      table.style.tableLayout = "fixed";
+      heads.forEach((th, i) => (th.style.width = `${widths[i]}px`));
+    };
+
+    const toggle = (group, value) => {
+      if (chosen[group].has(value)) chosen[group].delete(value);
+      else chosen[group].add(value);
+      apply();
+    };
+
+    // The chips in the table filter by whatever they say. They are plain text
+    // in the markup and only become controls here, so with the script off they
+    // are not buttons that do nothing.
+    for (const chip of root.querySelectorAll("[data-chip]")) {
+      const group = chip.dataset.chip;
+      const value = chip.dataset.value;
+      chip.setAttribute("role", "button");
+      chip.setAttribute("tabindex", "0");
+      chip.title = `Show only sources matching ${(chip.textContent || "").trim()}`;
+      chip.addEventListener("click", () => toggle(group, value));
+      chip.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggle(group, value);
+        }
+      });
+    }
+
+    clear.addEventListener("click", () => {
+      for (const group of GROUPS) chosen[group].clear();
+      apply();
+    });
+
+    // A filtered view can be linked to, so read the URL back on the way in.
+    const incoming = new URLSearchParams(location.search);
+    for (const group of GROUPS) {
+      for (const value of (incoming.get(group) || "").split(",").filter(Boolean)) {
+        chosen[group].add(value);
+      }
+    }
+
+    // Only while the table is scrolled sideways is the pinned column worth an
+    // edge; the rest of the time it is a line down the middle of the table.
+    const shade = () =>
+      scroll.classList.toggle("is-scrolled", scroll.scrollLeft > 0);
+    scroll.addEventListener("scroll", shade, { passive: true });
+
+    // The locked widths are right for one viewport, so a resize has to measure
+    // again.
+    let resizing;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizing);
+      resizing = setTimeout(() => {
+        lockColumns();
+        shade();
+      }, 150);
+    });
+
+    filters.hidden = false;
+    lockColumns();
+    shade();
+    apply();
+  }
+</script>
+
+<style>
+  .msum {
+    margin: 1.5rem 0 0;
+  }
+
+  /* `display` on a class beats the [hidden] attribute's own rule, so without
+     this the filter bar shows up on a page with JavaScript off, full of
+     controls that do nothing. */
+  .msum__filters[hidden] {
+    display: none;
+  }
+
+  .msum__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.6rem;
+    margin: 0 0 0.6rem;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+  }
+
+  /* Says the filtering is there at all. Nothing about a chip or a heading
+     announces that it can be clicked, and a heading that can be clicked is
+     usually a sort control rather than a filter, so this line does the
+     explaining. It goes away once a filter is on and has made the point. */
+  .msum__hintline {
+    color: var(--sl-color-gray-3);
+  }
+
+  .msum__count {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-3);
+  }
+
+  .msum__clear {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--sl-color-accent);
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .msum__empty {
+    margin: 0.85rem 0 0;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+  }
+
+  .msum tbody tr[hidden] {
+    display: none;
+  }
+
+  /* The four yes/no headings filter by their own column. They are ordinary
+     headings until the script makes them controls, and they are left looking
+     like headings: the line above the table is what says they can be clicked,
+     so they do not need marking up as well. */
+  .msum thead th[role="button"] {
+    cursor: pointer;
+  }
+
+  .msum thead th[role="button"]:hover {
+    color: var(--sl-color-accent);
+  }
+
+  .msum thead th[aria-pressed="true"] {
+    color: var(--sl-color-accent);
+  }
+
+  /* The chips only become controls once the script runs; until then they are
+     plain text, so nothing here applies to a page without JavaScript. */
+  .msum [data-chip][role="button"] {
+    cursor: pointer;
+  }
+
+  .msum [data-chip][role="button"]:hover {
+    border-color: var(--sl-color-accent);
+    color: var(--sl-color-white);
+  }
+
+  .msum [data-chip][aria-pressed="true"] {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 1px;
+  }
+
+  .msum [data-chip]:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
+  .msum__scroll {
+    overflow-x: auto;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+  }
+
+  .msum__scroll:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
+  /* Smaller than the body text on purpose: eight columns only clear the
+     content column, which is 690px on a desktop and 647px on an iPad Pro in
+     landscape, if the headings are small enough not to set the widths
+     themselves. */
+  .msum table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+
+  .msum caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* Nearly fifty rows, so the headings have to stay put on the way down. The
+     offset clears Starlight's own sticky header. */
+  /* One line per span, so the heading breaks exactly where the data file says
+     and each column's width is decided rather than left to the browser. */
+  .msum thead th span {
+    display: block;
+  }
+
+  /* No sticky heading row, though forty-seven rows would like one. The scroll
+     container sets overflow-x, which makes it the scrollport, so a sticky
+     <thead> sticks to that container rather than to the page: it never stays in
+     view on the way down, and it pushes itself away from the top of the table
+     by whatever offset it is given. Making it work means capping the
+     container's height and scrolling the table inside its own box, which is
+     worse to use than losing the headings. */
+  .msum thead th {
+    padding: 0.55rem 0.2rem;
+    vertical-align: bottom;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+    background: var(--sl-color-bg);
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
+
+  .msum tbody th,
+  .msum tbody td {
+    padding: 0.4rem 0.2rem;
+    background: var(--sl-color-bg);
+    border-bottom: 1px solid var(--sl-color-gray-6);
+    vertical-align: middle;
+  }
+
+  .msum tbody tr:last-child th,
+  .msum tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .msum tbody tr:nth-child(even) th,
+  .msum tbody tr:nth-child(even) td {
+    background: var(--sl-color-gray-6);
+  }
+
+  /* Pinned so the source stays readable while the columns scroll under it. */
+  .msum__source {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    width: 8.5rem;
+    min-width: 8.5rem;
+    text-align: left;
+  }
+
+  /* Only while the table is actually scrolled sideways. At the widths where it
+     fits, a line down the middle of the table is a line for no reason; on a
+     phone it is the only thing showing where the scrolling part starts. */
+  .msum__scroll.is-scrolled .msum__source {
+    box-shadow: 1px 0 0 var(--sl-color-gray-5);
+  }
+
+  .msum tbody .msum__source {
+    padding-left: 0.5rem;
+    font-weight: 400;
+  }
+
+  .msum__source a {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--sl-color-white);
+    text-decoration: none;
+  }
+
+  .msum__source a:hover {
+    color: var(--sl-color-accent);
+  }
+
+  .msum__source img {
+    flex: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  /* Sized only by their headings these come out ragged, so they get a floor.
+     nowrap keeps a footnote marker beside the mark it belongs to. */
+  .msum__flag {
+    min-width: 2.6rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .msum__yes {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--sl-color-green);
+  }
+
+  .msum__yes svg {
+    display: block;
+    width: 0.95rem;
+    height: 0.95rem;
+  }
+
+  /* Read out but never shown: the "No" in an empty cell, and the heading over
+     the source column, which the logos and names speak for on their own. A cross in every one of these cells is
+     noise across four columns and forty-seven rows, and the tick is what anyone
+     is scanning for, but an empty cell tells a screen reader nothing at all, so
+     the word stays in the markup. */
+  .msum__sronly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .msum__ref {
+    font-size: 0.75em;
+    line-height: 1;
+    vertical-align: top;
+  }
+
+  .msum__ref a {
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+  }
+
+  .msum__ref a:hover {
+    color: var(--sl-color-accent);
+  }
+
+  /* These two share whatever width the table is not using. Left to itself the
+     media types column takes the lot, which squeezes the quality wording into
+     four lines on twenty-two rows; splitting it drops the table from 4197px to
+     3637px and leaves only three rows wrapping past two lines. */
+  .msum__quality {
+    width: 45%;
+    text-align: center;
+  }
+
+  .msum__tier {
+    display: inline-block;
+    /* All four the same width, so the column reads as one row of badges rather
+       than four different-sized ones. Sized to the longest label, "Hi-Res". */
+    min-width: 4.5rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* The colours the app itself uses for quality, so the badges here match what
+     people see in the player, at 30%: at full strength there are 26 orange chips
+     in this column and they shout.
+
+     The alpha is on the background alone rather than on the chip, so the text
+     is not faded with it. Toning them down also makes every one of them a light
+     colour, so they all take dark text — measured over both the plain and the
+     striped row, the worst of the eight is 8.69:1. */
+  .msum__tier {
+    color: #17181c;
+  }
+
+  .msum__tier--hi-res {
+    background: rgb(0 255 255 / 30%);
+  }
+
+  .msum__tier--cd {
+    background: rgb(0 128 0 / 30%);
+  }
+
+  .msum__tier--lossy {
+    background: rgb(255 165 0 / 30%);
+  }
+
+  .msum__tier--varies {
+    background: rgb(128 128 128 / 30%);
+  }
+
+  /* The page's own wording, kept as it is written there. */
+  .msum__detail {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.875rem;
+    color: var(--sl-color-gray-3);
+  }
+
+  /* At body size the chips are wide enough that a narrow column stacks them one
+     per line, which made the tallest rows seven lines deep. */
+  .msum__types {
+    width: 55%;
+  }
+
+  .msum__types ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .msum__types li {
+    padding: 0.05rem 0.3rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .msum__login {
+    width: 5.5rem;
+    text-align: center;
+    font-size: 0.9375rem;
+  }
+
+  .msum__hint {
+    display: none;
+    margin: 0.5rem 0 0;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+
+  @media (max-width: 47rem) {
+    .msum__hint {
+      display: block;
+    }
+  }
+
+  .msum__notes {
+    margin: 0.85rem 0 0;
+    padding-left: 1.35rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+
+  .msum__notes li {
+    margin: 0.15rem 0;
+  }
+
+  .msum__notes li:target {
+    color: var(--sl-color-white);
+  }
+
+  /* The border, marker, padding and spacing come from the site's own accordion
+     styles, so that this matches the other <details> on the page. */
+  .msum__legend dl {
+    margin: 0;
+    font-size: var(--sl-text-sm);
+  }
+
+  .msum__legend dt {
+    margin-top: 0.6rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  /* Matches the "Back to the top" links TilePage puts under each section of
+     tiles further up the page. */
+  .msum__top {
+    display: inline-block;
+    margin-top: 0.9rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+  }
+
+  .msum__top:hover {
+    color: var(--sl-color-accent);
+  }
+
+  .msum__legend dd {
+    margin: 0.15rem 0 0;
+    color: var(--sl-color-gray-2);
+  }
+</style>

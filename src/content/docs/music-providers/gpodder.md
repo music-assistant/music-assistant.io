@@ -31,7 +31,7 @@ provider at it, as described under [Configuration](#configuration).
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, Variable Quality |
+| Maximum Stream Quality | Lossy variable bitrate |
 | Login Method | Password or Nextcloud Login |
 
 ### Other

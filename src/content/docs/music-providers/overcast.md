@@ -30,7 +30,7 @@ the account's OPML export. It works one way only, nothing Music Assistant does i
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | Lossy, Variable Quality |
+| Maximum Stream Quality | Lossy variable bitrate |
 | Login Method | Password |
 
 ### Other

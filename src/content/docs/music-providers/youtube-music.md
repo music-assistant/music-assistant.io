@@ -31,7 +31,7 @@ With your account connected, your library and playlists appear in Music Assistan
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossy, AAC (256kbps) |
+| Maximum Stream Quality | AAC 256kbps |
 | Login Method | Token + Cookie |
 
 ### Other

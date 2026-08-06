@@ -29,7 +29,7 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 
-| Maximum Stream Quality | Hi-Res FLAC (upstream response dependent) |
+| Maximum Stream Quality | Hi-Res FLAC |
 | Login Method | NetEase App QR Code |
 
 ### Other
