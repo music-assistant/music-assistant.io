@@ -34,7 +34,7 @@ Music Quiz is experimental. Its game types, settings, and behavior may change be
 - For **Venue mode**, an available, enabled Music Assistant player, stereo pair, or group
 - For **Remote mode**, the Sendspin provider must be available; each player also needs a device and browser that can play web audio
 - For **Music Timeline**, enough unique tracks with usable release years: one initial anchor plus one track per configured round
-- For **Music Trivia**, a configured plugin that supports AI queries, such as the Home Assistant plugin with LLM access, and enough selected tracks with usable metadata
+- For **Music Trivia**, a configured plugin that supports AI queries, either the [OpenAI Compatible plugin](/plugins/openai_compatible/) or the Home Assistant plugin with LLM access, and enough selected tracks with usable metadata
 
 :::note
 Music Trivia is only shown in the game picker when a compatible AI plugin is loaded. Guess the Song and Music Timeline do not require AI.
