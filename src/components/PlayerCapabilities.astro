@@ -204,7 +204,7 @@ const rateLines = (rate: string | string[]) =>
                     loading="lazy"
                     decoding="async"
                   />
-                  <span>{capabilities.shortName ?? player.name}</span>
+                  <span>{player.name}</span>
                 </a>
               </th>
               <td class="caps__rate">
@@ -381,8 +381,13 @@ const rateLines = (rate: string | string[]) =>
     position: sticky;
     left: 0;
     z-index: 1;
-    width: 7.5rem;
-    min-width: 7.5rem;
+    /* The longest name, "Music Player Daemon (MPD)", needs 122px to fall on two
+       lines rather than three, which makes its row half again as tall as the
+       others. 8.5rem leaves room on top of that, because the page uses the
+       system font and the measurement differs between platforms. There is
+       space for it: the table needs 647px of the 690px content column. */
+    width: 8.5rem;
+    min-width: 8.5rem;
     text-align: left;
     box-shadow: 1px 0 0 var(--sl-color-gray-5);
   }

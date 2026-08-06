@@ -28,13 +28,6 @@ export interface CapabilityColumn {
 export interface PlayerCapabilities {
   /** The provider's slug, exactly as it appears in players.ts. */
   slug: string;
-  /**
-   * Replaces the players.ts name in this table only. The provider column is
-   * narrow, so a name that wraps to three lines makes its row noticeably
-   * taller than the rest. Use it to drop a bracketed abbreviation, not to give
-   * a provider a different name from the one on its page.
-   */
-  shortName?: string;
   /** Highest rate the protocol can carry. An array renders as several lines. */
   sampleRate: string | string[];
   /** Footnote numbers shown against the sample rate. */
@@ -300,8 +293,6 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
   },
   {
     slug: "player-support/music-player-daemon",
-    // "Music Player Daemon (MPD)" wraps to three lines in the provider column.
-    shortName: "Music Player Daemon",
     sampleRate: "192kHz/32 bits",
     sampleRateNotes: [1],
     values: {
