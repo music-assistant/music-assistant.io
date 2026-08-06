@@ -626,11 +626,11 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   }
 
   /* The four yes/no headings filter by their own column. They are ordinary
-     headings until the script makes them controls. */
+     headings until the script makes them controls, and they are left looking
+     like headings: the line above the table is what says they can be clicked,
+     so they do not need marking up as well. */
   .msum thead th[role="button"] {
     cursor: pointer;
-    text-decoration: underline dotted;
-    text-underline-offset: 3px;
   }
 
   .msum thead th[role="button"]:hover {
@@ -639,7 +639,6 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
 
   .msum thead th[aria-pressed="true"] {
     color: var(--sl-color-accent);
-    text-decoration-style: solid;
   }
 
   /* The chips only become controls once the script runs; until then they are
@@ -854,35 +853,31 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   }
 
   /* The colours the app itself uses for quality, so the badges here match what
-     people see in the player. Fixed values rather than theme tokens: they are
-     brand colours, and the site is light only.
+     people see in the player, at half strength: at full strength there are 26
+     orange chips in this column and they shout.
 
-     The text colour follows the background rather than being white throughout,
-     because white only works on the dark green. Measured: dark on cyan is
-     14.15:1 and on orange 8.98:1, white on green is 5.14:1 — where white on
-     cyan would be 1.25:1, all but invisible.
-
-     Grey is the one compromise. The app's #808080 passes with neither colour
-     (white 3.95:1, dark 4.49:1, needing 4.5:1), so it is darkened by a shade
-     that white clears. */
-  .msum__tier--hi-res {
-    background: #00ffff;
+     The alpha is on the background alone rather than on the chip, so the text
+     is not faded with it. Half strength also makes every one of them a light
+     colour, so they all take dark text — measured over both the plain and the
+     striped row, the worst of the eight is 7.47:1. */
+  .msum__tier {
     color: #17181c;
+  }
+
+  .msum__tier--hi-res {
+    background: rgb(0 255 255 / 50%);
   }
 
   .msum__tier--cd {
-    background: #008000;
-    color: #ffffff;
+    background: rgb(0 128 0 / 50%);
   }
 
   .msum__tier--lossy {
-    background: #ffa500;
-    color: #17181c;
+    background: rgb(255 165 0 / 50%);
   }
 
   .msum__tier--varies {
-    background: #767676;
-    color: #ffffff;
+    background: rgb(128 128 128 / 50%);
   }
 
   /* The page's own wording, kept as it is written there. */
