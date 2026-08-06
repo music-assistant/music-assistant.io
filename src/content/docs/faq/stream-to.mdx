@@ -4,6 +4,7 @@ description: Find the Music Assistant player provider that can drive the device 
 ---
 
 import TilePage from '../../../components/TilePage.astro';
+import PlayerCapabilities from '../../../components/PlayerCapabilities.astro';
 import { PLAYERS_PAGE } from '../../../data/players';
 
 # I Want To Stream To
@@ -20,7 +21,7 @@ The table below summarises what every player provider can do. Note that DLNA and
 players can suffer from poor implementation of the required standards. If one of those does not
 work well and your device supports another protocol, use the other protocol.
 
-[![Preview image](/assets/player-provider-summary.png)](/assets/player-provider-summary.png)
+<PlayerCapabilities />
 
 If a device supports several protocols they are combined into one player, shown as chips near the
 player name in the settings. In the [Individual Player Settings](/settings/individual-player/#output-protocols)
