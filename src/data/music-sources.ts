@@ -212,9 +212,9 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["streaming"],
   },
   {
-    name: "ARD Audiothek",
-    slug: "music-providers/ard-audiothek",
-    icon: "/assets/icons/ard-audiothek.png",
+    name: "ARD Sounds",
+    slug: "music-providers/ard-sounds",
+    icon: "/assets/icons/ard-sounds.png",
     categories: ["radio", "podcasts", "germany"],
   },
   {
