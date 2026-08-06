@@ -204,7 +204,7 @@ const rateLines = (rate: string | string[]) =>
                     loading="lazy"
                     decoding="async"
                   />
-                  <span>{player.name}</span>
+                  <span>{capabilities.shortName ?? player.name}</span>
                 </a>
               </th>
               <td class="caps__rate">
