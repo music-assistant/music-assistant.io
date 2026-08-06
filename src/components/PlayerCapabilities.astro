@@ -186,7 +186,9 @@ const rateLines = (rate: string | string[]) =>
           <th scope="col" class="caps__rate">Max Sample Rate</th>
           {
             CAPABILITY_COLUMNS.map((column) => (
-              <th scope="col">{column.label}</th>
+              <th scope="col" class="caps__flag">
+                {column.label}
+              </th>
             ))
           }
         </tr>
@@ -222,7 +224,7 @@ const rateLines = (rate: string | string[]) =>
                 ))}
               </td>
               {CAPABILITY_COLUMNS.map((column) => (
-                <td>
+                <td class="caps__flag">
                   {capabilities.values[column.id] ? (
                     <span class="caps__yes" role="img" aria-label="Yes">
                       <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
@@ -383,9 +385,9 @@ const rateLines = (rate: string | string[]) =>
     z-index: 1;
     /* The longest name, "Music Player Daemon (MPD)", needs 122px to fall on two
        lines rather than three, which makes its row half again as tall as the
-       others. 8.5rem leaves room on top of that, because the page uses the
-       system font and the measurement differs between platforms. There is
-       space for it: the table needs 647px of the 690px content column. */
+       others. 8.5rem keeps room on top of that for the platforms whose system
+       font renders wider than the one this was measured in, and is also what
+       lets "Bose SoundTouch" and "Home Assistant" sit on one line. */
     width: 8.5rem;
     min-width: 8.5rem;
     text-align: left;
@@ -428,6 +430,15 @@ const rateLines = (rate: string | string[]) =>
 
   .caps tbody .caps__rate {
     font-size: 0.7rem;
+  }
+
+  /* Left to size themselves, these columns come out anywhere between 32px and
+     69px wide depending on how long their heading is, which reads as ragged.
+     A floor evens them up. Raising it spends the room the table needs to stay
+     inside the content column, which is only 647px on an iPad Pro in
+     landscape, where the table of contents appears. */
+  .caps__flag {
+    min-width: 2.6rem;
   }
 
   .caps tbody .caps__rate span {

@@ -48,9 +48,10 @@ export interface PlayerCapabilities {
 export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
   {
     id: "hiRes",
-    // Two words already, so it wraps on its own. A real hyphen here would break
-    // as "Hi-" over "Res".
-    label: "Hi Res",
+    // A non-breaking space, so the shortest heading in the table stays on one
+    // line and its column does not end up visibly narrower than the rest. A
+    // real hyphen instead would break as "Hi-" over "Res".
+    label: "Hi\u00A0Res",
     help: "Can carry audio above 48kHz or above 16 bits.",
     href: "/player-support/#audio-quality",
   },
@@ -67,7 +68,7 @@ export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
   },
   {
     id: "syncCorrection",
-    label: "Sync Correction",
+    label: "Sync Adjust",
     help: "A per-player delay can be applied to pull a player that runs ahead of or behind the rest of its group back into line.",
     href: "/settings/individual-player/#output-protocols",
   },

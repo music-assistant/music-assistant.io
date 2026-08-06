@@ -241,6 +241,10 @@ missed. Keep the label short. The table only clears the content column because t
 small enough not to set the column widths themselves, and a long label brings back the sideways
 scrolling.
 
+The capability columns have a minimum width, so a short label will not leave a starved-looking
+column next to its neighbours. There is no matching maximum: a label with a word longer than about
+nine letters sets its own column wider than the rest and the row stops looking even.
+
 A heading that is one long word is the worst case, because it cannot wrap and so sets its column's
 width on its own. Put a `­` soft hyphen at a sensible break point in any word longer than
 about eight letters, as `Cross­fade` and `Sync Cor­rection` do. It is invisible while
