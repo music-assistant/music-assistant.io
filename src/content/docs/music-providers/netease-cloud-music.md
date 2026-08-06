@@ -25,7 +25,7 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Radio |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 

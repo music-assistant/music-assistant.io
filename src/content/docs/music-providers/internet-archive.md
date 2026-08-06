@@ -25,7 +25,7 @@ This source gives Music Assistant users free access to millions of audio recordi
 | Media Types Supported | Artists, Albums, Tracks, Audiobooks, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 

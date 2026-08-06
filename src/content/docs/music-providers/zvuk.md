@@ -31,7 +31,7 @@ This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvu
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
@@ -47,7 +47,7 @@ This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvu
 - Browse is available to explore the Zvuk Music catalogue
 - Lyrics are displayed when available (synced line-by-line when provided by the service, otherwise plain text)
 - Personalized playlists ("Плейлисты для вас") appear in the Recommendations section on the Home screen
-- Similar tracks are available from the track context menu (used by Radio Mode)
+- Similar tracks are available from the track context menu (used by Endless Mix)
 
 ## Configuration
 

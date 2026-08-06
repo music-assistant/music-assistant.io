@@ -26,7 +26,7 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 | Media Types Supported                           | Artists, Albums, Tracks |
 | [Recommendations](/ui/#view---discover) Supported |           No            |
 | Lyrics Supported                                |           Yes           |
-| [Radio Mode](/ui/#track-menu)               |           No            |
+| [Endless Mix](/ui/#track-menu)              |           No            |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 

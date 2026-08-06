@@ -23,7 +23,7 @@ This source signs Music Assistant in to your Apple Music account, so your saved 
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Radio |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     | 
@@ -35,7 +35,7 @@ This source signs Music Assistant in to your Apple Music account, so your saved 
 - Searching the Apple Music catalogue
 - Browsing playlists organised in folders
 - Artist radio stations available via Browse and the [Discover view](/ui/#view---discover); live broadcast stations are not supported
-- Similar tracks are supported, shown in the track detail view and available for Radio Mode
+- Similar tracks are supported, shown in the track detail view and available for Endless Mix
 - Similar artists are supported and shown in the artist detail view
 
 

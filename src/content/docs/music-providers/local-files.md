@@ -18,7 +18,7 @@ When streaming sources are also availabe in MA linking will only occur when the 
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes with Sonic Similarity Plugin                      | 
