@@ -32,7 +32,8 @@ export type CategoryId =
   | "china"
   | "japan"
   | "france"
-  | "uk";
+  | "uk"
+  | "australia";
 
 export interface Category {
   /** Used as the link target, so it must be unique. */
@@ -177,11 +178,23 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         title: "United Kingdom",
         blurb: "British radio, live and after broadcast.",
       },
+      {
+        id: "australia",
+        icon: "/assets/icons/listen/australia.svg",
+        title: "Australia",
+        blurb: "Australian public radio, from new music to classical and jazz.",
+      },
     ],
   },
 ];
 
 export const MUSIC_SOURCES: MusicSource[] = [
+  {
+    name: "ABC Radio Network",
+    slug: "music-providers/abc-radio-network",
+    icon: "/assets/icons/abc-radio-icon.svg",
+    categories: ["radio", "children", "australia"],
+  },
   {
     name: "Apple Music",
     slug: "music-providers/apple-music",
