@@ -142,12 +142,109 @@ and somebody will sort it out.
 
 ## Adding a player provider
 
-The same, with `src/content/docs/player-support/<slug>.md` and `src/data/players.ts`. Categories
-there are `commercial` for devices sold ready to use, and `diy` for software you set up yourself.
+Four things, and the build will tell you if you miss either of the last two.
 
-There is no sidebar entry to add here either. The `Player Providers` menu is generated from that
-folder, so the same two rules apply: name the file after the provider, because the menu is sorted
-by filename, and set `title` to the name people know it by, because that is the label.
+1. **The page**, at `src/content/docs/player-support/<slug>.md`. Copy an existing provider page
+   and work from that. Structure is covered under [House style](#house-style) below.
+
+   There is no sidebar entry to add. The `Player Providers` menu is generated from this folder,
+   so the file lands in the menu on its own. Two things follow from that: **name the file after
+   the provider**, because the menu is sorted by filename, and **set `title` to the name people
+   know it by**, because that is the label they will see.
+2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
+3. **The tile entry**, in `src/data/players.ts`, alphabetical by `name`:
+
+   ```ts
+   {
+     name: "Example",
+     slug: "player-support/example",
+     icon: "/assets/icons/example-icon.svg",
+     categories: ["commercial"],
+   },
+   ```
+
+   Categories are `commercial` for devices sold ready to use, and `diy` for software you set up
+   yourself. A provider can be both. This puts it on the
+   [I Want To Stream To](https://music-assistant.io/faq/stream-to/) page. **The build fails
+   without it.**
+4. **The row in the comparison table**, in `src/data/player-capabilities.ts`. That is the table
+   further down the same page, comparing every provider side by side:
+
+   ```ts
+   {
+     slug: "player-support/example",
+     sampleRate: "48kHz/16 bits",
+     values: {
+       hiRes: false,
+       lossless: true,
+       perfectSync: false,
+       syncCorrection: false,
+       crossfade: false,
+       stereoPair: false,
+       deviceButton: false,
+       deviceVoice: false,
+       playerOptions: false,
+     },
+   },
+   ```
+
+   Use the same slug as the tile entry: the name and the logo are taken from `players.ts` rather
+   than typed again. Every column needs a `true` or a `false`, because the table has no blank
+   cells. What each column means is written out under **What the columns mean** on
+   [the page itself](https://music-assistant.io/faq/stream-to/#comparing-players-side-by-side);
+   that wording is the definition, so check your answers against it rather than going by the
+   column name alone. **The build fails without a row**, and names your provider along with a
+   block to paste.
+
+   Where a provider supports two rates, as Sonos does across its two generations, give
+   `sampleRate` a list of strings and each one gets its own line.
+
+### When an answer needs a footnote
+
+Some answers are yes only in a particular case — Sonos is hi-res on Series 2 devices, Google Cast
+syncs when the group was made in the Google Home app. Put the wording in `CAPABILITY_NOTES` in the
+same file, then point at it from the row by its position in that list:
+
+```ts
+notes: {
+  hiRes: [5],
+},
+```
+
+Add the note and the reference together: a note nothing refers to fails the build, and so does a
+reference to a note that is not there. Adding to the end of the list is safe, but **deleting a
+note renumbers every note after it**, and the rows point at numbers, so check the rows if you
+remove one.
+
+### Leaving a provider out of the table
+
+If you genuinely do not know what your provider supports, put its slug in `KNOWN_UNCHARTED` in the
+same file instead of writing a row:
+
+```ts
+export const KNOWN_UNCHARTED: string[] = [
+  "player-support/example",
+];
+```
+
+The build then stops asking for a row and the provider is left out of the comparison.
+
+Treat that as temporary. A provider missing from the table is one nobody can weigh against the
+others, which is what most readers came to that page to do. Better to fill in what you are sure of
+and say on the pull request which answers you were unsure about — somebody will know them. Take
+the slug back out when the row lands.
+
+The providers listed there now are ones that control a device rather than stream to it, and one
+too new to have the answers yet.
+
+### Adding a column
+
+Rare, but if a new capability applies across providers rather than to one: add it to
+`CAPABILITY_COLUMNS` with an id, a short label, a one-sentence `help` for the legend, and a `href`
+if a page already explains the term. Then add it to every row — the build lists the ones you
+missed. Keep the label short. The table only clears the content column because the headings are
+small enough not to set the column widths themselves, and a long label brings back the sideways
+scrolling.
 
 ## Adding a plugin, metadata provider or audio analysis provider
 
