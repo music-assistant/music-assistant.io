@@ -132,7 +132,7 @@ In any of the following views, Right click or long press on a track to get the f
 
 ![image](/assets/screenshots/UI-track-menu.png)
 
-The START RADIO option will only be seen if there is a provider that supports it. [Start Radio populates the queue with tracks based on the selected track](/usage/#endless-mix). The tracks are selected by the provider not MA. 
+The **View ... endless mix** option will only be seen if there is a provider that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the provider not MA. 
 ***************************************************************
 
 ## View - Discover
