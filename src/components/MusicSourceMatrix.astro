@@ -59,9 +59,9 @@ const plain = (value: string) =>
     .trim();
 
 // Rows of a page's Features table, as label and value with the markup taken
-// off both. Matching the cleaned label rather than the raw line matters: the
-// pages link their labels in three different ways — plain text, a markdown
-// link, and on nugs.md an <a> tag — and all three mean the same row.
+// off both. Matching the cleaned label rather than the raw line matters: some
+// pages write a label as plain text and others link it, and a page that
+// reaches for an <a> tag instead of a markdown link still means the same row.
 const featureRows = (body: string): { label: string; value: string }[] =>
   body.split("\n").flatMap((line) => {
     const cells = line.split("|");

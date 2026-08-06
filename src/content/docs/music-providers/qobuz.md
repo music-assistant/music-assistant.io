@@ -43,7 +43,6 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 
 ## Known Issues / Notes
 
-- Endless Mix is not supported
 - Qobuz only fetches images for artists/albums that have been directly added to the library (eg not albums of artists) to prevent too many API calls
 
 ## Not yet supported

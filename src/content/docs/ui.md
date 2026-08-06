@@ -210,7 +210,7 @@ The ID shown against the streaming provider may be used in automations and scrip
 
 ## View - Radio
 
-The Radio view shows streaming radio stations that are available in the MA library (this is not the [Endless Mix](/usage/#endless-mix) of the Player Queue). Stations can be added to the library in the following ways:
+The Radio view shows streaming radio stations that are available in the MA library. Stations can be added to the library in the following ways:
 
 * Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 
