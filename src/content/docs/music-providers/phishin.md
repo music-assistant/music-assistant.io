@@ -34,7 +34,8 @@ It is free to use and needs no account. This source makes those recordings avail
 - Search for concerts, tracks and playlists by partial title
 
 ## Configuration:
-- In the configuration, you only need to click the save button.
+
+In the configuration, you only need to click the save button.
 
 ## Known Issues / Notes
 
