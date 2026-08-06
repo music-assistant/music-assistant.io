@@ -121,7 +121,7 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
       {
         id: "children",
         icon: "/assets/icons/listen/children.svg",
-        title: "Stories for children",
+        title: "Entertainment for children",
         blurb: "Audio made for younger listeners.",
       },
     ],
