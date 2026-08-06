@@ -427,6 +427,9 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     const clear = root.querySelector("[data-clear]");
     const empty = root.querySelector(".msum__empty");
     const hint = root.querySelector(".msum__hintline");
+    const scroll = root.querySelector(".msum__scroll");
+    const table = root.querySelector("table");
+    const heads = [...root.querySelectorAll("thead th")];
     const GROUPS = ["type", "tier", "flag"];
     const DATA = { type: "types", tier: "tier", flag: "flags" };
 
@@ -484,6 +487,24 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
       );
     };
 
+    // Hiding rows re-cuts the widths, because every column except the four tick
+    // ones is sized from the content of the rows on screen: the source column
+    // drops 10px the moment "iTunes Podcast Search" is filtered out, and the
+    // three text columns re-share the leftover width every time. So measure the
+    // widths the table works out for itself with everything showing, then hold
+    // them. The measure un-hides, reads and re-hides in one go — the browser
+    // paints at the end of a task, so none of it is visible.
+    const lockColumns = () => {
+      const hiddenRows = rows.filter((row) => row.hidden);
+      hiddenRows.forEach((row) => (row.hidden = false));
+      table.style.tableLayout = "";
+      heads.forEach((th) => (th.style.width = ""));
+      const widths = heads.map((th) => th.getBoundingClientRect().width);
+      hiddenRows.forEach((row) => (row.hidden = true));
+      table.style.tableLayout = "fixed";
+      heads.forEach((th, i) => (th.style.width = `${widths[i]}px`));
+    };
+
     const toggle = (group, value) => {
       if (chosen[group].has(value)) chosen[group].delete(value);
       else chosen[group].add(value);
@@ -521,7 +542,26 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
       }
     }
 
+    // Only while the table is scrolled sideways is the pinned column worth an
+    // edge; the rest of the time it is a line down the middle of the table.
+    const shade = () =>
+      scroll.classList.toggle("is-scrolled", scroll.scrollLeft > 0);
+    scroll.addEventListener("scroll", shade, { passive: true });
+
+    // The locked widths are right for one viewport, so a resize has to measure
+    // again.
+    let resizing;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizing);
+      resizing = setTimeout(() => {
+        lockColumns();
+        shade();
+      }, 150);
+    });
+
     filters.hidden = false;
+    lockColumns();
+    shade();
     apply();
   }
 </script>
@@ -707,6 +747,12 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     width: 8.5rem;
     min-width: 8.5rem;
     text-align: left;
+  }
+
+  /* Only while the table is actually scrolled sideways. At the widths where it
+     fits, a line down the middle of the table is a line for no reason; on a
+     phone it is the only thing showing where the scrolling part starts. */
+  .msum__scroll.is-scrolled .msum__source {
     box-shadow: 1px 0 0 var(--sl-color-gray-5);
   }
 
@@ -803,9 +849,13 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     white-space: nowrap;
   }
 
+  /* The blue pair, not the accent pair. custom.css sets --sl-color-accent-high
+     to a light blue meant to sit on a dark background, and this site is light
+     only, so as text it came out at 1.53:1. These two are 9.32:1, and match how
+     the CD chip beside it uses the green pair. */
   .msum__tier--hi-res {
-    background: var(--sl-color-accent-low);
-    color: var(--sl-color-accent-high);
+    background: var(--sl-color-blue-low);
+    color: var(--sl-color-blue-high);
   }
 
   .msum__tier--cd {
@@ -836,6 +886,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   .msum__types ul {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.2rem;
     margin: 0;
     padding: 0;
