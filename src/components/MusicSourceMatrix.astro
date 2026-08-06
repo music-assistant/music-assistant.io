@@ -268,30 +268,14 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
 ---
 
 <figure class="msum not-content">
-  <div class="msum__filters" hidden>
-    <div class="msum__group" role="group" aria-labelledby="msum-f-type">
-      <span class="msum__grouplabel" id="msum-f-type">Plays</span>
-      {MEDIA_TYPE_ORDER.map((type) => (
-        <button type="button" data-filter="type" data-value={type} aria-pressed="false">{type}</button>
-      ))}
-    </div>
-    <div class="msum__group" role="group" aria-labelledby="msum-f-tier">
-      <span class="msum__grouplabel" id="msum-f-tier">Quality</span>
-      {TIERS.map((tier) => (
-        <button type="button" data-filter="tier" data-value={tier} aria-pressed="false">{TIER_LABEL[tier]}</button>
-      ))}
-    </div>
-    <div class="msum__group" role="group" aria-labelledby="msum-f-flag">
-      <span class="msum__grouplabel" id="msum-f-flag">Only show</span>
-      {YES_NO_COLUMNS.map((column) => (
-        <button type="button" data-filter="flag" data-value={column.id} aria-pressed="false">{column.label}</button>
-      ))}
-    </div>
-    <p class="msum__count">
-      <span data-count="" aria-live="polite">Showing all {rows.length} sources</span>
-      <button type="button" class="msum__clear" data-clear="" hidden>Clear filters</button>
-    </p>
-  </div>
+  <p class="msum__filters" hidden>
+    <span data-count="" aria-live="polite">Showing all {rows.length} sources</span>
+    <span class="msum__hintline">
+      &mdash; click a chip, or a {YES_NO_COLUMNS.map((c) => c.head.join(" ")).join(" / ")} heading, to filter
+    </span>
+    <button type="button" class="msum__clear" data-clear="" hidden>Clear filters</button>
+  </p>
+
   <div
     class="msum__scroll"
     role="region"
@@ -305,7 +289,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
           <th scope="col" class="msum__source">Source</th>
           {
             YES_NO_COLUMNS.map((column) => (
-              <th scope="col" class="msum__flag">
+              <th scope="col" class="msum__flag" data-chip="flag" data-value={column.id}>
                 {column.head.map((line) => (
                   <span>{line}</span>
                 ))}
@@ -442,6 +426,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     const count = root.querySelector("[data-count]");
     const clear = root.querySelector("[data-clear]");
     const empty = root.querySelector(".msum__empty");
+    const hint = root.querySelector(".msum__hintline");
     const GROUPS = ["type", "tier", "flag"];
     const DATA = { type: "types", tier: "tier", flag: "flags" };
 
@@ -477,13 +462,10 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
         ? `Showing ${shown} of ${rows.length} sources`
         : `Showing all ${rows.length} sources`;
       clear.hidden = active === 0;
+      hint.hidden = active !== 0;
       empty.hidden = shown > 0;
 
-      for (const button of root.querySelectorAll("[data-filter]")) {
-        const pressed = chosen[button.dataset.filter].has(button.dataset.value);
-        button.setAttribute("aria-pressed", String(pressed));
-      }
-      for (const chip of root.querySelectorAll("[data-chip]")) {
+        for (const chip of root.querySelectorAll("[data-chip]")) {
         const pressed = chosen[chip.dataset.chip].has(chip.dataset.value);
         chip.setAttribute("aria-pressed", String(pressed));
       }
@@ -507,12 +489,6 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
       else chosen[group].add(value);
       apply();
     };
-
-    for (const button of root.querySelectorAll("[data-filter]")) {
-      button.addEventListener("click", () =>
-        toggle(button.dataset.filter, button.dataset.value),
-      );
-    }
 
     // The chips in the table filter by whatever they say. They are plain text
     // in the markup and only become controls here, so with the script off they
@@ -566,44 +542,18 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.4rem 0.9rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .msum__group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.3rem;
-  }
-
-  .msum__grouplabel {
-    font-size: var(--sl-text-xs);
+    gap: 0.35rem 0.6rem;
+    margin: 0 0 0.6rem;
+    font-size: var(--sl-text-sm);
     color: var(--sl-color-gray-3);
   }
 
-  .msum__filters button {
-    padding: 0.1rem 0.5rem;
-    border: 1px solid var(--sl-color-gray-5);
-    border-radius: 0.75rem;
-    background: var(--sl-color-bg);
-    color: var(--sl-color-gray-2);
-    font: inherit;
-    font-size: 0.7rem;
-    line-height: 1.6;
-    cursor: pointer;
-  }
-
-  .msum__filters button:hover {
-    border-color: var(--sl-color-accent);
-    color: var(--sl-color-white);
-  }
-
-  .msum__filters button[aria-pressed="true"] {
-    border-color: var(--sl-color-accent);
-    background: var(--sl-color-accent-low);
-    color: var(--sl-color-white);
-    font-weight: 600;
+  /* Says the filtering is there at all. Nothing about a chip or a heading
+     announces that it can be clicked, and a heading that can be clicked is
+     usually a sort control rather than a filter, so this line does the
+     explaining. It goes away once a filter is on and has made the point. */
+  .msum__hintline {
+    color: var(--sl-color-gray-3);
   }
 
   .msum__count {
@@ -611,13 +561,18 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     align-items: baseline;
     gap: 0.6rem;
     margin: 0;
-    font-size: var(--sl-text-xs);
+    font-size: var(--sl-text-sm);
     color: var(--sl-color-gray-3);
   }
 
   .msum__clear {
-    border-color: transparent;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--sl-color-accent);
+    font: inherit;
     text-decoration: underline;
+    cursor: pointer;
   }
 
   .msum__empty {
@@ -628,6 +583,23 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
 
   .msum tbody tr[hidden] {
     display: none;
+  }
+
+  /* The four yes/no headings filter by their own column. They are ordinary
+     headings until the script makes them controls. */
+  .msum thead th[role="button"] {
+    cursor: pointer;
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+  }
+
+  .msum thead th[role="button"]:hover {
+    color: var(--sl-color-accent);
+  }
+
+  .msum thead th[aria-pressed="true"] {
+    color: var(--sl-color-accent);
+    text-decoration-style: solid;
   }
 
   /* The chips only become controls once the script runs; until then they are
@@ -670,8 +642,8 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    font-size: 0.75rem;
-    line-height: 1.3;
+    font-size: 1rem;
+    line-height: 1.35;
   }
 
   .msum caption {
@@ -702,7 +674,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   .msum thead th {
     padding: 0.55rem 0.2rem;
     vertical-align: bottom;
-    font-size: 0.7rem;
+    font-size: 0.9375rem;
     font-weight: 600;
     color: var(--sl-color-white);
     background: var(--sl-color-bg);
@@ -812,8 +784,12 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     color: var(--sl-color-accent);
   }
 
+  /* These two share whatever width the table is not using. Left to itself the
+     media types column takes the lot, which squeezes the quality wording into
+     four lines on twenty-two rows; splitting it drops the table from 4197px to
+     3637px and leaves only three rows wrapping past two lines. */
   .msum__quality {
-    width: 6.5rem;
+    width: 45%;
     text-align: center;
   }
 
@@ -821,7 +797,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     display: inline-block;
     padding: 0.05rem 0.35rem;
     border-radius: 0.75rem;
-    font-size: 0.65rem;
+    font-size: 0.875rem;
     font-weight: 600;
     white-space: nowrap;
   }
@@ -845,13 +821,15 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   /* The page's own wording, kept as it is written there. */
   .msum__detail {
     display: block;
-    margin-top: 0.15rem;
-    font-size: 0.65rem;
+    margin-top: 0.2rem;
+    font-size: 0.875rem;
     color: var(--sl-color-gray-3);
   }
 
+  /* At body size the chips are wide enough that a narrow column stacks them one
+     per line, which made the tallest rows seven lines deep. */
   .msum__types {
-    width: 7rem;
+    width: 55%;
   }
 
   .msum__types ul {
@@ -867,14 +845,14 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     padding: 0.05rem 0.3rem;
     border: 1px solid var(--sl-color-gray-5);
     border-radius: 0.75rem;
-    font-size: 0.65rem;
+    font-size: 0.875rem;
     white-space: nowrap;
   }
 
   .msum__login {
     width: 5.5rem;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.9375rem;
   }
 
   .msum__hint {

@@ -47,7 +47,7 @@ export const YES_NO_COLUMNS: SummaryColumn[] = [
   {
     id: "selfHosted",
     label: "Self-hosted",
-    head: ["Self-", "hosted"],
+    head: ["Local"],
     help: "The source plays from files you hold yourself, on your own disk, NAS or server, rather than from someone else's catalogue.",
     featuresLabel: /^Self-Hosted Local Media$/i,
   },
@@ -56,16 +56,15 @@ export const YES_NO_COLUMNS: SummaryColumn[] = [
     label: "Radio Mode",
     head: ["Radio", "Mode"],
     help: "Music Assistant can keep playing in a similar vein once the queue runs out, using this source's own idea of what is similar.",
-    href: "/ui/#track-menu",
+    href: "/usage/#radio-mode",
     featuresLabel: /^Radio Mode$/i,
   },
   {
     id: "recommendations",
     label: "Recommendations",
-    // Broken across three lines rather than two: on two, the longer half is
-    // still ten letters and leaves this column half again as wide as the other
-    // three. Rec-om-men-da-tions, so both breaks fall between syllables.
-    head: ["Recom-", "menda-", "tions"],
+    // Short, because the column is a tick: at body size the full word would
+    // hold sixty pixels to show fifteen. The legend keeps the full term.
+    head: ["Recs"],
     help: "The source offers its own suggestions, which appear in the Discover view.",
     href: "/ui/#view---discover",
     featuresLabel: /^Recommendations Supported$/i,
@@ -93,7 +92,7 @@ export const TEXT_COLUMNS = {
     id: "login",
     label: "Login",
     head: ["Login"],
-    help: "What you need to sign in with. A password is the most straightforward; OAuth signs you in on the service's own site; a cookie has to be copied out of your browser by hand and is the least pleasant.",
+    help: "What you need to sign in with. A password is the most straightforward; OAuth signs you in on the service's own site; a cookie has to be copied out of your browser by hand and is the least user friendly.",
     featuresLabel: /^Login Method$/i,
   },
 } as const;
