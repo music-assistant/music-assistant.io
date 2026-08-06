@@ -198,7 +198,7 @@ export default defineConfig({
           items: [
             { label: "Overview", slug: "music-providers" },
             { label: "Apple Music", slug: "music-providers/apple-music" },
-            { label: "ARD Audiothek", slug: "music-providers/ard-audiothek" },
+            { label: "ARD Sounds", slug: "music-providers/ard-sounds" },
             { label: "Audible", slug: "music-providers/audible" },
             { label: "Audiobookshelf", slug: "music-providers/audiobookshelf" },
             { label: "Bandcamp", slug: "music-providers/bandcamp" },
