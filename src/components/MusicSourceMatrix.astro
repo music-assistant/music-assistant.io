@@ -133,6 +133,7 @@ interface Row {
   slug: string;
   icon: string;
   flags: { value: boolean; note?: number }[];
+  flagIds: string;
   tier: QualityTier | null;
   quality: string;
   mediaTypes: string[];
@@ -244,6 +245,7 @@ for (const source of MUSIC_SOURCES) {
     slug: source.slug,
     icon: source.icon,
     flags,
+    flagIds: YES_NO_COLUMNS.filter((_, i) => flags[i].value).map((c) => c.id).join("|"),
     tier: tier ?? null,
     quality,
     mediaTypes: [...mediaTypes].sort(
@@ -262,9 +264,34 @@ if (problems.length > 0) {
 }
 
 const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
+const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
 ---
 
 <figure class="msum not-content">
+  <div class="msum__filters" hidden>
+    <div class="msum__group" role="group" aria-labelledby="msum-f-type">
+      <span class="msum__grouplabel" id="msum-f-type">Plays</span>
+      {MEDIA_TYPE_ORDER.map((type) => (
+        <button type="button" data-filter="type" data-value={type} aria-pressed="false">{type}</button>
+      ))}
+    </div>
+    <div class="msum__group" role="group" aria-labelledby="msum-f-tier">
+      <span class="msum__grouplabel" id="msum-f-tier">Quality</span>
+      {TIERS.map((tier) => (
+        <button type="button" data-filter="tier" data-value={tier} aria-pressed="false">{TIER_LABEL[tier]}</button>
+      ))}
+    </div>
+    <div class="msum__group" role="group" aria-labelledby="msum-f-flag">
+      <span class="msum__grouplabel" id="msum-f-flag">Only show</span>
+      {YES_NO_COLUMNS.map((column) => (
+        <button type="button" data-filter="flag" data-value={column.id} aria-pressed="false">{column.label}</button>
+      ))}
+    </div>
+    <p class="msum__count">
+      <span data-count="" aria-live="polite">Showing all {rows.length} sources</span>
+      <button type="button" class="msum__clear" data-clear="" hidden>Clear filters</button>
+    </p>
+  </div>
   <div
     class="msum__scroll"
     role="region"
@@ -301,7 +328,7 @@ const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
       <tbody>
         {
           rows.map((row) => (
-            <tr>
+            <tr data-types={row.mediaTypes.join("|")} data-tier={row.tier} data-flags={row.flagIds}>
               <th scope="row" class="msum__source">
                 <a href={`/${row.slug}/`}>
                   <img
@@ -330,17 +357,7 @@ const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
                       </svg>
                     </span>
                   ) : (
-                    <span class="msum__no" role="img" aria-label="No">
-                      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                        <path
-                          d="M4 4 12 12 M12 4 4 12"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2.5"
-                          stroke-linecap="round"
-                        />
-                      </svg>
-                    </span>
+                    <span class="msum__no">No</span>
                   )}
                   {flag.note && (
                     <sup class="msum__ref">
@@ -350,7 +367,7 @@ const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
                 </td>
               ))}
               <td class="msum__quality">
-                <span class:list={["msum__tier", `msum__tier--${row.tier}`]}>
+                <span class:list={["msum__tier", `msum__tier--${row.tier}`]} data-chip="tier" data-value={row.tier}>
                   {TIER_LABEL[row.tier as QualityTier]}
                 </span>
                 <span class="msum__detail">
@@ -360,7 +377,7 @@ const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
               <td class="msum__types">
                 <ul>
                   {row.mediaTypes.map((type) => (
-                    <li>{type}</li>
+                    <li data-chip="type" data-value={type}>{type}</li>
                   ))}
                 </ul>
               </td>
@@ -371,6 +388,10 @@ const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
       </tbody>
     </table>
   </div>
+
+  <p class="msum__empty" hidden>
+    No source matches all of those. Try turning one of the filters off.
+  </p>
 
   <p class="msum__hint">Scroll the table sideways to see every column.</p>
 
@@ -410,9 +431,224 @@ const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
   </dl>
 </details>
 
+<script>
+  // Filtering, added on top of a table that is complete and readable without
+  // it. Everything below only runs once the script does, and the controls stay
+  // hidden until then, so nothing here is load-bearing.
+  const root = document.querySelector(".msum");
+  if (root) {
+    const filters = root.querySelector(".msum__filters");
+    const rows = [...root.querySelectorAll("tbody tr")];
+    const count = root.querySelector("[data-count]");
+    const clear = root.querySelector("[data-clear]");
+    const empty = root.querySelector(".msum__empty");
+    const GROUPS = ["type", "tier", "flag"];
+    const DATA = { type: "types", tier: "tier", flag: "flags" };
+
+    // One set per group. Within a group any match will do, which is the only
+    // thing that makes sense for quality, where a source has exactly one. The
+    // "only show" group is the exception: those read as requirements, so a
+    // source has to satisfy all of them at once.
+    const chosen = { type: new Set(), tier: new Set(), flag: new Set() };
+
+    const valuesOf = (row, group) =>
+      (row.dataset[DATA[group]] || "").split("|").filter(Boolean);
+
+    const matches = (row) => {
+      if (chosen.type.size && !valuesOf(row, "type").some((v) => chosen.type.has(v)))
+        return false;
+      if (chosen.tier.size && !valuesOf(row, "tier").some((v) => chosen.tier.has(v)))
+        return false;
+      const flags = valuesOf(row, "flag");
+      for (const flag of chosen.flag) if (!flags.includes(flag)) return false;
+      return true;
+    };
+
+    const apply = () => {
+      let shown = 0;
+      for (const row of rows) {
+        const ok = matches(row);
+        row.hidden = !ok;
+        if (ok) shown++;
+      }
+
+      const active = chosen.type.size + chosen.tier.size + chosen.flag.size;
+      count.textContent = active
+        ? `Showing ${shown} of ${rows.length} sources`
+        : `Showing all ${rows.length} sources`;
+      clear.hidden = active === 0;
+      empty.hidden = shown > 0;
+
+      for (const button of root.querySelectorAll("[data-filter]")) {
+        const pressed = chosen[button.dataset.filter].has(button.dataset.value);
+        button.setAttribute("aria-pressed", String(pressed));
+      }
+      for (const chip of root.querySelectorAll("[data-chip]")) {
+        const pressed = chosen[chip.dataset.chip].has(chip.dataset.value);
+        chip.setAttribute("aria-pressed", String(pressed));
+      }
+
+      // A query string rather than a hash: the footnote markers under the table
+      // already use hashes, and the two would fight over the same part of the URL.
+      const params = new URLSearchParams();
+      for (const group of GROUPS) {
+        if (chosen[group].size) params.set(group, [...chosen[group]].join(","));
+      }
+      const query = params.toString();
+      history.replaceState(
+        null,
+        "",
+        (query ? `?${query}` : location.pathname) + location.hash,
+      );
+    };
+
+    const toggle = (group, value) => {
+      if (chosen[group].has(value)) chosen[group].delete(value);
+      else chosen[group].add(value);
+      apply();
+    };
+
+    for (const button of root.querySelectorAll("[data-filter]")) {
+      button.addEventListener("click", () =>
+        toggle(button.dataset.filter, button.dataset.value),
+      );
+    }
+
+    // The chips in the table filter by whatever they say. They are plain text
+    // in the markup and only become controls here, so with the script off they
+    // are not buttons that do nothing.
+    for (const chip of root.querySelectorAll("[data-chip]")) {
+      const group = chip.dataset.chip;
+      const value = chip.dataset.value;
+      chip.setAttribute("role", "button");
+      chip.setAttribute("tabindex", "0");
+      chip.title = `Show only sources matching ${(chip.textContent || "").trim()}`;
+      chip.addEventListener("click", () => toggle(group, value));
+      chip.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          toggle(group, value);
+        }
+      });
+    }
+
+    clear.addEventListener("click", () => {
+      for (const group of GROUPS) chosen[group].clear();
+      apply();
+    });
+
+    // A filtered view can be linked to, so read the URL back on the way in.
+    const incoming = new URLSearchParams(location.search);
+    for (const group of GROUPS) {
+      for (const value of (incoming.get(group) || "").split(",").filter(Boolean)) {
+        chosen[group].add(value);
+      }
+    }
+
+    filters.hidden = false;
+    apply();
+  }
+</script>
+
 <style>
   .msum {
     margin: 1.5rem 0 0;
+  }
+
+  /* `display` on a class beats the [hidden] attribute's own rule, so without
+     this the filter bar shows up on a page with JavaScript off, full of
+     controls that do nothing. */
+  .msum__filters[hidden] {
+    display: none;
+  }
+
+  .msum__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.9rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .msum__group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem;
+  }
+
+  .msum__grouplabel {
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+
+  .msum__filters button {
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.75rem;
+    background: var(--sl-color-bg);
+    color: var(--sl-color-gray-2);
+    font: inherit;
+    font-size: 0.7rem;
+    line-height: 1.6;
+    cursor: pointer;
+  }
+
+  .msum__filters button:hover {
+    border-color: var(--sl-color-accent);
+    color: var(--sl-color-white);
+  }
+
+  .msum__filters button[aria-pressed="true"] {
+    border-color: var(--sl-color-accent);
+    background: var(--sl-color-accent-low);
+    color: var(--sl-color-white);
+    font-weight: 600;
+  }
+
+  .msum__count {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    margin: 0;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+
+  .msum__clear {
+    border-color: transparent;
+    text-decoration: underline;
+  }
+
+  .msum__empty {
+    margin: 0.85rem 0 0;
+    font-size: var(--sl-text-sm);
+    color: var(--sl-color-gray-2);
+  }
+
+  .msum tbody tr[hidden] {
+    display: none;
+  }
+
+  /* The chips only become controls once the script runs; until then they are
+     plain text, so nothing here applies to a page without JavaScript. */
+  .msum [data-chip][role="button"] {
+    cursor: pointer;
+  }
+
+  .msum [data-chip][role="button"]:hover {
+    border-color: var(--sl-color-accent);
+    color: var(--sl-color-white);
+  }
+
+  .msum [data-chip][aria-pressed="true"] {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 1px;
+  }
+
+  .msum [data-chip]:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
   }
 
   .msum__scroll {
@@ -535,26 +771,30 @@ const LEGEND = [...YES_NO_COLUMNS, ...Object.values(TEXT_COLUMNS)];
     white-space: nowrap;
   }
 
-  .msum__yes,
-  .msum__no {
+  .msum__yes {
     display: inline-block;
     vertical-align: middle;
+    color: var(--sl-color-green);
   }
 
-  .msum__yes svg,
-  .msum__no svg {
+  .msum__yes svg {
     display: block;
     width: 0.95rem;
     height: 0.95rem;
   }
 
-  /* A tick and a cross, not two colours of one mark. */
-  .msum__yes {
-    color: var(--sl-color-green);
-  }
-
+  /* "No" is read out but never shown. A cross in every one of these cells is
+     noise across four columns and forty-seven rows, and the tick is what anyone
+     is scanning for, but an empty cell tells a screen reader nothing at all, so
+     the word stays in the markup. */
   .msum__no {
-    color: var(--sl-color-red);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .msum__ref {
