@@ -41,7 +41,8 @@ This source gives Music Assistant users free access to millions of audio recordi
 - LibriVox audiobook library browsing
 
 ## Configuration:
-- In the configuration, you only need to click the save button.
+
+In the configuration, you only need to click the save button.
 
 ## Known Issues / Notes
 
