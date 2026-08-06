@@ -218,8 +218,8 @@ remove one.
 
 ### Leaving a provider out of the table
 
-If you genuinely do not know what your provider supports, put its slug in `KNOWN_UNCHARTED` in the
-same file instead of writing a row:
+If a provider needs to be left out, put its slug in `KNOWN_UNCHARTED` in the same file instead of
+writing a row:
 
 ```ts
 export const KNOWN_UNCHARTED: string[] = [
@@ -229,17 +229,8 @@ export const KNOWN_UNCHARTED: string[] = [
 
 The build then stops asking for a row and the provider is left out of the comparison.
 
-Treat that as temporary. A provider missing from the table is one nobody can weigh against the
-others, which is what most readers came to that page to do. Better to fill in what you are sure of
-and say on the pull request which answers you were unsure about — somebody will know them. Take
-the slug back out when the row lands.
-
-The two listed there now are one that controls a device rather than streaming to it, and one too
-new to have the answers yet.
-
-A provider that leans on another one for the audio is a different case, and does belong in the
-table. Bose SoundTouch handles control while the sound goes over DLNA, so its row is the DLNA row
-with a footnote saying so.
+A provider that relies on another one for the audio does not need this. Give it that provider's
+row instead, as Bose SoundTouch has DLNA's.
 
 ### Adding a column
 
