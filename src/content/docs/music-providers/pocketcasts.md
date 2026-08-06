@@ -36,7 +36,7 @@ Music Assistant becomes another of those devices, reading from and writing back 
 
 ## Configuration
 
-- A Pocket Casts email address and password must be provided in the configuration
+A Pocket Casts email address and password must be provided in the configuration
 
 > [!NOTE]
 > A free Pocket Casts account is sufficient; a paid subscription is not required. Authentication uses a bearer token that is valid for several months, after which re-authentication may be required.
