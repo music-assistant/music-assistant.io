@@ -2,10 +2,11 @@
 # server builds (the documentation icon in settings) keep working.
 # Netlify ignores trailing slashes when matching these paths.
 
-/music-providers/filesystem   /music-providers/local-files          301
-/music-providers/radiothek    /music-providers/orf-radiothek        301
-/player-support/ha            /player-support/home-assistant        301
-/player-support/mpd           /player-support/music-player-daemon   301
+/music-providers/ard-audiothek   /music-providers/ard-sounds           301
+/music-providers/filesystem      /music-providers/local-files          301
+/music-providers/radiothek       /music-providers/orf-radiothek        301
+/player-support/ha               /player-support/home-assistant        301
+/player-support/mpd              /player-support/music-player-daemon   301
 
 # The MPD provider has always pointed at a music-providers path that never existed.
-/music-providers/mpd          /player-support/music-player-daemon   301
+/music-providers/mpd             /player-support/music-player-daemon   301
