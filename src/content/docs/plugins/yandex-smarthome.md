@@ -35,14 +35,15 @@ Once set up, you can say things like «Alice, pause in the kitchen» or «Alice,
 | «Alice, turn up / turn down on \<name\>» | Volume up / down (±10) |
 | «Alice, set volume to 50 on \<name\>» | Set volume to 50% |
 | «Alice, pause on \<name\>» | Pause |
+| «Alice, mute \<name\>» | Mute, on players that support it |
 | «Alice, next / previous on \<name\>» | Next / previous track |
 | «Alice, switch \<name\> source to \<one…ten\>» | Switch to a source by number. This covers both the player's own sources and any playlists you have set up (see [Starting a playlist by voice](#starting-a-playlist-by-voice)) |
-
-Muting only works on players that support it.
 
 ## Configuration
 
 Go to **Settings → Plugins → Add a Plugin** and add **Yandex Smart Home**. The rest of the setup happens in the plugin's own settings dialog, described below.
+
+The Yandex service behind all of this is <a href="https://yandex.ru/dev/dialogs/smart-home/" target="_blank" rel="noopener noreferrer">Yandex Dialogs Smart Home</a>, which is where any skill you create lives.
 
 There are three ways the plugin can connect. Pick the one that suits your setup:
 
