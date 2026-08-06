@@ -6,7 +6,7 @@ title: "KION Music"
 
 Music Assistant has support for [KION Music](https://music.mts.ru) (MTS Music). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 
-KION Music is a music streaming service by MTS (Mobile TeleSystems), one of the largest telecom operators in Russia and CIS countries. This source uses the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library adapted for the KION API endpoint.
+KION Music is a music streaming service run by MTS (Mobile TeleSystems), one of the largest telecoms companies in Russia and the CIS.
 
 Connecting your account puts your KION library and the wider catalogue inside Music Assistant.
 
@@ -49,17 +49,19 @@ Connecting your account puts your KION library and the wider catalogue inside Mu
 
 ## Configuration
 
-Configuration requires obtaining a token from KION Music.
+KION has no sign-in for outside apps, so a token has to be copied out of your browser.
 
-### Obtaining the Token
+1. Sign in to your account at [music.mts.ru](https://music.mts.ru)
+2. Press Ctrl+Shift+I to open the browser's developer tools
+3. Open the **Storage** tab in Firefox, or the **Application** tab in Chrome
+4. Under **Local Storage**, select the entry for `https://music.mts.ru`
+5. Find the row named `ya_token` and copy its value
+6. Paste it into the KION Music source in Music Assistant and save
 
-1. Open your browser and navigate to [music.mts.ru](https://music.mts.ru)
-2. Log in to your account
-3. Open Developer Tools (Ctrl+Shift+I)
-4. Go to the **Storage** (Firefox) or **Application** (Chrome) tab
-5. Under **Local Storage**, find the entry for `https://music.mts.ru`
-6. Copy the value of the `ya_token` key
-7. Paste this token into the Music Assistant KION Music source configuration
+> [!WARNING]
+> **Keep your token private**
+>
+> Anyone who has it can get into your KION account, so do not share it or paste it anywhere when asking for help.
 
 ### Settings
 

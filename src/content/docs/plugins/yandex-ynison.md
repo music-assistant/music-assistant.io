@@ -5,9 +5,9 @@ description: Features and Notes for the Yandex Music Connect (Ynison) Plugin
 
 # Yandex Music Connect (Ynison)
 
-Music Assistant can expose its players as playback devices in the official [Yandex Music](https://music.yandex.ru) app via the **Ynison** protocol (Yandex's equivalent of Spotify Connect). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
+This plugin makes your Music Assistant players show up inside the official [Yandex Music](https://music.yandex.ru) app, in the same list you would pick a speaker from. Choose one there and the music plays on it, the way Spotify Connect works. Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
 
-This plugin depends on the [Yandex Music](/music-providers/yandex-music/) source, which must be configured first — Ynison only handles the player/device side, while audio streaming and quality are driven by the linked Yandex Music provider.
+Set up the [Yandex Music](/music-providers/yandex-music/) source first. This plugin only handles the player side of things — the music itself comes from that source, and so does the sound quality.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
@@ -25,8 +25,7 @@ This plugin depends on the [Yandex Music](/music-providers/yandex-music/) source
 |           |                     |
 |:-----------------------|:---------------------:|
 | Exposes MA players to the Yandex Music app | Yes |
-| Protocol | Ynison (JSON over WebSocket) |
-| Maximum Stream Quality | Lossless FLAC (inherited from Yandex Music source) |
+| Maximum Stream Quality | Lossless FLAC (set on the Yandex Music source) |
 | Transport controls | play / pause / seek / next / previous |
 | Radio / My Wave queues | Yes |
 | Multiple instances | Yes |
@@ -51,29 +50,28 @@ This plugin depends on the [Yandex Music](/music-providers/yandex-music/) source
 
 1. In Music Assistant, add the **Yandex Music Connect (Ynison)** plugin from the providers list.
 2. For **Yandex Music source**, either:
-   - select an existing **Yandex Music** instance to borrow its OAuth token (recommended — token refresh stays automatic), or
-   - select **Use own token (manual entry)** and paste a Yandex Music token obtained from [Yandex OAuth](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d).
-3. Select the **Connected Music Assistant Player** that should receive audio when the device is picked in the Yandex Music app. Use `Auto` to prefer a currently playing player.
-4. Save the configuration — the device name from **Device name in Yandex Music** will then appear in the Yandex Music app's playback-target list.
+   - pick your existing **Yandex Music** source, so the plugin can use the sign-in you already have (recommended, and it stays signed in on its own), or
+   - pick **Use own token (manual entry)** and paste a token from [Yandex](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d).
+3. Choose the **Connected Music Assistant Player** that should play the music when this device is picked in the Yandex Music app. `Auto` will use whichever player is already playing.
+4. Save. The name you gave under **Device name in Yandex Music** now appears in the Yandex Music app when you go to choose a speaker.
 
-Multiple plugin instances may be added (one per target player) — each needs its own `mass_player_id`.
+You can add the plugin more than once, one for each player you want to appear in the app.
 
 ### Settings
 
-- **Yandex Music source** — borrow the OAuth token from an existing Yandex Music provider instance, or switch to manual-token entry.
-- **Yandex Music Token** — only shown when not borrowing. Paste an OAuth token manually; note that token refresh is **not** automatic in this mode.
-- **Connected Music Assistant Player** — the MA player that acts as the playback target for this device. `Auto` picks a currently playing player, falling back to the first available one.
-- **Allow manual player switching** — when enabled, selecting this plugin as a source on any MA player switches playback to that player. When disabled, playback is fixed to the configured default player.
-- **Output sample rate** (advanced) — PCM sample rate sent to the MA player. `Auto` selects 44.1 kHz for lossy sources and 48 kHz for lossless. Options: `Auto`, `44100`, `48000`, `96000`.
-- **Output bit depth** (advanced) — PCM bit depth. `Auto` selects 16-bit for lossy sources and 24-bit for lossless. Options: `Auto`, `16`, `24`.
-- **Device name in Yandex Music** (advanced) — how this device appears in the Yandex Music app's playback-target list.
+- **Yandex Music source** — use the sign-in from an existing Yandex Music source, or paste your own token instead.
+- **Yandex Music Token** — only appears if you chose to paste your own. A token entered here will expire and have to be replaced by hand.
+- **Connected Music Assistant Player** — the player that music will come out of. `Auto` picks whichever player is already playing, or the first available one if none is.
+- **Allow manual player switching** — with this on, picking this plugin as the source on any Music Assistant player moves playback to that player. With it off, playback stays on the player set above.
+- **Output sample rate** (advanced) — leave on `Auto` unless you have a reason not to. Options: `Auto`, `44100`, `48000`, `96000`.
+- **Output bit depth** (advanced) — leave on `Auto` unless you have a reason not to. Options: `Auto`, `16`, `24`.
+- **Device name in Yandex Music** (advanced) — the name this device is given in the Yandex Music app.
 
 ## Known Issues / Notes
 
-- The plugin requires a configured [Yandex Music](/music-providers/yandex-music/) source — it cannot stream audio on its own.
-- Manually entered OAuth tokens do not auto-refresh; borrow credentials from a Yandex Music instance to keep tokens refreshed automatically.
-- Playback quality is controlled by the linked Yandex Music source — change the **Audio quality** setting there to switch between lossy and lossless.
-- Yandex controls the queue (passive-player model): Music Assistant signals track completion and waits for the Yandex Music app or Ynison backend to push the next track. The only exception is Radio / My Wave, where the plugin replenishes the queue via the Yandex Music REST API.
-- Ynison connections are long-lived WebSockets; brief reconnects (with exponential backoff) may occur and are handled transparently.
-- Announcements will interrupt the Ynison stream; playback resumes afterwards where supported by the MA player.
-- Only one Yandex account is used per plugin instance; add more instances to target additional players, but each instance still maps to a single Yandex account.
+- A [Yandex Music](/music-providers/yandex-music/) source has to be set up first. This plugin cannot play anything by itself.
+- A token you pasted in yourself will expire. Using the sign-in from a Yandex Music source avoids this.
+- Sound quality is set on the Yandex Music source, under its **Audio quality** setting.
+- The Yandex Music app decides what plays next, not Music Assistant, so the queue lives on the Yandex side. My Wave and radio are the exception, where this plugin keeps the queue topped up itself.
+- Announcements interrupt playback. It picks up again afterwards on players that support it.
+- Each copy of the plugin uses one Yandex account. Add more copies for more players, but they each still use a single account.
