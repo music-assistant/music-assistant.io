@@ -239,17 +239,7 @@ const rateLines = (rate: string | string[]) =>
                       </svg>
                     </span>
                   ) : (
-                    <span class="caps__no" role="img" aria-label="No">
-                      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                        <path
-                          d="M4 4 12 12 M12 4 4 12"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2.5"
-                          stroke-linecap="round"
-                        />
-                      </svg>
-                    </span>
+                    <span class="caps__sronly">No</span>
                   )}
                   {(capabilities.notes?.[column.id] ?? []).map((note) => (
                     <sup class="caps__ref">
@@ -324,17 +314,17 @@ const rateLines = (rate: string | string[]) =>
     outline-offset: 2px;
   }
 
-  /* The type here is smaller than the rest of the page on purpose. Eleven
-     columns only clear the content column — 690px once the page shows its table
-     of contents — if the headings are small enough not to set the width
-     themselves. Enlarging any of this brings back the sideways scroll. */
+  /* Smaller than the rest of the page on purpose: eleven columns only clear the
+     690px content column if the headings stay small, since it is the headings
+     that size the nine tick columns. Body text costs far less. As set here the
+     table needs 669px. */
   .caps table {
     width: 100%;
     /* Separate rather than collapse: collapsed borders are painted by the cell
        that scrolls under the sticky first column, and disappear beneath it. */
     border-collapse: separate;
     border-spacing: 0;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     line-height: 1.3;
   }
 
@@ -391,13 +381,11 @@ const rateLines = (rate: string | string[]) =>
     position: sticky;
     left: 0;
     z-index: 1;
-    /* The longest name, "Music Player Daemon (MPD)", needs 122px to fall on two
-       lines rather than three, which makes its row half again as tall as the
-       others. 8.5rem keeps room on top of that for the platforms whose system
-       font renders wider than the one this was measured in, and is also what
-       lets "Bose SoundTouch" and "Home Assistant" sit on one line. */
-    width: 8.5rem;
-    min-width: 8.5rem;
+    /* "Music Player Daemon (MPD)" needs 141px here to wrap onto two lines
+       rather than three. 9.5rem is 152px, leaving room for wider system fonts,
+       and is also where "Bose SoundTouch" fits on one line. */
+    width: 9.5rem;
+    min-width: 9.5rem;
     text-align: left;
     box-shadow: 1px 0 0 var(--sl-color-gray-5);
   }
@@ -437,7 +425,7 @@ const rateLines = (rate: string | string[]) =>
   }
 
   .caps tbody .caps__rate {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   /* Left to size themselves, these columns come out anywhere between 32px and
@@ -453,27 +441,29 @@ const rateLines = (rate: string | string[]) =>
     display: block;
   }
 
-  .caps__yes,
-  .caps__no {
+  .caps__yes {
     display: inline-block;
     vertical-align: middle;
+    color: var(--sl-color-green);
   }
 
-  .caps__yes svg,
-  .caps__no svg {
+  .caps__yes svg {
     display: block;
     width: 0.95rem;
     height: 0.95rem;
   }
 
-  /* A tick and a cross, not two colours of the same mark: the shape has to
-     carry the meaning on its own. */
-  .caps__yes {
-    color: var(--sl-color-green);
-  }
-
-  .caps__no {
-    color: var(--sl-color-red);
+  /* The "No" in an empty cell: read out, never shown. A cross in every empty
+     cell is noise across nine columns, but a blank tells a screen reader
+     nothing. */
+  .caps__sronly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .caps__ref {
