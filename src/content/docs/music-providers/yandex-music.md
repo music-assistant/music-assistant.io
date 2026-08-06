@@ -27,6 +27,7 @@ This source is built on top of the [yandex-music-api](https://github.com/Marshal
 
 |           |                     |
 |:-----------------------|:---------------------:|
+| Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks |
 | [Recommendations](/ui/#view---discover) Supported | Yes |

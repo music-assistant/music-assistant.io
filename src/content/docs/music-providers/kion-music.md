@@ -24,6 +24,7 @@ Connecting your account puts your KION library and the wider catalogue inside Mu
 
 |           |                     |
 |:-----------------------|:---------------------:|
+| Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
