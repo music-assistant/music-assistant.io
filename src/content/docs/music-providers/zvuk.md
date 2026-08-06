@@ -13,7 +13,7 @@ Connecting your account brings your Zvuk library and playlists into Music Assist
 > [!CAUTION]
 > This is an **unofficial** implementation with no affiliation to [Zvuk](https://zvuk.com) or its owners.
 
-> [!WARNING]
+> [!NOTE]
 > A Zvuk Prime subscription is required for full functionality of this source and for lossless (FLAC) quality.
 > Without a subscription, this source's full-fledged operation is not guaranteed.
 
