@@ -161,14 +161,6 @@ In addition to the settings outlined above to configure this source, there are a
 
 - Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
 - When using the remote share connection, be aware that use of SMB1 (which is very old) is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB1 can be disabled
-- Use the following naming convention for local artwork
-    - Artist thumb: cover.jpg, folder.jpg or artist.jpg (or jpeg/png)
-    - Album thumb: cover.jpg, folder.jpg or album.jpg (or jpeg/png)
-    - Fan Art (used as background in banners): fanart.jpg (or jpeg/png)
-    - Logo (used on Artist view): logo.png
-    - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
-- Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
-- Embedded album thumbs will be extracted from audio files. However, performance can be improved and disk space saved by providing a single local artwork file vs. embedding the same artwork in all files
 - WebDAV, Google Drive and OneDrive are reached over the internet rather than over your own network, so library sync is slower than local, SMB or NFS, particularly for large libraries. The first sync of a cloud source reads the tags of every file over the internet
 - Writing to WebDAV, Google Drive and OneDrive sources is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
 
@@ -178,17 +170,15 @@ In addition to the settings outlined above to configure this source, there are a
 > - Expect a 1-2 second delay when playback starts or when seeking as the audio has to be fetched from the cloud service on demand
 > - Folder listings are cached for up to five minutes to keep browsing snappy, so changes made on the cloud service can take up to five minutes to appear in the BROWSE view. Library sync always reads fresh listings, so new content is never missed by a sync
 
-> [!TIP]
-> **Local Artwork is Optimal**
->
-> Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
-
-- Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
 - In regard to folder and filenames note the following:
     - Folders commencing with an underscore will be ignored
     - Music Assistant requires all file and folder names to be valid UTF-8. Files with non-UTF-8 characters in their names will be skipped during library sync and a warning will be logged identifying the affected file. This most commonly affects files originally tagged or named on Windows using legacy encodings such as Windows-1252, where characters like curly quotes or accented letters may have been written as non-UTF-8 bytes
     - Emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
  
+## Organising Your Files
+
+How you name and arrange your folders decides how much Music Assistant can work out about your collection. The sections below cover each kind of content, and artwork.
+
 ### Music
 
 - Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
@@ -215,6 +205,24 @@ In addition to the settings outlined above to configure this source, there are a
 - Embedded chapters within individual episode files are supported
 - A `metadata.json` file in the folder can provide additional podcast-level metadata: title, sorttitle, description, publisher, genres, and image URL.
 - Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
+
+### Artwork
+
+Artwork embedded in your audio files is supported and will be extracted. Artwork stored alongside your files as separate images is also supported, and is the better option.
+
+- Use the following naming convention for local artwork
+    - Artist thumb: cover.jpg, folder.jpg or artist.jpg (or jpeg/png)
+    - Album thumb: cover.jpg, folder.jpg or album.jpg (or jpeg/png)
+    - Fan Art (used as background in banners): fanart.jpg (or jpeg/png)
+    - Logo (used on Artist view): logo.png
+    - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
+- Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
+- Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
+
+> [!TIP]
+> **Local Artwork is Optimal**
+>
+> Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
 
 ## Tagging Files 
 
