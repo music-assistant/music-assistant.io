@@ -34,7 +34,7 @@ Individual Sendspin players will appear automatically when clients connect
 Standard [player settings](/settings/player-provider/) apply. Specific settings available for this player type are:
 
 - <b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example `192.168.1.50` or `speaker.local`. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
-- <b>Sync delay (ms).</b> Not all devices allow this correction but when available is allows a for static delay to be applied for audio synchronisation
+- <b>Sync delay (ms).</b> Not all devices allow this correction but when available it allows for a static delay to be applied for audio synchronisation
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 
 ## Known Issues / Notes
