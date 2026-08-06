@@ -23,7 +23,7 @@ It is free to use and needs no account. This source makes those recordings avail
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 
-| Maximum Stream Quality | MP3 |
+| Maximum Stream Quality | MP3 256kbps |
 | Login Method | None |
 
 ### Other
