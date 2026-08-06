@@ -32,7 +32,7 @@ This source makes the directory searchable from Music Assistant, so any station 
 
 ## Configuration
 
-- In the configuration, you only need to click the save button. 
+In the configuration, you only need to click the save button. 
 
 ## Usage
 

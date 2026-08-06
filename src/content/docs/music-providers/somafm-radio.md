@@ -32,7 +32,7 @@ This source makes the SomaFM channels available in Music Assistant.
 
 ## Configuration
 
-- Quality can be set to Highest, High, or Low in Advanced Settings (default Highest)
+Quality can be set to Highest, High, or Low in Advanced Settings (default Highest)
 
 ## Usage
 

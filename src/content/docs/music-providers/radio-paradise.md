@@ -37,7 +37,7 @@ This source adds those channels to Music Assistant as radio stations.
 
 ## Configuration
 
-- In the configuration, you only need to click the save button
+In the configuration, you only need to click the save button
 
 ## Usage
 

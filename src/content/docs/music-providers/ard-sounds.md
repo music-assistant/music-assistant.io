@@ -35,7 +35,7 @@ This source makes that content available inside Music Assistant. An ARD account 
 
 ## Configuration
 
-- Login to the ARD Sounds app, if syncing is required
+Login to the ARD Sounds app, if syncing is required
 
 ### Settings
 - <b>E-Mail address of ARD account.</b>

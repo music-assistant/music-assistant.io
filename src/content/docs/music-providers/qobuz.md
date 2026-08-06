@@ -35,7 +35,7 @@ Sign in and your Qobuz favourites appear in Music Assistant, along with the whol
 
 ## Configuration
 
-- In the configuration, you need to enter your Qobuz username and password
+In the configuration, you need to enter your Qobuz username and password
 
 ### Settings
 

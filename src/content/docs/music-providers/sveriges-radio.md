@@ -31,7 +31,7 @@ Sveriges Radio is funded publicly rather than by advertising. It runs four natio
 
 ## Configuration
 
-- No configuration is required. The provider is added and its channels become available immediately
+No configuration is required. The provider is added and its channels become available immediately
 
 ## Known Issues / Notes
 
