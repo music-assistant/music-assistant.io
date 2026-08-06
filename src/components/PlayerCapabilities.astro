@@ -275,26 +275,34 @@ const rateLines = (rate: string | string[]) =>
     }
   </ol>
 
-  <details class="caps__legend">
-    <summary>What the columns mean</summary>
-    <dl>
-      {
-        CAPABILITY_COLUMNS.map((column) => (
-          <>
-            <dt>
-              {column.href ? (
-                <a href={column.href}>{column.label}</a>
-              ) : (
-                column.label
-              )}
-            </dt>
-            <dd>{column.help}</dd>
-          </>
-        ))
-      }
-    </dl>
-  </details>
 </figure>
+
+{/* Deliberately outside the figure above, and so outside its "not-content"
+    class. Every Starlight rule that styles a <summary> is written as
+    `:not(:where(.not-content *))`, including the one that masks the marker into
+    the site's chevron. Inside the figure this accordion kept the ▶ from
+    custom.css unmasked, which the emoji font draws as an orange tile, and it
+    stood out against every other accordion on the page. Out here it is an
+    ordinary one. */}
+<details class="caps__legend">
+  <summary>What the columns mean</summary>
+  <dl>
+    {
+      CAPABILITY_COLUMNS.map((column) => (
+        <>
+          <dt>
+            {column.href ? (
+              <a href={column.href}>{column.label}</a>
+            ) : (
+              column.label
+            )}
+          </dt>
+          <dd>{column.help}</dd>
+        </>
+      ))
+    }
+  </dl>
+</details>
 
 <style>
   .caps {
@@ -512,13 +520,11 @@ const rateLines = (rate: string | string[]) =>
     color: var(--sl-color-white);
   }
 
-  .caps__legend {
-    margin-top: 1rem;
-  }
-
+  /* The border, the marker, the padding and the spacing all come from the
+     site's own accordion styles now, so that this matches the other <details>
+     on the page. Only the definition list inside it is styled here. */
   .caps__legend dl {
     margin: 0;
-    padding: 0 1rem 1rem;
     font-size: var(--sl-text-sm);
   }
 
