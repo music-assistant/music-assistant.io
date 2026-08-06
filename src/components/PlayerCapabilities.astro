@@ -239,17 +239,7 @@ const rateLines = (rate: string | string[]) =>
                       </svg>
                     </span>
                   ) : (
-                    <span class="caps__no" role="img" aria-label="No">
-                      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                        <path
-                          d="M4 4 12 12 M12 4 4 12"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2.5"
-                          stroke-linecap="round"
-                        />
-                      </svg>
-                    </span>
+                    <span class="caps__sronly">No</span>
                   )}
                   {(capabilities.notes?.[column.id] ?? []).map((note) => (
                     <sup class="caps__ref">
@@ -327,14 +317,20 @@ const rateLines = (rate: string | string[]) =>
   /* The type here is smaller than the rest of the page on purpose. Eleven
      columns only clear the content column — 690px once the page shows its table
      of contents — if the headings are small enough not to set the width
-     themselves. Enlarging any of this brings back the sideways scroll. */
+     themselves.
+
+     The headings are what to leave alone. They set the width of the nine tick
+     columns, so a quarter of a rem on them costs more than the same on the body
+     text, which sits in columns already sized by something else. At the sizes
+     below the table needs 660px and has 30px in hand; taking the headings to
+     0.75rem spends all of it. */
   .caps table {
     width: 100%;
     /* Separate rather than collapse: collapsed borders are painted by the cell
        that scrolls under the sticky first column, and disappear beneath it. */
     border-collapse: separate;
     border-spacing: 0;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     line-height: 1.3;
   }
 
@@ -391,13 +387,15 @@ const rateLines = (rate: string | string[]) =>
     position: sticky;
     left: 0;
     z-index: 1;
-    /* The longest name, "Music Player Daemon (MPD)", needs 122px to fall on two
-       lines rather than three, which makes its row half again as tall as the
-       others. 8.5rem keeps room on top of that for the platforms whose system
-       font renders wider than the one this was measured in, and is also what
-       lets "Bose SoundTouch" and "Home Assistant" sit on one line. */
-    width: 8.5rem;
-    min-width: 8.5rem;
+    /* The longest name, "Music Player Daemon (MPD)", needs 141px at this size to
+       fall on two lines rather than three, which would make its row half again
+       as tall as the others. 9.5rem is 152px, so it has 11px in hand for the
+       platforms whose system font renders wider than the one this was measured
+       in, and it is also the width at which "Bose SoundTouch" and "Home
+       Assistant" sit on one line. The table needs 669px at this width and the
+       content column is 690px, so there is no more to give. */
+    width: 9.5rem;
+    min-width: 9.5rem;
     text-align: left;
     box-shadow: 1px 0 0 var(--sl-color-gray-5);
   }
@@ -437,7 +435,7 @@ const rateLines = (rate: string | string[]) =>
   }
 
   .caps tbody .caps__rate {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   /* Left to size themselves, these columns come out anywhere between 32px and
@@ -453,27 +451,30 @@ const rateLines = (rate: string | string[]) =>
     display: block;
   }
 
-  .caps__yes,
-  .caps__no {
+  .caps__yes {
     display: inline-block;
     vertical-align: middle;
+    color: var(--sl-color-green);
   }
 
-  .caps__yes svg,
-  .caps__no svg {
+  .caps__yes svg {
     display: block;
     width: 0.95rem;
     height: 0.95rem;
   }
 
-  /* A tick and a cross, not two colours of the same mark: the shape has to
-     carry the meaning on its own. */
-  .caps__yes {
-    color: var(--sl-color-green);
-  }
-
-  .caps__no {
-    color: var(--sl-color-red);
+  /* Read out but never shown: the "No" in an empty cell. A cross in every one
+     of these cells is noise across nine columns and twenty rows, and the tick
+     is what anyone is scanning for, but an empty cell tells a screen reader
+     nothing at all, so the word stays in the markup. */
+  .caps__sronly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .caps__ref {
