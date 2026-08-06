@@ -70,13 +70,13 @@ export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
     id: "syncCorrection",
     label: "Sync Adjust",
     help: "A per-player delay can be applied to pull a player that runs ahead of or behind the rest of its group back into line.",
-    href: "/settings/individual-player/#output-protocols",
+    href: "/player-support/airplay/#player-settings",
   },
   {
     id: "crossfade",
     label: "Cross\u00ADfade",
     help: "One track can be faded into the next.",
-    href: "/faq/tech-info/#track-queueing",
+    href: "/audio-analysis/smart-fades/",
   },
   {
     id: "stereoPair",
