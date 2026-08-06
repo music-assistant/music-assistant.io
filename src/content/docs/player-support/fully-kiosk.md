@@ -8,8 +8,9 @@ Music Assistant has support for streaming to devices running the Fully Kiosk Bro
 
 ## Features
 
-- This is a basic player
-- Multiple Fully Kiosk browser players can be added
+- Play music through an Android tablet running Fully Kiosk, typically a wall-mounted dashboard
+- Add as many tablets as you like, one at a time
+- Basic playback only. There is no synchronised multi-room playback with other players
   
 ## Configuration
 
@@ -30,7 +31,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the Fully Kiosk players have the following settings:
 
-- <b>Output codec to use for streaming audio to the player.</b> The default is `MP3` but other options are `FLAC`, `AAC` or `WAV. Trying to send lossless to these devicxes can be problematic
+- <b>Output codec to use for streaming audio to the player.</b> The default is `MP3` but other options are `FLAC`, `AAC` or `WAV`. Many tablets struggle with lossless, so stay on MP3 unless you have a reason to change
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 - <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
 - <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting
@@ -38,10 +39,8 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
   
 ## Known Issues / Notes
 
-- The Fully Kiosk player must be manually added
 - A <a href="https://www.fully-kiosk.com/#pricing" target="_blank" rel="noopener noreferrer">paid license</a> for Fully Kiosk is required
-- When configuring you must add the device IP address and the Fully Kiosk password
+- These players are never found automatically, so each tablet has to be added by hand with its IP address and Fully Kiosk password
 - Once added the device name can be changed, if required, in the specific player configuration
-- Some devices cannot handle the FLAC stream so an option in the individual player settings allows for changing to the lossy MP3 codec
 - Crossfade is supported if [flow mode](/faq/tech-info/#track-queueing) is enabled in the individual player settings. Enabling flow mode may also solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - This player can be grouped via a [Universal Group](/faq/groups/#universal-groups) but perfect sync is not possible.

@@ -17,7 +17,7 @@ Connecting your account puts your saved music and playlists into Music Assistant
 > A Spotify Premium account is required for this music source. Free accounts will not work.
 
 > [!NOTE]
-> Spotify has made it clear to third party products that lossless support is not to be pursued.
+> Spotify has told third party products not to pursue lossless support, so do not expect it here.
 
 ## Features
 
@@ -56,7 +56,7 @@ Spotify will now work, but consider the optional step below.
 
 ### Optional: add a personal Client ID (recommended)
 
-Spotify limits how quickly third party apps can make requests on its shared access. Adding your own free Client ID gives Music Assistant a dedicated allowance, which speeds up access and should eliminate rate limiting. Without it, you may see rate limiting and streaming errors in the log.
+Music Assistant shares one allowance from Spotify with everybody else using it, and Spotify limits how fast that allowance can be used. Registering your own free Client ID gives you an allowance of your own, which makes everything quicker. Without it you may find things slow to load, and see errors in the log.
 
 1. Complete the basic setup above, then reopen the Spotify settings. A new option titled `Developer Token` appears towards the bottom of the view.
 2. Create an app on Spotify's <a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">developer dashboard</a>. When filling in the app details, the only field that matters is the `Redirect URL`. Set it exactly to `https://music-assistant.io/callback`.
@@ -69,10 +69,8 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 
 ## Known Issues / Notes
 
-- Spotify has blocked accounts created around 2024 and later, and some older accounts are also affected. If you see `Key Error` messages in the log, your account is affected. There is currently no remedy; consider changing to [another streaming source that we support](/music-providers/)
-- Due to restrictions with Spotify's API, only Spotify Premium accounts are supported (including Duo and Family). Free accounts will not work
-- When you first save the source, MA checks whether the account supports audiobooks. If it does, additional audiobook related options appear when you revisit the source's settings
-- After you add the developer token, MA maintains two sessions to a single Spotify source and routes requests appropriately. For example, MA requests playlists via its global token (which is rate limited but allows playlist retrieval) while it retrieves other items via the dev token. Search uses the dev token by default as it is otherwise very slow. Playing and browsing playlists is routed through the global token to the originating source (useful when multiple Spotify accounts are added)
-- The Spotify API does not support the provision of recommendations
-- The Spotify API does not return genre information
-- Spotify has curtailed the usability of Client IDs for recently created accounts. If you see 403 errors in the log, remove the Client ID
+- Premium is required, including Duo and Family. Free accounts will not work
+- When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
+- Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
+- Spotify does not tell Music Assistant what genre anything is
+- Spotify has also limited what Client IDs can do on recently created accounts. If you see 403 errors in the log after adding one, take the Client ID back out
