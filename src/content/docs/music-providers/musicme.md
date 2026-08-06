@@ -42,7 +42,7 @@ This source signs Music Assistant in to your MusicMe account and makes the catal
 
 ## Configuration
 
-- In the configuration, you need to enter your MusicMe account email and password
+In the configuration, you need to enter your MusicMe account email and password
 
 ## Known Issues / Notes
 
