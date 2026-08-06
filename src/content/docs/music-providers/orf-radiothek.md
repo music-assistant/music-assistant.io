@@ -22,7 +22,7 @@ ORF is Austria's public broadcaster and the Radiothek is its audio platform. It 
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | AAC 44.1kHz |
+| Maximum Stream Quality | AAC 320kbps |
 | Login Method | None |
 
 ### Other

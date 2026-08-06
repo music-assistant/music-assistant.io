@@ -30,7 +30,7 @@ This source signs Music Assistant in to your MusicMe account and makes the catal
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 
-| Maximum Stream Quality | AAC in MP4 |
+| Maximum Stream Quality | AAC 320kbps |
 | Login Method | Email + Password |
 
 ### Other
