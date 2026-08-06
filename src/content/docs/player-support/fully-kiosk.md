@@ -9,7 +9,7 @@ Music Assistant has support for streaming to devices running the Fully Kiosk Bro
 ## Features
 
 - Play music through an Android tablet running Fully Kiosk, typically a wall-mounted dashboard
-- Add as many tablets as you like, one at a time
+- Multiple Fully Kiosk browser players can be added
 - Basic playback only. There is no synchronised multi-room playback with other players
   
 ## Configuration
