@@ -4,7 +4,7 @@ title: AcoustID Lookup
 
 # AcoustID Lookup Provider  <img src="/assets/icons/acoustid-lookup-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-**AcoustID Lookup** works out what a track is by listening to it. It takes a fingerprint of the actual sound and looks that up in the AcoustID database, which tells it exactly which recording this is.
+**AcoustID Lookup** works out what a track is by listening to it. It takes a fingerprint of the actual sound and looks that up in the AcoustID database, which tells it which recording this is.
 
 That matters because Music Assistant normally relies on the tags in your files to fetch artwork, descriptions and biographies. Where the tags are thin or missing, nothing can be found. Once AcoustID has identified a track, all of that becomes available anyway, and the same track from different sources is matched up more reliably.
 
