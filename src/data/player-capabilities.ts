@@ -41,7 +41,9 @@ export interface PlayerCapabilities {
 export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
   {
     id: "hiRes",
-    label: "Hi-Res",
+    // No hyphen: the heading wraps to two lines in its column, and a hyphen
+    // there breaks as "Hi-" over "Res".
+    label: "Hi Res",
     help: "Can carry audio above 48kHz or above 16 bits.",
     href: "/player-support/#audio-quality",
   },
