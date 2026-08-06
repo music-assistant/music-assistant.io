@@ -221,13 +221,18 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
   flex-direction: row;
   gap: 0.5rem;
 }
-/* Install buttons under the home page artwork. */
-.install-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-block: 1.5rem;
+/* Landing page: let the hero and card grid use the full splash width.
+   --sl-content-width is 50rem for readable prose, which is too narrow for a
+   six-card grid, so it is widened for the page that has a hero. */
+[data-has-hero] {
+  --sl-content-width: 68rem;
+}
+
+/* The hero artwork carries the brand, so give it the same rounded treatment
+   as the other page imagery rather than leaving it a bare rectangle. */
+[data-has-hero] .hero > img,
+[data-has-hero] .hero picture > img {
+  border-radius: 12px;
 }
 
 /* Core team: five portraits per row. In MDX each link is its own top level
@@ -244,4 +249,111 @@ main > .content-panel:has(.overview-anchor) + .content-panel {
 }
 .team-row img {
   margin: 0;
+}
+
+/* Documentation menu in the header.
+   Only shown on the landing page: that page uses the splash template, which
+   has no sidebar, so it is the one place with no way into the docs. Every
+   other page already lists these sections in the sidebar.
+   Built on <details> so it needs no JavaScript, and clicking an entry
+   navigates away, which closes it for free. */
+.docs-menu {
+  display: none;
+  position: relative;
+  margin-inline-end: 0.5rem;
+}
+[data-has-hero] .docs-menu {
+  display: block;
+}
+.docs-menu > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.25rem 0.7rem;
+  border-radius: 0.35rem;
+  color: var(--sl-color-text-accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.docs-menu > summary::-webkit-details-marker {
+  display: none;
+}
+.docs-menu > summary::after {
+  content: '';
+  display: inline-block;
+  margin-inline-start: 0.4em;
+  border: 0.3em solid transparent;
+  border-top-color: currentColor;
+  translate: 0 0.15em;
+}
+.docs-menu[open] > summary::after {
+  rotate: 180deg;
+  translate: 0 -0.1em;
+}
+.docs-menu > summary:hover,
+.docs-menu > summary:focus-visible {
+  background: var(--sl-color-gray-6);
+}
+.docs-menu > ul {
+  position: absolute;
+  inset-inline-end: 0;
+  margin-block-start: 0.4rem;
+  padding: 0.35rem;
+  min-width: 15rem;
+  list-style: none;
+  background: var(--sl-color-bg-nav);
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.2);
+  z-index: var(--sl-z-index-navbar, 20);
+}
+.docs-menu > ul li + li {
+  margin-block-start: 0.1rem;
+}
+.docs-menu > ul a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.3rem;
+  color: var(--sl-color-white);
+  text-decoration: none;
+  font-size: var(--sl-text-sm);
+}
+.docs-menu > ul a:hover,
+.docs-menu > ul a:focus-visible {
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-text-accent);
+}
+
+/* Landing page tiles: the whole card is a link, so drop the link styling and
+   let the card border pick up the hover and focus states. */
+.tile-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.5rem;
+}
+.tile-link:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 3px;
+}
+
+/* Give each landing page tile its own icon colour. Starlight cards are all
+   purple by default, which makes six of them read as one block. These are
+   Starlight's own accent tokens, so they follow the light and dark themes.
+   Keyed on the tile name rather than its position, so reordering the grid
+   cannot silently reassign the colours. */
+.tile-link[data-tile='server'] .card         { --sl-card-border: var(--sl-color-blue);   --sl-card-bg: var(--sl-color-blue-low); }
+.tile-link[data-tile='sources'] .card        { --sl-card-border: var(--sl-color-green);  --sl-card-bg: var(--sl-color-green-low); }
+.tile-link[data-tile='players'] .card        { --sl-card-border: var(--sl-color-orange); --sl-card-bg: var(--sl-color-orange-low); }
+.tile-link[data-tile='metadata'] .card       { --sl-card-border: var(--sl-color-purple); --sl-card-bg: var(--sl-color-purple-low); }
+.tile-link[data-tile='plugins'] .card        { --sl-card-border: var(--sl-color-red);    --sl-card-bg: var(--sl-color-red-low); }
+.tile-link[data-tile='home-assistant'] .card { --sl-card-border: var(--sl-color-blue);   --sl-card-bg: var(--sl-color-blue-low); }
+
+/* The icon takes the tile colour; the hover border uses it too. */
+.tile-link .card .icon {
+  color: var(--sl-card-border);
+}
+.tile-link:hover .card,
+.tile-link:focus-visible .card {
+  border-color: var(--sl-card-border);
 }
