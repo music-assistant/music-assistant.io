@@ -38,11 +38,18 @@ export interface PlayerCapabilities {
   notes?: Record<string, number[]>;
 }
 
+// A heading that is one long word sets its column's width all on its own, and
+// the widest of them made the table 651px when the content column on an iPad in
+// portrait is 476px. `\u00AD` is a soft hyphen: invisible while the column has
+// room for the whole word, and a hyphen with a line break after it when the
+// column does not. It costs nothing on a desktop and takes 66px off the table
+// on a narrow screen. Put one at a normal English break point in any heading
+// with a word longer than about eight letters.
 export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
   {
     id: "hiRes",
-    // No hyphen: the heading wraps to two lines in its column, and a hyphen
-    // there breaks as "Hi-" over "Res".
+    // Two words already, so it wraps on its own. A real hyphen here would break
+    // as "Hi-" over "Res".
     label: "Hi Res",
     help: "Can carry audio above 48kHz or above 16 bits.",
     href: "/player-support/#audio-quality",
@@ -60,13 +67,13 @@ export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
   },
   {
     id: "syncCorrection",
-    label: "Sync Correction",
+    label: "Sync Cor\u00ADrection",
     help: "A per-player delay can be applied to pull a player that runs ahead of or behind the rest of its group back into line.",
     href: "/settings/individual-player/#output-protocols",
   },
   {
     id: "crossfade",
-    label: "Crossfade",
+    label: "Cross\u00ADfade",
     help: "One track can be faded into the next.",
     href: "/faq/tech-info/#track-queueing",
   },

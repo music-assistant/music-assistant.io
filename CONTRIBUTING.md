@@ -241,6 +241,11 @@ missed. Keep the label short. The table only clears the content column because t
 small enough not to set the column widths themselves, and a long label brings back the sideways
 scrolling.
 
+A heading that is one long word is the worst case, because it cannot wrap and so sets its column's
+width on its own. Put a `­` soft hyphen at a sensible break point in any word longer than
+about eight letters, as `Cross­fade` and `Sync Cor­rection` do. It is invisible while
+the column has room for the whole word, and becomes a hyphen and a line break when it does not.
+
 ## Adding a plugin, metadata provider or audio analysis provider
 
 These do not follow a fixed structure, so there is no template to match and nothing to register
