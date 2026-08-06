@@ -12,7 +12,7 @@ Once set up, you can say things like «Alice, pause in the kitchen» or «Alice,
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
 
-> [!WARNING]
+> [!NOTE]
 > **Alice cannot pick a song for you**
 >
 > Yandex does not let outside devices be asked for a particular song or album, so «Alice, play music» only resumes whatever is already queued in Music Assistant.
