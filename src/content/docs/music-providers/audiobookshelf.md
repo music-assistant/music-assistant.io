@@ -77,13 +77,10 @@ This source points Music Assistant at that server so the same collection is avai
 
 - The Audiobook search function supports searching for Authors and Narrators
 - Progress is synced both ways and obtained just ahead of playing
-- Event driven updates of podcast/ audiobook metadata in **known** libraries:
-    - A change is immediately reflected to the MA database if MA is running
-    - Newly added and just deleted items are immediately reflected as well
-    - BUT: if MA was down while changes in the ABS database occured, those will only be synced if a normal provider sync is triggered
+- Changes you make in Audiobookshelf show up in Music Assistant straight away, including anything you add or delete. If Music Assistant was switched off at the time, run a sync to pick those changes up
 - Single and multi-file audiobooks are supported
 - Supports recommendations on the [Discover view](/ui/#view---discover)
-- Playlist creation and editing are supported only when Audiobookshelf contains a single audiobook library and a single podcast library. This limitation exists because Music Assistant uses a single-library model, whereas Audiobookshelf supports multiple libraries, making library mapping ambiguous
+- Playlists can only be created and edited if Audiobookshelf has just one audiobook library and one podcast library. With more than one, Music Assistant has no way of knowing which library a new playlist belongs in
 
 ## Configuration
 
@@ -97,12 +94,12 @@ The following is needed to setup this provider:
 > [!NOTE]
 > The user must be of type user, admin or root. Guest users are neither tested nor supported
 
-- If <a href="https://www.audiobookshelf.org/guides/oidc_authentication/" target="_blank" rel="noopener noreferrer">OIDC</a> is configured:
-    - Pre version 2.26, <b>Token instead of user/password.</b> Add the token in the specified field. This token can be obtained by an admin user for any user within the ABS settings -> users
-    - From version 2.26 audiobookshelf uses the JWT token system internally. It is possible to create permanent API keys for an external application. Please follow the audiobookshelf docs at https://www.audiobookshelf.org/guides/api-keys/ to create such an API key
+- If <a href="https://www.audiobookshelf.org/guides/oidc_authentication/" target="_blank" rel="noopener noreferrer">OIDC</a> is configured, use a token instead of a username and password:
+    - On Audiobookshelf 2.26 or newer, create an API key by following the <a href="https://www.audiobookshelf.org/guides/api-keys/" target="_blank" rel="noopener noreferrer">Audiobookshelf guide</a>, and put that in the token field
+    - On older versions, an admin can get a token for any user from the Audiobookshelf settings under Users
 
 > [!NOTE]
-> Should you insert an old legacy token, your provider will not work anymore once these are removed from ABS.
+> Do not use one of the older tokens if you are on 2.26 or newer. They still work for now, but Audiobookshelf will drop them eventually and this source will stop working when it does.
 
 ### Multi-user environment
 
@@ -117,11 +114,11 @@ user please refer to [user management](/settings/user-management/#filter-progres
 
 ## Known Issues / Notes
 
-- Multi-file Audiobooks: The UI will show PCM as the source file format (as that is what is used internally) instead of the actual file format of the audiobook
+- For audiobooks made up of several files, Music Assistant shows the format as PCM rather than the format the files are actually in. The audio itself is unaffected
 - Tested currently against ABS >= 2.19.0
 - In the first instance of any problems ensure the server is running the <a href="https://github.com/advplyr/audiobookshelf/releases" target="_blank" rel="noopener noreferrer">latest version of the audiobookshelf software</a>
 
 ## Not Yet Supported
 
-- Edit provider feature is only supported for playlists, and only with the above restrictions.
-- Creation/deletion of a new library (i.e. not media items in a known library) is not reflected in an event driven way. Instead, use a normal sync
+- Editing from within Music Assistant works for playlists only, and only under the restriction described above
+- Adding or removing a whole library in Audiobookshelf does not show up on its own. Run a sync afterwards and it will appear. Changes to the contents of a library you already have are picked up straight away

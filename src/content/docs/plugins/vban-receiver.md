@@ -5,46 +5,46 @@ description: Features and Notes for the VBAN Receiver Plugin
 
 # VBAN Receiver <img src="/assets/icons/vban-icon.svg" alt="Preview image" style="width: 126px; float: right;"  loading="lazy" />
 
-The VBAN Receiver plugin gives Music Assistant a network-based auxiliary input - audio playing on another device can be sent into MA and treated as a standard streaming source. Typical use cases include transmitting system audio, audio from individual applications, or audio captured from soundcard inputs such as microphones or line-in devices on a remote machine. Contributed and maintained by <a href="https://github.com/sprocket-9" target="_blank" rel="noopener noreferrer">sprocket-9</a>
+This plugin lets another computer on your network send its audio to Music Assistant, which then plays it on any of your speakers. It behaves like an aux input: whatever the other machine is playing turns up in Music Assistant as something you can choose to listen to. Contributed and maintained by <a href="https://github.com/sprocket-9" target="_blank" rel="noopener noreferrer">sprocket-9</a>
 
-VBAN itself is an audio-over-IP protocol from <a href="https://vb-audio.com/Voicemeeter/vban.htm" target="_blank" rel="noopener noreferrer">VB-Audio</a> that uses UDP to transmit high-quality, native PCM audio over a local network. See the [VBAN Senders section below](#vban-senders) for examples of compatible sender implementations.
+That can be everything coming out of the other computer, the sound from one particular application, or something plugged into it such as a microphone or a turntable on a line-in.
+
+VBAN is the method used to carry the audio across the network. It comes from <a href="https://vb-audio.com/Voicemeeter/vban.htm" target="_blank" rel="noopener noreferrer">VB-Audio</a> and sends the sound uncompressed, so nothing is lost on the way. The sending computer needs software that can speak it — see [VBAN Senders](#vban-senders) below for the usual choices.
 
 ## Features
 
-- Ingest audio from any VBAN sender on the network as a standard MA streaming source
-- Play system audio, individual applications, microphones or line-in inputs from a remote machine to any MA player
-- Multiple instances can be added, one per incoming stream
+- Take in audio from any VBAN sender on your network and play it like any other source
+- Send everything from another computer, or just one application, a microphone or a line-in
+- Add the plugin more than once, one for each incoming feed
 
 ## Configuration
 
-The plugin is multi-instance, so ensure each instance of the plugin is listening on its own unique UDP port and configured to match the stream parameters as set by the VBAN Sender.
+Most of these settings have to match what you set on the sending computer, or no sound will come through. Fill in the sender's side first, then copy the same values here.
+
+If you add the plugin more than once, give each one its own port number.
 
 ### Settings
 
-The VBAN Receiver plugin provides several configuration options that define how it connects to and receives audio from a remote VBAN sender. These settings ensure proper communication, format compatibility, and reliable playback performance.
-
-The available settings are:
-
-- <b>Receiver: UDP Port.</b> Defines the UDP port that the VBAN receiver listens on for incoming connections. Ensure that the server is reachable at the specified IP address and UDP port by remote VBAN senders
-- <b>Sender: VBAN Stream Name.</b> Specifies the VBAN stream name to expect from the remote VBAN sender. This value must match the session name configured on the sender; otherwise, audio streaming will fail. The name is limited to a maximum of 16 ASCII characters
-- <b>Sender: VBAN Sender hostname/IP address.</b> Sets the hostname or IP address of the remote VBAN sender device
-- <b>PCM audio format.</b> Defines the VBAN PCM audio format expected from the remote sender. This must exactly match the format configured on the sender to ensure successful audio streaming
-- <b>PCM sample rate.</b> Sets the VBAN PCM sample rate expected from the sender. This must match the sender’s configuration to maintain proper synchronization and playback
-- <b>Channels.</b> Specifies the number of audio channels to be received (i.e. 1 or 2)
+- <b>Receiver: UDP Port.</b> The port Music Assistant listens on. The sending computer needs to be able to reach your Music Assistant server on this port
+- <b>Sender: VBAN Stream Name.</b> The name given to the feed on the sending computer. It has to match exactly or nothing will come through. Up to 16 characters, letters and numbers only
+- <b>Sender: VBAN Sender hostname/IP address.</b> The address of the computer sending the audio
+- <b>PCM audio format.</b> Match this to the sending computer
+- <b>PCM sample rate.</b> Match this to the sending computer
+- <b>Channels.</b> `1` for mono or `2` for stereo
 
 In the ADVANCED section:
 
-- <b>Receiver: Bind to IP/interface.</b> Determines which network interface or IP address the VBAN receiver should bind to. Use `0.0.0.0` to listen on all available interfaces (default). This is an advanced option and typically does not require adjustment in standard setups
-- <b>Receiver: VBAN queue strategy.</b> Configures the behavior when the receiver’s internal packet queue becomes full. This setting defines how packet overflow is handled during high-load conditions. The options are `Clear entire queue`, `Clear the oldest half of the queue` and `Remove single oldest queue entry`
-- <b>Receiver: VBAN packets queue size.</b> Defines the maximum number of packets that can be queued before processing. This setting may be increased on systems with limited processing power but generally should not require modification
+- <b>Receiver: Bind to IP/interface.</b> Which of your server's network connections to listen on. The default `0.0.0.0` means all of them, which is almost always what you want
+- <b>Receiver: VBAN queue strategy.</b> What to do when audio arrives faster than it can be dealt with. The options are `Clear entire queue`, `Clear the oldest half of the queue` and `Remove single oldest queue entry`
+- <b>Receiver: VBAN packets queue size.</b> How much audio can wait to be dealt with. Raising it may help on a slower server, but most people never need to touch it
 
 ## Known Issues / Notes
 
 - To listen to the plugin audio, navigate to the desired player’s NOW PLAYING view and then in the menu in the top right, select Source, and choose the desired VBAN Receiver
-- Although VBAN is designed for real-time audio transmission, this plugin’s primary objective is to route remote system audio into MA rather than to achieve real-time playback. The plugin functions as an intermediary, forwarding incoming packets from the VBAN Sender directly to MA for processing as they are received. Since MA is optimized to process audio from plugins with minimal delay, overall latency should remain low. However, the audio buffering mechanisms employed by the various Players supported by MA also contribute to the total delay, resulting in a slight but unavoidable latency in the final audio output.
-- The plugin transmits audio using connectionless UDP packets, making network quality a significant factor in performance. Factors such as the use of wired versus wireless connections, packet loss, network latency, and jitter can all affect audio reliability. Because UDP does not support retransmission of lost packets, degraded network conditions may cause interruptions or artifacts in playback.
-- Performance may also be impacted if the VBAN Sender device operates under limited processing power or high system load, as this can delay packet transmission and lead to choppy or inconsistent audio.
-- This plugin exclusively supports the VBAN AUDIO subprotocol type and does not accommodate any other VBAN subprotocols.
+- Expect a small delay between the sound leaving the other computer and coming out of your speakers. Most of it comes from the player at the end rather than from this plugin, so how much you get depends on which speakers you are using. This is not meant for anything where the sound has to line up with a picture
+- Audio sent this way is not resent if any of it goes missing on the way, so the quality of your network matters. A wired connection is far more reliable than wi-fi. On a congested or weak network you may hear dropouts or crackling
+- A sending computer that is slow or busy can also cause the sound to break up
+- Only the audio part of VBAN is supported, not its other functions
 
 ## VBAN Senders
 

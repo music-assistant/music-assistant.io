@@ -10,14 +10,12 @@ Yandex Music is the streaming service of Yandex, the Russian internet company. I
 
 Connecting your account puts your Yandex Music library, the wider catalogue and My Wave itself inside Music Assistant.
 
-This source is built on top of the [yandex-music-api](https://github.com/MarshalX/yandex-music-api) library.
-
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
 
-> [!WARNING]
-> A Yandex Music Plus subscription is required for full functional of source and lossless (FLAC) quality.
-> Without a subscription, the source's's full-fledged operation is not guaranteed.
+> [!NOTE]
+> A Yandex Music Plus subscription is required for lossless (FLAC) quality and for everything here to work.
+> Without one, some of what is described below will be unavailable.
 
 > [!NOTE]
 > Full source documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-music](https://trudenboy.github.io/ma-provider-yandex-music/)**
@@ -47,7 +45,7 @@ This source is built on top of the [yandex-music-api](https://github.com/Marshal
 - Browse is available to explore the Yandex Music catalogue
 - Lyrics are displayed when available (synced line-by-line when provided by the service, otherwise plain text)
 - Personalized recommendations (My Wave, Made for You, Chart, New Releases and more) appear in the Recommendations section on the Home screen
-- **My Wave** personalised radio with Yandex's long-lived rotor session (signals like/dislike, skips and full plays back to the recommendation algorithm)
+- **My Wave** personalised radio. Likes, dislikes, skips and tracks you hear all the way through are sent back to Yandex, so the wave keeps learning from what you do in Music Assistant
 - **Wave Modes** — 11 one-click presets for My Wave (Discover / Favorites / Popular, Calm / Active / Fun / Sad, Russian / Non-Russian / Without Words)
 - **My Presets** — save your own named combinations of diversity, mood and language, re-launch them from Browse without fiddling with settings
 - Similar tracks are available from the track context menu (used by Endless Mix); when a wave track plays, Endless Mix continues the same Yandex-curated session instead of branching into an unrelated similar-tracks stream
@@ -57,40 +55,41 @@ This source is built on top of the [yandex-music-api](https://github.com/Marshal
 
 ## Configuration
 
-The source supports three authentication methods. Device Flow is the recommended path — it's non-interactive, works on headless setups, and produces refreshable credentials.
+There are three ways to sign in. The first is the easiest and keeps working on its own, so use that one unless it fails.
 
-### Option 1: Device Flow (recommended)
+### Option 1: Sign in with a code (recommended)
 
 1. In Music Assistant, add the Yandex Music source and click **Login with device code**
-2. A short verification URL and user code appear — open the URL on any device (phone, another computer) and enter the code
+2. A short web address and a code appear. Open that address on any device, such as your phone, and type in the code
 3. Approve the request in your Yandex account
-4. Music Assistant receives the tokens automatically and finishes setup. Session tokens auto-refresh — no periodic re-login required.
+4. Music Assistant finishes the setup on its own. It will stay signed in, so there is nothing to renew later
 
 ### Option 2: QR Code
 
 1. In Music Assistant, add the Yandex Music source and click **Login with QR code**
-2. Scan the QR with the Yandex app on your phone (signed into the account you want)
-3. Approve in the app — Music Assistant picks up the credentials
+2. Scan the code with the Yandex app on your phone, signed in to the account you want to use
+3. Approve it in the app and Music Assistant does the rest
 
-### Option 3: Manual OAuth Token (advanced)
+### Option 3: Paste a token by hand (advanced)
 
-For headless setups where neither device flow nor QR works:
+Only needed if neither of the above works:
 
-1. Open your browser and navigate to [Yandex OAuth](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d)
-2. Log in with your Yandex account if prompted
-3. After authorization, you will be redirected to a URL containing `access_token=YOUR_TOKEN`
-4. Copy the token value (the part after `access_token=` and before `&`)
-5. Paste this token into the Music Assistant Yandex Music source configuration (under advanced settings)
+1. Open [this Yandex sign-in link](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d) in your browser
+2. Sign in to your Yandex account if asked
+3. You will land on a page whose web address contains `access_token=` followed by a long run of characters
+4. Copy that run of characters — everything after `access_token=` and before the next `&`
+5. Paste it into the Yandex Music source in Music Assistant, under advanced settings
+
+Note that a token pasted this way will expire and have to be replaced by hand.
 
 ### Settings
 
 - **Audio quality**: Select preferred audio quality. Options: `Efficient (AAC ~64 kbps)`, `Balanced (AAC ~192 kbps)` (default), `High (MP3 320 kbps)`, `Lossless (FLAC)` (requires Yandex Music Plus subscription)
-- **Remember session**: keeps the refresh token so tokens renew automatically (on by default for Device Flow / QR)
+- **Remember session**: stays signed in and renews the connection on its own. On by default when you sign in with a code or a QR code
 - **My Wave custom presets**: advanced-settings builder for saving named wave combinations (name + up to three dropdowns). Saved entries surface under **Radio → My Presets** in Browse
 
 ## Known Issues / Notes
 
-- Manually-obtained OAuth tokens expire and need to be refreshed periodically; Device Flow / QR setups auto-refresh
-- Lossless FLAC quality requires an active Yandex Music Plus subscription; without it the source falls back to the highest available quality
-- Lossless FLAC streams are fetched in 4 MB windows to work around Yandex CDN per-connection limits, ensuring uninterrupted playback for tracks of any length
-- Tracks played through Music Assistant currently **do not** appear in the Yandex Listening History feed — that feed is only written from an active Ynison WebSocket session. If you need Yandex-side history, play through the native Yandex app (or the companion [Yandex Music Connect (Ynison)](https://music-assistant.io/plugins/yandex-ynison/) plugin)
+- A token pasted in by hand expires and has to be replaced. Signing in with a code or a QR code avoids this
+- Lossless FLAC requires an active Yandex Music Plus subscription. Without one, Yandex Music plays at the highest quality your account allows
+- Tracks played through Music Assistant do **not** show up in your Yandex listening history. If you want them to, play through the Yandex app itself, or add the [Yandex Music Connect (Ynison)](/plugins/yandex-ynison/) plugin

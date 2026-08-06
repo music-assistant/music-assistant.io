@@ -10,12 +10,10 @@ Zvuk is a Russian music streaming service with a large Russian language catalogu
 
 Connecting your account brings your Zvuk library and playlists into Music Assistant, and the catalogue can be searched from there.
 
-This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvuk-music) library.
-
 > [!CAUTION]
 > This is an **unofficial** implementation with no affiliation to [Zvuk](https://zvuk.com) or its owners.
 
-> [!WARNING]
+> [!NOTE]
 > A Zvuk Prime subscription is required for full functionality of this source and for lossless (FLAC) quality.
 > Without a subscription, this source's full-fledged operation is not guaranteed.
 
@@ -51,58 +49,20 @@ This source is built on top of the [zvuk-music](https://github.com/trudenboy/zvu
 
 ## Configuration
 
-Configuration requires obtaining an X-Auth-Token from Zvuk Music.
+Zvuk has no sign-in for outside apps, so a token has to be copied out of your browser.
 
-### Obtaining the Token
-
-The Zvuk Music source requires an authentication token (X-Auth-Token) from your Zvuk account.
-
-**Steps:**
-
-1. **Log in** to your Zvuk Music account at [zvuk.com](https://zvuk.com) using your web browser
-
-2. **Navigate** to the profile API endpoint: [https://zvuk.com/api/tiny/profile](https://zvuk.com/api/tiny/profile)
-
-   Your browser will display a JSON response containing your profile information and authentication token.
-
-3. **Locate the token** in the JSON response
-
-   The response will look similar to this:
-
-   ```json
-   {
-     "user": {
-       "id": 12345678,
-       "email": "your@email.com",
-       "token": "abc123def456ghi789jkl012mno345pqr678stu901vwx234yz",
-       ...
-     }
-   }
-   ```
-
-4. **Copy the token value**
-
-   - Find the line with `"token":` in the JSON
-   - Copy only the alphanumeric string between the quotes (not including the quotes)
-   - The token is typically a long string of random letters and numbers
-   - Example token: `abc123def456ghi789jkl012mno345pqr678stu901vwx234yz`
-
-5. **Paste the token** into Music Assistant
-
-   - Go to Music Assistant Settings → Music sources → Add a music source → Zvuk Music
-   - Paste the token into the "X-Auth-Token" field
-   - Save the configuration
+1. Sign in to your account at [zvuk.com](https://zvuk.com)
+2. In the same browser, open [zvuk.com/api/tiny/profile](https://zvuk.com/api/tiny/profile). A page of text about your account appears
+3. Find `"token":` in that text and copy the long run of letters and numbers between the quotation marks that follow it, leaving the quotation marks themselves out
+4. In Music Assistant, go to Settings → Music sources → Add a music source → Zvuk Music, paste it into the **X-Auth-Token** field and save
 
 > [!TIP]
-> **Browser Display Tips**
-> - **Chrome/Edge**: JSON will be formatted automatically for easy reading
-> - **Firefox**: JSON appears with syntax highlighting
-> - **Safari**: Enable Develop menu → Show Page Source if needed
-> - **Other browsers**: If the browser downloads a file, open it with a text editor
+> If your browser downloads a file rather than showing the text, open the file in any text editor and look for `"token":` in there.
 
 > [!WARNING]
-> **Token Security**
-> Keep your token private and do not share it. Anyone with your token can access your Zvuk Music account.
+> **Keep your token private**
+>
+> Anyone who has it can get into your Zvuk account, so do not share it or paste it anywhere when asking for help.
 
 ### Settings
 
@@ -112,13 +72,8 @@ The Zvuk Music source requires an authentication token (X-Auth-Token) from your 
 
 ## Known Issues / Notes
 
-### Authentication Issues
-
-- **Token expiration**: The token may expire and need to be refreshed periodically. If you encounter authentication errors, try obtaining a new token by following the steps above.
-- **Login required**: You must be logged in to zvuk.com before accessing the profile endpoint. If you see an error or empty response, make sure you're logged in to your account first.
-- **Invalid token format**: Ensure you copied the complete token value without any extra spaces, quotes, or line breaks.
-
-### Quality Issues
-
-- If lossless quality is unavailable (no subscription), this source will automatically fall back to the highest available quality (320 kbps)
+- The token expires after a while and has to be replaced. If Zvuk stops working, go through the steps above again to get a fresh one
+- If step 2 shows an error or an empty page, you are probably not signed in to zvuk.com. Sign in first, then try again
+- If the token is rejected, check you copied all of it and nothing else, with no stray spaces, quotation marks or line breaks
+- Without a subscription, lossless is unavailable and Zvuk plays at the highest quality your account allows (320 kbps)
 
