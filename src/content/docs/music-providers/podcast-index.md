@@ -37,7 +37,7 @@ This source lets you search and browse the index from Music Assistant and add an
 
 ## Configuration
 
-- You need to get an API key and secret from https://api.podcastindex.org/signup
+You need to get an API key and secret from https://api.podcastindex.org/signup
 
 ### Settings
 
