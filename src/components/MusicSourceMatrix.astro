@@ -853,31 +853,31 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
   }
 
   /* The colours the app itself uses for quality, so the badges here match what
-     people see in the player, at half strength: at full strength there are 26
-     orange chips in this column and they shout.
+     people see in the player, at 40%: at full strength there are 26 orange chips
+     in this column and they shout.
 
      The alpha is on the background alone rather than on the chip, so the text
-     is not faded with it. Half strength also makes every one of them a light
+     is not faded with it. Toning them down also makes every one of them a light
      colour, so they all take dark text — measured over both the plain and the
-     striped row, the worst of the eight is 7.47:1. */
+     striped row, the worst of the eight is 8.69:1. */
   .msum__tier {
     color: #17181c;
   }
 
   .msum__tier--hi-res {
-    background: rgb(0 255 255 / 50%);
+    background: rgb(0 255 255 / 40%);
   }
 
   .msum__tier--cd {
-    background: rgb(0 128 0 / 50%);
+    background: rgb(0 128 0 / 40%);
   }
 
   .msum__tier--lossy {
-    background: rgb(255 165 0 / 50%);
+    background: rgb(255 165 0 / 40%);
   }
 
   .msum__tier--varies {
-    background: rgb(128 128 128 / 50%);
+    background: rgb(128 128 128 / 40%);
   }
 
   /* The page's own wording, kept as it is written there. */
