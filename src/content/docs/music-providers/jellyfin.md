@@ -5,7 +5,7 @@ description: Documentation for using the Jellyfin music source
 
 # Jellyfin <img src="/assets/icons/jellyfin-logo.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for music servers which work to the Jellyfin definition. This component was contributed by <a href="https://github.com/lokiberra" target="_blank" rel="noopener noreferrer">lokiberra</a>.
+Music Assistant has support for Jellyfin servers. This component was contributed by <a href="https://github.com/lokiberra" target="_blank" rel="noopener noreferrer">lokiberra</a>.
 
 Jellyfin is a free, open source media server you run on your own hardware. It catalogues the music, films and other media you already have and streams them to apps on your devices, with nothing held on someone else's servers.
 
@@ -51,4 +51,4 @@ You will need to provide the following to Music Assistant:
 - Album types metadata
 
 ## Known Issues / Notes
-- This provider makes use of the <a href="https://github.com/jellyfin/jellyfin-apiclient-python" target="_blank" rel="noopener noreferrer">Jellyfin ApiClient</a> for communicating with the server. If something is failing to work properly in Music Assistant, try to use that library to interact with your server (can you ping it?, fetch artist and albums?, can you search?)
+- If something is not working, check first that the account you gave Music Assistant can reach your music through Jellyfin's own web interface. Problems there will show up here too
