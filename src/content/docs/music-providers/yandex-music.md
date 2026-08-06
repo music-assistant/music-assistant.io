@@ -13,7 +13,7 @@ Connecting your account puts your Yandex Music library, the wider catalogue and 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
 
-> [!WARNING]
+> [!NOTE]
 > A Yandex Music Plus subscription is required for lossless (FLAC) quality and for everything here to work.
 > Without one, some of what is described below will be unavailable.
 
