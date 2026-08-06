@@ -314,16 +314,10 @@ const rateLines = (rate: string | string[]) =>
     outline-offset: 2px;
   }
 
-  /* The type here is smaller than the rest of the page on purpose. Eleven
-     columns only clear the content column — 690px once the page shows its table
-     of contents — if the headings are small enough not to set the width
-     themselves.
-
-     The headings are what to leave alone. They set the width of the nine tick
-     columns, so a quarter of a rem on them costs more than the same on the body
-     text, which sits in columns already sized by something else. At the sizes
-     below the table needs 660px and has 30px in hand; taking the headings to
-     0.75rem spends all of it. */
+  /* Smaller than the rest of the page on purpose: eleven columns only clear the
+     690px content column if the headings stay small, since it is the headings
+     that size the nine tick columns. Body text costs far less. As set here the
+     table needs 669px. */
   .caps table {
     width: 100%;
     /* Separate rather than collapse: collapsed borders are painted by the cell
@@ -387,13 +381,9 @@ const rateLines = (rate: string | string[]) =>
     position: sticky;
     left: 0;
     z-index: 1;
-    /* The longest name, "Music Player Daemon (MPD)", needs 141px at this size to
-       fall on two lines rather than three, which would make its row half again
-       as tall as the others. 9.5rem is 152px, so it has 11px in hand for the
-       platforms whose system font renders wider than the one this was measured
-       in, and it is also the width at which "Bose SoundTouch" and "Home
-       Assistant" sit on one line. The table needs 669px at this width and the
-       content column is 690px, so there is no more to give. */
+    /* "Music Player Daemon (MPD)" needs 141px here to wrap onto two lines
+       rather than three. 9.5rem is 152px, leaving room for wider system fonts,
+       and is also where "Bose SoundTouch" fits on one line. */
     width: 9.5rem;
     min-width: 9.5rem;
     text-align: left;
@@ -463,10 +453,9 @@ const rateLines = (rate: string | string[]) =>
     height: 0.95rem;
   }
 
-  /* Read out but never shown: the "No" in an empty cell. A cross in every one
-     of these cells is noise across nine columns and twenty rows, and the tick
-     is what anyone is scanning for, but an empty cell tells a screen reader
-     nothing at all, so the word stays in the markup. */
+  /* The "No" in an empty cell: read out, never shown. A cross in every empty
+     cell is noise across nine columns, but a blank tells a screen reader
+     nothing. */
   .caps__sronly {
     position: absolute;
     width: 1px;
