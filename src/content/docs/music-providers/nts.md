@@ -28,7 +28,7 @@ This source adds the NTS streams to Music Assistant as radio stations.
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-|Maximum Stream Quality|AAC|
+|Maximum Stream Quality| AAC 256kbps |
 |Login Method|None|
 
 ### What's included
