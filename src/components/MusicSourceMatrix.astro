@@ -842,31 +842,47 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
 
   .msum__tier {
     display: inline-block;
-    padding: 0.05rem 0.35rem;
+    /* All four the same width, so the column reads as one row of badges rather
+       than four different-sized ones. Sized to the longest label, "Hi-Res". */
+    min-width: 4.5rem;
+    padding: 0.1rem 0.4rem;
     border-radius: 0.75rem;
     font-size: 0.875rem;
     font-weight: 600;
+    text-align: center;
     white-space: nowrap;
   }
 
-  /* The blue pair, not the accent pair. custom.css sets --sl-color-accent-high
-     to a light blue meant to sit on a dark background, and this site is light
-     only, so as text it came out at 1.53:1. These two are 9.32:1, and match how
-     the CD chip beside it uses the green pair. */
+  /* The colours the app itself uses for quality, so the badges here match what
+     people see in the player. Fixed values rather than theme tokens: they are
+     brand colours, and the site is light only.
+
+     The text colour follows the background rather than being white throughout,
+     because white only works on the dark green. Measured: dark on cyan is
+     14.15:1 and on orange 8.98:1, white on green is 5.14:1 — where white on
+     cyan would be 1.25:1, all but invisible.
+
+     Grey is the one compromise. The app's #808080 passes with neither colour
+     (white 3.95:1, dark 4.49:1, needing 4.5:1), so it is darkened by a shade
+     that white clears. */
   .msum__tier--hi-res {
-    background: var(--sl-color-blue-low);
-    color: var(--sl-color-blue-high);
+    background: #00ffff;
+    color: #17181c;
   }
 
   .msum__tier--cd {
-    background: var(--sl-color-green-low);
-    color: var(--sl-color-green-high);
+    background: #008000;
+    color: #ffffff;
   }
 
-  .msum__tier--lossy,
+  .msum__tier--lossy {
+    background: #ffa500;
+    color: #17181c;
+  }
+
   .msum__tier--varies {
-    background: var(--sl-color-gray-6);
-    color: var(--sl-color-gray-2);
+    background: #767676;
+    color: #ffffff;
   }
 
   /* The page's own wording, kept as it is written there. */
