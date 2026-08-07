@@ -66,7 +66,7 @@ Other plugins can offer engines too, and they appear in the same drop-downs alon
 
 ### If no engine is available
 
-A feature that needs an engine you do not have shows a greyed-out drop-down and a message telling you to set up a plugin that can provide one. AI Radio goes further and will not let you complete its setup at all until both an AI engine and a text-to-speech engine exist.
+A feature that needs an engine you do not have shows a greyed-out drop-down and a message telling you to set up a plugin that can provide one. Some features will not let you finish setting them up at all until the engine exists.
 
 If an engine you had chosen disappears — because the entity was removed or renamed in Home Assistant, for instance — Music Assistant reports it as missing rather than quietly switching you to a different one.
 
