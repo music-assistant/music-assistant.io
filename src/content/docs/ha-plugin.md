@@ -36,8 +36,8 @@ Each feature then picks the engine it wants from its own settings.
 
 ### What you need in Home Assistant
 
-- For an **AI engine**, an AI task entity. That means setting up a conversation or AI integration in Home Assistant, such as OpenAI Conversation, Google Generative AI, or a local conversation agent
-- For a **text-to-speech engine**, a text-to-speech entity. Test it in Home Assistant first and make sure it will speak a short message
+- For an **AI engine**, an <a href="https://www.home-assistant.io/integrations/ai_task/" target="_blank" rel="noopener noreferrer">AI Task</a> entity. Home Assistant does not provide these on its own — they come from an AI integration you add, such as <a href="https://www.home-assistant.io/integrations/openai_conversation/" target="_blank" rel="noopener noreferrer">OpenAI Conversation</a>. Check the Home Assistant page for whichever AI integration you prefer, as not all of them offer AI Task
+- For a **text-to-speech engine**, a <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">text-to-speech</a> entity. These also come from an integration you add, and Home Assistant lists the available ones on that page. Test yours there first and make sure it will speak a short message
 
 The engines only decide which Home Assistant entity gets called. The model, the voice, the language, the speaking speed and the audio quality are all set on the Home Assistant side.
 
