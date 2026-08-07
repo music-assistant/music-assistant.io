@@ -28,28 +28,26 @@ Once it is added, the only settings here are the three player control lists desc
 
 ## AI and text-to-speech engines
 
-Some Music Assistant features need to write text with AI, or to speak text out loud. [AI Radio](/plugins/ai-radio/) needs both, [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only.
+Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only.
 
-This plugin does not do either job itself. What it does is make everything Home Assistant can already do available to Music Assistant. Every AI task entity in Home Assistant becomes an **AI engine**, and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is selected here — the plugin simply offers them all.
+This plugin does neither job itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine** and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
 
-Each feature then picks the engine it wants from its own settings.
+Other plugins provide engines too. The [OpenAI Compatible plugin](/plugins/openai_compatible/) provides AI engines with no Home Assistant involved at all.
 
 ### What you need in Home Assistant
 
-- For an **AI engine**, an <a href="https://www.home-assistant.io/integrations/ai_task/" target="_blank" rel="noopener noreferrer">AI Task</a> entity. Home Assistant does not provide these on its own — they come from an AI integration you add, such as <a href="https://www.home-assistant.io/integrations/openai_conversation/" target="_blank" rel="noopener noreferrer">OpenAI Conversation</a>. Check the Home Assistant page for whichever AI integration you prefer, as not all of them offer AI Task
-- For a **text-to-speech engine**, a <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">text-to-speech</a> entity. These also come from an integration you add, and Home Assistant lists the available ones on that page. Test yours there first and make sure it will speak a short message
+- For an **AI engine**, an <a href="https://www.home-assistant.io/integrations/ai_task/" target="_blank" rel="noopener noreferrer">AI Task</a> entity. These come from an AI integration you add, such as <a href="https://www.home-assistant.io/integrations/openai_conversation/" target="_blank" rel="noopener noreferrer">OpenAI Conversation</a>. Not all AI integrations offer one, so check the page for whichever you prefer
+- For a **text-to-speech engine**, a <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">text-to-speech</a> entity. Home Assistant lists the integrations that provide these. Test yours there first and make sure it will speak a short message
 
-The engines only decide which Home Assistant entity gets called. The model, the voice, the language, the speaking speed and the audio quality are all set on the Home Assistant side.
+The engines only decide which Home Assistant entity gets called. The model, the voice, the language, the speaking speed and the audio quality are all set in Home Assistant.
 
 ### Choosing an engine for a feature
 
-Engines are offered in a drop-down labelled **AI engine** or **Text-to-speech engine** in each feature's own settings. Every option is named after the plugin it came from and then the entity, so you can tell two similarly named engines apart:
+Each feature has its own drop-down labelled **AI engine** or **Text-to-speech engine**. Options are named after the plugin and then the entity, so two similar engines can be told apart:
 
 ```text
 Home Assistant | Google Translate (tts.google_translate_en_com)
 ```
-
-Where to find the drop-down depends on the feature:
 
 | Feature | What it needs | Where to change it |
 |---|---|---|
@@ -58,17 +56,11 @@ Where to find the drop-down depends on the feature:
 | [Smart Playlists](/plugins/smart_playlist/) | AI | Provider settings, once **AI descriptions** is switched on |
 
 > [!TIP]
-> If you have only one AI engine and one text-to-speech engine, there is nothing to do. Each feature takes the only one available and remembers it. You only need to make a choice when there is more than one to choose from.
+> With only one engine of each kind there is nothing to do. A feature takes the only one available and remembers it. The picker matters when you have more than one.
 
-### Home Assistant is not the only source
+If a feature needs an engine you do not have, its drop-down is greyed out with a message telling you to set up a plugin that provides one. Some features will not finish setting up at all until it exists.
 
-Other plugins can offer engines too, and they appear in the same drop-downs alongside the Home Assistant ones. The [OpenAI Compatible plugin](/plugins/openai_compatible/) provides AI engines without Home Assistant being involved at all, using OpenAI, Groq, OpenRouter, Together, or a server you run yourself such as Ollama or LM Studio.
-
-### If no engine is available
-
-A feature that needs an engine you do not have shows a greyed-out drop-down and a message telling you to set up a plugin that can provide one. Some features will not let you finish setting them up at all until the engine exists.
-
-If an engine you had chosen disappears — because the entity was removed or renamed in Home Assistant, for instance — Music Assistant reports it as missing rather than quietly switching you to a different one.
+If an engine you chose later disappears, because the entity was removed or renamed in Home Assistant for example, Music Assistant reports it as missing rather than quietly switching to a different one.
 
 ## Linking Home Assistant entities to player controls
 

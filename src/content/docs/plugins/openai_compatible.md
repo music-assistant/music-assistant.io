@@ -9,7 +9,7 @@ Some Music Assistant features are powered by an AI model: **AI Radio**, the **Tr
 
 Those features used to need Home Assistant, because an AI task entity there was the only thing that could answer them. This plugin lets Music Assistant talk to an AI service directly, so they work without Home Assistant as well.
 
-Each model you pick here becomes an **AI engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Each feature then chooses which engine it wants from its own settings — see [choosing an engine for a feature](/ha-plugin/#choosing-an-engine-for-a-feature).
+Each model you pick here becomes an **AI engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Each feature then chooses which engine it wants from its own settings. See [choosing an engine for a feature](/ha-plugin/#choosing-an-engine-for-a-feature).
 
 It works with any service that speaks the OpenAI API, which is nearly all of them:
 

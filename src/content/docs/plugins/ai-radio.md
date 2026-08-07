@@ -28,7 +28,7 @@ AI Radio is currently in beta. The show editor, prompt presets, generated output
 
 - The **AI Radio** plugin must be enabled in **Settings → Plugins → Add a Plugin**.
 - At least one playlist with playable tracks.
-- An **AI engine**, to write what the host says, and a **text-to-speech engine**, to speak it. Both come from other plugins — see [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
+- An **AI engine**, to write what the host says, and a **text-to-speech engine**, to speak it. Both come from other plugins. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
 - For live playback, an enabled and available Music Assistant player.
 
 > [!IMPORTANT]
@@ -205,7 +205,7 @@ If **Clear Queue on Dynamic Start** is enabled, the selected queue is replaced. 
 
 ### Setup will not let me past the engines step
 
-AI Radio needs both an AI engine and a text-to-speech engine, and neither can be created from here. Set up a plugin that provides the missing one first — see [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines) — then add AI Radio again.
+AI Radio needs both an AI engine and a text-to-speech engine, and neither can be created from here. Set up a plugin that provides the missing one first, as described under [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines), then add AI Radio again.
 
 ### I cannot find the engine pickers in the plugin's settings
 
