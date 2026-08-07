@@ -7,7 +7,9 @@ description: Use OpenAI, Groq, OpenRouter, Together or a local AI server such as
 
 Some Music Assistant features are powered by an AI model: **AI Radio**, the **Trivia** quiz type, the AI answer suggestions in **Music Quiz**, and the AI-written descriptions for **Smart Playlists**.
 
-Until now those features needed Home Assistant, because its AI Task integration was the only thing that could answer them. This plugin lets Music Assistant talk to an AI service directly, so the features also work without Home Assistant.
+Those features used to need Home Assistant, because an AI task entity there was the only thing that could answer them. This plugin lets Music Assistant talk to an AI service directly, so they work without Home Assistant as well.
+
+Each model you pick here becomes an **AI engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Each feature then chooses which engine it wants from its own settings — see [choosing an engine for a feature](/ha-plugin/#choosing-an-engine-for-a-feature).
 
 It works with any service that speaks the OpenAI API, which is nearly all of them:
 
@@ -45,7 +47,7 @@ The plugin does not offer any models until you pick them. Open the plugin under 
 
 The list is read from your service. If your service does not publish a list of its models, the field lets you type the model names yourself.
 
-Each model you select shows up as its own choice wherever an AI engine can be picked, listed as `OpenAI Compatible | <model>`.
+Each model you select becomes its own AI engine, listed as `OpenAI Compatible | <model>` wherever an AI engine can be picked.
 
 ## Choosing a model
 

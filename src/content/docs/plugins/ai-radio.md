@@ -28,9 +28,12 @@ AI Radio is currently in beta. The show editor, prompt presets, generated output
 
 - The **AI Radio** plugin must be enabled in **Settings → Plugins → Add a Plugin**.
 - At least one playlist with playable tracks.
-- A configured provider that supports AI queries, either the [OpenAI Compatible plugin](/plugins/openai_compatible/) or the [Home Assistant plugin](/ha-plugin/) with LLM access.
-- A configured provider that supports TTS, such as the [Home Assistant plugin](/ha-plugin/) with a working text-to-speech service.
+- An **AI engine**, to write what the host says. This comes from either the [OpenAI Compatible plugin](/plugins/openai_compatible/) or the [Home Assistant plugin](/ha-plugin/) with an AI task entity set up in Home Assistant.
+- A **text-to-speech engine**, to turn that writing into speech. The [Home Assistant plugin](/ha-plugin/) provides one for every text-to-speech entity you have in Home Assistant.
 - For live playback, an enabled and available Music Assistant player.
+
+> [!IMPORTANT]
+> Both engines have to exist **before** you add AI Radio. Its setup will not let you continue without them, and will tell you to set up a plugin that provides the missing one first.
 
 :::note
 AI Radio generates new speech each time a show is started. The exact wording can vary even when the same show and playlist are used.
@@ -38,30 +41,25 @@ AI Radio generates new speech each time a show is started. The exact wording can
 
 ## Installation
 
-### Setting up AI and TTS with Home Assistant
+### Setting up the engines
 
-AI Radio does not contain its own LLM or TTS engine. It asks Music Assistant for providers that expose AI-query and text-to-speech features. The [Home Assistant plugin](/ha-plugin/) can supply both, as the bridge to Home Assistant's Assist/LLM and TTS services, and the steps below cover that setup.
+AI Radio writes nothing and speaks nothing by itself. It needs an **AI engine** to write the host's lines and a **text-to-speech engine** to say them, and both come from other plugins.
 
-If you would rather not go through Home Assistant for the AI half, the [OpenAI Compatible plugin](/plugins/openai_compatible/) provides the AI engine on its own, using OpenAI, Groq, OpenRouter, Together or a local server such as Ollama or LM Studio. You still need a text-to-speech provider for spoken shows.
+The [Home Assistant plugin](/ha-plugin/) can provide both, by passing through the AI task and text-to-speech entities you already have set up in Home Assistant. If you would rather keep the AI half out of Home Assistant, the [OpenAI Compatible plugin](/plugins/openai_compatible/) supplies AI engines on its own, using OpenAI, Groq, OpenRouter, Together or a server you run yourself such as Ollama or LM Studio. You will still need Home Assistant, or another plugin that provides it, for the speech.
 
-Before configuring AI Radio:
+Before adding AI Radio:
 
 1. Install the [Home Assistant integration](/integration/installation/) if your Music Assistant server is not already connected to Home Assistant.
-2. Add or verify the [Home Assistant plugin](/ha-plugin/) in Music Assistant.
-3. In Home Assistant, configure the LLM/conversation agent you want Music Assistant to use.
-4. In Home Assistant, configure a TTS service and test that it can speak a short message.
-5. In the Music Assistant Home Assistant plugin settings, select the **Text-to-Speech entity** and **AI Task entity** under **Features**.
-6. Return to Music Assistant and open AI Radio. If Music Assistant can see an AI-query provider and a TTS provider, the AI Radio page becomes usable.
-
-:::tip
-If AI Radio reports that an AI provider or TTS provider is missing, test the Home Assistant plugin first. AI Radio only sees capabilities that the plugin exposes to Music Assistant.
-:::
+2. Add or check the [Home Assistant plugin](/ha-plugin/) in Music Assistant.
+3. In Home Assistant, set up the conversation or AI integration you want to use, so that you have an AI task entity. Skip this if you are using the OpenAI Compatible plugin instead.
+4. In Home Assistant, set up a text-to-speech entity and check that it will speak a short message.
 
 ### Configure the Plugin
 
 1. Go to **Settings → Plugins → Add a Plugin**.
 2. Add **AI Radio**.
-3. Configure the optional plugin settings:
+3. Setup opens at a step called **Choose the AI Radio engines**. Pick the AI engine that will write the host's lines and the text-to-speech engine that will voice them. Both are required, and setup cannot finish without them.
+4. Configure the optional plugin settings:
 
 | Setting | Description |
 |---|---|
@@ -70,6 +68,16 @@ If AI Radio reports that an AI provider or TTS provider is missing, test the Hom
 | **Weather country** | Country used together with the city for weather lookup. |
 
 Weather is optional. Shows without weather segments do not need a weather location.
+
+### Changing the AI or text-to-speech engine later
+
+:::caution[The engine pickers are not in AI Radio's settings]
+AI Radio keeps its two engine choices with its setup, not with its ordinary settings. Opening **Configure** on the plugin will show you the timezone and weather options and nothing else — the **AI engine** and **Text-to-speech engine** drop-downs are not there, and no amount of looking will find them.
+
+To change either one, choose **Reconfigure** from the AI Radio provider's menu. That reopens the **Choose the AI Radio engines** step with your current selections already filled in, so you can change one, leave the other alone, and save. Nothing else about the plugin is touched, and your shows are left as they are.
+:::
+
+This applies to AI Radio only. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) keep their AI engine in normal settings, where you can change it in place without reconfiguring anything.
 
 ## Creating a show
 
@@ -211,13 +219,21 @@ If **Clear Queue on Dynamic Start** is enabled, the selected queue is replaced. 
 
 ## Troubleshooting
 
-### AI Radio says an AI provider is needed
+### Setup will not let me past the engines step
 
-Configure a plugin that supports AI queries. The [Home Assistant plugin](/ha-plugin/) can provide this when it has access to an LLM/conversation service.
+AI Radio needs both an AI engine and a text-to-speech engine, and neither can be created from here. Set up a plugin that provides the missing one first — see [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines) — then add AI Radio again.
+
+### I cannot find the engine pickers in the plugin's settings
+
+They are not there. Use **Reconfigure** on the AI Radio provider's menu instead, as described under [changing the AI or text-to-speech engine later](#changing-the-ai-or-text-to-speech-engine-later).
+
+### AI Radio says an AI or text-to-speech engine is not available
+
+The engine it was using has gone. This usually means the entity behind it was removed or renamed in Home Assistant, or the plugin providing it is no longer loaded. Music Assistant will not quietly move you to a different engine, so put the original back or choose another one through **Reconfigure**.
 
 ### No speech is generated
 
-Check that a TTS-capable provider is configured and working. AI Radio needs both AI text generation and TTS synthesis. With Home Assistant, test the TTS service there first, then verify that the [Home Assistant plugin](/ha-plugin/) is connected in Music Assistant.
+Check the text-to-speech engine works at its source. With Home Assistant, test the entity there first, then check that the [Home Assistant plugin](/ha-plugin/) is still connected in Music Assistant.
 
 ### Live playback will not start
 

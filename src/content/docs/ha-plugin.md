@@ -13,7 +13,7 @@ If you are not sure how this fits with the Home Assistant integration, see [how 
 ## Features
 
 - Allows HA entities to be linked to power, mute or volume controls of any player available in MA. This can be useful if the player doesn't support the feature natively or in advanced use cases
-- Exposes supported Home Assistant AI-query and text-to-speech capabilities to Music Assistant plugins that need them
+- Makes the AI and text-to-speech entities you already have in Home Assistant available to Music Assistant features that need them
 - Is a prerequisite for the [Home Assistant Media Players](/player-support/home-assistant/) provider, which is what allows HA media players to be players in the MA User Interface
  
 ## Configuration
@@ -24,20 +24,63 @@ Before the Plugin can be added the HA Integration must be [installed](/integrati
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 
-## AI and text-to-speech features
+Once it is added, the only settings here are the three player control lists described under [Linking Home Assistant entities to player controls](#linking-home-assistant-entities-to-player-controls).
 
-Some Music Assistant plugins, such as [AI Radio](/plugins/ai-radio/), use the Home Assistant plugin as a bridge to Home Assistant's AI/conversation and text-to-speech services.
+## AI and text-to-speech engines
 
-To use these features:
+Some Music Assistant features need to write text with AI, or to speak text out loud. [AI Radio](/plugins/ai-radio/) needs both, [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only.
 
-1. Configure an LLM/conversation integration in Home Assistant. Examples include OpenAI Conversation, Google Generative AI, or a local conversation agent.
-2. Configure a text-to-speech entity in Home Assistant and test that it can speak a short message.
-3. In Music Assistant, open the Home Assistant plugin settings.
-4. Under **Features**, select the Home Assistant **Text-to-Speech entity** Music Assistant should use.
-5. Under **Features**, select the Home Assistant **AI Task entity** Music Assistant should use for AI queries.
-6. Open the Music Assistant plugin that needs AI or TTS and retry its setup.
+This plugin does not do either job itself. What it does is make everything Home Assistant can already do available to Music Assistant. Every AI task entity in Home Assistant becomes an **AI engine**, and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is selected here — the plugin simply offers them all.
 
-The exact LLM model, TTS voice, language, speed, and audio quality are controlled by the configured Home Assistant services. The Home Assistant plugin only selects which Home Assistant `tts` and `ai_task` entities Music Assistant should call.
+Each feature then picks the engine it wants from its own settings.
+
+> [!NOTE]
+> If you are looking for the **Text-to-Speech entity** and **AI Task entity** boxes that used to be in this plugin's settings, they have gone. Each feature now chooses for itself. See [Choosing an engine for a feature](#choosing-an-engine-for-a-feature) below.
+
+### What you need in Home Assistant
+
+- For an **AI engine**, an AI task entity. That means setting up a conversation or AI integration in Home Assistant, such as OpenAI Conversation, Google Generative AI, or a local conversation agent
+- For a **text-to-speech engine**, a text-to-speech entity. Test it in Home Assistant first and make sure it will speak a short message
+
+The engines only decide which Home Assistant entity gets called. The model, the voice, the language, the speaking speed and the audio quality are all set on the Home Assistant side.
+
+### Choosing an engine for a feature
+
+Engines are offered in a drop-down labelled **AI engine** or **Text-to-speech engine** in each feature's own settings. Every option is named after the plugin it came from and then the entity, so you can tell two similarly named engines apart:
+
+```text
+Home Assistant | Google Translate (tts.google_translate_en_com)
+```
+
+Where to find the drop-down depends on the feature:
+
+| Feature | What it needs | Where to change it |
+|---|---|---|
+| [AI Radio](/plugins/ai-radio/) | AI **and** text-to-speech | **Reconfigure** on the provider's menu, not its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later) |
+| [Music Quiz](/plugins/music-quiz/) | AI | Provider settings, under **Features** |
+| [Smart Playlists](/plugins/smart_playlist/) | AI | Provider settings, once **AI descriptions** is switched on |
+
+> [!TIP]
+> If you have only one AI engine and one text-to-speech engine, there is nothing to do. Each feature takes the only one available and remembers it. You only need to make a choice when there is more than one to choose from.
+
+### Home Assistant is not the only source
+
+Other plugins can offer engines too, and they appear in the same drop-downs alongside the Home Assistant ones. The [OpenAI Compatible plugin](/plugins/openai_compatible/) provides AI engines without Home Assistant being involved at all, using OpenAI, Groq, OpenRouter, Together, or a server you run yourself such as Ollama or LM Studio.
+
+### If no engine is available
+
+A feature that needs an engine you do not have shows a greyed-out drop-down and a message telling you to set up a plugin that can provide one. AI Radio goes further and will not let you complete its setup at all until both an AI engine and a text-to-speech engine exist.
+
+If an engine you had chosen disappears — because the entity was removed or renamed in Home Assistant, for instance — Music Assistant reports it as missing rather than quietly switching you to a different one.
+
+### Upgrading from an earlier version
+
+If you had a **Text-to-Speech entity** and an **AI Task entity** selected in this plugin before upgrading, Music Assistant moves those choices across for you. The AI task entity becomes the AI engine for AI Radio, Music Quiz and Smart Playlists, and the text-to-speech entity becomes AI Radio's text-to-speech engine. Everything should carry on working with nothing to do.
+
+> [!WARNING]
+> **Unless you have more than one Home Assistant plugin configured.** In that case Music Assistant cannot tell which one's settings should win, so it does not guess — it moves nothing across and logs a warning instead. You will need to pick the engines yourself in each feature, and for AI Radio that means going through **Reconfigure** as described [on its page](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later).
+
+This only applies to features that were already installed at the time of the upgrade. Anything you add afterwards picks up the first available engine on its own.
 
 ## Linking Home Assistant entities to player controls
 
