@@ -15,7 +15,7 @@ MA includes a built-in Snapserver although an external server can also be used. 
 ## Features
 
 - Synchronized playback across all Snapcast devices
-- Lossless audio quality. The default is 48 kHz / 16-bit. Higher sample rates and 24-bit are available only when Music Assistant is connected to a compatible external Snapserver (see Settings)
+- Lossless audio quality. The default is 48 kHz / 16-bit. Higher sample rates and 24-bit are available only when Music Assistant is connected to a [compatible external Snapserver](https://github.com/rwjack/snapcast/tree/feature/tcp-packed-s24le).
 
 ## Configuration
 
