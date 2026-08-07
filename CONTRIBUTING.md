@@ -125,13 +125,13 @@ Four things, and the build will tell you if you miss the last one.
 
 ### Country categories
 
-**These are about the language people will hear, not where the company is registered.** Tag a
-source with a country when most of what it carries is in that country's language. Deezer and
-Qobuz are both French companies, but their catalogues are international, so neither is tagged
-France. Sveriges Radio broadcasts in Swedish, so it is tagged Sweden.
+**Tag a country only when the source's content is predominantly or only from that country.** Not
+where the company is registered, and not where it sells. Deezer and Qobuz are French companies
+with international catalogues, so neither is tagged France. Sveriges Radio broadcasts in Swedish,
+so it is tagged Sweden.
 
-One source can carry more than one language. Storytel is tagged both Sweden and Denmark, because
-it is sold in Denmark as Mofibo with a full Danish catalogue.
+This is why the large international services carry no country tag at all. A source can be tagged
+with more than one country where that genuinely holds.
 
 **If the language you need is not on the list, add it.** Three small pieces, in
 `src/data/music-sources.ts` unless stated:
