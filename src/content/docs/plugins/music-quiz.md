@@ -164,7 +164,7 @@ The Music Quiz provider settings, under **Features**, contain the following:
 
 These two are separate. Music Trivia always needs an AI engine, whether or not **Enhance the Experience with AI** is switched on, so the engine picker stays available either way.
 
-If you only have one AI engine, Music Quiz takes it and there is nothing to choose. The picker matters when you have several — for example an AI task entity through the [Home Assistant plugin](/ha-plugin/) alongside a model from the [OpenAI Compatible plugin](/plugins/openai_compatible/) — and want Music Quiz to use a particular one. Options are named `<plugin> | <entity>` so you can tell them apart. If you have none at all, the picker is greyed out with a note telling you to set up a plugin that provides one.
+Engines come from other plugins, and Music Quiz uses the only one available unless you pick a different one. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
 
 ## Game flow and host controls
 

@@ -136,9 +136,7 @@ After saving, open the smart playlist to view a current sample output based on y
 
 The Smart Playlists provider settings have an **AI descriptions** option. With it switched on, Music Assistant writes a short description for each smart playlist from the rules you gave it, so the playlist says what it holds without you having to write that yourself.
 
-This needs an **AI engine**, which comes from another plugin — either the [OpenAI Compatible plugin](/plugins/openai_compatible/) or the [Home Assistant plugin](/ha-plugin/) with an AI task entity set up in Home Assistant.
-
-Switching **AI descriptions** on reveals an **AI engine** picker directly beneath it. If you only have one AI engine it is used automatically and you can ignore the picker. If you have several, it decides which one writes the descriptions, and you can change it here at any time without reconfiguring anything. With no AI engine at all, the picker is greyed out and tells you to set up a plugin that provides one.
+This needs an **AI engine**, which comes from another plugin. Switching **AI descriptions** on reveals an **AI engine** picker directly beneath it, which you can change at any time. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
 
 ## Notes
 

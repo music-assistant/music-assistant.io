@@ -70,17 +70,6 @@ A feature that needs an engine you do not have shows a greyed-out drop-down and 
 
 If an engine you had chosen disappears — because the entity was removed or renamed in Home Assistant, for instance — Music Assistant reports it as missing rather than quietly switching you to a different one.
 
-### Coming from Music Assistant 2.9 or earlier
-
-Up to 2.9, this plugin had its own **Text-to-Speech entity** and **AI Task entity** boxes, and whatever you chose there was used by everything. From 2.10 those boxes are gone and each feature picks an engine for itself.
-
-If you had either of them set, Music Assistant carries your choice over when you upgrade. The AI task entity becomes the AI engine for AI Radio, Music Quiz and Smart Playlists, and the text-to-speech entity becomes AI Radio's text-to-speech engine. There should be nothing for you to do.
-
-> [!WARNING]
-> **Unless you have more than one Home Assistant plugin configured.** In that case Music Assistant cannot tell which one's settings should win, so it does not guess — it moves nothing across and logs a warning instead. You will need to pick the engines yourself in each feature, and for AI Radio that means going through **Reconfigure** as described [on its page](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later).
-
-This only applies to features that were already installed at the time of the upgrade. Anything you add afterwards picks up the first available engine on its own.
-
 ## Linking Home Assistant entities to player controls
 
 The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function. A power entity might wake an amplifier from standby when playback starts, or switch on the active speakers a player feeds into; a volume or mute entity might drive an amplifier that the player has no direct control over. There are three drop down lists which contain a filtered list of HA entities:

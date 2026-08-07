@@ -28,8 +28,7 @@ AI Radio is currently in beta. The show editor, prompt presets, generated output
 
 - The **AI Radio** plugin must be enabled in **Settings → Plugins → Add a Plugin**.
 - At least one playlist with playable tracks.
-- An **AI engine**, to write what the host says. This comes from either the [OpenAI Compatible plugin](/plugins/openai_compatible/) or the [Home Assistant plugin](/ha-plugin/) with an AI task entity set up in Home Assistant.
-- A **text-to-speech engine**, to turn that writing into speech. The [Home Assistant plugin](/ha-plugin/) provides one for every text-to-speech entity you have in Home Assistant.
+- An **AI engine**, to write what the host says, and a **text-to-speech engine**, to speak it. Both come from other plugins — see [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
 - For live playback, an enabled and available Music Assistant player.
 
 > [!IMPORTANT]
@@ -41,24 +40,11 @@ AI Radio generates new speech each time a show is started. The exact wording can
 
 ## Installation
 
-### Setting up the engines
-
-AI Radio writes nothing and speaks nothing by itself. It needs an **AI engine** to write the host's lines and a **text-to-speech engine** to say them, and both come from other plugins.
-
-The [Home Assistant plugin](/ha-plugin/) can provide both, by passing through the AI task and text-to-speech entities you already have set up in Home Assistant. If you would rather keep the AI half out of Home Assistant, the [OpenAI Compatible plugin](/plugins/openai_compatible/) supplies AI engines on its own, using OpenAI, Groq, OpenRouter, Together or a server you run yourself such as Ollama or LM Studio. You will still need Home Assistant, or another plugin that provides it, for the speech.
-
-Before adding AI Radio:
-
-1. Install the [Home Assistant integration](/integration/installation/) if your Music Assistant server is not already connected to Home Assistant.
-2. Add or check the [Home Assistant plugin](/ha-plugin/) in Music Assistant.
-3. In Home Assistant, set up the conversation or AI integration you want to use, so that you have an AI task entity. Skip this if you are using the OpenAI Compatible plugin instead.
-4. In Home Assistant, set up a text-to-speech entity and check that it will speak a short message.
-
 ### Configure the Plugin
 
 1. Go to **Settings → Plugins → Add a Plugin**.
 2. Add **AI Radio**.
-3. Setup opens at a step called **Choose the AI Radio engines**. Pick the AI engine that will write the host's lines and the text-to-speech engine that will voice them. Both are required, and setup cannot finish without them.
+3. Setup opens at a step called **Choose the AI Radio engines**. Pick the AI engine that will write the host's lines and the text-to-speech engine that will voice them.
 4. Configure the optional plugin settings:
 
 | Setting | Description |
@@ -72,12 +58,10 @@ Weather is optional. Shows without weather segments do not need a weather locati
 ### Changing the AI or text-to-speech engine later
 
 :::caution[The engine pickers are not in AI Radio's settings]
-AI Radio keeps its two engine choices with its setup, not with its ordinary settings. Opening **Configure** on the plugin will show you the timezone and weather options and nothing else — the **AI engine** and **Text-to-speech engine** drop-downs are not there, and no amount of looking will find them.
+AI Radio stores its two engine choices with its setup rather than its settings. **Configure** shows only the timezone and weather options above.
 
-To change either one, choose **Reconfigure** from the AI Radio provider's menu. That reopens the **Choose the AI Radio engines** step with your current selections already filled in, so you can change one, leave the other alone, and save. Nothing else about the plugin is touched, and your shows are left as they are.
+To change either engine, choose **Reconfigure** from the AI Radio provider's menu. This reopens the **Choose the AI Radio engines** step with your current selections filled in, so you can change one and leave the other. Nothing else is affected and your shows are unchanged.
 :::
-
-This applies to AI Radio only. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) keep their AI engine in normal settings, where you can change it in place without reconfiguring anything.
 
 ## Creating a show
 
