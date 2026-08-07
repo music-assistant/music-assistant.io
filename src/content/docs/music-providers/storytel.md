@@ -6,7 +6,7 @@ title: "Storytel"
 
 Music Assistant has support for <a href="https://www.storytel.com" target="_blank" rel="noopener noreferrer">Storytel</a>, which in some countries is sold as <a href="https://www.mofibo.com" target="_blank" rel="noopener noreferrer">Mofibo</a>. Contributed and maintained by <a href="https://github.com/jonasbp2011" target="_blank" rel="noopener noreferrer">Jonas Pedersen</a>
 
-Storytel is a Swedish subscription service for audiobooks and podcasts, and one of the largest of its kind. A monthly fee covers unlimited listening rather than buying titles one at a time, and the catalogue is strongest in the Nordic languages alongside the usual English titles.
+Storytel is a subscription service for audiobooks and podcasts, and one of the largest of its kind. A monthly fee covers unlimited listening rather than buying titles one at a time, and the catalogue is strongest in the Nordic languages alongside the usual English titles.
 
 Connecting your account puts your Storytel library inside Music Assistant, with the catalogue there to search. Where you got to in a book travels in both directions, so a title started in the Storytel app can be picked up again in Music Assistant, or the other way round.
 
@@ -33,7 +33,7 @@ Connecting your account puts your Storytel library inside Music Assistant, with 
 
 - Search is available for both audiobooks and podcasts.
 - Chapter navigation.
-- Listening progress is automatically synced back to Storytel through bookmarks.
+- Listening progress is automatically synced back to Storytel for continued listening in-app.
 - Library management is supported for adding and removing audiobooks and podcasts.
 
 ## Configuration
@@ -41,15 +41,17 @@ Connecting your account puts your Storytel library inside Music Assistant, with 
 To set up the Storytel provider, follow these steps:
 
 1. Navigate to `Settings`.
-2. Under Music Sources, click `Add a music source`, select `Storytel`, and fill in your `Username or email` and `Password`.
-3. Select the content languages you want to use for search and recommendations.
-4. Click `Save`.
+2. Under Music Sources, click `Add a music source`, select `Storytel`, and fill in your `Email` and `Password`.
+3. Click `Finish`.
+4. Click `Open settings` to configure additional settings for the Storytel provider.
 
 ### Settings
 
-In addition to `Username or email` and `Password`, there is also:
+In addition to the default options, the Storytel provider also has the following:
 
 - <b>Content Languages.</b> Select which languages to include in recommendations and search results. Multiple languages can be selected.
+
+- <b>Kids Mode.</b> Storytel provides a kids mode, which restricts the search results and recommendations to childrens books.
 
 ## Known Issues / Notes
 
