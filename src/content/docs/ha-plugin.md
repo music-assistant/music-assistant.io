@@ -34,9 +34,6 @@ This plugin does not do either job itself. What it does is make everything Home 
 
 Each feature then picks the engine it wants from its own settings.
 
-> [!NOTE]
-> If you are looking for the **Text-to-Speech entity** and **AI Task entity** boxes that used to be in this plugin's settings, they have gone. Each feature now chooses for itself. See [Choosing an engine for a feature](#choosing-an-engine-for-a-feature) below.
-
 ### What you need in Home Assistant
 
 - For an **AI engine**, an AI task entity. That means setting up a conversation or AI integration in Home Assistant, such as OpenAI Conversation, Google Generative AI, or a local conversation agent
