@@ -31,13 +31,10 @@ Connecting your account puts your Storytel library inside Music Assistant, with 
 
 ### Other
 
-- Storytel supports both audiobooks and podcasts from the user's library.
 - Search is available for both audiobooks and podcasts.
-- Personalized recommendations are supported.
 - Chapter navigation.
 - Listening progress is automatically synced back to Storytel through bookmarks.
 - Library management is supported for adding and removing audiobooks and podcasts.
-- The provider can be configured with one or more content languages to influence search and recommendations.
 
 ## Configuration
 
