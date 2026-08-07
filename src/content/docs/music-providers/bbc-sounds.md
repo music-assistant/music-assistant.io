@@ -19,11 +19,11 @@ This source brings all of that into Music Assistant. It works without an account
 | Media Types Supported | Tracks, Radio, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, AAC-LC(320kbps) |
+| Maximum Stream Quality | AAC-LC 320kbps |
 | Login Method | None or Password |
 
 ### Other

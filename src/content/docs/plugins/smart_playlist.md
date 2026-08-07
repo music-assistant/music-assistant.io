@@ -132,6 +132,12 @@ After saving, open the smart playlist to view a current sample output based on y
 
 ![Smart Playlist detail view](/assets/screenshots/smart_playlist/playlist_detail.png)
 
+## AI descriptions
+
+The Smart Playlists provider settings have an **AI descriptions** option. With it switched on, Music Assistant writes a short description for each smart playlist from the rules you gave it, so the playlist says what it holds without you having to write that yourself.
+
+This needs an **AI engine**, which comes from another plugin. Switching **AI descriptions** on reveals an **AI engine** picker directly beneath it, which you can change at any time. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
+
 ## Notes
 
 - Smart playlists only exist as long as the Smart Playlists plugin is installed. Removing the plugin also removes associated smart playlists from the MA library.

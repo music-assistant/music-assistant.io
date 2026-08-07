@@ -1,5 +1,7 @@
 ---
 title: "QQ 音乐"
+sidebar:
+  hidden: true
 ---
 
 # QQ 音乐 <img src="/assets/icons/qqmusic-icon.svg" alt="QQ Music icon" style="width: 70px; float: right;"  loading="lazy" />

@@ -10,10 +10,8 @@ Deezer is a French subscription streaming service with a catalogue of around 100
 
 Connecting your account puts your Deezer favourites and playlists alongside the rest of your music in Music Assistant, with the whole catalogue there to search. Podcasts and audiobooks come across as well, and your place in them is kept in step with Deezer's own apps.
 
-> [!TIP]
-> **Note**
->
-> - Because of Deezer's TOS only HiFi/Premium/Family accounts are supported
+> [!NOTE]
+> Deezer's terms of service mean only HiFi, Premium and Family accounts can be used here. Free accounts will not work.
 
 ## Features
 
@@ -24,11 +22,11 @@ Connecting your account puts your Deezer favourites and playlists alongside the 
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks, Radio |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     | 
-| Maximum Stream Quality | Lossless FLAC (44.1 kHz / 16 bit) |
+| Maximum Stream Quality | FLAC 44.1kHz 16 bit |
 | Login Method | Cookie (ARL) |
 
 ### Other
@@ -42,13 +40,13 @@ Connecting your account puts your Deezer favourites and playlists alongside the 
 - Podcast and audiobook progress (bookmark/resume) is synced both ways
 - Personal (user-uploaded) songs are available via the "My Uploads" playlist
 - Recommendations: Made For You, Explore (charts, new releases, editorial playlists), Recently Played, Music Together and dynamic Flow/mood/genre mixes
-- Pasting or searching a Deezer share URL (`deezer.com/{type}/{id}`) resolves the item directly
+- Paste a Deezer share link into the search box and it will take you straight to that album, track or playlist
 - Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
 - Logging of played tracks in Deezer
 
 ## Configuration
 
-Authentication with Deezer happens through an ARL cookie token. Unfortunately, Deezer does not officially support third party logins, so you will need to obtain your own ARL Token. Instructions were written for Chrome:
+Deezer has no sign-in for outside apps, so a value called an ARL token has to be copied out of your browser. These instructions are for Chrome:
 
 1. In the MA SETTINGS select MUSIC SOURCES, then ADD A MUSIC SOURCE and then DEEZER.
 2. Navigate in another browser tab to <a href="https://deezer.com/" target="_blank" rel="noopener noreferrer">https://deezer.com/</a> and log in.

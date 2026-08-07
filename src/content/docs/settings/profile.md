@@ -8,7 +8,7 @@ This page relates to the currently logged in user. User name, display name and p
 
 ## Active Sessions
 
-- A list of active sessions that have been logged in with this user are shown and can be logged out by using the bin icon
+A list of active sessions that have been logged in with this user are shown and can be logged out by using the bin icon
 
 ## Long-lived access tokens
 

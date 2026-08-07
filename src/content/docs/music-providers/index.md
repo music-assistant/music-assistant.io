@@ -1,5 +1,7 @@
 ---
 title: "Music Sources"
+sidebar:
+  label: Overview
 ---
 
 # Music Sources

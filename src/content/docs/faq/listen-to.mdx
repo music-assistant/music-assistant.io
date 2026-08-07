@@ -4,6 +4,7 @@ description: Find the Music Assistant music sources that provide what you want t
 ---
 
 import TilePage from '../../../components/TilePage.astro';
+import MusicSourceMatrix from '../../../components/MusicSourceMatrix.astro';
 import { MUSIC_SOURCES_PAGE } from '../../../data/music-sources';
 
 # I Want To Listen To
@@ -13,7 +14,8 @@ through the list one at a time, start from what you actually want to hear and se
 provide it.
 
 Pick a heading below to jump to the sources for it. Most sources appear more than once, because
-plenty of them do several jobs at the same time.
+plenty of them do several jobs at the same time. You can also compare all providers
+[side by side](#comparing-sources-side-by-side).
 
 <TilePage page={MUSIC_SOURCES_PAGE} />
 
@@ -27,4 +29,4 @@ Stream quality is shown as either [Hi-Res](/player-support/#audio-quality), <a h
 
 The most user friendly login method is a password. Next best is OAuth, where you log in on the service's own website and grant Music Assistant access to your account. The cookie method, where you copy a hidden value out of your browser, is the least desirable.
 
-[![music provider summary](/assets/music-provider-summary.png)](/assets/music-provider-summary.png)
+<MusicSourceMatrix />

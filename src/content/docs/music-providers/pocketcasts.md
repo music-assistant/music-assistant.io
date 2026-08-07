@@ -1,5 +1,5 @@
 ---
-title: "Pocket Casts"
+title: "Pocketcasts"
 ---
 
 # Pocket Casts <img src="/assets/icons/pocketcasts-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
@@ -19,11 +19,11 @@ Music Assistant becomes another of those devices, reading from and writing back 
 | Media Types Supported | Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Varies (podcast source) |
+| Maximum Stream Quality | Varies by feed |
 | Login Method | Email & Password |
 
 ### Other
@@ -36,7 +36,7 @@ Music Assistant becomes another of those devices, reading from and writing back 
 
 ## Configuration
 
-- A Pocket Casts email address and password must be provided in the configuration
+A Pocket Casts email address and password must be provided in the configuration
 
 > [!NOTE]
 > A free Pocket Casts account is sufficient; a paid subscription is not required. Authentication uses a bearer token that is valid for several months, after which re-authentication may be required.

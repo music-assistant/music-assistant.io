@@ -1,5 +1,5 @@
 ---
-title: MusicCast Player Provider
+title: "MusicCast"
 description: A Description of the MusicCast Player Provider
 ---
 

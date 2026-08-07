@@ -132,7 +132,7 @@ In any of the following views, Right click or long press on a track to get the f
 
 ![image](/assets/screenshots/UI-track-menu.png)
 
-The START RADIO option will only be seen if there is a provider that supports it. [Start Radio populates the queue with tracks based on the selected track](/usage/#radio-mode). The tracks are selected by the provider not MA. 
+The **View ... endless mix** option will only be seen if there is a provider that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the provider not MA. 
 ***************************************************************
 
 ## View - Discover
@@ -194,7 +194,7 @@ When an item is available from several providers, Music Assistant picks the high
 
 The creation of links within the MA library to other identical items in the MA library (within or across providers) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
 
-Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/filesystem/#tagging-files).
+Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/local-files/#tagging-files).
 
 The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
 
@@ -210,7 +210,7 @@ The ID shown against the streaming provider may be used in automations and scrip
 
 ## View - Radio
 
-The Radio view shows streaming radio stations that are available in the MA library (this is not the [Radio Mode](usage/#radio-mode) of the Player Queue). Stations can be added to the library in the following ways:
+The Radio view shows streaming radio stations that are available in the MA library. Stations can be added to the library in the following ways:
 
 * Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 

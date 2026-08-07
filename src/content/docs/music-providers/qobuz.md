@@ -19,11 +19,11 @@ Sign in and your Qobuz favourites appear in Music Assistant, along with the whol
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 
-| Maximum Stream Quality | Lossless FLAC (192 kHz, 24 bit) |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | Password |
 
 ### Other
@@ -35,7 +35,7 @@ Sign in and your Qobuz favourites appear in Music Assistant, along with the whol
 
 ## Configuration
 
-- In the configuration, you need to enter your Qobuz username and password
+In the configuration, you need to enter your Qobuz username and password
 
 ### Settings
 
@@ -43,7 +43,6 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 
 ## Known Issues / Notes
 
-- Radio Mode is not supported
 - Qobuz only fetches images for artists/albums that have been directly added to the library (eg not albums of artists) to prevent too many API calls
 
 ## Not yet supported

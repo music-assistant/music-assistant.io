@@ -1,5 +1,5 @@
 ---
-title: MPD Player Provider
+title: "Music Player Daemon (MPD)"
 description: A Description of the MPD Player Provider
 ---
 # MPD Player <img src="/assets/icons/mpd-icon.svg" alt="MPD icon" style="width: 70px; float: right;" loading="lazy" />
@@ -21,7 +21,7 @@ MPD is available for Linux, Windows, and macOS. See the <a href="https://www.mus
 
 ### MPD audio output configuration
 
-MA delivers audio by directing MPD to fetch a stream over HTTP. MPD must have an ALSA (or other local audio) output configured in `mpd.conf` to play that stream to hardware. A minimal example:
+Music Assistant sends the audio to MPD, but MPD still needs to know where to send it next. That means an output has to be configured in `mpd.conf`, usually ALSA. Without one, MPD will accept the music and play it nowhere. A minimal example:
 ```ini
 audio_output {
     type        "alsa"
@@ -44,7 +44,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/), t
 
 ## Known Issues / Notes
 
-- FLAC is not available as an output codec. MPD requires a seekable stream to probe the FLAC header, which is incompatible with MA's continuous HTTP stream
-- Flow mode is always enabled and cannot be disabled; this is required for MA to deliver audio to MPD via HTTP
-- Volume control requires a mixer to be configured in MPD. If no mixer is available, volume control will not be shown
-- MPD itself imposes no limit on audio quality — it will pass the stream to the hardware as-is. The effective quality ceiling is therefore determined by the output hardware and the codec selected in MA. WAV (uncompressed PCM) will deliver the highest quality but will require significnt bandwidth. 
+- FLAC cannot be used here. MPD needs to look through the whole file before it will play FLAC, which it cannot do with a continuous stream
+- Flow mode is always on for MPD players and cannot be turned off. It is the only way Music Assistant can feed audio to MPD
+- Volume control only appears if a mixer has been set up in MPD. Without one, there is nothing for Music Assistant to control
+- MPD passes on whatever it is given without limiting the quality, so what you get depends on your sound hardware and on the Output Codec chosen above. WAV sounds best but uses far more of your network

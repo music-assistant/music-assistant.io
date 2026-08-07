@@ -1,12 +1,11 @@
 ---
-title: Snapcast Player Provider
+title: "Snapcast"
 description: Details for the Snapcast Player Provider
 ---
 
 # Snapcast <img src="/assets/icons/snapcast-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant supports Snapcast, a powerful solution for synchronized multi-room audio streaming. Snapcast enables seamless playback across various devices, creating an immersive audio experience.
-Whether using Snapcast-compatible speakers or devices like the Raspberry Pi, synchronized audio playback can be enjoyed effortlessly. This component is contributed and maintained by <a href="https://github.com/Santiagosotoc" target="_blank" rel="noopener noreferrer">SantiagoSotoC</a>.
+Snapcast plays the same audio on several devices at once and keeps them in step, so music can follow you from room to room without any echo between them. Anything that can run the Snapcast client software becomes a speaker, which in practice means a Raspberry Pi, a spare computer, a phone or just a browser tab. This component is contributed and maintained by <a href="https://github.com/Santiagosotoc" target="_blank" rel="noopener noreferrer">SantiagoSotoC</a>.
 
 MA includes a built-in Snapserver although an external server can also be used. The diagram below shows a possible combination of outputs. In the diagram a Raspberry Pi runs the server which communicates to MA and all of the clients. The server running Pi is also running Snapclient and is connected to a set of speakers. Then there is another Pi running Snapclient in another room, a phone running Snapdroid and a laptop running Snapweb.
 
@@ -36,8 +35,8 @@ In the `Show Advanced Settings` toggle is enabled this will allow the use of an 
 
 The `Built-in Snapserver Settings`are as follows:
 
-- <b>Buffer Size.</b> (default 1000ms) is the total buffer size (or better buffer duration) between recording the signal on the server and playing it out on the client. This can be translated directly to the total latency of the audio signal. If play is pressed or a track is paused or skipped, a delay of 1000ms will be noticed because of this buffer
-- <b>Chunk Size.</b> (default 26ms). The server will continously read this number of milliseconds from the source into buffer and pass this buffer to the encoder. The encoded buffer is sent to the clients. Some codecs have a higher latency and will need more data, e.g. FLAC will need ~26ms chunks and thus this is the default
+- <b>Buffer Size.</b> (default 1000ms) How far ahead the server works. This is why there is a pause of about a second after you press play, or skip, or pause. Lowering it shortens that delay but makes dropouts more likely
+- <b>Chunk Size.</b> (default 26ms) How much audio the server prepares at a time. The default suits FLAC, which is what is used unless you change it. Leave it alone unless you have changed the codec and are having trouble
 - <b>Snapserver Initial Volume.</b> The initial volume for new clients
 - <b>Send audio to muted clients.</b> Maintains a stream to muted clients
 - <b>Snapserver default transport codec.</b> Options are FLAC [default], OGG, OPUS, and PCM
@@ -58,7 +57,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/), S
 - The built-in Snapserver can only accept connections from Music Assistant
 - If it is necessary to adjust the latency of a client, it must be done from another interface such as Snapdroid or Snapweb
 - If muted players go out of sync or exhibit undesirable rebuffer delays when subsequently unmuted, or shutdown while muted then try turning on the option `Send audio to muted clients`
-- Pausing has been implemented as best as can be achieved with the limitations of Snapcast. MA issues a STOP and RESUME command to achieve the pause effect but this means the resulting player state never changes to paused.
+- Snapcast has no real pause, so Music Assistant stops and restarts instead. Pausing works, but the player never actually shows as paused
 - Occasionally after a stream change (pause, skip or seek) Snapweb can go silent. This can be fixed by selecting stop then play in the Snapweb UI
 - The Snapcast app for iOS is broken as it uses an old version of Snapclient. Using it brings problems with this provider
 - Ensure that the ports 1704 and 1705 on the Snapserver host are open. Also make sure that the ports between 4953 and 5153 inclusive are open
