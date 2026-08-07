@@ -70,9 +70,11 @@ A feature that needs an engine you do not have shows a greyed-out drop-down and 
 
 If an engine you had chosen disappears — because the entity was removed or renamed in Home Assistant, for instance — Music Assistant reports it as missing rather than quietly switching you to a different one.
 
-### Upgrading from an earlier version
+### Coming from Music Assistant 2.9 or earlier
 
-If you had a **Text-to-Speech entity** and an **AI Task entity** selected in this plugin before upgrading, Music Assistant moves those choices across for you. The AI task entity becomes the AI engine for AI Radio, Music Quiz and Smart Playlists, and the text-to-speech entity becomes AI Radio's text-to-speech engine. Everything should carry on working with nothing to do.
+Up to 2.9, this plugin had its own **Text-to-Speech entity** and **AI Task entity** boxes, and whatever you chose there was used by everything. From 2.10 those boxes are gone and each feature picks an engine for itself.
+
+If you had either of them set, Music Assistant carries your choice over when you upgrade. The AI task entity becomes the AI engine for AI Radio, Music Quiz and Smart Playlists, and the text-to-speech entity becomes AI Radio's text-to-speech engine. There should be nothing for you to do.
 
 > [!WARNING]
 > **Unless you have more than one Home Assistant plugin configured.** In that case Music Assistant cannot tell which one's settings should win, so it does not guess — it moves nothing across and logs a warning instead. You will need to pick the engines yourself in each feature, and for AI Radio that means going through **Reconfigure** as described [on its page](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later).
