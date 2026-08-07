@@ -198,6 +198,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Audio Pipeline", slug: "audiopipeline" },
+            { label: "Convolution", slug: "dsp/convolution" },
             { label: "Digital Signal Processing", slug: "dsp" },
             { label: "Parametric Equalizer", slug: "dsp/parametriceq" },
             { label: "Tone Controls", slug: "dsp/tonecontrols" },
@@ -225,6 +226,10 @@ export default defineConfig({
                   slug: "plugins/listenbrainz_scrobble",
                 },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
+                {
+                  label: "OpenAI Compatible",
+                  slug: "plugins/openai_compatible",
+                },
                 { label: "Party", slug: "plugins/party" },
                 { label: "Plex Connect", slug: "plugins/plex-connect" },
                 { label: "Smart Playlist", slug: "plugins/smart_playlist" },

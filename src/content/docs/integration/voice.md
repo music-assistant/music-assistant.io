@@ -31,7 +31,7 @@ Home Assistant handles the rest of the playback controls too — next and previo
 
 ## Going further with blueprints
 
-The built-in sentences cover the common request well, but they are deliberately simple. They cannot express "play the album Rumours **by Fleetwood Mac**", they have no way to turn shuffle on as part of the request, and they have no radio mode.
+The built-in sentences cover the common request well, but they are deliberately simple. They cannot express "play the album Rumours **by Fleetwood Mac**", they have no way to turn shuffle on as part of the request, and they have no Endless Mix.
 
 For those, the community maintains a set of blueprints in the <a href="https://github.com/music-assistant/voice-support" target="_blank" rel="noopener noreferrer">MA Voice Support repository</a>. They build on the `music_assistant.play_media` action and give you a good deal more control over the request. There are three options: a fully local one using custom sentences, one that adds an LLM to interpret looser phrasing, and one that exposes playback as a tool your LLM conversation agent can call. The repository has the setup steps, the sentences each option accepts, and translations for several languages.
 

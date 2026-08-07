@@ -15,7 +15,7 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 > Please note that Bandcamp does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis.
 
 > [!NOTE]
-> Identity token cookie needed for Bandcamp Account Collection access. Without it, library syncing options won't work.
+> You can search and play without signing in. To bring across the albums you have bought, you need to add your identity cookie as described below.
 
 ## Features
 
@@ -26,11 +26,11 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 | Media Types Supported                           | Artists, Albums, Tracks |
 | [Recommendations](/ui/#view---discover) Supported |           No            |
 | Lyrics Supported                                |           Yes           |
-| [Radio Mode](/ui/#track-menu)               |           No            |
+| [Endless Mix](/ui/#track-menu)              |           No            |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality                          |  Lossy, MP3 (128kbps)   |
+| Maximum Stream Quality                          | MP3 128kbps |
 | Login Method                                    |    Cookie (optional)    |
 
 ### Other
@@ -64,11 +64,10 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 ## Known Issues / Notes
 
 - This provider mimics Bandcamp. Do not expect to see the same search results as you would when using Bandcamp itself
-- **Slow Loading for Large Labels**: When browsing a music label with a large catalog (dozens to hundreds of albums),
-  indexing may take several minutes. This happens because Bandcamp limits how quickly data can be retrieved from
-  their servers. You'll see multiple retry attempts in the logs with messages like "Bandcamp rate limit reached"
-  followed by delays between each attempt. This is a limitation imposed by Bandcamp's service and cannot be
-  bypassed — the system must wait between requests to avoid being blocked entirely.
+- **Large labels are slow to load**: a label with hundreds of albums can take several minutes to appear, because
+  Bandcamp limits how fast anything can read from it. Music Assistant has to pause between requests or Bandcamp
+  will block it altogether. The log will show "Bandcamp rate limit reached" while this is going on, which is
+  expected rather than a fault.
 
 ### Artists, Labels, and Search
 

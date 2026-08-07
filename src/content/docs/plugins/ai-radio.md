@@ -28,7 +28,7 @@ AI Radio is currently in beta. The show editor, prompt presets, generated output
 
 - The **AI Radio** plugin must be enabled in **Settings → Plugins → Add a Plugin**.
 - At least one playlist with playable tracks.
-- A configured provider that supports AI queries, such as the [Home Assistant plugin](/ha-plugin/) with LLM access.
+- A configured provider that supports AI queries, either the [OpenAI Compatible plugin](/plugins/openai_compatible/) or the [Home Assistant plugin](/ha-plugin/) with LLM access.
 - A configured provider that supports TTS, such as the [Home Assistant plugin](/ha-plugin/) with a working text-to-speech service.
 - For live playback, an enabled and available Music Assistant player.
 
@@ -40,7 +40,9 @@ AI Radio generates new speech each time a show is started. The exact wording can
 
 ### Setting up AI and TTS with Home Assistant
 
-AI Radio does not contain its own LLM or TTS engine. It asks Music Assistant for providers that expose AI-query and text-to-speech features. The most common setup is to use the [Home Assistant plugin](/ha-plugin/) as the bridge to Home Assistant's Assist/LLM and TTS services.
+AI Radio does not contain its own LLM or TTS engine. It asks Music Assistant for providers that expose AI-query and text-to-speech features. The [Home Assistant plugin](/ha-plugin/) can supply both, as the bridge to Home Assistant's Assist/LLM and TTS services, and the steps below cover that setup.
+
+If you would rather not go through Home Assistant for the AI half, the [OpenAI Compatible plugin](/plugins/openai_compatible/) provides the AI engine on its own, using OpenAI, Groq, OpenRouter, Together or a local server such as Ollama or LM Studio. You still need a text-to-speech provider for spoken shows.
 
 Before configuring AI Radio:
 

@@ -15,8 +15,8 @@ This source signs Music Assistant in to your QQ Music account, so the tracks, al
 
 > [!NOTE]
 > - A QQ Music account is required.
-> - Subscription is required for subscription-only tracks/qualities.
-> - This provider does not bypass entitlement checks.
+> - Tracks and audio qualities that need a subscription still need one here.
+> - This source plays only what your account is entitled to. It does not get around any of QQ Music's restrictions.
 
 ## Features
 
@@ -27,11 +27,11 @@ This source signs Music Assistant in to your QQ Music account, so the tracks, al
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossless FLAC (up to 24-bit/192kHz) |
+| Maximum Stream Quality | FLAC up to 192kHz 24 bit |
 | Login Method | QQ or WeChat App QR Code |
 
 ### Other
@@ -39,7 +39,7 @@ This source signs Music Assistant in to your QQ Music account, so the tracks, al
 - Search support for tracks, artists, albums, and playlists
 - Library sync for liked tracks, followed artists, liked albums, and playlists
 - Library sync is currently one-way (QQ Music → Music Assistant)
-- Quality fallback handling when selected quality is unavailable for a specific track
+- If a track is not available at the quality you asked for, the next best is played instead
 
 ## Configuration
 
@@ -60,7 +60,7 @@ This source signs Music Assistant in to your QQ Music account, so the tracks, al
 
 ## Known Issues / Notes
 
-- Availability is region-dependent and may work best in Mainland China.
-- Because QQ Music does not provide a public official API for this workflow, this provider relies on web-session based integration and may be affected by upstream changes.
-- Some recommended or dynamic items can become unavailable between listing and playback.
-- Some non-entitled tracks may only return preview/limited playback or be unplayable.
+- Availability depends on where you are, and it works best in Mainland China.
+- QQ Music offers no proper way in for other apps, so this source signs in the way a web browser does. That means a change at QQ Music's end can break it without warning.
+- Something that appeared in a recommendation or a radio list may have gone by the time you try to play it.
+- A track your account is not entitled to may play only a preview, or not at all.

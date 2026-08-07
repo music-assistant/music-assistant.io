@@ -7,7 +7,7 @@ description: Features, Configuration, Issues and More for the File System Music 
 
 Music Assistant has full support for reading local music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant.  Network support is limited to SMB/CIFS, NFS and WebDAV, plus the cloud storage services Google Drive and Microsoft OneDrive.
 
-When streaming sources are also availabe in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
+When streaming sources are also available in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
 
 ## Features
 
@@ -18,11 +18,11 @@ When streaming sources are also availabe in MA linking will only occur when the 
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes with Sonic Similarity Plugin                      | 
-| Maximum Stream Quality | Lossless FLAC 192 kHz, 24 bit |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | Password or None |
 
 ### Other
@@ -58,7 +58,7 @@ Music Assistant has support for NFS shares. Select the music source "Filesystem 
 
 **Audio files are on a remote share served via WebDAV**
 
-Music Assistant has support for WebDAV shares. Select the music source "WebDAV" and configure the full URL of the WebDAV endpoint including the full path to the content folder (e.g. `https://example.com/webdav/music`). Provide username and password if authentication is required. SSL certificate verification is optional and disabled by default.
+Music Assistant has support for WebDAV shares. Select the music source "WebDAV" and configure the full web address of the WebDAV share including the full path to the content folder (e.g. `https://example.com/webdav/music`). Provide username and password if authentication is required. SSL certificate verification is optional and disabled by default.
 
 **Audio files are on a remote share served via Google Drive**
 
@@ -161,15 +161,7 @@ In addition to the settings outlined above to configure this source, there are a
 
 - Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
 - When using the remote share connection, be aware that use of SMB1 (which is very old) is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB1 can be disabled
-- Use the following naming convention for local artwork
-    - Artist thumb: cover.jpg, folder.jpg or artist.jpg (or jpeg/png)
-    - Album thumb: cover.jpg, folder.jpg or album.jpg (or jpeg/png)
-    - Fan Art (used as background in banners): fanart.jpg (or jpeg/png)
-    - Logo (used on Artist view): logo.png
-    - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
-- Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
-- Embedded album thumbs will be extracted from audio files. However, performance can be improved and disk space saved by providing a single local artwork file vs. embedding the same artwork in all files
-- WebDAV, Google Drive and OneDrive are HTTP/API-based so every file operation requires a network request. Library sync will therefore be slower than local, SMB or NFS, particularly for large libraries and the first sync of a cloud source reads the tags of every file over the internet
+- WebDAV, Google Drive and OneDrive are reached over the internet rather than over your own network, so library sync is slower than local, SMB or NFS, particularly for large libraries. The first sync of a cloud source reads the tags of every file over the internet
 - Writing to WebDAV, Google Drive and OneDrive sources is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
 
 > [!NOTE]
@@ -178,18 +170,15 @@ In addition to the settings outlined above to configure this source, there are a
 > - Expect a 1-2 second delay when playback starts or when seeking as the audio has to be fetched from the cloud service on demand
 > - Folder listings are cached for up to five minutes to keep browsing snappy, so changes made on the cloud service can take up to five minutes to appear in the BROWSE view. Library sync always reads fresh listings, so new content is never missed by a sync
 
-> [!TIP]
-> **Local Artwork is Optimal**
->
-> Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
-
-- Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
-- A setting, enabled by default, allows the skipping of playlists which are more than one level below the root (normally this is the album folder). This is preferred as these playlists (normally all album tracks in the folder) serve no function in MA and clutter the Playlists view. Excessive numbers of playlists can have a negative impact on other parts of the MA experience
 - In regard to folder and filenames note the following:
     - Folders commencing with an underscore will be ignored
     - Music Assistant requires all file and folder names to be valid UTF-8. Files with non-UTF-8 characters in their names will be skipped during library sync and a warning will be logged identifying the affected file. This most commonly affects files originally tagged or named on Windows using legacy encodings such as Windows-1252, where characters like curly quotes or accented letters may have been written as non-UTF-8 bytes
-    - Due to a kernel limitation, emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
+    - Emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
  
+## Organising Your Files
+
+How you name and arrange your folders decides how much Music Assistant can work out about your collection. The sections below cover each kind of content, and artwork.
+
 ### Music
 
 - Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
@@ -217,13 +206,30 @@ In addition to the settings outlined above to configure this source, there are a
 - A `metadata.json` file in the folder can provide additional podcast-level metadata: title, sorttitle, description, publisher, genres, and image URL.
 - Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
 
+### Artwork
+
+Artwork embedded in your audio files is supported and will be extracted. Artwork stored alongside your files as separate images is also supported, and is the better option.
+
+- Use the following naming convention for local artwork
+    - Artist thumb: cover.jpg, folder.jpg or artist.jpg (or jpeg/png)
+    - Album thumb: cover.jpg, folder.jpg or album.jpg (or jpeg/png)
+    - Fan Art (used as background in banners): fanart.jpg (or jpeg/png)
+    - Logo (used on Artist view): logo.png
+    - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
+- Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
+- Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
+
+> [!TIP]
+> **Local Artwork is Optimal**
+>
+> Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
+
 ## Tagging Files 
 
 - It is very important that all audio files contain correct, and ideally, extensive tag information. The more comprehensive the tagging the better the results will be when using MA. Note the following:
-    - Universal Tag Support: Music Assistant parses metadata from the industry-standard formats, including ID3 (v1/v2) for MP3s, Vorbis Comments for FLAC/Ogg/Opus, MP4 Atoms for M4A, and APEv2 tags
-    - Primary Source of Truth: Embedded tags are treated as the definitive source for artist, album, and track names. External metadata providers (like MusicBrainz or Fanart.tv) are only used to supplement missing info, such as high-resolution artwork or artist bios
+    - Universal Tag Support: Music Assistant reads tags from all the common file formats
+    - Your tags win: Embedded tags are treated as the definitive source for artist, album, and track names. External metadata providers (like MusicBrainz or Fanart.tv) are only used to supplement missing info, such as high-resolution artwork or artist bios
     - Cross-Platform Linking: MA uses identifier tags such as MusicBrainz IDs (MBID) and ISRC codes to seamlessly link local files with matching tracks on streaming services like Spotify or Tidal
-    - Artwork Handling: MA supports both embedded artwork within the file and local folder-based images (e.g., folder.jpg or artist.png)
     - Recommended Tagger: For the best results in Music Assistant, it is strongly recommended to use <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a> to ensure the files contain the specific IDs needed for library linking. Other programs such as <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a> are often also based on the Musicbrainz catalog and can work as well provided they include the tags shown in the [Tags used by MA](#tags-used-by-ma) table
 
 - Fields with multiple values can be handled as follows:
@@ -231,8 +237,7 @@ In addition to the settings outlined above to configure this source, there are a
     - For Vorbis (FLAC, OGG), use multiple fields per the [Vorbis spec](https://xiph.org/vorbis/doc/v-comment.html)
     - For ID3v2.4 and APEv2 tags, multiple artists and album artists can be separated by the null character
 - MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
-- Music Assistant puts you in control by fully trusting the tags you provide, only additional information is scraped from metadata providers.
-- Music Assistant has support for both embedded artwork and artwork stored in a common folder structure of Artist \ Album and `.nfo` files with enhanced metadata are also supported
+- `.nfo` files with enhanced metadata are supported
 - For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
 - If there is nothing added to the disc tag then the disc number will not be shown in the display
 
@@ -294,7 +299,7 @@ Normally it is best to leave the Picard tags unchanged. However, some people do 
 
 ## CUE Sheet Support
 
-When the filesystem provider encounters a `.cue` file, each logical track described by the sheet becomes its own library track. The referenced audio file itself is not imported as a separate track.
+When the filesystem provider encounters a `.cue` file, each track described by the sheet becomes its own library track. The referenced audio file itself is not imported as a separate track.
 
 Information for each track is built from two sources: the CUE Sheet and the tags in the referenced audio file. Where both describe the same album-level field, the CUE Sheet wins.
 
@@ -359,7 +364,7 @@ Where both artists and a companion field (sort names, MB artist IDs) are multi-v
 
 Written at the top of the file, before any `TRACK`. The **Standard** column indicates whether the directive is commonly emitted by mainstream ripping/authoring tools (EAC, CUETools, foobar2000, XLD), not necessarily part of the original 13-directive CDRWIN spec. Fields marked **No** are Music Assistant extensions - other players may ignore them.
 
-Standard directives FLAGS, PREGAP, POSTGAP, SONGWRITER, and CDTEXTFILE are accepted but silently ignored - they're CD-burning or CD-Text binary-file concerns that don't map to Music Assistant's library model.
+Standard directives FLAGS, PREGAP, POSTGAP, SONGWRITER, and CDTEXTFILE are accepted but ignored.
 
 | Directive | Standard | Multi? | Feeds |
 |-----------|:---:|:---:|-------|
@@ -402,7 +407,7 @@ Track duration is computed from the next track's `INDEX 01` minus this track's `
 
 **Fields read from the audio file**
 
-`ffprobe` tags on the referenced audio file supply everything that applies to the album as a whole, plus the technical format used for playback:
+Tags on the referenced audio file supply everything that applies to the album as a whole, plus the technical format used for playback:
 
 - **Format** (shared by every CUE track) - sample rate, bit depth, channels, bit rate, container/codec, embedded cover art, disc number.
 - **Album metadata** (used unless overridden by the CUE sheet) - album, albumsort, albumartist/albumartists, albumartistsort, musicbrainzalbumartistid, album_type, date/year, genre, barcode, musicbrainzalbumid, musicbrainzreleasegroupid.

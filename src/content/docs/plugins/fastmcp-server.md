@@ -15,7 +15,7 @@ Music Assistant has the ability to expose its library, queue, playback and playe
 - Any MCP-aware AI client can connect to your Music Assistant library through a single URL
 - One-click Connect Wizard with ready-to-paste configuration for Claude Desktop, Claude Code, Cursor, Windsurf, VSCode, ChatGPT Connectors, Codex CLI, Gemini CLI, Cline, Zed, OpenClaw and Hermes
 - Each connected client gets its own access token, revocable individually under Profile → Long-lived access tokens
-- Fine-grained permission toggles let you decide what each connected AI client may do — browse the library, control playback, manage queues, edit playlists, remove favourites, and choose which URI-addressable resources the client can see
+- Detailed permission toggles let you decide what each connected AI client may do — browse the library, control playback, manage queues, edit playlists, remove favourites, and how much of your library it can see at all
 - Two optional, off-by-default capability namespaces for power users: a **debug** namespace (introspection for troubleshooting) and a **config** namespace (view and edit Music Assistant settings over MCP)
 - Optional confirmation prompt before destructive actions like clearing a queue or removing a track from the library
 - Reuses the Music Assistant webserver — no extra port to open, works behind reverse proxies and Home Assistant ingress out of the box
@@ -23,7 +23,7 @@ Music Assistant has the ability to expose its library, queue, playback and playe
 
 ## Configuration
 
-The plugin is single-instance. Add it via `SETTINGS >> PLUGINS >> ADD A PLUGIN`.
+Add the plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`. You only ever need one copy of it, however many AI clients you connect.
 
 ### Connecting an AI client
 
@@ -31,12 +31,12 @@ Once the plugin has been added, the Connect Wizard becomes available from the pl
 
 1. Open the plugin settings and click **Open Connect Wizard**.
 2. Pick your AI client from the list.
-3. The wizard mints a long-lived token, names it after the client (for example `MCP — Claude Desktop`), and shows a ready-to-paste configuration snippet.
-4. Paste the snippet into your client's MCP configuration, or — for Cursor — click the **Add to Cursor** deep-link.
+3. The wizard creates an access token, names it after the client (for example `MCP — Claude Desktop`), and shows you a block of configuration ready to copy.
+4. Paste it into your client's MCP configuration, or for Cursor click the **Add to Cursor** link.
 
-Regenerating the snippet for a client revokes the previous token for that same client, so stale credentials are never left behind.
+Generating the block again for the same client cancels its previous token, so old credentials are never left lying around.
 
-For multi-agent orchestrators the wizard emits the native form for each: an `openclaw mcp set …` command for OpenClaw and a `~/.hermes/config.yaml` block for Hermes. Both point at the same streamable-HTTP endpoint with the minted bearer token, exactly like every other client.
+For OpenClaw and Hermes the wizard gives you the form each of those expects — an `openclaw mcp set …` command and a `~/.hermes/config.yaml` block. Both connect the same way as everything else.
 
 ### Settings
 
@@ -48,8 +48,8 @@ For multi-agent orchestrators the wizard emits the native form for each: an `ope
 
 Both namespaces ship entirely off by default — a standard installation exposes no debug or config tools at all. Enable a toggle only for the capability you need, and prefer leaving them off in production.
 
-- <b>Debug.</b> Five toggles (`Debug: inspect`, `Debug: logs`, `Debug: events`, `Debug: providers`, `Debug: reload`) expose read-mostly introspection for troubleshooting a running instance over MCP: raw player/queue/provider state, a tail of `musicassistant.log` (with common secrets redacted), a bounded ring buffer of recent events, a provider/health roll-up, and — gated separately — reloading a provider instance. The event buffer's capacity is configurable in the ADVANCED section.
-- <b>Config.</b> Five toggles (`Config: read settings`, `Config: edit provider settings`, `Config: edit core settings`, `Config: edit player settings`, and `Config: allow writing secret values`) let a client view and edit Music Assistant core, provider and player configuration over MCP. Reads mask `SECURE_STRING` values; writes are validated and delegated to Music Assistant's own atomic save (validate → encrypt → persist → reload, with rollback), so the plugin never hand-rolls persistence. Writing a secret value requires the dedicated secret flag in addition to the relevant category flag.
+- <b>Debug.</b> Five toggles (`Debug: inspect`, `Debug: logs`, `Debug: events`, `Debug: providers`, `Debug: reload`) let a client help you troubleshoot a running Music Assistant: the current state of your players, queues and providers, the end of the log file with passwords and the like blanked out, a list of what has happened recently, a summary of provider health, and — switched on separately — restarting a provider. How much recent activity is kept can be set in the ADVANCED section.
+- <b>Config.</b> Five toggles (`Config: read settings`, `Config: edit provider settings`, `Config: edit core settings`, `Config: edit player settings`, and `Config: allow writing secret values`) let a client look at and change your Music Assistant settings. Passwords and tokens are hidden when read, and changing one needs the separate secret toggle switched on as well as the toggle for that group of settings. Changes go through the same checks as if you had made them yourself, and are undone if anything goes wrong.
 
 In the ADVANCED section:
 
@@ -57,7 +57,7 @@ In the ADVANCED section:
 - <b>Enforce token audience (RFC 8707).</b> Rejects tokens that are not bound to this MCP server's URL. Leave off until Music Assistant issues audience-bound tokens by default.
 - <b>Additional allowed Origins (CSV).</b> Comma-separated list of additional Origin headers to accept, on top of the Music Assistant hosts that are auto-detected.
 - <b>Connect Wizard external URL (fallback).</b> Explicit base URL the Connect Wizard should use in the generated snippets. Only needed when the wizard cannot detect the public URL from the active client's request headers.
-- <b>Debug: event buffer capacity.</b> Maximum number of recent events kept in memory when the `Debug: events` toggle is enabled. Older events are dropped FIFO; has no effect when events are off.
+- <b>Debug: event buffer capacity.</b> How many recent events to keep when `Debug: events` is on. Once the limit is reached the oldest are discarded. Has no effect when events are off.
 
 ## Known Issues / Notes
 

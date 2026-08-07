@@ -4,7 +4,7 @@ title: "Storytel"
 
 # Storytel <img src="/assets/icons/storytel.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for [Storytel](https://www.storytel.com), which in some countries is sold as [Mofibo](https://www.mofibo.com). Contributed and maintained by [Jonas Pedersen](https://github.com/jonasbp2011)
+Music Assistant has support for <a href="https://www.storytel.com" target="_blank" rel="noopener noreferrer">Storytel</a>, which in some countries is sold as <a href="https://www.mofibo.com" target="_blank" rel="noopener noreferrer">Mofibo</a>. Contributed and maintained by <a href="https://github.com/jonasbp2011" target="_blank" rel="noopener noreferrer">Jonas Pedersen</a>
 
 Storytel is a Swedish subscription service for audiobooks and podcasts, and one of the largest of its kind. A monthly fee covers unlimited listening rather than buying titles one at a time, and the catalogue is strongest in the Nordic languages alongside the usual English titles.
 
@@ -22,7 +22,7 @@ Connecting your account puts your Storytel library inside Music Assistant, with 
 | Media Types Supported                             | Audiobooks, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported |         Yes          |
 | Lyrics Supported                                  |          No          |
-| [Radio Mode](/ui/#track-menu)                     |          No          |
+| [Endless Mix](/ui/#track-menu)                    |          No          |
 | Artist Top Tracks Support                         |          No          |
 | Similar Artists Support                           |          No          |
 | Similar Tracks Support                            |          No          |

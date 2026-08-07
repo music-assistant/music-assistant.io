@@ -22,6 +22,7 @@ export type CategoryId =
   | "podcasts"
   | "audiobooks"
   | "live-concerts"
+  | "classical"
   | "children"
   // Music and radio from a particular country
   | "germany"
@@ -32,7 +33,8 @@ export type CategoryId =
   | "china"
   | "japan"
   | "france"
-  | "uk";
+  | "uk"
+  | "australia";
 
 export interface Category {
   /** Used as the link target, so it must be unique. */
@@ -110,9 +112,16 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         blurb: "Soundboard and audience recordings of shows, often complete sets.",
       },
       {
+        id: "classical",
+        icon: "/assets/icons/listen/classical.svg",
+        title: "Classical music",
+        blurb:
+          "Stations and services carrying orchestral, chamber and operatic music.",
+      },
+      {
         id: "children",
         icon: "/assets/icons/listen/children.svg",
-        title: "Stories for children",
+        title: "Entertainment for children",
         blurb: "Audio made for younger listeners.",
       },
     ],
@@ -177,11 +186,23 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         title: "United Kingdom",
         blurb: "British radio, live and after broadcast.",
       },
+      {
+        id: "australia",
+        icon: "/assets/icons/listen/australia.svg",
+        title: "Australia",
+        blurb: "Australian public radio, from new music to classical and jazz.",
+      },
     ],
   },
 ];
 
 export const MUSIC_SOURCES: MusicSource[] = [
+  {
+    name: "ABC Radio Network",
+    slug: "music-providers/abc-radio-network",
+    icon: "/assets/icons/abc-radio-icon.svg",
+    categories: ["radio", "classical", "children", "australia"],
+  },
   {
     name: "Apple Music",
     slug: "music-providers/apple-music",
@@ -191,9 +212,9 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["streaming"],
   },
   {
-    name: "ARD Audiothek",
-    slug: "music-providers/ard-audiothek",
-    icon: "/assets/icons/ard-audiothek.png",
+    name: "ARD Sounds",
+    slug: "music-providers/ard-sounds",
+    icon: "/assets/icons/ard-sounds.png",
     categories: ["radio", "podcasts", "germany"],
   },
   {
@@ -218,7 +239,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "BBC Sounds",
     slug: "music-providers/bbc-sounds",
     icon: "/assets/icons/bbcsounds-logo.png",
-    categories: ["radio", "podcasts", "uk"],
+    categories: ["radio", "podcasts", "classical", "uk"],
   },
   {
     name: "Builtin",
@@ -236,7 +257,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "DI.fm Network",
     slug: "music-providers/digitally-incorporated",
     icon: "/assets/icons/difm-icon.svg",
-    categories: ["radio"],
+    categories: ["radio", "classical"],
   },
   {
     name: "Emby",
@@ -321,7 +342,13 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "ORF Radiothek",
     slug: "music-providers/orf-radiothek",
     icon: "/assets/icons/orf_radiothek-icon.svg",
-    categories: ["radio", "podcasts", "austria"],
+    categories: ["radio", "podcasts", "classical", "austria"],
+  },
+  {
+    name: "Overcast",
+    slug: "music-providers/overcast",
+    icon: "/assets/icons/overcast-icon.png",
+    categories: ["podcasts"],
   },
   {
     name: "Pandora",
@@ -375,7 +402,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "Radio Browser",
     slug: "music-providers/radio-browser",
     icon: "/assets/icons/radiobrowser_icon.png",
-    categories: ["radio"],
+    categories: ["radio", "classical"],
   },
   {
     name: "Radio Paradise",
@@ -387,7 +414,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "SiriusXM",
     slug: "music-providers/siriusxm",
     icon: "/assets/icons/siriusxm-logo.png",
-    categories: ["radio"],
+    categories: ["radio", "classical", "children"],
   },
   {
     name: "SomaFM Radio",
@@ -425,7 +452,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "Sveriges Radio",
     slug: "music-providers/sveriges-radio",
     icon: "/assets/icons/sverigesradio-icon.svg",
-    categories: ["radio", "sweden"],
+    categories: ["radio", "classical", "children", "sweden"],
   },
   {
     name: "TeddyCloud",
@@ -443,7 +470,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "TuneIn",
     slug: "music-providers/tunein",
     icon: "/assets/icons/tunein-icon.svg",
-    categories: ["radio"],
+    categories: ["radio", "classical"],
   },
   {
     name: "Yandex Music",

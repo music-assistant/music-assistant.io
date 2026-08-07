@@ -26,11 +26,11 @@ This source signs Music Assistant in to your MusicMe account and makes the catal
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 
-| Maximum Stream Quality | AAC in MP4 (44.1 kHz) |
+| Maximum Stream Quality | AAC 320kbps |
 | Login Method | Email + Password |
 
 ### Other
@@ -42,7 +42,7 @@ This source signs Music Assistant in to your MusicMe account and makes the catal
 
 ## Configuration
 
-- In the configuration, you need to enter your MusicMe account email and password
+In the configuration, you need to enter your MusicMe account email and password
 
 ## Known Issues / Notes
 
