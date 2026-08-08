@@ -65,6 +65,10 @@ Matching items between streaming sources is challenging as they do not all provi
 
 ## My media player is not available or not playing
 
+If the player is found and starts playing but then crackles, skips or stops after a while, that is a different problem and is covered by the [dropout checklist](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while). Start with the ping test there, which tells you within a few minutes whether your network is at fault. Note that a player can work perfectly in its manufacturer's own app and still drop out here, because those apps send audio a long way ahead and can hide network faults that Music Assistant cannot.
+
+For a player that is missing or will not start at all, read on.
+
 First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to MA SETTINGS >> PLAYERS. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
 
 If the player is not shown in the list of players in the MA SETTINGS then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
