@@ -70,7 +70,7 @@ Two things worth checking while you are there. **Does it affect one player or al
 
 Several access points bring their own problems, and they are a common cause of dropouts that only happen in some rooms. Skip this if you have a single router.
 
-5. **Turn the transmit power down.** This feels backwards and is often the fix. Access points all shouting at full power interfere with one another, and a speaker will cling to a distant loud one instead of the good one next to it. Medium is a sensible starting point.
+5. **Turn the transmit power down.** This feels backwards but is often the fix. Access points all shouting at full power interfere with one another, and a speaker will cling to a distant loud one instead of the good one next to it. Medium is a sensible starting point.
 6. **Stop speakers wandering.** Turn off band steering and fast roaming, and where your equipment allows it, tie each speaker to the access point nearest to it. A speaker that hops mid-track drops audio while it hops.
 7. **Set channels by hand** and turn off any nightly or automatic channel optimisation, which can move a channel out from under a speaker that is happily playing.
 8. **Narrow the channel width.** Wider is not better when access points are close together. 20 MHz on 2.4 GHz and 40 MHz on 5 GHz is a reasonable starting point.
