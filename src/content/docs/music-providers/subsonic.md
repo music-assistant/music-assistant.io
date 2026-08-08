@@ -36,6 +36,7 @@ You will need to provide the following to Music Assistant:
 
 - <b>Username.</b> The account you want Music Assistant to use to access your server
 - <b>Password.</b> For the account specified
+- <b>API Token.</b> The API token to use instead of username and password
 - <b>Base URL.</b> The server URL starting with http:// or https:// (e.g. https://music.domain.tld)
 - <b>Port.</b> Typically, 80 for plain http, or 443 for https, but can be any port where your server can be reached
 - <b>Server Path.</b> Anything that comes after the address, if your server sits at something like `music.domain.tld/mypathroute/` rather than at the top level. Leave this blank unless you know you need it
