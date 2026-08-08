@@ -141,7 +141,9 @@ with more than one country where that genuinely holds.
    every national flag is available as an SVG, or from the MIT licensed
    [flag-icons](https://flagicons.lipis.dev/) set. Prefer a plain one over a highly detailed
    version: the existing flags are a few hundred bytes each and are only shown about 34 pixels
-   tall. Any aspect ratio is fine and the page draws the border for you.
+   tall. Keep it a similar shape to the ones already there, which are all wider than they are
+   tall and mostly close to 3:2. Check it looks right against its neighbours on the built
+   page rather than measuring it; the page draws the border for you.
 
 Then tag your source with it. The build fails if the flag file is missing, and also if a category
 exists that no source uses, so all three have to land together.
