@@ -42,7 +42,9 @@ So "it works fine in every other app" does not rule out the network. Nothing abo
 
 Do this first. If it comes back clean, nothing else on this page will help and you can stop.
 
-**Run a constant ping to the player while it is playing.** Find the player's IP address in its own app or your router's device list, then on a computer on the same network:
+**Run a constant ping to the player while it is playing.** Ping is a small tool built into every computer. It asks a device "are you there?" over and over, and prints how long each reply took, so any trouble on the link between the two shows up as slow or missing replies. If it is new to you, <a href="https://www.youtube.com/watch?v=ZCMMyzBv354" target="_blank" rel="noopener noreferrer">this short video</a> explains it and how to read what it prints.
+
+Find the player's IP address in its own app or your router's device list, then on a computer on the same network:
 
 ```text
 ping 192.168.1.50          Mac or Linux
@@ -90,4 +92,5 @@ The networking terms used elsewhere in these docs, in plain language. You do not
 - **VLAN (Virtual LAN).** A way of splitting one physical network into several isolated ones, sometimes used in custom home network setups (for example a separate network for smart-home devices). Default home setups do not have VLANs. <a href="https://www.youtube.com/watch?v=x-QNtpD4_UU" target="_blank" rel="noopener noreferrer">Learn more (video)</a>
 - **VPN (Virtual Private Network).** An encrypted tunnel that places your device "virtually" on another network, such as your office or a privacy service. While connected, the device is not really on your home network, so discovery and streaming break. <a href="https://au.norton.com/blog/vpn/how-does-a-vpn-work" target="_blank" rel="noopener noreferrer">Learn more</a>
 - **Firewall / opening ports.** A firewall controls which network connections are allowed. A "port" is a numbered door that a program listens behind; "opening a port" means telling the firewall to allow connections to that door. How you open a port is specific to each router or firewall product, so check the manual for yours. MA and its players use many ports, some chosen at random, which is why running MA behind a restrictive firewall is not supported.
+- **Ping.** A small tool built into Windows, macOS and Linux that repeatedly asks another device on the network for a reply and reports how long each one took. Useful for telling a network fault apart from everything else, because it shows dropped and slow replies as they happen. <a href="https://www.youtube.com/watch?v=ZCMMyzBv354" target="_blank" rel="noopener noreferrer">Learn more (video)</a>
 - **Reverse proxy.** A server that sits in front of a web application, usually to add HTTPS or a friendly address (for example `music.example.com` instead of an IP address and port number). Only relevant if you have set one up yourself for accessing the MA interface; players always need direct access to the server. <a href="https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/" target="_blank" rel="noopener noreferrer">Learn more</a>
