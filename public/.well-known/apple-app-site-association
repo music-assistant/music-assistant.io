@@ -6,6 +6,10 @@
         "appID": "5J5R9QK64D.io.music-assistant.client",
         "paths": ["/app/*"]
       }
+      {
+        "appID": "GUYFAK8DC6.io.music-assistant.mobile-client",
+        "paths": ["/app/*"]
+      }
     ]
   }
 }
