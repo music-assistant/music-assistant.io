@@ -21,10 +21,6 @@ document something readers cannot use.
 If you are not sure, open it against `beta` and say so. Moving a pull request to the other branch
 afterwards is one click for a maintainer.
 
-One thing to watch on `beta`: if your branch was taken before the last release it will be missing
-files the build now expects, and you will get errors that have nothing to do with your change. If
-that happens, say so on the pull request and a maintainer will bring your branch up to date.
-
 ## Checking your change
 
 You do not need to install anything or build the site yourself. Open the pull request and the
@@ -102,7 +98,7 @@ Four things, and the build will tell you if you miss the last one.
    Two more are a judgement call rather than something the table can tell you: `live-concerts`
    for recordings of live shows, and `children` for audio aimed at younger listeners.
 
-   Last are the country categories, covered just below. These are the ones people forget.
+   Last are the country categories, covered just below.
 
    The full list of valid categories is at the top of `src/data/music-sources.ts`, and the build
    lists them if you use one that does not exist.
