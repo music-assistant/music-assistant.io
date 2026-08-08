@@ -29,7 +29,7 @@ An alternative way to run the Music Assistant server is by running the docker im
 docker run -v <dir>:/data --network host ghcr.io/music-assistant/server
 ```
 
-You must run the docker container with **host network mode** (see the note on networking below). The data volume is `/data` - replace `<dir>` with a writable directory to ensure the data volume persists between updates. If you want access to your local music files from within MA, make sure to also mount that local directory, e.g. `/media` (mount it read-only where possible).
+You must give the Docker container direct access to your local network by using **host network mode**, a **macvlan** network, or an **ipvlan L2** network (see the note on networking below). The data volume is `/data` - replace `<dir>` with a writable directory to ensure the data volume persists between updates. If you want access to your local music files from within MA, make sure to also mount that local directory, e.g. `/media` (mount it read-only where possible).
 
 The recommended setup keeps the container as restricted as possible. The extra privileges (`SYS_ADMIN`, `DAC_READ_SEARCH` and `apparmor:unconfined`) shown further down are **only** needed if you want MA to mount a remote (Samba/NFS) share itself from inside the container. For most users, mounting music on the host and bind-mounting it into the container is the more secure choice.
 
@@ -41,8 +41,10 @@ services:
     image: ghcr.io/music-assistant/server:latest # <<< Desired release version here (or use beta to get the latest beta version)
     container_name: music-assistant-server
     restart: unless-stopped
-    # Network mode must be set to host for MA to discover and stream to players (see networking note below)
-    network_mode: host
+    networks:
+      lan:
+        # Choose an unused IP address on your local network
+        ipv4_address: 192.168.1.150
     volumes:
       - ${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
       # Optional: expose local music to MA by bind-mounting it read-only
@@ -52,7 +54,20 @@ services:
       # default=info, possible=(critical, error, warning, info, debug)
       - LOG_LEVEL=info
 
+networks:
+  lan:
+    driver: macvlan
+    driver_opts:
+      # Change this to the network interface connected to your local network
+      parent: eth0
+    ipam:
+      config:
+        # Update the subnet and gateway to match your local network
+        - subnet: 192.168.1.0/24
+          gateway: 192.168.1.1
 ```
+
+Before starting this compose file, change `parent`, `subnet`, and `gateway` to match your local network and set `ipv4_address` to an unused address outside your DHCP server's allocation range. The container will appear as a separate device on your local network.
 
 The desired release version can be found on <a href="https://github.com/music-assistant/server/pkgs/container/server" target="_blank" rel="noopener noreferrer">the container image releases page</a>
 
@@ -79,9 +94,9 @@ If you do need MA to mount the share itself, add the privileges to the recommend
       - apparmor:unconfined
 ```
 
-### A note on host networking
+### A note on Docker networking
 
-`network_mode: host` gives the container direct (layer 2) access to your network. Music Assistant relies on this for local player discovery (mDNS/uPnP, [explained in Networking Basics](/faq/networking/)) and for streaming to and interacting with networked audio devices (AirPlay, Chromecast, DLNA, Sonos), which open random TCP/UDP ports. This is why host networking (or macvlan) is a supported requirement - see the support notes below.
+`network_mode: host`, macvlan, and ipvlan L2 give the container direct (layer 2) access to your network. Music Assistant relies on this for local player discovery (mDNS/uPnP, [explained in Networking Basics](/faq/networking/)) and for streaming to and interacting with networked audio devices (AirPlay, Chromecast, DLNA, Sonos), which open random TCP/UDP ports. This is why one of these network configurations is a supported requirement - see the support notes below.
 
 If you do not use any local/networked players and only stream to software players, you can instead run the container on a normal bridge network with explicit port mappings, for example the web UI on `8095` and the stream server on `8097`:
 
@@ -97,7 +112,7 @@ The MA team will support docker installs that are installed per the above instru
 
 - The docker install must be a simple standalone container (e.g. not using kubernetes)
 - MA, HA and all players must be on the same flat network (or VLAN)
-- Music Assistant needs direct (layer 2) access to the network to properly discover and stream to players. So either host networking or macvlan networking is a mandatory requirement for the docker container
+- Music Assistant needs direct (layer 2) access to the network to properly discover and stream to players. Therefore host networking, macvlan networking, or ipvlan L2 networking is mandatory for the docker container
 
 Everything else is considered unsupported. We have the right to close support requests if you're running an unsupported installation or we may ask you to try to reproduce the issue on one of our supported installation types.
 
