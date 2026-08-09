@@ -41,7 +41,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 
 - Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
-- Some Samsung Cast devices, including the LS60D, Q995GD and S66GD soundbars and Music Frames, stop playing part way through a track on the default HTTP profile. Set them to `Profile 1 - chunked`, as described under [playback stops part way through a track](#playback-stops-part-way-through-a-track)
+- Some Cast devices, Samsung soundbars in particular, stop playing part way through a track on the default HTTP profile. See [playback stops part way through a track](#playback-stops-part-way-through-a-track)
 - After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - TV/Video devices (not the AV dongles) are disabled by default
@@ -67,9 +67,9 @@ You may see any of these, and they are all the same fault:
 - The song starts itself again from the beginning
 - The player briefly goes unavailable and comes back about 15 seconds later
 
-**What identifies it:** playback stops after the same length of time every time, and that time gets shorter the better the audio quality. On one affected soundbar, MP3 lasted about four minutes, FLAC at 48 kHz about eighty seconds, and FLAC at 96 kHz about twenty-five. The device keeps everything it downloads and runs out of room, so better quality fills it sooner. If that is what you are seeing, your network is not the problem and no amount of Wi-Fi tuning will help.
+**What identifies it:** playback stops after the same length of time every time, and that time gets shorter the better the audio quality, from minutes on MP3 down to under a minute on high resolution FLAC. The device keeps everything it downloads and runs out of room, so better quality fills it sooner. If that is what you are seeing, your network is not the problem and no amount of Wi-Fi tuning will help.
 
-**The fix:** in the individual player settings, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`. This has been confirmed on Samsung soundbars and Music Frames, and is worth setting on any Samsung Cast device.
+**The fix:** in the individual player settings, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
 
 > [!IMPORTANT]
 > **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Set the profile on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
