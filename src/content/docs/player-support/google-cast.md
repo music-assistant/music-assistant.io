@@ -71,7 +71,7 @@ In the individual player settings:
 1. Set **Output codec to use for streaming audio to the player** to `MP3`.
 2. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
 
-Once playback is reliable you can put the output codec back to `FLAC` if you want the higher quality.
+Once playback is reliable you can try putting the output codec back to `FLAC`, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
 
 > [!IMPORTANT]
 > **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Set the profile on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
