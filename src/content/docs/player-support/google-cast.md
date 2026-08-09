@@ -37,11 +37,22 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting.
 - <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a continuous audio stream. Use for players that do not natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
 
+## Known Issues / Notes
+
+- Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
+- Some Samsung Cast devices, including the LS60D, Q995GD and S66GD soundbars and Music Frames, stop playing part way through a track on the default HTTP profile. Set them to `Profile 1 - chunked`, as described under [playback stops part way through a track](#playback-stops-part-way-through-a-track)
+- After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
+- It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
+- TV/Video devices (not the AV dongles) are disabled by default
+- Cast Groups containing only a stereo pair will not work
+- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length` and Output Codec MP3 (advanced settings)
+
 ## Troubleshooting playback problems
 
 ### Start by putting the sample rates back to default
 
-Whatever the symptom, set **Sample rates supported by this player** back to 44.1 kHz and 48 kHz at 16 bit in the individual player settings, and try again. Anything higher is a choice you made rather than something Music Assistant detected, it is the most common self-inflicted cause, and some Cast devices from other brands handle high rates badly.
+Whatever the symptom, set **Sample rates supported by this player** back to 44.1 kHz and 48 kHz at 16 bit in the individual player settings, and try again.
 
 Two things to know before you judge the result:
 
@@ -88,14 +99,3 @@ If none of the above solves it, these are the settings that make a Cast problem 
 Keep the recording short, ideally under five minutes, because verbose logging is very noisy.
 
 It is also worth running a [continuous ping](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while) to the device while you reproduce the problem. If the audio stops while the ping stays perfect, that rules the network out and saves everyone a lot of time.
-
-## Known Issues / Notes
-
-- Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
-- If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
-- Some Samsung Cast devices, including the LS60D, Q995GD and S66GD soundbars and Music Frames, stop playing part way through a track on the default HTTP profile. Set them to `Profile 1 - chunked`, as described under [playback stops part way through a track](#playback-stops-part-way-through-a-track)
-- After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
-- It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
-- TV/Video devices (not the AV dongles) are disabled by default
-- Cast Groups containing only a stereo pair will not work
-- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length` and Output Codec MP3 (advanced settings)
