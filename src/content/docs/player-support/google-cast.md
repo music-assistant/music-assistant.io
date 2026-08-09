@@ -56,7 +56,7 @@ Whatever the symptom, if you have changed **Sample rates supported by this playe
 Two things to know before you judge the result:
 
 - **Test for longer than you think you need to.** If the problem is the one described below, a lower sample rate does not fix it, it only makes it take longer to appear. If playback used to fail after 30 seconds, listen for at least two or three minutes before deciding the change worked.
-- **If it still fails at the default rates, leave them there and move on.** Sample rates are then ruled out. Carrying on adjusting them only changes how long the failure takes to arrive.
+- **If it still fails at the default rates, leave them there and move on.** Sample rates by themselves are not the problem, but they may be contributing, so leave them at their default values until you have found a working configuration.
 
 ### Playback stops part way through a track
 
