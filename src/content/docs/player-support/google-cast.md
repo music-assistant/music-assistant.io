@@ -66,9 +66,11 @@ You may see any of these, and they are all the same fault:
 - The song starts itself again from the beginning
 - The player briefly goes unavailable and comes back about 15 seconds later
 
-**What identifies it:** playback stops after the same length of time every time, and that time gets shorter the better the audio quality, from minutes on MP3 down to under a minute on high resolution FLAC. The device keeps everything it downloads and runs out of room, so better quality fills it sooner. If that is what you are seeing, your network is not the problem and no amount of Wi-Fi tuning will help.
+**First, confirm it.** In the individual player settings, set **Output codec to use for streaming audio to the player** to `MP3` and play again. If playback now runs for several minutes before stopping, where it used to stop in seconds, that is your confirmation. The device holds on to everything it is sent until it runs out of room, so the lower the quality, the longer it takes to fill. Your network is not the problem, and no amount of Wi-Fi tuning will help.
 
-**The fix:** in the individual player settings, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
+If it stops after the same length of time as before, this is something else and the rest of this section will not help.
+
+**Then fix it.** Set **HTTP Profile used for sending audio** to `Profile 1 - chunked`. That removes the limit rather than delaying it, so you can put the output codec back to what it was afterwards.
 
 > [!IMPORTANT]
 > **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Set the profile on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
