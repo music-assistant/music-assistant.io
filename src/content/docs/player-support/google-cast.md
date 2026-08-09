@@ -51,7 +51,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 
 ### Start by putting the sample rates back to default
 
-Whatever the symptom, set **Sample rates supported by this player** back to 44.1 kHz and 48 kHz at 16 bit in the individual player settings, and try again.
+Whatever the symptom, if you have changed **Sample rates supported by this player**, set it back to 44.1 kHz and 48 kHz at 16 bit in the individual player settings and try again.
 
 Two things to know before you judge the result:
 
