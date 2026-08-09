@@ -67,15 +67,7 @@ You may see any of these, and they are all the same fault:
 - The song starts itself again from the beginning
 - The player briefly goes unavailable and comes back about 15 seconds later
 
-**What identifies it:** the stop happens after a consistent length of time for a given output codec, and changing the codec or sample rate changes that time in proportion. Measured on one affected soundbar, with the same device, network and track:
-
-| Output codec | Playback stopped after | Audio delivered |
-|---|---|---|
-| MP3 320 kbps | about 4 minutes | about 9.8 MB |
-| FLAC 48 kHz 16 bit | about 80 seconds | about 9.8 MB |
-| FLAC 96 kHz 24 bit | about 25 seconds | about 9.8 MB |
-
-The amount of audio is the same every time, which is the giveaway. The device is holding on to everything it downloads and running out of room, so a higher bitrate simply fills it sooner. If your own failures line up like this, your network is not the problem and no amount of Wi-Fi tuning will help.
+**What identifies it:** playback stops after the same length of time every time, and that time gets shorter the better the audio quality. On one affected soundbar, MP3 lasted about four minutes, FLAC at 48 kHz about eighty seconds, and FLAC at 96 kHz about twenty-five. The device keeps everything it downloads and runs out of room, so better quality fills it sooner. If that is what you are seeing, your network is not the problem and no amount of Wi-Fi tuning will help.
 
 **The fix:** in the individual player settings, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`. This has been confirmed on Samsung soundbars and Music Frames, and is worth setting on any Samsung Cast device.
 
