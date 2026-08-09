@@ -41,7 +41,6 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 
 - Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
-- Some Cast devices, Samsung soundbars in particular, stop playing part way through a track on the default HTTP profile. See [playback stops part way through a track](#playback-stops-part-way-through-a-track)
 - After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - TV/Video devices (not the AV dongles) are disabled by default
@@ -84,10 +83,10 @@ If none of the above solves it, these are the settings that make a Cast problem 
 
 1. Set the Google Cast provider's log level to **verbose**. This records the conversation with the device, including any error it reports back.
 2. Set the Streams controller log level to **debug** in [System Settings](/settings/core/). This logs every request for audio along with which device asked, which is how you tell that a device has restarted the stream rather than simply stopped.
-3. Restart Music Assistant. The log starts fresh on every restart and only the previous one is kept.
-4. Reproduce the problem, and note the actual time of day the audio stopped. Verbose logs run to thousands of lines and the timestamp is how anyone finds the right part.
-5. Download `musicassistant.log` straight away, before restarting again. Do not send `musicassistant.log.1`, which is the previous run.
+3. Restart Music Assistant, which starts a fresh log.
+4. Reproduce the problem, and note the time of day the audio stopped.
+5. Download the log from [Diagnostics](/settings/core/#diagnostics) before restarting again.
 
 Keep the recording short, ideally under five minutes, because verbose logging is very noisy.
 
-It is also worth running a [continuous ping](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while) to the device while you reproduce the problem. If the audio stops while the ping stays perfect, that rules the network out and saves everyone a lot of time.
+It is also worth running a [continuous ping](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while) to the device while you reproduce the problem. If the audio stops while the ping stays perfect, that rules the network out.
