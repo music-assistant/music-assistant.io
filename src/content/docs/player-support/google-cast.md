@@ -66,10 +66,10 @@ You may see any of these:
 - The song starts itself again from the beginning
 - The player briefly goes unavailable and comes back about 15 seconds later
 
-In the individual player settings, set both of the following:
+In the individual player settings:
 
-- **Output codec to use for streaming audio to the player** to `MP3`
-- **HTTP Profile used for sending audio** to `Profile 1 - chunked`
+1. Set **Output codec to use for streaming audio to the player** to `MP3`.
+2. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
 
 Once playback is reliable you can put the output codec back to `FLAC` if you want the higher quality.
 
