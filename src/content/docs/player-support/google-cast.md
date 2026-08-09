@@ -45,7 +45,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - TV/Video devices (not the AV dongles) are disabled by default
 - Cast Groups containing only a stereo pair will not work
-- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length` and Output Codec MP3 (advanced settings)
+- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length`, Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
 
 ## Troubleshooting playback problems
 
