@@ -60,6 +60,9 @@ Two things worth checking while you are there. **Does it affect one player or al
 
 ### If the ping showed a problem
 
+> [!NOTE]
+> If the audio stops after a consistent length of time, and that time changes when you change the output codec or sample rate, this is not your network. It is a limit inside the player. Cast users should see [playback stops part way through a track](/player-support/google-cast/#playback-stops-part-way-through-a-track).
+
 1. **Use a cable wherever you can.** A wired player takes the whole problem away, and wiring the Music Assistant server helps every player at once. If you do only one thing, do this one.
 2. **Check the signal where the speaker actually is**, not what the router claims. A speaker behind a wall, inside a cabinet or on another floor can look healthy from the router and still be struggling. Moving it a metre is a free test.
 3. **Look for power saving.** Wi-Fi power saving on the speaker, power management on the server's network adapter, and a server that sleeps or spins its disks down all cause dropouts that come and go for no obvious reason. Dropouts at a regular interval are a strong hint that something is going to sleep.
