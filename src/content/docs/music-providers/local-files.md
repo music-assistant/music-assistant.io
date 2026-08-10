@@ -43,7 +43,10 @@ Separate sources must be added for Music, Audiobooks and Podcasts.
 If the files are stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, the Filesystem (local disk) source should be selected and then the path to the files provided. 
 
 > [!NOTE]
-> For Home Assistant OS only the `/media` folder can be accessed. Docker users can mount their own folder paths. It is not possible to mount a folder from Home Assistant into the `/media` path.
+> On Home Assistant OS only the /media folder can be accessed, and it is not possible to mount a folder from Home Assistant into that path. Docker users can mount their own folder paths.
+
+> [!CAUTION]
+> Music Assistant assumes your NFS or SMB server is on your local network. It adds no encryption or access control of its own, so these shares should not be reached over the internet.
 
 **Audio files are on a remote share served via SMB/CIFS**
 
