@@ -225,6 +225,10 @@ export default defineConfig({
                   label: "Listenbrainz Scrobbler",
                   slug: "plugins/listenbrainz_scrobble",
                 },
+                {
+                  label: "MilkDrop Visualizer",
+                  slug: "plugins/milkdrop-visualizer",
+                },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
                 {
                   label: "OpenAI Compatible",
