@@ -80,4 +80,4 @@ The rows update automatically based on your listening:
 - "Random" rows give you variety from your library
 - "Most Played" shows your personal favorites over time
 
-The rows only include music already in your Music Assistant library. For discovering new music you don't own yet, check out the available [music providers](/music-providers/) and [metadata providers](/metadata/) that offer recommendations.
+The rows only include music already in your Music Assistant library. For discovering new music you don't own yet, check out the available [music sources](/music-providers/) and [metadata providers](/metadata/) that offer recommendations.
