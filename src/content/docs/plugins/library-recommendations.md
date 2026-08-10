@@ -15,11 +15,11 @@ Music Assistant surfaces recommendation rows based on what's in your library and
 Library Recommendations provides several discovery rows:
 
 ### Recently played
-- **In Progress** — Audiobooks and podcasts you started but haven't finished yet
-- **Recently Played** — What you've listened to recently
 - **Recently Added Tracks/Albums** — Your latest library additions
 
 ![Recently Added Tracks row on the Discover page](/assets/screenshots/library-recommendations/recently-added-tracks.png)
+
+![Recently Added Albums row on the Discover page](/assets/screenshots/library-recommendations/recently-added-albums.png)
 
 ### Favorites and collections
 - **Recent Favorite Tracks** — Tracks you recently marked as favorites
@@ -27,6 +27,8 @@ Library Recommendations provides several discovery rows:
 - **Favorite Radio** — Quick access to your favorite radio stations
 
 ![Recent Favorite Tracks row on the Discover page](/assets/screenshots/library-recommendations/recent-favorite-tracks.png)
+
+![Favorite Playlists row on the Discover page](/assets/screenshots/library-recommendations/favorite_playlists.png)
 
 ![Favorite Radio row on the Discover page](/assets/screenshots/library-recommendations/favorite-radio.png)
 
@@ -38,6 +40,10 @@ Library Recommendations provides several discovery rows:
 
 ![Random Artists row on the Discover page](/assets/screenshots/library-recommendations/random-artists.png)
 
+![Recent Artists row on the Discover page](/assets/screenshots/library-recommendations/recent-artists.png)
+
+![Recent Tracks row on the Discover page](/assets/screenshots/library-recommendations/recent-tracks.png)
+
 ### Rediscovery
 - **Forgotten Tracks** — Tracks you haven't played in a while
 - **Forgotten Albums** — Albums you haven't heard in a while  
@@ -47,6 +53,10 @@ Library Recommendations provides several discovery rows:
 ![Forgotten Tracks row on the Discover page](/assets/screenshots/library-recommendations/forgotten-tracks.png)
 
 ![Forgotten Albums row on the Discover page](/assets/screenshots/library-recommendations/forgotten-albums.png)
+
+![Forgotten Artists row on the Discover page](/assets/screenshots/library-recommendations/forgotten-artists.png)
+
+![Never / Rarely Played row on the Discover page](/assets/screenshots/library-recommendations/never-played-tracks.png)
 
 ### Top played
 - **Most Played Tracks** — Your all-time favorite tracks based on play count
