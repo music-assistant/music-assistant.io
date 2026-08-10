@@ -56,7 +56,7 @@ Which URL is right depends on where Music Assistant runs relative to the addon:
 
 ## Usage
 
-- After setup, find **Mamma Mi Radio** via browse or search and add it to your library
+- After setup, Mamma Mi Radio is added to your library automatically
 - Press play; live now-playing metadata appears within one update interval (about 12 seconds)
 
 ## Known Issues / Notes
