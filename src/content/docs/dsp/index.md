@@ -53,6 +53,10 @@ The following filters can be added to the DSP path. The simpler filters are expl
 
 Shifts the stereo image left or right, from −100 (full left) through 0 (centred) to +100 (full right). Rather than the near side being boosted, the opposite side is quietened so the audio never becomes louder than the source and cannot distort. The value is the percentage by which the opposite channel is reduced: at +20 the left channel is played at 80% level, and at +100 the left channel is fully muted. Because the amount is expressed as a percentage of level rather than in decibels, it is best suited to balancing by ear; for a specific decibel trim, it should be noted that roughly every 20 points corresponds to about −2 dB on the opposite channel.
 
+### Compressor
+
+Reduces the difference between the loudest and the quietest parts of the audio to produce a more consistent, controlled sound. It is described in detail on the [Compressor](/dsp/compressor/) page.
+
 ### Convolution
 
 Applies a recorded impulse response to the audio, most commonly for room correction, speaker correction or headphone simulation. It is described in detail on the [Convolution](/dsp/convolution/) page.

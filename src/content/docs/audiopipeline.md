@@ -39,6 +39,9 @@ The maximum sample rate that can be expected can be found in the [Player Provide
 
 In this example [DSP](/dsp/) has been enabled. High level information about the DSP filters which have been applied are shown. A message will be shown if DSP is not supported (See the example below in [Groups](#groups)).
 
+> [!NOTE]
+> Filters will not be shown in the audio pipeline if they have no effect on the audio path. For example, if the Balance control is set to the middle position then it is not doing anything and will not be shown.
+
 ***************************************************************
 ## Groups
 <img src="/assets/screenshots/audiopipeline-groups.png" alt="image" style="width: 500px;"  loading="lazy" />

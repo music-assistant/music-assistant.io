@@ -198,6 +198,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Audio Pipeline", slug: "audiopipeline" },
+            { label: "Compressor", slug: "dsp/compressor" },
             { label: "Convolution", slug: "dsp/convolution" },
             { label: "Digital Signal Processing", slug: "dsp" },
             { label: "Parametric Equalizer", slug: "dsp/parametriceq" },
