@@ -50,7 +50,7 @@ Connecting your account puts your saved music and playlists into Music Assistant
 
 1. Add the Spotify source via `SETTINGS >> MUSIC SOURCES >> ADD A MUSIC SOURCE`.
 2. Follow the on screen instructions which should take you through the initial flow shown here
-<a href="assets/screenshots/spotify-phase1.png"><img src="/assets/screenshots/spotify-phase1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+<a href="/assets/screenshots/spotify-phase1.png"><img src="/assets/screenshots/spotify-phase1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
 <details>
 <summary>I clicked - Use the Spotify App</summary>
@@ -59,14 +59,14 @@ Connecting your account puts your saved music and playlists into Music Assistant
 > [!NOTE]
 > Your mobile device must be on the same network as the MA server for this to work
 
-<a href="assets/screenshots/spotify-phase2a.png"><img src="/assets/screenshots/spotify-phase2a.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+<a href="/assets/screenshots/spotify-phase2a.png"><img src="/assets/screenshots/spotify-phase2a.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
 
 <details>
 <summary>I clicked - Use a web browser instead</summary>
 <div>
-<a href="assets/screenshots/spotify-phase2b.png"><img src="/assets/screenshots/spotify-phase2b.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+<a href="/assets/screenshots/spotify-phase2b.png"><img src="/assets/screenshots/spotify-phase2b.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
 
