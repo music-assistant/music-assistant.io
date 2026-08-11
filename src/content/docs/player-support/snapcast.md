@@ -1,5 +1,5 @@
 ---
-title: Snapcast Player Provider
+title: "Snapcast"
 description: Details for the Snapcast Player Provider
 ---
 
@@ -15,7 +15,7 @@ MA includes a built-in Snapserver although an external server can also be used. 
 ## Features
 
 - Synchronized playback across all Snapcast devices
-- Lossless audio quality with options for 48kHz / 16bits PCM
+- Lossless audio quality. The default is 48 kHz / 16-bit. Higher sample rates and 24-bit are available only when Music Assistant is connected to a [compatible external Snapserver](https://github.com/rwjack/snapcast/tree/feature/tcp-packed-s24le).
 
 ## Configuration
 
@@ -33,6 +33,8 @@ In the `Show Advanced Settings` toggle is enabled this will allow the use of an 
 - <b>Snapcast Server IP.</b> The IP address of the external Snapcast server (e.g. `192.168.1.200`)
 - <b>Snapcast Control Port.</b> The port the external Snapcast server can be reached on
 - <b>Idle threshold stream parameter.</b> (default 60000ms) The stream state will switch from playing to idle after receiving this many milliseconds of silence
+- <b>Snapcast stream sample rate.</b> (default `48000`) Only shown when **Use existing Snapserver** is enabled. Choose `48000`, `96000`, or `192000`. Your Snapcast clients must support the rate you choose. After changing it, reload the Snapcast provider
+- <b>Snapcast stream bit depth.</b> (default `16`) Only shown when **Use existing Snapserver** is enabled. Choose `16` or `24`. Higher rates and 24-bit need a [compatible external Snapserver](https://github.com/rwjack/snapcast/tree/feature/tcp-packed-s24le). The built-in Snapserver always stays at 48 kHz / 16-bit
 
 The `Built-in Snapserver Settings`are as follows:
 
@@ -63,4 +65,5 @@ In addition to the [Individual Player Settings](/settings/individual-player/), S
 - The Snapcast app for iOS is broken as it uses an old version of Snapclient. Using it brings problems with this provider
 - Ensure that the ports 1704 and 1705 on the Snapserver host are open. Also make sure that the ports between 4953 and 5153 inclusive are open
 - Try the default Snapcast settings and then make changes as necessary
+- Leave the stream sample rate and bit depth at the defaults unless you are using a compatible external Snapserver. Reload the Snapcast provider after changing them
 - The stream name must be `default`

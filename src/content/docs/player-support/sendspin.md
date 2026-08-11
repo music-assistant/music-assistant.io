@@ -4,22 +4,24 @@ title: "Sendspin"
 
 # Sendspin-audio Provider  <img src="/assets/icons/sendspin-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-<a href="https://www.sendspin-audio.com/" target="_blank" rel="noopener noreferrer">Sendspin-audio</a> is an audio playback, control, and synchronization protocol developed by the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation</a>. It is the **native playback protocol built into Music Assistant**, providing synchronized audio playback across multiple clients with sample-accurate timing.
+<a href="https://www.sendspin-audio.com/" target="_blank" rel="noopener noreferrer">Sendspin</a> is Music Assistant's own way of sending audio to a player. It keeps several devices playing in step with each other, closely enough that the same track can play in more than one room without any echo between them.
 
-Because Sendspin is **license-free and open source**, anyone can build apps, devices, and integrations using the protocol. The specification is available at <a href="https://github.com/Sendspin/spec" target="_blank" rel="noopener noreferrer">github.com/Sendspin/spec</a>.
+It is built into Music Assistant and switched on from the start, so there is nothing to install. The web player you use in your browser is a Sendspin player, and Sendspin speakers and apps appear on their own once they are on your network.
+
+Sendspin was developed by the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation</a> and is free for anyone to build on, so the range of devices and apps that support it is growing.
 
 > [!CAUTION]
 > **Technical Preview**
 >
-> Sendspin and its implementation in Music Assistant are currently in **technical preview**. While functional, the protocol and implementation may change.
+> Sendspin is still in technical preview. It works, but expect it to change.
     
 ## Features
 
-- **Synchronized multi-room audio**: Sample-accurate playback across all connected devices
-- **Automatic discovery**: Sendspin devices on your network are automatically detected by Music Assistant
-- **Per-player DSP**: Individual equalizer and volume settings for each device
-- **Bidirectional control**: Clients can control playback (play, pause, skip, etc.)
-- **Real-time metadata**: Track info, artwork, and playback progress on all devices
+- **Synchronised multi-room audio**: every connected device stays in step
+- **Automatic discovery**: Sendspin devices on your network are found on their own
+- **Per-player audio settings**: each device gets its own equaliser and volume
+- **Control from the device**: play, pause and skip can be driven from the player as well as from Music Assistant
+- **Track information**: title, artwork and progress appear on every device
 
 ## Configuration
 
@@ -31,31 +33,17 @@ Individual Sendspin players will appear automatically when clients connect
 
 Standard [player settings](/settings/player-provider/) apply. Specific settings available for this player type are:
 
-- <b>Manual IP addresses for discovery.</b> Normally Sendspin clients are automatically discovered via mDNS. If automatic discovery does not work due to the network setup, the IP address or hostname of a Sendspin client can be manually entered. Accepted values are a plain IP address or hostname, optionally with a port, such as `192.168.1.50`, `speaker.local`, or `speaker.local:8928`. For clients using a non-default path or protocol, enter the full WebSocket URL, such as `ws://speaker.local:8928/sendspin` or `wss://speaker.example.com/sendspin`. If only an IP address or hostname is entered, Music Assistant assumes the default Sendspin client endpoint `ws://<host>:8928/sendspin`. Music Assistant will connect to the configured clients directly and keep retrying if a client is offline when MA starts.
-- <b>Sync delay (ms).</b> Not all devices allow this correction but when available is allows a for static delay to be applied for audio synchronisation
+- <b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example `192.168.1.50` or `speaker.local`. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
+- <b>Sync delay (ms).</b> Not all devices allow this correction but when available it allows for a static delay to be applied for audio synchronisation
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 
 ## Known Issues / Notes
 
-- The Sendspin provider is added by default
-- The web player appears automatically in the player list
+- Audio is sent to Sendspin players as 16 bit, so higher resolution material is converted on the way out
+- Artwork clears briefly when you pause, seek, or move on to the next track
+- Only one Music Assistant server on a network can use Sendspin
+- Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Cloud gives the most reliable connection through a firewall
 - If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
-
-### Limitations
-
-- **Technical preview**: The protocol is still evolving
-- **Network requirements**: For direct connections, devices must be on the same network as Music Assistant
-- **WebRTC requirements**: For remote access via WebRTC, Home Assistant Cloud (Nabucasa) provides optimal TURN server support for reliable connections through firewalls
-
-### Specification Compliance and Deviations
-
-There are some gaps between this implementation and the specification at <a href="https://github.com/Sendspin/spec" target="_blank" rel="noopener noreferrer">github.com/Sendspin/spec</a>. Both are subject to change. Known deviations include:
-
-- Player Format Changes through `stream/request-format` are not yet supported
-- The `paused` `playback_state` is never used - only `playing` and `stopped` are sent to clients
-- All streams are ended immediately when playback stops, skipping to the next track, or when seeking. Artwork is also cleared during pause, seek, or loading of the next track
-- Multi Server Support messages are implemented but not fully utilized - only a single server per network is supported
-- Only 16-bit audio formats are supported
 
 ## Supported Clients
 
@@ -65,42 +53,29 @@ Several client types can connect to Music Assistant via Sendspin:
 |--------|-------------|
 | **Web Browser** | The built-in Music Assistant web player uses Sendspin for local playback |
 | **[Google Cast (Sendspin mode)](/player-support/google-cast/)** | Experimental Sendspin mode for Chromecast devices |
-| **<a href="https://esphome.github.io/home-assistant-voice-pe-alpha/" target="_blank" rel="noopener noreferrer">Home Assistant Voice PE</a>** | Alpha firmware for the Home Assistant Voice Preview Edition |
+| **<a href="https://esphome.github.io/home-assistant-voice-pe/" target="_blank" rel="noopener noreferrer">Home Assistant Voice PE</a>** | Built into recent Voice PE firmware. Update the device with the official installer, choosing a pre-release build if the current stable one does not show up as a player |
 | **<a href="https://github.com/trudenboy/sendspin-bt-bridge" target="_blank" rel="noopener noreferrer">Sendspin Bluetooth Bridge</a>** | Bridges Bluetooth speakers as MA players — multi-device, multiroom sync, web dashboard. Deploys as HA addon, Docker, or LXC |
 | **<a href="https://www.sendspin-audio.com/code/" target="_blank" rel="noopener noreferrer"> Various Sendspin Clients</a>** | Clients are becoming available for various platforms |
 
-## How It Works
+## The Web Player
 
-### Automatic Discovery
+The player built into the Music Assistant web interface is itself a Sendspin player. On your own network it connects straight to the server, which sounds best. From anywhere else it connects over the internet instead, which still works but at a lower quality.
 
-Sendspin devices on the local network are automatically discovered via mDNS and will appear in Music Assistant. If mDNS discovery is unavailable or unreliable, add the client's IP address or hostname to the provider's manual discovery setting.
+The sync delay can be adjusted under **Settings → User Interface → Sendspin sync delay**. Music Assistant picks a value to suit your device, but it may need adjusting.
 
-### The Web Player
+Audio quality in the web player depends on where you are listening from:
 
-The built-in web player in the Music Assistant frontend uses Sendspin for audio playback. When on a local network, the web player will attempt to use a direct WebSocket connection for best performance; otherwise it falls back to WebRTC.
-
-The sync delay can be adjusted under **Settings → User Interface → Sendspin sync delay**. This value is auto-selected based on the platform but may need manual adjustment.
-
-#### Codec Support
-
-The audio codec used depends on the connection and platform:
-
-- **Local connections** (on the same network): FLAC (lossless) is used on desktop browsers and Android. iOS, iPadOS, and Safari use Opus.
-- **Remote connections** (via WebRTC): All browsers use Opus.
+- **On your own network**: lossless FLAC on desktop browsers and Android. iPhone, iPad and Safari use Opus
+- **From anywhere else**: every browser uses Opus
 
 > [!NOTE]
-> Firefox on Android does not support remote (WebRTC) playback.
+> Firefox on Android cannot play from outside your own network.
 
-### Connection Methods
+## Connecting Other Sendspin Players
 
-Sendspin supports two connection methods:
+Sendspin players on your network are found automatically, so there is usually no address to enter anywhere.
 
-1. **Direct WebSocket**: Used automatically by clients on the same local network as Music Assistant, including the web player and hardware devices.
-2. **WebRTC**: Used for remote access when not on the local network. Works across networks and through firewalls. The web player falls back to this method when a direct connection isn't possible.
-
-#### Connecting External Sendspin Clients
-
-Sendspin clients on the local network are discovered automatically, so most users never need to enter a URL. However, if a third-party client asks for a server URL (or you are developing your own client), the Sendspin server listens on the `/sendspin` WebSocket endpoint on port `8927`. A full connection URL looks like `ws://192.168.1.100:8927/sendspin` (replacing the IP address with that of your Music Assistant server).
+If a player does ask you for a server address, or you are building a client of your own, Music Assistant listens at `ws://192.168.1.100:8927/sendspin` — replace the IP address with that of your Music Assistant server. The specification is published at <a href="https://github.com/Sendspin/spec" target="_blank" rel="noopener noreferrer">github.com/Sendspin/spec</a>.
 
 > [!NOTE]
-> The `/sendspin` path also exists on the main web interface port (8095), but that is an authenticated proxy used internally by the web player and external clients connecting there will be rejected.
+> The same `/sendspin` path exists on the main web interface port (8095), but that one is reserved for the built-in web player and will reject other clients.

@@ -7,7 +7,7 @@ description: Common Problems and Fixes
 
 ## First things to try
 
-**Logs.** Look in the logs and try and resolve any errors you see there particularly those related to [tagging](/music-providers/filesystem/#tagging-files). Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
+**Logs.** Look in the logs and try and resolve any errors you see there particularly those related to [tagging](/music-providers/local-files/#tagging-files). Connection errors are symptomatic of networking problems (including Adguard or pi-hole blocking) or container misconfiguration.
 
 **Complex networks.** Probably the most common issue is people trying to run MA with complicated network setups. Running behind VPNs, across subnets or VLANs, behind firewalls, local SSL, using reverse proxies or inside containers (except when using our recommended docker compose) is not supported (it might work but we can’t troubleshoot for you as MA is run by a small team who don't have the resources to help with non-MA issues). Some options have been added to core to help people who are running non-standard setups but these are supplied on a non-support basis. Search Discord for these problems as users have regularly reported these issues and found that it is their setup that was causing the fault; their solution might help you. See [Networking Basics](/faq/networking/) for a plain-language explanation of these terms.
 
@@ -25,7 +25,7 @@ description: Common Problems and Fixes
 
 **Physical devices.** Check the physical device settings. There have been numerous reports where the issue was actually a setting external to MA such as receivers set to repeat tracks or ESP devices with incorrect arguments passed on install.
 
-**File tagging.** Ensure local files are [tagged properly](/music-providers/filesystem/#tagging-files).
+**File tagging.** Ensure local files are [tagged properly](/music-providers/local-files/#tagging-files).
 
 **Playback.** If it is a playback issue then turn on [QUEUE FLOW MODE](/faq/tech-info/#track-queueing) in the settings for the specific player (where that is available).
 
@@ -64,6 +64,10 @@ Navigate to MA settings and inspect the provider or source entry. If there is a 
 Matching items between streaming sources is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see [Metadata](/metadata/)
 
 ## My media player is not available or not playing
+
+If the player is found and starts playing but then crackles, skips or stops after a while, that is a different problem and is covered by the [dropout checklist](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while). Start with the ping test there, which tells you within a few minutes whether your network is at fault. Note that a player can work perfectly in its manufacturer's own app and still drop out here, because those apps send audio a long way ahead and can hide network faults that Music Assistant cannot.
+
+For a player that is missing or will not start at all, read on.
 
 First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to MA SETTINGS >> PLAYERS. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
 
@@ -113,7 +117,7 @@ Some amplifiers may auto turn on when a signal is detected so check the amplifie
 
 ## My local music isn’t being imported or I’m seeing missing ID3 tag warnings in the logs
 
-This is likely a tagging problem. See [here](/music-providers/filesystem/#tagging-files)
+This is likely a tagging problem. See [here](/music-providers/local-files/#tagging-files)
 
 ## MA is interfering with my Spotify Connect or Other Streaming App
 

@@ -1,0 +1,531 @@
+---
+import {
+  CAPABILITY_COLUMNS,
+  CAPABILITY_NOTES,
+  KNOWN_UNCHARTED,
+  PLAYER_CAPABILITIES,
+} from "../data/player-capabilities";
+import { PLAYERS } from "../data/players";
+
+// ---------------------------------------------------------------------------
+// Guard rails for src/data/player-capabilities.ts.
+//
+// Everything below runs while the site is being built, in the same spirit as
+// TilePage.astro: a mistake in the data file stops the build with an explicit
+// message rather than shipping a row with a hole in it. This table replaced a
+// screenshot that nobody could keep current, so the checks matter more than
+// usual — a provider added without a row must not go unnoticed.
+// ---------------------------------------------------------------------------
+
+const problems: string[] = [];
+
+const playersBySlug = new Map(PLAYERS.map((player) => [player.slug, player]));
+const columnIds = CAPABILITY_COLUMNS.map((column) => column.id);
+const knownColumnIds = new Set(columnIds);
+const unchartedSlugs = new Set(KNOWN_UNCHARTED);
+const referencedNotes = new Set<number>();
+
+if (knownColumnIds.size !== columnIds.length) {
+  problems.push(
+    `two columns in CAPABILITY_COLUMNS share an id. Ids are used as the keys ` +
+      `of every row's "values", so they must be unique.`,
+  );
+}
+
+const seenSlugs = new Set<string>();
+
+for (const row of PLAYER_CAPABILITIES) {
+  const where = `the row for "${row.slug}"`;
+  const player = playersBySlug.get(row.slug);
+
+  if (seenSlugs.has(row.slug)) {
+    problems.push(
+      `${where} appears twice in PLAYER_CAPABILITIES. Delete whichever of the ` +
+        `two is the duplicate.`,
+    );
+  }
+  seenSlugs.add(row.slug);
+
+  if (!player) {
+    problems.push(
+      `${where} uses a slug that is not in PLAYERS in src/data/players.ts, so ` +
+        `the row has no name and no logo. Slugs include the folder, for ` +
+        `example "player-support/sonos". Check the spelling, and add the ` +
+        `provider to players.ts first if it is missing there.`,
+    );
+  }
+
+  if (unchartedSlugs.has(row.slug)) {
+    problems.push(
+      `${where} is also listed in KNOWN_UNCHARTED, which is only for providers ` +
+        `with no row at all. Now that it has one, remove it from that list.`,
+    );
+  }
+
+  for (const id of knownColumnIds) {
+    if (typeof row.values[id] !== "boolean") {
+      problems.push(
+        `${where} has no true or false for the "${id}" column. Every provider ` +
+          `needs a value in every column: the table has no blank cells.`,
+      );
+    }
+  }
+
+  for (const id of Object.keys(row.values)) {
+    if (!knownColumnIds.has(id)) {
+      problems.push(
+        `${where} has a value for "${id}", which is not a column in ` +
+          `CAPABILITY_COLUMNS. The columns are: ${columnIds.join(", ")}.`,
+      );
+    }
+  }
+
+  const noteRefs: [string, number[]][] = [
+    ["sampleRateNotes", row.sampleRateNotes ?? []],
+    ...Object.entries(row.notes ?? {}),
+  ];
+
+  for (const [id, notes] of noteRefs) {
+    if (id !== "sampleRateNotes" && !knownColumnIds.has(id)) {
+      problems.push(
+        `${where} has notes against "${id}", which is not a column in ` +
+          `CAPABILITY_COLUMNS. The columns are: ${columnIds.join(", ")}.`,
+      );
+    }
+
+    for (const note of notes) {
+      if (!Number.isInteger(note) || note < 1 || note > CAPABILITY_NOTES.length) {
+        problems.push(
+          `${where} refers to note ${note} against "${id}", but CAPABILITY_NOTES ` +
+            `only has notes 1 to ${CAPABILITY_NOTES.length}. Add the note ` +
+            `first, then refer to it by its position in that list.`,
+        );
+      } else {
+        referencedNotes.add(note);
+      }
+    }
+  }
+}
+
+// A provider added to players.ts must be given a row here too, otherwise it
+// would quietly be missing from the comparison. Adding a provider is the
+// moment to work out what it supports.
+for (const player of PLAYERS) {
+  if (seenSlugs.has(player.slug) || unchartedSlugs.has(player.slug)) continue;
+  problems.push(
+    `"${player.name}" is in players.ts but has no row in the comparison table, ` +
+      `so it would be missing from it. Add one to PLAYER_CAPABILITIES:\n\n` +
+      `       {\n` +
+      `         slug: "${player.slug}",\n` +
+      `         sampleRate: "48kHz/16 bits",\n` +
+      `         values: {\n` +
+      columnIds.map((id) => `           ${id}: false,`).join("\n") +
+      `\n         },\n` +
+      `       },\n\n` +
+      `     If its capabilities are genuinely not known yet, add its slug to ` +
+      `KNOWN_UNCHARTED instead, and take it out again once they are.`,
+  );
+}
+
+for (const slug of KNOWN_UNCHARTED) {
+  if (!playersBySlug.has(slug)) {
+    problems.push(
+      `KNOWN_UNCHARTED lists "${slug}", which is not in PLAYERS in ` +
+        `src/data/players.ts. It is probably a leftover from a renamed or ` +
+        `deleted provider and can be removed.`,
+    );
+  }
+}
+
+for (let i = 0; i < CAPABILITY_NOTES.length; i++) {
+  if (!referencedNotes.has(i + 1)) {
+    problems.push(
+      `note ${i + 1} ("${CAPABILITY_NOTES[i]}") is never used by any row, so ` +
+        `it would appear under the table with nothing pointing at it. Either ` +
+        `refer to it from a row or delete it — but note that deleting one ` +
+        `renumbers every note after it, and the rows refer to notes by number.`,
+    );
+  }
+}
+
+if (problems.length > 0) {
+  throw new Error(
+    `\n\nsrc/data/player-capabilities.ts has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
+      problems.map((problem, i) => `  ${i + 1}. ${problem}`).join("\n\n") +
+      `\n\nFix the file and build again.\n`,
+  );
+}
+
+// Rows follow the order of players.ts so that the table and the tiles above it
+// list the providers the same way.
+const rows = PLAYERS.flatMap((player) => {
+  const capabilities = PLAYER_CAPABILITIES.find(
+    (entry) => entry.slug === player.slug,
+  );
+  return capabilities ? [{ player, capabilities }] : [];
+});
+
+const rateLines = (rate: string | string[]) =>
+  Array.isArray(rate) ? rate : [rate];
+---
+
+<figure class="caps not-content">
+  <div
+    class="caps__scroll"
+    role="region"
+    tabindex="0"
+    aria-labelledby="caps-caption"
+  >
+    <table>
+      <caption id="caps-caption">
+        What each player provider supports
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col" class="caps__provider">Provider</th>
+          <th scope="col" class="caps__rate">Max Sample Rate</th>
+          {
+            CAPABILITY_COLUMNS.map((column) => (
+              <th scope="col" class="caps__flag">
+                {column.label}
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          rows.map(({ player, capabilities }) => (
+            <tr>
+              <th scope="row" class="caps__provider">
+                <a href={`/${player.slug}/`}>
+                  <img
+                    src={player.icon}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span>{player.name}</span>
+                </a>
+              </th>
+              <td class="caps__rate">
+                {rateLines(capabilities.sampleRate).map((line, i, lines) => (
+                  <span>
+                    {line}
+                    {/* Markers ride on the last line, not on one of their own. */}
+                    {i === lines.length - 1 &&
+                      (capabilities.sampleRateNotes ?? []).map((note) => (
+                        <sup class="caps__ref">
+                          <a href={`#caps-note-${note}`}>{note}</a>
+                        </sup>
+                      ))}
+                  </span>
+                ))}
+              </td>
+              {CAPABILITY_COLUMNS.map((column) => (
+                <td class="caps__flag">
+                  {capabilities.values[column.id] ? (
+                    <span class="caps__yes" role="img" aria-label="Yes">
+                      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                        <path
+                          d="M2.5 8.5 6 12 13.5 4"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  ) : (
+                    <span class="caps__sronly">No</span>
+                  )}
+                  {(capabilities.notes?.[column.id] ?? []).map((note) => (
+                    <sup class="caps__ref">
+                      <a href={`#caps-note-${note}`}>{note}</a>
+                    </sup>
+                  ))}
+                </td>
+              ))}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <p class="caps__hint">Scroll the table sideways to see every column.</p>
+
+  <ol class="caps__notes">
+    {
+      CAPABILITY_NOTES.map((note, i) => (
+        <li id={`caps-note-${i + 1}`}>{note}</li>
+      ))
+    }
+  </ol>
+
+</figure>
+
+{/* Deliberately outside the figure above, and so outside its "not-content"
+    class. Every Starlight rule that styles a <summary> is written as
+    `:not(:where(.not-content *))`, including the one that masks the marker into
+    the site's chevron. Inside the figure this accordion kept the ▶ from
+    custom.css unmasked, which the emoji font draws as an orange tile, and it
+    stood out against every other accordion on the page. Out here it is an
+    ordinary one. */}
+<details class="caps__legend">
+  <summary>What the columns mean</summary>
+  <dl>
+    {
+      CAPABILITY_COLUMNS.map((column) => (
+        <>
+          <dt>
+            {column.href ? (
+              <a href={column.href}>{column.label}</a>
+            ) : (
+              column.label
+            )}
+          </dt>
+          <dd>{column.help}</dd>
+        </>
+      ))
+    }
+  </dl>
+</details>
+
+<style>
+  .caps {
+    margin: 1.5rem 0 0;
+  }
+
+  /* The table sits at its natural width, which fits the content column on a
+     desktop, and scrolls only when the viewport is too narrow for it. The
+     region needs tabindex so that a scroll container is reachable without a
+     mouse. */
+  .caps__scroll {
+    overflow-x: auto;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.5rem;
+  }
+
+  .caps__scroll:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+
+  /* Smaller than the rest of the page on purpose: eleven columns only clear the
+     690px content column if the headings stay small, since it is the headings
+     that size the nine tick columns. Body text costs far less. As set here the
+     table needs 669px. */
+  .caps table {
+    width: 100%;
+    /* Separate rather than collapse: collapsed borders are painted by the cell
+       that scrolls under the sticky first column, and disappear beneath it. */
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.875rem;
+    line-height: 1.3;
+  }
+
+  .caps caption {
+    /* The section heading already says what this is; the caption is here for
+       screen readers and to label the scrollable region. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .caps thead th {
+    padding: 0.55rem 0.2rem;
+    vertical-align: bottom;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+    background: var(--sl-color-bg);
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
+
+  .caps tbody th,
+  .caps tbody td {
+    padding: 0.4rem 0.2rem;
+    background: var(--sl-color-bg);
+    border-bottom: 1px solid var(--sl-color-gray-6);
+  }
+
+  .caps tbody tr:last-child th,
+  .caps tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .caps tbody tr:nth-child(even) th,
+  .caps tbody tr:nth-child(even) td {
+    background: var(--sl-color-gray-6);
+  }
+
+  /* nowrap keeps a footnote marker on the same line as the mark it belongs to,
+     rather than dropping it underneath in a narrow column. */
+  .caps td {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* Pinned so the provider stays readable while the columns scroll under it.
+     The cells need their own opaque background for that, which is why every
+     rule above sets one. */
+  .caps__provider {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    /* "Music Player Daemon (MPD)" needs 141px here to wrap onto two lines
+       rather than three. 9.5rem is 152px, leaving room for wider system fonts,
+       and is also where "Bose SoundTouch" fits on one line. */
+    width: 9.5rem;
+    min-width: 9.5rem;
+    text-align: left;
+    box-shadow: 1px 0 0 var(--sl-color-gray-5);
+  }
+
+  .caps thead .caps__provider {
+    z-index: 2;
+  }
+
+  .caps tbody .caps__provider {
+    padding-left: 0.5rem;
+    font-weight: 400;
+  }
+
+  .caps__provider a {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--sl-color-white);
+    text-decoration: none;
+  }
+
+  .caps__provider a:hover {
+    color: var(--sl-color-accent);
+  }
+
+  .caps__provider img {
+    flex: none;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  .caps__rate {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .caps tbody .caps__rate {
+    font-size: 0.8rem;
+  }
+
+  /* Left to size themselves, these columns come out anywhere between 32px and
+     69px wide depending on how long their heading is, which reads as ragged.
+     A floor evens them up. Raising it spends the room the table needs to stay
+     inside the content column, which is only 647px on an iPad Pro in
+     landscape, where the table of contents appears. */
+  .caps__flag {
+    min-width: 2.6rem;
+  }
+
+  .caps tbody .caps__rate span {
+    display: block;
+  }
+
+  .caps__yes {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--sl-color-green);
+  }
+
+  .caps__yes svg {
+    display: block;
+    width: 0.95rem;
+    height: 0.95rem;
+  }
+
+  /* The "No" in an empty cell: read out, never shown. A cross in every empty
+     cell is noise across nine columns, but a blank tells a screen reader
+     nothing. */
+  .caps__sronly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .caps__ref {
+    font-size: 0.75em;
+    line-height: 1;
+    vertical-align: top;
+  }
+
+  .caps__ref a {
+    color: var(--sl-color-gray-3);
+    text-decoration: none;
+  }
+
+  .caps__ref a:hover {
+    color: var(--sl-color-accent);
+  }
+
+  .caps__hint {
+    display: none;
+    margin: 0.5rem 0 0;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+
+  /* Only worth saying when the table actually scrolls. */
+  @media (max-width: 47rem) {
+    .caps__hint {
+      display: block;
+    }
+  }
+
+  .caps__notes {
+    margin: 0.85rem 0 0;
+    padding-left: 1.35rem;
+    font-size: var(--sl-text-xs);
+    color: var(--sl-color-gray-3);
+  }
+
+  .caps__notes li {
+    margin: 0.15rem 0;
+  }
+
+  .caps__notes li:target {
+    color: var(--sl-color-white);
+  }
+
+  /* The border, the marker, the padding and the spacing all come from the
+     site's own accordion styles now, so that this matches the other <details>
+     on the page. Only the definition list inside it is styled here. */
+  .caps__legend dl {
+    margin: 0;
+    font-size: var(--sl-text-sm);
+  }
+
+  .caps__legend dt {
+    margin-top: 0.6rem;
+    font-weight: 600;
+    color: var(--sl-color-white);
+  }
+
+  .caps__legend dd {
+    margin: 0.15rem 0 0;
+    color: var(--sl-color-gray-2);
+  }
+</style>

@@ -23,11 +23,11 @@ Pandora is officially available in the United States only. This source brings th
 | Media Types Supported | Radio |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, MP3 (192kbps) |
+| Maximum Stream Quality | MP3 192kbps |
 | Login Method | Password |
 
 ## Configuration:

@@ -5,10 +5,7 @@ description: Features and configuration for the Playlist Metadata Provider
 
 # Playlist Metadata Provider
 
-Music Assistant includes a built-in metadata provider that generates custom artwork and metadata for library playlists. This provider creates unique, visually appealing playlist covers using images from the tracks' artists and albums, with support for multiple configurable layout templates. It can also automatically detect and assign genres based on the playlist's track content.
-
-> [!NOTE]
-> This provider is built-in and cannot be disabled. It runs automatically during the metadata refresh cycle for playlists.
+Music Assistant includes a built-in metadata provider that generates custom artwork and metadata for library playlists. This provider creates unique, visually appealing playlist covers using images from the tracks' artists and albums, with support for multiple configurable layout templates. It can also automatically detect and assign genres based on the playlist's track content. This provider is built-in and cannot be disabled. It runs automatically during the metadata refresh cycle for playlists.
 
 ## Features
 

@@ -21,10 +21,6 @@ document something readers cannot use.
 If you are not sure, open it against `beta` and say so. Moving a pull request to the other branch
 afterwards is one click for a maintainer.
 
-One thing to watch on `beta`: if your branch was taken before the last release it will be missing
-files the build now expects, and you will get errors that have nothing to do with your change. If
-that happens, say so on the pull request and a maintainer will bring your branch up to date.
-
 ## Checking your change
 
 You do not need to install anything or build the site yourself. Open the pull request and the
@@ -60,15 +56,34 @@ Node 22 or newer. The lockfile is pnpm's, so use pnpm rather than npm.
 
 ## Adding a music source
 
-Five things, and the build will tell you if you miss the last one.
+Four things, and the build will tell you if you miss the last one.
+
+> [!NOTE]
+> The `Features` table on a source page is not only documentation. The comparison table on
+> [I Want To Listen To](https://music-assistant.io/faq/listen-to/) is built from those tables
+> while the site builds, so a source appears in the comparison as soon as its page has one. That
+> means the table has to be complete and has to use the standard row labels: the build fails,
+> naming the source and the row, if a row is missing or if a Yes/No row answers something other
+> than Yes or No. Wording after the answer, like `Yes (with limitations)`, becomes a footnote
+> under the comparison rather than being lost.
+>
+> Two things there cannot be read from a page, and live in `src/data/music-summary.ts`. To keep a
+> source out of the comparison, put its slug in `EXCLUDED`; it still gets a tile. And if
+> `Maximum Stream Quality` does not say whether it is Hi-Res, CD or lossy, the build asks you to
+> settle it in `QUALITY_TIER_OVERRIDES` rather than guessing.
 
 1. **The page**, at `src/content/docs/music-providers/<slug>.md`. Copy an existing page and work
    from that. Structure is covered under [House style](#house-style) below.
+
+   There is no sidebar entry to add. The `Music Sources` menu is generated from this folder, so
+   the file lands in the menu on its own. Two things follow from that: **name the file after the
+   source**, because the menu is sorted by filename, and **set `title` to the name people know it
+   by**, because that is the label they will see. Abbreviate the filename and the two drift apart:
+   `ha.md` sorted before `heos.md` while showing as Home Assistant, which belongs after HEOS. If
+   the page needs a different title from its menu label, add `sidebar: { label: ... }` to the
+   frontmatter.
 2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
-3. **The sidebar entry**, in the `Music Sources` group in `astro.config.mjs`, in alphabetical
-   order. Nothing checks this, so it is the easiest one to forget. A page with no sidebar entry
-   still builds but is unreachable from the menu.
-4. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
+3. **The tile entry**, in `src/data/music-sources.ts`, alphabetical by `name`:
 
    ```ts
    {
@@ -83,7 +98,7 @@ Five things, and the build will tell you if you miss the last one.
    page. **The build fails without it**, and the Deploy Preview check will go red with a
    ready-made entry for you to paste.
 
-5. **Pick the categories.** Your `Media Types Supported` row tells you whether the source offers
+4. **Pick the categories.** Your `Media Types Supported` row tells you whether the source offers
    music, radio, podcasts or audiobooks. Translate that into categories:
 
    - **Music**, which is what the table means by Artists, Albums, Tracks or Playlists, is either
@@ -94,23 +109,24 @@ Five things, and the build will tell you if you miss the last one.
    - **Podcasts** is `podcasts`.
    - **Audiobooks** is `audiobooks`.
 
-   Two more are a judgement call rather than something the table can tell you: `live-concerts`
-   for recordings of live shows, and `children` for audio aimed at younger listeners.
+   Three more are a judgement call rather than something the table can tell you: `live-concerts`
+   for recordings of live shows, `classical` for orchestral, chamber and operatic music, and
+   `children` for audio aimed at younger listeners.
 
-   Last are the country categories, covered just below. These are the ones people forget.
+   Last are the country categories, covered just below.
 
    The full list of valid categories is at the top of `src/data/music-sources.ts`, and the build
    lists them if you use one that does not exist.
 
 ### Country categories
 
-**These are about the language people will hear, not where the company is registered.** Tag a
-source with a country when most of what it carries is in that country's language. Deezer and
-Qobuz are both French companies, but their catalogues are international, so neither is tagged
-France. Sveriges Radio broadcasts in Swedish, so it is tagged Sweden.
+**Tag a country only when the source's content is predominantly or only from that country.** Not
+where the company is registered, and not where it sells. Deezer and Qobuz are French companies
+with international catalogues, so neither is tagged France. Sveriges Radio broadcasts in Swedish,
+so it is tagged Sweden.
 
-One source can carry more than one language. Storytel is tagged both Sweden and Denmark, because
-it is sold in Denmark as Mofibo with a full Danish catalogue.
+This is why the large international services carry no country tag at all. A source can be tagged
+with more than one country where that genuinely holds.
 
 **If the language you need is not on the list, add it.** Three small pieces, in
 `src/data/music-sources.ts` unless stated:
@@ -125,7 +141,9 @@ it is sold in Denmark as Mofibo with a full Danish catalogue.
    every national flag is available as an SVG, or from the MIT licensed
    [flag-icons](https://flagicons.lipis.dev/) set. Prefer a plain one over a highly detailed
    version: the existing flags are a few hundred bytes each and are only shown about 34 pixels
-   tall. Any aspect ratio is fine and the page draws the border for you.
+   tall. Keep it a similar shape to the ones already there, which are all wider than they are
+   tall and mostly close to 3:2. Check it looks right against its neighbours on the built
+   page rather than measuring it; the page draws the border for you.
 
 Then tag your source with it. The build fails if the flag file is missing, and also if a category
 exists that no source uses, so all three have to land together.
@@ -137,9 +155,113 @@ and somebody will sort it out.
 
 ## Adding a player provider
 
-The same, with `src/content/docs/player-support/<slug>.md`, the `Player Providers` sidebar group,
-and `src/data/players.ts`. Categories there are `commercial` for devices sold ready to use, and
-`diy` for software you set up yourself.
+Four things, and the build will tell you if you miss either of the last two.
+
+1. **The page**, at `src/content/docs/player-support/<slug>.md`. Copy an existing provider page
+   and work from that. Structure is covered under [House style](#house-style) below.
+
+   There is no sidebar entry to add. The `Player Providers` menu is generated from this folder,
+   so the file lands in the menu on its own. Two things follow from that: **name the file after
+   the provider**, because the menu is sorted by filename, and **set `title` to the name people
+   know it by**, because that is the label they will see.
+2. **The icon**, in `public/assets/icons/`. See [Icons](#icons).
+3. **The tile entry**, in `src/data/players.ts`, alphabetical by `name`:
+
+   ```ts
+   {
+     name: "Example",
+     slug: "player-support/example",
+     icon: "/assets/icons/example-icon.svg",
+     categories: ["commercial"],
+   },
+   ```
+
+   Categories are `commercial` for devices sold ready to use, and `diy` for software you set up
+   yourself. A provider can be both. This puts it on the
+   [I Want To Stream To](https://music-assistant.io/faq/stream-to/) page. **The build fails
+   without it.**
+4. **The row in the comparison table**, in `src/data/player-capabilities.ts`. That is the table
+   further down the same page, comparing every provider side by side:
+
+   ```ts
+   {
+     slug: "player-support/example",
+     sampleRate: "48kHz/16 bits",
+     values: {
+       hiRes: false,
+       lossless: true,
+       perfectSync: false,
+       syncCorrection: false,
+       crossfade: false,
+       stereoPair: false,
+       deviceButton: false,
+       deviceVoice: false,
+       playerOptions: false,
+     },
+   },
+   ```
+
+   Use the same slug as the tile entry: the name and the logo are taken from `players.ts` rather
+   than typed again. Every column needs a `true` or a `false`, because the table has no blank
+   cells. What each column means is written out under **What the columns mean** on
+   [the page itself](https://music-assistant.io/faq/stream-to/#comparing-players-side-by-side);
+   that wording is the definition, so check your answers against it rather than going by the
+   column name alone. **The build fails without a row**, and names your provider along with a
+   block to paste.
+
+   Where a provider supports two rates, as Sonos does across its two generations, give
+   `sampleRate` a list of strings and each one gets its own line.
+
+### When an answer needs a footnote
+
+Some answers are yes only in a particular case — Sonos is hi-res on Series 2 devices, Google Cast
+syncs when the group was made in the Google Home app. Put the wording in `CAPABILITY_NOTES` in the
+same file, then point at it from the row by its position in that list:
+
+```ts
+notes: {
+  hiRes: [5],
+},
+```
+
+Add the note and the reference together: a note nothing refers to fails the build, and so does a
+reference to a note that is not there. Adding to the end of the list is safe, but **deleting a
+note renumbers every note after it**, and the rows point at numbers, so check the rows if you
+remove one.
+
+### Leaving a provider out of the table
+
+If a provider needs to be left out, put its slug in `KNOWN_UNCHARTED` in the same file instead of
+writing a row:
+
+```ts
+export const KNOWN_UNCHARTED: string[] = [
+  "player-support/example",
+];
+```
+
+The build then stops asking for a row and the provider is left out of the comparison.
+
+A provider that relies on another one for the audio does not need this. Give it that provider's
+row instead, as Bose SoundTouch has DLNA's.
+
+### Adding a column
+
+Rare, but if a new capability applies across providers rather than to one: add it to
+`CAPABILITY_COLUMNS` with an id, a short label, a one-sentence `help` for the legend, and a `href`
+if a page already explains the term. Then add it to every row — the build lists the ones you
+missed. Keep the label short. The table only clears the content column because the headings are
+small enough not to set the column widths themselves, and a long label brings back the sideways
+scrolling.
+
+The capability columns have a minimum width, so a short label will not leave a starved-looking
+column next to its neighbours. There is no matching maximum: a label with a word longer than about
+nine letters sets its own column wider than the rest and the row stops looking even.
+
+A heading that is one long word is the worst case, because it cannot wrap and so sets its column's
+width on its own. Put a `­` soft hyphen at a sensible break point in any word longer than
+about eight letters, as `Cross­fade` and `Sync Cor­rection` do. It is invisible while
+the column has room for the whole word, and becomes a hyphen and a line break when it does not.
 
 ## Adding a plugin, metadata provider or audio analysis provider
 
@@ -180,6 +302,9 @@ there to search.
   **one on what the Music Assistant source gets you**. Keep both to a few sentences.
 - Do not restate the Features table in prose. The table already says what is supported.
 - Plain English. Write as you would explain it to someone in person.
+- **Write for the person using Music Assistant, not the person building it.** Keep the page to
+  what a reader needs to know or can act on. How it works inside — the API calls it makes, how it
+  caches, what the sync does behind the scenes — belongs in the code, not on the page.
 - On a music source or player provider page, keep every standard `Features` table row even
   where the answer is `No`, so the pages line up with each other.
 - Use `## Configuration`, `## Known Issues / Notes` and the other standard headings at the same
@@ -202,7 +327,7 @@ Keep PNGs small. They are served as they are, with no resizing, and they are dis
 ## Editing an `.mdx` page
 
 Most pages are `.md`. A few are `.mdx` because they use components. MDX is stricter than
-markdown and two things bite:
+markdown, and two things catch people out:
 
 - `<` starts a tag, so a bare `<100` breaks the build. Write `&lt;100`.
 - Every tag must be closed, so `<br>` must be `<br />`.

@@ -1,7 +1,20 @@
 ---
-title: General
+title: Overview
 description: Information regarding various elements of Music Assistant
 ---
+
+# Overview
+
+Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These four pages are not a walkthrough of that.
+
+They cover the ideas the interface assumes you already understand, so that when something is not self-evident, the explanation is here.
+
+- **This page** — what the library actually holds, how the queue and Endless Mix behave, what playlists can and cannot do, and where artwork and other metadata come from
+- **[UI](/ui/)** — a tour of the interface itself, view by view
+- **[Groups](/faq/groups/)** — playing the same music on more than one speaker at once
+- **[Genres](/genres/)** — how Music Assistant categorises your library, and how to shape that
+
+None of it needs reading end to end. Use the contents list to jump to whatever you are looking for.
 
 ## The Library
 
@@ -54,18 +67,18 @@ See the [player queues settings](/settings/core/#player-queues) section for more
 > [!CAUTION]
 > Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less.
 
-### Radio Mode
+### Endless Mix
 
-Radio Mode keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music).
+Endless Mix keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music).
 
 <details>
-<summary>How Radio Mode picks tracks</summary>
+<summary>How Endless Mix picks tracks</summary>
 
 **Starting from a Track or Album:**
-Radio Mode retrieves similar tracks using the track's provider mappings (shown in the [Provider Details](/ui/#provider-details) section in the UI). When you start radio mode from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature. For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start radio mode with a track or album that is not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
+Endless Mix retrieves similar tracks using the track's provider mappings (shown in the [Provider Details](/ui/#provider-details) section in the UI). When you start Endless Mix from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature. For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start Endless Mix with a track or album that is not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
 
 **Starting from an Artist:**
-Radio Mode works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all sources where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own source for similar tracks. This means radio mode started from an artist typically produces a diverse mix of results from multiple sources, as each base track contributes similar tracks from its respective source (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that source's top tracks are used as the base.
+Endless Mix works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all sources where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own source for similar tracks. This means Endless Mix started from an artist typically produces a diverse mix of results from multiple sources, as each base track contributes similar tracks from its respective source (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that source's top tracks are used as the base.
 
 </details>
 

@@ -132,7 +132,7 @@ In any of the following views, Right click or long press on a track to get the f
 
 ![image](/assets/screenshots/UI-track-menu.png)
 
-The START RADIO option will only be seen if there is a provider that supports it. [Start Radio populates the queue with tracks based on the selected track](/usage/#radio-mode). The tracks are selected by the provider not MA. 
+The **View ... endless mix** option will only be seen if there is a provider that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the provider not MA. 
 ***************************************************************
 
 ## View - Discover
@@ -190,9 +190,11 @@ Expanding the IMAGES section (only visible to users with the Administrators role
 
 The PROVIDER DETAILS section (read only for other than users with the Administrator role) shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new provider does not trigger linking across existing library items.
 
+When an item is available from several providers, Music Assistant picks the highest quality one at playback time. See [Stream Selection](/faq/tech-info/#stream-selection) for how that choice is made.
+
 The creation of links within the MA library to other identical items in the MA library (within or across providers) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
 
-Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/filesystem/#tagging-files).
+Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/local-files/#tagging-files).
 
 The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
 
@@ -208,7 +210,7 @@ The ID shown against the streaming provider may be used in automations and scrip
 
 ## View - Radio
 
-The Radio view shows streaming radio stations that are available in the MA library (this is not the [Radio Mode](usage/#radio-mode) of the Player Queue). Stations can be added to the library in the following ways:
+The Radio view shows streaming radio stations that are available in the MA library. Stations can be added to the library in the following ways:
 
 * Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
 

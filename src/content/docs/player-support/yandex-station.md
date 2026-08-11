@@ -5,13 +5,13 @@ description: Features and Notes for the Yandex Station Player Provider
 
 # Yandex Station <img src="/assets/icons/yandex-station-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant can play music on <a href="https://station.yandex.ru/" target="_blank" rel="noopener noreferrer">Yandex Station</a> smart speakers over the local protocol — no cloud roundtrip for audio. Contributed and maintained by <a href="https://github.com/trudenboy" target="_blank" rel="noopener noreferrer">Mikhail Nevskiy</a>
+Music Assistant can play music on <a href="https://station.yandex.ru/" target="_blank" rel="noopener noreferrer">Yandex Station</a> smart speakers. The audio goes straight from your Music Assistant server to the speaker without passing through Yandex. Contributed and maintained by <a href="https://github.com/trudenboy" target="_blank" rel="noopener noreferrer">Mikhail Nevskiy</a>
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
 
 > [!WARNING]
-> Stations must be on the **same local network** as the Music Assistant server. The Glagol WebSocket endpoint is only exposed on the LAN and streams are served over plain HTTP from the MA stream server — stations reject HTTPS URLs on the local network.
+> Your speakers must be on the **same network** as the Music Assistant server. There is no way to reach them from outside your home.
 
 ## Features
 

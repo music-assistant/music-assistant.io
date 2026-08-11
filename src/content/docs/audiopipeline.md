@@ -28,7 +28,7 @@ The Output section is then shown which, in this example, is simple and just show
 
 MA, by default, sends lossless audio to the player. The exact codec, sample rate or bit depth that are sent to the player depends on the player / output protocol and is always shown. Changes to the original audio quality may occur if the MP3 option has been selected in the player settings (See the [Groups](#groups) example below) or if the audio is resampled to match the player's maximum or native sample rate or bit depth. PCM could be sent to the player, although typically FLAC is used to save some bandwidth.
 
-The maximum sample rate that can be expected can be found in the [Player Providers summary table](/player-support/). This can be further limited if changes were made to the default options for the player's `Sample Rates Supported by this Player` advanced setting.
+The maximum sample rate that can be expected can be found in the [Player Providers summary table](/faq/stream-to/#comparing-players-side-by-side). This can be further limited if changes were made to the default options for the player's `Sample Rates Supported by this Player` advanced setting.
 
 > [!NOTE]
 > Radio streams will have their bit depth reduced to 16 due to incompatibilities with some players

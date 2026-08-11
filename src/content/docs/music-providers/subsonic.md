@@ -19,11 +19,11 @@ This source connects to any server that supports the Open Subsonic specification
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossless FLAC (24 bit, 192 kHz) |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | Password |
 
 ### Other
@@ -36,9 +36,10 @@ You will need to provide the following to Music Assistant:
 
 - <b>Username.</b> The account you want Music Assistant to use to access your server
 - <b>Password.</b> For the account specified
+- <b>API Token.</b> The API token to use instead of username and password
 - <b>Base URL.</b> The server URL starting with http:// or https:// (e.g. https://music.domain.tld)
 - <b>Port.</b> Typically, 80 for plain http, or 443 for https, but can be any port where your server can be reached
-- <b>Server Path.</b> Path to append to the Base URL which is used to get to the Rest API (e.g. mypathroute/ if you are path routing. (Leave this blank unless you know you need it))
+- <b>Server Path.</b> Anything that comes after the address, if your server sits at something like `music.domain.tld/mypathroute/` rather than at the top level. Leave this blank unless you know you need it
 
 ### Settings
 
@@ -52,15 +53,10 @@ You will need to provide the following to Music Assistant:
 
 ## Known Issues / Notes
 
-- Not all server implementations accept an empty string as a search query, however this is considered valid input per the API documentation. If search or track enumeration fails, ask the authors of your server implementation about handling empty query strings
-- This source makes use of https://github.com/khers/py-opensonic for communicating with the server, if something is failing to work properly in Music Assistant, try to use that library to interact with your server (can you ping it?, fetch artist and albums?, can you search?)
-- This source only supports servers implementing the Open Subsonic API definition. To verify that your server is compatible, use the same setup you used to test connectivity above to hit the getOpenSubsonicExtensions() endpoint. If this endpoint is not implemented, MA cannot talk to your server
+- Searching with nothing typed in is allowed by the specification, but some servers refuse it. If search or the track list fails, that is worth raising with whoever makes your server
+- This source only works with servers that follow the Open Subsonic specification. If your server does not support the newer specification, Music Assistant cannot talk to it. Your server's own documentation should say which one it follows
 - If you find a mismatch between what is displayed by your Subsonic compatible server and Music Assistant then refer to and contribute <a href="https://github.com/music-assistant/support/issues/2192" target="_blank" rel="noopener noreferrer">here to help find a solution</a>
-- Not all Open Subsonic implementations handle tracks/albums with multiple contributing artists particularly well. If you see strange artists listed in Music Assistant, please verify that your implementation has an artist ID for all artists listed on a track or album. See the discussion <a href="https://github.com/music-assistant/support/issues/2965" target="_blank" rel="noopener noreferrer">here</a>
-- It may not be possible to playback m4a, opus, VBR encoded music, or any other formate that uses stream metadata inband with audio samples. Options to workaround this are
-    - Don't use these formats
-    - Force the subsonic server to transcode all these files before serving to a format that works
-    - Don't serve these files from a subsonic server
-    - It may be possible to force an encoder to place the moov atom at the beginning of the file. This would make the files playable, but MA provides no support for this
-- Autoplay mode (<a href="https://www.music-assistant.io/usage/#the-queue" target="_blank" rel="noopener noreferrer">described here</a>) relies on your subsonic servers implementation of the <a href="https://opensubsonic.netlify.app/docs/endpoints/getsimilarsongs/" target="_blank" rel="noopener noreferrer">getSimilarSongs</a> end point. Please ensure that you have configured your server for this to work. Both Gonic and Navidrome require the addition of a Last.fm API key to provide similar songs. Please see your subsonic server's documentation.
-- Note that this provider is for server implementations that use the Open Subsonic API definitions _only_. This means that it will not work with the original Subsonic or any of its forks (like Airsonic or Airsonic-Advanced) unless those forks have also moved to using the Open Subsonic API specification.
+- Not all servers handle tracks or albums with several contributing artists well. If you see odd artists appearing in Music Assistant, this is usually the cause. See the discussion <a href="https://github.com/music-assistant/support/issues/2965" target="_blank" rel="noopener noreferrer">here</a>
+- Some files may not play at all, most often m4a and opus, and anything encoded at a variable bitrate. These formats can hold information part way through the file rather than all of it at the start, which Music Assistant cannot work with over a Subsonic connection. Your options are to avoid these formats, to set your server to convert them to something else before sending them, or to keep those files out of your Subsonic library and reach them another way
+- Autoplay (<a href="https://www.music-assistant.io/usage/#the-queue" target="_blank" rel="noopener noreferrer">described here</a>) needs your server to be able to suggest similar songs, which not every server does out of the box. Gonic and Navidrome both need a Last.fm API key added before they can. Check your server's documentation
+- To be clear, this will not work with the original Subsonic or with anything built on it, such as Airsonic or Airsonic-Advanced, unless that software has since moved over to the Open Subsonic specification.

@@ -34,7 +34,7 @@ Music Quiz is experimental. Its game types, settings, and behavior may change be
 - For **Venue mode**, an available, enabled Music Assistant player, stereo pair, or group
 - For **Remote mode**, the Sendspin provider must be available; each player also needs a device and browser that can play web audio
 - For **Music Timeline**, enough unique tracks with usable release years: one initial anchor plus one track per configured round
-- For **Music Trivia**, a configured plugin that supports AI queries, such as the Home Assistant plugin with LLM access, and enough selected tracks with usable metadata
+- For **Music Trivia**, an **AI engine** from either the [OpenAI Compatible plugin](/plugins/openai_compatible/) or the [Home Assistant plugin](/ha-plugin/) with an AI task entity set up in Home Assistant, plus enough selected tracks with usable metadata
 
 :::note
 Music Trivia is only shown in the game picker when a compatible AI plugin is loaded. Guess the Song and Music Timeline do not require AI.
@@ -155,13 +155,16 @@ For predictable games, especially a carefully themed quiz, leave this option dis
 
 ## Plugin configuration
 
-The Music Quiz provider settings contain one optional enhancement:
+The Music Quiz provider settings, under **Features**, contain the following:
 
 | Setting | Default | Description |
 |---|---:|---|
-| **Enhance the Experience with AI** | Off | Lets compatible AI providers generate more convincing fake answers where supported. It currently enhances Hard Guess the Song distractors and Music Timeline multiple-choice bonuses. Built-in answer generation remains the fallback if AI is unavailable or returns an unusable response. |
+| **Enhance the Experience with AI** | Off | Lets AI generate more convincing fake answers where supported. It currently enhances Hard Guess the Song distractors and Music Timeline multiple-choice bonuses. Built-in answer generation remains the fallback if AI is unavailable or returns an unusable response. |
+| **AI engine** | First available | Which AI engine Music Quiz uses. Change it here at any time, no reconfiguring needed. |
 
-This setting is separate from Music Trivia. Trivia always requires an AI-query provider because its questions are generated for each game.
+These two are separate. Music Trivia always needs an AI engine, whether or not **Enhance the Experience with AI** is switched on, so the engine picker stays available either way.
+
+Engines come from other plugins, and Music Quiz uses the only one available unless you pick a different one. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
 
 ## Game flow and host controls
 
