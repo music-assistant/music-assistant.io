@@ -35,7 +35,7 @@ The core server settings are set with typical defaults that should work for most
 
 ## Players
 
-- No specific options
+- <b>Volume step size.</b>Defaults to zero which enables an adapative mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
 
 ## Player Queues
 
