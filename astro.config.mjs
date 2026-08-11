@@ -198,12 +198,12 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Audio Pipeline", slug: "audiopipeline" },
-            { label: "Compressor", slug: "dsp/compressor" },
-            { label: "Convolution", slug: "dsp/convolution" },
             { label: "Digital Signal Processing", slug: "dsp" },
-            { label: "Parametric Equalizer", slug: "dsp/parametriceq" },
-            { label: "Tone Controls", slug: "dsp/tonecontrols" },
-            { label: "Transpose", slug: "dsp/transpose" },
+            { label: "DSP Compressor Filter", slug: "dsp/compressor" },
+            { label: "DSP Convolution Filter", slug: "dsp/convolution" },
+            { label: "DSP Parametric Equalizer", slug: "dsp/parametriceq" },
+            { label: "DSP Tone Controls", slug: "dsp/tonecontrols" },
+            { label: "DSP Transpose Filter", slug: "dsp/transpose" },
           ],
         },
         {
