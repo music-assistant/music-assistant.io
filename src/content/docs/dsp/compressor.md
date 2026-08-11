@@ -9,11 +9,11 @@ A compressor reduces the difference between the loudest and the quietest parts o
 
 ## Usage
 
-The compressor has two modes which are selected using the `BASIC` and `ADVANCED` tabs at the top of the filter.
+The compressor has two modes which are selected using the `PRESET` and `CUSTOM` tabs at the top of the filter.
 
-### Basic Mode
+### Preset Mode
 
-In Basic mode, three preset buttons are shown:
+In Preset mode, three preset buttons are shown:
 
 - **Light** — Gentle leveling
 - **Medium** — Balanced control
@@ -23,9 +23,9 @@ Selecting a preset applies a matched combination of the settings described below
 
 ![Compressor](/assets/screenshots/dsp-compressor-basic.png)
 
-### Advanced Mode
+### Custom Mode
 
-In Advanced mode, six controls are shown which allow the behaviour of the compressor to be fine-tuned.
+In Custom mode, six controls are shown which allow the behaviour of the compressor to be fine-tuned.
 
 #### Threshold
 
