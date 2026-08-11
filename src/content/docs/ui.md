@@ -23,8 +23,6 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 - If a pinned item is updated (for example renamed), the shortcut is updated automatically.
 - If a pinned item is deleted, it is removed from shortcuts automatically.
 
-***************************************************************
-
 ## Global Search
 [![image](/assets/screenshots/global-search.png)](/assets/screenshots/global-search.png)
 
@@ -33,7 +31,6 @@ Searches can be done via any combination of words or partial words and also via 
 Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. Which media types are shown can be selected with the filter. Similarly, the providers used for the search can also be filtered.
 
 Selecting an individual media type will then show a maximum of 50 items per provider. Context sensitive menus are available for each. If the item desired is not found then narrow the search term.
-***************************************************************
 
 ## Player Bar
 [![image](/assets/screenshots/UI-playercontrols-bar.png)](/assets/screenshots/UI-playercontrols-bar.png)
@@ -43,8 +40,6 @@ When playing to a group, tapping near the volume control will open a dialog to c
 The [Audio Pipeline](/audiopipeline/) selectable label shows, via a colored icon and two letters, the sound quality of the audio output: LQ (Low Quality), SQ (Standard Quality), HQ (High Quality) or HR (Hi-Res). Select the label to see the full path the audio takes; what each quality level means is explained on the [Audio Pipeline](/audiopipeline/) page. For groups, where the quality varies between players, the highest quality available will be indicated.
 
 The overflow menu holds a number of useful options. Of note, for podcasts and audiobooks, there is a `Change playback speed` option which when selected will open a dialog with five preset speeds and a slider. The slider ranges from 0.5x to 2.0x and a preset is available for a boosted speed of 3.0x.
-
-***************************************************************
 
 ## Now Playing View
 [![image](/assets/screenshots/now-playing-view.png)](/assets/screenshots/now-playing-view.png)
@@ -67,8 +62,6 @@ The contents of the ⋮ menu vary depending upon player and queue state. When a 
 
 [![image](/assets/screenshots/now_playing_menu.png)](/assets/screenshots/now_playing_menu.png)
 
-***************************************************************
-
 ## Player List
 
 [![image](/assets/screenshots/UI-speakers-menu.png)](/assets/screenshots/UI-speakers-menu.png)
@@ -80,7 +73,6 @@ When a [player group](/faq/groups/) is powered on the members of that group will
 
 > [!NOTE]
 > The icon shown against each player (a <a href="https://pictogrammers.com/library/mdi/" target="_blank" rel="noopener noreferrer">Material Design Icon</a>) can be changed in the player settings.
-***************************************************************
 
 ## Grouping Players
 
@@ -91,16 +83,11 @@ There are four ways to group players
 3.   **[UNIVERSAL GROUP.](/faq/groups/#universal-groups)** This allows grouping of dissimilar player provider types but carefully note the potential limitations on the linked page.
 4.   **NATIVE GROUP.** Use the native functionality to group players offered by some player provider types (e.g. Google Cast)
 
-With TEMPORARY SYNC GROUPs the number of players being streamed to can be seen due to the naming convention. In the example image below there are three players in the group.
-
-![image](/assets/screenshots/group_indication.png)
-
 > [!NOTE]
 > If an attempt is made to power on a group and a member of that group is already a member of another powered on group then an error will be shown.
 
 > [!NOTE]
 > If a player is taken over by another app, MA will not have knowledge of that, and the group may no longer function correctly. Additionally, if a player of a sync group tries to join late (e.g. it was unpowered) it will not be synced to the group.
-***************************************************************
 
 ## Play Button ![image](/assets/icons/play-button.png)
 
@@ -114,8 +101,6 @@ Clicking/touching the Play Button will either execute the default play action fo
 > [!NOTE]
 > If there is ever uncertainty as to whether the item will immediately start playing use a right click or long press to bring up the menu.
 
-***************************************************************
-
 ## Multi Select ![image](/assets/icons/multiselect.png)
 
 When the Multi Select icon is selected the Select All icon will appear.  
@@ -124,8 +109,6 @@ Clicking/touching the Select All icon will select all of the items in the view (
 
 CTRL-A will also select all items unless the search box is in view in which case it will select all text in that box. Also CTRL-A won't work on views that have multiple sections (e.g. the artist view has albums and tracks) so the Multi Select icon must be used in that case. 
 
-***************************************************************
-
 ## Track Menu
 
 In any of the following views, Right click or long press on a track to get the following menus
@@ -133,7 +116,6 @@ In any of the following views, Right click or long press on a track to get the f
 ![image](/assets/screenshots/UI-track-menu.png)
 
 The **View ... endless mix** option will only be seen if there is a provider that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the provider not MA. 
-***************************************************************
 
 ## View - Discover
 
@@ -145,12 +127,7 @@ Select the pencil icon in the top right to enter edit mode. From there, show or 
 
 [![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
 
-Music Assistant provides three listening history rows:
-
-- **Recently Played** reflects the item you chose to play, such as an album, playlist, artist, or genre, instead of listing its individual tracks. For podcasts and audiobooks, it shows the parent show or book instead of individual episodes or chapters.
-- **Recent Artists** shows recently played artists.
-- **Recent Tracks** shows recently played tracks.
-***************************************************************
+Refer to the [Library Recommendations Plugin](/plugins/library-recomendations) for information about the available recommendations rows that are built into Music Assistant.
 
 ## View - Artist / Album / Track
 
@@ -173,7 +150,6 @@ will bring up this menu
 ![image](/assets/screenshots/UI-actions-menu.png)
 
 The behavior described above will work on any view where you see the "x item(s) selected" text.
-***************************************************************
 
 ## View - Individual Artist
 
@@ -197,15 +173,12 @@ Incorrect mappings can be removed via the delete option in the ⋮ menu. For loc
 
 The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
 
-***************************************************************
-
 ## View - Individual Track
 
 [![image](/assets/screenshots/UI-track-show-info.png)](/assets/screenshots/UI-track-show-info.png)
 
 > [!NOTE]
 > The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
-***************************************************************
 
 ## View - Radio
 
