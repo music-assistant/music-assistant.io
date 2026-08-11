@@ -34,6 +34,8 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
+In order to make all available content accessible in a digestible manner many of the expandable views are filtered by provider. The open box icon is shown when a section is expanded and indicates that multiple providers can populate the section. Note only one can be selected at any one time. In the screenshot above "All albums" is collapsed, so the provider selection icon is not shown. Immediately below is the "Top tracks" section which is expanded and does show the icon. In both cases the currently selected provider is shown on the left side. 
+
 **Favorites**
 
 As a further means of filtering the library, you can mark items as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favorited by default when imported from the music source is determined by the [source settings](/music-providers/). All items can be seen if the heart icon is deselected in the top menu.
