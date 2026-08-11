@@ -49,19 +49,41 @@ Connecting your account puts your saved music and playlists into Music Assistant
 ### Basic setup
 
 1. Add the Spotify source via `SETTINGS >> MUSIC SOURCES >> ADD A MUSIC SOURCE`.
-2. Click the `AUTHENTICATE WITH SPOTIFY` button. A new tab opens on Spotify's own website where you give Music Assistant permission to access your account, so make sure your browser allows pop-ups. Use a device that is on the same home network as your MA server and is not connected to a VPN (see [Networking Basics](/faq/networking/)); if the button appears to do nothing, this is the most likely cause.
-3. Click `SAVE` on the Spotify settings page. The setup will fail if you skip this step. If your device closes the MA page before you can click `SAVE` (this can happen on mobile devices), retry from a laptop or PC.
+2. Follow the on screen instructions which should take you through the initial flow shown here
+<a href="/assets/screenshots/spotify-phase1.png"><img src="/assets/screenshots/spotify-phase1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
-Spotify will now work, but consider the optional step below.
+<details>
+<summary>I clicked - Use the Spotify App</summary>
+<div>
 
-### Optional: add a personal Client ID (recommended)
+> [!NOTE]
+> Your mobile device must be on the same network as the MA server for this to work
 
-Music Assistant shares one allowance from Spotify with everybody else using it, and Spotify limits how fast that allowance can be used. Registering your own free Client ID gives you an allowance of your own, which makes everything quicker. Without it you may find things slow to load, and see errors in the log.
+<a href="/assets/screenshots/spotify-phase2a.png"><img src="/assets/screenshots/spotify-phase2a.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+</div>
+</details>
 
-1. Complete the basic setup above, then reopen the Spotify settings. A new option titled `Developer Token` appears towards the bottom of the view.
-2. Create an app on Spotify's <a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">developer dashboard</a>. When filling in the app details, the only field that matters is the `Redirect URL`. Set it exactly to `https://music-assistant.io/callback`.
-3. Enter the Client ID from your new app in the `Developer Token` section, then click the large `AUTHENTICATE DEVELOPER SESSION` button.
-4. Click `SAVE` again.
+<details>
+<summary>I clicked - Use a web browser instead</summary>
+<div>
+
+> [!NOTE]
+> The webpage error is shown in step 3 is normal. You then need to copy the entire URL from that browser tab and paste it into the dialog shown in the MA UI
+
+<a href="/assets/screenshots/spotify-phase2b.png"><img src="/assets/screenshots/spotify-phase2b.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+</div>
+</details>
+
+Spotify will now work, but consider the optional step below or click `Finish` and then `Done`.
+
+### Optional: add a personal Client ID
+
+Music Assistant shares one allowance from Spotify with everybody else using it, and Spotify limits how fast that allowance can be used. Registering your own free Client ID gives you an allowance of your own, which may make everything quicker but it does have some potential problems detailed in the known issues section.
+
+1. Complete the basic setup above, then check `Use my own Spotify developer key` and click finish.
+2. A new dialog will open where you must add your own Client ID. 
+3. Create an app on Spotify's <a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">developer dashboard</a>. When filling in the app details, the only field that matters is the `Redirect URL`. Set it exactly to `https://music-assistant.io/callback`.
+4. Enter the Client ID from your new app in the dialog you saw after completing step 2, then click `Finish` and then `Done`.
 
 ### Settings
 
@@ -73,4 +95,4 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 - When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
 - Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
 - Spotify does not tell Music Assistant what genre anything is
-- Spotify has also limited what Client IDs can do on recently created accounts. If you see 403 errors in the log after adding one, take the Client ID back out
+- Spotify has limited what Client IDs can do on recently created accounts. If you see 403 errors in the log after adding one, take the Client ID back out by selecting `Reconfigure` and going through the setup process again
