@@ -103,9 +103,16 @@
       // a remote attacker cannot receive traffic there. Anything else keeps the code
       // until the user has seen the destination address and confirmed it is their own.
       function isPrivateHost(hostname) {
+        // IPv6 literals: loopback, ULA and link-local. Browsers bracket the host,
+        // but strip any brackets defensively so a bare literal is never mistaken
+        // for a single-label hostname below.
+        if (hostname.includes(':')) {
+          const ipv6 = hostname.replace(/^\[|\]$/g, '');
+          return ipv6 === '::1' || /^(fc|fd|fe[89ab])/.test(ipv6);
+        }
         // plain (single label) hostnames and reserved suffixes never resolve over
         // public DNS, so nobody on the internet can claim them
-        if (!hostname.startsWith('[') && !hostname.includes('.')) {
+        if (!hostname.includes('.')) {
           return true;
         }
         if (hostname.endsWith('.localhost')) {
@@ -132,11 +139,6 @@
             (octet1 === 169 && octet2 === 254) ||
             (octet1 === 100 && octet2 >= 64 && octet2 <= 127)
           );
-        }
-        // IPv6 literals (bracketed by the URL parser): loopback, ULA and link-local
-        if (hostname.startsWith('[') && hostname.endsWith(']')) {
-          const ipv6 = hostname.slice(1, -1);
-          return ipv6 === '::1' || /^(fc|fd|fe[89ab])/.test(ipv6);
         }
         return false;
       }
