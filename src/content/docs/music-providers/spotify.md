@@ -66,6 +66,10 @@ Connecting your account puts your saved music and playlists into Music Assistant
 <details>
 <summary>I clicked - Use a web browser instead</summary>
 <div>
+
+> [!NOTE]
+> The webpage error is shown in step 3 is normal. You then need to copy the entire URL from that browser tab and paste it into the dialog shown in the MA UI
+
 <a href="/assets/screenshots/spotify-phase2b.png"><img src="/assets/screenshots/spotify-phase2b.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
