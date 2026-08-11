@@ -35,8 +35,6 @@ Selecting an individual media type will then show a maximum of 50 items per prov
 ## Player Bar
 [![image](/assets/screenshots/UI-playercontrols-bar.png)](/assets/screenshots/UI-playercontrols-bar.png)
 
-When playing to a group, tapping near the volume control will open a dialog to control the individual players.
-
 The [Audio Pipeline](/audiopipeline/) selectable label shows, via a colored icon and two letters, the sound quality of the audio output: LQ (Low Quality), SQ (Standard Quality), HQ (High Quality) or HR (Hi-Res). Select the label to see the full path the audio takes; what each quality level means is explained on the [Audio Pipeline](/audiopipeline/) page. For groups, where the quality varies between players, the highest quality available will be indicated.
 
 The overflow menu holds a number of useful options. Of note, for podcasts and audiobooks, there is a `Change playback speed` option which when selected will open a dialog with five preset speeds and a slider. The slider ranges from 0.5x to 2.0x and a preset is available for a boosted speed of 3.0x.
