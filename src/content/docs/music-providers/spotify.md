@@ -52,7 +52,7 @@ Connecting your account puts your saved music and playlists into Music Assistant
 
 3. Click `AUTHORISE PLAYBACK`. Using your mobile device which is on the same network as the MA server, open the Spotify App. Start playing a track. Find the icon that allows you to transfer the music to another device, press it and then select 'Music Assistant'. Return to the Music Assistant UI and you should find the source is authorized. If this fails for any reason try the `AUTHORIZE IN BROWSER' option.
 
-4. If you use the `AUTHORIZE IN BROWSER` option be aware that it is normal to get a failed to load page during the setup process. When on that page you need to copy the entire URL and paste that into the field in the MA UI that asks for it.
+4. If you use the `AUTHORIZE IN BROWSER` option be aware that it is normal to get a failed to load page during the setup process. When on that page you need to copy the entire URL and paste that into the field in the MA UI that asks for it. You might need to wait for some time before the UI changes to allow entry of the URL.
 
 4. Click `SAVE` on the Spotify settings page. The setup will fail if you skip this step. If your device closes the MA page before you can click `SAVE` (this can happen on mobile devices), retry from a laptop or PC.
 
