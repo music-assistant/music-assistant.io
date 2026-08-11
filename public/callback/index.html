@@ -34,14 +34,36 @@
         a:hover {
             text-decoration: underline;
         }
+        .destination {
+            font-weight: bold;
+            word-break: break-all;
+        }
+        a.button {
+            display: inline-block;
+            background-color: #1DB954;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+        }
+        a.button:hover {
+            text-decoration: none;
+            background-color: #17a34a;
+        }
+        .caution {
+            color: #666;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Music Assistant</h1>
         <p id="status"></p>
-        <div class="fallback" id="manual-link" hidden>
-            <a href="#" id="redirect-link">Continue to Music Assistant</a>
+        <div class="fallback" id="confirm" hidden>
+            <p class="destination" id="destination"></p>
+            <a href="#" id="redirect-link" class="button">Continue to Music Assistant</a>
+            <p class="caution" id="caution" hidden>Only continue if you recognize this address
+               as your own Music Assistant.</p>
         </div>
         <div class="fallback" id="error" hidden>
             <p>This page was opened without a valid Music Assistant address to return to,
@@ -75,21 +97,77 @@
       // offer those as a link instead of navigating there on the user's behalf.
       const isIngress = returnUrl.includes('hassio_ingress');
 
+      // Anyone can point `state` here, so this page must not silently forward the
+      // authorization code to an arbitrary address. A private or otherwise unroutable
+      // destination (the typical self-hosted setup) is safe to forward to automatically:
+      // a remote attacker cannot receive traffic there. Anything else keeps the code
+      // until the user has seen the destination address and confirmed it is their own.
+      function isPrivateHost(hostname) {
+        // plain (single label) hostnames and reserved suffixes never resolve over
+        // public DNS, so nobody on the internet can claim them
+        if (!hostname.startsWith('[') && !hostname.includes('.')) {
+          return true;
+        }
+        if (hostname.endsWith('.localhost')) {
+          return true;
+        }
+        // .lan and .home are not IANA-reserved but are common router defaults and
+        // blocked from ever becoming public top level domains
+        for (const suffix of ['.local', '.internal', '.home.arpa', '.lan', '.home']) {
+          if (hostname.endsWith(suffix)) {
+            return true;
+          }
+        }
+        // IPv4 literals: loopback, RFC1918, link-local and CGNAT (Tailscale) ranges.
+        // Match the full hostname so `192.168.1.10.evil.com` stays a public hostname.
+        const ipv4 = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(hostname);
+        if (ipv4) {
+          const octet1 = Number(ipv4[1]);
+          const octet2 = Number(ipv4[2]);
+          return (
+            octet1 === 10 ||
+            octet1 === 127 ||
+            (octet1 === 172 && octet2 >= 16 && octet2 <= 31) ||
+            (octet1 === 192 && octet2 === 168) ||
+            (octet1 === 169 && octet2 === 254) ||
+            (octet1 === 100 && octet2 >= 64 && octet2 <= 127)
+          );
+        }
+        // IPv6 literals (bracketed by the URL parser): loopback, ULA and link-local
+        if (hostname.startsWith('[') && hostname.endsWith(']')) {
+          const ipv6 = hostname.slice(1, -1);
+          return ipv6 === '::1' || /^(fc|fd|fe[89ab])/.test(ipv6);
+        }
+        return false;
+      }
+
+      let destination = null;
+      try {
+        destination = new URL(returnUrl);
+      } catch {
+        // unparseable destinations simply fall through to the confirm button
+      }
+      const isPrivate = destination !== null && isPrivateHost(destination.hostname);
+
       // the status line starts out empty so that it never promises a redirect that a
       // browser without JavaScript is not going to make
       const status = document.getElementById('status');
       if (!isCallbackUrl) {
         document.getElementById('error').hidden = false;
       } else {
-        // render the link before navigating: it is the fallback for when the browser
-        // refuses the automatic navigation, and is already on screen if that happens
+        // render the destination and link before navigating: it is the fallback for
+        // when the browser refuses the automatic navigation, and it is the consent
+        // step for destinations we cannot vouch for
         document.getElementById('redirect-link').href = finalUrl;
-        document.getElementById('manual-link').hidden = false;
-        if (isIngress) {
-          status.textContent = 'One more step to finish signing in:';
-        } else {
+        document.getElementById('destination').textContent =
+          destination ? destination.origin : returnUrl;
+        document.getElementById('caution').hidden = isPrivate;
+        document.getElementById('confirm').hidden = false;
+        if (isPrivate && !isIngress) {
           status.textContent = 'Returning you to Music Assistant…';
           window.location.replace(finalUrl);
+        } else {
+          status.textContent = 'One more step to finish signing in:';
         }
       }
     </script>
