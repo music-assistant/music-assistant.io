@@ -156,12 +156,11 @@ Music Assistant provides three listening history rows:
 
 [![image](/assets/screenshots/UI-artist-view.png)](/assets/screenshots/UI-artist-view.png)
 
-Album, Track and Playlist Views look similar to the above except there is no album artist filter icon and the track view has an [ADD VIA URL](/music-providers/builtin/) option. Playlists have a `Create new playlist on` icon as well as a `Import playlist` icon which allows the manual importation of plain text M3U and M3U8 playlist files. 
+Album, Track and Playlist Views look similar to the above except there is no album artist filter option and the track view has an [ADD VIA URL](/music-providers/builtin/) option. Playlists have a `Create new playlist on` option as well as a `Import playlist` option which allows the manual importation of plain text M3U and M3U8 playlist files. 
 
-A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) )
-indicates that the viewed results are subject to filtering.
+A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) ) indicates that the viewed results are subject to filtering.
 
-The provider filter icon will only show when there are two or more music sources installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
+The provider filter option will only show when there are two or more music sources installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
 
 Items in all views can be "right-clicked" or "long-pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
@@ -180,7 +179,7 @@ The behavior described above will work on any view where you see the "x item(s) 
 
 [![image](/assets/screenshots/UI-individual-artist.png)](/assets/screenshots/UI-individual-artist.png)
 
-The tracks and albums sections are collapsible. The view above shows them both collapsed. The tracks section shows ALL tracks that are in the library or that are available across all of the providers. A blue dot on the library icon ![image](/assets/icons/library-icon.png) indicates that the viewed results are filtered to only show items that are in the library. To see what albums any given track is on you can either sort alphabetically or click on one and use the context menu and SHOW INFO.
+Each section is collapsible. The tracks section shows all tracks that are in the library. The Top tracks section can be filtered by provider when there is more that one available to provide that data.
 
 The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP, LIVE, SOUNDTRACK or UNKNOWN album types.
 
