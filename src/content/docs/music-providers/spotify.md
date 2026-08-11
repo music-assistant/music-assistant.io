@@ -55,6 +55,10 @@ Connecting your account puts your saved music and playlists into Music Assistant
 <details>
 <summary>I clicked - Use the Spotify App</summary>
 <div>
+
+> [!NOTE]
+> Your mobile device must be on the same network as the MA server for this to work
+
 <a href="assets/screenshots/spotify-phase2a.png"><img src="/assets/screenshots/spotify-phase2a.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
