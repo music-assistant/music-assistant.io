@@ -36,8 +36,6 @@ Sign in and your Tidal favourites and playlists appear in Music Assistant, with 
 
 ## Configuration
 
-Tidal is linked with the OAuth device flow, so there is nothing to copy or paste.
-
 1. Add the Tidal provider. Music Assistant shows your code and an `Open` button, and waits.
 
    [![Preview image](/assets/screenshots/tidal-device-login.png)](/assets/screenshots/tidal-device-login.png)
