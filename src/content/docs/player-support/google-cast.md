@@ -46,6 +46,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - TV/Video devices (not the AV dongles) are disabled by default
 - Cast Groups containing only a stereo pair will not work
 - Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length`, Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
+- MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work.
 
 ## Troubleshooting playback problems
 
