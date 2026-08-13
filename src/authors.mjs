@@ -17,10 +17,4 @@ export const authors = {
     picture: "https://avatars.githubusercontent.com/mrdarrengriffin?size=64",
     url: "https://github.com/mrdarrengriffin",
   },
-  missy: {
-    name: "Missy Quarry",
-    title: "Community Manager",
-    picture: "https://avatars.githubusercontent.com/missyquarry?size=64",
-    url: "https://github.com/missyquarry",
-  },
 };
