@@ -1,6 +1,6 @@
 ---
 title: "Yandex Disk"
-description: Play personal music, audiobooks, and podcasts stored on Yandex Disk
+description: Play personal music, audiobooks, podcasts, and sound effects stored on Yandex Disk
 ---
 
 # Yandex Disk <img src="/assets/icons/yandex-disk-icon.svg" alt="Yandex Disk" style="width: 50px; float: right;" loading="lazy" />
@@ -19,7 +19,7 @@ Yandex Disk. Contributed and maintained by
 |:--|:--:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | Yes |
-| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks, Sound Effects |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | Yes |
 | [Endless Mix](/ui/#track-menu) | No |
@@ -37,15 +37,18 @@ Yandex Disk. Contributed and maintained by
 
 ### Create a Yandex OAuth application
 
-1. Open [Yandex OAuth](https://oauth.yandex.ru/) and create an application.
+1. Open [Yandex OAuth](https://oauth.yandex.ru/), select **Create app**, and choose
+   **For API access or debugging**.
 2. Under **Data access**, add the **`cloud_api:disk.read`** permission.
 3. Copy the application's **Client ID** and **Client Secret**.
 
 ### Add Yandex Disk to Music Assistant
 
-1. In Music Assistant, open **Settings → Providers → Add Provider → Yandex Disk**.
+1. In Music Assistant, open
+   **Settings → Music sources → Add a music source → Yandex Disk**.
 2. Enter the Client ID and Client Secret from your OAuth application.
-3. Select whether this instance contains music, audiobooks, or podcasts.
+3. Select whether this instance contains music, audiobooks, podcasts, or sound
+   effects.
 4. Keep **Root folder to scan** set to `root` for the complete disk, or enter a
    path such as `disk:/Music`.
 5. Continue, open the displayed verification URL, enter the short code, and
