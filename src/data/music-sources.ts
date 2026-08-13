@@ -309,6 +309,15 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["own-files", "audiobooks", "podcasts"],
   },
   {
+    name: "Mamma Mi Radio",
+    slug: "music-providers/mamma-mi-radio",
+    icon: "/assets/icons/mamma-mi-radio-icon.png",
+    // A self-hosted station rather than a library of your own files, so radio
+    // only. The hosts are Italian characters but broadcast mostly in English,
+    // so no country tag.
+    categories: ["radio"],
+  },
+  {
     name: "MusicMe",
     slug: "music-providers/musicme",
     icon: "/assets/icons/musicme-icon.svg",
