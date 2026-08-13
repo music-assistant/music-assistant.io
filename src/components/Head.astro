@@ -1,7 +1,16 @@
 ---
 import Default from "@astrojs/starlight/components/Head.astro";
+
+// Crossposts redirect to the original article. Browsers default to
+// `strict-origin-when-cross-origin`, which drops the path from the referrer on a
+// cross-origin navigation, so the destination would only see our domain. Relax
+// the policy for these pages so the original site receives the full referrer URL.
+const isCrosspost = Boolean(
+  Astro.locals.starlightRoute?.entry.data.crosspostSource,
+);
 ---
 
+{isCrosspost && <meta name="referrer" content="no-referrer-when-downgrade" />}
 <Default {...Astro.props}><slot /></Default>
 
 <script>
