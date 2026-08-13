@@ -27,18 +27,17 @@ const crossposts = crosspostEntries.map((entry) => ({
       if (!crosspost) continue;
 
       const heading = link.closest("h2");
-      if (!heading) continue;
-
-      // Insert after the cover image (figure) when present, otherwise after the heading.
-      const anchor = heading.parentElement?.querySelector("figure") ?? heading;
-      if (anchor.nextElementSibling?.classList.contains("crosspost-badge"))
+      if (
+        !heading ||
+        heading.nextElementSibling?.classList.contains("crosspost-badge")
+      )
         continue;
 
       const badge = document.createElement("span");
       badge.className = "crosspost-badge";
       badge.innerHTML = externalIconSvg;
       badge.append(document.createTextNode(crosspost.label));
-      anchor.insertAdjacentElement("afterend", badge);
+      heading.insertAdjacentElement("afterend", badge);
     }
   };
 
