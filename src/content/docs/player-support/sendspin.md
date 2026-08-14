@@ -10,6 +10,8 @@ It is built into Music Assistant and switched on from the start, so there is not
 
 Sendspin was developed by the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation</a> and is free for anyone to build on, so the range of devices and apps that support it is growing.
 
+To bring audio from a compatible Sendspin line-in, microphone, or other input into Music Assistant, see the [Sendspin Source plugin](/plugins/sendspin-source/).
+
 > [!CAUTION]
 > **Technical Preview**
 >

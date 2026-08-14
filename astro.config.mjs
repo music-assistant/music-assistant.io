@@ -238,6 +238,7 @@ export default defineConfig({
                 },
                 { label: "Party", slug: "plugins/party" },
                 { label: "Plex Connect", slug: "plugins/plex-connect" },
+                { label: "Sendspin Source", slug: "plugins/sendspin-source" },
                 { label: "Smart Playlist", slug: "plugins/smart_playlist" },
                 { label: "Sonic Similarity", slug: "plugins/sonic-similarity" },
                 { label: "Spotify Connect", slug: "plugins/spotify-connect" },
