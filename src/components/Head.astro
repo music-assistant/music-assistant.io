@@ -1,5 +1,6 @@
 ---
 import Default from "@astrojs/starlight/components/Head.astro";
+import allowedReferrers from "../data/allowed-referrers.json";
 
 // Crossposts redirect to the original article. Browsers default to
 // `strict-origin-when-cross-origin`, which drops the path from the referrer on a
@@ -12,6 +13,45 @@ const isCrosspost = Boolean(
 
 {isCrosspost && <meta name="referrer" content="no-referrer-when-downgrade" />}
 <Default {...Astro.props}><slot /></Default>
+
+<!-- prettier-ignore -->
+<script is:inline async src="https://plausible.openhomefoundation.org/js/pa-Dnap0nCCcvD7asrOUpyy_.js"></script>
+<script is:inline define:vars={{ allowedReferrers }}>
+  /* eslint-disable */
+  ((window.plausible =
+    window.plausible ||
+    function () {
+      (plausible.q = plausible.q || []).push(arguments);
+    }),
+    (plausible.init =
+      plausible.init ||
+      function (i) {
+        plausible.o = i || {};
+      }));
+  plausible.init({
+    transformRequest: function (payload) {
+      var ref = payload.r;
+      if (!ref) return payload;
+      var host = "";
+      try {
+        host = new URL(ref).hostname.replace(/\.$/, "");
+      } catch (e) {
+        // Unparseable referrer: falls through and gets replaced.
+      }
+      for (var i = 0; i < allowedReferrers.length; i++) {
+        var d = allowedReferrers[i];
+        if (host === d || (host.length > d.length && host.slice(-(d.length + 1)) === "." + d)) {
+          return payload;
+        }
+      }
+      // One aggregate bucket so we can see how much we filter without learning
+      // anything about individual visitors. .invalid is reserved by RFC 2606 and
+      // can never collide with a real domain.
+      payload.r = "https://unlisted.invalid/";
+      return payload;
+    },
+  });
+</script>
 
 <script>
   document.querySelector('a.site-title')?.addEventListener("contextmenu", (e) => {
