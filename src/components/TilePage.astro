@@ -32,6 +32,7 @@ const knownCategoryIds = new Set(allCategories.map((c) => c.id));
 
 const problems: string[] = [];
 const seenSlugs = new Set<string>();
+const seenNames = new Set<string>();
 
 for (const category of allCategories) {
   if (!existsSync(new URL(`.${category.icon}`, publicDir))) {
@@ -47,12 +48,18 @@ for (const category of allCategories) {
 for (const source of page.items) {
   const where = `the entry named "${source.name}"`;
 
-  if (seenSlugs.has(source.slug)) {
+  // Name and slug together, rather than either alone. Several tiles lead to one
+  // page, since the players page names its tiles after makes: Denon and Marantz
+  // both open HEOS. And one name can appear more than once, since the three
+  // catch-alls are all called "Other". Repeating both is a copy-paste.
+  const identity = `${source.name}\u0000${source.slug}`;
+  if (seenNames.has(identity)) {
     problems.push(
-      `${where} uses the slug "${source.slug}", which an earlier entry already ` +
-        `uses. Delete whichever of the two is the duplicate.`,
+      `${where} appears twice with the same name and the same slug, so it ` +
+        `would be listed twice. Delete whichever of the two is the duplicate.`,
     );
   }
+  seenNames.add(identity);
   seenSlugs.add(source.slug);
 
   if (!knownSlugs.has(source.slug)) {
@@ -74,6 +81,13 @@ for (const source of page.items) {
       `${where} has the icon "${source.icon}", but that file does not exist. ` +
         `Expected a file at public${source.icon} — file names are case ` +
         `sensitive, and note that some icons end in .png and others in .svg.`,
+    );
+  }
+
+  if (source.via?.icon && !existsSync(new URL(`.${source.via.icon}`, publicDir))) {
+    problems.push(
+      `${where} has the "powered by" icon "${source.via.icon}", but that file ` +
+        `does not exist. Expected a file at public${source.via.icon}.`,
     );
   }
 
@@ -149,7 +163,14 @@ if (problems.length > 0) {
           {group.title}
         </h2>
         <p class="tiles__blurb">{group.intro}</p>
-        <ul class="tiles__grid tiles__grid--wide">
+        <ul
+          class:list={[
+            "tiles__grid",
+            "tiles__grid--wide",
+            group.columns && "tiles__grid--fixed",
+          ]}
+          style={group.columns ? `--tiles-cols: ${group.columns}` : undefined}
+        >
           {group.categories.map((category) => (
             <li>
               <a class="tiles__tile" href={`#${page.idPrefix}-${category.id}`}>
@@ -195,16 +216,46 @@ if (problems.length > 0) {
           {sourcesFor(category.id).map((source) => (
             <li>
               <a class="tiles__tile" href={`/${source.slug}/`}>
-                <span class="tiles__logo">
+                <span
+                  class="tiles__logo"
+                  style={
+                    source.iconHeight
+                      ? `--tiles-logo-max: ${source.iconHeight}`
+                      : undefined
+                  }
+                >
                   <img
                     src={source.icon}
-                    alt=""
-                    aria-hidden="true"
+                    alt={source.iconAlt ?? ""}
+                    aria-hidden={source.iconAlt ? undefined : "true"}
                     loading="lazy"
                     decoding="async"
                   />
                 </span>
-                <span class="tiles__name">{source.name}</span>
+                <span
+                  class:list={[
+                    "tiles__name",
+                    source.nameHidden && "tiles__sronly",
+                  ]}
+                >
+                  {source.name}
+                </span>
+                {source.via && (
+                  <span class="tiles__via">
+                    <span class="tiles__via-label">Powered by</span>
+                    {source.via.icon ? (
+                      <img
+                        class="tiles__via-mark"
+                        src={source.via.icon}
+                        alt={source.via.label}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    ) : (
+                      source.via.label
+                    )}
+                  </span>
+                )}
               </a>
             </li>
           ))}
@@ -280,6 +331,15 @@ if (problems.length > 0) {
     grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
   }
 
+  /* Only once the content column is wide enough to divide. Below this the
+     sidebar has gone and the page is under 500px, where five columns would be
+     85px each, so fitting is left to do its job. */
+  @media (min-width: 50rem) {
+    .tiles__grid--fixed {
+      grid-template-columns: repeat(var(--tiles-cols), 1fr);
+    }
+  }
+
   .tiles__tile {
     display: flex;
     flex-direction: column;
@@ -316,7 +376,7 @@ if (problems.length > 0) {
 
   .tiles__logo img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: var(--tiles-logo-max, 100%);
     width: auto;
     height: auto;
     margin: 0;
@@ -328,6 +388,47 @@ if (problems.length > 0) {
     max-height: 2.1rem;
     border-radius: 2px;
     box-shadow: 0 0 0 1px rgb(0 0 0 / 0.15);
+  }
+
+  /* Says which page the tile opens, for the makes whose provider goes by
+     another name. Sized like the category count so the two read as one idea. */
+  .tiles__via {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.15rem 0.3rem;
+    margin-top: -0.35rem;
+    font-size: var(--sl-text-xs);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--sl-color-gray-3);
+  }
+
+  /* Read out but never shown, for a tile whose logo says the name already. */
+  .tiles__sronly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .tiles__via-label {
+    white-space: nowrap;
+  }
+
+  /* Two classes deep for the same reason .tiles__logo img is: the tiles are
+     list items, and Starlight's ".sl-markdown-content li img" sets height to
+     auto, which outweighs a single class and lets the mark render full size. */
+  .tiles__via .tiles__via-mark {
+    height: 1rem;
+    width: auto;
+    max-width: 4.5rem;
+    margin: 0;
+    object-fit: contain;
   }
 
   .tiles__name {
