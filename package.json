@@ -3,8 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "fetch-allowed-referrers": "node ./scripts/fetch-allowed-referrers.mjs",
+    "predev": "npm run fetch-allowed-referrers",
     "dev": "astro dev --host",
+    "prestart": "npm run fetch-allowed-referrers",
     "start": "astro dev --host",
+    "prebuild": "npm run fetch-allowed-referrers",
     "build": "astro build",
     "preview": "astro preview --host",
     "astro": "astro"
