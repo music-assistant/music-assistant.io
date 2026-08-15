@@ -23,6 +23,9 @@ The dialog shown above appears when clicking on a username or via the ⋮ menu.
 
 Each user can be restricted to a set of specific players. Additionally, restricting users to certain music sources offers two benefits: only these sources are used when initiating playback, and listening statistics are accurately attributed to a user's source streaming account.
 
+> [!CAUTION]
+> When music sources are removed from MA then the entries are cleaned up from any users that had them as a restriction. However, if this results in a user having no more music source restrictions then they will be able to access the complete library.
+
 ### Audiobook and podcast progress sync in a multi-user environment
 
 <a name="filter-progress-multi-user"></a>
