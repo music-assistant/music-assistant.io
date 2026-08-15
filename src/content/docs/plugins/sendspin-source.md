@@ -1,5 +1,5 @@
 ---
-title: Sendspin Source Plugin
+title: Sendspin Source
 description: Use Sendspin source devices as Live Inputs in Music Assistant
 ---
 
