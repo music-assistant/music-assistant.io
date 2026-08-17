@@ -19,7 +19,7 @@ Connecting your Yoto account puts that library inside Music Assistant, where you
 | Media Types Supported                             | Music, Audiobooks, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported |             No              |
 | Lyrics Supported                                  |             No              |
-| [Radio Mode](/ui/#track-menu)                     |             No              |
+| [Endless Mix](/ui/#track-menu)                    |             No              |
 | Artist Top Tracks Support                         |             No              |
 | Similar Artists Support                           |             No              |
 | Similar Tracks Support                            |             No              |
