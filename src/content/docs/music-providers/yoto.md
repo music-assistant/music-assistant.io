@@ -12,19 +12,19 @@ Connecting your Yoto account puts that library inside Music Assistant, where you
 
 ## Features
 
-|                                                   |                             |
-| :------------------------------------------------ | :-------------------------: |
-| Subscription FREE                                 |             Yes             |
-| Self-Hosted Local Media                           |             No              |
-| Media Types Supported                             | Music, Audiobooks, Podcasts |
-| [Recommendations](/ui/#view---discover) Supported |             No              |
-| Lyrics Supported                                  |             No              |
-| [Endless Mix](/ui/#track-menu)                    |             No              |
-| Artist Top Tracks Support                         |             No              |
-| Similar Artists Support                           |             No              |
-| Similar Tracks Support                            |             No              |
-| Maximum Stream Quality                            |    AAC variable bitrate     |
-| Login Method                                      |            OAuth            |
+|                                                   |                                      |
+| :------------------------------------------------ | :----------------------------------: |
+| Subscription FREE                                 |                 Yes                  |
+| Self-Hosted Local Media                           |                  No                  |
+| Media Types Supported                             | Albums, Tracks, Audiobooks, Podcasts |
+| [Recommendations](/ui/#view---discover) Supported |                  No                  |
+| Lyrics Supported                                  |                  No                  |
+| [Endless Mix](/ui/#track-menu)                    |                  No                  |
+| Artist Top Tracks Support                         |                  No                  |
+| Similar Artists Support                           |                  No                  |
+| Similar Tracks Support                            |                  No                  |
+| Maximum Stream Quality                            |         AAC variable bitrate         |
+| Login Method                                      |                OAuth                 |
 
 ### Other
 
