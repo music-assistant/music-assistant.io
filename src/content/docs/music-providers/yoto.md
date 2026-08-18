@@ -15,19 +15,19 @@ This is an unofficial implementation and is not affiliated with or endorsed by Y
 
 ## Features
 
-|                                                   |                            |
-| :------------------------------------------------ | :------------------------: |
-| Subscription FREE                                 |            Yes             |
-| Self-Hosted Local Media                           |             No             |
-| Media Types Supported                             | Albums, Tracks, Audiobooks |
-| [Recommendations](/ui/#view---discover) Supported |             No             |
-| Lyrics Supported                                  |             No             |
-| [Endless Mix](/ui/#track-menu)                    |             No             |
-| Artist Top Tracks Support                         |             No             |
-| Similar Artists Support                           |             No             |
-| Similar Tracks Support                            |             No             |
-| Maximum Stream Quality                            |    AAC variable bitrate    |
-| Login Method                                      |           OAuth            |
+|                                                   |                      |
+| :------------------------------------------------ | :------------------: |
+| Subscription FREE                                 |         Yes          |
+| Self-Hosted Local Media                           |          No          |
+| Media Types Supported                             |    Albums, Tracks    |
+| [Recommendations](/ui/#view---discover) Supported |          No          |
+| Lyrics Supported                                  |          No          |
+| [Endless Mix](/ui/#track-menu)                    |          No          |
+| Artist Top Tracks Support                         |          No          |
+| Similar Artists Support                           |          No          |
+| Similar Tracks Support                            |          No          |
+| Maximum Stream Quality                            | AAC variable bitrate |
+| Login Method                                      |        OAuth         |
 
 ### Other
 
