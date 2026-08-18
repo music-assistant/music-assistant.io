@@ -4,7 +4,7 @@ title: "Deezer"
 
 # Deezer <img src="/assets/icons/deezer-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for <a href="https://www.deezer.com/" target="_blank" rel="noopener noreferrer">Deezer</a>. Contributed and maintained by <a href="https://github.com/arctixdev" target="_blank" rel="noopener noreferrer">arctixdev</a>, <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> and <a href="https://github.com/jdaberkow" target="_blank" rel="noopener noreferrer">jdaberkow</a>
+Music Assistant has support for <a href="https://www.deezer.com/" target="_blank" rel="noopener noreferrer">Deezer</a>. Contributed originally by <a href="https://github.com/arctixdev" target="_blank" rel="noopener noreferrer">arctixdev</a> and <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a>. Now maintained by <a href="https://github.com/jdaberkow" target="_blank" rel="noopener noreferrer">Julian</a>.
 
 Deezer is a French subscription streaming service with a catalogue of around 100 million tracks, plus podcasts and audiobooks. It is available in most countries and streams lossless on its higher tiers.
 
