@@ -5,7 +5,7 @@ import {
   KNOWN_UNCHARTED,
   PLAYER_CAPABILITIES,
 } from "../data/player-capabilities";
-import { PLAYERS } from "../data/players";
+import { PLAYER_PROVIDERS } from "../data/players";
 
 // ---------------------------------------------------------------------------
 // Guard rails for src/data/player-capabilities.ts.
@@ -19,7 +19,9 @@ import { PLAYERS } from "../data/players";
 
 const problems: string[] = [];
 
-const playersBySlug = new Map(PLAYERS.map((player) => [player.slug, player]));
+const playersBySlug = new Map(
+  PLAYER_PROVIDERS.map((provider) => [provider.slug, provider]),
+);
 const columnIds = CAPABILITY_COLUMNS.map((column) => column.id);
 const knownColumnIds = new Set(columnIds);
 const unchartedSlugs = new Set(KNOWN_UNCHARTED);
@@ -48,7 +50,8 @@ for (const row of PLAYER_CAPABILITIES) {
 
   if (!player) {
     problems.push(
-      `${where} uses a slug that is not in PLAYERS in src/data/players.ts, so ` +
+      `${where} uses a slug that is not in PLAYER_PROVIDERS in `
+        + `src/data/players.ts, so ` +
         `the row has no name and no logo. Slugs include the folder, for ` +
         `example "player-support/sonos". Check the spelling, and add the ` +
         `provider to players.ts first if it is missing there.`,
@@ -110,10 +113,10 @@ for (const row of PLAYER_CAPABILITIES) {
 // A provider added to players.ts must be given a row here too, otherwise it
 // would quietly be missing from the comparison. Adding a provider is the
 // moment to work out what it supports.
-for (const player of PLAYERS) {
+for (const player of PLAYER_PROVIDERS) {
   if (seenSlugs.has(player.slug) || unchartedSlugs.has(player.slug)) continue;
   problems.push(
-    `"${player.name}" is in players.ts but has no row in the comparison table, ` +
+    `"${player.name}" is in PLAYER_PROVIDERS but has no row in the comparison table, ` +
       `so it would be missing from it. Add one to PLAYER_CAPABILITIES:\n\n` +
       `       {\n` +
       `         slug: "${player.slug}",\n` +
@@ -130,7 +133,7 @@ for (const player of PLAYERS) {
 for (const slug of KNOWN_UNCHARTED) {
   if (!playersBySlug.has(slug)) {
     problems.push(
-      `KNOWN_UNCHARTED lists "${slug}", which is not in PLAYERS in ` +
+      `KNOWN_UNCHARTED lists "${slug}", which is not in PLAYER_PROVIDERS in ` +
         `src/data/players.ts. It is probably a leftover from a renamed or ` +
         `deleted provider and can be removed.`,
     );
@@ -156,9 +159,10 @@ if (problems.length > 0) {
   );
 }
 
-// Rows follow the order of players.ts so that the table and the tiles above it
-// list the providers the same way.
-const rows = PLAYERS.flatMap((player) => {
+// One row per provider, in the order of PLAYER_PROVIDERS. Not the tiles above,
+// which are named after makes and repeat a provider wherever two makes share
+// one: the table is about what each provider can do.
+const rows = PLAYER_PROVIDERS.flatMap((player) => {
   const capabilities = PLAYER_CAPABILITIES.find(
     (entry) => entry.slug === player.slug,
   );
