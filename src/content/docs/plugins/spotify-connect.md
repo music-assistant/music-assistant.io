@@ -47,6 +47,6 @@ The plugin can run on two different playback engines. You choose one while addin
 
 - To use Spotify Connect, all devices must be connected to the same network. Refer to the <a href="https://support.spotify.com/us/article/spotify-connect/" target="_blank" rel="noopener noreferrer">Spotify Connect Support Article</a> for more information (Note that any reference in that article to accessing devices from different WiFi networks isn't supported)
 - Depending on the player's own buffering there can be a short delay between an action in the Spotify app and hearing the result, and the Spotify app's progress can run slightly ahead of the audio
-- The exact audio quality Spotify delivers is not visible to Music Assistant: the audio arrives as decoded PCM (44.1 kHz/32-bit for Soloist), so that is what the signal path shows
+- Spotify's delivered encoding and quality are not visible to Music Assistant. The signal path therefore shows the decoded PCM audio as it arrives from the playback engine (44.1 kHz/32-bit with Soloist) — not the quality of Spotify's source
 - Using a HA Media Player as the `Connected Music Assistant Player` is not supported
 - In complex network setups, if playback problems are experienced, the BIND TO option in the [Streams Settings](/settings/core/#generic) may need to be set
