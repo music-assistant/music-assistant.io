@@ -10,11 +10,11 @@ Yoto is a smart audio player for kids. It uses physical cards that slot into the
 
 Connecting your Yoto account puts that library inside Music Assistant, where you can play them on any compatible device. Currently only standard cards are supported, and specialty cards using dynamic features have not been tested.
 
-[!CAUTION]
-This is an unofficial implementation and is not affiliated with or endorsed by Yoto.
+> [!CAUTION]
+> This is an unofficial implementation and is not affiliated with or endorsed by Yoto.
 
-[!NOTE]
-Credit to <a href="https://github.com/cdnninja" target="_blank" rel="noopener noreferrer">cdnninja</a> for the underlying API library.
+> [!NOTE]
+> Credit to <a href="https://github.com/cdnninja" target="_blank" rel="noopener noreferrer">cdnninja</a> for the underlying API library.
 
 ## Features
 
