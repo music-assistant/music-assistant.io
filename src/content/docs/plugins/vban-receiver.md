@@ -40,7 +40,7 @@ In the ADVANCED section:
 
 ## Known Issues / Notes
 
-- To listen to the plugin audio, navigate to the desired player’s NOW PLAYING view and then in the menu in the top right, select Source, and choose the desired VBAN Receiver
+- To listen to the plugin audio, navigate to Browse in the sidebar and choose the desired VBAN Receiver stream
 - Expect a small delay between the sound leaving the other computer and coming out of your speakers. Most of it comes from the player at the end rather than from this plugin, so how much you get depends on which speakers you are using. This is not meant for anything where the sound has to line up with a picture
 - Audio sent this way is not resent if any of it goes missing on the way, so the quality of your network matters. A wired connection is far more reliable than wi-fi. On a congested or weak network you may hear dropouts or crackling
 - A sending computer that is slow or busy can also cause the sound to break up
