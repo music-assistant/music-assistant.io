@@ -81,6 +81,8 @@ The [Music Assistant Companion App](/companion-app/) can also be configured to r
 
 ## My ESP32 Based Device
 
+The native solution for MA is to use [Sendspin](https://www.sendspin-audio.com/). The device requires at least 2MB of PSRAM and 4MB of flash memory. Flash the device with [ESPHome](https://esphome.io/components/media_source/sendspin/). A number of more off the shelf items have pre-made software available on [RealDeco's GitHub repository](https://github.com/RealDeco/sendspin-guition) 
+
 If the hardware has at least 4MB of flash and 4MB of PSRAM it will be capable of running squeezelite directly. Use the <a href="https://github.com/sle118/squeezelite-esp32" target="_blank" rel="noopener noreferrer">Squeezelite ESP32 firmware</a>. A nice pre-made solution with speaker terminals is the <a href="https://www.tindie.com/products/sonocotta/louder-esp32/" target="_blank" rel="noopener noreferrer">Louder ESP32</a>
 
 If the ESP32 device has other firmware on it that has been discovered by Home Assistant then use the <a href="https://music-assistant.io/integration/installation/" target="_blank" rel="noopener noreferrer">Home Assistant Player Provider</a> to expose the HA media player entitiy to MA. If the exposed player is running ESPHOME then consider changing the Output Codec to `MP3 (lossy)` (if it isn't already the default) in the player settings as this may be all the player can handle.
@@ -147,9 +149,9 @@ In general terms the protocols/devices that should give you minimum to no setup 
 -	<a href="https://sourceforge.net/projects/lmsclients/files/squeezelite/" target="_blank" rel="noopener noreferrer">Squeezelite</a> based players
 -	<a href="https://www.sonos.com/en-us/home" target="_blank" rel="noopener noreferrer">Sonos</a>
 
-We don’t believe most people can hear the difference in sample rates above CD quality so AirPlay is highly recommended. It has a good sync protocol and is widely implemented in consumer devices. For most people they should consider what they already have and fit in with that (unless it’s DLNA then consider changing due to the quirks of some devices) and their budget.
+We don’t believe most people can hear the difference in sample rates above CD quality so AirPlay is highly recommended. It has a good sync protocol and is widely implemented in consumer devices. Music Assistant also has a Sendspin bridge for AirPlay which means AirPlay devices will play in sync with other Sendspin devices. Additionally, many Sonos devices can also be synced with AirPlay devices which is another plus.
 
-Note that many Sonos devices can be synced with AirPlay devices which is another plus for AirPlay.
+For most people they should consider what they already have and fit in with that (unless it’s DLNA then consider changing due to the quirks of some devices) and their budget.
 
 Lastly, if grouping of players is planned and use of the DSP settings is desired then review which protocols support DSP in this circumstance in the [Digital Signal Processing overview](/dsp/)
 
