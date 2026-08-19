@@ -40,7 +40,7 @@ export const PLAYER_GROUPS: TileGroup[] = [
       {
         id: "tvs",
         icon: "/assets/icons/stream/tvs.png",
-        title: "TVs and streamers",
+        title: "TVs and set-top boxes",
         blurb:
           "Televisions, and the boxes and sticks that plug into them. Most smart TVs answer to at least one of AirPlay, Cast or DLNA even when the make is not listed.",
       },
