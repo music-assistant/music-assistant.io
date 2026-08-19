@@ -73,54 +73,54 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
     categories: [
       {
         id: "own-files",
-        icon: "/assets/icons/listen/own-files.svg",
+        icon: "/assets/icons/listen/own-files.png",
         title: "My own music",
         blurb:
           "Music you already own, held on a disk, a NAS or your own media server.",
       },
       {
         id: "streaming",
-        icon: "/assets/icons/listen/streaming.svg",
+        icon: "/assets/icons/listen/streaming.png",
         title: "Streaming music",
         blurb:
           "Services with a large catalogue to search and play, some paid and some free.",
       },
       {
         id: "radio",
-        icon: "/assets/icons/listen/radio.svg",
+        icon: "/assets/icons/listen/radio.png",
         title: "Radio stations",
         blurb:
           "Live internet radio, from a single station through to directories of thousands.",
       },
       {
         id: "podcasts",
-        icon: "/assets/icons/listen/podcasts.svg",
+        icon: "/assets/icons/listen/podcasts.png",
         title: "Podcasts",
         blurb:
           "Follow shows and pick up each episode where you left off.",
       },
       {
         id: "audiobooks",
-        icon: "/assets/icons/listen/audiobooks.svg",
+        icon: "/assets/icons/listen/audiobooks.png",
         title: "Audiobooks",
         blurb: "Books to listen to, with chapters and a saved position.",
       },
       {
         id: "live-concerts",
-        icon: "/assets/icons/listen/live-concerts.svg",
+        icon: "/assets/icons/listen/live-concerts.png",
         title: "Live concert recordings",
         blurb: "Soundboard and audience recordings of shows, often complete sets.",
       },
       {
         id: "classical",
-        icon: "/assets/icons/listen/classical.svg",
+        icon: "/assets/icons/listen/classical.png",
         title: "Classical music",
         blurb:
           "Stations and services carrying orchestral, chamber and operatic music.",
       },
       {
         id: "children",
-        icon: "/assets/icons/listen/children.svg",
+        icon: "/assets/icons/listen/children.png",
         title: "Entertainment for children",
         blurb: "Audio made for younger listeners.",
       },
