@@ -239,7 +239,7 @@ export const PLAYERS: TileItem[] = [
     name: "WiiM",
     slug: "player-support/wiim",
     icon: "/assets/icons/wiim.svg",
-    categories: ["speakers"],
+    categories: ["tvs"],
   },
   {
     // MusicCast is the platform, Yamaha is what is written on the front.
