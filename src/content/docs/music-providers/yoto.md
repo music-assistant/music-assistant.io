@@ -4,7 +4,7 @@ title: "Yoto"
 
 # Yoto <img src="/assets/icons/yoto-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming from Yoto. Contributed and maintained by <a href="https://github.com/pantsman0" target="_blank" rel="noopener noreferrer">Pantsman0</a>
+Music Assistant has support for streaming from <a href="https://yotoplay.com/" target="_blank" rel="noopener noreferrer">Yoto</a>. Contributed and maintained by <a href="https://github.com/pantsman0" target="_blank" rel="noopener noreferrer">Pantsman0</a>
 
 Yoto is a smart audio player for kids. It uses physical cards that slot into the player to play audiobooks, music, podcasts, radio, and more! These cards can be downloaded or streamed to the player from the Yoto cloud service, and now to Music Assistant too.
 
@@ -12,6 +12,9 @@ Connecting your Yoto account puts that library inside Music Assistant, where you
 
 [!CAUTION]
 This is an unofficial implementation and is not affiliated with or endorsed by Yoto.
+
+[!NOTE]
+Credit to <a href="https://github.com/cdnninja" target="_blank" rel="noopener noreferrer">cdnninja</a> for the underlying API library.
 
 ## Features
 
