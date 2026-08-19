@@ -13,9 +13,6 @@ Connecting your Yoto account puts that library inside Music Assistant, where you
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yoto.
 
-> [!NOTE]
-> Credit to <a href="https://github.com/cdnninja" target="_blank" rel="noopener noreferrer">cdnninja</a> for the underlying API library.
-
 ## Features
 
 |                                                   |                      |
