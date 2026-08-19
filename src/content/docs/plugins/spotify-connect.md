@@ -11,7 +11,7 @@ description: Features and Notes for the Spotify Connect Plugin
 
 The plugin can run on two different playback engines. You choose one while adding the plugin and can switch later by re-running the setup.
 
-**Spotify Soloist (official, recommended)** — Spotify's own playback engine for devices without a screen. Setting it up requires a Spotify **Premium** account once, to create a personal API key on the Spotify developer website (the setup guides you through this). Anyone connecting afterwards can use a **Free** (with Spotify ads) or Premium account. Supported Premium accounts may receive lossless audio up to 24-bit/44.1 kHz.
+**Spotify Soloist (official, recommended)** — Spotify's own playback engine for devices without a screen. Setting it up requires a Spotify **Premium** account initially in order to create a personal API key on the Spotify developer website (the setup guides you through this). Anyone connecting afterwards can use a **Free** (with Spotify ads) or Premium account. Supported Premium accounts may receive lossless audio up to 24-bit/44.1 kHz.
 
 > [!NOTE]
 > Music Assistant may not distribute Soloist as part of its own installation, so it is downloaded from Spotify's servers on your behalf (after your consent in the setup) and updated automatically. Spotify's terms do not clearly allow using Soloist this way — using it through Music Assistant is at your own risk.
