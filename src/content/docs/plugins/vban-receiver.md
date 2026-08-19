@@ -38,9 +38,10 @@ In the ADVANCED section:
 - <b>Receiver: VBAN queue strategy.</b> Configures the behavior when the receiver’s internal packet queue becomes full. This setting defines how packet overflow is handled during high-load conditions. The options are `Clear entire queue`, `Clear the oldest half of the queue` and `Remove single oldest queue entry`
 - <b>Receiver: VBAN packets queue size.</b> Defines the maximum number of packets that can be queued before processing. This setting may be increased on systems with limited processing power but generally should not require modification
 
+To listen to the plugin audio, navigate to Browse in the sidebar and choose the desired VBAN Receiver stream.
+
 ## Known Issues / Notes
 
-- To listen to the plugin audio, navigate to the desired player’s NOW PLAYING view and then in the menu in the top right, select Source, and choose the desired VBAN Receiver
 - Although VBAN is designed for real-time audio transmission, this plugin’s primary objective is to route remote system audio into MA rather than to achieve real-time playback. The plugin functions as an intermediary, forwarding incoming packets from the VBAN Sender directly to MA for processing as they are received. Since MA is optimized to process audio from plugins with minimal delay, overall latency should remain low. However, the audio buffering mechanisms employed by the various Players supported by MA also contribute to the total delay, resulting in a slight but unavoidable latency in the final audio output.
 - The plugin transmits audio using connectionless UDP packets, making network quality a significant factor in performance. Factors such as the use of wired versus wireless connections, packet loss, network latency, and jitter can all affect audio reliability. Because UDP does not support retransmission of lost packets, degraded network conditions may cause interruptions or artifacts in playback.
 - Performance may also be impacted if the VBAN Sender device operates under limited processing power or high system load, as this can delay packet transmission and lead to choppy or inconsistent audio.
