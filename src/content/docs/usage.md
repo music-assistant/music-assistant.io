@@ -55,7 +55,7 @@ Transferring the queue will also transfer the shuffle and repeat setting to the 
 
 ![Preview image](/assets/screenshots/now_playing_menu.png)
 
-Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A TTS provider has to be configured in the [System Player Settings](/settings/core/#players)
+Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A TTS provider has to be selected in the [System Player Settings](/settings/core/#players)
 
 ![Preview image](/assets/screenshots/now_playing_menu.png)
 
