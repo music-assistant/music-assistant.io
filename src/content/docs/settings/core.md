@@ -35,7 +35,8 @@ The core server settings are set with typical defaults that should work for most
 
 ## Players
 
-- <b>Volume step size.</b>Defaults to zero which enables an adapative mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
+- <b>Volume step size.</b> Defaults to zero which enables an adapative mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
+- <b>Announcement text to speech engine.</b> Which engine is used to generate announcements sent from within Music Assistant
 
 ## Player Queues
 
@@ -133,22 +134,9 @@ Administrators can access the **Genre Management** page from the settings menu. 
 
 ![image](/assets/screenshots/genres/genre-management-overview.png)
 
-### Background Scanner
+## Genre Library Administration 
 
-The genre scanner automatically maps media items to genres based on metadata from your music sources. The scanner panel shows:
-
-- **Scanner status** — Whether the scanner is currently running or idle
-- **Last scan time** — When the last scan completed
-- **Items mapped** — How many items were mapped during the last scan
-- **Scan Now** button — Manually trigger a scan
-
-The scanner status is polled automatically every 30 seconds.
-
-![image](/assets/screenshots/genres/background-scanner.png)
-
-### Genre Statistics
-
-Displays the total number of genres in your library, with a link to view all genres.
+Displays statistics about the genres in the library. Genres can be excluded from use via the ⋮ menu
 
 ### Restore Missing Defaults
 

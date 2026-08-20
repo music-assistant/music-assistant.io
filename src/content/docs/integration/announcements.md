@@ -9,6 +9,9 @@ Announcements are either Text-to-Speech or audio files that are sent (from Home 
 
 Only the [Home Assistant integration](/integration/installation/) is needed for this. The Home Assistant plugin and Home Assistant Media Players play no part in announcements.
 
+> [!NOTE]
+> The integration is not strictly required to send announcements as this can be done [via the UI](/usage/#the-queue)
+
 ## Overview
 
 If music is being played by MA then this will be temporarily paused and restored after the announcement.

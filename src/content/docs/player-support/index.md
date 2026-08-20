@@ -11,7 +11,7 @@ description: Information Relevant to all Player Providers
 
 A **player provider** is not one speaker. It is the part of Music Assistant that knows how to talk to a whole family of them: one AirPlay provider covers every AirPlay device in the house, one Sonos provider covers all your Sonos.
 
-So you do not add speakers one at a time. You add the provider for the kind of device you own, and where that provider supports auto-discovery it finds them for you and keeps looking, so a speaker you plug in next month turns up on its own. Not every provider can discover devices; some need an address entering by hand. The page for each provider says which it is.
+So you do not add speakers one at a time. You add the provider for the kind of device you own, and where that provider supports auto-discovery it finds them for you and keeps looking, so a speaker you plug in next month turns up on its own. Not every provider can discover devices; some need an address entered by hand. The page for each provider says which it is.
 
 Some devices can be reached more than one way. Anything Home Assistant already knows about can be played to through [Home Assistant Media Players](/player-support/home-assistant/), but **if Music Assistant has a provider of its own for a device, use it**. The Home Assistant route is a fallback for devices with no native provider, not an alternative to one. [Audio Quality](#audio-quality) below explains why.
 
