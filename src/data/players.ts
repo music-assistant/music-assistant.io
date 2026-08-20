@@ -165,6 +165,16 @@ export const PLAYERS: TileItem[] = [
     categories: ["software"],
   },
   {
+    // Sendspin is built into recent Voice PE firmware, which the Sendspin page
+    // lists among its clients. TODO: wearing the Home Assistant mark until a
+    // Voice PE product image is to hand.
+    name: "Home Assistant Voice PE",
+    via: { label: "Sendspin", icon: "/assets/icons/sendspin-icon.svg" },
+    slug: "player-support/sendspin",
+    icon: "/assets/icons/ha-logo.png",
+    categories: ["voice"],
+  },
+  {
     name: "Local Audio Out",
     slug: "player-support/local-audio",
     icon: "/assets/icons/loudness-analysis-icon.svg",
