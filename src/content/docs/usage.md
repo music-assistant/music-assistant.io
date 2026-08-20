@@ -63,7 +63,7 @@ When Autoplay is on the mode will be automatically enabled when the last track o
 
 Each queue has a number of options which affect various behaviours. The options can be set globally in the [player queues settings](/settings/core/#player-queues) or individually via the option in the ⋮ menu. The individual player queue settings are as follows:
 
-![Preview image](/assets/screenshots/queue-settings.png)
+[![Preview image](/assets/screenshots/queue-settings.png)](/assets/screenshots/queue-settings.png)
 
 See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade. 
 
