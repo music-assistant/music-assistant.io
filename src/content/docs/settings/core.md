@@ -35,7 +35,8 @@ The core server settings are set with typical defaults that should work for most
 
 ## Players
 
-- <b>Volume step size.</b>Defaults to zero which enables an adapative mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
+- <b>Volume step size.</b> Defaults to zero which enables an adapative mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
+- <b>Announcement text to speech engine.</b> Which engine is used to generate announcements sent from within Music Assistant
 
 ## Player Queues
 
