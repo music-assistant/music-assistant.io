@@ -488,6 +488,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["streaming", "podcasts", "audiobooks", "russia"],
   },
   {
+    name: "Yoto",
+    slug: "music-providers/yoto",
+    icon: "/assets/icons/yoto-icon.png",
+    categories: ["audiobooks", "children", "streaming", "podcasts"],
+  },
+  {
     name: "YouSee Musik",
     slug: "music-providers/yousee-musik",
     icon: "/assets/icons/yousee.svg",
