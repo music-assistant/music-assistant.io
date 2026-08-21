@@ -324,6 +324,7 @@ export default defineConfig({
         { label: "Blog", link: "/blog/" },
       ],
       components: {
+        SocialIcons: "./src/components/SocialIcons.astro",
         Head: "./src/components/Head.astro",
         PageTitle: "./src/components/PageTitle.astro",
         Footer: "./src/components/Footer.astro",

@@ -1,0 +1,62 @@
+---
+/**
+ * Header override: adds a Documentation menu, then renders Starlight's own
+ * social icons unchanged.
+ *
+ * The menu is only shown on the landing page, which uses the `splash`
+ * template and therefore has no sidebar. Every other page lists these same
+ * sections in the sidebar, so showing it there would duplicate navigation.
+ * The visibility rule lives in `src/styles/custom.css`, keyed on the
+ * `data-has-hero` attribute Starlight sets on `<html>` for splash pages.
+ *
+ * Keep `sections` in step with the top-level groups in `astro.config.mjs`.
+ */
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+
+const sections = [
+  { label: 'Install Music Assistant', href: '/installation/' },
+  { label: 'Home Assistant Integration', href: '/integration/' },
+  { label: 'Music Sources', href: '/music-providers/' },
+  { label: 'Player Providers', href: '/player-support/' },
+  { label: 'Using Music Assistant', href: '/usage/' },
+  { label: 'Plugins', href: '/plugins/' },
+  { label: 'Troubleshooting', href: '/faq/troubleshooting/' },
+];
+---
+
+<nav aria-label="Documentation">
+  <details class="docs-menu">
+    <summary>Documentation</summary>
+    <ul>
+      {
+        sections.map(({ label, href }) => (
+          <li>
+            <a href={href}>{label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </details>
+</nav>
+
+<Default />
+
+<script>
+  // `<details>` has no dismissal behaviour of its own. Choosing an entry
+  // navigates away, which closes the menu for free, so this only covers the
+  // cases where nothing is chosen: a click elsewhere, or Escape.
+  const menu = document.querySelector<HTMLDetailsElement>('details.docs-menu');
+
+  if (menu) {
+    document.addEventListener('click', (event) => {
+      if (menu.open && !menu.contains(event.target as Node)) menu.open = false;
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || !menu.open) return;
+      menu.open = false;
+      // Escape should leave focus somewhere sensible rather than on the body.
+      menu.querySelector('summary')?.focus();
+    });
+  }
+</script>
