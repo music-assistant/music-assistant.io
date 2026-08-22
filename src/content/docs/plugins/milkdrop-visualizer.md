@@ -20,10 +20,10 @@ This plugin renders a <a href="https://github.com/jberg/butterchurn" target="_bl
 
 ## Configuration
 
-- The visualizer follows a [Sendspin](/player-support/sendspin/) player, so you need at least one. Sendspin is built into Music Assistant, and the web player in your browser is one
+- The visualizer works with any player: it reads the waveform from the audio Music Assistant is already decoding for playback, whatever protocol the player renders over
 - In Music Assistant, go to `SETTINGS >> PLUGINS >> ADD A PLUGIN` and select `MILKDROP VISUALIZER`
 - Once enabled, a `MilkDrop` entry appears in the sidebar leading to its settings page, and a droplet toggle appears in the fullscreen player menu
-- Turn the visualizer on from the player menu (or the party screen), play something on a Sendspin player, and the visuals appear behind the now-playing view
+- Turn the visualizer on from the player menu (or the party screen), play something, and the visuals appear behind the now-playing view
 
 ### Settings
 
@@ -43,3 +43,4 @@ Favourite the preset currently showing with the star next to the preset picker i
 - If the normal background still shows after enabling this plugin, your browser is likely too old to run the visualizer; try a current one. (You can check yours at <a href="https://get.webgl.org/webgl2/" target="_blank" rel="noopener noreferrer">get.webgl.org/webgl2</a>.)
 - Google Cast receivers do not support this plugin, so casting a dashboard to a Chromecast keeps the normal background. To run the visualizer on a TV, open a now-playing dashboard in the TV's own browser or a kiosk browser app
 - Beat-driven preset switching uses the track's beat analysis from the [Smart Fades](/audio-analysis/smart-fades) provider when available; it may be unavailable until the analysis has been computed, or on lower-powered devices
+- Audio that a provider streams directly to the device (an external source) is not decoded by Music Assistant, so the visualizer has nothing to react to while such a source plays
