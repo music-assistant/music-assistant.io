@@ -40,12 +40,14 @@ Apple Home app access restrictions are supported through the same pairing flow. 
 
 Settings are shown only when they apply to the selected device and protocol.
 
-- **Audio synchronization delay correction.** Adjusts this player from `-500 ms` to `+500 ms` relative to the other players in a synchronized group. Negative values make it play earlier and positive values make it play later. For example, use `-100 ms` when downstream processing by a TV or AV receiver makes this player lag by about 100 ms.
-- **Output Channel Mode.** Plays both channels or only the left or right channel, for example when creating a stereo pair from two players.
-- **Ignore volume reports sent by the device itself.** Ignores unreliable device volume feedback that can otherwise cause unexpected volume changes.
-- **Enable encryption.** Controls encrypted communication when RAOP applies. If RAOP playback fails, try toggling this setting.
-- **Device password.** Supplies the playback password required by some RAOP receivers. This is separate from pairing credentials.
-- **Enable hi-res (24-bit) playback.** Enables 24-bit audio at 44.1 or 48 kHz for supported AirPlay 2 devices. Leave it disabled unless the device supports 24-bit rendering; some receivers accept the stream but play silence.
+- **Streaming mode.** Normally leave this in AUTOMATIC which is the default. Only the modes offered by the device are shown. After a failure of one mode MA will pin a safer option. Restarting playback will use the new mode. Set it back to automatic if the new mode is also problematic
+- **Audio synchronization delay correction.** Adjusts this player from `-500 ms` to `+500 ms` relative to the other players in a synchronized group. Negative values make it play earlier and positive values make it play later. For example, use `-100 ms` when downstream processing by a TV or AV receiver makes this player lag by about 100 ms
+- **Ignore volume reports sent by the device itself.** Ignores unreliable device volume feedback that can otherwise cause unexpected volume changes
+- **Audio buffer depth.** How much audio the speaker keeps buffered ahead of the playback position. By default AUTOMATIC is selected which will use a value appropriate for the device. Higher values may help to keep playback going in certain environments at the cost of slower track skips and pauses
+- **Output Channel Mode.** Plays both channels or only the left or right channel, for example when creating a stereo pair from two players
+- **Enable encryption.** Controls encrypted communication when RAOP applies. If RAOP playback fails, try toggling this setting
+- **Device password.** Supplies the playback password required by some RAOP receivers. This is separate from pairing credentials
+- **Enable hi-res (24-bit) playback.** Enables 24-bit audio at 44.1 or 48 kHz for supported AirPlay 2 devices. Leave it disabled unless the device supports 24-bit rendering; some receivers accept the stream but play silence
 
 ## AirPlay 2 group synchronization
 

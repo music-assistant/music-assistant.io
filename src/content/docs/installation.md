@@ -51,6 +51,9 @@ You must run the docker container with **host network mode** (see the note on ne
 
 The recommended setup keeps the container as restricted as possible. The extra privileges (`SYS_ADMIN`, `DAC_READ_SEARCH` and `apparmor:unconfined`) shown further down are **only** needed if you want MA to mount a remote (Samba/NFS) share itself from inside the container. For most users, mounting music on the host and bind-mounting it into the container is the more secure choice.
 
+> [!WARNING]
+> Do not attempt to switch from the stable to beta channels (or vica versa) by simply changing the version tag on the image. Similarly, do not attempt to move or copy the database between beta and stable instances (or vica versa). It is possible to [run parallel server versions](/release/#running-parallel-server-versions)
+  
 **Docker compose (recommended):**
 
 ```
