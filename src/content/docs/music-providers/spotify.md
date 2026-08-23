@@ -19,9 +19,6 @@ Spotify audio can be played through two different engines. You choose one while 
 
 **Spotify Soloist (official)** — Spotify's own playback engine for devices without a screen. It works with **every** Premium account, including accounts created since December 2024, and can deliver lossless audio. Setting it up needs a personal API key from the Spotify developer website and a one-off pairing with your Spotify app; the setup guides you through both.
 
-> [!IMPORTANT]
-> Spotify only publishes Soloist for Linux, so it is unavailable on a Windows or macOS server. Music Assistant will tell you so and ask you to choose librespot instead. This does not affect the Home Assistant add-on or the Docker container.
-
 > [!NOTE]
 > Music Assistant may not distribute Soloist as part of its own installation, so it is downloaded from Spotify's servers on your behalf (after your consent in the setup) and updated automatically. Spotify's terms do not clearly allow using Soloist this way — using it through Music Assistant is at your own risk.
 
@@ -32,7 +29,6 @@ Spotify audio can be played through two different engines. You choose one while 
 |  | Spotify Soloist | librespot |
 |:--|:--|:--|
 | Accounts created since December 2024 | Works | Usually will not play |
-| Runs on | Linux only | Any system |
 | Best audio quality | Lossless, up to 24-bit/44.1 kHz | Ogg Vorbis 320kbps |
 | Setup | Terms, an API key and pairing | A one-time playback approval |
 | Starting a queue, and seeking | A few seconds | Quick |
@@ -146,7 +142,6 @@ Crossfade is not set here — enable it for the player as usual and, with Solois
 
 - Premium is required, including Duo and Family. Free accounts will not work
 - Accounts created around December 2024 and later generally cannot play through librespot, and some older accounts are affected too. If playback fails and you see `Key Error` messages in the log, that is the symptom — choose Spotify Soloist instead
-- Spotify Soloist is available for Linux servers only
 - Each Spotify Soloist account plays one thing at a time. Starting Spotify on a second player asks you to stop the first one; a second Spotify account added as its own source has a session of its own
 - While Spotify Soloist is playing, Music Assistant shows up as a device in your Spotify app. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
 - With Spotify Soloist, starting a queue and seeking take a few seconds because Spotify sends the audio at playback speed. Consecutive songs are not affected, but a podcast episode, an audiobook chapter or a repeated song each start fresh
