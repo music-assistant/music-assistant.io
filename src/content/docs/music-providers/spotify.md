@@ -10,14 +10,35 @@ Spotify is the largest of the music streaming services, with a catalogue of arou
 
 Connecting your account puts your saved music and playlists into Music Assistant and makes the catalogue searchable. Your players do not need to support Spotify Connect.
 
-> [!WARNING]
-> Spotify has blocked accounts created around 2024 and later from working with third party apps like Music Assistant, and some older accounts are also affected. If the provider does not work and you see `Key Error` messages in the log, your account is affected. There is currently no remedy; consider using [another streaming source that we support](/music-providers/) instead
+> [!NOTE]
+> A Spotify Premium account is required, including Duo and Family. Free accounts will not work.
+
+## Playback engines
+
+Spotify audio can be played through two different engines. You choose one while adding the provider and can switch later by re-running the setup.
+
+**Spotify Soloist (official)** — Spotify's own playback engine for devices without a screen. It works with **every** Premium account, including accounts created since December 2024, and can deliver lossless audio. Setting it up needs a personal API key from the Spotify developer website and a one-off pairing with your Spotify app; the setup guides you through both.
 
 > [!NOTE]
-> A Spotify Premium account is required for this music source. Free accounts will not work.
+> Music Assistant may not distribute Soloist as part of its own installation, so it is downloaded from Spotify's servers on your behalf (after your consent in the setup) and updated automatically. Spotify's terms do not clearly allow using Soloist this way — using it through Music Assistant is at your own risk.
 
-> [!NOTE]
-> Spotify has told third party products not to pursue lossless support, so do not expect it here.
+**librespot (community)** — a community-built, reverse-engineered engine. No API key, pairing or download is needed and it starts playing quicker, but it is intended for Premium accounts created **before December 2024** and may stop working whenever Spotify changes things on their end.
+
+### Which one should I pick?
+
+|  | Spotify Soloist | librespot |
+|:--|:--|:--|
+| Accounts created since December 2024 | Works | Usually will not play |
+| Best audio quality | Lossless, up to 24-bit/44.1 kHz | Ogg Vorbis 320kbps |
+| Extra setup | API key + pairing with the Spotify app | None |
+| Starting a queue, and seeking | A few seconds | Quick |
+| Songs after the first one | Follow on without a break | Follow on without a break |
+| Crossfade between songs | Spotify's own crossfade | Music Assistant's crossfade |
+| Playing on two players at once | One at a time | Supported |
+
+Soloist trades a little responsiveness for quality and for working with newer accounts: Spotify sends the audio at playback speed, so the **first** song of a queue takes a few seconds to start, and so does seeking within a song. Everything after that first song is prepared while the current one plays, so the rest of the queue follows on without a break.
+
+If your account was created before December 2024 and you are happy with 320kbps, librespot remains the quicker, simpler option. It is preselected for a new setup, and for existing setups that were added before this choice existed.
 
 ## Features
 
@@ -32,7 +53,7 @@ Connecting your account puts your saved music and playlists into Music Assistant
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | OGG Vorbis 320kbps |
+| Maximum Stream Quality | Soloist: lossless, up to 24-bit/44.1 kHz. librespot: OGG Vorbis 320kbps |
 | Login Method | OAuth |
 
 ### Other
@@ -74,7 +95,23 @@ Connecting your account puts your saved music and playlists into Music Assistant
 </div>
 </details>
 
-Spotify will now work, but consider the optional step below or click `Finish` and then `Done`.
+3. Choose how Spotify audio should be played. Pick `librespot (community)` to finish here, or `Spotify Soloist (official)` to continue with the extra steps below.
+
+Spotify will now work, but consider the optional step further below or click `Finish` and then `Done`.
+
+### Setting up Spotify Soloist
+
+Choosing Soloist adds three steps to the setup:
+
+1. **Read and accept the terms.** Soloist is downloaded from Spotify's servers and run on your behalf, and Spotify's terms do not clearly allow this. You have to agree before the setup continues.
+2. **Create your API key.** Open the <a href="https://developer.spotify.com/dashboard/soloist" target="_blank" rel="noopener noreferrer">Soloist API key page</a>, sign in, accept Spotify's terms if asked, choose `Generate API Key` and paste the key into Music Assistant. Creating the key needs a Premium account. Music Assistant stores it encrypted and only shares it with the Soloist app — your Spotify password is never asked for.
+3. **Pair with your Spotify app.** Music Assistant advertises itself as `Music Assistant Pairing`. In the Spotify app, start playing anything, tap the speaker icon and choose `Music Assistant Pairing`. The setup then continues by itself and you can switch back to your usual speaker straight away.
+
+> [!IMPORTANT]
+> Pair from a Spotify app signed in to the **same account** you connected in the first step, so your music library and the audio come from the same place. Music Assistant checks this and will ask you to pair again if the accounts do not match.
+
+> [!NOTE]
+> Not seeing `Music Assistant Pairing`? Make sure the device running the Spotify app is on the same network as the Music Assistant server.
 
 ### Optional: add a personal Client ID
 
@@ -89,9 +126,20 @@ Music Assistant shares one allowance from Spotify with everybody else using it, 
 
 Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
 
+Two extra settings appear when Spotify Soloist is the playback engine:
+
+- **Streaming quality** — the highest quality Spotify is asked to stream, defaulting to `Lossless`. This is a ceiling rather than a promise: Spotify still picks something lower on a slow connection, when a song has no file at that quality, or when your plan does not include it. Podcasts and audiobooks are always Ogg Vorbis. Takes effect the next time playback starts.
+- **Enable Spotify's volume normalization** — on by default. Spotify evens out the loudness between songs using values computed for its whole catalogue, and Music Assistant then leaves the level alone instead of correcting it twice, which also makes songs start noticeably quicker. Turn it off to have Music Assistant do it instead, the same way it does for every other music source. Either way it only applies while volume normalization is enabled for the player.
+
+Crossfade is not set here — enable it for the player as usual and, with Soloist, Spotify's own crossfade is used between songs.
+
 ## Known Issues / Notes
 
 - Premium is required, including Duo and Family. Free accounts will not work
+- Accounts created around December 2024 and later cannot play through librespot. Choose Spotify Soloist for those accounts
+- With Spotify Soloist, only one thing can play at a time. Starting Spotify on a second player asks you to stop the first one
+- While Spotify Soloist is playing, Music Assistant shows up as a device in your Spotify app. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
+- With Spotify Soloist, starting a queue and seeking take a few seconds because Spotify sends the audio at playback speed. Later songs in the queue are not affected
 - When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
 - Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
 - Spotify does not tell Music Assistant what genre anything is

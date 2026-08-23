@@ -132,4 +132,8 @@ export const QUALITY_TIER_OVERRIDES: Record<string, QualityTier> = {
   "music-providers/kion-music": "hi-res",
   "music-providers/yandex-music": "hi-res",
   "music-providers/zvuk": "hi-res",
+  // Soloist can serve lossless, and Music Assistant reports 24 bits because the
+  // engine hands the decoded audio over as 32-bit PCM. Spotify sells no hi-res
+  // tier though, so the comparison says CD rather than reading that figure as one.
+  "music-providers/spotify": "cd",
 };
