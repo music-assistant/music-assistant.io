@@ -25,15 +25,18 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-- <b>Main controller hostname or IP address.</b> This is the HEOS device that will be act as the main controller, it is not mandatory. This setting can be used to force MA to use a specific device as the controller.
+- <b>Main controller hostname or IP address.</b> This is the HEOS device that will be act as the main controller, it is not mandatory. This setting can be used to force MA to use a specific device as the controller
+- <b>Command timeout value.</b> How long Music Assistant waits for a HEOS device to answer a command, in seconds. The default is 25 and it can be set between 10 and 60. Increase it if you see command timeout messages in the log
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the HEOS players have the following settings:
 
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`.
+- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues.
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
-  
+- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
+- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the player cannot play continuous WAV streams
+
+HEOS players always play the queue as one continuous stream, so there is no flow mode setting to change. There is also no sample rates setting because HEOS players report their own capability. First generation HEOS hardware is limited to 48kHz / 16 bits, while HS2 and newer models handle up to 192kHz / 24 bits.
+
 ## Known Issues / Notes
 
 - Metadata on built-in displays on devices and the HEOS app will show 'URL stream' when playing anything from Music Assistant due to limitations with the HEOS API.

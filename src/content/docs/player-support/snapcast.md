@@ -26,29 +26,34 @@ MA includes a built-in Snapserver although an external server can also be used. 
 
 ### Provider 
 
-At the provider level the following settings are available:
+Music Assistant ships with its own built-in Snapserver and uses it by default. One setting decides which set of options below applies:
 
-In the `Show Advanced Settings` toggle is enabled this will allow the use of an external Snapcast server and the following settings:
+- <b>Use existing Snapserver.</b> Off by default when the built-in Snapserver is available, in which case this setting and the external server settings below only appear with Show Advanced Settings enabled. On an install where no built-in Snapserver is available it is on and cannot be turned off, and the built-in settings are hidden
 
-- <b>Snapcast Server IP.</b> The IP address of the external Snapcast server (e.g. `192.168.1.200`)
-- <b>Snapcast Control Port.</b> The port the external Snapcast server can be reached on
-- <b>Idle threshold stream parameter.</b> (default 60000ms) The stream state will switch from playing to idle after receiving this many milliseconds of silence
-- <b>Snapcast stream sample rate.</b> (default `48000`) Only shown when **Use existing Snapserver** is enabled. Choose `48000`, `96000`, or `192000`. Your Snapcast clients must support the rate you choose. After changing it, reload the Snapcast provider
-- <b>Snapcast stream bit depth.</b> (default `16`) Only shown when **Use existing Snapserver** is enabled. Choose `16` or `24`. Higher rates and 24-bit need a [compatible external Snapserver](https://github.com/rwjack/snapcast/tree/feature/tcp-packed-s24le). The built-in Snapserver always stays at 48 kHz / 16-bit
+With <b>Use existing Snapserver</b> enabled the following are available:
 
-The `Built-in Snapserver Settings`are as follows:
+- <b>Snapcast Server IP.</b> The IP address of the external Snapcast server (e.g. `192.168.1.200`). Defaults to 127.0.0.1
+- <b>Snapcast Control Port.</b> The port the external Snapcast server can be reached on. Defaults to 1705
+- <b>Snapcast stream sample rate.</b> The rate Music Assistant sends into Snapcast, either 48000 (the default), 96000 or 192000. Your Snapcast clients must support the rate you choose. Reload the Snapcast provider after changing it
+- <b>Snapcast stream bit depth.</b> Either 16 (the default) or 24. 24 bit needs an external Snapserver built with packed 24 bit PCM support, which normal package builds do not have yet. See [this build](https://github.com/rwjack/snapcast/tree/feature/tcp-packed-s24le). The built-in Snapserver always stays at 48kHz / 16 bits
 
-- <b>Buffer Size.</b> (default 1000ms) is the total buffer size (or better buffer duration) between recording the signal on the server and playing it out on the client. This can be translated directly to the total latency of the audio signal. If play is pressed or a track is paused or skipped, a delay of 1000ms will be noticed because of this buffer
-- <b>Chunk Size.</b> (default 26ms). The server will continously read this number of milliseconds from the source into buffer and pass this buffer to the encoder. The encoded buffer is sent to the clients. Some codecs have a higher latency and will need more data, e.g. FLAC will need ~26ms chunks and thus this is the default
-- <b>Snapserver Initial Volume.</b> The initial volume for new clients
-- <b>Send audio to muted clients.</b> Maintains a stream to muted clients
-- <b>Snapserver default transport codec.</b> Options are FLAC [default], OGG, OPUS, and PCM
+The Built-in Snapserver Settings appear while the built-in server is in use and are as follows:
+
+- <b>Snapserver buffer size.</b> The total buffer between the signal being read on the server and played out on the client, which is also the total latency of the audio. The default is 1000 ms and it can be set between 200 and 6000. It is why a delay of about a second is noticed when you press play, pause or skip
+- <b>Snapserver chunk size.</b> How much audio the server reads from the source at a time before passing it to the encoder and sending it to the clients. The default is 26 ms and it can be set between 10 and 100. Some codecs need more data than others, FLAC needs around 26 ms, which is where the default comes from
+- <b>Snapserver initial volume.</b> The volume new clients start at. The default is 25
+- <b>Send audio to muted clients.</b> Off by default. Keeps a stream running to clients that are muted
+- <b>Snapserver default transport codec.</b> Options are FLAC (the default), OGG, OPUS and PCM
+
+One setting applies whichever server you use:
+
+- <b>Snapcast idle threshold stream parameter.</b> The stream switches from playing to idle after this many milliseconds of silence. The default is 60000
 
 ### Player
 
 In addition to the [Individual Player Settings](/settings/individual-player/), Snapcast players also have a unique setting as follows:
 
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
+- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
 
 ## Known Issues / Notes
 

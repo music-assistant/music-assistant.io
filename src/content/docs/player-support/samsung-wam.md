@@ -32,9 +32,13 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the Samsung WAM players have the following settings:
 
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC`, or `WAV`.
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only`, or `Mono (both channels)`.
-- <b>Flow Mode sample rate.</b> Sets the sample rate for the continuous flow mode stream. Because WAM always uses flow mode, this setting governs the output rate for all playback. The default is `Smart (upsample only)`, which starts at the first track's sample rate and only resamples subsequent tracks upward. Other options are `Bit-perfect (no resampling)`, `48 kHz`, `96 kHz`, or `Highest supported by player`.
+- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC, or WAV
+- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only, or Mono (both channels)
+- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the speaker cannot play continuous WAV streams
+
+WAM speakers always play the queue as one continuous stream, because they cannot queue the next track themselves. The stream starts at the first track's sample rate and only resamples later tracks upward, and there is no setting to change that. There is also no sample rates setting, as WAM speakers report their own support of 44.1kHz through to 192kHz at 16 or 24 bits.
+
+The HTTP profile and metadata injection settings are set by the provider and hidden, so they do not appear on WAM players.
 
 ## Known Issues / Notes
 

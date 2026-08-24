@@ -36,12 +36,17 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the WiiM players have the following settings:
 
-- <b>HTTP profile used for send audio.</b> This is considered to be an advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Please note some older (Generation 1) devices only support up to 48kHz/16bit. Content with unsupported sample rates will be resampled
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting. Some devices have this setting disabled
-- <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a contnuous audio stream. Use for players that dont natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+- <b>HTTP Profile used for sending audio.</b> This is considered to be an advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
+- <b>Sample rates supported by this player.</b> Everything up to 192kHz / 24 bits is offered and selected by default. Please note some older (Generation 1) devices only support up to 48kHz / 16 bits, so untick the higher rates on those. Content with unsupported sample rates will be resampled
+- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
+- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV
+- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the speaker cannot play continuous WAV streams
+- <b>Try to inject metadata into stream (ICY).</b> Off by default and only applies while flow mode is enabled. It attempts to provide metadata to the player so it can show track info during a flow stream. Not all players support this correctly, therefore, if there are issues with playback try a lower profile or disable it
+- <b>Enable queue flow mode.</b> Off by default. Enabling this option will send all tracks as one continuous audio stream. Use for players that do not natively support gapless or crossfading, or that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
+- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. Only applies while flow mode is off, so it is greyed out once flow mode is enabled
+
+Generic LinkPlay speakers such as Edifier are handled differently to WiiM and Audio Pro devices. Music Assistant controls them but hands the audio to another output protocol, so their audio settings appear under that protocol's own section rather than the list above.
 
 ## Known Issues / Notes
 

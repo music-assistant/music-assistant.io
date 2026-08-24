@@ -35,13 +35,25 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 - <b>Manual IP addresses for discovery.</b> In normal circumstances Music Assistant will automatically discover all players on the network using multicast discovery (mDNS/UPnP, [explained here](/faq/networking/)). In the case of special network setups, or when issues are encountered with one or more players not being discovered, IP addresses can be manually added here. This setting is not recommended for normal use. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming; in that case ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#streams)
 
+The Sonos S1 provider has two further settings:
+
+- <b>Enable network scan for discovery.</b> Off by default. Scans the network for players instead of waiting for them to announce themselves. Try it if some of your S1 players are not found automatically, though it should not normally be needed
+- <b>Household ID.</b> The ID of your Sonos S1 system. It is detected automatically when left empty, so only fill it in if you have a reason to
+
 In addition to the [Individual Player Settings](/settings/individual-player/) the Sonos players have the following settings:
 
-- <b>HTTP profile used for send audio.</b> This is considered to be an advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting. Some devices have this setting disabled
-- <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a contnuous audio stream. Use for players that dont natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+- <b>HTTP Profile used for sending audio.</b> This is considered to be an advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
+- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
+- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV
+- <b>Prefer low-latency WAV for live sources.</b> On by default for Sonos and Sonos S1. Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the speaker cannot play continuous WAV streams
+- <b>Enable queue flow mode.</b> Off by default. Enabling this option will send all tracks as one continuous audio stream. Use for players that do not natively support gapless or crossfading, or that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled. It attempts to provide metadata to the player so it can show track info during a flow stream. Not all players support this correctly, therefore, if there are issues with playback try disabling it
+- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
+- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. It applies while flow mode is off, so it is greyed out once flow mode is enabled
+
+There is no sample rates setting for Sonos players, as each speaker's capability is known already. Current Sonos models take 44.1kHz and 48kHz at 16 or 24 bits, while older models are limited to 16 bits. Sonos S1 players are 44.1kHz and 48kHz at 16 bits.
+
+A Sonos speaker that Music Assistant can also reach another way, over AirPlay for example, shows a section for each protocol under Output Protocol(s). The settings above are the ones in the Sonos section, and the other protocol carries its own separate set, which is why the available settings can look different from one speaker to the next.
 
 ## Known Issues / Notes
 

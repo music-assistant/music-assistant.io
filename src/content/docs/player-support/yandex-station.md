@@ -32,25 +32,39 @@ Any Yandex Station that exposes the local Glagol API is supported, including Sta
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Yandex Station`.
-2. Sign in with the Yandex account that owns the stations, using one of the authentication methods below.
-3. Your stations will be discovered automatically and will appear in the player list.
+1. In Music Assistant, go to SETTINGS >> PLAYER PROVIDERS, click ADD A NEW PROVIDER and select Yandex Station.
+2. If you already have a Yandex Music provider set up, choose the <b>Yandex account source</b>. Borrow that provider's account to keep a single login shared between the two, or use this provider's own credentials and sign in as below.
+3. Choose a <b>Login method</b>, decide whether to keep the session with <b>Remember session</b>, then sign in with the Yandex account that owns the stations.
+4. Your stations will be discovered automatically and will appear in the player list.
 
 If a station does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ### Authentication
 
-- **Device Flow** *(recommended)* — Music Assistant shows a short code; confirm it at <a href="https://yandex.com/device" target="_blank" rel="noopener noreferrer">yandex.com/device</a> in a browser signed in to your Yandex account. Yields a refresh token so the session renews silently in the background.
-- **QR code** — Scan the QR shown during setup with the Yandex app (or phone camera) and confirm the login. No refresh token: the session must be renewed manually when it expires.
-- **Cookies (advanced fallback)** — Paste Yandex session cookies as a JSON array exported from browser dev tools. Use when the other two methods are blocked by your network or account.
+- <b>Device Flow</b> (recommended). Music Assistant shows a short code along with the address to enter it at. Open that address in a browser signed in to your Yandex account and confirm. A fresh code appears on its own if the first one expires. This yields a refresh token, so the session renews silently in the background
+- <b>QR code</b>. Scan the QR code shown during setup with the Yandex app and confirm the login. A fresh code is shown on its own if it expires. This also yields a refresh token
+- <b>Cookies</b> (advanced fallback). Open passport.yandex.ru/profile, copy your session cookies with a "Copy Cookies" browser extension and paste them in. Both JSON arrays and raw cookie strings are accepted. There is no refresh token with this method, so the session has to be renewed by hand when it expires. Use it when the other two methods are blocked by your network or account
+- <b>Remember session</b>. On by default. Stores the tokens so the provider survives a Music Assistant restart without signing in again. With it off, nothing is kept and you sign in again after each restart
 
 ## Settings
 
-- **Remember session** — store the refresh token / tokens so the provider survives MA restarts without re-authentication. On by default.
-- **Enable intercept feature** *(provider-level, advanced)* — master switch for the intercept feature (see below). Off by default; without it, no per-player intercept setting takes effect.
-- **Voice control integration** *(per-player, advanced)* — off by default. When enabled, the provider detects when you talk to Alice during MA playback and reacts accordingly (see below).
-- **Intercept native Station playback** *(per-player, advanced)* — off by default. When enabled (and the provider-level master switch is on), redirects native Station playback to a chosen target player.
-- **Intercept target player** *(per-player, advanced)* — the Music Assistant player that receives intercepted playback. The dropdown is filtered to players that support `play_media`, `pause`, `volume_set` and `seek`.
+In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+
+- <b>Experimental: Enable intercept feature.</b> Off by default. The master switch for the intercept feature described below. While it is off, the per-player intercept settings have no effect. The yandex_music music provider must also be configured, as that is what resolves the tracks
+
+In addition to the [Individual Player Settings](/settings/individual-player/) the Yandex Station players have the following settings:
+
+- <b>Experimental: Intercept native Station playback.</b> Off by default. When the Station starts playing Yandex Music on its own, usually from an Alice voice command but also from a touch on the Station itself, this silences the Station and plays the same track on the target player chosen below. The Station keeps its own queue running quietly in the background so Music Assistant can follow each next track. It needs the provider level switch above turned on
+- <b>Intercept target player.</b> The Music Assistant player that receives intercepted playback. Every registered player except this Station is listed, including ones that are currently offline so you can pick a target before it is switched on. Pause, volume and seek are mirrored where the target supports them and are quietly skipped where it does not
+- <b>Experimental: Voice control integration.</b> Off by default. Resumes the Music Assistant queue automatically after voice commands such as "Алиса, стоп" or "Алиса, дальше". Experimental, so it may behave unexpectedly
+- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV
+- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
+- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. The default is Profile 3 - forced content length, because Yandex Stations need a content length and cannot handle chunked streams
+- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the Station cannot play continuous WAV streams
+- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits. Higher rates and 24 bit options are offered if the Station handles them. Content with unsupported sample rates will be resampled
+- <b>Enable queue flow mode.</b> Off by default. Sends all tracks as one continuous audio stream. Use it if the Station has difficulty transitioning between tracks, at the cost of losing per track metadata
+- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled, so it is greyed out with the default settings
+- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
 
 ### Voice control integration (experimental)
 

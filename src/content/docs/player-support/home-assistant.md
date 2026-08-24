@@ -31,19 +31,23 @@ Before the Player Provider can be added the [Plugin](/ha-plugin/) must be instal
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the following audio and streaming related settings are available for Home Assistant Media Players. Note that for newer ESPHome-based players (see below), some of these settings are automatically configured based on the device’s reported capabilities and will not be visible:
+In addition to the [Individual Player Settings](/settings/individual-player/) the following audio and streaming related settings are available for Home Assistant Media Players:
 
-- <b>Output codec to use for streaming audio to the player.</b> Selects the audio codec for the stream sent to the player. Options are `FLAC` (lossless, compressed), `MP3` (lossy), `AAC` (lossy), or `WAV` (lossless, uncompressed). The default for most HA media players is `MP3` as it has the broadest compatibility across HA player integrations
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting
-- <b>Enforce gapless playback with queue flow mode streaming.</b> Flow mode streams audio as a continuous flow rather than individual tracks, which avoids gaps between tracks. For HA media players, flow mode is always enforced and this setting is not shown, because the wide variation in HA player capabilities makes flow mode the most reliable playback method
+- <b>Output codec to use for streaming audio to the player.</b> Selects the audio codec for the stream sent to the player. Options are FLAC (lossless, compressed), MP3 (lossy), AAC (lossy), or WAV (lossless, uncompressed). The default for HA media players is MP3 as it has the broadest compatibility across HA player integrations
+- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
+- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
+- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the player cannot play continuous WAV streams
+- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits, which suits the widest range of HA players. Higher rates and 24 bit options are offered if the device handles them. Content with unsupported sample rates will be resampled
+
+Flow mode streams audio as a continuous flow rather than individual tracks, which avoids gaps between tracks. For HA media players flow mode is always used and there is no setting to turn it off, because the wide variation in HA player capabilities makes it the most reliable playback method.
 
 ### ESPHome Media Players
 
-Newer ESPHome-based media players (such as the HA Voice PE) that report their supported audio formats receive an optimised configuration. The output codec, sample rates, HTTP profile, and ICY metadata settings are automatically configured based on what the device reports and are hidden from the user. These devices generally work well with Music Assistant.
+Newer ESPHome based players such as the Voice PE are configured from the capabilities they report, so several of the settings above are set for you and do not appear. The output codec and the HTTP profile are fixed to what the device asks for, metadata injection is switched off, and the sample rates come from the device rather than the list above. Output channel mode and the low latency WAV setting are still available.
 
-Older or less capable ESPHome-based media players that do not report their audio format capabilities will show the standard settings described above. These devices are generally not recommended for music playback — short audio announcements or web radio may work but full music playback can be unreliable. TIP: you may need to enable the “forced content length” HTTP profile in the player settings.
+### MA Natively Supported Media Players
+
+If the player you imported also has a native Music Assistant provider, a notice appears at the top of its settings. Using the native provider is strongly recommended over the generic Home Assistant one, as it gives better control and playback.
 
 ## Known Issues / Notes
 
