@@ -59,7 +59,7 @@ Navigate to MA settings and inspect the provider or source entry. If there is a 
 
 ![image](/assets/screenshots/setup_error.png)
 
-The error often makes more sense alongside the setup notes for that provider, so check its own page under [music sources](/music-providers/) or [player providers](/player-support/) as well. Both list known issues, and services that need an account or a key usually explain there what a rejected sign in means.
+The error often makes more sense alongside the setup notes for that provider, so check its own page under [music sources](/music-providers/) or [player providers](/player-support/) as well. Those pages list known issues, and for anything that needs an account or a key they usually explain what a rejected sign in points to.
 
 ## Why aren't tracks/albums matching between sources
 
@@ -87,7 +87,7 @@ A player that is found and starts playing, but stutters, cuts out, leaves gaps b
 
 Change one thing at a time, and give it a track or two before deciding it did not help. Changing any of them reloads the player, so playback stops briefly each time.
 
-**Stuttering or dropouts, mainly on Wi-Fi.** Music Assistant sends lossless audio by default, which is the most demanding thing you can put on a weak wireless link. Set **Output codec** to MP3 or AAC, which need far less bandwidth. If a wired player on the same network is fine, the network is the cause rather than Music Assistant.
+**Stuttering or dropouts, mainly on Wi-Fi.** Music Assistant sends lossless audio by default, which is the most demanding thing you can put on a weak wireless link. Set **Output codec** to MP3 or AAC, which need far less bandwidth. If a wired player on the same network is fine, the network is the cause rather than Music Assistant, so work through the [dropout checklist](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while). Strong signal strength is not proof that the network is healthy. Where you have more than one access point, settings such as transmit power, band steering and channel width matter more than the signal bars, and the checklist covers them.
 
 **A gap between tracks, or a stumble on the change from one track to the next.** Turn on **Enable queue flow mode**, which sends the whole queue as one continuous stream instead of one track at a time. The trade-off is that most players then stop showing track information. [Track Queueing](/faq/tech-info/#track-queueing) explains the difference.
 
