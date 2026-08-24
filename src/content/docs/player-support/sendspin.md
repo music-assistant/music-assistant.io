@@ -48,7 +48,6 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Automatically play line-in on.</b> Only shown for devices with a line-in that can report when a signal is present. Chooses where that line-in plays automatically, either This device, another player, or Off
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in step with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
 - <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (let client decide) is the default, and the other options are read from the device itself
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
 
 ## Known Issues / Notes
 

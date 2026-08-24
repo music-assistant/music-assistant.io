@@ -51,9 +51,7 @@ One setting applies whichever server you use:
 
 ### Player
 
-In addition to the [Individual Player Settings](/settings/individual-player/), Snapcast players also have a unique setting as follows:
-
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
+Snapcast players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
 
 ## Known Issues / Notes
 
