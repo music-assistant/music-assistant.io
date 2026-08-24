@@ -7,9 +7,9 @@ description: Explanation of the use and effect of the DSP Convolution filter
 
 [Convolution](https://www.edmprod.com/convolution-reverb/) applies a recorded impulse response to the audio. An impulse response, usually shortened to IR, is a recording of how a particular space or piece of equipment reacts to a single, very short sound. Playing music through that recording makes the music take on the same character, which is why convolution is the tool of choice for room correction, speaker correction and headphone simulation. A more detailed explanation can be found in this <a href="https://en.wikipedia.org/wiki/Impulse_response" target="_blank" rel="noopener noreferrer">description of impulse responses</a>.
 
-This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
-
 Unlike the other filters, convolution does not shape the sound according to controls that are set by hand. The correction is contained entirely within the impulse response file, which is typically produced by measurement software such as <a href="https://www.roomeqwizard.com/" target="_blank" rel="noopener noreferrer">Room EQ Wizard</a>, or downloaded from a project that publishes ready-made responses.
+
+This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
 
 ## Usage
 

@@ -10,7 +10,7 @@ The first part of this page covers everyday questions about using Music Assistan
 
 After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -17 LUFS (and -17 is the default starting point). **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
 
-The methods and the fixed gain values are set in the [Streams Queue Playback settings](/settings/core/#queue-playback). Turning normalization on or off, and the target level, live in the [Player Queues settings](/settings/core/#player-queues) and can be overridden for [one queue](/usage/#the-queue).
+The methods and the fixed gain values are set under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback). Turning normalization on or off, and the target level, live under [**Settings → System → Player Queues**](/settings/core/#player-queues) and can be overridden for [one queue](/usage/#the-queue).
 
 More details [here](/faq/tech-info/#volume-normalization)
 

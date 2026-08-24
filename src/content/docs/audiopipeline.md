@@ -22,7 +22,7 @@ The Input section shows the origin of the stream and the codec, <a href="https:/
 
 The Processing section shows that all tracks are processed internally as raw <a href="https://www.origin-ic.com/blog/what-you-need-to-know-about-pcm-audio-explained/48067" target="_blank" rel="noopener noreferrer">PCM</a> by Music Assistant and are decoded to <a href="https://www.youtube.com/watch?v=4YRp-FIsNDA" target="_blank" rel="noopener noreferrer">32 bits floating point</a> in the sample rate of the source. 
 
-Next the Volume Normalization value is shown. How it is applied is described on the [Technical Information](/faq/tech-info/#volume-normalization) page, and the settings that control it are in [Streams Queue Playback](/settings/core/#queue-playback).
+Next the Volume Normalization value is shown. How it is applied is described on the [Technical Information](/faq/tech-info/#volume-normalization) page, and the settings that control it are under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback).
 
 The Output section is then shown which, in this example, is simple and just shows the Output Limiter, the output codec and quality and then finally the icon of the output protocol and the name of the player is shown.
 

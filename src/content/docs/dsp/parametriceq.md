@@ -7,11 +7,11 @@ description: Explanation of the use and effect of the DSP Parametric Equalizer f
 
 A Parametric Equalizer (PEQ) is a <a href="https://www.masteringbox.com/learn/parametric-eq" target="_blank" rel="noopener noreferrer">powerful tool</a> for fine-tuning audio. Unlike simpler tone controls, a PEQ allows precise adjustment of specific frequency ranges.
 
-This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
-
 PEQs can be used to tailor the sound to a room's acoustics, compensate for speaker or headphone characteristics, or to fine-tune the frequency balance to personal taste. MA supports the application of corrections to both channels (left and right) identically or individually.
 
 Multiple PEQ filters can be added to the MA signal path if desired.
+
+This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
 
 ## Usage
 

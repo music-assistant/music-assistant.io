@@ -22,7 +22,7 @@ Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or who
 
 ## How the data is used
 
-- **[Volume normalization](/settings/core/#queue-playback)** — keeps perceived loudness consistent when transitioning between tracks from different sources (a loudly-mastered modern album, a quiet jazz release, a podcast and a streaming track all play back at comparable loudness). How the measurement is used is chosen in the Streams settings, and normalization is switched on or off per queue.
+- **[Volume normalization](/settings/core/#queue-playback)** — keeps perceived loudness consistent when transitioning between tracks from different sources (a loudly-mastered modern album, a quiet jazz release, a podcast and a streaming track all play back at comparable loudness). How the measurement is used is chosen under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), and normalization is switched on or off per queue.
 - When a track is played through a player that has volume normalization disabled, the live loudness measurement is skipped, as no gain would be applied. However, a background job continues to measure library tracks independently of playback, so a measurement is still produced over time.
 
 ## Settings
