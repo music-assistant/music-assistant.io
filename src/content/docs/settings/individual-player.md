@@ -10,14 +10,28 @@ Individual Player Settings are usually quite extensive. The typical headings of 
 
 A powerful feature of Music Assistant is that it will combine all of the available protocols from a device into one player. The available protocols can be seen in the chips at the top of the page and in the Output Protocols section of the settings.
 
+The `Reconfigure` button launches the configuration wizard for the player and for those with multiple protocols the one to be reconfigured will need to be selected from a drop down box. 
+
+## Queue Settings
+
+This is a link to the respective [Queue Settings](/usage/#the-queue). It should be noted that these can be set globally in the [Player Queues Settings](/settings/core/#player-queues)
+
+## DSP Settings
+
+All providers have the option to apply <a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">Digital Signal Processing</a> (DSP) filters to the audio stream. This section is where the DSP is configured for each player, which means that each player has its own independently configurable DSP settings.
+
+Full details of the DSP capabilities and the filters that are available can be found in the [Digital Signal Processing](/dsp/) section of the documentation.
+
+## Player Options
+
+Some players (e.g. [MusicCast](../player-support/musiccast/) have [unique control features](../player-support/#player-options) which are fully described in the documentation for the relevant player provider 
+
 ## Generic Settings
 
 - <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the [Player List](/ui/#player-list) and other areas of the UI
 - <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
 - <b>Icon.</b> A material design icon is used in some parts of the UI and this can be configured on a per player basis
-- <b>Flow Mode sample rate.</b> Controls the sample rate used when the queue is streamed in [Flow Mode](/faq/tech-info/#track-queueing), where MA sends the whole queue as one continuous stream. The options are `Smart (upsample only)` (this is the default), `Bit-perfect (no resampling)`, `48 kHz (balanced quality and bandwidth)`, `96 kHz (high quality)`, and `Highest supported by player`. Found under advanced settings and only for supported protocols. Smart will anchor the stream quality on that of the first track and only restart for higher rates. Bit-perfect will not do any resampling and will restart the stream on any rate change.
-- <b>Dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
-- <b>Group members.</b> For Group player types the members of the group are configured in this field
+- <b>Play Media overrides active group.</b> When this player is currently captured by an active group or sync session, an explicit Play Media command (e.g. starting a new playlist or track from Home Assistant) will release this player from the group/sync and play the new media directly on this player. Disable this to keep the legacy behaviour where Play Media is redirected to the group leader. Other commands (next/prev/pause/resume) are always forwarded to the group leader as they act on the existing playback
 
 ## Output Protocols
 
@@ -29,9 +43,12 @@ One setting appears in the protocol sections of many player types and is describ
 
 - <b>Try to inject metadata into stream (ICY).</b> ICY is a way of slipping the track name and artist into the audio stream so the player can display them (<a href="https://liquidsoap.readthedocs.io/en/latest/content/icy_metadata.html" target="_blank" rel="noopener noreferrer">more about ICY metadata</a>, written for developers). Not all players handle it correctly, so if there are issues with playback, try disabling this setting
 
-## Queue Playback
+For group players the following settings will be seen:
 
-- <b>Enable Limiting to Prevent Clipping.</b> This setting should normally remain enabled to prevent audio distortion by excessively loud peaks in a track. This setting is only visible when the advanced toggle is enabled.
+- <b>Group members.</b> For Group player types the members of the group are configured in this field
+- <b>Enable dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
+- <b>Allowed members</b>. Limit which players can join this group. Leave empty to allow any sync-compatible player. This can be used to reduce the list of players that show up for joining in case you have a lot of players. Only shown when the advanced toggle is on
+- <b>Allow crossfades between tracks of different sample rates</b>. Enable this option to allow crossfades between tracks that have different sample rates (e.g. 44.1kHz to 48kHz). Disable this option if you experience audio glitches during transitions between tracks. Only shown when the advanced toggle is on
 
 ## Announcements Configuration
 
@@ -51,17 +68,6 @@ It is possible to map other HA entities to the MA player controls. in order for 
 
 **Mute** There is a FAKE option that will set the volume to zero and restore it when mute and unmute is commanded.
 
-**Minimum and Maximum Volume** Two sliders allow the application of limits to the maximum and minimum values that are sent to the player. The volume sliders in the UI are rescaled so the full 0-100 range will still be seen.
+**Minimum and Maximum Volume** Two sliders allow the application of limits to the maximum and minimum values that are sent to the player. The volume sliders in the UI are rescaled so the full 0-100 range will still be seen. (Only shown when the advanced toggle is on)
 
-**Auomatically play/resume on power on** If the player supports power control then this option will cause the player to immediately start playing any items in the queue on power on.
-
-## DSP Settings
-
-All providers have the option to apply <a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">Digital Signal Processing</a> (DSP) filters to the audio stream. This section is where the DSP is configured for each player, which means that each player has its own independently configurable DSP settings.
-
-Full details of the DSP capabilities and the filters that are available can be found in the [Digital Signal Processing](/dsp/) section of the documentation.
-
-## Player Options
-
-Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control features](/player-support/#player-options) which are fully described in the documentation for the relevant player provider 
-
+**Automatically play/resume on power on** If the player supports power control then this option will cause the player to immediately start playing any items in the queue on power on.
