@@ -93,7 +93,7 @@ Change one thing at a time, and give it a track or two before deciding it did no
 
 **The player shows no track name or artist.** This happens in flow mode, because the player receives one long stream rather than separate tracks. Set **Try to inject metadata into stream (ICY)** to Profile 1, or to Profile 2 if you want album art as well. Some players mishandle Profile 2, so step back down if playback becomes unreliable.
 
-**Silence, or a refusal to play higher quality files.** Untick the higher rates under **Sample rates supported by this player**. The ticked defaults are deliberately safe on most players, and anything above them is offered for you to try rather than promised to work.
+**Silence, or a refusal to play higher quality files.** Remove the higher rates from **Sample rates supported by this player**. The rates selected by default are deliberately safe on most players, and anything above them is there for you to try rather than promised to work.
 
 If none of these help, the [player provider's own page](/player-support/) may list a known issue for your device.
 
