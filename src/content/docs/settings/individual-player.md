@@ -41,7 +41,7 @@ Each available protocol then has its own configuration section. Protocols can be
 
 ### Settings shared by most protocols
 
-The settings below appear under most protocols and mean the same thing wherever you see them. **Most people never need to change any of them** — the defaults are chosen to work on the widest range of hardware, and the usual reason to come here is that something is not playing properly.
+The settings below appear under most protocols and mean the same thing wherever you see them. **Most people never need to change any of them.** The defaults are chosen to work on the widest range of hardware, and the usual reason to come here is that something is not playing properly.
 
 Two things are true of all of them:
 
@@ -90,7 +90,7 @@ Turn it on if your player shows nothing useful while flow mode is running. Start
 | --- | --- |
 | **Disabled - do not send ICY metadata** *(default)* | No metadata is injected; the player will not show track info during flow mode |
 | **Profile 1 - basic info** | Title and artist only. Lightweight and widely compatible |
-| **Profile 2 - full info (including image)** | Also sends the album name and cover art. Richer, but some players mishandle it — use Profile 1 if you see playback issues |
+| **Profile 2 - full info (including image)** | Also sends the album name and cover art. Richer, but some players mishandle it, so use Profile 1 if you see playback issues |
 
 </details>
 
@@ -98,7 +98,7 @@ Turn it on if your player shows nothing useful while flow mode is running. Start
 
 The format Music Assistant encodes the audio into before sending it. `FLAC` by default, which is lossless.
 
-Change it if the player cannot play FLAC, or to cut down network traffic on a weak Wi-Fi link — a lossy codec is a good first thing to try when playback stutters on wireless players.
+Change it if the player cannot play FLAC, or to cut down network traffic on a weak Wi-Fi link. A lossy codec is a good first thing to try when playback stutters on wireless players.
 
 <details>
 <summary>What each option does</summary>
@@ -116,13 +116,13 @@ Change it if the player cannot play FLAC, or to cut down network traffic on a we
 
 The sample rates and bit depths Music Assistant will send to this player as they are. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are ticked by default.
 
-Rates are offered up to 384 kHz / 24 bit, though most providers narrow that list to what the device plausibly handles. On most players the ticked boxes are a safe starting point rather than something detected from the device, and the higher ones are offered for you to try. If your player genuinely supports them, tick them and you will get better quality; if playback breaks or the player falls silent, untick them again. Manufacturers vary, so test rather than assume. Some providers do detect the device's capabilities and set this for you — those pages say so.
+Rates are offered up to 384 kHz / 24 bit, though most providers narrow that list to what the device plausibly handles. On most players the ticked boxes are a safe starting point rather than something detected from the device, and the higher ones are offered for you to try. If your player genuinely supports them, tick them and you will get better quality; if playback breaks or the player falls silent, untick them again. Manufacturers vary, so test rather than assume. Some providers do detect the device's capabilities and set this for you, and those pages say so.
 
 #### Output Channel Mode
 
 Whether the player receives both channels, one channel, or a mono mix of the two. `Stereo` by default.
 
-The usual reason to change it is building a stereo pair from two players — set one to `Left channel only` and the other to `Right channel only`, then group them.
+The usual reason to change it is building a stereo pair from two players. Set one to `Left channel only` and the other to `Right channel only`, then group them.
 
 #### Prefer low-latency WAV for live sources
 
