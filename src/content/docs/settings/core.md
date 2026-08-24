@@ -8,7 +8,7 @@ The core server settings are set with typical defaults that should work for most
 
 ![image](/assets/screenshots/settings-core.png)
 
-## Background Tasks
+## Background Tasks (configuration)
 
 - <b>Maximum number of concurrent background tasks.</b> Defaults to 2. This controls how many background tasks run simultaneously. Higher numbers mean higher demands on the system's resources and can slow the system down. Setting is only visible when the advanced toggle is on
 
@@ -99,7 +99,7 @@ How much to raise or lower the volume, in dB, whenever the fixed-gain path is us
 - The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically and set to `auto`. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
 
-#### Audio Analysis
+#### Audio Analysis Options
 
 - <b>SmartFades Log Level.</b> Specific log level for the Smart Fades mixer and analyzer
 - <b>Background analysis concurrency.</b> Maximum number of tracks analysed concurrently during the nightly background scan. Default is 1 and should only be increased on more powerful systems
