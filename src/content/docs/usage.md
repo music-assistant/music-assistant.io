@@ -47,7 +47,7 @@ Each player has its own queue. View the queue by pressing the ![Preview image](/
 The queue order can be adjusted by selecting and dragging the six dot icon or via the options in the ⋮ menu.
 
 > [!NOTE]
-> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in **Settings → System → Player Queues**
+> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → System → Player Queues**](/settings/core/#player-queues)
     
 The options in the menu available in the top right is shown below. 
 
@@ -104,7 +104,7 @@ Playlists can be copied from one source to another by opening the original playl
 
 Automatically generated playlists from streaming sources may be supported. See the specific source documentation for further information.
 
-MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in **Settings → System → Background tasks** or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting REFRESH ITEM.
+MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in [**Settings → System → Background tasks**](/settings/core/#background-tasks) or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting REFRESH ITEM.
 
 There are also two pseudo-playlists, the Infinite Mixes (one based on the whole library and one on the favorites). Viewing these playlists shows no tracks; playing one results in an endless queue where 25 random tracks are added and refreshed as the queue comes to an end.
 

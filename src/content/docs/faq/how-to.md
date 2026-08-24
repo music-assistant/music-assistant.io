@@ -113,7 +113,7 @@ If you are using docker then you can use an <a href="https://www.home-assistant.
 
 ## Access the MA Views directly via URL
 
-If authentication becomes a blocker to some devices then create a long lived access token via **Settings → Profile** and use the following format as the URL
+If authentication becomes a blocker to some devices then create a long lived access token via [**Settings → Profile**](/settings/profile/#long-lived-access-tokens) and use the following format as the URL
 https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
 
 ## Open the UI with a Specific Player Selected

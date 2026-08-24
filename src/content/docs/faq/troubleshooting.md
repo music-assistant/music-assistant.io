@@ -15,7 +15,7 @@ description: Common Problems and Fixes
 
 **Unsupported installs.** For clarity, running installation options other than HAOS (Home Assistant Operating System) or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
 
-**Stream settings.** There are settings available in **Settings → System → Streams** and then select the "Show advanced settings" toggle, that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
+**Stream settings.** There are settings available in [**Settings → System → Streams**](/settings/core/#streams) and then select the "Show advanced settings" toggle, that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
 
 **Player discovery.** Most players are discovered automatically. They announce themselves on the network and MA listens for those announcements (a technique called mDNS/multicast, [explained in plain language here](/faq/networking/)). If your players do not get discovered it means something on your network is blocking those announcements. Work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered); the most common causes are guest Wi-Fi networks, VPNs, and router settings that filter multicast traffic. Business-grade network equipment tends to block multicast traffic as much as possible as it hurts performance when there are many clients, but in a home setup it is mandatory because all home gear relies on it. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
 
@@ -47,9 +47,9 @@ description: Common Problems and Fixes
 
 Before you raise an issue [read this first](/support/). Report issues using the template with as much detail as possible. Often posts aren’t clear about exactly what is typed where, how something is configured or what series of menus are selected. Screenshots can be helpful. 
 
-DOWNLOAD and ATTACH the diagnostics report from **Settings → System → Diagnostics**. This is the single most useful thing you can give us and it should be included in every report.
+DOWNLOAD and ATTACH the diagnostics report from [**Settings → System → Diagnostics**](/settings/core/#diagnostics). This is the single most useful thing you can give us and it should be included in every report.
 
-DOWNLOAD and ATTACH complete logs from **Settings → System → Diagnostics**. These are optional to begin with as we may ask for more detailed logging once we have read the diagnostics report, but attaching them from the start does no harm. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider/source basis.
+DOWNLOAD and ATTACH complete logs from [**Settings → System → Diagnostics**](/settings/core/#diagnostics). These are optional to begin with as we may ask for more detailed logging once we have read the diagnostics report, but attaching them from the start does no harm. Enabling debug logging is ok if the default level is providing no useful information. It is not recommended to run debug logging at a global level for daily use as it has a resource overhead; only do so in the case of problems. Do NOT use verbose logging level on a global level because it makes the logs practically unreadable. If really needed, but only by dev request, verbose logging may be enabled on a PER provider/source basis.
 
 You can also look in the Browser console when you have front end issues which in Chrome browser is --> F12 for developer tools --> console. 
 
@@ -71,7 +71,7 @@ If the player appears to start normally, with the progress bar advancing and the
 
 For a player that is missing or will not start at all, read on.
 
-First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to **Settings → Players**. If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
+First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to [**Settings → Players**](/settings/individual-player/). If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
 
 If the player is not shown in the list of players in the MA SETTINGS then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
 

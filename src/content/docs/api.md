@@ -10,7 +10,7 @@ The API documentation is automatically generated and available at http://YOUR_MA
 
 ## Before you start
 
-- Every request needs an authentication token. Create a long lived access token in the MA UI via **Settings → Profile** and send it in the `Authorization: Bearer <token>` header (the examples below show a truncated token)
+- Every request needs an authentication token. Create a long lived access token in the MA UI via [**Settings → Profile**](/settings/profile/#long-lived-access-tokens) and send it in the `Authorization: Bearer <token>` header (the examples below show a truncated token)
 - The `message_id` is any string of your choosing; it is echoed back in the response so you can match responses to requests
 - Each example below is shown in two forms: a `curl` command you can run from any terminal, and the equivalent Home Assistant <a href="https://www.home-assistant.io/integrations/rest_command/" target="_blank" rel="noopener noreferrer">rest_command</a> YAML for use in automations
 
