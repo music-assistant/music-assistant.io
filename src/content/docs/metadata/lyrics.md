@@ -46,7 +46,7 @@ LRCLIB is throttled to one request per 30 seconds against the public API, so a n
 
 An optional fallback for unsynchronized lyrics and is a fallback source for plain (unsynchronized) lyrics, scraped from genius.com. Matching is on title and artist only — this can return results for more tracks but risks incorrect versions for ambiguously-titled songs.
 
-Genius Lyrics is enabled from Settings → Providers → Add provider.
+Genius Lyrics is enabled from Settings → Metadata Providers → Add provider.
 
 ## Replacing wrong or stale lyrics
 

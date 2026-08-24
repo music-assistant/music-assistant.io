@@ -29,7 +29,7 @@ Library items are enriched on a **90-day refresh cycle**. Refreshes are triggere
 
 For each item, source metadata is collected first (sorted so local providers such as the file system, Plex, Jellyfin and Subsonic outrank streaming providers), then the online metadata providers are queried when "Enable metadata retrieval from online metadata providers" is on (default).
 
-The language used for descriptions and bios is set under [Settings → System Settings → Metadata](/settings/core/#metadata) → "Preferred language". English is always used as fallback.
+The language used for descriptions and bios is set under [Settings → System → Metadata](/settings/core/#metadata) → "Preferred language". English is always used as fallback.
 
 ## What Music Assistant reads from local file libraries
 
