@@ -24,10 +24,8 @@ Refer to the [Player Provider Settings](/settings/player-provider/) when setting
 In addition to the [Individual Player Settings](/settings/individual-player/) the Bluesound players have the following settings:
 
 - <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Try to inject metadata into stream (ICY).</b> Default is "full" (Profile 2 - full info including images). This option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting
 - <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
 - <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the player cannot play continuous WAV streams
-- <b>Flow Mode sample rate.</b> Bluesound players always play the queue as one continuous stream, which uses a single sample rate throughout. Smart (the default) upsamples lower-rate tracks to match the first track and only restarts the stream for a higher-rate track. Other options are Bit-perfect, a fixed 48 kHz or 96 kHz, or Highest supported by player
 - <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
 
 ## Known Issues / Notes
