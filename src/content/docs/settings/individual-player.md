@@ -56,7 +56,7 @@ AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show on
 
 Sends the whole queue to the player as one continuous stream, instead of one track at a time. Off by default on most players, though several providers turn it on because their devices work better that way; those pages say so.
 
-Turn it on if the player leaves a gap between tracks, stumbles on the change from one track to the next, or cannot do gapless playback at all. Music Assistant also switches it on by itself when crossfade is in use *and* the player cannot do gapless playback on its own, since stitching those tracks together needs one continuous stream.
+Turn it on if the player leaves a gap between tracks, fails to transition to the next track, or cannot do gapless playback at all. Music Assistant also switches it on by itself when crossfade is in use *and* the player cannot do gapless playback on its own, since stitching those tracks together needs one continuous stream.
 
 The trade-off is that most players stop showing track information on their own display, because they only ever receive one long "track". The ICY setting below can put some of it back. [Track Queueing](/faq/tech-info/#track-queueing) explains how this differs from letting the player queue the next track itself.
 
