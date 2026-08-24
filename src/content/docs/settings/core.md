@@ -151,7 +151,7 @@ A destructive operation that completely rebuilds the genre database from default
 
 ## Audio Analysis
 
-Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers — [Loudness Analysis](/audio-analysis/loudness-analysis/), [Smart Fades](/audio-analysis/smart-fades/), [Sonic Analysis](/audio-analysis/sonic-analysis/) and [AcoustID Lookup](/audio-analysis/acoustid/). The stale number is the number of tracks that need to be re-analysed due to a version change. There is also a section which shows failures and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned.
+Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers, namely [Loudness Analysis](/audio-analysis/loudness-analysis/), [Smart Fades](/audio-analysis/smart-fades/), [Sonic Analysis](/audio-analysis/sonic-analysis/) and [AcoustID Lookup](/audio-analysis/acoustid/). The stale number is the number of tracks that need to be re-analysed due to a version change. There is also a section which shows failures and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned.
 
 ![image](/assets/screenshots/audio-analysis-view.png)
 
