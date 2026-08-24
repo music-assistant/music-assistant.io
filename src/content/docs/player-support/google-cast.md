@@ -29,11 +29,11 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Google Cast provider has the following:
 
-- <b>HTTP Profile used for sending audio.</b> Defaults to `Profile 3 - forced content length` on Cast devices. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
+- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to `Profile 3 - forced content length` on Cast devices. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
 - <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
-- <b>Sample rates supported by this player.</b> Rates go up to 192 kHz / 24 bit for a single player, and up to 96 kHz for a Cast group. Only 44.1 kHz / 16 bit and 48 kHz / 16 bit are selected by default, because the higher ones are unreliable on some devices despite being officially supported. Add them and test rather than assume
-- <b>Prefer low-latency WAV for live sources.</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
-- <b>Enable queue flow mode.</b> On by default, as these devices handle one continuous stream more reliably than being fed tracks one at a time
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit for a single player, and up to 96 kHz for a Cast group. Only 44.1 kHz / 16 bit and 48 kHz / 16 bit are selected by default, because the higher ones are unreliable on some devices despite being officially supported. Add them and test rather than assume
+- <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
+- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> On by default, as these devices handle one continuous stream more reliably than being fed tracks one at a time
 
 ## Known Issues / Notes
 

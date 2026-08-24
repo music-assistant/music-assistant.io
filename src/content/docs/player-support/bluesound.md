@@ -23,8 +23,8 @@ Refer to the [Player Provider Settings](/settings/player-provider/) when setting
 
 Bluesound players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on BluOS:
 
-- <b>Sample rates supported by this player.</b> Everything up to 192 kHz / 24 bit is selected by default, rather than only 44.1 kHz / 16 bit and 48 kHz / 16 bit. Remove the higher ones if your player cannot manage them
-- <b>Try to inject metadata into stream (ICY).</b> Defaults to Profile 2 - full info, rather than being off as it is elsewhere
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Everything up to 192 kHz / 24 bit is selected by default, rather than only 44.1 kHz / 16 bit and 48 kHz / 16 bit. Remove the higher ones if your player cannot manage them
+- <b>[Try to inject metadata into stream (ICY)](/settings/individual-player/#try-to-inject-metadata-into-stream-icy).</b> Defaults to Profile 2 - full info, rather than being off as it is elsewhere
 
 ## Known Issues / Notes
 

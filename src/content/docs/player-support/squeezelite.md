@@ -37,7 +37,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>Audio synchronization delay correction.</b> Shifts this player's audio by up to ±500 ms to keep it in step with the others. Refer to the Player Summary Table to identify which types support sync correction
 - <b>Enable display support.</b> Some Squeezelite hardware has a display and this setting enables support for it
 - <b>Visualization type.</b> The visualisation shown on the display during playback. It only becomes available once display support is enabled
-- <b>Prefer low-latency WAV for live sources.</b> On by default for Squeezelite. Turn it off if the player cannot play continuous WAV streams
+- <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Squeezelite. Turn it off if the player cannot play continuous WAV streams
 - <b>Allow crossfades between tracks of different sample rates.</b> Only enable this if the player supports it. It applies while flow mode is off, so it is greyed out once flow mode is enabled
 
 There is no sample rates setting for Squeezelite players, as each one reports the highest rate it can take and Music Assistant works from that. There is also no HTTP profile setting, as it is fixed at Profile 2 for slimproto.

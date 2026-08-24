@@ -57,7 +57,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>Experimental: Intercept native Station playback.</b> Off by default. When the Station starts playing Yandex Music on its own, usually from an Alice voice command but also from a touch on the Station itself, this silences the Station and plays the same track on the target player chosen below. The Station keeps its own queue running quietly in the background so Music Assistant can follow each next track. It needs the provider level switch above turned on
 - <b>Intercept target player.</b> The Music Assistant player that receives intercepted playback. Every registered player except this Station is listed, including ones that are currently offline so you can pick a target before it is switched on. Pause, volume and seek are mirrored where the target supports them and are quietly skipped where it does not
 - <b>Experimental: Voice control integration.</b> Off by default. Resumes the Music Assistant queue automatically after voice commands such as "Алиса, стоп" or "Алиса, дальше". Experimental, so it may behave unexpectedly
-- <b>HTTP Profile used for sending audio.</b> Defaults to Profile 3 - forced content length here, because Yandex Stations need a content length and cannot handle chunked streams
+- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to Profile 3 - forced content length here, because Yandex Stations need a content length and cannot handle chunked streams
 
 ### Voice control integration (experimental)
 

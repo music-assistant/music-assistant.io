@@ -30,7 +30,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>Use HTTPS when connecting to the Fully Kiosk API.</b> This is off by default
 - <b>Verify HTTPS certificates (recommended).</b> This is on by default. Turning it off trusts any certificate without validation
 - <b>TLS certificate fingerprint.</b> Optional SHA-256 hex fingerprint. When provided it must match the device certificate and overrides the Verify HTTPS certificates setting
-- <b>Output codec to use for streaming audio to the player.</b> Defaults to MP3 here rather than FLAC, because many tablets struggle with lossless. Stay on MP3 unless you have a reason to change
+- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Defaults to MP3 here rather than FLAC, because many tablets struggle with lossless. Stay on MP3 unless you have a reason to change
   
 ## Known Issues / Notes
 

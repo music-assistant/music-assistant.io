@@ -66,8 +66,8 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 MSX players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Two of those are worth knowing about on a TV:
 
-- <b>Output codec to use for streaming audio to the player.</b> Set per TV, and defaults to MP3 here rather than FLAC
-- <b>Enable queue flow mode.</b> Turning this on stops the TV reporting track progress correctly, so leave it off unless you have a reason to change it
+- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Set per TV, and defaults to MP3 here rather than FLAC
+- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> Turning this on stops the TV reporting track progress correctly, so leave it off unless you have a reason to change it
 
 ## How It Works
 

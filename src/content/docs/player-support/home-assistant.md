@@ -33,7 +33,7 @@ Before the Player Provider can be added the [Plugin](/ha-plugin/) must be instal
 
 Home Assistant Media Players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). One of those differs here:
 
-- <b>Output codec to use for streaming audio to the player.</b> Defaults to MP3 here rather than FLAC, as it has the broadest compatibility across Home Assistant player integrations
+- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Defaults to MP3 here rather than FLAC, as it has the broadest compatibility across Home Assistant player integrations
 
 Flow mode streams audio as a continuous flow rather than individual tracks, which avoids gaps between tracks. For HA media players flow mode is always used and there is no setting to turn it off, because the wide variation in HA player capabilities makes it the most reliable playback method.
 
