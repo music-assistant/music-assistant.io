@@ -31,7 +31,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It must be an input that does not need a network connection, and it is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching. This setting is only available on multi-zone players
 - <b>Turn off the zone when it leaves a group.</b> Toggle defines the power behaviour when the player leaves a group. This setting is only available on multi-zone players
 - <b>Auto-advance queue when the device stops at end of track.</b> On by default. Yamaha receivers occasionally drop the queued next track and stop playing, and this lets Music Assistant notice that and move the queue on. The side effect is that stopping playback yourself in the last few seconds of a track also advances to the next item, so turn it off if you would rather the device's own stop always be respected
-- <b>Sample rates supported by this player.</b> Options are offered up to 192 kHz / 24 bit. Set these to match what your device handles
+- <b>Sample rates supported by this player.</b> Rates go up to 192 kHz / 24 bit. Set these to match what your device handles
 
 ## Player Options
 

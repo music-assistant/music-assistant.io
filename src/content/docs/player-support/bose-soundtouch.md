@@ -42,7 +42,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 
 - <b>Overwrite preset 1-6.</b> Press one of these buttons to hand that physical preset button on this speaker over to Music Assistant. Do this once per speaker for each button you want to use. The button's label tells you when the speaker already has something stored on that preset. What the button plays is set in the provider settings above
 - <b>Output codec to use for streaming audio to the player.</b> Defaults to MP3 on SoundTouch speakers, which gives by far the most reliable playback. The other codecs are available but are more likely to cause problems here
-- <b>Sample rates supported by this player.</b> Rates go up to 192 kHz / 24 bit. The usual two stay selected by default
+- <b>Sample rates supported by this player.</b> Rates go up to 192 kHz / 24 bit
 
 ## Known Issues / Notes
 
