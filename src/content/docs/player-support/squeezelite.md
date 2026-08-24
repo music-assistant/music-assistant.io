@@ -31,7 +31,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>JSON-RPC CLI/API Port.</b> Some slimproto players use the LMS style JSON-RPC API to fetch album art and other metadata. It runs on port 9000 by default. Set it to 0 to switch it off
 - <b>Enable Discovery server.</b> On by default. Broadcasts discovery packets so slimproto clients find and connect to this server on their own. Turn it off if you run more than one slimproto server on your network, or you do not want clients connecting automatically
 
-In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Squeezelite provider has a unique setting in the Advanced section and a unique Presets section
+In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Squeezelite provider has these settings of its own:
 
 - <b>Presets.</b> Real Squeezebox hardware or jive(lite) based emulators support presets. This section lets you assign a Playlist or Radio Station from your library to each of the ten presets
 - <b>Audio synchronization delay correction.</b> Shifts this player's audio by up to ±500 ms to keep it in step with the others. Refer to the Player Summary Table to identify which types support sync correction
