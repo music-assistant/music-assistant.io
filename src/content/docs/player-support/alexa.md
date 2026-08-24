@@ -84,9 +84,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>API Basic Auth Password.</b> The password you put in `app_password.txt`
 - <b>Alexa Language.</b> Locale used for Alexa (e.g. en-US)
 
-Alexa players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). One of those behaves differently here:
-
-- <b>Sample rates supported by this player.</b> Unlike most players, this is set automatically when the player is discovered. You can still adjust it by hand if you need to
+Alexa players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
 
 ## Known Issues / Notes
 

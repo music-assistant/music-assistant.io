@@ -28,7 +28,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 - <b>Host.</b> The hostname or IP address of the AmpliPi controller (e.g. `amplipi.local` or `192.168.1.50`). A full URL may also be provided. This is asked when you add the provider and is required, as AmpliPi controllers are not auto-discovered
 
-Each zone on the controller becomes its own player, using the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
+Each zone on the controller becomes its own player. AmpliPi zones use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
 
 AmpliPi zones always play the queue as one continuous stream, so there is no flow mode setting to change.
 

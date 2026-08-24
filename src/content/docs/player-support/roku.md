@@ -31,12 +31,10 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>Manual IP addresses for discovery.</b> Add Roku devices by IP address when automatic discovery does not find them on your network
 - <b>App ID of Media Assistant.</b> Defaults to the Roku Channel Store version of Media Assistant, ID 782875. Set it to dev if you sideloaded the app onto your Roku
 
-Roku players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Two of those are worth knowing about on a Roku:
+Roku players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on a Roku:
 
-- <b>Sample rates supported by this player.</b> Defaults to Roku's stated support of 44.1 kHz / 16 bit and 48 kHz / 16 bit. Higher rates may work anyway depending on the device, so they are worth trying
-- <b>Output codec to use for streaming audio to the player.</b> Some codecs load faster than others depending on the Roku device, so it is worth trying another if playback is slow to start
-
-If your Roku struggles to move from one track to the next, turning on <b>Enable queue flow mode</b> often helps.
+- <b>Sample rates supported by this player.</b> The ticked defaults match Roku's stated support. Higher rates may still work depending on the device, so they are worth a try
+- <b>Output codec to use for streaming audio to the player.</b> Some codecs load faster than others depending on the Roku device, so try another if playback is slow to start
 
 ## Known Issues / Notes
 

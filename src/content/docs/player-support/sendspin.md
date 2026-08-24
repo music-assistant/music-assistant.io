@@ -35,9 +35,9 @@ Individual Sendspin players will appear automatically when clients connect
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-<b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example 192.168.1.50 or speaker.local. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
-<b>Allow legacy clients.</b> On by default. Accepts older Sendspin devices that do not follow the current specification, including devices that connect without encryption, whose traffic can be read by anyone on your local network. Turn it off to accept only up to date devices. This option is temporary and will be removed in a future release
-<b>Minimum PIN length.</b> The fewest digits a device may use for dynamic PIN pairing. The default is 4 and it can be set as high as 12
+- <b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example 192.168.1.50 or speaker.local. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
+- <b>Allow legacy clients.</b> On by default. Accepts older Sendspin devices that do not follow the current specification, including devices that connect without encryption, whose traffic can be read by anyone on your local network. Turn it off to accept only up to date devices. This option is temporary and will be removed in a future release
+- <b>Minimum PIN length.</b> The fewest digits a device may use for dynamic PIN pairing. The default is 4 and it can be set as high as 12
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the Sendspin players have the following settings:
 
