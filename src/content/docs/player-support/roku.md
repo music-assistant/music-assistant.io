@@ -33,7 +33,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 Roku players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on a Roku:
 
-- <b>Sample rates supported by this player.</b> The ticked defaults match Roku's stated support. Higher rates may still work depending on the device, so they are worth a try
+- <b>Sample rates supported by this player.</b> The rates selected by default match Roku's stated support. Higher rates may still work depending on the device, so they are worth adding to see
 - <b>Output codec to use for streaming audio to the player.</b> Some codecs load faster than others depending on the Roku device, so try another if playback is slow to start
 
 ## Known Issues / Notes
