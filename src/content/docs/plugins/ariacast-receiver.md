@@ -19,7 +19,7 @@ The **AriaCast Receiver** plugin allows for streaming of high-quality audio wire
 
 ## Usage
 1. Install the [AriaCast Android app](https://github.com/AriaCast/AriaCast-app/releases/latest).
-2. Open the app — it will automatically discover servers on the network that the Android device is connected to`
+2. Open the app — it will automatically discover servers on the network that the Android device is connected to
 3. Select the Music Assistant server desired and start playing content
 4. Audio will be streamed to the configured Music Assistant player.
 

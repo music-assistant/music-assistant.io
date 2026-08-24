@@ -304,7 +304,7 @@ rest_command:
 
 <details><summary>Play latest podcast episode</summary>
 
-Pass 'latest` or `newest` as the `start_item` parameter.
+Pass `latest` or `newest` as the `start_item` parameter.
 
 ```yaml
 rest_command:
