@@ -24,7 +24,7 @@ Full details of the DSP capabilities and the filters that are available can be f
 
 ## Player Options
 
-Some players (e.g. [MusicCast](../player-support/musiccast/) have [unique control features](../player-support/#player-options) which are fully described in the documentation for the relevant player provider 
+Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control features](/player-support/#player-options) which are fully described in the documentation for the relevant player provider 
 
 ## Generic Settings
 
