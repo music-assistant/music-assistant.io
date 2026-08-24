@@ -35,9 +35,9 @@ Individual Sendspin players will appear automatically when clients connect
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-<b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example 192.168.1.50 or speaker.local. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
-<b>Allow legacy clients.</b> On by default. Accepts older Sendspin devices that do not follow the current specification, including devices that connect without encryption, whose traffic can be read by anyone on your local network. Turn it off to accept only up to date devices. This option is temporary and will be removed in a future release
-<b>Minimum PIN length.</b> The fewest digits a device may use for dynamic PIN pairing. The default is 4 and it can be set as high as 12
+- <b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example 192.168.1.50 or speaker.local. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
+- <b>Allow legacy clients.</b> On by default. Accepts older Sendspin devices that do not follow the current specification, including devices that connect without encryption, whose traffic can be read by anyone on your local network. Turn it off to accept only up to date devices. This option is temporary and will be removed in a future release
+- <b>Minimum PIN length.</b> The fewest digits a device may use for dynamic PIN pairing. The default is 4 and it can be set as high as 12
 
 In addition to the [Individual Player Settings](/settings/individual-player/) the Sendspin players have the following settings:
 
@@ -48,7 +48,6 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Automatically play line-in on.</b> Only shown for devices with a line-in that can report when a signal is present. Chooses where that line-in plays automatically, either This device, another player, or Off
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in step with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
 - <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (let client decide) is the default, and the other options are read from the device itself
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
 
 ## Known Issues / Notes
 

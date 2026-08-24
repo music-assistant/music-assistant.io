@@ -40,7 +40,6 @@ Music Assistant chooses how to stream to each device automatically, so under nor
 - <b>Audio buffer depth.</b> How much audio the speaker keeps queued ahead of playback. Increase this if the speaker stays silent or drops out while Music Assistant shows it playing — at the cost of slower skipping and pausing. Automatic picks a value suited to the device.
 - <b>Ignore volume reports sent by the device itself.</b> Some devices report their own volume level unreliably, which can cause unexpected volume changes. Enable this to ignore those reports.
 - <b>Enable encryption.</b> Only shown for devices streaming with AirPlay 1 (RAOP). Some third party players require this to be turned off.
-- <b>Output channel mode.</b> Play only the left or right channel, for example to create a stereo pair from 2 players, or downmix to mono.
 
 ### AirPlay Provider Settings
 

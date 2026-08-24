@@ -31,16 +31,10 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>Manual IP addresses for discovery.</b> Add Roku devices by IP address when automatic discovery does not find them on your network
 - <b>App ID of Media Assistant.</b> Defaults to the Roku Channel Store version of Media Assistant, ID 782875. Set it to dev if you sideloaded the app onto your Roku
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Roku players have the following settings:
+Roku players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on a Roku:
 
-- <b>Enable queue flow mode.</b> Off by default. Enabling this option will send all tracks as a continuous audio stream. This allows for support of gapless or crossfading. This can also help if your Roku is having difficulty transitioning between tracks. This does have the side effect of losing some displayed metadata
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
-- <b>Sample rates supported by this player.</b> This setting defaults to Roku's stated support of 44.1kHz / 16 bits and 48kHz / 16 bits, but the sample rates and bit depths can be manually set. Unsupported sample rates may work depending on the Roku device
-- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV. Some codecs may load faster than others depending on the Roku device
-- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
-- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the Roku cannot play continuous WAV streams
-- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled, so it is greyed out with the default settings. It attempts to provide metadata to the player so it can show track info during a flow stream
-- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
+- <b>Sample rates supported by this player.</b> The rates selected by default match Roku's stated support. Higher rates may still work depending on the device
+- <b>Output codec to use for streaming audio to the player.</b> Some codecs load faster than others depending on the Roku device, so try another if playback is slow to start
 
 ## Known Issues / Notes
 

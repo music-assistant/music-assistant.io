@@ -30,11 +30,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 - <b>Manual IP addresses for discovery.</b> Specify one or more IP addresses to add speakers that aren't discovered automatically. Only needed in non-standard network setups, for example, if your speakers are on a different subnet from the MA server.
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Samsung WAM players have the following settings:
-
-- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC, or WAV
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only, or Mono (both channels)
-- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the speaker cannot play continuous WAV streams
+Samsung WAM players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
 
 WAM speakers always play the queue as one continuous stream, because they cannot queue the next track themselves. The stream starts at the first track's sample rate and only resamples later tracks upward, and there is no setting to change that. There is also no sample rates setting, as WAM speakers report their own support of 44.1kHz through to 192kHz at 16 or 24 bits.
 

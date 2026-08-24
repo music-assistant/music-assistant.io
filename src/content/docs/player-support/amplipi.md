@@ -28,13 +28,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 - <b>Host.</b> The hostname or IP address of the AmpliPi controller (e.g. `amplipi.local` or `192.168.1.50`). A full URL may also be provided. This is asked when you add the provider and is required, as AmpliPi controllers are not auto-discovered
 
-Each zone on the controller becomes its own player. In addition to the [Individual Player Settings](/settings/individual-player/) the AmpliPi players have the following settings:
-
-- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
-- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
-- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if playback of those sources is unreliable
-- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits. Higher rates and 24 bit options are offered if your setup handles them. Content with unsupported sample rates will be resampled
+Each zone on the controller becomes its own player. AmpliPi zones use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
 
 AmpliPi zones always play the queue as one continuous stream, so there is no flow mode setting to change.
 
