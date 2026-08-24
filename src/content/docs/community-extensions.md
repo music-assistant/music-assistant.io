@@ -5,7 +5,7 @@ description: A Collection of HA cards or dashboards
 
 # General <img src="/assets/icons/community-extensions-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 This is a collection of community developed HA cards or dashboards for Music Assistant. Review the linked repos (the repo title is linked) for instructions and status of these projects. The complexity of these projects varies.
-***************************************************************
+*********************************
 ## <a href="https://github.com/fastxl2024/mass-search-card" target="_blank" rel="noopener noreferrer">Music Assistant Search Card</a>
 
 The Mass Search Card is an advanced search card for Home Assistant, designed to simplify interaction with Music Assistant. This card allows you to effortlessly search for artists, tracks, albums, playlists, and radio stations and play them on your selected media players.
@@ -14,63 +14,63 @@ The Mass Search Card is an advanced search card for Home Assistant, designed to 
 
 <img src="https://github.com/user-attachments/assets/ce10cadf-bada-444a-87ea-a9d05f0a41db" alt="image" style="width: 250px;"  loading="lazy" />
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/antontanderup/mediocre-hass-media-player-cards" target="_blank" rel="noopener noreferrer">Mediocre Media Player Card</a>
 
 A bunch of custom media player cards for Home Assistant that let you group speakers and do some custom actions.
 
 <img src="https://github.com/user-attachments/assets/2178b5d4-ea8f-46cf-9737-149e1da935c5" alt="image" style="width: 250px;"  loading="lazy" />
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/codemonkey2k5/HomeAssistent-Custom-Media-Card" target="_blank" rel="noopener noreferrer">Custom Media Card</a>
 
 A simple media player card for Home Assistant.
 
 <img src="https://github.com/user-attachments/assets/03815604-b80d-4aea-ac97-52b5c07aa3b2" alt="image" style="width: 250px;"  loading="lazy" />
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/rxritalin/Music-Assistant-Lovelace-UI" target="_blank" rel="noopener noreferrer">Music Assistant Lovelace UI</a>
 
 A work in progress Lovelace UI for Music Assistant in Home Assistant using picture-elements
 
 <img src="https://github.com/user-attachments/assets/3c81c0cb-9290-4e86-afaa-5f9d3d445e02" alt="image" style="width: 600px;"  loading="lazy" />
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/OzGav/MA-floorplan" target="_blank" rel="noopener noreferrer">Music Assistant ha-floorplan based UI</a>
 
 This is working concept demonstrator using the ha-floorplan custom component.
 
 <img src="https://github.com/user-attachments/assets/babed2c0-646f-46b6-bdb6-b29f3b34087f" alt="image" style="width: 600px;"  loading="lazy" />
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/jianyu-li/yet-another-media-player" target="_blank" rel="noopener noreferrer">Yet Another Media Player</a>
 
 YAMP is a Home Assistant media card for controlling multiple entities with highly customizable actions and UI elements
 
 <img src="https://github.com/jianyu-li/yet-another-media-player/blob/main/preview/largepreview.png?raw=true" alt="image" style="width: 600px;"  loading="lazy" />
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/droans/mass-player-card" target="_blank" rel="noopener noreferrer">Music Assistant Player Card</a>
 
 Music Assistant Player Card is a custom card which provides a full media player, browser, and player queue for Music Assistant. Requires the custom integration <a href="https://github.com/droans/mass_queue" target="_blank" rel="noopener noreferrer">Music Assistant Queue Actions</a> to work.
 
 <img src="https://raw.githubusercontent.com/droans/mass-player-card/main/static/combined.png" alt="image" style="width: 600px;"  loading="lazy" />
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/trudenboy/sendspin-bt-bridge" target="_blank" rel="noopener noreferrer">Sendspin Bluetooth Bridge</a>
 
 Turn any Bluetooth speaker into a Music Assistant player using the Sendspin protocol. Supports multiple simultaneous devices, multiroom sync groups, and comes with a real-time web dashboard. Deploys as an HA addon, Docker Compose, Proxmox LXC, or OpenWrt LXC.
 
 <img src="https://raw.githubusercontent.com/trudenboy/sendspin-bt-bridge/main/docs-site/public/screenshots/screenshot-dashboard-full.png" alt="Sendspin BT Bridge dashboard" style="width: 600px;"  loading="lazy" />
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/eliseo-juan/mass-coverwall-card" target="_blank" rel="noopener noreferrer">Music Assistant Cover Wall Card</a>
 
 A responsive cover wall for the Home Assistant Sections view that displays your Music Assistant playlists, albums, or artists as a tap-to-play grid. Supports multiroom playback, 16 sort options, and a manual pinning mode to always keep your go-to covers front and center.
 
 <img src="https://github.com/user-attachments/assets/9b4fbb2e-db2a-47d0-9b81-2b1d56204fd4" alt="MASS Cover Wall Example" style="width: 600px;"  loading="lazy"/>
 
-***************************************************************
+*********************************
 ## <a href="https://github.com/r11a/homeii-music-flow" target="_blank" rel="noopener noreferrer">HOMEii Flow</a>
 
 HOMEii Flow is a premium, minimalist music app experience for Music Assistant, fully responsive and optimized for **Desktop, Tablet, and Mobile**. It features a high-end UI with glassmorphism effects, dynamic backgrounds, and a specialized Studio Mode for a seamless experience across all your devices.

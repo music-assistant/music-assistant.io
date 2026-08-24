@@ -62,4 +62,4 @@ MA will use the artwork supplied from the streaming providers. For local provide
 
 ## Caching
 
-Artwork is cached locally so the UI stays responsive and to keep API usage low. The on-disk thumbnail cache size is configurable under [Settings → System → Metadata](/settings/core/#metadata) → "Maximum thumbnail cache size" (default 500 MB). Oldest thumbnails are evicted when the limit is reached.
+Artwork is cached locally so the UI stays responsive and to keep API usage low. The on-disk thumbnail cache size is configurable under [**Settings → System → Metadata**](/settings/core/#metadata) → "Maximum thumbnail cache size" (default 500 MB). Oldest thumbnails are evicted when the limit is reached.

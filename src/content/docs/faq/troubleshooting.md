@@ -71,9 +71,9 @@ If the player appears to start normally, with the progress bar advancing and the
 
 For a player that is missing or will not start at all, read on.
 
-First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to [**Settings → Players**](/settings/individual-player/). If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the GENERIC SETTINGS for the individual player to determine under what circumstances the player will be hidden in the UI.
+First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to [**Settings → Players**](/settings/individual-player/). If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the **Generic Settings** for the individual player to determine under what circumstances the player will be hidden in the UI.
 
-If the player is not shown in the list of players in the MA SETTINGS then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
+If the player is not shown in the list of players in the MA settings then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
 
 If your device does support one of the supported protocols then review the documentation for that player provider for known issues and troubleshooting tips.
 

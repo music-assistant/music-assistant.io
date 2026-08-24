@@ -54,7 +54,7 @@ Zvuk has no sign-in for outside apps, so a token has to be copied out of your br
 1. Sign in to your account at [zvuk.com](https://zvuk.com)
 2. In the same browser, open [zvuk.com/api/tiny/profile](https://zvuk.com/api/tiny/profile). A page of text about your account appears
 3. Find `"token":` in that text and copy the long run of letters and numbers between the quotation marks that follow it, leaving the quotation marks themselves out
-4. In Music Assistant, go to Settings → Music Sources → Add a music source → Zvuk Music, paste it into the **X-Auth-Token** field and save
+4. In Music Assistant, go to **Settings → Music Sources → Add a music source → Zvuk Music**, paste it into the **X-Auth-Token** field and save
 
 > [!TIP]
 > If your browser downloads a file rather than showing the text, open the file in any text editor and look for `"token":` in there.
