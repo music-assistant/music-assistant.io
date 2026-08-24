@@ -37,7 +37,114 @@ Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control 
 
 - <b>Preferred Output Protocol.</b> Choose from the list of available protocols
 
-Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. Refer to the relevant Player provider for settings which are available for each.
+Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device.
+
+### Settings shared by most protocols
+
+The settings below appear under most protocols and mean the same thing wherever you see them. **Most people never need to change any of them** — the defaults are chosen to work on the widest range of hardware, and the usual reason to come here is that something is not playing properly.
+
+Three things are true of all of them:
+
+- They are only visible when the `Show advanced settings` toggle is on
+- Changing one reloads the player, so anything currently playing stops briefly
+- Not every player shows every setting. A provider can set its own default, fix a setting so it cannot be changed, or hide it entirely where it does not apply. Where that happens it is noted on that provider's own page
+
+#### Enable queue flow mode
+
+Sends the whole queue to the player as one continuous stream, instead of one track at a time. Off by default.
+
+Turn it on if the player leaves a gap between tracks, stumbles on the change from one track to the next, or cannot do gapless playback at all. It is also switched on automatically when crossfade is in use, because stitching tracks together requires one continuous stream.
+
+The trade-off is that most players stop showing track information on their own display, because they only ever receive one long "track". The ICY setting below can put some of it back.
+
+#### Flow Mode sample rate
+
+Only applies when flow mode is on. A flow stream uses a single sample rate from start to finish, and this decides which one. `Smart` is the default and the right choice for almost everyone.
+
+<details>
+<summary>What each option does</summary>
+
+| Option | Behaviour |
+| --- | --- |
+| **Smart** *(default)* | Starts at the first track's rate, upsamples lower-rate tracks to match, and restarts the stream only when a track has a higher rate. The best balance of quality and seamless playback |
+| **Bit-perfect** | Never resamples. Playback restarts between tracks of differing sample rates, which disables gapless and crossfade across those transitions |
+| **48 kHz** | Resamples everything to a fixed 48 kHz, or the closest rate the player supports. A good compromise of quality and bandwidth |
+| **96 kHz** | Resamples everything to a fixed 96 kHz, or the closest rate the player supports |
+| **Highest supported by player** | Resamples everything to the highest rate the player supports. Best quality, but can waste a lot of bandwidth |
+
+</details>
+
+#### Try to inject metadata into stream (ICY)
+
+Only applies when flow mode is on. Slips the track title and artist into the audio stream itself so the player can display them — the same trick internet radio stations use. Disabled by default.
+
+Turn it on if your player shows nothing useful while flow mode is running. Not every player handles it correctly, so if playback becomes unreliable after enabling it, step down to Profile 1 or turn it off again.
+
+<details>
+<summary>What each option does</summary>
+
+| Option | Behaviour |
+| --- | --- |
+| **Disabled** *(default)* | No metadata is injected; the player will not show track info during flow mode |
+| **Profile 1 - basic info** | Title and artist only. Lightweight and widely compatible |
+| **Profile 2 - full info** | Also sends the album name and cover art. Richer, but some players mishandle it — use Profile 1 if you see playback issues |
+
+</details>
+
+#### Output codec to use for streaming audio to the player
+
+The format Music Assistant encodes the audio into before sending it. `FLAC` by default, which is lossless.
+
+Change it if the player cannot play FLAC, or to cut down network traffic on a weak Wi-Fi link — a lossy codec is a good first thing to try when playback stutters on wireless players.
+
+<details>
+<summary>What each option does</summary>
+
+| Option | Behaviour |
+| --- | --- |
+| **FLAC (lossless, compressed)** *(default)* | Full quality at a moderate bitrate. The best choice for most players |
+| **MP3 (lossy)** | Smaller bitrate at some quality cost. Use for players that cannot play FLAC, or to save bandwidth |
+| **AAC (lossy)** | Comparable to MP3; pick it for players that prefer AAC |
+| **WAV (uncompressed PCM)** | Highest bandwidth of the four. Only needed for players that cannot handle FLAC |
+
+</details>
+
+#### Sample rates supported by this player
+
+The sample rates and bit depths Music Assistant will send to this player as they are. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are ticked by default.
+
+This is worth understanding before changing it: **the ticked boxes are a deliberately safe starting point, not something detected from your device.** The higher rates are offered for you to try. If your player genuinely supports them, tick them and you will get better quality; if playback breaks or the player falls silent, untick them again. Manufacturers vary, so test rather than assume.
+
+#### Output Channel Mode
+
+Whether the player receives both channels, one channel, or a mono mix of the two. `Stereo` by default.
+
+The usual reason to change it is building a stereo pair from two players — set one to `Left channel only` and the other to `Right channel only`, then group them.
+
+#### Prefer low-latency WAV for live sources
+
+Sends live sources such as [Spotify Connect](/plugins/spotify-connect/) and the [AirPlay Receiver](/plugins/airplay-receiver/) as uncompressed audio, so there is less delay before you hear them. Off by default on most players, on by default on a few where it works well.
+
+Turn it off if those sources are unreliable on your player; Music Assistant will fall back to the output codec set above.
+
+#### HTTP Profile used for sending audio
+
+A low-level detail of how the audio is handed to the player. `Profile 2` by default, and correct for most players.
+
+This is a troubleshooting setting rather than a tuning one. Come here if the player stops part way through a track, refuses to start, or cannot seek — then try the other profiles.
+
+<details>
+<summary>What each option does</summary>
+
+| Option | Behaviour |
+| --- | --- |
+| **Profile 1 - chunked** | Sends audio using chunked transfer encoding, without a fixed length up front |
+| **Profile 2 - no content length** *(default)* | Streams without a Content-Length header. Works for most players |
+| **Profile 3 - forced content length** | Sends an estimated Content-Length header. Some players need this to start playback or to seek |
+
+</details>
+
+### Group player settings
 
 For group players the following settings will be seen:
 
