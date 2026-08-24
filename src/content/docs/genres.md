@@ -156,7 +156,7 @@ NOTE: The link to genre option is only available for items that are in your libr
 
 ## Managing Genres
 
-Administrators can manage genres in bulk from [**Settings → System → Genre Management**](/settings/core/#genre-management).
+Administrators can manage genres in bulk from [**Settings → System → Genre Management**](/settings/core/#genre-management). The settings page has a [short summary of the same tools](/settings/core/#genre-library-administration).
 
 ### Genre Library Administration
 
@@ -177,11 +177,11 @@ Excluded (globally hidden) genres are listed below the active ones, greyed out, 
 
 Two options are available if you want to bring back genres that were removed or excluded:
 
-- **Restore Missing Defaults**: Adds back any missing default genre, without touching your existing genres or custom mappings. Choose to restore All categories at once, or just Music, Podcasts, or Audiobooks.
+- **[Restore Missing Defaults](/settings/core/#restore-missing-defaults)**: Adds back any missing default genre, without touching your existing genres or custom mappings. Choose to restore All categories at once, or just Music, Podcasts, or Audiobooks.
 
 ![image](/assets/screenshots/genres/restore-missing-defaults.png)
 
-- **Full Restore (Reset All)**: Deletes every genre and alias, recreates only the defaults, and remaps all existing media items to the new genres. All custom genres, alias mappings, and media associations are lost. This always restores every category. There's no option to limit it to just one.
+- **[Full Restore (Reset All)](/settings/core/#full-restore)**: Deletes every genre and alias, recreates only the defaults, and remaps all existing media items to the new genres. All custom genres, alias mappings, and media associations are lost. This always restores every category. There's no option to limit it to just one.
 
 ![image](/assets/screenshots/genres/full-restore.png)
 

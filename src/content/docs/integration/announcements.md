@@ -26,6 +26,8 @@ The functionality works with all players that are supported by Music Assistant.
 
 Each player has settings which allow for adjustment of certain aspects of the announcement playback. Groups only have a setting for the pre-announcement sound. See also [Announcements Configuration](/settings/individual-player/#announcements-configuration)
 
+Which engine turns the text into speech is chosen once for the whole server, with the **Announcement text to speech engine** setting in [System Players settings](/settings/core/#players). The engines on offer there come from your plugins — the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines) makes every Home Assistant text-to-speech entity available.
+
 ![image](/assets/screenshots/announcement-settings.png)
 
 ## Native Support

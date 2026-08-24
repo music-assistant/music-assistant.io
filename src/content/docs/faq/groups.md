@@ -39,7 +39,7 @@ Temporary Sync Group players are configured via the [Player List](/ui/#player-li
 
 ## Sync Groups
 
-These are permanent group players that are configured via the MA settings. These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. Normally a player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
+These are permanent group players that are created and configured in the [Output Protocols settings](/settings/individual-player/#output-protocols) for the group player. These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. Normally a player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
 
 ![image](/assets/screenshots/syncgroup.png)
 

@@ -7,6 +7,8 @@ description: Explanation of the use and effect of the DSP Compressor filter
 
 A compressor reduces the difference between the loudest and the quietest parts of the audio. This is achieved by gently turning down the volume of the loudest moments, which produces a more consistent, controlled sound. A more detailed explanation of compression can be found in this <a href="https://musictech.com/guides/essential-guide/beginners-guide-to-compression/" target="_blank" rel="noopener noreferrer">beginner's guide to compression</a>.
 
+This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
+
 ## Usage
 
 The compressor has two modes which are selected using the `PRESET` and `CUSTOM` tabs at the top of the filter.
