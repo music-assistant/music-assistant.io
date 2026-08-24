@@ -153,9 +153,9 @@ Change it only to fix a problem. If the player behaves in any of those ways, wor
 
 ## Group Player Settings
 
-For group players the following settings will be seen:
+For group players the following settings will be seen. **Group members** and **Allowed members** are both chosen from a drop down list of checkboxes, with the players you pick then shown as chips in the field.
 
-- <b>Group members.</b> For Group player types the members of the group are configured in this field
+- <b>Group members.</b> The players that belong to this group
 - <b>Enable dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
 - <b>Allowed members</b>. Limit which players can join this group. Leave empty to allow any sync-compatible player. This can be used to reduce the list of players that show up for joining in case you have a lot of players. Only shown when the advanced toggle is on
 - <b>Allow crossfades between tracks of different sample rates</b>. Enable this option to allow crossfades between tracks that have different sample rates (e.g. 44.1kHz to 48kHz). Disable this option if you experience audio glitches during transitions between tracks. Only shown when the advanced toggle is on
