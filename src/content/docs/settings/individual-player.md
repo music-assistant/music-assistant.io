@@ -48,7 +48,7 @@ Two things are true of all of them:
 - They are only visible when the `Show advanced settings` toggle is on
 - Changing one reloads the player, so anything currently playing stops briefly
 
-Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some depend on what the player can do: a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, its own page says so.
+Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, its own page says so.
 
 AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list.
 
@@ -134,7 +134,7 @@ Turn it off if those sources are unreliable on your player; Music Assistant will
 
 A low-level detail of how the audio is handed to the player. `Profile 2` by default, and correct for most players.
 
-Change it only to fix a problem: if the player stops part way through a track, refuses to start, or cannot seek, try the other profiles.
+Change it only to fix a problem. If the player stops part way through a track, refuses to start, or cannot seek, try the other profiles.
 
 <details>
 <summary>What each option does</summary>
