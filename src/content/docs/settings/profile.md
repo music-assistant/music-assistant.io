@@ -12,4 +12,4 @@ A list of active sessions that have been logged in with this user are shown and 
 
 ## Long-lived access tokens
 
-Tokens can be created here which can be used with external applications or to allow frontend access from [devices that have not been logged in](/faq/how-to/#access-the-ma-views-directly-via-url).
+Tokens can be created here which can be used with the [API](/api/), with external applications, or to allow frontend access from [devices that have not been logged in](/faq/how-to/#access-the-ma-views-directly-via-url).
