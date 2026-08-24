@@ -36,11 +36,14 @@ For full configuration options refer to the <a href="https://mpd.readthedocs.io/
 
 In addition to the [Individual Player Settings](/settings/individual-player/), the MPD provider has the following unique settings:
 
-- <b>Output Codec.</b> The audio format MA streams to MPD. MP3 is the default. AAC and WAV (uncompressed) are also available
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled.
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues.
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
+- <b>Output codec to use for streaming audio to the player.</b> The audio format MA streams to MPD. MP3 is the default, with AAC and WAV (uncompressed) also available. FLAC is not offered for MPD
+- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
+- <b>Prefer low-latency WAV for live sources.</b> On by default for MPD. Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the server cannot play continuous WAV streams
+- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits. MPD does not report what it can handle, so higher rates and 24 bit options are offered for you to set manually based on your output hardware. Content with unsupported sample rates will be resampled
+- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
+- <b>Enable queue flow mode.</b> Off by default. Sends all tracks as one continuous audio stream. Use it if MPD has trouble transitioning between tracks, at the cost of losing per track metadata
+- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled, so it is greyed out with the default settings. It attempts to provide metadata to the player so it can show track info during a flow stream
+- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
 
 ## Known Issues / Notes
 
