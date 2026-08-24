@@ -36,7 +36,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 WiiM players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). One of those differs here:
 
-- <b>Sample rates supported by this player.</b> Unusually, everything up to 192 kHz / 24 bit is offered and selected by default. Older Generation 1 devices only support up to 48 kHz / 16 bit, so untick the higher rates on those
+- <b>Sample rates supported by this player.</b> Unusually, everything up to 192 kHz / 24 bit is selected by default. Older Generation 1 devices only support up to 48 kHz / 16 bit, so remove the higher rates on those
 - <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. Only applies while flow mode is off, so it is greyed out once flow mode is enabled
 
 Generic LinkPlay speakers such as Edifier are handled differently to WiiM and Audio Pro devices. Music Assistant controls them but hands the audio to another output protocol, so their audio settings appear under that protocol's own section rather than the list above.

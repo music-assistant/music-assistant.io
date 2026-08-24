@@ -27,7 +27,7 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 
 - <b>Enable queue flow mode.</b> On by default for DLNA, because most DLNA players cannot queue up the next track themselves
 - <b>Replace Pause with Stop.</b> Some older uPnP players are unable to pause streamed music and ignore the command. Enable this if that occurs and a stop command will be issued for both pause and stop
-- <b>Sample rates supported by this player.</b> Options are offered up to 192 kHz / 24 bit. The usual two rates stay ticked by default
+- <b>Sample rates supported by this player.</b> Rates go up to 192 kHz / 24 bit. The usual two stay selected by default
 - <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. Only shown for players that support gapless playback, and only while flow mode is switched off
 
 ## Known Issues / Notes
