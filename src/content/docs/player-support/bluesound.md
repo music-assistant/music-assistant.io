@@ -21,10 +21,10 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 Refer to the [Player Provider Settings](/settings/player-provider/) when setting up this provider as it has no unique settings at the provider level.
 
-Bluesound players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Two of those differ here:
+Bluesound players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on BluOS:
 
-- <b>Sample rates supported by this player.</b> Set automatically when the player is discovered, with options offered up to 192 kHz / 24 bit
-- <b>Try to inject metadata into stream (ICY).</b> Defaults to Profile 2 - full info on BluOS players, rather than being off as it is elsewhere
+- <b>Sample rates supported by this player.</b> Everything up to 192 kHz / 24 bit is offered and ticked by default, rather than just the two safe rates. Untick the higher ones if your player cannot manage them
+- <b>Try to inject metadata into stream (ICY).</b> Defaults to Profile 2 - full info, rather than being off as it is elsewhere
 
 ## Known Issues / Notes
 

@@ -39,7 +39,7 @@ Flow mode streams audio as a continuous flow rather than individual tracks, whic
 
 ### ESPHome Media Players
 
-Newer ESPHome based players such as the Voice PE are configured from the capabilities they report, so several of the settings above are set for you and do not appear. The output codec and the HTTP profile are fixed to what the device asks for, metadata injection is switched off, and the sample rates come from the device rather than the list above. Output channel mode and the low latency WAV setting are still available.
+Newer ESPHome based players such as the Voice PE are configured from the capabilities they report, so several of the settings above are set for you and do not appear. The output codec is fixed to what the device asks for, the HTTP profile is fixed to Profile 2, metadata injection is switched off, and the sample rates come from the device rather than the list above. Output channel mode and the low latency WAV setting are still available.
 
 ### MA Natively Supported Media Players
 

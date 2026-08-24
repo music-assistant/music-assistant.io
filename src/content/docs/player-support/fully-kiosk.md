@@ -31,12 +31,11 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>Verify HTTPS certificates (recommended).</b> This is on by default. Turning it off trusts any certificate without validation
 - <b>TLS certificate fingerprint.</b> Optional SHA-256 hex fingerprint. When provided it must match the device certificate and overrides the Verify HTTPS certificates setting
 - <b>Output codec to use for streaming audio to the player.</b> Defaults to MP3 here rather than FLAC, because many tablets struggle with lossless. Stay on MP3 unless you have a reason to change
-- <b>Sample rates supported by this player.</b> The default pair suits most tablets. Add higher rates only if the device genuinely handles them
   
 ## Known Issues / Notes
 
 - A <a href="https://www.fully-kiosk.com/#pricing" target="_blank" rel="noopener noreferrer">paid license</a> for Fully Kiosk is required
 - These players are never found automatically, so each tablet has to be added by hand with its IP address and Fully Kiosk password
 - Once added the device name can be changed, if required, in the specific player configuration
-- Crossfade is supported if [flow mode](/faq/tech-info/#track-queueing) is enabled in the individual player settings. Enabling flow mode may also solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- Fully Kiosk players always stream the queue as one continuous [flow mode](/faq/tech-info/#track-queueing) stream, so there is no setting to turn it on or off. Crossfade works as a result, but the device may not show track metadata and its physical buttons may not respond
 - This player can be grouped via a [Universal Group](/faq/groups/#universal-groups) but perfect sync is not possible.

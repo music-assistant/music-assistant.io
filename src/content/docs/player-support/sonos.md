@@ -42,7 +42,6 @@ The Sonos S1 provider has two further settings:
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Sonos players have the following settings:
 
-- <b>HTTP Profile used for sending audio.</b> This is considered to be an advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
 - <b>Prefer low-latency WAV for live sources.</b> On by default for Sonos and Sonos S1. Turn it off if the speaker cannot play continuous WAV streams
 - <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. It applies while flow mode is off, so it is greyed out once flow mode is enabled
 

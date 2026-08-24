@@ -34,11 +34,10 @@ For full configuration options refer to the <a href="https://mpd.readthedocs.io/
 
 ## Settings
 
-MPD players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Three of those differ here:
+MPD players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on MPD:
 
 - <b>Output codec to use for streaming audio to the player.</b> MP3 is the default here, with AAC and WAV also available. FLAC is not offered for MPD
 - <b>Prefer low-latency WAV for live sources.</b> On by default for MPD. Turn it off if the server cannot play continuous WAV streams
-- <b>Sample rates supported by this player.</b> MPD does not report what it can handle, so set these by hand to match your output hardware
 
 ## Known Issues / Notes
 

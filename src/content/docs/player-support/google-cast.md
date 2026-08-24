@@ -31,7 +31,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 
 - <b>HTTP Profile used for sending audio.</b> Defaults to `Profile 3 - forced content length` on Cast devices. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
 - <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
-- <b>Sample rates supported by this player.</b> Cast officially supports FLAC up to 96 kHz / 24 bit, which works on most of Google's own hardware. Other brands vary and some handle it badly, so test rather than assume
+- <b>Sample rates supported by this player.</b> Options are offered up to 192 kHz / 24 bit for a single player, and up to 96 kHz for a Cast group. Only the usual two rates are ticked by default, because higher rates are unreliable on some devices despite being officially supported. Try them rather than assume
 - <b>Prefer low-latency WAV for live sources.</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
 - <b>Enable queue flow mode.</b> On by default, as these devices handle one continuous stream more reliably than being fed tracks one at a time
 
