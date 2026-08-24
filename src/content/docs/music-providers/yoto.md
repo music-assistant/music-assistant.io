@@ -8,26 +8,26 @@ Music Assistant has support for streaming from <a href="https://yotoplay.com/" t
 
 Yoto is a smart audio player for kids. It uses physical cards that slot into the player to play audiobooks, music, podcasts, radio, and more! These cards can be downloaded or streamed to the player from the Yoto cloud service, and now to Music Assistant too.
 
-Connecting your Yoto account puts that library inside Music Assistant, where you can play them on any compatible device. Currently only standard cards are supported, and specialty cards using dynamic features have not been tested.
+Connecting your Yoto account puts that library inside Music Assistant, where you can play them on any compatible device. Currently only standard cards are supported; cards using dynamic features have not been tested.
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yoto.
 
 ## Features
 
-|                                                   |                      |
-| :------------------------------------------------ | :------------------: |
-| Subscription FREE                                 |         Yes          |
-| Self-Hosted Local Media                           |          No          |
-| Media Types Supported                             |    Albums, Tracks    |
-| [Recommendations](/ui/#view---discover) Supported |          No          |
-| Lyrics Supported                                  |          No          |
-| [Endless Mix](/ui/#track-menu)                    |          No          |
-| Artist Top Tracks Support                         |          No          |
-| Similar Artists Support                           |          No          |
-| Similar Tracks Support                            |          No          |
-| Maximum Stream Quality                            | AAC variable bitrate |
-| Login Method                                      |        OAuth         |
+|                                                   |                                            |
+| :------------------------------------------------ | :----------------------------------------: |
+| Subscription FREE                                 |                    Yes                     |
+| Self-Hosted Local Media                           |                     No                     |
+| Media Types Supported                             | Albums, Tracks, Audiobooks, Podcasts,Radio |
+| [Recommendations](/ui/#view---discover) Supported |                     No                     |
+| Lyrics Supported                                  |                     No                     |
+| [Endless Mix](/ui/#track-menu)                    |                     No                     |
+| Artist Top Tracks Support                         |                     No                     |
+| Similar Artists Support                           |                     No                     |
+| Similar Tracks Support                            |                     No                     |
+| Maximum Stream Quality                            |            AAC variable bitrate            |
+| Login Method                                      |                   OAuth                    |
 
 ### Other
 
@@ -52,5 +52,4 @@ To set up the Yoto provider, follow these steps:
 
 ## Not Yet Supported
 
-- Browsing capabilities - Album view is supported for each card, and finding cards by other criteria requires Music Assistant's Search feature.
-- Radio cards and Yoto free radio channels are not yet supported.
+- Browsing capabilities - Album/Podcast/Audiobook/Radio view is supported for each card, discovery and browsing outside of the existing library is not supported. Finding cards by other criteria requires Music Assistant's Search feature.
