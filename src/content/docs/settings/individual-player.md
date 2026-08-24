@@ -47,7 +47,7 @@ Three things are true of all of them:
 
 - They are only visible when the `Show advanced settings` toggle is on
 - Changing one reloads the player, so anything currently playing stops briefly
-- Not every player shows every setting. A provider can set its own default, fix a setting so it cannot be changed, or hide it entirely where it does not apply. Where that happens it is noted on that provider's own page
+- Not every player shows every setting, and that is normal. A provider can set its own default or hide a setting where it does not apply, and some depend on what the player can do: a player that always streams the queue in one go has no flow mode setting to change, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, it is noted on that provider's own page
 
 #### Enable queue flow mode
 
