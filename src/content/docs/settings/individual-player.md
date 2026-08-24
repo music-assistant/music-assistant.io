@@ -134,16 +134,18 @@ Turn it off if those sources are unreliable on your player; Music Assistant will
 
 A low-level detail of how the audio is handed to the player. `Profile 2` by default, and correct for most players.
 
-Change it only to fix a problem. If the player stops part way through a track, refuses to start, or cannot seek, try the other profiles.
+The three differ in whether Music Assistant tells the player how much audio is coming before it starts sending any. Most players do not mind either way, but a few will not start, stop part way through, or refuse to skip within a track unless they are told in advance.
+
+Change it only to fix a problem. If the player behaves in any of those ways, work through the other profiles.
 
 <details>
 <summary>What each option does</summary>
 
 | Option | Behaviour |
 | --- | --- |
-| **Profile 1 - chunked** | Sends audio using chunked transfer encoding, without a fixed length up front |
-| **Profile 2 - no content length** *(default)* | Streams without a Content-Length header. Works for most players |
-| **Profile 3 - forced content length** | Sends an estimated Content-Length header. Some players need this to start playback or to seek |
+| **Profile 1 - chunked** | Sends the audio in pieces as it is produced, without saying how much is coming |
+| **Profile 2 - no content length** *(default)* | Sends the audio as one continuous stream, without saying how much is coming. Right for most players |
+| **Profile 3 - forced content length** | Tells the player up front roughly how much audio to expect, worked out from the length of the track. Try this one first if the player will not start, cuts off early, or will not let you skip within a track |
 
 </details>
 
