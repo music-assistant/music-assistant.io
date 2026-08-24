@@ -39,10 +39,6 @@ Some players (e.g. [MusicCast](../player-support/musiccast/) have [unique contro
 
 Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. Refer to the relevant Player provider for settings which are available for each.
 
-One setting appears in the protocol sections of many player types and is described here once:
-
-- <b>Try to inject metadata into stream (ICY).</b> ICY is a way of slipping the track name and artist into the audio stream so the player can display them (<a href="https://liquidsoap.readthedocs.io/en/latest/content/icy_metadata.html" target="_blank" rel="noopener noreferrer">more about ICY metadata</a>, written for developers). Not all players handle it correctly, so if there are issues with playback, try disabling this setting
-
 For group players the following settings will be seen:
 
 - <b>Group members.</b> For Group player types the members of the group are configured in this field
