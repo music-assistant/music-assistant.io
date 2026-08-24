@@ -56,12 +56,24 @@ Music Assistant has support for streaming music to Smart TVs via the <a href="ht
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-- **HTTP Server Port**. The port for the MSX HTTP server. Default: `8099`
-- **Audio Output Format**. Audio format for streaming to the TV. Options: `MP3` (default), `AAC`, `FLAC`. Note: FLAC provides lossless quality but some TVs may not support it
-- **Player Idle Timeout (minutes)**. Automatically unregister MSX players after this many minutes of inactivity. Default: `30`
-- **Show notification before closing player**. Show a confirmation dialog on the TV when stopping playback from MA. Default: off
-- **Enable player grouping (experimental)**. Allow grouping multiple MSX TVs to play the same track simultaneously. Default: off
-- **Group Stream Mode**. How audio is sent to grouped TVs. `Independent` (default) sends each TV its own copy. `Shared Buffer` prepares the audio once and sends the same thing to all of them, which is easier on your server and keeps the TVs better in step
+- <b>HTTP Server Port.</b> The port for the MSX HTTP server. The default is 8099
+- <b>Audio Output Format.</b> The audio format used for streaming to the TV. Enter mp3 (the default), aac or flac. FLAC gives lossless quality but some TVs cannot play it
+- <b>Player Idle Timeout (minutes).</b> Unregisters an MSX player after this many minutes without activity. The default is 30
+- <b>Show notification before closing player.</b> Shows a confirmation dialog on the TV when playback is stopped from Music Assistant. Off by default
+- <b>Enable player grouping (experimental).</b> Allows several MSX TVs to be grouped so they play the same track together. Off by default. Disable it again if you run into problems with multi TV setups
+- <b>Sendspin bridge (experimental).</b> On by default. Registers each TV as a Sendspin client so it can join sample synchronised playback groups with any other Music Assistant player. The TV opens the web kiosk in Sendspin mode when a synchronised stream starts. It needs a TV browser capable of running the Sendspin web client, and falls back to the regular HTTP player if the TV cannot connect
+- <b>Stream Delivery Mode.</b> How the audio reaches the TVs. MA Streamserver (the default) points each TV straight at the Music Assistant stream server, which uses the least CPU and applies the per player codec and audio processing, falling back to Independent if the address cannot be worked out. Independent gives each TV its own separate stream, which uses more CPU and does not keep them in step. Shared Buffer prepares the audio once and feeds it to every group member, which is easier on your server and keeps grouped TVs better in step. Note that MA Streamserver mode has each grouped TV fetch its own stream, so they are not kept in step
+
+In addition to the [Individual Player Settings](/settings/individual-player/) the MSX players have the following settings:
+
+- <b>Output codec to use for streaming audio to the player.</b> Set per TV. The default is MP3 but other options are FLAC, AAC or WAV
+- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
+- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
+- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the TV cannot play continuous WAV streams
+- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits. Higher rates and 24 bit options are offered if the TV handles them. Content with unsupported sample rates will be resampled
+- <b>Enable queue flow mode.</b> Off by default for MSX players. Sends all tracks as one continuous audio stream, which stops the TV from reporting track progress correctly, so leave it off unless you have a reason to change it
+- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled, so it is greyed out with the default settings. It attempts to provide metadata to the player so it can show track info during a flow stream
+- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
 
 ## How It Works
 
