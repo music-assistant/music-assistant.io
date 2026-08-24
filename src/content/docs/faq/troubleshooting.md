@@ -35,7 +35,7 @@ description: Common Problems and Fixes
 
 **Isolate the fault.** Narrow the fault down to a single player or music source. Play the same content on a different player, then play something from a different music source on the original player. If you only have one player then [Sendspin](/player-support/sendspin/), the built-in web player, is always available; if you only have one music source then try a radio station. Knowing that a player works with one source but not another, or that one player fails where the others are fine, tells you where the problem is not.
 
-**Provider documentation.** Review the applicable player provider or music source documentation to see if there are known issues or specific troubleshooting steps or fixes. 
+**Provider documentation.** Every [player provider](/player-support/) and [music source](/music-providers/) page has its own Known Issues section, and several add troubleshooting steps for that device or service. Check the page for whichever one you are using before going further. 
 
 **Voice.** For voice problems refer to <a href="https://www.home-assistant.io/voice_control/troubleshooting/" target="_blank" rel="noopener noreferrer">Home Assistant Voice Troubleshooting</a>, and to [Voice Control](/integration/voice/) for how Music Assistant fits in. If you are not using HOME ASSISTANT as your Conversation Agent then you must seek assistance in the HA forums first. If they direct you back to this project then make it clear in your report that you are using a LLM as the Conversation Agent and include the reasons why the HA support network wasn't able to help.
 
@@ -59,6 +59,8 @@ Navigate to MA settings and inspect the provider or source entry. If there is a 
 
 ![image](/assets/screenshots/setup_error.png)
 
+The error often makes more sense alongside the setup notes for that provider, so check its own page under [music sources](/music-providers/) or [player providers](/player-support/) as well. Both list known issues, and services that need an account or a key usually explain there what a rejected sign in means.
+
 ## Why aren't tracks/albums matching between sources
 
 Matching items between streaming sources is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see [Metadata](/metadata/)
@@ -75,7 +77,7 @@ First check if the player has been discovered but just isn't appearing in the [P
 
 If the player is not shown in the list of players in the MA settings then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
 
-If your device does support one of the supported protocols then review the documentation for that player provider for known issues and troubleshooting tips.
+If your device does support one of the supported protocols then review the [documentation for that player provider](/player-support/) for known issues and troubleshooting tips specific to it.
 
 If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identifying why the player isn't working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issues</a>, <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">Discussions</a> and <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord</a> as likely someone has asked your question before.
 
@@ -95,7 +97,7 @@ Change one thing at a time, and give it a track or two before deciding it did no
 
 **Silence, or a refusal to play higher quality files.** Remove the higher rates from **Sample rates supported by this player**. The rates selected by default are deliberately safe on most players, and anything above them is there for you to try rather than promised to work.
 
-If none of these help, the [player provider's own page](/player-support/) may list a known issue for your device.
+If none of these help, check the [page for your player provider](/player-support/). Each one has a Known Issues section, and some carry troubleshooting steps for problems particular to that device.
 
 ## All my media is missing 
 
