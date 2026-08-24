@@ -23,7 +23,7 @@ Before the Player Provider can be added the [Plugin](/ha-plugin/) must be instal
 
 ![screenshot](/assets/screenshots/plugin-provider.png)
 
-- In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Home Assistant Media Players`
+- In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Home Assistant Media Players`
 - In the provider settings, select which players are desired to be utilised. These can be changed at any time.
 
 > [!CAUTION]

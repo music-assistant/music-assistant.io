@@ -17,7 +17,7 @@ Music Assistant has the ability to add <a href="https://www.apple.com/au/airplay
 
 ## Configuration
 
-To make each player appear as an AirPlay target, this plugin needs to be added individually for each player via `SETTINGS >> PLUGINS >> ADD A PLUGIN`
+To make each player appear as an AirPlay target, this plugin needs to be added individually for each player via **Settings → Plugins → Add a plugin**
 
 ## Known Issues / Notes
 

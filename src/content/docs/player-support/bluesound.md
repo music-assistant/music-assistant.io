@@ -12,7 +12,7 @@ Music Assistant has support for <a href="https://www.bluesound.com/" target="_bl
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Bluesound`.
+1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Bluesound`.
 2. Your Bluesound devices will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).

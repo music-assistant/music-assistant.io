@@ -156,7 +156,7 @@ NOTE: The link to genre option is only available for items that are in your libr
 
 ## Managing Genres
 
-Administrators can manage genres in bulk from **Settings → System → Genre Management**.
+Administrators can manage genres in bulk from [**Settings → System → Genre Management**](/settings/core/#genre-management).
 
 ### Genre Library Administration
 

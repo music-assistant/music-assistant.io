@@ -29,7 +29,7 @@ The plugin can run on two different playback engines. You choose one while addin
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLUGINS`, click `ADD A PLUGIN` and select `Spotify Connect`.
+1. In Music Assistant, go to **Settings → Plugins**, click **Add a plugin** and select `Spotify Connect`.
 2. Choose the playback engine. For Soloist, the setup walks you through Spotify's terms and creating the API key.
 3. Choose the Music Assistant player that should receive the Spotify audio, and the name to display in the Spotify app. Alternatively, set the player to `Auto` to send audio to whichever player is currently playing, or the first available player if none is playing.
 4. Repeat for each player you want to appear in the Spotify app; a separate instance of the plugin is added per player.

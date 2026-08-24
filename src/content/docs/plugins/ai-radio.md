@@ -26,7 +26,7 @@ AI Radio is currently in beta. The show editor, prompt presets, generated output
 
 ## Requirements
 
-- The **AI Radio** plugin must be enabled in **Settings → Plugins → Add a Plugin**.
+- The **AI Radio** plugin must be enabled in **Settings → Plugins → Add a plugin**.
 - At least one playlist with playable tracks.
 - An **AI engine**, to write what the host says, and a **text-to-speech engine**, to speak it. Both come from other plugins. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
 - For live playback, an enabled and available Music Assistant player.
@@ -42,7 +42,7 @@ AI Radio generates new speech each time a show is started. The exact wording can
 
 ### Configure the Plugin
 
-1. Go to **Settings → Plugins → Add a Plugin**.
+1. Go to **Settings → Plugins → Add a plugin**.
 2. Add **AI Radio**.
 3. Setup opens at a step called **Choose the AI Radio engines**. Pick the AI engine that will write the host's lines and the text-to-speech engine that will voice them.
 4. Configure the optional plugin settings:

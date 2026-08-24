@@ -19,7 +19,7 @@ How much of a source ends up in that library is up to you. Each one has its own 
 
 ## Adding a source
 
-Go to `SETTINGS >> MUSIC SOURCES >> ADD A MUSIC SOURCE` and pick the one you want. Each source has its own page in this section covering what it offers and how to set it up.
+Go to [**Settings → Music Sources → Add a music source**](/settings/music-provider-settings/) and pick the one you want. Each source has its own page in this section covering what it offers and how to set it up.
 
 If you remove a source, the database is cleaned up afterwards, which takes a little while. If you still see entries from a deleted source after some time, restart MA to retrigger the cleanup.
 
@@ -38,7 +38,7 @@ All Music Sources have settings which can be configured. The settings page will 
 
 All music sources have options to control the import of media items and this is shown in the image below. The image shows a typical streaming provider on the left and a typical filessytem provider on the right. Note that if an individual track is in the source's library (but not its associated album) and, for example, all of the import settings are set to sync then the individual track will be imported and the album will be created in the database but all of the other album tracks will not be added. This behaviour can be changed by using the `Import album tracks` toggle.
 
-Control of the synchronisation timing between the provider and MA is done in the [Background Tasks](/settings/core/#background-tasks) view in MA SETTINGS >> SYSTEM. 
+Control of the synchronisation timing between the provider and MA is done in the [Background Tasks](/settings/core/#background-tasks) view in **Settings → System**. 
 
 There is a setting which controls whether additions to the MA library are also made to the source library. For clarity, adding an item to the MA library will only be reflected in the originating source of the item. So, for example, if you had the Deezer and Spotify sources installed and you searched for an artist you will likely see that artist listed twice, once from each source. If you add the artist to the MA library and you have sync back enabled, then the artist will only be added to the source that was associated with item selected. The list view is required to see the source's icons.
 

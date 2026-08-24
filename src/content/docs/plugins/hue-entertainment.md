@@ -21,8 +21,8 @@ This plugin makes your <a href="https://www.philips-hue.com/" target="_blank" re
 ## Configuration
 
 - The lights can only follow a [Sendspin](/player-support/sendspin/) player, so you need at least one of those. Sendspin is built into Music Assistant, and the web player in your browser is one
-- Create an Entertainment Area in the Philips Hue app (SETTINGS >> ENTERTAINMENT AREAS) before adding the plugin
-- In Music Assistant, go to `SETTINGS >> PLUGINS >> ADD A PLUGIN` and select `HUE LIGHTS SYNC`
+- Create an Entertainment Area in the Philips Hue app (`SETTINGS >> ENTERTAINMENT AREAS`) before adding the plugin
+- In Music Assistant, go to **Settings → Plugins → Add a plugin** and select **Hue Lights Sync**
 - Enter the IP address of the Hue bridge, or leave it for Music Assistant to find
 - Press the physical link button on the Hue bridge, then click `Pair` in the MA UI
 - Click SAVE to complete configuration. Each entertainment area on the bridge will appear as a Light player

@@ -17,7 +17,7 @@ Some devices can be reached more than one way. Anything Home Assistant already k
 
 ## Adding a player provider
 
-Go to `SETTINGS >> PLAYER PROVIDERS >> ADD A NEW PROVIDER` and pick the one that matches your devices. Each provider has its own page in this section covering what it supports and how to set it up.
+Go to [**Settings → Player Providers → Add a player provider**](/settings/player-provider/) and pick the one that matches your devices. Each provider has its own page in this section covering what it supports and how to set it up.
 
 Settings that apply to every provider are described on the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages.
 

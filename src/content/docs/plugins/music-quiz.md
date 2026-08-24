@@ -44,7 +44,7 @@ Music Trivia is only shown in the game picker when a compatible AI plugin is loa
 
 ### For the host
 
-1. Go to **Settings → Plugins → Add a Plugin** and add **Music Quiz**.
+1. Go to **Settings → Plugins → Add a plugin** and add **Music Quiz**.
 2. Open **Music Quiz** from the Music Assistant sidebar.
 3. Select **New Game**, choose a game type, and configure playback, rounds, answer time, and music sources.
 4. Create the game and display the QR code. Use **Present mode** for a full-screen lobby and scoreboard.

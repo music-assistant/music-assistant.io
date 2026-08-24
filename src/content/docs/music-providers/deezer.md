@@ -48,7 +48,7 @@ Connecting your account puts your Deezer favourites and playlists alongside the 
 
 Deezer has no sign-in for outside apps, so a value called an ARL token has to be copied out of your browser. These instructions are for Chrome:
 
-1. In the MA SETTINGS select MUSIC SOURCES, then ADD A MUSIC SOURCE and then DEEZER.
+1. In Music Assistant, go to **Settings → Music Sources → Add a music source** and select `Deezer`.
 2. Navigate in another browser tab to <a href="https://deezer.com/" target="_blank" rel="noopener noreferrer">https://deezer.com/</a> and log in.
 3. Right click on the browser window and select INSPECT. A new window will open
 4. Click the 'Application' tab. You might need to expand your window or click the `>>` button

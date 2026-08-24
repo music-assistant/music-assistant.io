@@ -23,7 +23,7 @@ Music Assistant has the ability to expose its library, queue, playback and playe
 
 ## Configuration
 
-Add the plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`. You only ever need one copy of it, however many AI clients you connect.
+Add the plugin via **Settings → Plugins → Add a plugin**. You only ever need one copy of it, however many AI clients you connect.
 
 ### Connecting an AI client
 

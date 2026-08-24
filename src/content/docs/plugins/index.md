@@ -13,6 +13,6 @@ Plugins are optional. Music Assistant works perfectly well without any of them.
 
 ## Adding a plugin
 
-Go to `SETTINGS >> PLUGINS >> ADD A PLUGIN` and pick one from the list. Every plugin has its own page in this section covering what it does and how to configure it.
+Go to **Settings → Plugins → Add a plugin** and pick one from the list. Every plugin has its own page in this section covering what it does and how to configure it.
 
 Some plugins depend on something else being set up first. The [Home Assistant](/ha-plugin/) plugin needs the Home Assistant integration, and [AI Radio](/plugins/ai-radio/) needs the Home Assistant plugin to reach an AI and text-to-speech service.

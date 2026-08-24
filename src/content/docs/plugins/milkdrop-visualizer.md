@@ -21,7 +21,7 @@ This plugin renders a <a href="https://github.com/jberg/butterchurn" target="_bl
 ## Configuration
 
 - The visualizer works with any player: it reads the waveform from the audio Music Assistant is already decoding for playback, whatever protocol the player renders over
-- In Music Assistant, go to `SETTINGS >> PLUGINS >> ADD A PLUGIN` and select `MILKDROP VISUALIZER`
+- In Music Assistant, go to **Settings → Plugins → Add a plugin** and select **Milkdrop Visualizer**
 - Once enabled, a `MilkDrop` entry appears in the sidebar leading to its settings page, and a droplet toggle appears in the fullscreen player menu
 - Turn the visualizer on from the player menu (or the party screen), play something, and the visuals appear behind the now-playing view
 

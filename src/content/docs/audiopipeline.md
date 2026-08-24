@@ -33,7 +33,7 @@ The maximum sample rate that can be expected can be found in the [Player Provide
 > [!NOTE]
 > Radio streams will have their bit depth reduced to 16 due to incompatibilities with some players
 
-***************************************************************
+*********************************
 ## Digital Signal Processing
 <img src="/assets/screenshots/audiopipeline-dsp.png" alt="image" style="width: 500px;"  loading="lazy" />
 
@@ -42,7 +42,7 @@ In this example [DSP](/dsp/) has been enabled. High level information about the 
 > [!NOTE]
 > Filters will not be shown in the audio pipeline if they have no effect on the audio path. For example, if the Balance control is set to the middle position then it is not doing anything and will not be shown.
 
-***************************************************************
+*********************************
 ## Groups
 <img src="/assets/screenshots/audiopipeline-groups.png" alt="image" style="width: 500px;"  loading="lazy" />
 

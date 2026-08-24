@@ -29,7 +29,7 @@ Library items are enriched on a **90-day refresh cycle**. Refreshes are triggere
 
 For each item, source metadata is collected first (sorted so local providers such as the file system, Plex, Jellyfin and Subsonic outrank streaming providers), then the online metadata providers are queried when "Enable metadata retrieval from online metadata providers" is on (default).
 
-The language used for descriptions and bios is set under [Settings → System Settings → Metadata](/settings/core/#metadata) → "Preferred language". English is always used as fallback.
+The language used for descriptions and bios is set under [**Settings → System → Metadata**](/settings/core/#metadata) → "Preferred language". English is always used as fallback.
 
 ## What Music Assistant reads from local file libraries
 
@@ -76,4 +76,4 @@ When write access is available the exceptions to this are:
 | **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
 | **Wikipedia** | Multi-lingual artist biographies, in your preferred language where available. | Artist MBID (used to resolve the Wikipedia article via Wikidata) |
 
-Individual metadata sources can be turned off in Settings>> Metadata Providers, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
+Individual metadata sources can be turned off in **Settings → Metadata Providers**, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".

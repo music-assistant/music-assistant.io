@@ -41,7 +41,7 @@ Once set up, you can say things like «Alice, pause in the kitchen» or «Alice,
 
 ## Configuration
 
-Go to **Settings → Plugins → Add a Plugin** and add **Yandex Smart Home**. The rest of the setup happens in the plugin's own settings dialog, described below.
+Go to **Settings → Plugins → Add a plugin** and add **Yandex Smart Home**. The rest of the setup happens in the plugin's own settings dialog, described below.
 
 The Yandex service behind all of this is <a href="https://yandex.ru/dev/dialogs/smart-home/" target="_blank" rel="noopener noreferrer">Yandex Dialogs Smart Home</a>, which is where any skill you create lives.
 
@@ -85,7 +85,7 @@ Use this if Yaha Cloud is already linked to something else on your Yandex accoun
 
 Yandex talks to your Music Assistant server itself, so your server has to be reachable from the internet over HTTPS. The plugin still creates the skill for you:
 
-1. Add the **Yandex Smart Home** plugin and set the connection type to `direct`. Your **Base URL** (Settings → Core → Webserver → Base URL) needs to be an address reachable from the internet over HTTPS. If you would rather keep that pointing at your local address, put the public one in the plugin's own **External Base URL** setting instead — only Yandex will use it.
+1. Add the **Yandex Smart Home** plugin and set the connection type to `direct`. Your **Base URL** ([**Settings → System → Webserver**](/settings/core/#webserver) → Base URL) needs to be an address reachable from the internet over HTTPS. If you would rather keep that pointing at your local address, put the public one in the plugin's own **External Base URL** setting instead — only Yandex will use it.
 2. Click **Auto-create Smart Home skill**. When it finishes, the form shows a Yandex link — open it, approve access, copy the long value that comes back into **Skill OAuth Token** and save.
 3. In the Yandex app go to **Devices → Add device → Smart Home** and pick your skill.
 
