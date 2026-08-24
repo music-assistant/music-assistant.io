@@ -45,7 +45,7 @@ This source signs Music Assistant in to your QQ Music account, so the tracks, al
 
 ### QR Login Flow
 
-1. Open **Settings → Music Sources → Add Music Source → QQ Music**.
+1. Open **Settings → Music Sources → Add a music source → QQ Music**.
 2. Click **QQ Login** or **WeChat Login**. A new QR page will open.
 3. Scan the QR code with the matching **QQ** or **WeChat** app and tap **Login/Confirm** in the app.
 4. Close the QR page.

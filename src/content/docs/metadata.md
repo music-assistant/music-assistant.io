@@ -76,4 +76,4 @@ When write access is available the exceptions to this are:
 | **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
 | **Wikipedia** | Multi-lingual artist biographies, in your preferred language where available. | Artist MBID (used to resolve the Wikipedia article via Wikidata) |
 
-Individual metadata sources can be turned off in Settings>> Metadata Providers, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
+Individual metadata sources can be turned off in **Settings → Metadata Providers**, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".

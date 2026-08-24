@@ -26,7 +26,7 @@ Music Assistant can play audio directly through soundcards attached to the machi
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Local Audio Out`.
+1. In Music Assistant, go to **Settings → Player Providers**, click **Add a new provider** and select `Local Audio Out`.
 2. The soundcards attached to the machine running the MA server are detected automatically and each output appears as its own player.
 
 ## Settings

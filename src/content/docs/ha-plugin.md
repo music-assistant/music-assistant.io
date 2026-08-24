@@ -20,7 +20,7 @@ If you are not sure how this fits with the Home Assistant integration, see [how 
 
 Before the Plugin can be added the HA Integration must be [installed](/integration/installation/). 
 
-- Navigate to MA SETTINGS >> PLUGINS and add the plug-in
+- Navigate to **Settings → Plugins** and add the plug-in
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 

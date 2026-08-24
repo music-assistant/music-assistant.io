@@ -11,7 +11,7 @@ description: A Walkthrough of the Music Assistant User Interface
 
 This menu's appearance can be configured by clicking on the ⋮ in the bottom right and selecting `Edit menu`. Items can then be re-ordered, shown or hidden and section titles renamed.
 
-In SETTINGS >> USER INTERFACE there are Display options which affect the UI. On a desktop, the menu can be placed vertically on the left or right or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. 
+In **Settings → User Interface** there are Display options which affect the UI. On a desktop, the menu can be placed vertically on the left or right or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. 
 
 ### Sidebar Shortcuts
 

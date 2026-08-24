@@ -41,7 +41,7 @@ Once set up, you can say things like «Alice, pause in the kitchen» or «Alice,
 
 ## Configuration
 
-Go to **Settings → Plugins → Add a Plugin** and add **Yandex Smart Home**. The rest of the setup happens in the plugin's own settings dialog, described below.
+Go to **Settings → Plugins → Add a plugin** and add **Yandex Smart Home**. The rest of the setup happens in the plugin's own settings dialog, described below.
 
 The Yandex service behind all of this is <a href="https://yandex.ru/dev/dialogs/smart-home/" target="_blank" rel="noopener noreferrer">Yandex Dialogs Smart Home</a>, which is where any skill you create lives.
 

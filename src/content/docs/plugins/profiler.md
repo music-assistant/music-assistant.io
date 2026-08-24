@@ -21,7 +21,7 @@ The Profiler plugin records what the Music Assistant server is actually doing �
 
 ## Creating a report
 
-1. Add the plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`. Measurements start immediately.
+1. Add the plugin via **Settings → Plugins → Add a plugin**. Measurements start immediately.
 2. Reproduce the problem, or simply leave it running if the issue appproduce it on demand, press **Profile now** in the plugin settings just before you do.
 3. Generate the report with the `profiler/report` API command. Pass `ready to paste into an issue.
 4. Attach the report to your GitHub issue or support request.

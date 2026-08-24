@@ -50,7 +50,7 @@ If you run Music Assistant under Home Assistant, there is a companion add-on in 
 
 ### QR Login Flow (NetEase App)
 
-1. Open **Settings -> Music Sources -> Add Music Source -> NetEase Cloud Music**
+1. Open **Settings → Music Sources → Add a music source → NetEase Cloud Music**
 2. Set **API base URL** to your local API service
 3. Click **QR Login**. A new QR page will open
 4. Scan with the **NetEase Cloud Music app** and confirm login in the app

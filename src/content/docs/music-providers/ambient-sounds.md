@@ -42,7 +42,7 @@ This source gives Music Assistant users a small catalog of ambient sound loops, 
 
 ## Configuration:
 - The provider is set up automatically and there is nothing to configure.
-- The provider can disabled or removed from Settings -> Music Sources.
+- The provider can disabled or removed from Settings → Music Sources.
 
 ## Usage
 
