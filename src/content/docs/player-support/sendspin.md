@@ -74,7 +74,7 @@ Several client types can connect to Music Assistant via Sendspin:
 
 The player built into the Music Assistant web interface is itself a Sendspin player. On your own network it connects straight to the server, which sounds best. From anywhere else it connects over the internet instead, which still works but at a lower quality.
 
-The sync delay can be adjusted under **Settings → User Interface → Sendspin sync delay**. Music Assistant picks a value to suit your device, but it may need adjusting.
+Like any other Sendspin player, the web player has a **Static playback delay (ms)** setting in its [Output Protocols settings](/settings/individual-player/#output-protocols). Music Assistant picks a value to suit your device, but it may need adjusting if the web player is heard out of step with your other speakers.
 
 Audio quality in the web player depends on where you are listening from:
 
