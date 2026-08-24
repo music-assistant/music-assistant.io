@@ -21,13 +21,15 @@ description: Common Problems and Fixes
 
 **Home Assistant URL.** Make sure the HA internal url is set correctly. HA SETTINGS >> SYSTEM >> NETWORK >> Home Assistant URL >> Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to http://your.internal.ip:8123/
 
-**WiFi and bandwidth.** MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which by default is usually FLAC) so playing a low quality MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage. Players have an option to use a lossy codec which will lower the bandwidth requirements, this is available in the advanced settings for the player.
+**WiFi and bandwidth.** MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which by default is usually FLAC) so playing a low quality MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage. Players have an option to use a lossy codec which will lower the bandwidth requirements, in the [protocol settings for the player](/settings/individual-player/#output-protocols).
 
 **Physical devices.** Check the physical device settings. There have been numerous reports where the issue was actually a setting external to MA such as receivers set to repeat tracks or ESP devices with incorrect arguments passed on install.
 
 **File tagging.** Ensure local files are [tagged properly](/music-providers/local-files/#tagging-files).
 
-**Playback.** If it is a playback issue then turn on [QUEUE FLOW MODE](/faq/tech-info/#track-queueing) in the settings for the specific player (where that is available).
+**Playback.** If it is a playback issue then turn on **Enable queue flow mode** in the [protocol settings for the player](/settings/individual-player/#output-protocols), where that is available. [Track Queueing](/faq/tech-info/#track-queueing) explains what it changes.
+
+**Playback stops part way through a track.** If a player starts but cuts off early, will not start at all, or will not let you skip within a track, try the other **HTTP Profile** options in the [protocol settings for the player](/settings/individual-player/#output-protocols).
 
 **Authentication.** If it is a music source issue and the source requires authentication then clear the authentication and re-login.
 
