@@ -43,19 +43,22 @@ Each available protocol then has its own configuration section. Protocols can be
 
 The settings below appear under most protocols and mean the same thing wherever you see them. **Most people never need to change any of them** — the defaults are chosen to work on the widest range of hardware, and the usual reason to come here is that something is not playing properly.
 
-Three things are true of all of them:
+Two things are true of all of them:
 
 - They are only visible when the `Show advanced settings` toggle is on
 - Changing one reloads the player, so anything currently playing stops briefly
-- Not every player shows every setting, and that is normal. A provider can set its own default or hide a setting where it does not apply, and some depend on what the player can do: a player that always streams the queue in one go has no flow mode setting to change, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, it is noted on that provider's own page
+
+Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some depend on what the player can do: a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, its own page says so.
+
+AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list.
 
 #### Enable queue flow mode
 
-Sends the whole queue to the player as one continuous stream, instead of one track at a time. Off by default.
+Sends the whole queue to the player as one continuous stream, instead of one track at a time. Off by default on most players, though several providers turn it on because their devices work better that way; those pages say so.
 
-Turn it on if the player leaves a gap between tracks, stumbles on the change from one track to the next, or cannot do gapless playback at all. It is also switched on automatically when crossfade is in use, because stitching tracks together requires one continuous stream.
+Turn it on if the player leaves a gap between tracks, stumbles on the change from one track to the next, or cannot do gapless playback at all. Music Assistant also switches it on by itself when crossfade is in use *and* the player cannot do gapless playback on its own, since stitching those tracks together needs one continuous stream.
 
-The trade-off is that most players stop showing track information on their own display, because they only ever receive one long "track". The ICY setting below can put some of it back.
+The trade-off is that most players stop showing track information on their own display, because they only ever receive one long "track". The ICY setting below can put some of it back. [Track Queueing](/faq/tech-info/#track-queueing) explains how this differs from letting the player queue the next track itself.
 
 #### Flow Mode sample rate
 
@@ -76,18 +79,18 @@ Only applies when flow mode is on. A flow stream uses a single sample rate from 
 
 #### Try to inject metadata into stream (ICY)
 
-Only applies when flow mode is on. Slips the track title and artist into the audio stream itself so the player can display them — the same trick internet radio stations use. Disabled by default.
+Only applies when flow mode is on. Puts the track title and artist into the audio stream itself so the player can display them, in the same way internet radio stations do. Disabled by default.
 
-Turn it on if your player shows nothing useful while flow mode is running. Not every player handles it correctly, so if playback becomes unreliable after enabling it, step down to Profile 1 or turn it off again.
+Turn it on if your player shows nothing useful while flow mode is running. Start with Profile 1, and move to Profile 2 if you want album art as well. Not every player handles it correctly, so if playback becomes unreliable, step back down or turn it off again.
 
 <details>
 <summary>What each option does</summary>
 
 | Option | Behaviour |
 | --- | --- |
-| **Disabled** *(default)* | No metadata is injected; the player will not show track info during flow mode |
+| **Disabled - do not send ICY metadata** *(default)* | No metadata is injected; the player will not show track info during flow mode |
 | **Profile 1 - basic info** | Title and artist only. Lightweight and widely compatible |
-| **Profile 2 - full info** | Also sends the album name and cover art. Richer, but some players mishandle it — use Profile 1 if you see playback issues |
+| **Profile 2 - full info (including image)** | Also sends the album name and cover art. Richer, but some players mishandle it — use Profile 1 if you see playback issues |
 
 </details>
 
@@ -113,7 +116,7 @@ Change it if the player cannot play FLAC, or to cut down network traffic on a we
 
 The sample rates and bit depths Music Assistant will send to this player as they are. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are ticked by default.
 
-This is worth understanding before changing it: **the ticked boxes are a deliberately safe starting point, not something detected from your device.** The higher rates are offered for you to try. If your player genuinely supports them, tick them and you will get better quality; if playback breaks or the player falls silent, untick them again. Manufacturers vary, so test rather than assume.
+Rates are offered up to 384 kHz / 24 bit, though most providers narrow that list to what the device plausibly handles. On most players the ticked boxes are a safe starting point rather than something detected from the device, and the higher ones are offered for you to try. If your player genuinely supports them, tick them and you will get better quality; if playback breaks or the player falls silent, untick them again. Manufacturers vary, so test rather than assume. Some providers do detect the device's capabilities and set this for you — those pages say so.
 
 #### Output Channel Mode
 
@@ -123,7 +126,7 @@ The usual reason to change it is building a stereo pair from two players — set
 
 #### Prefer low-latency WAV for live sources
 
-Sends live sources such as [Spotify Connect](/plugins/spotify-connect/) and the [AirPlay Receiver](/plugins/airplay-receiver/) as uncompressed audio, so there is less delay before you hear them. Off by default on most players, on by default on a few where it works well.
+Sends live sources such as [Spotify Connect](/plugins/spotify-connect/) and the [AirPlay Receiver](/plugins/airplay-receiver/) as uncompressed audio, so there is less delay before you hear them. Off by default on most players; providers that turn it on say so on their own page.
 
 Turn it off if those sources are unreliable on your player; Music Assistant will fall back to the output codec set above.
 
@@ -131,7 +134,7 @@ Turn it off if those sources are unreliable on your player; Music Assistant will
 
 A low-level detail of how the audio is handed to the player. `Profile 2` by default, and correct for most players.
 
-This is a troubleshooting setting rather than a tuning one. Come here if the player stops part way through a track, refuses to start, or cannot seek — then try the other profiles.
+Change it only to fix a problem: if the player stops part way through a track, refuses to start, or cannot seek, try the other profiles.
 
 <details>
 <summary>What each option does</summary>
@@ -144,7 +147,7 @@ This is a troubleshooting setting rather than a tuning one. Come here if the pla
 
 </details>
 
-### Group player settings
+## Group Player Settings
 
 For group players the following settings will be seen:
 
@@ -152,6 +155,8 @@ For group players the following settings will be seen:
 - <b>Enable dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
 - <b>Allowed members</b>. Limit which players can join this group. Leave empty to allow any sync-compatible player. This can be used to reduce the list of players that show up for joining in case you have a lot of players. Only shown when the advanced toggle is on
 - <b>Allow crossfades between tracks of different sample rates</b>. Enable this option to allow crossfades between tracks that have different sample rates (e.g. 44.1kHz to 48kHz). Disable this option if you experience audio glitches during transitions between tracks. Only shown when the advanced toggle is on
+
+Universal Groups default to `Profile 1 - chunked` for the HTTP Profile, rather than Profile 2 as elsewhere.
 
 ## Announcements Configuration
 
