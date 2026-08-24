@@ -125,7 +125,7 @@ Select the pencil icon in the top right to enter edit mode. From there, show or 
 
 [![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
 
-Refer to the [Library Recommendations Plugin](/plugins/library-recomendations) for information about the available recommendations rows that are built into Music Assistant.
+Refer to the [Library Recommendations Plugin](/plugins/library-recommendations) for information about the available recommendations rows that are built into Music Assistant.
 
 ## View - Artist / Album / Track
 
@@ -139,7 +139,7 @@ The provider filter option will only show when there are two or more music sourc
 
 Items in all views can be "right-clicked" or "long-pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
-Multiple selections of albums / artists / tracks is possible by clicking the [multi-select icon](#multi-select). Once one or more items are selected then clicking on the "ACTIONS" at the bottom
+Multiple selections of albums / artists / tracks is possible by clicking the [multi-select icon](#multi-select-). Once one or more items are selected then clicking on the "ACTIONS" at the bottom
 
 ![image](/assets/screenshots/UI-actions.png)
 

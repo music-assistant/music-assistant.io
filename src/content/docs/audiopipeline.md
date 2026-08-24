@@ -20,7 +20,7 @@ The view is broken into three sections, Input, Processing and Output. The colore
 
 The Input section shows the origin of the stream and the codec, <a href="https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html" target="_blank" rel="noopener noreferrer">sample rate, bit depth</a> and <a href="https://nottinghamhifi.co.uk/blogs/blog/understanding-audio-bitrate" target="_blank" rel="noopener noreferrer">bit rate</a>. Even more details about the original file are available by hovering over the ⓘ.
 
-The Processing section shows that all tracks are processed internally as raw <a href="https://diyodemag.com/education/what_is_pcm_pulse_code_modulation" target="_blank" rel="noopener noreferrer">PCM</a> by Music Assistant and are decoded to <a href="https://www.youtube.com/watch?v=4YRp-FIsNDA" target="_blank" rel="noopener noreferrer">32 bits floating point</a> in the sample rate of the source. 
+The Processing section shows that all tracks are processed internally as raw <a href="https://www.origin-ic.com/blog/what-you-need-to-know-about-pcm-audio-explained/48067" target="_blank" rel="noopener noreferrer">PCM</a> by Music Assistant and are decoded to <a href="https://www.youtube.com/watch?v=4YRp-FIsNDA" target="_blank" rel="noopener noreferrer">32 bits floating point</a> in the sample rate of the source. 
 
 Next the Volume Normalization value is shown. Details about how Volume Normalization is applied can be found on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 

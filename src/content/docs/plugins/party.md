@@ -145,7 +145,7 @@ Guests are automatically redirected here after scanning the QR code.
 
 ## Remote Access
 
-When [Remote Access](../settings/remote-access.md) is enabled, the QR code URL uses `app.music-assistant.io`, allowing guests to connect from anywhere via WebRTC - even if they're not on your local network.
+When [Remote Access](/settings/remote-access) is enabled, the QR code URL uses `app.music-assistant.io`, allowing guests to connect from anywhere via WebRTC - even if they're not on your local network.
 
 When remote access is disabled, guests must be on the same network as your Music Assistant server.
 

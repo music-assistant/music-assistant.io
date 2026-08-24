@@ -107,7 +107,7 @@ For certain sources (Spotify is a known example) the authentication method used 
 
 Possibly your browser is using a cached version of the front end. Try forcing a refresh Chrome, Firefox, or Edge for Windows: Press Ctrl+F5 (If that doesn’t work, try Shift+F5 or Ctrl+Shift+R).
 
-if the above doesn’t work look <a href="https://www.webinstinct.com/faq/how-to-disable-browser-cache" target="_blank" rel="noopener noreferrer">here for some more options</a>
+if the above doesn’t work look <a href="https://support.thundertech.com/hc/en-us/articles/208095793-Disable-Browser-Caching-Using-Developer-Tools" target="_blank" rel="noopener noreferrer">here for some more options</a>
 
 For the iOS app see <a href="https://community.home-assistant.io/t/anyone-know-how-to-clear-cache-in-the-ios-app/64569/10" target="_blank" rel="noopener noreferrer">here</a>
 

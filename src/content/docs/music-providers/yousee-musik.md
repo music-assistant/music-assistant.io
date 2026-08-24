@@ -50,7 +50,7 @@ In addition to `Username` and `Password` there is also:
 
 - <b>Stream Quality.</b> Default is `High` (MP4 320kbps). The other option is `Normal` (MP4 192kbps). This only needs to be changed if operating with a slow internet connection
 
-Refer also to the [Library Import Control](index.md#library-import-control) settings.
+Refer also to the [Library Import Control](/music-providers/#library-import-control) settings.
 
 ## Known Issues / Notes
 
