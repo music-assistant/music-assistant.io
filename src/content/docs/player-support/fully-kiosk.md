@@ -33,10 +33,8 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - <b>Output codec to use for streaming audio to the player.</b> The default is MP3 but other options are FLAC, AAC or WAV. Many tablets struggle with lossless, so stay on MP3 unless you have a reason to change
 - <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
 - <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
-- <b>Try to inject metadata into stream (ICY).</b> Off by default. Enabling this attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Profile 1 - basic info sends title and artist only, Profile 2 - full info adds the album name and cover art. Not all players support this correctly, therefore, if there are issues with playback try a lower profile or disable it
 - <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the player cannot play continuous WAV streams
 - <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits, which suits most tablets. Add higher rates only if the device genuinely handles them. Content with unsupported sample rates will be resampled
-- <b>Flow Mode sample rate.</b> Fully Kiosk players always play the queue as one continuous stream, which uses a single sample rate throughout. Smart (the default) starts at the first track's rate and only restarts the stream when a later track is higher. Other options are Bit-perfect, a fixed 48 kHz or 96 kHz, or Highest supported by player
   
 ## Known Issues / Notes
 
