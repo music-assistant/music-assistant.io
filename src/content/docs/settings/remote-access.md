@@ -15,6 +15,6 @@ For most users this is all that is needed.
 
 ## Technical Details
 
-Remote access usually works without a Nabu Casa subscription. If any of the terms below are unfamiliar, [Networking Basics](/faq/networking/) explains them. The exception is complex network environments, for example double NAT, mobile carriers, or corporate networks blocking standard <a href="https://medium.com/@jamesbordane57/what-is-a-stun-server-df3563dbf14a" target="_blank" rel="noopener noreferrer">STUN servers</a>. This is where TURN servers (which Nabu Casa provides) are useful as they relay the traffic.
+Remote access usually works without a Nabu Casa subscription. The exception is complex network environments, for example double NAT, mobile carriers, or corporate networks blocking standard <a href="https://medium.com/@jamesbordane57/what-is-a-stun-server-df3563dbf14a" target="_blank" rel="noopener noreferrer">STUN servers</a>. This is where TURN servers (which Nabu Casa provides) are useful as they relay the traffic.
 
-Further information is shown in the MA UI.
+Further information is shown in the MA UI. For the network terms used elsewhere in this documentation, see [Networking Basics](/faq/networking/).
