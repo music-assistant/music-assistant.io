@@ -2,7 +2,6 @@
 title: Bose SoundTouch
 ---
 
-
 # Bose SoundTouch <img src="/assets/icons/bose-soundtouch-icon.png" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
 Music Assistant has support for [Bose SoundTouch](https://www.bose.com/) speakers. Following Bose's end of life of the SoundTouch platform, this provider keeps the speakers usable within Music Assistant by exposing native control and mapping their physical preset buttons to Music Assistant content. Contributed and maintained by [Odn0](https://github.com/Odn0).
@@ -39,12 +38,11 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>Bose SoundTouch app key.</b> Optional. A Bose SoundTouch developer app key enables sending announcements to the speaker as an overlay that ducks the current music and resumes it afterwards. Leave this empty to disable native announcements (they then play through the linked playback protocol instead)
 - <b>Presets 1-6.</b> Each of the six physical preset buttons can be mapped to a Music Assistant media item. The mapping is shared by every SoundTouch speaker of this provider, so preset 4 plays the same thing on all of them. To set one up, use the <b>Search engine preset</b> section: choose a <b>Media type</b>, enter your keywords and press <b>Search</b>, pick a <b>Result</b>, choose which button it belongs to under <b>Select for preset</b>, then press <b>Assign result to preset</b>. The chosen item appears under <b>Presets</b> as <b>Preset 1-6 to play</b>, where a Music Assistant URI (provider://media_type/identifier) can also be entered manually instead of using the search flow
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the SoundTouch players have the following settings:
+In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the SoundTouch players have the following settings:
 
 - <b>Overwrite preset 1-6.</b> Press one of these buttons to hand that physical preset button on this speaker over to Music Assistant. Do this once per speaker for each button you want to use. The button's label tells you when the speaker already has something stored on that preset. What the button plays is set in the provider settings above
-- <b>Output codec to use for streaming audio to the player.</b> Defaults to MP3 for SoundTouch speakers, which gives by far the most reliable playback. FLAC, AAC and WAV are also available but are more likely to cause problems on these speakers
-- <b>Enable queue flow mode.</b> Sends all queue tracks as one continuous audio stream. Use this if the speaker has trouble transitioning between tracks
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths can be manually set. SoundTouch speakers support up to 192kHz / 24 bits. Content with unsupported sample rates will be resampled
+- <b>Output codec to use for streaming audio to the player.</b> Defaults to MP3 on SoundTouch speakers, which gives by far the most reliable playback. The other codecs are available but are more likely to cause problems here
+- <b>Sample rates supported by this player.</b> Set automatically when the speaker is discovered. SoundTouch speakers support up to 192 kHz / 24 bit
 
 ## Known Issues / Notes
 

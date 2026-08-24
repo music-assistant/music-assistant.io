@@ -52,19 +52,12 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 - <b>Experimental: Enable intercept feature.</b> Off by default. The master switch for the intercept feature described below. While it is off, the per-player intercept settings have no effect. The yandex_music music provider must also be configured, as that is what resolves the tracks
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Yandex Station players have the following settings:
+In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Yandex Station players have the following settings:
 
 - <b>Experimental: Intercept native Station playback.</b> Off by default. When the Station starts playing Yandex Music on its own, usually from an Alice voice command but also from a touch on the Station itself, this silences the Station and plays the same track on the target player chosen below. The Station keeps its own queue running quietly in the background so Music Assistant can follow each next track. It needs the provider level switch above turned on
 - <b>Intercept target player.</b> The Music Assistant player that receives intercepted playback. Every registered player except this Station is listed, including ones that are currently offline so you can pick a target before it is switched on. Pause, volume and seek are mirrored where the target supports them and are quietly skipped where it does not
 - <b>Experimental: Voice control integration.</b> Off by default. Resumes the Music Assistant queue automatically after voice commands such as "Алиса, стоп" or "Алиса, дальше". Experimental, so it may behave unexpectedly
-- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
-- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. The default is Profile 3 - forced content length, because Yandex Stations need a content length and cannot handle chunked streams
-- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the Station cannot play continuous WAV streams
-- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits. Higher rates and 24 bit options are offered if the Station handles them. Content with unsupported sample rates will be resampled
-- <b>Enable queue flow mode.</b> Off by default. Sends all tracks as one continuous audio stream. Use it if the Station has difficulty transitioning between tracks, at the cost of losing per track metadata
-- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled, so it is greyed out with the default settings
-- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
+- <b>HTTP Profile used for sending audio.</b> Defaults to Profile 3 - forced content length here, because Yandex Stations need a content length and cannot handle chunked streams
 
 ### Voice control integration (experimental)
 

@@ -31,18 +31,13 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>JSON-RPC CLI/API Port.</b> Some slimproto players use the LMS style JSON-RPC API to fetch album art and other metadata. It runs on port 9000 by default. Set it to 0 to switch it off
 - <b>Enable Discovery server.</b> On by default. Broadcasts discovery packets so slimproto clients find and connect to this server on their own. Turn it off if you run more than one slimproto server on your network, or you do not want clients connecting automatically
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Squeezelite provider also has a unique setting in the Advanced section and a unique Presets section
+In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Squeezelite provider has a unique setting in the Advanced section and a unique Presets section
 
 - <b>Presets.</b> Real Squeezebox hardware or jive(lite) based emulators support presets. This section lets you assign a Playlist or Radio Station from your library to each of the ten presets
 - <b>Audio synchronization delay correction.</b> Shifts this player's audio by up to ±500 ms to keep it in step with the others. Refer to the Player Summary Table to identify which types support sync correction
 - <b>Enable display support.</b> Some Squeezelite hardware has a display and this setting enables support for it
 - <b>Visualization type.</b> The visualisation shown on the display during playback. It only becomes available once display support is enabled
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
-- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV
-- <b>Prefer low-latency WAV for live sources.</b> On by default for Squeezelite. Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the player cannot play continuous WAV streams
-- <b>Enable queue flow mode.</b> Off by default. Enabling this option will send all tracks as one continuous audio stream. Use for players that do not natively support gapless or crossfading, or that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
-- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled. It attempts to provide metadata to the player so it can show track info during a flow stream. Not all players support this correctly, therefore, if there are issues with playback try disabling it
-- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
+- <b>Prefer low-latency WAV for live sources.</b> On by default for Squeezelite. Turn it off if the player cannot play continuous WAV streams
 - <b>Allow crossfades between tracks of different sample rates.</b> Only enable this if the player supports it. It applies while flow mode is off, so it is greyed out once flow mode is enabled
 
 There is no sample rates setting for Squeezelite players, as each one reports the highest rate it can take and Music Assistant works from that. There is also no HTTP profile setting, as it is fixed at Profile 2 for slimproto.

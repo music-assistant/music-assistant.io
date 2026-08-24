@@ -31,13 +31,9 @@ Before the Player Provider can be added the [Plugin](/ha-plugin/) must be instal
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the following audio and streaming related settings are available for Home Assistant Media Players:
+Home Assistant Media Players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). One of those differs here:
 
-- <b>Output codec to use for streaming audio to the player.</b> Selects the audio codec for the stream sent to the player. Options are FLAC (lossless, compressed), MP3 (lossy), AAC (lossy), or WAV (lossless, uncompressed). The default for HA media players is MP3 as it has the broadest compatibility across HA player integrations
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
-- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
-- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the player cannot play continuous WAV streams
-- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits, which suits the widest range of HA players. Higher rates and 24 bit options are offered if the device handles them. Content with unsupported sample rates will be resampled
+- <b>Output codec to use for streaming audio to the player.</b> Defaults to MP3 here rather than FLAC, as it has the broadest compatibility across Home Assistant player integrations
 
 Flow mode streams audio as a continuous flow rather than individual tracks, which avoids gaps between tracks. For HA media players flow mode is always used and there is no setting to turn it off, because the wide variation in HA player capabilities makes it the most reliable playback method.
 
