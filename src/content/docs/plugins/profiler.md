@@ -36,7 +36,7 @@ The plugin is single-instance and works out of the box; the defaults suit most c
 - <b>Periodic CPU profiling.</b> Automatically captures a CPU profile window at a regular interval. On by default. The server runs slightly slower while a window is being captured
 - <b>CPU profile window duration (seconds).</b> How long each window records before its results are processed
 - <b>CPU profile interval (minutes).</b> How often a new window is captured automatically
-- <b>Track memory allocations (tracemalloc).</b> Traces where memory is allocated, so the report can show the top allocation sites and how they grow between two reports. Off by default: it roughly doubles memory-tracking overhead and slows the server while enabled, so turn it on only when hunting a memory leak
+- <b>Track memory allocations (tracemalloc).</b> Traces where memory is allocated, so the report can show the top allocation sites and how they grow between two reports. Off by default, because it roughly doubles memory-tracking overhead and slows the server while enabled, so turn it on only when hunting a memory leak
 - <b>Profile now.</b> Captures a profile window on demand, for example while you are reproducing an issue. The result appears in the next report
 
 When it is not capturing a profile, the plugin's overhead is negligible.

@@ -84,8 +84,8 @@ Use it to keep Alice as a voice frontend while the audio plays on better speaker
 
 Both switches are off by default and **both must be on** for any intercept action to happen:
 
-1. Provider-level master switch — **Settings → Player Providers → Yandex Station → Show advanced → Enable intercept feature**.
-2. Per-player switch — **Settings → Players → \<Your Station\> → Show advanced → Intercept native Station playback** + **Intercept target player**.
+1. Provider-level master switch, at **Settings → Player Providers → Yandex Station → Show advanced → Enable intercept feature**.
+2. Per-player switch, at **Settings → Players → \<Your Station\> → Show advanced → Intercept native Station playback** plus **Intercept target player**.
 
 #### Requirements
 
