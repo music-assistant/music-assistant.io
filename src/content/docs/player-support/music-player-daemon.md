@@ -34,16 +34,10 @@ For full configuration options refer to the <a href="https://mpd.readthedocs.io/
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/), the MPD provider has the following unique settings:
+MPD players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on MPD:
 
-- <b>Output codec to use for streaming audio to the player.</b> The audio format MA streams to MPD. MP3 is the default, with AAC and WAV (uncompressed) also available. FLAC is not offered for MPD
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
-- <b>Prefer low-latency WAV for live sources.</b> On by default for MPD. Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the server cannot play continuous WAV streams
-- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits. MPD does not report what it can handle, so higher rates and 24 bit options are offered for you to set manually based on your output hardware. Content with unsupported sample rates will be resampled
-- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
-- <b>Enable queue flow mode.</b> Off by default. Sends all tracks as one continuous audio stream. Use it if MPD has trouble transitioning between tracks, at the cost of losing per track metadata
-- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled, so it is greyed out with the default settings. It attempts to provide metadata to the player so it can show track info during a flow stream
-- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
+- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> MP3 is the default here, with AAC and WAV also available. FLAC is not offered for MPD
+- <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for MPD. Turn it off if the server cannot play continuous WAV streams
 
 ## Known Issues / Notes
 

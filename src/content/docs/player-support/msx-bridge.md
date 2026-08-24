@@ -64,16 +64,10 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>Sendspin bridge (experimental).</b> On by default. Registers each TV as a Sendspin client so it can join sample synchronised playback groups with any other Music Assistant player. The TV opens the web kiosk in Sendspin mode when a synchronised stream starts. It needs a TV browser capable of running the Sendspin web client, and falls back to the regular HTTP player if the TV cannot connect
 - <b>Stream Delivery Mode.</b> How the audio reaches the TVs. MA Streamserver (the default) points each TV straight at the Music Assistant stream server, which uses the least CPU and applies the per player codec and audio processing, falling back to Independent if the address cannot be worked out. Independent gives each TV its own separate stream, which uses more CPU and does not keep them in step. Shared Buffer prepares the audio once and feeds it to every group member, which is easier on your server and keeps grouped TVs better in step. Note that MA Streamserver mode has each grouped TV fetch its own stream, so they are not kept in step
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the MSX players have the following settings:
+MSX players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Two of those are worth knowing about on a TV:
 
-- <b>Output codec to use for streaming audio to the player.</b> Set per TV. The default is MP3 but other options are FLAC, AAC or WAV
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
-- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
-- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the TV cannot play continuous WAV streams
-- <b>Sample rates supported by this player.</b> Defaults to 44.1kHz / 16 bits and 48kHz / 16 bits. Higher rates and 24 bit options are offered if the TV handles them. Content with unsupported sample rates will be resampled
-- <b>Enable queue flow mode.</b> Off by default for MSX players. Sends all tracks as one continuous audio stream, which stops the TV from reporting track progress correctly, so leave it off unless you have a reason to change it
-- <b>Try to inject metadata into stream (ICY).</b> Only applies while flow mode is enabled, so it is greyed out with the default settings. It attempts to provide metadata to the player so it can show track info during a flow stream
-- <b>Flow Mode sample rate.</b> Only applies while flow mode is enabled. A flow mode stream uses a single sample rate from start to finish, and this decides which one
+- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Set per TV, and defaults to MP3 here rather than FLAC
+- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> Turning this on stops the TV reporting track progress correctly, so leave it off unless you have a reason to change it
 
 ## How It Works
 
@@ -85,7 +79,7 @@ You can check on all of this at `http://<ma-ip>:8099/`.
 
 ## Known Issues / Notes
 
-- **Audio format**: MP3 works on every TV, which is why it is the default. AAC sounds slightly better for the same file size. FLAC is lossless, but Music Assistant cannot tell the TV in advance how long the audio will be, and some TVs do not cope with that
+- **Audio format**: MP3 works on every TV, which is why it is the default. AAC sounds slightly better for the same file size. FLAC is lossless, but with it Music Assistant cannot tell the TV up front how much audio is coming, and some TVs will not play without that
 - **Player grouping**: This is experimental. `Shared Buffer` keeps the TVs better in step, but every TV in the group has to be set to the same audio format
 - **Network**: The TV and Music Assistant have to be on the same network. There is no way to reach a TV from outside your home
 - **Idle timeout**: If a TV is switched off or the MSX app is closed, it disappears from the player list after the idle timeout, 30 minutes by default. It comes back as soon as the TV connects again

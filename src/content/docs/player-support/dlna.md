@@ -23,18 +23,12 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 ## Settings
 
-For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages. Specific settings available for this player in the Output Protocol(s) section are:
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages, including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Settings that differ or are specific to DLNA are:
 
-- <b>Enable queue flow mode.</b> Sends all tracks as one continuous audio stream. This is switched on by default for DLNA because most DLNA players cannot queue up the next track themselves. May have the side effect of losing metadata to the player
-- <b>Flow Mode sample rate.</b> A flow mode stream uses a single sample rate from start to finish, and this decides which one. Smart (the default) starts at the first track's rate and only restarts the stream when a later track is higher. Other options are Bit-perfect, a fixed 48 kHz or 96 kHz, or Highest supported by player
+- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> On by default for DLNA, because most DLNA players cannot queue up the next track themselves
 - <b>Replace Pause with Stop.</b> Some older uPnP players are unable to pause streamed music and ignore the command. Enable this if that occurs and a stop command will be issued for both pause and stop
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. DLNA players are offered up to 192kHz / 24 bits. Content with unsupported sample rates will be resampled
-- <b>Output channel mode.</b> The default is Stereo (both channels) but other options are Left channel only, Right channel only or Mono (both channels)
-- <b>Output codec to use for streaming audio to the player.</b> The default is FLAC but other options are MP3, AAC or WAV
-- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the player cannot play continuous WAV streams
-- <b>HTTP Profile used for sending audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default is Profile 2 - no content length
-- <b>Try to inject metadata into stream (ICY).</b> Off by default. Enabling this attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Profile 1 - basic info sends title and artist only, Profile 2 - full info adds the album name and cover art. Not all players support this correctly, therefore, if there are issues with playback try a lower profile or disable it
-- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. Only shown for players that can queue the next track themselves, and only while flow mode is switched off
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit
+- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. Only shown for players that support gapless playback, and only while flow mode is switched off
 
 ## Known Issues / Notes
 

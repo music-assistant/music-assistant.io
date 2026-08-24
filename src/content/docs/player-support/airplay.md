@@ -23,6 +23,8 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 ## Protocol Settings
 
+AirPlay does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode**. The settings below are specific to AirPlay.
+
 Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired before Music Assistant can use them. These show a Setup button in the player settings — press it and follow the steps, entering the PIN shown on the device's screen. Devices protected with a password ask for the password instead.
 
 Apple TVs offer two extra pairing steps after the main one. Both are optional and can be added later by running Setup again:

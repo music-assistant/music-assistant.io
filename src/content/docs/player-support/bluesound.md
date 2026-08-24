@@ -21,12 +21,10 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 Refer to the [Player Provider Settings](/settings/player-provider/) when setting up this provider as it has no unique settings at the provider level.
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Bluesound players have the following settings:
+Bluesound players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on BluOS:
 
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
-- <b>Prefer low-latency WAV for live sources.</b> Sends live sources such as Spotify Connect and AirPlay Receiver as uncompressed audio to reduce the delay before you hear them. Disable this if the player cannot play continuous WAV streams
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Everything up to 192 kHz / 24 bit is selected by default, rather than only 44.1 kHz / 16 bit and 48 kHz / 16 bit. Remove the higher ones if your player cannot manage them
+- <b>[Try to inject metadata into stream (ICY)](/settings/individual-player/#try-to-inject-metadata-into-stream-icy).</b> Defaults to Profile 2 - full info, rather than being off as it is elsewhere
 
 ## Known Issues / Notes
 
