@@ -16,7 +16,7 @@ Music Assistant has support for uPnP/DLNA based devices. This is a (somewhat) un
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers** and check whether `DLNA` is already listed; it is added automatically on new installs. If it is missing, click **Add a new provider** and select `DLNA`.
+1. In Music Assistant, go to **Settings → Player Providers** and check whether `DLNA` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `DLNA`.
 2. Your DLNA devices will be discovered automatically and will appear in the player list. Note it can take up to 5 minutes for some devices to be discovered.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).

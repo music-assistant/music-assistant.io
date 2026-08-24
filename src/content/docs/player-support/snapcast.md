@@ -19,7 +19,7 @@ MA includes a built-in Snapserver although an external server can also be used. 
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a new provider** and select `Snapcast`. This starts the built-in Snapcast server; no further server setup is needed. To use an external Snapcast server instead, enable `Show Advanced Settings` and enter its IP and port (see Settings below and note the version requirements in Known Issues / Notes).
+1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Snapcast`. This starts the built-in Snapcast server; no further server setup is needed. To use an external Snapcast server instead, enable `Show Advanced Settings` and enter its IP and port (see Settings below and note the version requirements in Known Issues / Notes).
 2. Connect your players (clients) by pointing a browser or the Snapdroid app at `<YOUR_MA_IP_ADDRESS>:1780`. Each connected client appears in the MA player list.
 
 ## Settings

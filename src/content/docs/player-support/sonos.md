@@ -23,8 +23,8 @@ If the Sonos device is grouped with an AirPlay device, or if the default [output
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers** and check whether `Sonos` is already listed; it is added automatically on new installs. If it is missing, click **Add a new provider** and select `Sonos`.
-2. If you have devices from the older S1 generation, the `Sonos S1` provider is never added automatically. Click **Add a new provider** and select `Sonos S1`.
+1. In Music Assistant, go to **Settings → Player Providers** and check whether `Sonos` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `Sonos`.
+2. If you have devices from the older S1 generation, the `Sonos S1` provider is never added automatically. Click **Add a player provider** and select `Sonos S1`.
 3. Your Sonos devices will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
