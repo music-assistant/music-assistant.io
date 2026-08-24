@@ -59,7 +59,7 @@ Music Assistant Player Card is a custom card which provides a full media player,
 *********************************
 ## <a href="https://github.com/trudenboy/sendspin-bt-bridge" target="_blank" rel="noopener noreferrer">Sendspin Bluetooth Bridge</a>
 
-Turn any Bluetooth speaker into a Music Assistant player using the Sendspin protocol. Supports multiple simultaneous devices, multiroom sync groups, and comes with a real-time web dashboard. Deploys as an HA addon, Docker Compose, Proxmox LXC, or OpenWrt LXC.
+Turn any Bluetooth speaker into a Music Assistant player using the Sendspin protocol. Supports multiple simultaneous devices, multiroom sync groups, and comes with a real-time web dashboard. Deploys as a Home Assistant App, Docker Compose, Proxmox LXC, or OpenWrt LXC.
 
 <img src="https://raw.githubusercontent.com/trudenboy/sendspin-bt-bridge/main/docs-site/public/screenshots/screenshot-dashboard-full.png" alt="Sendspin BT Bridge dashboard" style="width: 600px;"  loading="lazy" />
 
