@@ -79,7 +79,7 @@ You can check on all of this at `http://<ma-ip>:8099/`.
 
 ## Known Issues / Notes
 
-- **Audio format**: MP3 works on every TV, which is why it is the default. AAC sounds slightly better for the same file size. FLAC is lossless, but Music Assistant cannot tell the TV in advance how long the audio will be, and some TVs do not cope with that
+- **Audio format**: MP3 works on every TV, which is why it is the default. AAC sounds slightly better for the same file size. FLAC is lossless, but with it Music Assistant cannot tell the TV up front how much audio is coming, and some TVs will not play without that
 - **Player grouping**: This is experimental. `Shared Buffer` keeps the TVs better in step, but every TV in the group has to be set to the same audio format
 - **Network**: The TV and Music Assistant have to be on the same network. There is no way to reach a TV from outside your home
 - **Idle timeout**: If a TV is switched off or the MSX app is closed, it disappears from the player list after the idle timeout, 30 minutes by default. It comes back as soon as the TV connects again
