@@ -27,9 +27,7 @@ description: Common Problems and Fixes
 
 **File tagging.** Ensure local files are [tagged properly](/music-providers/local-files/#tagging-files).
 
-**Playback.** If it is a playback issue then turn on **Enable queue flow mode** in the [protocol settings for the player](/settings/individual-player/#output-protocols), where that is available. [Track Queueing](/faq/tech-info/#track-queueing) explains what it changes.
-
-**Playback stops part way through a track.** If a player starts but cuts off early, will not start at all, or will not let you skip within a track, try the other **HTTP Profile** options in the [protocol settings for the player](/settings/individual-player/#output-protocols).
+**Playback.** If the player is found and starts, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, see [the player plays, but not properly](#the-player-plays-but-not-properly) below.
 
 **Authentication.** If it is a music source issue and the source requires authentication then clear the authentication and re-login.
 
@@ -80,6 +78,24 @@ If the player is not shown in the list of players in the MA settings then review
 If your device does support one of the supported protocols then review the documentation for that player provider for known issues and troubleshooting tips.
 
 If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identifying why the player isn't working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issues</a>, <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">Discussions</a> and <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord</a> as likely someone has asked your question before.
+
+## The player plays, but not properly
+
+A player that is found and starts playing, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, can usually be fixed with one of the protocol settings. They all live under [Output Protocols](/settings/individual-player/#output-protocols) in that player's settings and are only visible with the `Show advanced settings` toggle on. That page explains what each one does. The symptoms below say which one to reach for.
+
+Change one thing at a time, and give it a track or two before deciding it did not help. Changing any of them reloads the player, so playback stops briefly each time.
+
+**Stuttering or dropouts, mainly on Wi-Fi.** Music Assistant sends lossless audio by default, which is the most demanding thing you can put on a weak wireless link. Set **Output codec** to MP3 or AAC, which need far less bandwidth. If a wired player on the same network is fine, the network is the cause rather than Music Assistant.
+
+**A gap between tracks, or a stumble on the change from one track to the next.** Turn on **Enable queue flow mode**, which sends the whole queue as one continuous stream instead of one track at a time. The trade-off is that most players then stop showing track information. [Track Queueing](/faq/tech-info/#track-queueing) explains the difference.
+
+**Playback stops part way through a track, will not start at all, or will not let you skip within a track.** Work through the **HTTP Profile** options, starting with Profile 3. This decides whether Music Assistant tells the player how much audio is coming before it starts sending, and a few players will not play properly unless they are told.
+
+**The player shows no track name or artist.** This happens in flow mode, because the player receives one long stream rather than separate tracks. Set **Try to inject metadata into stream (ICY)** to Profile 1, or to Profile 2 if you want album art as well. Some players mishandle Profile 2, so step back down if playback becomes unreliable.
+
+**Silence, or a refusal to play higher quality files.** Untick the higher rates under **Sample rates supported by this player**. The ticked defaults are deliberately safe on most players, and anything above them is offered for you to try rather than promised to work.
+
+If none of these help, the [player provider's own page](/player-support/) may list a known issue for your device.
 
 ## All my media is missing 
 
