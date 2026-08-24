@@ -39,7 +39,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>Allow legacy clients.</b> On by default. Accepts older Sendspin devices that do not follow the current specification, including devices that connect without encryption, whose traffic can be read by anyone on your local network. Turn it off to accept only up to date devices. This option is temporary and will be removed in a future release
 - <b>Minimum PIN length.</b> The fewest digits a device may use for dynamic PIN pairing. The default is 4 and it can be set as high as 12
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Sendspin players have the following settings:
+Sendspin does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode**. In addition to the standard [Individual Player Settings](/settings/individual-player/), Sendspin players have the following:
 
 - <b>Pairing.</b> Each device shows its security state at the top of its settings, either paired, connected without pairing, or connected without encryption. Press <b>Setup</b> on the player to pair it by entering the PIN or pairing token the device gives you, or to allow it to play without pairing. Bridged players and the built in web player have nothing to pair
 - <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential and the device reconnects as unpaired
