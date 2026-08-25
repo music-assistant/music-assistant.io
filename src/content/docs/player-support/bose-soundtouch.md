@@ -19,6 +19,10 @@ Music Assistant has support for [Bose SoundTouch](https://www.bose.com/) speaker
 - MA will show metadata when the speaker is playing non-MA content (e.g. Bluetooth, AUX or a built-in streaming service)
 - Optional native announcements that play as an overlay, ducking and resuming the current playback
 
+## Audio playback
+
+SoundTouch has no usable API to play an arbitrary stream, so Music Assistant does not send audio to the speaker directly. Instead, the SoundTouch provider handles control and discovery while audio is routed through a **linked playback protocol** on the same device, typically [DLNA](/player-support/dlna/). Thus, the SoundTouch provider depends on the DLNA provider and will enable it automatically.
+
 ## Configuration
 
 1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Bose SoundTouch`.
