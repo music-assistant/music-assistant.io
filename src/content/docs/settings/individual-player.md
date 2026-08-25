@@ -114,7 +114,7 @@ Change it if the player cannot play FLAC, or to cut down network traffic on a we
 
 #### Sample rates supported by this player
 
-The sample rates and bit depths Music Assistant will send to this player as they are. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are selected by default.
+The sample rates and bit depths this player can be sent without resampling. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are selected by default.
 
 You choose the rates from a drop down list of checkboxes, and the ones you pick are then shown as chips in the field, so you can see the whole selection at a glance.
 
