@@ -10,7 +10,7 @@ The Music Assistant integration for Home Assistant provides a connection from MA
 
 - The integration is an official part of Home Assistant, there is no need to install custom components
 
-- The integration can connect to the MA server which is running either as an HA addon or as a docker container on the same or another host system
+- The integration can connect to the MA server which is running either as a Home Assistant App or as a docker container on the same or another host system
 
 See also the <a href="https://www.home-assistant.io/integrations/music_assistant/" target="_blank" rel="noopener noreferrer">documentation from Home Assistant about the Music Assistant integration</a>
 

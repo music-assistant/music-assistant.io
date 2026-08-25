@@ -46,7 +46,7 @@ Music Assistant 已支持 <a href="https://music.163.com/" target="_blank" rel="
 
 该提供商需要可访问的 NeteaseCloudMusicApi 兼容 HTTP 服务（默认：`http://127.0.0.1:3000`）。
 
-Home Assistant 用户可参考配套 add-on PR：  
+Home Assistant 用户可参考配套 App PR：  
 <a href="https://github.com/music-assistant/home-assistant-addon/pull/16" target="_blank" rel="noopener noreferrer">home-assistant-addon#16</a>
 
 ### 扫码登录流程（网易云 App）

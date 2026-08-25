@@ -45,7 +45,7 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 
 NetEase provides no proper way in for other apps, so this source talks to NetEase through a separate piece of software called NeteaseCloudMusicApi, which you run yourself. Music Assistant expects to find it at `http://127.0.0.1:3000` unless you tell it otherwise.
 
-If you run Music Assistant under Home Assistant, there is a companion add-on in progress:  
+If you run Music Assistant under Home Assistant, there is a companion App in progress:  
 <a href="https://github.com/music-assistant/home-assistant-addon/pull/16" target="_blank" rel="noopener noreferrer">home-assistant-addon#16</a>
 
 ### QR Login Flow (NetEase App)
