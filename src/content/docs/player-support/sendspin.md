@@ -19,7 +19,7 @@ To bring audio from a compatible Sendspin line-in, microphone, or other input in
     
 ## Features
 
-- **Synchronised multi-room audio**: every connected device plays at the same moment
+- **Synchronised multi-room audio**: every connected device stays in step
 - **Automatic discovery**: Sendspin devices on your network are found on their own
 - **Per-player audio settings**: each device gets its own equaliser and volume
 - **Control from the device**: play, pause and skip can be driven from the player as well as from Music Assistant
