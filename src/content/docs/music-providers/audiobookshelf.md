@@ -16,7 +16,7 @@ This source points Music Assistant at that server so the same collection is avai
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media   | Yes |
-| Media Types Supported | Audiobooks, Podcasts, Playlists, Authors/ Narrators (Artists) |
+| Media Types Supported | Audiobooks, Podcasts, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | No |
