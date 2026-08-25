@@ -16,7 +16,7 @@ This source points Music Assistant at that server so the same collection is avai
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media   | Yes |
-| Media Types Supported | Audiobooks, Podcasts |
+| Media Types Supported | Audiobooks, Podcasts, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | No |
@@ -31,6 +31,8 @@ This source points Music Assistant at that server so the same collection is avai
 - Populates Audiobooks from all libraries accessible by the supplied user
 - Populates Podcasts from all libraries accessible by the supplied user
 - Populates Playlists from all libraries accessible by the supplied user
+- Has support for dedicated author and narrator tabs in the audiobooks view
+- Syncs audiobooks series enabling "collapse collections" in the audiobooks view. Note that the provider *does not sync* native audiobookshelf collections, only book series. These are then mapped to Music Assistant's collections.
 - Browse Feature has the following structure:
 
 ```
