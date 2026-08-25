@@ -8,7 +8,7 @@ Music Assistant has support for <a href="https://www.deezer.com/" target="_blank
 
 Deezer is a French subscription streaming service with a catalogue of around 100 million tracks, plus podcasts and audiobooks. It is available in most countries and streams lossless on its higher tiers.
 
-Connecting your account puts your Deezer favourites and playlists alongside the rest of your music in Music Assistant, with the whole catalogue there to search. Podcasts and audiobooks come across as well, and your place in them is kept in step with Deezer's own apps.
+Connecting your account puts your Deezer favourites and playlists alongside the rest of your music in Music Assistant, with the whole catalogue there to search. Podcasts and audiobooks come across as well, and your place in them is kept in sync with Deezer's own apps.
 
 > [!NOTE]
 > Deezer's terms of service mean only HiFi, Premium and Family accounts can be used here. Free accounts will not work.

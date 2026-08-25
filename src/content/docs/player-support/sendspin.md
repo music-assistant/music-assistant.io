@@ -4,7 +4,7 @@ title: "Sendspin"
 
 # Sendspin-audio Provider  <img src="/assets/icons/sendspin-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-<a href="https://www.sendspin-audio.com/" target="_blank" rel="noopener noreferrer">Sendspin</a> is Music Assistant's own way of sending audio to a player. It keeps several devices playing in step with each other, closely enough that the same track can play in more than one room without any echo between them.
+<a href="https://www.sendspin-audio.com/" target="_blank" rel="noopener noreferrer">Sendspin</a> is Music Assistant's own way of sending audio to a player. It keeps several devices playing in sync with each other, closely enough that the same track can play in more than one room without any echo between them.
 
 It is built into Music Assistant and switched on from the start, so there is nothing to install. The web player you use in your browser is a Sendspin player, and Sendspin speakers and apps appear on their own once they are on your network.
 
@@ -19,7 +19,7 @@ To bring audio from a compatible Sendspin line-in, microphone, or other input in
     
 ## Features
 
-- **Synchronised multi-room audio**: every connected device stays in step
+- **Synchronised multi-room audio**: every connected device plays at the same moment
 - **Automatic discovery**: Sendspin devices on your network are found on their own
 - **Per-player audio settings**: each device gets its own equaliser and volume
 - **Control from the device**: play, pause and skip can be driven from the player as well as from Music Assistant
@@ -46,7 +46,7 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 - <b>Require pairing.</b> Shown for a device you allowed to connect without pairing. Stops it connecting that way
 - <b>Manage device settings.</b> Opens the device's own pairing settings, where unpaired access, static PIN pairing and dynamic PIN pairing can each be turned on or off. While this section is open the device refuses connections from other servers, so close it again with <b>Close device management</b> when you are finished
 - <b>Automatically play line-in on.</b> Only shown for devices with a line-in that can report when a signal is present. Chooses where that line-in plays automatically, either This device, another player, or Off
-- <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in step with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
+- <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
 - <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (let client decide) is the default, and the other options are read from the device itself
 
 ## Known Issues / Notes

@@ -34,7 +34,7 @@ If discovery still fails after all of this, see the [Troubleshooting](/faq/troub
 
 A player that is found, starts playing, and then crackles, skips or stops is a different problem from one that is never found. Discovery is working. Something is interrupting the audio once it is flowing.
 
-**Why it works in the manufacturer's own app but not here.** Apps like Apple Music and Spotify send the speaker a large amount of audio ahead of time, tens of seconds of it, and the speaker plays out of that store. If the network loses some along the way there is plenty of time to send it again and you never hear a thing. Music Assistant sends audio as it is being played, with about two seconds in hand. That is what lets it keep several speakers in step and start a track the moment you press play, but it also means a network fault that was always there, and always hidden, is now something you can hear.
+**Why it works in the manufacturer's own app but not here.** Apps like Apple Music and Spotify send the speaker a large amount of audio ahead of time, tens of seconds of it, and the speaker plays out of that store. If the network loses some along the way there is plenty of time to send it again and you never hear a thing. Music Assistant sends audio as it is being played, with about two seconds in hand. That is what lets it keep several speakers in sync and start a track the moment you press play, but it also means a network fault that was always there, and always hidden, is now something you can hear.
 
 So "it works fine in every other app" does not rule out the network. Nothing about the network changed. What changed is how much slack the sender has to cover it up.
 

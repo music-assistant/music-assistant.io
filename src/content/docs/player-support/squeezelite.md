@@ -34,7 +34,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Squeezelite provider has these settings of its own:
 
 - <b>Presets.</b> Real Squeezebox hardware or jive(lite) based emulators support presets. This section lets you assign a Playlist or Radio Station from your library to each of the ten presets
-- <b>Audio synchronization delay correction.</b> Shifts this player's audio by up to ±500 ms to keep it in step with the others. Refer to the Player Summary Table to identify which types support sync correction
+- <b>Audio synchronization delay correction.</b> Shifts this player's audio by up to ±500 ms to keep it in sync with the others. Refer to the Player Summary Table to identify which types support sync correction
 - <b>Enable display support.</b> Some Squeezelite hardware has a display and this setting enables support for it
 - <b>Visualization type.</b> The visualisation shown on the display during playback. It only becomes available once display support is enabled
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Squeezelite. Turn it off if the player cannot play continuous WAV streams

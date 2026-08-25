@@ -62,7 +62,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>Show notification before closing player.</b> Shows a confirmation dialog on the TV when playback is stopped from Music Assistant. Off by default
 - <b>Enable player grouping (experimental).</b> Allows several MSX TVs to be grouped so they play the same track together. Off by default. Disable it again if you run into problems with multi TV setups
 - <b>Sendspin bridge (experimental).</b> On by default. Registers each TV as a Sendspin client so it can join sample synchronised playback groups with any other Music Assistant player. The TV opens the web kiosk in Sendspin mode when a synchronised stream starts. It needs a TV browser capable of running the Sendspin web client, and falls back to the regular HTTP player if the TV cannot connect
-- <b>Stream Delivery Mode.</b> How the audio reaches the TVs. MA Streamserver (the default) points each TV straight at the Music Assistant stream server, which uses the least CPU and applies the per player codec and audio processing, falling back to Independent if the address cannot be worked out. Independent gives each TV its own separate stream, which uses more CPU and does not keep them in step. Shared Buffer prepares the audio once and feeds it to every group member, which is easier on your server and keeps grouped TVs better in step. Note that MA Streamserver mode has each grouped TV fetch its own stream, so they are not kept in step
+- <b>Stream Delivery Mode.</b> How the audio reaches the TVs. MA Streamserver (the default) points each TV straight at the Music Assistant stream server, which uses the least CPU and applies the per player codec and audio processing, falling back to Independent if the address cannot be worked out. Independent gives each TV its own separate stream, which uses more CPU and does not keep them synchronised. Shared Buffer prepares the audio once and feeds it to every group member, which is easier on your server and keeps grouped TVs better synchronised. Note that MA Streamserver mode has each grouped TV fetch its own stream, so they are not synchronised
 
 MSX players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Two of those are worth knowing about on a TV:
 
@@ -80,7 +80,7 @@ You can check on all of this at `http://<ma-ip>:8099/`.
 ## Known Issues / Notes
 
 - **Audio format**: MP3 works on every TV, which is why it is the default. AAC sounds slightly better for the same file size. FLAC is lossless, but with it Music Assistant cannot tell the TV up front how much audio is coming, and some TVs will not play without that
-- **Player grouping**: This is experimental. `Shared Buffer` keeps the TVs better in step, but every TV in the group has to be set to the same audio format
+- **Player grouping**: This is experimental. `Shared Buffer` keeps the TVs better synchronised, but every TV in the group has to be set to the same audio format
 - **Network**: The TV and Music Assistant have to be on the same network. There is no way to reach a TV from outside your home
 - **Idle timeout**: If a TV is switched off or the MSX app is closed, it disappears from the player list after the idle timeout, 30 minutes by default. It comes back as soon as the TV connects again
 - Crossfade is not supported, because the TV does its own playing and cannot fade one track into the next
