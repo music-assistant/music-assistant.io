@@ -21,13 +21,13 @@ description: Common Problems and Fixes
 
 **Home Assistant URL.** Make sure the HA internal url is set correctly. HA SETTINGS >> SYSTEM >> NETWORK >> Home Assistant URL >> Local network (set to automatic or use your internal HA IP). If it is automatic you can try changing it to http://your.internal.ip:8123/
 
-**WiFi and bandwidth.** MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which by default is usually FLAC) so playing a low quality MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage. Players have an option to use a lossy codec which will lower the bandwidth requirements, this is available in the advanced settings for the player.
+**WiFi and bandwidth.** MA streams at high quality which may max out poor network connections. If possible use wired connections for MA players. Input codec is not always the same as the output codec (which by default is usually FLAC) so playing a low quality MP3 will not change the apparent performance. If you experience stuttering or other interrupted playback issues which are not apparent on wired players or those close to your access points then poor WiFi is likely to blame. You will need to improve your WiFi coverage. Players have an option to use a lossy codec which will lower the bandwidth requirements, in the [protocol settings for the player](/settings/individual-player/#output-protocols).
 
 **Physical devices.** Check the physical device settings. There have been numerous reports where the issue was actually a setting external to MA such as receivers set to repeat tracks or ESP devices with incorrect arguments passed on install.
 
 **File tagging.** Ensure local files are [tagged properly](/music-providers/local-files/#tagging-files).
 
-**Playback.** If it is a playback issue then turn on [QUEUE FLOW MODE](/faq/tech-info/#track-queueing) in the settings for the specific player (where that is available).
+**Playback.** If the player is found and starts, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, see [the player plays, but not properly](#the-player-plays-but-not-properly) below.
 
 **Authentication.** If it is a music source issue and the source requires authentication then clear the authentication and re-login.
 
@@ -35,7 +35,7 @@ description: Common Problems and Fixes
 
 **Isolate the fault.** Narrow the fault down to a single player or music source. Play the same content on a different player, then play something from a different music source on the original player. If you only have one player then [Sendspin](/player-support/sendspin/), the built-in web player, is always available; if you only have one music source then try a radio station. Knowing that a player works with one source but not another, or that one player fails where the others are fine, tells you where the problem is not.
 
-**Provider documentation.** Review the applicable player provider or music source documentation to see if there are known issues or specific troubleshooting steps or fixes. 
+**Provider documentation.** Every [player provider](/player-support/) and [music source](/music-providers/) page has its own Known Issues section, and several add troubleshooting steps for that device or service. Check the page for whichever one you are using before going further. 
 
 **Voice.** For voice problems refer to <a href="https://www.home-assistant.io/voice_control/troubleshooting/" target="_blank" rel="noopener noreferrer">Home Assistant Voice Troubleshooting</a>, and to [Voice Control](/integration/voice/) for how Music Assistant fits in. If you are not using HOME ASSISTANT as your Conversation Agent then you must seek assistance in the HA forums first. If they direct you back to this project then make it clear in your report that you are using a LLM as the Conversation Agent and include the reasons why the HA support network wasn't able to help.
 
@@ -59,6 +59,8 @@ Navigate to MA settings and inspect the provider or source entry. If there is a 
 
 ![image](/assets/screenshots/setup_error.png)
 
+The error often makes more sense alongside the setup notes for that provider, so check its own page under [music sources](/music-providers/) or [player providers](/player-support/) as well. Those pages list known issues, and for anything that needs an account or a key they usually explain what a rejected sign in points to.
+
 ## Why aren't tracks/albums matching between sources
 
 Matching items between streaming sources is challenging as they do not all provide the same or unique metadata to definitively identify a match. If you think there is an obvious match (eg. same artist and track and album) then please submit an issue report. For more information about how MA uses metadata in various ways see [Metadata](/metadata/)
@@ -75,9 +77,27 @@ First check if the player has been discovered but just isn't appearing in the [P
 
 If the player is not shown in the list of players in the MA settings then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
 
-If your device does support one of the supported protocols then review the documentation for that player provider for known issues and troubleshooting tips.
+If your device does support one of the supported protocols then review the [documentation for that player provider](/player-support/) for known issues and troubleshooting tips specific to it.
 
 If your device still doesn't work and you think it should then review the full logs for discovery information and errors. Review the first things to try at the top of this page as usually if you get this far without identifying why the player isn't working it will be a networking or non-standard installation issue which, generally, you will need to resolve yourself. Search the Github <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issues</a>, <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">Discussions</a> and <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord</a> as likely someone has asked your question before.
+
+## The player plays, but not properly
+
+A player that is found and starts playing, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, can usually be fixed with one of the protocol settings. They all live under [Output Protocols](/settings/individual-player/#output-protocols) in that player's settings and are only visible with the `Show advanced settings` toggle on. That page explains what each one does. The symptoms below say which one to reach for.
+
+Change one thing at a time, and give it a track or two before deciding it did not help. Changing any of them reloads the player, so playback stops briefly each time.
+
+**Stuttering or dropouts, mainly on Wi-Fi.** Music Assistant sends lossless audio by default, which is the most demanding thing you can put on a weak wireless link. Set **Output codec** to MP3 or AAC, which need far less bandwidth. If a wired player on the same network is fine, the network is the cause rather than Music Assistant, so work through the [dropout checklist](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while). Strong signal strength is not proof that the network is healthy. Where you have more than one access point, settings such as transmit power, band steering and channel width matter more than the signal bars, and the checklist covers them.
+
+**A gap between tracks, or playback stopping on the track transition.** Turn on **Enable queue flow mode**, which sends the whole queue as one continuous stream instead of one track at a time. The trade-off is that most players then stop showing track information. [Track Queueing](/faq/tech-info/#track-queueing) explains the difference.
+
+**Playback stops part way through a track, will not start at all, or will not let you skip within a track.** Work through the **HTTP Profile** options, starting with Profile 3. This decides whether Music Assistant tells the player how much audio is coming before it starts sending, and a few players will not play properly unless they are told.
+
+**The player shows no track name or artist.** This happens in flow mode, because the player receives one long stream rather than separate tracks. Set **Try to inject metadata into stream (ICY)** to Profile 1, or to Profile 2 if you want album art as well. Some players mishandle Profile 2, so step back down if playback becomes unreliable.
+
+**Silence, or a refusal to play higher quality files.** Remove the higher rates from **Sample rates supported by this player**. The rates selected by default are deliberately safe on most players, and anything above them is there for you to try rather than promised to work.
+
+If none of these help, check the [page for your player provider](/player-support/). Each one has a Known Issues section, and some carry troubleshooting steps for problems particular to that device.
 
 ## All my media is missing 
 

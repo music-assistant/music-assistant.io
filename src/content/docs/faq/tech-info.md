@@ -19,7 +19,7 @@ In general, it is not recommended to turn off the volume normalization because t
 
 If audio is only played from one single source (e.g. Deezer) and that audio source already has normalized its audio files, then its safe to disable normalization in MA. If audio is played from different sources or audio is not normalized at the source, it is highly recommended to leave normalization enabled for the best experience.
 
-NOTE that all audio is analyzed at playback time. If no Integrated loudness measurement is available for an audio source, MA will fallback to a dynamic normalizer which is less accurate but will at least prevent a sudden drop or spike in the volume level. See the settings we provide to finetune the behavior in the settings of the Streamserver, which you can find in the settings menu under the core controller section.
+NOTE that all audio is analyzed at playback time. If no Integrated loudness measurement is available for an audio source, MA will fallback to a dynamic normalizer which is less accurate but will at least prevent a sudden drop or spike in the volume level. The [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback) settings let you choose how this is handled.
 
 **More technical details**
 
@@ -31,7 +31,7 @@ All further processing in MA is done at PCM raw audio level, such as the DSP Set
 
 The final part in the chain is that MA needs to send the audio to the player. By default MA encodes the raw PCM into FLAC because it is lossless while still providing a descent amount of compression. For players that can not handle FLAC very well, or simply to save bandwidth, MA provides an option (per player) to encode to MP3 instead.
 
-The [Streams Queue Playback settings](/settings/core/#queue-playback) contain a number of options which determine how Volume Normalization will perform. Enabling and disabling the feature, and adjusting the target level, is done in the [Player Queues settings](/settings/core/#player-queues), and both can be overridden on an [individual queue basis](/usage/#the-queue).
+The [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback) settings contain a number of options which determine how Volume Normalization will perform. Enabling and disabling the feature, and adjusting the target level, is done under [**Settings → System → Player Queues**](/settings/core/#player-queues), and both can be overridden on an [individual queue basis](/usage/#the-queue).
 
 ## Stream Selection
 

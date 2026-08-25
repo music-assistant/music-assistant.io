@@ -36,7 +36,7 @@ For each analysed album, once enough of its tracks have been identified:
 
 Large libraries may take several nights to work through. A well tagged library will see almost nothing happen, because any track that already carries a MusicBrainz Recording Id or an ISRC is skipped. Tracks from streaming services are picked up gradually as you play them rather than all at once.
 
-The "stale" count shown against this provider is the number of tracks that AcoustID could not find. Those are tried again every 60 days, in case the database has caught up.
+The "stale" count shown on the [Audio analysis page](/settings/core/#audio-analysis) is the number of tracks that AcoustID could not find. Those are tried again every 60 days, in case the database has caught up.
 
 ## Limitations
 
