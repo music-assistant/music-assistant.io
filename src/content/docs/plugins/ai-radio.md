@@ -27,19 +27,11 @@ AI Radio is in alpha. The show and host editors, the bundled hosts and the gener
 - Turn on an AI DJ for any queue straight from the queue menu
 - Duplicate a show to make a variation without starting again
 
-## Requirements
+## Before you start
 
-- The **AI Radio** plugin, added from **Settings → Plugins → Add a plugin**
-- At least one playlist with playable tracks
-- An **AI engine** to write what the host says, and a **text-to-speech engine** to speak it. Both come from other plugins. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines)
-- An enabled and available player to listen on
-
-> [!IMPORTANT]
-> Both engines have to exist **before** you add AI Radio. Setup will not let you continue without them, and will tell you to set up a plugin that provides the missing one first.
-
-:::note
-The host is written fresh every time, so the same show will not say the same thing twice.
-:::
+- An **AI engine** to write what the host says, and a **text-to-speech engine** to speak it. Both come from other plugins, so set these up first. AI Radio will not get past its own first step without them. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines)
+- A player to listen on, enabled and available
+- A playlist with playable tracks, if you want to build a show. The AI DJ works on whatever is already in the queue
 
 ## Setting it up
 
@@ -86,6 +78,8 @@ Music Assistant prepares the first few tracks and host segments, queues them, an
 
 Only one show can be on air at a time. If another is already running, Music Assistant asks whether to stop it and switch.
 
+The host is written fresh every time, so the same show will not say the same thing twice.
+
 > [!NOTE]
 > Starting a show clears the target queue and turns off shuffle on it, so the segments stay with the tracks they were written for. Anything already queued is replaced.
 
@@ -98,6 +92,8 @@ Open the queue menu and choose **Enable AI Radio DJ**, then pick a host. Choose 
 The choice sticks to that queue and survives a Music Assistant restart, so the DJ carries on until you turn it off. Switching to a different host removes anything the previous host had lined up.
 
 A queue has one host at a time. If you start a show on the queue, the show takes it over and the menu shows **On air** with that show's host instead.
+
+The difference from a show is that a show has a beginning and an end, while a queue just keeps going. The DJ only ever fills the gaps between songs, so a host's **Once at start** and **Once at end** segments never play. If you want the opening greeting and the sign-off, run it as a show.
 
 ## Customizing a show
 
@@ -130,7 +126,7 @@ Select **Edit** on a host card, or **Add host** to build one from scratch. You c
 |---|---|
 | **Host name** | The name shown wherever you pick a host |
 | **Voice** | The text-to-speech voice this host speaks with. **Default** uses the engine chosen during setup |
-| **Language** | The language the host speaks. **Follow server language** uses your Music Assistant language |
+| **Language** | The language the host speaks. **Follow server language** uses the **Preferred language** from [**Settings → System → Metadata**](/settings/core/#metadata) |
 | **Host and Program Instructions** | The personality and writing style. This goes to the AI with every segment |
 
 ### Segments
