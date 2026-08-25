@@ -37,7 +37,7 @@ Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control 
 
 - <b>Preferred Output Protocol.</b> Choose from the list of available protocols
 
-Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device.
+Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. The [Audio Pipeline](/audiopipeline/) view shows which protocol a player is actually using and what the audio quality is at each stage.
 
 ### Settings shared by most protocols
 
@@ -162,7 +162,7 @@ Universal Groups default to `Profile 1 - chunked` for the HTTP Profile, rather t
 
 ## Announcements Configuration
 
-There are a number of configurable options for controlling the volume of announcements sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
+There are a number of configurable options for controlling the volume of [announcements](/integration/announcements/) sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
 
 ![image](/assets/screenshots/announcements-settings.png)
 

@@ -31,12 +31,12 @@ The core server settings are set with typical defaults that should work for most
 
 ## Music
 
-- <b>Advanced - Reset Library Database.</b> Selecting this button will erase the MA database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music sources will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
+- <b>Advanced - Reset Library Database.</b> Selecting this button will erase the [MA library](/usage/#the-library) database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music sources will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
 
 ## Players
 
 - <b>Volume step size.</b> Defaults to zero which enables an adapative mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
-- <b>Announcement text to speech engine.</b> Which engine is used to generate announcements sent from within Music Assistant
+- <b>Announcement text to speech engine.</b> Which engine is used to generate [announcements](/integration/announcements/) sent from within Music Assistant. The engines on offer come from your plugins, such as the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines)
 
 ## Player Queues
 
@@ -118,7 +118,7 @@ This opens a view where the 150 line tail of the Music Assistant log can be seen
 
 ## Background Tasks
 
-This opens a view where the completed and upcoming background tasks can be seen. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task. There is a ⋮ menu on the right which allows for:
+This opens a view where the completed and upcoming background tasks can be seen. This is where the sync interval for the [automatically generated playlists](/usage/#playlists) is set. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task. There is a ⋮ menu on the right which allows for:
 - Viewing the task details
 - Editing the task schedule. Frequency can be Hourly, Daily or Weekly. A precise time can be specified for the task for Daily and Weekly frequencies
 - Running of the task now
@@ -130,7 +130,7 @@ Administrators can see all tasks on the server whereas Users can only see tasks 
 
 ## Genre Management
 
-Administrators can access the **Genre Management** page from the settings menu. This page provides tools for maintaining the genre database.
+Administrators can access the **Genre Management** page from the settings menu. This page provides tools for maintaining the genre database. The [Genres](/genres/#managing-genres) page describes these tools and the rest of the genre system in full.
 
 ![image](/assets/screenshots/genres/genre-management-overview.png)
 
@@ -151,7 +151,7 @@ A destructive operation that completely rebuilds the genre database from default
 
 ## Audio Analysis
 
-Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers. The stale number is the number of tracks that need to be re-analysed due to a version change. There is also a section which shows failures and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned.
+Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers, namely [Loudness Analysis](/audio-analysis/loudness-analysis/), [Smart Fades](/audio-analysis/smart-fades/), [Sonic Analysis](/audio-analysis/sonic-analysis/) and [AcoustID Lookup](/audio-analysis/acoustid/). The stale number is the number of tracks that need to be re-analysed due to a version change. There is also a section which shows failures and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned.
 
 ![image](/assets/screenshots/audio-analysis-view.png)
 
