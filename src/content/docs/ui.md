@@ -178,6 +178,21 @@ The ID shown against the streaming provider may be used in automations and scrip
 > [!NOTE]
 > The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
 
+## View - Audiobooks
+The audiobooks view shows available audiobooks in your library.
+[![image](/assets/screenshots/audiobooks/audiobooks_view_annotated.png)](/assets/screenshots/audiobooks/audiobooks_view_annotated.png)
+
+1. Tabs for audiobooks, authors and narrators. These tabs are only shown if at least one of your configured music sources supports syncing of authors and/ or narrators to the Music Assistant library. Otherwise there is only the plain audiobooks view without tabs.
+2. Collapse collections: If the music source supports syncing collections (e.g. audiobook series) to Music Assistant, using "Collapse collections" minimizes these collections to single items.
+[![image](/assets/screenshots/audiobooks/audiobook_view_collections_collapsed.png)](/assets/screenshots/audiobooks/audiobook_view_collections_collapsed.png)
+
+## View - Audiobooks Collection & Author/ Narrator details
+The collection subview shows audiobooks in a collection. The items are sorted in the order given by the music source. When you play a collection, it will always enqueue the first not fully played item.
+[![image](/assets/screenshots/audiobooks/collection_view.png)](/assets/screenshots/audiobooks/collection_view.png)
+
+The author & narrator subview shows audiobooks belonging to the given artist. For library items it is possible to collapse collections.
+[![image](/assets/screenshots/audiobooks/author_details_collapse_collections.png)](/assets/screenshots/audiobooks/author_details_collapse_collections.png)
+
 ## View - Radio
 
 The Radio view shows streaming radio stations that are available in the MA library. Stations can be added to the library in the following ways:
