@@ -65,5 +65,5 @@ Which URL is right depends on where Music Assistant runs relative to the App:
 - As with all radio in Music Assistant, tracks cannot be skipped or seeked
 - Metadata refreshes about every 12 seconds, so the now-playing card can trail the audio slightly
 - Only one instance of this source can be configured
-- Music sources, hosts, language mix, and home-context permissions are all configured in the App, not here; see the <a href="https://github.com/florianhorner/mammamiradio" target="_blank" rel="noopener noreferrer">addon documentation</a>
+- Music sources, hosts, language mix, and home-context permissions are all configured in the App, not here; see the <a href="https://github.com/florianhorner/mammamiradio" target="_blank" rel="noopener noreferrer">App documentation</a>
 - Mamma Mi Radio itself has no account or subscription. Fully generative hosts require an API key from an AI provider you choose, billed by that provider
