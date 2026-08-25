@@ -120,10 +120,9 @@ export const CAPABILITY_NOTES: string[] = [
 // slug here only while its capabilities are genuinely unknown, and take it out
 // again once they are.
 export const KNOWN_UNCHARTED: string[] = [
-  // Alexa controls the device rather than streaming to it, and Local Audio Out
-  // is new; neither has published capability data.
+  // Alexa controls the device rather than streaming to it, so it has no
+  // published capability data.
   "player-support/alexa",
-  "player-support/local-audio",
 ];
 
 export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [

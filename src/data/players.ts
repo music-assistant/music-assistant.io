@@ -174,12 +174,6 @@ export const PLAYERS: TileItem[] = [
     categories: ["voice"],
   },
   {
-    name: "Local Audio Out",
-    slug: "player-support/local-audio",
-    icon: "/assets/icons/loudness-analysis-icon.svg",
-    categories: ["software"],
-  },
-  {
     name: "Marantz",
     nameHidden: true,
     via: { label: "HEOS", icon: "/assets/icons/heos-icon.svg" },
@@ -322,7 +316,6 @@ export const PLAYER_PROVIDERS: PlayerProvider[] = [
   { name: "Google Cast", slug: "player-support/google-cast", icon: "/assets/icons/google-cast-logo.svg" },
   { name: "HEOS", slug: "player-support/heos", icon: "/assets/icons/heos-icon.svg" },
   { name: "Home Assistant", slug: "player-support/home-assistant", icon: "/assets/icons/ha-logo.png" },
-  { name: "Local Audio Out", slug: "player-support/local-audio", icon: "/assets/icons/loudness-analysis-icon.svg" },
   { name: "MSX Bridge", slug: "player-support/msx-bridge", icon: "/assets/icons/msx-bridge-icon.svg" },
   { name: "Music Player Daemon (MPD)", slug: "player-support/music-player-daemon", icon: "/assets/icons/mpd-icon.svg" },
   { name: "MusicCast", slug: "player-support/musiccast", icon: "/assets/icons/musiccast-icon.svg" },
@@ -350,6 +343,9 @@ export const PLAYERS_PAGE = {
   // Pages under player-support/ that intentionally have no tile.
   knownUnlisted: [
     "player-support", // the overview page
+    // Retired provider. The page stays because the server still points at it,
+    // but there is nothing left to stream to.
+    "player-support/local-audio",
   ],
   groups: PLAYER_GROUPS,
   items: PLAYERS,
