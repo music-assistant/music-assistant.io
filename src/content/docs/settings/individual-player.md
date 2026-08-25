@@ -114,9 +114,11 @@ Change it if the player cannot play FLAC, or to cut down network traffic on a we
 
 #### Sample rates supported by this player
 
-The sample rates and bit depths Music Assistant will send to this player as they are. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are ticked by default.
+The sample rates and bit depths this player can be sent without resampling. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are selected by default.
 
-Rates are offered up to 384 kHz / 24 bit, though most providers narrow that list to what the device plausibly handles. On most players the ticked boxes are a safe starting point rather than something detected from the device, and the higher ones are offered for you to try. If your player genuinely supports them, tick them and you will get better quality; if playback breaks or the player falls silent, untick them again. Manufacturers vary, so test rather than assume. Some providers do detect the device's capabilities and set this for you, and those pages say so.
+You choose the rates from a drop down list of checkboxes, and the ones you pick are then shown as chips in the field, so you can see the whole selection at a glance.
+
+Rates go up to 384 kHz / 24 bit, though most providers narrow that list to what the device plausibly handles. On most players the selection is a safe starting point rather than something detected from the device, and the higher rates are there for you to try. If your player genuinely supports them, add them and you will get better quality. If playback breaks or the player falls silent, remove them again. Manufacturers vary, so test rather than assume. Some providers do detect the device's capabilities and set this for you, and those pages say so.
 
 #### Output Channel Mode
 
@@ -151,9 +153,9 @@ Change it only to fix a problem. If the player behaves in any of those ways, wor
 
 ## Group Player Settings
 
-For group players the following settings will be seen:
+For group players the following settings will be seen. **Group members** and **Allowed members** are both chosen from a drop down list of checkboxes, with the players you pick then shown as chips in the field.
 
-- <b>Group members.</b> For Group player types the members of the group are configured in this field
+- <b>Group members.</b> The players that belong to this group
 - <b>Enable dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
 - <b>Allowed members</b>. Limit which players can join this group. Leave empty to allow any sync-compatible player. This can be used to reduce the list of players that show up for joining in case you have a lot of players. Only shown when the advanced toggle is on
 - <b>Allow crossfades between tracks of different sample rates</b>. Enable this option to allow crossfades between tracks that have different sample rates (e.g. 44.1kHz to 48kHz). Disable this option if you experience audio glitches during transitions between tracks. Only shown when the advanced toggle is on
