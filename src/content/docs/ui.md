@@ -42,7 +42,7 @@ The overflow menu holds a number of useful options. Of note, for podcasts and au
 ## Now Playing View
 [![image](/assets/screenshots/now-playing-view.png)](/assets/screenshots/now-playing-view.png)
 
-This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right.
+This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right. This view can be cast to compatible devices using the cast icon in the top right.
 
 The [Audio Pipeline](/audiopipeline/) selectable label is described above in the [Player Bar](#player-bar) section.
 
