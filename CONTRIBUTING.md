@@ -324,6 +324,9 @@ have is white, put it on a dark rounded plate, as several existing icons do.
 Keep PNGs small. They are served as they are, with no resizing, and they are displayed at about
 48 pixels on the tile pages.
 
+Screenshots and any other pictures go in `public/assets/screenshots/` and are referenced as
+`/assets/screenshots/<name>`, not in `src/assets`.
+
 ## Editing an `.mdx` page
 
 Most pages are `.md`. A few are `.mdx` because they use components. MDX is stricter than
