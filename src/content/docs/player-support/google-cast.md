@@ -44,7 +44,8 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - TV/Video devices (not the AV dongles) are disabled by default
 - Cast Groups containing only a stereo pair will not work
 - Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length`, Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
-- MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work.
+- MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work
+- Google has removed functionality that enables Sendspin to work with some devices. If a message is heard that Sendspin does not work with the device then navigate to the player settings, OutPut Protocols section and disable Sendspin
 
 ## Troubleshooting playback problems
 
