@@ -52,8 +52,8 @@ Set up the [Yandex Music](/music-providers/yandex-music/) source first. This plu
 2. For **Yandex Music source**, either:
    - pick your existing **Yandex Music** source, so the plugin can use the sign-in you already have (recommended, and it stays signed in on its own), or
    - pick **Use own token (manual entry)** and paste a token from [Yandex](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d).
-3. Choose the **Connected Music Assistant Player** that should play the music when this device is picked in the Yandex Music app. `Auto` will use whichever player is already playing.
-4. Save. The name you gave under **Device name in Yandex Music** now appears in the Yandex Music app when you go to choose a speaker.
+3. Choose the **Connected Music Assistant Player** that should play the music when this device is picked in the Yandex Music app.
+4. Save. The player now shows up in the Yandex Music app, under its own name, when you go to choose a speaker.
 
 You can add the plugin more than once, one for each player you want to appear in the app.
 
@@ -61,11 +61,10 @@ You can add the plugin more than once, one for each player you want to appear in
 
 - **Yandex Music source** — use the sign-in from an existing Yandex Music source, or paste your own token instead.
 - **Yandex Music Token** — only appears if you chose to paste your own. A token entered here will expire and have to be replaced by hand.
-- **Connected Music Assistant Player** — the player that music will come out of. `Auto` picks whichever player is already playing, or the first available one if none is.
+- **Connected Music Assistant Player** — the player that music will come out of. Its name is also what the device is called in the Yandex Music app; renaming the player renames the device.
 - **Allow manual player switching** — with this on, picking this plugin as the source on any Music Assistant player moves playback to that player. With it off, playback stays on the player set above.
 - **Output sample rate** (advanced) — `Auto` uses 44.1 kHz for compressed music and 48 kHz for lossless, which suits almost everyone. Options: `Auto`, `44100`, `48000`, `96000`.
 - **Output bit depth** (advanced) — `Auto` uses 16 bit for compressed music and 24 bit for lossless. Options: `Auto`, `16`, `24`.
-- **Device name in Yandex Music** (advanced) — the name this device is given in the Yandex Music app.
 
 ## Known Issues / Notes
 
@@ -76,3 +75,4 @@ You can add the plugin more than once, one for each player you want to appear in
 - The connection to Yandex is a long-lived one and will drop and re-establish itself from time to time. This is normal and handled for you.
 - Announcements interrupt playback. It picks up again afterwards on players that support it.
 - Each copy of the plugin uses one Yandex account. Add more copies for more players, but they each still use a single account.
+- After upgrading from a version that offered `Auto` for the connected player, the plugin asks you to pick a player once — hit **Reconfigure** and select one.

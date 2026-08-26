@@ -21,32 +21,35 @@ The plugin can run on two different playback engines. You choose one while addin
 ## Features
 
 - Any MA player can be exposed as a Spotify Connect device, including groups
-- The name shown in the Spotify app is configurable per player
-- Playback can also be started from Music Assistant itself (browse to `Live Inputs`), which resumes your last Spotify session on the device
+- Every connected player appears as its own device in the Spotify app, named after the player
+- Playback can also be started from Music Assistant itself (from the player's source menu, or browse to `Live Inputs`), which resumes your last Spotify session on the device
 - Stopping playback in Music Assistant releases the device in the Spotify app; moving playback to another device in the Spotify app stops the MA player
 - Crossfade and loudness normalization are configurable in the plugin settings
 - With the Soloist engine you can choose how volume behaves: `Player volume only` (default, the audio always arrives untouched) or syncing the Spotify app's volume slider with the player volume
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Plugins**, click **Add a plugin** and select `Spotify Connect`.
+1. In Music Assistant, go to **Settings → Plugins**, click **Add a plugin** and select `Spotify Connect`. The plugin is added once and serves all your players.
 2. Choose the playback engine. For Soloist, the setup walks you through Spotify's terms and creating the API key.
-3. Choose the Music Assistant player that should receive the Spotify audio, and the name to display in the Spotify app. Alternatively, set the player to `Auto` to send audio to whichever player is currently playing, or the first available player if none is playing.
-4. Repeat for each player you want to appear in the Spotify app; a separate instance of the plugin is added per player.
+3. Under **Connected players**, select every player that should appear in the Spotify app. Each selected player is advertised as its own Spotify Connect device, and the audio always plays on the player whose device you picked in the app. The selection can be changed later in the plugin settings.
+4. Optionally change **Advertised device name**, which controls how the devices are named after their player: `Player name | Music Assistant` (the default), `Player name only`, or `Music Assistant | Player name`. Renaming a player renames its device.
 
 > [!NOTE]
 > It is inadvisable to try and configure a Home Assistant player. Use only native Music Assistant players
+
+> [!NOTE]
+> Upgrading from an earlier version? The plugin used to be added once per player; those copies are merged into a single configuration automatically, with your players preselected under **Connected players**. Every device gets a fresh identity in the Spotify app, so you may need to pick your player in the app's device list once again (an existing Soloist setup is carried over where possible). Home Assistant automations that referenced a per-player instance id such as `spotify_connect--xxxx` should now use plain `spotify_connect`.
 
 ## Usage
 
 1. Open the Spotify app on your phone, tablet or computer. The device must be on the same network as the Music Assistant server.
 2. Start playing something, then open Spotify's device picker (the speaker icon).
-3. Select the Music Assistant player by the name you configured. The audio will now play through that player.
+3. Select the Music Assistant player by its name. The audio will now play through that player.
 
 ## Known Issues / Notes
 
 - To use Spotify Connect, all devices must be connected to the same network. Refer to the <a href="https://support.spotify.com/us/article/spotify-connect/" target="_blank" rel="noopener noreferrer">Spotify Connect Support Article</a> for more information (Note that any reference in that article to accessing devices from different WiFi networks isn't supported)
 - Depending on the player's own buffering there can be a short delay between an action in the Spotify app and hearing the result, and the Spotify app's progress can run slightly ahead of the audio
 - Spotify's delivered encoding and quality are not visible to Music Assistant. The signal path therefore shows the decoded PCM audio as it arrives from the playback engine (44.1 kHz/32-bit with Soloist) — not the quality of Spotify's source
-- Using a HA Media Player as the `Connected Music Assistant Player` is not supported
+- Using a HA Media Player as a connected player is not supported
 - In complex network setups, if playback problems are experienced, the BIND TO option in the [Streams Settings](/settings/core/#generic) may need to be set
