@@ -137,16 +137,16 @@ Here’s a rundown of everything else in 2.10:
 
 **New player support**
 
-* **Bose SoundTouch:** Control your SoundTouch speakers (by <a href="https://github.com/Odn0" target="_blank" rel="noopener">@Odn0</a>)
-* **Yandex Station:** Local control of Yandex speakers (by <a href="https://github.com/trudenboy" target="_blank" rel="noopener">@trudenboy</a>)
-* **AmpliPi:** Multi-zone whole-house audio support (by <a href="https://github.com/mcaulifn" target="_blank" rel="noopener">@mcaulifn</a>)
+* **Bose SoundTouch:** control your SoundTouch speakers (by <a href="https://github.com/Odn0" target="_blank" rel="noopener">@Odn0</a>)
+* **Yandex Station:** local control of Yandex speakers (by <a href="https://github.com/trudenboy" target="_blank" rel="noopener">@trudenboy</a>)
+* **AmpliPi:** multi-zone whole-house audio support (by <a href="https://github.com/mcaulifn" target="_blank" rel="noopener">@mcaulifn</a>)
 
 **Other new features**
 
 * **Cast dashboards:** some pages, such as the now playing screen and the party dashboard can be cast as dashboards (by <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener">@MarvinSchenkel</a>)
 * **Guided setup flows:** step-by-step provider and player setup (by <a href="https://github.com/marcelveldt" target="_blank" rel="noopener">@marcelveldt</a>)
 * **Smarter Smart Fades:** vocal and energy aware transitions (by <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener">@MarvinSchenkel</a>)
-* **Milkdrop visualizer:** Great visuals for your music (by <a href="https://github.com/jozefKruszynski" target="_blank" rel="noopener">@jozefKruszynski</a>)
+* **Milkdrop visualizer:** great visuals for your music (by <a href="https://github.com/jozefKruszynski" target="_blank" rel="noopener">@jozefKruszynski</a>)
 * **Sleep timers:** doze off, playback stops automatically (by <a href="https://github.com/teancom" target="_blank" rel="noopener">@teancom</a>)
 * **Audiobook collections:** organize series into tidy collections (by <a href="https://github.com/fmunkes" target="_blank" rel="noopener">@fmunkes</a>)
 * **Audible Whispersync:** resume audiobooks across your devices (by <a href="https://github.com/scootaash" target="_blank" rel="noopener">@scootaash</a>)
