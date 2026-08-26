@@ -19,28 +19,26 @@ Connecting your account puts what you have liked and followed on SoundCloud into
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossy AAC (256kbps) |
+| Maximum Stream Quality | AAC 256kbps |
 | Login Method | Cookie |
 
 ## Configuration
 
-Two fields need to be completed to use this source, Client id and Authorization. To obtain these proceed as follows:
+SoundCloud has no sign-in for outside apps, so two values have to be copied out of your browser while you log in. You need a **Client id** and an **Authorization**.
 
-1. Delete your cookies for Soundcloud.
-2. Go to <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">Soundcloud</a>.
-3. Open the `Inspect` tool (F12 on most browsers).
-4. Go to the page `Network` on the inspect terminal.
-5. Login.
-6. Search for `auth`.
-7. In one of the requests you will find the `client_id`
-8. And for the OAuth token we need the `oauth_token` cookie on the soundcloud.com domain prepended with "OAuth "
+1. Clear your SoundCloud cookies, so that logging in again produces the requests you need to see
+2. Go to <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">SoundCloud</a> but do not log in yet
+3. Press F12 to open your browser's developer tools, and go to the **Network** tab
+4. Now log in. A long list of entries will appear
+5. Type `auth` in the filter box to narrow the list down
+6. Look through those entries for `client_id`. It is a run of 32 letters and numbers. Copy it
+7. Now find the `oauth_token` cookie for soundcloud.com and copy its value. In Music Assistant this goes in the **Authorization** field with `OAuth ` typed in front of it, including the space
 
-`client_id`: string of 32 bytes alphanumeric
-`oauth_token`: string inside the cookie value
+The screenshots below show where each of these appears.
 
 ### Client id
 <img src="/assets/screenshots/soundcloud-clientid.jpg" alt="screenshot" style="width: 1005px; float: center;"  loading="lazy" />
@@ -48,7 +46,7 @@ Two fields need to be completed to use this source, Client id and Authorization.
 ### OAuth token
 <img src="/assets/screenshots/soundcloud-token.jpg" alt="screenshot" style="width: 1005px; float: center;"  loading="lazy" />
 
-Example snippet for the Music Source configuration step (OAuth and client_id are NOT real, use yours):
+Filled in, the two fields should look like this. These values are made up — use your own:
 
 ```
 client_id = 5Hvc9wa0Ejf092wj3f3920w3F920asuL
@@ -56,5 +54,4 @@ Authorization = OAuth 2-26432-21446-asdif2309fQ
 ```
 ## Known Issues / Notes
 
-- Artists synced from Soundcloud are actually Soundcloud users.
-- If a song by artist X is uploaded by user Y, this song belongs to the artist Y in Music Assistant
+- What SoundCloud calls an artist is really whoever holds the account, so that is what appears as the artist in Music Assistant. If someone else uploads a track by an artist, it will be filed under the uploader rather than under the artist

@@ -8,6 +8,10 @@ title: "Alexa"
 
 Music Assistant has support for Alexa devices. This component is contributed and maintained by <a href="https://github.com/alams154" target="_blank" rel="noopener noreferrer">Sameer Alam</a>.
 
+Amazon does not let anything play to an Echo the way it lets you play to a Chromecast or a Sonos. The only way in is to build your own Alexa skill, so that is what this does — your Echo devices turn up in Music Assistant as players and you can send music to them like any other speaker.
+
+Getting there is a long way from adding a provider and clicking save. You need somewhere to run a second piece of software, a web address of your own with a valid certificate on it, and an Amazon developer account to create the skill in. Set aside an evening, and read the whole of this page before you start.
+
 ## Features
 
 - Detects all Alexa devices linked to your Amazon account and registers them as players
@@ -22,10 +26,10 @@ Run with Docker Compose (recommended):
 - Copy the `docker-compose.yml` from the prototype repository (`https://github.com/alams154/music-assistant-alexa-skill-prototype`) and ensure Docker and Docker Compose are installed.
 - Create a `secrets/` directory next to your `docker-compose.yml` and add the following files (relative to the compose file):
 
-  - `./secrets/api_username.txt` — contains your API username
-  - `./secrets/api_password.txt` — contains your API password
+  - `./secrets/app_username.txt` — a username of your choosing, used to protect the setup pages
+  - `./secrets/app_password.txt` — the matching password
 
-- Edit environment variables in `docker-compose.yml` as needed (for example: `MA_HOSTNAME`, `PORT`).
+- Set the environment variables in `docker-compose.yml`. The two that matter are `SKILL_HOSTNAME`, the public address Amazon will reach this service on, and `MA_HOSTNAME`, your Music Assistant server. `MA_HOSTNAME` is required for any Echo without a screen.
 - Start the service:
 
   ```sh
@@ -33,11 +37,8 @@ Run with Docker Compose (recommended):
   ```
 
 - By default the service will be available at `http://localhost:5000` (or the IP/port you configured).
-- In your browser, open the setup UI at `http://localhost:5000/setup`. The setup page will:
-   - detect existing persistent ASK credentials (if present) and skip the browser-based auth flow
-   - guide you through the ASK CLI authorization flow if credentials are not present
-   - run the automated skill creation/update, interaction model upload, model build polling, and testing enablement.
-- In your browser, open the status UI at `http://localhost:5000/status` to check the status of the skill
+- In your browser, open the setup page at `http://localhost:5000/setup`. It will sign you in to your Amazon developer account if you are not already, then create the skill and get it ready for testing. This takes a few minutes and the page will wait for Amazon while it works.
+- Open `http://localhost:5000/status` at any point to see how the skill is getting on
 
 ### 2. Set Up a Proxy with SSL Certificates
 - Configure a reverse proxy (such as Nginx or Caddy) in front of both the skill prototype service (default port: 5000) and your Music Assistant streaming port (default port: 8097) [optional if using only APL devices]
@@ -58,8 +59,7 @@ Run with Docker Compose (recommended):
 8. Under **Interfaces**, enable the **Audio Player** and **Alexa Presentation Language** interfaces and save the changes.
 9. Go to the **Test** tab and enable testing by switching to **Development**.
 
-**Summary:**  
-The skill prototype is run as a separate server, a proxy with SSL certificates must be set up, the Alexa skill is created and configured, and then Music Assistant playback should now be enabled on your Alexa devices.
+**In short:** you run the skill service yourself, put it behind a web address with a valid certificate, create the Alexa skill and point it at that address. Your Echo devices then appear in Music Assistant as players.
 
 ### Login Process
 
@@ -79,18 +79,12 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>E-mail.</b> Amazon account linked to Echo devices
 - <b>Password.</b> Password for the Amazon account
 - <b>OTP Secret.</b> OTP secret for the Amazon account
-- <b>API URL.</b> URL of the local API used to communicate with Alexa (e.g. http://localhost:3000)
-- <b>API Basic Auth Username.</b> Username for basic auth if the API is protected
-- <b>API Basic Auth Password.</b> Password for API basic auth
+- <b>API URL.</b> Address of the skill service you set up above (e.g. http://localhost:5000)
+- <b>API Basic Auth Username.</b> The username you put in `app_username.txt`
+- <b>API Basic Auth Password.</b> The password you put in `app_password.txt`
 - <b>Alexa Language.</b> Locale used for Alexa (e.g. en-US)
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Alexa players have the following settings:
-
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting
+Alexa players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
 
 ## Known Issues / Notes
 

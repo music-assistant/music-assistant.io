@@ -4,26 +4,26 @@ title: Hue Lights Sync Plugin
 
 # Hue Lights Sync <img src="/assets/icons/hue-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant can sync <a href="https://www.philips-hue.com/" target="_blank" rel="noopener noreferrer">Philips Hue</a> lights to music in real time using the <a href="https://developers.meethue.com/develop/hue-entertainment/" target="_blank" rel="noopener noreferrer">Hue Entertainment API</a>. Each entertainment area on a paired Hue bridge appears as a Music Assistant light player and reacts to whatever is playing when joined to a [Sendspin](/player-support/sendspin/) player or group.
+This plugin makes your <a href="https://www.philips-hue.com/" target="_blank" rel="noopener noreferrer">Philips Hue</a> lights react to whatever is playing, changing colour in time with the music. Each entertainment area you have set up on your Hue bridge turns up in Music Assistant as if it were a speaker, and you group it with the player the music is coming from.
 
 > [!CAUTION]
 > This plugin is marked experimental. It has been tested on Hue Bridge V2 and Hue Bridge Pro, but functionality may change and bugs may occur.
 
 ## Features
 
-- Sync Philips Hue lights to playing music with low latency using the Hue Entertainment API
-- Four selectable visualization modes: Smooth, Ambient, Flashing and Energetic
-- Beat-synced colour cycling driven by the Sendspin visualizer role, falling back to peak and onset detection when beat data isn't available
-- Auto-discovery of Hue bridges on the local network via mDNS
-- Multiple bridges supported; add the plugin once per bridge
-- Each entertainment area on a bridge is exposed as its own MA light player
+- Lights change with the music, quickly enough to keep up with it
+- Four styles to choose from: Smooth, Ambient, Flashing and Energetic
+- Colours change on the beat where Music Assistant can work out where the beat is, and follow the loud moments in the music where it cannot
+- Hue bridges on your network are found on their own
+- More than one bridge is supported. Add the plugin again for each
+- Every entertainment area on a bridge becomes its own light player in Music Assistant
 
 ## Configuration
 
-- The [Sendspin](/player-support/sendspin/) provider (MA's built-in player technology) must be installed and at least one Sendspin player or group available; Hue light players can only be joined to Sendspin players
-- Create an Entertainment Area in the Philips Hue app (SETTINGS >> ENTERTAINMENT AREAS) before adding the plugin
-- In Music Assistant, go to `SETTINGS >> PLUGINS >> ADD A PLUGIN` and select `HUE LIGHTS SYNC`
-- Enter the IP address of the Hue bridge, or let mDNS auto-discover it
+- The lights can only follow a [Sendspin](/player-support/sendspin/) player, so you need at least one of those. Sendspin is built into Music Assistant, and the web player in your browser is one
+- Create an Entertainment Area in the Philips Hue app (`SETTINGS >> ENTERTAINMENT AREAS`) before adding the plugin
+- In Music Assistant, go to **Settings → Plugins → Add a plugin** and select **Hue Lights Sync**
+- Enter the IP address of the Hue bridge, or leave it for Music Assistant to find
 - Press the physical link button on the Hue bridge, then click `Pair` in the MA UI
 - Click SAVE to complete configuration. Each entertainment area on the bridge will appear as a Light player
 - Join a Hue light player to any active Sendspin player or group and the lights will start reacting to the music

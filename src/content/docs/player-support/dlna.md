@@ -1,5 +1,5 @@
 ---
-title: DLNA/UPnP Provider
+title: "DLNA"
 description: A description of the DLNA/UPnP Player Provider
 ---
 
@@ -16,23 +16,19 @@ Music Assistant has support for uPnP/DLNA based devices. This is a (somewhat) un
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS` and check whether `DLNA` is already listed; it is added automatically on new installs. If it is missing, click `ADD A NEW PROVIDER` and select `DLNA`.
+1. In Music Assistant, go to **Settings → Player Providers** and check whether `DLNA` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `DLNA`.
 2. Your DLNA devices will be discovered automatically and will appear in the player list. Note it can take up to 5 minutes for some devices to be discovered.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
-For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages. Specific settings available for this player in the Output Protocol(s) section are:
+For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages, including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Settings that differ or are specific to DLNA are:
 
-- <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a contnuous audio stream. Use for players that dont natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> On by default for DLNA, because most DLNA players cannot queue up the next track themselves
 - <b>Replace Pause with Stop.</b> Some older uPnP players are unable to pause streamed music and ignore the command. Enable this if that occurs and a stop command will be issued for both pause and stop
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting
-- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audo glitches occur during track transition
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit
+- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. Only shown for players that support gapless playback, and only while flow mode is switched off
 
 ## Known Issues / Notes
 

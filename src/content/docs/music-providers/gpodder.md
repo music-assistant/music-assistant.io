@@ -9,7 +9,7 @@ Music Assistant has support for <a href="https://gpodder.github.io" target="_bla
 
 gPodder is a synchronisation service for podcast apps rather than a place to discover podcasts. It keeps a
 shared record of the podcasts you subscribe to and how far through each episode you are, so that several apps
-can stay in step with one another.
+can stay in sync with one another.
 
 This provider connects Music Assistant to that shared record. Your existing subscriptions turn up as podcasts
 you can play, and your listening progress is written back as you go, so an episode started elsewhere can be
@@ -27,11 +27,11 @@ provider at it, as described under [Configuration](#configuration).
 | Media Types Supported | Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, Variable Quality |
+| Maximum Stream Quality | Lossy variable bitrate |
 | Login Method | Password or Nextcloud Login |
 
 ### Other
@@ -51,10 +51,10 @@ To setup this functionality you need:
 - <b>Device ID.</b>
 
 > [!NOTE]
-> The Device ID can be any ASCII string, but keep in mind, that this is used for syncing. Other clients must use the same Device ID
+> The Device ID can be anything you like, as long as it is plain letters and numbers. What matters is that every app you want kept in sync uses exactly the same one.
 
 > [!NOTE]
-> `gpodder.net` is deliberately _not_ supported. The provider relies on frequent API calls, and the service hosted there is known to be either slow or fully unresponsive, which will slow down MA. Consider using a locally hosted alternative.
+> `gpodder.net` is deliberately _not_ supported. This source checks in with the server often, and the service hosted there is known to be either slow or completely unresponsive, which would hold Music Assistant up. Run one of the alternatives yourself instead.
 
 ### nextcloud-gpodder
 The provider supports <a href="https://apps.nextcloud.com/apps/gpoddersync" target="_blank" rel="noopener noreferrer">nextcloud-gpodder/gpoddersync</a>.

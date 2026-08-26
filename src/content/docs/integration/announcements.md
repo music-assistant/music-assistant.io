@@ -7,6 +7,11 @@ description: Details of the announcements functionality
 
 Announcements are either Text-to-Speech or audio files that are sent (from Home Assistant) to the MA players via the <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">`tts.xxxxxx`</a> or [`music_assistant.play_announcement`](/faq/massannounce/) HA actions.
 
+Only the [Home Assistant integration](/integration/installation/) is needed for this. The Home Assistant plugin and Home Assistant Media Players play no part in announcements.
+
+> [!NOTE]
+> The integration is not strictly required to send announcements as this can be done [via the UI](/usage/#the-queue)
+
 ## Overview
 
 If music is being played by MA then this will be temporarily paused and restored after the announcement.
@@ -20,6 +25,8 @@ If a player type has native support for announcements (i.e. Sonos, Snapcast, Sen
 The functionality works with all players that are supported by Music Assistant.
 
 Each player has settings which allow for adjustment of certain aspects of the announcement playback. Groups only have a setting for the pre-announcement sound. See also [Announcements Configuration](/settings/individual-player/#announcements-configuration)
+
+Which engine turns the text into speech is chosen once for the whole server, with the **Announcement text to speech engine** setting under [**Settings → System → Players**](/settings/core/#players). The engines on offer there come from your plugins, and the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines) makes every Home Assistant text-to-speech entity available.
 
 ![image](/assets/screenshots/announcement-settings.png)
 

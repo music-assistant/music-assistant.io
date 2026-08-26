@@ -1,5 +1,5 @@
 ---
-title: MPD Player Provider
+title: "Music Player Daemon (MPD)"
 description: A Description of the MPD Player Provider
 ---
 # MPD Player <img src="/assets/icons/mpd-icon.svg" alt="MPD icon" style="width: 70px; float: right;" loading="lazy" />
@@ -21,7 +21,7 @@ MPD is available for Linux, Windows, and macOS. See the <a href="https://www.mus
 
 ### MPD audio output configuration
 
-MA delivers audio by directing MPD to fetch a stream over HTTP. MPD must have an ALSA (or other local audio) output configured in `mpd.conf` to play that stream to hardware. A minimal example:
+Music Assistant sends the audio to MPD, but MPD still needs to know where to send it next. That means an output has to be configured in `mpd.conf`, usually ALSA. Without one, MPD will accept the music and play it nowhere. A minimal example:
 ```ini
 audio_output {
     type        "alsa"
@@ -34,17 +34,14 @@ For full configuration options refer to the <a href="https://mpd.readthedocs.io/
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/), the MPD provider has the following unique settings:
+MPD players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on MPD:
 
-- <b>Output Codec.</b> The audio format MA streams to MPD. MP3 is the default. AAC and WAV (uncompressed) are also available
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled.
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues.
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all player support this correctly, therefore, if there are issues with playback try disabling this setting.
+- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> MP3 is the default here, with AAC and WAV also available. FLAC is not offered for MPD
+- <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for MPD. Turn it off if the server cannot play continuous WAV streams
 
 ## Known Issues / Notes
 
-- FLAC is not available as an output codec. MPD requires a seekable stream to probe the FLAC header, which is incompatible with MA's continuous HTTP stream
-- Flow mode is always enabled and cannot be disabled; this is required for MA to deliver audio to MPD via HTTP
-- Volume control requires a mixer to be configured in MPD. If no mixer is available, volume control will not be shown
-- MPD itself imposes no limit on audio quality — it will pass the stream to the hardware as-is. The effective quality ceiling is therefore determined by the output hardware and the codec selected in MA. WAV (uncompressed PCM) will deliver the highest quality but will require significnt bandwidth. 
+- FLAC cannot be used here. MPD needs to look through the whole file before it will play FLAC, which it cannot do with a continuous stream
+- Flow mode is always on for MPD players and cannot be turned off. It is the only way Music Assistant can feed audio to MPD
+- Volume control only appears if a mixer has been set up in MPD. Without one, there is nothing for Music Assistant to control
+- MPD passes on whatever it is given without limiting the quality, so what you get depends on your sound hardware and on the Output Codec chosen above. WAV sounds best but uses far more of your network

@@ -15,7 +15,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 - **Mobile-Optimized Guest View** - Clean, touch-friendly interface designed for phones
 - **Search & Request Songs** - Guests can search your music library and streaming services
 - **Duplicate Prevention** - Tracks already in the queue are shown as "Already in queue" and cannot be re-added
-- **Configurable Rate Limiting** - Token-based system prevents queue flooding
+- **Configurable Rate Limiting** - Give each guest a set number of requests so nobody can take over the queue
 - **Party Dashboard** - Display the queue and QR code on a TV, monitor, or tablet
 - **Lyrics Display** - Show synchronized lyrics on the dashboard alongside the QR code
 - **Karaoke Mode** - Prioritize lyrics front-and-center for a karaoke-style experience
@@ -25,7 +25,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 
 ### For the Host
 
-1. Enable the Party plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`
+1. Enable the Party plugin via **Settings → Plugins → Add a plugin**
 2. Configure which player will be used for party (or leave on Auto to use the last active player)
 3. Open the Party dashboard on the screen of your choice to display the live queue and guest join QR code
 
@@ -62,7 +62,9 @@ You can add multiple Party instances — one per player. Each instance has its o
 
 ### Rate Limiting (Advanced)
 
-Rate limiting uses a "token bucket" system. Each guest has a pool of tokens that refill over time. When tokens run out, they must wait for them to refill.
+Each guest gets an allowance of goes, and they earn another one back every so often. Once a guest has used them all up they have to wait for one to come back before they can do that again. Adding songs, boosting and skipping each have their own allowance, so running out of skips does not stop someone adding a song.
+
+The **Token Limit** is how many goes a guest starts with, and how many they can save up. The **Refill Rate** is how long it takes to earn one back.
 
 :::tip[Disabling Rate Limiting]
 Set "Enable Rate Limiting" to off to give guests unlimited requests. Individual features (Add, Boost, Skip) can still be disabled separately.
@@ -74,24 +76,24 @@ Set "Enable Rate Limiting" to off to give guests unlimited requests. Individual 
 |---------|---------|-------------|
 | **Allow Add to Queue** | On | Let guests add songs to the queue (prioritized before normally added songs, but after any "Boost" songs) |
 | **Prevent Duplicate Tracks** | On | Prevent guests from adding a track that is already in the queue. Tracks already queued are shown as "Already in queue" in the guest view. |
-| **Token Limit** | 10 | How many songs a guest can add before waiting |
-| **Refill Rate** | 2 min | Time to regenerate one token |
+| **Token Limit** | 10 | How many songs a guest can add before having to wait |
+| **Refill Rate** | 2 min | How long until they earn another go |
 
 #### Boost
 
 | Setting | Default | Description |
 |---------|---------|-------------|
 | **Allow Boost** | On | Let guests boost songs to play next (queue jumping). Guests can boost from search results or tap an upcoming queue item to boost it higher. |
-| **Token Limit** | 1 | How many "Boost" requests before waiting |
-| **Refill Rate** | 20 min | Time to regenerate one token |
+| **Token Limit** | 1 | How many boosts a guest can use before having to wait |
+| **Refill Rate** | 20 min | How long until they earn another go |
 
 #### Skip Song
 
 | Setting | Default | Description |
 |---------|---------|-------------|
 | **Allow Skip Song** | Off | Let guests skip the currently playing song |
-| **Token Limit** | 1 | How many skips before waiting |
-| **Refill Rate** | 60 min | Time to regenerate one token |
+| **Token Limit** | 1 | How many skips a guest can use before having to wait |
+| **Refill Rate** | 60 min | How long until they earn another go |
 
 ### Badge Colors (Advanced)
 
@@ -143,7 +145,7 @@ Guests are automatically redirected here after scanning the QR code.
 
 ## Remote Access
 
-When [Remote Access](../settings/remote-access.md) is enabled, the QR code URL uses `app.music-assistant.io`, allowing guests to connect from anywhere via WebRTC - even if they're not on your local network.
+When [Remote Access](/settings/remote-access) is enabled, the QR code URL uses `app.music-assistant.io`, allowing guests to connect from anywhere via WebRTC - even if they're not on your local network.
 
 When remote access is disabled, guests must be on the same network as your Music Assistant server.
 

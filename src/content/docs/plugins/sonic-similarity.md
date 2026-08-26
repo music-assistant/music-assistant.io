@@ -1,6 +1,6 @@
 ---
 title: Sonic Similarity
-description: Local similarity search powering library-wide Similar Tracks, radio mode, an "Inspired by recently played" discover row, and natural-language search.
+description: Local similarity search powering library-wide Similar Tracks, Endless Mix, an "Inspired by recently played" discover row, and natural-language search.
 ---
 
 # Sonic Similarity
@@ -10,7 +10,7 @@ The **Sonic Similarity** plugin turns the audio fingerprints already produced by
 What it powers:
 
 - **Library-wide Similar Tracks** — works even on filesystem libraries and on providers that do not supply their own similar-tracks feed
-- **Radio mode** — the same data is used when Music Assistant needs to extend a queue with similar tracks and no streaming-side radio is available
+- **Endless Mix** — the same data is used when Music Assistant needs to extend a queue with similar tracks and no streaming-side radio is available
 - **An "Inspired by recently played" row** on the discover page
 - **Natural-language search** — optionally lets you search for tracks by typing things like *"super dancy disco"* or *"calm acoustic morning"*
 
@@ -42,7 +42,7 @@ Three engines run inside the plugin. The Traits engine is always on; the Charact
 
 Matches on measured sound traits — tempo, energy, loudness, key, and so on. The engine builds a small per-track signature from those measurements and ranks neighbours using one of the configurable weight presets. Cheap to build, cheap to query, and fits comfortably in memory for libraries of tens of thousands of tracks.
 
-This engine powers the Similar Tracks menu, radio mode, and the discover row by default.
+This engine powers the Similar Tracks menu, Endless Mix, and the discover row by default.
 
 ### Character engine (opt-in)
 
@@ -60,7 +60,7 @@ The first time free-text search is loaded, about 500 MB of language model files 
 
 ## Configuration
 
-The plugin is installed via `SETTINGS >> PLUGINS >> ADD A PLUGIN`. All settings live on a single configuration page made up of four panels: **Generic**, **Similarity search**, **Discover**, and **Status**.
+The plugin is installed via **Settings → Plugins → Add a plugin**. All settings live on a single configuration page made up of four panels: **Generic**, **Similarity search**, **Discover**, and **Status**.
 
 ### Generic
 

@@ -15,7 +15,7 @@ Music Assistant has support for AirPlay devices. This includes Apple devices suc
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS` and check whether `AirPlay` is already listed; it is added automatically on new installs. If it is missing, click `ADD A NEW PROVIDER` and select `AirPlay`.
+1. In Music Assistant, go to **Settings → Player Providers** and check whether `AirPlay` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `AirPlay`.
 2. Your AirPlay devices will be discovered automatically and will appear in the player list, usually within a minute.
 3. Apple TVs additionally require pairing before they can be used; see [Protocol Settings](#protocol-settings) below.
 
@@ -23,28 +23,29 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 ## Protocol Settings
 
-Support exists for devices which require pairing with a PIN before they can be used (e.g. Apple TV's). Select the `START AIRPLAY PAIRING` button to register the PIN and when successful, click the `SAVE` button to save the authorisation key.
+AirPlay does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode**. The settings below are specific to AirPlay.
 
-Music Assistant has support for both versions of the AirPlay protocol. AirPlay 1 is also known as RAOP. Under normal circumstances, the AirPlay protocol version to use for streaming can be left as `Automatically select [default]`. The default for most devices is AirPlay 1 (RAOP). Devices which are known to have issues with AirPlay 1 (RAOP) and known to work with AirPlay 2 will automatically use AirPlay 2 for streaming.
+Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired before Music Assistant can use them. These show a Setup button in the player settings — press it and follow the steps, entering the PIN shown on the device's screen. Devices protected with a password ask for the password instead.
+
+Apple TVs offer two extra pairing steps after the main one. Both are optional and can be added later by running Setup again:
+
+- <b>Remote control.</b> Lets Music Assistant see whether the device is on, wake it before playback, and control what it is playing and its volume.
+- <b>Playback monitoring.</b> Shows the app and media playing on the device outside of Music Assistant.
+
+Music Assistant chooses how to stream to each device automatically, so under normal circumstances nothing here needs changing.
+
+- <b>Audio synchronization delay correction.</b> Shifts when audio is heard on this device compared to the other players it is synced with, up to ±500 ms. Negative values make it play earlier, positive values later. Use a negative value for a device connected to a TV, AV receiver or amplifier that adds its own delay — if it lags the group by about 100 ms, set it to -100.
 
 ### Advanced Protocol Settings
 
-Advanced Protocol Settings applicable to both versions of the AirPlay protocol are:
+- <b>Streaming mode.</b> Pins this device to one way of streaming. Leave on Automatic (recommended) unless the device misbehaves — only the modes the device actually supports are offered: AirPlay 2 - PTP timing, AirPlay 2 - NTP timing, AirPlay 2 - compatibility mode and AirPlay 1 (RAOP). Music Assistant also switches to a safer mode by itself after a device repeatedly fails; set it back to Automatic to try the original mode again.
+- <b>Audio buffer depth.</b> How much audio the speaker keeps queued ahead of playback. Increase this if the speaker stays silent or drops out while Music Assistant shows it playing — at the cost of slower skipping and pausing. Automatic picks a value suited to the device.
+- <b>Ignore volume reports sent by the device itself.</b> Some devices report their own volume level unreliably, which can cause unexpected volume changes. Enable this to ignore those reports.
+- <b>Enable encryption.</b> Only shown for devices streaming with AirPlay 1 (RAOP). Some third party players require this to be turned off.
 
-- <b>Audio synchronization delay correction.</b> If audio played by this player is synchronized with other players and is found to be slightly out of sync, a fixed delay of up to ±500 ms can be adjusted using this setting.
-- <b>Output Channel Mode.</b> You can configure this player to play only the left or right channel, for example to create a stereo pair with 2 players.
+### AirPlay Provider Settings
 
-
-AirPlay 1 (RAOP) specific advanced settings are:
-
-- <b>Enable encryption.</b> Enable encrypted communication if required by the player. AirPlay 1 only.
-- <b>Enable compression.</b> Enable to save some bandwidth by sending the audio as (lossless) ALAC
-- <b>Device password.</b> If the device requires a password to play then it is added here
-- <b>Milliseconds of data to buffer.</b> Try increasing this value if playback is unreliable. This adds to the latency experienced for the commencement of playback.
-
-AirPlay 2 specific advanced settings are:
-
-- <b>Expected milliseconds to establish streaming session with the AirPlay device.</b> How much audio MA buffers while the connection to the player is established. Try increasing the value if playback is unreliable (out of sync or not working). <b>NOTE:</b> This adds to the latency experienced for the commencement of playback.
+- <b>Verbose PTP daemon logging.</b> Adds detailed multi-room clock timing to the log. Only enable when asked to for troubleshooting sync problems — it writes around 10 lines per second.
 
 ## Known Issues / Notes
 

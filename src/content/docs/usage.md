@@ -1,7 +1,20 @@
 ---
-title: General
+title: Overview
 description: Information regarding various elements of Music Assistant
 ---
+
+# Overview
+
+Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These four pages are not a walkthrough of that.
+
+They cover the ideas the interface assumes you already understand, so that when something is not self-evident, the explanation is here.
+
+- **This page** — what the library actually holds, how the queue and Endless Mix behave, what playlists can and cannot do, and where artwork and other metadata come from
+- **[UI](/ui/)** — a tour of the interface itself, view by view
+- **[Groups](/faq/groups/)** — playing the same music on more than one speaker at once
+- **[Genres](/genres/)** — how Music Assistant categorises your library, and how to shape that
+
+None of it needs reading end to end. Use the contents list to jump to whatever you are looking for.
 
 ## The Library
 
@@ -21,30 +34,38 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
+In order to make all available content accessible in a digestible manner many of the expandable views are filtered by provider. The open box icon is shown when a section is expanded and indicates that multiple providers can populate the section. Note only one can be selected at any one time. In the screenshot above "All albums" is collapsed, so the provider selection icon is not shown. Immediately below is the "Top tracks" section which is expanded and does show the icon. In both cases the currently selected provider is shown on the left side. 
+
 **Favorites**
 
 As a further means of filtering the library, you can mark items as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favorited by default when imported from the music source is determined by the [source settings](/music-providers/). All items can be seen if the heart icon is deselected in the top menu.
 
 ## The Queue
 
-Each player has its own queue. View the queue by pressing the queue icon. This button can be found on the player bar at the bottom of the UI or, for narrow displays, in the NOW PLAYING view.
+Each player has its own queue. View the queue by pressing the ![Preview image](/assets/icons/queue-button.png) button. This button can be found on the player bar at the bottom of the UI or, for narrow displays, in the NOW PLAYING view.
 
-Selecting the PLAYED ITEMS option will show the previous items from the queue and selecting any will show a menu and this will allow a restart of the queue from that point.
-
-![Preview image](/assets/screenshots/queue1.png)
-
-A menu of options to control the queue is available for each upcoming track and is shown in the image above.
+The queue order can be adjusted by selecting and dragging the six dot icon or via the options in the ⋮ menu.
 
 > [!NOTE]
-> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in MA SETTINGS>> SYSTEM>> PLAYER QUEUES
+> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → System → Player Queues**](/settings/core/#player-queues)
     
-The options in the menu available in the top right is shown below. Repeat and Shuffle also have buttons at the bottom in the player bar (or in the NOW PLAYING view for narrow mobile devices).
+The options in the menu available in the top right is shown below. 
 
 Transferring the queue will also transfer the shuffle and repeat setting to the new player.
 
-![Preview image](/assets/screenshots/queue3.png)
+![Preview image](/assets/screenshots/now_playing_menu.png)
 
-The Don't Stop The Music (DSTM) option can be enabled if a source is available which supports dynamic tracks (i.e. Apple, Deezer, Spotify, Subsonic, Tidal and YTM). When DSTM is on, radio mode will be automatically enabled when the last track of the queue is reached and if any dynamic tracks can be resolved from one of the sources. The added tracks will be based on the played items in the queue.
+Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A TTS provider has to be selected in the [System Player Settings](/settings/core/#players)
+
+![Preview image](/assets/screenshots/play_announcement.png)
+
+When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the queue settings.
+
+Each queue has a number of options which affect various behaviours. The options can be set globally in the [player queues settings](/settings/core/#player-queues) or individually via the option in the ⋮ menu. The individual player queue settings are as follows:
+
+[![Preview image](/assets/screenshots/queue-settings.png)](/assets/screenshots/queue-settings.png)
+
+See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade. 
 
 > [!NOTE]
 > If a queue is paused for more than 30 seconds its status will change to stopped
@@ -52,18 +73,18 @@ The Don't Stop The Music (DSTM) option can be enabled if a source is available w
 > [!CAUTION]
 > Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less.
 
-### Radio Mode
+### Endless Mix
 
-Radio Mode keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music).
+Endless Mix keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music).
 
 <details>
-<summary>How Radio Mode picks tracks</summary>
+<summary>How Endless Mix picks tracks</summary>
 
 **Starting from a Track or Album:**
-Radio Mode retrieves similar tracks using the track's provider mappings (shown in the [Provider Details](/ui/#provider-details) section in the UI). When you start radio mode from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature. For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start radio mode with a track or album that is not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
+Endless Mix retrieves similar tracks using the track's provider mappings (shown in the [Provider Details](/ui/#provider-details) section in the UI). When you start Endless Mix from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature. For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start Endless Mix with a track or album that is not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
 
 **Starting from an Artist:**
-Radio Mode works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all sources where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own source for similar tracks. This means radio mode started from an artist typically produces a diverse mix of results from multiple sources, as each base track contributes similar tracks from its respective source (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that source's top tracks are used as the base.
+Endless Mix works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all sources where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own source for similar tracks. This means Endless Mix started from an artist typically produces a diverse mix of results from multiple sources, as each base track contributes similar tracks from its respective source (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that source's top tracks are used as the base.
 
 </details>
 
@@ -83,7 +104,7 @@ Playlists can be copied from one source to another by opening the original playl
 
 Automatically generated playlists from streaming sources may be supported. See the specific source documentation for further information.
 
-MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in MA SETTINGS>> SYSTEM>> BACKGROUND TASKS or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting REFRESH ITEM.
+MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in [**Settings → System → Background tasks**](/settings/core/#background-tasks) or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting **Refresh item**.
 
 There are also two pseudo-playlists, the Infinite Mixes (one based on the whole library and one on the favorites). Viewing these playlists shows no tracks; playing one results in an endless queue where 25 random tracks are added and refreshed as the queue comes to an end.
 

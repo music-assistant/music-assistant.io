@@ -29,7 +29,7 @@ Library items are enriched on a **90-day refresh cycle**. Refreshes are triggere
 
 For each item, source metadata is collected first (sorted so local providers such as the file system, Plex, Jellyfin and Subsonic outrank streaming providers), then the online metadata providers are queried when "Enable metadata retrieval from online metadata providers" is on (default).
 
-The language used for descriptions and bios is set under [Settings → System Settings → Metadata](/settings/core/#metadata) → "Preferred language". English is always used as fallback.
+The language used for descriptions and bios is set under [**Settings → System → Metadata**](/settings/core/#metadata) → "Preferred language". English is always used as fallback.
 
 ## What Music Assistant reads from local file libraries
 
@@ -39,7 +39,7 @@ For library items backed by a local music collection, the following are read aut
 - **`.lrc` sidecar files** with the same name as the audio file, used as synchronized lyrics. This is the format produced by tools such as LRCGET
 - **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) - title, sort name, biography, genres, MusicBrainz artist ID
 - **`album.nfo`** in an album folder - title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs
-- **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, [etc.](/music-providers/local-files/#known-issues--notes)) - used as thumbnails and other artwork for albums and artists
+- **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, [etc.](/music-providers/local-files/#artwork)) - used as thumbnails and other artwork for albums and artists
 
 These are part of the source metadata layer and always take priority over online lookups. They are also the most reliable way to fix problems with online matching: adding a MusicBrainz ID to a tag or `.nfo` file immediately unlocks the rest of the online providers for that item.
 
@@ -76,4 +76,4 @@ When write access is available the exceptions to this are:
 | **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
 | **Wikipedia** | Multi-lingual artist biographies, in your preferred language where available. | Artist MBID (used to resolve the Wikipedia article via Wikidata) |
 
-Individual metadata sources can be turned off in Settings>> Metadata Providers, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
+Individual metadata sources can be turned off in **Settings → Metadata Providers**, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".

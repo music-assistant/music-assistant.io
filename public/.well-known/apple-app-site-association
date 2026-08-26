@@ -10,6 +10,10 @@
         "appID": "GUYFAK8DC6.io.music-assistant.mobile-client",
         "paths": ["/app/*"]
       }
+      {
+        "appID": "GUYFAK8DC6.io.music-assistant.mobile-client",
+        "paths": ["/app/*"]
+      }
     ]
   }
 }

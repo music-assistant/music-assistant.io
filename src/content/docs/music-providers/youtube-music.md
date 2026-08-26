@@ -27,11 +27,11 @@ With your account connected, your library and playlists appear in Music Assistan
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality | Lossy, AAC (256kbps) |
+| Maximum Stream Quality | AAC 256kbps |
 | Login Method | Token + Cookie |
 
 ### Other
@@ -50,7 +50,7 @@ Cookie authentication is the **only** way to get YT Music working; Google does n
 
 ### Step 1: Install the PO Token app
 
-Google requires a 'Proof of Origin' (PO) token before it allows streaming; without one, Music Assistant cannot play your music. This app generates the token for you automatically. Install it before adding the YT Music source:
+Google will not let anything play until it has been given a 'Proof of Origin' token, which is its way of checking the request came from a real YouTube app. This small piece of software produces those for Music Assistant in the background, and you never have to touch it again once it is running. Install it before adding the YT Music source:
 
 1. In Home Assistant, go to `Settings >> Apps >> Install app`.
 2. Scroll down to the 'Music Assistant' section.
@@ -83,7 +83,7 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 
 ### Step 3: Configure the source
 
-1. In Music Assistant, go to `SETTINGS >> MUSIC SOURCES >> ADD A MUSIC SOURCE` and select 'Youtube Music'.
+1. In Music Assistant, go to **Settings → Music Sources → Add a music source** and select 'Youtube Music'.
 2. Fill out the fields in the Generic Settings section as follows:
     - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
     - <b>Login Cookie.</b> Paste the value you copied in Step 2
@@ -110,8 +110,8 @@ A brand account is a sub-account that lives under your main Google account. You 
 ## Known Issues / Notes
 
 - This source mimics YouTube Music. Do not expect to see the same search results as you see if using YouTube
-- There is no support for the disc and track number in album tracks listings. Currently, the disc number is always 0 and the track number is the order number in which the tracks were returned by Youtube Music. This should generally give the desired result, but could mess up multi-disc albums
+- YouTube Music does not tell Music Assistant which disc a track is on, so tracks are simply numbered in the order they arrive. That is usually right, but a multi-disc album may come out in the wrong order
 - Whether music videos are selected for playback fully depends on what you are playing. If you have saved a specific album in your library, then that exact version will show up in MA and thus you will have the album version. However, if you start a radio on, for example, a playlist, then Youtube Music decides which songs will be played in a 'dynamic radio' playlist which could include videos
 - Uploaded Music should be able to be found when it is in a playlist. If it's just a single track being searched for then it may not be found, since often those uploaded songs don't have proper metadata. It will be hard to find them via the UI in MA
-- Some low quality artwork can be expected when using this source. YTM is very inconsistent when it comes to delivering thumbnails. When a Playlist or album is retrieved, the thumbs for the tracks are usually in low quality for all songs. However, when a single track is played the HQ version should be displayed. This source tries to work around the problem for albums and playlists by loading details for the next enqueued track, but some low quality album art is still expected to be encountered
+- Expect some blurry artwork. YouTube Music sends low quality images when Music Assistant asks for a whole album or playlist, and only sends the good one when a single track is asked for. Music Assistant works around this where it can by fetching the artwork for the next track in advance, but some of it will still look poor
 - By default, only the liked music and 'episodes for later' playlists are added to the YTM library and thus will appear in MA. In order to see other personal playlists in the MA library, you have to go into the YT Music web app and add those personal playlists to your library

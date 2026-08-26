@@ -10,6 +10,8 @@ The first part of this page covers everyday questions about using Music Assistan
 
 After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -17 LUFS (and -17 is the default starting point). **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
 
+The methods and the fixed gain values are set under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback). Turning normalization on or off, and the target level, live under [**Settings → System → Player Queues**](/settings/core/#player-queues) and can be overridden for [one queue](/usage/#the-queue).
+
 More details [here](/faq/tech-info/#volume-normalization)
 
 ## Have my music continue if I change rooms
@@ -107,13 +109,13 @@ The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopene
 
 ## Get the MA icon in the HA sidebar?
 
-If you are running the MA app within the HA host go to SETTINGS>>ADDONS>>MUSIC ASSISTANT and select "Show in sidebar".
+If you are running the MA app within the HA host go to HA `SETTINGS >> APPS >> MUSIC ASSISTANT` and select "Show in sidebar".
 
 If you are using docker then you can use an <a href="https://www.home-assistant.io/dashboards/iframe/" target="_blank" rel="noopener noreferrer">iframe panel</a> or you can use another custom integration called <a href="https://github.com/lovelylain/hass_ingress" target="_blank" rel="noopener noreferrer">hass_ingress</a> which allows you to add additional ingress panels to your Home Assistant frontend. If using direct URLs a [long lived access token](#access-the-ma-views-directly-via-url) will be required.
 
 ## Access the MA Views directly via URL
 
-If authentication becomes a blocker to some devices then create a long lived access token via MA SETTINGS >> PROFILE and use the following format as the URL
+If authentication becomes a blocker to some devices then create a long lived access token via [**Settings → Profile**](/settings/profile/#long-lived-access-tokens) and use the following format as the URL
 https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
 
 ## Open the UI with a Specific Player Selected
@@ -182,7 +184,7 @@ data:
 
 Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
 
-You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](/ui/#view-individual-artist) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
+You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](/ui/#provider-details) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
 
 > [!NOTE]
 > URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.

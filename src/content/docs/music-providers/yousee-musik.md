@@ -22,11 +22,11 @@ Sign in and your YouSee library and playlists show up in Music Assistant, with t
 | Media Types Supported                           | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported |                Yes               |
 | Lyrics Supported                                |                Yes                 |
-| [Radio Mode](/ui/#track-menu)                   |                Yes                 |
+| [Endless Mix](/ui/#track-menu)                  |                Yes                 |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
-| Maximum Stream Quality                          |        Lossy, MP4 (320kbps)        |
+| Maximum Stream Quality                          | MP4 320kbps |
 | Login Method                                    |         Password                   |
 
 ### Other
@@ -50,7 +50,7 @@ In addition to `Username` and `Password` there is also:
 
 - <b>Stream Quality.</b> Default is `High` (MP4 320kbps). The other option is `Normal` (MP4 192kbps). This only needs to be changed if operating with a slow internet connection
 
-Refer also to the [Library Import Control](index.md#library-import-control) settings.
+Refer also to the [Library Import Control](/music-providers/#library-import-control) settings.
 
 ## Known Issues / Notes
 

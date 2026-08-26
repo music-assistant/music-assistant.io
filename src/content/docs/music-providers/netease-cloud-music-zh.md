@@ -1,5 +1,7 @@
 ---
 title: "网易云音乐"
+sidebar:
+  hidden: true
 ---
 
 # 网易云音乐 <img src="/assets/icons/netease-cloud-music-icon.png" alt="NetEase Cloud Music icon" style="width: 70px; float: right;" loading="lazy" />
@@ -25,7 +27,7 @@ Music Assistant 已支持 <a href="https://music.163.com/" target="_blank" rel="
 | 免费订阅可用 | 否 |
 | 本地自托管媒体 | 否 |
 | 支持媒体类型 | 歌手、专辑、歌曲、歌单、电台 |
-| [发现推荐](/ui/#view-home) | 支持 |
+| [发现推荐](/ui/#view---discover) | 支持 |
 | 歌词 | 支持 |
 | [电台模式](/ui/#track-menu) | 支持 |
 | 最高音质 | Hi-Res FLAC（取决于上游接口返回） |
@@ -44,7 +46,7 @@ Music Assistant 已支持 <a href="https://music.163.com/" target="_blank" rel="
 
 该提供商需要可访问的 NeteaseCloudMusicApi 兼容 HTTP 服务（默认：`http://127.0.0.1:3000`）。
 
-Home Assistant 用户可参考配套 add-on PR：  
+Home Assistant 用户可参考配套 App PR：  
 <a href="https://github.com/music-assistant/home-assistant-addon/pull/16" target="_blank" rel="noopener noreferrer">home-assistant-addon#16</a>
 
 ### 扫码登录流程（网易云 App）

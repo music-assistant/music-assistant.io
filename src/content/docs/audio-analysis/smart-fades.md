@@ -6,7 +6,7 @@ title: Smart Fades
 
 The **Smart Fades** provider analyses each track to find its beats, downbeats, musical key and energy curve, and uses that information to create beat-matched, EQ-aware crossfades between tracks — much smoother than a plain time-based fade.
 
-Smart Fades is an optional plugin but is automatically added and enabled unless the minimum resources requirements listed below are not met.
+Smart Fades is an optional plugin but is automatically added and enabled unless the minimum resources requirements [listed below](#performance-notes) are not met.
 
 ## What it adds to playback
 
@@ -18,9 +18,9 @@ When Smart Fades is enabled on a player, the transition between tracks is:
 
 The result is closer to what a DJ would do manually than to a stock crossfade.
 
-## Enabling Smart Fades on a player
+## Choosing the crossfade mode
 
-Smart Fades is configured **per player** under that player's settings:
+Crossfade is a queue setting. Set it for all players in the [Player Queues settings](/settings/core/#player-queues), or for one player only in [that queue's own settings](/usage/#the-queue):
 
 | Mode | Behaviour |
 | --- | --- |
@@ -28,7 +28,7 @@ Smart Fades is configured **per player** under that player's settings:
 | **Standard Crossfade** | A simple time-based crossfade of a configurable duration. Used as a fallback when Smart Fades cannot run. |
 | **Smart Crossfade** | Uses the beat, key and energy data produced by this provider to build a beat-matched, EQ-aware transition. |
 
-The duration used for Standard Crossfade (and as a fallback for Smart Crossfade) is set via "Fallback crossfade duration" in the same settings group.
+The duration used for Standard Crossfade (and as a fallback for Smart Crossfade) is set via "Fallback crossfade duration" in the same place.
 
 Some players don't natively support gapless or crossfaded playback. For those, Music Assistant automatically switches into flow mode (a continuous re-encoded stream) so the crossfade can still happen.
 

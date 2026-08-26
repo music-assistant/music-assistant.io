@@ -26,7 +26,7 @@ Music Assistant has the ability to expose MA players to Plex clients like Plexam
 
 ## Configuration
 
-To make each player appear as a Plex Connect target in Plex clients, the Plex Connect plugin needs to be added individually for each player. The plugin is added via `SETTINGS >> PLUGINS >> ADD A PLUGIN`.
+To make each player appear as a Plex Connect target in Plex clients, the Plex Connect plugin needs to be added individually for each player. The plugin is added via **Settings → Plugins → Add a plugin**.
 
 ### Configuration Options
 

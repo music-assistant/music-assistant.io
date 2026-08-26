@@ -13,13 +13,13 @@ The normalization value to totally avoid clipping should be -23 LUFS based on th
 
 Here is a good document from the mastering plugin developer izotope comparing different plattforms like YouTube, Spotify, Deezer, Tidal and many more. <a href="https://www.izotope.com/en/learn/mastering-for-streaming-platforms.html#loudness-specifications-by-streaming-platform" target="_blank" rel="noopener noreferrer">This page explains the whole topic very well</a>
 
-Noting the above, the default value is -17 which should be a good compromise in 99% of cases. MA originally had it set the to EBU's standard value of -23 but then there were complaints from people finding the music too silent.
+Noting the above, the default value is -14 which should be a good compromise in 99% of cases.
 
-In general, it is not recommended to turn off the volume normalization because there are so many different loudness levels, especially if music is played from different sources. MA uses an integrated loudness level based on the EBU-R128 standard and only adjusts gain of the entire track up or down so there is no compression of dynamic range as long as you use a value low enough to keep headroom. MA's limiter is set to -1.5dB to prevent clipping. It's the user's responsibility to use sane values for the target level of the volume normalization, a value somewhere between -23 and -12 LUFS is recommended. The default value is set to -17 LUFS.
+In general, it is not recommended to turn off the volume normalization because there are so many different loudness levels, especially if music is played from different sources. MA uses an integrated loudness level based on the EBU-R128 standard and only adjusts gain of the entire track up or down so there is no compression of dynamic range as long as you use a value low enough to keep headroom. MA's limiter is set to -1.5dB to prevent clipping. It's the user's responsibility to use sane values for the target level of the volume normalization, a value somewhere between -23 and -12 LUFS is recommended. The default value is set to -14 LUFS.
 
 If audio is only played from one single source (e.g. Deezer) and that audio source already has normalized its audio files, then its safe to disable normalization in MA. If audio is played from different sources or audio is not normalized at the source, it is highly recommended to leave normalization enabled for the best experience.
 
-NOTE that all audio is analyzed at playback time. If no Integrated loudness measurement is available for an audio source, MA will fallback to a dynamic normalizer which is less accurate but will at least prevent a sudden drop or spike in the volume level. See the settings we provide to finetune the behavior in the settings of the Streamserver, which you can find in the settings menu under the core controller section.
+NOTE that all audio is analyzed at playback time. If no Integrated loudness measurement is available for an audio source, MA will fallback to a dynamic normalizer which is less accurate but will at least prevent a sudden drop or spike in the volume level. The [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback) settings let you choose how this is handled.
 
 **More technical details**
 
@@ -31,7 +31,15 @@ All further processing in MA is done at PCM raw audio level, such as the DSP Set
 
 The final part in the chain is that MA needs to send the audio to the player. By default MA encodes the raw PCM into FLAC because it is lossless while still providing a descent amount of compression. For players that can not handle FLAC very well, or simply to save bandwidth, MA provides an option (per player) to encode to MP3 instead.
 
-The [Streamserver Settings](/settings/core/#streamserver-audio-settings) contains a number of options which determine how Volume Normalization will perform. Additionally, the [Individual Player Settings](/settings/individual-player/#queue-playback) provides access to options to enable and disable this feature as well as adjusting the [target level](/settings/individual-player/#queue-playback).
+The [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback) settings contain a number of options which determine how Volume Normalization will perform. Enabling and disabling the feature, and adjusting the target level, is done under [**Settings → System → Player Queues**](/settings/core/#player-queues), and both can be overridden on an [individual queue basis](/usage/#the-queue).
+
+## Stream Selection
+
+When the same track is available from more than one source — say a Spotify stream and a FLAC file on disk — Music Assistant picks one automatically when you press play. It always chooses the highest quality available.
+
+Quality is judged on **sample rate, bit depth and codec**, in that order. Where two sources are of equal quality, the local one is preferred over the cloud one.
+
+You can see which sources hold a given item, and how they are linked together, in the [Provider Details](/ui/#provider-details) section of the item.
 
 ## Track Queueing
 

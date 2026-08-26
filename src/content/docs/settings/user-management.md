@@ -23,7 +23,10 @@ The dialog shown above appears when clicking on a username or via the ⋮ menu.
 
 Each user can be restricted to a set of specific players. Additionally, restricting users to certain music sources offers two benefits: only these sources are used when initiating playback, and listening statistics are accurately attributed to a user's source streaming account.
 
+> [!CAUTION]
+> When music sources are removed from MA then the entries are cleaned up from any users that had them as a restriction. However, if this results in a user having no more music source restrictions then they will be able to access the complete library.
+
 ### Audiobook and podcast progress sync in a multi-user environment
 
 <a name="filter-progress-multi-user"></a>
-Some podcast and/or audiobook sources allow syncing the progress of media items. By assigning such a source to only a certain user via the music source filter function, the progress is then only synced with this individual user, instead of all users. By setting up these music sources multiple times individual user syncing can be achieved by correctly assigning the source via the filter function.
+Some podcast and/or audiobook sources, such as [Audiobookshelf](/music-providers/audiobookshelf/), [Audible](/music-providers/audible/) and [Storytel](/music-providers/storytel/), allow syncing the progress of media items. By assigning such a source to only a certain user via the music source filter function, the progress is then only synced with this individual user, instead of all users. By setting up these music sources multiple times individual user syncing can be achieved by correctly assigning the source via the filter function.

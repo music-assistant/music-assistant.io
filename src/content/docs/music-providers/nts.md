@@ -22,13 +22,13 @@ This source adds the NTS streams to Music Assistant as radio stations.
 |Subscription FREE|Yes|
 |Self-Hosted Local Media|No|
 |Media Types Supported|Radio|
-|[Recommendations](/ui/#view-discover) Supported|No|
+|[Recommendations](/ui/#view---discover) Supported|No|
 |Lyrics Supported|No|
-|[Radio Mode](/ui/#track-menu)|No|
+|[Endless Mix](/ui/#track-menu)|No|
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-|Maximum Stream Quality|AAC|
+|Maximum Stream Quality| AAC 256kbps |
 |Login Method|None|
 
 ### What's included

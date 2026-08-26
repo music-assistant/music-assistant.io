@@ -1,40 +1,21 @@
 ---
-title: Local Audio Out Provider
-description: A description of the Local Audio Out Player Provider
+title: "Local Audio Out (retired)"
+description: The Local Audio Out player provider has been retired in favour of the Local Audio app
 ---
 
 # Local Audio Out <img src="/assets/icons/loudness-analysis-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant can play audio directly through soundcards attached to the machine the server runs on, such as USB DACs, built-in audio outputs and HDMI audio. Each detected output device is added as its own player. This is useful for turning the server into a player, for example a small computer connected to an amplifier or a pair of powered speakers.
+> [!CAUTION]
+> **This provider has been retired.** It can no longer be added, and where one is already configured it fails to load with a notice pointing here. The only thing left to do with it is press **Remove** in its settings.
+
+Playing to soundcards, USB DACs and built-in audio outputs on the machine Music Assistant runs on is now the job of the **Local Audio** app, which runs alongside Music Assistant rather than inside it.
+
+## The Local Audio app
+
+The app plays to the audio hardware of the machine it runs on and appears in Music Assistant as a [Sendspin](/player-support/sendspin/) player, found over mDNS on its own. There is no provider to add in Music Assistant.
+
+- **On Home Assistant**, install **Local Audio** from the Music Assistant app repository, the same one Music Assistant itself comes from. Choose the output it plays through in the app's own **Audio** panel; nothing in its configuration picks an output.
+- **Anywhere else**, run the container with Docker Compose. Both it and the app are built from <a href="https://github.com/music-assistant/local-audio-addon" target="_blank" rel="noopener noreferrer">music-assistant/local-audio-addon</a>, whose README covers the environment variables and how to name an ALSA output.
 
 > [!NOTE]
-> This provider is in an early (alpha) stage of development. Basic playback works but some features are still limited and behaviour may change between releases.
-
-## Features
-
-- Attached soundcards are auto detected when the provider is loaded
-- Each output device is added as a separate player
-- Playback between multiple Local Audio players is synchronized, so they can be grouped together
-
-## Requirements
-
-- The soundcard must be attached to, and usable from, the environment where the Music Assistant server runs. When the server runs in a container, the audio devices must be made available to that container (for a manual Docker install this means passing through `/dev/snd`)
-- This provider uses the Sendspin provider under the hood for timing and synchronization, so Sendspin must remain enabled
-
-## Configuration
-
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Local Audio Out`.
-2. The soundcards attached to the machine running the MA server are detected automatically and each output appears as its own player.
-
-## Settings
-
-For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages. Specific settings available for this provider are:
-
-- <b>Volume control mode.</b> The default is `Hardware (preferred)` which controls the volume of the soundcard itself via the operating system. If hardware volume control is not available for a device, software volume is used automatically instead. `Software` applies the volume to the audio stream before it is sent to the soundcard. `Disabled` always passes the audio at full volume, which is useful when the volume is controlled on an external amplifier or DAC
-
-## Known Issues / Notes
-
-- Devices that cannot be opened, for example because another program or sound server is using them, are skipped during discovery. If an expected player is missing, make sure the device is not in use elsewhere and reload the provider
-- Devices plugged in or removed after startup are not always picked up straight away. Reload the provider (Settings → Player Providers → Local Audio Out) to refresh the list of players
-- Audio is played in stereo at 44.1 kHz / 16 bit. Content in other formats is converted automatically. Devices with less than 2 output channels are not added
-- Hardware volume control on Linux uses the card's `Master` mixer control. Cards without such a control automatically fall back to software volume
+> The app is experimental. It works, but it has not been through wide testing on real hardware.
