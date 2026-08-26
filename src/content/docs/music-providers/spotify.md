@@ -31,11 +31,10 @@ Spotify audio can be played through two different engines. You choose one while 
 | Accounts created since December 2024 | Works | Usually will not play |
 | Best audio quality | Lossless, up to 24-bit/44.1 kHz | Ogg Vorbis 320kbps |
 | Setup | Terms, an API key and pairing | A one-time playback approval |
-| Starting a queue, and seeking | A few seconds | Quick |
-| Crossfade between songs | Spotify's own crossfade | Music Assistant's crossfade |
+| Starting a queue, and seeking | Takes a little longer | Quick |
 | Playing on two players at once | One at a time, per Spotify account | Supported |
 
-With Soloist, the **first** song of a queue takes a few seconds to start, and so does seeking. Songs after it follow on without a break — though a podcast episode, an audiobook chapter or the same song twice in a row each start fresh.
+With Soloist, the **first** song of a queue takes a little longer to start than with librespot, and so does seeking. Songs after it follow on without a break — though a podcast episode or an audiobook chapter start fresh.
 
 librespot is preselected for a new setup, and stays selected for setups added before this choice existed.
 
@@ -136,15 +135,15 @@ Two extra settings appear when Spotify Soloist is the playback engine:
 - **Streaming quality** — the highest quality Spotify is asked to stream, defaulting to `Lossless`. This is a ceiling rather than a promise: Spotify still picks something lower on a slow connection, when a song has no file at that quality, or when your plan does not include it. Podcasts and audiobooks are always Ogg Vorbis. Takes effect the next time playback starts.
 - **Enable Spotify's volume normalization** — on by default. Spotify evens out the loudness between songs using values computed for its whole catalogue, and Music Assistant then leaves the level alone instead of correcting it twice, which also makes songs start noticeably quicker. Turn it off to have Music Assistant do it instead, the same way it does for every other music source. Either way it only applies while volume normalization is enabled for the queue.
 
-Crossfade is not set here — enable it for the player as usual and, with Soloist, Spotify's own crossfade is used between songs.
+Crossfade is not set here — enable it for the player as usual, and it works the same as for every other music source.
 
 ## Known Issues / Notes
 
 - Premium is required, including Duo and Family. Free accounts will not work
 - Accounts created around December 2024 and later generally cannot play through librespot, and some older accounts are affected too. If playback fails and you see `Key Error` messages in the log, that is the symptom — choose Spotify Soloist instead
 - Each Spotify Soloist account plays one thing at a time. Starting Spotify on a second player asks you to stop the first one; a second Spotify account added as its own source has a session of its own
-- While Spotify Soloist is playing, Music Assistant shows up as a device in your Spotify app. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
-- With Spotify Soloist, starting a queue or seeking takes a few seconds
+- While Spotify Soloist is playing, Music Assistant shows up in your Spotify app as a device called `Music Assistant Playback`. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
+- With Spotify Soloist, starting a queue or seeking takes a little longer than with librespot
 - When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
 - Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
 - Spotify does not tell Music Assistant what genre anything is
