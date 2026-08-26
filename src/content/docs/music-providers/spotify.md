@@ -34,7 +34,7 @@ Spotify audio can be played through two different engines. You choose one while 
 | Starting a queue, and seeking | Takes a little longer | Quick |
 | Playing on two players at once | One at a time, per Spotify account | Supported |
 
-With Soloist, the **first** song of a queue takes a little longer to start than with librespot, and so does seeking. Songs after it follow on without a break — though a podcast episode or an audiobook chapter starts fresh.
+With Soloist, the **first** song of a queue takes a little longer to start than with librespot, and so does seeking. Songs after it follow on without a break — though a podcast episode or an audiobook chapter start fresh.
 
 librespot is preselected for a new setup, and stays selected for setups added before this choice existed.
 
