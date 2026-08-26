@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Assistant oAuth Redirect</title>
+    <title>Music Assistant</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
         }
@@ -18,72 +18,160 @@
             text-align: center;
             background-color: white;
             padding: 2rem;
+            margin: 1rem;
+            max-width: 30rem;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        #manual-link, #error {
-            display: none;
+        .fallback {
             margin-top: 1rem;
         }
         a {
             color: #1DB954;
             text-decoration: none;
+            font-weight: bold;
         }
         a:hover {
             text-decoration: underline;
+        }
+        .destination {
+            font-weight: bold;
+            word-break: break-all;
+        }
+        a.button {
+            display: inline-block;
+            background-color: #1DB954;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+        }
+        a.button:hover {
+            text-decoration: none;
+            background-color: #17a34a;
+        }
+        .caution {
+            color: #666;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Music Assistant oAuth Redirect</h1>
-        <p>Processing your request...</p>
-        <div id="manual-link">
-            <p>If you are not redirected automatically, please click the link below:</p>
-            <a href="#" id="redirect-link">Complete Authentication</a>
+        <h1>Music Assistant</h1>
+        <p id="status"></p>
+        <div class="fallback" id="confirm" hidden>
+            <p class="destination" id="destination"></p>
+            <a href="#" id="redirect-link" class="button">Continue to Music Assistant</a>
+            <p class="caution" id="caution" hidden>Only continue if you recognize this address
+               as your own Music Assistant.</p>
         </div>
-        <div id="error">
+        <div class="fallback" id="error" hidden>
             <p>This page was opened without a valid Music Assistant address to return to,
                so the sign-in cannot be completed. Close this window and start the sign-in
                again from within Music Assistant.</p>
         </div>
+        <noscript>
+            <p class="fallback">JavaScript is required to complete the sign-in.
+               Enable it and start the sign-in again from within Music Assistant.</p>
+        </noscript>
     </div>
-
-  <footer>
 
     <script>
       'use strict';
-      // Music providers only allow pre-registered redirect URIs, so they all send the
-      // browser here. The Music Assistant instance that started the sign-in passes its
-      // own (session specific) callback URL along in `state`: forward everything the
-      // provider returned - the authorization code, or an error - to that URL.
-      const signInHosts = ['spotify.com', 'google.com', 'microsoftonline.com', 'live.com'];
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirectUrl = urlParams.get('state') || '';
-      urlParams.delete('state');
-      const query = urlParams.toString();
-      const finalUrl = query ? redirectUrl + '?' + query : redirectUrl;
-      const referrerHost = document.referrer ? new URL(document.referrer).hostname : '';
-      const validOrigin = signInHosts.some(
-        (host) => referrerHost === host || referrerHost.endsWith('.' + host),
-      );
-      // only forward to something shaped like a Music Assistant callback URL, and never
-      // to a Home Assistant ingress URL (which needs the ingress session to be reachable)
-      const validDest =
-        /^https?:\/\/[^/?#@\s]+\/(?:[^?#\s]*\/)?callback\/[A-Za-z0-9_.-]+$/.test(redirectUrl) &&
-        !redirectUrl.includes('hassio_ingress');
-      if (!validDest) {
-        document.getElementById('error').style.display = 'block';
-      } else {
-        if (validOrigin) {
-          window.location.replace(finalUrl);
+      // OAuth providers only accept pre-registered redirect URIs, so Spotify, Google and
+      // Microsoft all send the browser here. The Music Assistant instance that started the
+      // sign-in passes its own (session specific) callback URL along in `state`: forward
+      // everything the provider returned - the authorization code, or an error - to it.
+      const params = new URLSearchParams(window.location.search);
+      const returnUrl = params.get('state') || '';
+      params.delete('state');
+      const query = params.toString();
+      const finalUrl = query ? returnUrl + '?' + query : returnUrl;
+
+      // Only forward to something shaped like a Music Assistant callback URL. Both the
+      // current `/setup_flow/callback/<id>` and the older `/callback/<id>` shape are in
+      // use, and the base URL may carry a path prefix when MA sits behind a reverse proxy.
+      const isCallbackUrl =
+        /^https?:\/\/[^/?#@\s]+\/(?:[^?#\s]*\/)?callback\/[A-Za-z0-9_.-]+$/.test(returnUrl);
+      // Home Assistant ingress URLs are only reachable from within the HA frontend, so
+      // offer those as a link instead of navigating there on the user's behalf.
+      const isIngress = returnUrl.includes('hassio_ingress');
+
+      // Anyone can point `state` here, so this page must not silently forward the
+      // authorization code to an arbitrary address. A private or otherwise unroutable
+      // destination (the typical self-hosted setup) is safe to forward to automatically:
+      // a remote attacker cannot receive traffic there. Anything else keeps the code
+      // until the user has seen the destination address and confirmed it is their own.
+      function isPrivateHost(hostname) {
+        // IPv6 literals: loopback, ULA and link-local. Browsers bracket the host,
+        // but strip any brackets defensively so a bare literal is never mistaken
+        // for a single-label hostname below.
+        if (hostname.includes(':')) {
+          const ipv6 = hostname.replace(/^\[|\]$/g, '');
+          return ipv6 === '::1' || /^(fc|fd|fe[89ab])/.test(ipv6);
         }
-        // manual fallback for when we cannot tell which sign-in page the browser came
-        // from, or when the browser refuses the automatic redirect
-        document.getElementById('manual-link').style.display = 'block';
+        // plain (single label) hostnames and reserved suffixes never resolve over
+        // public DNS, so nobody on the internet can claim them
+        if (!hostname.includes('.')) {
+          return true;
+        }
+        if (hostname.endsWith('.localhost')) {
+          return true;
+        }
+        // .lan and .home are not IANA-reserved but are common router defaults and
+        // blocked from ever becoming public top level domains
+        for (const suffix of ['.local', '.internal', '.home.arpa', '.lan', '.home']) {
+          if (hostname.endsWith(suffix)) {
+            return true;
+          }
+        }
+        // IPv4 literals: loopback, RFC1918, link-local and CGNAT (Tailscale) ranges.
+        // Match the full hostname so `192.168.1.10.evil.com` stays a public hostname.
+        const ipv4 = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(hostname);
+        if (ipv4) {
+          const octet1 = Number(ipv4[1]);
+          const octet2 = Number(ipv4[2]);
+          return (
+            octet1 === 10 ||
+            octet1 === 127 ||
+            (octet1 === 172 && octet2 >= 16 && octet2 <= 31) ||
+            (octet1 === 192 && octet2 === 168) ||
+            (octet1 === 169 && octet2 === 254) ||
+            (octet1 === 100 && octet2 >= 64 && octet2 <= 127)
+          );
+        }
+        return false;
+      }
+
+      let destination = null;
+      try {
+        destination = new URL(returnUrl);
+      } catch {
+        // unparseable destinations simply fall through to the confirm button
+      }
+      const isPrivate = destination !== null && isPrivateHost(destination.hostname);
+
+      // the status line starts out empty so that it never promises a redirect that a
+      // browser without JavaScript is not going to make
+      const status = document.getElementById('status');
+      if (!isCallbackUrl) {
+        document.getElementById('error').hidden = false;
+      } else {
+        // render the destination and link before navigating: it is the fallback for
+        // when the browser refuses the automatic navigation, and it is the consent
+        // step for destinations we cannot vouch for
         document.getElementById('redirect-link').href = finalUrl;
+        document.getElementById('destination').textContent =
+          destination ? destination.origin : returnUrl;
+        document.getElementById('caution').hidden = isPrivate;
+        document.getElementById('confirm').hidden = false;
+        if (isPrivate && !isIngress) {
+          status.textContent = 'Returning you to Music Assistant…';
+          window.location.replace(finalUrl);
+        } else {
+          status.textContent = 'One more step to finish signing in:';
+        }
       }
     </script>
-  </footer>
 </body>
 </html>
