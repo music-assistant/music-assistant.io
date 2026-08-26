@@ -37,9 +37,6 @@ The plugin can run on two different playback engines. You choose one while addin
 > [!NOTE]
 > Home Assistant players are supported but not recommended — your mileage may vary. Native Music Assistant players work best.
 
-> [!NOTE]
-> Upgrading from an earlier version? Every device gets a fresh identity in the Spotify app, so you will need to pick your player in the app's device list once again. Home Assistant automations that referenced a per-player instance id such as `spotify_connect--xxxx` should now use plain `spotify_connect`.
-
 ## Usage
 
 1. Open the Spotify app on your phone, tablet or computer. The device must be on the same network as the Music Assistant server.
