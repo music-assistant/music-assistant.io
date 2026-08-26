@@ -18,7 +18,7 @@ Music Assistant has the ability to add <a href="https://www.apple.com/au/airplay
 ## Configuration
 
 1. Add the plugin via **Settings → Plugins → Add a plugin**. The plugin is added once and serves all your players.
-2. Under **Connected players**, select every player that should appear as an AirPlay device. Each selected player is advertised as its own AirPlay receiver, and the audio always plays on the player whose receiver you picked. The selection can be changed later in the plugin settings.
+2. Under **Connected players**, select every player that should appear as an AirPlay device. Each selected player is advertised as its own AirPlay receiver, and the audio always plays on the player whose receiver you picked in the sending app. The selection can be changed later in the plugin settings.
 3. Optionally change **Advertised device name**, which controls how the receivers are named after their player: `Player name | Music Assistant` (the default), `Player name only`, or `Music Assistant | Player name`. Renaming a player renames its receiver.
 
 ## Known Issues / Notes
@@ -26,4 +26,4 @@ Music Assistant has the ability to add <a href="https://www.apple.com/au/airplay
 - To use AirPlay, all devices must be connected to the same network
 - Due to buffering a delay of approximately 5 seconds is normal when playing, pausing and resuming
 - Using a HA Media Player as a connected player is not supported
-- When upgrading from an earlier version, where the plugin was added once per player, those copies are merged into a single configuration automatically
+- When upgrading from an earlier version (where the plugin was added once per player), the per-player copies are merged into a single configuration automatically

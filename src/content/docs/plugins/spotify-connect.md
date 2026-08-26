@@ -22,7 +22,7 @@ The plugin can run on two different playback engines. You choose one while addin
 
 - Any MA player can be exposed as a Spotify Connect device, including groups
 - Every connected player appears as its own device in the Spotify app, named after the player
-- Playback can also be started from Music Assistant itself (from the player's source menu, or browse to `Live Inputs`), which resumes your last Spotify session on the device
+- Playback can also be started from Music Assistant itself (from the player's source menu, or by browsing to `Live Inputs`), which resumes your last Spotify session on the device
 - Stopping playback in Music Assistant releases the device in the Spotify app; moving playback to another device in the Spotify app stops the MA player
 - Crossfade and loudness normalization are configurable in the plugin settings
 - With the Soloist engine you can choose how volume behaves: `Player volume only` (default, the audio always arrives untouched) or syncing the Spotify app's volume slider with the player volume
@@ -35,10 +35,10 @@ The plugin can run on two different playback engines. You choose one while addin
 4. Optionally change **Advertised device name**, which controls how the devices are named after their player: `Player name | Music Assistant` (the default), `Player name only`, or `Music Assistant | Player name`. Renaming a player renames its device.
 
 > [!NOTE]
-> It is inadvisable to try and configure a Home Assistant player. Use only native Music Assistant players
+> Do not select Home Assistant players under **Connected players**. Use only native Music Assistant players
 
 > [!NOTE]
-> Upgrading from an earlier version? The plugin used to be added once per player; those copies are merged into a single configuration automatically, with your players preselected under **Connected players**. Every device gets a fresh identity in the Spotify app, so you may need to pick your player in the app's device list once again (an existing Soloist setup is carried over where possible). Home Assistant automations that referenced a per-player instance id such as `spotify_connect--xxxx` should now use plain `spotify_connect`.
+> Upgrading from an earlier version? The plugin used to be added once per player; those copies are merged into a single configuration automatically, with your players preselected under **Connected players**. Every device gets a fresh identity in the Spotify app, so you will need to pick your player in the app's device list once again (an existing Soloist setup is carried over where possible). Home Assistant automations that referenced a per-player instance id such as `spotify_connect--xxxx` should now use plain `spotify_connect`.
 
 ## Usage
 

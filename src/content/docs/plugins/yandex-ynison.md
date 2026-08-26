@@ -75,4 +75,4 @@ You can add the plugin more than once, one for each player you want to appear in
 - The connection to Yandex is a long-lived one and will drop and re-establish itself from time to time. This is normal and handled for you.
 - Announcements interrupt playback. It picks up again afterwards on players that support it.
 - Each copy of the plugin uses one Yandex account. Add more copies for more players, but they each still use a single account.
-- After upgrading from a version that offered `Auto` for the connected player, the plugin asks you to pick a player once — hit **Reconfigure** and select one.
+- After upgrading from a version that offered `Auto` for the connected player, the plugin asks you to pick a player once — click **Reconfigure** and select one.
