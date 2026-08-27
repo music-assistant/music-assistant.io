@@ -36,7 +36,7 @@ If an announcement is sent to a single player that supports native announcements
 
 Native announcement support usually means that the player can "overlay" the announcement on top of any music that is playing. It will "duck" the volume of the music (or silence it completely), play the announcement with a volume boost and then revert the music volume. Music keeps playing and the entire announcement will be handled by the player itself.
 
-Currently the only player types that support native announcements are Sonos S2 speakers, Snapcast, and Sendspin.
+Currently the only player types that support native announcements are Sonos S2 speakers and Sendspin.
 
 ## MA Player Support
 
