@@ -110,6 +110,7 @@ export const MEDIA_TYPE_ORDER = [
   "Radio",
   "Podcasts",
   "Audiobooks",
+  "Sound Effects",
 ];
 
 // Sources with a tile but no row in the comparison. Only for a source there is

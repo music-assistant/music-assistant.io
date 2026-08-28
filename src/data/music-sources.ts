@@ -482,6 +482,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "classical"],
   },
   {
+    name: "Yandex Disk",
+    slug: "music-providers/yandex-disk",
+    icon: "/assets/icons/yandex-disk-icon.svg",
+    categories: ["own-files", "podcasts", "audiobooks"],
+  },
+  {
     name: "Yandex Music",
     slug: "music-providers/yandex-music",
     icon: "/assets/icons/yandex-music-icon.svg",
