@@ -17,7 +17,7 @@ For temporary and permanent sync groups the [protocol linking](/usage/#streaming
 <a href="/assets/group-diagram.png"><img src="/assets/group-diagram.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
 > [!NOTE]
-> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay - Sendspin bridges should always work
+> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay - Sendspin bridges should always work. On Chromecast devices Sendspin is experimental and switched off by default, so it has to be turned on per speaker before that speaker can join a Sendspin group, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices)
 
 ## Temporary Sync Group
 
