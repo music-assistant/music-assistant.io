@@ -222,6 +222,7 @@ export default defineConfig({
                 { label: "Home Assistant", slug: "ha-plugin" },
                 { label: "Hue Entertainment", slug: "plugins/hue-entertainment" },
                 { label: "LastFM Scrobbler", slug: "plugins/lastfm_scrobble" },
+                { label: "Library Automations", slug: "plugins/library_automations" },
                 { label: "Library Recommendations", slug: "plugins/library-recommendations" },
                 {
                   label: "Listenbrainz Scrobbler",
