@@ -35,6 +35,7 @@ This plugin renders a <a href="https://github.com/jberg/butterchurn" target="_bl
 - <b>Switch preset on downbeat.</b> Automatically change preset on a downbeat, using Music Assistant's beat analysis. Takes precedence over a fixed preset.
 - <b>Minimum time between switches.</b> How long a preset stays on screen before a downbeat may switch it.
 - <b>Blur</b> and <b>opacity</b> are adjusted per user from the visualizer menu in the fullscreen player.
+- <b>Colour tint.</b> The visuals are tinted toward the current track's artwork colour. This is on by default and can be turned off in the plugin's advanced configuration settings.
 
 Favourite the preset currently showing with the star next to the preset picker in the fullscreen player.
 
