@@ -24,7 +24,6 @@ Crossfade is a queue setting. Set it for all players in the [Player Queues setti
 
 | Mode | Behaviour |
 | --- | --- |
-| **Disabled** | No crossfade between tracks. |
 | **Standard Crossfade** | A simple time-based crossfade of a configurable duration. Used as a fallback when Smart Fades cannot run. |
 | **Smart Crossfade** | Uses the beat, key and energy data produced by this provider to build a beat-matched, EQ-aware transition. |
 
