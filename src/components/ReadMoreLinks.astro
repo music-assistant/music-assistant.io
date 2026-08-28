@@ -1,0 +1,92 @@
+---
+// Adds a "Read more" link to every post card on the blog listing pages, and makes
+// the cover image clickable through to the same post. The card title is the only
+// link starlight-blog renders, so the excerpt and cover image give the reader
+// nothing to click. Preview.astro (starlight-blog) has no override hook, so this
+// patches the DOM client-side (same approach as CrosspostBadges.astro).
+---
+
+<script is:inline>
+  const arrowIconSvg =
+    '<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M13.29 5.29a1 1 0 0 1 1.42 0l6 6a1 1 0 0 1 0 1.42l-6 6a1 1 0 0 1-1.42-1.42l4.3-4.29H4a1 1 0 1 1 0-2h13.59l-4.3-4.29a1 1 0 0 1 0-1.42Z"/></svg>';
+
+  const decorate = (article) => {
+    const header = article.querySelector(":scope > header");
+    const link = header?.querySelector("h2 a");
+    const href = link?.getAttribute("href");
+    if (!href) return;
+
+    // Wrap the cover image so it links to the post too. It's a duplicate of the
+    // title link, so hide it from assistive tech rather than repeating the title.
+    const cover = header.querySelector(":scope > figure");
+    if (cover && !cover.closest("a")) {
+      const coverLink = document.createElement("a");
+      coverLink.className = "cover-link";
+      coverLink.href = href;
+      coverLink.tabIndex = -1;
+      coverLink.setAttribute("aria-hidden", "true");
+      cover.replaceWith(coverLink);
+      coverLink.append(cover);
+    }
+
+    if (article.querySelector(":scope > a.read-more")) return;
+
+    const readMore = document.createElement("a");
+    readMore.className = "read-more";
+    readMore.href = href;
+    readMore.append(document.createTextNode("Read more"));
+    readMore.insertAdjacentHTML("beforeend", arrowIconSvg);
+
+    // The link text repeats on every card, so name the post for screen readers.
+    const title = link.textContent?.trim();
+    if (title) readMore.setAttribute("aria-label", `Read more: ${title}`);
+
+    // After the excerpt where one exists, otherwise straight after the header.
+    const excerpt = article.querySelector(":scope > .sl-markdown-content");
+    (excerpt ?? header).insertAdjacentElement("afterend", readMore);
+  };
+
+  const init = () => {
+    for (const article of document.querySelectorAll("article.preview")) {
+      decorate(article);
+    }
+  };
+
+  init();
+  document.addEventListener("astro:page-load", init);
+</script>
+
+<style is:global>
+  article.preview a.cover-link {
+    display: block;
+  }
+  article.preview a.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    width: fit-content;
+    color: var(--sl-color-text-accent);
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  article.preview a.read-more:hover {
+    color: var(--sl-color-white);
+  }
+  article.preview a.read-more svg {
+    flex-shrink: 0;
+    fill: currentColor;
+    transition: transform 0.15s ease;
+  }
+  article.preview a.read-more:hover svg {
+    transform: translateX(0.15rem);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    article.preview a.read-more svg {
+      transition: none;
+    }
+    article.preview a.read-more:hover svg {
+      transform: none;
+    }
+  }
+</style>

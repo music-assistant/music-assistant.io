@@ -12,6 +12,9 @@ Amazon does not let anything play to an Echo the way it lets you play to a Chrom
 
 Getting there is a long way from adding a provider and clicking save. You need somewhere to run a second piece of software, a web address of your own with a valid certificate on it, and an Amazon developer account to create the skill in. Set aside an evening, and read the whole of this page before you start.
 
+> [!IMPORTANT]
+> All issues related to this provider need to be raised in the [maintainer’s repository](https://github.com/alams154/music-assistant-alexa-skill-prototype/issues)
+
 ## Features
 
 - Detects all Alexa devices linked to your Amazon account and registers them as players
