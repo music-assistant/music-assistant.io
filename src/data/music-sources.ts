@@ -482,6 +482,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "classical"],
   },
   {
+    name: "VRT MAX",
+    slug: "music-providers/vrt-max",
+    icon: "/assets/icons/vrt_max-icon.svg",
+    categories: ["radio", "podcasts", "classical"],
+  },
+  {
     name: "Yandex Music",
     slug: "music-providers/yandex-music",
     icon: "/assets/icons/yandex-music-icon.svg",
