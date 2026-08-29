@@ -153,6 +153,25 @@ and a rough one is much better than leaving your source out of a language its li
 for. If you cannot find a flag at all, add the category without one, say so on the pull request
 and somebody will sort it out.
 
+### What to put in the free-text rows
+
+Most rows in the `Features` table are Yes or No. Three carry free text and are shown in the
+comparison exactly as you write them, so keep them in the same form as the other pages.
+
+**Maximum Stream Quality.** Give the codec and the ceiling: `FLAC 192kHz 24 bit`, `MP3 320kbps`,
+`AAC 256kbps`. The build reads this to decide whether the source is shown as Hi-Res, CD or Lossy.
+A bare codec name like `MP3` is accepted, but it does not say what the maximum is, which is the
+whole point of the column, so give the bitrate. Where the quality genuinely varies, use
+`Lossy variable bitrate` or `Varies by station`.
+
+**Login Method.** One of `None`, `Password`, `OAuth`, `Cookie` or `Token`. Where more than one
+works, join them with `or` and put the easiest first, as in `None or Password`. Add a bracketed
+qualifier only where it changes what the user has to do, as in `Cookie (ARL)`. Do not describe the
+credential itself: signing in with an email address and a password is still `Password`.
+
+**Media Types Supported.** A comma separated list drawn from Artists, Albums, Tracks, Playlists,
+Radio, Podcasts and Audiobooks. Step 4 above explains how these map onto the tile categories.
+
 ## Adding a player provider
 
 Four things, and the build will tell you if you miss either of the last two.

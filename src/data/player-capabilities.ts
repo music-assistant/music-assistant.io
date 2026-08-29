@@ -70,7 +70,7 @@ export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
     id: "syncCorrection",
     label: "Sync Adjust",
     help: "A per-player delay can be applied to pull a player that runs ahead of or behind the rest of its group back into line.",
-    href: "/player-support/airplay/#player-settings",
+    href: "/player-support/airplay/#protocol-settings",
   },
   {
     id: "crossfade",
