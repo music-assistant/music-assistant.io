@@ -153,6 +153,32 @@ If two between-song segments fall at the same point, AI Radio writes them separa
 | **allow (model may use web)** | The host may search if the AI engine supports it |
 | **force (web search required)** | The segment always searches. Use this for news |
 
+:::note[How web search works]
+Web search is not a separate tool call from Music Assistant. When you pick **allow** or **force**, AI Radio appends one of these lines to the prompt sent to the AI:
+
+```
+Web mode: allow. Use current information if it improves the answer.
+```
+
+or (for **force**)
+
+```
+Web mode: force. Use current up-to-date information where relevant.
+```
+
+Whether the model actually performs a search depends on your AI engine. Only providers that integrate their own built-in web search into the model will honour this hint — for example, if you use "OpenAI" as a provider, you would need to choose a model with web-search like `gpt-5-search-api`. Local models or models without a built-in search solution will not query the web; they may still try to answer from their training data, which can produce inaccurate results.
+
+:::
+
+An example prompt that benefits from web search:
+
+```text
+The previous track was <prev_songinfo> and the next track is <next_songinfo>.
+Write a short intro for <next_songinfo>. Look up any recent news about
+the artist first — if nothing fresh is available, mention their most
+recent album instead. Keep it under 80 words.
+```
+
 Use it sparingly. Searching makes a segment slower to prepare, and what it can do depends on your AI engine.
 
 ### Placeholders
@@ -255,3 +281,7 @@ Check the queue is actually playing. The DJ fills the gaps between tracks, so it
 ### Weather segments are empty or skipped
 
 Check the weather city and country are set in the plugin settings, and that **Weather Provider** has not been set to Disabled.
+
+### Web search seems to do nothing (or hallucinates)
+
+Web search is just a hint appended to the prompt, not a separate tool call from Music Assistant. Whether the model actually searches depends on your AI engine — only providers that integrate their own built-in web search into the model will honour this hint. Local models or models without a built-in search solution will not query the web; they may still try to answer from their training data, which can produce inaccurate results. If your engine does not provide search tooling, leave `web_search` at **disabled** for all segments.
