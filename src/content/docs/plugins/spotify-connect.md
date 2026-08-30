@@ -26,6 +26,7 @@ The plugin can run on two different playback engines. You choose one while addin
 - Stopping playback in Music Assistant releases the device in the Spotify app; moving playback to another device in the Spotify app stops the MA player
 - Crossfade and loudness normalization are configurable in the plugin settings
 - With the Soloist engine you can choose how volume behaves: `Player volume only` (default, the audio always arrives untouched) or syncing the Spotify app's volume slider with the player volume
+- With the go-librespot engine, its network port for Spotify Connect discovery can be pinned to a fixed/static value in advanced settings, instead of a random/ephemeral one on every restart — useful behind a strict firewall or with Docker's host networking mode
 
 ## Configuration
 
