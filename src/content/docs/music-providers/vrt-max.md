@@ -13,7 +13,7 @@ With VRT MAX you can stream the VRT radio stations live (Radio 1, Radio 2, Klara
 
 |           |                     |
 |:-----------------------|:---------------------:|
-| Subscription FREE | Yes (some on-demand content may be region-locked) |
+| Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Radio, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | No |
@@ -22,8 +22,8 @@ With VRT MAX you can stream the VRT radio stations live (Radio 1, Radio 2, Klara
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | MP3 (live radio) / AAC (on-demand) |
-| Login Method | Username & Password (optional) |
+| Maximum Stream Quality | AAC 128kbps |
+| Login Method | Password |
 
 ### Other
 
@@ -35,27 +35,20 @@ With VRT MAX you can stream the VRT radio stations live (Radio 1, Radio 2, Klara
 
 ## Usage
 
-Add the provider from Settings → Providers. Leave the username and password empty to use live radio only, or enter your VRT account credentials to unlock on-demand playback, favourites and resume.
+Add the provider from Settings → Music Sources. Leave the username and password empty to use live radio only, or enter your VRT account credentials to unlock on-demand playback, favourites and resume.
 
 To connect more than one VRT account, add the provider again as a separate instance.
 
-## Configuration
+## Settings
 
-No configuration is required for live radio. To enable on-demand playback and account features, provide your VRT account credentials.
-
-### Settings
-
-- <b>Username.</b> Optional. The email address of your VRT account. Leave empty for live radio only.
-- <b>Password.</b> Optional. The password of your VRT account. Leave empty for live radio only.
+- <b>Username.</b> The email address of your VRT account. Leave empty for live radio only.
+- <b>Password.</b> The password of your VRT account. Leave empty for live radio only.
 
 ## Known Issues / Notes
 
-- This provider is currently marked as experimental.
-- VRT MAX is an unofficial integration and is not affiliated with or endorsed by VRT. It relies on VRT's public web/app APIs, which may change at any time.
 - Some on-demand programmes and podcasts may be geo-restricted to Belgium.
 - Station logos and programme metadata are populated from VRT where available.
 
 ## Not Yet Supported
 
 - Recommendations / discover
-- Lyrics
