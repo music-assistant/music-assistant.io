@@ -27,6 +27,7 @@ export type CategoryId =
   // Music and radio from a particular country
   | "germany"
   | "austria"
+  | "belgium"
   | "sweden"
   | "denmark"
   | "russia"
@@ -143,6 +144,12 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         icon: "/assets/icons/listen/austria.svg",
         title: "Österreich / Austria",
         blurb: "Austrian radio stations and podcasts.",
+      },
+      {
+        id: "belgium",
+        icon: "/assets/icons/listen/belgium.svg",
+        title: "België / Belgium",
+        blurb: "Radio and podcasts from the Belgian public broadcasters.",
       },
       {
         id: "sweden",
@@ -485,7 +492,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "VRT MAX",
     slug: "music-providers/vrt-max",
     icon: "/assets/icons/vrt_max-icon.svg",
-    categories: ["radio", "podcasts", "classical"],
+    categories: ["radio", "podcasts", "classical", "belgium"],
   },
   {
     name: "Yandex Music",
