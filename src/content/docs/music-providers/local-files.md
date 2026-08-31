@@ -185,6 +185,7 @@ How you name and arrange your folders decides how much Music Assistant can work 
 ### Music
 
 - Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
+- If your files are untagged, MA will fall back to reading `Artist - Title.ext` from the filename. See [Files Without Tags](#files-without-tags) for the exact rules and their limits. Tagging the files is always the better answer
 - Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
 - To minimise the chance of problems, music folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any non-[alphanumeric characters](https://en.wikipedia.org/wiki/Alphanumericals) removed (e.g. AC/DC should be in a folder ACDC)
 - Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
@@ -299,6 +300,23 @@ Normally it is best to leave the Picard tags unchanged. However, some people do 
 - If the AcoustID Lookup provider is in use, disable it, as it will re-add the Recording ID that was just removed
 
 ---
+
+### Files Without Tags
+
+Tags are always preferred. When a file has no `title`, `artist` or `track` tag at all, MA falls back to reading the filename, but this is a last resort and it is deliberately simple. If your files are untagged, name them `Artist - Title.ext` and nothing else.
+
+> [!WARNING]
+> The filename is read only as far as the **first** period. `Dr. Dre - Still D.R.E..mp3` is read as the title `Dr` with no artist. Untagged filenames must contain exactly one period, the one before the file extension
+
+<details>
+<summary>How MA reads untagged filenames</summary>
+
+- The separator must be a hyphen with a space either side. `Artist-Title.mp3` is not split, and the whole name becomes the title with no artist
+- Everything before the first ` - ` is the artist and the next segment is the title. Further segments are discarded, so `Nirvana - Come As You Are - Live.mp3` imports as `Come As You Are` and the `Live` marker is lost
+- Do not put a track number in the filename. A leading number is read as the artist, so `01 - Come As You Are.mp3` gives the artist `01`, and `01 - Nirvana - Come As You Are.mp3` gives the artist `01` and the title `Nirvana`
+- There is no filename or folder fallback for the **album** name, so an untagged file is never grouped into an album. The `Action when a track is missing the Albumartist ID3 tag` setting covers the album *artist* only, and only once an album tag exists
+
+</details>
 
 ## CUE Sheet Support
 
