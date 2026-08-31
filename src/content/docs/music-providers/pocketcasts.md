@@ -33,6 +33,7 @@ Music Assistant becomes another of those devices, reading from and writing back 
 - Podcasts can be subscribed to and unsubscribed from within Music Assistant, with changes synced back to Pocket Casts
 - Playback progress is synced bidirectionally with Pocket Casts, and playback resumes from the saved position
 - Seeking within episodes is supported
+- Transcripts are available for many podcasts
 
 ## Configuration
 
