@@ -64,7 +64,7 @@ Several client types can connect to Music Assistant via Sendspin:
 | Client | Description |
 |--------|-------------|
 | **Web Browser** | The built-in Music Assistant web player uses Sendspin for local playback |
-| **[Google Cast (Sendspin mode)](/player-support/google-cast/)** | Experimental Sendspin mode for Chromecast devices |
+| **[Google Cast (Sendspin mode)](/player-support/google-cast/)** | Experimental Sendspin mode for Chromecast devices, off by default. See [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices) |
 | **<a href="https://esphome.github.io/home-assistant-voice-pe/" target="_blank" rel="noopener noreferrer">Home Assistant Voice PE</a>** | Built into recent Voice PE firmware. Update the device with the official installer, choosing a pre-release build if the current stable one does not show up as a player |
 | **[Local Audio](/player-support/local-audio/)** | Plays to the soundcard, USB DAC or built-in output of the machine it runs on. Deploys as a Home Assistant App or with Docker Compose |
 | **<a href="https://github.com/trudenboy/sendspin-bt-bridge" target="_blank" rel="noopener noreferrer">Sendspin Bluetooth Bridge</a>** | Bridges Bluetooth speakers as MA players, with multi-device support, multiroom sync and a web dashboard. Deploys as a Home Assistant App, Docker, or LXC |

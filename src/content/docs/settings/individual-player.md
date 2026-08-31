@@ -37,7 +37,7 @@ Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control 
 
 - <b>Preferred Output Protocol.</b> Choose from the list of available protocols
 
-Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. The [Audio Pipeline](/audiopipeline/) view shows which protocol a player is actually using and what the audio quality is at each stage.
+Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. A protocol whose toggle says *(experimental)* is switched off until you turn it on yourself, with a warning above the toggle explaining what to expect. The [Audio Pipeline](/audiopipeline/) view shows which protocol a player is actually using and what the audio quality is at each stage.
 
 ### Settings shared by most protocols
 

@@ -12,7 +12,7 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 - Music Assistant supports playing to cast groups which are created in the Google Home app
 - When using Google cast groups then perfect sync across players in that group is possible
 - Any physical control buttons on the device should be supported as well as voice control
-- Cast speakers can be synchronised with other Sendspin clients (experimental)
+- Cast speakers can be synchronised with other Sendspin clients. This is experimental and off by default, see [Sendspin on Cast devices](#sendspin-on-cast-devices)
 
 ## Configuration
 
@@ -35,6 +35,14 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
 - <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> On by default, as these devices handle one continuous stream more reliably than being fed tracks one at a time
 
+## Sendspin on Cast devices
+
+A Cast speaker can also be driven over [Sendspin](/player-support/sendspin/), which lets it play in sync alongside Sendspin, AirPlay and Sonos players in one group. This is experimental and switched off by default, so there is nothing to do here unless you want a Cast speaker in a mixed group.
+
+To turn it on, open the player's settings, find Sendspin in the **Output Protocols** section and tick **Enable this protocol on this player (experimental)**.
+
+Expect to do some tuning afterwards. Playback is rarely in sync straight away, so you will probably have to set **Static playback delay (ms)** for that speaker by hand until it lines up with the others. Some recent Cast firmwares cannot run Sendspin at all and there is no way to tell in advance, so you only find out the first time you play something. When that happens Music Assistant says so and stops offering Sendspin for that speaker. The standard Cast protocol is unaffected and keeps working.
+
 ## Known Issues / Notes
 
 - Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
@@ -45,7 +53,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - Cast Groups containing only a stereo pair will not work
 - Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length`, Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
 - MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work
-- Google has removed functionality that enables Sendspin to work with some devices. If a message is heard that Sendspin does not work with the device then navigate to the player settings, OutPut Protocols section and disable Sendspin
+- Google has removed functionality that Sendspin needs on some devices. If a message says Sendspin does not work with the device, Music Assistant stops offering Sendspin for that speaker and will not offer it again. There is nothing to do, playback continues over the standard Cast protocol
 
 ## Troubleshooting playback problems
 
