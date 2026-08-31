@@ -53,6 +53,6 @@ The player then appears in the cast menu of Plexamp on your phone within seconds
 - On some networks the Plexamp mobile apps do not pick up players via local (GDM) discovery. Linking with a Plex account is the workaround for those setups; it is not needed where local discovery already works
 - Timeline reporting to the Plex server is done on a per-player basis
 - A queue loaded from Plex is capped at 100 tracks to keep loading and syncing responsive
-- Each plugin instance keeps the same network port across restarts. If you run several instances, give each one a different port, or leave the port empty and let Music Assistant pick and remember a free one for each
+- Each plugin instance keeps the same network port across restarts. If several instances are being run, each one requires a different port, or leave the port empty and let Music Assistant pick and remember a free one for each
 - Plex does not offer a public protocol for controlling Plex players, so this plugin builds on the reverse-engineering work done by others. A Plex update could stop it from working overnight, and there is no guarantee it can be fixed
 - Playback is driven by Music Assistant, not by Plex, so features are mirrored by MA and are not exactly the same as playing on a real Plex client. The sweet fades and the shuffling, for example, are handled on the MA side
