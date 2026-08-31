@@ -299,8 +299,6 @@ Normally it is best to leave the Picard tags unchanged. However, some people do 
 - Because there is no version specific tag, place the version between brackets in the title, for the Album, Track, or both (when using the Album tag, make sure it is identical on all tracks of that release). For example, Great Song (Vinyl Rip Version). Regardless of what other text is in the brackets ensure the word `Version` is also there
 - If the AcoustID Lookup provider is in use, disable it, as it will re-add the Recording ID that was just removed
 
----
-
 ### Files Without Tags
 
 Tags are always preferred. When a file has no `title`, `artist` or `track` tag at all, MA falls back to reading the filename, but this is a last resort and it is deliberately simple. If your files are untagged, name them `Artist - Title.ext` and nothing else.
@@ -317,6 +315,8 @@ Tags are always preferred. When a file has no `title`, `artist` or `track` tag a
 - There is no filename or folder fallback for the **album** name, so an untagged file is never grouped into an album. The `Action when a track is missing the Albumartist ID3 tag` setting covers the album *artist* only, and only once an album tag exists
 
 </details>
+
+---
 
 ## CUE Sheet Support
 
