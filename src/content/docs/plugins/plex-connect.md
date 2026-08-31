@@ -42,7 +42,7 @@ To make each player appear as a Plex Connect target in Plex clients, the Plex Co
 On most networks the Plexamp mobile apps (iOS/Android) discover Plex Connect players on the local network, just like the desktop and web clients. On some networks, though, the mobile apps only list players registered on plex.tv. If your player does not appear in the mobile cast menu, link it with your Plex account:
 
 1. In the plugin instance settings, click **Get plex.tv link code**.
-2. Open [plex.tv/link](https://plex.tv/link) (signed in to your Plex account) and enter the 4-character code shown in the settings dialog.
+2. Open [plex.tv/link](https://plex.tv/link) (signed in to a Plex account) and enter the 4-character code shown in the settings dialog.
 3. Back in Music Assistant, click **I have entered the code** and save the configuration.
 
 The player then appears in the cast menu of Plexamp on the mobile device within seconds. Linking is a one-time step per plugin instance: Music Assistant stores a device token and refreshes the registration automatically on startup. Use **Unlink from plex.tv** in the settings to undo it. Unlinking or removing the plugin instance does not remove the device entry from the Plex account - remove it under [Authorized Devices](https://app.plex.tv/desktop/#!/settings/devices/all) if desired.
