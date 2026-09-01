@@ -153,6 +153,7 @@ If two between-song segments fall at the same point, AI Radio writes them separa
 | **allow (model may use web)** | The host may search if the AI engine supports it |
 | **force (web search required)** | The segment always searches. Use this for news |
 
+Music Assistant does not search the web itself. These settings add a line to the prompt asking the AI to use current information, and it is up to your AI engine whether it acts on it. Engines with their own built-in search will but local models and models without search will not, and may answer from what they were trained on instead, which can be out of date or wrong.
 Use it sparingly. Searching makes a segment slower to prepare, and what it can do depends on your AI engine.
 
 ### Placeholders
@@ -255,3 +256,7 @@ Check the queue is actually playing. The DJ fills the gaps between tracks, so it
 ### Weather segments are empty or skipped
 
 Check the weather city and country are set in the plugin settings, and that **Weather Provider** has not been set to Disabled.
+
+### Web search seems to do nothing (or hallucinates)
+
+Your AI engine does likely not have search of its own or the search is not triggered by the prompt hint. For the latter, try rephrasing the prompt in your Host prompt. If your AI engine does not have a search of its own, set web search to disabled on every segment, or the host will keep inventing current events. See [web search modes](#web-search-modes).
