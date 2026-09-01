@@ -1,8 +1,26 @@
 ---
 import Default from "@astrojs/starlight/components/SiteTitle.astro";
+import { getCollection } from "astro:content";
 import latestRelease from "../data/latest-release.json";
 
-const { version, url } = latestRelease as { version?: string; url?: string };
+const { version, url: githubUrl } = latestRelease as {
+  version?: string;
+  url?: string;
+};
+
+// Link the badge to our own announcement post rather than the GitHub release,
+// since that's more useful to visitors. Blog posts are only published per
+// minor version, so just take the most recent one tagged "release" rather
+// than trying to match it to the exact (possibly patch-level) version above.
+const releasePosts = await getCollection(
+  "docs",
+  (entry) =>
+    entry.id.startsWith("blog/") && (entry.data.tags ?? []).includes("release"),
+);
+const latestPost = releasePosts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+)[0];
+const url = latestPost ? `/${latestPost.id}/` : githubUrl;
 ---
 
 <Default {...Astro.props}><slot /></Default>
