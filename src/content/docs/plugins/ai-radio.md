@@ -259,4 +259,4 @@ Check the weather city and country are set in the plugin settings, and that **We
 
 ### Web search seems to do nothing (or hallucinates)
 
-Web search is just a hint appended to the prompt, not a separate tool call from Music Assistant. Whether the model actually searches depends on your AI engine — only providers that integrate their own built-in web search into the model will honour this hint. Local models or models without a built-in search solution will not query the web; they may still try to answer from their training data, which can produce inaccurate results. If your engine does not provide search tooling, leave `web_search` at **disabled** for all segments.
+Your AI engine does likely not have search of its own or the search is not triggered by the prompt hint. For the latter, try rephrasing the prompt in your Host prompt. If your AI engine does not have a search of its own, set web search to disabled on every segment, or the host will keep inventing current events. See [web search modes](#web-search-modes).
