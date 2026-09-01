@@ -46,7 +46,6 @@ To set up the Yoto provider, follow these steps:
    - Allowed Callback URLs: https://music-assistant.io/callback
    - scopes:
      - family:library:view
-     - user:content:view
      - offline_access
 4. Once the application is created, you will be shown the Client ID. Paste the Client ID into the setup form.
 
