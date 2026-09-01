@@ -50,6 +50,8 @@ Additionally, there are options which can be set on a global level which can be 
 
 Smart Shuffle enhances standard shuffle behavior by intelligently reducing repetition. Instead of selecting tracks purely at random, songs and artists that have been played recently are deprioritized, resulting in a more evenly distributed listening experience and reducing the likelihood of the same tracks being repeated when playlists are replayed. Smart Shuffle is always applied when playing a dynamic playlist, regardless of this setting.
 
+**Optimize order for Smart Fades** is an optional Smart Shuffle setting. When Smart crossfade is active, Music Assistant uses Smart Fades analysis it already has for upcoming tracks to put more musically compatible neighbours together. Tempo, musical key and end-to-start energy are considered, while Smart Shuffle's recency rules still take priority. The setting does not start new analysis, and tracks without analysis are treated neutrally. Smart Fades still decides the actual transition when the tracks play.
+
 Autoplay has four options as follows:
 - <b>Automatic — similar tracks, falling back to your library (default).</b> New tracks similar to what was recently played are requested from the music providers. If no provider is able to supply similar-track recommendations (for example, when only local files are used), an endless mix drawn from the library is used instead, so playback will not stop
 
