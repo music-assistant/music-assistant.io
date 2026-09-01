@@ -351,6 +351,7 @@ export default defineConfig({
         ThemeProvider: "./src/components/ThemeProvider.astro",
         ThemeSelect: "./src/components/ThemeSelect.astro",
         SocialIcons: "./src/components/SocialIcons.astro",
+        SiteTitle: "./src/components/SiteTitle.astro",
       },
     }),
     mdx(),
