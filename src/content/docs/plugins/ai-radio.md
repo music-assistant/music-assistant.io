@@ -153,32 +153,7 @@ If two between-song segments fall at the same point, AI Radio writes them separa
 | **allow (model may use web)** | The host may search if the AI engine supports it |
 | **force (web search required)** | The segment always searches. Use this for news |
 
-:::note[How web search works]
-Web search is not a separate tool call from Music Assistant. When you pick **allow** or **force**, AI Radio appends one of these lines to the prompt sent to the AI:
-
-```
-Web mode: allow. Use current information if it improves the answer.
-```
-
-or (for **force**)
-
-```
-Web mode: force. Use current up-to-date information where relevant.
-```
-
-Whether the model actually performs a search depends on your AI engine. Only providers that integrate their own built-in web search into the model will honour this hint — for example, if you use "OpenAI" as a provider, you would need to choose a model with web-search like `gpt-5-search-api`. Local models or models without a built-in search solution will not query the web; they may still try to answer from their training data, which can produce inaccurate results.
-
-:::
-
-An example prompt that benefits from web search:
-
-```text
-The previous track was <prev_songinfo> and the next track is <next_songinfo>.
-Write a short intro for <next_songinfo>. Look up any recent news about
-the artist first — if nothing fresh is available, mention their most
-recent album instead. Keep it under 80 words.
-```
-
+Music Assistant does not search the web itself. These settings add a line to the prompt asking the AI to use current information, and it is up to your AI engine whether it acts on it. Engines with their own built-in search will but local models and models without search will not, and may answer from what they were trained on instead, which can be out of date or wrong.
 Use it sparingly. Searching makes a segment slower to prepare, and what it can do depends on your AI engine.
 
 ### Placeholders
