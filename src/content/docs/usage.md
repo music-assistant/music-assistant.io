@@ -75,7 +75,7 @@ See the [player queues settings](/settings/core/#player-queues) section for more
 
 ### Endless Mix
 
-Endless Mix keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music).
+Endless Mix keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music). When this is selected Autoplay is enabled and can't be disabled, and shuffle is disabled and can't be enabled.
 
 <details>
 <summary>How Endless Mix picks tracks</summary>
