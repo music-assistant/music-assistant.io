@@ -1,0 +1,49 @@
+---
+import Default from "@astrojs/starlight/components/SiteTitle.astro";
+import latestRelease from "../data/latest-release.json";
+
+const { version, url } = latestRelease as { version?: string; url?: string };
+---
+
+<Default {...Astro.props}><slot /></Default>
+{
+  version && url && (
+    <a
+      href={url}
+      class="version-badge"
+      title={`Music Assistant ${version}`}
+      translate="no"
+    >
+      {version}
+    </a>
+  )
+}
+
+<style>
+  :global(.title-wrapper) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .version-badge {
+    padding: 0 4px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 15px;
+    height: 15px;
+    letter-spacing: 0.4px;
+    color: var(--sl-color-black);
+    background-color: var(--sl-color-bg-accent);
+    border-radius: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      background-color 0.3s ease-in-out,
+      color 0.3s ease-in-out;
+  }
+  .version-badge:hover {
+    background-color: var(--sl-color-accent-low);
+    color: var(--sl-color-text);
+  }
+</style>

@@ -329,6 +329,7 @@ export default defineConfig({
         Footer: "./src/components/Footer.astro",
         ThemeProvider: "./src/components/ThemeProvider.astro",
         ThemeSelect: "./src/components/ThemeSelect.astro",
+        SiteTitle: "./src/components/SiteTitle.astro",
       },
     }),
     mdx(),
