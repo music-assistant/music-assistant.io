@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "scripts": {
     "fetch-allowed-referrers": "node ./scripts/fetch-allowed-referrers.mjs",
-    "predev": "npm run fetch-allowed-referrers",
+    "fetch-latest-release": "node ./scripts/fetch-latest-release.mjs",
+    "predev": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
     "dev": "astro dev --host",
-    "prestart": "npm run fetch-allowed-referrers",
+    "prestart": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
     "start": "astro dev --host",
-    "prebuild": "npm run fetch-allowed-referrers",
+    "prebuild": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
     "build": "astro build",
     "preview": "astro preview --host",
     "astro": "astro"

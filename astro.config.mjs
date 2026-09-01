@@ -129,7 +129,10 @@ export default defineConfig({
           label: "I Want To",
           items: [
             { label: "Install Music Assistant", slug: "installation" },
-            { label: "Install the HA Integration", slug: "integration/installation" },
+            {
+              label: "Install the HA Integration",
+              slug: "integration/installation",
+            },
             { label: "Listen To...", slug: "faq/listen-to" },
             { label: "Stream To...", slug: "faq/stream-to" },
           ],
@@ -215,14 +218,23 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { label: "Overview", slug: "plugins" },
-                { label: 'AI Radio', slug: 'plugins/ai-radio' },
+                { label: "AI Radio", slug: "plugins/ai-radio" },
                 { label: "AirPlay Receiver", slug: "plugins/airplay-receiver" },
-                { label: "Ariacast Receiver", slug: "plugins/ariacast-receiver" },
+                {
+                  label: "Ariacast Receiver",
+                  slug: "plugins/ariacast-receiver",
+                },
                 { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
                 { label: "Home Assistant", slug: "ha-plugin" },
-                { label: "Hue Entertainment", slug: "plugins/hue-entertainment" },
+                {
+                  label: "Hue Entertainment",
+                  slug: "plugins/hue-entertainment",
+                },
                 { label: "LastFM Scrobbler", slug: "plugins/lastfm_scrobble" },
-                { label: "Library Recommendations", slug: "plugins/library-recommendations" },
+                {
+                  label: "Library Recommendations",
+                  slug: "plugins/library-recommendations",
+                },
                 {
                   label: "Listenbrainz Scrobbler",
                   slug: "plugins/listenbrainz_scrobble",
@@ -242,7 +254,10 @@ export default defineConfig({
                 { label: "Smart Playlist", slug: "plugins/smart_playlist" },
                 { label: "Sonic Similarity", slug: "plugins/sonic-similarity" },
                 { label: "Spotify Connect", slug: "plugins/spotify-connect" },
-                { label: "Subsonic Scrobbler", slug: "plugins/subsonic_scrobble" },
+                {
+                  label: "Subsonic Scrobbler",
+                  slug: "plugins/subsonic_scrobble",
+                },
                 { label: "VBAN Receiver", slug: "plugins/vban-receiver" },
                 {
                   label: "Yandex Music Connect (Ynison)",
@@ -266,7 +281,10 @@ export default defineConfig({
                   label: "LastFM Recommendations",
                   slug: "metadata-providers/lastfm-recommendations",
                 },
-                { label: "MusicBrainz", slug: "metadata-providers/musicbrainz" },
+                {
+                  label: "MusicBrainz",
+                  slug: "metadata-providers/musicbrainz",
+                },
                 {
                   label: "Playlist Metadata",
                   slug: "metadata-providers/playlist-metadata",
@@ -283,7 +301,10 @@ export default defineConfig({
                   slug: "audio-analysis/loudness-analysis",
                 },
                 { label: "Smart Fades", slug: "audio-analysis/smart-fades" },
-                { label: "Sonic Analysis", slug: "audio-analysis/sonic-analysis" },
+                {
+                  label: "Sonic Analysis",
+                  slug: "audio-analysis/sonic-analysis",
+                },
               ],
             },
           ],
@@ -329,6 +350,8 @@ export default defineConfig({
         Footer: "./src/components/Footer.astro",
         ThemeProvider: "./src/components/ThemeProvider.astro",
         ThemeSelect: "./src/components/ThemeSelect.astro",
+        SocialIcons: "./src/components/SocialIcons.astro",
+        SiteTitle: "./src/components/SiteTitle.astro",
       },
     }),
     mdx(),
