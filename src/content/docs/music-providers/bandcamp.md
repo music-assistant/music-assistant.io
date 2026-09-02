@@ -25,13 +25,13 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 | Self-Hosted Local Media                           |           No            |
 | Media Types Supported                             | Artists, Albums, Tracks |
 | [Recommendations](/ui/#view---discover) Supported |           No            |
-| Lyrics Supported                                  |  Yes (optional setting) |
+| Lyrics Supported                                  |           Yes           |
 | [Endless Mix](/ui/#track-menu)                    |           No            |
 | Artist Top Tracks Support                         |           Yes           |
 | Similar Artists Support                           |           No            |
 | Similar Tracks Support                            |           No            | 
 | Maximum Stream Quality                            |       MP3 128kbps       |
-| Login Method                                      |    Cookie (optional)    |
+| Login Method                                      |    None or Cookie       |
 
 ### Other
 - Searching the Bandcamp catalogue
@@ -40,9 +40,9 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 
 ## Configuration
 
-- Providing an identity cookie is optional, but allows importing owned albums as library items.
-- Enable "Fetch song lyrics" to get lyrics from Bandcamp. Each album or standalone track costs one extra Bandcamp request, cached for 30 days.
-- Tweak Top Tracks Limit to balance search speed and quantity of search results.
+- Providing an identity cookie is optional, but allows importing owned albums as library items
+- Enable "Fetch song lyrics" to get lyrics from Bandcamp
+- Tweak Top Tracks Limit to balance search speed and quantity of search results
 
 > [!NOTE]
 > Cookies may expire after some time. This means that you may have to replace the identity cookie in the provider configuration if library synchronization begins to fail.
@@ -78,8 +78,8 @@ This Provider mirrors this directly.
 
 What this means in practice:
 
-- **Artist search returns pages, not performers.** A performer without their own Bandcamp page will not appear in artist search results. To find their releases, search by **album** name, or by the **label** that hosts them. Examples Below.
-- **A label's page lists every album on it**, regardless of the credited performer.
-- **Names can collide.** The same name may exist as both a standalone artist page and as a credited performer on a label-hosted album (e.g. *Apollo Brown* on their own [page](https://apollobrown.bandcamp.com/) vs. on [*Hip Dozer*](https://hipdozer.bandcamp.com/album/night-moves) compilations). These are distinct entries on Bandcamp and will appear separately.
-- **Track and album metadata is correct.** The credited performer is what's displayed in the player and scrobbled, even when the parent page is a label.
+- **Artist search returns pages, not performers.** A performer without their own Bandcamp page will not appear in artist search results. To find their releases, search by **album** name, or by the **label** that hosts them
+- **A label's page lists every album on it**, regardless of the credited performer
+- **Names can collide.** The same name may exist as both a standalone artist page and as a credited performer on a label-hosted album (e.g. *Apollo Brown* on their own [page](https://apollobrown.bandcamp.com/) vs. on [*Hip Dozer*](https://hipdozer.bandcamp.com/album/night-moves) compilations). These are distinct entries on Bandcamp and will appear separately
+- **Track and album metadata is correct.** The credited performer is what's displayed in the player and scrobbled, even when the parent page is a label
   
