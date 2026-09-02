@@ -4,7 +4,7 @@ title: "Bandcamp"
 
 # Bandcamp Music <img src="/assets/icons/bandcamp.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua](https://github.com/ALERTua)
+Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua](https://github.com/ALERTua) and [teancom](https://github.com/teancom)
 
 Bandcamp is a shop and streaming site where artists and labels publish their own music and sell it directly to listeners. Most of the catalogue can be streamed for free before you decide to buy.
 
@@ -19,19 +19,19 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 
 ## Features
 
-|                                                 |                         |
-|:------------------------------------------------|:-----------------------:|
-| Subscription FREE                               |           Yes           |
-| Self-Hosted Local Media                         |           No            |
-| Media Types Supported                           | Artists, Albums, Tracks |
+|                                                   |                         |
+|:--------------------------------------------------|:-----------------------:|
+| Subscription FREE                                 |           Yes           |
+| Self-Hosted Local Media                           |           No            |
+| Media Types Supported                             | Artists, Albums, Tracks |
 | [Recommendations](/ui/#view---discover) Supported |           No            |
-| Lyrics Supported                                |           Yes           |
-| [Endless Mix](/ui/#track-menu)              |           No            |
-| Artist Top Tracks Support                       |            Yes                     |
-| Similar Artists Support                         |            No                      |
-| Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality                          | MP3 128kbps |
-| Login Method                                    |    Cookie (optional)    |
+| Lyrics Supported                                  |  Yes (optional setting) |
+| [Endless Mix](/ui/#track-menu)                    |           No            |
+| Artist Top Tracks Support                         |           Yes           |
+| Similar Artists Support                           |           No            |
+| Similar Tracks Support                            |           No            | 
+| Maximum Stream Quality                            |       MP3 128kbps       |
+| Login Method                                      |    Cookie (optional)    |
 
 ### Other
 - Searching the Bandcamp catalogue
@@ -41,6 +41,7 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 ## Configuration
 
 - Providing an identity cookie is optional, but allows importing owned albums as library items.
+- Enable "Fetch song lyrics" to get lyrics from Bandcamp. Each album or standalone track costs one extra Bandcamp request, cached for 30 days.
 - Tweak Top Tracks Limit to balance search speed and quantity of search results.
 
 > [!NOTE]
