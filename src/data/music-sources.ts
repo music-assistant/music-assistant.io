@@ -255,7 +255,7 @@ export const MUSIC_SOURCES: MusicSource[] = [
   },
   {
     name: "DI.fm Network",
-    slug: "music-providers/digitally-incorporated",
+    slug: "music-providers/digitally-imported",
     icon: "/assets/icons/difm-icon.svg",
     categories: ["radio", "classical"],
   },
