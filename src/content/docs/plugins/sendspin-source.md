@@ -1,6 +1,9 @@
 ---
 title: Sendspin Source
 description: Use Sendspin source devices as Live Inputs in Music Assistant
+plugin:
+  group: incoming
+  summary: "Brings a turntable, microphone or line-in on a Sendspin device into Music Assistant as a Live Input."
 ---
 
 # Sendspin Source <img src="/assets/icons/sendspin-icon.svg" alt="Sendspin logo" style="width: 70px; float: right;" loading="lazy" />

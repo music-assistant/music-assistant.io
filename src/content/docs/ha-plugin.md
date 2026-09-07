@@ -1,6 +1,9 @@
 ---
 title: Home Assistant Plugin Provider
 description: The Home Assistant Plugin provides a connection from HA to MA
+plugin:
+  group: other-systems
+  summary: "The bridge to Home Assistant. It links entities to player controls, and hands the AI and text-to-speech services you already have there to the features that need them."
 ---
 # Home Assistant Plugin Provider <img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 

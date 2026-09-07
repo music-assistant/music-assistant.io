@@ -1,94 +1,53 @@
 ---
 import { getCollection } from "astro:content";
-import { PLUGIN_GROUPS, PLUGINS } from "../data/plugins";
+import { PLUGIN_GROUPS } from "../content.config";
 
 // ---------------------------------------------------------------------------
 // The list of every plugin, for the bottom of the Plugins overview.
 //
-// Names come from the pages themselves, so a renamed plugin renames here too,
-// and a plugin page with no entry in src/data/plugins.ts stops the build with
-// a block to paste. Without that the list would be a fourth place to remember
-// when a plugin is added, after the page, the sidebar and the release notes.
+// Each plugin page carries its own summary and group in its frontmatter, so
+// the list is the pages rather than a copy of them, and a renamed or reworded
+// plugin follows on its own. The group and the summary are checked as the page
+// loads, by the schema in src/content.config.ts.
 //
-// Pages outside the plugins folder are listed by naming their slug, as the
-// Home Assistant plugin does. Only the folder is checked for pages nobody
-// listed, since only the folder is guaranteed to hold plugins and nothing else.
+// What the schema cannot see is a plugin page that names no group at all, so
+// that is checked here: it stops the build with a block to paste. Without it
+// the list would be a fourth place to remember when a plugin is added, after
+// the page, the sidebar and the release notes.
+//
+// Only the plugins folder is checked that way, since only it is guaranteed to
+// hold plugins and nothing else. A plugin page outside it, as the Home
+// Assistant one is, joins the list by carrying the frontmatter.
 // ---------------------------------------------------------------------------
 
-const problems: string[] = [];
-
 const docs = await getCollection("docs");
-const titleBySlug = new Map(docs.map((entry) => [entry.id, entry.data.title]));
-const knownGroupIds = new Set(PLUGIN_GROUPS.map((group) => group.id));
-const listed = new Set(PLUGINS.map((plugin) => plugin.slug));
 
-for (const plugin of PLUGINS) {
-  const where = `the entry for "${plugin.slug}"`;
+const missing = docs.filter(
+  (entry) =>
+    entry.id.startsWith("plugins/") &&
+    entry.id !== "plugins/index" &&
+    !entry.data.plugin,
+);
 
-  if (!titleBySlug.has(plugin.slug)) {
-    problems.push(
-      `${where} has no documentation page. Expected a file at ` +
-        `src/content/docs/${plugin.slug}.md — check the spelling, and ` +
-        `remember the slug includes the folder, for example ` +
-        `"plugins/party".`,
-    );
-  }
-
-  if (!knownGroupIds.has(plugin.group)) {
-    problems.push(
-      `${where} uses the group "${plugin.group}", which is not one of the ` +
-        `groups in PLUGIN_GROUPS. The valid groups are: ` +
-        `${[...knownGroupIds].join(", ")}.`,
-    );
-  }
-
-  if (!plugin.summary.trim()) {
-    problems.push(`${where} has an empty summary. Give it one sentence.`);
-  }
-}
-
-if (new Set(PLUGINS.map((p) => p.slug)).size !== PLUGINS.length) {
-  problems.push(
-    `Two entries have the same slug, so a plugin would be listed twice. ` +
-      `Delete whichever is the duplicate.`,
-  );
-}
-
-// A new plugin page must be added to the data file too, otherwise it would
-// quietly never appear in the list.
-for (const entry of docs) {
-  const slug = entry.id;
-  if (!slug.startsWith("plugins/") || slug === "plugins/index") continue;
-  if (listed.has(slug)) continue;
-  problems.push(
-    `"${slug}" has a documentation page but no entry in ` +
-      `src/data/plugins.ts, so it would never appear in the list of ` +
-      `plugins on the overview page. Add it there, keeping its group ` +
-      `alphabetical by slug:\n\n` +
-      `       {\n` +
-      `         slug: "${slug}",\n` +
-      `         summary: "CHANGE ME. One sentence on what it does.",\n` +
-      `         group: "CHANGE-ME",\n` +
-      `       },\n\n` +
-      `     Pick a group from: ${[...knownGroupIds].join(", ")}.`,
-  );
-}
-
-for (const group of PLUGIN_GROUPS) {
-  if (!PLUGINS.some((plugin) => plugin.group === group.id)) {
-    problems.push(
-      `The group "${group.id}" is defined but no plugin uses it, so it ` +
-        `would appear as an empty heading. Either put a plugin in it or ` +
-        `remove the group.`,
-    );
-  }
-}
-
-if (problems.length > 0) {
+if (missing.length > 0) {
   throw new Error(
-    `\n\nsrc/data/plugins.ts has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
-      problems.map((problem, i) => `  ${i + 1}. ${problem}`).join("\n\n") +
-      `\n\nFix the file and build again.\n`,
+    `\n\n${missing.length} plugin page${missing.length === 1 ? " has" : "s have"} no "plugin" ` +
+      `block in ${missing.length === 1 ? "its" : "their"} frontmatter, so ` +
+      `${missing.length === 1 ? "it" : "they"} would never appear in the list of plugins on ` +
+      `the overview page:\n\n` +
+      missing
+        .map(
+          (entry, i) =>
+            `  ${i + 1}. src/content/docs/${entry.id}.md — add this under its ` +
+            `description:\n\n` +
+            `       plugin:\n` +
+            `         group: CHANGE-ME\n` +
+            `         summary: "CHANGE ME. One sentence on what it does."\n`,
+        )
+        .join("\n") +
+      `\n     Pick a group from: ${PLUGIN_GROUPS.map((group) => group.id).join(", ")}. ` +
+      `They are defined in src/content.config.ts.\n\n` +
+      `Fix the pages and build again.\n`,
   );
 }
 
@@ -97,24 +56,35 @@ if (problems.length > 0) {
  * as something else, as the Profiler and the Party pages do. In a list of
  * nothing but plugins that suffix is on every second line and says nothing.
  */
-const nameFor = (slug: string) =>
-  (titleBySlug.get(slug) ?? slug).replace(/ Plugin( Provider)?$/, "");
+const nameFor = (title: string) => title.replace(/ Plugin( Provider)?$/, "");
 
-const pluginsFor = (id: string) =>
-  PLUGINS.filter((plugin) => plugin.group === id);
+const plugins = docs
+  .filter((entry) => entry.data.plugin)
+  .map((entry) => ({
+    slug: entry.id,
+    name: nameFor(entry.data.title),
+    summary: entry.data.plugin!.summary,
+    group: entry.data.plugin!.group,
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const groups = PLUGIN_GROUPS.map((group) => ({
+  ...group,
+  plugins: plugins.filter((plugin) => plugin.group === group.id),
+})).filter((group) => group.plugins.length > 0);
 ---
 
 <div class="plugin-list">
   {
-    PLUGIN_GROUPS.map((group) => (
+    groups.map((group) => (
       <section aria-labelledby={`plugin-group-${group.id}`}>
         <h3 class="plugin-list__title" id={`plugin-group-${group.id}`}>
           {group.title}
         </h3>
         <ul class="plugin-list__items">
-          {pluginsFor(group.id).map((plugin) => (
+          {group.plugins.map((plugin) => (
             <li>
-              <a href={`/${plugin.slug}/`}>{nameFor(plugin.slug)}</a>
+              <a href={`/${plugin.slug}/`}>{plugin.name}</a>
               <span class="plugin-list__summary">{plugin.summary}</span>
             </li>
           ))}

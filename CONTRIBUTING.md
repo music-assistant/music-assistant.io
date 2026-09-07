@@ -290,26 +290,26 @@ beyond the page itself:
 1. **The page**, under `src/content/docs/plugins/`, `src/content/docs/metadata-providers/` or
    `src/content/docs/audio-analysis/`.
 2. **The sidebar entry**, in the matching group in `astro.config.mjs`.
-3. **For a plugin, the entry in `src/data/plugins.ts`**, which puts it in the list at the bottom
-   of the [Plugins overview](https://music-assistant.io/plugins/#all-plugins):
+3. **For a plugin, a `plugin` block in the page's frontmatter**, which puts it in the list at
+   the bottom of the [Plugins overview](https://music-assistant.io/plugins/#all-plugins):
 
-   ```ts
-   {
-     slug: "plugins/example",
-     summary: "One sentence on what it does.",
-     group: "discover",
-   },
+   ```yaml
+   plugin:
+     group: discover
+     summary: "One sentence on what it does."
    ```
 
-   The name shown is the page's own `title`, so only the summary and the group are written here.
-   The groups are at the top of that file. **The build fails without an entry**, and names your
-   page along with a block to paste.
+   The name shown is the page's own `title`, so only the group and the summary are written here.
+   The summary is separate from the `description` because that one is written for search results.
+   The groups are listed in `src/content.config.ts`, and the build names the valid ones if you use
+   a group that does not exist. **The build also fails if a page in the plugins folder has no
+   block at all**, and names your page along with one to paste.
 
 There are no tiles for these, and for a metadata or audio analysis provider nothing fails the
 build if you forget something. Copy whichever existing page is closest in kind to yours and
 follow its shape. Most open with a heading and icon, an attribution line, a short `## Features`
-list and a `## Configuration` section, but the detail varies from page to page and that is fine. The [House style](#house-style) and
-[Icons](#icons) notes below still apply.
+list and a `## Configuration` section, but the detail varies from page to page and that is fine.
+The [House style](#house-style) and [Icons](#icons) notes below still apply.
 
 ## House style
 

@@ -1,6 +1,9 @@
 ---
 title: "Yandex Smart Home Plugin"
 description: Features and Notes for the Yandex Smart Home Plugin
+plugin:
+  group: other-systems
+  summary: "Adds your players to Yandex Smart Home, so Alice can control them by voice."
 ---
 
 # Yandex Smart Home

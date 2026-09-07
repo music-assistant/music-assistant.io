@@ -1,6 +1,9 @@
 ---
 title: Profiler Plugin
 description: Features and Notes for the Profiler Plugin
+plugin:
+  group: diagnostics
+  summary: "Records what the server is doing and turns it into one report to attach to a bug report. Add it when a maintainer asks, then remove it again."
 ---
 
 # Profiler <img src="/assets/icons/profiler-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

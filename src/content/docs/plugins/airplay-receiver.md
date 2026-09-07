@@ -1,6 +1,9 @@
 ---
 title: AirPlay Receiver Plugin
 description: Features and Notes for the AirPlay Receiver Plugin
+plugin:
+  group: incoming
+  summary: "Makes your players appear as AirPlay devices, so anything that can send to AirPlay can play on them."
 ---
 
 # AirPlay Receiver <img src="/assets/icons/airplay-receiver-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

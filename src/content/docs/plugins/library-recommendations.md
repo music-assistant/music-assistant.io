@@ -1,6 +1,9 @@
 ---
 title: Library Recommendations
 description: Discover and rediscover music from your library
+plugin:
+  group: discover
+  summary: "Fills the Discover page with rows drawn from your own library and what you have been playing. Built in and always on."
 ---
 
 # Library Recommendations

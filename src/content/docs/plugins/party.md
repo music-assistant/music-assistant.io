@@ -1,6 +1,9 @@
 ---
 title: Party Plugin
 description: Features and configuration for the Party Plugin
+plugin:
+  group: shared
+  summary: "Lets guests queue songs from their phones by scanning a QR code, with no account and no access to your system."
 ---
 
 # Party Plugin
