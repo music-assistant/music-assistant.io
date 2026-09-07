@@ -3,6 +3,8 @@ title: Plugins
 description: What plugins are and what they add to Music Assistant
 ---
 
+import PluginList from '../../../components/PluginList.astro';
+
 # Plugins
 
 Plugins add things that sit alongside playback rather than being part of it.
@@ -16,3 +18,9 @@ Plugins are optional. Music Assistant works perfectly well without any of them.
 Go to **Settings → Plugins → Add a plugin** and pick one from the list. Every plugin has its own page in this section covering what it does and how to configure it.
 
 Some plugins depend on something else being set up first. The [Home Assistant](/ha-plugin/) plugin needs the Home Assistant integration, and [AI Radio](/plugins/ai-radio/) needs the Home Assistant plugin to reach an AI and text-to-speech service.
+
+## All plugins
+
+Every plugin, grouped by what it is for. Each one has its own page with the detail.
+
+<PluginList />

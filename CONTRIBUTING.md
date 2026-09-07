@@ -284,17 +284,31 @@ the column has room for the whole word, and becomes a hyphen and a line break wh
 
 ## Adding a plugin, metadata provider or audio analysis provider
 
-These do not follow a fixed structure, so there is no template to match and nothing to register
+These do not follow a fixed structure, so there is no template to match and little to register
 beyond the page itself:
 
 1. **The page**, under `src/content/docs/plugins/`, `src/content/docs/metadata-providers/` or
    `src/content/docs/audio-analysis/`.
 2. **The sidebar entry**, in the matching group in `astro.config.mjs`.
+3. **For a plugin, the entry in `src/data/plugins.ts`**, which puts it in the list at the bottom
+   of the [Plugins overview](https://music-assistant.io/plugins/#all-plugins):
 
-There are no tiles for these, so nothing fails the build if you forget something. Copy whichever
-existing page is closest in kind to yours and follow its shape. Most open with a heading and
-icon, an attribution line, a short `## Features` list and a `## Configuration` section, but the
-detail varies from page to page and that is fine. The [House style](#house-style) and
+   ```ts
+   {
+     slug: "plugins/example",
+     summary: "One sentence on what it does.",
+     group: "discover",
+   },
+   ```
+
+   The name shown is the page's own `title`, so only the summary and the group are written here.
+   The groups are at the top of that file. **The build fails without an entry**, and names your
+   page along with a block to paste.
+
+There are no tiles for these, and for a metadata or audio analysis provider nothing fails the
+build if you forget something. Copy whichever existing page is closest in kind to yours and
+follow its shape. Most open with a heading and icon, an attribution line, a short `## Features`
+list and a `## Configuration` section, but the detail varies from page to page and that is fine. The [House style](#house-style) and
 [Icons](#icons) notes below still apply.
 
 ## House style
