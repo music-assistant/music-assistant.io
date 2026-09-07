@@ -5,8 +5,8 @@ import { blogSchema } from 'starlight-blog/schema'
 
 /**
  * The sections of the plugin list at the bottom of /plugins/, in the order
- * they appear there. A plugin page joins the list by naming one of these in
- * its own frontmatter. See PluginList.astro.
+ * they appear there. A plugin page joins the list by naming one of these as
+ * its `pluginGroup`. See PluginList.astro.
  */
 export const PLUGIN_GROUPS = [
 	{ id: 'discover', title: 'Finding something to play' },
@@ -34,18 +34,10 @@ export const collections = {
 				crosspostSource: z.string().optional(),
 				/**
 				 * Set on a plugin page to put it in the list on the Plugins
-				 * overview. The name shown there is the page's own title, so only
-				 * the group and a one-line summary are given here. The summary is
-				 * separate from the description because that one is written for
-				 * search results, and on several pages says no more than
-				 * "Features and Notes for the X Plugin".
+				 * overview, in this group. The name and the line beside it there
+				 * are the page's own title and description. See PluginList.astro.
 				 */
-				plugin: z
-					.object({
-						group: z.enum(pluginGroupIds),
-						summary: z.string().min(1),
-					})
-					.optional(),
+				pluginGroup: z.enum(pluginGroupIds).optional(),
 			}),
 		}),
 	}),

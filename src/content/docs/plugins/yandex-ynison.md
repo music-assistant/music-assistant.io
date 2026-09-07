@@ -1,9 +1,7 @@
 ---
 title: "Yandex Music Connect (Ynison) Plugin"
-description: Features and Notes for the Yandex Music Connect (Ynison) Plugin
-plugin:
-  group: incoming
-  summary: "Puts your players in the official Yandex Music app. Needs the Yandex Music source."
+description: Put your players in the official Yandex Music app. Needs the Yandex Music source.
+pluginGroup: incoming
 ---
 
 # Yandex Music Connect (Ynison)

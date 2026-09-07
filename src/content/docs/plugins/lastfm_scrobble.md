@@ -1,9 +1,7 @@
 ---
 title: LastFM Scrobbler Plugin
-description: Features and Notes for the LastFM Scrobbler Plugin
-plugin:
-  group: scrobbling
-  summary: "Scrobbles what you play to LastFM or LibreFM."
+description: Scrobble what you play to LastFM or LibreFM.
+pluginGroup: scrobbling
 ---
 
 # LastFM Scrobbler <img src="/assets/icons/audioscrobbler-icon.svg" alt="Preview image" style="width: 126px; float: right;"  loading="lazy" />

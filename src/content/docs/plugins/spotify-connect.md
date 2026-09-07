@@ -1,9 +1,7 @@
 ---
 title: Spotify Connect Plugin
-description: Features and Notes for the Spotify Connect Plugin
-plugin:
-  group: incoming
-  summary: "Puts your players in the official Spotify app's device list, like a Spotify Connect speaker."
+description: Put your players in the official Spotify app's device list, like a Spotify Connect speaker.
+pluginGroup: incoming
 ---
 
 # Spotify Connect <img src="/assets/icons/spotify-connect-icon.png" alt="Preview image" style="float: right;"  loading="lazy" />

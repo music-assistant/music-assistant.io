@@ -5,49 +5,58 @@ import { PLUGIN_GROUPS } from "../content.config";
 // ---------------------------------------------------------------------------
 // The list of every plugin, for the bottom of the Plugins overview.
 //
-// Each plugin page carries its own summary and group in its frontmatter, so
-// the list is the pages rather than a copy of them, and a renamed or reworded
-// plugin follows on its own. The group and the summary are checked as the page
+// A plugin page is listed by naming a group in its frontmatter, and the two
+// things shown are its own title and description, so the list is the pages
+// rather than a copy of them. A renamed or reworded plugin follows on its own,
+// and the description has to be worth reading, since it is now what a reader
+// meets before opening the page. The group itself is checked as the page
 // loads, by the schema in src/content.config.ts.
 //
-// What the schema cannot see is a plugin page that names no group at all, so
-// that is checked here: it stops the build with a block to paste. Without it
-// the list would be a fourth place to remember when a plugin is added, after
-// the page, the sidebar and the release notes.
+// What the schema cannot see is a plugin page that names no group at all, or
+// one with nothing to show beside its name, so both are checked here. Without
+// that the list would be a fourth place to remember when a plugin is added,
+// after the page, the sidebar and the release notes.
 //
 // Only the plugins folder is checked that way, since only it is guaranteed to
 // hold plugins and nothing else. A plugin page outside it, as the Home
-// Assistant one is, joins the list by carrying the frontmatter.
+// Assistant one is, joins the list by naming a group.
 // ---------------------------------------------------------------------------
 
 const docs = await getCollection("docs");
 
-const missing = docs.filter(
-  (entry) =>
-    entry.id.startsWith("plugins/") &&
-    entry.id !== "plugins/index" &&
-    !entry.data.plugin,
-);
+const problems: string[] = [];
 
-if (missing.length > 0) {
+for (const entry of docs) {
+  const inFolder =
+    entry.id.startsWith("plugins/") && entry.id !== "plugins/index";
+
+  if (inFolder && !entry.data.pluginGroup) {
+    problems.push(
+      `src/content/docs/${entry.id}.md is a plugin page with no ` +
+        `"pluginGroup" in its frontmatter, so it would never appear in the ` +
+        `list of plugins on the overview page. Add this line under its ` +
+        `description:\n\n` +
+        `       pluginGroup: CHANGE-ME\n\n` +
+        `     Pick a group from: ` +
+        `${PLUGIN_GROUPS.map((group) => group.id).join(", ")}. They are ` +
+        `defined in src/content.config.ts.`,
+    );
+  }
+
+  if (entry.data.pluginGroup && !entry.data.description) {
+    problems.push(
+      `src/content/docs/${entry.id}.md is listed on the plugins overview, ` +
+        `where its description is the line beside its name, but it has no ` +
+        `description. Give it one sentence on what the plugin does.`,
+    );
+  }
+}
+
+if (problems.length > 0) {
   throw new Error(
-    `\n\n${missing.length} plugin page${missing.length === 1 ? " has" : "s have"} no "plugin" ` +
-      `block in ${missing.length === 1 ? "its" : "their"} frontmatter, so ` +
-      `${missing.length === 1 ? "it" : "they"} would never appear in the list of plugins on ` +
-      `the overview page:\n\n` +
-      missing
-        .map(
-          (entry, i) =>
-            `  ${i + 1}. src/content/docs/${entry.id}.md — add this under its ` +
-            `description:\n\n` +
-            `       plugin:\n` +
-            `         group: CHANGE-ME\n` +
-            `         summary: "CHANGE ME. One sentence on what it does."\n`,
-        )
-        .join("\n") +
-      `\n     Pick a group from: ${PLUGIN_GROUPS.map((group) => group.id).join(", ")}. ` +
-      `They are defined in src/content.config.ts.\n\n` +
-      `Fix the pages and build again.\n`,
+    `\n\nThe plugin list has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
+      problems.map((problem, i) => `  ${i + 1}. ${problem}`).join("\n\n") +
+      `\n\nFix the pages and build again.\n`,
   );
 }
 
@@ -59,12 +68,12 @@ if (missing.length > 0) {
 const nameFor = (title: string) => title.replace(/ Plugin( Provider)?$/, "");
 
 const plugins = docs
-  .filter((entry) => entry.data.plugin)
+  .filter((entry) => entry.data.pluginGroup)
   .map((entry) => ({
     slug: entry.id,
     name: nameFor(entry.data.title),
-    summary: entry.data.plugin!.summary,
-    group: entry.data.plugin!.group,
+    summary: entry.data.description!,
+    group: entry.data.pluginGroup,
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 

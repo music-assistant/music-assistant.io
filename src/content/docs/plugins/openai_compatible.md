@@ -1,9 +1,7 @@
 ---
 title: OpenAI Compatible
 description: Use OpenAI, Groq, OpenRouter, Together or a local AI server such as Ollama or LM Studio for Music Assistant's AI features.
-plugin:
-  group: other-systems
-  summary: "Points the AI features at OpenAI, Groq, OpenRouter, Together or a local server such as Ollama, so they work without Home Assistant."
+pluginGroup: other-systems
 ---
 
 # OpenAI Compatible

@@ -1,9 +1,7 @@
 ---
 title: Music Quiz Plugin
 description: Host multiplayer music quiz games with QR-code guest access, shared or remote playback, and several game types.
-plugin:
-  group: shared
-  summary: "Runs a multiplayer quiz on your own library, with the dashboard on a TV and the answers on your guests' phones."
+pluginGroup: shared
 ---
 
 # Music Quiz Plugin

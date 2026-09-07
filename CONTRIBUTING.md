@@ -290,20 +290,21 @@ beyond the page itself:
 1. **The page**, under `src/content/docs/plugins/`, `src/content/docs/metadata-providers/` or
    `src/content/docs/audio-analysis/`.
 2. **The sidebar entry**, in the matching group in `astro.config.mjs`.
-3. **For a plugin, a `plugin` block in the page's frontmatter**, which puts it in the list at
-   the bottom of the [Plugins overview](https://music-assistant.io/plugins/#all-plugins):
+3. **For a plugin, a `pluginGroup` in the page's frontmatter**, which puts it in the list at the
+   bottom of the [Plugins overview](https://music-assistant.io/plugins/#all-plugins):
 
    ```yaml
-   plugin:
-     group: discover
-     summary: "One sentence on what it does."
+   pluginGroup: discover
    ```
 
-   The name shown is the page's own `title`, so only the group and the summary are written here.
-   The summary is separate from the `description` because that one is written for search results.
+   The list shows the page's own `title` and `description`, so nothing is written twice. That
+   makes the description worth a moment: it is the one line a reader gets before deciding whether
+   to open the page, as well as the summary search engines show. One sentence on what the plugin
+   does, not "Features and notes for the Example plugin".
+
    The groups are listed in `src/content.config.ts`, and the build names the valid ones if you use
    a group that does not exist. **The build also fails if a page in the plugins folder has no
-   block at all**, and names your page along with one to paste.
+   group, or has a group but no description.**
 
 There are no tiles for these, and for a metadata or audio analysis provider nothing fails the
 build if you forget something. Copy whichever existing page is closest in kind to yours and

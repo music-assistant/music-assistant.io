@@ -1,9 +1,7 @@
 ---
 title: Sonic Similarity
 description: Local similarity search powering library-wide Similar Tracks, Endless Mix, an "Inspired by recently played" discover row, and natural-language search.
-plugin:
-  group: discover
-  summary: "Uses the sound of your tracks to find similar ones, extend a queue endlessly and answer searches written as a description."
+pluginGroup: discover
 ---
 
 # Sonic Similarity

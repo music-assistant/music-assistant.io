@@ -1,9 +1,7 @@
 ---
 title: AI Radio Plugin
 description: Turn a playlist into a radio show with an AI host, or let an AI DJ talk over the queue you are already playing.
-plugin:
-  group: discover
-  summary: "Puts a spoken host between your tracks, either as a show built from one of your playlists or over the queue you are already listening to."
+pluginGroup: discover
 ---
 
 # AI Radio Plugin

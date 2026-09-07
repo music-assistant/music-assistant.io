@@ -1,9 +1,7 @@
 ---
 title: VBAN Receiver Plugin
-description: Features and Notes for the VBAN Receiver Plugin
-plugin:
-  group: incoming
-  summary: "Lets another computer send its sound across the network and play it on your speakers, like an aux input."
+description: Let another computer send its sound across the network and play it on your speakers, like an aux input.
+pluginGroup: incoming
 ---
 
 # VBAN Receiver <img src="/assets/icons/vban-icon.svg" alt="Preview image" style="width: 126px; float: right;"  loading="lazy" />
