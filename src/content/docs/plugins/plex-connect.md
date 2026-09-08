@@ -1,6 +1,7 @@
 ---
 title: Plex Connect Plugin
-description: Features and Notes for the Plex Connect Plugin
+description: Put your players in the device list of Plex clients such as Plexamp. Needs the Plex music source.
+pluginGroup: incoming
 ---
 
 # Plex Connect <img src="/assets/icons/plex-connect-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

@@ -1,6 +1,7 @@
 ---
 title: AriaCast Receiver Plugin
-description: Features and Notes for the AriaCast Receiver Plugin
+description: Send audio from an Android device to any of your players.
+pluginGroup: incoming
 ---
 
 # AriaCast Receiver <img src="/assets/icons/ariacast_icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

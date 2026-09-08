@@ -1,6 +1,7 @@
 ---
 title: MilkDrop Visualizer
 description: Render a MilkDrop (Butterchurn) music visualizer behind the now-playing views, reacting live to the audio.
+pluginGroup: visuals
 ---
 
 # MilkDrop Visualizer
