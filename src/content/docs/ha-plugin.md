@@ -1,6 +1,7 @@
 ---
 title: Home Assistant Plugin Provider
-description: The Home Assistant Plugin provides a connection from HA to MA
+description: Reach into Home Assistant to link entities to player controls, and to use its AI and text-to-speech services in Music Assistant.
+pluginGroup: other-systems
 ---
 # Home Assistant Plugin Provider <img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 

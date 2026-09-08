@@ -1,0 +1,134 @@
+---
+import { getCollection } from "astro:content";
+import { PLUGIN_GROUPS } from "../content.config";
+
+// ---------------------------------------------------------------------------
+// The list of every plugin, for the bottom of the Plugins overview.
+//
+// A plugin page is listed by naming a group in its frontmatter, and the two
+// things shown are its own title and description, so the list is the pages
+// rather than a copy of them. A renamed or reworded plugin follows on its own,
+// and the description has to be worth reading, since it is now what a reader
+// meets before opening the page. The group itself is checked as the page
+// loads, by the schema in src/content.config.ts.
+//
+// What the schema cannot see is a plugin page that names no group at all, or
+// one with nothing to show beside its name, so both are checked here. Without
+// that the list would be a fourth place to remember when a plugin is added,
+// after the page, the sidebar and the release notes.
+//
+// Only the plugins folder is checked that way, since only it is guaranteed to
+// hold plugins and nothing else. A plugin page outside it, as the Home
+// Assistant one is, joins the list by naming a group.
+// ---------------------------------------------------------------------------
+
+const docs = await getCollection("docs");
+
+const problems: string[] = [];
+
+for (const entry of docs) {
+  const inFolder =
+    entry.id.startsWith("plugins/") && entry.id !== "plugins/index";
+
+  if (inFolder && !entry.data.pluginGroup) {
+    problems.push(
+      `src/content/docs/${entry.id}.md is a plugin page with no ` +
+        `"pluginGroup" in its frontmatter, so it would never appear in the ` +
+        `list of plugins on the overview page. Add this line under its ` +
+        `description:\n\n` +
+        `       pluginGroup: CHANGE-ME\n\n` +
+        `     Pick a group from: ` +
+        `${PLUGIN_GROUPS.map((group) => group.id).join(", ")}. They are ` +
+        `defined in src/content.config.ts.`,
+    );
+  }
+
+  if (entry.data.pluginGroup && !entry.data.description) {
+    problems.push(
+      `src/content/docs/${entry.id}.md is listed on the plugins overview, ` +
+        `where its description is the line beside its name, but it has no ` +
+        `description. Give it one sentence on what the plugin does.`,
+    );
+  }
+}
+
+if (problems.length > 0) {
+  throw new Error(
+    `\n\nThe plugin list has ${problems.length} problem${problems.length === 1 ? "" : "s"}:\n\n` +
+      problems.map((problem, i) => `  ${i + 1}. ${problem}`).join("\n\n") +
+      `\n\nFix the pages and build again.\n`,
+  );
+}
+
+/**
+ * Page titles carry a "Plugin" suffix where the plugin's name alone would read
+ * as something else, as the Profiler and the Party pages do. In a list of
+ * nothing but plugins that suffix is on every second line and says nothing.
+ */
+const nameFor = (title: string) => title.replace(/ Plugin( Provider)?$/, "");
+
+const plugins = docs
+  .filter((entry) => entry.data.pluginGroup)
+  .map((entry) => ({
+    slug: entry.id,
+    name: nameFor(entry.data.title),
+    summary: entry.data.description!,
+    group: entry.data.pluginGroup,
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const groups = PLUGIN_GROUPS.map((group) => ({
+  ...group,
+  plugins: plugins.filter((plugin) => plugin.group === group.id),
+})).filter((group) => group.plugins.length > 0);
+---
+
+<div class="plugin-list">
+  {
+    groups.map((group) => (
+      <section aria-labelledby={`plugin-group-${group.id}`}>
+        <h3 class="plugin-list__title" id={`plugin-group-${group.id}`}>
+          {group.title}
+        </h3>
+        <ul class="plugin-list__items">
+          {group.plugins.map((plugin) => (
+            <li>
+              <a href={`/${plugin.slug}/`}>{plugin.name}</a>
+              <span class="plugin-list__summary">{plugin.summary}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  .plugin-list__title {
+    font-size: var(--sl-text-h4);
+  }
+
+  .plugin-list__items {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .plugin-list__items li + li {
+    margin-top: 0.5rem;
+  }
+
+  .plugin-list__items a {
+    font-weight: 600;
+  }
+
+  /* The summary reads as a continuation of the name, so it stays on the same
+     line where there is room and wraps under it where there is not. */
+  .plugin-list__summary::before {
+    content: " — ";
+    color: var(--sl-color-gray-3);
+  }
+
+  .plugin-list__summary {
+    color: var(--sl-color-gray-2);
+  }
+</style>
