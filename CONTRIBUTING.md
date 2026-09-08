@@ -302,15 +302,41 @@ beyond the page itself:
    to open the page, as well as the summary search engines show. One sentence on what the plugin
    does, not "Features and notes for the Example plugin".
 
-   The groups are listed in `src/content.config.ts`, and the build names the valid ones if you use
-   a group that does not exist. **The build also fails if a page in the plugins folder has no
-   group, or has a group but no description.**
+   **The build fails if a page in the plugins folder has no group, or has a group but no
+   description.** It also names the valid groups if you use one that does not exist. They are:
+
+   | Group | Heading on the page |
+   |:--|:--|
+   | `discover` | Finding something to play |
+   | `incoming` | Playing to Music Assistant from something else |
+   | `shared` | Listening with other people |
+   | `visuals` | Enhancing with lights and visuals |
+   | `scrobbling` | Reporting what you played |
+   | `other-systems` | Connecting to other systems |
+   | `diagnostics` | Diagnostics |
 
 There are no tiles for these, and for a metadata or audio analysis provider nothing fails the
 build if you forget something. Copy whichever existing page is closest in kind to yours and
 follow its shape. Most open with a heading and icon, an attribution line, a short `## Features`
 list and a `## Configuration` section, but the detail varies from page to page and that is fine.
 The [House style](#house-style) and [Icons](#icons) notes below still apply.
+
+### When none of the groups fit
+
+**Add one**, rather than forcing a plugin into a group it does not belong in. Add it to
+`PLUGIN_GROUPS` in `src/content.config.ts`, in the position where it should appear on the page,
+then tag your plugin with it:
+
+```ts
+{ id: 'visuals', title: 'Enhancing with lights and visuals' },
+```
+
+The `id` is what pages carry and is never shown. The `title` is the heading readers see, so write
+it as a few words saying what the plugins under it are for. A group nothing uses is left off the
+page rather than shown as an empty heading.
+
+Do not worry about getting the wording exactly right. It will be looked at in review, and a rough
+group is much better than a plugin filed somewhere a reader would not look for it.
 
 ## House style
 

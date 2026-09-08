@@ -1,7 +1,7 @@
 ---
 title: Hue Lights Sync Plugin
 description: Make your Philips Hue lights change colour in time with whatever is playing.
-pluginGroup: shared
+pluginGroup: visuals
 ---
 
 # Hue Lights Sync <img src="/assets/icons/hue-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

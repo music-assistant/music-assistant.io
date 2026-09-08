@@ -12,8 +12,9 @@ export const PLUGIN_GROUPS = [
 	{ id: 'discover', title: 'Finding something to play' },
 	{ id: 'incoming', title: 'Playing to Music Assistant from something else' },
 	{ id: 'shared', title: 'Listening with other people' },
+	{ id: 'visuals', title: 'Enhancing with lights and visuals' },
 	{ id: 'scrobbling', title: 'Reporting what you played' },
-	{ id: 'other-systems', title: 'Reaching other systems' },
+	{ id: 'other-systems', title: 'Connecting to other systems' },
 	{ id: 'diagnostics', title: 'Diagnostics' },
 ] as const;
 
