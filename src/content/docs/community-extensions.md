@@ -76,3 +76,16 @@ A responsive cover wall for the Home Assistant Sections view that displays your 
 HOMEii Flow is a premium, minimalist music app experience for Music Assistant, fully responsive and optimized for **Desktop, Tablet, and Mobile**. It features a high-end UI with glassmorphism effects, dynamic backgrounds, and a specialized Studio Mode for a seamless experience across all your devices.
 
 <img src="https://raw.githubusercontent.com/r11a/homeii-music-flow/main/HOMEii%20Flow%20Main.png" alt="HOMEii Flow - Responsive UI for Mobile, Tablet and Desktop" style="width: 600px;"  loading="lazy" />
+
+
+*********************************
+
+
+## [Mobile MA – Native iOS App for Music Assistant](https://www.mobile-ma.app/en/)
+
+<img width="1600" height="900" alt="mobile-ma-community" src="https://github.com/user-attachments/assets/c88230ec-819c-4e1b-9b5b-a33a088b4d8b" />
+
+Mobile MA is a native SwiftUI app for iPhone and iPad that turns your device into a full remote and player for Music Assistant. Control every player and multiroom group, browse your library, podcasts and radio, and stream straight to your iPhone via Sendspin – at home over LAN or on the go through WebRTC remote access, without a VPN or cloud account. Comes with CarPlay, an Apple Watch remote, a companion Apple TV app, Siri and widgets. Free on the App Store with an optional one-time Unlimited upgrade (no subscription). Requires Music Assistant 2.9 or newer.
+
+[Mobile MA – native iOS app for Music Assistant](https://www.mobile-ma.app/en/)
+
