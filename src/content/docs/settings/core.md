@@ -108,11 +108,16 @@ How much to raise or lower the volume, in dB, whenever the fixed-gain path is us
 
 ## Webserver
 
-- <b>Allow User Self-Registration.</b> Allows users to create accounts via Home Assistant OAuth
-- <b>Base URL.</b> The (base) URL used to reach the web UI and API on the network. Leave this on auto unless you have a reason not to. Music Assistant works out the address itself from the server's IP address and the port set below. Set it manually only when clients need to reach Music Assistant at a different address than the server sees, behind a [reverse proxy](/faq/networking/#the-jargon-translated), for example. In that case enter the full address including the port, such as https://music.example.com:8123. The port field below is separate and still applies as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Base URL 
-- <b>TCP Port.</b> The port that the webserver is to be run on. If this setting is changed then ensure the base URL port is changed as well
-- <b> Enable SSL/TLS.</b> When enabled two additional fields are revealed which is where the `SSL Certificate` and `SSL Private Key` are added (both must be in PEM format)
-- <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. For further information see the help for this setting in the MA UI
+- <b>Server Name.</b> The name of this Music Assistant instance, shown in the UI and announced on the network. Useful when you run more than one server. Clear the field to restore the default name
+- <b>Allow User Self-Registration.</b> Allows users to create accounts by logging in with Home Assistant. Only appears when the Home Assistant plugin is added in Music Assistant, since the login goes through your HA instance
+
+The settings below are advanced and only appear when advanced settings are enabled in the UI
+
+- <b>Internal URL.</b> The address devices and apps on your local network use to reach the web UI and API. Leave this on `auto` unless you have a reason not to. Music Assistant works the address out itself from the server's IP address and the TCP port below. Set it manually only when clients need to reach Music Assistant at a different address than the server sees, behind a reverse proxy, for example. In that case enter the full address including the port, such as `https://music.example.com:443`. The TCP Port field is separate and still applies, as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Internal URL
+- <b>External URL.</b> The address Music Assistant can be reached at from outside your local network, for example through a reverse proxy. Leave empty if your server isn't reachable from the internet
+- <b>TCP Port.</b> The port the webserver runs on (default `8095`). If you change it, and you set the Internal URL manually, change the port there as well
+- <b> Enable SSL/TLS.</b> Serves the web UI and API over HTTPS. When enabled, two additional fields are revealed for the `SSL Certificate` and `SSL Private Key`. Both must be PEM format, and you can either paste the file contents or enter an absolute path (e.g. `/ssl/fullchain.pem`). RSA and ECDSA are both supported and the private key must be unencrypted. Use the `Verify` button to check the certificate and key are valid and match. If the certificate can't be loaded, the webserver keeps running unencrypted and shows a warning
+- <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. The default `0.0.0.0` binds to all interfaces (IPv4 and IPv6). Change this only in setups such as binding to a docker-internal network behind a reverse proxy
 
 ## Diagnostics
 
