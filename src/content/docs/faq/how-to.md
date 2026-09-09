@@ -191,6 +191,10 @@ You can also use the `music_assistant.search` or `music_assistant.get_library` a
 
 URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system source added to MA then `filesystem_smb` can be used.
 
+In general every MA item has a URI shaped like `provider://media_type/item_id`. More examples are:
+
+- `ambient_sounds://sound_effect/ocean_waves`
+
 ### Add items to the queue via a script or automation
 
 ``` yaml
