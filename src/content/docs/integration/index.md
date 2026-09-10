@@ -24,7 +24,7 @@ See also the <a href="https://www.home-assistant.io/integrations/music_assistant
 
 Music Assistant and Home Assistant can be joined in both directions, and there are three separate pieces involved. Which ones you need depends on which direction you want.
 
-<a href="/assets/ha-connection-diagram.png"><img src="/assets/ha-connection-diagram.png" alt="The Home Assistant Integration, installed in Home Assistant, makes Music Assistant players appear in Home Assistant, and is all most people need. Installed in Music Assistant, the Home Assistant Plugin exposes Home Assistant control entities plus AI and text to speech, and requires the integration. Home Assistant Media Players makes Home Assistant players appear in Music Assistant, and requires the plugin." style="width: 800px;" loading="lazy" /></a>
+<a href="/assets/ha-connection-diagram.png"><img src="/assets/ha-connection-diagram.png" alt="The Home Assistant Integration, installed in Home Assistant, makes Music Assistant players appear in Home Assistant, and is all most people need. Installed in Music Assistant, the Home Assistant Plugin exposes Home Assistant control entities plus AI and text to speech, and works without the integration. Home Assistant Media Players makes Home Assistant players appear in Music Assistant, and requires the plugin." style="width: 800px;" loading="lazy" /></a>
 
 | Piece | You install it in | What it gives you |
 |:--|:--|:--|
@@ -34,6 +34,6 @@ Music Assistant and Home Assistant can be joined in both directions, and there a
 
 Most people only want the first row. Install the integration and your Music Assistant speakers show up in Home Assistant — that is the whole job.
 
-Add the third row if you also want the reverse: a speaker that Home Assistant knows about, but Music Assistant has no provider for, made available inside Music Assistant. It needs the plugin, and the plugin needs the integration, so all three end up installed, in that order.
+Add the third row if you also want the reverse: a speaker that Home Assistant knows about, but Music Assistant has no provider for, made available inside Music Assistant. It needs the plugin. The plugin does not need the integration, so the second and third rows work without the first.
 
 You may want the plugin on its own, without the third row. It is what lets you map a Home Assistant entity to the power, volume or mute control of any Music Assistant player, so that, for example, an amplifier sitting in standby can be woken when playback starts, and it is how plugins reach Home Assistant's AI and text-to-speech services.
