@@ -52,7 +52,7 @@ When the favorite icon is solid then selecting that will bring up two options - 
 
 When lyrics are available for the track being played then the LYRICS selectable label will be shown in white. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song. Adjustment to the lyric timing is available in the ⋮ menu.
 
-The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu.
+The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu. Autoplay will be turned off and disabled if Repeat One or Repeat All is selected.
 
 A sleep timer is also available in the ⋮ menu, which will stop playback after the selected period.
 
