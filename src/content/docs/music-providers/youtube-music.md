@@ -61,7 +61,23 @@ Google will not let anything play until it has been given a 'Proof of Origin' to
 
 ### Step 2: Obtain your login cookie
 
-YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure. To export a cookie that keeps working, export it in a way that never rotates it. One way to do this is through a private browsing/incognito window:
+YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure. To export a cookie that keeps working, export it in a way that never rotates it: always work in a private browsing/incognito window, and close that window as soon as you have the cookie. There are two ways to get it.
+
+#### Option A: export with a cookie extension (recommended)
+
+This is the method the yt-dlp project <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">recommends</a> and it gives the longest-lived cookie. Install <a href="https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc" target="_blank" rel="noopener noreferrer">Get cookies.txt LOCALLY</a> (Chrome, Edge and other Chromium browsers) or <a href="https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/" target="_blank" rel="noopener noreferrer">cookies.txt</a> (Firefox).
+
+> [!WARNING]
+> As with any browser extension, be careful about what you install. The similarly named "Get cookies.txt" (without LOCALLY) has been reported as malware; do not use it.
+
+1. Allow the extension in private windows, otherwise it will not appear there. In Chrome and Edge: go to `chrome://extensions` (or `edge://extensions`), open the extension's **Details** and switch on **Allow in Incognito** / **Allow in InPrivate**. In Firefox: `about:addons` → the extension → **Run in Private Windows: Allow**.
+2. Open a fresh incognito window and log in to <a href="http://music.youtube.com/" target="_blank">YT Music</a>.
+3. In that same tab, go to <a href="https://www.youtube.com/robots.txt" target="_blank">https://www.youtube.com/robots.txt</a>. The extension exports the cookies of the site in the current tab, so it has to be a youtube.com page — but a real YouTube page runs the scripts that rotate your session cookie, and `robots.txt` is a plain text file on the same domain that does not.
+4. Click the extension's icon and choose **Export** (Chrome) or **Current Site** (Firefox). A `youtube.com_cookies.txt` (or `cookies.txt`) file is downloaded.
+5. Close the incognito window, so nothing else touches that session.
+6. Open the downloaded file in a text editor, select everything and copy it. That whole text is what you paste into the Login Cookie field in Step 3; Music Assistant keeps only the youtube.com cookies from it.
+
+#### Option B: copy the Cookie header from the developer tools
 
 1. Open <a href="http://music.youtube.com/" target="_blank">YT Music</a> in your browser in an incognito window and log in to your account.
 2. Open the developer tools via View -> Developer -> Developer Tools. Note that this might be named differently based on your browser. It should open a window similar to this:
@@ -73,27 +89,20 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 
 [![Auth request](/assets/screenshots/ytmusic-auth-request.png)](/assets/screenshots/ytmusic-auth-request.png)
 
-7. Right-click that row **in the request list** (not in the Headers panel) and choose **Copy ▸ Copy as cURL**. On Windows, Chrome and Edge offer **Copy as cURL (cmd)** and **Copy as cURL (bash)**; either works. In Firefox the entry is **Copy Value ▸ Copy as cURL**. That is all you need: Music Assistant picks the cookie out of the copied command for you.
-
-If you would rather copy the cookie itself, click the row instead, open the 'Headers' tab, find 'Request Headers' and copy the **value** of the item named 'Cookie'. Extra spaces or line breaks around the value do not matter.
+7. Click the request and make sure you are on the 'Headers' tab.
+8. Find the section called 'Request Headers'.
+9. Find the item named 'Cookie' and copy the **value**. Extra spaces or line breaks around the value do not matter.
 [![Cookie value](/assets/screenshots/ytmusic-cookie-value.png)](/assets/screenshots/ytmusic-cookie-value.png)
 
-> [!TIP]
-> **Cookie keeps expiring?** The yt-dlp project <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">recommends</a> a cookie export extension for the longest-lived cookie: <a href="https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc" target="_blank" rel="noopener noreferrer">Get cookies.txt LOCALLY</a> (Chrome and other Chromium browsers) or <a href="https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/" target="_blank" rel="noopener noreferrer">cookies.txt</a> (Firefox).
->
-> 1. In a fresh incognito window, log in to <a href="http://music.youtube.com/" target="_blank">YT Music</a>.
-> 2. In that same tab, go to <a href="https://www.youtube.com/robots.txt" target="_blank">https://www.youtube.com/robots.txt</a> and export the cookies with the extension. The extension exports the cookies of the site in the current tab, so it has to be a youtube.com page — but a real YouTube page runs the scripts that rotate your session cookie, and `robots.txt` is a plain text file on the same domain that does not.
-> 3. Close the incognito window, so nothing else touches that session.
-> 4. Open the downloaded file in a text editor and paste its whole contents into the Login Cookie field. Music Assistant keeps only the youtube.com cookies from it.
->
-> As with any browser extension, be careful about what you install. The similarly named "Get cookies.txt" (without LOCALLY) has been reported as malware; do not use it.
+> [!NOTE]
+> In **Firefox** you can skip steps 7–9: right-click the request row and choose **Copy Value ▸ Copy as cURL**, then paste the whole command. Do not do this in Chrome or Edge: since early 2025 their **Copy ▸ Copy as cURL** no longer includes cookies, so the paste will be rejected as not signed in.
 
 ### Step 3: Configure the source
 
 1. In Music Assistant, go to **Settings → Music Sources → Add a music source** and select 'Youtube Music'.
 2. Fill out the fields in the Generic Settings section as follows:
     - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
-    - <b>Login Cookie.</b> Paste what you copied in Step 2: the cURL command, the cookie value, or the contents of the exported cookies.txt file. Any of the three works
+    - <b>Login Cookie.</b> Paste what you copied in Step 2: the contents of the exported cookies.txt file, the cookie value, or (Firefox) the cURL command. Any of the three works
     - <b>PO Token Server URL.</b> Leave this setting as the default if you run the PO server as an App on the same host as the MA App. If you run the PO token server separately, adjust the IP address and port accordingly
 3. Click 'Save'. Music Assistant checks the cookie with YouTube Music and contacts the PO Token server before saving, so a problem shows up right away on the field it belongs to.
 
@@ -102,7 +111,7 @@ If you would rather copy the cookie itself, click the row instead, open the 'Hea
 >
 > The message under the field tells you what to fix:
 >
-> - **The cookie is missing the `__Secure-3PAPISID` field.** Your cookie did not come from a logged-in (authenticated) request. Go back to the incognito window, open a few more pages that require your account (for example your library), and copy again — or use the cookies.txt export from Step 2, which always includes it. If you cannot obtain a cookie containing this value, try a different browser.
+> - **The cookie is missing the `__Secure-3PAPISID` field.** Your paste did not come from a logged-in (authenticated) session. With Option A, check that the extension was allowed in incognito and that you were still logged in when you exported. With Option B, open a few more pages that require your account (for example your library) and copy again — and if you pasted a "Copy as cURL" command from Chrome or Edge, that is the cause: it no longer contains cookies.
 > - **The cookie could not be parsed.** Something was changed or lost while copying. Copy it again and paste it exactly as the browser or extension produced it.
 > - **Your YouTube Music session is no longer valid.** Google has already rotated that cookie. Export a fresh one; the incognito window must still be signed in when you do.
 > - **YouTube Music did not accept this cookie.** Check that the incognito window is signed in to the right account and that no consent or 'confirm it is you' page is waiting there, then export again.
