@@ -22,7 +22,7 @@ When streaming sources are also available in MA linking will only occur when the
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes with Sonic Similarity Plugin                      | 
-| Maximum Stream Quality | Unlimited, whatever the file holds |
+| Maximum Stream Quality | FLAC, Unlimited |
 | Login Method | None or Password |
 
 ### Other
