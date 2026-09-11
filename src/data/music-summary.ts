@@ -124,6 +124,9 @@ export const EXCLUDED: string[] = [
 // The tier is worked out from the wording on the page. These are the ones the
 // wording cannot settle, decided by hand instead of guessed at. Keyed by slug.
 export const QUALITY_TIER_OVERRIDES: Record<string, QualityTier> = {
+  // "FLAC, Unlimited": local files are served at whatever resolution the file
+  // holds, with no cap, so the ceiling is Hi-Res.
+  "music-providers/local-files": "hi-res",
   // "192kHz 24 bit", with no codec named. Above 48kHz and above 16 bits, which
   // is what /player-support/#audio-quality calls Hi-Res.
   "music-providers/audiobookshelf": "hi-res",

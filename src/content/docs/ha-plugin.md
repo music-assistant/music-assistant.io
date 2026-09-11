@@ -19,7 +19,7 @@ If you are not sure how this fits with the Home Assistant integration, see [how 
  
 ## Configuration
 
-Before the Plugin can be added the HA Integration must be [installed](/integration/installation/). 
+The plugin connects directly to Home Assistant's own API and does not need the [Home Assistant integration](/integration/installation/) to be installed. The two are independent: the integration puts MA players into HA, the plugin lets MA reach into HA.
 
 - Navigate to **Settings → Plugins** and add the plug-in
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
