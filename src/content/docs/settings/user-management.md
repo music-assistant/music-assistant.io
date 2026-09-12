@@ -13,7 +13,7 @@ On the right side of each username is a ⋮ menu which has four menu items
 - <b>Edit User.</b> See the section below
 - <b>Manage access tokens.</b> Allows management of login sessions and long lived tokens the same as is shown on an individuals [profile settings](/settings/profile/)
 - <b>Disable User.</b> Prevents user access. Settings are preserved
-- <b>Delete User.</b> Completely removes a user and all of their settings. Music sources they owned lose their owner, and a source only they could use is then off limits to everyone until an administrator changes its access. Their playlists become visible to everyone
+- <b>Delete User.</b> Completely removes a user and all of their settings. Music sources they owned lose their owner, and a source only they could use is then off limits to everyone until an administrator changes its access. Their Music Assistant playlists become visible to everyone
 
 ## Editing Users
 
@@ -28,7 +28,7 @@ Each user can be restricted to a set of specific players. Which music sources a 
 Every music source is either shared or personal.
 
 - <b>Shared (no owner).</b> Administrators manage the source.
-- <b>Personal.</b> The source belongs to one member. Anyone who plays from it, including the people it is shared with, uses that member's account and adds to its listening history.
+- <b>Personal.</b> The source belongs to one member. Playback from it and its listening history use that member's account.
 
 Who else can use a source depends on its sharing:
 
