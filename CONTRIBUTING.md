@@ -120,15 +120,22 @@ Four things, and the build will tell you if you miss the last one.
 
 ### Country categories
 
-**Tag a country only when the source's content is predominantly or only from that country.** Not
-where the company is registered, and not where it sells. Deezer and Qobuz are French companies
-with international catalogues, so neither is tagged France. Sveriges Radio broadcasts in Swedish,
-so it is tagged Sweden.
+**These are here so that a reader in a given country can find the sources aimed at them.** That is
+the test to apply, and it is a judgement call rather than a hard rule, so tag what you think
+somebody there would be looking for and marginal ones get sorted out in review.
 
-This is why the large international services carry no country tag at all. A source can be tagged
-with more than one country where that genuinely holds.
+Sveriges Radio broadcasts in Swedish, so it is tagged Sweden. Pandora plays the same
+international music as everyone else but can only be used in the United States, so it is tagged
+United States. Storytel sells across much of Europe and is tagged with the two countries it
+started in. A source can carry more than one country tag where each genuinely holds.
 
-**If the language you need is not on the list, add it.** Three small pieces, in
+What does not count is where the company is registered, or selling into a country without being
+aimed at it. Deezer and Qobuz are French with international catalogues, and SomaFM broadcasts
+from California to anyone who wants to listen, so none of them are tagged. SiriusXM is tagged
+United States and not Canada, because Canadian subscribers get mostly the American lineup. This
+is why the large international services carry no country tag at all.
+
+**If the country you need is not on the list, add it.** Three small pieces, in
 `src/data/music-sources.ts` unless stated:
 
 1. Add the id to the `CategoryId` list at the top of the file.
@@ -140,8 +147,8 @@ with more than one country where that genuinely holds.
    [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:SVG_flags_by_country), where
    every national flag is available as an SVG, or from the MIT licensed
    [flag-icons](https://flagicons.lipis.dev/) set. Prefer a plain one over a highly detailed
-   version: the existing flags are a few hundred bytes each and are only shown about 34 pixels
-   tall. Keep it a similar shape to the ones already there, which are all wider than they are
+   version: the existing flags run from a couple of hundred bytes to about two kilobytes, and are
+   only shown about 34 pixels tall. Keep it a similar shape to the ones already there, which are all wider than they are
    tall and mostly close to 3:2. Check it looks right against its neighbours on the built
    page rather than measuring it; the page draws the border for you.
 
@@ -149,7 +156,7 @@ Then tag your source with it. The build fails if the flag file is missing, and a
 exists that no source uses, so all three have to land together.
 
 Do not worry about getting the flag or the wording exactly right. It will be looked at in review,
-and a rough one is much better than leaving your source out of a language its listeners search
+and a rough one is much better than leaving your source out of a country its listeners search
 for. If you cannot find a flag at all, add the category without one, say so on the pull request
 and somebody will sort it out.
 

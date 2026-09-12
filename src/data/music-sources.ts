@@ -34,7 +34,8 @@ export type CategoryId =
   | "japan"
   | "france"
   | "uk"
-  | "australia";
+  | "australia"
+  | "usa";
 
 export interface Category {
   /** Used as the link target, so it must be unique. */
@@ -128,7 +129,7 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
   },
   {
     id: "country",
-    title: "Or something in your own language",
+    title: "Or something from your own country",
     intro:
       "These sources carry content from one country, or are only available there.",
     categories: [
@@ -191,6 +192,12 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         icon: "/assets/icons/listen/australia.svg",
         title: "Australia",
         blurb: "Australian public radio, from new music to classical and jazz.",
+      },
+      {
+        id: "usa",
+        icon: "/assets/icons/listen/usa.svg",
+        title: "United States",
+        blurb: "American radio, from satellite channels to personalised stations.",
       },
     ],
   },
@@ -363,7 +370,9 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "Pandora",
     slug: "music-providers/pandora",
     icon: "/assets/icons/pandora.png",
-    categories: ["radio"],
+    // Tagged "usa" because it can only be used there, not for its catalogue,
+    // which is the same international music as any other streaming service.
+    categories: ["radio", "usa"],
   },
   {
     name: "Phish.in",
@@ -423,7 +432,9 @@ export const MUSIC_SOURCES: MusicSource[] = [
     name: "SiriusXM",
     slug: "music-providers/siriusxm",
     icon: "/assets/icons/siriusxm-logo.png",
-    categories: ["radio", "classical", "children"],
+    // Not tagged "canada" as well: the Canadian lineup is mostly the American
+    // one, so it sells there rather than being aimed at listeners there.
+    categories: ["radio", "classical", "children", "usa"],
   },
   {
     name: "SomaFM Radio",
