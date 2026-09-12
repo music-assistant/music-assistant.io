@@ -27,8 +27,8 @@ Each user can be restricted to a set of specific players. Which music sources a 
 
 Every music source is either shared or personal.
 
-- <b>Shared.</b> The source has no owner, and administrators manage it. A source an administrator adds is shared with everyone.
-- <b>Personal.</b> The source belongs to one member. Playback and listening history use that member's account, also when someone they shared it with is listening.
+- <b>Shared.</b> The source has no owner, and administrators manage it.
+- <b>Personal.</b> The source belongs to one member. Whatever plays from it uses that member's account and listening history, whoever is listening.
 
 Who else can use a source depends on its sharing:
 
@@ -37,7 +37,7 @@ Who else can use a source depends on its sharing:
 - <b>All members.</b> Every signed-in member, but not guests
 - <b>Everyone, including guests.</b> Any user
 
-An administrator sets the owner and the sharing with <b>Access</b> in the source's ⋮ menu under [Settings → Music Sources](/settings/music-provider-settings/#owner-and-sharing). The owner of a personal source changes who it is shared with through <b>Sharing</b> in the same menu. Only an administrator can change the owner.
+An administrator sets the owner and the sharing with <b>Access</b> in the source's ⋮ menu under [Settings → Music Sources](/settings/music-provider-settings/#owner-and-sharing). A source an administrator adds starts out shared with everyone, including guests. To set one up for themselves or for a member, they add it and then make that person its owner. The owner of a personal source changes who it is shared with through <b>Sharing</b> in the same menu. Only an administrator can change the owner.
 
 Users only see what comes from the music sources they can use, in the library, when browsing and in search. That includes administrators, although they see every source in the settings so they can manage it. When you play something, Music Assistant uses your own accounts first and never uses an account that is not shared with you.
 
