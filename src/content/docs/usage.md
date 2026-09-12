@@ -108,6 +108,12 @@ MA automatically generates some dynamic playlists. These playlists will be updat
 
 There are also two pseudo-playlists, the Infinite Mixes (one based on the whole library and one on the favorites). Viewing these playlists shows no tracks; playing one results in an endless queue where 25 random tracks are added and refreshed as the queue comes to an end.
 
+### Sharing a playlist
+
+A playlist you create on Music Assistant itself, rather than on a music source, belongs to you, and at first only you can see it. To share it, open the playlist and select the share icon, or **Share playlist** in its ⋮ menu. You can share it with selected members, all members, or everyone, including guests. Turn on **Collaborative** to let them add and remove tracks too. Administrators can also change who owns a playlist.
+
+The page of a Music Assistant playlist shows who it belongs to and who it is shared with. A playlist that comes from a music source, such as one of your Spotify playlists, is visible to everyone who can use that source. **Add to Playlist** only offers the playlists you can edit.
+
 ### Playlist Artwork
 
 MA will use the artwork supplied from the streaming providers. For local providers MA will create a collage based on the tracks in the playlist. Alternatively, for the local file system providers, an image which has the same prefix as the playlist will be used (eg. mix.m3u and mix.jpg)
