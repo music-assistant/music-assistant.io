@@ -66,7 +66,7 @@ Music Assistant signs in once and keeps the resulting session, so your credentia
 
 ### Multiple accounts
 
-The Overcast source can be set up multiple times, once per account, and each one keeps its own sign in. To give each member their own progress, add a source for each of them with their own account, and make them its owner. See [audiobook and podcast progress](/settings/user-management/#audiobook-and-podcast-progress).
+The Overcast source can be set up multiple times, once per account, and each one keeps its own sign in. To give each member their own progress, each member adds their own, or an administrator adds one for them and makes them its owner. See [audiobook and podcast progress](/settings/user-management/#audiobook-and-podcast-progress).
 
 ### Settings
 
