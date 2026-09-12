@@ -10,4 +10,4 @@ All [Music Sources](/music-providers/) have settings which can be configured. Th
 
 ## Owner and sharing
 
-Every source in **Settings → Music Sources** shows who owns it and who can use it, such as `Shared (no owner) · Everyone, including guests` or `Sam · Shared with 2 members`. An administrator changes both with <b>Access</b> in the source's ⋮ menu. The owner of a personal source finds <b>Sharing</b> there instead, to choose who else can use it. [Personal and shared music sources](/settings/user-management/#personal-and-shared-music-sources) explains each option.
+In **Settings → Music Sources**, an administrator sees who owns each source and who can use it, such as `Shared (no owner) · Everyone, including guests` or `Sam · Shared with 2 members`. They change both with **Access** in the source's ⋮ menu. Members see only the sources they own, with who they share them with, and change that with **Sharing** in the same menu. [Personal and shared music sources](/settings/user-management/#personal-and-shared-music-sources) explains each option.
