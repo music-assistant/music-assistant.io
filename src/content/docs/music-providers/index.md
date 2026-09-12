@@ -21,6 +21,8 @@ How much of a source ends up in that library is up to you. Each one has its own 
 
 Go to [**Settings → Music Sources → Add a music source**](/settings/music-provider-settings/) and pick the one you want. Each source has its own page in this section covering what it offers and how to set it up.
 
+When an administrator adds a source, it starts out shared with everyone. They can then make it their own or a member's and choose who else can use it. Members can also add their own account for a service that can be added more than once, which only they can use until they share it. See [Personal and shared music sources](/settings/user-management/#personal-and-shared-music-sources).
+
 If you remove a source, the database is cleaned up afterwards, which takes a little while. If you still see entries from a deleted source after some time, restart MA to retrigger the cleanup.
 
 > [!TIP]

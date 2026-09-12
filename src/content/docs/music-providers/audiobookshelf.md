@@ -105,9 +105,7 @@ The following is needed to setup this provider:
 
 ### Multi-user environment
 
-The audiobookshelf provider can be set up multiple times for individual users.
-To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
+The Audiobookshelf source can be added more than once, one for each Audiobookshelf user, and Audiobookshelf keeps progress per user. To give each member their own progress, each member adds their own, or an administrator adds one for them and makes them its owner. See [audiobook and podcast progress](/settings/user-management/#audiobook-and-podcast-progress).
 
 ### Advanced Settings
 
