@@ -73,7 +73,7 @@ All settings in this section should be considered advanced and will not need to 
 
 This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual queue basis](/usage/#the-queue). There are two of these settings, one for tracks, one for radio, and you set them independently.
 
-The best result comes from a loudness measurement of the audio. Music Assistant measures your local library automatically in a nightly background scan, and it measures everything, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before that measurement exists:
+The best result comes from a loudness measurement of the audio. Tracks tagged with ReplayGain or R128 loudness values supply one directly, and Music Assistant uses those in preference to measuring anything itself. Everything else it measures on its own: your local library automatically in a nightly background scan, and anything played, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before a value exists:
 
 - Fallback Dynamic (default) — use the measurement when there is one, otherwise adjust loudness on the fly. Always evens things out; the on-the-fly path is slightly less precise
 - Fallback Fixed Gain — use the measurement when there is one, otherwise apply the fixed adjustment below
@@ -82,7 +82,7 @@ The best result comes from a loudness measurement of the audio. Music Assistant 
 - Fixed Gain — never analyse; apply the same fixed adjustment to everything
 - Disabled — leave loudness untouched
 
-Two things worth knowing: live radio is rarely measured, so the radio setting in practice runs on whichever fallback you choose; and volume normalization also has to be switched on for the player itself — these settings control how it's done, not whether.
+Once a measurement exists it is used, whichever of the two fallback options is selected. Two other things are worth knowing: live radio is rarely measured, so the radio setting in practice runs on whichever fallback you choose, and volume normalization also has to be switched on for the player itself. These settings control how it's done, not whether. How the value is chosen, and when album gain is used instead of track gain, is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 
 Fixed/fallback gain adjustment — tracks / radio
 
