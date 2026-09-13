@@ -312,6 +312,8 @@ Whether or not MBIDs are present, the artist names themselves need to be encoded
 
 The left column corresponds to the TAG NAME shown in the <a href="https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html" target="_blank" rel="noopener noreferrer">MusicBrainz Picard Tag Mapping</a> table. Refer then to the appropriate tag name for the format of the file being tagged
 
+Loudness tags are read as well. If a file is tagged with ReplayGain or R128 loudness values, Music Assistant uses them for [volume normalization](/faq/tech-info/#volume-normalization) instead of measuring the track itself. Both track and album values are read, and album values are the only way to normalize an album as a whole. Tags added or changed after a track was scanned are picked up with **Refresh item** on the track.
+
 ### Manually Adjusting Tags
 
 > [!WARNING]
