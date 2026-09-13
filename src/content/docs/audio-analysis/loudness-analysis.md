@@ -18,7 +18,7 @@ For each analysed track:
 
 When a track already carries a loudness value from its tags or from the music provider, that value is used and the track is not analysed at all. The tags read are `R128_TRACK_GAIN` and `R128_ALBUM_GAIN`, then `REPLAYGAIN_TRACK_GAIN` and `REPLAYGAIN_ALBUM_GAIN`, with the R128 pair taking priority where both are present. Plex and Subsonic report the same data through their own APIs.
 
-Album level values come only from those tags or from a music provider. This provider measures the individual track, so album gain is available only for tracks that were tagged with it. How the values are chosen and applied is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
+Album level values come only from those tags or from a music provider. This provider measures the individual track, so unless a music provider supplies one, album gain is available only for tracks carrying an `R128_ALBUM_GAIN` or `REPLAYGAIN_ALBUM_GAIN` tag. The album tag is read alongside the track tag, so a file that carries an album value but no track value is treated as having no loudness value at all. How the values are chosen and applied is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 
 Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or whose measurement comes back near silence are skipped to avoid unreliable values.
 
