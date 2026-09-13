@@ -25,17 +25,20 @@ export type CategoryId =
   | "classical"
   | "children"
   // Music and radio from a particular country
-  | "germany"
+  | "australia"
   | "austria"
   | "belgium"
-  | "sweden"
-  | "denmark"
-  | "russia"
+  | "canada"
   | "china"
-  | "japan"
+  | "denmark"
   | "france"
+  | "germany"
+  | "japan"
+  | "mexico"
+  | "new-zealand"
+  | "russia"
+  | "sweden"
   | "uk"
-  | "australia"
   | "usa";
 
 export interface Category {
@@ -135,10 +138,10 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
       "These sources carry content from one country, or are only available there.",
     categories: [
       {
-        id: "germany",
-        icon: "/assets/icons/listen/germany.svg",
-        title: "Deutschland / Germany",
-        blurb: "Radio and podcasts from the German public broadcasters.",
+        id: "australia",
+        icon: "/assets/icons/listen/australia.svg",
+        title: "Australia",
+        blurb: "Australian public radio, from new music to classical and jazz.",
       },
       {
         id: "austria",
@@ -153,22 +156,10 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         blurb: "Radio and podcasts from the Belgian public broadcasters.",
       },
       {
-        id: "sweden",
-        icon: "/assets/icons/listen/sweden.svg",
-        title: "Sverige / Sweden",
-        blurb: "Swedish public service radio, and audiobooks in Swedish.",
-      },
-      {
-        id: "denmark",
-        icon: "/assets/icons/listen/denmark.svg",
-        title: "Danmark / Denmark",
-        blurb: "Danish music streaming, and audiobooks in Danish.",
-      },
-      {
-        id: "russia",
-        icon: "/assets/icons/listen/russia.svg",
-        title: "Россия / Russia",
-        blurb: "Streaming services with large Russian language catalogues.",
+        id: "canada",
+        icon: "/assets/icons/listen/canada.svg",
+        title: "Canada",
+        blurb: "Canadian radio stations.",
       },
       {
         id: "china",
@@ -177,10 +168,10 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         blurb: "The two large streaming platforms in Mainland China.",
       },
       {
-        id: "japan",
-        icon: "/assets/icons/listen/japan.svg",
-        title: "日本 / Japan",
-        blurb: "Music uploaded by the Nico Nico community, much of it found nowhere else.",
+        id: "denmark",
+        icon: "/assets/icons/listen/denmark.svg",
+        title: "Danmark / Denmark",
+        blurb: "Danish music streaming, and audiobooks in Danish.",
       },
       {
         id: "france",
@@ -189,16 +180,46 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         blurb: "French streaming with a catalogue of major and independent labels.",
       },
       {
+        id: "germany",
+        icon: "/assets/icons/listen/germany.svg",
+        title: "Deutschland / Germany",
+        blurb: "Radio and podcasts from the German public broadcasters.",
+      },
+      {
+        id: "japan",
+        icon: "/assets/icons/listen/japan.svg",
+        title: "日本 / Japan",
+        blurb: "Music uploaded by the Nico Nico community, much of it found nowhere else.",
+      },
+      {
+        id: "mexico",
+        icon: "/assets/icons/listen/mexico.svg",
+        title: "México / Mexico",
+        blurb: "Mexican radio stations in Spanish.",
+      },
+      {
+        id: "new-zealand",
+        icon: "/assets/icons/listen/new-zealand.svg",
+        title: "Aotearoa / New Zealand",
+        blurb: "New Zealand radio stations.",
+      },
+      {
+        id: "russia",
+        icon: "/assets/icons/listen/russia.svg",
+        title: "Россия / Russia",
+        blurb: "Streaming services with large Russian language catalogues.",
+      },
+      {
+        id: "sweden",
+        icon: "/assets/icons/listen/sweden.svg",
+        title: "Sverige / Sweden",
+        blurb: "Swedish public service radio, and audiobooks in Swedish.",
+      },
+      {
         id: "uk",
         icon: "/assets/icons/listen/uk.svg",
         title: "United Kingdom",
         blurb: "British radio, live and after broadcast.",
-      },
-      {
-        id: "australia",
-        icon: "/assets/icons/listen/australia.svg",
-        title: "Australia",
-        blurb: "Australian public radio, from new music to classical and jazz.",
       },
       {
         id: "usa",
@@ -291,6 +312,13 @@ export const MUSIC_SOURCES: MusicSource[] = [
     icon: "/assets/icons/ibroadcast-logo.png",
     // Not self-hosted, but you upload your own collection to it.
     categories: ["own-files"],
+  },
+  {
+    name: "iHeartRadio",
+    slug: "music-providers/iheartradio",
+    icon: "/assets/icons/iheartradio-icon.svg",
+    // Tagged by the countries it runs a local station catalogue for.
+    categories: ["radio", "podcasts", "australia", "canada", "mexico", "new-zealand", "usa"],
   },
   {
     name: "Internet Archive",
