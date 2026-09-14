@@ -12,6 +12,11 @@ const isProduction =
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.music-assistant.io",
+  redirects: {
+    "/music-providers/radioparadise": "/music-providers/radio-paradise",
+	"/music-providers/itunes-podcasts": "/music-providers/itunes-podcast",
+	"/audio-analysis/acoustid-lookup": "/audio-analysis/acoustid",
+  },	  
   image: {
     domains: ["assets.openhomefoundation.org", "www.openhomefoundation.org"],
   },
