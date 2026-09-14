@@ -63,9 +63,7 @@ To setup this functionality, you need the `Nextcloud URL`, and then click the AU
 
 ### Multi-user environment
 
-The gpodder provider can be set up multiple times for individual users.
-To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
+The gPodder source can be added more than once, one for each gPodder account, and the server keeps progress per account. To give each member their own progress, each member adds their own, or an administrator adds one for them and makes them its owner. See [audiobook and podcast progress](/settings/user-management/#audiobook-and-podcast-progress).
 
 ### Settings
 
