@@ -43,10 +43,8 @@ You will need to provide the following to Music Assistant:
 
 ### Settings
 
-- <b>Enable Podcasts.</b> This toggle controls podcast availability in Music Assistant
 - <b>Enable Legacy Auth.</b> Some Subsonic implementations require this to be enabled to authenticate
 - <b>Enable Radio Stations.</b> This toggle controls radio stations availability in Music Assistant
-- <b>Force Player Provider Seek.</b> Some Subsonic implementations advertise that seeking is supported when it isn't. If seeking does not work then enable this option
 - <b>Recommend Favorites.</b> Should favorited (starred) items be included as recommendations?
 - <b>Recommend New Albums.</b> Should new albums be included as recommendations?
 - <b>Recommend Most Played.</b> Should most played albums be included as recommendations?
