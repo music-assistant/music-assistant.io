@@ -33,8 +33,8 @@ Every music source is either shared or personal.
 Who else can use a source depends on its sharing:
 
 - <b>Only me.</b> Only the owner. Administrators see this as <b>Not shared</b>
-- <b>Selected members.</b> The owner, if there is one, and the users you pick
-- <b>All members.</b> Every signed-in user, but not guests
+- <b>Selected users.</b> The owner, if there is one, and the users you pick
+- <b>All users except guests.</b> Everyone signed in with a role other than Guest
 - <b>Everyone, including guests.</b> Any user
 
 An administrator sets the owner and the sharing with **Access** in the source's ⋮ menu under [Settings → Music Sources](/settings/music-provider-settings/#owner-and-sharing). A source an administrator adds starts out shared with everyone, including guests. To set one up for themselves or for a user, they add it, make that person its owner and choose who else can use it, for example **Only me**. The owner of a personal source changes who it is shared with through **Sharing** in the same menu. Only an administrator can change the owner.
