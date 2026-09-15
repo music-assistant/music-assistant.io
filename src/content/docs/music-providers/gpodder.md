@@ -63,7 +63,7 @@ To setup this functionality, you need the `Nextcloud URL`, and then click the AU
 
 ### Multi-user environment
 
-The gPodder source can be added more than once, one for each gPodder account, and the server keeps progress per account. To give each member their own progress, each member adds their own, or an administrator adds one for them and makes them its owner. See [audiobook and podcast progress](/settings/user-management/#audiobook-and-podcast-progress).
+gPodder keeps listening progress separately for each account, so each Music Assistant user needs a source of their own, signed in to their own gPodder account. A user can add one themselves, or an administrator can add it for them and set them as the owner. See [audiobook and podcast progress](/settings/user-management/#audiobook-and-podcast-progress).
 
 ### Settings
 
