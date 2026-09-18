@@ -43,7 +43,7 @@ You will need to provide the following to Music Assistant:
 
 ### Settings
 
-- <b>Enable Podcasts.</b> This toggle controls podcast availability in Music Assistant
+- <b>Enable Podcasts.</b> This toggle controls podcast availability in Music Assistant (If you are still seeing Podcast sync related failures after disabling see below)
 - <b>Enable Legacy Auth.</b> Some Subsonic implementations require this to be enabled to authenticate
 - <b>Enable Radio Stations.</b> This toggle controls radio stations availability in Music Assistant
 - <b>Force Player Provider Seek.</b> Some Subsonic implementations advertise that seeking is supported when it isn't. If seeking does not work then enable this option
@@ -55,6 +55,7 @@ You will need to provide the following to Music Assistant:
 
 ## Known Issues / Notes
 
+- Music Assistant 2.10 introduced finer grained controls for what is synchronized that include if podcasts should be done. This is independent from the provider specific settings above and needs to be disabled as well. This setting can be found at the bottom of the provider configuration page.
 - Searching with nothing typed in is allowed by the specification, but some servers refuse it. If search or the track list fails, that is worth raising with whoever makes your server
 - This source only works with servers that follow the Open Subsonic specification. If your server does not support the newer specification, Music Assistant cannot talk to it. Your server's own documentation should say which one it follows
 - If you find a mismatch between what is displayed by your Subsonic compatible server and Music Assistant then refer to and contribute <a href="https://github.com/music-assistant/support/issues/2192" target="_blank" rel="noopener noreferrer">here to help find a solution</a>
