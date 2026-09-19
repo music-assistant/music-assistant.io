@@ -60,7 +60,7 @@ The Service role can do what the User role can, and it can also see the other us
 
 ## The first time someone signs in
 
-The first time a user signs in, a short welcome opens over the app. Administrators setting the server up get the [setup wizard](/first-run/) instead, and guests get neither. An administrator added later gets neither and can run the wizard from the settings.
+The first time a user signs in, a short welcome opens over the app. Administrators never see it. The one setting the server up gets the [setup wizard](/first-run/) instead, and an administrator added later gets nothing and can run that wizard from the settings. Guests get neither.
 
 - <b>Make yourself at home.</b> <b>Standard</b> keeps the interface clean, <b>Expert</b> shows advanced options and extra details. It only sets a few defaults, and every setting stays theirs to change
 - <b>Your players.</b> The players they can send music to
