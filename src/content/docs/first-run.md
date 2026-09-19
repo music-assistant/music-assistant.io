@@ -1,8 +1,8 @@
 ---
-title: "First Run (Authentication)"
+title: "First Run"
 ---
 
-# Initial Authentication Setup
+# First Run
 
 Access to the Music Assistant User Interface (UI) requires a login and password.
 
@@ -15,6 +15,18 @@ The initial authentication setup dialog will appear as follows
 
 <a href="/assets/screenshots/auth-flow.png"><img src="/assets/screenshots/auth-flow.png" alt="Preview image" style="width: 256px;"  loading="lazy" /></a>
 
-After successfully logging in, your first action as administrator is to add [music sources](/music-providers/) and any necessary [players](/player-support/). This banner is shown to support this
+## The setup wizard
 
-![Preview image](/assets/screenshots/setup-banner.png)
+The first administrator to sign in is taken through a setup wizard, which opens over the app and covers everything Music Assistant needs before it can play. It cannot be closed, so work through to the end. You can move past any step, and nothing in it is final. The wizard uses the same dialogs as the settings, so whatever you leave you can do there later.
+
+- <b>Choose how you want to use Music Assistant.</b> <b>As my music hub</b> brings your streaming services and local music together into one library. <b>From the apps on my phone</b> streams from Spotify, AirPlay and other apps to the speakers in your home. Your answer only changes the order of the steps that follow, and everything stays available either way
+- <b>Add your music sources.</b> Connect a streaming service or your local music files. Each source has its own page under [Music Sources](/music-providers/)
+- <b>Add your players.</b> The players Music Assistant has already found are listed here. Switch off any you do not want to use, and rename them as you like. Finding players takes a moment, so give it one if the list is still empty. <b>Add more players</b> opens the list of [player providers](/player-support/) rather than single speakers, so pick the one your speakers use
+- <b>Add plugins.</b> Extras such as Party, Spotify Connect and an AirPlay receiver, described under [Plugins](/plugins/). Skip it and add them whenever you like
+- <b>Check your server settings.</b> The address the apps in your home use, and the address your players fetch the audio from. Both are worked out automatically and are normally right, and your browser checks whether it can reach them. This step is also where you switch on [remote access](/settings/remote-access/), or say that you run your own reverse proxy. Only a more complicated network needs these addresses set by hand, under <b>Show advanced settings</b>
+- <b>Add users.</b> Everyone in your home can have an account of their own. See [user management](/settings/user-management/)
+- <b>Finish setup.</b> A recap of what is set up and what is still to do, with a way back to each step you left, and the offer of a [short tour of the app](/ui/#take-a-tour)
+
+To go through it again, select **Run the setup wizard again** at the bottom of the settings.
+
+Everyone else gets [a short welcome](/settings/user-management/#the-first-time-someone-signs-in) the first time they sign in, not this wizard.
