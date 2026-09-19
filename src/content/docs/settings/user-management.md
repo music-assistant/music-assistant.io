@@ -25,10 +25,10 @@ Each user can be restricted to a set of specific players. Which music sources a 
 
 ## Roles
 
-Every user has a role, and the role decides what they can do. The **Roles** tab lists the built-in roles and any role you made yourself.
+Every user has a role, and the role decides what they can do. A new user gets the User role unless you pick another. The **Roles** tab lists the built-in roles and, under **Custom roles**, any role you make yourself.
 
 - <b>Administrator.</b> Everything, including users, roles, every music source, the whole library, the server settings and system maintenance
-- <b>User.</b> Browse and play, add and remove items in the library and favorites, and add music sources of their own
+- <b>User.</b> Browse and play, add and remove items in the library and favorites, and add music sources of their own. A user can also show dashboards, host a music quiz, and see the music source and server settings and the background tasks
 - <b>Guest.</b> Browse and play, and nothing else
 - <b>Service.</b> The role of the [Home Assistant account](#the-home-assistant-account), which no other user is given
 
@@ -44,7 +44,7 @@ Select **Create role** to make one. Give it a name, start from **Guest** or **Us
 - <b>Users.</b> See the other users, and show dashboards and host a music quiz
 - <b>Server.</b> See the server settings, and see the background tasks and their logs
 
-Browsing, playing, controlling the players, the queue and seeing the music source and player settings are always allowed, and are listed under **Always allowed**. Managing users, the whole library, every music source, the server settings and system maintenance stay with administrators, so you cannot hand those to a role of your own.
+Browsing the library, playing music, controlling the players and the queue, seeing the music sources and seeing the player settings are always allowed, and are listed under **Always allowed**. Managing users, the whole library, every music source, the server settings and system maintenance stay with administrators, so you cannot hand those to a role of your own.
 
 Some permissions need another one. Switching on **Add and manage their own music sources** also switches on **See the settings of the music sources** and holds it there.
 
@@ -56,11 +56,11 @@ When you change someone's role, or change what a role allows, the app of everyon
 
 The Home Assistant integration signs in with an account of its own, shown with a **System** badge and the **Service** role. Its username, role and password are fixed, and it cannot be disabled or deleted. Its display name, avatar, player restriction and access tokens work like any other user's.
 
-The Service role can do what the User role can, and it can also change player settings and act on behalf of other users. It cannot own a music source, although a music source can be shared with it.
+The Service role can do what the User role can, and it can also see the other users, change player settings and act on behalf of other users. It cannot own a music source, although a music source can be shared with it.
 
 ## The first time someone signs in
 
-The first time a user signs in, a short welcome opens over the app. Administrators get the [setup wizard](/first-run/) instead, and guests get neither.
+The first time a user signs in, a short welcome opens over the app. Administrators setting the server up get the [setup wizard](/first-run/) instead, and guests get neither. An administrator added later gets neither and can run the wizard from the settings.
 
 - <b>Make yourself at home.</b> <b>Standard</b> keeps the interface clean, <b>Expert</b> shows advanced options and extra details. It only sets a few defaults, and every setting stays theirs to change
 - <b>Your players.</b> The players they can send music to
@@ -68,7 +68,7 @@ The first time a user signs in, a short welcome opens over the app. Administrato
 - <b>Connect your own accounts.</b> Only when their role lets them add music sources. They can add one there or move on and do it later
 - <b>You're all set.</b> A summary, and the offer of a short [tour of the app](/ui/#take-a-tour)
 
-They can close the welcome at any point, and it does not open again by itself. It only opens on its own in the first week after the account is made, so someone who signs in later never sees it. Anyone can go through it again from **Show the welcome again** at the bottom of the settings.
+They can close the welcome at any point, and it does not open again by itself. It only opens on its own in the first week after the account is made, so someone who signs in later never sees it. Anyone but a guest can go through it again from **Show the welcome again** at the bottom of the settings.
 
 ## Personal and shared music sources
 
