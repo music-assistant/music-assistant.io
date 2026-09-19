@@ -5,6 +5,10 @@ description: A Walkthrough of the Music Assistant User Interface
 
 # User Interface
 
+## Take a tour
+
+A short tour points out the main parts of the app: the menu, search, the settings, your profile, the player bar, picking a player and grouping players. It is offered at the end of the setup wizard and of the welcome, and you can take it whenever you like by selecting your name at the bottom of the menu and choosing **Take a tour**. Stops for anything that is not on screen are skipped, so a phone shows fewer of them.
+
 ## Main Menu
 
 ![image](/assets/screenshots/UI-main-menu.png)

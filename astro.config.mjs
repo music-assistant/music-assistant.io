@@ -141,7 +141,7 @@ export default defineConfig({
           label: "First Run and Settings",
           collapsed: true,
           items: [
-            { label: "First Run (Authentication)", slug: "first-run" },
+            { label: "First Run", slug: "first-run" },
             {
               label: "Music Sources",
               slug: "settings/music-provider-settings",
