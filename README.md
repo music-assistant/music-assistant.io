@@ -42,6 +42,8 @@ npm run preview
 │   ├── content/docs/      # Markdown documentation files
 │   ├── styles/            # Custom CSS (branding)
 │   ├── components/        # Custom Astro components
+│   ├── pages/             # Homepage, getting started, and blog routes
+│   ├── layouts/           # Shared marketing page layout
 │   └── assets/            # Logo files
 ├── public/
 │   ├── assets/            # Static images
@@ -51,6 +53,16 @@ npm run preview
 ├── astro.config.mjs       # Astro configuration
 └── dist/                  # Build output
 ```
+
+The homepage and `/get-started/` use `MarketingLayout.astro` and
+`src/styles/marketing.css`. Their shared navigation, footer, and blog cards live
+in `src/components/marketing/`; interactive controls live in
+`src/scripts/marketing.ts`. The documentation overview is at `/documentation/`,
+and all other documentation URLs remain unchanged.
+
+The blog pages render the existing `src/content/docs/blog/` collection at its
+original URLs. Starlight Blog still provides RSS, tag/author pages, and crosspost
+redirects. The release badge uses the same build-time release data as the docs.
 
 ## Contributing
 

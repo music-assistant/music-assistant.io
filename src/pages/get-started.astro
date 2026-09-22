@@ -1,0 +1,216 @@
+---
+import MarketingLayout from "../layouts/MarketingLayout.astro";
+---
+
+<MarketingLayout
+  title="Install Music Assistant"
+  description="Install Music Assistant on Home Assistant or with Docker, then connect your music and speakers."
+>
+  <div class="container install-layout">
+    <div class="install-heading">
+      <h1>Install Music Assistant</h1>
+      <p>Choose where to install Music Assistant.</p>
+    </div>
+
+    <nav id="choose" class="install-picker" aria-label="Installation method">
+      <a id="tab-home-assistant" href="#home-assistant" class="install-option">
+        <strong>Home Assistant</strong>
+        <span>Install as an app</span>
+      </a>
+      <a id="tab-docker" href="#docker" class="install-option">
+        <strong>Docker</strong>
+        <span>For your own Linux server</span>
+      </a>
+    </nav>
+
+    <section id="home-assistant" class="section install-section">
+      <div class="install-grid">
+        <div class="install-sidebar">
+          <h2>Install the Home Assistant app</h2>
+          <p>
+            Music Assistant runs alongside Home Assistant on Home Assistant OS.
+          </p>
+        </div>
+
+        <div class="install-steps">
+          <article class="install-step">
+            <span class="install-step-number">01</span>
+            <div>
+              <h3>Open the App store</h3>
+              <p>
+                In Home Assistant, go to{" "}
+                <strong>Settings → Apps → App store</strong>.
+              </p>
+            </div>
+          </article>
+          <article class="install-step">
+            <span class="install-step-number">02</span>
+            <div>
+              <h3>Install Music Assistant</h3>
+              <p>
+                Search for <strong>Music Assistant</strong>, open it, and choose{" "}
+                <strong>Install</strong>.
+              </p>
+            </div>
+          </article>
+          <article class="install-step">
+            <span class="install-step-number">03</span>
+            <div>
+              <h3>Start the app</h3>
+              <p>
+                When installation finishes, start Music Assistant and select
+                Open Web UI in Home Assistant.
+              </p>
+            </div>
+          </article>
+          <article class="install-step">
+            <span class="install-step-number">04</span>
+            <div>
+              <h3>Optional: add the integration</h3>
+              <p>
+                Add the Music Assistant integration to control players from Home
+                Assistant dashboards, automations and voice.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="docker" class="section install-section docker-section">
+      <div class="install-grid">
+        <div class="install-sidebar">
+          <h2>Install with Docker Compose</h2>
+          <p>
+            Use Docker when Music Assistant will run on another always-on Linux
+            system. Host networking is required so it can find and stream to
+            your players.
+          </p>
+        </div>
+
+        <div class="install-steps">
+          <article class="install-step">
+            <span class="install-step-number">01</span>
+            <div>
+              <h3>Create a Compose file</h3>
+              <p>
+                Save this as <strong>compose.yaml</strong>. Uncomment the
+                optional music volume and change its path if you want to include
+                local files.
+              </p>
+              <div class="code-shell">
+                <div class="code-shell-head">
+                  <span>compose.yaml</span>
+                  <button
+                    class="copy-button"
+                    type="button"
+                    aria-live="polite"
+                    data-copy-target="compose-code"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <pre id="compose-code"><code is:raw>services:
+  music-assistant-server:
+    image: ghcr.io/music-assistant/server:latest
+    container_name: music-assistant-server
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
+      # - /path/to/your/music:/media:ro
+    environment:
+      - LOG_LEVEL=info</code></pre>
+              </div>
+            </div>
+          </article>
+          <article class="install-step">
+            <span class="install-step-number">02</span>
+            <div>
+              <h3>Start Music Assistant</h3>
+              <p>
+                Run the command below from the folder containing your Compose
+                file.
+              </p>
+              <div class="code-shell">
+                <div class="code-shell-head">
+                  <span>Terminal</span>
+                  <button
+                    class="copy-button"
+                    type="button"
+                    aria-live="polite"
+                    data-copy-target="start-code"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <pre id="start-code"><code>docker compose up -d</code></pre>
+              </div>
+            </div>
+          </article>
+          <article class="install-step">
+            <span class="install-step-number">03</span>
+            <div>
+              <h3>Open Music Assistant</h3>
+              <p>
+                Visit <strong>http://YOUR_MA_IP_ADDRESS:8095</strong> in your
+                browser.
+              </p>
+              <div class="network-note">
+                <strong>Players not appearing?</strong>
+                <p>
+                  Check that Music Assistant and your speakers are on the same
+                  local network.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section first-run-section">
+      <div>
+        <div class="section-intro">
+          <h2>Once you’re in</h2>
+        </div>
+        <div class="first-run-grid">
+          <article class="first-run-card">
+            <h3>Add your music</h3>
+            <p>
+              Connect a streaming service, local files, radio or another source
+              from Settings.
+            </p>
+          </article>
+          <article class="first-run-card">
+            <h3>Check your players</h3>
+            <p>
+              Supported AirPlay, Google Cast, DLNA, Sendspin and Sonos players
+              are discovered automatically.
+            </p>
+          </article>
+          <article class="first-run-card">
+            <h3>Press play</h3>
+            <p>
+              Choose a speaker and press play. Your library may take a few
+              minutes to appear.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-panel">
+      <div>
+        <h2>Need a hand?</h2>
+        <p>
+          Find help with networking, storage and troubleshooting in the
+          installation guide.
+        </p>
+      </div>
+      <a class="text-link" href="/installation/">
+        Read the installation docs
+      </a>
+    </section>
+  </div>
+</MarketingLayout>

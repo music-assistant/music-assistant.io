@@ -1,0 +1,1224 @@
+---
+import MarketingLayout from "../layouts/MarketingLayout.astro";
+---
+
+<MarketingLayout
+  title="Music Assistant — Your music. Your way."
+  description="Bring your streaming services and your own files into one library, and play them on almost any speaker in your home."
+>
+  <section id="top" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>
+          Your music.
+          <br />
+          Your way.
+        </h1>
+        <p class="hero-lead">
+          Bring your streaming services and your own files into one library, and
+          play them on almost any speaker in your home.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/get-started/">
+            Get Music Assistant
+          </a>
+        </div>
+        <p class="hero-note">
+          Free and open source · A project of the Open Home Foundation
+        </p>
+      </div>
+
+      <div class="hero-product" aria-label="Music Assistant interface preview">
+        <figure class="product-frame">
+          <img
+            src="/assets/landing/discover.png"
+            fetchpriority="high"
+            alt="Music Assistant Discover screen showing players, recommendations and music controls"
+          />
+        </figure>
+        <p class="hand-note" aria-hidden="true">
+          Same music.
+          <br />
+          More ways
+          <br />
+          to listen.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="section section-light">
+    <div class="container">
+      <div class="section-intro split-intro">
+        <div>
+          <h2>One system between your music and your speakers.</h2>
+        </div>
+        <p>
+          Keep your library and playlists independent of any one music service.
+          Mix speaker brands, switch services and change your setup without
+          starting over.
+        </p>
+      </div>
+
+      <div
+        id="compatibility"
+        class="orchestrator"
+        aria-label="Music sources flow through Music Assistant to speakers"
+      >
+        <div class="orchestrator-box">
+          <h3>Your music</h3>
+          <p>
+            Streaming services, local files, radio, podcasts and audiobooks—in
+            one place.
+          </p>
+          <div class="source-brands">
+            <ul
+              class="brand-list"
+              id="source-logos"
+              aria-label="Supported music sources"
+            >
+              <li>
+                <img
+                  class="brand-local-files"
+                  src="/assets/landing/brands/filesystem_local.svg"
+                  alt="Local files"
+                  title="Local files"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/spotify.svg"
+                  alt="Spotify"
+                  title="Spotify"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/apple_music.svg"
+                  alt="Apple Music"
+                  title="Apple Music"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/ytmusic.svg"
+                  alt="YouTube Music"
+                  title="YouTube Music"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/soundcloud.svg"
+                  alt="SoundCloud"
+                  title="SoundCloud"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/deezer.svg"
+                  alt="Deezer"
+                  title="Deezer"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/tidal.svg"
+                  alt="TIDAL"
+                  title="TIDAL"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/qobuz.svg"
+                  alt="Qobuz"
+                  title="Qobuz"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/tunein.svg"
+                  alt="TuneIn"
+                  title="TuneIn"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/audible.svg"
+                  alt="Audible"
+                  title="Audible"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/plex.svg"
+                  alt="Plex"
+                  title="Plex"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/jellyfin.svg"
+                  alt="Jellyfin"
+                  title="Jellyfin"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/bandcamp.svg"
+                  alt="Bandcamp"
+                  title="Bandcamp"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/pandora.svg"
+                  alt="Pandora"
+                  title="Pandora"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/siriusxm.svg"
+                  alt="SiriusXM"
+                  title="SiriusXM"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/audiobookshelf.svg"
+                  alt="Audiobookshelf"
+                  title="Audiobookshelf"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/emby.svg"
+                  alt="Emby"
+                  title="Emby"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/qqmusic.svg"
+                  alt="QQ Music"
+                  title="QQ Music"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/neteasecloudmusic.svg"
+                  alt="NetEase Cloud Music"
+                  title="NetEase Cloud Music"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/yandex_music.svg"
+                  alt="Yandex Music"
+                  title="Yandex Music"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/bbc_sounds.svg"
+                  alt="BBC Sounds"
+                  title="BBC Sounds"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/pocketcasts.svg"
+                  alt="Pocket Casts"
+                  title="Pocket Casts"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/itunes_podcasts.svg"
+                  alt="iTunes Podcast Search"
+                  title="iTunes Podcast Search"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/overcast.svg"
+                  alt="Overcast"
+                  title="Overcast"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/storytel.svg"
+                  alt="Storytel"
+                  title="Storytel"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/opensubsonic.svg"
+                  alt="Subsonic"
+                  title="Subsonic"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/radiobrowser.svg"
+                  alt="Radio Browser"
+                  title="Radio Browser"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/radioparadise.svg"
+                  alt="Radio Paradise"
+                  title="Radio Paradise"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/internet_archive.svg"
+                  alt="Internet Archive"
+                  title="Internet Archive"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/podcastfeed.svg"
+                  alt="Podcast RSS Feed"
+                  title="Podcast RSS Feed"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/podcast_index.svg"
+                  alt="Podcast Index"
+                  title="Podcast Index"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/ard_audiothek.svg"
+                  alt="ARD Sounds"
+                  title="ARD Sounds"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/somafm.svg"
+                  alt="SomaFM Radio"
+                  title="SomaFM Radio"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/nts.svg"
+                  alt="NTS Radio"
+                  title="NTS Radio"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/digitally_incorporated.svg"
+                  alt="DI.fm Network"
+                  title="DI.fm Network"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/nugs.svg"
+                  alt="Nugs.net"
+                  title="Nugs.net"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/ibroadcast.svg"
+                  alt="iBroadcast"
+                  title="iBroadcast"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/gpodder.svg"
+                  alt="gPodder"
+                  title="gPodder"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/sverigesradio.svg"
+                  alt="Sveriges Radio"
+                  title="Sveriges Radio"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/abc_radio_network.svg"
+                  alt="ABC Radio Network"
+                  title="ABC Radio Network"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/orf_radiothek.svg"
+                  alt="ORF Radiothek"
+                  title="ORF Radiothek"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/nicovideo.svg"
+                  alt="Nico Nico Video"
+                  title="Nico Nico Video"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/teddycloud.svg"
+                  alt="TeddyCloud"
+                  title="TeddyCloud"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/yousee.svg"
+                  alt="YouSee Musik"
+                  title="YouSee Musik"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/kion_music.svg"
+                  alt="KION Music"
+                  title="KION Music"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/zvuk_music.svg"
+                  alt="Zvuk Music"
+                  title="Zvuk Music"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/musicme.svg"
+                  alt="MusicMe"
+                  title="MusicMe"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/phishin.svg"
+                  alt="Phish.in"
+                  title="Phish.in"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/mammamiradio.svg"
+                  alt="Mamma Mi Radio"
+                  title="Mamma Mi Radio"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/ambient_sounds.svg"
+                  alt="Ambient Sounds"
+                  title="Ambient Sounds"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+              <li>
+                <img
+                  src="/assets/landing/brands/builtin.svg"
+                  alt="Builtin"
+                  title="Builtin"
+                  width="32"
+                  height="32"
+                  loading="lazy"
+                />
+              </li>
+            </ul>
+            <a class="text-link brand-directory-link" href="/music-providers/">
+              All sources <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+        <div class="orchestrator-link" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="orchestrator-box orchestrator-core">
+          <img
+            class="orchestrator-logo"
+            src="/assets/landing/music-assistant-logo.svg"
+            alt="Music Assistant"
+            width="1762"
+            height="240"
+            loading="lazy"
+          />
+          <p>Browse your music, build a queue and control your speakers.</p>
+        </div>
+        <div class="orchestrator-link" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="orchestrator-box">
+          <h3>Your speakers</h3>
+          <p>
+            Speakers from different brands and ecosystems, in one room or in
+            sync throughout your home.
+          </p>
+          <ul
+            class="brand-list brand-list-speakers"
+            aria-label="Supported speakers and player systems"
+          >
+            <li>
+              <img
+                src="/assets/landing/brands/sonos.svg"
+                alt="Sonos"
+                title="Sonos"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/airplay.svg"
+                alt="AirPlay"
+                title="AirPlay"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/chromecast.svg"
+                alt="Google Cast"
+                title="Google Cast"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/wiim.svg"
+                alt="WiiM"
+                title="WiiM"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/sendspin.svg"
+                alt="Sendspin"
+                title="Sendspin"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/hass_players.svg"
+                alt="Home Assistant media players"
+                title="Home Assistant media players"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/heos.svg"
+                alt="HEOS"
+                title="HEOS"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/musiccast.svg"
+                alt="Yamaha MusicCast"
+                title="Yamaha MusicCast"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/bluesound.svg"
+                alt="Bluesound"
+                title="Bluesound"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/squeezelite.svg"
+                alt="Squeezelite"
+                title="Squeezelite"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/dlna.svg"
+                alt="DLNA"
+                title="DLNA"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+            <li>
+              <img
+                src="/assets/landing/brands/alexa.svg"
+                alt="Alexa"
+                title="Alexa"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
+            </li>
+          </ul>
+          <a class="text-link brand-directory-link" href="/player-support/">
+            All players <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="features"
+    class="section possibilities-section"
+    aria-labelledby="possibilities-heading"
+  >
+    <div class="container possibilities-layout">
+      <div class="section-intro feature-intro">
+        <h2 id="possibilities-heading">More than pressing play.</h2>
+      </div>
+      <div
+        class="possibilities-grid"
+        role="region"
+        aria-label="Featured plugins"
+        tabindex="0"
+      >
+        <article>
+          <h3>Everyone gets a turn with Party mode.</h3>
+          <p>
+            Guests scan a QR code to browse your music and request songs from
+            their phones. You decide what plays next. No app or account needed.
+          </p>
+          <a class="text-link" href="/plugins/party/">
+            Explore Party mode
+          </a>
+        </article>
+        <article>
+          <h3>Challenge your friends with Music Quiz.</h3>
+          <p>
+            Turn your collection into game night. Guess the song, put tracks in
+            order of release or try music trivia. Friends join from their
+            phones.
+          </p>
+          <a class="text-link" href="/plugins/music-quiz/">
+            Explore Music Quiz
+          </a>
+        </article>
+        <article>
+          <h3>Sing along with the music you love.</h3>
+          <p>
+            Follow the lyrics in Now Playing. When timed lyrics are available,
+            they scroll along with the music.
+          </p>
+          <a class="text-link" href="/metadata/lyrics/">
+            Explore lyrics
+          </a>
+        </article>
+        <article>
+          <h3>Create a radio station of your own.</h3>
+          <p>
+            Give your playlist an AI host that introduces songs and adds weather
+            or news between tracks. Set the personality and how often it speaks.
+            You can use the AI and text-to-speech services you already have in
+            Home Assistant.
+          </p>
+          <a class="text-link" href="/plugins/ai-radio/">
+            Explore AI Radio
+          </a>
+        </article>
+      </div>
+      <a class="text-link all-plugins-link" href="/plugins/">
+        All plugins <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="experience" class="section discover-section">
+    <div class="container discover-layout">
+      <div class="discover-copy">
+        <h2>Get lost in the music.</h2>
+        <p>
+          Browse new releases, rediscover favorites and find what to play next
+          without jumping between apps.
+        </p>
+        <p>
+          Build smart playlists that follow your own rules, or find songs that
+          sound like a favorite.
+        </p>
+      </div>
+      <figure class="discover-image">
+        <img
+          src="/assets/landing/discover-page.webp"
+          alt="Music Assistant Discover page with personalized picks, new tracks and albums"
+          width="800"
+          height="435"
+          loading="lazy"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section id="setlist" class="section setlist-section">
+    <div class="container">
+      <div class="setlist-heading">
+        <div>
+          <h2>Fine-tune your everyday listening.</h2>
+        </div>
+      </div>
+
+      <div class="setlist" data-accordion>
+        <article class="track is-open">
+          <button
+            class="track-trigger"
+            type="button"
+            aria-expanded="true"
+            aria-controls="track-1"
+          >
+            <span class="track-number">01</span>
+            <span class="track-title">Move your playlists</span>
+            <span class="track-summary">
+              Take your favorites to another service.
+            </span>
+            <span class="track-icon" aria-hidden="true">
+              −
+            </span>
+          </button>
+          <div id="track-1" class="track-panel">
+            <p>
+              Copy playlists between supported services and keep them in sync as
+              you add new songs.
+            </p>
+          </div>
+        </article>
+
+        <article class="track">
+          <button
+            class="track-trigger"
+            type="button"
+            aria-expanded="true"
+            aria-controls="track-2"
+          >
+            <span class="track-number">02</span>
+            <span class="track-title">Add Spotify Connect</span>
+            <span class="track-summary">Keep using the Spotify app.</span>
+            <span class="track-icon" aria-hidden="true">
+              +
+            </span>
+          </button>
+          <div id="track-2" class="track-panel">
+            <p>
+              Make supported speakers appear in Spotify, even if they didn’t
+              come with Spotify Connect. Pick one speaker or a whole group in
+              the Spotify app and play as usual.{" "}
+              <a href="/plugins/spotify-connect/">Set up Spotify Connect</a>.
+            </p>
+          </div>
+        </article>
+
+        <article class="track">
+          <button
+            class="track-trigger"
+            type="button"
+            aria-expanded="true"
+            aria-controls="track-3"
+          >
+            <span class="track-number">03</span>
+            <span class="track-title">
+              The best sound each speaker can play
+            </span>
+            <span class="track-summary">
+              Gapless albums, smoother transitions and consistent volume.
+            </span>
+            <span class="track-icon" aria-hidden="true">
+              +
+            </span>
+          </button>
+          <div id="track-3" class="track-panel">
+            <p>
+              Music Assistant matches the audio to what each speaker supports.
+              Keep albums gapless, blend tracks with Smart Fades, even out
+              volume between songs and adjust the sound for your speakers and
+              room.
+            </p>
+          </div>
+        </article>
+
+        <article class="track">
+          <button
+            class="track-trigger"
+            type="button"
+            aria-expanded="true"
+            aria-controls="track-4"
+          >
+            <span class="track-number">04</span>
+            <span class="track-title">Different speakers in sync</span>
+            <span class="track-summary">AirPlay meets Sendspin.</span>
+            <span class="track-icon" aria-hidden="true">
+              +
+            </span>
+          </button>
+          <div id="track-4" class="track-panel">
+            <p>
+              Play your existing AirPlay speakers in sync with Sendspin devices
+              as one group.
+            </p>
+          </div>
+        </article>
+
+        <article class="track">
+          <button
+            class="track-trigger"
+            type="button"
+            aria-expanded="true"
+            aria-controls="track-5"
+          >
+            <span class="track-number">05</span>
+            <span class="track-title">Let your home speak up</span>
+            <span class="track-summary">
+              Hear the message without losing your place.
+            </span>
+            <span class="track-icon" aria-hidden="true">
+              +
+            </span>
+          </button>
+          <div id="track-5" class="track-panel">
+            <p>
+              Give Home Assistant a voice through your speakers, from a doorbell
+              alert to a call for dinner. Music Assistant pauses or lowers the
+              music for the announcement, then brings it back when the message
+              ends.{" "}
+              <a href="/integration/announcements/">Set up announcements</a>.
+            </p>
+          </div>
+        </article>
+
+        <article class="track">
+          <button
+            class="track-trigger"
+            type="button"
+            aria-expanded="true"
+            aria-controls="track-6"
+          >
+            <span class="track-number">06</span>
+            <span class="track-title">Search your whole library by voice</span>
+            <span class="track-summary">Ask for the music and the room.</span>
+            <span class="track-icon" aria-hidden="true">
+              +
+            </span>
+          </button>
+          <div id="track-6" class="track-panel">
+            <p>
+              Ask Home Assistant Assist to find a song, album, artist or
+              playlist across your connected music sources, then tell it where
+              to play. <a href="/integration/voice/">Set up voice control</a>.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" class="section open-section">
+    <div class="container">
+      <div class="open-panel">
+        <h2>Built in the open.</h2>
+        <p>
+          Music Assistant runs on a device in your home. It’s free and open
+          source: anyone can read the code, suggest changes or help improve it.
+          A community project of the Open Home Foundation.
+        </p>
+        <h3 class="team-intro">Brought to you by</h3>
+        <ul class="core-team" aria-label="Music Assistant core team">
+          <li>
+            <a
+              href="https://github.com/marcelveldt"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Marcel on GitHub"
+            >
+              <img
+                src="/assets/team/marcel.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Marcel</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/marvinschenkel"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Marvin on GitHub"
+            >
+              <img
+                src="/assets/team/marvin.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Marvin</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/maximmaxim345"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Maxim on GitHub"
+            >
+              <img
+                src="/assets/team/maxim.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Maxim</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/stvncode"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Steven on GitHub"
+            >
+              <img
+                src="/assets/team/steven.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Steven</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/chrisuthe"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Chris on GitHub"
+            >
+              <img
+                src="/assets/team/chris.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Chris</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/OzGav"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Gavin on GitHub"
+            >
+              <img
+                src="/assets/team/gavin.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Gavin</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/jozefKruszynski"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Jozef on GitHub"
+            >
+              <img
+                src="/assets/team/jozef.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Jozef</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/fmunkes"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Fabian on GitHub"
+            >
+              <img
+                src="/assets/team/fabian.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Fabian</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/khers"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Eric on GitHub"
+            >
+              <img
+                src="/assets/team/khers.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Eric</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/robsonke"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Rob on GitHub"
+            >
+              <img
+                src="/assets/team/robsonke.png"
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+              />
+              <span>Rob</span>
+            </a>
+          </li>
+        </ul>
+        <div class="open-actions">
+          <a
+            class="button button-dark"
+            href="https://github.com/music-assistant"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View on GitHub
+          </a>
+          <a
+            class="button button-dark-outline"
+            href="https://www.openhomefoundation.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open Home Foundation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="get-started" class="section final-cta">
+    <div class="container final-cta-inner">
+      <h2>Bring your music home.</h2>
+      <p>
+        Install Music Assistant on Home Assistant or with Docker, then connect
+        your music and speakers.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/get-started/">
+          Get Music Assistant
+        </a>
+        <a class="button button-secondary" href="/documentation/">
+          Read the documentation
+        </a>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>

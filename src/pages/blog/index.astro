@@ -1,0 +1,31 @@
+---
+import MarketingLayout from "../../layouts/MarketingLayout.astro";
+import BlogCard from "../../components/marketing/BlogCard.astro";
+import { getPosts } from "../../utils/blog";
+const [featured, ...posts] = await getPosts();
+---
+
+<MarketingLayout
+  title="Blog — Music Assistant"
+  description="Releases, project news and stories from the Music Assistant community."
+>
+  <div class="container blog-layout">
+    <header class="blog-heading">
+      <h1>Blog</h1>
+      <p>
+        Releases, project news and stories from the Music Assistant community.
+      </p>
+    </header>
+    {featured && <BlogCard post={featured} featured />}
+    <div class="blog-posts">
+      {posts.map((post) => (
+        <BlogCard post={post} />
+      ))}
+    </div>
+    <p class="blog-archive">
+      <a class="text-link" href="/blog/rss.xml">
+        Subscribe via RSS <span aria-hidden="true">↗</span>
+      </a>
+    </p>
+  </div>
+</MarketingLayout>

@@ -1,0 +1,66 @@
+---
+import latestRelease from "../../data/latest-release.json";
+import { getPosts } from "../../utils/blog";
+
+const { version, url: githubUrl } = latestRelease as {
+  version?: string;
+  url?: string;
+};
+const latestPost = (await getPosts()).find((post) =>
+  post.data.tags?.includes("release"),
+);
+const releaseUrl = latestPost ? `/${latestPost.id}/` : githubUrl;
+const isBlog = Astro.url.pathname.startsWith("/blog");
+const isInstall = Astro.url.pathname.startsWith("/get-started");
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand-lockup">
+      <a class="brand" href="/" aria-label="Music Assistant home">
+        <img
+          src="/assets/landing/music-assistant-logo.svg"
+          alt="Music Assistant"
+          width="1762"
+          height="240"
+        />
+      </a>
+      {version && releaseUrl && (
+        <a
+          class="release-link"
+          href={releaseUrl}
+          aria-label={`Music Assistant ${version} release announcement`}
+        >
+          {version.startsWith("v") ? version : `v${version}`}
+        </a>
+      )}
+    </div>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span></span>
+      <span></span>
+      <span class="sr-only">Open menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+      <a href="/#experience">Experience</a>
+      <a href="/#how-it-works">How it works</a>
+      <a href="/#features">Features</a>
+      <a href="/blog/" aria-current={isBlog ? "page" : undefined}>
+        Blog
+      </a>
+      <a href="/get-started/" aria-current={isInstall ? "page" : undefined}>
+        Get started
+      </a>
+    </nav>
+    <a
+      class="header-action"
+      href={isInstall ? "/documentation/" : "/get-started/"}
+    >
+      {isInstall ? "Documentation" : "Get Music Assistant"}
+    </a>
+  </div>
+</header>

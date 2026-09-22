@@ -124,7 +124,8 @@ export default defineConfig({
         }),
       ],
       sidebar: [
-        { label: "Home", slug: "index" },
+        { label: "Home", link: "/" },
+        { label: "Documentation", slug: "documentation" },
         {
           label: "I Want To",
           items: [

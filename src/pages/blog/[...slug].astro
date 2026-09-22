@@ -1,0 +1,74 @@
+---
+import { render } from "astro:content";
+import type { InferGetStaticPropsType } from "astro";
+import MarketingLayout from "../../layouts/MarketingLayout.astro";
+import { getPosts, coverImage, formatDate } from "../../utils/blog";
+import { authors } from "../../authors.mjs";
+
+export async function getStaticPaths() {
+  // Crossposts keep their existing Starlight routes and redirects to the original.
+  return (await getPosts())
+    .filter((post) => !post.data.crosspostSource)
+    .map((post) => ({
+      params: { slug: post.id.slice("blog/".length) },
+      props: { post },
+    }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { post } = Astro.props;
+const { Content } = await render(post);
+const cover = coverImage(post);
+const byline = (
+  Array.isArray(post.data.authors) ? post.data.authors : [post.data.authors]
+)
+  .filter(Boolean)
+  .map((author) =>
+    typeof author === "string"
+      ? (authors[author as keyof typeof authors]?.name ?? author)
+      : author?.name,
+  )
+  .join(", ");
+---
+
+<MarketingLayout
+  title={`${post.data.title} — Music Assistant`}
+  description={post.data.description ?? post.data.title}
+  image={cover?.src}
+  article
+>
+  <meta
+    slot="head"
+    property="article:published_time"
+    content={post.data.date.toISOString()}
+  />
+  <article class="container article-layout">
+    <a class="article-back text-link" href="/blog/">
+      ← All posts
+    </a>
+    <header class="article-heading">
+      <h1>{post.data.title}</h1>
+      <p class="post-meta">
+        <time datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date)}
+        </time>
+      </p>
+      {byline && <p class="article-byline">By {byline}</p>}
+    </header>
+    {cover && (
+      <figure class="article-image">
+        <img src={cover.src} alt={cover.alt} width="1200" height="630" />
+      </figure>
+    )}
+    <div class="article-body">
+      <Content />
+      <div class="article-end">
+        <a class="text-link" href="/blog/">
+          Back to the blog
+        </a>
+        <a class="text-link" href="/get-started/">
+          Get Music Assistant
+        </a>
+      </div>
+    </div>
+  </article>
+</MarketingLayout>

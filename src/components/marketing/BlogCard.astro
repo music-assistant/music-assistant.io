@@ -1,0 +1,45 @@
+---
+import { coverImage, formatDate, type BlogPost } from "../../utils/blog";
+interface Props {
+  post: BlogPost;
+  featured?: boolean;
+}
+const { post, featured = false } = Astro.props;
+const cover = coverImage(post);
+const url = `/${post.id}/`;
+---
+
+<article class={featured ? "blog-feature" : "blog-row"}>
+  {cover && (
+    <a
+      class="blog-image-link"
+      href={url}
+      aria-label={`Read ${post.data.title}`}
+    >
+      <img
+        src={cover.src}
+        alt={cover.alt}
+        width="1200"
+        height="630"
+        loading={featured ? "eager" : "lazy"}
+      />
+    </a>
+  )}
+  <div class={featured ? "blog-feature-copy" : undefined}>
+    <h2>
+      <a href={url}>{post.data.title}</a>
+    </h2>
+    <p class="post-meta">
+      <time datetime={post.data.date.toISOString()}>
+        {formatDate(post.data.date)}
+      </time>
+      {post.data.crosspostSource && (
+        <span>Shared from {post.data.crosspostSource}</span>
+      )}
+    </p>
+    <p>{post.data.description}</p>
+    <a class="text-link" href={url}>
+      Read the post <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>
