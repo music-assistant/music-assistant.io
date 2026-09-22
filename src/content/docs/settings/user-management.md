@@ -21,7 +21,7 @@ On the right side of each username is a ⋮ menu which has four menu items
 
 The dialog shown above appears when clicking on a username or via the ⋮ menu.
 
-Each user can be restricted to a specific set of players. Restricted users automatically gain access to any new browser window, desktop app, or mobile companion app linked to their profile. Additionally, restricting users to certain music sources offers two benefits: only these sources are used when initiating playback, and listening statistics are accurately attributed to a user's source streaming account.
+Each user can be restricted to a specific set of players. Restricted users automatically gain access to any new browser window, desktop app, or mobile companion app player(s) linked to their profile. Additionally, restricting users to certain music sources offers two benefits: only these sources are used when initiating playback, and listening statistics are accurately attributed to a user's source streaming account.
 
 > [!CAUTION]
 > When music sources are removed from MA then the entries are cleaned up from any users that had them as a restriction. However, if this results in a user having no more music source restrictions then they will be able to access the complete library.
