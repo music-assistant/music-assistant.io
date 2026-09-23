@@ -422,6 +422,21 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
     },
   },
   {
+    slug: "player-support/raumfeld",
+    sampleRate: "192kHz/24 bits",
+    values: {
+      hiRes: true,
+      lossless: true,
+      perfectSync: true,
+      syncCorrection: false,
+      crossfade: false,
+      stereoPair: false,
+      deviceButton: false,
+      deviceVoice: false,
+      playerOptions: false,
+    },
+  },
+  {
     slug: "player-support/wiim",
     sampleRate: "192kHz/24 bits",
     values: {
