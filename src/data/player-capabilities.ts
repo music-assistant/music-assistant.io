@@ -429,7 +429,7 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
       lossless: true,
       perfectSync: true,
       syncCorrection: false,
-      crossfade: false,
+      crossfade: true,
       stereoPair: false,
       deviceButton: false,
       deviceVoice: false,

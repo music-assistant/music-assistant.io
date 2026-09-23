@@ -16,9 +16,10 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 
 - Each Raumfeld room appears as a player, and Raumfeld zones map to sync groups
 - Grouped rooms play in sync, handled by the Raumfeld host itself
+- Gapless playback between tracks, including across grouped rooms
+- Crossfade between tracks
 - A room's analog **Line-in** input is offered as a selectable source, where the device has one
 - Hi-res audio up to 24 bit / 192 kHz
-- Optional gapless playback between tracks (off by default, see Settings)
 - Rooms are matched to the same speaker's Chromecast or DLNA representation, so they do not show up twice
 
 ## Configuration
@@ -35,12 +36,9 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 
 - <b>Raumfeld host.</b> The IP address of the device running the Raumfeld host service
 - <b>Raumfeld host port.</b> Only change this if the host runs on a non-default port
-- <b>Gapless playback.</b> Off by default. Hands the next track to the speaker itself so it crosses the track boundary without a gap. See the note below on what it costs
 
 ## Known Issues / Notes
 
 - **Pause is handled as stop.** Raumfeld renderers drop the HTTP connection when paused, and they restart the track from the beginning on play. Therefore, Music Assistant stops instead and re-streams from the stored position when you resume. In practice, pause and resume work as expected
-- **Gapless playback only applies to rooms that are not grouped.** In a zone, the Raumfeld host feeds all members one shared stream and coordinates their timing; handing an individual speaker its own next track would break that. Grouped rooms always use the normal transition, with a short gap between tracks
-- **With gapless playback on, the Raumfeld app shows the wrong elapsed time.** The track name follows along, but the time and duration keep those of the finished track. This is because the hand-over happens directly on the speaker, outside the host's view, and no other mechanism can correct it without restarting playback — which is exactly what gapless avoids. Leave the setting off if you use the Raumfeld app alongside Music Assistant
-- **Crossfade is not available.** It would require queue flow mode, which Raumfeld cannot use.
+- **In the Raumfeld app, the track title follows the queue but the elapsed time and duration do not.** Music Assistant sends the whole queue to the speaker as one continuous stream — this is what makes playback gapless, grouped rooms included — and the host reads each track's title out of that stream and shows it. The time it shows, though, runs on continuously across the queue instead of resetting per track, and the duration is not meaningful. Music Assistant's own progress bar is correct; only the Raumfeld app's is affected
 - Using the Raumfeld integration in Home Assistant at the same time may result in both sending commands to the same speakers
