@@ -36,14 +36,12 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 - <b>Raumfeld host.</b> The IP address of the device running the Raumfeld host service
 - <b>Raumfeld host port.</b> Only change this if the host runs on a non-default port
 - <b>Gapless playback.</b> Off by default. Hands the next track to the speaker itself so it crosses the track boundary without a gap. See the note below on what it costs
-- There is no *sample rates* setting, as Raumfeld speakers are hi-res capable and the supported rates are already known
-- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode)</b> is not offered. A flow stream is served to the Raumfeld host, whose internal relay re-requests it on its own; because a flow URL is tied to the queue position it was created at, each re-request restarts playback from that point
 
 ## Known Issues / Notes
 
-- **Pause is handled as stop.** Raumfeld renderers drop the HTTP connection when paused and restart the track from the beginning on play, so Music Assistant stops instead and re-streams from the stored position when you resume. In practice, pause and resume work as expected
+- **Pause is handled as stop.** Raumfeld renderers drop the HTTP connection when paused, and they restart the track from the beginning on play. Therefore, Music Assistant stops instead and re-streams from the stored position when you resume. In practice, pause and resume work as expected
 - **Gapless playback only applies to rooms that are not grouped.** In a zone, the Raumfeld host feeds all members one shared stream and coordinates their timing; handing an individual speaker its own next track would break that. Grouped rooms always use the normal transition, with a short gap between tracks
 - **With gapless playback on, the Raumfeld app shows the wrong elapsed time.** The track name follows along, but the time and duration keep those of the finished track. This is because the hand-over happens directly on the speaker, outside the host's view, and no other mechanism can correct it without restarting playback — which is exactly what gapless avoids. Leave the setting off if you use the Raumfeld app alongside Music Assistant
-- **Crossfade is not available.** It would require queue flow mode, which cannot be used here for the reason given under Settings
-- Players are identified by the speaker's hardware serial number, so renaming a room, or rebuilding the Raumfeld system, keeps each player's settings. Moving a speaker to a different room takes its settings along with it
+- **Crossfade is not available.** It would require queue flow mode, which Raumfeld cannot use: the flow stream is served to the Raumfeld host, whose internal relay re-requests it on its own, and because a flow URL is tied to the queue position it was created at, each re-request restarts playback from that point
+- Player settings follow the speaker itself, not the room it is in, so moving a speaker to another room takes its settings along with it
 - Using the Raumfeld integration in Home Assistant at the same time may result in both sending commands to the same speakers
