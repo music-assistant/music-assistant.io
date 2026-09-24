@@ -10,18 +10,7 @@ import Button from "../marketing/ui/Button.astro";
     </p>
     <h1 id="hero-title">
       <span>Your music.</span>
-      <span class="way">
-        Your way.
-        <!-- A marker stroke under the words, drawn once on load. -->
-        <svg
-          class="scribble"
-          viewBox="0 0 400 24"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path d="M4 16 C 60 6, 120 20, 190 11 S 330 6, 396 13" pathLength="1"></path>
-        </svg>
-      </span>
+      <span class="way">Your way.</span>
     </h1>
 
     <div class="intro">
@@ -82,39 +71,8 @@ import Button from "../marketing/ui/Button.astro";
     display: block;
   }
   .way {
-    position: relative;
-    width: fit-content;
     color: var(--accent);
   }
-  .scribble {
-    position: absolute;
-    left: -2%;
-    bottom: -0.12em;
-    width: 104%;
-    height: 0.18em;
-    overflow: visible;
-  }
-  .scribble path {
-    fill: none;
-    stroke: var(--fg);
-    stroke-width: 5;
-    stroke-linecap: round;
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    vector-effect: non-scaling-stroke;
-    animation: draw 0.9s 0.4s cubic-bezier(0.6, 0, 0.3, 1) forwards;
-  }
-  @keyframes draw {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .scribble path {
-      stroke-dashoffset: 0;
-    }
-  }
-
   .intro {
     display: flex;
     flex-wrap: wrap;

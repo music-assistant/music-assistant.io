@@ -2,9 +2,9 @@
  * Music Assistant marketing pages.
  *
  * Minimal and dark-first, in the Open Home Foundation family: near-black and
- * off-white with the logo blue as the only accent. The music-scene feel comes
- * from restraint rather than colour: condensed poster type, mono track
- * numbers, a little print grain and the odd hand-drawn mark.
+ * off-white with the logo blue as the only accent, and Inter throughout. The
+ * music feel comes from the details rather than loud type: mono track
+ * numbers, a setlist, a gig bill and a little print grain.
  *
  * Dark is the default. Light follows the visitor's system setting unless they
  * pick one with the header toggle, which sets [data-theme] on <html>.
@@ -58,7 +58,7 @@
 }
 
 :root {
-  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-display: var(--font-sans);
   --font-sans: "Inter Variable", Inter, system-ui, -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
@@ -168,25 +168,22 @@
   h4 {
     margin: 0 0 1rem;
     font-family: var(--font-display);
-    font-weight: 700;
-    line-height: 0.95;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
   h1 {
-    font-size: clamp(4rem, 12vw, 10rem);
-    font-weight: 800;
-    line-height: 0.82;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
   }
   h2 {
-    font-size: clamp(2.75rem, 6vw, 4.75rem);
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: clamp(2rem, 3.6vw, 2.75rem);
+    letter-spacing: -0.03em;
   }
   h3 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.05;
   }

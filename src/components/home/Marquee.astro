@@ -22,7 +22,7 @@ const names = [...musicSources, ...speakers].map((brand) => brand.name);
 <style>
   .marquee {
     overflow: hidden;
-    padding: 1.125rem 0;
+    padding: 1.25rem 0;
     border-block: 1px solid var(--line);
     mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
@@ -42,15 +42,13 @@ const names = [...musicSources, ...speakers].map((brand) => brand.name);
   }
   li {
     color: var(--muted);
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     line-height: 1;
-    text-transform: uppercase;
     white-space: nowrap;
   }
   li::after {
-    content: "/";
+    content: "·";
     margin: 0 1.25rem;
     color: var(--accent);
   }

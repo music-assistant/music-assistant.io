@@ -34,8 +34,8 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
 
     <p class="also" data-reveal>
       <span class="eyebrow">Also on the bill</span>
-      Smart playlists / Sonic similarity / Spotify Connect / Scrobbling /
-      Visualizers /{" "}
+      Smart playlists · Sonic similarity · Spotify Connect · Scrobbling ·
+      Visualizers
       <a class="text-link" href="/plugins/">
         All plugins <Icon name="arrow-right" size={16} />
       </a>
@@ -55,19 +55,17 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   }
   .act {
     display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
     align-items: center;
     gap: 1rem 3rem;
     padding: clamp(1.25rem, 3vw, 2rem) 0;
     text-decoration: none;
   }
   .name {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-weight: 800;
-    line-height: 0.85;
-    letter-spacing: -0.01em;
-    text-transform: uppercase;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     transition:
       color 0.2s,
       transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -107,18 +105,13 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   .also {
     margin: 2rem 0 0;
     color: var(--muted);
-    font-family: var(--font-display);
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
-    font-weight: 600;
-    text-transform: uppercase;
+    font-size: 1rem;
   }
   .also .eyebrow {
     margin-bottom: 0.5rem;
   }
   .also .text-link {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    text-transform: none;
+    margin-left: 0.25rem;
   }
 
   @media (max-width: 760px) {

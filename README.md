@@ -57,7 +57,7 @@ npm run preview
 The homepage, `/get-started/` and the blog use `MarketingLayout.astro`. The
 look is minimal and dark-first in the Open Home Foundation family (near-black,
 off-white and the logo blue as the one accent), with a music-scene feel from
-condensed poster type (Barlow Condensed), mono track captions (IBM Plex Mono)
+Inter throughout, mono track captions (IBM Plex Mono)
 and a little print grain. Light mode follows the system setting or the header
 toggle. `src/styles/marketing.css` holds the tokens and base styles; sections
 pick a tone (`base`, `alt` or `inverse`) with `Section.astro`, and every
