@@ -102,8 +102,8 @@ const byline = (
   }
   .cover img {
     width: 100%;
-    border: 2px solid var(--ink);
-    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
   }
 
   /* Blog content is Markdown, so it is styled by element. */
@@ -114,7 +114,6 @@ const byline = (
   }
   .prose :global(:where(h2, h3, h4)) {
     margin: 2.5rem 0 1rem;
-    font-stretch: 85%;
     scroll-margin-top: calc(var(--header-height) + 1rem);
   }
   .prose :global(h2) {
@@ -133,8 +132,8 @@ const byline = (
     margin-top: 0.375rem;
   }
   .prose :global(a:not(.text-link)) {
-    text-decoration-color: var(--coral);
-    text-decoration-thickness: 2px;
+    color: var(--link);
+    text-decoration-thickness: 1px;
     text-underline-offset: 3px;
   }
   .prose :global(img),
@@ -152,9 +151,9 @@ const byline = (
   .prose :global(blockquote),
   .prose :global(.markdown-alert) {
     padding: 1rem 1.25rem;
-    border-left: 4px solid var(--blue);
+    border-left: 2px solid var(--accent);
     border-radius: 0 0.75rem 0.75rem 0;
-    background: rgba(24, 188, 242, 0.12);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
   }
   .prose :global(:where(blockquote, .markdown-alert) > :last-child) {
     margin-bottom: 0;
@@ -171,14 +170,14 @@ const byline = (
   .prose :global(code) {
     padding: 0.125rem 0.375rem;
     border-radius: 0.375rem;
-    background: var(--paper-deep);
+    background: var(--page-alt);
     font-family: var(--font-mono);
     font-size: 0.875em;
   }
   .prose :global(pre) {
     overflow-x: auto;
-    color: var(--paper);
-    background: var(--ink) !important;
+    color: #f2f4f9;
+    background: #0b0c0d !important;
     padding: 1rem;
     border: 1px solid var(--line);
     border-radius: 0.75rem;

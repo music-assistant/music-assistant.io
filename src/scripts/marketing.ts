@@ -23,6 +23,23 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// Light/dark toggle. Without a stored choice the page follows the system.
+document
+  .querySelector<HTMLButtonElement>("[data-theme-toggle]")
+  ?.addEventListener("click", () => {
+    const root = document.documentElement;
+    const current =
+      root.dataset.theme ??
+      (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    const next = current === "light" ? "dark" : "light";
+    root.dataset.theme = next;
+    try {
+      localStorage.setItem("ma-theme", next);
+    } catch {
+      // Storage can be unavailable (private mode); the switch still applies.
+    }
+  });
+
 // Give the header a border once the page has scrolled.
 const updateScrolled = () =>
   document.documentElement.classList.toggle("is-scrolled", scrollY > 8);

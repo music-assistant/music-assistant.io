@@ -1,19 +1,25 @@
 ---
-// Section title with a small liner-notes caption above it, an optional lead
-// and an optional action aligned to the end.
+// A section title with a mono track caption above it ("01 · How it works"),
+// an optional lead and an optional action aligned to the end.
 interface Props {
   id?: string;
+  track?: string;
   label?: string;
   title: string;
   lead?: string;
 }
-const { id, label, title, lead } = Astro.props;
+const { id, track, label, title, lead } = Astro.props;
 const hasAction = Astro.slots.has("action");
 ---
 
 <header class="section-heading" data-reveal>
   <div class="text">
-    {label && <p class="liner">{label}</p>}
+    {(track || label) && (
+      <p class="eyebrow">
+        {track && <b>{track}</b>}
+        {label}
+      </p>
+    )}
     <h2 id={id}>{title}</h2>
     {lead && <p class="lead">{lead}</p>}
   </div>
@@ -34,7 +40,7 @@ const hasAction = Astro.slots.has("action");
     margin-bottom: clamp(2.5rem, 5vw, 4rem);
   }
   h2 {
-    max-width: 16ch;
+    max-width: 18ch;
     margin: 0;
   }
   .lead {

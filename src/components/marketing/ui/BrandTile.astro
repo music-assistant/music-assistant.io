@@ -1,14 +1,13 @@
 ---
 import type { Brand } from "../../../data/marketing";
 
-// A provider logo on a small paper square, like a patch on a jacket.
 interface Props {
   brand: Brand;
 }
 const { brand } = Astro.props;
 ---
 
-<li class="brand-tile" title={brand.name}>
+<li class:list={["brand-tile", { "is-dark": brand.dark }]} title={brand.name}>
   <img
     src={`/assets/landing/brands/${brand.icon}.svg`}
     alt={brand.name}
@@ -24,23 +23,26 @@ const { brand } = Astro.props;
     display: grid;
     place-items: center;
     aspect-ratio: 1;
-    border: 1.5px solid var(--line);
+    border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: #fff;
-    transition: transform 0.2s;
-  }
-  .brand-tile:nth-child(3n) {
-    transform: rotate(-3deg);
-  }
-  .brand-tile:nth-child(4n + 1) {
-    transform: rotate(2deg);
+    background: var(--bg);
+    transition: border-color 0.2s;
   }
   .brand-tile:hover {
-    transform: rotate(0) scale(1.08);
+    border-color: var(--accent);
   }
   img {
-    width: 58%;
-    height: 58%;
+    width: 55%;
+    height: 55%;
     object-fit: contain;
+  }
+  /* Black logos would vanish on the dark theme. */
+  :global(:root:not([data-theme="light"])) .is-dark img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+  @media (prefers-color-scheme: light) {
+    :global(:root:not([data-theme])) .is-dark img {
+      filter: none;
+    }
   }
 </style>

@@ -3,100 +3,72 @@ import Button from "../marketing/ui/Button.astro";
 import Section from "../marketing/ui/Section.astro";
 ---
 
-<Section id="get-started" tone="paper" labelledby="final-title">
-  <div class="container">
-    <!-- A gig ticket: the show on the left, the stub with the way in on the right. -->
-    <div class="ticket" data-reveal>
-      <div class="show tone-ink">
-        <p class="liner">Admit one · All ages · Free entry</p>
-        <h2 id="final-title">Bring your music home.</h2>
-        <p>
-          Install Music Assistant on Home Assistant or with Docker, then connect
-          your music and speakers.
-        </p>
-      </div>
-      <div class="stub tone-butter">
-        <p class="stub-no">No. 0001</p>
+<Section id="get-started" tone="base" labelledby="final-title" class="final">
+  <div class="container" data-reveal>
+    <p class="eyebrow">
+      <b>06</b> Encore
+    </p>
+    <h2 id="final-title">Bring your music home.</h2>
+    <div class="row">
+      <p>
+        Install Music Assistant on Home Assistant or with Docker, then connect
+        your music and speakers.
+      </p>
+      <div class="actions">
         <Button href="/get-started/" size="lg" trailingIcon="arrow-right">
           Get Music Assistant
         </Button>
-        <a class="text-link" href="/documentation/">
+        <Button href="/documentation/" variant="secondary" size="lg">
           Read the documentation
-        </a>
+        </Button>
       </div>
     </div>
   </div>
 </Section>
 
 <style>
-  .ticket {
-    --notch: 1.25rem;
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
-    filter: drop-shadow(0 24px 30px rgba(23, 21, 15, 0.25));
-    transform: rotate(-1deg);
+  .final {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
   }
-  .show,
-  .stub {
-    padding: clamp(1.75rem, 4vw, 3rem);
+  .final::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -10%;
+    bottom: -40%;
+    width: 70%;
+    height: 100%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      color-mix(in srgb, var(--accent) 14%, transparent),
+      transparent 70%
+    );
   }
-  .show {
-    border-radius: 0.75rem 0 0 0.75rem;
-    /* Half-circle bites where the ticket tears. */
-    mask:
-      radial-gradient(circle var(--notch) at 100% 0, transparent 98%, #000)
-        top / 100% 51% no-repeat,
-      radial-gradient(circle var(--notch) at 100% 100%, transparent 98%, #000)
-        bottom / 100% 51% no-repeat;
+  h2 {
+    max-width: none;
+    font-size: clamp(3.5rem, 10vw, 8.5rem);
+    font-weight: 800;
+    line-height: 0.85;
   }
-  .show .liner {
-    color: var(--butter);
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+    margin-top: 2rem;
   }
-  .show h2 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-  }
-  .show p:last-child {
-    max-width: 34rem;
+  .row p {
+    max-width: 30rem;
     margin: 0;
     color: var(--muted);
-    font-size: 1.125rem;
+    font-size: 1.1875rem;
   }
-  .stub {
+  .actions {
     display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 1.25rem;
-    border-left: 3px dashed rgba(23, 21, 15, 0.45);
-    border-radius: 0 0.75rem 0.75rem 0;
-    mask:
-      radial-gradient(circle var(--notch) at 0 0, transparent 98%, #000) top /
-        100% 51% no-repeat,
-      radial-gradient(circle var(--notch) at 0 100%, transparent 98%, #000)
-        bottom / 100% 51% no-repeat;
-  }
-  .stub-no {
-    margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    letter-spacing: 0.1em;
-  }
-  @media (max-width: 760px) {
-    .ticket {
-      grid-template-columns: 1fr;
-      transform: none;
-    }
-    .show,
-    .stub {
-      mask: none;
-    }
-    .show {
-      border-radius: 0.75rem 0.75rem 0 0;
-    }
-    .stub {
-      border-left: 0;
-      border-top: 3px dashed rgba(23, 21, 15, 0.45);
-      border-radius: 0 0 0.75rem 0.75rem;
-    }
+    flex-wrap: wrap;
+    gap: 0.75rem;
   }
 </style>

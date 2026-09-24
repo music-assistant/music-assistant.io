@@ -2,15 +2,14 @@
 import { team } from "../../data/marketing";
 import Button from "../marketing/ui/Button.astro";
 import Section from "../marketing/ui/Section.astro";
-
-// A slightly different tilt for each badge, so they look pinned on by hand.
-const tilts = [-3, 2, -1.5, 3, -2, 1.5, -2.5, 2.5, -1, 1];
 ---
 
-<Section id="community" tone="blue" labelledby="community-title">
+<Section id="community" tone="inverse" labelledby="community-title">
   <div class="container layout">
     <div class="intro" data-reveal>
-      <p class="liner">Liner notes</p>
+      <p class="eyebrow">
+        <b>05</b> Liner notes
+      </p>
       <h2 id="community-title">Built in the open.</h2>
       <p>
         Music Assistant runs on a device in your home. It’s free and open
@@ -25,17 +24,18 @@ const tilts = [-3, 2, -1.5, 3, -2, 1.5, -2.5, 2.5, -1, 1];
         >
           View on GitHub
         </Button>
-        <Button href="/help/" variant="outline">
+        <Button href="/help/" variant="secondary">
           Help or donate
         </Button>
       </div>
     </div>
 
     <div class="band">
-      <h3>Brought to you by</h3>
+      <p class="eyebrow">Brought to you by</p>
+      <!-- Black-and-white band photos; colour comes back on hover. -->
       <ul>
-        {team.map((person, index) => (
-          <li style={`--tilt: ${tilts[index % tilts.length]}deg`}>
+        {team.map((person) => (
+          <li>
             <a
               href={`https://github.com/${person.github}`}
               target="_blank"
@@ -66,7 +66,8 @@ const tilts = [-3, 2, -1.5, 3, -2, 1.5, -2.5, 2.5, -1, 1];
     align-items: center;
     gap: clamp(2.5rem, 6vw, 5rem);
   }
-  .intro p:not(.liner) {
+  .intro p:not(.eyebrow) {
+    color: var(--muted);
     font-size: 1.125rem;
   }
   .actions {
@@ -75,52 +76,47 @@ const tilts = [-3, 2, -1.5, 3, -2, 1.5, -2.5, 2.5, -1, 1];
     gap: 0.75rem;
     margin-top: 1.75rem;
   }
-  .band h3 {
-    margin-bottom: 1.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    font-weight: 400;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+  .actions :global(.btn-primary) {
+    color: var(--bg);
+    background: var(--fg);
+  }
+  .actions :global(.btn-primary:hover) {
+    background: color-mix(in srgb, var(--fg) 80%, var(--bg));
   }
   ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1.5rem 1rem;
+    gap: 1.75rem 1rem;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  /* Pin badges, like the ones on a band's merch table. */
   a {
     display: grid;
     justify-items: center;
-    gap: 0.5rem;
-    color: var(--ink);
+    gap: 0.625rem;
     text-decoration: none;
   }
   img {
     width: 100%;
-    max-width: 6.5rem;
+    max-width: 6rem;
     aspect-ratio: 1;
-    border: 4px solid var(--ink);
     border-radius: 50%;
     object-fit: cover;
-    background: var(--paper);
-    box-shadow:
-      inset 0 0 0 2px rgba(255, 255, 255, 0.4),
-      0 8px 14px -8px rgba(23, 21, 15, 0.7);
-    transform: rotate(var(--tilt));
-    transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: grayscale(1) contrast(1.1);
+    transition:
+      filter 0.3s,
+      transform 0.3s;
   }
   a:hover img,
   a:focus-visible img {
-    transform: rotate(calc(var(--tilt) * -3)) scale(1.08);
+    filter: none;
+    transform: scale(1.05);
   }
   span:not(.sr-only) {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    font-weight: 700;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
   }
   @media (max-width: 900px) {

@@ -54,13 +54,15 @@ npm run preview
 └── dist/                  # Build output
 ```
 
-The homepage, `/get-started/` and the blog use `MarketingLayout.astro`. They
-have their own look, closer to how a band presents itself than to app UI: a
-few flat "inks" (paper, ink, coral, butter and the logo blue) that alternate
-section by section, poster type and mono liner-notes captions.
-`src/styles/marketing.css` holds those tokens and the base styles; sections
-pick a tone with `Section.astro`, and every component carries its own scoped
-styles.
+The homepage, `/get-started/` and the blog use `MarketingLayout.astro`. The
+look is minimal and dark-first in the Open Home Foundation family (near-black,
+off-white and the logo blue as the one accent), with a music-scene feel from
+condensed poster type (Barlow Condensed), mono track captions (IBM Plex Mono)
+and a little print grain. Light mode follows the system setting or the header
+toggle. `src/styles/marketing.css` holds the tokens and base styles; sections
+pick a tone (`base`, `alt` or `inverse`) with `Section.astro`, and every
+component carries its own scoped styles. Screenshots come in dark and light
+pairs and switch with the theme.
 
 - `src/components/home/`: one component per homepage section
 - `src/components/get-started/`: the installation stepper

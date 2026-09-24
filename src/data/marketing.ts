@@ -4,16 +4,22 @@
 export interface Brand {
   name: string;
   icon: string;
+  /** The logo is black and needs inverting on dark backgrounds. */
+  dark?: boolean;
 }
 
-const brand = (icon: string, name: string): Brand => ({ name, icon });
+const brand = (icon: string, name: string, dark = false): Brand => ({
+  name,
+  icon,
+  dark,
+});
 
 export const musicSources: Brand[] = [
   brand("filesystem_local", "Local files"),
   brand("spotify", "Spotify"),
   brand("apple_music", "Apple Music"),
   brand("ytmusic", "YouTube Music"),
-  brand("tidal", "TIDAL"),
+  brand("tidal", "TIDAL", true),
   brand("qobuz", "Qobuz"),
   brand("deezer", "Deezer"),
   brand("soundcloud", "SoundCloud"),
@@ -21,7 +27,7 @@ export const musicSources: Brand[] = [
   brand("jellyfin", "Jellyfin"),
   brand("opensubsonic", "Subsonic"),
   brand("emby", "Emby"),
-  brand("bandcamp", "Bandcamp"),
+  brand("bandcamp", "Bandcamp", true),
   brand("tunein", "TuneIn"),
   brand("radiobrowser", "Radio Browser"),
   brand("siriusxm", "SiriusXM"),
@@ -31,7 +37,7 @@ export const musicSources: Brand[] = [
   brand("pocketcasts", "Pocket Casts"),
   brand("itunes_podcasts", "iTunes Podcasts"),
   brand("bbc_sounds", "BBC Sounds"),
-  brand("internet_archive", "Internet Archive"),
+  brand("internet_archive", "Internet Archive", true),
   brand("somafm", "SomaFM"),
 ];
 
@@ -44,7 +50,7 @@ export const speakers: Brand[] = [
   brand("wiim", "WiiM"),
   brand("heos", "HEOS"),
   brand("musiccast", "Yamaha MusicCast"),
-  brand("bluesound", "Bluesound"),
+  brand("bluesound", "Bluesound", true),
   brand("squeezelite", "Squeezelite"),
   brand("dlna", "DLNA"),
   brand("alexa", "Alexa"),

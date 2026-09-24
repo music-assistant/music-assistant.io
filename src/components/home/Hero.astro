@@ -3,98 +3,77 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
 import Button from "../marketing/ui/Button.astro";
 ---
 
-<section class="hero tone-ink" aria-labelledby="hero-title">
+<section class="hero tone-base" aria-labelledby="hero-title">
   <div class="container">
-    <p class="liner">Music Assistant · Free and open source</p>
+    <p class="eyebrow">
+      <b>●</b> Free and open source · Open Home Foundation
+    </p>
+    <h1 id="hero-title">
+      <span>Your music.</span>
+      <span class="way">
+        Your way.
+        <!-- A marker stroke under the words, drawn once on load. -->
+        <svg
+          class="scribble"
+          viewBox="0 0 400 24"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path d="M4 16 C 60 6, 120 20, 190 11 S 330 6, 396 13" pathLength="1"></path>
+        </svg>
+      </span>
+    </h1>
 
-    <div class="title-row">
-      <h1 id="hero-title">
-        <span>Your music.</span>
-        <span class="pop">Your way.</span>
-      </h1>
-
-      <!-- A round sticker, the kind that ends up on every laptop at a gig. -->
-      <svg
-        class="sticker"
-        viewBox="0 0 200 200"
-        role="img"
-        aria-label="Free and open source"
-      >
-        <defs>
-          <path
-            id="sticker-ring"
-            d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"
-          ></path>
-        </defs>
-        <circle cx="100" cy="100" r="98" class="sticker-bg"></circle>
-        <g class="sticker-ring">
-          <text>
-            <textPath href="#sticker-ring" textLength="452">
-              FREE ✦ OPEN SOURCE ✦ RUNS AT HOME ✦
-            </textPath>
-          </text>
-        </g>
-        <text x="100" y="112" text-anchor="middle" class="sticker-mid">
-          100%
-        </text>
-        <text x="100" y="136" text-anchor="middle" class="sticker-sub">
-          YOURS
-        </text>
-      </svg>
+    <div class="intro">
+      <p class="lead">
+        Bring your streaming services and your own files into one library, and
+        play them on almost any speaker in your home.
+      </p>
+      <div class="actions">
+        <Button href="/get-started/" size="lg" trailingIcon="arrow-right">
+          Get Music Assistant
+        </Button>
+        <Button href="#how-it-works" variant="secondary" size="lg">
+          How it works
+        </Button>
+      </div>
     </div>
 
-    <div class="grid">
-      <div class="copy">
-        <p class="lead">
-          Bring your streaming services and your own files into one library, and
-          play them on almost any speaker in your home.
-        </p>
-        <div class="actions">
-          <Button
-            href="/get-started/"
-            variant="pop"
-            size="lg"
-            trailingIcon="arrow-right"
-          >
-            Get Music Assistant
-          </Button>
-          <Button href="#how-it-works" variant="outline" size="lg">
-            How it works
-          </Button>
-        </div>
-        <p class="credit">A project of the Open Home Foundation</p>
-      </div>
-
-      <!-- The app slides out of its sleeve with a record behind it. -->
-      <div class="record">
-        <div class="vinyl" aria-hidden="true">
-          <span class="label">
-            <img src="/favicon.svg" alt="" width="150" height="150" />
-          </span>
-        </div>
-        <AppWindow
-          src="/assets/landing/discover.webp"
-          alt="Music Assistant's Discover screen, with players, top picks and similar artists"
-          width={1911}
-          height={1027}
-          eager
-          class="sleeve"
-        />
-      </div>
+    <div class="product">
+      <AppWindow
+        src="/assets/landing/discover-dark.webp"
+        srcLight="/assets/landing/discover-light.webp"
+        alt="Music Assistant's Discover screen: speakers playing in different rooms, top picks and recently played music"
+        width={2400}
+        height={1500}
+        eager
+      />
     </div>
   </div>
 </section>
 
 <style>
   .hero {
-    overflow: hidden;
-    padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(4rem, 8vw, 6rem);
-  }
-  .liner {
-    color: var(--muted);
-  }
-  .title-row {
     position: relative;
+    overflow: hidden;
+    padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(4rem, 8vw, 6rem);
+    isolation: isolate;
+  }
+  /* One cold stage light from above, behind the product. */
+  .hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    bottom: -10%;
+    width: min(1100px, 120%);
+    height: 70%;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      color-mix(in srgb, var(--accent) 16%, transparent),
+      transparent 70%
+    );
+    transform: translateX(-50%);
   }
   h1 {
     margin: 0;
@@ -102,52 +81,52 @@ import Button from "../marketing/ui/Button.astro";
   h1 span {
     display: block;
   }
-  .pop {
-    color: var(--butter);
+  .way {
+    position: relative;
+    width: fit-content;
+    color: var(--accent);
   }
-
-  .sticker {
+  .scribble {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: clamp(7rem, 14vw, 11rem);
-    transform: rotate(12deg);
+    left: -2%;
+    bottom: -0.12em;
+    width: 104%;
+    height: 0.18em;
+    overflow: visible;
   }
-  .sticker-bg {
-    fill: var(--coral);
+  .scribble path {
+    fill: none;
+    stroke: var(--fg);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    vector-effect: non-scaling-stroke;
+    animation: draw 0.9s 0.4s cubic-bezier(0.6, 0, 0.3, 1) forwards;
   }
-  .sticker-ring {
-    transform-origin: 100px 100px;
-    animation: spin 24s linear infinite;
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
-  .sticker text {
-    fill: var(--ink);
-    font-family: var(--font-mono);
-    font-weight: 700;
-  }
-  .sticker-ring text {
-    font-size: 17px;
-    letter-spacing: 1px;
-  }
-  .sticker-mid {
-    font-family: var(--font-display) !important;
-    font-size: 44px;
-    font-weight: 800 !important;
-  }
-  .sticker-sub {
-    font-size: 16px;
-    letter-spacing: 3px;
+  @media (prefers-reduced-motion: reduce) {
+    .scribble path {
+      stroke-dashoffset: 0;
+    }
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  .intro {
+    display: flex;
+    flex-wrap: wrap;
     align-items: end;
-    gap: clamp(2rem, 5vw, 4.5rem);
-    margin-top: clamp(-6rem, -6vw, -2rem);
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
   }
   .lead {
-    max-width: 30rem;
+    max-width: 32rem;
+    margin: 0;
+    color: var(--muted);
     font-size: clamp(1.1875rem, 1.8vw, 1.375rem);
     line-height: 1.5;
   }
@@ -155,88 +134,8 @@ import Button from "../marketing/ui/Button.astro";
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 2rem;
   }
-  .credit {
-    margin: 2rem 0 0;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-  }
-
-  .record {
-    position: relative;
-    padding: 25% 0 0;
-  }
-  /* The record: grooves, a sheen that stays put while it spins, and the
-     label. */
-  .vinyl {
-    position: absolute;
-    top: 0;
-    right: 7%;
-    width: 42%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background:
-      repeating-radial-gradient(circle, #2b2820 0 1.5px, #3a362c 2px 3px),
-      #2b2820;
-    box-shadow:
-      0 0 0 3px #0b0a07,
-      0 20px 40px -10px rgba(0, 0, 0, 0.7);
-    animation: spin 6s linear infinite;
-  }
-  .vinyl::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: conic-gradient(
-      from 30deg,
-      transparent 0 8%,
-      rgba(255, 255, 255, 0.12) 12%,
-      transparent 18% 58%,
-      rgba(255, 255, 255, 0.1) 62%,
-      transparent 68%
-    );
-    animation: spin 6s linear infinite reverse;
-  }
-  .label {
-    position: absolute;
-    z-index: 1;
-    inset: 33%;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: var(--coral);
-  }
-  .label img {
-    width: 48%;
-  }
-  .record :global(.sleeve) {
-    position: relative;
-    transform: rotate(-1.5deg);
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @media (max-width: 900px) {
-    .grid {
-      grid-template-columns: 1fr;
-      margin-top: 2rem;
-    }
-    .sticker {
-      top: auto;
-      bottom: -3rem;
-      right: -0.5rem;
-    }
-  }
-  @media (max-width: 560px) {
-    .sticker {
-      display: none;
-    }
+  .product {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
   }
 </style>

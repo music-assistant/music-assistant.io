@@ -33,7 +33,7 @@ const columns = [
 const isExternal = (href: string) => href.startsWith("http");
 ---
 
-<footer class="site-footer tone-ink">
+<footer class="site-footer tone-alt">
   <div class="container">
     <div class="top">
       <div class="about">
@@ -104,6 +104,7 @@ const isExternal = (href: string) => href.startsWith("http");
 <style>
   .site-footer {
     padding: 4rem 0 2rem;
+    border-top: 1px solid var(--line);
     font-size: 0.9375rem;
   }
   .top {
@@ -144,7 +145,7 @@ const isExternal = (href: string) => href.startsWith("http");
     text-decoration: none;
   }
   ul a:hover {
-    color: var(--butter);
+    color: var(--link);
   }
   .bottom {
     display: flex;

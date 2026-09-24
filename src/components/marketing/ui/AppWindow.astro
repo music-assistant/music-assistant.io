@@ -1,70 +1,73 @@
 ---
-// A screenshot of the app in a plain dark frame. Optional tape strips make it
-// look pinned up, like a flyer on a noticeboard.
+// A screenshot of the app in a thin frame. Pass `srcLight` to show the app's
+// light theme when the site is in light mode.
 interface Props {
   src: string;
+  srcLight?: string;
   alt: string;
   width: number;
   height: number;
   eager?: boolean;
-  taped?: boolean;
+  device?: "desktop" | "phone";
   class?: string;
 }
 const {
   src,
+  srcLight,
   alt,
   width,
   height,
   eager = false,
-  taped = false,
+  device = "desktop",
   class: className,
 } = Astro.props;
+const loading = eager ? "eager" : "lazy";
 ---
 
-<figure class:list={["app-window", { taped }, className]}>
+<figure class:list={["app-window", `is-${device}`, className]}>
   <img
+    class:list={{ "only-dark": srcLight }}
     src={src}
     alt={alt}
     width={width}
     height={height}
-    loading={eager ? "eager" : "lazy"}
+    loading={loading}
     fetchpriority={eager ? "high" : undefined}
     decoding="async"
   />
+  {srcLight && (
+    <img
+      class="only-light"
+      src={srcLight}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      decoding="async"
+    />
+  )}
 </figure>
 
 <style>
   .app-window {
-    position: relative;
     margin: 0;
-    padding: 0.5rem;
-    border-radius: 0.625rem;
-    background: #0e0d09;
-    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+    padding: 0.375rem;
+    border: 1px solid var(--line);
+    border-radius: 0.875rem;
+    background: color-mix(in srgb, var(--fg) 4%, var(--bg));
+    box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.6);
   }
   img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
   }
-  .taped::before,
-  .taped::after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: -0.875rem;
-    width: 7rem;
-    height: 1.75rem;
-    background: rgba(245, 195, 59, 0.82);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  .is-phone {
+    padding: 0.3rem;
+    border-radius: 1.75rem;
   }
-  .taped::before {
-    left: 8%;
-    transform: rotate(-4deg);
-  }
-  .taped::after {
-    right: 8%;
-    transform: rotate(3deg);
+  .is-phone img {
+    border-radius: 1.5rem;
   }
 </style>

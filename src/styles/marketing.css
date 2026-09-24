@@ -1,88 +1,100 @@
 /*
  * Music Assistant marketing pages.
  *
- * The look borrows from how bands present themselves rather than from app
- * UI: a small set of flat "inks" like a riso-printed gig poster, poster type,
- * and sections that alternate colour. The logo blue is one of the inks, not
- * the colour of every button.
+ * Minimal and dark-first, in the Open Home Foundation family: near-black and
+ * off-white with the logo blue as the only accent. The music-scene feel comes
+ * from restraint rather than colour: condensed poster type, mono track
+ * numbers, a little print grain and the odd hand-drawn mark.
  *
- * Each section picks a tone (see Section.astro); inside it, components only
- * use the local --bg, --fg, --muted, --line and --pop variables, so the same
- * component works on any tone.
+ * Dark is the default. Light follows the visitor's system setting unless they
+ * pick one with the header toggle, which sets [data-theme] on <html>.
+ *
+ * Sections set a tone (see Section.astro): the page colour, the alternate
+ * colour, or inverted. Components only read the local tokens below, so they
+ * work in any tone and either theme.
  */
 
-:root {
-  --paper: #f1ece1;
-  --paper-deep: #e6dfcf;
-  --ink: #17150f;
-  --ink-soft: #24211a;
-  --coral: #ec5a3b;
-  --butter: #f5c33b;
-  --blue: #18bcf2;
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0b0c0d;
+  --page-alt: #131517;
+  --surface: #1a1d20;
+  --text: #f2f4f9;
+  --text-muted: #a3a9b1;
+  --hairline: rgba(242, 244, 249, 0.12);
+  --accent: #18bcf2;
+  --accent-text: #18bcf2;
+  --on-accent: #0b0c0d;
+  --grain: 0.06;
+}
 
-  --font-display:
-    "Bricolage Grotesque Variable", "Arial Narrow", system-ui, sans-serif;
-  --font-sans:
-    "Instrument Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #f2f4f9;
+  --page-alt: #e7eaf0;
+  --surface: #ffffff;
+  --text: #0b0c0d;
+  --text-muted: #4d545c;
+  --hairline: rgba(11, 12, 13, 0.12);
+  --accent: #18bcf2;
+  --accent-text: #0784b3;
+  --on-accent: #0b0c0d;
+  --grain: 0.045;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --page: #f2f4f9;
+    --page-alt: #e7eaf0;
+    --surface: #ffffff;
+    --text: #0b0c0d;
+    --text-muted: #4d545c;
+    --hairline: rgba(11, 12, 13, 0.12);
+    --accent-text: #0784b3;
+    --grain: 0.045;
+  }
+}
+
+:root {
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-sans: "Inter Variable", Inter, system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --container: 1200px;
   --gutter: clamp(1rem, 4vw, 2rem);
   --section: clamp(4.5rem, 10vw, 8rem);
-  --header-height: 4rem;
-  --radius: 0.375rem;
-
-  /* Paper is the default tone. */
-  --bg: var(--paper);
-  --fg: var(--ink);
-  --muted: rgba(23, 21, 15, 0.68);
-  --line: rgba(23, 21, 15, 0.16);
-  --pop: var(--coral);
-  --surface: #fbf8f1;
+  --header-height: 4.25rem;
+  --radius: 0.5rem;
 }
 
-/* Tones. Sections, and anything else that wants a colour block, add one. */
-.tone-paper {
-  --bg: var(--paper);
-  --fg: var(--ink);
-  --muted: rgba(23, 21, 15, 0.68);
-  --line: rgba(23, 21, 15, 0.16);
-  --pop: var(--coral);
-  --surface: #fbf8f1;
+/* The tokens components use. Tones remap them locally. */
+:root,
+.tone-base {
+  --bg: var(--page);
+  --fg: var(--text);
+  --muted: var(--text-muted);
+  --line: var(--hairline);
+  --card: var(--surface);
+  --link: var(--accent-text);
 }
-.tone-ink {
-  --bg: var(--ink);
-  --fg: var(--paper);
-  --muted: rgba(241, 236, 225, 0.66);
-  --line: rgba(241, 236, 225, 0.16);
-  --pop: var(--butter);
-  --surface: var(--ink-soft);
+.tone-alt {
+  --bg: var(--page-alt);
+  --card: var(--surface);
 }
-.tone-coral {
-  --bg: var(--coral);
-  --fg: var(--ink);
-  --muted: rgba(23, 21, 15, 0.74);
-  --line: rgba(23, 21, 15, 0.22);
-  --pop: var(--paper);
-  --surface: #f07a5f;
+/* Inverted: the light theme's page colours in dark mode, and the reverse. */
+.tone-inverse {
+  --bg: var(--text);
+  --fg: var(--page);
+  --muted: color-mix(in srgb, var(--page) 70%, var(--text));
+  --line: color-mix(in srgb, var(--page) 14%, transparent);
+  --card: color-mix(in srgb, var(--page) 6%, var(--text));
+  --link: var(--page);
 }
-.tone-butter {
-  --bg: var(--butter);
-  --fg: var(--ink);
-  --muted: rgba(23, 21, 15, 0.72);
-  --line: rgba(23, 21, 15, 0.2);
-  --pop: var(--coral);
-  --surface: #f8d36b;
-}
-.tone-blue {
-  --bg: var(--blue);
-  --fg: var(--ink);
-  --muted: rgba(23, 21, 15, 0.74);
-  --line: rgba(23, 21, 15, 0.2);
-  --pop: var(--paper);
-  --surface: #5dd0f6;
-}
-[class*="tone-"] {
+.tone-base,
+.tone-alt,
+.tone-inverse {
   color: var(--fg);
   background-color: var(--bg);
 }
@@ -125,15 +137,15 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* A little print grain over everything, like ink on uncoated paper. */
+  /* Faint print grain, like a photocopied flyer. */
   body::after {
     content: "";
     position: fixed;
     z-index: 200;
     inset: 0;
     pointer-events: none;
-    opacity: 0.07;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: var(--grain);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   img,
@@ -157,27 +169,26 @@
     margin: 0 0 1rem;
     font-family: var(--font-display);
     font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.02em;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
   h1 {
-    font-size: clamp(3.5rem, 11.5vw, 9.5rem);
+    font-size: clamp(4rem, 12vw, 10rem);
     font-weight: 800;
-    font-stretch: 75%;
-    line-height: 0.88;
+    line-height: 0.82;
     letter-spacing: -0.02em;
     text-transform: uppercase;
   }
   h2 {
-    font-size: clamp(2.25rem, 5.5vw, 4.25rem);
-    font-weight: 800;
-    font-stretch: 80%;
-    line-height: 0.95;
+    font-size: clamp(2.75rem, 6vw, 4.75rem);
+    font-weight: 700;
+    text-transform: uppercase;
   }
   h3 {
-    font-size: 1.5rem;
-    font-stretch: 90%;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.05;
   }
   p {
     margin: 0 0 1rem;
@@ -185,13 +196,13 @@
   }
 
   :focus-visible {
-    outline: 3px solid var(--pop);
-    outline-offset: 2px;
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 
   ::selection {
-    color: var(--ink);
-    background: var(--butter);
+    color: var(--on-accent);
+    background: var(--accent);
   }
 }
 
@@ -204,22 +215,21 @@
   padding-block: var(--section);
 }
 
-/* Small mono caption, used like the credits on a record sleeve. */
-.liner {
-  display: inline-flex;
+/* Mono caption above headings, like a track listing. */
+.eyebrow {
+  display: flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: 0.75rem;
   margin: 0 0 1.25rem;
+  color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.8125rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.liner::before {
-  content: "";
-  width: 1.5rem;
-  height: 2px;
-  background: currentColor;
+.eyebrow b {
+  color: var(--link);
+  font-weight: 500;
 }
 
 .sr-only {
@@ -240,27 +250,29 @@
   top: 0.75rem;
   left: 0.75rem;
   padding: 0.5rem 1rem;
-  color: var(--ink);
-  background: var(--butter);
-  font-weight: 700;
+  border-radius: var(--radius);
+  color: var(--on-accent);
+  background: var(--accent);
+  font-weight: 600;
   transform: translateY(-200%);
 }
 .skip-link:focus {
   transform: none;
 }
 
-/* Inline text link with an arrow, used for "Explore…" style links. */
+/* Inline link with an arrow, for "Explore…" style links. */
 .text-link {
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  color: var(--link);
+  font-weight: 600;
+  text-decoration: none;
 }
 .text-link:hover {
-  text-decoration-color: var(--pop);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 .text-link .icon {
   transition: transform 0.15s;
@@ -273,7 +285,7 @@
    reduced motion, everything is simply visible. */
 .js [data-reveal] {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(16px);
   transition:
     opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
     transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -287,5 +299,24 @@
   .js [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Show an element in one theme only, e.g. the light or dark screenshot. */
+.only-light {
+  display: none !important;
+}
+:root[data-theme="light"] .only-light {
+  display: block !important;
+}
+:root[data-theme="light"] .only-dark {
+  display: none !important;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .only-light {
+    display: block !important;
+  }
+  :root:not([data-theme]) .only-dark {
+    display: none !important;
   }
 }

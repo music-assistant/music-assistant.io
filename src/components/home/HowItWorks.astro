@@ -2,23 +2,24 @@
 import { musicSources, speakers } from "../../data/marketing";
 import BrandTile from "../marketing/ui/BrandTile.astro";
 import Icon from "../marketing/ui/Icon.astro";
-import SectionHeading from "../marketing/ui/SectionHeading.astro";
 import Logo from "../marketing/ui/Logo.astro";
 import Section from "../marketing/ui/Section.astro";
+import SectionHeading from "../marketing/ui/SectionHeading.astro";
 ---
 
-<Section id="how-it-works" tone="paper" labelledby="how-title">
+<Section id="how-it-works" tone="base" labelledby="how-title">
   <div class="container">
     <SectionHeading
       id="how-title"
-      label="Track 01 · How it works"
+      track="01"
+      label="How it works"
       title="One system between your music and your speakers."
       lead="Keep your library and playlists independent of any one music service. Mix speaker brands, switch services and change your setup without starting over."
     />
 
     <ol class="flow">
       <li class="panel" data-reveal>
-        <p class="step">A · Your music</p>
+        <p class="step">Your music</p>
         <p>
           Streaming services, local files, radio, podcasts and audiobooks, in
           one place.
@@ -33,8 +34,7 @@ import Section from "../marketing/ui/Section.astro";
         </a>
       </li>
 
-      <li class="panel core tone-ink" data-reveal style="--reveal-delay: 100ms">
-        <p class="step">B · The mix</p>
+      <li class="panel core" data-reveal style="--reveal-delay: 100ms">
         <div class="core-logo">
           <Logo />
         </div>
@@ -45,7 +45,7 @@ import Section from "../marketing/ui/Section.astro";
       </li>
 
       <li class="panel" data-reveal style="--reveal-delay: 200ms">
-        <p class="step">C · Your speakers</p>
+        <p class="step">Your speakers</p>
         <p>
           Speakers from different brands and ecosystems, in one room or in sync
           throughout your home.
@@ -66,8 +66,8 @@ import Section from "../marketing/ui/Section.astro";
 <style>
   .flow {
     display: grid;
-    grid-template-columns: 1fr minmax(0, 0.85fr) 1fr;
-    gap: 1.25rem;
+    grid-template-columns: 1fr minmax(0, 0.8fr) 1fr;
+    gap: 1.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -76,88 +76,77 @@ import Section from "../marketing/ui/Section.astro";
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 1.5rem;
-    border: 2px solid var(--ink);
-    border-radius: var(--radius);
-    background: var(--surface);
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--card);
   }
   .panel p {
     color: var(--muted);
   }
   .step {
-    margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--line);
+    margin-bottom: 0.75rem;
     color: var(--fg) !important;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
+    font-family: var(--font-display);
+    font-size: 1.75rem;
     font-weight: 700;
+    line-height: 1;
     text-transform: uppercase;
   }
   .brands {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.5rem;
-    margin: 0.5rem 0 1.5rem;
+    margin: 0.75rem 0 1.5rem;
     padding: 0;
     list-style: none;
   }
   .panel .text-link {
     margin-top: auto;
   }
-
   .core {
     justify-content: center;
     text-align: center;
-    background: var(--ink);
-  }
-  .core .step {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    right: 1.5rem;
-    text-align: left;
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    background:
+      radial-gradient(
+        90% 60% at 50% 0%,
+        color-mix(in srgb, var(--accent) 14%, transparent),
+        transparent 70%
+      ),
+      var(--card);
   }
   .core-logo {
-    height: clamp(1.75rem, 3vw, 2.5rem);
-    margin: 4rem auto 1.25rem;
-    color: var(--paper);
+    height: clamp(1.75rem, 2.6vw, 2.25rem);
+    margin: 0 auto 1.25rem;
+    color: var(--fg);
   }
 
-  /* Arrows between the panels, pointing the way the music goes. */
+  /* A small arrow between panels, the way the music goes. */
   .panel:not(:last-child)::after {
-    content: "→";
+    content: "";
     position: absolute;
     z-index: 1;
     top: 50%;
-    right: -1.375rem;
-    display: grid;
-    place-items: center;
-    width: 1.5rem;
-    height: 1.5rem;
+    right: calc(-0.75rem - 5px);
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    color: var(--ink);
-    background: var(--butter);
-    font-weight: 700;
-    line-height: 1;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
     transform: translateY(-50%);
   }
 
   @media (max-width: 1000px) {
     .flow {
       grid-template-columns: 1fr;
-      gap: 1.75rem;
     }
     .panel:not(:last-child)::after {
-      content: "↓";
       top: auto;
       right: auto;
-      bottom: -1.375rem;
+      bottom: calc(-0.75rem - 5px);
       left: 50%;
       transform: translateX(-50%);
-    }
-    .core {
-      padding-block: 1.5rem 2rem;
     }
   }
   @media (max-width: 1000px) and (min-width: 560px) {

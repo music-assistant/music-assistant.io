@@ -1,29 +1,26 @@
 ---
 import { refinements } from "../../data/marketing";
 import Icon from "../marketing/ui/Icon.astro";
-import SectionHeading from "../marketing/ui/SectionHeading.astro";
 import Section from "../marketing/ui/Section.astro";
+import SectionHeading from "../marketing/ui/SectionHeading.astro";
 ---
 
-<Section id="setlist" tone="butter" labelledby="setlist-title">
+<Section id="setlist" tone="alt" labelledby="setlist-title">
   <div class="container layout">
     <SectionHeading
       id="setlist-title"
-      label="Track 04 · The details"
+      track="04"
+      label="Setlist"
       title="Fine-tune your everyday listening."
     />
 
-    <!-- A setlist taped to the stage floor. Native <details> sharing a name
-         open one at a time. -->
-    <div class="sheet" data-reveal>
-      <p class="sheet-head">
-        <span>Setlist</span>
-        <span>Music Assistant · Every night</span>
-      </p>
+    <!-- A setlist: numbered songs, one opened at a time. Native <details>
+         sharing a name behave as an accordion. -->
+    <div class="list" data-reveal>
       {refinements.map((item, index) => (
         <details name="setlist" open={index === 0}>
           <summary>
-            <span class="num">{index + 1}</span>
+            <span class="num">{String(index + 1).padStart(2, "0")}</span>
             <span class="song">
               <strong>{item.title}</strong>
               <span>{item.summary}</span>
@@ -48,59 +45,28 @@ import Section from "../marketing/ui/Section.astro";
 <style>
   .layout {
     display: grid;
-    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     align-items: start;
-    gap: 2rem clamp(2rem, 6vw, 5rem);
+    gap: 1rem clamp(2rem, 6vw, 5rem);
+  }
+  .layout :global(h2) {
+    font-size: clamp(2.5rem, 4.5vw, 3.75rem);
   }
   .layout :global(.section-heading) {
     position: sticky;
     top: calc(var(--header-height) + 2rem);
   }
-  .sheet {
-    --bg: #fbf8f1;
-    --fg: var(--ink);
-    --muted: rgba(23, 21, 15, 0.68);
-    --line: rgba(23, 21, 15, 0.14);
-    --pop: var(--coral);
-    position: relative;
-    padding: 1.5rem clamp(1.25rem, 3vw, 2.25rem) 1rem;
-    color: var(--fg);
-    background: var(--bg);
-    box-shadow: 0 20px 40px -24px rgba(23, 21, 15, 0.55);
-    transform: rotate(-0.75deg);
+  .list {
+    border-top: 1px solid var(--line);
   }
-  .sheet::before {
-    content: "";
-    position: absolute;
-    top: -0.875rem;
-    left: 50%;
-    width: 8rem;
-    height: 1.75rem;
-    background: rgba(24, 188, 242, 0.55);
-    transform: translateX(-50%) rotate(2deg);
-  }
-  .sheet-head {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--ink);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-  }
-  .sheet-head span:first-child {
-    font-weight: 700;
-  }
-  details + details {
-    border-top: 1px dashed var(--line);
+  details {
+    border-bottom: 1px solid var(--line);
   }
   summary {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
     cursor: pointer;
     list-style: none;
   }
@@ -109,13 +75,13 @@ import Section from "../marketing/ui/Section.astro";
   }
   .num {
     flex: none;
-    width: 2rem;
-    color: var(--coral);
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 800;
-    font-stretch: 75%;
-    line-height: 1;
+    width: 1.75rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+  details[open] .num {
+    color: var(--link);
   }
   .song {
     display: grid;
@@ -125,26 +91,30 @@ import Section from "../marketing/ui/Section.astro";
   }
   .song strong {
     font-family: var(--font-display);
-    font-size: clamp(1.25rem, 2.2vw, 1.625rem);
-    font-weight: 800;
-    font-stretch: 80%;
+    font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+    font-weight: 700;
+    line-height: 1.05;
     text-transform: uppercase;
-    transition: transform 0.2s;
+    transition: color 0.15s;
   }
   summary:hover .song strong {
-    transform: translateX(4px);
+    color: var(--accent);
   }
   .song span {
+    margin-top: 0.125rem;
     color: var(--muted);
     font-size: 0.9375rem;
   }
   .toggle {
     position: relative;
     flex: none;
-    width: 1.75rem;
-    height: 1.75rem;
-    border: 2px solid var(--ink);
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--line);
     border-radius: 50%;
+    transition:
+      border-color 0.15s,
+      background-color 0.15s;
   }
   .toggle::before,
   .toggle::after {
@@ -153,26 +123,30 @@ import Section from "../marketing/ui/Section.astro";
     top: 50%;
     left: 50%;
     width: 0.625rem;
-    height: 2px;
-    background: var(--ink);
+    height: 1.5px;
+    background: var(--fg);
     transform: translate(-50%, -50%);
     transition: transform 0.2s;
   }
   .toggle::after {
     transform: translate(-50%, -50%) rotate(90deg);
   }
+  summary:hover .toggle {
+    border-color: var(--fg);
+  }
   details[open] .toggle {
-    background: var(--ink);
+    border-color: var(--accent);
+    background: var(--accent);
   }
   details[open] .toggle::before,
   details[open] .toggle::after {
-    background: var(--paper);
+    background: var(--on-accent);
   }
   details[open] .toggle::after {
     transform: translate(-50%, -50%) rotate(0);
   }
   .detail {
-    padding: 0 0 1.25rem 3rem;
+    padding: 0 3.25rem 1.5rem 3rem;
   }
   .detail p {
     max-width: 60ch;
@@ -184,12 +158,11 @@ import Section from "../marketing/ui/Section.astro";
     }
     .layout :global(.section-heading) {
       position: static;
-      margin-bottom: 1rem;
     }
   }
   @media (max-width: 480px) {
     .detail {
-      padding-left: 0;
+      padding-inline: 0;
     }
   }
 </style>

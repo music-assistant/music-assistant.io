@@ -25,7 +25,7 @@ const links = [
 const isInstall = path.startsWith("/get-started");
 ---
 
-<header class="site-header tone-paper">
+<header class="site-header">
   <div class="container inner">
     <div class="brand">
       <a href="/" class="home" aria-label="Music Assistant home">
@@ -57,6 +57,19 @@ const isInstall = path.startsWith("/get-started");
         ))}
       </ul>
       <div class="nav-actions">
+        <button
+          class="icon-button theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch between light and dark theme"
+        >
+          <span class="to-light">
+            <Icon name="sun" />
+          </span>
+          <span class="to-dark">
+            <Icon name="moon" />
+          </span>
+        </button>
         <a
           class="icon-button"
           href="https://github.com/music-assistant"
@@ -101,11 +114,15 @@ const isInstall = path.startsWith("/get-started");
     position: sticky;
     z-index: 50;
     top: 0;
-    border-bottom: 2px solid transparent;
+    color: var(--fg);
+    background: color-mix(in srgb, var(--page) 85%, transparent);
+    border-bottom: 1px solid transparent;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     transition: border-color 0.2s;
   }
   :global(.is-scrolled) .site-header {
-    border-bottom-color: var(--ink);
+    border-bottom-color: var(--line);
   }
   .inner {
     display: flex;
@@ -126,20 +143,19 @@ const isInstall = path.startsWith("/get-started");
   }
   .version {
     padding: 0.125rem 0.5rem;
-    border: 1.5px solid var(--fg);
+    border: 1px solid var(--line);
     border-radius: 999px;
+    color: var(--muted);
     font-family: var(--font-mono);
     font-size: 0.6875rem;
-    font-weight: 700;
     text-decoration: none;
-    transform: rotate(-4deg);
     transition:
-      transform 0.2s,
-      background-color 0.2s;
+      color 0.15s,
+      border-color 0.15s;
   }
   .version:hover {
-    background: var(--butter);
-    transform: rotate(0);
+    color: var(--link);
+    border-color: var(--accent);
   }
   .nav,
   .nav ul,
@@ -148,7 +164,7 @@ const isInstall = path.startsWith("/get-started");
     align-items: center;
   }
   .nav {
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
   .nav ul {
     gap: 0.25rem;
@@ -159,19 +175,21 @@ const isInstall = path.startsWith("/get-started");
   .nav ul a {
     display: block;
     padding: 0.5rem 0.75rem;
+    color: var(--muted);
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
+    transition: color 0.15s;
   }
   .nav ul a:hover,
   .nav ul a[aria-current="page"] {
-    text-decoration-line: underline;
-    text-decoration-color: var(--coral);
+    color: var(--fg);
   }
   .nav-actions {
-    gap: 0.5rem;
+    gap: 0.25rem;
+  }
+  .nav-actions :global(.btn) {
+    margin-left: 0.5rem;
   }
   .icon-button {
     display: grid;
@@ -181,12 +199,29 @@ const isInstall = path.startsWith("/get-started");
     padding: 0;
     border: 0;
     border-radius: var(--radius);
-    color: var(--fg);
+    color: var(--muted);
     background: transparent;
     cursor: pointer;
+    transition: color 0.15s;
   }
   .icon-button:hover {
-    background: var(--paper-deep);
+    color: var(--fg);
+  }
+  /* Show the icon for the theme you would switch to. */
+  .theme-toggle .to-dark,
+  :global(:root[data-theme="light"]) .theme-toggle .to-light {
+    display: none;
+  }
+  :global(:root[data-theme="light"]) .theme-toggle .to-dark {
+    display: block;
+  }
+  @media (prefers-color-scheme: light) {
+    :global(:root:not([data-theme])) .theme-toggle .to-light {
+      display: none;
+    }
+    :global(:root:not([data-theme])) .theme-toggle .to-dark {
+      display: block;
+    }
   }
   .menu-toggle {
     display: none;
@@ -202,6 +237,7 @@ const isInstall = path.startsWith("/get-started");
   @media (max-width: 960px) {
     .menu-toggle {
       display: grid;
+      color: var(--fg);
     }
     .nav {
       position: fixed;
@@ -210,9 +246,9 @@ const isInstall = path.startsWith("/get-started");
       flex-direction: column;
       align-items: stretch;
       gap: 1rem;
-      padding: 1rem var(--gutter) 1.5rem;
-      background: var(--paper);
-      border-bottom: 2px solid var(--ink);
+      padding: 0.5rem var(--gutter) 1.5rem;
+      background: var(--page);
+      border-bottom: 1px solid var(--line);
     }
     .nav.is-open {
       display: flex;
@@ -222,15 +258,12 @@ const isInstall = path.startsWith("/get-started");
       align-items: stretch;
     }
     .nav ul a {
-      padding: 0.75rem 0;
+      padding: 0.625rem 0;
+      color: var(--fg);
       font-family: var(--font-display);
-      font-size: 1.75rem;
-      font-weight: 800;
-      font-stretch: 80%;
+      font-size: 2rem;
+      font-weight: 700;
       text-transform: uppercase;
-    }
-    .nav-actions {
-      justify-content: space-between;
     }
     .nav-actions :global(.btn) {
       flex: 1;

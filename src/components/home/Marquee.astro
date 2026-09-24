@@ -1,12 +1,12 @@
 ---
 import { musicSources, speakers } from "../../data/marketing";
 
-// A running list of what Music Assistant plays from and to, like the band
-// names on the back of a tour shirt.
+// A quiet running list of what Music Assistant plays from and to, like the
+// names printed down the back of a tour shirt.
 const names = [...musicSources, ...speakers].map((brand) => brand.name);
 ---
 
-<div class="marquee tone-butter" aria-label="Works with">
+<div class="marquee tone-alt">
   <p class="sr-only">Works with {names.join(", ")}, and many more.</p>
   <div class="track" aria-hidden="true">
     {[0, 1].map(() => (
@@ -22,13 +22,14 @@ const names = [...musicSources, ...speakers].map((brand) => brand.name);
 <style>
   .marquee {
     overflow: hidden;
-    padding: 1rem 0;
-    border-block: 2px solid var(--ink);
+    padding: 1.125rem 0;
+    border-block: 1px solid var(--line);
+    mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   }
   .track {
     display: flex;
     width: max-content;
-    animation: scroll 80s linear infinite;
+    animation: scroll 90s linear infinite;
   }
   .marquee:hover .track {
     animation-play-state: paused;
@@ -40,18 +41,18 @@ const names = [...musicSources, ...speakers].map((brand) => brand.name);
     list-style: none;
   }
   li {
+    color: var(--muted);
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
-    font-weight: 800;
-    font-stretch: 75%;
+    font-size: 1.5rem;
+    font-weight: 600;
     line-height: 1;
     text-transform: uppercase;
     white-space: nowrap;
   }
   li::after {
-    content: "✦";
+    content: "/";
     margin: 0 1.25rem;
-    color: var(--coral);
+    color: var(--accent);
   }
   @keyframes scroll {
     to {

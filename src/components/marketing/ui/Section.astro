@@ -1,13 +1,13 @@
 ---
-// A full-width colour block. Sections alternate tones down the page, like the
-// panels of a gig poster.
+// A full-width band. Sections alternate between the page colour and the
+// alternate colour; one or two are inverted for emphasis.
 interface Props {
   id?: string;
-  tone?: "paper" | "ink" | "coral" | "butter" | "blue";
+  tone?: "base" | "alt" | "inverse";
   labelledby?: string;
   class?: string;
 }
-const { id, tone = "paper", labelledby, class: className } = Astro.props;
+const { id, tone = "base", labelledby, class: className } = Astro.props;
 ---
 
 <section
