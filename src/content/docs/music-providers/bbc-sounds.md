@@ -38,6 +38,12 @@ This source brings all of that into Music Assistant. It works without an account
 
 You can access the main Sounds menu by navigating to *Browse > BBC Sounds*. Relevant content will also be shown on the homepage as recommended items, and available content can also be accessed through search.
 
+### Rewinding the programme on air
+
+To listen to the programme currently on air from its start, go to *Browse > BBC Sounds > Stations*, choose a station and open *Today*. The programme on air can be played from its beginning and you can seek anywhere up to the live broadcast; seeking past it takes you back to live. When the programme ends, the station's live stream is added to the queue next so playback carries on live.
+
+This uses the BBC's rewind window for the station, which covers roughly the last six hours, and always uses the HLS stream whatever the *Preferred Stream Format* setting.
+
 ## Configuration
 
 The provider works without a login, but you will be restricted to a basic version of the Sounds content.
@@ -53,7 +59,7 @@ The full functionality is enabled when you are a UK-based listener, and signed i
 
 ## Not Yet Supported
 
-- Pausing and seeking live radio
+- Pausing and seeking the live station stream itself (the programme on air can be rewound from the station's *Today* schedule, see [Rewinding the programme on air](#rewinding-the-programme-on-air))
 - International accounts may work, but are not currently supported
 - The international menu should show available podcasts, this has not been implemented yet
 - Showing the currently playing song for stations and catch-up is implemented but not yet released
