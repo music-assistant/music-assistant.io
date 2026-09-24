@@ -141,6 +141,7 @@ Crossfade is not set here — enable it for the player as usual, and it works th
 
 - Premium is required, including Duo and Family. Free accounts will not work
 - Accounts created around December 2024 and later generally cannot play through librespot, and some older accounts are affected too. If playback fails and you see `Key Error` messages in the log, that is the symptom — choose Spotify Soloist instead
+- Spotify Soloist cannot be used on hosts with Docker bridge networks  
 - Each Spotify Soloist account plays one thing at a time. Starting Spotify on a second player asks you to stop the first one; a second Spotify account added as its own source has a session of its own
 - While Spotify Soloist is playing, Music Assistant shows up in your Spotify app as a device called `Music Assistant Playback`. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
 - With Spotify Soloist, starting a queue or seeking takes a little longer than with librespot
