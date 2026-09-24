@@ -54,11 +54,22 @@ npm run preview
 └── dist/                  # Build output
 ```
 
-The homepage and `/get-started/` use `MarketingLayout.astro` and
-`src/styles/marketing.css`. Their shared navigation, footer, and blog cards live
-in `src/components/marketing/`; interactive controls live in
-`src/scripts/marketing.ts`. The documentation overview is at `/documentation/`,
-and all other documentation URLs remain unchanged.
+The homepage, `/get-started/` and the blog use `MarketingLayout.astro`. Their
+look follows the Music Assistant app: `src/styles/marketing.css` holds the app's
+colour tokens (light and dark) and base styles, and every component carries its
+own scoped styles.
+
+- `src/components/home/`: one component per homepage section
+- `src/components/get-started/`: the installation stepper
+- `src/components/marketing/`: header, footer and blog card
+- `src/components/marketing/ui/`: small building blocks (`Button`, `Icon` for
+  lucide icons, `AppWindow` for screenshots, `SectionHeading`, `CodeBlock`, …)
+- `src/data/marketing.ts`: the lists of sources, speakers, plugins and people
+  shown on the homepage
+- `src/scripts/marketing.ts`: menu, scroll reveal, install tabs and copy buttons
+
+The documentation overview is at `/documentation/`, and all other documentation
+URLs remain unchanged.
 
 The blog pages render the existing `src/content/docs/blog/` collection at its
 original URLs. Starlight Blog still provides RSS, tag/author pages, and crosspost

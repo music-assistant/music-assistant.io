@@ -1,0 +1,78 @@
+---
+// Frames a screenshot of the app like a browser window, so product imagery reads
+// as the real thing rather than a floating picture.
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  eager?: boolean;
+  class?: string;
+}
+const {
+  src,
+  alt,
+  width,
+  height,
+  eager = false,
+  class: className,
+} = Astro.props;
+---
+
+<figure class:list={["app-window", className]}>
+  <div class="chrome" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+    <div class="address">music-assistant.local</div>
+  </div>
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={eager ? "eager" : "lazy"}
+    fetchpriority={eager ? "high" : undefined}
+    decoding="async"
+  />
+</figure>
+
+<style>
+  .app-window {
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid var(--frame-border);
+    border-radius: 1rem;
+    background: #181818;
+    box-shadow: var(--shadow-lg);
+  }
+  .chrome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 2.25rem;
+    padding: 0 0.875rem;
+    background: #232323;
+    border-bottom: 1px solid #2d2d2d;
+  }
+  .chrome > span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #3d3d3d;
+  }
+  .address {
+    margin-inline: auto;
+    padding: 0.125rem 0.875rem;
+    border-radius: 999px;
+    background: #181818;
+    color: #a0a0a0;
+    font-size: 0.75rem;
+    transform: translateX(-18px);
+  }
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>

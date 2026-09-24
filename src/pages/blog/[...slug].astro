@@ -1,6 +1,7 @@
 ---
 import { render } from "astro:content";
 import type { InferGetStaticPropsType } from "astro";
+import Icon from "../../components/marketing/ui/Icon.astro";
 import MarketingLayout from "../../layouts/MarketingLayout.astro";
 import { getPosts, coverImage, formatDate } from "../../utils/blog";
 import { authors } from "../../authors.mjs";
@@ -41,34 +42,163 @@ const byline = (
     property="article:published_time"
     content={post.data.date.toISOString()}
   />
-  <article class="container article-layout">
-    <a class="article-back text-link" href="/blog/">
-      ← All posts
+  <article class="container article">
+    <a class="text-link back" href="/blog/">
+      <Icon name="arrow-left" size={16} /> All posts
     </a>
-    <header class="article-heading">
-      <h1>{post.data.title}</h1>
-      <p class="post-meta">
+    <header>
+      <p class="meta">
         <time datetime={post.data.date.toISOString()}>
           {formatDate(post.data.date)}
         </time>
+        {byline && <span>· By {byline}</span>}
       </p>
-      {byline && <p class="article-byline">By {byline}</p>}
+      <h1>{post.data.title}</h1>
+      {post.data.description && <p class="lead">{post.data.description}</p>}
     </header>
     {cover && (
-      <figure class="article-image">
+      <figure class="cover">
         <img src={cover.src} alt={cover.alt} width="1200" height="630" />
       </figure>
     )}
-    <div class="article-body">
+    <div class="prose">
       <Content />
-      <div class="article-end">
-        <a class="text-link" href="/blog/">
-          Back to the blog
-        </a>
-        <a class="text-link" href="/get-started/">
-          Get Music Assistant
-        </a>
-      </div>
     </div>
+    <footer class="end">
+      <a class="text-link" href="/blog/">
+        <Icon name="arrow-left" size={16} /> Back to the blog
+      </a>
+      <a class="text-link" href="/get-started/">
+        Get Music Assistant <Icon name="arrow-right" size={16} />
+      </a>
+    </footer>
   </article>
 </MarketingLayout>
+
+<style>
+  .article {
+    max-width: 46rem;
+    padding-block: clamp(2rem, 5vw, 3.5rem) var(--section);
+  }
+  .back {
+    margin-bottom: 2rem;
+  }
+  .meta {
+    margin-bottom: 0.75rem;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+  }
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+  }
+  .lead {
+    color: var(--muted-foreground);
+    font-size: 1.25rem;
+  }
+  .cover {
+    margin: 2rem 0 0;
+  }
+  .cover img {
+    width: 100%;
+    border-radius: 1.25rem;
+  }
+
+  /* Blog content is Markdown, so it is styled by element. */
+  .prose {
+    margin-top: 2.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+  .prose :global(:where(h2, h3, h4)) {
+    margin: 2.5rem 0 1rem;
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+  }
+  .prose :global(h2) {
+    font-size: 1.75rem;
+  }
+  .prose :global(h3) {
+    font-size: 1.375rem;
+  }
+  .prose :global(:where(p, ul, ol, blockquote, pre, table, figure)) {
+    margin: 0 0 1.25rem;
+  }
+  .prose :global(:where(ul, ol)) {
+    padding-left: 1.25rem;
+  }
+  .prose :global(li + li) {
+    margin-top: 0.375rem;
+  }
+  .prose :global(a:not(.text-link)) {
+    color: var(--primary-strong);
+    text-underline-offset: 3px;
+  }
+  .prose :global(img),
+  .prose :global(video) {
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+    border-radius: 0.875rem;
+  }
+  .prose :global(hr) {
+    margin: 2.5rem 0;
+    border: 0;
+    border-top: 1px solid var(--border);
+  }
+  .prose :global(blockquote),
+  .prose :global(.markdown-alert) {
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--primary);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: var(--primary-soft);
+  }
+  .prose :global(:where(blockquote, .markdown-alert) > :last-child) {
+    margin-bottom: 0;
+  }
+  .prose :global(.markdown-alert-title) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+  .prose :global(.markdown-alert-title svg) {
+    fill: currentColor;
+  }
+  .prose :global(code) {
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.375rem;
+    background: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+  }
+  .prose :global(pre) {
+    overflow-x: auto;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+  }
+  .prose :global(pre code) {
+    padding: 0;
+    background: none;
+  }
+  .prose :global(table) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .prose :global(:where(th, td)) {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .end {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+</style>

@@ -1,0 +1,134 @@
+---
+import { refinements } from "../../data/marketing";
+import Icon from "../marketing/ui/Icon.astro";
+import SectionHeading from "../marketing/ui/SectionHeading.astro";
+---
+
+<section
+  id="setlist"
+  class="section refinements"
+  aria-labelledby="refinements-title"
+>
+  <div class="container narrow">
+    <SectionHeading
+      id="refinements-title"
+      title="Fine-tune your everyday listening."
+    />
+
+    <!-- A track list, like the app's: each row opens to show the detail.
+         Native <details> sharing a name behave as an accordion. -->
+    <div class="list" data-reveal>
+      {refinements.map((item, index) => (
+        <details name="refinements" open={index === 0}>
+          <summary>
+            <span class="row-icon">
+              <Icon name={item.icon} size={20} />
+            </span>
+            <span class="row-text">
+              <strong>{item.title}</strong>
+              <span>{item.summary}</span>
+            </span>
+            <Icon name="chevron-down" size={20} class="chevron" />
+          </summary>
+          <div class="detail">
+            <p>{item.text}</p>
+            {item.link && (
+              <a class="text-link" href={item.link.href}>
+                {item.link.label}
+                <Icon name="arrow-right" size={16} />
+              </a>
+            )}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .narrow {
+    max-width: 56rem;
+  }
+  .list {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--card);
+    box-shadow: var(--shadow-sm);
+  }
+  details + details {
+    border-top: 1px solid var(--border);
+  }
+  summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.15s;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary:hover {
+    background: color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+  summary:focus-visible {
+    outline-offset: -2px;
+  }
+  .row-icon {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.625rem;
+    background: var(--tile);
+    color: var(--muted-foreground);
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+  }
+  details[open] .row-icon {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  .row-text {
+    display: grid;
+    flex: 1;
+    min-width: 0;
+    line-height: 1.35;
+  }
+  .row-text strong {
+    font-size: 1.0625rem;
+    font-weight: 600;
+  }
+  details[open] .row-text strong {
+    color: var(--primary-strong);
+  }
+  .row-text span {
+    color: var(--muted-foreground);
+    font-size: 0.9375rem;
+  }
+  summary :global(.chevron) {
+    flex: none;
+    color: var(--muted-foreground);
+    transition: transform 0.2s;
+  }
+  details[open] summary :global(.chevron) {
+    transform: rotate(180deg);
+  }
+  .detail {
+    padding: 0 1.25rem 1.25rem calc(1.25rem + 2.75rem + 1rem);
+  }
+  .detail p {
+    max-width: 60ch;
+    color: var(--muted-foreground);
+  }
+  @media (max-width: 560px) {
+    .detail {
+      padding-left: 1.25rem;
+    }
+  }
+</style>

@@ -1,206 +1,177 @@
 ---
+import Step from "../components/get-started/Step.astro";
+import Steps from "../components/get-started/Steps.astro";
+import CodeBlock from "../components/marketing/ui/CodeBlock.astro";
+import Icon from "../components/marketing/ui/Icon.astro";
 import MarketingLayout from "../layouts/MarketingLayout.astro";
----
 
-<MarketingLayout
-  title="Install Music Assistant"
-  description="Install Music Assistant on Home Assistant or with Docker, then connect your music and speakers."
->
-  <div class="container install-layout">
-    <div class="install-heading">
-      <h1>Install Music Assistant</h1>
-      <p>Choose where to install Music Assistant.</p>
-    </div>
-
-    <nav id="choose" class="install-picker" aria-label="Installation method">
-      <a id="tab-home-assistant" href="#home-assistant" class="install-option">
-        <strong>Home Assistant</strong>
-        <span>Install as an app</span>
-      </a>
-      <a id="tab-docker" href="#docker" class="install-option">
-        <strong>Docker</strong>
-        <span>For your own Linux server</span>
-      </a>
-    </nav>
-
-    <section id="home-assistant" class="section install-section">
-      <div class="install-grid">
-        <div class="install-sidebar">
-          <h2>Install the Home Assistant app</h2>
-          <p>
-            Music Assistant runs alongside Home Assistant on Home Assistant OS.
-          </p>
-        </div>
-
-        <div class="install-steps">
-          <article class="install-step">
-            <span class="install-step-number">01</span>
-            <div>
-              <h3>Open the App store</h3>
-              <p>
-                In Home Assistant, go to{" "}
-                <strong>Settings → Apps → App store</strong>.
-              </p>
-            </div>
-          </article>
-          <article class="install-step">
-            <span class="install-step-number">02</span>
-            <div>
-              <h3>Install Music Assistant</h3>
-              <p>
-                Search for <strong>Music Assistant</strong>, open it, and choose{" "}
-                <strong>Install</strong>.
-              </p>
-            </div>
-          </article>
-          <article class="install-step">
-            <span class="install-step-number">03</span>
-            <div>
-              <h3>Start the app</h3>
-              <p>
-                When installation finishes, start Music Assistant and select
-                Open Web UI in Home Assistant.
-              </p>
-            </div>
-          </article>
-          <article class="install-step">
-            <span class="install-step-number">04</span>
-            <div>
-              <h3>Optional: add the integration</h3>
-              <p>
-                Add the Music Assistant integration to control players from Home
-                Assistant dashboards, automations and voice.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="docker" class="section install-section docker-section">
-      <div class="install-grid">
-        <div class="install-sidebar">
-          <h2>Install with Docker Compose</h2>
-          <p>
-            Use Docker when Music Assistant will run on another always-on Linux
-            system. Host networking is required so it can find and stream to
-            your players.
-          </p>
-        </div>
-
-        <div class="install-steps">
-          <article class="install-step">
-            <span class="install-step-number">01</span>
-            <div>
-              <h3>Create a Compose file</h3>
-              <p>
-                Save this as <strong>compose.yaml</strong>. Uncomment the
-                optional music volume and change its path if you want to include
-                local files.
-              </p>
-              <div class="code-shell">
-                <div class="code-shell-head">
-                  <span>compose.yaml</span>
-                  <button
-                    class="copy-button"
-                    type="button"
-                    aria-live="polite"
-                    data-copy-target="compose-code"
-                  >
-                    Copy
-                  </button>
-                </div>
-                <pre id="compose-code"><code is:raw>services:
+const compose = `services:
   music-assistant-server:
     image: ghcr.io/music-assistant/server:latest
     container_name: music-assistant-server
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
+      - \${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
       # - /path/to/your/music:/media:ro
     environment:
-      - LOG_LEVEL=info</code></pre>
-              </div>
-            </div>
-          </article>
-          <article class="install-step">
-            <span class="install-step-number">02</span>
-            <div>
-              <h3>Start Music Assistant</h3>
-              <p>
-                Run the command below from the folder containing your Compose
-                file.
-              </p>
-              <div class="code-shell">
-                <div class="code-shell-head">
-                  <span>Terminal</span>
-                  <button
-                    class="copy-button"
-                    type="button"
-                    aria-live="polite"
-                    data-copy-target="start-code"
-                  >
-                    Copy
-                  </button>
-                </div>
-                <pre id="start-code"><code>docker compose up -d</code></pre>
-              </div>
-            </div>
-          </article>
-          <article class="install-step">
-            <span class="install-step-number">03</span>
-            <div>
-              <h3>Open Music Assistant</h3>
-              <p>
-                Visit <strong>http://YOUR_MA_IP_ADDRESS:8095</strong> in your
-                browser.
-              </p>
-              <div class="network-note">
-                <strong>Players not appearing?</strong>
-                <p>
-                  Check that Music Assistant and your speakers are on the same
-                  local network.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
+      - LOG_LEVEL=info`;
+
+const methods = [
+  {
+    id: "home-assistant",
+    icon: "house",
+    title: "Home Assistant",
+    text: "Install as an app",
+  },
+  {
+    id: "docker",
+    icon: "container",
+    title: "Docker",
+    text: "For your own Linux server",
+  },
+];
+
+const nextSteps = [
+  {
+    icon: "library-big",
+    title: "Add your music",
+    text: "Connect a streaming service, local files, radio or another source from Settings.",
+  },
+  {
+    icon: "speaker",
+    title: "Check your players",
+    text: "Supported AirPlay, Google Cast, DLNA, Sendspin and Sonos players are discovered automatically.",
+  },
+  {
+    icon: "play",
+    title: "Press play",
+    text: "Choose a speaker and press play. Your library may take a few minutes to appear.",
+  },
+];
+---
+
+<MarketingLayout
+  title="Install Music Assistant"
+  description="Install Music Assistant on Home Assistant or with Docker, then connect your music and speakers."
+>
+  <div class="container page">
+    <header class="heading">
+      <h1>Install Music Assistant</h1>
+      <p>Choose where Music Assistant will run.</p>
+    </header>
+
+    <nav class="picker" data-install-picker aria-label="Installation method">
+      {methods.map((method) => (
+        <a id={`tab-${method.id}`} href={`#${method.id}`}>
+          <span class="picker-icon">
+            <Icon name={method.icon} size={22} />
+          </span>
+          <span>
+            <strong>{method.title}</strong>
+            <span>{method.text}</span>
+          </span>
+        </a>
+      ))}
+    </nav>
+
+    <section id="home-assistant" class="method">
+      <div class="method-intro">
+        <span class="chip">Recommended</span>
+        <h2>Install the Home Assistant app</h2>
+        <p>
+          Music Assistant runs alongside Home Assistant on Home Assistant OS.
+        </p>
       </div>
+      <Steps>
+        <Step title="Open the App store">
+          <p>
+            In Home Assistant, go to{" "}
+            <strong>Settings → Apps → App store</strong>.
+          </p>
+        </Step>
+        <Step title="Install Music Assistant">
+          <p>
+            Search for <strong>Music Assistant</strong>, open it, and choose{" "}
+            <strong>Install</strong>.
+          </p>
+        </Step>
+        <Step title="Start the app">
+          <p>
+            When installation finishes, start Music Assistant and select{" "}
+            <strong>Open Web UI</strong>.
+          </p>
+        </Step>
+        <Step title="Optional: add the integration">
+          <p>
+            Add the{" "}
+            <a class="text-link" href="/integration/installation/">
+              Music Assistant integration
+            </a>{" "}
+            to control players from Home Assistant dashboards, automations and
+            voice.
+          </p>
+        </Step>
+      </Steps>
     </section>
 
-    <section class="section first-run-section">
-      <div>
-        <div class="section-intro">
-          <h2>Once you’re in</h2>
-        </div>
-        <div class="first-run-grid">
-          <article class="first-run-card">
-            <h3>Add your music</h3>
-            <p>
-              Connect a streaming service, local files, radio or another source
-              from Settings.
-            </p>
-          </article>
-          <article class="first-run-card">
-            <h3>Check your players</h3>
-            <p>
-              Supported AirPlay, Google Cast, DLNA, Sendspin and Sonos players
-              are discovered automatically.
-            </p>
-          </article>
-          <article class="first-run-card">
-            <h3>Press play</h3>
-            <p>
-              Choose a speaker and press play. Your library may take a few
-              minutes to appear.
-            </p>
-          </article>
-        </div>
+    <section id="docker" class="method">
+      <div class="method-intro">
+        <h2>Install with Docker Compose</h2>
+        <p>
+          Use Docker when Music Assistant will run on another always-on Linux
+          system. Host networking is required so it can find and stream to your
+          players.
+        </p>
       </div>
+      <Steps>
+        <Step title="Create a Compose file">
+          <p>
+            Save this as <strong>compose.yaml</strong>. Uncomment the music
+            volume and change its path if you want to include local files.
+          </p>
+          <CodeBlock id="compose-code" title="compose.yaml" code={compose} />
+        </Step>
+        <Step title="Start Music Assistant">
+          <p>Run this from the folder containing your Compose file.</p>
+          <CodeBlock
+            id="start-code"
+            title="Terminal"
+            code="docker compose up -d"
+          />
+        </Step>
+        <Step title="Open Music Assistant">
+          <p>
+            Visit <strong>http://YOUR_MA_IP_ADDRESS:8095</strong> in your
+            browser.
+          </p>
+          <div class="note">
+            <Icon name="wifi" size={18} />
+            <p>
+              <strong>Players not appearing?</strong> Check that Music Assistant
+              and your speakers are on the same local network.
+            </p>
+          </div>
+        </Step>
+      </Steps>
     </section>
 
-    <section class="help-panel">
+    <section class="next" aria-labelledby="next-title">
+      <h2 id="next-title">Once you’re in</h2>
+      <ul>
+        {nextSteps.map((item) => (
+          <li>
+            <span class="next-icon">
+              <Icon name={item.icon} size={22} />
+            </span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <aside class="help">
       <div>
         <h2>Need a hand?</h2>
         <p>
@@ -209,8 +180,203 @@ import MarketingLayout from "../layouts/MarketingLayout.astro";
         </p>
       </div>
       <a class="text-link" href="/installation/">
-        Read the installation docs
+        Read the installation docs <Icon name="arrow-right" size={16} />
       </a>
-    </section>
+    </aside>
   </div>
 </MarketingLayout>
+
+<style>
+  .page {
+    max-width: 60rem;
+    padding-block: clamp(3rem, 7vw, 5rem) var(--section);
+  }
+  .heading {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .heading h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+  .heading p {
+    color: var(--muted-foreground);
+    font-size: 1.125rem;
+  }
+
+  /* Segmented control: two large options on a tonal track. */
+  .picker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.375rem;
+    margin-bottom: 2.5rem;
+    padding: 0.375rem;
+    border-radius: 1.25rem;
+    background: var(--muted);
+  }
+  .picker a {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.875rem 1rem;
+    border-radius: 0.875rem;
+    color: var(--muted-foreground);
+    text-decoration: none;
+    transition:
+      background-color 0.15s,
+      color 0.15s,
+      box-shadow 0.15s;
+  }
+  .picker a:hover {
+    color: var(--foreground);
+  }
+  .picker a[aria-selected="true"] {
+    color: var(--foreground);
+    background: var(--card);
+    box-shadow:
+      var(--shadow-sm),
+      0 0 0 1px var(--border);
+  }
+  .picker a > span:last-child {
+    display: grid;
+    line-height: 1.3;
+  }
+  .picker strong {
+    font-weight: 600;
+  }
+  .picker a > span:last-child > span {
+    font-size: 0.875rem;
+  }
+  .picker-icon {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    background: var(--tile);
+  }
+  .picker a[aria-selected="true"] .picker-icon {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .method {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 2.5rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    background: var(--card);
+  }
+  .method + .method {
+    margin-top: 1.5rem;
+  }
+  :global(.js) .method[hidden] {
+    display: none;
+  }
+  .method-intro h2 {
+    font-size: 1.625rem;
+  }
+  .method-intro p {
+    color: var(--muted-foreground);
+  }
+  .chip {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    padding: 0.125rem 0.625rem;
+    border-radius: 0.5rem;
+    background: var(--primary-soft);
+    color: var(--primary-strong);
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  .note {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding: 0.875rem 1rem;
+    border-radius: 0.75rem;
+    background: var(--primary-soft);
+  }
+  .note :global(.icon) {
+    flex: none;
+    margin-top: 0.1875rem;
+    color: var(--primary-strong);
+  }
+
+  .next {
+    margin-top: 4rem;
+  }
+  .next h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+  }
+  .next ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .next li {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    background: var(--card);
+  }
+  .next-icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    background: var(--primary-soft);
+    color: var(--primary-strong);
+  }
+  .next h3 {
+    margin-bottom: 0.375rem;
+    font-size: 1.125rem;
+  }
+  .next p {
+    margin: 0;
+    color: var(--muted-foreground);
+    font-size: 0.9375rem;
+  }
+
+  .help {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    background: var(--muted);
+  }
+  .help h2 {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+  }
+  .help p {
+    margin: 0;
+    color: var(--muted-foreground);
+  }
+
+  @media (max-width: 760px) {
+    .method,
+    .next ul {
+      grid-template-columns: 1fr;
+    }
+    .method {
+      gap: 1.5rem;
+    }
+  }
+  @media (max-width: 480px) {
+    .picker {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

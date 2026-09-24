@@ -1,32 +1,180 @@
+---
+import Logo from "./ui/Logo.astro";
+
+const columns = [
+  {
+    title: "Product",
+    links: [
+      { href: "/get-started/", label: "Get started" },
+      { href: "/music-providers/", label: "Music sources" },
+      { href: "/player-support/", label: "Players" },
+      { href: "/plugins/", label: "Plugins" },
+    ],
+  },
+  {
+    title: "Learn",
+    links: [
+      { href: "/documentation/", label: "Documentation" },
+      { href: "/blog/", label: "Blog" },
+      { href: "/faq/troubleshooting/", label: "Troubleshooting" },
+      { href: "/support/", label: "Support" },
+    ],
+  },
+  {
+    title: "Community",
+    links: [
+      { href: "https://github.com/music-assistant", label: "GitHub" },
+      { href: "https://discord.gg/kaVm8hGpne", label: "Discord" },
+      { href: "/help/", label: "Help or donate" },
+      { href: "/help/lokalise/", label: "Translate" },
+    ],
+  },
+];
+const isExternal = (href: string) => href.startsWith("http");
+---
+
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <a href="/" aria-label="Music Assistant home">
-      <img
-        src="/assets/landing/music-assistant-logo.svg"
-        alt="Music Assistant"
-        width="1762"
-        height="240"
-      />
-    </a>
-    <p>Your music. Your way.</p>
-    <div class="footer-links">
-      <a href="/blog/">Blog</a>
-      <a href="/get-started/">Get started</a>
-      <a
-        href="https://github.com/music-assistant"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-      </a>
-      <a href="/documentation/">Documentation</a>
-      <a
-        href="https://www.openhomefoundation.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Open Home Foundation
-      </a>
+  <div class="container">
+    <div class="top">
+      <div class="about">
+        <a href="/" class="home" aria-label="Music Assistant home">
+          <Logo />
+        </a>
+        <p>
+          Free and open source music management for your home. A project of the
+          Open Home Foundation.
+        </p>
+        <a
+          class="ohf"
+          href="https://www.openhomefoundation.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://www.openhomefoundation.org/badges/ohf-project.png"
+            alt="A project from the Open Home Foundation"
+            width="300"
+            height="80"
+            loading="lazy"
+          />
+        </a>
+      </div>
+      {columns.map((column) => (
+        <nav aria-label={column.title}>
+          <h2>{column.title}</h2>
+          <ul>
+            {column.links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  target={isExternal(link.href) ? "_blank" : undefined}
+                  rel={
+                    isExternal(link.href) ? "noopener noreferrer" : undefined
+                  }
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ))}
+    </div>
+    <div class="bottom">
+      <p>© {new Date().getFullYear()} Open Home Foundation</p>
+      <p class="analytics">
+        <a
+          href="https://www.openhomefoundation.org/blog/making-our-web-analytics-open-source-with-plausible/"
+          rel="noopener"
+        >
+          Privacy-first analytics
+        </a>
+        <span aria-hidden="true">·</span>
+        <a
+          href="https://plausible.openhomefoundation.org/music-assistant.io"
+          rel="noopener"
+        >
+          Public dashboard
+        </a>
+      </p>
     </div>
   </div>
 </footer>
+
+<style>
+  .site-footer {
+    padding: 4rem 0 2rem;
+    border-top: 1px solid var(--border);
+    background: var(--card);
+    font-size: 0.9375rem;
+  }
+  .top {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+  .home {
+    display: block;
+    height: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+  }
+  .about p {
+    max-width: 32ch;
+    color: var(--muted-foreground);
+  }
+  .ohf img {
+    width: 11rem;
+  }
+  h2 {
+    margin-bottom: 0.875rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--muted-foreground);
+  }
+  ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul a {
+    text-decoration: none;
+  }
+  ul a:hover {
+    color: var(--primary-strong);
+  }
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted-foreground);
+    font-size: 0.8125rem;
+  }
+  .bottom p {
+    margin: 0;
+  }
+  .analytics {
+    display: flex;
+    gap: 0.5rem;
+  }
+  @media (max-width: 800px) {
+    .top {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .about {
+      grid-column: 1 / -1;
+    }
+  }
+  @media (max-width: 480px) {
+    .top {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

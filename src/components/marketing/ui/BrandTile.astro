@@ -1,0 +1,48 @@
+---
+import type { Brand } from "../../../data/marketing";
+
+// Provider logo on a tonal square, the way providers appear in the app's
+// settings.
+interface Props {
+  brand: Brand;
+}
+const { brand } = Astro.props;
+---
+
+<li class:list={["brand-tile", { "is-dark": brand.dark }]} title={brand.name}>
+  <img
+    src={`/assets/landing/brands/${brand.icon}.svg`}
+    alt={brand.name}
+    width="28"
+    height="28"
+    loading="lazy"
+    decoding="async"
+  />
+</li>
+
+<style>
+  .brand-tile {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    border-radius: 0.75rem;
+    background: var(--tile);
+    transition:
+      transform 0.2s,
+      background-color 0.2s;
+  }
+  .brand-tile:hover {
+    transform: translateY(-2px);
+    background: var(--accent);
+  }
+  @media (prefers-color-scheme: dark) {
+    .is-dark img {
+      filter: invert(1) hue-rotate(180deg);
+    }
+  }
+  img {
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+  }
+</style>

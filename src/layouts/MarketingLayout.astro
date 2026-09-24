@@ -2,6 +2,7 @@
 import Header from "../components/marketing/Header.astro";
 import Footer from "../components/marketing/Footer.astro";
 import Analytics from "../components/Analytics.astro";
+import "@fontsource-variable/roboto-flex/standard.css";
 import "../styles/marketing.css";
 
 interface Props {
@@ -26,8 +27,21 @@ const isProduction =
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <script is:inline>
+      document.documentElement.classList.add("js");
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0c0d" />
+    <meta
+      name="theme-color"
+      content="#f5f5f5"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#181818"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="color-scheme" content="light dark" />
     <meta name="description" content={description} />
     <meta
       name="robots"
@@ -69,12 +83,6 @@ const isProduction =
         })}
       ></script>
     )}
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
     <Analytics />
     <slot name="head" />
   </head>

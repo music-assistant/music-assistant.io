@@ -1,66 +1,241 @@
 ---
 import latestRelease from "../../data/latest-release.json";
 import { getPosts } from "../../utils/blog";
+import Button from "./ui/Button.astro";
+import Icon from "./ui/Icon.astro";
+import Logo from "./ui/Logo.astro";
 
 const { version, url: githubUrl } = latestRelease as {
   version?: string;
   url?: string;
 };
+// Link the version to our own announcement post, like the docs header does.
 const latestPost = (await getPosts()).find((post) =>
   post.data.tags?.includes("release"),
 );
 const releaseUrl = latestPost ? `/${latestPost.id}/` : githubUrl;
-const isBlog = Astro.url.pathname.startsWith("/blog");
-const isInstall = Astro.url.pathname.startsWith("/get-started");
+const path = Astro.url.pathname;
+
+const links = [
+  { href: "/#how-it-works", label: "How it works" },
+  { href: "/#features", label: "Features" },
+  { href: "/blog/", label: "Blog", current: path.startsWith("/blog") },
+  { href: "/documentation/", label: "Documentation" },
+];
+const isInstall = path.startsWith("/get-started");
 ---
 
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="brand-lockup">
-      <a class="brand" href="/" aria-label="Music Assistant home">
-        <img
-          src="/assets/landing/music-assistant-logo.svg"
-          alt="Music Assistant"
-          width="1762"
-          height="240"
-        />
+  <div class="container inner">
+    <div class="brand">
+      <a href="/" class="home" aria-label="Music Assistant home">
+        <Logo />
       </a>
       {version && releaseUrl && (
         <a
-          class="release-link"
+          class="version"
           href={releaseUrl}
-          aria-label={`Music Assistant ${version} release announcement`}
+          title={`Music Assistant ${version} release notes`}
+          translate="no"
         >
           {version.startsWith("v") ? version : `v${version}`}
         </a>
       )}
     </div>
+
+    <nav id="site-nav" class="nav" aria-label="Main">
+      <ul>
+        {links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              aria-current={link.current ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="nav-actions">
+        <a
+          class="icon-button"
+          href="https://github.com/music-assistant"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Music Assistant on GitHub"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"
+            ></path>
+          </svg>
+        </a>
+        <Button
+          href={isInstall ? "/documentation/" : "/get-started/"}
+          variant="filled"
+        >
+          {isInstall ? "Documentation" : "Get Music Assistant"}
+        </Button>
+      </div>
+    </nav>
+
     <button
-      class="menu-toggle"
+      class="menu-toggle icon-button"
       type="button"
       aria-expanded="false"
       aria-controls="site-nav"
     >
-      <span></span>
-      <span></span>
-      <span class="sr-only">Open menu</span>
+      <span class="open">
+        <Icon name="menu" />
+      </span>
+      <span class="close">
+        <Icon name="x" />
+      </span>
+      <span class="sr-only" data-menu-label>
+        Open menu
+      </span>
     </button>
-    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <a href="/#experience">Experience</a>
-      <a href="/#how-it-works">How it works</a>
-      <a href="/#features">Features</a>
-      <a href="/blog/" aria-current={isBlog ? "page" : undefined}>
-        Blog
-      </a>
-      <a href="/get-started/" aria-current={isInstall ? "page" : undefined}>
-        Get started
-      </a>
-    </nav>
-    <a
-      class="header-action"
-      href={isInstall ? "/documentation/" : "/get-started/"}
-    >
-      {isInstall ? "Documentation" : "Get Music Assistant"}
-    </a>
   </div>
 </header>
+
+<style>
+  .site-header {
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    background: color-mix(in srgb, var(--background) 82%, transparent);
+    border-bottom: 1px solid transparent;
+    backdrop-filter: saturate(1.4) blur(16px);
+    -webkit-backdrop-filter: saturate(1.4) blur(16px);
+    transition: border-color 0.2s;
+  }
+  :global(.is-scrolled) .site-header {
+    border-bottom-color: var(--border);
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    height: var(--header-height);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-inline-end: auto;
+  }
+  .home {
+    display: block;
+    height: 1.625rem;
+    color: var(--foreground);
+  }
+  .version {
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+    color: var(--primary-strong);
+    background: var(--primary-soft);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .version:hover {
+    background: color-mix(in srgb, var(--primary) 20%, transparent);
+  }
+  .nav,
+  .nav ul,
+  .nav-actions {
+    display: flex;
+    align-items: center;
+  }
+  .nav {
+    gap: 1.5rem;
+  }
+  .nav ul {
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .nav ul a {
+    display: block;
+    padding: 0.5rem 0.875rem;
+    border-radius: 999px;
+    color: var(--muted-foreground);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      color 0.15s,
+      background-color 0.15s;
+  }
+  .nav ul a:hover,
+  .nav ul a[aria-current="page"] {
+    color: var(--foreground);
+    background: var(--accent);
+  }
+  .nav-actions {
+    gap: 0.5rem;
+  }
+  .icon-button {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    color: var(--foreground);
+    background: transparent;
+    cursor: pointer;
+  }
+  .icon-button:hover {
+    background: var(--accent);
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .menu-toggle .close,
+  .menu-toggle[aria-expanded="true"] .open {
+    display: none;
+  }
+  .menu-toggle[aria-expanded="true"] .close {
+    display: block;
+  }
+
+  @media (max-width: 960px) {
+    .menu-toggle {
+      display: grid;
+    }
+    .nav {
+      position: fixed;
+      inset: var(--header-height) 0 auto;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 1rem;
+      padding: 1rem var(--gutter) 1.5rem;
+      background: var(--background);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+    }
+    .nav.is-open {
+      display: flex;
+    }
+    .nav ul {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .nav ul a {
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      font-size: 1.0625rem;
+    }
+    .nav-actions {
+      justify-content: space-between;
+    }
+    .nav-actions :global(.btn) {
+      flex: 1;
+    }
+  }
+</style>

@@ -1,0 +1,103 @@
+---
+import Icon from "./Icon.astro";
+
+// Mirrors the app's button variants: filled for the one main action, tonal for
+// secondary ones, ghost for quiet links.
+interface Props {
+  href: string;
+  variant?: "filled" | "tonal" | "outline" | "ghost";
+  size?: "md" | "lg";
+  icon?: string;
+  trailingIcon?: string;
+  external?: boolean;
+  class?: string;
+}
+
+const {
+  href,
+  variant = "filled",
+  size = "md",
+  icon,
+  trailingIcon,
+  external = false,
+  class: className,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={["btn", `btn-${variant}`, `btn-${size}`, className]}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+>
+  {icon && <Icon name={icon} size={size === "lg" ? 20 : 18} />}
+  <span>
+    <slot />
+  </span>
+  {trailingIcon && <Icon name={trailingIcon} size={size === "lg" ? 20 : 18} />}
+</a>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    padding: 0 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      background-color 0.15s,
+      border-color 0.15s,
+      color 0.15s,
+      box-shadow 0.15s;
+  }
+  .btn-lg {
+    height: 3rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+  }
+  .btn:has(:global(.icon):first-child) {
+    padding-inline-start: 1rem;
+  }
+  .btn-filled {
+    color: var(--primary-foreground);
+    background: var(--primary);
+  }
+  .btn-filled:hover {
+    background: color-mix(in srgb, var(--primary) 88%, var(--foreground));
+    box-shadow: 0 4px 16px -4px
+      color-mix(in srgb, var(--primary) 60%, transparent);
+  }
+  .btn-tonal {
+    color: var(--foreground);
+    background: var(--secondary);
+  }
+  .btn-tonal:hover {
+    background: color-mix(in srgb, var(--secondary) 85%, var(--foreground));
+  }
+  .btn-outline {
+    color: var(--foreground);
+    border-color: var(--border);
+  }
+  .btn-outline:hover {
+    background: var(--accent);
+  }
+  .btn-ghost {
+    padding-inline: 0.75rem;
+    color: var(--primary);
+  }
+  .btn-ghost:hover {
+    background: var(--primary-soft);
+  }
+  .btn:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+</style>

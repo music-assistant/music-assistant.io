@@ -1,0 +1,184 @@
+---
+import Button from "../marketing/ui/Button.astro";
+import Icon from "../marketing/ui/Icon.astro";
+---
+
+<section id="get-started" class="section final" aria-labelledby="final-title">
+  <div class="container">
+    <!-- Styled after the app's player bar, with the call to action as the track. -->
+    <div class="bar" data-reveal>
+      <div class="now">
+        <img
+          class="art"
+          src="/favicon.svg"
+          alt=""
+          width="150"
+          height="150"
+          loading="lazy"
+        />
+        <div>
+          <h2 id="final-title">Bring your music home.</h2>
+          <p>
+            Install Music Assistant on Home Assistant or with Docker, then
+            connect your music and speakers.
+          </p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="transport" aria-hidden="true">
+          <Icon name="shuffle" size={20} />
+          <Icon name="skip-back" size={22} />
+          <span class="play">
+            <Icon name="play" size={26} />
+          </span>
+          <Icon name="skip-forward" size={22} />
+          <Icon name="repeat" size={20} />
+        </div>
+        <div class="progress" aria-hidden="true">
+          <span></span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <Button href="/get-started/" size="lg" trailingIcon="arrow-right">
+          Get Music Assistant
+        </Button>
+        <Button href="/documentation/" variant="ghost" icon="book-open">
+          Read the documentation
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final {
+    padding-top: 0;
+  }
+  .bar {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 2rem;
+    overflow: hidden;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: 1.75rem;
+    color: #fff;
+    /* The app tints its player bar from the album art; here, from the logo. */
+    background:
+      radial-gradient(
+        60% 140% at 0% 50%,
+        rgba(3, 169, 244, 0.55),
+        transparent 70%
+      ),
+      radial-gradient(
+        50% 120% at 100% 100%,
+        rgba(156, 39, 176, 0.25),
+        transparent 70%
+      ),
+      #181818;
+    box-shadow: var(--shadow-lg);
+  }
+  .now {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .art {
+    flex: none;
+    width: 5rem;
+    height: 5rem;
+    padding: 0.875rem;
+    border-radius: 0.875rem;
+    background: rgba(0, 0, 0, 0.35);
+  }
+  h2 {
+    margin-bottom: 0.375rem;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  }
+  .now p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.72);
+  }
+  .controls {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+  }
+  .transport {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    color: rgba(255, 255, 255, 0.72);
+  }
+  .play {
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #181818;
+  }
+  .play :global(.icon) {
+    fill: currentColor;
+    transform: translateX(2px);
+  }
+  .progress {
+    width: 14rem;
+    height: 4px;
+    overflow: hidden;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .progress span {
+    display: block;
+    width: 38%;
+    height: 100%;
+    border-radius: inherit;
+    background: #fff;
+    animation: progress 12s linear infinite;
+  }
+  @keyframes progress {
+    from {
+      width: 10%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 0.5rem;
+  }
+  .actions :global(.btn-ghost) {
+    color: #fff;
+  }
+  .actions :global(.btn-ghost:hover) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  @media (max-width: 1000px) {
+    .bar {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    .controls {
+      display: none;
+    }
+    .actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+  @media (max-width: 480px) {
+    .now {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+</style>
