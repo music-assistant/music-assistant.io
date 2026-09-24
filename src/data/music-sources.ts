@@ -27,6 +27,7 @@ export type CategoryId =
   // Music and radio from a particular country
   | "germany"
   | "austria"
+  | "belgium"
   | "sweden"
   | "denmark"
   | "russia"
@@ -144,6 +145,12 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         icon: "/assets/icons/listen/austria.svg",
         title: "Österreich / Austria",
         blurb: "Austrian radio stations and podcasts.",
+      },
+      {
+        id: "belgium",
+        icon: "/assets/icons/listen/belgium.svg",
+        title: "België / Belgium",
+        blurb: "Radio and podcasts from the Belgian public broadcasters.",
       },
       {
         id: "sweden",
@@ -493,10 +500,22 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "classical"],
   },
   {
+    name: "VRT MAX",
+    slug: "music-providers/vrt-max",
+    icon: "/assets/icons/vrt_max-icon.svg",
+    categories: ["radio", "podcasts", "classical", "belgium"],
+  },
+  {
     name: "Yandex Music",
     slug: "music-providers/yandex-music",
     icon: "/assets/icons/yandex-music-icon.svg",
     categories: ["streaming", "podcasts", "audiobooks", "russia"],
+  },
+  {
+    name: "Yoto",
+    slug: "music-providers/yoto",
+    icon: "/assets/icons/yoto-icon.png",
+    categories: ["audiobooks", "children", "streaming", "podcasts", "radio"],
   },
   {
     name: "YouSee Musik",

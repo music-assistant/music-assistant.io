@@ -11,10 +11,10 @@ Overcast is a podcast player for iPhone, iPad and the web. It keeps the list of 
 remembers how far through each episode you are, so you can put an episode down on one device and pick it up
 on another.
 
-This provider brings both of those into Music Assistant. The podcasts you follow turn up as podcasts you can
+This source brings both of those into Music Assistant. The podcasts you follow turn up as podcasts you can
 play, and an episode you started in Overcast can be finished on a speaker, resuming where you left off.
 
-Overcast has no public API, so this provider signs in to your account the same way the website does and reads
+Overcast has no public API, so this source signs in to your account the same way the website does and reads
 the account's OPML export. It works one way only, nothing Music Assistant does is sent back to Overcast.
 
 ## Features
@@ -31,23 +31,29 @@ the account's OPML export. It works one way only, nothing Music Assistant does i
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
 | Maximum Stream Quality | Lossy variable bitrate |
-| Login Method | Password |
+| Login Method | QR code or Password |
 
 ### Other
 - Acquires progress from Overcast, but does not report progress back
 - Populates libraries with podcasts
-- Updates playlog on regular provider syncs
+- Updates playlog on regular source syncs
 - Episodes you are part way through appear under Continue Listening
 
 ## Configuration
 
 ### Overcast account
 
-Overcast works without a login by default. When you install the app it creates an anonymous account behind the scenes, so many users may never have set up a password. 
-Music Assistant needs the optional Overcast web login to read your subscriptions, so you'll need to add one first.
+Most Overcast accounts are created in the app and have no email address or password. The quickest way to connect is to scan a code with the Overcast app on your iPhone, which links the account without needing any credentials.
+
+If your account does have an email and password you can use those instead. Choose Overcast when adding a music source and pick the method that suits you:
+
+- <b>Overcast app (scan a code).</b> A QR code appears on screen. Point your device's camera at it and open the link, or tap the code if you are setting up on the device itself. The Overcast app asks you to approve the connection. This is the default and works for every account, including ones that have never set up a password.
+- <b>Email and password.</b> Sign in with the email address and password of your Overcast account. Only works for accounts that have set these up. Accounts that sign in to Overcast through Sign in with Apple, and accounts with two factor authentication enabled, cannot use this method.
 
 <details>
-<summary>How to add an email and password</summary>
+<summary>How to add an email and password (optional)</summary>
+
+If you prefer to sign in with a password and have not set one up yet:
 
 1. Open the Overcast app on your iPhone or iPad
 2. Go to Settings (the gear icon) and choose the `Sync Profile` option to add an email address and password to your account
@@ -56,16 +62,11 @@ Music Assistant needs the optional Overcast web login to read your subscriptions
 
 </details>
 
-Choose Overcast when adding a music provider and sign in with:
-
-- <b>Email.</b> The email address of your Overcast account
-- <b>Password.</b> The password of your Overcast account
-
-Music Assistant signs in once and keeps the resulting session, so your password is only used when that session expires and a new sign in is needed. Accounts that sign in to Overcast through Sign in with Apple, and accounts with two factor authentication enabled, cannot be used here.
+Music Assistant signs in once and keeps the resulting session, so your credentials are only used when that session expires and a new sign in is needed.
 
 ### Multiple accounts
 
-The Overcast provider can be set up multiple times, once per account, and each one keeps its own sign in. To have the progress of individual media items sync with the right Music Assistant user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
+The Overcast source can be set up multiple times, once per account, and each one keeps its own sign in. To have the progress of individual media items sync with the right Music Assistant user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
 
 ### Settings
 
