@@ -33,7 +33,7 @@ const columns = [
 const isExternal = (href: string) => href.startsWith("http");
 ---
 
-<footer class="site-footer">
+<footer class="site-footer tone-ink">
   <div class="container">
     <div class="top">
       <div class="about">
@@ -41,8 +41,8 @@ const isExternal = (href: string) => href.startsWith("http");
           <Logo />
         </a>
         <p>
-          Free and open source music management for your home. A project of the
-          Open Home Foundation.
+          Your music. Your way. Free and open source, and a project of the Open
+          Home Foundation.
         </p>
         <a
           class="ohf"
@@ -104,8 +104,6 @@ const isExternal = (href: string) => href.startsWith("http");
 <style>
   .site-footer {
     padding: 4rem 0 2rem;
-    border-top: 1px solid var(--border);
-    background: var(--card);
     font-size: 0.9375rem;
   }
   .top {
@@ -117,21 +115,23 @@ const isExternal = (href: string) => href.startsWith("http");
     display: block;
     height: 1.75rem;
     margin-bottom: 1rem;
-    color: var(--foreground);
+    color: var(--fg);
   }
   .about p {
     max-width: 32ch;
-    color: var(--muted-foreground);
+    color: var(--muted);
   }
   .ohf img {
     width: 11rem;
   }
   h2 {
     margin-bottom: 0.875rem;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: var(--muted-foreground);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
   }
   ul {
     display: grid;
@@ -144,7 +144,7 @@ const isExternal = (href: string) => href.startsWith("http");
     text-decoration: none;
   }
   ul a:hover {
-    color: var(--primary-strong);
+    color: var(--butter);
   }
   .bottom {
     display: flex;
@@ -153,8 +153,8 @@ const isExternal = (href: string) => href.startsWith("http");
     gap: 0.5rem 2rem;
     margin-top: 3rem;
     padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    color: var(--muted-foreground);
+    border-top: 1px solid var(--line);
+    color: var(--muted);
     font-size: 0.8125rem;
   }
   .bottom p {

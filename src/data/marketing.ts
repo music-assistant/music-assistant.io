@@ -4,22 +4,16 @@
 export interface Brand {
   name: string;
   icon: string;
-  /** Logo is black or near-black and needs lifting on dark backgrounds. */
-  dark?: boolean;
 }
 
-const brand = (icon: string, name: string, dark = false): Brand => ({
-  name,
-  icon,
-  dark,
-});
+const brand = (icon: string, name: string): Brand => ({ name, icon });
 
 export const musicSources: Brand[] = [
   brand("filesystem_local", "Local files"),
   brand("spotify", "Spotify"),
   brand("apple_music", "Apple Music"),
   brand("ytmusic", "YouTube Music"),
-  brand("tidal", "TIDAL", true),
+  brand("tidal", "TIDAL"),
   brand("qobuz", "Qobuz"),
   brand("deezer", "Deezer"),
   brand("soundcloud", "SoundCloud"),
@@ -27,7 +21,7 @@ export const musicSources: Brand[] = [
   brand("jellyfin", "Jellyfin"),
   brand("opensubsonic", "Subsonic"),
   brand("emby", "Emby"),
-  brand("bandcamp", "Bandcamp", true),
+  brand("bandcamp", "Bandcamp"),
   brand("tunein", "TuneIn"),
   brand("radiobrowser", "Radio Browser"),
   brand("siriusxm", "SiriusXM"),
@@ -37,7 +31,7 @@ export const musicSources: Brand[] = [
   brand("pocketcasts", "Pocket Casts"),
   brand("itunes_podcasts", "iTunes Podcasts"),
   brand("bbc_sounds", "BBC Sounds"),
-  brand("internet_archive", "Internet Archive", true),
+  brand("internet_archive", "Internet Archive"),
   brand("somafm", "SomaFM"),
 ];
 
@@ -56,29 +50,12 @@ export const speakers: Brand[] = [
   brand("alexa", "Alexa"),
 ];
 
-/** Players shown in the hero, echoing the Players row of the app. */
-export const heroPlayers = [
-  {
-    name: "Living room",
-    kind: "Sonos",
-    icon: "speaker",
-    playing: true,
-    track: "Synchronicity II",
-    artist: "The Police",
-  },
-  { name: "Kitchen", kind: "AirPlay", icon: "airplay" },
-  { name: "Office", kind: "Google Cast", icon: "cast" },
-  { name: "Garden", kind: "Sendspin", icon: "radio" },
-];
-
 export interface Plugin {
   label: string;
   title: string;
   text: string;
   href: string;
   link: string;
-  icon: string;
-  tone: "blue" | "green" | "orange" | "purple";
 }
 
 export const plugins: Plugin[] = [
@@ -88,8 +65,6 @@ export const plugins: Plugin[] = [
     text: "Guests scan a QR code to browse your music and request songs from their phones. You decide what plays next. No app or account needed.",
     href: "/plugins/party/",
     link: "Explore Party mode",
-    icon: "party-popper",
-    tone: "blue",
   },
   {
     label: "Music Quiz",
@@ -97,8 +72,6 @@ export const plugins: Plugin[] = [
     text: "Turn your collection into game night. Guess the song, put tracks in order of release or try music trivia. Friends join from their phones.",
     href: "/plugins/music-quiz/",
     link: "Explore Music Quiz",
-    icon: "trophy",
-    tone: "orange",
   },
   {
     label: "Lyrics",
@@ -106,8 +79,6 @@ export const plugins: Plugin[] = [
     text: "Follow the lyrics in Now Playing. When timed lyrics are available, they scroll along with the music.",
     href: "/metadata/lyrics/",
     link: "Explore lyrics",
-    icon: "mic-vocal",
-    tone: "purple",
   },
   {
     label: "AI Radio",
@@ -115,13 +86,10 @@ export const plugins: Plugin[] = [
     text: "Give your playlist a host that introduces songs and adds weather or news between tracks. Use the AI and text-to-speech services you already have in Home Assistant.",
     href: "/plugins/ai-radio/",
     link: "Explore AI Radio",
-    icon: "radio-tower",
-    tone: "green",
   },
 ];
 
 export interface Refinement {
-  icon: string;
   title: string;
   summary: string;
   text: string;
@@ -130,13 +98,11 @@ export interface Refinement {
 
 export const refinements: Refinement[] = [
   {
-    icon: "list-music",
     title: "Move your playlists",
     summary: "Take your favorites to another service.",
     text: "Copy playlists between supported services and keep them in sync as you add new songs.",
   },
   {
-    icon: "audio-lines",
     title: "Add Spotify Connect",
     summary: "Keep using the Spotify app.",
     text: "Make supported speakers appear in Spotify, even if they didn’t come with Spotify Connect. Pick one speaker or a whole group in the Spotify app and play as usual.",
@@ -146,21 +112,18 @@ export const refinements: Refinement[] = [
     },
   },
   {
-    icon: "audio-waveform",
     title: "The best sound each speaker can play",
     summary: "Gapless albums, smoother transitions and consistent volume.",
     text: "Music Assistant matches the audio to what each speaker supports. Keep albums gapless, blend tracks with Smart Fades, even out volume between songs and adjust the sound for your speakers and room.",
     link: { href: "/audiopipeline/", label: "How the audio pipeline works" },
   },
   {
-    icon: "speaker",
     title: "Different speakers in sync",
     summary: "AirPlay meets Sendspin.",
     text: "Play your existing AirPlay speakers in sync with Sendspin devices as one group.",
     link: { href: "/faq/groups/", label: "Learn about groups" },
   },
   {
-    icon: "megaphone",
     title: "Let your home speak up",
     summary: "Hear the message without losing your place.",
     text: "Give Home Assistant a voice through your speakers, from a doorbell alert to a call for dinner. Music Assistant pauses or lowers the music for the announcement, then brings it back when the message ends.",
@@ -170,7 +133,6 @@ export const refinements: Refinement[] = [
     },
   },
   {
-    icon: "mic",
     title: "Search your whole library by voice",
     summary: "Ask for the music and the room.",
     text: "Ask Home Assistant Assist to find a song, album, artist or playlist across your connected music sources, then tell it where to play.",

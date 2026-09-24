@@ -35,16 +35,19 @@ const methods = [
 const nextSteps = [
   {
     icon: "library-big",
+    tone: "coral",
     title: "Add your music",
     text: "Connect a streaming service, local files, radio or another source from Settings.",
   },
   {
     icon: "speaker",
+    tone: "butter",
     title: "Check your players",
     text: "Supported AirPlay, Google Cast, DLNA, Sendspin and Sonos players are discovered automatically.",
   },
   {
     icon: "play",
+    tone: "blue",
     title: "Press play",
     text: "Choose a speaker and press play. Your library may take a few minutes to appear.",
   },
@@ -56,6 +59,7 @@ const nextSteps = [
   description="Install Music Assistant on Home Assistant or with Docker, then connect your music and speakers."
 >
   <div class="container page">
+    <p class="liner">Soundcheck</p>
     <header class="heading">
       <h1>Install Music Assistant</h1>
       <p>Choose where Music Assistant will run.</p>
@@ -160,7 +164,7 @@ const nextSteps = [
       <h2 id="next-title">Once you’re in</h2>
       <ul>
         {nextSteps.map((item) => (
-          <li>
+          <li class={`tone-${item.tone}`}>
             <span class="next-icon">
               <Icon name={item.icon} size={22} />
             </span>
@@ -171,7 +175,7 @@ const nextSteps = [
       </ul>
     </section>
 
-    <aside class="help">
+    <aside class="help tone-ink">
       <div>
         <h2>Need a hand?</h2>
         <p>
@@ -188,63 +192,64 @@ const nextSteps = [
 
 <style>
   .page {
-    max-width: 60rem;
+    max-width: 62rem;
     padding-block: clamp(3rem, 7vw, 5rem) var(--section);
   }
   .heading {
     margin-bottom: 2.5rem;
-    text-align: center;
   }
   .heading h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(3rem, 9vw, 6.5rem);
   }
   .heading p {
-    color: var(--muted-foreground);
-    font-size: 1.125rem;
+    color: var(--muted);
+    font-size: 1.25rem;
   }
 
-  /* Segmented control: two large options on a tonal track. */
+  /* Two tickets to choose from; the chosen one is inked in. */
   .picker {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.375rem;
-    margin-bottom: 2.5rem;
-    padding: 0.375rem;
-    border-radius: 1.25rem;
-    background: var(--muted);
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
   .picker a {
     display: flex;
     align-items: center;
-    gap: 0.875rem;
-    padding: 0.875rem 1rem;
-    border-radius: 0.875rem;
-    color: var(--muted-foreground);
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--surface);
     text-decoration: none;
     transition:
-      background-color 0.15s,
-      color 0.15s,
-      box-shadow 0.15s;
+      transform 0.15s,
+      box-shadow 0.15s,
+      background-color 0.15s;
   }
   .picker a:hover {
-    color: var(--foreground);
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 var(--ink);
   }
   .picker a[aria-selected="true"] {
-    color: var(--foreground);
-    background: var(--card);
-    box-shadow:
-      var(--shadow-sm),
-      0 0 0 1px var(--border);
+    background: var(--butter);
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: translate(-2px, -2px);
   }
   .picker a > span:last-child {
     display: grid;
     line-height: 1.3;
   }
   .picker strong {
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-stretch: 80%;
+    text-transform: uppercase;
   }
   .picker a > span:last-child > span {
-    font-size: 0.875rem;
+    color: var(--muted);
+    font-size: 0.9375rem;
   }
   .picker-icon {
     display: grid;
@@ -252,12 +257,9 @@ const nextSteps = [
     place-items: center;
     width: 2.75rem;
     height: 2.75rem;
-    border-radius: 0.75rem;
-    background: var(--tile);
-  }
-  .picker a[aria-selected="true"] .picker-icon {
-    background: var(--primary);
-    color: var(--primary-foreground);
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
   }
 
   .method {
@@ -265,9 +267,9 @@ const nextSteps = [
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
     gap: 2.5rem;
     padding: clamp(1.5rem, 4vw, 2.5rem);
-    border: 1px solid var(--border);
-    border-radius: 1.5rem;
-    background: var(--card);
+    border: 2px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--surface);
   }
   .method + .method {
     margin-top: 1.5rem;
@@ -276,40 +278,41 @@ const nextSteps = [
     display: none;
   }
   .method-intro h2 {
-    font-size: 1.625rem;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
   }
   .method-intro p {
-    color: var(--muted-foreground);
+    color: var(--muted);
   }
   .chip {
     display: inline-block;
-    margin-bottom: 0.75rem;
-    padding: 0.125rem 0.625rem;
-    border-radius: 0.5rem;
-    background: var(--primary-soft);
-    color: var(--primary-strong);
-    font-size: 0.75rem;
-    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
+    background: var(--coral);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transform: rotate(-3deg);
   }
   .note {
     display: flex;
     gap: 0.75rem;
     margin-top: 1rem;
     padding: 0.875rem 1rem;
-    border-radius: 0.75rem;
-    background: var(--primary-soft);
+    border-left: 4px solid var(--blue);
+    background: rgba(24, 188, 242, 0.12);
   }
   .note :global(.icon) {
     flex: none;
     margin-top: 0.1875rem;
-    color: var(--primary-strong);
   }
 
   .next {
-    margin-top: 4rem;
+    margin-top: 4.5rem;
   }
   .next h2 {
-    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-size: clamp(2rem, 4vw, 3rem);
   }
   .next ul {
     display: grid;
@@ -321,9 +324,10 @@ const nextSteps = [
   }
   .next li {
     padding: 1.5rem;
-    border: 1px solid var(--border);
-    border-radius: 1.25rem;
-    background: var(--card);
+    border-radius: var(--radius);
+  }
+  .next li:nth-child(2) {
+    transform: rotate(1deg);
   }
   .next-icon {
     display: grid;
@@ -331,18 +335,17 @@ const nextSteps = [
     width: 2.75rem;
     height: 2.75rem;
     margin-bottom: 1rem;
-    border-radius: 0.75rem;
-    background: var(--primary-soft);
-    color: var(--primary-strong);
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
   }
   .next h3 {
     margin-bottom: 0.375rem;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
   }
   .next p {
     margin: 0;
-    color: var(--muted-foreground);
-    font-size: 0.9375rem;
+    color: var(--muted);
   }
 
   .help {
@@ -351,18 +354,20 @@ const nextSteps = [
     align-items: center;
     justify-content: space-between;
     gap: 1rem 2rem;
-    margin-top: 1rem;
-    padding: 1.5rem;
-    border-radius: 1.25rem;
-    background: var(--muted);
+    margin-top: 1.5rem;
+    padding: 1.5rem 1.75rem;
+    border-radius: var(--radius);
   }
   .help h2 {
     margin-bottom: 0.25rem;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
   .help p {
     margin: 0;
-    color: var(--muted-foreground);
+    color: var(--muted);
+  }
+  .help .text-link {
+    color: var(--butter);
   }
 
   @media (max-width: 760px) {
@@ -374,7 +379,7 @@ const nextSteps = [
       gap: 1.5rem;
     }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     .picker {
       grid-template-columns: 1fr;
     }

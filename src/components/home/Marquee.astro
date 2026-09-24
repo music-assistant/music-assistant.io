@@ -1,0 +1,66 @@
+---
+import { musicSources, speakers } from "../../data/marketing";
+
+// A running list of what Music Assistant plays from and to, like the band
+// names on the back of a tour shirt.
+const names = [...musicSources, ...speakers].map((brand) => brand.name);
+---
+
+<div class="marquee tone-butter" aria-label="Works with">
+  <p class="sr-only">Works with {names.join(", ")}, and many more.</p>
+  <div class="track" aria-hidden="true">
+    {[0, 1].map(() => (
+      <ul>
+        {names.map((name) => (
+          <li>{name}</li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</div>
+
+<style>
+  .marquee {
+    overflow: hidden;
+    padding: 1rem 0;
+    border-block: 2px solid var(--ink);
+  }
+  .track {
+    display: flex;
+    width: max-content;
+    animation: scroll 80s linear infinite;
+  }
+  .marquee:hover .track {
+    animation-play-state: paused;
+  }
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 800;
+    font-stretch: 75%;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  li::after {
+    content: "✦";
+    margin: 0 1.25rem;
+    color: var(--coral);
+  }
+  @keyframes scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .track {
+      animation: none;
+    }
+  }
+</style>

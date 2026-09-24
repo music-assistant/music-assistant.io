@@ -52,27 +52,26 @@ const isRelease = post.data.tags?.includes("release");
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: 1.25rem;
-    background: var(--card);
+    border: 2px solid var(--ink);
+    border-radius: var(--radius);
+    background: var(--surface);
     transition:
-      border-color 0.2s,
       transform 0.2s,
       box-shadow 0.2s;
   }
   .post:hover {
-    border-color: color-mix(in srgb, var(--primary) 50%, var(--border));
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 0 var(--ink);
   }
   .post:focus-within {
-    outline: 2px solid var(--ring);
+    outline: 3px solid var(--coral);
     outline-offset: 2px;
   }
   .cover {
     aspect-ratio: 1200 / 630;
     overflow: hidden;
-    background: var(--tile);
+    border-bottom: 2px solid var(--ink);
+    background: var(--ink);
   }
   .cover img {
     width: 100%;
@@ -83,7 +82,7 @@ const isRelease = post.data.tags?.includes("release");
     display: grid;
     place-items: center;
     height: 100%;
-    color: var(--primary);
+    color: var(--butter);
   }
   .body {
     padding: 1.25rem 1.5rem 1.5rem;
@@ -93,21 +92,24 @@ const isRelease = post.data.tags?.includes("release");
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--muted-foreground);
-    font-size: 0.8125rem;
+    margin-bottom: 0.625rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
   }
   .chip {
-    padding: 0.0625rem 0.5rem;
-    border-radius: 0.375rem;
-    background: var(--primary-soft);
-    color: var(--primary-strong);
-    font-weight: 600;
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+    color: var(--ink);
+    background: var(--butter);
+    font-weight: 700;
   }
   h2 {
-    margin: 0 0 0.5rem;
-    font-size: 1.25rem;
-    letter-spacing: -0.015em;
+    margin: 0 0 0.625rem;
+    font-size: 1.625rem;
+    font-stretch: 85%;
+    line-height: 1.05;
   }
   h2 a {
     text-decoration: none;
@@ -125,7 +127,7 @@ const isRelease = post.data.tags?.includes("release");
     display: -webkit-box;
     margin: 0;
     overflow: hidden;
-    color: var(--muted-foreground);
+    color: var(--muted);
     font-size: 0.9375rem;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -138,13 +140,26 @@ const isRelease = post.data.tags?.includes("release");
   .featured .cover {
     aspect-ratio: auto;
     min-height: 100%;
+    border-right: 2px solid var(--ink);
+    border-bottom: 0;
   }
   .featured .body {
-    align-self: center;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: clamp(1.5rem, 4vw, 3rem);
+    color: var(--paper);
+    background: var(--ink);
+  }
+  .featured .meta,
+  .featured .excerpt {
+    color: rgba(241, 236, 225, 0.7);
   }
   .featured h2 {
-    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    text-transform: uppercase;
+    font-stretch: 78%;
   }
   .featured .excerpt {
     font-size: 1.0625rem;
@@ -156,6 +171,8 @@ const isRelease = post.data.tags?.includes("release");
     }
     .featured .cover {
       aspect-ratio: 1200 / 630;
+      border-right: 0;
+      border-bottom: 2px solid var(--ink);
     }
   }
 </style>

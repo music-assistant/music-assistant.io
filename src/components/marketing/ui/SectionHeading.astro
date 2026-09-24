@@ -1,18 +1,19 @@
 ---
-// Section title in the app's "Title  · meta" style, with an optional lead
-// paragraph and an action link aligned to the end, like "See all" rows.
+// Section title with a small liner-notes caption above it, an optional lead
+// and an optional action aligned to the end.
 interface Props {
   id?: string;
+  label?: string;
   title: string;
   lead?: string;
-  align?: "start" | "center";
 }
-const { id, title, lead, align = "start" } = Astro.props;
+const { id, label, title, lead } = Astro.props;
 const hasAction = Astro.slots.has("action");
 ---
 
-<header class:list={["section-heading", `align-${align}`]} data-reveal>
+<header class="section-heading" data-reveal>
   <div class="text">
+    {label && <p class="liner">{label}</p>}
     <h2 id={id}>{title}</h2>
     {lead && <p class="lead">{lead}</p>}
   </div>
@@ -30,26 +31,16 @@ const hasAction = Astro.slots.has("action");
     align-items: end;
     justify-content: space-between;
     gap: 1rem 2rem;
-    margin-bottom: clamp(2rem, 4vw, 3rem);
-  }
-  .align-center {
-    justify-content: center;
-    text-align: center;
-  }
-  .align-center .lead {
-    margin-inline: auto;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
   }
   h2 {
+    max-width: 16ch;
     margin: 0;
-    max-width: 18ch;
-  }
-  .align-center h2 {
-    max-width: none;
   }
   .lead {
-    margin: 1rem 0 0;
-    max-width: 56ch;
-    color: var(--muted-foreground);
-    font-size: 1.125rem;
+    max-width: 52ch;
+    margin: 1.25rem 0 0;
+    color: var(--muted);
+    font-size: 1.1875rem;
   }
 </style>

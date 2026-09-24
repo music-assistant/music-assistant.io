@@ -1,78 +1,90 @@
 /*
  * Music Assistant marketing pages.
  *
- * The colour tokens are the ones the app itself uses (frontend
- * src/styles/style.css, shadcn-vue "new-york" on a neutral base with the
- * Material light-blue primary), so the site and the product look like one
- * thing. Pages follow the visitor's light/dark preference, as the app does.
- * Component styles live in each component; this file holds the tokens, base
- * element styles and the few layout helpers shared across sections.
+ * The look borrows from how bands present themselves rather than from app
+ * UI: a small set of flat "inks" like a riso-printed gig poster, poster type,
+ * and sections that alternate colour. The logo blue is one of the inks, not
+ * the colour of every button.
+ *
+ * Each section picks a tone (see Section.astro); inside it, components only
+ * use the local --bg, --fg, --muted, --line and --pop variables, so the same
+ * component works on any tone.
  */
 
 :root {
-  color-scheme: light;
-  --radius: 0.625rem;
+  --paper: #f1ece1;
+  --paper-deep: #e6dfcf;
+  --ink: #17150f;
+  --ink-soft: #24211a;
+  --coral: #ec5a3b;
+  --butter: #f5c33b;
+  --blue: #18bcf2;
 
-  --background: #f5f5f5;
-  --foreground: #000000;
-  --card: #ffffff;
-  --card-foreground: #000000;
-  --primary: #03a9f4;
-  --primary-foreground: #ffffff;
-  --primary-strong: #0288d1;
-  --primary-soft: color-mix(in srgb, var(--primary) 12%, transparent);
-  --secondary: #e7e7e7;
-  --muted: #e7e7e7;
-  --muted-foreground: #666666;
-  --accent: #e7e7e7;
-  --border: #d4d4d4;
-  --ring: #03a9f4;
-  --tile: #f0f0f0;
-  --code: #fafafa;
-  --frame-border: rgba(0, 0, 0, 0.12);
-
-  /* The app's chart palette doubles as the artwork tones on feature tiles. */
-  --tone-blue: #03a9f4;
-  --tone-green: #4caf50;
-  --tone-orange: #ff9800;
-  --tone-purple: #9c27b0;
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-lg:
-    0 1px 2px rgba(0, 0, 0, 0.06), 0 24px 64px -24px rgba(0, 0, 0, 0.35);
-
+  --font-display:
+    "Bricolage Grotesque Variable", "Arial Narrow", system-ui, sans-serif;
   --font-sans:
-    "Roboto Flex Variable", Roboto, system-ui, -apple-system, "Segoe UI",
-    sans-serif;
-  --font-mono:
-    ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, monospace;
+    "Instrument Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --container: 1200px;
   --gutter: clamp(1rem, 4vw, 2rem);
   --section: clamp(4.5rem, 10vw, 8rem);
   --header-height: 4rem;
+  --radius: 0.375rem;
+
+  /* Paper is the default tone. */
+  --bg: var(--paper);
+  --fg: var(--ink);
+  --muted: rgba(23, 21, 15, 0.68);
+  --line: rgba(23, 21, 15, 0.16);
+  --pop: var(--coral);
+  --surface: #fbf8f1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --background: #181818;
-    --foreground: #ffffff;
-    --card: #232323;
-    --card-foreground: #ffffff;
-    --primary-strong: #4fc3f7;
-    --secondary: #2d2d2d;
-    --muted: #2d2d2d;
-    --muted-foreground: #a0a0a0;
-    --accent: #2d2d2d;
-    --border: #3d3d3d;
-    --tile: #2a2a2a;
-    --code: #1c1c1c;
-    --frame-border: rgba(255, 255, 255, 0.1);
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --shadow-lg:
-      0 1px 2px rgba(0, 0, 0, 0.4), 0 32px 80px -24px rgba(0, 0, 0, 0.8);
-  }
+/* Tones. Sections, and anything else that wants a colour block, add one. */
+.tone-paper {
+  --bg: var(--paper);
+  --fg: var(--ink);
+  --muted: rgba(23, 21, 15, 0.68);
+  --line: rgba(23, 21, 15, 0.16);
+  --pop: var(--coral);
+  --surface: #fbf8f1;
+}
+.tone-ink {
+  --bg: var(--ink);
+  --fg: var(--paper);
+  --muted: rgba(241, 236, 225, 0.66);
+  --line: rgba(241, 236, 225, 0.16);
+  --pop: var(--butter);
+  --surface: var(--ink-soft);
+}
+.tone-coral {
+  --bg: var(--coral);
+  --fg: var(--ink);
+  --muted: rgba(23, 21, 15, 0.74);
+  --line: rgba(23, 21, 15, 0.22);
+  --pop: var(--paper);
+  --surface: #f07a5f;
+}
+.tone-butter {
+  --bg: var(--butter);
+  --fg: var(--ink);
+  --muted: rgba(23, 21, 15, 0.72);
+  --line: rgba(23, 21, 15, 0.2);
+  --pop: var(--coral);
+  --surface: #f8d36b;
+}
+.tone-blue {
+  --bg: var(--blue);
+  --fg: var(--ink);
+  --muted: rgba(23, 21, 15, 0.74);
+  --line: rgba(23, 21, 15, 0.2);
+  --pop: var(--paper);
+  --surface: #5dd0f6;
+}
+[class*="tone-"] {
+  color: var(--fg);
+  background-color: var(--bg);
 }
 
 @layer base {
@@ -104,13 +116,24 @@
   body {
     margin: 0;
     min-height: 100vh;
-    color: var(--foreground);
-    background: var(--background);
+    color: var(--fg);
+    background: var(--bg);
     font-family: var(--font-sans);
-    font-size: 1rem;
+    font-size: 1.0625rem;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* A little print grain over everything, like ink on uncoated paper. */
+  body::after {
+    content: "";
+    position: fixed;
+    z-index: 200;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   img,
@@ -132,110 +155,137 @@
   h3,
   h4 {
     margin: 0 0 1rem;
+    font-family: var(--font-display);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1;
     letter-spacing: -0.02em;
     text-wrap: balance;
   }
   h1 {
-    font-size: clamp(2.75rem, 7vw, 5rem);
+    font-size: clamp(3.5rem, 11.5vw, 9.5rem);
     font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1;
+    font-stretch: 75%;
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
   }
   h2 {
-    font-size: clamp(2rem, 4.5vw, 3.25rem);
-    letter-spacing: -0.03em;
+    font-size: clamp(2.25rem, 5.5vw, 4.25rem);
+    font-weight: 800;
+    font-stretch: 80%;
+    line-height: 0.95;
   }
   h3 {
-    font-size: 1.25rem;
-    letter-spacing: -0.01em;
+    font-size: 1.5rem;
+    font-stretch: 90%;
   }
   p {
     margin: 0 0 1rem;
     text-wrap: pretty;
   }
 
-  .container {
-    width: min(100% - var(--gutter) * 2, var(--container));
-    margin-inline: auto;
-  }
-
-  .section {
-    padding-block: var(--section);
-  }
-
-  .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-    border: 0;
-  }
-
-  .skip-link {
-    position: fixed;
-    z-index: 100;
-    top: 0.75rem;
-    left: 0.75rem;
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
-    color: var(--primary-foreground);
-    background: var(--primary);
-    font-weight: 600;
-    transform: translateY(-200%);
-  }
-  .skip-link:focus {
-    transform: none;
-  }
-
-  /* Inline text link with an arrow, used for "Explore…" style links. */
-  .text-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    color: var(--primary-strong);
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .text-link:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-  .text-link .icon {
-    transition: transform 0.15s;
-  }
-  .text-link:hover .icon {
-    transform: translateX(2px);
-  }
-
   :focus-visible {
-    outline: 2px solid var(--ring);
+    outline: 3px solid var(--pop);
     outline-offset: 2px;
   }
 
-  /* Sections fade up as they scroll into view. Without JavaScript, or with
-   reduced motion, everything is simply visible. */
-  .js [data-reveal] {
-    opacity: 0;
-    transform: translateY(16px);
-    transition:
-      opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
-      transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    transition-delay: var(--reveal-delay, 0ms);
+  ::selection {
+    color: var(--ink);
+    background: var(--butter);
   }
-  .js [data-reveal].is-visible {
+}
+
+.container {
+  width: min(100% - var(--gutter) * 2, var(--container));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section);
+}
+
+/* Small mono caption, used like the credits on a record sleeve. */
+.liner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0 0 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.liner::before {
+  content: "";
+  width: 1.5rem;
+  height: 2px;
+  background: currentColor;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 300;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.5rem 1rem;
+  color: var(--ink);
+  background: var(--butter);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+.skip-link:focus {
+  transform: none;
+}
+
+/* Inline text link with an arrow, used for "Explore…" style links. */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.text-link:hover {
+  text-decoration-color: var(--pop);
+}
+.text-link .icon {
+  transition: transform 0.15s;
+}
+.text-link:hover .icon {
+  transform: translateX(3px);
+}
+
+/* Sections fade up as they scroll into view. Without JavaScript, or with
+   reduced motion, everything is simply visible. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
     opacity: 1;
     transform: none;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .js [data-reveal] {
-      opacity: 1;
-      transform: none;
-    }
   }
 }

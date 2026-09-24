@@ -1,12 +1,13 @@
 ---
-// Frames a screenshot of the app like a browser window, so product imagery reads
-// as the real thing rather than a floating picture.
+// A screenshot of the app in a plain dark frame. Optional tape strips make it
+// look pinned up, like a flyer on a noticeboard.
 interface Props {
   src: string;
   alt: string;
   width: number;
   height: number;
   eager?: boolean;
+  taped?: boolean;
   class?: string;
 }
 const {
@@ -15,17 +16,12 @@ const {
   width,
   height,
   eager = false,
+  taped = false,
   class: className,
 } = Astro.props;
 ---
 
-<figure class:list={["app-window", className]}>
-  <div class="chrome" aria-hidden="true">
-    <span></span>
-    <span></span>
-    <span></span>
-    <div class="address">music-assistant.local</div>
-  </div>
+<figure class:list={["app-window", { taped }, className]}>
   <img
     src={src}
     alt={alt}
@@ -39,40 +35,36 @@ const {
 
 <style>
   .app-window {
+    position: relative;
     margin: 0;
-    overflow: hidden;
-    border: 1px solid var(--frame-border);
-    border-radius: 1rem;
-    background: #181818;
-    box-shadow: var(--shadow-lg);
-  }
-  .chrome {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    height: 2.25rem;
-    padding: 0 0.875rem;
-    background: #232323;
-    border-bottom: 1px solid #2d2d2d;
-  }
-  .chrome > span {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #3d3d3d;
-  }
-  .address {
-    margin-inline: auto;
-    padding: 0.125rem 0.875rem;
-    border-radius: 999px;
-    background: #181818;
-    color: #a0a0a0;
-    font-size: 0.75rem;
-    transform: translateX(-18px);
+    padding: 0.5rem;
+    border-radius: 0.625rem;
+    background: #0e0d09;
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
   }
   img {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 0.25rem;
+  }
+  .taped::before,
+  .taped::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -0.875rem;
+    width: 7rem;
+    height: 1.75rem;
+    background: rgba(245, 195, 59, 0.82);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+  .taped::before {
+    left: 8%;
+    transform: rotate(-4deg);
+  }
+  .taped::after {
+    right: 8%;
+    transform: rotate(3deg);
   }
 </style>

@@ -1,270 +1,242 @@
 ---
-import { heroPlayers } from "../../data/marketing";
 import AppWindow from "../marketing/ui/AppWindow.astro";
 import Button from "../marketing/ui/Button.astro";
-import Icon from "../marketing/ui/Icon.astro";
 ---
 
-<section class="hero" aria-labelledby="hero-title">
-  <div class="glow" aria-hidden="true"></div>
+<section class="hero tone-ink" aria-labelledby="hero-title">
   <div class="container">
-    <div class="copy">
-      <p class="badge">
-        <Icon name="house" size={14} />
-        <span>
-          Free and open source
-          <span class="wide"> · A project of the Open Home Foundation</span>
-        </span>
-      </p>
+    <p class="liner">Music Assistant · Free and open source</p>
+
+    <div class="title-row">
       <h1 id="hero-title">
-        Your music. <span>Your way.</span>
+        <span>Your music.</span>
+        <span class="pop">Your way.</span>
       </h1>
-      <p class="lead">
-        Bring your streaming services and your own files into one library, and
-        play them on almost any speaker in your home.
-      </p>
-      <div class="actions">
-        <Button href="/get-started/" size="lg" trailingIcon="arrow-right">
-          Get Music Assistant
-        </Button>
-        <Button href="#how-it-works" variant="tonal" size="lg">
-          See how it works
-        </Button>
-      </div>
+
+      <!-- A round sticker, the kind that ends up on every laptop at a gig. -->
+      <svg
+        class="sticker"
+        viewBox="0 0 200 200"
+        role="img"
+        aria-label="Free and open source"
+      >
+        <defs>
+          <path
+            id="sticker-ring"
+            d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"
+          ></path>
+        </defs>
+        <circle cx="100" cy="100" r="98" class="sticker-bg"></circle>
+        <g class="sticker-ring">
+          <text>
+            <textPath href="#sticker-ring" textLength="452">
+              FREE ✦ OPEN SOURCE ✦ RUNS AT HOME ✦
+            </textPath>
+          </text>
+        </g>
+        <text x="100" y="112" text-anchor="middle" class="sticker-mid">
+          100%
+        </text>
+        <text x="100" y="136" text-anchor="middle" class="sticker-sub">
+          YOURS
+        </text>
+      </svg>
     </div>
 
-    <div class="product">
-      <AppWindow
-        src="/assets/landing/discover.webp"
-        alt="Music Assistant's Discover screen, with players, top picks and similar artists"
-        width={1911}
-        height={1027}
-        eager
-      />
+    <div class="grid">
+      <div class="copy">
+        <p class="lead">
+          Bring your streaming services and your own files into one library, and
+          play them on almost any speaker in your home.
+        </p>
+        <div class="actions">
+          <Button
+            href="/get-started/"
+            variant="pop"
+            size="lg"
+            trailingIcon="arrow-right"
+          >
+            Get Music Assistant
+          </Button>
+          <Button href="#how-it-works" variant="outline" size="lg">
+            How it works
+          </Button>
+        </div>
+        <p class="credit">A project of the Open Home Foundation</p>
+      </div>
 
-      <ul
-        class="players"
-        aria-label="Example speakers playing from Music Assistant"
-      >
-        {heroPlayers.map((player) => (
-          <li class:list={["player", { playing: player.playing }]}>
-            <span class="player-icon">
-              {player.playing ? (
-                <span class="eq" aria-hidden="true">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                </span>
-              ) : (
-                <Icon name={player.icon} size={18} />
-              )}
-            </span>
-            <span class="player-text">
-              <strong>{player.name}</strong>
-              <span>
-                {player.playing
-                  ? `${player.track} · ${player.artist}`
-                  : player.kind}
-              </span>
-            </span>
-          </li>
-        ))}
-      </ul>
+      <!-- The app slides out of its sleeve with a record behind it. -->
+      <div class="record">
+        <div class="vinyl" aria-hidden="true">
+          <span class="label">
+            <img src="/favicon.svg" alt="" width="150" height="150" />
+          </span>
+        </div>
+        <AppWindow
+          src="/assets/landing/discover.webp"
+          alt="Music Assistant's Discover screen, with players, top picks and similar artists"
+          width={1911}
+          height={1027}
+          eager
+          class="sleeve"
+        />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .hero {
-    position: relative;
     overflow: hidden;
-    padding: clamp(3rem, 8vw, 6rem) 0 clamp(4rem, 8vw, 6rem);
-    isolation: isolate;
+    padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(4rem, 8vw, 6rem);
   }
-  /* A soft wash of colour, like the album-art tint on the app's player bar. */
-  .glow {
-    position: absolute;
-    z-index: -1;
-    inset: -20% -10% auto;
-    height: 80%;
-    background:
-      radial-gradient(
-        40% 50% at 30% 40%,
-        color-mix(in srgb, var(--primary) 28%, transparent),
-        transparent 70%
-      ),
-      radial-gradient(
-        30% 45% at 72% 35%,
-        color-mix(in srgb, var(--tone-purple) 16%, transparent),
-        transparent 70%
-      ),
-      radial-gradient(
-        30% 40% at 55% 70%,
-        color-mix(in srgb, var(--tone-green) 12%, transparent),
-        transparent 70%
-      );
-    filter: blur(40px);
+  .liner {
+    color: var(--muted);
   }
-  .copy {
-    max-width: 48rem;
-    margin: 0 auto;
-    text-align: center;
-  }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.75rem;
-    padding: 0.375rem 0.875rem;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--card) 70%, transparent);
-    color: var(--muted-foreground);
-    font-size: 0.8125rem;
-    font-weight: 500;
-  }
-  .badge :global(.icon) {
-    color: var(--primary);
+  .title-row {
+    position: relative;
   }
   h1 {
-    margin-bottom: 1.5rem;
+    margin: 0;
   }
   h1 span {
-    color: var(--primary);
+    display: block;
+  }
+  .pop {
+    color: var(--butter);
+  }
+
+  .sticker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: clamp(7rem, 14vw, 11rem);
+    transform: rotate(12deg);
+  }
+  .sticker-bg {
+    fill: var(--coral);
+  }
+  .sticker-ring {
+    transform-origin: 100px 100px;
+    animation: spin 24s linear infinite;
+  }
+  .sticker text {
+    fill: var(--ink);
+    font-family: var(--font-mono);
+    font-weight: 700;
+  }
+  .sticker-ring text {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+  .sticker-mid {
+    font-family: var(--font-display) !important;
+    font-size: 44px;
+    font-weight: 800 !important;
+  }
+  .sticker-sub {
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    align-items: end;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    margin-top: clamp(-6rem, -6vw, -2rem);
   }
   .lead {
-    max-width: 38rem;
-    margin: 0 auto 2rem;
-    color: var(--muted-foreground);
-    font-size: clamp(1.125rem, 2vw, 1.3125rem);
+    max-width: 30rem;
+    font-size: clamp(1.1875rem, 1.8vw, 1.375rem);
     line-height: 1.5;
   }
   .actions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 0.75rem;
+    margin-top: 2rem;
+  }
+  .credit {
+    margin: 2rem 0 0;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
   }
 
-  .product {
+  .record {
     position: relative;
-    max-width: 68rem;
-    margin: clamp(3rem, 6vw, 4.5rem) auto 0;
+    padding: 25% 0 0;
   }
-
-  /* Speakers in the style of the Players row at the top of Discover. */
-  .players {
+  /* The record: grooves, a sheen that stays put while it spins, and the
+     label. */
+  .vinyl {
     position: absolute;
-    left: 50%;
-    bottom: 0;
-    display: flex;
-    gap: 0.5rem;
-    width: max-content;
-    max-width: calc(100% - 2rem);
-    margin: 0;
-    padding: 0.5rem;
-    list-style: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1.25rem;
-    background: rgba(35, 35, 35, 0.78);
-    backdrop-filter: blur(20px) saturate(1.5);
-    -webkit-backdrop-filter: blur(20px) saturate(1.5);
-    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.6);
-    color: #fff;
-    transform: translate(-50%, 45%);
+    top: 0;
+    right: 7%;
+    width: 42%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+      repeating-radial-gradient(circle, #2b2820 0 1.5px, #3a362c 2px 3px),
+      #2b2820;
+    box-shadow:
+      0 0 0 3px #0b0a07,
+      0 20px 40px -10px rgba(0, 0, 0, 0.7);
+    animation: spin 6s linear infinite;
   }
-  .player {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    min-width: 0;
-    padding: 0.5rem 1rem 0.5rem 0.5rem;
-    border-radius: 0.75rem;
-    background: rgba(255, 255, 255, 0.04);
+  .vinyl::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 30deg,
+      transparent 0 8%,
+      rgba(255, 255, 255, 0.12) 12%,
+      transparent 18% 58%,
+      rgba(255, 255, 255, 0.1) 62%,
+      transparent 68%
+    );
+    animation: spin 6s linear infinite reverse;
   }
-  .player.playing {
-    background: color-mix(in srgb, var(--primary) 22%, transparent);
-  }
-  .player-icon {
+  .label {
+    position: absolute;
+    z-index: 1;
+    inset: 33%;
     display: grid;
-    flex: none;
     place-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.08);
-    color: #a0a0a0;
+    border-radius: 50%;
+    background: var(--coral);
   }
-  .playing .player-icon {
-    background: var(--primary);
-    color: #fff;
+  .label img {
+    width: 48%;
   }
-  .player-text {
-    display: grid;
-    min-width: 0;
-    line-height: 1.3;
-  }
-  .player-text strong {
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-  .player-text span {
-    overflow: hidden;
-    color: #a0a0a0;
-    font-size: 0.75rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .playing .player-text span {
-    color: #d7f0fc;
+  .record :global(.sleeve) {
+    position: relative;
+    transform: rotate(-1.5deg);
   }
 
-  .eq {
-    display: flex;
-    align-items: end;
-    gap: 3px;
-    height: 16px;
-  }
-  .eq i {
-    width: 3px;
-    height: 100%;
-    border-radius: 2px;
-    background: currentColor;
-    transform-origin: bottom;
-    animation: eq 1s ease-in-out infinite;
-  }
-  .eq i:nth-child(2) {
-    animation-delay: -0.4s;
-  }
-  .eq i:nth-child(3) {
-    animation-delay: -0.7s;
-  }
-  @keyframes eq {
-    0%,
-    100% {
-      transform: scaleY(0.3);
-    }
-    50% {
-      transform: scaleY(1);
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
     }
   }
 
   @media (max-width: 900px) {
-    .player:nth-child(n + 3) {
-      display: none;
+    .grid {
+      grid-template-columns: 1fr;
+      margin-top: 2rem;
+    }
+    .sticker {
+      top: auto;
+      bottom: -3rem;
+      right: -0.5rem;
     }
   }
   @media (max-width: 560px) {
-    .badge .wide {
+    .sticker {
       display: none;
-    }
-    .players {
-      position: static;
-      width: auto;
-      max-width: none;
-      margin-top: 0.75rem;
-      transform: none;
-      flex-direction: column;
     }
   }
 </style>

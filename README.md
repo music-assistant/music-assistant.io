@@ -54,16 +54,20 @@ npm run preview
 └── dist/                  # Build output
 ```
 
-The homepage, `/get-started/` and the blog use `MarketingLayout.astro`. Their
-look follows the Music Assistant app: `src/styles/marketing.css` holds the app's
-colour tokens (light and dark) and base styles, and every component carries its
-own scoped styles.
+The homepage, `/get-started/` and the blog use `MarketingLayout.astro`. They
+have their own look, closer to how a band presents itself than to app UI: a
+few flat "inks" (paper, ink, coral, butter and the logo blue) that alternate
+section by section, poster type and mono liner-notes captions.
+`src/styles/marketing.css` holds those tokens and the base styles; sections
+pick a tone with `Section.astro`, and every component carries its own scoped
+styles.
 
 - `src/components/home/`: one component per homepage section
 - `src/components/get-started/`: the installation stepper
 - `src/components/marketing/`: header, footer and blog card
-- `src/components/marketing/ui/`: small building blocks (`Button`, `Icon` for
-  lucide icons, `AppWindow` for screenshots, `SectionHeading`, `CodeBlock`, …)
+- `src/components/marketing/ui/`: small building blocks (`Section`, `Button`,
+  `Icon` for lucide icons, `AppWindow` for screenshots, `SectionHeading`,
+  `CodeBlock`, …)
 - `src/data/marketing.ts`: the lists of sources, speakers, plugins and people
   shown on the homepage
 - `src/scripts/marketing.ts`: menu, scroll reveal, install tabs and copy buttons

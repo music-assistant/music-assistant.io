@@ -1,0 +1,19 @@
+---
+// A full-width colour block. Sections alternate tones down the page, like the
+// panels of a gig poster.
+interface Props {
+  id?: string;
+  tone?: "paper" | "ink" | "coral" | "butter" | "blue";
+  labelledby?: string;
+  class?: string;
+}
+const { id, tone = "paper", labelledby, class: className } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={["section", `tone-${tone}`, className]}
+  aria-labelledby={labelledby}
+>
+  <slot />
+</section>

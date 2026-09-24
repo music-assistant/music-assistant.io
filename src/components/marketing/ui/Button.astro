@@ -1,11 +1,12 @@
 ---
 import Icon from "./Icon.astro";
 
-// Mirrors the app's button variants: filled for the one main action, tonal for
-// secondary ones, ghost for quiet links.
+// Buttons take their colours from the tone they sit in: "solid" is the tone's
+// text colour as a block, "pop" uses the tone's accent ink, "outline" is a
+// bordered version.
 interface Props {
   href: string;
-  variant?: "filled" | "tonal" | "outline" | "ghost";
+  variant?: "solid" | "pop" | "outline";
   size?: "md" | "lg";
   icon?: string;
   trailingIcon?: string;
@@ -15,7 +16,7 @@ interface Props {
 
 const {
   href,
-  variant = "filled",
+  variant = "solid",
   size = "md",
   icon,
   trailingIcon,
@@ -43,61 +44,52 @@ const {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    height: 2.5rem;
+    height: 2.75rem;
     padding: 0 1.25rem;
-    border: 1px solid transparent;
-    border-radius: 999px;
+    border: 2px solid var(--fg);
+    border-radius: var(--radius);
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1;
     text-decoration: none;
     white-space: nowrap;
     transition:
+      transform 0.15s,
+      box-shadow 0.15s,
       background-color 0.15s,
-      border-color 0.15s,
-      color 0.15s,
-      box-shadow 0.15s;
+      color 0.15s;
   }
   .btn-lg {
-    height: 3rem;
+    height: 3.25rem;
     padding: 0 1.5rem;
-    font-size: 1rem;
+    font-size: 1.0625rem;
   }
-  .btn:has(:global(.icon):first-child) {
-    padding-inline-start: 1rem;
+  .btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 var(--fg);
   }
-  .btn-filled {
-    color: var(--primary-foreground);
-    background: var(--primary);
+  .btn:active {
+    transform: none;
+    box-shadow: none;
   }
-  .btn-filled:hover {
-    background: color-mix(in srgb, var(--primary) 88%, var(--foreground));
-    box-shadow: 0 4px 16px -4px
-      color-mix(in srgb, var(--primary) 60%, transparent);
+  .btn-solid {
+    color: var(--bg);
+    background: var(--fg);
   }
-  .btn-tonal {
-    color: var(--foreground);
-    background: var(--secondary);
+  .btn-solid:hover {
+    box-shadow: 3px 3px 0 var(--pop);
   }
-  .btn-tonal:hover {
-    background: color-mix(in srgb, var(--secondary) 85%, var(--foreground));
+  .btn-pop {
+    color: var(--ink);
+    background: var(--pop);
+    border-color: var(--pop);
   }
   .btn-outline {
-    color: var(--foreground);
-    border-color: var(--border);
+    color: var(--fg);
+    background: transparent;
   }
   .btn-outline:hover {
-    background: var(--accent);
-  }
-  .btn-ghost {
-    padding-inline: 0.75rem;
-    color: var(--primary);
-  }
-  .btn-ghost:hover {
-    background: var(--primary-soft);
-  }
-  .btn:focus-visible {
-    outline: 2px solid var(--ring);
-    outline-offset: 2px;
+    background: var(--fg);
+    color: var(--bg);
   }
 </style>

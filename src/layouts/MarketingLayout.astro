@@ -2,7 +2,10 @@
 import Header from "../components/marketing/Header.astro";
 import Footer from "../components/marketing/Footer.astro";
 import Analytics from "../components/Analytics.astro";
-import "@fontsource-variable/roboto-flex/standard.css";
+import "@fontsource-variable/bricolage-grotesque/standard.css";
+import "@fontsource-variable/instrument-sans/index.css";
+import "@fontsource/space-mono/400.css";
+import "@fontsource/space-mono/700.css";
 import "../styles/marketing.css";
 
 interface Props {
@@ -31,17 +34,7 @@ const isProduction =
       document.documentElement.classList.add("js");
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="theme-color"
-      content="#f5f5f5"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#181818"
-      media="(prefers-color-scheme: dark)"
-    />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#17150f" />
     <meta name="description" content={description} />
     <meta
       name="robots"

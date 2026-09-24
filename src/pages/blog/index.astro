@@ -14,6 +14,7 @@ const [featured, ...posts] = await getPosts();
   <div class="container page">
     <header class="heading">
       <div>
+        <p class="liner">News from the road</p>
         <h1>Blog</h1>
         <p>
           Releases, project news and stories from the Music Assistant community.
@@ -46,18 +47,18 @@ const [featured, ...posts] = await getPosts();
   }
   .heading h1 {
     margin-bottom: 0.75rem;
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(3.5rem, 12vw, 9rem);
   }
   .heading p {
     margin: 0;
-    color: var(--muted-foreground);
+    color: var(--muted);
     font-size: 1.125rem;
   }
   .grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-    margin-top: 1.25rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
   @media (max-width: 1000px) {
     .grid {

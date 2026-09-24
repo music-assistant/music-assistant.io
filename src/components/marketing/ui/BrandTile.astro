@@ -1,15 +1,14 @@
 ---
 import type { Brand } from "../../../data/marketing";
 
-// Provider logo on a tonal square, the way providers appear in the app's
-// settings.
+// A provider logo on a small paper square, like a patch on a jacket.
 interface Props {
   brand: Brand;
 }
 const { brand } = Astro.props;
 ---
 
-<li class:list={["brand-tile", { "is-dark": brand.dark }]} title={brand.name}>
+<li class="brand-tile" title={brand.name}>
   <img
     src={`/assets/landing/brands/${brand.icon}.svg`}
     alt={brand.name}
@@ -25,24 +24,23 @@ const { brand } = Astro.props;
     display: grid;
     place-items: center;
     aspect-ratio: 1;
-    border-radius: 0.75rem;
-    background: var(--tile);
-    transition:
-      transform 0.2s,
-      background-color 0.2s;
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius);
+    background: #fff;
+    transition: transform 0.2s;
+  }
+  .brand-tile:nth-child(3n) {
+    transform: rotate(-3deg);
+  }
+  .brand-tile:nth-child(4n + 1) {
+    transform: rotate(2deg);
   }
   .brand-tile:hover {
-    transform: translateY(-2px);
-    background: var(--accent);
-  }
-  @media (prefers-color-scheme: dark) {
-    .is-dark img {
-      filter: invert(1) hue-rotate(180deg);
-    }
+    transform: rotate(0) scale(1.08);
   }
   img {
-    width: 55%;
-    height: 55%;
+    width: 58%;
+    height: 58%;
     object-fit: contain;
   }
 </style>
