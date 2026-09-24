@@ -196,9 +196,24 @@ How you name and arrange your folders decides how much Music Assistant can work 
 - Audiobooks in their own folder are always supported and is the preferred option. For untagged files this is mandatory, and filenames must sort alphabetically in chapter order
 - A single file with embedded chapters (e.g. `.m4b`) works in any folder
 - Multiple books can share a single folder if each file has an album tag (used as the book title to group chapters) and a track number tag. Multi-disc books also need a disc number tag. The title tag is used as the chapter name if present
-- Author is read from the writer, album artist, or artist tag (in that order). Optional but recommended
+- Authors and narrators are read from the file tags and become artists in Music Assistant, so the audiobooks view offers author and narrator tabs. Optional but recommended
+- The series tags map to a collection, which enables "collapse collections" in the audiobooks view
 - Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
 - A `.txt` file in the folder will be used as the book description
+
+#### Audiobook Tags
+
+| Value | Read from | Notes |
+|:--|:--|:--|
+| Author | `writers`, `writer`, then `albumartist`, then `artist` | For untagged files the name taken from the filename is not used as an author |
+| Narrator | `narrators`, `narrator`, `narratedby`, then `composer` | Many audiobooks name the narrator in the composer field, hence the fallback |
+| Series | `series` | Title of the collection the book belongs to |
+| Series part | `seriespart` | Position within the series |
+
+Tag names are matched regardless of case and separators, so `NARRATEDBY`, `Narrated By` and `narrated-by` all work. Multiple authors or narrators are separated like [multiple artists](#multi-artist-tracks). Names are used as written, so spelling one differently across books creates separate entries.
+
+> [!NOTE]
+> A library that was indexed before author and narrator support existed is reparsed once, automatically, during the first sync after the upgrade. That sync takes longer than usual.
 
 ### Podcasts
 
