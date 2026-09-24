@@ -58,7 +58,10 @@ The homepage, `/get-started/` and the blog use `MarketingLayout.astro`. The
 look is minimal and dark-first in the Open Home Foundation family (near-black,
 off-white and the logo blue as the one accent), with a music-scene feel from
 Inter throughout, mono track captions (IBM Plex Mono)
-and a little print grain. Light mode follows the system setting or the header
+and a little print grain. Colour comes from album art, as in the app:
+`Cover.astro` renders mesh-gradient stand-in covers from the genre palettes
+in `src/data/marketing.ts`, used for the genre shelf, plugin and setlist
+thumbnails and the closing section. Light mode follows the system setting or the header
 toggle. `src/styles/marketing.css` holds the tokens and base styles; sections
 pick a tone (`base`, `alt` or `inverse`) with `Section.astro`, and every
 component carries its own scoped styles. Screenshots come in dark and light

@@ -1,0 +1,72 @@
+---
+import { palettes, shelf } from "../../data/marketing";
+import Cover from "../marketing/ui/Cover.astro";
+
+// A slowly moving shelf of records across genres and sources: the range of
+// music one Music Assistant library can hold.
+const items = shelf.map((name) => ({ name, ...palettes[name] }));
+---
+
+<div class="shelf tone-base">
+  <p class="sr-only">
+    Music of every kind, from {items.map((item) => item.genre).join(", ")}.
+  </p>
+  <div class="track" aria-hidden="true">
+    {[0, 1].map(() => (
+      <ul>
+        {items.map((item) => (
+          <li>
+            <Cover
+              palette={item.name}
+              title={item.genre}
+              subtitle={item.source}
+            />
+          </li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</div>
+
+<style>
+  .shelf {
+    overflow: hidden;
+    padding: 0 0 clamp(3rem, 6vw, 5rem);
+    mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+  .track {
+    display: flex;
+    width: max-content;
+    animation: scroll 70s linear infinite;
+  }
+  .shelf:hover .track {
+    animation-play-state: paused;
+  }
+  ul {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0 0.5rem;
+    list-style: none;
+  }
+  li {
+    width: clamp(8rem, 13vw, 11rem);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  li:nth-child(odd) {
+    transform: translateY(0.75rem);
+  }
+  li:hover {
+    transform: translateY(-0.25rem);
+  }
+  @keyframes scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .track {
+      animation: none;
+    }
+  }
+</style>

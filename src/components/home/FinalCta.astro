@@ -27,24 +27,52 @@ import Section from "../marketing/ui/Section.astro";
 </Section>
 
 <style>
-  .final {
+  /* The closing section is lit like the app's Now Playing screen: a big,
+     slow gradient taken from a cover. */
+  .section.final {
     position: relative;
     overflow: hidden;
+    color: #fff;
+    background: #0b0c0d;
     isolation: isolate;
+    --fg: #fff;
+    --muted: rgba(255, 255, 255, 0.75);
+    --line: rgba(255, 255, 255, 0.2);
+    --link: #fff;
   }
   .final::before {
     content: "";
     position: absolute;
     z-index: -1;
-    right: -10%;
-    bottom: -40%;
-    width: 70%;
-    height: 100%;
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      color-mix(in srgb, var(--accent) 14%, transparent),
-      transparent 70%
+    inset: -20%;
+    background:
+      radial-gradient(40% 50% at 20% 30%, #7b2ff7, transparent 70%),
+      radial-gradient(35% 45% at 70% 25%, #ff006e, transparent 70%),
+      radial-gradient(45% 55% at 85% 80%, #fb5607, transparent 70%),
+      radial-gradient(40% 50% at 35% 85%, #3a0ca3, transparent 70%), #240046;
+    filter: blur(20px) saturate(1.1);
+    opacity: 0.85;
+    animation: glow 20s ease-in-out infinite alternate;
+  }
+  .final::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(11, 12, 13, 0.35),
+      rgba(11, 12, 13, 0.55)
     );
+  }
+  @keyframes glow {
+    to {
+      transform: rotate(8deg) scale(1.1);
+      filter: blur(20px) saturate(1.1) hue-rotate(-30deg);
+    }
+  }
+  .final :global(.eyebrow b) {
+    color: #fff;
   }
   h2 {
     max-width: none;
@@ -68,5 +96,12 @@ import Section from "../marketing/ui/Section.astro";
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+  .actions :global(.btn-primary) {
+    color: #0b0c0d;
+    background: #fff;
+  }
+  .actions :global(.btn-primary:hover) {
+    background: rgba(255, 255, 255, 0.85);
   }
 </style>

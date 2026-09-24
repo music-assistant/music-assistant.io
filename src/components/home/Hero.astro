@@ -48,21 +48,46 @@ import Button from "../marketing/ui/Button.astro";
     padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(4rem, 8vw, 6rem);
     isolation: isolate;
   }
-  /* One cold stage light from above, behind the product. */
+  /* Behind the product, colour bleeds out like light through album art:
+     a few cover hues drifting slowly. */
   .hero::before {
     content: "";
     position: absolute;
     z-index: -1;
     left: 50%;
-    bottom: -10%;
-    width: min(1100px, 120%);
-    height: 70%;
-    background: radial-gradient(
-      50% 50% at 50% 50%,
-      color-mix(in srgb, var(--accent) 16%, transparent),
-      transparent 70%
-    );
+    bottom: -8%;
+    width: min(1300px, 140%);
+    height: 72%;
+    background:
+      radial-gradient(
+        35% 45% at 25% 55%,
+        rgba(157, 78, 221, 0.35),
+        transparent 70%
+      ),
+      radial-gradient(
+        30% 40% at 55% 40%,
+        rgba(255, 122, 24, 0.28),
+        transparent 70%
+      ),
+      radial-gradient(
+        30% 45% at 78% 60%,
+        rgba(24, 188, 242, 0.3),
+        transparent 70%
+      ),
+      radial-gradient(
+        25% 35% at 45% 80%,
+        rgba(255, 0, 110, 0.2),
+        transparent 70%
+      );
+    filter: blur(30px);
     transform: translateX(-50%);
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  @keyframes drift {
+    to {
+      transform: translateX(-47%) scale(1.06);
+      filter: blur(30px) hue-rotate(25deg);
+    }
   }
   h1 {
     margin: 0;

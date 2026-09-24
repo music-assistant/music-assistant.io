@@ -1,5 +1,6 @@
 ---
 import { refinements } from "../../data/marketing";
+import Cover from "../marketing/ui/Cover.astro";
 import Icon from "../marketing/ui/Icon.astro";
 import Section from "../marketing/ui/Section.astro";
 import SectionHeading from "../marketing/ui/SectionHeading.astro";
@@ -20,7 +21,10 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
       {refinements.map((item, index) => (
         <details name="setlist" open={index === 0}>
           <summary>
-            <span class="num">{String(index + 1).padStart(2, "0")}</span>
+            <span class="thumb">
+              <Cover palette={item.cover} />
+              <span class="num">{String(index + 1).padStart(2, "0")}</span>
+            </span>
             <span class="song">
               <strong>{item.title}</strong>
               <span>{item.summary}</span>
@@ -70,15 +74,31 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   summary::-webkit-details-marker {
     display: none;
   }
-  .num {
+  /* Each row gets a small cover, like a track in the app's queue. */
+  .thumb {
+    position: relative;
     flex: none;
-    width: 1.75rem;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
+    width: 3rem;
   }
-  details[open] .num {
-    color: var(--link);
+  .thumb :global(.cover) {
+    border-radius: 0.375rem;
+    filter: saturate(0.35) brightness(0.8);
+    transition: filter 0.3s;
+  }
+  details[open] .thumb :global(.cover),
+  summary:hover .thumb :global(.cover) {
+    filter: none;
+  }
+  .num {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
   .song {
     display: grid;
@@ -142,7 +162,7 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
     transform: translate(-50%, -50%) rotate(0);
   }
   .detail {
-    padding: 0 3.25rem 1.5rem 3rem;
+    padding: 0 3.25rem 1.5rem 4.25rem;
   }
   .detail p {
     max-width: 60ch;

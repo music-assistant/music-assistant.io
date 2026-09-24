@@ -1,5 +1,6 @@
 ---
 import { plugins } from "../../data/marketing";
+import Cover from "../marketing/ui/Cover.astro";
 import Icon from "../marketing/ui/Icon.astro";
 import Section from "../marketing/ui/Section.astro";
 import SectionHeading from "../marketing/ui/SectionHeading.astro";
@@ -19,7 +20,10 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
       {plugins.map((plugin, index) => (
         <li data-reveal style={`--reveal-delay: ${index * 70}ms`}>
           <a href={plugin.href} class="act">
-            <span class="name">{plugin.label}</span>
+            <span class="headliner">
+              <Cover palette={plugin.cover} class="art" />
+              <span class="name">{plugin.label}</span>
+            </span>
             <span class="detail">
               <strong>{plugin.title}</strong>
               <span>{plugin.text}</span>
@@ -60,6 +64,20 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
     gap: 1rem 3rem;
     padding: clamp(1.25rem, 3vw, 2rem) 0;
     text-decoration: none;
+  }
+  .headliner {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .headliner :global(.art) {
+    flex: none;
+    width: clamp(3.5rem, 6vw, 4.5rem);
+    box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .act:hover .headliner :global(.art) {
+    transform: rotate(-4deg) scale(1.06);
   }
   .name {
     font-size: clamp(1.75rem, 3vw, 2.25rem);
