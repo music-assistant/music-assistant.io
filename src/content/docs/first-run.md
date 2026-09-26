@@ -27,7 +27,7 @@ The administrator setting the server up is taken through a setup wizard, which o
 - <b>Add users.</b> Everyone in your home can have an account of their own. See [user management](/settings/user-management/)
 - <b>Finish setup.</b> A recap of what is set up and what is still to do, with a way back to each step you left, and the offer of a [short tour of the app](/ui/#take-a-tour)
 
-To go through it again, select **Run the setup wizard again** at the bottom of the settings. An administrator added later gets neither the wizard nor the welcome below, and starts the wizard the same way.
+To go through it again, select **Run the setup wizard again** at the bottom of the settings. Nothing opens by itself for an administrator added later, so that is where they start the wizard too.
 
 ## The first time a user signs in
 
