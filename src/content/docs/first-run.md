@@ -31,7 +31,7 @@ To go through it again, select **Run the setup wizard again** at the bottom of t
 
 ## The first time a user signs in
 
-Everyone who is not an administrator gets a short welcome over the app instead of this wizard. Guests get neither.
+Everyone but administrators, guests and the Home Assistant account gets a short welcome over the app instead of this wizard.
 
 - <b>Make yourself at home.</b> <b>Standard</b> keeps the interface clean, <b>Expert</b> shows advanced options and extra details. It only sets a few defaults, and every setting stays theirs to change
 - <b>Your players.</b> The players they can send music to
@@ -39,5 +39,5 @@ Everyone who is not an administrator gets a short welcome over the app instead o
 - <b>Connect your own accounts.</b> Only when their role lets them add music sources. They can add one there or move on and do it later
 - <b>You're all set.</b> A summary, and the offer of a short [tour of the app](/ui/#take-a-tour)
 
-They can close the welcome at any point, and it does not open again by itself. It only opens on its own in the first week after the account is made, so someone who signs in later never sees it. Anyone but a guest can go through it again from **Show the welcome again** at the bottom of the settings.
+They can close the welcome at any point, and it does not open again by itself. It only opens on its own in the first week after the account is made, so someone who signs in later never sees it. Anyone who gets the welcome can go through it again from **Show the welcome again** at the bottom of the settings.
 
