@@ -20,14 +20,11 @@ const points = [
 <Section id="experience" tone="base" labelledby="discover-title">
   <div class="container layout">
     <div class="copy" data-reveal>
-      <p class="eyebrow">
-        <b>03</b> Discover
-      </p>
       <h2 id="discover-title">Get lost in the music.</h2>
       <p class="lead">
         One place to find what to play next, whichever service it comes from.
       </p>
-      <ol>
+      <ul>
         {points.map((point) => (
           <li>
             <span>{point.text}</span>
@@ -38,7 +35,7 @@ const points = [
             )}
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
     <div class="shots" data-reveal style="--reveal-delay: 120ms">
       <AppWindow
@@ -72,26 +69,15 @@ const points = [
     color: var(--muted);
     font-size: 1.1875rem;
   }
-  ol {
+  ul {
     margin: 2rem 0 0;
     padding: 0;
     list-style: none;
-    counter-reset: point;
   }
   li {
     display: grid;
-    grid-template-columns: 2.75rem 1fr;
     padding: 1rem 0;
     border-top: 1px solid var(--line);
-    counter-increment: point;
-  }
-  li::before {
-    content: counter(point, decimal-leading-zero);
-    grid-row: span 2;
-    color: var(--link);
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    line-height: 1.9;
   }
   li .text-link {
     justify-self: start;

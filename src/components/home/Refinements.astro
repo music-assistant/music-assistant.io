@@ -10,20 +10,16 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   <div class="container layout">
     <SectionHeading
       id="setlist-title"
-      track="04"
-      label="Setlist"
       title="Fine-tune your everyday listening."
     />
 
-    <!-- A setlist: numbered songs, one opened at a time. Native <details>
-         sharing a name behave as an accordion. -->
+    <!-- Native <details> sharing a name behave as an accordion. -->
     <div class="list" data-reveal>
       {refinements.map((item, index) => (
         <details name="setlist" open={index === 0}>
           <summary>
             <span class="thumb">
               <Cover palette={item.cover} />
-              <span class="num">{String(index + 1).padStart(2, "0")}</span>
             </span>
             <span class="song">
               <strong>{item.title}</strong>
@@ -76,7 +72,6 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   }
   /* Each row gets a small cover, like a track in the app's queue. */
   .thumb {
-    position: relative;
     flex: none;
     width: 3rem;
   }
@@ -88,17 +83,6 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   details[open] .thumb :global(.cover),
   summary:hover .thumb :global(.cover) {
     filter: none;
-  }
-  .num {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    color: #fff;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    font-weight: 500;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
   .song {
     display: grid;

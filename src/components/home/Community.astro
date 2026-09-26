@@ -7,9 +7,6 @@ import Section from "../marketing/ui/Section.astro";
 <Section id="community" tone="inverse" labelledby="community-title">
   <div class="container layout">
     <div class="intro" data-reveal>
-      <p class="eyebrow">
-        <b>05</b> Liner notes
-      </p>
       <h2 id="community-title">Built in the open.</h2>
       <p>
         Music Assistant runs on a device in your home. It’s free and open
@@ -66,7 +63,7 @@ import Section from "../marketing/ui/Section.astro";
     align-items: center;
     gap: clamp(2.5rem, 6vw, 5rem);
   }
-  .intro p:not(.eyebrow) {
+  .intro p {
     color: var(--muted);
     font-size: 1.125rem;
   }

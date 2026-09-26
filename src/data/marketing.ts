@@ -22,23 +22,11 @@ export const musicSources: Brand[] = [
   brand("tidal", "TIDAL", true),
   brand("qobuz", "Qobuz"),
   brand("deezer", "Deezer"),
-  brand("soundcloud", "SoundCloud"),
   brand("plex", "Plex"),
-  brand("jellyfin", "Jellyfin"),
-  brand("opensubsonic", "Subsonic"),
-  brand("emby", "Emby"),
-  brand("bandcamp", "Bandcamp", true),
   brand("tunein", "TuneIn"),
-  brand("radiobrowser", "Radio Browser"),
-  brand("siriusxm", "SiriusXM"),
-  brand("pandora", "Pandora"),
   brand("audible", "Audible"),
   brand("audiobookshelf", "Audiobookshelf"),
   brand("pocketcasts", "Pocket Casts"),
-  brand("itunes_podcasts", "iTunes Podcasts"),
-  brand("bbc_sounds", "BBC Sounds"),
-  brand("internet_archive", "Internet Archive", true),
-  brand("somafm", "SomaFM"),
 ];
 
 export const speakers: Brand[] = [

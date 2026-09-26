@@ -11,8 +11,6 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   <div class="container">
     <SectionHeading
       id="how-title"
-      track="01"
-      label="How it works"
       title="One system between your music and your speakers."
       lead="Keep your library and playlists independent of any one music service. Mix speaker brands, switch services and change your setup without starting over."
     />
@@ -94,7 +92,7 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   }
   .brands {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 0.5rem;
     margin: 0.75rem 0 1.5rem;
     padding: 0;
@@ -146,11 +144,6 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
       bottom: calc(-0.75rem - 5px);
       left: 50%;
       transform: translateX(-50%);
-    }
-  }
-  @media (max-width: 1000px) and (min-width: 560px) {
-    .brands {
-      grid-template-columns: repeat(8, 1fr);
     }
   }
 </style>
