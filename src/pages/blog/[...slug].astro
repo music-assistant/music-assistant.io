@@ -1,0 +1,210 @@
+---
+import { render } from "astro:content";
+import type { InferGetStaticPropsType } from "astro";
+import Icon from "../../components/marketing/ui/Icon.astro";
+import MarketingLayout from "../../layouts/MarketingLayout.astro";
+import { getPosts, coverImage, formatDate } from "../../utils/blog";
+import { authors } from "../../authors.mjs";
+
+export async function getStaticPaths() {
+  // Crossposts keep their existing Starlight routes and redirects to the original.
+  return (await getPosts())
+    .filter((post) => !post.data.crosspostSource)
+    .map((post) => ({
+      params: { slug: post.id.slice("blog/".length) },
+      props: { post },
+    }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { post } = Astro.props;
+const { Content } = await render(post);
+const cover = coverImage(post);
+const byline = (
+  Array.isArray(post.data.authors) ? post.data.authors : [post.data.authors]
+)
+  .filter(Boolean)
+  .map((author) =>
+    typeof author === "string"
+      ? (authors[author as keyof typeof authors]?.name ?? author)
+      : author?.name,
+  )
+  .join(", ");
+---
+
+<MarketingLayout
+  title={`${post.data.title} — Music Assistant`}
+  description={post.data.description ?? post.data.title}
+  image={cover?.src}
+  article
+>
+  <meta
+    slot="head"
+    property="article:published_time"
+    content={post.data.date.toISOString()}
+  />
+  <article class="container article">
+    <a class="text-link back" href="/blog/">
+      <Icon name="arrow-left" size={16} /> All posts
+    </a>
+    <header>
+      <p class="meta">
+        <time datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date)}
+        </time>
+        {byline && <span>· By {byline}</span>}
+      </p>
+      <h1>{post.data.title}</h1>
+      {post.data.description && <p class="lead">{post.data.description}</p>}
+    </header>
+    {cover && (
+      <figure class="cover">
+        <img src={cover.src} alt={cover.alt} width="1200" height="630" />
+      </figure>
+    )}
+    <div class="prose">
+      <Content />
+    </div>
+    <footer class="end">
+      <a class="text-link" href="/blog/">
+        <Icon name="arrow-left" size={16} /> Back to the blog
+      </a>
+      <a class="text-link" href="/get-started/">
+        Get Music Assistant <Icon name="arrow-right" size={16} />
+      </a>
+    </footer>
+  </article>
+</MarketingLayout>
+
+<style>
+  .article {
+    max-width: 46rem;
+    padding-block: clamp(2rem, 5vw, 3.5rem) var(--section);
+  }
+  .back {
+    margin-bottom: 2rem;
+  }
+  .meta {
+    margin-bottom: 1rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+  }
+  .lead {
+    color: var(--muted);
+    font-size: 1.25rem;
+  }
+  .cover {
+    margin: 2rem 0 0;
+  }
+  .cover img {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+  }
+
+  /* Blog content is Markdown, so it is styled by element. */
+  .prose {
+    margin-top: 2.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+  .prose :global(:where(h2, h3, h4)) {
+    margin: 2.5rem 0 1rem;
+    scroll-margin-top: calc(var(--header-height) + 1rem);
+  }
+  .prose :global(h2) {
+    font-size: 1.75rem;
+  }
+  .prose :global(h3) {
+    font-size: 1.375rem;
+  }
+  .prose :global(:where(p, ul, ol, blockquote, pre, table, figure)) {
+    margin: 0 0 1.25rem;
+  }
+  .prose :global(:where(ul, ol)) {
+    padding-left: 1.25rem;
+  }
+  .prose :global(li + li) {
+    margin-top: 0.375rem;
+  }
+  .prose :global(a:not(.text-link)) {
+    color: var(--link);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .prose :global(img),
+  .prose :global(video) {
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+    border-radius: 0.875rem;
+  }
+  .prose :global(hr) {
+    margin: 2.5rem 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+  }
+  .prose :global(blockquote),
+  .prose :global(.markdown-alert) {
+    padding: 1rem 1.25rem;
+    border-left: 2px solid var(--accent);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+  }
+  .prose :global(:where(blockquote, .markdown-alert) > :last-child) {
+    margin-bottom: 0;
+  }
+  .prose :global(.markdown-alert-title) {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+  .prose :global(.markdown-alert-title svg) {
+    fill: currentColor;
+  }
+  .prose :global(code) {
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.375rem;
+    background: var(--page-alt);
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+  }
+  .prose :global(pre) {
+    overflow-x: auto;
+    color: #f2f4f9;
+    background: #0b0c0d !important;
+    padding: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+  }
+  .prose :global(pre code) {
+    padding: 0;
+    background: none;
+  }
+  .prose :global(table) {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+  }
+  .prose :global(:where(th, td)) {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+  }
+  .end {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+</style>

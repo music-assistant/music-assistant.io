@@ -1,0 +1,19 @@
+---
+// A full-width band. Sections alternate between the page colour and the
+// alternate colour; one or two are inverted for emphasis.
+interface Props {
+  id?: string;
+  tone?: "base" | "alt" | "inverse";
+  labelledby?: string;
+  class?: string;
+}
+const { id, tone = "base", labelledby, class: className } = Astro.props;
+---
+
+<section
+  id={id}
+  class:list={["section", `tone-${tone}`, className]}
+  aria-labelledby={labelledby}
+>
+  <slot />
+</section>

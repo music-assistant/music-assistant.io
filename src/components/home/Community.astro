@@ -1,0 +1,129 @@
+---
+import { team } from "../../data/marketing";
+import Button from "../marketing/ui/Button.astro";
+import Section from "../marketing/ui/Section.astro";
+---
+
+<Section id="community" tone="inverse" labelledby="community-title">
+  <div class="container layout">
+    <div class="intro" data-reveal>
+      <h2 id="community-title">Built in the open.</h2>
+      <p>
+        Music Assistant runs on a device in your home. It’s free and open
+        source: anyone can read the code, suggest changes or help improve it. A
+        community project of the Open Home Foundation.
+      </p>
+      <div class="actions">
+        <Button
+          href="https://github.com/music-assistant"
+          trailingIcon="arrow-up-right"
+          external
+        >
+          View on GitHub
+        </Button>
+        <Button href="/help/" variant="secondary">
+          Help or donate
+        </Button>
+      </div>
+    </div>
+
+    <div class="band">
+      <p class="eyebrow">Brought to you by</p>
+      <!-- Black-and-white band photos; colour comes back on hover. -->
+      <ul>
+        {team.map((person) => (
+          <li>
+            <a
+              href={`https://github.com/${person.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={`/assets/team/${person.image}.png`}
+                alt=""
+                width="200"
+                height="200"
+                loading="lazy"
+                decoding="async"
+              />
+              <span>{person.name}</span>
+              <span class="sr-only"> on GitHub</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: center;
+    gap: clamp(2.5rem, 6vw, 5rem);
+  }
+  .intro p {
+    color: var(--muted);
+    font-size: 1.125rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+  .actions :global(.btn-primary) {
+    color: var(--bg);
+    background: var(--fg);
+  }
+  .actions :global(.btn-primary:hover) {
+    background: color-mix(in srgb, var(--fg) 80%, var(--bg));
+  }
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.75rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    display: grid;
+    justify-items: center;
+    gap: 0.625rem;
+    text-decoration: none;
+  }
+  img {
+    width: 100%;
+    max-width: 6rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.1);
+    transition:
+      filter 0.3s,
+      transform 0.3s;
+  }
+  a:hover img,
+  a:focus-visible img {
+    filter: none;
+    transform: scale(1.05);
+  }
+  span:not(.sr-only) {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 480px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

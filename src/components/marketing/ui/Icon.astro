@@ -1,0 +1,34 @@
+---
+// Lucide icons, the same set the Music Assistant app uses. Only the icons a
+// page asks for end up in its HTML.
+interface Props {
+  name: string;
+  size?: number;
+  class?: string;
+  label?: string;
+}
+
+const icons = import.meta.glob<string>(
+  "/node_modules/lucide-static/icons/*.svg",
+  { query: "?raw", import: "default" },
+);
+
+const { name, size = 20, class: className, label } = Astro.props;
+const load = icons[`/node_modules/lucide-static/icons/${name}.svg`];
+if (!load) throw new Error(`Unknown lucide icon "${name}"`);
+
+const source = (await load()).replace(/<!--.*?-->/s, "").trim();
+// Swap the attributes on the root <svg> only; inner shapes keep their own.
+const svg = source.replace(/^<svg[^>]*>/, (tag) =>
+  tag
+    .replace(/\s(width|height|class)="[^"]*"/g, "")
+    .replace(
+      "<svg",
+      `<svg width="${size}" height="${size}" class="icon${className ? ` ${className}` : ""}" ${
+        label ? `role="img" aria-label="${label}"` : 'aria-hidden="true"'
+      } focusable="false"`,
+    ),
+);
+---
+
+<Fragment set:html={svg} />

@@ -1,0 +1,106 @@
+---
+import Header from "../components/marketing/Header.astro";
+import Footer from "../components/marketing/Footer.astro";
+import Analytics from "../components/Analytics.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource/ibm-plex-mono/latin-400.css";
+import "@fontsource/ibm-plex-mono/latin-500.css";
+import "../styles/marketing.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  article?: boolean;
+}
+const {
+  title,
+  description,
+  image = "/assets/banner.png",
+  article = false,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+const isProduction =
+  process.env.CONTEXT === "production" || !process.env.CONTEXT;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <script is:inline>
+      document.documentElement.classList.add("js");
+      try {
+        const theme = localStorage.getItem("ma-theme");
+        if (theme === "light" || theme === "dark")
+          document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="theme-color"
+      content="#0b0c0d"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#f2f4f9"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={isProduction ? "index, follow" : "noindex, nofollow"}
+    />
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Music Assistant Blog"
+      href="/blog/rss.xml"
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={socialImage} />
+    {!article && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Music Assistant",
+          applicationCategory: "MultimediaApplication",
+          operatingSystem: "Linux",
+          description:
+            "Music library manager for your offline and online music sources",
+          url: "https://www.music-assistant.io",
+          author: {
+            "@type": "Organization",
+            name: "Open Home Foundation",
+            url: "https://www.openhomefoundation.org/",
+          },
+        })}
+      ></script>
+    )}
+    <Analytics />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to content
+    </a>
+    <Header />
+    <main id="main" data-pagefind-body>
+      <slot />
+    </main>
+    <Footer />
+    <script src="../scripts/marketing.ts"></script>
+  </body>
+</html>

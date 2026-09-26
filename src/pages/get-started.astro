@@ -1,0 +1,383 @@
+---
+import Step from "../components/get-started/Step.astro";
+import Steps from "../components/get-started/Steps.astro";
+import CodeBlock from "../components/marketing/ui/CodeBlock.astro";
+import Icon from "../components/marketing/ui/Icon.astro";
+import MarketingLayout from "../layouts/MarketingLayout.astro";
+
+const compose = `services:
+  music-assistant-server:
+    image: ghcr.io/music-assistant/server:latest
+    container_name: music-assistant-server
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - \${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
+      # - /path/to/your/music:/media:ro
+    environment:
+      - LOG_LEVEL=info`;
+
+const methods = [
+  {
+    id: "home-assistant",
+    icon: "house",
+    title: "Home Assistant",
+    text: "Install as an app",
+  },
+  {
+    id: "docker",
+    icon: "container",
+    title: "Docker",
+    text: "For your own Linux server",
+  },
+];
+
+const nextSteps = [
+  {
+    icon: "library-big",
+    title: "Add your music",
+    text: "Connect a streaming service, local files, radio or another source from Settings.",
+  },
+  {
+    icon: "speaker",
+    title: "Check your players",
+    text: "Supported AirPlay, Google Cast, DLNA, Sendspin and Sonos players are discovered automatically.",
+  },
+  {
+    icon: "play",
+    title: "Press play",
+    text: "Choose a speaker and press play. Your library may take a few minutes to appear.",
+  },
+];
+---
+
+<MarketingLayout
+  title="Install Music Assistant"
+  description="Install Music Assistant on Home Assistant or with Docker, then connect your music and speakers."
+>
+  <div class="container page">
+    <p class="eyebrow">
+      <b>●</b> Soundcheck
+    </p>
+    <header class="heading">
+      <h1>Install Music Assistant</h1>
+      <p>Choose where Music Assistant will run.</p>
+    </header>
+
+    <nav class="picker" data-install-picker aria-label="Installation method">
+      {methods.map((method) => (
+        <a id={`tab-${method.id}`} href={`#${method.id}`}>
+          <span class="picker-icon">
+            <Icon name={method.icon} size={22} />
+          </span>
+          <span>
+            <strong>{method.title}</strong>
+            <span>{method.text}</span>
+          </span>
+        </a>
+      ))}
+    </nav>
+
+    <section id="home-assistant" class="method">
+      <div class="method-intro">
+        <span class="chip">Recommended</span>
+        <h2>Install the Home Assistant app</h2>
+        <p>
+          Music Assistant runs alongside Home Assistant on Home Assistant OS.
+        </p>
+      </div>
+      <Steps>
+        <Step title="Open the App store">
+          <p>
+            In Home Assistant, go to{" "}
+            <strong>Settings → Apps → App store</strong>.
+          </p>
+        </Step>
+        <Step title="Install Music Assistant">
+          <p>
+            Search for <strong>Music Assistant</strong>, open it, and choose{" "}
+            <strong>Install</strong>.
+          </p>
+        </Step>
+        <Step title="Start the app">
+          <p>
+            When installation finishes, start Music Assistant and select{" "}
+            <strong>Open Web UI</strong>.
+          </p>
+        </Step>
+        <Step title="Optional: add the integration">
+          <p>
+            Add the{" "}
+            <a class="text-link" href="/integration/installation/">
+              Music Assistant integration
+            </a>{" "}
+            to control players from Home Assistant dashboards, automations and
+            voice.
+          </p>
+        </Step>
+      </Steps>
+    </section>
+
+    <section id="docker" class="method">
+      <div class="method-intro">
+        <h2>Install with Docker Compose</h2>
+        <p>
+          Use Docker when Music Assistant will run on another always-on Linux
+          system. Host networking is required so it can find and stream to your
+          players.
+        </p>
+      </div>
+      <Steps>
+        <Step title="Create a Compose file">
+          <p>
+            Save this as <strong>compose.yaml</strong>. Uncomment the music
+            volume and change its path if you want to include local files.
+          </p>
+          <CodeBlock id="compose-code" title="compose.yaml" code={compose} />
+        </Step>
+        <Step title="Start Music Assistant">
+          <p>Run this from the folder containing your Compose file.</p>
+          <CodeBlock
+            id="start-code"
+            title="Terminal"
+            code="docker compose up -d"
+          />
+        </Step>
+        <Step title="Open Music Assistant">
+          <p>
+            Visit <strong>http://YOUR_MA_IP_ADDRESS:8095</strong> in your
+            browser.
+          </p>
+          <div class="note">
+            <Icon name="wifi" size={18} />
+            <p>
+              <strong>Players not appearing?</strong> Check that Music Assistant
+              and your speakers are on the same local network.
+            </p>
+          </div>
+        </Step>
+      </Steps>
+    </section>
+
+    <section class="next" aria-labelledby="next-title">
+      <h2 id="next-title">Once you’re in</h2>
+      <ul>
+        {nextSteps.map((item) => (
+          <li>
+            <span class="next-icon">
+              <Icon name={item.icon} size={22} />
+            </span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <aside class="help">
+      <div>
+        <h2>Need a hand?</h2>
+        <p>
+          Find help with networking, storage and troubleshooting in the
+          installation guide.
+        </p>
+      </div>
+      <a class="text-link" href="/installation/">
+        Read the installation docs <Icon name="arrow-right" size={16} />
+      </a>
+    </aside>
+  </div>
+</MarketingLayout>
+
+<style>
+  .page {
+    max-width: 62rem;
+    padding-block: clamp(3rem, 7vw, 5rem) var(--section);
+  }
+  .heading {
+    margin-bottom: 2.5rem;
+  }
+  .heading h1 {
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+  }
+  .heading p {
+    color: var(--muted);
+    font-size: 1.25rem;
+  }
+
+  .picker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .picker a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--card);
+    color: var(--muted);
+    text-decoration: none;
+    transition:
+      border-color 0.15s,
+      color 0.15s;
+  }
+  .picker a:hover {
+    color: var(--fg);
+    border-color: color-mix(in srgb, var(--fg) 30%, transparent);
+  }
+  .picker a[aria-selected="true"] {
+    color: var(--fg);
+    border-color: var(--accent);
+    box-shadow: inset 0 0 0 1px var(--accent);
+  }
+  .picker a > span:last-child {
+    display: grid;
+    line-height: 1.3;
+  }
+  .picker strong {
+    color: var(--fg);
+    font-size: 1.0625rem;
+    font-weight: 600;
+  }
+  .picker a > span:last-child > span {
+    font-size: 0.9375rem;
+  }
+  .picker-icon {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+  }
+  .picker a[aria-selected="true"] .picker-icon {
+    color: var(--on-accent);
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .method {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: 2.5rem;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--card);
+  }
+  .method + .method {
+    margin-top: 1.5rem;
+  }
+  :global(.js) .method[hidden] {
+    display: none;
+  }
+  .method-intro h2 {
+    font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+  }
+  .method-intro p {
+    color: var(--muted);
+  }
+  .chip {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.25rem 0.625rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    color: var(--link);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+  }
+  .note {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding: 0.875rem 1rem;
+    border-left: 2px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, transparent);
+  }
+  .note :global(.icon) {
+    flex: none;
+    margin-top: 0.1875rem;
+    color: var(--link);
+  }
+
+  .next {
+    margin-top: 4.5rem;
+  }
+  .next h2 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+  }
+  .next ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .next li {
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--card);
+  }
+  .next-icon {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--link);
+  }
+  .next h3 {
+    margin-bottom: 0.375rem;
+    font-size: 1.125rem;
+  }
+  .next p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .help {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-top: 1rem;
+    padding: 1.5rem 1.75rem;
+    border: 1px dashed var(--line);
+    border-radius: 0.75rem;
+  }
+  .help h2 {
+    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+  }
+  .help p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    .method,
+    .next ul {
+      grid-template-columns: 1fr;
+    }
+    .method {
+      gap: 1.5rem;
+    }
+  }
+  @media (max-width: 520px) {
+    .picker {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

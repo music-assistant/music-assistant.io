@@ -1,0 +1,75 @@
+---
+import BlogCard from "../../components/marketing/BlogCard.astro";
+import Icon from "../../components/marketing/ui/Icon.astro";
+import MarketingLayout from "../../layouts/MarketingLayout.astro";
+import { getPosts } from "../../utils/blog";
+
+const [featured, ...posts] = await getPosts();
+---
+
+<MarketingLayout
+  title="Blog — Music Assistant"
+  description="Releases, project news and stories from the Music Assistant community."
+>
+  <div class="container page">
+    <header class="heading">
+      <div>
+        <p class="eyebrow">
+          <b>●</b> News from the road
+        </p>
+        <h1>Blog</h1>
+        <p>
+          Releases, project news and stories from the Music Assistant community.
+        </p>
+      </div>
+      <a class="text-link" href="/blog/rss.xml">
+        <Icon name="rss" size={16} /> Subscribe via RSS
+      </a>
+    </header>
+    {featured && <BlogCard post={featured} featured />}
+    <div class="grid">
+      {posts.map((post) => (
+        <BlogCard post={post} />
+      ))}
+    </div>
+  </div>
+</MarketingLayout>
+
+<style>
+  .page {
+    padding-block: clamp(3rem, 7vw, 5rem) var(--section);
+  }
+  .heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .heading h1 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+  }
+  .heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.125rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  @media (max-width: 1000px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

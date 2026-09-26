@@ -1,0 +1,121 @@
+---
+import AppWindow from "../marketing/ui/AppWindow.astro";
+import Button from "../marketing/ui/Button.astro";
+---
+
+<section class="hero tone-base" aria-labelledby="hero-title">
+  <div class="container">
+    <h1 id="hero-title">
+      <span>Your music.</span>
+      <span class="way">Your way.</span>
+    </h1>
+
+    <div class="intro">
+      <p class="lead">
+        Bring your streaming services and your own files into one library, and
+        play them on almost any speaker in your home.
+      </p>
+      <div class="actions">
+        <Button href="/get-started/" size="lg" trailingIcon="arrow-right">
+          Get Music Assistant
+        </Button>
+        <Button href="#how-it-works" variant="secondary" size="lg">
+          How it works
+        </Button>
+      </div>
+    </div>
+
+    <div class="product">
+      <AppWindow
+        src="/assets/landing/discover-dark.webp"
+        srcLight="/assets/landing/discover-light.webp"
+        alt="Music Assistant's Discover screen: speakers playing in different rooms, top picks and recently played music"
+        width={2400}
+        height={1500}
+        eager
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(4rem, 8vw, 6rem);
+    isolation: isolate;
+  }
+  /* Behind the product, colour bleeds out like light through album art:
+     a few cover hues drifting slowly. */
+  .hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    bottom: -8%;
+    width: min(1300px, 140%);
+    height: 72%;
+    background:
+      radial-gradient(
+        35% 45% at 25% 55%,
+        rgba(157, 78, 221, 0.35),
+        transparent 70%
+      ),
+      radial-gradient(
+        30% 40% at 55% 40%,
+        rgba(255, 122, 24, 0.28),
+        transparent 70%
+      ),
+      radial-gradient(
+        30% 45% at 78% 60%,
+        rgba(24, 188, 242, 0.3),
+        transparent 70%
+      ),
+      radial-gradient(
+        25% 35% at 45% 80%,
+        rgba(255, 0, 110, 0.2),
+        transparent 70%
+      );
+    filter: blur(30px);
+    transform: translateX(-50%);
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+  @keyframes drift {
+    to {
+      transform: translateX(-47%) scale(1.06);
+      filter: blur(30px) hue-rotate(25deg);
+    }
+  }
+  h1 {
+    margin: 0;
+  }
+  h1 span {
+    display: block;
+  }
+  .way {
+    color: var(--accent);
+  }
+  .intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+  .lead {
+    max-width: 32rem;
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(1.1875rem, 1.8vw, 1.375rem);
+    line-height: 1.5;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .product {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+  }
+</style>
