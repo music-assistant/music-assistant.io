@@ -23,6 +23,8 @@ The dialog shown above appears when clicking on a username or via the ⋮ menu.
 
 Each user can be restricted to a specific set of players. Restricted users automatically gain access to any new browser window, desktop app, or mobile companion app player(s) linked to their profile. Which music sources a user can use is not set here. Each music source has an owner and a sharing setting instead, described below.
 
+What a user sees the first time they sign in is covered under [First Run](/first-run/#the-first-time-a-user-signs-in).
+
 ## Roles
 
 Every user has a role, and the role decides what they can do. A new user gets the User role unless you pick another. The **Roles** tab lists the built-in roles and, under **Custom roles**, any role you make yourself.
@@ -57,18 +59,6 @@ When you change someone's role, or change what a role allows, the app of everyon
 The Home Assistant integration signs in with an account of its own, shown with a **System** badge and the **Service** role. Its username, role and password are fixed, and it cannot be disabled or deleted. Its display name, avatar, player restriction and access tokens work like any other user's.
 
 The Service role can do what the User role can, and it can also see the other users, change player settings and act on behalf of other users. It cannot own a music source, although a music source can be shared with it.
-
-## The first time someone signs in
-
-The first time a user signs in, a short welcome opens over the app. Administrators never see it. The one setting the server up gets the [setup wizard](/first-run/) instead, and an administrator added later gets nothing and can run that wizard from the settings. Guests get neither.
-
-- <b>Make yourself at home.</b> <b>Standard</b> keeps the interface clean, <b>Expert</b> shows advanced options and extra details. It only sets a few defaults, and every setting stays theirs to change
-- <b>Your players.</b> The players they can send music to
-- <b>What you can listen to.</b> The music sources they can use
-- <b>Connect your own accounts.</b> Only when their role lets them add music sources. They can add one there or move on and do it later
-- <b>You're all set.</b> A summary, and the offer of a short [tour of the app](/ui/#take-a-tour)
-
-They can close the welcome at any point, and it does not open again by itself. It only opens on its own in the first week after the account is made, so someone who signs in later never sees it. Anyone but a guest can go through it again from **Show the welcome again** at the bottom of the settings.
 
 ## Personal and shared music sources
 

@@ -27,6 +27,17 @@ The administrator setting the server up is taken through a setup wizard, which o
 - <b>Add users.</b> Everyone in your home can have an account of their own. See [user management](/settings/user-management/)
 - <b>Finish setup.</b> A recap of what is set up and what is still to do, with a way back to each step you left, and the offer of a [short tour of the app](/ui/#take-a-tour)
 
-To go through it again, select **Run the setup wizard again** at the bottom of the settings.
+To go through it again, select **Run the setup wizard again** at the bottom of the settings. An administrator added later gets neither the wizard nor the welcome below, and starts the wizard the same way.
 
-Everyone else, guests aside, gets [a short welcome](/settings/user-management/#the-first-time-someone-signs-in) the first time they sign in rather than this wizard.
+## The first time a user signs in
+
+Everyone who is not an administrator gets a short welcome over the app instead of this wizard. Guests get neither.
+
+- <b>Make yourself at home.</b> <b>Standard</b> keeps the interface clean, <b>Expert</b> shows advanced options and extra details. It only sets a few defaults, and every setting stays theirs to change
+- <b>Your players.</b> The players they can send music to
+- <b>What you can listen to.</b> The music sources they can use
+- <b>Connect your own accounts.</b> Only when their role lets them add music sources. They can add one there or move on and do it later
+- <b>You're all set.</b> A summary, and the offer of a short [tour of the app](/ui/#take-a-tour)
+
+They can close the welcome at any point, and it does not open again by itself. It only opens on its own in the first week after the account is made, so someone who signs in later never sees it. Anyone but a guest can go through it again from **Show the welcome again** at the bottom of the settings.
+
