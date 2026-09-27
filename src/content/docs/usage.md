@@ -36,9 +36,19 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
 
 In order to make all available content accessible in a digestible manner many of the expandable views are filtered by provider. The open box icon is shown when a section is expanded and indicates that multiple providers can populate the section. Note only one can be selected at any one time. In the screenshot above "All albums" is collapsed, so the provider selection icon is not shown. Immediately below is the "Top tracks" section which is expanded and does show the icon. In both cases the currently selected provider is shown on the left side. 
 
-**Favorites**
+### Favorites and dislikes
 
-As a further means of filtering the library, you can mark items as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favorited by default when imported from the music source is determined by the [source settings](/music-providers/). All items can be seen if the heart icon is deselected in the top menu.
+Favorites are personal. Every user has their own favorites and dislikes and only ever sees their own. The library itself, play counts and listening history are shared by everyone.
+
+The heart on an item, in a list, on its page or in the player bar, shows where you stand: filled when the item is a favorite of yours, an outline when you have not said anything, and a thumbs-down in its place when you dislike it. Select it for a small menu with **Add to favorites** or **Remove from favorites**, **Dislike** or **Remove dislike**, and **Add to playlist**. The heart at the top of a library view narrows the view to your favorites. Deselect it to see everything.
+
+A track you dislike stays out of the music Music Assistant picks for you: radio mode, autoplay, dynamic playlists and mixes. You can still play it yourself, from an album, a playlist or the queue. A dislike on an artist or album is remembered but does not affect playback yet.
+
+A favorite adds the item to the library, and to your own streaming accounts when the service keeps a library of its own. A dislike adds nothing. An item that is not in the library yet stays out of it, and out of every account.
+
+Music Assistant writes your favorites and dislikes to your own accounts and to sources that have no owner, never to another user's personal source. Apple Music, Plex and Subsonic take both the favorite and the dislike. YouTube Music does not take the dislike yet. What a streaming source marks as a favorite arrives as one for the owner of that source, or for everyone when the source has no owner.
+
+The favorites you had before this version are kept. Each becomes a favorite for the users whose accounts hold the item, and for everyone when it comes from a source that has no owner.
 
 ## The Queue
 
@@ -106,7 +116,7 @@ Automatically generated playlists from streaming sources may be supported. See t
 
 MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in [**Settings → System → Background tasks**](/settings/core/#background-tasks) or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting **Refresh item**.
 
-There are also two pseudo-playlists, the Infinite Mixes (one based on the whole library and one on the favorites). Viewing these playlists shows no tracks; playing one results in an endless queue where 25 random tracks are added and refreshed as the queue comes to an end.
+There are also two pseudo-playlists, the Infinite Mixes (one based on the whole library and one on your favorites). Viewing these playlists shows no tracks; playing one results in an endless queue where 25 random tracks are added and refreshed as the queue comes to an end.
 
 ### Playlist Artwork
 
