@@ -38,7 +38,7 @@ In order to make all available content accessible in a digestible manner many of
 
 ### Favorites and dislikes
 
-Favorites are personal. Every user has their own favorites and dislikes and only ever sees their own. The library itself, play counts and listening history are shared by everyone.
+Favorites are personal. Every user has their own favorites and dislikes and only ever sees their own. The library itself is shared by everyone.
 
 The heart on an item, in a list, on its page or in the player bar, shows where you stand: filled when the item is a favorite of yours, an outline when you have not said anything, and a thumbs-down in its place when you dislike it. Select it for a small menu with **Add to favorites** or **Remove from favorites**, **Dislike** or **Remove dislike**, and **Add to playlist**. The heart at the top of a library view narrows the view to your favorites. Deselect it to see everything.
 
