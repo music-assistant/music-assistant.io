@@ -49,6 +49,10 @@ To set up the Yoto provider, follow these steps:
      - offline_access
 4. Once the application is created, you will be shown the Client ID. Paste the Client ID into the setup form.
 
+## Known Issues / Notes
+
+- Podcast transcripts are not available
+
 ## Not Yet Supported
 
 - Browsing capabilities - Album/Podcast/Audiobook/Radio view is supported for each card, discovery and browsing outside of the existing library is not supported. Finding cards by other criteria requires Music Assistant's Search feature.

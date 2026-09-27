@@ -45,7 +45,7 @@ Login to the ARD Sounds app, if syncing is required
 
 ## Known Issues / Notes
 
-- Nil
+- Podcast transcripts are not available
 
 ## Not Yet Supported
 

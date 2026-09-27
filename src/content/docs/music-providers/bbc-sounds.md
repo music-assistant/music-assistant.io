@@ -49,6 +49,8 @@ The provider works without a login, but you will be restricted to a basic versio
 
 ## Known Issues / Notes
 
+- Podcast transcripts are not available
+
 The full functionality is enabled when you are a UK-based listener, and signed in to your BBC account. The BBC has slowly been moving towards excluding non-UK listeners from using its Sounds platform, more details <a href="https://www.bbc.co.uk/sounds/help/questions/listening-outside-the-uk/outside-uk-changes" target="_blank" rel="noopener noreferrer">here</a>. This provider currently allows access to live and catch up radio to International listeners via the Sounds API, but this could be restricted in the future.
 
 ## Not Yet Supported

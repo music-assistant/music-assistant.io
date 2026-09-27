@@ -177,6 +177,7 @@ In addition to the settings outlined above to configure this source, there are a
     - Folders commencing with an underscore will be ignored
     - Music Assistant requires all file and folder names to be valid UTF-8. Files with non-UTF-8 characters in their names will be skipped during library sync and a warning will be logged identifying the affected file. This most commonly affects files originally tagged or named on Windows using legacy encodings such as Windows-1252, where characters like curly quotes or accented letters may have been written as non-UTF-8 bytes
     - Emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
+- Podcast transcripts are not available
  
 ## Organising Your Files
 

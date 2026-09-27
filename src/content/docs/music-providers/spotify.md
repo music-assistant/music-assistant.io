@@ -148,3 +148,4 @@ Crossfade is not set here — enable it for the player as usual, and it works th
 - When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
 - Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
 - Spotify does not tell Music Assistant what genre anything is
+- Podcast transcripts are not available

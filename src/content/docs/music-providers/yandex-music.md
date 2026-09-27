@@ -93,3 +93,4 @@ Note that a token pasted this way will expire and have to be replaced by hand.
 - A token pasted in by hand expires and has to be replaced. Signing in with a code or a QR code avoids this
 - Lossless FLAC requires an active Yandex Music Plus subscription. Without one, Yandex Music plays at the highest quality your account allows
 - Tracks played through Music Assistant do **not** show up in your Yandex listening history. If you want them to, play through the Yandex app itself, or add the [Yandex Music Connect (Ynison)](/plugins/yandex-ynison/) plugin
+- Podcast transcripts are not available

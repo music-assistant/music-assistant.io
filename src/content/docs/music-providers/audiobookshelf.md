@@ -119,6 +119,7 @@ user please refer to [user management](/settings/user-management/#filter-progres
 - For audiobooks made up of several files, Music Assistant shows the format as PCM rather than the format the files are actually in. The audio itself is unaffected
 - Tested currently against ABS >= 2.19.0
 - In the first instance of any problems ensure the server is running the <a href="https://github.com/advplyr/audiobookshelf/releases" target="_blank" rel="noopener noreferrer">latest version of the audiobookshelf software</a>
+- Podcast transcripts are not available
 
 ## Not Yet Supported
 
