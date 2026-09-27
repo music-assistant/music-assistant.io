@@ -159,9 +159,9 @@ The album section has an additional filter option. You can choose to filter by o
 
 Expanding the IMAGES section (only visible to users with the Administrators role) allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select UPDATE METADATA. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
 
-### Provider Details
+### Source Details
 
-The PROVIDER DETAILS section (read only for other than users with the Administrator role) shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new provider does not trigger linking across existing library items.
+The SOURCE DETAILS section (read only for other than users with the Administrator role) shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new provider does not trigger linking across existing library items.
 
 When an item is available from several providers, Music Assistant picks the highest quality one at playback time. See [Stream Selection](/faq/tech-info/#stream-selection) for how that choice is made.
 
@@ -176,7 +176,7 @@ The ID shown against the streaming provider may be used in automations and scrip
 [![image](/assets/screenshots/UI-track-show-info.png)](/assets/screenshots/UI-track-show-info.png)
 
 > [!NOTE]
-> The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
+> The SOURCE DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
 
 ## View - Audiobooks
 The audiobooks view shows available audiobooks in your library.
