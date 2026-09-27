@@ -42,11 +42,11 @@ Favorites are personal. Every user has their own favorites and dislikes and only
 
 The heart on an item, in a list, on its page or in the player bar, shows where you stand: filled when the item is a favorite of yours, an outline when you have not said anything, and a thumbs-down in its place when you dislike it. Select it for a small menu with **Add to favorites** or **Remove from favorites**, **Dislike** or **Remove dislike**, and **Add to playlist**. The heart at the top of a library view narrows the view to your favorites. Deselect it to see everything.
 
-A track you dislike stays out of the music Music Assistant picks for you: [Endless Mix](#endless-mix), Autoplay, the Infinite Mixes and other dynamic playlists. You can still play it yourself, from an album, a playlist or the queue. A dislike on an artist or album is remembered but does not affect playback yet.
+A track you dislike stays out of the music Music Assistant picks for you: [Endless Mix](#endless-mix), Autoplay, the Infinite Mixes and other dynamic playlists. You can still play it yourself, from an album, a playlist or the queue. A dislike on an artist or album is remembered but does not affect what is picked for you.
 
 A favorite adds the item to the library, and to your own streaming accounts when the service keeps a library of its own. A dislike adds nothing. An item that is not in the library yet stays out of it, and out of every account.
 
-Music Assistant writes your favorites and dislikes to your own accounts and to sources that have no owner, never to another user's personal source. Apple Music, Plex and Subsonic take both the favorite and the dislike. YouTube Music does not take the dislike yet. What a streaming source marks as a favorite arrives as one for the owner of that source, or for everyone when the source has no owner.
+Music Assistant writes your favorites and dislikes to your own accounts and to sources that have no owner, never to another user's personal source. Some services, such as Apple Music, Plex and Subsonic, take both the favorite and the dislike. What a streaming source marks as a favorite arrives as one for the owner of that source, or for everyone when the source has no owner.
 
 The favorites you had before this version are kept. Each becomes a favorite for the users whose accounts hold the item, and for everyone when it comes from a source that has no owner.
 
