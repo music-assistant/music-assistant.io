@@ -48,8 +48,6 @@ A favorite adds the item to the library, and to your own streaming accounts when
 
 Music Assistant writes your favorites and dislikes to your own accounts and to sources that have no owner, never to another user's personal source. Some services, such as Apple Music, Plex and Subsonic, take both the favorite and the dislike. What a streaming source marks as a favorite arrives as one for the owner of that source, or for everyone when the source has no owner.
 
-The favorites you had before this version are kept. Each becomes a favorite for the users whose accounts hold the item, and for everyone when it comes from a source that has no owner.
-
 ## The Queue
 
 Each player has its own queue. View the queue by pressing the ![Preview image](/assets/icons/queue-button.png) button. This button can be found on the player bar at the bottom of the UI or, for narrow displays, in the NOW PLAYING view.
