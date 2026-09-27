@@ -120,15 +120,22 @@ Four things, and the build will tell you if you miss the last one.
 
 ### Country categories
 
-**Tag a country only when the source's content is predominantly or only from that country.** Not
-where the company is registered, and not where it sells. Deezer and Qobuz are French companies
-with international catalogues, so neither is tagged France. Sveriges Radio broadcasts in Swedish,
-so it is tagged Sweden.
+**These are here so that a reader in a given country can find the sources aimed at them.** That is
+the test to apply, and it is a judgement call rather than a hard rule, so tag what you think
+somebody there would be looking for and marginal ones get sorted out in review.
 
-This is why the large international services carry no country tag at all. A source can be tagged
-with more than one country where that genuinely holds.
+Sveriges Radio broadcasts in Swedish, so it is tagged Sweden. Pandora plays the same
+international music as everyone else but can only be used in the United States, so it is tagged
+United States. Storytel sells across much of Europe and is tagged with the two countries it
+started in. A source can carry more than one country tag where each genuinely holds.
 
-**If the language you need is not on the list, add it.** Three small pieces, in
+What does not count is where the company is registered, or selling into a country without being
+aimed at it. Deezer and Qobuz are French with international catalogues, and SomaFM broadcasts
+from California to anyone who wants to listen, so none of them are tagged. SiriusXM is tagged
+United States and not Canada, because Canadian subscribers get mostly the American lineup. This
+is why the large international services carry no country tag at all.
+
+**If the country you need is not on the list, add it.** Three small pieces, in
 `src/data/music-sources.ts` unless stated:
 
 1. Add the id to the `CategoryId` list at the top of the file.
@@ -140,8 +147,8 @@ with more than one country where that genuinely holds.
    [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:SVG_flags_by_country), where
    every national flag is available as an SVG, or from the MIT licensed
    [flag-icons](https://flagicons.lipis.dev/) set. Prefer a plain one over a highly detailed
-   version: the existing flags are a few hundred bytes each and are only shown about 34 pixels
-   tall. Keep it a similar shape to the ones already there, which are all wider than they are
+   version: the existing flags run from a couple of hundred bytes to about two kilobytes, and are
+   only shown about 34 pixels tall. Keep it a similar shape to the ones already there, which are all wider than they are
    tall and mostly close to 3:2. Check it looks right against its neighbours on the built
    page rather than measuring it; the page draws the border for you.
 
@@ -149,7 +156,7 @@ Then tag your source with it. The build fails if the flag file is missing, and a
 exists that no source uses, so all three have to land together.
 
 Do not worry about getting the flag or the wording exactly right. It will be looked at in review,
-and a rough one is much better than leaving your source out of a language its listeners search
+and a rough one is much better than leaving your source out of a country its listeners search
 for. If you cannot find a flag at all, add the category without one, say so on the pull request
 and somebody will sort it out.
 
@@ -284,18 +291,59 @@ the column has room for the whole word, and becomes a hyphen and a line break wh
 
 ## Adding a plugin, metadata provider or audio analysis provider
 
-These do not follow a fixed structure, so there is no template to match and nothing to register
+These do not follow a fixed structure, so there is no template to match and little to register
 beyond the page itself:
 
 1. **The page**, under `src/content/docs/plugins/`, `src/content/docs/metadata-providers/` or
    `src/content/docs/audio-analysis/`.
 2. **The sidebar entry**, in the matching group in `astro.config.mjs`.
+3. **For a plugin, a `pluginGroup` in the page's frontmatter**, which puts it in the list at the
+   bottom of the [Plugins overview](https://music-assistant.io/plugins/#all-plugins):
 
-There are no tiles for these, so nothing fails the build if you forget something. Copy whichever
-existing page is closest in kind to yours and follow its shape. Most open with a heading and
-icon, an attribution line, a short `## Features` list and a `## Configuration` section, but the
-detail varies from page to page and that is fine. The [House style](#house-style) and
-[Icons](#icons) notes below still apply.
+   ```yaml
+   pluginGroup: discover
+   ```
+
+   The list shows the page's own `title` and `description`, so nothing is written twice. That
+   makes the description worth a moment: it is the one line a reader gets before deciding whether
+   to open the page, as well as the summary search engines show. One sentence on what the plugin
+   does, not "Features and notes for the Example plugin".
+
+   **The build fails if a page in the plugins folder has no group, or has a group but no
+   description.** It also names the valid groups if you use one that does not exist. They are:
+
+   | Group | Heading on the page |
+   |:--|:--|
+   | `discover` | Finding something to play |
+   | `incoming` | Playing to Music Assistant from something else |
+   | `shared` | Listening with other people |
+   | `visuals` | Enhancing with lights and visuals |
+   | `scrobbling` | Reporting what you played |
+   | `other-systems` | Connecting to other systems |
+   | `diagnostics` | Diagnostics |
+
+There are no tiles for these, and for a metadata or audio analysis provider nothing fails the
+build if you forget something. Copy whichever existing page is closest in kind to yours and
+follow its shape. Most open with a heading and icon, an attribution line, a short `## Features`
+list and a `## Configuration` section, but the detail varies from page to page and that is fine.
+The [House style](#house-style) and [Icons](#icons) notes below still apply.
+
+### When none of the groups fit
+
+**Add one**, rather than forcing a plugin into a group it does not belong in. Add it to
+`PLUGIN_GROUPS` in `src/content.config.ts`, in the position where it should appear on the page,
+then tag your plugin with it:
+
+```ts
+{ id: 'visuals', title: 'Enhancing with lights and visuals' },
+```
+
+The `id` is what pages carry and is never shown. The `title` is the heading readers see, so write
+it as a few words saying what the plugins under it are for. A group nothing uses is left off the
+page rather than shown as an empty heading.
+
+Do not worry about getting the wording exactly right. It will be looked at in review, and a rough
+group is much better than a plugin filed somewhere a reader would not look for it.
 
 ## House style
 

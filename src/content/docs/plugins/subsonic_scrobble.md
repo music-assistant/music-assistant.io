@@ -1,6 +1,7 @@
 ---
 title: Subsonic Scrobbler Plugin
-description: Scrobbles playback to a Subsonic media server
+description: Report what you play to a Subsonic media server, so its play counts and history stay right.
+pluginGroup: scrobbling
 ---
 
 # Subsonic Scrobbler <img src="/assets/icons/subsonic_icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

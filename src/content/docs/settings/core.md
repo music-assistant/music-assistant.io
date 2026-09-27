@@ -50,7 +50,9 @@ Additionally, there are options which can be set on a global level which can be 
 
 Smart Shuffle enhances standard shuffle behavior by intelligently reducing repetition. Instead of selecting tracks purely at random, songs and artists that have been played recently are deprioritized, resulting in a more evenly distributed listening experience and reducing the likelihood of the same tracks being repeated when playlists are replayed. Smart Shuffle is always applied when playing a dynamic playlist, regardless of this setting.
 
-Autoplay has four options as follows:
+**Optimize order for Smart Fades** is an optional Smart Shuffle setting. When Smart crossfade is active, Music Assistant uses existing Smart Fades analysis to arrange upcoming tracks so Smart Fades has a better chance of creating a smooth transition between consecutive tracks. It considers tempo, musical key and how the energy changes from the end of one track to the start of the next. Songs and artists played recently are still deprioritized according to the Smart Shuffle settings. No new analysis is started for this, and tracks without analysis are neither preferred nor penalized. Smart Fades still decides how the actual transition is mixed when the tracks play.
+
+A setting is available to enable Autoplay by default on all queues. Then Autoplay itself has four options as follows:
 - <b>Automatic — similar tracks, falling back to your library (default).</b> New tracks similar to what was recently played are requested from the music providers. If no provider is able to supply similar-track recommendations (for example, when only local files are used), an endless mix drawn from the library is used instead, so playback will not stop
 
 - <b>Similar to what you played.</b> Tracks that resemble the most recently played items in the queue are fetched from the connected music providers and appended to the queue. This mode relies on a provider that offers similar-track recommendations; if none is available, no tracks are added
@@ -59,7 +61,7 @@ Autoplay has four options as follows:
 
 - <b>Tracks from a playlist.</b> The playlist the user has selected in the box below will be played
 
-Crossfade can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/) is the default. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. This is the only place that the standard crossfade duration can be set.
+Crossfade can be enabled or disabled by default on all queues via a setting here and also can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/) is the default. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. This is the only place that the standard crossfade duration can be set.
 
 [Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items and sources. The target level is set in the [Streams Queue Playback Settings](#queue-playback)
 
@@ -73,7 +75,7 @@ All settings in this section should be considered advanced and will not need to 
 
 This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual queue basis](/usage/#the-queue). There are two of these settings, one for tracks, one for radio, and you set them independently.
 
-The best result comes from a loudness measurement of the audio. Music Assistant measures your local library automatically in a nightly background scan, and it measures everything, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before that measurement exists:
+The best result comes from a loudness measurement of the audio. Tracks tagged with ReplayGain or R128 loudness values supply one directly, and Music Assistant uses those in preference to measuring anything itself. Everything else it measures on its own: your local library automatically in a nightly background scan, and anything played, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before a value exists:
 
 - Fallback Dynamic (default) — use the measurement when there is one, otherwise adjust loudness on the fly. Always evens things out; the on-the-fly path is slightly less precise
 - Fallback Fixed Gain — use the measurement when there is one, otherwise apply the fixed adjustment below
@@ -82,7 +84,7 @@ The best result comes from a loudness measurement of the audio. Music Assistant 
 - Fixed Gain — never analyse; apply the same fixed adjustment to everything
 - Disabled — leave loudness untouched
 
-Two things worth knowing: live radio is rarely measured, so the radio setting in practice runs on whichever fallback you choose; and volume normalization also has to be switched on for the player itself — these settings control how it's done, not whether.
+Once a measurement exists it is used, whichever of the two fallback options is selected. Two other things are worth knowing: live radio is rarely measured, so the radio setting in practice runs on whichever fallback you choose, and volume normalization also has to be switched on for the player itself. These settings control how it's done, not whether. How the value is chosen, and when album gain is used instead of track gain, is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 
 Fixed/fallback gain adjustment — tracks / radio
 
@@ -106,11 +108,16 @@ How much to raise or lower the volume, in dB, whenever the fixed-gain path is us
 
 ## Webserver
 
-- <b>Allow User Self-Registration.</b> Allows users to create accounts via Home Assistant OAuth
-- <b>Base URL.</b> The (base) URL used to reach the web UI and API on the network. Leave this on auto unless you have a reason not to. Music Assistant works out the address itself from the server's IP address and the port set below. Set it manually only when clients need to reach Music Assistant at a different address than the server sees, behind a [reverse proxy](/faq/networking/#the-jargon-translated), for example. In that case enter the full address including the port, such as https://music.example.com:8123. The port field below is separate and still applies as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Base URL 
-- <b>TCP Port.</b> The port that the webserver is to be run on. If this setting is changed then ensure the base URL port is changed as well
-- <b> Enable SSL/TLS.</b> When enabled two additional fields are revealed which is where the `SSL Certificate` and `SSL Private Key` are added (both must be in PEM format)
-- <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. For further information see the help for this setting in the MA UI
+- <b>Server Name.</b> The name of this Music Assistant instance, shown in the UI and announced on the network. Useful when you run more than one server. Clear the field to restore the default name
+- <b>Allow User Self-Registration.</b> Allows users to create accounts by logging in with Home Assistant. Only appears when the Home Assistant plugin is added in Music Assistant, since the login goes through your HA instance
+
+The settings below are advanced and only appear when advanced settings are enabled in the UI
+
+- <b>Internal URL.</b> The address devices and apps on your local network use to reach the web UI and API. Leave this on `auto` unless you have a reason not to. Music Assistant works the address out itself from the server's IP address and the TCP port below. Set it manually only when clients need to reach Music Assistant at a different address than the server sees, behind a reverse proxy, for example. In that case enter the full address including the port, such as `https://music.example.com:443`. The TCP Port field is separate and still applies, as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Internal URL
+- <b>External URL.</b> The address Music Assistant can be reached at from outside your local network, for example through a reverse proxy. Leave empty if your server isn't reachable from the internet
+- <b>TCP Port.</b> The port the webserver runs on (default `8095`). If you change it, and you set the Internal URL manually, change the port there as well
+- <b> Enable SSL/TLS.</b> Serves the web UI and API over HTTPS. When enabled, two additional fields are revealed for the `SSL Certificate` and `SSL Private Key`. Both must be PEM format, and you can either paste the file contents or enter an absolute path (e.g. `/ssl/fullchain.pem`). RSA and ECDSA are both supported and the private key must be unencrypted. Use the `Verify` button to check the certificate and key are valid and match. If the certificate can't be loaded, the webserver keeps running unencrypted and shows a warning
+- <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. The default `0.0.0.0` binds to all interfaces (IPv4 and IPv6). Change this only in setups such as binding to a docker-internal network behind a reverse proxy
 
 ## Diagnostics
 

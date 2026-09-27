@@ -1,6 +1,7 @@
 ---
 title: Smart Playlists
 description: Create dynamic playlists based on rules from your library or from music discovered via seed tracks, artists, albums, or playlists.
+pluginGroup: discover
 ---
 
 # Smart Playlists

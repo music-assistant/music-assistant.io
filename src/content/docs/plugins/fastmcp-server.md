@@ -1,6 +1,7 @@
 ---
 title: FastMCP Server Plugin
-description: Features and Notes for the FastMCP Server Plugin
+description: Offer your library, queue and players over the Model Context Protocol, so an AI assistant can search and control them.
+pluginGroup: other-systems
 ---
 
 # FastMCP Server <img src="/assets/icons/fastmcp-server-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

@@ -4,7 +4,7 @@ title: "Bandcamp"
 
 # Bandcamp Music <img src="/assets/icons/bandcamp.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua](https://github.com/ALERTua)
+Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua](https://github.com/ALERTua) and [teancom](https://github.com/teancom)
 
 Bandcamp is a shop and streaming site where artists and labels publish their own music and sell it directly to listeners. Most of the catalogue can be streamed for free before you decide to buy.
 
@@ -19,19 +19,19 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 
 ## Features
 
-|                                                 |                         |
-|:------------------------------------------------|:-----------------------:|
-| Subscription FREE                               |           Yes           |
-| Self-Hosted Local Media                         |           No            |
-| Media Types Supported                           | Artists, Albums, Tracks |
+|                                                   |                         |
+|:--------------------------------------------------|:-----------------------:|
+| Subscription FREE                                 |           Yes           |
+| Self-Hosted Local Media                           |           No            |
+| Media Types Supported                             | Artists, Albums, Tracks |
 | [Recommendations](/ui/#view---discover) Supported |           No            |
-| Lyrics Supported                                |           Yes           |
-| [Endless Mix](/ui/#track-menu)              |           No            |
-| Artist Top Tracks Support                       |            Yes                     |
-| Similar Artists Support                         |            No                      |
-| Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality                          | MP3 128kbps |
-| Login Method                                    |    Cookie (optional)    |
+| Lyrics Supported                                  |           Yes           |
+| [Endless Mix](/ui/#track-menu)                    |           No            |
+| Artist Top Tracks Support                         |           Yes           |
+| Similar Artists Support                           |           No            |
+| Similar Tracks Support                            |           No            | 
+| Maximum Stream Quality                            |       MP3 128kbps       |
+| Login Method                                      |    None or Cookie       |
 
 ### Other
 - Searching the Bandcamp catalogue
@@ -40,8 +40,9 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 
 ## Configuration
 
-- Providing an identity cookie is optional, but allows importing owned albums as library items.
-- Tweak Top Tracks Limit to balance search speed and quantity of search results.
+- Providing an identity cookie is optional, but allows importing owned albums as library items
+- Enable "Fetch song lyrics" to get lyrics from Bandcamp
+- Tweak Top Tracks Limit to balance search speed and quantity of search results
 
 > [!NOTE]
 > Cookies may expire after some time. This means that you may have to replace the identity cookie in the provider configuration if library synchronization begins to fail.
@@ -77,8 +78,8 @@ This Provider mirrors this directly.
 
 What this means in practice:
 
-- **Artist search returns pages, not performers.** A performer without their own Bandcamp page will not appear in artist search results. To find their releases, search by **album** name, or by the **label** that hosts them. Examples Below.
-- **A label's page lists every album on it**, regardless of the credited performer.
-- **Names can collide.** The same name may exist as both a standalone artist page and as a credited performer on a label-hosted album (e.g. *Apollo Brown* on their own [page](https://apollobrown.bandcamp.com/) vs. on [*Hip Dozer*](https://hipdozer.bandcamp.com/album/night-moves) compilations). These are distinct entries on Bandcamp and will appear separately.
-- **Track and album metadata is correct.** The credited performer is what's displayed in the player and scrobbled, even when the parent page is a label.
+- **Artist search returns pages, not performers.** A performer without their own Bandcamp page will not appear in artist search results. To find their releases, search by **album** name, or by the **label** that hosts them
+- **A label's page lists every album on it**, regardless of the credited performer
+- **Names can collide.** The same name may exist as both a standalone artist page and as a credited performer on a label-hosted album (e.g. *Apollo Brown* on their own [page](https://apollobrown.bandcamp.com/) vs. on [*Hip Dozer*](https://hipdozer.bandcamp.com/album/night-moves) compilations). These are distinct entries on Bandcamp and will appear separately
+- **Track and album metadata is correct.** The credited performer is what's displayed in the player and scrobbled, even when the parent page is a label
   

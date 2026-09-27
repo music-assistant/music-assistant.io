@@ -1,6 +1,7 @@
 ---
 title: OpenAI Compatible
 description: Use OpenAI, Groq, OpenRouter, Together or a local AI server such as Ollama or LM Studio for Music Assistant's AI features.
+pluginGroup: other-systems
 ---
 
 # OpenAI Compatible

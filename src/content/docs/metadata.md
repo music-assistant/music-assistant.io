@@ -17,7 +17,7 @@ This section describes which providers contribute which fields and when lookups 
 - [Artwork](./artwork): sources and ordering for thumbnails, fanart, disc art and radio stream artwork
 - [Lyrics](./lyrics): what lyrics are available
 
-For loudness measurement, see the [Loudness Analysis](../audio-analysis/loudness-analysis) provider page.
+Loudness tags are read from the file when the track is first scanned. If you add or change them later, use **Refresh item** on the track to pick up the new values. See [Loudness Analysis](../audio-analysis/loudness-analysis) for how the values are used and which source wins.
 
 ## How metadata gets fetched
 
@@ -35,7 +35,7 @@ The language used for descriptions and bios is set under [**Settings → System 
 
 For library items backed by a local music collection, the following are read automatically during the library scan:
 
-- **Embedded tags** in audio files - title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, ReplayGain values, etc. The `genre` tag is applied to the track only; album and artist genres are sourced separately (see below).
+- **Embedded tags** in audio files - title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, loudness values (`R128_TRACK_GAIN`, `R128_ALBUM_GAIN`, `REPLAYGAIN_TRACK_GAIN`, `REPLAYGAIN_ALBUM_GAIN`), etc. The `genre` tag is applied to the track only; album and artist genres are sourced separately (see below).
 - **`.lrc` sidecar files** with the same name as the audio file, used as synchronized lyrics. This is the format produced by tools such as LRCGET
 - **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) - title, sort name, biography, genres, MusicBrainz artist ID
 - **`album.nfo`** in an album folder - title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs

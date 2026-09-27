@@ -43,7 +43,7 @@ Note that the embedded `genre` tag in audio files is applied to the track only, 
 | Genres, mood, style, description | File tags, music providers, **The Audio DB** |
 | Explicit flag, copyright, grouping, comment | File tags, music providers |
 | Lyrics | See [Lyrics](/metadata/lyrics) |
-| Volume normalization value | See [Loudness Analysis](/audio-analysis/loudness-analysis) |
+| Volume normalization value | File tags (`R128_*` and `REPLAYGAIN_*`, track and album), music providers (Plex, Subsonic), otherwise measured by [Loudness Analysis](/audio-analysis/loudness-analysis) |
 
 ## Playlists
 

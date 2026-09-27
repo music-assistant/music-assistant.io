@@ -15,15 +15,35 @@ Here is a good document from the mastering plugin developer izotope comparing di
 
 Noting the above, the default value is -14 which should be a good compromise in 99% of cases.
 
-In general, it is not recommended to turn off the volume normalization because there are so many different loudness levels, especially if music is played from different sources. MA uses an integrated loudness level based on the EBU-R128 standard and only adjusts gain of the entire track up or down so there is no compression of dynamic range as long as you use a value low enough to keep headroom. MA's limiter is set to -1.5dB to prevent clipping. It's the user's responsibility to use sane values for the target level of the volume normalization, a value somewhere between -23 and -12 LUFS is recommended. The default value is set to -14 LUFS.
+In general, it is not recommended to turn off the volume normalization because there are so many different loudness levels, especially if music is played from different sources. MA uses an integrated loudness level based on the EBU-R128 standard and only adjusts gain of the entire track up or down so there is no compression of dynamic range as long as you use a value low enough to keep headroom. It's the user's responsibility to use sane values for the target level of the volume normalization, a value somewhere between -23 and -12 LUFS is recommended. The default value is set to -14 LUFS. Audio is processed internally as 32 bit floating point, so the gain adjustment has headroom to work in. If a hard ceiling on the output is wanted, a [Safety Limiter](/dsp/#safety-limiter) filter can be added in the DSP settings.
 
-If audio is only played from one single source (e.g. Deezer) and that audio source already has normalized its audio files, then its safe to disable normalization in MA. If audio is played from different sources or audio is not normalized at the source, it is highly recommended to leave normalization enabled for the best experience.
+If audio is only played from one single source (e.g. Deezer) and that audio source already has normalized its audio files, then its safe to disable normalization in MA. If audio is played from different sources or audio is not normalized at the source, it is highly recommended to leave normalization enabled for the best experience. Some sources, Spotify among them, deliver their audio at a loudness target of their own and tell MA so. Those streams are left untouched and the [Audio Pipeline](/audiopipeline/) view reports the normalization as coming from the source.
 
-NOTE that all audio is analyzed at playback time. If no Integrated loudness measurement is available for an audio source, MA will fallback to a dynamic normalizer which is less accurate but will at least prevent a sudden drop or spike in the volume level. The [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback) settings let you choose how this is handled.
+### Where the loudness value comes from
 
-**More technical details**
+MA needs an integrated loudness value for a track, in LUFS, before it can work out a gain adjustment. It looks for one in this order:
 
-If volume normalization data is already available for a track via a replay gain tag then that will be used in lieu of the following process. This is true even if the tag information is added after the measurement has been taken.
+1. `R128_TRACK_GAIN` and `R128_ALBUM_GAIN` tags on the file
+2. `REPLAYGAIN_TRACK_GAIN` and `REPLAYGAIN_ALBUM_GAIN` tags on the file
+3. A loudness value supplied by the music provider itself, which Plex and Subsonic both report
+4. MA's own measurement, produced by the [Loudness Analysis](/audio-analysis/loudness-analysis/) provider
+
+Tags and provider values take priority over MA's own measurement, and a track that already carries one is not analysed at all. Tags are read when the track is scanned into the library. If you add or change them later, use **Refresh item** on the track to pick up the new values.
+
+Once a value exists from any of these sources it is used, whichever method is selected under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), unless that method is Dynamic, Fixed Gain or Disabled. The methods otherwise differ only in what happens while no value is available yet. Where no value exists and the method allows it, MA falls back to a dynamic normalizer, which is less accurate but will at least prevent a sudden drop or spike in the volume level.
+
+### Track gain and album gain
+
+Album gain keeps the relative loudness between the tracks of an album intact, so a quiet interlude still sits below the track that follows it. MA uses the album value in place of the track value when all of the following are true:
+
+- The track is playing as part of an album that was queued as an album. A single track added to the queue, or a playlist that happens to contain the track, uses track gain
+- Repeat mode is not set to repeat a single track
+- An album loudness value is available for the track
+- The method in use is measurement based, rather than Dynamic or Fixed Gain
+
+Album loudness only ever comes from file tags or a music provider. MA's own measurement covers the individual track, so a library with no album gain tags normalizes per track. Which of the two was used is shown for the current track in the [Audio Pipeline](/audiopipeline/) view.
+
+### More technical details
 
 All tracks are processed internally as raw pcm by Music Assistant. So everything that is played will be first decoded to raw pcm of 32 bits floating point in the sample rate of the origin (unless explicit resampling is enabled/needed, such as when flow mode is enabled), and the gain adjustment is done while extracting the raw source media so the pcm chunks passed into the streaming engine have the gain adjustment applied. In this way there should be enough headroom within the (final) 16 or 24 bits bit depth. If a playback target does not support bit depths higher than 16 bits, dithering will be applied to bring the signal down again to 16 bits without quality loss.
 
@@ -31,7 +51,7 @@ All further processing in MA is done at PCM raw audio level, such as the DSP Set
 
 The final part in the chain is that MA needs to send the audio to the player. By default MA encodes the raw PCM into FLAC because it is lossless while still providing a descent amount of compression. For players that can not handle FLAC very well, or simply to save bandwidth, MA provides an option (per player) to encode to MP3 instead.
 
-The [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback) settings contain a number of options which determine how Volume Normalization will perform. Enabling and disabling the feature, and adjusting the target level, is done under [**Settings → System → Player Queues**](/settings/core/#player-queues), and both can be overridden on an [individual queue basis](/usage/#the-queue).
+The [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback) settings contain the normalization method and the target level, both of which apply to all playback. Turning normalization on and off is done under [**Settings → System → Player Queues**](/settings/core/#player-queues) and can be overridden on an [individual queue basis](/usage/#the-queue).
 
 ## Stream Selection
 

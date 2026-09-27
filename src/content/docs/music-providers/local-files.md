@@ -22,7 +22,7 @@ When streaming sources are also available in MA linking will only occur when the
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes with Sonic Similarity Plugin                      | 
-| Maximum Stream Quality | FLAC 192kHz 24 bit |
+| Maximum Stream Quality | FLAC, Unlimited |
 | Login Method | None or Password |
 
 ### Other
@@ -281,9 +281,38 @@ Whether or not MBIDs are present, the artist names themselves need to be encoded
 
 ### Tags used by MA
 
-<a href="/assets/tag-usage.png"><img src="/assets/tag-usage.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
+<div class="tag-table">
+
+| Tag | Importance | Why it matters |
+|:--|:--|:--|
+| Title<br />Artist<br />Album<br />Album Artist<br />Track number | Mandatory | Required for basic functionality of Music Assistant |
+| Artists | Strongly recommended<br />for ID3 tags | Required for ID3 tags to disambiguate multiple artist names on the one item |
+| Album Artist Sort Order<br />Artist Sort Order | Strongly recommended | Required for some sorting options in the UI |
+| ISRC | Strongly recommended | Required for linking identical streaming provider items to streaming and local items |
+| Barcode<br />Catalogue Number | Recommended | Can be used for linking identical streaming provider items to streaming and local items |
+| Genre | Strongly recommended | Required for the Genre view in the UI |
+| MusicBrainz Artist ID<br />MusicBrainz Recording ID<br />MusicBrainz Release Artist ID<br />MusicBrainz Release Group ID<br />MusicBrainz Release ID<br />MusicBrainz Track ID | Strongly recommended | Required to link identical tracks across local providers. Eliminates same named tracks, artists or albums from being incorrectly linked together |
+| Release Type | Strongly recommended | Used as a filter and displayed in the UI |
+| Disc Number<br />Total Discs | Strongly recommended | Used in the UI |
+| Date | Recommended | Used as the album date and fallback for track date and used in the UI |
+| Original Release Date<br />Original Release Year | Recommended | Used as the track date and fallback for album date and used in the UI |
+| Record label<br />Release country<br />Release status | Optional | Can be used in future UI updates as sorting or search options |
+
+</div>
+
+<style>
+  /* Keep each tag name and each importance level on one line. That sets a
+     minimum width, so the table scrolls inside its own box on a narrow
+     screen rather than being cut off or dragging the page sideways. */
+  .tag-table { overflow-x: auto; }
+  .tag-table table { min-width: 34rem; }
+  .tag-table td:nth-child(1),
+  .tag-table td:nth-child(2) { white-space: nowrap; }
+</style>
 
 The left column corresponds to the TAG NAME shown in the <a href="https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html" target="_blank" rel="noopener noreferrer">MusicBrainz Picard Tag Mapping</a> table. Refer then to the appropriate tag name for the format of the file being tagged
+
+Loudness tags are read as well. If a file is tagged with ReplayGain or R128 loudness values, Music Assistant uses them for [volume normalization](/faq/tech-info/#volume-normalization) instead of measuring the track itself. Both track and album values are read, and album values are the only way to normalize an album as a whole. Tags added or changed after a track was scanned are picked up with **Refresh item** on the track.
 
 ### Manually Adjusting Tags
 
