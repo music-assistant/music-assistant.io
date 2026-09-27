@@ -14,18 +14,16 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 
 ## Features
 
-- Each Raumfeld room appears as a player, and Raumfeld zones map to sync groups
 - Grouped rooms play in sync, handled by the Raumfeld host itself
 - Gapless playback between tracks, including across grouped rooms (with flow mode on, the default)
-- Crossfade between tracks (with flow mode on)
 - A room's analog **Line-in** input is offered as a selectable source, where the device has one
-- Hi-res audio up to 24 bit / 192 kHz
+- Hi-res audio up to 192 kHz / 24 bit
 - Rooms are matched to the same speaker's Chromecast or DLNA representation, so they do not show up twice
 
 ## Configuration
 
 1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Teufel Raumfeld`.
-2. Enter the **IP address** of the device running the Raumfeld host service. The default port is correct unless you run the host somewhere unusual.
+2. Enter the host's **IP address**.
 3. Your rooms appear in the player list within a few seconds of the host being reached.
 
 If the host is unreachable when you set it up, or goes away later, the provider keeps retrying rather than failing. Players are shown as unavailable until it returns.
@@ -36,10 +34,11 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 
 - <b>Raumfeld host.</b> The IP address of the device running the Raumfeld host service
 - <b>Raumfeld host port.</b> Only change this if the host runs on a non-default port
-- <b>Flow mode.</b> On by default. Music Assistant then sends the whole queue to the speaker as one continuous stream, which is what makes playback gapless — grouped rooms included — but the Raumfeld app cannot follow that stream's elapsed time and duration (see below). Switch it off to play each track as its own stream instead: there is then a short gap between tracks, but the Raumfeld app shows each track's own time and duration. In a group, only the setting of the group leader (the room the others were added to) counts, because it plays and the host passes its stream on to the other rooms. If crossfade is enabled for the queue, Music Assistant uses flow mode regardless of this setting
+- <b>Flow mode.</b> On by default, and it is what makes playback gapless, grouped rooms included. The trade off is that the Raumfeld app cannot show each track's elapsed time and duration (see Known Issues). Switch it off to play each track on its own. There is then a short gap between tracks, but the Raumfeld app shows each track's time and duration. In a group only the leader's setting counts, that is the room the others were added to. If crossfade is enabled, flow mode is used regardless of this setting
 
 ## Known Issues / Notes
 
-- **Pause is handled as stop.** Raumfeld renderers drop the HTTP connection when paused, and they restart the track from the beginning on play. Therefore, Music Assistant stops instead and re-streams from the stored position when you resume. In practice, pause and resume work as expected
-- **With flow mode on, the Raumfeld app follows the track title but not its elapsed time and duration.** The queue plays as one continuous stream, and the host reads each track's title out of it and shows it. The time it shows, though, runs on continuously across the queue instead of resetting per track, and the duration is not meaningful. Music Assistant's own progress bar is correct; only the Raumfeld app's is affected. If you rely on the Raumfeld app's time display, switch flow mode off (see Settings)
+- **Pause is handled as stop.** Resuming picks up where you paused, but the Raumfeld app shows the room as stopped rather than paused
+- **With flow mode on, the Raumfeld app shows the track title but not its elapsed time or duration.** The time it shows runs on across the whole queue rather than starting again for each track. Music Assistant's own progress bar is correct. If you rely on the Raumfeld app's time display, switch flow mode off (see Settings)
+- **Stopping the Line-in puts the room into standby**, along with any rooms grouped with it, because a Raumfeld Line-in would otherwise keep playing. The next play from Music Assistant wakes them again
 - Using the Raumfeld integration in Home Assistant at the same time may result in both sending commands to the same speakers
