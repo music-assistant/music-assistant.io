@@ -13,7 +13,7 @@ Music Assistant holds no music of its own. A **music source** is somewhere your 
 
 You add the sources you already use, and Music Assistant reads from all of them at once. Nothing appears until you add at least one, even if Home Assistant can already see the media.
 
-Everything you add is combined into a single **library**: one set of artists, albums, tracks, playlists, radio stations, podcasts and audiobooks, whichever source each item came from. Where the same album exists in several sources, Music Assistant tries to link those copies together so you see one entry rather than three, and plays the [best quality version](/faq/tech-info/#stream-selection) available. Linking only happens where the sources supply enough metadata to identify a match, so it is not guaranteed; see [Provider Details](/ui/#provider-details) for what to do when copies stay separate.
+Everything you add is combined into a single **library**: one set of artists, albums, tracks, playlists, radio stations, podcasts and audiobooks, whichever source each item came from. Where the same album exists in several sources, Music Assistant tries to link those copies together so you see one entry rather than three, and plays the [best quality version](/faq/tech-info/#stream-selection) available. Linking only happens where the sources supply enough metadata to identify a match, so it is not guaranteed; see [Source Details](/ui/#source-details) for what to do when copies stay separate.
 
 How much of a source ends up in that library is up to you. Each one has its own settings for what gets synced and how often, which the rest of this page covers.
 
@@ -24,7 +24,7 @@ Go to [**Settings → Music Sources → Add a music source**](/settings/music-pr
 If you remove a source, the database is cleaned up afterwards, which takes a little while. If you still see entries from a deleted source after some time, restart MA to retrigger the cleanup.
 
 > [!TIP]
-> If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [PROVIDER DETAILS](/ui/#provider-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
+> If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [SOURCE DETAILS](/ui/#source-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
 
 ![image](/assets/screenshots/add-music-provider.png)
 
