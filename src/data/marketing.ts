@@ -120,12 +120,6 @@ export const features: Feature[] = [
     ],
   },
   {
-    cover: "indie",
-    title: "Move your playlists",
-    summary: "Take your favorites to another service.",
-    text: "Copy playlists between supported services and keep supported playlists in sync as you edit them. You can change services without rebuilding every playlist, though the songs available depend on the destination service’s catalogue.",
-  },
-  {
     cover: "folk",
     title: "Keep the music going",
     summary: "Put your phone away or take the queue to another room.",
@@ -152,6 +146,12 @@ export const features: Feature[] = [
     summary: "Voice control, automations and announcements with Home Assistant.",
     text: "Ask Home Assistant Assist for a song and a room, start music from an automation, or play a doorbell announcement through your speakers. Music Assistant can pause or lower the music for the message, then bring it back. The integration works with both Docker and Home Assistant installations.",
     link: { href: "/integration/", label: "Connect Home Assistant" },
+  },
+  {
+    cover: "indie",
+    title: "Move your playlists",
+    summary: "Take your favorites to another service.",
+    text: "Copy playlists between supported services and keep supported playlists in sync as you edit them. You can change services without rebuilding every playlist, though the songs available depend on the destination service’s catalogue.",
   },
 ];
 
