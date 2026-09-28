@@ -48,7 +48,7 @@ The [Audio Pipeline](/audiopipeline/) selectable label is described above in the
 
 You can also access the [Now Playing view directly via URL](/faq/how-to/#open-the-ui-with-the-now-playing-view-showing)
 
-When the favorite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favorite status may not indicate correctly until playback of the track is restarted.
+The heart shows your own favorite state for the playing track: filled for a favorite, an outline for nothing, a thumbs-down for a dislike. Selecting it opens the same menu as everywhere else, to favorite or dislike the track or add it to a playlist. A change made from another view or device shows here straight away. See [Favorites and dislikes](/usage/#favorites-and-dislikes).
 
 When lyrics are available for the track being played then the LYRICS selectable label will be shown in white. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song. Adjustment to the lyric timing is available in the ⋮ menu.
 
