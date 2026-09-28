@@ -90,7 +90,7 @@ export const plugins: Plugin[] = [
   },
 ];
 
-export interface Refinement {
+export interface Feature {
   cover: PaletteName;
   title: string;
   summary: string;
@@ -98,22 +98,33 @@ export interface Refinement {
   link?: { href: string; label: string };
 }
 
-export const refinements: Refinement[] = [
+export const features: Feature[] = [
+  {
+    cover: "rock",
+    title: "One library across your music sources",
+    summary: "Search your streaming services and your own collection together.",
+    text: "Browse music from your connected sources in one place. Matching releases are linked, and a playlist can include tracks from several services alongside your own files. Each service still needs its own account and subscription where required.",
+    link: { href: "/music-providers/", label: "Explore music sources" },
+  },
   {
     cover: "indie",
     title: "Move your playlists",
     summary: "Take your favorites to another service.",
-    text: "Copy playlists between supported services and keep them in sync as you add new songs.",
+    text: "Copy playlists between supported services and keep supported playlists in sync as you edit them. You can change services without rebuilding every playlist, though the songs available depend on the destination service’s catalogue.",
   },
   {
-    cover: "rock",
-    title: "Add Spotify Connect",
-    summary: "Keep using the Spotify app.",
-    text: "Make supported speakers appear in Spotify, even if they didn’t come with Spotify Connect. Pick one speaker or a whole group in the Spotify app and play as usual.",
-    link: {
-      href: "/plugins/spotify-connect/",
-      label: "Set up Spotify Connect",
-    },
+    cover: "folk",
+    title: "Keep the music going",
+    summary: "Put your phone away or take the queue to another room.",
+    text: "Your playback queue lives on the Music Assistant server, so closing the app or browser doesn’t stop the music. Transfer the queue to another speaker without losing your place, and control playback from your phone or a browser.",
+    link: { href: "/faq/masstransfer/", label: "Move music between rooms" },
+  },
+  {
+    cover: "ambient",
+    title: "Play in sync across compatible speakers",
+    summary: "Including AirPlay and Sendspin together.",
+    text: "Group compatible speakers to play the same music around your home. Music Assistant can also bring AirPlay speakers into a Sendspin group. Synchronization depends on the speakers and group type; not every combination can play in sync.",
+    link: { href: "/faq/groups/", label: "Learn about groups" },
   },
   {
     cover: "classical",
@@ -123,28 +134,11 @@ export const refinements: Refinement[] = [
     link: { href: "/audiopipeline/", label: "How the audio pipeline works" },
   },
   {
-    cover: "ambient",
-    title: "Different speakers in sync",
-    summary: "AirPlay meets Sendspin.",
-    text: "Play your existing AirPlay speakers in sync with Sendspin devices as one group.",
-    link: { href: "/faq/groups/", label: "Learn about groups" },
-  },
-  {
-    cover: "folk",
-    title: "Let your home speak up",
-    summary: "Hear the message without losing your place.",
-    text: "Give Home Assistant a voice through your speakers, from a doorbell alert to a call for dinner. Music Assistant pauses or lowers the music for the announcement, then brings it back when the message ends.",
-    link: {
-      href: "/integration/announcements/",
-      label: "Set up announcements",
-    },
-  },
-  {
     cover: "jazz",
-    title: "Search your whole library by voice",
-    summary: "Ask for the music and the room.",
-    text: "Ask Home Assistant Assist to find a song, album, artist or playlist across your connected music sources, then tell it where to play.",
-    link: { href: "/integration/voice/", label: "Set up voice control" },
+    title: "Make music part of your smart home",
+    summary: "Voice control, automations and announcements with Home Assistant.",
+    text: "Ask Home Assistant Assist for a song and a room, start music from an automation, or play a doorbell announcement through your speakers. Music Assistant can pause or lower the music for the message, then bring it back. The integration works with both Docker and Home Assistant installations.",
+    link: { href: "/integration/", label: "Connect Home Assistant" },
   },
 ];
 

@@ -1,22 +1,23 @@
 ---
-import { refinements } from "../../data/marketing";
+import { features } from "../../data/marketing";
 import Cover from "../marketing/ui/Cover.astro";
 import Icon from "../marketing/ui/Icon.astro";
 import Section from "../marketing/ui/Section.astro";
 import SectionHeading from "../marketing/ui/SectionHeading.astro";
 ---
 
-<Section id="setlist" tone="alt" labelledby="setlist-title">
+<Section id="features" tone="alt" labelledby="features-title">
   <div class="container layout">
     <SectionHeading
-      id="setlist-title"
-      title="Fine-tune your everyday listening."
+      id="features-title"
+      title="A music system for your home."
+      lead="Your library and queues run on a device in your home. Music Assistant never collects or shares what you play. Online music services still handle their own streams."
     />
 
     <!-- Native <details> sharing a name behave as an accordion. -->
     <div class="list" data-reveal>
-      {refinements.map((item, index) => (
-        <details name="setlist" open={index === 0}>
+      {features.map((item, index) => (
+        <details name="features" open={index === 0}>
           <summary>
             <span class="thumb">
               <Cover palette={item.cover} />

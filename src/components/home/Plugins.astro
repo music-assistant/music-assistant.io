@@ -6,11 +6,12 @@ import Section from "../marketing/ui/Section.astro";
 import SectionHeading from "../marketing/ui/SectionHeading.astro";
 ---
 
-<Section id="features" tone="alt" labelledby="plugins-title">
+<Section id="plugins" tone="alt" labelledby="plugins-title">
   <div class="container">
     <SectionHeading
       id="plugins-title"
       title="More than pressing play."
+      lead="Add plugins for parties, games and new ways to listen."
     >
       <a slot="action" class="text-link" href="/plugins/">
         All plugins <Icon name="arrow-right" size={16} />
@@ -48,6 +49,9 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
 </Section>
 
 <style>
+  .container :global(.section-heading) {
+    align-items: baseline;
+  }
   .bill {
     margin: 0;
     padding: 0;
