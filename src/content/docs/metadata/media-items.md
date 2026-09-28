@@ -27,6 +27,7 @@ Note that the embedded `genre` tag in audio files is applied to the track only, 
 | Metadata Type | Source(s) |
 | --- | --- |
 | Name, sort name, year, album type | File tags, `album.nfo`, music providers |
+| Album artist | File tags, `album.nfo` |
 | Genres | `album.nfo`, music providers, **The Audio DB**, derived from track tags when the filesystem provider's `Propagate track genres` option is enabled |
 | MusicBrainz Release Group / Album ID | File tags, `album.nfo`, music providers |
 | Description / review | `album.nfo` (`<review>`), music providers, **The Audio DB** |
