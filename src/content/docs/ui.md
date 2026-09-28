@@ -28,9 +28,9 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 
 Searches can be done via any combination of words or partial words and also via a URL to a source such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
 
-Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. Which media types are shown can be selected with the filter. Similarly, the providers used for the search can also be filtered.
+Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. Which media types are shown can be selected with the filter. Similarly, the sources used for the search can also be filtered.
 
-Selecting an individual media type will then show a maximum of 50 items per provider. Context sensitive menus are available for each. If the item desired is not found then narrow the search term.
+Selecting an individual media type will then show a maximum of 50 items per music source. Context sensitive menus are available for each. If the item desired is not found then narrow the search term.
 
 ## Player Bar
 [![image](/assets/screenshots/UI-playercontrols-bar.png)](/assets/screenshots/UI-playercontrols-bar.png)
@@ -113,13 +113,13 @@ In any of the following views, Right click or long press on a track to get the f
 
 ![image](/assets/screenshots/UI-track-menu.png)
 
-The **View ... endless mix** option will only be seen if there is a provider that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the provider not MA. 
+The **View ... endless mix** option will only be seen if there is a music source that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the source not MA. 
 
 ## View - Discover
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
 
-The Discover view provides quick access to different media types and recommendations. Recommendation rows load independently, so content appears one row at a time as it becomes available. Each enabled music provider can supply its own rows.
+The Discover view provides quick access to different media types and recommendations. Recommendation rows load independently, so content appears one row at a time as it becomes available. Each enabled music source can supply its own rows.
 
 Select the pencil icon in the top right to enter edit mode. From there, show or hide rows and drag them into your preferred order. Some specialized or slower-loading rows are hidden by default to keep Discover fast; enable them in edit mode if you want to use them. Select `Leave edit mode` to return to the normal view.
 
@@ -135,7 +135,7 @@ Album, Track and Playlist Views look similar to the above except there is no alb
 
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) ) indicates that the viewed results are subject to filtering.
 
-The provider filter option will only show when there are two or more music sources installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
+The source filter option will only show when there are two or more music sources installed that support the media type being viewed. Multiple sources can be selected as part of the filter.
 
 Items in all views can be "right-clicked" or "long-pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
@@ -153,7 +153,7 @@ The behavior described above will work on any view where you see the "x item(s) 
 
 [![image](/assets/screenshots/UI-individual-artist.png)](/assets/screenshots/UI-individual-artist.png)
 
-Each section is collapsible. The tracks section shows all tracks that are in the library. The Top tracks section can be filtered by provider when there is more that one available to provide that data.
+Each section is collapsible. The tracks section shows all tracks that are in the library. The Top tracks section can be filtered by sources when there is more that one available to provide that data.
 
 The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP, LIVE, SOUNDTRACK or UNKNOWN album types.
 
@@ -161,22 +161,22 @@ Expanding the IMAGES section (only visible to users with the Administrators role
 
 ### Source Details
 
-The SOURCE DETAILS section (read only for other than users with the Administrator role) shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new provider does not trigger linking across existing library items.
+The SOURCE DETAILS section (read only for other than users with the Administrator role) shows what music sources are linked to the artist (albums and tracks have a similar section) across the available sources. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a music source and across music sources. Cross linking across and within music sources occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new music source does not trigger linking across existing library items.
 
-When an item is available from several providers, Music Assistant picks the highest quality one at playback time. See [Stream Selection](/faq/tech-info/#stream-selection) for how that choice is made.
+When an item is available from several sources, Music Assistant picks the highest quality one at playback time. See [Stream Selection](/faq/tech-info/#stream-selection) for how that choice is made.
 
-The creation of links within the MA library to other identical items in the MA library (within or across providers) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
+The creation of links within the MA library to other identical items in the MA library (within or across sources) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
 
 Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/local-files/#tagging-files).
 
-The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
+The ID shown against the streaming source may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming sources, is an external link which opens the page for the item on the source provider.
 
 ## View - Individual Track
 
 [![image](/assets/screenshots/UI-track-show-info.png)](/assets/screenshots/UI-track-show-info.png)
 
 > [!NOTE]
-> The SOURCE DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
+> The SOURCE DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the source and may differ during playback if transcoding is done before the audio data reaches MA.
 
 ## View - Audiobooks
 The audiobooks view shows available audiobooks in your library.
@@ -197,9 +197,9 @@ The author & narrator subview shows audiobooks belonging to the given artist. Fo
 
 The Radio view shows streaming radio stations that are available in the MA library. Stations can be added to the library in the following ways:
 
-* Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
+* Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by source, they will be shown as provided by "Music Assistant". 
 
-* Music providers that support Radio items will have those items shown here when they are added to the library
+* Music sources that support Radio items will have those items shown here when they are added to the library
 
 ## View - Browse
 
