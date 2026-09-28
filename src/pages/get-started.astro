@@ -19,16 +19,16 @@ const compose = `services:
 
 const methods = [
   {
-    id: "home-assistant",
-    image: "/assets/landing/brands/hass_players.svg",
-    title: "Home Assistant",
-    text: "Install as an app",
-  },
-  {
     id: "docker",
     icon: "container",
     title: "Docker",
     text: "For your own Linux server",
+  },
+  {
+    id: "home-assistant",
+    image: "/assets/landing/brands/hass_players.svg",
+    title: "Home Assistant",
+    text: "Install as an app",
   },
 ];
 
@@ -53,7 +53,7 @@ const nextSteps = [
 
 <MarketingLayout
   title="Install Music Assistant"
-  description="Install Music Assistant on Home Assistant or with Docker, then connect your music and speakers."
+  description="Install Music Assistant with Docker or on Home Assistant, then connect your music and speakers."
 >
   <div class="container page">
     <header class="heading">
@@ -78,6 +78,46 @@ const nextSteps = [
         </a>
       ))}
     </nav>
+
+    <section id="docker" class="method">
+      <div class="method-intro">
+        <h2>Install with Docker Compose</h2>
+        <p>
+          Install Music Assistant on an always-on Linux system. Host networking
+          is required so it can find and stream to your players.
+        </p>
+      </div>
+      <Steps>
+        <Step title="Create a Compose file">
+          <p>
+            Save this as <strong>compose.yaml</strong>. Uncomment the music
+            volume and change its path if you want to include local files.
+          </p>
+          <CodeBlock id="compose-code" title="compose.yaml" code={compose} />
+        </Step>
+        <Step title="Start Music Assistant">
+          <p>Run this from the folder containing your Compose file.</p>
+          <CodeBlock
+            id="start-code"
+            title="Terminal"
+            code="docker compose up -d"
+          />
+        </Step>
+        <Step title="Open Music Assistant">
+          <p>
+            Visit <strong>http://YOUR_MA_IP_ADDRESS:8095</strong> in your
+            browser.
+          </p>
+          <div class="note">
+            <Icon name="wifi" size={18} />
+            <p>
+              <strong>Players not appearing?</strong> Check that Music Assistant
+              and your speakers are on the same local network.
+            </p>
+          </div>
+        </Step>
+      </Steps>
+    </section>
 
     <section id="home-assistant" class="method">
       <div class="method-intro">
@@ -115,47 +155,6 @@ const nextSteps = [
             to control players from Home Assistant dashboards, automations and
             voice.
           </p>
-        </Step>
-      </Steps>
-    </section>
-
-    <section id="docker" class="method">
-      <div class="method-intro">
-        <h2>Install with Docker Compose</h2>
-        <p>
-          Use Docker when Music Assistant will run on another always-on Linux
-          system. Host networking is required so it can find and stream to your
-          players.
-        </p>
-      </div>
-      <Steps>
-        <Step title="Create a Compose file">
-          <p>
-            Save this as <strong>compose.yaml</strong>. Uncomment the music
-            volume and change its path if you want to include local files.
-          </p>
-          <CodeBlock id="compose-code" title="compose.yaml" code={compose} />
-        </Step>
-        <Step title="Start Music Assistant">
-          <p>Run this from the folder containing your Compose file.</p>
-          <CodeBlock
-            id="start-code"
-            title="Terminal"
-            code="docker compose up -d"
-          />
-        </Step>
-        <Step title="Open Music Assistant">
-          <p>
-            Visit <strong>http://YOUR_MA_IP_ADDRESS:8095</strong> in your
-            browser.
-          </p>
-          <div class="note">
-            <Icon name="wifi" size={18} />
-            <p>
-              <strong>Players not appearing?</strong> Check that Music Assistant
-              and your speakers are on the same local network.
-            </p>
-          </div>
         </Step>
       </Steps>
     </section>
@@ -267,6 +266,7 @@ const nextSteps = [
 
   .method {
     display: grid;
+    overflow-wrap: anywhere;
     grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
     gap: 2.5rem;
     padding: clamp(1.5rem, 4vw, 2.5rem);
