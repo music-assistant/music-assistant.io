@@ -213,6 +213,9 @@ How you name and arrange your folders decides how much Music Assistant can work 
 Tag names are matched regardless of case and separators, so `NARRATEDBY`, `Narrated By` and `narrated-by` all work. Multiple authors or narrators are separated like [multiple artists](#multi-artist-tracks). Names are used as written, so spelling one differently across books creates separate entries.
 
 > [!NOTE]
+> These are not part of the standard Picard tag set, so Picard will not fill them in for you. You can still add them in Picard yourself as custom tags, or use another tagger such as Mp3Tag.
+
+> [!NOTE]
 > A library that was indexed before author and narrator support existed is reparsed once, automatically, during the first sync after the upgrade. That sync takes longer than usual.
 
 ### Podcasts
