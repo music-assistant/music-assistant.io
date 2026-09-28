@@ -4,44 +4,46 @@
 export interface Brand {
   name: string;
   icon: string;
+  href: string;
   /** The logo is black and needs inverting on dark backgrounds. */
   dark?: boolean;
 }
 
-const brand = (icon: string, name: string, dark = false): Brand => ({
+const brand = (icon: string, name: string, href: string, dark = false): Brand => ({
   name,
   icon,
+  href,
   dark,
 });
 
 export const musicSources: Brand[] = [
-  brand("filesystem_local", "Local files"),
-  brand("spotify", "Spotify"),
-  brand("apple_music", "Apple Music"),
-  brand("ytmusic", "YouTube Music"),
-  brand("tidal", "TIDAL", true),
-  brand("qobuz", "Qobuz"),
-  brand("deezer", "Deezer"),
-  brand("plex", "Plex"),
-  brand("tunein", "TuneIn"),
-  brand("audible", "Audible"),
-  brand("audiobookshelf", "Audiobookshelf"),
-  brand("pocketcasts", "Pocket Casts"),
+  brand("filesystem_local", "Local files", "/music-providers/local-files/"),
+  brand("spotify", "Spotify", "/music-providers/spotify/"),
+  brand("apple_music", "Apple Music", "/music-providers/apple-music/"),
+  brand("ytmusic", "YouTube Music", "/music-providers/youtube-music/"),
+  brand("tidal", "TIDAL", "/music-providers/tidal/", true),
+  brand("qobuz", "Qobuz", "/music-providers/qobuz/", true),
+  brand("deezer", "Deezer", "/music-providers/deezer/"),
+  brand("plex", "Plex", "/music-providers/plex/"),
+  brand("tunein", "TuneIn", "/music-providers/tunein/"),
+  brand("audible", "Audible", "/music-providers/audible/"),
+  brand("audiobookshelf", "Audiobookshelf", "/music-providers/audiobookshelf/"),
+  brand("pocketcasts", "Pocket Casts", "/music-providers/pocketcasts/"),
 ];
 
 export const speakers: Brand[] = [
-  brand("sonos", "Sonos"),
-  brand("airplay", "AirPlay"),
-  brand("chromecast", "Google Cast"),
-  brand("sendspin", "Sendspin"),
-  brand("hass_players", "Home Assistant"),
-  brand("wiim", "WiiM"),
-  brand("heos", "HEOS"),
-  brand("musiccast", "Yamaha MusicCast"),
-  brand("bluesound", "Bluesound", true),
-  brand("squeezelite", "Squeezelite"),
-  brand("dlna", "DLNA"),
-  brand("alexa", "Alexa"),
+  brand("sonos", "Sonos", "/player-support/sonos/"),
+  brand("airplay", "AirPlay", "/player-support/airplay/"),
+  brand("chromecast", "Google Cast", "/player-support/google-cast/"),
+  brand("sendspin", "Sendspin", "/player-support/sendspin/"),
+  brand("hass_players", "Home Assistant", "/player-support/home-assistant/"),
+  brand("wiim", "WiiM", "/player-support/wiim/"),
+  brand("heos", "HEOS", "/player-support/heos/"),
+  brand("musiccast", "Yamaha MusicCast", "/player-support/musiccast/"),
+  brand("bluesound", "Bluesound", "/player-support/bluesound/", true),
+  brand("squeezelite", "Squeezelite", "/player-support/squeezelite/"),
+  brand("dlna", "DLNA", "/player-support/dlna/"),
+  brand("alexa", "Alexa", "/player-support/alexa/"),
 ];
 
 export interface Plugin {
