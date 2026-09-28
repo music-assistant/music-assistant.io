@@ -67,3 +67,7 @@ Deezer has no sign-in for outside apps, so a value called an ARL token has to be
 ### Settings
 
 Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+
+## Known Issues / Notes
+
+- Podcast transcripts are not available

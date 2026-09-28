@@ -56,3 +56,4 @@ In addition to the default options, the Storytel provider also has the following
 ## Known Issues / Notes
 
 - Browse support is not currently implemented for Storytel. Instead, use the audiobook and podcast libraries to access your media.
+- Podcast transcripts are not available

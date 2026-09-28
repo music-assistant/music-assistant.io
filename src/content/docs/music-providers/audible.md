@@ -62,6 +62,7 @@ Note: If you need to re-authenticate or change the marketplace, you will have to
 - Switching marketplaces requires re-authentication
 - The provider will be registered as a device on Audible. If you remove the provider, it will deregister the device
 - While there haven't been any issues with the number of registered devices during development, it's worth noting that Audible has various content license requirements. If a user has material with a device license restriction then having many registered devices might cause issues
+- Podcast transcripts are not available
 
 ## Not Yet Supported
 

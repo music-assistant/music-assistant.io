@@ -48,6 +48,7 @@ To connect more than one VRT account, add the provider again as a separate insta
 
 - Some on-demand programmes and podcasts may be geo-restricted to Belgium.
 - Station logos and programme metadata are populated from VRT where available.
+- Podcast transcripts are not available
 
 ## Not Yet Supported
 

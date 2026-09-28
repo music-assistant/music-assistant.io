@@ -59,3 +59,4 @@ In the configuration, you only need to click the save button.
 - This free service does not have optimised API calls and delays can be experienced when browsing and searching. Long time caching is used to speed subsequent viewing
 - Bear in mind that file naming is inconsistent, clear titles are not always available and the same title can be used for different items
 - Audio quality varies widely
+- Podcast transcripts are not available
