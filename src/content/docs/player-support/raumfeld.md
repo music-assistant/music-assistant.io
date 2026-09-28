@@ -5,7 +5,9 @@ description: A description of the Teufel Raumfeld Player Provider
 
 # Teufel Raumfeld <img src="/assets/icons/raumfeld-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for Teufel Raumfeld (Smart Speaker) multiroom devices. Unlike most providers, Raumfeld systems are not a collection of independent speakers: one device (or the Raumfeld app) acts as the **host**, and every other speaker is registered with it. The host owns the system's *rooms* and its *zones* — the groups a room can be part of.
+Music Assistant has support for Teufel Raumfeld (Smart Speaker) multiroom devices. Contributed and maintained by [Simanias](https://github.com/Simanias).
+
+Unlike most providers, Raumfeld systems are not a collection of independent speakers: one device (or the Raumfeld app) acts as the **host**, and every other speaker is registered with it. The host owns the system's *rooms* and its *zones* — the groups a room can be part of.
 
 Music Assistant follows that model. Each Raumfeld **room** becomes a player, and each Raumfeld **zone** becomes a sync group. Grouping players in Music Assistant creates and changes zones on the host, so a group made here is a real Raumfeld group and shows up as one in the Raumfeld app.
 
