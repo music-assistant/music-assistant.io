@@ -22,7 +22,7 @@ const links = [
 ];
 ---
 
-<header class="site-header">
+<header class:list={["site-header", { "is-homepage": path === "/" }]}>
   <div class="container inner">
     <div class="brand">
       <a href="/" class="home" aria-label="Music Assistant home">
@@ -67,7 +67,7 @@ const links = [
             <Icon name="moon" />
           </span>
         </button>
-        <Button href="/get-started/">
+        <Button href="/get-started/" class="nav-install">
           Get Music Assistant
         </Button>
       </div>
@@ -173,6 +173,10 @@ const links = [
   }
   .nav-actions :global(.btn) {
     margin-left: 0.5rem;
+  }
+  /* Reserve the button's space so the navigation stays still as it appears. */
+  :global(.js) .site-header.is-homepage:not(.show-install) :global(.nav-install) {
+    visibility: hidden;
   }
   .icon-button {
     display: grid;
