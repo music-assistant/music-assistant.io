@@ -20,7 +20,7 @@ const compose = `services:
 const methods = [
   {
     id: "home-assistant",
-    icon: "house",
+    image: "/assets/landing/brands/hass_players.svg",
     title: "Home Assistant",
     text: "Install as an app",
   },
@@ -64,8 +64,12 @@ const nextSteps = [
     <nav class="picker" data-install-picker aria-label="Installation method">
       {methods.map((method) => (
         <a id={`tab-${method.id}`} href={`#${method.id}`}>
-          <span class="picker-icon">
-            <Icon name={method.icon} size={22} />
+          <span class:list={["picker-icon", { "brand-icon": method.image }]}>
+            {method.image ? (
+              <img src={method.image} alt="" width="32" height="32" />
+            ) : (
+              <Icon name={method.icon} size={22} />
+            )}
           </span>
           <span>
             <strong>{method.title}</strong>
@@ -252,7 +256,10 @@ const nextSteps = [
     border: 1px solid var(--line);
     border-radius: 50%;
   }
-  .picker a[aria-selected="true"] .picker-icon {
+  .picker-icon.brand-icon {
+    border: 0;
+  }
+  .picker a[aria-selected="true"] .picker-icon:not(.brand-icon) {
     color: var(--on-accent);
     background: var(--accent);
     border-color: var(--accent);
