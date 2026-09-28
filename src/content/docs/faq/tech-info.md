@@ -59,7 +59,7 @@ When the same track is available from more than one source — say a Spotify str
 
 Quality is judged on **sample rate, bit depth and codec**, in that order. Where two sources are of equal quality, the local one is preferred over the cloud one.
 
-You can see which sources hold a given item, and how they are linked together, in the [Provider Details](/ui/#provider-details) section of the item.
+You can see which sources hold a given item, and how they are linked together, in the [Source Details](/ui/#source-details) section of the item.
 
 ## Track Queueing
 
