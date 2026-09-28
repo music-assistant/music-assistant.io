@@ -126,8 +126,27 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   }
 
   @media (max-width: 760px) {
+    .bill {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 86%;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline-end: 14%;
+      overscroll-behavior-x: contain;
+      scrollbar-width: thin;
+      scrollbar-color: var(--line) transparent;
+      padding-bottom: 1.5rem;
+    }
+    li {
+      min-width: 0;
+      scroll-snap-align: start;
+    }
     .act {
       grid-template-columns: 1fr;
+      align-content: start;
+      height: 100%;
     }
   }
 </style>
