@@ -25,6 +25,7 @@ AI Radio is in alpha. The show and host editors, the bundled hosts and the gener
 - Decide when the host speaks, from every song to once an hour
 - Let the host look things up on the web for segments that need current information
 - Add weather to any segment through Open-Meteo
+- Feed a segment your own RSS or Atom news feeds and let the host read from them
 - Turn on an AI DJ for any queue straight from the queue menu
 - Duplicate a show to make a variation without starting again
 
@@ -141,6 +142,7 @@ A segment is one spoken part. **Add segment** offers ready-made ones for **Intro
 | **Web Search Mode** | Whether the host may look things up for this segment |
 | **Character Limit** | Roughly how long the spoken text may get |
 | **Plays** | When and how often the segment is used |
+| **RSS feeds** | The RSS or Atom feeds this segment reads from, used with the `<rss_feed>` placeholder. See [News feeds (RSS)](#news-feeds-rss) |
 
 **Plays** offers **Once at start**, **Once at end**, **Every song**, **Every ~N songs**, **Every ~N min** and **Occasionally**, the last with a percentage.
 
@@ -169,6 +171,7 @@ Anything below is filled in before the prompt goes to the AI. In the editor you 
 | `<timestamp>` | The current local time |
 | `<weather_hourly>` | The weather now and over the next few hours |
 | `<weather_daily>` | The weather for the day |
+| `<rss_feed>` | Recent articles from the segment's [RSS or Atom feeds](#news-feeds-rss) |
 
 An example prompt:
 
@@ -193,6 +196,37 @@ Weather comes from Open-Meteo. To use it, set the weather city and country in th
 A timing such as **Every ~60 min** or **Occasionally** keeps it from coming round too often.
 
 If the weather cannot be fetched, the host leaves the weather out and carries on rather than stopping the show. A segment that exists only to read the forecast is skipped instead.
+
+## News feeds (RSS)
+
+A segment can read from your own news sources. Give it one or more RSS or Atom feeds and put `<rss_feed>` in its prompt, and the host reads the latest headlines from those feeds instead of relying on a web search. So there is no need to enable the web search when using RSS or Atom feeds.
+
+Feeds are set per segment, so a **News** segment can pull from your local paper while the rest of the host stays as it is.
+
+### Adding feeds to a segment
+
+1. Select **Edit** on a host card, then open the segment you want, or add a new one.
+2. Under **RSS feeds**, select **Add feed**.
+3. Paste the **Feed URL**, for example `https://example.com/feed.xml`.
+4. Set **Max articles** for how many of the newest items from that feed the host may see. The default is 5, and the range is 1 to 20.
+5. Add more feeds the same way, or use the remove button next to a feed to take one out.
+6. Make sure the segment's **Prompt** contains `<rss_feed>` so the articles have somewhere to go.
+
+An example prompt:
+
+```text
+Read a short news update using <rss_feed>.
+Summarise the top stories in a natural spoken style, keep it factual and concise.
+```
+
+### How it works
+
+- Both **RSS 2.0** and **Atom 1.0** feeds are supported.
+- The feeds are fetched fresh each time the segment plays, so the host reads what is current rather than what was there when you set it up.
+- Only the newest items are used, up to the **Max articles** you set for each feed. Article text is cleaned up before it reaches the AI.
+- Because the feeds provide the facts, a segment reading from `<rss_feed>` usually does not need web search. See [web search modes](#web-search-modes).
+
+If a feed cannot be fetched or returns nothing, the host does not invent the news. It gives a brief general update or moves on instead, and the show keeps running.
 
 ## Plugin settings
 
@@ -257,6 +291,10 @@ Check the queue is actually playing. The DJ fills the gaps between tracks, so it
 ### Weather segments are empty or skipped
 
 Check the weather city and country are set in the plugin settings, and that **Weather Provider** has not been set to Disabled.
+
+### A news segment reads no headlines
+
+Check the segment has at least one feed under **RSS feeds** and that its prompt contains `<rss_feed>`. Open the feed URL in a browser to confirm it is a working RSS or Atom feed and not a web page. If a feed is unreachable the host falls back to a general update rather than reading from it, so the show keeps running. See [News feeds (RSS)](#news-feeds-rss).
 
 ### Web search seems to do nothing (or hallucinates)
 
