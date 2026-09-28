@@ -82,7 +82,7 @@ Users only see what comes from the music sources they can use, in the library, w
 
 Users can add music sources of their own when their role allows it, which the standard User role does. They find **Music Sources** in the settings, with the sources they own under **Your sources** and every other source they can use under **Shared with you**. There they can connect their own account for a service that can be added more than once, such as Spotify or Tidal, and reconfigure, share or remove it. A source a user adds starts out as **Only me**. Users whose role does not allow adding sources can still find the page, and see the sources shared with them.
 
-A [Filesystem (local disk)](/music-providers/local-files/) source is the exception. Only an administrator can add one, and can then share it with a user or make that user its owner.
+A user can also add a [Local files](/music-providers/local-files/) source of their own, on a folder in one of the storage locations an administrator made available. Only an administrator can add storage locations, on the [Storage](/settings/storage/) page.
 
 ### Audiobook and podcast progress
 
