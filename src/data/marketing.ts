@@ -94,7 +94,7 @@ export interface Feature {
   cover: PaletteName;
   title: string;
   summary: string;
-  text: string;
+  text: string | Array<string | { href: string; label: string }>;
   link?: { href: string; label: string };
 }
 
@@ -105,6 +105,19 @@ export const features: Feature[] = [
     summary: "Search your streaming services and your own collection together.",
     text: "Browse music from your connected sources in one place. Matching releases are linked, and a playlist can include tracks from several services alongside your own files. Each service still needs its own account and subscription where required.",
     link: { href: "/music-providers/", label: "Explore music sources" },
+  },
+  {
+    cover: "electronic",
+    title: "Free, open source and private",
+    summary: "Your music system stays under your control.",
+    text: [
+      "Music Assistant is free and open source, backed by the ",
+      {
+        href: "https://www.openhomefoundation.org/",
+        label: "Open Home Foundation",
+      },
+      ". It runs in your home and never collects or shares what you play. Connected music services still handle their own streams under their own privacy terms.",
+    ],
   },
   {
     cover: "indie",
