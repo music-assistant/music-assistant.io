@@ -17,7 +17,6 @@ const releaseUrl = latestPost ? `/${latestPost.id}/` : githubUrl;
 const path = Astro.url.pathname;
 
 const links = [
-  { href: "/#features", label: "Features" },
   { href: "/blog/", label: "News", current: path.startsWith("/blog") },
   { href: "/documentation/", label: "Documentation" },
 ];
