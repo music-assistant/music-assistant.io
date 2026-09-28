@@ -19,7 +19,7 @@ const path = Astro.url.pathname;
 const links = [
   { href: "/#how-it-works", label: "How it works" },
   { href: "/#features", label: "Features" },
-  { href: "/blog/", label: "Blog", current: path.startsWith("/blog") },
+  { href: "/blog/", label: "News", current: path.startsWith("/blog") },
   { href: "/documentation/", label: "Documentation" },
 ];
 const isInstall = path.startsWith("/get-started");

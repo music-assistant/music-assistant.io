@@ -116,7 +116,7 @@ export default defineConfig({
       routeMiddleware: "./src/starlightRouteData.ts",
       plugins: [
         starlightBlog({
-          title: "Blog",
+          title: "News",
           prefix: "blog",
           postCount: 10,
           recentPostCount: 5,
@@ -343,7 +343,7 @@ export default defineConfig({
             },
           ],
         },
-        { label: "Blog", link: "/blog/" },
+        { label: "News", link: "/blog/" },
       ],
       components: {
         Head: "./src/components/Head.astro",
