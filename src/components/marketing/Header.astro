@@ -21,7 +21,6 @@ const links = [
   { href: "/blog/", label: "News", current: path.startsWith("/blog") },
   { href: "/documentation/", label: "Documentation" },
 ];
-const isInstall = path.startsWith("/get-started");
 ---
 
 <header class="site-header">
@@ -69,8 +68,8 @@ const isInstall = path.startsWith("/get-started");
             <Icon name="moon" />
           </span>
         </button>
-        <Button href={isInstall ? "/documentation/" : "/get-started/"}>
-          {isInstall ? "Documentation" : "Get Music Assistant"}
+        <Button href="/get-started/">
+          Get Music Assistant
         </Button>
       </div>
     </nav>
