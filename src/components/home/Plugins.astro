@@ -11,7 +11,11 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
     <SectionHeading
       id="plugins-title"
       title="More than pressing play."
-    />
+    >
+      <a slot="action" class="text-link" href="/plugins/">
+        All plugins <Icon name="arrow-right" size={16} />
+      </a>
+    </SectionHeading>
 
     <!-- Set out like the bill on a gig poster: the names in big type. -->
     <ul class="bill">
@@ -122,10 +126,17 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
     font-size: 1rem;
   }
   .also .text-link {
+    display: none;
     margin-left: 0.25rem;
   }
 
   @media (max-width: 760px) {
+    .container :global(.section-heading .action) {
+      display: none;
+    }
+    .also .text-link {
+      display: inline-flex;
+    }
     .bill {
       display: grid;
       grid-auto-flow: column;
