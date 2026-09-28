@@ -94,14 +94,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://www.music-assistant.io/assets/banner.png",
+            content: "https://www.music-assistant.io/assets/website-social.png",
           },
         },
         {
           tag: "meta",
           attrs: {
             name: "twitter:image",
-            content: "https://www.music-assistant.io/assets/banner.png",
+            content: "https://www.music-assistant.io/assets/website-social.png",
           },
         },
         {
