@@ -72,7 +72,7 @@ Music Assistant has support for Google Drive. Follow the Home Assistant document
 
 **Audio files are on a remote share served via One Drive**
 
-Music Assistant has support for Microsoft One Drive. Setup instructions are below.
+Music Assistant has support for Microsoft One Drive personal accounts (business accounts are not supported). Setup instructions are below.
 
 <details>
 <summary><b>Setting up OneDrive for Music Assistant</b></summary>
