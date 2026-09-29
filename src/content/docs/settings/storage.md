@@ -56,6 +56,8 @@ A share that was added in Home Assistant, or mounted on the host, has no buttons
 
 This is only possible when Music Assistant does not run in a container. Select **Add a folder on this server** and enter the full path of an existing folder, for example `/home/me/Music`. **Remove** takes it off the list again. The folder and its files are not deleted.
 
+A drive or network share that is mounted on the computer can be added the same way. Enter the path it is mounted on, for example `/mnt/nas`. Other users can then pick it for a music source of their own. While the drive or share is not mounted, the folder shows as **Unavailable**.
+
 On Docker the button is not there. Map the folder into the container instead. On the Home Assistant App, put the files in the media folder or on a network share.
 
 ## Server storage
