@@ -5,7 +5,7 @@ description: Features, Configuration, Issues and More for the File System Music 
 
 # Filesystem Sources <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has full support for reading music files on a disk, a NAS or another server and will catalog them into the library, allowing playback to all player providers supported by Music Assistant. The **Local files** source reads a folder on the server itself, on a drive or on a network share (SMB or NFS). WebDAV and the cloud storage services Google Drive and Microsoft OneDrive each have a source of their own.
+Music Assistant has full support for reading music files on a disk, a NAS or another server and will catalog them into the library, allowing playback to all player providers supported by Music Assistant. The **Local files** source reads a folder on the server itself, on a drive or on an SMB or NFS network share. WebDAV and the cloud storage services Google Drive and Microsoft OneDrive each have a source of their own.
 
 When streaming sources are also available in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
 
@@ -40,7 +40,7 @@ Separate sources must be added for Music, Audiobooks and Podcasts.
 
 **Audio files are in a folder, on a drive or on a network share**
 
-Select the **Local files** music source. It asks what the folder holds (music, audiobooks, podcasts or sound effects) and where it is stored. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**. There is no field to type a path.
+Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**. There is no field to type a path.
 
 Which locations are listed depends on how Music Assistant is installed:
 
@@ -160,7 +160,7 @@ In addition to the settings outlined above to configure this source, there are a
 
 - Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
 - When a Local files source is on a storage location that is unavailable, for example a NAS that is switched off, the source is unavailable too. It returns by itself once the location is reachable again, and nothing is removed from the library while it is away
-- On an SMB network share, be aware that use of SMB 1 (which is very old) is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB 1 can be disabled
+- On an SMB network share, be aware that the very old SMB 1 is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB 1 can be disabled
 - WebDAV, Google Drive and OneDrive are reached over the internet rather than over your own network, so library sync is slower than local, SMB or NFS, particularly for large libraries. The first sync of a cloud source reads the tags of every file over the internet
 - Writing to WebDAV, Google Drive and OneDrive sources is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
 

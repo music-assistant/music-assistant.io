@@ -21,7 +21,7 @@ Which locations you see depends on how Music Assistant is installed.
 
 Each location shows its name, its path, the kind of location it is, such as **Network share** or **USB drive**, and the free space where it is known. Two more labels say something about its state:
 
-- <b>Unavailable.</b> Music Assistant cannot reach the location right now, for example because the NAS is switched off. For a network share that Music Assistant added, the reason is shown below it. A Local files source on this location is unavailable too. It returns by itself once the location is reachable again, and nothing is removed from the library while it is away
+- <b>Unavailable.</b> Music Assistant cannot reach the location right now, for example because the NAS is switched off. The reason is shown below it. A Local files source on this location is unavailable too. It returns by itself once the location is reachable again, and nothing is removed from the library while it is away
 - <b>Read-only.</b> Music Assistant can read the files but not change them. Playlist files in this location cannot be created or edited. Playlists you create in Music Assistant itself are not affected
 
 ## Adding a network share
@@ -34,21 +34,21 @@ Select **Add network share** and fill in the form:
 - <b>Export path.</b> For NFS, the folder the server shares, for example `/volume1/music`
 - <b>Username and Password.</b> For SMB. Leave both empty to connect as a guest
 - <b>Read-only.</b> Music Assistant can read from the share but not change anything on it
-- <b>Protocol version.</b> Under **Show advanced settings**. Leave it on **Automatic** unless the share does not connect with that setting
+- <b>Protocol version.</b> Under **Show advanced settings**. Leave it on **Automatic** unless the share does not connect with that setting. On the Home Assistant App, only SMB 1.0 and 2.0 can be picked, and NFS has no version setting
 
 Select **Add**. The share joins the list of music locations, and you can pick it, or a folder inside it, for a Local files source.
 
-If this installation of Music Assistant cannot connect a network share itself, the button is not there and the page shows **Add network shares on the host** instead. On Docker, [mount the share on the host](/installation/#with-docker) and map it into the container. It then shows up as a location of its own.
+If this installation of Music Assistant cannot connect a network share itself, the button is not there. In a container, the page shows **Add network shares on the host** instead. [Mount the share on the host](/installation/#with-docker) and map it into the container. It then shows up as a location of its own. Without a container, the page shows **Mount network shares on this server**. Mount the share on the computer. On Linux, it then shows up as a location of its own.
 
 ### Changing or removing a network share
 
 A network share that Music Assistant added has three buttons:
 
-- <b>Reload.</b> Connects the share again. Use it when a share is unavailable and you do not want to wait for Music Assistant to try again by itself
+- <b>Reload.</b> Connects the share again, for example after the NAS was switched off. While a music source uses the share, Music Assistant also tries this by itself
 - <b>Edit.</b> Changes the settings of the share. The password is not shown. Leave it empty to keep the current one
 - <b>Remove.</b> Disconnects the share. The files on it are not deleted
 
-A location that a music source still uses cannot be removed. Remove that music source first.
+When a location holds the folder of an enabled music source, it shows **Used by** with the name of that source, and it cannot be removed. Remove that music source first.
 
 A share that was added in Home Assistant, or mounted on the host, has no buttons here. Change it where it was added.
 
@@ -64,7 +64,7 @@ This part of the page shows where Music Assistant keeps its own data and its cac
 
 ## Who can use the storage locations
 
-Only administrators see the Storage page, and only they can add or remove storage locations. A user whose role allows [adding music sources of their own](/settings/user-management/#adding-your-own-music-sources) can add a Local files source on the locations an administrator made available.
+Only administrators see the Storage page, and only they can add or remove storage locations. A user whose role allows [adding music sources of their own](/settings/user-management/#adding-your-own-music-sources) can add a Local files source in a music location. On the Home Assistant App and on Docker, they can pick any music location. Without a container, they can only pick the folders and network shares an administrator added on the Storage page.
 
 ## Known limits
 
