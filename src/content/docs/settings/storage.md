@@ -9,6 +9,8 @@ A storage location is a folder, a drive or a network share that Music Assistant 
 
 The **Storage** page in the settings lists the storage locations and lets you add network shares. Only administrators see this page.
 
+![The Storage page with the Home Assistant media folder and a network share](/assets/screenshots/settings-storage.png)
+
 ## Where storage locations come from
 
 Which locations you see depends on how Music Assistant is installed.

@@ -42,6 +42,8 @@ Separate sources must be added for Music, Audiobooks and Podcasts.
 
 Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**. There is no field to type a path.
 
+<img src="/assets/screenshots/local-files-folder-picker.png" alt="The setup of a Local files source with the list of storage locations" style="width: 560px;" loading="lazy" />
+
 Which locations are listed depends on how Music Assistant is installed:
 
 - <b>Home Assistant App.</b> The Home Assistant media folder and every network share added to it
