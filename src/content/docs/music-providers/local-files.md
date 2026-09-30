@@ -40,7 +40,7 @@ Separate sources must be added for Music, Audiobooks and Podcasts.
 
 **Audio files are in a folder, on a drive or on a network share**
 
-Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**. There is no field to type a path.
+Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**.
 
 <img src="/assets/screenshots/local-files-folder-picker.png" alt="The setup of a Local files source with the list of storage locations" style="width: 560px;" loading="lazy" />
 
@@ -48,11 +48,10 @@ Which locations are listed depends on how Music Assistant is installed:
 
 - <b>Home Assistant App.</b> The Home Assistant media folder and every network share added to it
 - <b>Docker.</b> Every folder or volume mapped into the container
-- <b>Without a container.</b> The drives and network shares mounted on the computer, and the folders an administrator added
 
 Music on a NAS? Make the share a storage location first, then pick it here. On the Home Assistant App, an administrator adds it with **Add network share** on the [Storage](/settings/storage/#adding-a-network-share) page. On Docker, mount the share on the host and map it into the container, as described under [Your music files](/installation/#your-music-files).
 
-Below the picker, administrators find **Manage storage**, which opens the Storage page. Users who are not administrators can add a Local files source of their own when their role allows it. They pick from the storage locations an administrator made available. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
+Below the picker, administrators find **Manage storage**, which opens the Storage page. Users who are not administrators can add a Local files source of their own when their role allows it. They pick from the same storage locations. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
 
 > [!CAUTION]
 > Music Assistant assumes your NAS is on your local network. It adds no encryption or access control of its own, so a network share should not be reached over the internet.
