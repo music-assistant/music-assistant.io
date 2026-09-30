@@ -5,14 +5,11 @@ description: Documentation for using the FeiNiu Music music source
 
 # FeiNiu Music <img src="/assets/icons/feiniu-music-icon.svg" alt="FeiNiu Music icon" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for FeiNiu Music. This component was contributed and is maintained by <a href="https://github.com/neqq3" target="_blank" rel="noopener noreferrer">neqq3</a>.
+Music Assistant has support for <a href="https://fnnas.com/download" target="_blank" rel="noopener noreferrer">FeiNiu Music</a>. This component was contributed and is maintained by <a href="https://github.com/neqq3" target="_blank" rel="noopener noreferrer">neqq3</a>.
 
 FeiNiu Music is the personal music library application included with fnOS. It organises music stored on your NAS and makes the library available through its web and mobile applications.
 
 This source connects that library to Music Assistant, allowing the music available to the configured FeiNiu Music account to be browsed, searched and played through players supported by Music Assistant.
-
-> [!NOTE]
-> This source is currently experimental and has been tested with FeiNiu Music 1.0.1 (0.8.41).
 
 ## Features
 
@@ -27,7 +24,7 @@ This source connects that library to Music Assistant, allowing the music availab
 | Artist Top Tracks Support                         |                 No                 |
 | Similar Artists Support                           |                 No                 |
 | Similar Tracks Support                            |                 No                 |
-| Maximum Stream Quality                            |        Varies by source file       |
+| Maximum Stream Quality                            |          FLAC, Unlimited          |
 | Login Method                                      |              Password              |
 
 ### Other
@@ -48,7 +45,7 @@ In **Settings → Music Sources**, add **FeiNiu Music** and provide:
 - **Music username.** A FeiNiu Music account with access to the library you want to use.
 - **Music password.** The password for that account.
 
-Use a complete HTTP or HTTPS URL rather than an FN ID, and do not include query parameters or URL fragments.
+Use a complete HTTP or HTTPS URL rather than an <a href="https://help.fnnas.com/articles/v1/start/install-app" target="_blank" rel="noopener noreferrer">FN ID</a>, and do not include query parameters or URL fragments.
 
 > [!NOTE]
 > The standard `/music/` web path is supported. An additional reverse-proxy path prefix, such as `/nas/music/`, is not currently supported.
@@ -65,4 +62,3 @@ The server address and username cannot be changed on an existing source. To use 
 
 - This source is read-only. Library and playlist changes must be made in FeiNiu Music and are not written back from Music Assistant.
 - Available music follows the permissions of the configured FeiNiu Music account. If an item is missing or cannot be played, first check that the same account can access it in FeiNiu Music.
-- Audio is read from FeiNiu Music at the source file's original quality. The final format and quality sent to a player depend on Music Assistant's audio pipeline and the capabilities of the target player.
