@@ -7,7 +7,7 @@ description: Documentation for using the FeiNiu Music music source
 
 Music Assistant has support for <a href="https://fnnas.com/download" target="_blank" rel="noopener noreferrer">FeiNiu Music</a>. This component was contributed and is maintained by <a href="https://github.com/neqq3" target="_blank" rel="noopener noreferrer">neqq3</a>.
 
-FeiNiu Music is the personal music library application included with fnOS. It organises music stored on your NAS and makes the library available through its web and mobile applications.
+FeiNiu Music is the personal music library application included with <a href="https://fnnas.com" target="_blank" rel="noopener noreferrer">fnOS</a>. It organises music stored on your NAS and makes the library available through its web and mobile applications.
 
 This source connects that library to Music Assistant, allowing the music available to the configured FeiNiu Music account to be browsed, searched and played through players supported by Music Assistant.
 
