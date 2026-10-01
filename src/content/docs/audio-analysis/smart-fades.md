@@ -33,7 +33,7 @@ Some players don't natively support gapless or crossfaded playback. For those, M
 
 ## How analysis runs
 
-Scanning is done as a background task for local file system (i.e. SMB, NFS, or WebDAV) provided tracks and all in-library tracks are scanned during playback.
+Scanning is done as a background task for tracks from [Local files](/music-providers/local-files/) sources, including those on a network share, and all in-library tracks are scanned during playback.
  
 Analysis runs in the background while a track is playing through the streaming pipeline. The first time a track is played:
 
