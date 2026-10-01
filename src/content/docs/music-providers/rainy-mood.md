@@ -61,7 +61,7 @@ Note that enabling the overlay forces the queue into flow mode, because the over
 
 - Support for Rainy Mood is still experimental, please report if you experience any issues or unexpected behaviour
 - An internet connection to rainymood.com is required, the sound is not available offline
-- The rain sound cannot be favourited or added to a playlist
+- The rain sound cannot be favorited or added to a playlist
 - While the audio overlay is active, the queue always plays in flow mode. Players that rely on per-item playback features will behave accordingly
 - If the overlay source cannot be resolved or its stream fails, playback continues without the overlay rather than stopping the music
 - For locally generated noise and ocean wave loops, see [Ambient Sounds](/music-providers/ambient-sounds/)
