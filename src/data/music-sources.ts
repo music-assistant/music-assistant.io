@@ -273,6 +273,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["own-files"],
   },
   {
+    name: "Global Player",
+    slug: "music-providers/global-player",
+    icon: "/assets/icons/global-player-icon.svg",
+    categories: ["radio", "classical", "uk"],
+  },
+  {
     name: "gPodder",
     slug: "music-providers/gpodder",
     icon: "/assets/icons/gpodder-icon.png",
