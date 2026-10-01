@@ -551,6 +551,7 @@ export const MUSIC_SOURCES_PAGE = {
   knownUnlisted: [
     "music-providers", // the overview page
     "music-providers/ambient-sounds", // fits none of the listening categories
+    "music-providers/rainy-mood", // fits none of the listening categories
     "music-providers/netease-cloud-music-zh", // Chinese version of another page
     "music-providers/qqmusic-zh", // Chinese version of another page
   ],
