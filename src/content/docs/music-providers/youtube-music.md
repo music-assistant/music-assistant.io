@@ -29,7 +29,7 @@ With your account connected, your library and playlists appear in Music Assistan
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
-| Similar Artists Support                         |            No                      |
+| Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | AAC 256kbps |
 | Login Method | Token + Cookie |
