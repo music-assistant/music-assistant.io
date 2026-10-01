@@ -280,6 +280,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["own-files"],
   },
   {
+    name: "FeiNiu Music",
+    slug: "music-providers/feiniu-music",
+    icon: "/assets/icons/feiniu-music-icon.svg",
+    categories: ["own-files"],
+  },
+  {
     name: "gPodder",
     slug: "music-providers/gpodder",
     icon: "/assets/icons/gpodder-icon.png",
