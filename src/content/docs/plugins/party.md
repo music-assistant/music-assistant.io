@@ -30,8 +30,6 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 2. Configure which player will be used for party (or leave on Auto to use the last active player)
 3. Open the Party dashboard on the screen of your choice to display the live queue and guest join QR code
 
-You can add multiple Party instances — one per player. Each instance has its own configuration, QR code, and guest queue. This is useful if you have speakers in different rooms and want separate party experiences for each.
-
 ### For Guests
 
 1. Scan the QR code with a phone camera

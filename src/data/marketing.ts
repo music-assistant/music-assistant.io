@@ -155,15 +155,24 @@ export const features: Feature[] = [
   },
 ];
 
-export const team = [
+interface TeamMember {
+  name: string;
+  github: string;
+  image?: string;
+}
+
+export const team: TeamMember[] = [
   { name: "Marcel", github: "marcelveldt", image: "marcel" },
   { name: "Marvin", github: "marvinschenkel", image: "marvin" },
   { name: "Maxim", github: "maximmaxim345", image: "maxim" },
   { name: "Steven", github: "stvncode", image: "steven" },
   { name: "Chris", github: "chrisuthe", image: "chris" },
+  { name: "Piero", github: "pierosavi", image: "piero" },
   { name: "Gavin", github: "OzGav", image: "gavin" },
   { name: "Jozef", github: "jozefKruszynski", image: "jozef" },
   { name: "Fabian", github: "fmunkes", image: "fabian" },
+  { name: "David", github: "teancom", image: "david" },
+  { name: "Andrii", github: "formatbce", image: "andrii" },
   { name: "Eric", github: "khers", image: "khers" },
   { name: "Rob", github: "robsonke", image: "robsonke" },
 ];

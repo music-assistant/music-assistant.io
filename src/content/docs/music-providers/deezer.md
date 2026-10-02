@@ -63,6 +63,13 @@ Deezer has no sign-in for outside apps, so a value called an ARL token has to be
 - Have a Hifi/Premium/Family account
 - Are on the latest Music Assistant version
 - Try different browsers
+- Use the ARL of your own account, see [Deezer Family](#deezer-family)
+
+### Deezer Family
+
+Deezer Family members are either profiles, which log in with the owner's email and password, or independent accounts with their own login. Only independent accounts have their own ARL. If you log in with the owner's credentials and then pick a profile, the ARL still belongs to the owner and Music Assistant will show the owner's music.
+
+To use a profile in Music Assistant, convert it into an independent account first. It stays part of the Family plan and keeps its favourites and playlists. <a href="https://support.deezer.com/hc/en-gb/articles/360007641517-Join-And-Use-Deezer-Family-With-An-Independent-Account" target="_blank" rel="noopener noreferrer">Deezer's help page</a> explains how. Then log in on deezer.com with the new credentials and copy that ARL as described above.
 
 ### Settings
 

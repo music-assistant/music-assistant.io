@@ -1,6 +1,7 @@
 ---
 import { team } from "../../data/marketing";
 import Button from "../marketing/ui/Button.astro";
+import Cover from "../marketing/ui/Cover.astro";
 import Section from "../marketing/ui/Section.astro";
 ---
 
@@ -38,14 +39,20 @@ import Section from "../marketing/ui/Section.astro";
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src={`/assets/team/${person.image}.png`}
-                alt=""
-                width="200"
-                height="200"
-                loading="lazy"
-                decoding="async"
-              />
+              <div class="portrait">
+                {person.image ? (
+                  <img
+                    src={`/assets/team/${person.image}.png`}
+                    alt=""
+                    width="200"
+                    height="200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <Cover palette="electronic" />
+                )}
+              </div>
               <span>{person.name}</span>
               <span class="sr-only"> on GitHub</span>
             </a>
@@ -94,20 +101,30 @@ import Section from "../marketing/ui/Section.astro";
     gap: 0.625rem;
     text-decoration: none;
   }
-  img {
+  .portrait {
     width: 100%;
     max-width: 6rem;
     aspect-ratio: 1;
     border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  .portrait :global(.cover),
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+  img {
     object-fit: cover;
     filter: grayscale(1) contrast(1.1);
-    transition:
-      filter 0.3s,
-      transform 0.3s;
+    transition: filter 0.3s;
   }
   a:hover img,
   a:focus-visible img {
     filter: none;
+  }
+  a:hover .portrait,
+  a:focus-visible .portrait {
     transform: scale(1.05);
   }
   span:not(.sr-only) {
