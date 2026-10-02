@@ -34,6 +34,7 @@ This source lets you search and browse the index from Music Assistant and add an
 ### Other
 
 - Search and Browse supported
+- Transcripts are shown for episodes where the podcast publisher provides one
 
 ## Configuration
 
