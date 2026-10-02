@@ -173,8 +173,6 @@ export const team: TeamMember[] = [
   { name: "Fabian", github: "fmunkes", image: "fabian" },
   { name: "David", github: "teancom", image: "david" },
   { name: "Andrii", github: "formatbce", image: "andrii" },
-  { name: "Eric", github: "khers", image: "khers" },
-  { name: "Rob", github: "robsonke", image: "robsonke" },
 ];
 
 /**
