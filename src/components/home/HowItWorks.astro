@@ -1,0 +1,149 @@
+---
+import { musicSources, speakers } from "../../data/marketing";
+import BrandTile from "../marketing/ui/BrandTile.astro";
+import Icon from "../marketing/ui/Icon.astro";
+import Logo from "../marketing/ui/Logo.astro";
+import Section from "../marketing/ui/Section.astro";
+import SectionHeading from "../marketing/ui/SectionHeading.astro";
+---
+
+<Section id="how-it-works" tone="base" labelledby="how-title">
+  <div class="container">
+    <SectionHeading
+      id="how-title"
+      title="One system between your music and your speakers."
+      lead="Keep your library and playlists independent of any one music service. Mix speaker brands, switch services and change your setup without starting over."
+    />
+
+    <ol class="flow">
+      <li class="panel" data-reveal>
+        <p class="step">Your music</p>
+        <p>
+          Streaming services, local files, radio, podcasts and audiobooks, in
+          one place.
+        </p>
+        <ul class="brands" aria-label="Some of the supported music sources">
+          {musicSources.map((brand) => (
+            <BrandTile brand={brand} />
+          ))}
+        </ul>
+        <a class="text-link" href="/music-providers/">
+          All music sources <Icon name="arrow-right" size={16} />
+        </a>
+      </li>
+
+      <li class="panel core" data-reveal style="--reveal-delay: 100ms">
+        <div class="core-logo">
+          <Logo />
+        </div>
+        <p>
+          Runs on a device in your home. Browse your music, build a queue and
+          control every speaker from one app.
+        </p>
+      </li>
+
+      <li class="panel" data-reveal style="--reveal-delay: 200ms">
+        <p class="step">Your speakers</p>
+        <p>
+          Speakers from different brands and ecosystems, in one room or in sync
+          throughout your home.
+        </p>
+        <ul class="brands" aria-label="Some of the supported speakers">
+          {speakers.map((brand) => (
+            <BrandTile brand={brand} />
+          ))}
+        </ul>
+        <a class="text-link" href="/player-support/">
+          All players <Icon name="arrow-right" size={16} />
+        </a>
+      </li>
+    </ol>
+  </div>
+</Section>
+
+<style>
+  .flow {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 0.8fr) 1fr;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--card);
+  }
+  .panel p {
+    color: var(--muted);
+  }
+  .step {
+    margin-bottom: 0.75rem;
+    color: var(--fg) !important;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .brands {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin: 0.75rem 0 1.5rem;
+    padding: 0;
+    list-style: none;
+  }
+  .panel .text-link {
+    margin-top: auto;
+  }
+  .core {
+    justify-content: center;
+    text-align: center;
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+    background:
+      radial-gradient(
+        90% 60% at 50% 0%,
+        color-mix(in srgb, var(--accent) 14%, transparent),
+        transparent 70%
+      ),
+      var(--card);
+  }
+  .core-logo {
+    height: clamp(1.75rem, 2.6vw, 2.25rem);
+    margin: 0 auto 1.25rem;
+    color: var(--fg);
+  }
+
+  /* A small arrow between panels, the way the music goes. */
+  .panel:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: calc(-0.75rem - 5px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 1000px) {
+    .flow {
+      grid-template-columns: 1fr;
+    }
+    .panel:not(:last-child)::after {
+      top: auto;
+      right: auto;
+      bottom: calc(-0.75rem - 5px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+</style>

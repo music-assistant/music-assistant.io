@@ -1,0 +1,165 @@
+---
+import { coverImage, formatDate, type BlogPost } from "../../utils/blog";
+import Icon from "./ui/Icon.astro";
+
+interface Props {
+  post: BlogPost;
+  featured?: boolean;
+}
+const { post, featured = false } = Astro.props;
+const cover = coverImage(post);
+const url = `/${post.id}/`;
+const isRelease = post.data.tags?.includes("release");
+---
+
+<article class:list={["post", { featured }]}>
+  <div class="cover">
+    {cover ? (
+      <img
+        src={cover.src}
+        alt=""
+        width="1200"
+        height="630"
+        loading={featured ? "eager" : "lazy"}
+        decoding="async"
+      />
+    ) : (
+      <span class="placeholder" aria-hidden="true">
+        <Icon name="audio-lines" size={48} />
+      </span>
+    )}
+  </div>
+  <div class="body">
+    <p class="meta">
+      {isRelease && <span class="chip">Release</span>}
+      <time datetime={post.data.date.toISOString()}>
+        {formatDate(post.data.date)}
+      </time>
+      {post.data.crosspostSource && (
+        <span>· From {post.data.crosspostSource}</span>
+      )}
+    </p>
+    <h2>
+      <a href={url}>{post.data.title}</a>
+    </h2>
+    {post.data.description && <p class="excerpt">{post.data.description}</p>}
+  </div>
+</article>
+
+<style>
+  .post {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--card);
+    transition: border-color 0.2s;
+  }
+  .post:hover {
+    border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+  }
+  .post:focus-within {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .cover {
+    aspect-ratio: 1200 / 630;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    background: var(--page-alt);
+  }
+  .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .placeholder {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    color: var(--link);
+  }
+  .body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+  .chip {
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    color: var(--link);
+  }
+  h2 {
+    margin: 0 0 0.625rem;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+  h2 a {
+    text-decoration: none;
+  }
+  /* The whole card is clickable through the title link. */
+  h2 a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  h2 a:focus-visible {
+    outline: none;
+  }
+  .excerpt {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  .featured {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+  .featured .cover {
+    aspect-ratio: auto;
+    min-height: 100%;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+  .featured .body {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(1.5rem, 4vw, 3rem);
+  }
+  .featured h2 {
+    font-size: clamp(1.625rem, 3vw, 2.25rem);
+  }
+  .featured .excerpt {
+    font-size: 1.0625rem;
+    -webkit-line-clamp: 5;
+  }
+  @media (max-width: 800px) {
+    .featured {
+      display: flex;
+    }
+    .featured .cover {
+      aspect-ratio: 1200 / 630;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+  }
+</style>
