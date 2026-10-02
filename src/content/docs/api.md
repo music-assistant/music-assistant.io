@@ -353,3 +353,86 @@ rest_command:
     content_type:  'application/json; charset=utf-8' 
 ```
 </details>
+
+<details><summary>Refresh a podcast and play the latest episode</summary>
+
+Firstly, note that this only works with RSS based feeds such as podcastfeed (RSS), iTunes Podcasts, gPodder and Overcast. For others, they may already always return the latest episode on request. For yet others, it may not be possible to update the list more frequently due to caching of the episode list (e.g. Deezer, iHeartradio, Spotify, Storytel)
+
+Considerations:
+
+- The token has to belong to an admin user.
+- The `provider_instance_id` is shown in the provider's settings.
+- Nothing happens if podcast sync is turned off for that provider.
+- With many subscribed podcasts, 10 seconds may not be long enough for the sync to reach the one you want.
+
+```yaml
+rest_command:
+  ma_sync_podcast:
+    url: http://192.168.1.1:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "music/sync",
+        "args": {
+          "media_types": ["podcast"],
+          "providers": ["{{ provider_instance_id }}"]
+        }
+      }
+    content_type: 'application/json; charset=utf-8'
+
+  ma_play_podcast_latest:
+    url: http://192.168.1.1:8095/api
+    method: POST
+    headers:
+      accept: "application/json, text/html"
+      authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR......I"
+    payload: >
+      {
+        "message_id": "1",
+        "command": "player_queues/play_media",
+        "args": {
+          "queue_id": "{{ queue_id }}",
+          "media": "{{ media }}",
+          "start_item": "latest"
+        }
+      }
+    content_type: 'application/json; charset=utf-8'
+
+script:
+  ma_play_latest_podcast_fresh:
+    alias: Sync podcast and play latest episode
+    fields:
+      queue_id:
+        description: MA queue id (same as the player_id unless the player is grouped)
+        required: true
+      provider_instance_id:
+        description: Provider instance to sync, e.g. podcastfeed--abc123
+        required: true
+      podcast_uri:
+        description: MA URI of the podcast, e.g. library://podcast/2
+        required: true
+    sequence:
+      - action: rest_command.ma_sync_podcast
+        data:
+          provider_instance_id: "{{ provider_instance_id }}"
+      - delay: "00:00:10"
+      - action: rest_command.ma_play_podcast_latest
+        data:
+          queue_id: "{{ queue_id }}"
+          media: "{{ podcast_uri }}"
+```
+Example call:
+
+```yaml
+action: script.ma_play_latest_podcast_fresh
+data:
+  queue_id: 115ee854-3ac5-38c1-277d-7bdb4f3c126d
+  provider_instance_id: podcastfeed--abc123
+  podcast_uri: library://podcast/2
+```
+</details>
+
