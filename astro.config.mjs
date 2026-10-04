@@ -249,6 +249,10 @@ export default defineConfig({
                   label: "OpenAI Compatible",
                   slug: "plugins/openai_compatible",
                 },
+                {
+                  label: "OpenAI Text-to-speech",
+                  slug: "plugins/openai_tts",
+                },
                 { label: "Party", slug: "plugins/party" },
                 { label: "Plex Connect", slug: "plugins/plex-connect" },
                 { label: "Sendspin Source", slug: "plugins/sendspin-source" },
