@@ -1,0 +1,70 @@
+---
+import { palettes, type PaletteName } from "../../../data/marketing";
+
+// A stand-in album cover: a soft three-colour mesh gradient with a little
+// grain, optionally titled in the bottom corner the way the app labels tiles.
+interface Props {
+  palette: PaletteName;
+  title?: string;
+  subtitle?: string;
+  class?: string;
+}
+const { palette, title, subtitle, class: className } = Astro.props;
+const [c1, c2, c3] = palettes[palette].colors;
+---
+
+<div
+  class:list={["cover", className]}
+  style={`--c1: ${c1}; --c2: ${c2}; --c3: ${c3}`}
+  aria-hidden={title ? undefined : "true"}
+>
+  {title && (
+    <span class="caption">
+      <strong>{title}</strong>
+      {subtitle && <span>{subtitle}</span>}
+    </span>
+  )}
+</div>
+
+<style>
+  .cover {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border-radius: 0.5rem;
+    background:
+      radial-gradient(60% 60% at 18% 22%, var(--c1), transparent 70%),
+      radial-gradient(55% 55% at 82% 30%, var(--c2), transparent 72%),
+      radial-gradient(80% 70% at 60% 100%, var(--c3), transparent 80%),
+      linear-gradient(160deg, var(--c2), var(--c3));
+    isolation: isolate;
+  }
+  /* Print grain so the gradients read as printed sleeves, not screen blur. */
+  .cover::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .caption {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.625rem;
+    left: 0.75rem;
+    display: grid;
+    color: #fff;
+    line-height: 1.25;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  }
+  .caption strong {
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+  .caption span {
+    opacity: 0.85;
+    font-size: 0.75rem;
+  }
+</style>
