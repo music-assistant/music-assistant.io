@@ -54,8 +54,10 @@ Each voice becomes its own TTS engine, listed as `OpenAI Text-to-speech | <voice
 
 ## Choosing a voice
 
-- **Announcements** use the engine set under **Announcement text-to-speech engine** in the announcement settings.
-- **AI Radio** picks its engine from its own settings. This is where a natural-sounding voice is most noticeable, so it pays to try a few.
+- **Announcements** use the engine set under **Announcement text-to-speech engine** in [**Settings → System → Players**](/settings/core/#players).
+- **AI Radio** picks its engine with **Reconfigure** on the provider's menu, not in its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later). This is where a natural-sounding voice is most noticeable, so it pays to try a few.
+
+See [choosing an engine for a feature](/ha-plugin/#choosing-an-engine-for-a-feature) for how engines are picked across Music Assistant.
 
 ## Known Issues / Notes
 
