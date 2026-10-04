@@ -44,6 +44,21 @@ The behaviour when playing or enqueuing items is determined by the settings in t
 
 ![image](/assets/screenshots/settings-player-queues.png)
 
+<b>Order to play an artist in.</b> Sets how an artist is played. The options are:
+- <b>Shuffled tracks (default).</b> The tracks picked by <b>Items to select when you play a (in-library) artist</b> play in random order
+- <b>Albums in random order, each album in track order.</b> Whole albums play one after another, picked at random
+- <b>Albums by release year, oldest first.</b> Whole albums play from the oldest to the newest. Albums without a year play last
+
+With either album order:
+- Each album plays whole, in disc and track order.
+- The in-library selections play the albums in your library. <b>All tracks from all providers</b> also plays the albums found only on a provider.
+- Each album plays once, even when your library and a provider both have it.
+- Singles are left out, as their songs are mostly on the albums.
+- Compilations in your library still play. Compilations found only on a provider are left out, as their songs are already on the albums.
+- <b>Artist top tracks only</b>, or an artist without albums, still plays shuffled tracks.
+
+An album order switches shuffle off for the queue, as when you play an album. Asking for shuffle when you start the artist still shuffles it. <b>Artist top tracks only</b> keeps the shuffle. The setting does not apply to authors and narrators, as they play audiobooks.
+
 Additionally, there are options which can be set on a global level which can be overridden on a per queue basis. 
 
 <a href="/assets/screenshots/settings-player-queues2.png"><img src="/assets/screenshots/settings-player-queues2.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
