@@ -50,7 +50,7 @@ Two things are true of all of them:
 
 Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, its own page says so.
 
-AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list.
+AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list. Sendspin players also have their own version of **Flow Mode sample rate**, see [Sendspin](/player-support/sendspin/#settings).
 
 #### Enable queue flow mode
 
