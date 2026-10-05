@@ -55,3 +55,12 @@ Authorization = OAuth 2-26432-21446-asdif2309fQ
 ## Known Issues / Notes
 
 - What SoundCloud calls an artist is really whoever holds the account, so that is what appears as the artist in Music Assistant. If someone else uploads a track by an artist, it will be filed under the uploader rather than under the artist
+
+## Troubleshooting
+
+Getting this error message? 
+
+```
+401, message='Attempt to decode JSON with unexpected mimetype.', url='https://api-v2.soundcloud.com/me'
+```
+You may have entered the correct **OAuth token** for your account into the **Authorization** field, but you need to add `OAuth ` before it (make sure to add a space between "OAuth" and your **OAuth token**). It should look like this example: "OAuth 2-26432-21446-asdif2309fQ".
