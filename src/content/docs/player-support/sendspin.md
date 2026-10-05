@@ -48,11 +48,11 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 - <b>Automatically play line-in on.</b> Only shown for devices with a line-in that can report when a signal is present. Chooses where that line-in plays automatically, either This device, another player, or Off
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
 - <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (let client decide) is the default, and the other options are read from the device itself. On Automatic the player keeps the codec it prefers, and <b>Sample rate selection</b> decides the sample rate. Choosing a specific format here sets both
-- <b>Sample rate selection.</b> Only shown when the preferred audio format is Automatic. Decides the sample rate of the audio sent to this player. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). If the player cannot play the chosen rate in its preferred codec, it uses its own default format
+- <b>Sample rate selection.</b> Only shown when <b>Show advanced settings</b> is on and the preferred audio format is Automatic. Decides the sample rate of the audio sent to this player. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
 
 ## Known Issues / Notes
 
-- Audio is sent to Sendspin players as 16 bit, so higher resolution material is converted on the way out
+- Many Sendspin devices ask for 16 bit audio, so higher resolution material is converted on the way out
 - Artwork clears briefly when you pause, seek, or move on to the next track
 - Only one Music Assistant server on a network can use Sendspin
 - Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Cloud gives the most reliable connection through a firewall
