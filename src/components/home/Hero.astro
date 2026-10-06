@@ -1,53 +1,19 @@
 ---
-import { MUSIC_SOURCES } from "../../data/music-sources";
-import { PLAYER_PROVIDERS } from "../../data/players";
 import AppWindow from "../marketing/ui/AppWindow.astro";
-
-// Counted from the same lists as the docs pages, so they never go stale.
-const facts = [
-  {
-    value: MUSIC_SOURCES.length,
-    label: "music sources",
-    href: "/music-providers/",
-  },
-  {
-    value: PLAYER_PROVIDERS.length,
-    label: "speaker systems",
-    href: "/player-support/",
-  },
-  {
-    value: "Free",
-    label: "and open source",
-    href: "https://github.com/music-assistant/server",
-  },
-];
 ---
 
 <section class="hero tone-base" aria-labelledby="hero-title">
   <div class="container">
-    <div class="top">
-      <div class="copy">
-        <h1 id="hero-title">
-          <span>Your music.</span>
-          <span class="way">Your way.</span>
-        </h1>
-        <p class="lead">
-          Bring all the music you love into a single library, from your
-          streaming services to your collection, and enjoy it on almost any
-          speaker in your home.
-        </p>
-      </div>
-
-      <ul class="facts">
-        {facts.map((fact) => (
-          <li>
-            <a href={fact.href}>
-              <strong>{fact.value}</strong>
-              <span>{fact.label}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+    <div class="copy">
+      <h1 id="hero-title">
+        <span>Your music.</span>
+        <span class="way">Your way.</span>
+      </h1>
+      <p class="lead">
+        Bring all the music you love into a single library, from your streaming
+        services to your collection, and enjoy it on almost any speaker in your
+        home.
+      </p>
     </div>
 
     <div class="product">
@@ -120,72 +86,15 @@ const facts = [
   .way {
     color: var(--accent);
   }
-  /* The copy on the left, a few facts filling the space on the right. */
-  .top {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
-    gap: 2.5rem clamp(2rem, 8vw, 7rem);
+  .copy {
+    text-align: center;
   }
   .lead {
-    max-width: 32rem;
-    margin: clamp(2rem, 4vw, 3rem) 0 0;
+    max-width: 34rem;
+    margin: clamp(1.5rem, 3vw, 2.25rem) auto 0;
     color: var(--muted);
     font-size: clamp(1.1875rem, 1.8vw, 1.375rem);
     line-height: 1.5;
-  }
-  .facts {
-    display: grid;
-    min-width: 17rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border-top: 1px solid var(--line);
-  }
-  .facts li {
-    border-bottom: 1px solid var(--line);
-  }
-  .facts a {
-    display: flex;
-    align-items: baseline;
-    gap: 0.875rem;
-    padding: 1rem 0;
-    text-decoration: none;
-  }
-  .facts strong {
-    font-size: clamp(1.75rem, 3.4vw, 2.75rem);
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    font-variant-numeric: tabular-nums;
-    transition: color 0.15s;
-  }
-  .facts span {
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-  .facts a:hover strong {
-    color: var(--accent);
-  }
-  @media (max-width: 760px) {
-    .top {
-      grid-template-columns: 1fr;
-    }
-    .facts {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      min-width: 0;
-      border-bottom: 1px solid var(--line);
-    }
-    .facts li {
-      border-bottom: 0;
-    }
-    .facts a {
-      flex-direction: column;
-      gap: 0.375rem;
-    }
   }
   .product {
     margin-top: clamp(3rem, 6vw, 4.5rem);
