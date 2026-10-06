@@ -5,11 +5,12 @@
   "scripts": {
     "fetch-allowed-referrers": "node ./scripts/fetch-allowed-referrers.mjs",
     "fetch-latest-release": "node ./scripts/fetch-latest-release.mjs",
-    "predev": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
+    "fetch-github-repo": "node ./scripts/fetch-github-repo.mjs",
+    "predev": "npm run fetch-allowed-referrers && npm run fetch-latest-release && npm run fetch-github-repo",
     "dev": "astro dev --host",
-    "prestart": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
+    "prestart": "npm run fetch-allowed-referrers && npm run fetch-latest-release && npm run fetch-github-repo",
     "start": "astro dev --host",
-    "prebuild": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
+    "prebuild": "npm run fetch-allowed-referrers && npm run fetch-latest-release && npm run fetch-github-repo",
     "build": "astro build",
     "preview": "astro preview --host",
     "astro": "astro"

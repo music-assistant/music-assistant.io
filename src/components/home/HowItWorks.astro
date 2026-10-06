@@ -134,16 +134,14 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
     transform: translateY(-50%);
   }
 
+  /* Stacked, the panels read top to bottom on their own; the dot between
+     them would look like carousel paging. */
   @media (max-width: 1000px) {
     .flow {
       grid-template-columns: 1fr;
     }
     .panel:not(:last-child)::after {
-      top: auto;
-      right: auto;
-      bottom: calc(-0.75rem - 5px);
-      left: 50%;
-      transform: translateX(-50%);
+      display: none;
     }
   }
 </style>

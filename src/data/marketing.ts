@@ -92,6 +92,8 @@ export const plugins: Plugin[] = [
 
 export interface Feature {
   cover: PaletteName;
+  /** Lucide icon drawn on the cover, so each row says what it is about. */
+  icon: string;
   title: string;
   summary: string;
   text: string | Array<string | { href: string; label: string }>;
@@ -101,6 +103,7 @@ export interface Feature {
 export const features: Feature[] = [
   {
     cover: "rock",
+    icon: "library-big",
     title: "One library across your music sources",
     summary: "Search your streaming services and your own collection together.",
     text: "Browse music from your connected sources in one place. Matching releases are linked, and a playlist can include tracks from several services alongside your own files. Each service still needs its own account and subscription where required.",
@@ -108,6 +111,7 @@ export const features: Feature[] = [
   },
   {
     cover: "electronic",
+    icon: "shield-check",
     title: "Free, open source and private",
     summary: "Your music system stays under your control.",
     text: [
@@ -121,6 +125,7 @@ export const features: Feature[] = [
   },
   {
     cover: "folk",
+    icon: "list-music",
     title: "Keep the music going",
     summary: "Put your phone away or take the queue to another room.",
     text: "Your playback queue lives on the Music Assistant server, so closing the app or browser doesn’t stop the music. Transfer the queue to another speaker without losing your place, and control playback from your phone or a browser.",
@@ -128,6 +133,7 @@ export const features: Feature[] = [
   },
   {
     cover: "ambient",
+    icon: "speaker",
     title: "Play in sync across compatible speakers",
     summary: "Including AirPlay and Sendspin together.",
     text: "Group compatible speakers to play the same music around your home. Music Assistant can also bring AirPlay speakers into a Sendspin group. Synchronization depends on the speakers and group type; not every combination can play in sync.",
@@ -135,6 +141,7 @@ export const features: Feature[] = [
   },
   {
     cover: "classical",
+    icon: "audio-waveform",
     title: "The best sound each speaker can play",
     summary: "Gapless albums, smoother transitions and consistent volume.",
     text: "Music Assistant matches the audio to what each speaker supports. Keep albums gapless, blend tracks with Smart Fades, even out volume between songs and adjust the sound for your speakers and room.",
@@ -142,6 +149,7 @@ export const features: Feature[] = [
   },
   {
     cover: "jazz",
+    icon: "house",
     title: "Make music part of your smart home",
     summary: "Voice control, automations and announcements with Home Assistant.",
     text: "Ask Home Assistant Assist for a song and a room, start music from an automation, or play a doorbell announcement through your speakers. Music Assistant can pause or lower the music for the message, then bring it back. The integration works with both Docker and Home Assistant installations.",
@@ -149,6 +157,7 @@ export const features: Feature[] = [
   },
   {
     cover: "indie",
+    icon: "arrow-right-left",
     title: "Move your playlists",
     summary: "Take your favorites to another service.",
     text: "Copy playlists between supported services and keep supported playlists in sync as you edit them. You can change services without rebuilding every playlist, though the songs available depend on the destination service’s catalogue.",

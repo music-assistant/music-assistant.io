@@ -21,7 +21,6 @@ import Button from "../marketing/ui/Button.astro";
           href="/get-started/"
           size="lg"
           trailingIcon="arrow-right"
-          class="hero-install"
         >
           Get Music Assistant
         </Button>
@@ -98,12 +97,11 @@ import Button from "../marketing/ui/Button.astro";
   .way {
     color: var(--accent);
   }
+  /* The action sits under the copy it belongs to. */
   .intro {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: end;
-    justify-content: space-between;
-    gap: 1.5rem 3rem;
+    display: grid;
+    justify-items: start;
+    gap: 2rem;
     margin-top: clamp(2rem, 4vw, 3rem);
   }
   .lead {

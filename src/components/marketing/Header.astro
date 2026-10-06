@@ -1,19 +1,21 @@
 ---
-import latestRelease from "../../data/latest-release.json";
-import { getPosts } from "../../utils/blog";
+import githubRepo from "../../data/github-repo.json";
 import Button from "./ui/Button.astro";
 import Icon from "./ui/Icon.astro";
 import Logo from "./ui/Logo.astro";
 
-const { version, url: githubUrl } = latestRelease as {
-  version?: string;
-  url?: string;
-};
-// Link the version to our own announcement post, like the docs header does.
-const latestPost = (await getPosts()).find((post) =>
-  post.data.tags?.includes("release"),
-);
-const releaseUrl = latestPost ? `/${latestPost.id}/` : githubUrl;
+const { stars, url: repoUrl = "https://github.com/music-assistant/server" } =
+  githubRepo as { stars?: number; url?: string };
+// 1234 -> "1.2k", the way GitHub shows it.
+const starCount =
+  stars === undefined
+    ? undefined
+    : new Intl.NumberFormat("en", {
+        notation: "compact",
+        maximumFractionDigits: 1,
+      })
+        .format(stars)
+        .toLowerCase();
 const path = Astro.url.pathname;
 
 const links = [
@@ -22,22 +24,12 @@ const links = [
 ];
 ---
 
-<header class:list={["site-header", { "is-homepage": path === "/" }]}>
+<header class="site-header">
   <div class="container inner">
     <div class="brand">
       <a href="/" class="home" aria-label="Music Assistant home">
         <Logo />
       </a>
-      {version && releaseUrl && (
-        <a
-          class="version"
-          href={releaseUrl}
-          title={`Music Assistant ${version} release notes`}
-          translate="no"
-        >
-          {version.startsWith("v") ? version : `v${version}`}
-        </a>
-      )}
     </div>
 
     <nav id="site-nav" class="nav" aria-label="Main">
@@ -67,6 +59,34 @@ const links = [
             <Icon name="moon" />
           </span>
         </button>
+        <a
+          class="github"
+          href={repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={starCount
+            ? `Music Assistant on GitHub, ${stars} stars`
+            : "Music Assistant on GitHub"}
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+            />
+          </svg>
+          {starCount && (
+            <span class="stars" aria-hidden="true">
+              <Icon name="star" size={14} />
+              {starCount}
+            </span>
+          )}
+        </a>
         <Button href="/get-started/" class="nav-install">
           Get Music Assistant
         </Button>
@@ -124,22 +144,6 @@ const links = [
     height: 1.625rem;
     color: var(--fg);
   }
-  .version {
-    padding: 0.125rem 0.5rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    color: var(--muted);
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    text-decoration: none;
-    transition:
-      color 0.15s,
-      border-color 0.15s;
-  }
-  .version:hover {
-    color: var(--link);
-    border-color: var(--accent);
-  }
   .nav,
   .nav ul,
   .nav-actions {
@@ -174,9 +178,27 @@ const links = [
   .nav-actions :global(.btn) {
     margin-left: 0.5rem;
   }
-  /* Reserve the button's space so the navigation stays still as it appears. */
-  :global(.js) .site-header.is-homepage:not(.show-install) :global(.nav-install) {
-    visibility: hidden;
+  .github {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    padding: 0 0.625rem;
+    border-radius: var(--radius);
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .github:hover {
+    color: var(--fg);
+  }
+  .stars {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
   }
   .icon-button {
     display: grid;
