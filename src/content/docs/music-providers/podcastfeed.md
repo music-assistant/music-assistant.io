@@ -29,6 +29,7 @@ This source follows one feed, which means one podcast. To follow several podcast
 ### Other
 
 - Reads a standard podcast RSS feed from a web address you provide
+- Transcripts are shown for episodes where the podcast publisher provides one
 
 ## Configuration
 

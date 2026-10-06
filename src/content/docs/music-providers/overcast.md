@@ -38,6 +38,7 @@ the account's OPML export. It works one way only, nothing Music Assistant does i
 - Populates libraries with podcasts
 - Updates playlog on regular source syncs
 - Episodes you are part way through appear under Continue Listening
+- Transcripts are shown for episodes where the podcast publisher provides one
 
 ## Configuration
 
