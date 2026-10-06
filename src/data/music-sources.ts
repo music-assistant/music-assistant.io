@@ -280,6 +280,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["own-files"],
   },
   {
+    name: "FeiNiu Music",
+    slug: "music-providers/feiniu-music",
+    icon: "/assets/icons/feiniu-music-icon.svg",
+    categories: ["own-files"],
+  },
+  {
     name: "Global Player",
     slug: "music-providers/global-player",
     icon: "/assets/icons/global-player-icon.svg",
