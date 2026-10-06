@@ -26,7 +26,7 @@ There are three options.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
-You don't shuffle the music sources; you enable shuffle on the queue for the player, and whatever gets added to the queue then plays shuffled. Enable shuffle from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar).
+You don't shuffle the music sources; you [enable shuffle on the queue](/usage/#shuffle) for the player, and whatever gets added to the queue then plays shuffled. Enable shuffle from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar).
 
 For Home Assistant automations you can also do it with YAML:
 ``` yaml
@@ -39,9 +39,9 @@ data:
 
 ## Add radio stations to MA
 
-If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear.
+If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear. Any radio source that has its own library (or favorites) will work this way.
 
-If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired. 
+If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired. All radio sources can work this way.
 
 Direct entry of stations can be done by navigating to the Radio view and selecting ADD ITEM FROM URL in the menu at the top right.
 This will also work for locally hosted streams such as from Icecast. 
@@ -299,3 +299,25 @@ script:
 > [!NOTE]
 > Replace the `config_entry_id` value with the one for your own MA integration; the example above will not work as-is. The easiest way to get yours is to build the action once with the UI editor in Home Assistant's Developer Tools > Actions and then switch to YAML view.
 
+### Play an album shuffled
+
+[Shuffle is turned off automatically](/usage/#shuffle) when selecting `play` or `replace` and the item is an album (or other ordered item) so `add` needs to be used. For example:
+
+```
+actions:
+  - action: media_player.shuffle_set
+    target:
+      entity_id: media_player.home_assistant_voice
+    data:
+      shuffle: true
+  - data:
+      enqueue: add
+      media_type: album
+      media_id: Dark Side of the Moon
+    target:
+      entity_id: media_player.home_assistant_voice
+    action: music_assistant.play_media
+  - action: media_player.media_play
+    target:
+      entity_id: media_player.home_assistant_voice
+```

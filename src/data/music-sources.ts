@@ -286,6 +286,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["own-files"],
   },
   {
+    name: "Global Player",
+    slug: "music-providers/global-player",
+    icon: "/assets/icons/global-player-icon.svg",
+    categories: ["radio", "classical", "uk"],
+  },
+  {
     name: "gPodder",
     slug: "music-providers/gpodder",
     icon: "/assets/icons/gpodder-icon.png",
@@ -557,6 +563,7 @@ export const MUSIC_SOURCES_PAGE = {
   knownUnlisted: [
     "music-providers", // the overview page
     "music-providers/ambient-sounds", // fits none of the listening categories
+    "music-providers/rainy-mood", // fits none of the listening categories
     "music-providers/netease-cloud-music-zh", // Chinese version of another page
     "music-providers/qqmusic-zh", // Chinese version of another page
   ],

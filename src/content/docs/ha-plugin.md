@@ -33,7 +33,7 @@ Some Music Assistant features need to write text with AI, or to speak it out lou
 
 This plugin does neither job itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine** and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
 
-Other plugins provide engines too. The [OpenAI Compatible plugin](/plugins/openai_compatible/) provides AI engines with no Home Assistant involved at all.
+Other plugins provide engines too. The [OpenAI Compatible plugin](/plugins/openai_compatible/) and the [OpenAI Text-to-speech](/plugins/openai_tts/) plugin provides AI engines with no Home Assistant involved at all.
 
 ### What you need in Home Assistant
 

@@ -1,0 +1,27 @@
+---
+// The wordmark follows the text colour, so one inline SVG serves both themes.
+import logo from "../../../assets/ma-logo--dark.svg?raw";
+
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+const svg = logo
+  .replaceAll('fill="#1D2126"', 'fill="currentColor"')
+  .replace(
+    "<svg",
+    `<svg class="${["logo", className].filter(Boolean).join(" ")}" role="img" aria-label="Music Assistant"`,
+  )
+  .replace(/\swidth="1762" height="240"/, "");
+---
+
+<Fragment set:html={svg} />
+
+<style>
+  :global(.logo) {
+    display: block;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1762 / 240;
+  }
+</style>

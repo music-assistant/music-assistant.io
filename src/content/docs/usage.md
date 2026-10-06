@@ -81,6 +81,10 @@ See the [player queues settings](/settings/core/#player-queues) section for more
 > [!CAUTION]
 > Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less.
 
+### Shuffle
+
+As mentioned shuffle is treated as a setting on the queue, and it stays how you left it. The one exception is media that has its own track order: album, audiobook, podcast, podcast episode and radio/audio source. Starting one of these with play or replace switches shuffle off, so the tracks play in order.
+
 ### Endless Mix
 
 Endless Mix keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music). When this is selected Autoplay is enabled and can't be disabled, and shuffle is disabled and can't be enabled.

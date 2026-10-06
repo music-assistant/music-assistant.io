@@ -29,7 +29,7 @@ With your account connected, your library and playlists appear in Music Assistan
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
-| Similar Artists Support                         |            No                      |
+| Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | AAC 256kbps |
 | Login Method | Token + Cookie |
@@ -116,5 +116,4 @@ A brand account is a sub-account that lives under your main Google account. You 
 - Uploaded Music should be able to be found when it is in a playlist. If it's just a single track being searched for then it may not be found, since often those uploaded songs don't have proper metadata. It will be hard to find them via the UI in MA
 - Expect some blurry artwork. YouTube Music sends low quality images when Music Assistant asks for a whole album or playlist, and only sends the good one when a single track is asked for. Music Assistant works around this where it can by fetching the artwork for the next track in advance, but some of it will still look poor
 - By default, only the liked music and 'episodes for later' playlists are added to the YTM library and thus will appear in MA. In order to see other personal playlists in the MA library, you have to go into the YT Music web app and add those personal playlists to your library
-- Other Versions is populated on a best effort basis and may not include any or all versions of an item than can be found by manually searching
 - Podcast transcripts are not available
