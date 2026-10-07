@@ -36,7 +36,7 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 
 - Search support for tracks, artists, albums, and playlists
 - Library sync for liked/favorited content and user playlists
-- Dynamic recommendation/radio entries include Daily songs, Daily playlists, Private FM, and Heart Mode
+- Personalized recommendations are grouped in a single **Personal Recommendations** row: Daily Recommendations, Private FM, Personal Radar, Time Radar, and Heart Mode
 - Library sync is currently one-way (NetEase Cloud Music -> Music Assistant)
 
 ## Configuration
