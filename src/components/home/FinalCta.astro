@@ -6,19 +6,17 @@ import Section from "../marketing/ui/Section.astro";
 <Section id="get-started" tone="base" labelledby="final-title" class="final">
   <div class="container" data-reveal>
     <h2 id="final-title">Bring your music home.</h2>
-    <div class="row">
-      <p>
-        Install Music Assistant on Home Assistant or with Docker, then connect
-        your music and speakers.
-      </p>
-      <div class="actions">
-        <Button href="/get-started/" size="lg" trailingIcon="arrow-right">
-          Get Music Assistant
-        </Button>
-        <Button href="/documentation/" variant="secondary" size="lg">
-          Read the documentation
-        </Button>
-      </div>
+    <p>
+      Install Music Assistant on Home Assistant or with Docker, then connect
+      your music and speakers.
+    </p>
+    <div class="actions">
+      <Button href="/get-started/" size="lg" trailingIcon="arrow-right">
+        Get Music Assistant
+      </Button>
+      <Button href="/documentation/" variant="secondary" size="lg">
+        Read the documentation
+      </Button>
     </div>
   </div>
 </Section>
@@ -68,28 +66,26 @@ import Section from "../marketing/ui/Section.astro";
       filter: blur(20px) saturate(1.1) hue-rotate(-30deg);
     }
   }
+  /* Centred like the hero, with the actions underneath the copy. */
+  .container {
+    text-align: center;
+  }
   h2 {
     max-width: none;
     font-size: clamp(2.5rem, 5vw, 3.75rem);
   }
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: end;
-    justify-content: space-between;
-    gap: 1.5rem 3rem;
-    margin-top: 2rem;
-  }
-  .row p {
+  p {
     max-width: 30rem;
-    margin: 0;
+    margin: 1.5rem auto 0;
     color: var(--muted);
     font-size: 1.1875rem;
   }
   .actions {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 0.75rem;
+    margin-top: 2.5rem;
   }
   .actions :global(.btn-primary) {
     color: #0b0c0d;
