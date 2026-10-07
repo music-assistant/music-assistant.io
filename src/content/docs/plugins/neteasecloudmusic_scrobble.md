@@ -1,6 +1,6 @@
 ---
 title: NetEase Cloud Music Scrobbler
-description: Report what you play through the NetEase Cloud Music source back to NetEase, so play counts, listening stats and daily recommendations stay right.
+description: Report what you play through the NetEase Cloud Music source back to NetEase, so your NetEase play counts and listening history stay right.
 pluginGroup: scrobbling
 ---
 
@@ -8,7 +8,7 @@ pluginGroup: scrobbling
 
 Music Assistant has the ability to check in the tracks you fully play through the [NetEase Cloud Music source](/music-providers/netease-cloud-music/) back to your NetEase account. Contributed and maintained by <a href="https://github.com/Kiranwin" target="_blank" rel="noopener noreferrer">Kiranwin</a>.
 
-The check-in is what NetEase uses to build play counts, listening stats and its personalized daily recommendations, so the music you play in Music Assistant keeps those in sync with the NetEase app.
+The check-in is what NetEase uses to build play counts and listening history, so the music you play in Music Assistant shows up in your NetEase listening stats.
 
 ## Features
 
