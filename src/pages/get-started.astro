@@ -238,8 +238,8 @@ const nextSteps = [
 
   .methods {
     display: grid;
-    /* Docker gets the extra width: its Compose file is the longest content. */
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    /* Docker gets a little more width for its Compose file. */
+    grid-template-columns: minmax(0, 6fr) minmax(0, 7fr);
     align-items: stretch;
     gap: 1.5rem;
     margin-top: clamp(3rem, 6vw, 4rem);
