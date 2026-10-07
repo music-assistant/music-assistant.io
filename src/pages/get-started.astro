@@ -23,12 +23,6 @@ const compose = `services:
 const openInHomeAssistant =
   "https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon";
 
-const requirements = [
-  { icon: "power", label: "An always-on device" },
-  { icon: "cpu", label: "A 64-bit operating system" },
-  { icon: "wifi", label: "The same network as your speakers" },
-];
-
 const nextSteps = [
   {
     label: "Sources",
@@ -60,14 +54,6 @@ const nextSteps = [
         Music Assistant runs on a device in your home that stays on. Pick where
         it runs and follow a few steps.
       </p>
-      <ul class="requirements" aria-label="What you need">
-        {requirements.map((item) => (
-          <li>
-            <Icon name={item.icon} size={18} />
-            {item.label}
-          </li>
-        ))}
-      </ul>
     </header>
 
     <!-- Both ways side by side, so they can be compared at a glance. -->
@@ -214,28 +200,6 @@ const nextSteps = [
     font-size: clamp(1.125rem, 1.8vw, 1.25rem);
     line-height: 1.5;
   }
-  .requirements {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
-    margin: 2.5rem 0 0;
-    padding: 0;
-    list-style: none;
-  }
-  .requirements li {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    font-size: 0.9375rem;
-  }
-  .requirements :global(.icon) {
-    color: var(--link);
-  }
-
   .methods {
     display: grid;
     /* Docker gets a little more width for its Compose file. */
