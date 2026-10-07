@@ -5,7 +5,7 @@ description: Features, Configuration, Issues and More for the File System Music 
 
 # Filesystem Sources <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has full support for reading local music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant.  Network support is limited to SMB/CIFS, NFS and WebDAV, plus the cloud storage services Google Drive and Microsoft OneDrive.
+Music Assistant has full support for reading music files on a disk, a NAS or another server and will catalog them into the library, allowing playback to all player providers supported by Music Assistant. The **Local files** source reads a folder on the server itself, on a drive or on an SMB or NFS network share. WebDAV and the cloud storage services Google Drive and Microsoft OneDrive each have a source of their own.
 
 When streaming sources are also available in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
 
@@ -38,26 +38,23 @@ When streaming sources are also available in MA linking will only occur when the
 
 Separate sources must be added for Music, Audiobooks and Podcasts.
 
-**Audio files are on a disk/folder of the device running the Music Assistant Server**
+**Audio files are in a folder, on a drive or on a network share**
 
-If the files are stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, the Filesystem (local disk) source should be selected and then the path to the files provided. 
+Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**.
 
-> [!NOTE]
-> On Home Assistant OS only the /media folder can be accessed, and it is not possible to mount a folder from Home Assistant into that path. Docker users can mount their own folder paths.
+<img src="/assets/screenshots/local-files-folder-picker.png" alt="The setup of a Local files source with the list of storage locations" style="width: 560px;" loading="lazy" />
+
+Which locations are listed depends on how Music Assistant is installed:
+
+- <b>Home Assistant App.</b> The Home Assistant media folder and every network share added to it
+- <b>Docker.</b> Every folder or volume mapped into the container
+
+Music on a NAS? Make the share a storage location first, then pick it here. On the Home Assistant App, an administrator adds it with **Add network share** on the [Storage](/settings/storage/#adding-a-network-share) page. On Docker, mount the share on the host and map it into the container, as described under [Your music files](/installation/#your-music-files).
+
+Below the picker, administrators find **Manage storage**, which opens the Storage page. Users who are not administrators can add a Local files source of their own when their role allows it. They pick from the same storage locations. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
 
 > [!CAUTION]
-> Music Assistant assumes your NFS or SMB server is on your local network. It adds no encryption or access control of its own, so these shares should not be reached over the internet.
-
-**Audio files are on a remote share served via SMB/CIFS**
-
-Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS. Select the music source "Filesystem (remote share)" and configure the (fqdn) hostname (or alternatively the IP address) to the server, the name of the share and optionally any subfolder. Advanced options are:
-
-- <b>SMB Version.</b> The SMB protocol version to use. SMB 3.0 or higher is recommended for better performance and security. Use Auto to let the system negotiate. The options are `Auto`, `SMB 1.0`, `SMB 2.0`, `SMB 2.1`, `SMB 3.0 [default]`, and `SMB 3.1.1`
-- <b>Cache Mode.</b> Cache mode affects performance and consistency. 'Loose' provides better performance for read heavy workloads and is recommended for music libraries.. The options are `Strict`, `Loose (Recommended) [default]`, and `None`
-
-**Audio files are on a remote share served via NFS**
-
-Music Assistant has support for NFS shares. Select the music source "Filesystem (NFS share)" and configure the IP address (without leading `http://`) of the server, the absolute export path of the share (e.g. `/volume1/music`) and optionally any subfolder.
+> Music Assistant assumes your NAS is on your local network. It adds no encryption or access control of its own, so a network share should not be reached over the internet.
 
 **Audio files are on a remote share served via WebDAV**
 
@@ -163,7 +160,8 @@ In addition to the settings outlined above to configure this source, there are a
 ## Known Issues / Notes
 
 - Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
-- When using the remote share connection, be aware that use of SMB1 (which is very old) is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB1 can be disabled
+- When a Local files source is on a storage location that is unavailable, for example a NAS that is switched off, the source is unavailable too. It returns by itself once the location is reachable again, and nothing is removed from the library while it is away
+- On an SMB network share, be aware that the very old SMB 1 is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB 1 can be disabled
 - WebDAV, Google Drive and OneDrive are reached over the internet rather than over your own network, so library sync is slower than local, SMB or NFS, particularly for large libraries. The first sync of a cloud source reads the tags of every file over the internet
 - Writing to WebDAV, Google Drive and OneDrive sources is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
 

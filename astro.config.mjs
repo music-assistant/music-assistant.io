@@ -153,6 +153,7 @@ export default defineConfig({
               slug: "settings/metadata-provider-settings",
             },
             { label: "Players", slug: "settings/individual-player" },
+            { label: "Storage", slug: "settings/storage" },
             { label: "Profile", slug: "settings/profile" },
             { label: "User Interface", slug: "settings/user-interface" },
             { label: "User Management", slug: "settings/user-management" },

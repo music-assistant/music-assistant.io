@@ -33,7 +33,7 @@ Alongside these scores, a compact **audio fingerprint** is saved for every track
 ## When analysis runs
 
 - **Live during playback.** When an in-MA library track that has not been analysed yet is played, it is analysed live during playback
-- **Background scan.** A background job also works through the rest of the local files (SMB, NFS, and WebDAV) over time, so coverage grows even without active listening
+- **Background scan.** A background job also works through the rest of the tracks from [Local files](/music-providers/local-files/) sources, including those on a network share, over time, so coverage grows even without active listening
 - **Once per track.** Once a track has been analysed, the result is reused on every subsequent play — the analysis is not repeated unless the underlying file changes or a newer model version supersedes the previous one
 - **Tracks without a known duration are skipped** — a known length is required for the analysis to be consistent
 
