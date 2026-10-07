@@ -19,11 +19,10 @@ The check-in is what NetEase uses to build play counts and listening history, so
 ## Configuration
 
 - A [NetEase Cloud Music](/music-providers/netease-cloud-music/) source must be configured first; the plugin reuses its API backend and login, so no additional service or account is needed
-- With exactly one NetEase Cloud Music source configured it is picked automatically. With several, choose the one whose plays should be reported
+- No source has to be picked: each play is reported to whichever NetEase Cloud Music source it actually streamed from, so plays from several accounts each land on the right one
 
 ### Settings
 
-- <b>NetEase Cloud Music source.</b> The provider instance whose plays are reported to NetEase
 - <b>Suffix version to track names.</b> Adds the version of the track, such as a remix or live version, to the end of its name when it is sent to NetEase. Worth turning on if an artist has several different tracks with the same name and they are being counted together
 - <b>Scrobble for users.</b> This allows selection of which logged-in user will be scrobbled by this plugin. Multiple instances of this plugin can be added
 - <b>Scrobble for players.</b> This allows selection of which players will register scrobbles
@@ -31,4 +30,4 @@ The check-in is what NetEase uses to build play counts and listening history, so
 ## Known Issues / Notes
 
 - A track is only checked in once it has been fully played (90+%)
-- When the NetEase login expires, the plugin stops with an error. Sign in to the NetEase Cloud Music source again and re-enable the plugin to resume scrobbling
+- If a NetEase login expires, that source's plays are skipped until you sign in to the NetEase Cloud Music source again; other sources keep scrobbling and the plugin stays enabled
