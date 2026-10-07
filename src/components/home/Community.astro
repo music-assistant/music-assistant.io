@@ -92,13 +92,22 @@ import Section from "../marketing/ui/Section.astro";
   .actions :global(.btn-primary:hover) {
     background: color-mix(in srgb, var(--fg) 80%, var(--bg));
   }
+  /* Wrapping rows, centred so a short last row doesn't leave one person
+     stranded at the edge. */
   ul {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1.75rem 1rem;
+    --per-row: 6;
+    --gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.75rem var(--gap);
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  li {
+    flex: 0 0
+      calc((100% - (var(--per-row) - 1) * var(--gap)) / var(--per-row));
   }
   a {
     display: grid;
@@ -145,7 +154,7 @@ import Section from "../marketing/ui/Section.astro";
   }
   @media (max-width: 480px) {
     ul {
-      grid-template-columns: repeat(3, 1fr);
+      --per-row: 3;
     }
   }
 </style>

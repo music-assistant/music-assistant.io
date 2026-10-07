@@ -40,21 +40,11 @@ document
     }
   });
 
-// Show the homepage navigation CTA after the hero CTA passes the sticky header.
-const header = document.querySelector<HTMLElement>(".site-header.is-homepage");
-const heroCta = document.querySelector<HTMLElement>(".hero-install");
-const updateScrolled = () => {
-  const showInstall =
-    !heroCta ||
-    !header ||
-    heroCta.getBoundingClientRect().bottom <= header.getBoundingClientRect().height;
+// Draw the header's bottom border once the page scrolls under it.
+const updateScrolled = () =>
   document.documentElement.classList.toggle("is-scrolled", scrollY > 8);
-  header?.classList.toggle("show-install", showInstall);
-};
 updateScrolled();
 addEventListener("scroll", updateScrolled, { passive: true });
-addEventListener("resize", updateScrolled);
-addEventListener("load", updateScrolled);
 
 // Reveal sections as they scroll into view.
 const revealed = document.querySelectorAll("[data-reveal]");
@@ -67,7 +57,9 @@ if ("IntersectionObserver" in window) {
         observer.unobserve(entry.target);
       }
     },
-    { rootMargin: "0px 0px -10% 0px" },
+    // Start before a section reaches the viewport, so a fast scroll rarely
+    // lands on content that is still invisible.
+    { rootMargin: "0px 0px 10% 0px" },
   );
   revealed.forEach((element) => observer.observe(element));
 } else {
