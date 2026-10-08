@@ -58,5 +58,6 @@ You will need to provide the following to Music Assistant:
 
 - Playlists are not imported, because beets does not keep them in its library database
 - With the [Sonic Similarity](/plugins/sonic-similarity/) plugin, beets tracks are analysed by [Sonic Analysis](/audio-analysis/sonic-analysis/) as they are played, but not in the overnight scan that covers Local Files. Similar tracks will only include beets tracks you have already played at least once
-- If a sync finds the beets library empty when it was not before, Music Assistant leaves your library as it is rather than removing everything. This is almost always a mount that has gone missing, so check the database path can still be reached
+- If a sync finds the beets library empty when it was not before, the database at the path you gave no longer has tracks in it (for example a new or different `library.db`), and Music Assistant leaves your library as it is rather than removing everything. Check the path points at the database beets is using, which `beet config` shows as `library`
+- If the database can't be read at all, for example because the share it is on is not reachable, then the sync stops with a read error and nothing is removed
 - If tracks show up but will not play, check the music directory setting, and the beets music directory setting if beets runs on another machine. The files need to be reachable inside the music directory. Settings such as permissions and SELinux labels can prevent this.
