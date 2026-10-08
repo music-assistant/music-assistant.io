@@ -127,7 +127,6 @@ export const QUALITY_TIER_OVERRIDES: Record<string, QualityTier> = {
   // "FLAC, Unlimited": local files are served at whatever resolution the file
   // holds, with no cap, so the ceiling is Hi-Res.
   "music-providers/local-files": "hi-res",
-  // "FLAC, Unlimited", for the same reason: beets files are played as they are.
   "music-providers/beets": "hi-res",
   "music-providers/feiniu-music": "hi-res",
   // "192kHz 24 bit", with no codec named. Above 48kHz and above 16 bits, which
