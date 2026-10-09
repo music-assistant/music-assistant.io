@@ -3,11 +3,12 @@ import { palettes, shelf } from "../../data/marketing";
 import Cover from "../marketing/ui/Cover.astro";
 
 // A slowly moving shelf of records across genres and sources: the range of
-// music one Music Assistant library can hold.
+// music one Music Assistant library can hold. One cover is "now playing" and
+// colours the hero; clicking another puts that one on.
 const items = shelf.map((name) => ({ name, ...palettes[name] }));
 ---
 
-<div class="shelf tone-base">
+<div class="shelf tone-base" data-shelf>
   <p class="sr-only">
     Music of every kind, from {items.map((item) => item.genre).join(", ")}.
   </p>
@@ -15,18 +16,56 @@ const items = shelf.map((name) => ({ name, ...palettes[name] }));
     {[0, 1].map(() => (
       <ul>
         {items.map((item) => (
-          <li>
+          <li
+            data-palette={item.name}
+            data-colors={item.colors.join(",")}
+          >
             <Cover
               palette={item.name}
               title={item.genre}
               subtitle={item.source}
             />
+            <span class="play" />
+            <span class="playing">
+              <span class="bars">
+                <i />
+                <i />
+                <i />
+              </span>
+              Now playing
+            </span>
           </li>
         ))}
       </ul>
     ))}
   </div>
 </div>
+
+<script>
+  import { setNowPlaying } from "./now-playing";
+
+  const shelf = document.querySelector<HTMLElement>("[data-shelf]");
+  if (shelf) {
+    // Each cover appears twice for the endless scroll, so both copies light
+    // up together.
+    const covers = [...shelf.querySelectorAll<HTMLElement>("[data-palette]")];
+    const play = (name: string) => {
+      let colors: string[] = [];
+      for (const cover of covers) {
+        const on = cover.dataset.palette === name;
+        cover.toggleAttribute("data-active", on);
+        if (on) colors = cover.dataset.colors!.split(",");
+      }
+      setNowPlaying(colors);
+    };
+    const names = [...new Set(covers.map((cover) => cover.dataset.palette!))];
+    play(names[Math.floor(Math.random() * names.length)]);
+    shelf.addEventListener("click", (e) => {
+      const cover = (e.target as Element).closest<HTMLElement>("[data-palette]");
+      if (cover) play(cover.dataset.palette!);
+    });
+  }
+</script>
 
 <style>
   .shelf {
@@ -47,18 +86,119 @@ const items = shelf.map((name) => ({ name, ...palettes[name] }));
     list-style: none;
   }
   li {
+    position: relative;
     width: clamp(8rem, 13vw, 11rem);
-    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition:
+      transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      scale 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      outline-color 0.3s ease;
+    outline: 2px solid transparent;
+    outline-offset: 4px;
   }
   li:nth-child(odd) {
     transform: translateY(0.75rem);
   }
+
+  /* Now playing: lifted a touch and ringed in the accent, with an
+     equaliser badge as in the app. */
+  li[data-active] {
+    scale: 1.05;
+    outline-color: var(--accent);
+  }
+  .playing {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: none;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.3125rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  li[data-active] .playing {
+    display: flex;
+  }
+  .bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 0.75rem;
+  }
+  .bars i {
+    width: 3px;
+    height: 100%;
+    border-radius: 1px;
+    background: var(--accent);
+    transform-origin: bottom;
+    animation: bounce 0.9s ease-in-out infinite alternate;
+  }
+  .bars i:nth-child(2) {
+    animation-delay: -0.4s;
+  }
+  .bars i:nth-child(3) {
+    animation-delay: -0.7s;
+  }
+  @keyframes bounce {
+    from {
+      transform: scaleY(0.3);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  /* On hover, a play button invites a click on any cover not already
+     playing. */
+  .play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    pointer-events: none;
+  }
+  .play::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    width: 0.875rem;
+    height: 1rem;
+    background: #0b0c0d;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    transform: translate(-50%, -50%);
+  }
+
   @media (hover: hover) and (pointer: fine) {
     .shelf:hover .track {
       animation-play-state: paused;
     }
     li:hover {
       transform: translateY(-0.25rem);
+    }
+    li:not([data-active]):hover {
+      outline-color: var(--line);
+    }
+    li:not([data-active]):hover .play {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
     }
   }
   @keyframes scroll {
@@ -69,6 +209,9 @@ const items = shelf.map((name) => ({ name, ...palettes[name] }));
   @media (prefers-reduced-motion: reduce) {
     .track {
       animation: none;
+    }
+    .bars i:nth-child(2) {
+      transform: scaleY(0.6);
     }
   }
 </style>

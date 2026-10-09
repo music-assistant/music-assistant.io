@@ -2,7 +2,8 @@
 import AppWindow from "../marketing/ui/AppWindow.astro";
 ---
 
-<section class="hero tone-base" aria-labelledby="hero-title">
+<section class="hero tone-base" aria-labelledby="hero-title" data-hero>
+  <canvas class="smoke" aria-hidden="true" data-smoke></canvas>
   <div class="container">
     <div class="copy">
       <h1 id="hero-title">
@@ -28,15 +29,86 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
   </div>
 </section>
 
+<script>
+  import { onNowPlaying } from "./now-playing";
+  import { startSmoke } from "./smoke";
+
+  const hero = document.querySelector<HTMLElement>("[data-hero]");
+  const canvas = document.querySelector<HTMLCanvasElement>("[data-smoke]");
+
+  // Mixes hex colour a toward b by f.
+  const mix = (a: string, b: string, f: number) =>
+    "#" +
+    [1, 3, 5]
+      .map((i) => {
+        const x = parseInt(a.slice(i, i + 2), 16);
+        const y = parseInt(b.slice(i, i + 2), 16);
+        return Math.round(x + (y - x) * f)
+          .toString(16)
+          .padStart(2, "0");
+      })
+      .join("");
+
+  // The hero takes the playing cover's colours. Each cover's third colour
+  // is its deep shadow, nearly invisible as light on a dark page, so it's
+  // lifted toward the second.
+  const heroColors = ([c1, c2, c3]: string[]) => [c1, c2, mix(c3, c2, 0.45)];
+  onNowPlaying((colors) => {
+    const [c1, c2, c3] = heroColors(colors);
+    [c1, c2, c3, c2].forEach((color, i) =>
+      hero?.style.setProperty(`--glow-${i + 1}`, color),
+    );
+  });
+
+  // The smoke starts once the page has loaded and gone quiet: creating a
+  // WebGL context blocks the main thread, so it waits until the hero
+  // screenshot has painted.
+  const start = () => {
+    const smoke = hero && canvas ? startSmoke(hero, canvas) : undefined;
+    if (smoke) onNowPlaying((colors) => smoke.setColors(heroColors(colors)));
+  };
+  const whenIdle = () =>
+    "requestIdleCallback" in window
+      ? requestIdleCallback(start, { timeout: 1500 })
+      : setTimeout(start, 300);
+  if (document.readyState === "complete") whenIdle();
+  else addEventListener("load", whenIdle, { once: true });
+</script>
+
 <style>
+  @property --glow-1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #9d4edd;
+  }
+  @property --glow-2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #ff7a18;
+  }
+  @property --glow-3 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #18bcf2;
+  }
+  @property --glow-4 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #ff006e;
+  }
   .hero {
     position: relative;
     overflow: hidden;
     padding: clamp(3rem, 7vw, 5.5rem) 0 clamp(4rem, 8vw, 6rem);
     isolation: isolate;
+    transition:
+      --glow-1 1.2s ease,
+      --glow-2 1.2s ease,
+      --glow-3 1.2s ease,
+      --glow-4 1.2s ease;
   }
   /* Behind the product, colour bleeds out like light through album art:
-     a few cover hues drifting slowly. */
+     a few hues from the playing cover, drifting slowly. */
   .hero::before {
     content: "";
     position: absolute;
@@ -48,22 +120,22 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
     background:
       radial-gradient(
         35% 45% at 25% 55%,
-        rgba(157, 78, 221, 0.35),
+        color-mix(in srgb, var(--glow-1) 35%, transparent),
         transparent 70%
       ),
       radial-gradient(
         30% 40% at 55% 40%,
-        rgba(255, 122, 24, 0.28),
+        color-mix(in srgb, var(--glow-2) 28%, transparent),
         transparent 70%
       ),
       radial-gradient(
         30% 45% at 78% 60%,
-        rgba(24, 188, 242, 0.3),
+        color-mix(in srgb, var(--glow-3) 30%, transparent),
         transparent 70%
       ),
       radial-gradient(
         25% 35% at 45% 80%,
-        rgba(255, 0, 110, 0.2),
+        color-mix(in srgb, var(--glow-4) 20%, transparent),
         transparent 70%
       );
     filter: blur(30px);
@@ -75,6 +147,20 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
       transform: translateX(-47%) scale(1.06);
       filter: blur(30px) hue-rotate(25deg);
     }
+  }
+  /* Cursor-stirred smoke over the glow; see smoke.ts. */
+  .smoke {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .smoke:global(.is-ready) {
+    opacity: 1;
   }
   h1 {
     margin: 0;
