@@ -194,6 +194,7 @@ export default defineConfig({
           items: [
             { label: "Overview", slug: "usage" },
             { label: "UI", slug: "ui" },
+            { label: "Dashboards", slug: "dashboards" },
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },
           ],
