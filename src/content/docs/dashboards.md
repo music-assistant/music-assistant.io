@@ -1,63 +1,73 @@
 ---
 title: Dashboards
-description: Cast the Now Playing, Party and Music Quiz screens to a TV, smart display or wall tablet.
+description: Show Now Playing, the party screen or a music quiz on your TV, smart display or wall tablet.
 ---
 
 # Dashboards
 
-Three screens in Music Assistant are made for a TV or a tablet on the wall: Now Playing, the party screen and the Music Quiz game screen. You can cast any of them to a display device from the app. The display opens the screen by itself, so it needs no keyboard and nobody has to sign in on it.
+Some screens in Music Assistant look best on something big: what's playing right now, the party queue your guests add songs to, or the game screen of a music quiz. These are called dashboards, and you can send them to a TV, a smart display or a tablet on the wall with a couple of taps. The screen opens on its own, so there is no need to type anything or sign in on the TV.
 
-## The dashboards
+## What you can show
 
-- <b>Now Playing.</b> Large artwork, the title and artist, and the progress of the track, for one player. Cast it from the [Now Playing view](/ui/#now-playing-view), and it shows the player that was selected when you cast it
-- <b>Party.</b> The party queue with the QR code guests scan to add songs. It needs the [Party plugin](/plugins/party/), and the plugin's display settings, such as **Karaoke Mode** and **Enable Anti Burn-in**, apply on the display as well
-- <b>Music Quiz.</b> The game screen of the [Music Quiz plugin](/plugins/music-quiz/): the join QR code and players in the lobby, then the questions, the countdown, the answers and the scores. The host controls stay on your own phone or computer
+- <b>Now Playing.</b> Big artwork with the song, the artist and how far along it is, for one player. You cast it from the [Now Playing view](/ui/#now-playing-view), and it keeps showing the player you had selected at that moment
+- <b>Party.</b> The party queue next to the QR code your guests scan to add songs. This comes with the [Party plugin](/plugins/party/). Its display settings, such as **Karaoke Mode** and **Enable Anti Burn-in**, work on the TV too
+- <b>Music Quiz.</b> The big screen of a [Music Quiz](/plugins/music-quiz/) game: the QR code and players while everyone joins, then the questions, the countdown, the answers and the scores. You keep the host controls on your phone or computer
 
-## Casting a dashboard
+## How to cast
 
-1. Open the screen you want to show. For Now Playing, open the full screen player from the player bar. For Party or Music Quiz, open it from the sidebar. The icon is hidden in the party screen's full screen mode and in Music Quiz Present mode, so leave those first.
-2. Select the TV icon at the top of the screen. Hovering over it shows **Cast dashboard to a device**.
-3. Pick the display from the list.
+1. Open the screen you want to show. For Now Playing, open the full screen player from the player bar. For Party or Music Quiz, open it from the sidebar.
+2. Tap the TV icon at the top. It says **Cast dashboard to a device** when you hover over it.
+3. Pick your TV or display from the list.
 
-The icon is highlighted while the dashboard is on a display, and that display has a check mark in the list. To stop, open the list again and select **Disconnect**, followed by the name of the display.
+That's it. The TV icon lights up while the dashboard is showing, and the list puts a check mark next to the display it is on. To turn it off again, open the list and pick **Disconnect**.
 
-Each dashboard shows on one display at a time, so picking another display moves it there. Now Playing counts once per player, which means the kitchen can be on one display and the living room on another. A display shows one dashboard at a time, and casting a different one to it replaces what was there.
+Don't see the TV icon? It only shows up when Music Assistant has found at least one display, and only for people who are [allowed to cast](#who-can-cast). It is also hidden while the party screen is in full screen or the quiz is in Present mode, so leave those first.
 
-The icon only shows up when at least one display is available, and only for users who are allowed to cast. See [Who can cast](#who-can-cast).
+A few things worth knowing:
 
-## Displays you can cast to
+- Each dashboard shows on one display at a time. Pick a different display and it moves over
+- Now Playing works per player, so you can have the kitchen on one TV and the living room on another
+- A display shows one dashboard at a time. Cast something else to it and that replaces what was there
+
+## Which displays work
 
 ### Google Cast devices with a screen
 
-Chromecast, Google TV, Nest Hub and TVs with Chromecast built in are listed once the [Google Cast](/player-support/google-cast/) player provider is added. Speakers and cast groups are not listed, since they have no screen. A display still shows up when you have disabled it as a player.
+Chromecast, Google TV, Nest Hub and TVs with Chromecast built in all show up in the list, as long as the [Google Cast](/player-support/google-cast/) player provider is added. Speakers and speaker groups don't, since there is nothing to look at. A display still shows up if you have disabled it as a player.
 
-The dashboard runs in Music Assistant's own Cast app on the device. Casting to a Google Cast device needs [Remote Access](/settings/remote-access/) to be on, or an [Internal URL](/settings/core/#webserver) that starts with `https://`. Without either, casting fails with the message "Remote access or an HTTPS base URL is required to cast dashboards".
+Google Cast devices need one extra thing: [Remote Access](/settings/remote-access/) switched on, or an [Internal URL](/settings/core/#webserver) that starts with `https://`. Without either you'll see "Remote access or an HTTPS base URL is required to cast dashboards".
 
 ### Fully Kiosk tablets
 
-Every tablet added with the [Fully Kiosk](/player-support/fully-kiosk/) player provider is listed once its password is set and Music Assistant can reach it. Casting turns the screen on, stops the screensaver, brings Fully Kiosk to the front and opens the dashboard. **Disconnect** takes it back to the start page set in Fully Kiosk.
+Any tablet you have added with the [Fully Kiosk](/player-support/fully-kiosk/) player provider shows up, once its password is set and Music Assistant can reach it. When you cast, the tablet wakes its screen, closes the screensaver, brings Fully Kiosk to the front and opens the dashboard. **Disconnect** takes it back to the start page you set in Fully Kiosk.
 
-This works on your local network, with or without Remote Access.
+This works on your home network. Remote Access is not needed.
 
 ### Apple TV
 
-Casting to an Apple TV needs the Music Assistant app for Apple TV, which is not available yet. This page will link to it once it is released.
+Apple TV is supported through a Music Assistant app for Apple TV, which is not out yet. We'll link to it here once it is.
 
-The Apple TV also has to be enabled as an [AirPlay](/player-support/airplay/) player and paired, including the optional **Remote control** step. Like Fully Kiosk, this works on your local network.
+Besides the app, the Apple TV needs to be enabled as an [AirPlay](/player-support/airplay/) player and paired, including the optional **Remote control** step. Like Fully Kiosk, it works on your home network.
 
 ### Any other screen
 
-**Get Dashboard URL**, at the bottom of the list, copies a link to the dashboard. Open it in the browser of a smart TV, a tablet or a computer to show the dashboard there. The link works once and has to be opened within an hour. It has the same Remote Access or `https://` requirement as Google Cast.
+At the bottom of the list, **Get Dashboard URL** copies a link to the dashboard. Open that link in the browser of a smart TV, a tablet or a computer and the dashboard appears there. The link only works once, and only within an hour, so open it soon after copying. Like Google Cast, it needs Remote Access or an `https://` Internal URL.
+
+## From Home Assistant
+
+From Home Assistant 2026.11, each display shows up in Home Assistant as a media player. That means you can put a dashboard on the TV from an automation, a script or a button, for example showing the party screen when a scene starts, or Now Playing on the kitchen tablet in the morning.
+
+Use the **Play media** action on the display and pick the dashboard with **Pick media**. Turning the display off hides the dashboard again. The <a href="https://www.home-assistant.io/integrations/music_assistant/#dashboards" target="_blank" rel="noopener noreferrer">Home Assistant documentation</a> has the details and an example.
 
 ## Who can cast
 
-The **Administrator** and **User** roles can cast a dashboard and disconnect it. **Guest** cannot. For a [role of your own](/settings/user-management/#roles-of-your-own), switch on **Show dashboards and host a music quiz** under **Users**.
+Anyone with the **Administrator** or **User** role can cast a dashboard and turn it off again. Guests can't. If you made a [role of your own](/settings/user-management/#roles-of-your-own), switch on **Show dashboards and host a music quiz** under **Users** to allow it.
 
-The display signs in as a guest and the app keeps it on that one dashboard, so it cannot be used to change settings. Music Assistant creates a user called **Dashboard Viewer** for this the first time you cast or copy a dashboard link, and you will see it in the user list. Leave it enabled, or casting stops working.
+The TV itself signs in as a guest, and only ever shows that one dashboard, so nobody can use it to change your settings. For this, Music Assistant adds a user called **Dashboard Viewer** the first time you cast or copy a dashboard link. You'll see it in your user list. Leave it enabled, or casting stops working.
 
 ## Known Issues / Notes
 
-- The display's access lasts one day. After that it shows "This dashboard session has ended". Cast the dashboard again, or copy a new link
+- A display stays signed in for one day. After that it says "This dashboard session has ended". Cast the dashboard again, or copy a new link
 - "Failed to show the dashboard on ..." or "Timed out connecting to Cast device ..." means Music Assistant could not reach the display. Check that it is switched on and connected to your network
 - The [MilkDrop Visualizer](/plugins/milkdrop-visualizer/) does not run on Google Cast devices, so the dashboard keeps its normal background there
-- **Get Dashboard URL** is in the same list as the displays, so it is only there when at least one display is available
+- **Get Dashboard URL** sits in the same list as the displays, so you only see it when at least one display has been found
