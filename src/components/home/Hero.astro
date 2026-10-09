@@ -142,6 +142,17 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
     transform: translateX(-50%);
     animation: drift 18s ease-in-out infinite alternate;
   }
+  /* Browsers without color-mix (Safari before 16.2) get the default
+     colours, fixed. */
+  @supports not (color: color-mix(in srgb, red 50%, transparent)) {
+    .hero::before {
+      background:
+        radial-gradient(35% 45% at 25% 55%, rgb(157 78 221 / 0.35), transparent 70%),
+        radial-gradient(30% 40% at 55% 40%, rgb(255 122 24 / 0.28), transparent 70%),
+        radial-gradient(30% 45% at 78% 60%, rgb(24 188 242 / 0.3), transparent 70%),
+        radial-gradient(25% 35% at 45% 80%, rgb(255 0 110 / 0.2), transparent 70%);
+    }
+  }
   @keyframes drift {
     to {
       transform: translateX(-47%) scale(1.06);

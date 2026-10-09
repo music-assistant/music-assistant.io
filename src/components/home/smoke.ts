@@ -21,6 +21,11 @@
 
 const SIM_RESOLUTION = 128;
 const DYE_RESOLUTION = 768;
+// Touch screens get coarser smoke (it's soft anyway) and every screen a cap
+// on canvas pixels, so tablets and big displays don't pay for detail no one
+// can see.
+const TOUCH_DYE_RESOLUTION = 512;
+const MAX_CANVAS_PIXELS = 1_200_000;
 const PRESSURE_ITERATIONS = 20;
 const CURL = 5;
 const VELOCITY_DISSIPATION = 0.25;
@@ -224,14 +229,17 @@ uniform float value;
 void main() { o = value * texture(source, vUv); }`);
 
 // Premultiplied output: soft tone-mapped colour, as opaque as it is bright,
-// fading out at the top and bottom edges of the hero.
+// fading out at the top and bottom edges of the hero. On the light page the
+// colour is deepened (darker, more saturated) so pale smoke doesn't vanish
+// into the pale background.
 const DISPLAY = frag(`
 uniform sampler2D dye;
-uniform float strength;
+uniform float strength, deepen;
 void main() {
   vec3 c = 1.0 - exp(-texture(dye, vUv).rgb * 1.4);
   float edge = smoothstep(0.0, 0.15, vUv.y) * smoothstep(1.0, 0.85, vUv.y);
   float a = clamp(max(c.r, max(c.g, c.b)), 0.0, 1.0) * strength * edge;
+  c = mix(c, pow(c, vec3(1.8)) * 1.3, deepen);
   o = vec4(c * strength * edge, a);
 }`);
 
@@ -472,7 +480,9 @@ export function startSmoke(
     return d;
   };
   const [simW, simH] = size(SIM_RESOLUTION);
-  const [dyeW, dyeH] = size(DYE_RESOLUTION);
+  const [dyeW, dyeH] = size(
+    finePointer.matches ? DYE_RESOLUTION : TOUCH_DYE_RESOLUTION,
+  );
   const velocity = double(simW, simH);
   const dye = double(dyeW, dyeH);
   const pressure = double(simW, simH);
@@ -700,15 +710,23 @@ export function startSmoke(
     return a.map((v, k) => (v + (b[k] - v) * f) * intensity);
   };
 
-  // The light page needs less colour to read as the same smoke.
+  // The light page needs deeper colour to read as the same smoke.
   let strength = 0.45;
+  let deepen = 0;
   const readTheme = () => {
-    strength = getComputedStyle(host).colorScheme === "light" ? 0.32 : 0.45;
+    const light = getComputedStyle(host).colorScheme === "light";
+    strength = light ? 0.55 : 0.45;
+    deepen = light ? 1 : 0;
     if (still && ready) renderStill();
   };
 
   const resize = () => {
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const area = Math.max(1, host.clientWidth * host.clientHeight);
+    const dpr = Math.min(
+      window.devicePixelRatio || 1,
+      1.5,
+      Math.sqrt(MAX_CANVAS_PIXELS / area),
+    );
     canvas.width = Math.max(1, Math.round(host.clientWidth * dpr));
     canvas.height = Math.max(1, Math.round(host.clientHeight * dpr));
     if (still && ready) renderStill();
@@ -886,6 +904,7 @@ export function startSmoke(
     displayP.use();
     displayP.set("texel", 1 / canvas.width, 1 / canvas.height);
     displayP.set("strength", strength);
+    displayP.set("deepen", deepen);
     displayP.bind("dye", dye.read, 0);
     draw(null);
     if (!ready) {
