@@ -52,6 +52,8 @@ Filled in, the two fields should look like this. These values are made up — us
 client_id = 5Hvc9wa0Ejf092wj3f3920w3F920asuL
 Authorization = OAuth 2-26432-21446-asdif2309fQ
 ```
+> [!IMPORTANT]
+> Ensure that `OAuth ` is added to the start of the token otherwise login will fail with `unexpected mimetype` errors
 ## Known Issues / Notes
 
 - What SoundCloud calls an artist is really whoever holds the account, so that is what appears as the artist in Music Assistant. If someone else uploads a track by an artist, it will be filed under the uploader rather than under the artist
