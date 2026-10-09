@@ -28,7 +28,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 
 1. Enable the Party plugin via **Settings → Plugins → Add a plugin**
 2. Configure which player will be used for party (or leave on Auto to use the last active player)
-3. Open the Party dashboard on the screen of your choice to display the live queue and guest join QR code
+3. Open the Party dashboard on the screen of your choice to display the live queue and guest join QR code, or [cast it](/dashboards/) to a TV or tablet with the TV icon at the top of the Party view
 
 ### For Guests
 

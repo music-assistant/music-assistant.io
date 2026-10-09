@@ -29,7 +29,7 @@ Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired b
 
 Apple TVs offer two extra pairing steps after the main one. Both are optional and can be added later by running Setup again:
 
-- <b>Remote control.</b> Lets Music Assistant see whether the device is on, wake it before playback, and control what it is playing and its volume.
+- <b>Remote control.</b> Lets Music Assistant see whether the device is on, wake it before playback, and control what it is playing and its volume. It is also needed to show [dashboards](/dashboards/) on the Apple TV.
 - <b>Playback monitoring.</b> Shows the app and media playing on the device outside of Music Assistant.
 
 Music Assistant chooses how to stream to each device automatically, so under normal circumstances nothing here needs changing.

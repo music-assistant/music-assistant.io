@@ -210,6 +210,8 @@ Select **Present mode** from the host controls to open the TV-friendly full-scre
 
 Exiting browser full-screen also exits Present mode. Host controls remain in the regular dashboard, so keep another administrator device available if the presentation screen is not convenient to control.
 
+Instead of Present mode, you can [cast the game screen](/dashboards/) to a TV or tablet with the TV icon in the host dashboard header. The host controls then stay on the device you are using.
+
 ## Remote Access
 
 When [Remote Access](/settings/remote-access) is enabled, the QR code uses `app.music-assistant.io` and players can join through WebRTC from outside the local network.
