@@ -8,6 +8,11 @@
  * scatters them and they slowly gather back. Notes only come from the
  * cursor moving. The colours follow whichever shelf cover is "now playing" (setColors).
  *
+ * Touch screens get no interaction (a finger in the hero is scrolling, and
+ * the text and covers leave little room to stir anyway). Instead, every few
+ * seconds an unseen hand makes one slow sweep near the edges, with a single
+ * cluster of notes, kept above the screenshot (`covered`) where it can be seen.
+ *
  * WebGL2 with half-float render targets. If that's missing, nothing starts
  * and the CSS glow carries the hero. If the visitor prefers reduced motion,
  * the patches are drawn once, still, with no cursor or notes, and redrawn
@@ -51,6 +56,13 @@ const NOTE_HOLD = 1.2;
 const NOTE_FADE = 0.6;
 const NOTE_LIFE = NOTE_DELAY + NOTE_GATHER + NOTE_HOLD + NOTE_FADE;
 const NOTE_RISE = 0.04;
+
+// Touch screens: a sweep every SWEEP_EVERY to SWEEP_EVERY + SWEEP_JITTER
+// seconds, lasting SWEEP_TIME and covering SWEEP_LENGTH of the hero.
+const SWEEP_EVERY = 4;
+const SWEEP_JITTER = 3;
+const SWEEP_TIME = 1.6;
+const SWEEP_LENGTH = 0.3;
 
 // Frames closer together than this are skipped, capping at about 60fps.
 const MIN_FRAME_MS = 1000 / 70;
@@ -287,9 +299,15 @@ type Program = {
   bind(name: string, target: { tex: WebGLTexture }, unit: number): void;
 };
 
-export function startSmoke(host: HTMLElement, canvas: HTMLCanvasElement) {
+export function startSmoke(
+  host: HTMLElement,
+  canvas: HTMLCanvasElement,
+  covered?: Element | null,
+) {
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
   let still = reduceMotion.matches;
+  // Only a mouse or trackpad stirs the smoke; anything else gets sweeps.
+  const finePointer = matchMedia("(hover: hover) and (pointer: fine)");
   let ready = false;
 
   const gl = canvas.getContext("webgl2", {
@@ -711,7 +729,7 @@ export function startSmoke(host: HTMLElement, canvas: HTMLCanvasElement) {
   let pointer: { x: number; y: number } | null = null;
   let moved = { x: 0, y: 0, dx: 0, dy: 0, pending: false };
   host.addEventListener("pointermove", (e) => {
-    if (still) return;
+    if (still || e.pointerType === "touch" || !finePointer.matches) return;
     const r = host.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width;
     const y = 1 - (e.clientY - r.top) / r.height;
@@ -796,6 +814,73 @@ export function startSmoke(host: HTMLElement, canvas: HTMLCanvasElement) {
       splat(p.x, p.y, 0, 0, colorAt(i, PATCH_DENSITY), PATCH_RADIUS);
     });
   let travel = 0;
+
+  // The automatic sweep for touch screens: a gentle arc starting near the
+  // left or right edge, eased in and out, with notes halfway along.
+  let sweep: {
+    start: number;
+    x: number;
+    y: number;
+    angle: number;
+    bend: number;
+    noted: boolean;
+  } | null = null;
+  let nextSweep = 0;
+  const sweepAt = (s: NonNullable<typeof sweep>, f: number) => {
+    const e = f * f * (3 - 2 * f);
+    const angle = s.angle + s.bend * e;
+    return {
+      x: s.x + Math.cos(angle) * SWEEP_LENGTH * e,
+      y: s.y + Math.sin(angle) * SWEEP_LENGTH * e,
+    };
+  };
+  const updateSweep = (t: number) => {
+    if (!sweep) {
+      if (!nextSweep) nextSweep = t + 1.5;
+      if (t < nextSweep) return;
+      // Only the part of the hero above the screenshot, which hides
+      // whatever is behind it (y is 0–1, bottom up).
+      const r = host.getBoundingClientRect();
+      const top = covered?.getBoundingClientRect().top;
+      const floor =
+        top === undefined
+          ? 0.2
+          : Math.min(0.6, Math.max(0.2, (r.bottom - top) / r.height + 0.08));
+      const y = floor + Math.random() * (0.9 - floor);
+      // Heading inwards, drifting and curving towards the middle of that
+      // band so it doesn't wander behind the screenshot.
+      const toward = y < (floor + 0.9) / 2 ? 1 : -1;
+      const tilt = toward * Math.random() * 0.5;
+      const bend = toward * Math.random() * 0.6;
+      const left = Math.random() < 0.5;
+      sweep = {
+        start: t,
+        x: left ? 0.05 + Math.random() * 0.15 : 0.8 + Math.random() * 0.15,
+        y,
+        angle: left ? tilt : Math.PI - tilt,
+        bend: left ? bend : -bend,
+        noted: false,
+      };
+    }
+    const f = Math.min(1, (t - sweep.start) / SWEEP_TIME);
+    const prev = sweepAt(sweep, Math.max(0, f - 1 / 60 / SWEEP_TIME));
+    const p = sweepAt(sweep, f);
+    moved = {
+      x: p.x,
+      y: p.y,
+      dx: p.x - prev.x,
+      dy: p.y - prev.y,
+      pending: true,
+    };
+    if (!sweep.noted && f > 0.5) {
+      sweep.noted = true;
+      addNotes(p.x, p.y, t * 0.12, 0.7, 1 + Math.floor(Math.random() * 2));
+    }
+    if (f >= 1) {
+      sweep = null;
+      nextSweep = t + SWEEP_EVERY + Math.random() * SWEEP_JITTER;
+    }
+  };
   // Draws the dye to the page, fading the canvas in the first time.
   const present = () => {
     displayP.use();
@@ -839,6 +924,8 @@ export function startSmoke(host: HTMLElement, canvas: HTMLCanvasElement) {
     const hue = t * 0.12;
     blendPalette(now);
     if (!ready) seedPatches(t);
+    const auto = !finePointer.matches;
+    if (auto) updateSweep(t);
 
     if (moved.pending) {
       const aspect = canvas.width / Math.max(1, canvas.height);
@@ -853,7 +940,7 @@ export function startSmoke(host: HTMLElement, canvas: HTMLCanvasElement) {
         colorAt(hue, 0.03 + 0.075 * speed),
       );
       travel += Math.hypot(moved.dx * aspect, moved.dy);
-      if (travel > NOTE_SPACING) {
+      if (!auto && travel > NOTE_SPACING) {
         travel = 0;
         addNotes(
           moved.x,

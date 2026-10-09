@@ -64,7 +64,7 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
   // WebGL context blocks the main thread, so it waits until the hero
   // screenshot has painted.
   const start = () => {
-    const smoke = hero && canvas ? startSmoke(hero, canvas) : undefined;
+    const smoke = hero && canvas ? startSmoke(hero, canvas, hero.querySelector(".app-window")) : undefined;
     if (smoke) onNowPlaying((colors) => smoke.setColors(heroColors(colors)));
   };
   const whenIdle = () =>
