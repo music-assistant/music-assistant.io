@@ -21,7 +21,7 @@ Some screens in Music Assistant look best on something big: what's playing right
 
 That's it. The TV icon lights up while the dashboard is showing, and the list puts a check mark next to the display it is on. To turn it off again, open the list and pick **Disconnect**.
 
-Don't see the TV icon? It only shows up when Music Assistant has found at least one display, and only for people who are [allowed to cast](#who-can-cast). It is also hidden while the party screen is in full screen or the quiz is in Present mode, so leave those first.
+Don't see the TV icon? It shows up when Music Assistant has found at least one display. Without one, it still shows when you can [copy a link for any other screen](#any-other-screen), which needs Remote Access or an `https://` address. It only shows for people who are [allowed to cast](#who-can-cast). It is also hidden while the party screen is in full screen or the quiz is in Present mode, so leave those first.
 
 A few things worth knowing:
 
@@ -35,7 +35,7 @@ A few things worth knowing:
 
 Chromecast, Google TV, Nest Hub and TVs with Chromecast built in all show up in the list, as long as the [Google Cast](/player-support/google-cast/) player provider is added. Speakers and speaker groups don't, since there is nothing to look at. A display still shows up if you have disabled it as a player.
 
-Google Cast devices need one extra thing: [Remote Access](/settings/remote-access/) switched on, or an [Internal URL](/settings/core/#webserver) that starts with `https://`. Without either you'll see "Remote access or an HTTPS base URL is required to cast dashboards".
+Google Cast devices need one extra thing: [Remote Access](/settings/remote-access/) switched on, or an [Internal URL or External URL](/settings/core/#webserver) that starts with `https://`. Without any of these you'll see "Remote access, an HTTPS base URL or an HTTPS external URL is required to cast dashboards".
 
 ### Fully Kiosk tablets
 
@@ -51,7 +51,7 @@ Besides the app, the Apple TV needs to be enabled as an [AirPlay](/player-suppor
 
 ### Any other screen
 
-At the bottom of the list, **Get Dashboard URL** copies a link to the dashboard. Open that link in the browser of a smart TV, a tablet or a computer and the dashboard appears there. The link only works once, and only within an hour, so open it soon after copying. Like Google Cast, it needs Remote Access or an `https://` Internal URL.
+At the bottom of the list, **Get Dashboard URL** copies a link to the dashboard. Open that link in the browser of a smart TV, a tablet or a computer and the dashboard appears there. The link only works once, and only within an hour, so open it soon after copying. Like Google Cast, it needs Remote Access, or an Internal URL or External URL that starts with `https://`. When no display has been found, the list shows "No cast devices found" with **Get Dashboard URL** below it.
 
 ## From Home Assistant
 
@@ -70,4 +70,3 @@ The TV itself signs in as a guest, and only ever shows that one dashboard, so no
 - A display stays signed in for one day. After that it says "This dashboard session has ended". Cast the dashboard again, or copy a new link
 - "Failed to show the dashboard on ..." or "Timed out connecting to Cast device ..." means Music Assistant could not reach the display. Check that it is switched on and connected to your network
 - The [MilkDrop Visualizer](/plugins/milkdrop-visualizer/) does not run on Google Cast devices, so the dashboard keeps its normal background there
-- **Get Dashboard URL** sits in the same list as the displays, so you only see it when at least one display has been found
