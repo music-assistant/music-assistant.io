@@ -21,7 +21,7 @@ Some screens in Music Assistant look best on something big: what's playing right
 
 That's it. The TV icon lights up while the dashboard is showing, and the list puts a check mark next to the display it is on. To turn it off again, open the list and pick **Disconnect**.
 
-Don't see the TV icon? It only shows up when Music Assistant has found at least one display, and only for people who are [allowed to cast](#who-can-cast). It is also hidden while the party screen is in full screen or the quiz is in Present mode, so leave those first.
+Don't see the TV icon? It shows up when Music Assistant has found at least one display, or when it can make a link for [any other screen](#any-other-screen). It only shows for people who are [allowed to cast](#who-can-cast). It is also hidden while the party screen is in full screen or the quiz is in Present mode, so leave those first.
 
 A few things worth knowing:
 
@@ -70,4 +70,3 @@ The TV itself signs in as a guest, and only ever shows that one dashboard, so no
 - A display stays signed in for one day. After that it says "This dashboard session has ended". Cast the dashboard again, or copy a new link
 - "Failed to show the dashboard on ..." or "Timed out connecting to Cast device ..." means Music Assistant could not reach the display. Check that it is switched on and connected to your network
 - The [MilkDrop Visualizer](/plugins/milkdrop-visualizer/) does not run on Google Cast devices, so the dashboard keeps its normal background there
-- **Get Dashboard URL** sits in the same list as the displays, so you only see it when at least one display has been found
