@@ -27,7 +27,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 ### For the Host
 
 1. Enable the Party plugin via **Settings → Plugins → Add a plugin**
-2. Choose whether the music plays on a speaker or on each guest's phone, and which player will be used for party (or leave on Auto to use the last active player)
+2. Choose whether the music plays on a speaker or on each guest's phone, and in Venue mode which player will be used for party (or leave on Auto to use the last active player)
 3. Open the Party dashboard on the screen of your choice to display the live queue and guest join QR code
 
 ### For Guests
@@ -48,7 +48,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 
 | Setting | Description |
 |---------|-------------|
-| **Party Mode** | How the party is heard. **Venue** plays the music out loud on one of your players for everyone in the room. **Remote** makes it a silent disco, where every guest listens on their own phone by tapping **Listen in** on the guest page. Venue by default. |
+| **Party Mode** | How the party is heard. **Venue** plays the music out loud on one of your players for everyone in the room. **Remote** makes it a silent disco, where every guest listens on their own phone by tapping **Tap to listen** on the guest page. Venue by default. |
 | **Party Player** | Select which player/queue receives guest requests. Set to "Auto" to automatically use the last active player. Only shown in Venue mode. |
 | **Party Name** | Custom name/title displayed on the party dashboard. Leave blank to hide. |
 | **Party Duration (hours)** | How long the QR code and join link stay valid, from 1 to 168 hours. 8 hours by default. A change only applies to QR codes created after it, so it does not extend the one already on screen. |
@@ -150,7 +150,7 @@ When remote access is disabled, guests must be on the same network as your Music
 
 ## Known Issues / Notes
 
-- The QR code stops working after the Party Duration (8 hours unless you change it). Once a guest has joined, their session lasts 24 hours and then they need to scan the QR code again
+- The QR code stops working after the Party Duration (8 hours unless you change it). Once a guest has joined, their session lasts up to 24 hours and then they need to scan the QR code again
 - Switching guest access off or removing the Party plugin signs all guests out and stops the QR code from working
 - Rate limiting tokens are stored in the guest's browser - clearing browser data resets their limits
 - The Party Dashboard works best on landscape displays; the guest view is optimized for portrait (mobile)
