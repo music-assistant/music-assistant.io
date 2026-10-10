@@ -33,9 +33,11 @@ This source signs Music Assistant in to your account, so the shows you have acce
 
 ## Configuration
 
-To configure, input a username and password.
+To configure, input a username and password. Optionally, if your Nugs.net account has a plan that includes HiFi streaming, you can select the stream quality you want to use.
 
 ## Known Issues / Notes
+
+Not every show is available in every quality. When a show isn't offered in the quality you picked, Music Assistant plays the lossy version of it instead.
 
 Nugs does not support favorite tracks. Similarly, there is no endpoint available to pass a nugs track ID and receive relevant details such as track name or artist.
 
