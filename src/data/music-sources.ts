@@ -277,6 +277,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "podcasts", "classical", "uk"],
   },
   {
+    name: "beets",
+    slug: "music-providers/beets",
+    icon: "/assets/icons/beets-icon.png",
+    categories: ["own-files"],
+  },
+  {
     name: "Builtin",
     slug: "music-providers/builtin",
     icon: "/assets/icon.png",
