@@ -248,6 +248,10 @@ export default defineConfig({
                 },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
                 {
+                  label: "NetEase Cloud Music Scrobbler",
+                  slug: "plugins/neteasecloudmusic_scrobble",
+                },
+                {
                   label: "OpenAI Compatible",
                   slug: "plugins/openai_compatible",
                 },
