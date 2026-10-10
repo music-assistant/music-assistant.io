@@ -26,7 +26,7 @@ This source signs Music Assistant in to your account, so the shows you have acce
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | FLAC 192kHz 24 bit |
+| Maximum Stream Quality | FLAC 44.1kHz 16 bit |
 | Login Method | Password |
 
 ### Other
@@ -34,6 +34,10 @@ This source signs Music Assistant in to your account, so the shows you have acce
 ## Configuration
 
 To configure, input a username and password. Optionally, if your Nugs.net account has a plan that includes HiFi streaming, you can select the stream quality you want to use.
+
+### Settings
+
+- <b>Stream quality.</b> Default is `Lossless`. Options are `Lossless` or `Lossy`. Lossless needs a Nugs.net plan that includes HiFi streaming; other plans get the lossy stream.
 
 ## Known Issues / Notes
 
