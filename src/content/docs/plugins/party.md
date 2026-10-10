@@ -76,24 +76,24 @@ Set "Enable Rate Limiting" to off to give guests unlimited requests. Individual 
 |---------|---------|-------------|
 | **Allow Add to Queue** | On | Let guests add songs to the queue (prioritized before normally added songs, but after any "Boost" songs) |
 | **Prevent Duplicate Tracks** | On | Prevent guests from adding a track that is already in the queue. Tracks already queued are shown as "Already in queue" in the guest view. |
-| **Token Limit** | 10 | How many songs a guest can add before having to wait, from 1 to 50 |
-| **Refill Rate** | 2 min | How long until they earn another go, from 1 to 60 minutes |
+| **Add to Queue Token Limit** | 10 | How many songs a guest can add before having to wait, from 1 to 50 |
+| **Add to Queue Refill Rate (minutes)** | 2 min | How long until they earn another go, from 1 to 60 minutes |
 
 #### Boost
 
 | Setting | Default | Description |
 |---------|---------|-------------|
 | **Allow Boost** | On | Let guests boost songs to play next (queue jumping). Guests can boost from search results or tap an upcoming queue item to boost it higher. |
-| **Token Limit** | 1 | How many boosts a guest can use before having to wait, from 1 to 10 |
-| **Refill Rate** | 20 min | How long until they earn another go, from 5 to 120 minutes |
+| **Boost Token Limit** | 1 | How many boosts a guest can use before having to wait, from 1 to 10 |
+| **Boost Refill Rate (minutes)** | 20 min | How long until they earn another go, from 5 to 120 minutes |
 
 #### Skip Song
 
 | Setting | Default | Description |
 |---------|---------|-------------|
 | **Allow Skip Song** | Off | Let guests skip the currently playing song |
-| **Token Limit** | 1 | How many skips a guest can use before having to wait, from 1 to 5 |
-| **Refill Rate** | 60 min | How long until they earn another go, from 15 to 180 minutes |
+| **Skip Song Token Limit** | 1 | How many skips a guest can use before having to wait, from 1 to 5 |
+| **Skip Song Refill Rate (minutes)** | 60 min | How long until they earn another go, from 15 to 180 minutes |
 
 ### Badge Colors (Advanced)
 
