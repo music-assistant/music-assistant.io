@@ -37,7 +37,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 3. Search for songs by name or artist
 4. Pick a song from the search results, then tap "Request" to add it to the queue or "Boost" to play it sooner
 5. Songs already in the queue are marked as "Already in queue" and successfully requested songs show "Added"
-6. Tap an upcoming song in the queue to boost it higher
+6. Tap an upcoming song in the queue, then tap "Boost" to move it higher
 7. View the current queue and see when their songs will play
 
 ![Guest View - Queue](../../../assets/screenshots/party/party-guest-view-queue.png)
@@ -110,7 +110,7 @@ Access via the Party link in the Music Assistant sidebar. This view is designed 
 
 **Features:**
 
-- Large QR code for easy scanning. Click it, or the **Copy link** button below it, to copy the join link. On devices that can share, the button is **Share invitation** instead, with Copy link in its menu
+- Large QR code for easy scanning. Click it, or the **Copy link** button below it, to copy the join link. On devices that can share, the button is **Share invitation** instead, with **Copy link** in its menu
 - Animated track stack showing previous, current, and upcoming songs
 - Guest request badges visible on queue items
 - **Karaoke Mode** - A dedicated layout that puts synchronized lyrics front-and-center with the track stack minimized at the bottom and the QR code in the top-left corner. Great for sing-along parties!
@@ -132,7 +132,7 @@ Guests are automatically redirected here after scanning the QR code.
 - Pick an artist to browse their tracks, then tap a track to show its "Request" and "Boost" buttons
 - Tracks already in the queue show "Already in queue" instead of action buttons; successfully requested songs show "Added"
 - Current queue display with position indicators
-- Tap upcoming queue items to boost them higher in the queue
+- Tap an upcoming queue item, then tap "Boost" to move it higher in the queue
 - Token counters showing remaining requests
 - "Request" and "Boost" badges on songs they've added
 - **Skip button** - When enabled by the host, guests can skip the currently playing song. The button appears next to the "Current Queue" header with a token counter showing remaining skips. Once tokens are used, a countdown timer shows when the next skip becomes available
@@ -156,7 +156,7 @@ When remote access is disabled, guests must be on the same network as your Music
 
 ### Opening the QR link on a signed-in device
 
-If you open the QR code or join link in a browser that is already signed in to Music Assistant, you stay signed in as yourself and land on the guest page. Tap the icon at the top right and choose **Back to Music Assistant** to return to the full app.
+If you open the QR code or join link in a browser that is already signed in to Music Assistant, you stay signed in as yourself and land on the guest page. Tap your initial at the top right and choose **Back to Music Assistant** to return to the full app. If that browser is not signed in to this server, it joins as a normal guest and any login you have there stays as it is.
 
 Guests find **Leave guest mode** in the same menu. When a guest session ends, for example because it expired or guest access was switched off, the guest sees **Your party session has ended** with a button to scan the QR code again.
 
