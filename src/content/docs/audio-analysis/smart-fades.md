@@ -4,19 +4,25 @@ title: Smart Fades
 
 # Smart Fades Provider  <img src="/assets/icons/smart-fades-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The **Smart Fades** provider analyses each track to find its beats, downbeats, musical key and energy curve, and uses that information to create beat-matched, EQ-aware crossfades between tracks — much smoother than a plain time-based fade.
+The **Smart Fades** provider analyses each track to find its beats, downbeats, musical key, energy curve, where the kick drum plays and where someone sings. Music Assistant uses that information to choose a transition that suits each pair of tracks, instead of the same fade every time.
 
-Smart Fades is an optional plugin but is automatically added and enabled unless the minimum resources requirements [listed below](#performance-notes) are not met.
+Smart Fades is an optional provider. Music Assistant adds and enables it automatically on a server with at least 6 GB of RAM and 4 CPU cores. On a smaller server that meets the [minimum requirements](#performance-notes), you can add it yourself.
 
 ## What it adds to playback
 
-When Smart Fades is enabled on a player, the transition between tracks is:
+At every change of track, Music Assistant looks at how the current track ends and how the next one starts, and picks one of these transitions.
 
-- **Beat-aligned** — the outgoing and incoming tracks line up on a downbeat instead of clipping mid-bar.
-- **Energy-aware** — the crossfade is positioned where the outgoing track is winding down and the incoming one has settled in, rather than at a fixed offset.
-- **EQ-blended** — high and low frequencies are blended separately to avoid the muddy sound that a straight volume crossfade produces.
+| Transition | What you hear | When it is used |
+| --- | --- | --- |
+| Beatmatched blend | Both tracks play together for several bars with their beats lined up, the way a DJ mixes them. The bass of one track hands over to the other. When both have a kick drum, the current track speeds up or slows down a little to match the tempo of the next one. | Two tracks with a steady beat, the same time signature and tempos within about 8% of each other. |
+| Segue | The tracks overlap only where they are quiet: the current track's fade-out or quiet ending and the next track's quiet intro. The song's own fade carries the change, for up to about 15 seconds. | Tracks that can't be beatmatched, when the current one fades out or ends quietly, or the next one starts quietly. |
+| Short fade | A quick fade of one to four bars. | Tracks that can't be beatmatched, when neither ends or starts quietly enough for a segue. |
+| Filter out | The bass and the kick drum of the current track are swept away over a few bars while the next track comes in. | Instead of a short fade, when even that would play two kick drums out of step, and the tempos are within about 20%. |
+| Echo out | The current track stops on a beat and its last beat echoes away, while the next track starts on its first beat. | Like filter out, when the tempos are further apart or the time signatures differ. |
 
-The result is closer to what a DJ would do manually than to a stock crossfade.
+Music Assistant also checks what would play on top of each other. It keeps the overlap short when both tracks would sing at the same time, or when two kick drums would play out of step. A voice or a beat on only one of the two tracks doesn't count as a clash. When neither track has vocals around the change and at least one has no kick drum, the overlap can run up to about 15 seconds, even through the loud parts.
+
+A transition uses the standard crossfade when a track has no analysis yet, or when the current track ends in a long stretch of silence.
 
 ## Choosing the crossfade mode
 
@@ -25,9 +31,9 @@ Crossfade is a queue setting. Set it for all players in the [Player Queues setti
 | Mode | Behaviour |
 | --- | --- |
 | **Standard Crossfade** | A simple time-based crossfade of a configurable duration. Used as a fallback when Smart Fades cannot run. |
-| **Smart Crossfade** | Uses the beat, key and energy data produced by this provider to build a beat-matched, EQ-aware transition. |
+| **Smart Crossfade** | Uses the analysis from this provider to choose a transition that suits each pair of tracks, as described above. |
 
-The duration used for Standard Crossfade (and as a fallback for Smart Crossfade) is set via "Fallback crossfade duration" in the same place.
+The duration used for Standard Crossfade (and as a fallback for Smart Crossfade) is set with "Standard crossfade duration" in the Player Queues settings, which shows while Standard Crossfade is selected there.
 
 Some players don't natively support gapless or crossfaded playback. For those, Music Assistant automatically switches into flow mode (a continuous re-encoded stream) so the crossfade can still happen.
 
