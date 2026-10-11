@@ -285,6 +285,10 @@ export default defineConfig({
                 { label: "Lyrics", slug: "metadata/lyrics" },
                 { label: "Media Items", slug: "metadata/media-items" },
                 {
+                  label: "AI Artwork",
+                  slug: "metadata-providers/ai-artwork",
+                },
+                {
                   label: "LastFM Recommendations",
                   slug: "metadata-providers/lastfm-recommendations",
                 },

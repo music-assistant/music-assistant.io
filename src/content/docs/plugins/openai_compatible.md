@@ -6,7 +6,7 @@ pluginGroup: other-systems
 
 # OpenAI Compatible
 
-Some Music Assistant features are powered by an AI model: **AI Radio**, the **Trivia** quiz type, the AI answer suggestions in **Music Quiz**, and the AI-written descriptions for **Smart Playlists**.
+Some Music Assistant features are powered by an AI model: **AI Radio**, the **Trivia** quiz type, the AI answer suggestions in **Music Quiz**, the AI-written descriptions for **Smart Playlists**, and the covers and descriptions made by **AI Artwork**.
 
 Those features used to need Home Assistant, because an AI task entity there was the only thing that could answer them. This plugin lets Music Assistant talk to an AI service directly, so they work without Home Assistant as well.
 
@@ -49,6 +49,12 @@ The plugin does not offer any models until you pick them. Open the plugin under 
 The list is read from your service. If your service does not publish a list of its models, the field lets you type the model names yourself.
 
 Each model you select becomes its own AI engine, listed as `OpenAI Compatible | <model>` wherever an AI engine can be picked.
+
+### Choose image models
+
+Models that draw pictures are picked separately, under **Image models**, for example `google/gemini-2.5-flash-image` on OpenRouter or `gpt-image-1` on OpenAI. Each one becomes an **image engine**, used by features that create artwork such as [AI Artwork](/metadata-providers/ai-artwork/).
+
+Leave **Image models** empty if your service cannot generate images.
 
 ## Choosing a model
 
