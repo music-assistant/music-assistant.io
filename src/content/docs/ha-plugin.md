@@ -29,7 +29,7 @@ Once it is added, the only settings here are the three player control lists desc
 
 ## AI and text-to-speech engines
 
-Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only. [AI Artwork](/metadata-providers/ai-artwork/) draws pictures as well.
+Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only. [Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers) draws pictures as well, for its AI generated covers.
 
 This plugin does none of these jobs itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine**, an AI task entity that can generate images also becomes an **image engine**, and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
 
@@ -56,7 +56,7 @@ Home Assistant | Google Translate (tts.google_translate_en_com)
 | [AI Radio](/plugins/ai-radio/) | AI **and** text-to-speech | **Reconfigure** on the provider's menu, not its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later) |
 | [Music Quiz](/plugins/music-quiz/) | AI | Provider settings, under **Features** |
 | [Smart Playlists](/plugins/smart_playlist/) | AI | Provider settings, once **AI descriptions** is switched on |
-| [AI Artwork](/metadata-providers/ai-artwork/) | Image, and AI for descriptions | Provider settings, under **Cover artwork** and **Descriptions** |
+| [Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers) | Image for covers, AI for descriptions | Provider settings: **Image engine** appears once **Artwork template** is **AI generated**, and **Text engine** is under **AI covers and descriptions** |
 
 > [!TIP]
 > With only one engine of each kind there is nothing to do. A feature takes the only one available and remembers it. The picker matters when you have more than one.
