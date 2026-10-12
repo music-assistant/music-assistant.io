@@ -7,7 +7,7 @@ description: Generates playlist covers and short descriptions with an AI image a
 
 Music Assistant can give your playlists a generated cover and a short description, using an AI engine you already have connected. Contributed and maintained by <a href="https://github.com/ryanmac8" target="_blank" rel="noopener noreferrer">ryanmac8</a>
 
-Covers are drawn by an **image engine**: a Home Assistant AI Task entity that can generate images, or an image model added to the [OpenAI Compatible plugin](/plugins/openai_compatible/), such as one on OpenRouter. Descriptions are written by any **AI engine**. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines) for how engines work.
+Covers are drawn by an [image engine](#requirements) and descriptions are written by an [AI engine](#requirements).
 
 ## Features
 
@@ -57,9 +57,20 @@ Covers are drawn by an **image engine**: a Home Assistant AI Task entity that ca
 
 The same playlist will look different every time a cover is made, because the image engine invents a new picture each time. How good the covers are depends mostly on the image model you use.
 
+## Requirements
+
+You need at least one image engine before you add the provider, and an AI engine as well for the descriptions.
+
+- An **image engine** draws the covers. It is either a Home Assistant AI Task entity that can generate images, or an image model added to the [OpenAI Compatible plugin](/plugins/openai_compatible/)
+- An **AI engine** writes the descriptions. Any AI engine will do
+
+See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines) for how engines work.
+
 ## Configuration
 
-Add the provider in **Settings → Metadata providers**. You need at least one image engine first, and an AI engine as well for the descriptions.
+Add the provider in **Settings → Metadata providers**.
+
+## Settings
 
 ### Cover artwork
 
@@ -70,9 +81,9 @@ Add the provider in **Settings → Metadata providers**. You need at least one i
 
 ### Preview
 
-Try a look on one of your playlists before you change anything. Nothing is saved, and neither your settings nor the playlist change.
+You can preview what one of your playlists looks like before you change anything. Nothing is saved, and neither your settings nor the playlist change.
 
-- **Preview with playlist**: the playlist to try
+- **Preview with playlist**: the playlist to preview
 - **Styles to preview**: the styles to try, every style except Custom by default. Each style is one image from your image engine
 - **Custom prompt to preview**: the prompt to try when **Custom** is one of the styles to preview
 
@@ -98,6 +109,5 @@ Press **Generate preview** to see a cover for each style, together with the desc
 ## Known Issues / Notes
 
 - Covers and descriptions are made in the background: a couple of minutes after the provider starts or its settings are saved, and then every hour. With many playlists, the first round takes a while because of the hourly limit
-- A cover is only made again when something that shapes it changes: the playlist name, the style, the prompt or the engine. Renaming a playlist gives it a new cover
+- A cover is only made again when the playlist name, the style, the prompt or the image engine changes. Renaming a playlist gives it a new cover
 - Every cover and description is a request to your AI service, which may cost money. The hourly limit and **Keep existing artwork** help keep that down
-- Image engines can misspell the playlist name. If yours does, turn on **Let Music Assistant add the playlist name**
