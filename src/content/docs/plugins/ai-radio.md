@@ -161,7 +161,7 @@ Use it sparingly. Searching makes a segment slower to prepare, and what it can d
 
 ### Talking over the intro
 
-With **Talk over the intro** on, a segment's break does not have to finish before the next song starts. The last few seconds of the break play over the song's intro, with the music turned down under the voice and brought back up as the break ends, just before the singing starts.
+With **Talk over the intro** on, a segment's break does not have to finish before the next song starts. The last few seconds of the break play over the song's intro, with the music turned down under the voice and brought back up as the break ends, just before the singing starts. When several segments are merged into one break, the host only talks over the intro if every one of them has the switch on.
 
 Music Assistant only does this when it knows where the singing starts. It takes that from the [Smart Fades](/audio-analysis/smart-fades/#how-analysis-runs) analysis of a song it has played before, or from the song's [synced lyrics](/metadata/lyrics/). Without either, or when the intro or the break is too short to fit, the break plays whole and the song starts after it, as usual.
 
