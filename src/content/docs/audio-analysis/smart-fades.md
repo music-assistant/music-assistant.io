@@ -55,7 +55,7 @@ Smart Fades runs machine learning on the audio and is more CPU and memory intens
 - An [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) capable CPU on x86 (or use an ARM64 cpu). In virtualized environments, if the host CPU supports AVX2, pass the host CPU model through to the VM
 - Minimum 4GB of RAM and 2 CPU cores
 
-If a server feels sluggish after enabling Smart Fades, switching the affected players to Standard Crossfade (or Disabled) restores normal behaviour while leaving Smart Fades installed.
+If a server feels sluggish with Smart Fades, remove it in the settings under Audio analysis. Switching players to Standard Crossfade is not enough, because Smart Fades keeps analysing every track that plays for as long as it is installed. [Sonic Analysis](/audio-analysis/sonic-analysis/) also runs machine learning on the audio, so on a small server remove it as well.
 
 ## Same-album transitions
 
