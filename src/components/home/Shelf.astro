@@ -60,6 +60,10 @@ const items = shelf.map((name) => ({ name, ...palettes[name] }));
     };
     const names = [...new Set(covers.map((cover) => cover.dataset.palette!))];
     play(names[Math.floor(Math.random() * names.length)]);
+    // The scroll and the equaliser bars stop while the shelf is off-screen.
+    new IntersectionObserver(([entry]) =>
+      shelf.toggleAttribute("data-offscreen", !entry.isIntersecting),
+    ).observe(shelf);
     shelf.addEventListener("click", (e) => {
       const cover = (e.target as Element).closest<HTMLElement>("[data-palette]");
       if (cover) play(cover.dataset.palette!);
@@ -184,6 +188,10 @@ const items = shelf.map((name) => ({ name, ...palettes[name] }));
     background: #0b0c0d;
     clip-path: polygon(0 0, 100% 50%, 0 100%);
     transform: translate(-50%, -50%);
+  }
+
+  .shelf[data-offscreen] :is(.track, .bars i) {
+    animation-play-state: paused;
   }
 
   @media (hover: hover) and (pointer: fine) {

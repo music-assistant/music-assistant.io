@@ -53,6 +53,12 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
   // is its deep shadow, nearly invisible as light on a dark page, so it's
   // lifted toward the second.
   const heroColors = ([c1, c2, c3]: string[]) => [c1, c2, mix(c3, c2, 0.45)];
+  // The glow's drift stops while the hero is off-screen.
+  if (hero)
+    new IntersectionObserver(([entry]) =>
+      hero.toggleAttribute("data-offscreen", !entry.isIntersecting),
+    ).observe(hero);
+
   onNowPlaying((colors) => {
     const [c1, c2, c3] = heroColors(colors);
     [c1, c2, c3, c2].forEach((color, i) =>
@@ -152,6 +158,9 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
         radial-gradient(30% 45% at 78% 60%, rgb(24 188 242 / 0.3), transparent 70%),
         radial-gradient(25% 35% at 45% 80%, rgb(255 0 110 / 0.2), transparent 70%);
     }
+  }
+  .hero[data-offscreen]::before {
+    animation-play-state: paused;
   }
   @keyframes drift {
     to {

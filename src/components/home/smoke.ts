@@ -70,7 +70,13 @@ const SWEEP_TIME = 1.6;
 const SWEEP_LENGTH = 0.3;
 
 // Frames closer together than this are skipped, capping at about 60fps.
+// After IDLE_AFTER seconds with nothing happening (no cursor, sweep, notes
+// or colour change) it drops to about 30fps: the patches drift so slowly
+// that no one can tell, and it halves the GPU work while the hero just sits
+// there.
 const MIN_FRAME_MS = 1000 / 70;
+const IDLE_FRAME_MS = 1000 / 35;
+const IDLE_AFTER = 5;
 
 // How long the smoke takes to blend into a new palette, in seconds.
 const PALETTE_BLEND = 1.2;
@@ -690,7 +696,13 @@ export function startSmoke(
   let toPalette = DEFAULT_PALETTE;
   let blendStart = -Infinity;
   const blendPalette = (now: number) => {
+    // Nothing to do once the blend has finished.
+    if (palette === toPalette) return;
     const f = Math.min(1, (now - blendStart) / 1000 / PALETTE_BLEND);
+    if (f >= 1) {
+      palette = toPalette;
+      return;
+    }
     const e = f * f * (3 - 2 * f);
     palette = toPalette.map((to, k) => {
       const from = fromPalette[k % fromPalette.length];
@@ -803,6 +815,7 @@ export function startSmoke(
   }).observe(host);
 
   let last = performance.now();
+  let lastActive = last;
 
   // Each patch drifts a little around its spot, slowly shifting colour, and
   // is topped up just enough to hold its density against the fade.
@@ -933,11 +946,17 @@ export function startSmoke(
     if (!visible || stopped || still) return;
     // About 60fps at most: faster screens skip frames rather than doing
     // twice the work for no visible gain.
-    if (ready && now - last < MIN_FRAME_MS) {
+    const busy =
+      now - lastActive < IDLE_AFTER * 1000 ||
+      notes.length > 0 ||
+      palette !== toPalette;
+    if (ready && now - last < (busy ? MIN_FRAME_MS : IDLE_FRAME_MS)) {
       queue();
       return;
     }
-    const dt = Math.min((now - last) / 1000, 1 / 60);
+    // Real elapsed time, so the smoke moves at the same speed at 30fps, but
+    // capped so a long gap (a backgrounded tab) doesn't jolt it.
+    const dt = Math.min((now - last) / 1000, 1 / 30);
     last = now;
     const t = now / 1000;
     const hue = t * 0.12;
@@ -947,6 +966,7 @@ export function startSmoke(
     if (auto) updateSweep(t);
 
     if (moved.pending) {
+      lastActive = now;
       const aspect = canvas.width / Math.max(1, canvas.height);
       const dx = moved.dx * (aspect < 1 ? aspect : 1);
       const dy = moved.dy * (aspect > 1 ? 1 / aspect : 1);
