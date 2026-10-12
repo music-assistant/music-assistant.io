@@ -161,11 +161,11 @@ Use it sparingly. Searching makes a segment slower to prepare, and what it can d
 
 ### Talking over the intro
 
-With **Talk over the intro** on, a segment's break does not have to finish before the next song starts. The last few seconds of the break play over the song's intro, with the music turned down under the voice and brought back up as the break ends, just before the singing starts.
+With **Talk over the intro** on, a segment's break does not have to finish before the next song starts. The last few seconds of the break play over the song's intro, with the music turned down under the voice and brought back up as the break ends, just before the singing starts. When several segments are merged into one break, the host only talks over the intro if every one of them has the switch on.
 
 Music Assistant only does this when it knows where the singing starts. It takes that from the [Smart Fades](/audio-analysis/smart-fades/#how-analysis-runs) analysis of a song it has played before, or from the song's [synced lyrics](/metadata/lyrics/). Without either, or when the intro or the break is too short to fit, the break plays whole and the song starts after it, as usual.
 
-It also needs the player to play the queue as one continuous stream. A show with such a segment switches its player to [flow mode](/settings/individual-player/#enable-queue-flow-mode) while it is on air. The AI DJ on a queue leaves the player's settings alone, so there it only happens on players that already stream in flow mode.
+The host talks over the intro on players that play gapless, such as Sonos, and on players that stream in [flow mode](/settings/individual-player/#enable-queue-flow-mode). A show with such a segment switches any other player, such as a Chromecast, to flow mode while it is on air. The AI DJ on a queue leaves the player's settings alone, so on those players it only happens when they already stream in flow mode.
 
 While the host is talking over the intro, the [Audio Pipeline](/audiopipeline/) label on the player shows the transition as **Voice-over**.
 
@@ -268,7 +268,7 @@ Check the queue is actually playing. The DJ fills the gaps between tracks, so it
 
 ### The host never talks over the intro
 
-**Talk over the intro** is off by default, so check it is on for the segment. When it is, Music Assistant still plays the break whole when it does not know where the singing starts. That happens with a song it has not played before and that has no synced lyrics. It also plays the break whole when the intro or the break itself is too short. With the AI DJ on a queue, the player has to be streaming in [flow mode](/settings/individual-player/#enable-queue-flow-mode) already. A show takes care of that itself.
+**Talk over the intro** is off by default, so check it is on for the segment. When it is, Music Assistant still plays the break whole when it does not know where the singing starts. That happens with a song it has not played before and that has no synced lyrics. It also plays the break whole when the intro or the break itself is too short. On a player that neither plays gapless nor streams in [flow mode](/settings/individual-player/#enable-queue-flow-mode), such as a Chromecast, the AI DJ on a queue plays the break whole. A show switches such a player to flow mode itself.
 
 ### Weather segments are empty or skipped
 
