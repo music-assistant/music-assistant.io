@@ -83,7 +83,7 @@ Add the provider in **Settings → Metadata providers**.
 
 You can preview what one of your playlists looks like before you change anything. Nothing is saved, and neither your settings nor the playlist change.
 
-- **Preview with playlist**: the playlist to preview
+- **Preview playlist**: the playlist to preview
 - **Styles to preview**: the styles to try, every style except Custom by default. Each style is one image from your image engine
 - **Custom prompt to preview**: the prompt to try when **Custom** is one of the styles to preview
 
