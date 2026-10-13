@@ -33,7 +33,7 @@ Sign in and your Telmore library and playlists show up in Music Assistant, with 
 
 - Searching the Telmore Musik catalogue is possible
 - Two-way syncing of items added to library between MA and Telmore Musik is possible
-- Playlist creation is possible as well as adding and removing tracks from existing playlists
+- Playlist creation and deletion is possible, as well as adding and removing tracks from existing playlists
 - Played tracks are logged in Telmore Musik, which is especially useful for generating appropriate recommendations
 - Any track that Telmore Musik has lyrics for is automatically fetched in MA. If timestamps are available for a track, proper "karaoke style" lyrics are used, otherwise it falls back to raw text-only lyrics
 
