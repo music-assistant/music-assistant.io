@@ -36,21 +36,25 @@ Add the plugin in **Settings → Plugins → Add a plugin** and pick **OpenAI Te
 
 ### Connection details
 
-- **API endpoint** — the address of the speech API, including the version path. Use `https://api.openai.com/v1` for the OpenAI cloud API, or the address of your own server, for example `http://localhost:8880/v1` for Kokoro-FastAPI. Change this if the server does not run where it normally would, for example when it runs on a different machine than Music Assistant, or when Music Assistant runs in a container and cannot reach `localhost`
+- **API endpoint** — the address of the speech API. Use `https://api.openai.com/v1` for the OpenAI cloud API. For your own server the address and port are enough, for example `http://192.168.1.10:8880` for Kokoro-FastAPI. Music Assistant adds `http://` and `/v1` when they are missing. A full address ending in `/v1/audio/speech` works too, and an address with its own path, such as `https://api.groq.com/openai/v1`, is used as given. Use `localhost` only when the server runs on the same machine and Music Assistant can reach it there, which is often not the case when Music Assistant runs in a container
 - **API key** — the key from your service. Required for the OpenAI cloud API; leave it empty for a local server that does not ask for one
 - **Model** — the speech model to use, for example `tts-1` or the higher quality `gpt-4o-mini-tts` on the OpenAI cloud API. Self-hosted servers use their own model names
 - **Audio format** — the format the speech is requested in: MP3, Opus, AAC, FLAC or WAV. MP3 works with almost every server, so leave it as is unless yours does not support it
 
 Music Assistant renders a short test phrase before finishing, so a wrong address, key, model or audio format is caught here rather than on the first announcement.
 
+If the test phrase fails, setup shows the error message from your server, which usually says what is wrong.
+
 ### Voices
 
 The plugin finds its voices by itself:
 
-- If your server publishes a list of its voices, as Kokoro-FastAPI does, those voices are offered.
+- If your server publishes a list of its voices, as Kokoro-FastAPI and mlx-audio do, those voices are offered.
 - Otherwise the standard OpenAI voices are offered: `alloy`, `echo`, `fable`, `nova`, `onyx` and `shimmer`.
 
-If your server has voices that are not found this way, open the plugin under **Settings → Plugins** and enter them under **Voices**, one voice per value. This replaces the voices that would otherwise be offered.
+Some servers use their own voice names without listing them, for example Voxtral on mlx-audio, with voices such as `neutral_female` and `casual_male`. The test phrase then fails, and setup adds a **Voices** field. Enter the voice names from your server's documentation there, one voice per value, and finish the setup. Those voices are then offered instead of the standard ones.
+
+To change the voices later, open the plugin under **Settings → Plugins** and enter them under **Voices**, one voice per value. This replaces the voices that would otherwise be offered, including any entered during setup.
 
 Each voice becomes its own TTS engine, listed as `OpenAI Text-to-speech | <voice>` wherever a TTS engine can be picked.
 
