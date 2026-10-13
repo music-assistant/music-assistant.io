@@ -7,6 +7,8 @@ description: Explanation of the use and effect of the DSP Tone Controls filter
 
 Tone controls provide simple frequency adjustments, which allows the boosting or reducing of the bass and treble regions of the music sent to the player.
 
+This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
+
 ## Usage
 
 There are three controls available, Bass, Mid and Treble. These correspond to a range of frequencies centred on 100Hz, 900Hz and 9000Hz. Boosting or cutting the volume of the audio signal around these centres is accomplished by adjusting the three sliders.

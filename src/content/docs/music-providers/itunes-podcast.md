@@ -19,16 +19,17 @@ This source lets you search that directory from Music Assistant and add anything
 | Media Types Supported | Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy, Variable Quality |
+| Maximum Stream Quality | Lossy variable bitrate |
 | Login Method | None |
 
 ### Other
 
 - Search for podcasts via the iTunes API
+- Transcripts are shown for episodes where the podcast publisher provides one
 
 ## Configuration
 

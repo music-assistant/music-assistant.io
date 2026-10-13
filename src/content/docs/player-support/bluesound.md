@@ -12,7 +12,7 @@ Music Assistant has support for <a href="https://www.bluesound.com/" target="_bl
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Bluesound`.
+1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Bluesound`.
 2. Your Bluesound devices will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
@@ -21,14 +21,10 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 Refer to the [Player Provider Settings](/settings/player-provider/) when setting up this provider as it has no unique settings at the provider level.
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Bluesound players have the following settings:
+Bluesound players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on BluOS:
 
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Try to inject metadata into stream (ICY).</b> Default is "full" (Profile 2 - full info including images). This option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a contnuous audio stream. Use for players that dont natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Everything up to 192 kHz / 24 bit is selected by default, rather than only 44.1 kHz / 16 bit and 48 kHz / 16 bit. Remove the higher ones if your player cannot manage them
+- <b>[Try to inject metadata into stream (ICY)](/settings/individual-player/#try-to-inject-metadata-into-stream-icy).</b> Defaults to Profile 2 - full info, rather than being off as it is elsewhere
 
 ## Known Issues / Notes
 

@@ -8,7 +8,9 @@ The first part of this page covers everyday questions about using Music Assistan
 
 ## Use volume normalization? How does it work?
 
-After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -17 LUFS (and -17 is the default starting point). **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
+After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -12 LUFS, and the default is -14 LUFS. **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
+
+The method, the target level and the fixed gain values are set under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback). Turning normalization on or off lives under [**Settings → System → Player Queues**](/settings/core/#player-queues) and can be overridden for [one queue](/usage/#the-queue).
 
 More details [here](/faq/tech-info/#volume-normalization)
 
@@ -24,7 +26,7 @@ There are three options.
 
 ## Shuffle Spotify/Playlist/YouTube etc
 
-You don't shuffle the music sources; you enable shuffle on the queue for the player, and whatever gets added to the queue then plays shuffled. Enable shuffle from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar).
+You don't shuffle the music sources; you [enable shuffle on the queue](/usage/#shuffle) for the player, and whatever gets added to the queue then plays shuffled. Enable shuffle from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar).
 
 For Home Assistant automations you can also do it with YAML:
 ``` yaml
@@ -37,9 +39,9 @@ data:
 
 ## Add radio stations to MA
 
-If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear.
+If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear. Any radio source that has its own library (or favorites) will work this way.
 
-If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired. 
+If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired. All radio sources can work this way.
 
 Direct entry of stations can be done by navigating to the Radio view and selecting ADD ITEM FROM URL in the menu at the top right.
 This will also work for locally hosted streams such as from Icecast. 
@@ -65,7 +67,7 @@ and this (file has an absolute path):
 and this (full uri):
 spotify://track/12345
 or
-filesystem_smb://track/blah
+filesystem_local://track/blah
 ```
 
 Relative paths to the playlist (e.g.` ../Mariah Carey/Merry Christmas/02 All I Want for Christmas Is You.flac` ) also work.
@@ -107,13 +109,13 @@ The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopene
 
 ## Get the MA icon in the HA sidebar?
 
-If you are running the MA app within the HA host go to SETTINGS>>ADDONS>>MUSIC ASSISTANT and select "Show in sidebar".
+If you are running the MA app within the HA host go to HA `SETTINGS >> APPS >> MUSIC ASSISTANT` and select "Show in sidebar".
 
 If you are using docker then you can use an <a href="https://www.home-assistant.io/dashboards/iframe/" target="_blank" rel="noopener noreferrer">iframe panel</a> or you can use another custom integration called <a href="https://github.com/lovelylain/hass_ingress" target="_blank" rel="noopener noreferrer">hass_ingress</a> which allows you to add additional ingress panels to your Home Assistant frontend. If using direct URLs a [long lived access token](#access-the-ma-views-directly-via-url) will be required.
 
 ## Access the MA Views directly via URL
 
-If authentication becomes a blocker to some devices then create a long lived access token via MA SETTINGS >> PROFILE and use the following format as the URL
+If authentication becomes a blocker to some devices then create a long lived access token via [**Settings → Profile**](/settings/profile/#long-lived-access-tokens) and use the following format as the URL
 https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
 
 ## Open the UI with a Specific Player Selected
@@ -182,12 +184,16 @@ data:
 
 Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
 
-You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](/ui/#provider-details) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
+You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Source Details section](/ui/#source-details) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
 
 > [!NOTE]
 > URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
 
-URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system source added to MA then `filesystem_smb` can be used.
+URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_local--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one Local files source added to MA then `filesystem_local` can be used.
+
+In general every MA item has a URI shaped like `provider://media_type/item_id`. More examples are:
+
+- `ambient_sounds://sound_effect/ocean_waves`
 
 ### Add items to the queue via a script or automation
 
@@ -293,3 +299,25 @@ script:
 > [!NOTE]
 > Replace the `config_entry_id` value with the one for your own MA integration; the example above will not work as-is. The easiest way to get yours is to build the action once with the UI editor in Home Assistant's Developer Tools > Actions and then switch to YAML view.
 
+### Play an album shuffled
+
+[Shuffle is turned off automatically](/usage/#shuffle) when selecting `play` or `replace` and the item is an album (or other ordered item) so `add` needs to be used. For example:
+
+```
+actions:
+  - action: media_player.shuffle_set
+    target:
+      entity_id: media_player.home_assistant_voice
+    data:
+      shuffle: true
+  - data:
+      enqueue: add
+      media_type: album
+      media_id: Dark Side of the Moon
+    target:
+      entity_id: media_player.home_assistant_voice
+    action: music_assistant.play_media
+  - action: media_player.media_play
+    target:
+      entity_id: media_player.home_assistant_voice
+```

@@ -1,0 +1,541 @@
+---
+title: "Local Files"
+description: Features, Configuration, Issues and More for the File System Music Sources
+---
+
+# Filesystem Sources <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+
+Music Assistant has full support for reading music files on a disk, a NAS or another server and will catalog them into the library, allowing playback to all player providers supported by Music Assistant. The **Local files** source reads a folder on the server itself, on a drive or on an SMB or NFS network share. WebDAV and the cloud storage services Google Drive and Microsoft OneDrive each have a source of their own.
+
+When streaming sources are also available in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
+
+## Features
+
+|           |                     |
+|:-----------------------|:---------------------:|
+| Subscription FREE | Yes |
+| Self-Hosted Local Media   | Yes |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts |
+| [Recommendations](/ui/#view---discover) Supported | No |
+| Lyrics Supported | Yes |
+| [Endless Mix](/ui/#track-menu) | No |
+| Artist Top Tracks Support                       |            No                      |
+| Similar Artists Support                         |            No                      |
+| Similar Tracks Support                          |            Yes with Sonic Similarity Plugin                      | 
+| Maximum Stream Quality | FLAC, Unlimited |
+| Login Method | None or Password |
+
+### Other
+
+- Searching for tracks is possible
+- Local music is automatically included in the MA Library
+- Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
+- If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
+- On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
+- It is possible to add multiple filesystem sources
+
+## Configuration
+
+Separate sources must be added for Music, Audiobooks and Podcasts.
+
+**Audio files are in a folder, on a drive or on a network share**
+
+Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**.
+
+<img src="/assets/screenshots/local-files-folder-picker.png" alt="The setup of a Local files source with the list of storage locations" style="width: 560px;" loading="lazy" />
+
+Which locations are listed depends on how Music Assistant is installed:
+
+- <b>Home Assistant App.</b> The Home Assistant media folder and every network share added to it
+- <b>Docker.</b> Every folder or volume mapped into the container
+
+Music on a NAS? Make the share a storage location first, then pick it here. On the Home Assistant App, an administrator adds it with **Add network share** on the [Storage](/settings/storage/#adding-a-network-share) page. On Docker, mount the share on the host and map it into the container, as described under [Your music files](/installation/#your-music-files).
+
+Below the picker, administrators find **Manage storage**, which opens the Storage page. Users who are not administrators can add a Local files source of their own when their role allows it. They pick from the same storage locations. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
+
+> [!CAUTION]
+> Music Assistant assumes your NAS is on your local network. It adds no encryption or access control of its own, so a network share should not be reached over the internet.
+
+**Audio files are on a remote share served via WebDAV**
+
+Music Assistant has support for WebDAV shares. Select the music source "WebDAV" and configure the full web address of the WebDAV share including the full path to the content folder (e.g. `https://example.com/webdav/music`). Provide username and password if authentication is required. SSL certificate verification is optional and disabled by default.
+
+**Audio files are on a remote share served via Google Drive**
+
+Music Assistant has support for Google Drive. Follow the Home Assistant documentation to [obtain a Client ID and Secret](https://www.home-assistant.io/integrations/google_drive/) but use `https://music-assistant.io/callback` as the `Authorized redirect URI`. Then add the music source `Google Drive` and put the client ID and secret in the required fields before pressing `AUTHORIZE WITH GOOGLE`. Finally, add the `Drive Folder ID to Scan` which is the sequence of characters seen at the end of the URL when the drive folder is visited in a browser. For example: `https://drive.google.com/drive/u/0/folders/`<b>abcfJhfIilxCtMj6rItMmAdA3rDz1ab1c</b>
+
+> [!CAUTION]
+> Make sure the OAuth consent screen is set to `In production` (not `Testing`), otherwise Google revokes access after 7 days and you will need to re-authorize weekly.
+
+**Audio files are on a remote share served via One Drive**
+
+Music Assistant has support for Microsoft One Drive personal accounts (business accounts are not supported). Setup instructions are below.
+
+<details>
+<summary><b>Setting up OneDrive for Music Assistant</b></summary>
+<div>
+<br>
+You need two things from Microsoft: a <b>Client ID</b>, and a <b>Client Secret</b>. Setup takes about 15 minutes.
+
+#### 1. Get an Azure directory (first time only)
+
+Microsoft won't let you register an app without a directory.
+
+- Go to https://azure.microsoft.com and **sign up for a free Azure account**
+- The free tier is enough. You may be asked for a card for identity verification, but you won't be charged
+
+#### 2. Register the application
+
+1. Go to the **Microsoft Entra admin portal** > **App registrations** > **New registration**.
+2. **Name:** anything, e.g. `Music Assistant`.
+3. **Supported account types:** choose **"Accounts in any organizational directory and personal Microsoft accounts"**.
+4. **Redirect URI:** set type to **Web** and URL to `https://music-assistant.io/callback`
+5. Click **Register**.
+
+#### 3. Fix the manifest (important - two settings)
+
+Personal Microsoft accounts won't work until you change two values.
+
+1. In your app, open **Manifest** (left menu).
+2. Set these two properties:
+   ```json
+   "signInAudience": "AzureADandPersonalMicrosoftAccount",
+   "requestedAccessTokenVersion": 2
+   ```
+3. **Save.** Wait ~2 minutes for the change to propagate.
+
+> If you skip this you'll get: *"unauthorized_client: The client does not exist or is not enabled for consumers."*
+
+#### 4. Copy the Client ID
+
+- On the app's **Overview** page, copy **Application (client) ID**.
+- This is your **Client ID**.
+
+#### 5. Create the Client Secret
+
+1. Left menu > **Certificates & secrets** > **New client secret**.
+2. Add a description, pick an expiry (max ~2 years).
+3. **Copy the Value column immediately** - not the Secret ID. The Value is hidden once you leave the page. This is your **Client Secret**.
+
+> The secret **expires**. When it does, create a new one and re-authorise in Music Assistant.
+
+#### 6. (Optional) Choose a folder
+
+Leave the folder as `root` to scan your whole drive, or enter a folder **path** to limit the scan, for example, `Music` or `Documents/Music`
+
+Use the folder name(s) as they appear in OneDrive.
+
+#### 7. Setup provider in Music Assistant
+
+1. Add the OneDrive provider.
+2. Paste **Client ID** and **Client Secret**, set **Folder to scan** (or `root`).
+3. Click **Authorize with Microsoft**, sign in, approve access.
+4. Save.
+
+#### Common errors
+
+| Error | Fix |
+|---|---|
+| "unable to create app outside a directory" | Sign up for Azure (step 1) |
+| "unauthorized_client ... not enabled for consumers" | Manifest settings (step 3), wait 2 min |
+| "Property api.requestedAccessTokenVersion is invalid" | Set `requestedAccessTokenVersion` to `2` (step 3) |
+| "Folder not found" | Check the folder path spelling (step 6), or use `root` |
+| Authorize shows callback but MA won't save | Try and click `Authorize with Microsoft` again |
+</div>
+</details>
+
+### Settings
+
+In addition to the settings outlined above to configure this source, there are additional settings available (note certain options will be greyed out depending upon the content type selected):
+
+- <b>Content type in media folder(s).</b> This setting defines the content type of the source and is necessary for Music, Audiobooks and Podcasts to be correctly identified
+- <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled when there is no tagged album artist or single album artist in a `album.nfo` file. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
+- <b>Ignore playlists with album tracks within album folders.</b> Some users have a playlist per album. For large collections this results in an unusable Playlist View. To avoid this situation, this setting, which is enabled by default, will result in playlists which are more than one level below the root folder of the source to be ignored
+- <b>Sync Library Artists/Albums from this source to Music Assistant.</b> Whether to synchronize all artists/albums from the local source. 
+- <b>Import tracks/files into the Music Assistant library.</b> Define if the import of tracks/files is desired. When not importing into the library, tracks can still be manually browsed using the Browse feature. Note that by adding a Track into the Music Assistant library, the track artists and album will always be imported as well
+- <b>Import playlists (m3u files) into the Music Assistant library.</b> Define if the import of playlists (m3u files) is desired. When not importing into the library, they can still be manually browsed using the Browse feature.
+- <b>Import Podcasts/Audiobooks into the Music Assistant library.</b> Define if the import of Podcasts/Audiobooks is desired. When not importing into the library, items can still be manually browsed using the Browse feature.
+- <b>Propagate track genres to albums and artists.</b> Derive albums and artist genres from their tracks when album/artist have no genre metadata of their own
+
+## Known Issues / Notes
+
+- Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
+- When a Local files source is on a storage location that is unavailable, for example a NAS that is switched off, the source is unavailable too. It returns by itself once the location is reachable again, and nothing is removed from the library while it is away
+- On an SMB network share, be aware that the very old SMB 1 is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB 1 can be disabled
+- WebDAV, Google Drive and OneDrive are reached over the internet rather than over your own network, so library sync is slower than local, SMB or NFS, particularly for large libraries. The first sync of a cloud source reads the tags of every file over the internet
+- Writing to WebDAV, Google Drive and OneDrive sources is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
+
+> [!NOTE]
+> **Cloud sources (Google Drive / OneDrive)**
+>
+> - Expect a 1-2 second delay when playback starts or when seeking as the audio has to be fetched from the cloud service on demand
+> - Folder listings are cached for up to five minutes to keep browsing snappy, so changes made on the cloud service can take up to five minutes to appear in the BROWSE view. Library sync always reads fresh listings, so new content is never missed by a sync
+
+- In regard to folder and filenames note the following:
+    - Folders commencing with an underscore will be ignored
+    - Music Assistant requires all file and folder names to be valid UTF-8. Files with non-UTF-8 characters in their names will be skipped during library sync and a warning will be logged identifying the affected file. This most commonly affects files originally tagged or named on Windows using legacy encodings such as Windows-1252, where characters like curly quotes or accented letters may have been written as non-UTF-8 bytes
+    - Emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
+- Podcast transcripts are not available
+ 
+## Organising Your Files
+
+How you name and arrange your folders decides how much Music Assistant can work out about your collection. The sections below cover each kind of content, and artwork.
+
+### Music
+
+- Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
+- If your files are untagged, MA will fall back to reading `Artist - Title.ext` from the filename. See [Files Without Tags](#files-without-tags) for the exact rules and their limits. Tagging the files is always the better answer
+- Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
+- To minimise the chance of problems, music folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any non-[alphanumeric characters](https://en.wikipedia.org/wiki/Alphanumericals) removed (e.g. AC/DC should be in a folder ACDC)
+- Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
+
+### Audiobooks
+
+- Supported file formats are: `.aa`, `.aax`, `.m4b`, `.m4a`, `.mp3`, `.mp4`, `.flac`, `.ogg`, `.opus`
+- Audiobooks in their own folder are always supported and is the preferred option. For untagged files this is mandatory, and filenames must sort alphabetically in chapter order
+- A single file with embedded chapters (e.g. `.m4b`) works in any folder
+- Multiple books can share a single folder if each file has an album tag (used as the book title to group chapters) and a track number tag. Multi-disc books also need a disc number tag. The title tag is used as the chapter name if present
+- Authors and narrators are read from the file tags and become artists in Music Assistant, so the audiobooks view offers author and narrator tabs. Optional but recommended
+- The series tags map to a collection, which enables "collapse collections" in the audiobooks view
+- Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
+- A `.txt` file in the folder will be used as the book description
+
+#### Audiobook Tags
+
+| Value | Read from | Notes |
+|:--|:--|:--|
+| Author | `writers`, `writer`, then `albumartist`, then `artist` | For untagged files the name taken from the filename is not used as an author |
+| Narrator | `narrators`, `narrator`, `narratedby`, then `composer` | Many audiobooks name the narrator in the composer field, hence the fallback |
+| Series | `series` | Title of the collection the book belongs to |
+| Series part | `seriespart` | Position within the series |
+
+Tag names are matched regardless of case and separators, so `NARRATEDBY`, `Narrated By` and `narrated-by` all work. Multiple authors or narrators are separated like [multiple artists](#multi-artist-tracks). Names are used as written, so spelling one differently across books creates separate entries.
+
+> [!NOTE]
+> These are not part of the standard Picard tag set, so Picard will not fill them in for you. You can still add them in Picard yourself as custom tags, or use another tagger such as Mp3Tag.
+
+> [!NOTE]
+> A library that was indexed before author and narrator support existed is reparsed once, automatically, during the first sync after the upgrade. That sync takes longer than usual.
+
+### Podcasts
+
+- Supported file formats are: `.aa`, `.aax`, `.m4b`, `.m4a`, `.mp3`, `.mp4`, `.flac`, `.ogg`, `.opus`
+- Podcasts must be placed in their own folder. Every file in the folder is an episode of that podcast
+- Podcast name is obtained from the `album` tag of the episodes; if absent, the folder name is used
+- Episode name is obtained from the `title` tag. Episode order is set by the track number tag
+- Embedded chapters within individual episode files are supported
+- A `metadata.json` file in the folder can provide additional podcast-level metadata: title, sorttitle, description, publisher, genres, and image URL.
+- Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
+
+### Artwork
+
+Artwork embedded in your audio files is supported and will be extracted. Artwork stored alongside your files as separate images is also supported, and is the better option.
+
+- Use the following naming convention for local artwork
+    - Artist thumb: cover.jpg, folder.jpg or artist.jpg (or jpeg/png)
+    - Album thumb: cover.jpg, folder.jpg or album.jpg (or jpeg/png)
+    - Fan Art (used as background in banners): fanart.jpg (or jpeg/png)
+    - Logo (used on Artist view): logo.png
+    - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
+- Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
+- Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
+
+> [!TIP]
+> **Local Artwork is Optimal**
+>
+> Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
+
+## Tagging Files 
+
+- It is very important that all audio files contain correct, and ideally, extensive tag information. The more comprehensive the tagging the better the results will be when using MA. Note the following:
+    - Universal Tag Support: Music Assistant reads tags from all the common file formats
+    - Your tags win: Embedded tags are treated as the definitive source for artist, album, and track names. External metadata providers (like MusicBrainz or Fanart.tv) are only used to supplement missing info, such as high-resolution artwork or artist bios
+    - Cross-Platform Linking: MA uses identifier tags such as MusicBrainz IDs (MBID) and ISRC codes to seamlessly link local files with matching tracks on streaming services like Spotify or Tidal
+    - Recommended Tagger: For the best results in Music Assistant, it is strongly recommended to use <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a> to ensure the files contain the specific IDs needed for library linking. Other programs such as <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a> are often also based on the Musicbrainz catalog and can work as well provided they include the tags shown in the [Tags used by MA](#tags-used-by-ma) table
+
+- Fields with multiple values can be handled as follows:
+    - For ID3v2.3 and MP4 tags, multiple items should be separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3.
+    - For Vorbis (FLAC, OGG), use multiple fields per the [Vorbis spec](https://xiph.org/vorbis/doc/v-comment.html)
+    - For ID3v2.4 and APEv2 tags, multiple artists and album artists can be separated by the null character
+- MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
+- `.nfo` files with enhanced metadata are supported
+- For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
+- If there is nothing added to the disc tag then the disc number will not be shown in the display
+
+![image](/assets/screenshots/no-disc-tag.png)
+
+- To minimise the chance of problems with MA the <a href="https://kodi.wiki/view/Music_tagging" target="_blank" rel="noopener noreferrer">Kodi guidelines</a> should be followed. Just about all the tips, tricks and suggestions on that page are applicable to MA and if it is followed to the letter the UX will be much better
+
+### Multi-Artist Tracks
+
+For tracks with multiple artists, the simple summary is: tag your files with MusicBrainz Picard and let it write the ARTISTS tag and the MusicBrainz IDs; MA will then link the artists correctly. If your artists are being split incorrectly (or not split at all), the details below explain exactly how MA reads multi-artist tags for each file format.
+
+<details>
+<summary>How MA parses multi-artist tags (per file format)</summary>
+
+For tracks with multiple artists, MA supports several approaches. The most reliable way is to provide a semi-colon delimited list of MusicBrainz IDs for ARTIST ID and RELEASE ARTIST ID alongside your artist tags. When the MBID count matches the parsed artist count, the tag names are used as-is. If the counts disagree (for example an artist whose real name contains a separator character), MA will query MusicBrainz to resolve the canonical names from the IDs instead.
+
+Whether or not MBIDs are present, the artist names themselves need to be encoded in your tags using one of the following:
+
+1. ID3v2.3 and MP4: Use an ARTISTS tag - A dedicated multi-value field listing each artist delimited by a semi-colon. (It is not possible to have artists with a semi-colon in their name with this method)
+2. FLAC/OGG/Opus: Use multiple ARTIST fields. The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note that taggers may add multiple ARTISTS (plural) fields. This is not standard according to the Vorbis spec but MA will handle this case)
+3. ID3v2.4 and APEv2: Use a null separated list of names in the ARTIST tag
+4. ARTIST tag parsing - If none of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., presents, etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected
+
+> [!NOTE]
+> - If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database
+>
+> - The album artist tag is parsed the same way as ARTIST - same multi-value rules, same splitters (including featuring-style and MBID-guided), and the same MusicBrainz fallback when the parsed count doesn't match the MBID count
+
+> [!NOTE]
+> As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
+> - All formats: Single MusicBrainz Artist ID
+> - Vorbis (FLAC, OGG): Multiple (more than 1) ARTIST fields (one per artist)
+> - ID3v2.4 (MP3): Multiple (more than 1) null-separated values in TPE1
+> - APEv2 (WavPack, Musepack, etc.): Multiple (more than 1) null-separated values in Artist field
+
+</details>
+
+### Tags used by MA
+
+<div class="tag-table">
+
+| Tag | Importance | Why it matters |
+|:--|:--|:--|
+| Title<br />Artist<br />Album<br />Album Artist<br />Track number | Mandatory | Required for basic functionality of Music Assistant |
+| Artists | Strongly recommended<br />for ID3 tags | Required for ID3 tags to disambiguate multiple artist names on the one item |
+| Album Artist Sort Order<br />Artist Sort Order | Strongly recommended | Required for some sorting options in the UI |
+| ISRC | Strongly recommended | Required for linking identical streaming provider items to streaming and local items |
+| Barcode<br />Catalogue Number | Recommended | Can be used for linking identical streaming provider items to streaming and local items |
+| Genre | Strongly recommended | Required for the Genre view in the UI |
+| MusicBrainz Artist ID<br />MusicBrainz Recording ID<br />MusicBrainz Release Artist ID<br />MusicBrainz Release Group ID<br />MusicBrainz Release ID<br />MusicBrainz Track ID | Strongly recommended | Required to link identical tracks across local providers. Eliminates same named tracks, artists or albums from being incorrectly linked together |
+| Release Type | Strongly recommended | Used as a filter and displayed in the UI |
+| Disc Number<br />Total Discs | Strongly recommended | Used in the UI |
+| Date | Recommended | Used as the album date and fallback for track date and used in the UI |
+| Original Release Date<br />Original Release Year | Recommended | Used as the track date and fallback for album date and used in the UI |
+| Record label<br />Release country<br />Release status | Optional | Can be used in future UI updates as sorting or search options |
+
+</div>
+
+<style>
+  /* Keep each tag name and each importance level on one line. That sets a
+     minimum width, so the table scrolls inside its own box on a narrow
+     screen rather than being cut off or dragging the page sideways. */
+  .tag-table { overflow-x: auto; }
+  .tag-table table { min-width: 34rem; }
+  .tag-table td:nth-child(1),
+  .tag-table td:nth-child(2) { white-space: nowrap; }
+</style>
+
+The left column corresponds to the TAG NAME shown in the <a href="https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html" target="_blank" rel="noopener noreferrer">MusicBrainz Picard Tag Mapping</a> table. Refer then to the appropriate tag name for the format of the file being tagged
+
+Loudness tags are read as well. If a file is tagged with ReplayGain or R128 loudness values, Music Assistant uses them for [volume normalization](/faq/tech-info/#volume-normalization) instead of measuring the track itself. Both track and album values are read, and album values are the only way to normalize an album as a whole. Tags added or changed after a track was scanned are picked up with **Refresh item** on the track.
+
+### Manually Adjusting Tags
+
+> [!WARNING]
+> Manual tag editing is for users who deliberately want different behaviour from the MusicBrainz defaults. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between sources
+
+Normally it is best to leave the Picard tags unchanged. However, some people do not agree with Musicbrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> This technique can also be used for personally ripped albums or tracks that are not in the Musicbrainz database. To separate these out the tags can be edited as follows:
+
+- Remove MusicBrainz Release ID and Recording ID (Refer to the [Picard tag mapping documentation](https://picard-docs.musicbrainz.org/en/latest/appendices/tag_mapping.html#id39) for the exact tag name as it changes with the music file format)
+- Keep MusicBrainz Artist ID
+- Remove ISRC (as that is also used as strong identifier for tracks)
+- Remove barcode (as that is also used as strong identifier for albums)
+- Because there is no version specific tag, place the version between brackets in the title, for the Album, Track, or both (when using the Album tag, make sure it is identical on all tracks of that release). For example, Great Song (Vinyl Rip Version). Regardless of what other text is in the brackets ensure the word `Version` is also there
+- If the AcoustID Lookup provider is in use, disable it, as it will re-add the Recording ID that was just removed
+
+### Files Without Tags
+
+Tags are always preferred. When a file has no `title`, `artist` or `track` tag at all, MA falls back to reading the filename, but this is a last resort and it is deliberately simple. If your files are untagged, name them `Artist - Title.ext` and nothing else.
+
+> [!WARNING]
+> The filename is read only as far as the **first** period. `Dr. Dre - Still D.R.E..mp3` is read as the title `Dr` with no artist. Untagged filenames must contain exactly one period, the one before the file extension
+
+<details>
+<summary>How MA reads untagged filenames</summary>
+
+- The separator must be a hyphen with a space either side. `Artist-Title.mp3` is not split, and the whole name becomes the title with no artist
+- Everything before the first ` - ` is the artist and the next segment is the title. Further segments are discarded, so `Nirvana - Come As You Are - Live.mp3` imports as `Come As You Are` and the `Live` marker is lost
+- Do not put a track number in the filename. A leading number is read as the artist, so `01 - Come As You Are.mp3` gives the artist `01`, and `01 - Nirvana - Come As You Are.mp3` gives the artist `01` and the title `Nirvana`
+- There is no filename or folder fallback for the **album** name, so an untagged file is never grouped into an album. The `Action when a track is missing the Albumartist ID3 tag` setting covers the album *artist* only, and only once an album tag exists
+
+</details>
+
+---
+
+## CUE Sheet Support
+
+When the filesystem provider encounters a `.cue` file, each track described by the sheet becomes its own library track. The referenced audio file itself is not imported as a separate track.
+
+Information for each track is built from two sources: the CUE Sheet and the tags in the referenced audio file. Where both describe the same album-level field, the CUE Sheet wins.
+
+A standard CUE sheet produced by a mainstream ripping tool (EAC, CUETools, foobar2000, XLD) will just work, and the section below shows the minimum MA needs. To get the best experience, provide the additional fields in the [full field reference](#full-field-reference). They give MA the same rich metadata that the [strongly recommended tags](#tags-used-by-ma) provide for regular audio files.
+
+### Minimum viable CUE sheet
+
+Assuming the audio file has proper `album`/`albumartist` tags of its own:
+
+```
+FILE "album.flac" WAVE
+  TRACK 01 AUDIO
+    TITLE "First Song"
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Second Song"
+    INDEX 01 03:45:00
+```
+
+Each track requires:
+
+- `TRACK NN AUDIO`
+- `TITLE "..."` - tracks without a title are skipped with a warning
+- `INDEX 01 MM:SS:FF`
+
+The sheet requires:
+
+- `FILE` - can be omitted if the CUE Sheet shares the audio file's stem (e.g. `album.cue` alongside `album.flac`).
+
+Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
+
+If the audio file also has no album/artist tags, the minimum grows to:
+
+```
+PERFORMER "The Band"
+TITLE "Album Name"
+FILE "album.flac" WAVE
+  TRACK 01 AUDIO
+    TITLE "First Song"
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Second Song"
+    INDEX 01 03:45:00
+```
+
+Without either a CUE `TITLE` or an audio-file album tag, tracks are still imported but without an album attachment - a warning is logged.
+
+### Full field reference
+
+<details>
+<summary>Every directive Music Assistant parses, and how metadata is combined</summary>
+
+The original Cue Sheet specification only had [13 directives](https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/). These are not sufficient for Music Assistant to work optimally, so additional support has been added through various REM fields to allow the provision of the equivalent [tags listed above](#tags-used-by-ma). This metadata can be provided through any combination of tags in the file and fields in the Cue Sheet as described below. Because mainstream CUE Sheet authoring tools do not emit these REM fields (they follow the original 13-directive spec), users who want the full metadata available to Music Assistant will need to add them manually to the CUE Sheet - or, for album-level metadata, tag the audio file itself. The naming follows [Picard's variable conventions](https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html), so anyone already tagging their library with Picard will find the fields familiar.
+
+**Multi-value strategy**
+
+Multi-value fields follow the Vorbis convention: repeat the line rather than delimiter-joining. This keeps names like `AC/DC` or `Wait, Wait... Don't Tell Me!` intact. Multi-value capable directives are indicated in the table below.
+
+Where both artists and a companion field (sort names, MB artist IDs) are multi-value, Music Assistant aligns them by index - the Nth `REM ARTISTSORT` goes with the Nth `PERFORMER`.
+
+**Fields read from the CUE sheet (album level)**
+
+Written at the top of the file, before any `TRACK`. The **Standard** column indicates whether the directive is commonly emitted by mainstream ripping/authoring tools (EAC, CUETools, foobar2000, XLD), not necessarily part of the original 13-directive CDRWIN spec. Fields marked **No** are Music Assistant extensions - other players may ignore them.
+
+Standard directives FLAGS, PREGAP, POSTGAP, SONGWRITER, and CDTEXTFILE are accepted but ignored.
+
+| Directive | Standard | Multi? | Feeds |
+|-----------|:---:|:---:|-------|
+| `FILE "..." WAVE\|MP3\|...` | Yes | no | Path to the referenced audio file |
+| `TITLE "..."` | Yes | no | Album title (overrides audio album) |
+| `PERFORMER "..."` | Yes | yes | Album artists (overrides audio albumartist(s)) |
+| `CATALOG <upc>` | Yes | no | Disc UPC/EAN - album barcode |
+| `REM DATE YYYY` | Yes | no | Album year |
+| `REM GENRE "..."` / `GENRE "..."` | Yes | yes | Album genres |
+| `REM ALBUMSORT "..."` | No | no | Album sort name |
+| `REM ALBUMARTISTSORT "..."` | No | yes | Album artist sort names (aligned with `PERFORMER`) |
+| `REM MUSICBRAINZ_ALBUMARTISTID ...` | No | yes | Album artist MBIDs (aligned with `PERFORMER`) |
+| `REM MUSICBRAINZ_ALBUMID <uuid>` | No | no | Album MBID also known as the RELEASE ID |
+| `REM MUSICBRAINZ_RELEASEGROUPID <uuid>` | No | no | Release group MBID |
+| `REM RELEASETYPE ...` | No | yes | Album type (e.g. `album`, `compilation`, `live`) |
+
+**Fields read from the CUE sheet (track level)**
+
+Written inside each `TRACK NN AUDIO` block:
+
+| Directive | Standard | Multi? | Feeds |
+|-----------|:---:|:---:|-------|
+| `TRACK NN AUDIO` | Yes | no | Track number |
+| `INDEX 01 MM:SS:FF` | Yes | no | Track start position (`INDEX 00` pregap is ignored) |
+| `TITLE "..."` | Yes | no | Track name |
+| `PERFORMER "..."` | Yes | yes | Track artists (falls back to sheet-level `PERFORMER`) |
+| `ISRC ...` | Yes | yes | Track ISRCs |
+| `REM GENRE "..."` / `GENRE "..."` | Yes | yes | Per-track genres (overrides album genre for this track) |
+| `REM TITLESORT "..."` | No | no | Track sort name |
+| `REM ARTISTSORT "..."` | No | yes | Track artist sort names (aligned by index with `PERFORMER`) |
+| `REM MUSICBRAINZ_ARTISTID ...` | No | yes | Track artist MBIDs (aligned by index with `PERFORMER`) |
+| `REM MUSICBRAINZ_RECORDINGID <uuid>` | No | no | Unique identifier for the original recording of the track |
+| `REM MUSICBRAINZ_TRACKID <uuid>` | No | no | Unique identifier for the track on this release |
+| `REM COPYRIGHT "..."` | No | no | Track copyright metadata |
+| `REM GROUPING "..."` | No | no | Track grouping metadata |
+| `REM COMMENT "..."` | No | no | Track description metadata |
+| `REM ITUNESADVISORY 0\|1` | No | no | Explicit flag |
+
+Track duration is computed from the next track's `INDEX 01` minus this track's `INDEX 01`. For the final track, it is computed from the audio file's total duration.
+
+**Fields read from the audio file**
+
+Tags on the referenced audio file supply everything that applies to the album as a whole, plus the technical format used for playback:
+
+- **Format** (shared by every CUE track) - sample rate, bit depth, channels, bit rate, container/codec, embedded cover art, disc number.
+- **Album metadata** (used unless overridden by the CUE sheet) - album, albumsort, albumartist/albumartists, albumartistsort, musicbrainzalbumartistid, album_type, date/year, genre, barcode, musicbrainzalbumid, musicbrainzreleasegroupid.
+- **Loudness normalisation** - run a ReplayGain scanner against the audio file (e.g. `metaflac --add-replay-gain album.flac` or `rsgain easy album.flac`). Music Assistant reads `REPLAYGAIN_ALBUM_GAIN` from the audio file tags automatically; for a single-file CUE rip, file gain *is* album gain.
+
+Track-specific audio tags (title, artists, lyrics, per-track loudness, etc.) are not applied per CUE track - a single-file rip only carries one copy of those, so Music Assistant relies on the CUE sheet for anything that varies between tracks.
+
+Track artists (PERFORMER) fall back to sheet-level PERFORMER rather than audio tags. If there are no PERFORMER directives found then [unknown] will be applied.
+
+**Reference CUE sheet**
+
+Every directive Music Assistant currently parses:
+
+```
+PERFORMER "Pink Floyd"
+TITLE "The Dark Side of the Moon"
+CATALOG 5099902987620
+FILE "pink_floyd_dsotm.flac" WAVE
+REM GENRE "Progressive Rock"
+GENRE "Art Rock"
+REM DATE 1973
+REM RELEASETYPE album
+REM ALBUMSORT "Dark Side of the Moon, The"
+REM MUSICBRAINZ_ALBUMID a1b2c3d4-e5f6-7890-abcd-ef1234567890
+REM MUSICBRAINZ_RELEASEGROUPID rg000000-0000-0000-0000-000000000000
+REM ALBUMARTISTSORT "Pink Floyd"
+REM MUSICBRAINZ_ALBUMARTISTID aa000000-0000-0000-0000-000000000000
+  TRACK 01 AUDIO
+    TITLE "Speak to Me"
+    REM TITLESORT "Speak to Me"
+    PERFORMER "Pink Floyd"
+    REM ARTISTSORT "Pink Floyd"
+    REM MUSICBRAINZ_ARTISTID aa000000-0000-0000-0000-000000000000
+    ISRC GBCEN0500001
+    REM MUSICBRAINZ_TRACKID 11111111-1111-1111-1111-111111111111
+    REM COPYRIGHT "(P) 1973 Pink Floyd Music Ltd"
+    REM GROUPING "Part I"
+    REM COMMENT "Opening collage"
+    REM ITUNESADVISORY 0
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Breathe (In the Air)"
+    PERFORMER "Pink Floyd"
+    PERFORMER "Clare Torry"
+    REM ARTISTSORT "Pink Floyd"
+    REM ARTISTSORT "Torry, Clare"
+    REM MUSICBRAINZ_ARTISTID aa000000-0000-0000-0000-000000000000
+    REM MUSICBRAINZ_ARTISTID ab000000-0000-0000-0000-000000000000
+    REM MUSICBRAINZ_RECORDINGID ef000000-0110-0000-0000-000222000000
+    REM GENRE "Ambient Rock"
+    ISRC GBCEN0500002
+    INDEX 01 01:05:50
+  TRACK 03 AUDIO
+    TITLE "On the Run"
+    PERFORMER "Pink Floyd"
+    ISRC GBCEN0500003
+    GENRE "Ambient Rock"
+    INDEX 01 03:52:15
+```
+
+</details>
+
+---
+

@@ -24,20 +24,21 @@ This source lets you search and browse the index from Music Assistant and add an
 | Media Types Supported | Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |    
-| Maximum Stream Quality | Lossy, Variable Quality |
+| Maximum Stream Quality | Lossy variable bitrate |
 | Login Method | None |
 
 ### Other
 
 - Search and Browse supported
+- Transcripts are shown for episodes where the podcast publisher provides one
 
 ## Configuration
 
-- You need to get an API key and secret from https://api.podcastindex.org/signup
+You need to get an API key and secret from https://api.podcastindex.org/signup
 
 ### Settings
 

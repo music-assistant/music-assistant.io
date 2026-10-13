@@ -17,7 +17,7 @@ For temporary and permanent sync groups the [protocol linking](/usage/#streaming
 <a href="/assets/group-diagram.png"><img src="/assets/group-diagram.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
 > [!NOTE]
-> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay - Sendspin bridges should always work
+> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay - Sendspin bridges should always work. On Chromecast devices Sendspin is experimental and switched off by default, so it has to be turned on per speaker before that speaker can join a Sendspin group, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices)
 
 ## Temporary Sync Group
 
@@ -39,7 +39,7 @@ Temporary Sync Group players are configured via the [Player List](/ui/#player-li
 
 ## Sync Groups
 
-These are permanent group players that are configured via the MA settings. These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. Normally a player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
+These are permanent group players. You create one from the players list in the settings, and once it exists its members are set in the group settings on the [player's own settings page](/settings/individual-player/). These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. Normally a player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
 
 ![image](/assets/screenshots/syncgroup.png)
 

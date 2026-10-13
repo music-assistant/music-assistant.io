@@ -1,4 +1,5 @@
 ---
+import { Swiper, SwiperWrapper, SwiperPagination, SwiperButtonPrev, SwiperButtonNext } from 'astro-swiper';
 interface Breakpoint {
 	slidesPerView?: number | 'auto';
 	spaceBetween?: number;
@@ -28,90 +29,47 @@ const {
 	class: className = '',
 } = Astro.props;
 
-const options = {
-	slidesPerView,
-	spaceBetween,
-	loop,
-	pagination,
-	navigation,
-	autoplay,
-	centeredSlides,
-	breakpoints,
-};
+const swiperOptions = {
+	slidesPerView: slidesPerView,
+	spaceBetween: spaceBetween,
+	loop: loop,
+	centeredSlides: centeredSlides,
+	breakpoints: breakpoints,
+	pagination: pagination
+		? { el: ".swiper-pagination",clickable: true }
+		: false,
+	navigation: navigation
+		? {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			}
+		: false,
+	autoplay:
+		typeof autoplay === 'number'
+			? { delay: autoplay }
+			: autoplay
+				? { delay: 3000 }
+				: false,
+}
+
 ---
 
-<div class:list={['ma-swiper', className]} data-swiper-options={JSON.stringify(options)}>
-	<div class="swiper">
-		<div class="swiper-wrapper">
+<div class:list={['ma-swiper', className]}>
+	<Swiper options={swiperOptions}>
+		<SwiperWrapper>
 			<slot />
-		</div>
-		{pagination && <div class="swiper-pagination"></div>}
+		</SwiperWrapper>
+		{pagination && <SwiperPagination />}
 		{
 			navigation && (
 				<>
-					<div class="swiper-button-prev" />
-					<div class="swiper-button-next" />
+					<SwiperButtonPrev />
+					<SwiperButtonNext />
 				</>
 			)
 		}
 	</div>
 </div>
-
-<script>
-	import Swiper from 'swiper';
-	import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-	import 'swiper/css';
-	import 'swiper/css/navigation';
-	import 'swiper/css/pagination';
-
-	const init = () => {
-		document.querySelectorAll<HTMLElement>('.ma-swiper:not([data-swiper-ready])').forEach((host) => {
-			const swiperEl = host.querySelector<HTMLElement>('.swiper');
-			if (!swiperEl) return;
-
-			let options: any = {};
-			try {
-				options = JSON.parse(host.dataset.swiperOptions || '{}');
-			} catch {
-				options = {};
-			}
-
-			const modules: any[] = [];
-			if (options.pagination) modules.push(Pagination);
-			if (options.navigation) modules.push(Navigation);
-			if (options.autoplay) modules.push(Autoplay);
-
-			new Swiper(swiperEl, {
-				modules,
-				slidesPerView: options.slidesPerView ?? 1,
-				spaceBetween: options.spaceBetween ?? 0,
-				loop: !!options.loop,
-				centeredSlides: !!options.centeredSlides,
-				breakpoints: options.breakpoints,
-				pagination: options.pagination
-					? { el: swiperEl.querySelector('.swiper-pagination'), clickable: true }
-					: false,
-				navigation: options.navigation
-					? {
-							nextEl: swiperEl.querySelector('.swiper-button-next'),
-							prevEl: swiperEl.querySelector('.swiper-button-prev'),
-						}
-					: false,
-				autoplay:
-					typeof options.autoplay === 'number'
-						? { delay: options.autoplay }
-						: options.autoplay
-							? { delay: 3000 }
-							: false,
-			});
-
-			host.dataset.swiperReady = 'true';
-		});
-	};
-
-	init();
-	document.addEventListener('astro:page-load', init);
-</script>
 
 <style is:global>
 	.ma-swiper {

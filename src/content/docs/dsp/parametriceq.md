@@ -11,6 +11,8 @@ PEQs can be used to tailor the sound to a room's acoustics, compensate for speak
 
 Multiple PEQ filters can be added to the MA signal path if desired.
 
+This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
+
 ## Usage
 
 There is a button at the top of the display which enables multi-channel options. Enabling this shows additional channel selection boxes and allows for the application of corrections on a per channel basis.

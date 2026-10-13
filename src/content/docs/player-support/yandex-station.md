@@ -5,13 +5,13 @@ description: Features and Notes for the Yandex Station Player Provider
 
 # Yandex Station <img src="/assets/icons/yandex-station-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant can play music on <a href="https://station.yandex.ru/" target="_blank" rel="noopener noreferrer">Yandex Station</a> smart speakers over the local protocol — no cloud roundtrip for audio. Contributed and maintained by <a href="https://github.com/trudenboy" target="_blank" rel="noopener noreferrer">Mikhail Nevskiy</a>
+Music Assistant can play music on <a href="https://station.yandex.ru/" target="_blank" rel="noopener noreferrer">Yandex Station</a> smart speakers. The audio goes straight from your Music Assistant server to the speaker without passing through Yandex. Contributed and maintained by <a href="https://github.com/trudenboy" target="_blank" rel="noopener noreferrer">Mikhail Nevskiy</a>
 
 > [!CAUTION]
 > This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
 
 > [!WARNING]
-> Stations must be on the **same local network** as the Music Assistant server. The Glagol WebSocket endpoint is only exposed on the LAN and streams are served over plain HTTP from the MA stream server — stations reject HTTPS URLs on the local network.
+> Your speakers must be on the **same network** as the Music Assistant server. There is no way to reach them from outside your home.
 
 ## Features
 
@@ -32,25 +32,32 @@ Any Yandex Station that exposes the local Glagol API is supported, including Sta
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `Yandex Station`.
-2. Sign in with the Yandex account that owns the stations, using one of the authentication methods below.
-3. Your stations will be discovered automatically and will appear in the player list.
+1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select Yandex Station.
+2. If you already have a Yandex Music provider set up, choose the <b>Yandex account source</b>. Borrow that provider's account to keep a single login shared between the two, or use this provider's own credentials and sign in as below.
+3. Choose a <b>Login method</b>, decide whether to keep the session with <b>Remember session</b>, then sign in with the Yandex account that owns the stations.
+4. Your stations will be discovered automatically and will appear in the player list.
 
 If a station does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ### Authentication
 
-- **Device Flow** *(recommended)* — Music Assistant shows a short code; confirm it at <a href="https://yandex.com/device" target="_blank" rel="noopener noreferrer">yandex.com/device</a> in a browser signed in to your Yandex account. Yields a refresh token so the session renews silently in the background.
-- **QR code** — Scan the QR shown during setup with the Yandex app (or phone camera) and confirm the login. No refresh token: the session must be renewed manually when it expires.
-- **Cookies (advanced fallback)** — Paste Yandex session cookies as a JSON array exported from browser dev tools. Use when the other two methods are blocked by your network or account.
+- <b>Device Flow</b> (recommended). Music Assistant shows a short code along with the address to enter it at. Open that address in a browser signed in to your Yandex account and confirm. A fresh code appears on its own if the first one expires. This yields a refresh token, so the session renews silently in the background
+- <b>QR code</b>. Scan the QR code shown during setup with the Yandex app and confirm the login. A fresh code is shown on its own if it expires. This also yields a refresh token
+- <b>Cookies</b> (advanced fallback). Open passport.yandex.ru/profile, copy your session cookies with a "Copy Cookies" browser extension and paste them in. Both JSON arrays and raw cookie strings are accepted. There is no refresh token with this method, so the session has to be renewed by hand when it expires. Use it when the other two methods are blocked by your network or account
+- <b>Remember session</b>. On by default. Stores the tokens so the provider survives a Music Assistant restart without signing in again. With it off, nothing is kept and you sign in again after each restart
 
 ## Settings
 
-- **Remember session** — store the refresh token / tokens so the provider survives MA restarts without re-authentication. On by default.
-- **Enable intercept feature** *(provider-level, advanced)* — master switch for the intercept feature (see below). Off by default; without it, no per-player intercept setting takes effect.
-- **Voice control integration** *(per-player, advanced)* — off by default. When enabled, the provider detects when you talk to Alice during MA playback and reacts accordingly (see below).
-- **Intercept native Station playback** *(per-player, advanced)* — off by default. When enabled (and the provider-level master switch is on), redirects native Station playback to a chosen target player.
-- **Intercept target player** *(per-player, advanced)* — the Music Assistant player that receives intercepted playback. The dropdown is filtered to players that support `play_media`, `pause`, `volume_set` and `seek`.
+In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+
+- <b>Experimental: Enable intercept feature.</b> Off by default. The master switch for the intercept feature described below. While it is off, the per-player intercept settings have no effect. The yandex_music music provider must also be configured, as that is what resolves the tracks
+
+In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Yandex Station players have the following settings:
+
+- <b>Experimental: Intercept native Station playback.</b> Off by default. When the Station starts playing Yandex Music on its own, usually from an Alice voice command but also from a touch on the Station itself, this silences the Station and plays the same track on the target player chosen below. The Station keeps its own queue running quietly in the background so Music Assistant can follow each next track. It needs the provider level switch above turned on
+- <b>Intercept target player.</b> The Music Assistant player that receives intercepted playback. Every registered player except this Station is listed, including ones that are currently offline so you can pick a target before it is switched on. Pause, volume and seek are mirrored where the target supports them and are quietly skipped where it does not
+- <b>Experimental: Voice control integration.</b> Off by default. Resumes the Music Assistant queue automatically after voice commands such as "Алиса, стоп" or "Алиса, дальше". Experimental, so it may behave unexpectedly
+- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to Profile 3 - forced content length here, because Yandex Stations need a content length and cannot handle chunked streams
 
 ### Voice control integration (experimental)
 
@@ -77,8 +84,8 @@ Use it to keep Alice as a voice frontend while the audio plays on better speaker
 
 Both switches are off by default and **both must be on** for any intercept action to happen:
 
-1. Provider-level master switch — **Settings → Providers → Yandex Station → Show advanced → Enable intercept feature**.
-2. Per-player switch — **Settings → Players → \<Your Station\> → Show advanced → Intercept native Station playback** + **Intercept target player**.
+1. Provider-level master switch, at **Settings → Player Providers → Yandex Station → Show advanced → Enable intercept feature**.
+2. Per-player switch, at **Settings → Players → \<Your Station\> → Show advanced → Intercept native Station playback** plus **Intercept target player**.
 
 #### Requirements
 

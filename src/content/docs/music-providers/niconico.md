@@ -19,11 +19,11 @@ This source lets you search that catalogue and play the audio through Music Assi
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                     | 
-| Maximum Stream Quality | Lossy, AAC (up to ~576 kbps) |
+| Maximum Stream Quality | AAC up to 576kbps |
 | Login Method | Cookie or Password+MFA |
 
 ### Other

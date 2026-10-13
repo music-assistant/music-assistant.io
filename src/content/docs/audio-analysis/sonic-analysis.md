@@ -33,13 +33,13 @@ Alongside these scores, a compact **audio fingerprint** is saved for every track
 ## When analysis runs
 
 - **Live during playback.** When an in-MA library track that has not been analysed yet is played, it is analysed live during playback
-- **Background scan.** A background job also works through the rest of the local files (SMB, NFS, and WebDAV) over time, so coverage grows even without active listening
+- **Background scan.** A background job also works through the rest of the tracks from [Local files](/music-providers/local-files/) sources, including those on a network share, over time, so coverage grows even without active listening
 - **Once per track.** Once a track has been analysed, the result is reused on every subsequent play — the analysis is not repeated unless the underlying file changes or a newer model version supersedes the previous one
 - **Tracks without a known duration are skipped** — a known length is required for the analysis to be consistent
 
 ## Tracking progress
 
-Coverage for every audio analysis provider is shown on a single page under **Settings → System → Audio analysis**.
+Coverage for every audio analysis provider is shown on a single page under [**Settings → System → Audio analysis**](/settings/core/#audio-analysis).
 
 ![Audio analysis coverage page showing Loudness Analysis, Smart Fades and Sonic Analysis](/assets/screenshots/audio-analysis-view.png)
 
@@ -47,7 +47,7 @@ Each row shows the provider's overall coverage, the count of analysed vs. total 
 
 ## How the data is used
 
-- **Find similar music** — other plugins use the audio fingerprint to suggest tracks that sound like the one currently playing. The [Sonic Similarity](/plugins/sonic-similarity) plugin uses these fingerprints to power library-wide Similar Tracks, radio mode, an "Inspired by recently played" discover row, and optional natural-language search
+- **Find similar music** — other plugins use the audio fingerprint to suggest tracks that sound like the one currently playing. The [Sonic Similarity](/plugins/sonic-similarity) plugin uses these fingerprints to power library-wide Similar Tracks, Endless Mix, an "Inspired by recently played" discover row, and optional natural-language search
 - **Mood-based playlists** — the "feel" scores allow playlists to be built around moods, such as "upbeat and danceable" or "calm and acoustic"
 
 ## Settings

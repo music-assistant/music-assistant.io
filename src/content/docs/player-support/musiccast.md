@@ -1,5 +1,5 @@
 ---
-title: MusicCast Player Provider
+title: "MusicCast"
 description: A Description of the MusicCast Player Provider
 ---
 
@@ -18,28 +18,24 @@ Music Assistant has support for <a href="https://au.yamaha.com/en/products/conte
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS`, click `ADD A NEW PROVIDER` and select `MusicCast`.
+1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `MusicCast`.
 2. Your MusicCast devices will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the MusicCast provider also some unique settings in the `Output Protocol(s)` section for the player:
+In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the MusicCast provider has some unique settings in the `Output Protocol(s)` section for the player:
 
-- <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should  issues be encountered during playback then toggle this on. This setting is only available on multi-zone players
-- <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching
-- <b>Turn off the zone when it leaves a group.</b> Toggle defines the power behaviour when the player leaves a group
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues. The default differs between player types
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`.
-- <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a contnuous audio stream. Use for players that dont natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
-- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audo glitches occur during track transition
+- <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should issues be encountered during playback then toggle this on, which makes the other two zone settings below inactive. This setting is only available on multi-zone players
+- <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It must be an input that does not need a network connection, and it is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching. This setting is only available on multi-zone players
+- <b>Turn off the zone when it leaves a group.</b> Toggle defines the power behaviour when the player leaves a group. This setting is only available on multi-zone players
+- <b>Auto-advance queue when the device stops at end of track.</b> On by default. Yamaha receivers occasionally drop the queued next track and stop playing, and this lets Music Assistant notice that and move the queue on. The side effect is that stopping playback yourself in the last few seconds of a track also advances to the next item, so turn it off if you would rather the device's own stop always be respected
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit. Set these to match what your device handles
 
 ## Player Options
 
-MusicCast has support for [player options](/player-support/#player-options). Refer to the MA UI and the devices manual for information about the options available
+MusicCast has support for [player options](/player-support/#player-options). Refer to the MA UI and the device's manual for information about the options available
 
 ## Known Issues / Notes
 

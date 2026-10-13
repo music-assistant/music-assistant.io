@@ -25,11 +25,11 @@ This source gives Music Assistant users free access to millions of audio recordi
 | Media Types Supported | Artists, Albums, Tracks, Audiobooks, Podcasts |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | FLAC (16 bit, 44.1 kHz) |
+| Maximum Stream Quality | FLAC 44.1kHz 16 bit |
 | Login Method | None |
 
 ### Other
@@ -41,7 +41,8 @@ This source gives Music Assistant users free access to millions of audio recordi
 - LibriVox audiobook library browsing
 
 ## Configuration:
-- In the configuration, you only need to click the save button.
+
+In the configuration, you only need to click the save button.
 
 ## Known Issues / Notes
 
@@ -58,3 +59,4 @@ This source gives Music Assistant users free access to millions of audio recordi
 - This free service does not have optimised API calls and delays can be experienced when browsing and searching. Long time caching is used to speed subsequent viewing
 - Bear in mind that file naming is inconsistent, clear titles are not always available and the same title can be used for different items
 - Audio quality varies widely
+- Podcast transcripts are not available

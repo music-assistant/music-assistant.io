@@ -19,11 +19,11 @@ It is free to use and needs no account. This source makes those recordings avail
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 
-| Maximum Stream Quality | MP3 (16 bit, 44.1 kHz) |
+| Maximum Stream Quality | MP3 256kbps |
 | Login Method | None |
 
 ### Other
@@ -34,7 +34,8 @@ It is free to use and needs no account. This source makes those recordings avail
 - Search for concerts, tracks and playlists by partial title
 
 ## Configuration:
-- In the configuration, you only need to click the save button.
+
+In the configuration, you only need to click the save button.
 
 ## Known Issues / Notes
 

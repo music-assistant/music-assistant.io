@@ -1,6 +1,7 @@
 ---
 title: Smart Playlists
 description: Create dynamic playlists based on rules from your library or from music discovered via seed tracks, artists, albums, or playlists.
+pluginGroup: discover
 ---
 
 # Smart Playlists
@@ -15,7 +16,7 @@ This plugin is currently marked as **experimental**. Behaviour may change before
 
 ## Installation
 
-Enable the **Smart Playlists** plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`. No additional configuration is required.
+Enable the **Smart Playlists** plugin via **Settings → Plugins → Add a plugin**. No additional configuration is required.
 
 ![Smart Playlists plugin entry](/assets/screenshots/smart_playlist/add_plugin.png)
 
@@ -131,6 +132,12 @@ The screenshot below shows the Track Count hint for **Discover mode**.
 After saving, open the smart playlist to view a current sample output based on your rules.
 
 ![Smart Playlist detail view](/assets/screenshots/smart_playlist/playlist_detail.png)
+
+## AI descriptions
+
+The Smart Playlists provider settings have an **AI descriptions** option. With it switched on, Music Assistant writes a short description for each smart playlist from the rules you gave it, so the playlist says what it holds without you having to write that yourself.
+
+This needs an **AI engine**, which comes from another plugin. Switching **AI descriptions** on reveals an **AI engine** picker directly beneath it, which you can change at any time. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
 
 ## Notes
 

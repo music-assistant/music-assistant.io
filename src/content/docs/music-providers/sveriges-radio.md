@@ -17,11 +17,11 @@ Sveriges Radio is funded publicly rather than by advertising. It runs four natio
 | Media Types Supported | Radio |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
+| [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
-| Maximum Stream Quality | Lossy MP3 |
+| Maximum Stream Quality | MP3 320kbps |
 | Login Method | None |
 
 ### Other
@@ -31,7 +31,7 @@ Sveriges Radio is funded publicly rather than by advertising. It runs four natio
 
 ## Configuration
 
-- No configuration is required. The provider is added and its channels become available immediately
+No configuration is required. The provider is added and its channels become available immediately
 
 ## Known Issues / Notes
 

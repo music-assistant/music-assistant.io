@@ -1,0 +1,349 @@
+---
+import Step from "../components/get-started/Step.astro";
+import Steps from "../components/get-started/Steps.astro";
+import Button from "../components/marketing/ui/Button.astro";
+import CodeBlock from "../components/marketing/ui/CodeBlock.astro";
+import Icon from "../components/marketing/ui/Icon.astro";
+import MarketingLayout from "../layouts/MarketingLayout.astro";
+
+const compose = `services:
+  music-assistant-server:
+    image: ghcr.io/music-assistant/server:latest
+    container_name: music-assistant-server
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - \${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
+      # - /path/to/your/music:/media:ro
+    environment:
+      - LOG_LEVEL=info`;
+
+// Opens the app's page in the visitor's own Home Assistant, adding our app
+// repository first if it is missing. Same link as the installation docs.
+const openInHomeAssistant =
+  "https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon";
+
+const nextSteps = [
+  {
+    label: "Sources",
+    title: "Add your music",
+    text: "Connect a streaming service, local files, radio or another source from Settings.",
+  },
+  {
+    label: "Speakers",
+    title: "Check your speakers",
+    text: "Supported AirPlay, Google Cast, DLNA, Sendspin and Sonos players are discovered automatically.",
+  },
+  {
+    label: "Play",
+    title: "Press play",
+    text: "Choose a speaker and press play. Your library may take a few minutes to appear.",
+  },
+];
+---
+
+<MarketingLayout
+  title="Install Music Assistant"
+  description="Install Music Assistant with Docker or on Home Assistant, then connect your music and speakers."
+>
+  <div class="container page">
+    <header class="heading">
+      <p class="eyebrow"><b>Get started</b> · about 10 minutes</p>
+      <h1>Install Music Assistant</h1>
+      <p class="lead">
+        Music Assistant runs on a device in your home that stays on. Pick where
+        it runs and follow a few steps.
+      </p>
+    </header>
+
+    <!-- Both ways side by side, so they can be compared at a glance. -->
+    <div class="methods">
+      <section class="method recommended" aria-labelledby="ha-title">
+        <span class="chip">Recommended</span>
+        <div class="method-head">
+          <span class="method-icon brand">
+            <img
+              src="/assets/landing/brands/hass_players.svg"
+              alt=""
+              width="32"
+              height="32"
+            />
+          </span>
+          <div>
+            <h2 id="ha-title">Home Assistant app</h2>
+            <p>If you run Home Assistant OS</p>
+          </div>
+        </div>
+        <p class="method-lead">
+          Installs next to Home Assistant, updates with a click and connects to
+          voice and automations.
+        </p>
+        <Steps>
+          <Step title="Open the App store">
+            <p>
+              In Home Assistant, go to <strong>Settings → Apps → App store</strong>.
+            </p>
+          </Step>
+          <Step title="Install Music Assistant">
+            <p>
+              Search for <strong>Music Assistant</strong>, open it and choose{" "}
+              <strong>Install</strong>.
+            </p>
+          </Step>
+          <Step title="Start it">
+            <p>
+              When it’s installed, choose <strong>Start</strong>, then{" "}
+              <strong>Open Web UI</strong>.
+            </p>
+          </Step>
+        </Steps>
+        <div class="method-actions">
+          <Button href={openInHomeAssistant} trailingIcon="arrow-up-right" external>
+            Open in Home Assistant
+          </Button>
+          <a class="text-link" href="/integration/installation/">
+            Add the integration <Icon name="arrow-right" size={16} />
+          </a>
+        </div>
+      </section>
+
+      <section class="method" aria-labelledby="docker-title">
+        <div class="method-head">
+          <span class="method-icon">
+            <Icon name="container" size={24} />
+          </span>
+          <div>
+            <h2 id="docker-title">Docker Compose</h2>
+            <p>On your own Linux server</p>
+          </div>
+        </div>
+        <p class="method-lead">
+          Host networking is required so it can find and stream to your
+          speakers.
+        </p>
+        <Steps>
+          <Step title="Create a Compose file">
+            <p>
+              Save this as <strong>compose.yaml</strong>. Uncomment the music
+              line to include local files.
+            </p>
+            <CodeBlock id="compose-code" title="compose.yaml" code={compose} />
+          </Step>
+          <Step title="Start it">
+            <p>Run this from the folder with your Compose file.</p>
+            <CodeBlock
+              id="start-code"
+              title="Terminal"
+              code="docker compose up -d"
+            />
+          </Step>
+          <Step title="Open Music Assistant">
+            <p>
+              Go to <strong>http://YOUR_SERVER_IP:8095</strong> in your browser.
+            </p>
+          </Step>
+        </Steps>
+        <div class="method-actions">
+          <a class="text-link" href="/installation/#docker-image">
+            Full Docker guide <Icon name="arrow-right" size={16} />
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <p class="hint">
+      Not sure? If you already use Home Assistant, choose the app. Speakers not
+      showing up later? Check that they are on the same network as Music
+      Assistant, with no VLANs in between.
+    </p>
+
+    <section class="next" aria-labelledby="next-title">
+      <h2 id="next-title">Then, three things</h2>
+      <ol>
+        {nextSteps.map((item, index) => (
+          <li>
+            <span class="next-label">
+              {String(index + 1).padStart(2, "0")} · {item.label}
+            </span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <p class="help">
+      Stuck? <a href="/installation/">Read the installation guide</a> or{" "}
+      <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">ask on Discord</a>.
+    </p>
+  </div>
+</MarketingLayout>
+
+<style>
+  .page {
+    padding-block: clamp(3rem, 7vw, 5rem) var(--section);
+  }
+
+  .heading {
+    text-align: center;
+  }
+  .heading .eyebrow {
+    justify-content: center;
+  }
+  .heading h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+  }
+  .lead {
+    max-width: 36rem;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: clamp(1.125rem, 1.8vw, 1.25rem);
+    line-height: 1.5;
+  }
+  .methods {
+    display: grid;
+    /* Docker gets a little more width for its Compose file. */
+    grid-template-columns: minmax(0, 6fr) minmax(0, 7fr);
+    align-items: stretch;
+    gap: 1.5rem;
+    margin-top: clamp(3rem, 6vw, 4rem);
+  }
+  .method {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    background: var(--card);
+  }
+  .recommended {
+    border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+  .chip {
+    position: absolute;
+    top: -0.8125rem;
+    left: clamp(1.5rem, 3vw, 2.25rem);
+    padding: 0.1875rem 0.75rem;
+    border-radius: 999px;
+    color: var(--on-accent);
+    background: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .method-head {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+  }
+  .method-head h2 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .method-head p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+  .method-icon {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    background: color-mix(in srgb, var(--fg) 7%, transparent);
+  }
+  .method-icon.brand {
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+  }
+  .method-lead {
+    margin: 1.5rem 0 1.75rem;
+    color: var(--muted);
+  }
+  /* A notch smaller so the Compose file fits the card without scrolling. */
+  .method :global(pre) {
+    font-size: 0.8rem;
+  }
+  .method-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-top: auto;
+    padding-top: 2rem;
+  }
+
+  .hint {
+    max-width: 44rem;
+    margin: 1.5rem auto 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+
+  .next {
+    margin-top: clamp(4.5rem, 9vw, 6.5rem);
+  }
+  .next h2 {
+    margin-bottom: 2.5rem;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    text-align: center;
+  }
+  .next ol {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .next li {
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: 1.25rem;
+    background: var(--card);
+  }
+  .next-label {
+    color: var(--link);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .next h3 {
+    margin: 0.625rem 0 0.375rem;
+    font-size: 1.25rem;
+  }
+  .next p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+
+  .help {
+    margin: clamp(3.5rem, 7vw, 5rem) 0 0;
+    color: var(--muted);
+    text-align: center;
+  }
+  .help a {
+    color: var(--link);
+  }
+
+  @media (max-width: 860px) {
+    .methods {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+  @media (max-width: 760px) {
+    .next ol {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

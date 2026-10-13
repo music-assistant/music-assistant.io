@@ -23,11 +23,11 @@ This source signs Music Assistant in to your Apple Music account, so your saved 
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Radio |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | Yes |
+| [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     | 
-| Maximum Stream Quality | [Lossy AAC (256kbps)](#known-issues--notes) |
+| Maximum Stream Quality | AAC 256kbps |
 | Login Method | OAuth or Cookie |
 
 ### Other
@@ -35,15 +35,16 @@ This source signs Music Assistant in to your Apple Music account, so your saved 
 - Searching the Apple Music catalogue
 - Browsing playlists organised in folders
 - Artist radio stations available via Browse and the [Discover view](/ui/#view---discover); live broadcast stations are not supported
-- Similar tracks are supported, shown in the track detail view and available for Radio Mode
+- Similar tracks are supported, shown in the track detail view and available for Endless Mix
 - Similar artists are supported and shown in the artist detail view
 
 
 ## Configuration
 
-The required token can be retrieved automatically by authenticating your Music Assistant instance with Apple Music. 
+Click the **Authenticate with Apple Music** button, then in the pop-up window sign in with your Apple ID and give Music Assistant access to your Apple Music library. Everything needed is collected for you.
 
-Click the **Authenticate with Apple Music** button, then in the pop-up window sign in with your Apple ID and authorize Music Assistant to access your Apple Music Library.
+> [!IMPORTANT]
+> For Apple to hand you back to Music Assistant afterwards, you have to be on Music Assistant's own web address while you do this — that is `http://<YOUR_MA_IP>:8095`. If you have installed Music Assistant as an app, that port has to be opened first, as described in the [core settings](/settings/core/#webserver). You can close it again once Apple Music is working.
 
 [![Preview image](/assets/screenshots/apple-music-auth-0.png)](/assets/screenshots/apple-music-auth-0.png)
 
@@ -71,9 +72,7 @@ The token needs to be retrieved through your browser. Instructions were written 
 
    [![Preview image](/assets/screenshots/apple-music-auth-2.jpg)](/assets/screenshots/apple-music-auth-2.jpg)
 
-6. Currently in order for the callback to work MA must be accessed via the exposed webserver port when setting up this source. If MA has been installed as an app, then the port must be manually exposed as described in the [core settings](/settings/core/#webserver). Thus the URL when setting this source up must be `http://<YOUR_MA_IP>:8095`. Once successfully configured the webserver port can be disabled again if desired.
-
-**Note:** Take note of the "Expires / Max-Age" column. The token will expire on that date and Apple Music within Music Assistant will stop working. The above process must then be repeated to obtain a fresh token.
+**Note:** Look at the "Expires / Max-Age" column while you are there. Apple Music will stop working in Music Assistant on that date, and you will need to come back and do this again.
 
 </div>
 </details>
@@ -82,7 +81,7 @@ See also the [Library Import Control](/music-providers/#library-import-control) 
 
     
 ## Known Issues / Notes
-- Due to Apple's proprietary encryption (FairPlay), Lossless and Dolby Atmos versions of songs are not supported
-- Due to limitations in the API, favouriting an item will only sync back to Apple Music for albums, playlists and tracks
-- Due to lack of an offical API, it can take up to 5 seconds to transition between tracks
-- Only user-created playlists can be edited; shared and curated playlists are read-only
+- Lossless and Dolby Atmos versions are not available here. Apple protects those with its own encryption, which Music Assistant cannot open
+- Marking something as a favourite is only sent back to Apple Music for albums, playlists and tracks. Doing it to an artist stays in Music Assistant
+- There can be a gap of up to five seconds between tracks, because Apple provides no proper way in for other apps
+- Only playlists you made yourself can be edited. Apple's own playlists and ones shared with you are read-only

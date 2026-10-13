@@ -22,12 +22,48 @@ export interface TileGroup {
   id: string;
   title: string;
   intro: string;
+  /**
+   * Forces this many columns in the category menu on a wide screen, instead of
+   * fitting as many as the width allows. Set it to the number of categories to
+   * keep the menu on one line. Narrow screens ignore it and fall back to
+   * fitting, since five columns on a phone would be unreadable.
+   */
+  columns?: number;
   categories: TileCategory[];
 }
 
 export interface TileItem {
   /** Shown under the logo. Normally the same as the sidebar label. */
   name: string;
+  /**
+   * Named where the tile and the page it opens carry different names, so that
+   * a Denon tile says what it is about to show you. Omit where they match.
+   */
+  /**
+   * Caps the logo height, as a CSS length. For a mark that fills the box more
+   * than its neighbours and wants pulling back for optical balance. Unset
+   * means the full height of the logo box.
+   */
+  iconHeight?: string;
+  /**
+   * Alt text for the logo, for the tiles where the logo is what tells them
+   * apart. Without it the three "Other" tiles are three links called "Other".
+   * Leave unset and the logo is treated as decoration, which is right when the
+   * name below it already says the same thing.
+   */
+  iconAlt?: string;
+  /**
+   * Hides the name, for tiles whose logo is the name. It stays in the markup
+   * for screen readers, which would otherwise meet a link called "Powered by
+   * HEOS" with no clue whose it is.
+   */
+  nameHidden?: boolean;
+  via?: {
+    /** The platform, e.g. "HEOS". Also the alt text when there is an icon. */
+    label: string;
+    /** Optional mark shown instead of the label. A file in public/. */
+    icon?: string;
+  };
   /** The doc page, copied straight from the sidebar in astro.config.mjs. */
   slug: string;
   /** A file in public/, written as a path starting with a slash. */

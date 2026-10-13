@@ -27,6 +27,7 @@ Note that the embedded `genre` tag in audio files is applied to the track only, 
 | Metadata Type | Source(s) |
 | --- | --- |
 | Name, sort name, year, album type | File tags, `album.nfo`, music providers |
+| Album artist | File tags, `album.nfo` |
 | Genres | `album.nfo`, music providers, **The Audio DB**, derived from track tags when the filesystem provider's `Propagate track genres` option is enabled |
 | MusicBrainz Release Group / Album ID | File tags, `album.nfo`, music providers |
 | Description / review | `album.nfo` (`<review>`), music providers, **The Audio DB** |
@@ -43,7 +44,7 @@ Note that the embedded `genre` tag in audio files is applied to the track only, 
 | Genres, mood, style, description | File tags, music providers, **The Audio DB** |
 | Explicit flag, copyright, grouping, comment | File tags, music providers |
 | Lyrics | See [Lyrics](/metadata/lyrics) |
-| Volume normalization value | See [Loudness Analysis](/audio-analysis/loudness-analysis) |
+| Volume normalization value | File tags (`R128_*` and `REPLAYGAIN_*`, track and album), music providers (Plex, Subsonic, Tidal), otherwise measured by [Loudness Analysis](/audio-analysis/loudness-analysis) |
 
 ## Playlists
 

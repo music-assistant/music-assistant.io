@@ -19,8 +19,8 @@ The audio is not held in the figurine. It sits on a server, and TeddyCloud is th
 | Media Types Supported | Audiobooks |
 | [Recommendations](/ui/#view---discover) Supported | No |
 | Lyrics Supported | No |
-| [Radio Mode](/ui/#track-menu) | No |
-| Maximum Stream Quality | Opus, 96 kbps VBR (48 kHz) |
+| [Endless Mix](/ui/#track-menu) | No |
+| Maximum Stream Quality | Opus 96kbps |
 | Login Method | None |
 
 ### Other

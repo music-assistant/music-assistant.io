@@ -20,7 +20,8 @@ Media Assistant is a utility that allows you to stream/play local and hosted med
 1.	Install the Media Assistant app from the Roku Channel Store or sideload it on your Roku.
 - Roku Channel Store Link (https://channelstore.roku.com/details/625f8ef7740dff93df7d85fc510303b4/media-assistant)
 - Sideload Link (https://github.com/MedievalApple/Media-Assistant)
-2.	If you sideloaded the app, you will need to change the Player Provider Setting in Advanced >> `App ID of Media Assistant` to `dev`.
+- Alternatively, [Mass TV](https://github.com/kees/mass-tv) (Roku Channel Store Link: https://channelstore.roku.com/details/fc0588fb13ad2e8bd94263853acd1d60:a86872c07facb1fa2cb013fea671aa17/mass-tv) plays the same streams and is also a Music Assistant client for the TV remote (browse, search, queue). It is in the default list of apps, after Media Assistant.
+2.	If you sideloaded the app, you will need to add `dev` to the Player Provider Setting in **Advanced → Roku app IDs**.
 3.	On newer Roku OS versions, in order for Music Assistant to communicate with the Roku, you must ensure mobile app control is enabled. To check this, go to the Roku's settings and navigate to (Settings >> System >> Advanced system settings >> Control by mobile apps >> Network access) and check if `Network access` is set to `Enabled`
 
 ## Settings
@@ -28,14 +29,13 @@ Media Assistant is a utility that allows you to stream/play local and hosted med
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Allow automatic Roku discovery.</b> This is on by default and enables the automatic discovery of Roku devices
-- <b>App ID of Media Assistant.</b> This is only used if the Media Assistant app was sideloaded onto the device
+- <b>Manual IP addresses for discovery.</b> Add Roku devices by IP address when automatic discovery does not find them on your network
+- <b>Roku app IDs.</b> The Roku apps that play Music Assistant's streams, as a comma-separated list in order of preference. Defaults to the Roku Channel Store versions of Media Assistant (782875) and Mass TV (883989). Playback goes to a listed app that is already open on the Roku; otherwise the first listed app installed on that Roku is started. If you sideloaded the app on your Roku, add ID `dev` to this list (a Roku holds one sideloaded app). With only one ID listed, that app is always the one started
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Roku players have the following settings:
+Roku players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on a Roku:
 
-- <b>Enable queue flow mode.</b> Enable queue flow mode. Enabling this option will send all tracks as a continuous audio stream. This allows for support of gapless or crossfading. This can also help if your Roku is having have difficulty transitioning between tracks. This does have the side effect of losing some displayed metadata
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Sample rates supported by this player.</b> This setting defaults to Roku's stated max sample rates of 44.1kHz / 16 bits and 48kHz / 16 bits but the sample rates and bit depths supported by the Roku can be manually set. Unsupported sample rates may work depending on the Roku device
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`. Some codecs may load faster than others depending on the Roku device
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> The rates selected by default match Roku's stated support. Higher rates may still work depending on the device
+- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Some codecs load faster than others depending on the Roku device, so try another if playback is slow to start
 
 ## Known Issues / Notes
 
