@@ -43,16 +43,16 @@ Add the plugin in **Settings → Plugins → Add a plugin** and pick **OpenAI Te
 
 Music Assistant renders a short test phrase before finishing, so a wrong address, key, model or audio format is caught here rather than on the first announcement.
 
-If the test phrase fails, setup shows the error message from your server, which usually says what is wrong.
+If the server refuses the test phrase, setup shows the server's own error message, which usually says what is wrong, for example an unknown model or voice.
 
 ### Voices
 
 The plugin finds its voices by itself:
 
-- If your server publishes a list of its voices, as Kokoro-FastAPI and mlx-audio do, those voices are offered.
+- If your server publishes a list of its voices, as Kokoro-FastAPI does, those voices are offered.
 - Otherwise the standard OpenAI voices are offered: `alloy`, `echo`, `fable`, `nova`, `onyx` and `shimmer`.
 
-Some servers use their own voice names without listing them, for example Voxtral on mlx-audio, with voices such as `neutral_female` and `casual_male`. The test phrase then fails, and setup adds a **Voices** field. Enter the voice names from your server's documentation there, one voice per value, and finish the setup. Those voices are then offered instead of the standard ones.
+Some servers use their own voice names without listing them, for example Voxtral on mlx-audio, with voices such as `neutral_female` and `casual_male`. If the test phrase fails and the server does not list its voices, setup adds a **Voices** field. Enter the voice names from your server's documentation there, one voice per value, and finish the setup. Those voices are then offered instead of the standard ones.
 
 To change the voices later, open the plugin under **Settings → Plugins** and enter them under **Voices**, one voice per value. This replaces the voices that would otherwise be offered, including any entered during setup.
 
