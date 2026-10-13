@@ -44,12 +44,12 @@ The bare `/kiosk` URL opens a Sendspin player with all additions disabled. Set `
 | `lyrics=1` | Show up to three lyric lines when lyrics are available |
 | `queue=1` | Show the queue; requires an MA access token |
 | `show_player_id=1` | Show an extra selectable Player ID badge |
-| `token=<ma-access-token>` | Authorise on-page controls and queue access |
+| `#token=<ma-access-token>` | Authorise controls and queue access with a URL fragment |
 | `device_id=<unique-id>` | Set an explicit identity for this browser player |
 | `ma_url=<ma-web-url>` | Store the MA web interface address in the kiosk browser |
 | `sendspin_url=<sendspin-url>` | Override the Sendspin address; normally the same host on port 8927 |
 
-For example, `http://192.168.10.10:8098/kiosk?party=1&lyrics=1` enables the Party QR and lyrics. For controls and the queue, use `http://192.168.10.10:8098/kiosk?controls=1&queue=1&token=<ma-access-token>` with your own token. Treat URLs containing tokens as credentials; the kiosk also stores the token in browser storage.
+For example, `http://192.168.10.10:8098/kiosk?party=1&lyrics=1` enables the Party QR and lyrics. For controls and the queue, use `http://192.168.10.10:8098/kiosk?controls=1&queue=1#token=<ma-access-token>` with your own token. The builder puts the token in a URL fragment so it is not sent in HTTP requests. The kiosk stores the token and clears it from the visible address. Treat copied URLs containing tokens as credentials. Legacy query-string tokens are still accepted and cleared when the page loads.
 
 When no track is playing, the main title always shows the Player ID, independently of the optional badge. The subtitle shows Music Assistant and its server version. HTML5 or Sendspin artwork supplies the idle background.
 
@@ -68,7 +68,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/), these
 | Setting | Default | Description |
 |:--|:--|:--|
 | HTTP port | 8098 | Port serving the kiosk and URL builder |
-| Player idle timeout | 30 minutes | Unregister idle players after this period |
+| Player idle timeout | 30 minutes | Unregister disconnected idle players after this period |
 | Show notification before closing player | Off | Show a confirmation dialog when stopping playback from MA |
 | Sendspin bridge (experimental) | On | Enable experimental Sendspin integration |
 | Require MA sign-in for URL builder | Off | Protect the builder and player list |
@@ -84,6 +84,8 @@ In the [Individual Player Settings](/settings/individual-player/), the [output c
 - Sendspin integration is experimental. Complete any pairing prompt shown by the kiosk. The bundled client supports 44.1/48 kHz, 16-bit stereo; available codecs depend on the browser. Without WebCodecs audio decoding, it uses FLAC/PCM.
 - HTML5 fallback does not provide synchronised playback. HTML5 plays individual tracks with flow mode disabled and does not support crossfade.
 - The visualizer requires stored audio analysis, lyrics require available lyric data, and the Party QR appears only while a Party is active.
+- The queue display shows a window around the current track, including queues longer than 200 items.
+- Open kiosk pages remain registered during idle periods.
 - Music selection and library browsing take place in the Music Assistant interface.
 
 Browser playback functionality previously lived in MSX Bridge and was separated from that TV-focused provider. See <a href="https://github.com/music-assistant/server/pull/5868" target="_blank" rel="noopener noreferrer">the MSX Bridge cleanup</a>.
