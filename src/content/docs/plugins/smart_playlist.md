@@ -52,6 +52,7 @@ Smart playlists use include/exclude style rules:
 - **Year**: between from/to (it is possible to use only `from` or only `to`)
 - **Duration**: between from/to in MM:SS format (filter tracks by length)
 - **Last played**: filter tracks by how recently they were played (e.g., "1 days ago", "2 weeks ago")
+- **Folder**: is (library mode, one or more folders of a file-based music source, such as a local or network folder)
 
 Album type examples:
 
@@ -61,6 +62,12 @@ Album type examples:
 - **Album type is "Live"**: only live recordings/concerts
 
 Available album types: **Album**, **Single**, **EP**, **Compilation**, **Live**, **Soundtrack**, **Audiobook**, **Podcast**, **Unknown album type** (albums without a specific type classification or where the music provider does not provide type information).
+
+Folder examples:
+
+- **Folder is "My Music/Rock"**: all tracks in the `Rock` folder of that music source, including every subfolder.
+- New files added to the folder show up in the playlist after the next library sync.
+- Pick a music source to select its whole library, or browse into it and choose **Use this folder** at the level you want.
 
 Explicit content filter options:
 
