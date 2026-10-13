@@ -63,11 +63,21 @@ Album type examples:
 
 Available album types: **Album**, **Single**, **EP**, **Compilation**, **Live**, **Soundtrack**, **Audiobook**, **Podcast**, **Unknown album type** (albums without a specific type classification or where the music provider does not provide type information).
 
-Folder examples:
+Folder rule:
 
-- **Folder is "My Music/Rock"**: all tracks in the `Rock` folder of that music source, including every subfolder.
+The folder rule turns a folder structure into a playlist that stays up to date. It is meant for music that is organized by folder rather than by tags, for example:
+
+- **Your own groupings**: a folder like `80s` holds what you file under that decade, which does not always match the year tag (remasters, compilations). Folders like `Party`, `Christmas` or `Kids` describe something no tag does.
+- **Moving over from a folder-based player** such as foobar2000, MPD or Winamp: the folder structure you already have becomes your playlists, without rebuilding it in Music Assistant.
+- **Folders filled from outside**, for example synced from a phone with Syncthing: new files show up in the playlist on their own.
+- **Playing a folder by name**: unlike a folder, a playlist can be started from Home Assistant, an automation or a voice assistant.
+
+How it works:
+
+- **Folder is "My Music/80s"**: all tracks in the `80s` folder of that music source, including every subfolder.
 - New files added to the folder show up in the playlist after the next library sync.
 - Pick a music source to select its whole library, or browse into it and choose **Use this folder** at the level you want.
+- Combine it with the other rules, for example **Folder is "My Music/80s"** while excluding tracks played in the last 30 days (**Last played**), or **Folder is "My Music/Party"** and **Favorite**.
 
 Explicit content filter options:
 
