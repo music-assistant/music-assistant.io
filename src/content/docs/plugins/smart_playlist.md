@@ -70,7 +70,6 @@ The folder rule turns a folder structure into a playlist that stays up to date. 
 - **Your own groupings**: a folder like `80s` holds what you file under that decade, which does not always match the year tag (remasters, compilations). Folders like `Party`, `Christmas` or `Kids` describe something no tag does.
 - **Moving over from a folder-based player** such as foobar2000, MPD or Winamp: the folder structure you already have becomes your playlists, without rebuilding it in Music Assistant.
 - **Folders filled from outside**, for example synced from a phone with Syncthing: new files show up in the playlist on their own.
-- **Playing a folder by name**: unlike a folder, a playlist can be started from Home Assistant, an automation or a voice assistant.
 
 How it works:
 
