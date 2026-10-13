@@ -32,7 +32,7 @@ This source signs Music Assistant in to your QQ Music account, so the tracks, al
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | FLAC up to 192kHz 24 bit |
-| Login Method | QQ or WeChat App QR Code |
+| Login Method | QQ Music App QR Code |
 
 ### Other
 
@@ -46,13 +46,11 @@ This source signs Music Assistant in to your QQ Music account, so the tracks, al
 ### QR Login Flow
 
 1. Open **Settings → Music Sources → Add a music source → QQ Music**.
-2. Click **QQ Login** or **WeChat Login**. A new QR page will open.
-3. Scan the QR code with the matching **QQ** or **WeChat** app and tap **Login/Confirm** in the app.
-4. Close the QR page.
-5. Click **Save**.
+2. Scan the displayed QR code with the **QQ Music** app and confirm the login in the app.
+3. Wait for the setup to finish.
 
 > [!NOTE]
-> Use the same app as the login button you selected. A WeChat QR code must be scanned with WeChat, and a QQ QR code must be scanned with QQ.
+> This QR code can only be scanned with the QQ Music app. It cannot be scanned with QQ or WeChat.
 
 ### Settings
 

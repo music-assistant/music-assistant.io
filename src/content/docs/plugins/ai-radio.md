@@ -25,6 +25,7 @@ AI Radio is in alpha. The show and host editors, the bundled hosts and the gener
 - Decide when the host speaks, from every song to once an hour
 - Let the host look things up on the web for segments that need current information
 - Add weather to any segment through Open-Meteo
+- Let a segment keep talking over the start of the next song, with the music turned down under the voice
 - Turn on an AI DJ for any queue straight from the queue menu
 - Duplicate a show to make a variation without starting again
 
@@ -141,6 +142,7 @@ A segment is one spoken part. **Add segment** offers ready-made ones for **Intro
 | **Web Search Mode** | Whether the host may look things up for this segment |
 | **Character Limit** | Roughly how long the spoken text may get |
 | **Plays** | When and how often the segment is used |
+| **Talk over the intro** | Off by default. Lets the end of this segment play over the start of the next song. See [talking over the intro](#talking-over-the-intro) |
 
 **Plays** offers **Once at start**, **Once at end**, **Every song**, **Every ~N songs**, **Every ~N min** and **Occasionally**, the last with a percentage.
 
@@ -156,6 +158,16 @@ If two between-song segments fall at the same point, AI Radio writes them separa
 
 Music Assistant does not search the web itself. These settings add a line to the prompt asking the AI to use current information, and it is up to your AI engine whether it acts on it. Engines with their own built-in search will but local models and models without search will not, and may answer from what they were trained on instead, which can be out of date or wrong.
 Use it sparingly. Searching makes a segment slower to prepare, and what it can do depends on your AI engine.
+
+### Talking over the intro
+
+With **Talk over the intro** on, a segment's break does not have to finish before the next song starts. The last few seconds of the break play over the song's intro, with the music turned down under the voice and brought back up as the break ends, just before the singing starts. When several segments are merged into one break, the host only talks over the intro if every one of them has the switch on.
+
+Music Assistant only does this when it knows where the singing starts. It takes that from the [Smart Fades](/audio-analysis/smart-fades/#how-analysis-runs) analysis of a song it has played before, or from the song's [synced lyrics](/metadata/lyrics/). Without either, or when the intro or the break is too short to fit, the break plays whole and the song starts after it, as usual.
+
+The host talks over the intro on players that play gapless, such as Sonos, and on players that stream in [flow mode](/settings/individual-player/#enable-queue-flow-mode). A show with such a segment switches any other player, such as a Chromecast, to flow mode while it is on air. The AI DJ on a queue leaves the player's settings alone, so on those players it only happens when they already stream in flow mode.
+
+While the host is talking over the intro, the [Audio Pipeline](/audiopipeline/) label on the player shows the transition as **Voice-over**.
 
 ### Placeholders
 
@@ -253,6 +265,10 @@ The show needs a player, and that player has to be enabled and available. If the
 ### The AI DJ is on but never speaks
 
 Check the queue is actually playing. The DJ fills the gaps between tracks, so it has nothing to do while the queue is stopped. If a show is on air on that queue, the show has taken it over and the menu will say so.
+
+### The host never talks over the intro
+
+**Talk over the intro** is off by default, so check it is on for the segment. When it is, Music Assistant still plays the break whole when it does not know where the singing starts. That happens with a song it has not played before and that has no synced lyrics. It also plays the break whole when the intro or the break itself is too short. On a player that neither plays gapless nor streams in [flow mode](/settings/individual-player/#enable-queue-flow-mode), such as a Chromecast, the AI DJ on a queue plays the break whole. A show switches such a player to flow mode itself.
 
 ### Weather segments are empty or skipped
 

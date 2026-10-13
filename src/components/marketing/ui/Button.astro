@@ -1,0 +1,86 @@
+---
+import Icon from "./Icon.astro";
+
+// "primary" is the one accent-filled action on a screen, "secondary" is the
+// quiet outlined alternative, "ghost" is a text-weight link with padding.
+interface Props {
+  href: string;
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "md" | "lg";
+  icon?: string;
+  trailingIcon?: string;
+  external?: boolean;
+  class?: string;
+}
+
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  icon,
+  trailingIcon,
+  external = false,
+  class: className,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={["btn", `btn-${variant}`, `btn-${size}`, className]}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
+>
+  {icon && <Icon name={icon} size={size === "lg" ? 20 : 18} />}
+  <span>
+    <slot />
+  </span>
+  {trailingIcon && <Icon name={trailingIcon} size={size === "lg" ? 20 : 18} />}
+</a>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.75rem;
+    padding: 0 1.25rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    transition:
+      background-color 0.15s,
+      border-color 0.15s,
+      color 0.15s;
+  }
+  .btn-lg {
+    height: 3.25rem;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+  }
+  .btn-primary {
+    color: var(--on-accent);
+    background: var(--accent);
+  }
+  .btn-primary:hover {
+    background: color-mix(in srgb, var(--accent) 82%, white);
+  }
+  .btn-secondary {
+    color: var(--fg);
+    border-color: color-mix(in srgb, var(--fg) 30%, transparent);
+  }
+  .btn-secondary:hover {
+    border-color: var(--fg);
+  }
+  .btn-ghost {
+    padding-inline: 0.75rem;
+    color: var(--fg);
+  }
+  .btn-ghost:hover {
+    color: var(--link);
+  }
+</style>

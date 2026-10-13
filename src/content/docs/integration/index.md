@@ -20,6 +20,8 @@ See also the <a href="https://www.home-assistant.io/integrations/music_assistant
 
 - With some additional setup [voice control of MA](/integration/voice/) via HA is also possible
 
+- From Home Assistant 2026.11, [dashboards](/dashboards/#from-home-assistant) can be shown on your displays from automations and scripts
+
 ## How the pieces fit together
 
 Music Assistant and Home Assistant can be joined in both directions, and there are three separate pieces involved. Which ones you need depends on which direction you want.

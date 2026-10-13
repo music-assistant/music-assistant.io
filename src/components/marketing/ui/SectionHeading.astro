@@ -1,0 +1,43 @@
+---
+// A section title with an optional lead and action aligned to the end.
+interface Props {
+  id?: string;
+  title: string;
+  lead?: string;
+}
+const { id, title, lead } = Astro.props;
+const hasAction = Astro.slots.has("action");
+---
+
+<header class="section-heading" data-reveal>
+  <div class="text">
+    <h2 id={id}>{title}</h2>
+    {lead && <p class="lead">{lead}</p>}
+  </div>
+  {hasAction && (
+    <div class="action">
+      <slot name="action" />
+    </div>
+  )}
+</header>
+
+<style>
+  .section-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  h2 {
+    max-width: 22ch;
+    margin: 0;
+  }
+  .lead {
+    max-width: 52ch;
+    margin: 1.25rem 0 0;
+    color: var(--muted);
+    font-size: 1.1875rem;
+  }
+</style>

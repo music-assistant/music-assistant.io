@@ -57,3 +57,4 @@ This source connects Music Assistant to the music library on your Plex server. E
 - If you have multiple libraries and/or library types, you need to add the Plex provider multiple times
 - If you have multiple Plex accounts, which have their own playlists, you can also add them as separate provider instances
 - If a Plex Media Server is running on the same host as MA, the Plex Connect plugin will fail to start because both attempt to bind to the GDM discovery port (32412). This is a known incompatibility. To resolve this it is necessary to run MA in Docker and remap the port, or run Plex and MA on separate hosts
+- Podcast transcripts are not available

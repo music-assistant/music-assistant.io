@@ -20,13 +20,15 @@ Music Assistant has support for the <a href="https://www.amplipi.com/" target="_
 ## Configuration
 
 1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `AmpliPi`.
-2. Enter the hostname or IP address of your AmpliPi controller in the `Host` setting (AmpliPi controllers are not discovered automatically). See Settings below for the details.
+2. Confirm the `Host` setting. Controllers on your local network are found automatically and the field is prefilled with the first one that is not set up yet; if yours was not found, enter its hostname or IP address. See Settings below for the details.
 
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-- <b>Host.</b> The hostname or IP address of the AmpliPi controller (e.g. `amplipi.local` or `192.168.1.50`). A full URL may also be provided. This is asked when you add the provider and is required, as AmpliPi controllers are not auto-discovered
+- <b>Host.</b> The hostname or IP address of the AmpliPi controller (e.g. `amplipi.local` or `192.168.1.50`). A full URL may also be provided. This is asked when you add the provider and is required. Controllers on the local network are discovered over mDNS and the field is prefilled with the first one not yet set up in Music Assistant, so normally you only need to confirm it. Enter the address by hand when the controller is on another subnet or reachable only through a custom DNS name
+
+Each controller can be set up only once: adding a controller that is already configured is refused. To change its address, reconfigure the existing provider instance instead.
 
 Each zone on the controller becomes its own player. AmpliPi zones use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
 

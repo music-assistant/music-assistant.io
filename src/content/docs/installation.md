@@ -47,9 +47,9 @@ An alternative way to run the Music Assistant server is by running the docker im
 docker run -v <dir>:/data --network host ghcr.io/music-assistant/server
 ```
 
-You must run the docker container with **host network mode** (see the note on networking below). The data volume is `/data` - replace `<dir>` with a writable directory to ensure the data volume persists between updates. If you want access to your local music files from within MA, make sure to also mount that local directory, e.g. `/media` (mount it read-only where possible).
+You must run the docker container with **host network mode** (see the note on networking below). The data volume is `/data` - replace `<dir>` with a writable directory to ensure the data volume persists between updates. To use your own music files, map their folder into the container as well, read-only where possible. See [Your music files](#your-music-files).
 
-The recommended setup keeps the container as restricted as possible. The extra privileges (`SYS_ADMIN`, `DAC_READ_SEARCH` and `apparmor:unconfined`) shown further down are **only** needed if you want MA to mount a remote (Samba/NFS) share itself from inside the container. For most users, mounting music on the host and bind-mounting it into the container is the more secure choice.
+The recommended setup keeps the container as restricted as possible. It needs no extra privileges, not even for music on a NAS.
 
 > [!WARNING]
 > Do not attempt to switch from the stable to beta channels (or vica versa) by simply changing the version tag on the image. Similarly, do not attempt to move or copy the database between beta and stable instances (or vica versa). It is possible to [run parallel server versions](/release/#running-parallel-server-versions)
@@ -66,8 +66,8 @@ services:
     network_mode: host
     volumes:
       - ${USERDIR:-$HOME}/docker/music-assistant-server/data:/data/
-      # Optional: expose local music to MA by bind-mounting it read-only
-      - /path/to/your/music:/media:ro
+      # Optional: make a music folder available to MA, read-only where possible
+      - /path/to/your/music:/media/music:ro
     environment:
       # Provide logging level as environment variable.
       # default=info, possible=(critical, error, warning, info, debug)
@@ -76,29 +76,6 @@ services:
 ```
 
 The desired release version can be found on <a href="https://github.com/music-assistant/server/pkgs/container/server" target="_blank" rel="noopener noreferrer">the container image releases page</a>
-
-### Advanced: mounting SMB/network shares inside the container
-
-Music Assistant can mount a remote (Samba/NFS) share itself using the SMB File provider. Doing this **from inside the container** requires the container to be granted broad privileges: the `SYS_ADMIN` and `DAC_READ_SEARCH` capabilities and `apparmor:unconfined`. These significantly reduce container isolation and make a container escape more damaging if MA or one of its dependencies is ever compromised, so only add them if you actually need in-container mounting.
-
-The more secure alternative is to **mount the share on the host** (e.g. via `/etc/fstab` or your NAS tooling) and bind-mount that path into the container read-only, exactly like a local music folder:
-
-```
-    volumes:
-      - /mnt/nas/music:/media:ro
-```
-
-If you do need MA to mount the share itself, add the privileges to the recommended compose file above:
-
-```
-    # WARNING: only needed to mount SMB/NFS shares from inside the container.
-    # These reduce container isolation - prefer host-mounting the share instead.
-    cap_add:
-      - SYS_ADMIN
-      - DAC_READ_SEARCH
-    security_opt:
-      - apparmor:unconfined
-```
 
 ### Running without host networking
 
@@ -113,6 +90,41 @@ If you do not use any local/networked players and only stream to software player
 ```
 
 Be aware of the trade-off: on a bridge network, player discovery and any players that need direct network access (AirPlay, Chromecast, DLNA, Sonos, and similar) will not work, and this configuration is not supported by the MA team.
+
+## Your music files
+
+A [Local files](/music-providers/local-files/) source reads music from a folder in one of the storage locations Music Assistant can see. How a folder or a NAS becomes a storage location depends on the installation. [Storage](/settings/storage/) has the details.
+
+### With the Home Assistant App
+
+Put your music in the Home Assistant media folder, or add the network share of your NAS in Music Assistant under **Settings → Storage** with **Add network share**. Home Assistant connects the share, and it shows up as a storage location. A network share added in Home Assistant under **Settings → System → Storage** with the usage **Media** shows up as well.
+
+### With Docker
+
+Every folder you map into the container is found automatically and becomes a storage location. Map each music folder to a folder under `/media`, read-only where possible.
+
+For music on a NAS, the recommended way is to **mount the share on the host**, for example through `/etc/fstab` or your NAS tooling, and map that folder into the container like any other music folder:
+
+```
+    volumes:
+      - /mnt/nas/music:/media/music:ro
+```
+
+### Mounting shares from inside the container
+
+Use this only as a last resort. Music Assistant can connect a network share itself, with **Add network share** on the Storage page, but inside a container that needs broad privileges: the `SYS_ADMIN` and `DAC_READ_SEARCH` capabilities and `apparmor:unconfined`. These weaken the isolation between the container and the host, so a flaw in MA or one of its dependencies could do more damage. Without them, the Storage page explains that this installation cannot connect network shares.
+
+If mounting on the host is not an option, add the privileges to the recommended compose file above:
+
+```
+    # WARNING: only needed when MA mounts network shares itself.
+    # These weaken the container's isolation. Prefer mounting the share on the host.
+    cap_add:
+      - SYS_ADMIN
+      - DAC_READ_SEARCH
+    security_opt:
+      - apparmor:unconfined
+```
 
 ## Supported installations
 
