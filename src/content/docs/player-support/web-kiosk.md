@@ -29,6 +29,8 @@ Choose music in Music Assistant, then listen through the kiosk device and see th
 
 Keep the page open and the device awake. Reloading the page requires another tap or key press before it can play sound. The browser keeps its Player ID in local storage; clearing that storage or using another browser profile creates a new identity. Closing the last connection removes the player after a five-second grace period while preserving saved Sendspin settings. A browser profile has one Sendspin identity; if different device IDs use it, the most recently registered kiosk takes ownership of the Sendspin bridge.
 
+In Sendspin mode, MA attaches the browser's Sendspin output to the Web Kiosk player. Use the Web Kiosk player to select music; its device information identifies the browser software and version, rather than the physical tablet or TV manufacturer. Explicitly deleting the player in MA removes its saved settings.
+
 ### URL builder
 
 Open `http://<ma-host>:8098/` to choose the playback mode and optional additions, then copy the generated player URL. A copyable base URL is also available in the provider's **Kiosk URL** setting.
