@@ -52,6 +52,7 @@ Enable **Fullscreen button** in the URL builder to show a button in the upper-ri
 | `wake_lock=1` | Request screen wake lock where the browser allows it |
 | `fullscreen=1` | Show an optional enter/exit fullscreen button where supported |
 | `show_player_id=1` | Show an extra selectable Player ID badge |
+| `show_group=1` | Show the current MA group name; hidden for standalone players |
 | `#token=<ma-access-token>` | Authorise controls and queue access with a URL fragment |
 | `device_id=<unique-id>` | Set an explicit identity for this browser player |
 | `sendspin_url=<sendspin-url>` | Override the Sendspin address; normally the same host on port 8927 |
