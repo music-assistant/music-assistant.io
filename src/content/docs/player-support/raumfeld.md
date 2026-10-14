@@ -26,10 +26,10 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 
 Music Assistant also shows what a room plays when the music was started somewhere else: Spotify Connect, or music and radio from the Raumfeld app. You see the source and the track, and get the controls the Raumfeld host allows for it. For an album or Spotify that is pause, next/previous and seek; for radio only stop.
 
-- A source you stopped can be resumed for about a minute. Music Assistant shows it as paused until then
+- A source you stop is shown as paused and can be resumed for about a minute. After that Music Assistant shows its own queue again
 - Playing something from Music Assistant takes over the room
-- Music from another app that plays through the speaker's built-in Chromecast, such as the Tidal app, is not shown here
-- Pausing a track within its first seconds restarts it when you resume. The Raumfeld app does the same
+- Music from another app that plays through the speaker's built-in Chromecast, such as the Tidal app, is not shown
+- Pausing a track within the first few seconds restarts it when you resume. The Raumfeld app does the same
 
 ## Configuration
 
