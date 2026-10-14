@@ -31,7 +31,7 @@ When streaming sources are also available in MA linking will only occur when the
 - Local music is automatically included in the MA Library
 - Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
 - If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
-- On playback, when tracks are linked across sources (or within the same source) Music Assistant picks the copy that plays, by default the highest quality one. See [Which Source Plays](/source-selection/)
+- On playback, when tracks are linked across sources (or within the same source) Music Assistant picks which copy plays. See [Which Source Plays](/source-selection/)
 - It is possible to add multiple filesystem sources
 
 ## Configuration
@@ -333,16 +333,16 @@ Loudness tags are read as well. If a file is tagged with ReplayGain or R128 loud
 
 ### Two Releases of the Same Album
 
-MusicBrainz counts a remaster as the same recording as the original. With Picard's tags, an album and its remaster, say the 1969 release and the 2009 remaster, are two albums in your library, while each of their tracks is merged into one library track that holds both files. Each album still plays its own tracks: from your files, those are the files in that album's folder, so the two releases are not mixed. [Which Source Plays](/source-selection/) explains how the source of an album is chosen.
+MusicBrainz counts a remaster as the same recording as the original. With Picard's tags, an album and its remaster, say the 1969 release and the 2009 remaster, are two albums in your library, while each of their tracks is merged into one library track that holds both files. Each album still plays its own tracks: from your files, those are the files in that album's folder, so the two releases are not mixed, unless **Which source plays** is set to **Best quality for every track**. [Which Source Plays](/source-selection/) explains how the source of an album is chosen.
 
-To also have the remastered tracks as tracks of their own, there is no need to remove any tags. Turn on [Keep remastered versions apart](/source-selection/#keep-remastered-versions-apart) and name the remaster in the album title, for example `Abbey Road (2009 Remaster)`.
+To also have the remastered tracks as tracks of their own, there is no need to remove any tags. Turn on [Keep remastered versions apart](/source-selection/#keep-remastered-versions-apart) and name the remaster in the album title, for example `Abbey Road (2009 Remaster)`. Tracks that were merged before you turned it on stay merged.
 
 ### Manually Adjusting Tags
 
 > [!WARNING]
 > Manual tag editing is for users who deliberately want different behaviour from the MusicBrainz defaults. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between sources
 
-Normally it is best to leave the Picard tags unchanged. However, some people do not agree with Musicbrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> For an album and its remaster, see [Two Releases of the Same Album](#two-releases-of-the-same-album) first, which needs no tags removed. The technique below is for other versions that should be kept apart, and can also be used for personally ripped albums or tracks that are not in the Musicbrainz database. To separate these out the tags can be edited as follows:
+Normally it is best to leave the Picard tags unchanged. However, some people do not agree with MusicBrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> For an album and its remaster, see [Two Releases of the Same Album](#two-releases-of-the-same-album) first, which needs no tags removed. The technique below is for other versions that should be kept apart, and can also be used for personally ripped albums or tracks that are not in the MusicBrainz database. To separate these out the tags can be edited as follows:
 
 - Remove MusicBrainz Release ID and Recording ID (Refer to the [Picard tag mapping documentation](https://picard-docs.musicbrainz.org/en/latest/appendices/tag_mapping.html#id39) for the exact tag name as it changes with the music file format)
 - Keep MusicBrainz Artist ID

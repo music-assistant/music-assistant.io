@@ -100,7 +100,7 @@ How much to raise or lower the volume, in dB, whenever the fixed-gain path is us
 These settings decide which copy of a track plays when it is available from more than one source. [Which Source Plays](/source-selection/) explains them with examples.
 
 - <b>Which source plays.</b> The options are `Best quality [default]`, `Prefer local` and `Best quality for every track`. With the first two, an album plays all of its tracks from one source, and a playlist or folder plays from the source it comes from. Prefer local plays from your local and self-hosted sources before streaming services
-- <b>Upgrade copies below.</b> The options are `Off [default]`, `High-bitrate lossy`, `Lossless` and `Hi-res`. When the copy that would play is below the chosen quality, a better copy of the track plays instead
+- <b>Upgrade copies below.</b> The options are `Off [default]`, `High-bitrate lossy`, `Lossless` and `Hi-res`. When the copy that would play is below the chosen quality, a better copy of the track plays instead, when the track has one
 
 ### Streamserver Advanced Settings 
 
