@@ -258,6 +258,12 @@ Check the text-to-speech engine works at its source. With Home Assistant, test t
 
 If the host has **Advanced text-to-speech options** set, try removing them. A key the engine does not understand can make it reject the clip.
 
+### The host went quiet after a while
+
+Every break is one request to the text-to-speech engine, and a DJ makes roughly 20 to 30 of them an hour. The free tier of a cloud engine runs out fast at that rate, and a voice assistant that uses the same engine shares the quota.
+
+When the engine fails three breaks in a row, Music Assistant stops asking it for 15 minutes and then tries one break again. The music keeps playing in the meantime. The Music Assistant log says which engine failed. For a Home Assistant engine, the reason is in the Home Assistant log, and with a cloud engine that is usually a used-up quota.
+
 ### A show will not start
 
 The show needs a player, and that player has to be enabled and available. If the show has no default playback device, pick one before pressing **Play**.
