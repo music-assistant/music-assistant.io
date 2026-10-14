@@ -82,6 +82,7 @@ In the [Individual Player Settings](/settings/individual-player/), the [output c
 ## Known Issues / Notes
 
 - Reload kiosk pages after updating the provider to load the current playback protocol and browser assets.
+- Open Kiosk and its URL builder as standalone pages. Security headers block iframe embedding, including embedding in Home Assistant dashboards.
 - Browser audio needs a user gesture. If a registered player is silent, tap the kiosk page and start playback again.
 - Browser compatibility varies, especially on TVs. JavaScript, WebSocket and audio playback must work. HTML5 starts without loading the Sendspin SDK. If persistent storage is blocked, identity is retained only for the current page. Background tabs and sleeping devices may interrupt playback.
 - The browser must reach the kiosk port, MA's configured streaming address, and the Sendspin port when used. A custom HTTP port must also be reachable through your addon or container setup.
