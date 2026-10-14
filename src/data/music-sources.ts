@@ -101,8 +101,7 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "podcasts",
         icon: "/assets/icons/listen/podcasts.png",
         title: "Podcasts",
-        blurb:
-          "Follow shows and pick up each episode where you left off.",
+        blurb: "Follow shows and pick up each episode where you left off.",
       },
       {
         id: "audiobooks",
@@ -114,7 +113,8 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "live-concerts",
         icon: "/assets/icons/listen/live-concerts.png",
         title: "Live concert recordings",
-        blurb: "Soundboard and audience recordings of shows, often complete sets.",
+        blurb:
+          "Soundboard and audience recordings of shows, often complete sets.",
       },
       {
         id: "classical",
@@ -189,7 +189,15 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "japan",
         icon: "/assets/icons/listen/japan.svg",
         title: "日本 / Japan",
-        blurb: "Music uploaded by the Nico Nico community, much of it found nowhere else.",
+        blurb:
+          "Music uploaded by the Nico Nico community, much of it found nowhere else.",
+      },
+      {
+        id: "france",
+        icon: "/assets/icons/listen/france.svg",
+        title: "France",
+        blurb:
+          "French streaming with a catalogue of major and independent labels.",
       },
       {
         id: "mexico",
@@ -225,7 +233,8 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "usa",
         icon: "/assets/icons/listen/usa.svg",
         title: "United States",
-        blurb: "American radio, from satellite channels to personalised stations.",
+        blurb:
+          "American radio, from satellite channels to personalised stations.",
       },
     ],
   },
@@ -526,6 +535,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     slug: "music-providers/teddycloud",
     icon: "/assets/icons/teddycloud-icon.svg",
     categories: ["own-files", "audiobooks", "children"],
+  },
+  {
+    name: "Telmore Musik",
+    slug: "music-providers/telmore-musik",
+    icon: "/assets/icons/telmore.svg",
+    categories: ["streaming", "denmark"],
   },
   {
     name: "Tidal",
