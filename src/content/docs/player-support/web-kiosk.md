@@ -27,7 +27,7 @@ Choose music in Music Assistant, then listen through the kiosk device and see th
 3. Tap or press a key on the kiosk page to allow audio.
 4. Select the browser player in Music Assistant and start playback there.
 
-Keep the page open and the device awake. Reloading the page requires another tap or key press before it can play sound. The browser keeps its Player ID in local storage; clearing that storage or using another browser profile creates a new identity. Closing the last connection removes the player after a five-second grace period.
+Keep the page open and the device awake. Reloading the page requires another tap or key press before it can play sound. The browser keeps its Player ID in local storage; clearing that storage or using another browser profile creates a new identity. Closing the last connection removes the player after a five-second grace period while preserving saved Sendspin settings. A browser profile has one Sendspin identity; if different device IDs use it, the most recently registered kiosk takes ownership of the Sendspin bridge.
 
 ### URL builder
 
@@ -41,8 +41,11 @@ The bare `/kiosk` URL opens a Sendspin player with all additions disabled. Set `
 | `controls=1` | Show playback controls; requires an MA access token |
 | `party=1` | Show a QR code while a Party is active |
 | `viz=1` | Show a visualizer based on stored audio analysis |
-| `lyrics=1` | Show up to three lyric lines when lyrics are available |
+| `lyrics=1` | Show lyrics beside the artwork on wide screens, or three lines below on narrow screens |
 | `queue=1` | Show the queue; requires an MA access token |
+| `remote=1` | Enable arrow-key navigation and TV remote Back handling |
+| `lite=1` | Reduce decorative effects and visualizer work |
+| `wake_lock=1` | Request screen wake lock where the browser allows it |
 | `show_player_id=1` | Show an extra selectable Player ID badge |
 | `#token=<ma-access-token>` | Authorise controls and queue access with a URL fragment |
 | `device_id=<unique-id>` | Set an explicit identity for this browser player |
@@ -53,7 +56,7 @@ For example, `http://192.168.10.10:8098/kiosk?party=1&lyrics=1` enables the Part
 
 When no track is playing, the main title always shows the Player ID, independently of the optional badge. The subtitle shows Music Assistant and its server version. HTML5 or Sendspin artwork supplies the idle background.
 
-Click the Party QR beside the controls to enlarge it in place of the artwork. Click it again, or press Escape, to restore the artwork.
+The bottom-left mini-player artwork shows a Party QR when available, otherwise the Sendspin or HTML5 emblem. Click the QR to enlarge it in place of the main artwork. Click it again, or press Escape, to restore the artwork.
 
 ### Builder sign-in
 
@@ -80,9 +83,9 @@ In the [Individual Player Settings](/settings/individual-player/), the [output c
 
 - Reload kiosk pages after updating the provider to load the current playback protocol and browser assets.
 - Browser audio needs a user gesture. If a registered player is silent, tap the kiosk page and start playback again.
-- Browser compatibility varies, especially on TVs. JavaScript, WebSocket, local storage, and audio playback must work. Background tabs and sleeping devices may interrupt playback.
+- Browser compatibility varies, especially on TVs. JavaScript, WebSocket and audio playback must work. HTML5 starts without loading the Sendspin SDK. If persistent storage is blocked, identity is retained only for the current page. Background tabs and sleeping devices may interrupt playback.
 - The browser must reach the kiosk port, MA's configured streaming address, and the Sendspin port when used. A custom HTTP port must also be reachable through your addon or container setup.
-- Sendspin integration is experimental. Complete any pairing prompt shown by the kiosk. The bundled client supports 44.1/48 kHz, 16-bit stereo; available codecs depend on the browser. Without WebCodecs audio decoding, it uses FLAC/PCM.
+- Sendspin integration is experimental. Complete any pairing prompt shown by the kiosk. The bundled client supports 44.1/48 kHz, 16-bit stereo; available codecs depend on the browser. Opus and FLAC are advertised only after browser capability checks, with PCM as the baseline. If required Sendspin APIs are missing or the initial stream produces no decoded audio, the kiosk falls back to HTML5. HTTPS pages require an explicit secure `sendspin_url`; the kiosk does not assume port 8927 supports TLS.
 - HTML5 fallback does not provide synchronised playback. HTML5 plays individual tracks with flow mode disabled and does not support crossfade.
 - The visualizer requires stored audio analysis, lyrics require available lyric data, and the Party QR appears only while a Party is active.
 - The queue display shows a window around the current track, including queues longer than 200 items.
