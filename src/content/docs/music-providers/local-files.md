@@ -333,7 +333,7 @@ Loudness tags are read as well. If a file is tagged with ReplayGain or R128 loud
 
 ### Two Releases of the Same Album
 
-MusicBrainz counts a remaster as the same recording as the original. With Picard's tags, an album and its remaster, say the 1969 release and the 2009 remaster, are two albums in your library, while each of their tracks is merged into one library track that holds both files. Each album still plays its own tracks: from your files, those are the files in that album's folder, so the two releases are not mixed, unless **Which source plays** is set to **Best quality for every track**. [Which Source Plays](/source-selection/) explains how the source of an album is chosen.
+MusicBrainz counts a remaster as the same recording as the original. With Picard's tags, an album and its remaster, say the 1969 release and the 2009 remaster, are two albums in your library, while each of their tracks is merged into one library track that holds both files. Each album still plays its own tracks: from your files, those are the files in that album's folder, so the two releases are not mixed. A track of the album that is not in that folder plays from another copy, which can be the other release, and with **Which source plays** set to **Best quality for every track** each track plays its best copy. [Which Source Plays](/source-selection/) explains how the source of an album is chosen.
 
 To also have the remastered tracks as tracks of their own, there is no need to remove any tags. Turn on [Keep remastered versions apart](/source-selection/#keep-remastered-versions-apart) and name the remaster in the album title, for example `Abbey Road (2009 Remaster)`. Tracks that were merged before you turned it on stay merged.
 
