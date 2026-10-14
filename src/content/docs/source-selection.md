@@ -48,7 +48,9 @@ Podcasts and audiobooks keep playing from the source you started them from, so y
 
 **Upgrade copies below** sets the lowest quality you want to hear. It is off by default. When the copy that would play is below it, a better copy of the same track plays instead, if there is one, even when the album or playlist plays from another source or **Prefer local** is chosen.
 
-When none of the copies linked to a track reaches the chosen quality, Music Assistant looks for the track on your other streaming services when it plays, and keeps the copy it finds for the next time. Only tracks in your library are looked up. Podcasts and audiobooks are not upgraded: they keep playing from the source you started them from, so your progress stays with that account.
+When none of the copies linked to a track reaches the chosen quality, Music Assistant looks for the track on your other streaming services and keeps the copy it finds for the next time. A service that does not have the track is not asked again for a day. The lookup happens while the track before it plays, so only the track you start playback with can take a few seconds longer to begin, 5 seconds at most.
+
+Only tracks in your library are looked up, and podcasts and audiobooks are not upgraded at all: they keep playing from the source you started them from, so your progress stays with that account.
 
 | Option | What is upgraded |
 | --- | --- |
