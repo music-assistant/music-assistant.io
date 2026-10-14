@@ -71,7 +71,6 @@ In addition to the [Player Provider Settings](/settings/player-provider/), these
 | Setting | Default | Description |
 |:--|:--|:--|
 | HTTP port | 8098 | Port serving the kiosk and URL builder |
-| Player idle timeout | 30 minutes | Unregister disconnected idle players after this period |
 | Show notification when playback stops | Off | Show an informational notice after MA stops playback |
 | Sendspin bridge (experimental) | On | Enable experimental Sendspin integration |
 | Require MA sign-in for URL builder | Off | Protect the builder and player list |
