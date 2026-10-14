@@ -69,7 +69,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/), these
 |:--|:--|:--|
 | HTTP port | 8098 | Port serving the kiosk and URL builder |
 | Player idle timeout | 30 minutes | Unregister disconnected idle players after this period |
-| Show notification before closing player | Off | Show a confirmation dialog when stopping playback from MA |
+| Show notification when playback stops | Off | Show an informational notice after MA stops playback |
 | Sendspin bridge (experimental) | On | Enable experimental Sendspin integration |
 | Require MA sign-in for URL builder | Off | Protect the builder and player list |
 | Kiosk URL | Read-only | Copyable base player URL |
@@ -78,6 +78,7 @@ In the [Individual Player Settings](/settings/individual-player/), the [output c
 
 ## Known Issues / Notes
 
+- Reload kiosk pages after updating the provider to load the current playback protocol and browser assets.
 - Browser audio needs a user gesture. If a registered player is silent, tap the kiosk page and start playback again.
 - Browser compatibility varies, especially on TVs. JavaScript, WebSocket, local storage, and audio playback must work. Background tabs and sleeping devices may interrupt playback.
 - The browser must reach the kiosk port, MA's configured streaming address, and the Sendspin port when used. A custom HTTP port must also be reachable through your addon or container setup.
