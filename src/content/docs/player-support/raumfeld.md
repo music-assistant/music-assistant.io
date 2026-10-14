@@ -19,6 +19,8 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 - Grouped rooms play in sync, handled by the Raumfeld host itself
 - Gapless playback between tracks, including across grouped rooms (with flow mode on, the default)
 - A room's analog **Line-in** input is offered as a selectable source, where the device has one
+- Rooms can be switched off (standby) and on again from Music Assistant
+- Volume and mute are set per room, also for rooms in a group
 - Hi-res audio up to 192 kHz / 24 bit
 - Rooms are matched to the same speaker's Chromecast or DLNA representation, so they do not show up twice
 
@@ -42,5 +44,6 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 
 - **Pause is handled as stop.** Resuming picks up where you paused, but the Raumfeld app shows the room as stopped rather than paused
 - **With flow mode on, the Raumfeld app shows the track title but not its elapsed time or duration.** The time it shows runs on across the whole queue rather than starting again for each track. Music Assistant's own progress bar is correct. If you rely on the Raumfeld app's time display, switch flow mode off (see Settings)
-- **Stopping the Line-in puts the room into standby**, along with any rooms grouped with it, because a Raumfeld Line-in would otherwise keep playing. The next play from Music Assistant wakes them again
+- **Only a room that was switched off is shown as off.** A room that went into standby by itself after a while without music is shown as on, because it wakes up by itself for the next play. Switching a room off removes it from its group
+- **Stopping the Line-in switches the room off**, along with any rooms grouped with it, because a Raumfeld Line-in would otherwise keep playing. The next play from Music Assistant wakes them again
 - Using the Raumfeld integration in Home Assistant at the same time may result in both sending commands to the same speakers
