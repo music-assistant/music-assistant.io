@@ -167,7 +167,7 @@ Expanding the IMAGES section (only visible to users with the Administrators role
 
 The SOURCE DETAILS section (read only for other than users with the Administrator role) shows what music sources are linked to the artist (albums and tracks have a similar section) across the available sources. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a music source and across music sources. Cross linking across and within music sources occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new music source does not trigger linking across existing library items.
 
-When an item is available from several sources, Music Assistant picks the highest quality one at playback time. See [Stream Selection](/faq/tech-info/#stream-selection) for how that choice is made.
+When an item is available from several sources, Music Assistant picks which one plays. See [Which Source Plays](/source-selection/) for how that choice is made.
 
 The creation of links within the MA library to other identical items in the MA library (within or across sources) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
 

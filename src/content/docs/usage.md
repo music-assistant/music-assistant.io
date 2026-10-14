@@ -5,7 +5,7 @@ description: Information regarding various elements of Music Assistant
 
 # Overview
 
-Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These four pages are not a walkthrough of that.
+Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These pages are not a walkthrough of that.
 
 They cover the ideas the interface assumes you already understand, so that when something is not self-evident, the explanation is here.
 
@@ -13,6 +13,7 @@ They cover the ideas the interface assumes you already understand, so that when 
 - **[UI](/ui/)** — a tour of the interface itself, view by view
 - **[Groups](/faq/groups/)** — playing the same music on more than one speaker at once
 - **[Genres](/genres/)** — how Music Assistant categorises your library, and how to shape that
+- **[Which Source Plays](/source-selection/)** — which copy of a track plays when it is available from more than one source, and how to change that
 
 None of it needs reading end to end. Use the contents list to jump to whatever you are looking for.
 

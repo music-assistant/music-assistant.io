@@ -197,6 +197,7 @@ export default defineConfig({
             { label: "Dashboards", slug: "dashboards" },
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },
+            { label: "Which Source Plays", slug: "source-selection" },
           ],
         },
         {
