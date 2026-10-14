@@ -37,6 +37,8 @@ Open `http://<ma-host>:8098/` to choose the playback mode and optional additions
 
 The bare `/kiosk` URL opens a Sendspin player with all additions disabled. Set `sendspin=0` to use HTML5. `/web` remains an alias for `/kiosk`; the old `kiosk=1` parameter is no longer needed.
 
+Enable **Fullscreen button** in the URL builder to show a button in the upper-right corner, independently of playback controls. Click it to enter fullscreen and again to exit; exiting with Escape also updates the button. The button is hidden when the browser does not support fullscreen.
+
 | Parameter | Effect |
 |:--|:--|
 | `sendspin=0` | Use HTML5 playback instead of Sendspin |
@@ -48,6 +50,7 @@ The bare `/kiosk` URL opens a Sendspin player with all additions disabled. Set `
 | `remote=1` | Enable arrow-key navigation and TV remote Back handling |
 | `lite=1` | Reduce decorative effects and visualizer work |
 | `wake_lock=1` | Request screen wake lock where the browser allows it |
+| `fullscreen=1` | Show an optional enter/exit fullscreen button where supported |
 | `show_player_id=1` | Show an extra selectable Player ID badge |
 | `#token=<ma-access-token>` | Authorise controls and queue access with a URL fragment |
 | `device_id=<unique-id>` | Set an explicit identity for this browser player |
