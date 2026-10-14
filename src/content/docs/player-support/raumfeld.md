@@ -22,6 +22,15 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 - Hi-res audio up to 192 kHz / 24 bit
 - Rooms are matched to the same speaker's Chromecast or DLNA representation, so they do not show up twice
 
+## Playback started outside Music Assistant
+
+Music Assistant also shows what a room plays when the music was started somewhere else: Spotify Connect, or music and radio from the Raumfeld app. You see the source and the track, and get the controls the Raumfeld host allows for it. For an album or Spotify that is pause, next/previous and seek; for radio only stop.
+
+- A source you stopped can be resumed for about a minute. Music Assistant shows it as paused until then
+- Playing something from Music Assistant takes over the room
+- Music from another app that plays through the speaker's built-in Chromecast, such as the Tidal app, is not shown here
+- Pausing a track within its first seconds restarts it when you resume. The Raumfeld app does the same
+
 ## Configuration
 
 1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Teufel Raumfeld`.
@@ -40,7 +49,7 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 
 ## Known Issues / Notes
 
-- **Pause is handled as stop.** Resuming picks up where you paused, but the Raumfeld app shows the room as stopped rather than paused
+- **Pause is handled as stop for music played from Music Assistant.** Resuming picks up where you paused, but the Raumfeld app shows the room as stopped rather than paused
 - **With flow mode on, the Raumfeld app shows the track title but not its elapsed time or duration.** The time it shows runs on across the whole queue rather than starting again for each track. Music Assistant's own progress bar is correct. If you rely on the Raumfeld app's time display, switch flow mode off (see Settings)
 - **Stopping the Line-in puts the room into standby**, along with any rooms grouped with it, because a Raumfeld Line-in would otherwise keep playing. The next play from Music Assistant wakes them again
 - Using the Raumfeld integration in Home Assistant at the same time may result in both sending commands to the same speakers
