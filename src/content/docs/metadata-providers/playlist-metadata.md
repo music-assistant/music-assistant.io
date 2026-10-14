@@ -169,6 +169,8 @@ You can preview what one of your playlists looks like before you change anything
 
 Press **Generate preview** to see a cover for each style, together with the description the text engine would write.
 
+Previews count toward **Maximum generations per hour**, like the covers and descriptions made in the background. A preview that would go over the limit is refused, so pick fewer styles or try again later. Only one preview runs at a time.
+
 **AI Covers and Descriptions**
 
 - **Write descriptions with AI** (default: off) — Gives the playlists for AI a short description. See [AI Descriptions](#ai-descriptions)
