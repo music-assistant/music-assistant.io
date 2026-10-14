@@ -22,7 +22,7 @@ When the chosen copy can't be played, for example because its source is offline,
 
 ## Which source plays
 
-The **Which source plays** setting decides what wins when a track is available from more than one source. Music Assistant picks an album's source when you start the album, so after changing this setting, start an album that is already playing again to have it follow the new choice.
+The **Which source plays** setting decides what wins when a track is available from more than one source. Music Assistant picks an album's source when you queue the album, so a change applies to albums you queue after it. Switching to **Best quality for every track** also affects albums already in the queue.
 
 ### Best quality
 
