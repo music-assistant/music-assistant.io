@@ -71,10 +71,9 @@ BookOrbit keeps listening progress separately for each of its own users, so each
 
 ## Known Issues / Notes
 
-- This provider is experimental and currently supports audiobooks only
 - In the first instance of any problems ensure the server is running a recent <a href="https://github.com/bookorbit/bookorbit/releases" target="_blank" rel="noopener noreferrer">BookOrbit release</a>
 
 ## Not Yet Supported
 
-- Podcasts and ebooks
+- Podcasts
 - Recommendations on the Discover view
