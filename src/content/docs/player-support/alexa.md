@@ -19,7 +19,7 @@ Getting there is a long way from adding a provider and clicking save. You need s
 
 - Detects all Alexa devices linked to your Amazon account and registers them as players
 - Control playback (play, pause) on Alexa devices
--	Set and mute volume on Alexa devices
+-	Set and mute volume on Alexa devices. Alexa has no separate mute, so mute sets the volume to 0.
 
 ## Configuration
 
@@ -92,7 +92,8 @@ Alexa players use the standard [Individual Player Settings](/settings/individual
 ## Known Issues / Notes
 
 -	Commands sometimes fail in controlling devices if used too often (this is a limitation of the Alexa API)
--	State reporting is problematic therefore the playback status and volume shown in the MA UI may not reflect reality
+-	State reporting is problematic therefore the playback status shown in the MA UI may not reflect reality
+-	Volume changes made on the device show in MA within a few seconds while playing, and within 30 s otherwise
 -	Announcements and custom commands may have limited support depending on the device and region
 
 ## Not Yet Supported
