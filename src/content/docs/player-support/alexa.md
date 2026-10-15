@@ -19,7 +19,7 @@ Getting there is a long way from adding a provider and clicking save. You need s
 
 - Detects all Alexa devices linked to your Amazon account and registers them as players
 - Control playback (play, pause) on Alexa devices
--	Set and mute volume on Alexa devices. Alexa has no separate mute, so mute sets the volume to 0.
+-	Set and mute volume on Alexa devices
 
 ## Configuration
 
