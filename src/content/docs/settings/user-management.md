@@ -21,7 +21,7 @@ On the right side of each username is a ⋮ menu which has four menu items
 
 The dialog shown above appears when clicking on a username or via the ⋮ menu.
 
-Each user can be restricted to a specific set of players. Restricted users automatically gain access to any new browser window, desktop app, or mobile companion app player(s) linked to their profile. Which music sources a user can use is not set here. Each music source has an owner and a sharing setting instead, described below.
+Each user can be restricted to a specific set of players. Restricted users automatically gain access to any new browser window, desktop app, or mobile companion app player(s) linked to their profile. A player that has been [shared with other devices](/player-support/sendspin/#settings) counts as an ordinary speaker instead, so add it to the user's players if they should keep using it. Which music sources a user can use is not set here. Each music source has an owner and a sharing setting instead, described below.
 
 What a user sees the first time they sign in is covered under [First Run](/first-run/#the-first-time-a-user-signs-in).
 
