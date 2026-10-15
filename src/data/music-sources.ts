@@ -286,6 +286,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "podcasts", "classical", "uk"],
   },
   {
+    name: "BookOrbit",
+    slug: "music-providers/bookorbit",
+    icon: "/assets/icons/bookorbit-icon.png",
+    categories: ["own-files", "audiobooks"],
+  },
+  {
     name: "Builtin",
     slug: "music-providers/builtin",
     icon: "/assets/icon.png",
