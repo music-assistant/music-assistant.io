@@ -92,7 +92,8 @@ Alexa players use the standard [Individual Player Settings](/settings/individual
 ## Known Issues / Notes
 
 -	Commands sometimes fail in controlling devices if used too often (this is a limitation of the Alexa API)
--	State reporting is problematic therefore the playback status and volume shown in the MA UI may not reflect reality
+-	State reporting is problematic therefore the playback status shown in the MA UI may not reflect reality
+-	Volume changes made on the device show in MA within a few seconds while playing, and within 30 s otherwise
 -	Announcements and custom commands may have limited support depending on the device and region
 
 ## Not Yet Supported
