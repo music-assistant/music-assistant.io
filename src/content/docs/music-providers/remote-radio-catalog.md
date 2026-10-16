@@ -12,8 +12,14 @@ You provide the list's URL; this source does not include a station directory or
 recommend particular catalog hosts.
 
 Add one source for each catalog you want to follow. Each has its own name and
-refresh interval, and appears separately under Browse. Stations can also be
-imported into the Music Assistant library.
+appears separately under Browse. Music Assistant's library synchronization refreshes
+the station list; imported stations can be found through the library's search.
+
+This is useful for a publisher managing many changing live feeds, such as sports
+commentary, activity coverage or festival stages. The publisher updates one catalog
+instead of asking listeners to maintain every station separately. Refreshing the
+catalog updates the source's station names, stream addresses and, for JSON catalogs,
+logos. Existing library entries still follow MA's standard update rules.
 
 > [!NOTE]
 > This source requires a Music Assistant Server version containing the Remote Radio
@@ -39,23 +45,24 @@ imported into the Music Assistant library.
 
 1. Add **Remote Radio Catalog** in Music Assistant's music provider settings.
 2. Enter the full HTTP or HTTPS URL of an M3U, M3U8 or JSON station catalog.
-3. Set the refresh interval in minutes. The default is 30; the allowed range is 1–1440.
-4. Optionally give this source a friendly name using the provider's name field.
-5. Add the provider again for another catalog.
+3. Optionally give this source a friendly name using the provider's name field.
+4. Add the provider again for another catalog.
 
-For example, you can refresh **My Icecast Stations** every 5 minutes,
-**Community Radio** every 30 minutes, and **Personal Radio Collection** every 60
-minutes. Updating or removing one source does not change the others.
+Manage each source's radio library synchronization through MA's background tasks.
+The default schedule is every 12 hours; use MA's task controls to change its schedule
+or run a synchronization immediately. There is no separate provider refresh timer
+or minute-based refresh setting.
 
-Change an interval in that source's options. To change the catalog URL, use that
-source's reconfiguration flow. Give sources distinct names to recognize where
+To change the catalog URL, use that source's reconfiguration flow.
+Give sources distinct names to recognize where
 stations come from, especially when two catalogs contain the same station.
 
 ## Catalog formats
 
 Ask the catalog publisher for its station-list URL, not its website address.
-Files must be UTF-8 and no larger than 2 MiB. URLs containing a username and
-password are not supported.
+Files must be no larger than 2 MiB. UTF-8 is recommended; invalid UTF-8 bytes are
+replaced, so a damaged station title does not reject the whole list. URLs containing
+a username and password are not supported.
 
 An extended M3U or M3U8 station list looks like this:
 
@@ -96,8 +103,16 @@ supported, including a single source object or an array of sources.
   behavior applies to stations removed from a successfully refreshed catalog.
 - Conflicting duplicate IDs inside one catalog invalidate the download. Identical
   IDs in different source instances are allowed.
-- Turning off library synchronization leaves the catalog available under Browse
-  but stops automatic library imports.
+- Catalog updates are not live now-playing updates. Title and artist information
+  during playback depends on metadata provided by the stream and supported by MA.
+  Additional JSON fields such as `artist` and `title` are not imported by this provider.
+- Changes to station names and logos appear in the source's Browse listing after
+  synchronization. Existing library station names are not automatically overwritten.
+- Each source has its own catalog and provider mappings. Matching stations in the
+  combined library follows MA's standard radio matching rules, which may combine
+  identically named stations from different sources.
+- Turning off library synchronization stops automatic catalog refreshes and imports.
+  Browse and playback use the last loaded catalog (or fetch once if none is available).
 - AirPlay and Google Cast playback use the corresponding Music Assistant player
   providers. Add those players separately; this source only supplies radio stations.
 - Use catalogs and streams you are authorized to access. This provider cannot
