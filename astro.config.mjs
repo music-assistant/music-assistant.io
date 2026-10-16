@@ -266,6 +266,7 @@ export default defineConfig({
                 { label: "Smart Playlist", slug: "plugins/smart_playlist" },
                 { label: "Sonic Similarity", slug: "plugins/sonic-similarity" },
                 { label: "Spotify Connect", slug: "plugins/spotify-connect" },
+                { label: "Subsonic API", slug: "plugins/subsonic-server" },
                 {
                   label: "Subsonic Scrobbler",
                   slug: "plugins/subsonic_scrobble",
