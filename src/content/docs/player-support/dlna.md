@@ -21,6 +21,15 @@ Music Assistant has support for uPnP/DLNA based devices. This is a (somewhat) un
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
+### Manual IP addresses
+
+In normal circumstances Music Assistant will automatically discover all players on the network using multicast discovery ([explained here](/faq/networking/)). If your players are on a different subnet or VLAN than the Music Assistant server (where multicast does not reach), or if a player is not being discovered, its IP address can be manually added in the DLNA provider settings under `ADVANCED SETTINGS >> Manual IP addresses for discovery`. Music Assistant will then contact each configured address directly, without needing multicast, mDNS/SSDP reflection or the network scan option.
+
+- Only IPv4 addresses are accepted; invalid entries are skipped with a warning in the Music Assistant log
+- Give the player a fixed IP address (e.g. a DHCP reservation), as Music Assistant will only contact the configured address
+- Manually added players are discovered immediately after saving the setting and are then re-checked on the regular discovery cycle, so a player that was powered off appears automatically within 5 minutes of coming back online
+- The player must also be able to reach the Music Assistant server for audio streaming and events; if the player is on another subnet/VLAN, ensure the [Stream server](/settings/core/#streams) port is reachable from the player's network (check any firewalls between the networks)
+
 ## Settings
 
 For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages, including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Settings that differ or are specific to DLNA are:
@@ -33,7 +42,7 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 ## Known Issues / Notes
 
 - Some devices need special workarounds to enable playback. If playback is not working, look at the Music Assistant logs for clues and report an issue with these logs provided. Unfortunately due to the difficulty in resolving these issues they are low priority. If your device supports a different protocol then use that instead of raising an issue
-- If your device is not found then try turning on the option `allow network scan for discovery`. Note it can take up to 5 mins for players to be discovered (this also applies if a device is turned back on)
+- If your device is not found then add its IP address manually (see [Manual IP addresses](#manual-ip-addresses)) or try turning on the option `allow network scan for discovery`. Note it can take up to 5 mins for players to be discovered (this also applies if a device is turned back on)
 - DLNA speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, [queue flow mode](/faq/tech-info/#track-queueing) must be enabled in the player's settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - It is possible to group DLNA players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - Although Sonos devices are strictly also based on DLNA, they created their own extra layer on top of that such as crossfade support and many other goodies. It is therefore advised to use the Sonos Player provider with Music Assistant instead of the DLNA provider. MA disables any discovered Sonos DLNA devices by default
