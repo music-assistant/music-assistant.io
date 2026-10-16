@@ -30,7 +30,7 @@ When starting the app for the first time you are asked for some information abou
 
 ## Features
 
-- Native Audio Playback - High-quality audio output via [Sendspin](/player-support/sendspin/), MA's own streaming technology, with selection of the output device
+- Native Audio Playback - High-quality audio output via [Sendspin](/player-support/sendspin/), MA's own streaming technology, with selection of the output device. The player is private to this computer until you turn on <b>Share with other devices</b> in its [player settings](/player-support/sendspin/#settings), which lets every other device play to it
 - System Tray Integration - Control playback and see what's playing from the system tray
 - OS Media Controls - Integrates with macOS Control Center, Windows Media Controls, and Linux media controls (MPRIS)
 - Discord Rich Presence - Show what you're listening to on Discord
