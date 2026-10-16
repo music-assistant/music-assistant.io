@@ -228,6 +228,7 @@ export default defineConfig({
                   label: "Ariacast Receiver",
                   slug: "plugins/ariacast-receiver",
                 },
+                { label: "DLNA Receiver", slug: "plugins/dlna-receiver" },
                 { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
                 { label: "Home Assistant", slug: "ha-plugin" },
                 {
