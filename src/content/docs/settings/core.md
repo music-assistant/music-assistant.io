@@ -53,7 +53,7 @@ Smart Shuffle enhances standard shuffle behavior by intelligently reducing repet
 
 **Optimize order for Smart Fades** is an optional Smart Shuffle setting. When Smart crossfade is active, Music Assistant uses existing Smart Fades analysis to arrange upcoming tracks so Smart Fades has a better chance of creating a smooth transition between consecutive tracks. It considers tempo, musical key and how the energy changes from the end of one track to the start of the next. Songs and artists played recently are still deprioritized according to the Smart Shuffle settings. No new analysis is started for this, and tracks without analysis are neither preferred nor penalized. Smart Fades still decides how the actual transition is mixed when the tracks play.
 
-A setting is available to enable Autoplay by default on all queues. Then Autoplay itself has four options as follows:
+A setting is available to enable Autoplay by default on all queues. Then Autoplay itself has five options as follows:
 - <b>Automatic — similar tracks, falling back to your library (default).</b> New tracks similar to what was recently played are requested from the music providers. If no provider is able to supply similar-track recommendations (for example, when only local files are used), an endless mix drawn from the library is used instead, so playback will not stop
 
 - <b>Similar to what you played.</b> Tracks that resemble the most recently played items in the queue are fetched from the connected music providers and appended to the queue. This mode relies on a provider that offers similar-track recommendations; if none is available, no tracks are added
@@ -61,6 +61,8 @@ A setting is available to enable Autoplay by default on all queues. Then Autopla
 - <b>Infinite mix from your library.</b> Tracks are selected from the local library, with preference given to those that have been played the least. The selection is biased towards the genres of the items that were played most recently; when too few matching tracks are found, the mix is topped up with random tracks from across the whole library.
 
 - <b>Tracks from a playlist.</b> The playlist the user has selected in the box below will be played
+
+- <b>Whole albums, same artist first.</b> When the queue runs low, the next album by the last track's artist is added. <b>Order to play an artist in</b> picks the album, and albums already in the queue are skipped. When the artist has no album left, an album by one of its similar artists plays. If none has one, Automatic picks the next album. This option needs an album order in <b>Order to play an artist in</b> and an artist selection other than top tracks. Turn off shuffle so each album plays in order.
 
 Crossfade can be enabled or disabled by default on all queues via a setting here and also can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/) is the default. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. This is the only place that the standard crossfade duration can be set.
 
