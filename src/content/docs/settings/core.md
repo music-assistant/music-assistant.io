@@ -31,6 +31,7 @@ The core server settings are set with typical defaults that should work for most
 
 ## Music
 
+- <b>Advanced - Keep remastered versions apart.</b> Off by default. Keeps a track or album that is named as a remaster, such as `Remastered 2009`, apart from the original in the library instead of merging the two. Tracks and albums that were already merged stay merged. Read [Keep remastered versions apart](/source-selection/#keep-remastered-versions-apart) before turning it on
 - <b>Advanced - Reset Library Database.</b> Selecting this button will erase the [MA library](/usage/#the-library) database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music sources will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
 
 ## Players
@@ -93,6 +94,13 @@ How much to raise or lower the volume, in dB, whenever the fixed-gain path is us
 ![image](/assets/screenshots/settings-streamserver-audio.png)
 
 - <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
+
+### Source Selection
+
+These settings decide which copy of a track plays when it is available from more than one source. [Which Source Plays](/source-selection/) explains them with examples.
+
+- <b>Which source plays.</b> The options are `Best quality [default]`, `Prefer local` and `Best quality for every track`. With the first two, an album plays all of its tracks from one source, and a playlist or folder plays from the source it comes from. Prefer local plays from your local and self-hosted sources before streaming services
+- <b>Upgrade copies below.</b> The options are `Off [default]`, `High-bitrate lossy`, `Lossless` and `Hi-res`. When the copy that would play is below the chosen quality, a better copy of the track plays instead, when the track has one
 
 ### Streamserver Advanced Settings 
 
