@@ -4,7 +4,7 @@ title: "I want to help"
 
 # I want to help <img src="/assets/icons/help-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by <a href="https://www.nabucasa.com" target="_blank" rel="noopener noreferrer">subscribing to Nabu Casa</a> but helping out can also be done in other ways:
+With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by [subscribing to Home Assistant Cloud](https://www.home-assistant.io/cloud/) (soon to be renamed to "Home Assistant Link", an optional subscription service provided via Open Home Foundation's commercial partner <a href="https://www.nabucasa.com/link/" target="_blank" rel="noopener noreferrer">Nabu Casa</a> where the funds to OHF and its projects, including Music Assistant), but you can also help out in many other ways as well:
 
 - If you like to help with the development, e.g. implementing a new music source or fix a player specific quirk, please reach out on Discord. There hasn't been time to write extended development docs but once you get the grasp of the structure it is relatively straight forward. The current documentation can be found here <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">Music Assistant Developer</a>. There are also <a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">Example Providers</a>. For ideas of what to do you can:
     - look at the [issues](https://github.com/music-assistant/support/issues)
@@ -18,9 +18,11 @@ With a large project like this, there is always plenty to do. Not only with actu
 
 ## Donations
 
-As explained above you can show your appreciation in all kinds of ways. If you wanted to support the project financially then you should support the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation (OHF)</a> by subscribing to <a href="https://www.nabucasa.com/" target="_blank" rel="noopener noreferrer">Nabu Casa</a>. You can also support the OHF by purchasing <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant Hardware</a> or <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">merch!</a>
+As explained above you can show your appreciation in all kinds of ways. If you wanted to support the project financially then you should support the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation (OHF)</a> by signing up to the optional to [Home Assistant Cloud / Home Assistant Link](https://www.home-assistant.io/cloud/) subscription service which helps to directly fund OHF and all its projects). 
 
-If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a Buy Me A Coffee or similar link. There are also links to the main devs GitHub page on the [Home Page.](/#the-core-team)
+You can also support this project by purchasing <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">merchandise from the official Open Home Foundation merch store!</a> and officially branded <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant hardware</a>.
+
+If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a donation or sponsor-link (via Buy Me A Coffee and similar). There are also links to each of the the lead/main core developers GitHub page on the [Home Page.](/#the-core-team)
 
 A really big thank you in advance from the whole team!
 
