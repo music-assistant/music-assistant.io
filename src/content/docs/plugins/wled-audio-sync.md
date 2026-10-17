@@ -27,7 +27,7 @@ Each sync zone you add shows up in Music Assistant as a light player, which you 
 - In Music Assistant, go to **Settings → Plugins → Add a plugin** and select **WLED Audio Sync**
 - Pick a port for the zone. The next unused one is filled in for you, starting at `11988`. To change it later, run the plugin setup again
 - On each WLED device you want in the zone, open `Config >> Usermods`, and in the `AudioReactive` section under `Sync` set `Port` to the same port and `Mode` to `Receive`
-- Join the WLED light player to any active Sendspin player or group, pick a sound-reactive effect on your WLED devices, and the lights will start reacting to the music
+- Join the WLED light player with a Sendspin player or group, pick a sound-reactive effect on your WLED devices, and the lights will start reacting to the music
 
 ### Settings
 
