@@ -8,7 +8,7 @@ pluginGroup: visuals
 
 This plugin makes your <a href="https://kno.wled.ge/" target="_blank" rel="noopener noreferrer">WLED</a> lights react to whatever Music Assistant is playing. WLED already has sound-reactive effects that normally listen to a microphone or line-in on the device. This plugin feeds them the music instead, over your network, so they follow exactly what is coming out of your speakers with no microphone needed.
 
-Each sync zone you add turns up in Music Assistant as if it were a speaker, and you group it with the player the music is coming from. A zone is not tied to one device: every WLED device set to listen on that zone's port joins in, so one zone can light up a whole room.
+Each sync zone you add shows up in Music Assistant as a light player, which you group with the player the music is coming from. Every WLED device set to that zone's port joins in, so one zone can light up a whole room. Add the plugin again for each extra zone.
 
 > [!CAUTION]
 > This plugin is marked experimental. Functionality may change and bugs may occur, and the default brightness response is still being tuned.
