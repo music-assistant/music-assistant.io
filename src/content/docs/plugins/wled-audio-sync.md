@@ -25,7 +25,7 @@ Each sync zone you add shows up in Music Assistant as a light player, which you 
 - The lights can only follow a [Sendspin](/player-support/sendspin/) player, so you need at least one of those. Sendspin is built into Music Assistant, and the web player in your browser is one
 - Your WLED devices need a build that includes the Audio Reactive usermod, which the standard ESP32 builds do. It is not available on ESP8266
 - In Music Assistant, go to **Settings → Plugins → Add a plugin** and select **WLED Audio Sync**
-- Pick a port for the zone. The next unused one is filled in for you, starting at `11988`
+- Pick a port for the zone. The next unused one is filled in for you, starting at `11988`. To change it later, run the plugin setup again
 - On each WLED device you want in the zone, open `Config >> Usermods`, and in the `AudioReactive` section under `Sync` set `Port` to the same port and `Mode` to `Receive`
 - Join the WLED light player to any active Sendspin player or group, pick a sound-reactive effect on your WLED devices, and the lights will start reacting to the music
 
