@@ -94,7 +94,7 @@ OpenID Connect creates a separate account even if its username or email matches 
 
 Turning off OpenID Connect self-registration blocks new identities while allowing existing linked accounts to sign in. Disabling a Music Assistant account also blocks its OpenID Connect sign-in. Identity-provider groups do not assign Music Assistant roles.
 
-Signing out ends the current Music Assistant session. It does not sign you out of your identity provider or other applications. Disabling someone at the identity provider prevents future sign-ins, but does not revoke Music Assistant sessions already issued. To remove their Music Assistant access immediately, disable the account in User Management.
+Signing out ends the current Music Assistant session. It does not sign you out of your identity provider or other applications. Users can also set a local password in their Music Assistant profile. Disabling someone at the identity provider prevents future sign-ins through that provider, but does not revoke Music Assistant sessions or local password access. To remove their Music Assistant access immediately, disable the account in User Management.
 
 ### Recovery and limitations
 
