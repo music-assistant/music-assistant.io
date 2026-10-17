@@ -60,6 +60,48 @@ The Home Assistant integration signs in with an account of its own, shown with a
 
 The Service role can do what the User role can, and it can also see the other users, change player settings and act on behalf of other users. It cannot own a music source, although a music source can be shared with it.
 
+## OpenID Connect sign-in
+
+OpenID Connect lets people sign in through an identity provider such as Authentik. Enable it in **Settings → System → Webserver**. It is off by default. Password sign-in and any configured Home Assistant sign-in stay available.
+
+### Configuration
+
+Create a local administrator first and keep its password for recovery. Use HTTPS for the Music Assistant web address. If you use a reverse proxy, set **Internal URL** to the address people use to open Music Assistant.
+
+1. Register an application at your identity provider using the authorization code flow with PKCE S256 and signed ID tokens. For a Music Assistant address of `https://music.example.com`, register this exact redirect URI, including its query:
+
+   ```text
+   https://music.example.com/auth/callback?provider_id=oidc
+   ```
+
+   If people sign in through both the Internal URL and an External URL, register a callback for each address.
+2. In Music Assistant, enable **Enable OpenID Connect** and enter the **Identity provider name**. This appears on the sign-in button.
+3. Enter the **OpenID Connect issuer**, **OpenID Connect client ID** and **OpenID Connect client secret** from your provider. Copy the issuer exactly, including a trailing slash if present. The issuer must use HTTPS.
+4. In advanced settings, check **Token endpoint authentication** matches the application you registered. The default is `client_secret_basic`. Use `client_secret_post` if your provider requires it, or `none` for a public client with PKCE and no client secret.
+5. Restrict who can access the application at your identity provider. Then enable **Allow OpenID Connect self-registration** to let those people create Music Assistant accounts on their first sign-in.
+
+Music Assistant requests the `openid` and `profile` scopes. A new account receives the **User** role. An administrator can change its role and player access in User Management.
+
+### Authentik
+
+Create an OAuth2/OpenID provider and its application in Authentik. Choose a confidential client, enable the **Authorization code** grant type, and select a signing key, the `openid` and `profile` scope mappings, and the redirect URI above. Keep the provider's default issuer mode, **Each provider has a different issuer**. The global issuer mode is not supported.
+
+An issuer typically looks like `https://auth.example.com/application/o/music-assistant/`. Open its `.well-known/openid-configuration` document and copy the `issuer` value into Music Assistant. Set the identity provider name to **Authentik** to show **Sign in with Authentik** on the login page. See the <a href="https://docs.goauthentik.io/add-secure-apps/providers/oauth2/" target="_blank" rel="noopener noreferrer">Authentik provider documentation</a> for its application settings.
+
+### Existing accounts and access
+
+OpenID Connect creates a separate account even if its username or email matches an existing local or Home Assistant account. It does not automatically link accounts. A matching username receives a different available name. Subsequent sign-ins with the same provider identity use the same Music Assistant account and keep its role and restrictions.
+
+Turning off OpenID Connect self-registration blocks new identities while allowing existing linked accounts to sign in. Disabling a Music Assistant account also blocks its OpenID Connect sign-in. Identity-provider groups do not assign Music Assistant roles.
+
+Signing out ends the current Music Assistant session. It does not sign you out of your identity provider or other applications. Disabling someone at the identity provider prevents future sign-ins, but does not revoke Music Assistant sessions already issued. To remove their Music Assistant access immediately, disable the account in User Management.
+
+### Recovery and limitations
+
+If the identity provider is unavailable or misconfigured, use your local administrator's username and password to sign in and correct the Webserver settings. Turning off OpenID Connect removes its sign-in button without removing users or their provider links.
+
+When using Remote Access, OpenID Connect needs an **External URL** that the browser can reach. The remote app alone cannot complete this sign-in flow. Keep a backup of Music Assistant's data before downgrading to a version without OpenID Connect support after creating linked accounts.
+
 ## Personal and shared music sources
 
 Every music source is either shared or personal.
