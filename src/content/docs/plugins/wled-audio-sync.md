@@ -32,12 +32,12 @@ Each sync zone you add turns up in Music Assistant as if it were a speaker, and 
 ### Settings
 
 - <b>Zone port.</b> The port that identifies this zone. It is not the address of a device; every WLED device set to the same port joins the zone. Use a different port for each zone so they do not interfere with each other. Default `11988`.
-- <b>Sync latency (ms).</b> Milliseconds to send the music information ahead of the audio, to offset the delay of the speaker you have grouped with (0-3000). Default `100`. Increase if the lights lag the music, decrease if they run ahead of it.
-- <b>Gain (dB).</b> Boosts the levels sent to WLED (-20 to 40). Default `6`. Increase if the effects look dim or flat and never reach their full range, decrease if they are stuck at maximum.
-- <b>Scaling mode.</b> How quiet and loud passages are balanced, matching the options on WLED's own Audio Reactive settings:
-    - <b>Square Root</b> (default) - balanced, a good place to start.
-    - <b>Linear</b> - the most contrast between quiet and loud, but easily maxes out.
-    - <b>Logarithmic</b> - the gentlest, lifting quiet passages the most.
+- <b>Light timing (ms).</b> Makes the lights react slightly earlier so they stay in step with your speaker (0-3000). Default `100`. Increase if the lights lag the music, decrease if they run ahead of it.
+- <b>Sensitivity.</b> How strongly the lights react to the music (-20 to 40). Default `6`. Increase if the effects look dim or flat and never reach their full range, decrease if they are stuck at maximum.
+- <b>Light response.</b> How the lights react to quiet and loud parts of the music:
+    - <b>Balanced</b> (default) - a good place to start.
+    - <b>Punchy</b> - the most contrast between quiet and loud, but easily maxes out.
+    - <b>Smooth</b> - the gentlest, lifting quiet passages the most.
 
 > [!CAUTION]
 > Many of WLED's sound-reactive effects produce rapid flashing. Avoid them if you or anyone present is sensitive to flashing lights.
