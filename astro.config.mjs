@@ -271,6 +271,7 @@ export default defineConfig({
                   slug: "plugins/subsonic_scrobble",
                 },
                 { label: "VBAN Receiver", slug: "plugins/vban-receiver" },
+                { label: "WLED Audio Sync", slug: "plugins/wled-audio-sync" },
                 {
                   label: "Yandex Music Connect (Ynison)",
                   slug: "plugins/yandex-ynison",
