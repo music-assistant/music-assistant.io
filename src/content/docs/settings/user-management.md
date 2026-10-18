@@ -155,7 +155,7 @@ Set **OpenID Connect groups claim** to the claim holding the list of group names
 
 Roles are synchronized at each successful OpenID Connect sign-in. Group changes are not pushed immediately to Music Assistant. To withdraw current access immediately, end the Authentik session with logout notifications enabled, or disable the Music Assistant account.
 
-When mapping is configured, missing, malformed or unmatched groups deny sign-in and end existing OpenID Connect sessions for that identity. Removing an administrator group can demote the account on its next sign-in. Keep a separate local recovery administrator. If a role change would remove the last administrator or give someone who owns music sources a role that cannot own them, sign-in is denied and their OpenID Connect sessions are ended; an administrator must resolve the role or ownership conflict. Account data and music sources are preserved.
+When mapping is configured, missing, malformed or unmatched groups deny sign-in and end existing OpenID Connect sessions for that identity. Removing an administrator group can demote the account on its next sign-in. Keep a second administrator for recovery; it can use OIDC or a local password. If a role change would remove the last administrator or give someone who owns music sources a role that cannot own them, sign-in is denied and their OpenID Connect sessions are ended; an administrator must resolve the role or ownership conflict. Account data and music sources are preserved.
 
 After resolving denied access, allow up to 30 seconds before trying again. This accounts for small clock differences between Music Assistant and the identity provider.
 
