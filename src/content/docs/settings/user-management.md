@@ -80,7 +80,7 @@ For setup through the settings UI, create a local administrator first. Alternati
 4. In advanced settings, check **Token endpoint authentication** matches the application you registered. The default is `client_secret_basic`. Use `client_secret_post` if your provider requires it, or `none` for a public client with PKCE and no client secret.
 5. Restrict who can access the application at your identity provider. Then enable **Allow OpenID Connect self-registration** to let those people create Music Assistant accounts on their first sign-in.
 
-Music Assistant requests the `openid` and `profile` scopes. A new account receives the **User** role unless you configure group-to-role mapping. An administrator can change its player access in User Management.
+Music Assistant requests the `openid` and `profile` scopes by default. Use **OpenID Connect scopes** in advanced settings to request additional scopes required by your provider, such as `openid profile groups` for Authelia's group claims. The `openid` scope is always included. A new account receives the **User** role unless you configure group-to-role mapping. An administrator can change its player access in User Management.
 
 ### Authentik
 
@@ -103,6 +103,7 @@ To bootstrap a new server through your identity provider, set `MASS_OIDC_CONFIG_
   "allow_self_registration": true,
   "backchannel_logout": true,
   "groups_claim": "groups",
+  "scopes": "openid profile",
   "role_mapping": {
     "music-admins": "admin",
     "music-users": "user"
@@ -121,7 +122,7 @@ volumes:
 
 Register `https://music.example.com/auth/callback?provider_id=oidc` at your identity provider and include the user's groups in the ID token or UserInfo response. With the example mapping, a member of `music-admins` signs in first and completes the normal setup wizard. No local password account is created. Other groups cannot claim the initial setup, and the local account creation endpoint is disabled until an OIDC administrator exists. Afterward, members of `music-users` can sign in as regular users.
 
-`bootstrap_admin` requires self-registration and an explicit mapping to the built-in `admin` role. The first matching group in `role_mapping` wins, so list administrator groups first. Without `bootstrap_admin`, the file configures OIDC but initial setup still uses a local or Home Assistant administrator.
+`bootstrap_admin` requires self-registration and an explicit mapping to the built-in `admin` role. The first matching group in `role_mapping` wins, so list administrator groups first. If your provider requires an additional scope for group membership, include it in `scopes`; for example, use `openid profile groups` for Authelia. Without `bootstrap_admin`, the file configures OIDC but initial setup still uses a local or Home Assistant administrator.
 
 The file controls OIDC and **Internal URL**; the settings UI shows a deployment-managed notice. `base_url` must be an HTTPS origin without a path. Update the file and restart Music Assistant to change these settings. Invalid or unreadable configuration stops startup instead of falling back to local setup. Existing accounts and sessions are preserved, and the file's client secret is not copied into `settings.json`.
 
