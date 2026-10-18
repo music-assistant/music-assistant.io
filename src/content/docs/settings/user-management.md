@@ -80,7 +80,7 @@ Create a local administrator first and keep its password for recovery. Use HTTPS
 4. In advanced settings, check **Token endpoint authentication** matches the application you registered. The default is `client_secret_basic`. Use `client_secret_post` if your provider requires it, or `none` for a public client with PKCE and no client secret.
 5. Restrict who can access the application at your identity provider. Then enable **Allow OpenID Connect self-registration** to let those people create Music Assistant accounts on their first sign-in.
 
-Music Assistant requests the `openid` and `profile` scopes. A new account receives the **User** role. An administrator can change its role and player access in User Management.
+Music Assistant requests the `openid` and `profile` scopes. A new account receives the **User** role unless you configure group-to-role mapping. An administrator can change its player access in User Management.
 
 ### Authentik
 
@@ -88,13 +88,45 @@ Create an OAuth2/OpenID provider and its application in Authentik. Choose a conf
 
 An issuer typically looks like `https://auth.example.com/application/o/music-assistant/`. Open its `.well-known/openid-configuration` document and copy the `issuer` value into Music Assistant. Set the identity provider name to **Authentik** to show **Sign in with Authentik** on the login page. See the <a href="https://docs.goauthentik.io/add-secure-apps/providers/oauth2/" target="_blank" rel="noopener noreferrer">Authentik provider documentation</a> for its application settings.
 
+### Logout notifications
+
+To end Music Assistant sessions when the identity provider signs someone out, enable **Accept OpenID Connect logout notifications** in advanced Webserver settings. Register this back-channel logout URL at the provider:
+
+```text
+https://music.example.com/auth/oidc/backchannel-logout
+```
+
+In Authentik, set the OAuth2 provider's **Logout URI** to that address and **Logout Method** to **Back-channel**. Authentik must be able to reach the address and trust its HTTPS certificate. This also allows Authentik to end linked Music Assistant sessions when an administrator deletes the identity-provider session or deactivates the user. See <a href="https://docs.goauthentik.io/add-secure-apps/providers/oauth2/frontchannel_and_backchannel_logout/" target="_blank" rel="noopener noreferrer">Authentik's logout documentation</a>.
+
+Only the matching OpenID Connect sessions are ended. A session-specific notification preserves sessions on other devices. A notification for the whole identity ends all its OpenID Connect sessions for this client. Active connections are disconnected, and logout still works after a Music Assistant restart.
+
+Existing sessions are preserved during an upgrade. Sessions created before logout tracking was available need a fresh OpenID Connect sign-in before the provider can end them. Local password sessions and separately created long-lived access tokens remain under Music Assistant's control.
+
+### Group-to-role mapping
+
+Leave **OpenID Connect group-to-role mapping** empty to manage roles in Music Assistant. To manage them through your identity provider, enter a JSON object in that advanced setting, for example:
+
+```json
+{"music-admins": "admin", "music-users": "user", "music-guests": "guest"}
+```
+
+Use exact group names. The first matching entry wins, regardless of the order of groups returned by the provider. Values are Music Assistant role IDs: `admin`, `user`, `guest`, or the ID of an existing custom role. The Home Assistant `service` role cannot be assigned this way.
+
+Set **OpenID Connect groups claim** to the claim holding the list of group names; the default is `groups`. In Authentik, the standard `profile` mapping supplies groups. Include that mapping on the provider and either enable **Include claims in id_token** or make the groups available through UserInfo.
+
+Roles are synchronized at each successful OpenID Connect sign-in. Group changes are not pushed immediately to Music Assistant. To withdraw current access immediately, end the Authentik session with logout notifications enabled, or disable the Music Assistant account.
+
+When mapping is configured, missing, malformed or unmatched groups deny sign-in and end existing OpenID Connect sessions for that identity. Removing an administrator group can demote the account on its next sign-in. Keep a separate local recovery administrator. If a role change would remove the last administrator or give someone who owns music sources a role that cannot own them, sign-in is denied and their OpenID Connect sessions are ended; an administrator must resolve the role or ownership conflict. Account data and music sources are preserved.
+
+After resolving denied access, allow up to 30 seconds before trying again. This accounts for small clock differences between Music Assistant and the identity provider.
+
 ### Existing accounts and access
 
-OpenID Connect creates a separate account even if its username or email matches an existing local or Home Assistant account. It does not automatically link accounts. A matching username receives a different available name. Subsequent sign-ins with the same provider identity use the same Music Assistant account and keep its role and restrictions.
+OpenID Connect creates a separate account even if its username or email matches an existing local or Home Assistant account. It does not automatically link accounts. A matching username receives a different available name. Subsequent sign-ins with the same provider identity use the same Music Assistant account and keep its player restrictions. Roles are preserved unless group-to-role mapping is configured.
 
-Turning off OpenID Connect self-registration blocks new identities while allowing existing linked accounts to sign in. Disabling a Music Assistant account also blocks its OpenID Connect sign-in. Identity-provider groups do not assign Music Assistant roles.
+Turning off OpenID Connect self-registration blocks new identities while allowing existing linked accounts to sign in. Disabling a Music Assistant account also blocks its OpenID Connect sign-in.
 
-Signing out ends the current Music Assistant session. It does not sign you out of your identity provider or other applications. Users can also set a local password in their Music Assistant profile. Disabling someone at the identity provider prevents future sign-ins through that provider, but does not revoke Music Assistant sessions or local password access. To remove their Music Assistant access immediately, disable the account in User Management.
+Signing out of Music Assistant ends the current Music Assistant session. It does not sign you out of your identity provider or other applications. Users can also set a local password in their Music Assistant profile. Logout notifications and group mapping do not make an account exclusively managed by the identity provider: local password access and separately created access tokens remain available. To remove all Music Assistant access immediately, disable the account in User Management.
 
 ### Recovery and limitations
 
