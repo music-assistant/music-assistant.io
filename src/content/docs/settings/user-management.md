@@ -66,7 +66,7 @@ OpenID Connect lets people sign in through an identity provider such as Authenti
 
 ### Configuration
 
-Create a local administrator first and keep its password for recovery. Use HTTPS for the Music Assistant web address. If you use a reverse proxy, set **Internal URL** to the address people use to open Music Assistant.
+For setup through the settings UI, create a local administrator first. Alternatively, use [deployment-managed setup](#setup-without-a-local-account) to start with an OpenID Connect administrator and no local password. Use HTTPS for the Music Assistant web address. If you use a reverse proxy, set **Internal URL** to the address people use to open Music Assistant.
 
 1. Register an application at your identity provider using the authorization code flow with PKCE S256 and signed ID tokens. For a Music Assistant address of `https://music.example.com`, register this exact redirect URI, including its query:
 
@@ -87,6 +87,45 @@ Music Assistant requests the `openid` and `profile` scopes. A new account receiv
 Create an OAuth2/OpenID provider and its application in Authentik. Choose a confidential client, enable the **Authorization code** grant type, and select a signing key, the `openid` and `profile` scope mappings, and the redirect URI above. Keep the provider's default issuer mode, **Each provider has a different issuer**. The global issuer mode is not supported.
 
 An issuer typically looks like `https://auth.example.com/application/o/music-assistant/`. Open its `.well-known/openid-configuration` document and copy the `issuer` value into Music Assistant. Set the identity provider name to **Authentik** to show **Sign in with Authentik** on the login page. See the <a href="https://docs.goauthentik.io/add-secure-apps/providers/oauth2/" target="_blank" rel="noopener noreferrer">Authentik provider documentation</a> for its application settings.
+
+### Setup without a local account
+
+To bootstrap a new server through your identity provider, set `MASS_OIDC_CONFIG_FILE` to a JSON file readable by Music Assistant. Mount it read-only as a deployment secret; keep the normal Music Assistant data directory writable.
+
+```json
+{
+  "base_url": "https://music.example.com",
+  "issuer": "https://auth.example.com/application/o/music-assistant/",
+  "client_id": "music-assistant",
+  "client_secret": "replace-with-your-client-secret",
+  "name": "Authentik",
+  "bootstrap_admin": true,
+  "allow_self_registration": true,
+  "backchannel_logout": true,
+  "groups_claim": "groups",
+  "role_mapping": {
+    "music-admins": "admin",
+    "music-users": "user"
+  }
+}
+```
+
+For example, add these fields to your container configuration:
+
+```yaml
+environment:
+  MASS_OIDC_CONFIG_FILE: /run/secrets/music-assistant-oidc.json
+volumes:
+  - ./music-assistant-oidc.json:/run/secrets/music-assistant-oidc.json:ro
+```
+
+Register `https://music.example.com/auth/callback?provider_id=oidc` at your identity provider and include the user's groups in the ID token or UserInfo response. With the example mapping, a member of `music-admins` signs in first and completes the normal setup wizard. No local password account is created. Other groups cannot claim the initial setup, and the local account creation endpoint is disabled until an OIDC administrator exists. Afterward, members of `music-users` can sign in as regular users.
+
+`bootstrap_admin` requires self-registration and an explicit mapping to the built-in `admin` role. The first matching group in `role_mapping` wins, so list administrator groups first. Without `bootstrap_admin`, the file configures OIDC but initial setup still uses a local or Home Assistant administrator.
+
+The file controls OIDC and **Internal URL**; the settings UI shows a deployment-managed notice. `base_url` must be an HTTPS origin without a path. Update the file and restart Music Assistant to change these settings. Invalid or unreadable configuration stops startup instead of falling back to local setup. Existing accounts and sessions are preserved, and the file's client secret is not copied into `settings.json`.
+
+If Authentik is unavailable or the admin group is misconfigured, restore the provider or correct the mounted configuration and restart. A local recovery account is optional. This setup does not prevent administrators from creating local accounts or users from adding passwords later.
 
 ### Logout notifications
 
@@ -130,7 +169,7 @@ Signing out of Music Assistant ends the current Music Assistant session. It does
 
 ### Recovery and limitations
 
-If the identity provider is unavailable or misconfigured, use your local administrator's username and password to sign in and correct the Webserver settings. Turning off OpenID Connect removes its sign-in button without removing users or their provider links.
+If you have a local administrator, use its password to sign in when the identity provider is unavailable. Correct OIDC settings in the Webserver settings or, for deployment-managed setup, in the mounted file followed by a restart. Without a local account, restore the identity provider or its configuration. Turning off OpenID Connect removes its sign-in button without removing users or their provider links.
 
 When using Remote Access, OpenID Connect needs an **External URL** that the browser can reach. The remote app alone cannot complete this sign-in flow. Keep a backup of Music Assistant's data before downgrading to a version without OpenID Connect support after creating linked accounts.
 
