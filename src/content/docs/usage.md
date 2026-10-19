@@ -35,7 +35,7 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
-In order to make all available content accessible in a digestible manner many of the expandable views are filtered by provider. The open box icon is shown when a section is expanded and indicates that multiple providers can populate the section. Note only one can be selected at any one time. In the screenshot above "All albums" is collapsed, so the provider selection icon is not shown. Immediately below is the "Top tracks" section which is expanded and does show the icon. In both cases the currently selected provider is shown on the left side. 
+Sections such as **Top tracks** and **Similar artists** on an artist page have a source chip (for example **All sources**) to choose which source fills them.
 
 ### Favorites and dislikes
 
@@ -145,7 +145,7 @@ Only playlists that live in the Music Assistant library can be exported; provide
 
 **Importing a playlist**
 
-On the Playlists page, there is an option in the toolbar menu to `Import playlist`, select it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
+On the Playlists page, the ⋮ menu in the top right has **Import playlist**. Select it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
 
 In the import dialog, you will see a `Search for tracks on` list with a checkbox for each installed music provider. These are the providers MA will search when a track in the file can't be played directly (for example, the file references a Spotify track but Spotify is no longer installed, or you are importing a M3U that someone else exported).
 
