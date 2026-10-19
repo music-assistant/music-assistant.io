@@ -74,7 +74,7 @@ Who else can use a source depends on its sharing:
 - <b>All users except guests.</b> Everyone signed in with a role other than Guest
 - <b>Everyone, including guests.</b> Any user
 
-An administrator sets the owner and the sharing with **Access** in the source's ⋮ menu under [Settings → Music Sources](/settings/music-provider-settings/#owner-and-sharing). A source an administrator adds starts out shared with everyone, including guests. To set one up for themselves or for a user, they add it, make that person its owner and choose who else can use it, for example **Only me**. The owner of a personal source changes who it is shared with through **Sharing** in the same menu. Only an administrator can change the owner.
+An administrator sets the owner and the sharing with **Access** in the source's ⋮ menu under [Settings → Music sources](/settings/music-provider-settings/#owner-and-sharing). A source an administrator adds starts out shared with everyone, including guests. To set one up for themselves or for a user, they add it, make that person its owner and choose who else can use it, for example **Only me**. The owner of a personal source changes who it is shared with through **Sharing** in the same menu. Only an administrator can change the owner.
 
 Users only see what comes from the music sources they can use, in the library, when browsing and in search. That includes administrators, although they see every source in the settings so they can manage it. When you play something, Music Assistant uses your own accounts first and never uses an account that is not shared with you.
 
