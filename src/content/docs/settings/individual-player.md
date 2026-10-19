@@ -164,7 +164,11 @@ Universal Groups default to `Profile 1 - chunked` for the HTTP Profile, rather t
 
 ## Announcements Configuration
 
-There are a number of configurable options for controlling the volume of [announcements](/integration/announcements/) sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
+There are a number of configurable options for controlling the volume of [announcements](/integration/announcements/) sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field.
+
+- <b>Volume strategy.</b> There are four options: `Absolute volume`, `Relative volume increase`, `Volume increase by fixed percentage [default]` and `Do not adjust volume`. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected
+- <b>Pre-announcement chime.</b> A checkbox that plays a chime before the announcement
+- <b>Custom (pre)announcement chime URL.</b> The address of a sound to play as the chime instead of the built-in one
 
 ![image](/assets/screenshots/announcements-settings.png)
 

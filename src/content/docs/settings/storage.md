@@ -51,7 +51,7 @@ A network share that Music Assistant added has three buttons:
 - <b>Edit.</b> Changes the settings of the share. The password is not shown. Leave it empty to keep the current one
 - <b>Remove.</b> Disconnects the share. The files on it are not deleted
 
-When a location holds the folder of an enabled music source, it shows **Used by** with the name of that source, and it cannot be removed. Disable or remove that music source first. The source is named on the location closest to its folder. A location around that one cannot be removed either.
+When a location holds the folder of an enabled music source, it cannot be removed, and it says so with the name of that source, for example **Local files uses this location. Disable or remove that music source first.** The source is named on the location closest to its folder. A location around that one cannot be removed either.
 
 A location can also lie inside the folder of a music source. A source on `/media` reads every network share below it, for example. Such a location shows **Also read by** with the name of that source. It can be removed. The source then drops the items of that share from the library at its next sync, and Music Assistant tells you so before you confirm.
 

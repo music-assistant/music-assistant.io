@@ -11,6 +11,8 @@ Remote Access allows you to securely connect to your Music Assistant server from
 - Toggle the Remote Access Status to on. Setup is automatic and further instructions are shown in the MA UI
 - If you have a <a href="https://www.nabucasa.com/" target="_blank" rel="noopener noreferrer">Nabu Casa</a> (Home Assistant Cloud) subscription, ensure the option `WebRTC Connections` (in the Home Assistant Cloud settings) is ON
 
+To connect from elsewhere, go to <a href="https://app.music-assistant.io" target="_blank" rel="noopener noreferrer">app.music-assistant.io</a> and enter **Your Remote Access ID** shown on this page, or scan the QR code shown below it.
+
 For most users this is all that is needed.
 
 ## Links shared with guests

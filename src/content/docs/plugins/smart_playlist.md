@@ -10,8 +10,8 @@ The Smart Playlists plugin lets you create rule-based playlists from your Music 
 
 Smart playlists are **dynamic**: the tracks are re-evaluated whenever you play the playlist, based on your saved rules and current library/provider state.
 
-:::caution[Experimental]
-This plugin is currently marked as **experimental**. Behaviour may change before the final release.
+:::caution[Beta]
+This plugin is currently marked as **BETA**. Behaviour may change before the final release.
 :::
 
 ## Installation
@@ -22,7 +22,7 @@ Enable the **Smart Playlists** plugin via **Settings → Plugins → Add a plugi
 
 ## Creating a Smart Playlist
 
-In the Playlists view, select the <img src="/assets/screenshots/smart_playlist/create_button.png" alt="Create Smart Playlist button" style="height: 1.4em; vertical-align: middle;" loading="lazy" /> button in the top right and choose **Create Smart Playlist**.
+In the Playlists view, open the ⋮ menu in the top right and choose **Create new playlist on** → **Create Smart Playlist**.
 
 ![Create Smart Playlist menu](/assets/screenshots/smart_playlist/menu_entry.png)
 
@@ -37,11 +37,11 @@ The screenshot above shows **From my library** mode (rule-based setup).
 Enter a name and choose a source mode:
 
 - **From my library**: build from tracks already in your MA library.
-- **Discover mode**: use one or more seed items (tracks, artists, albums, or playlists) and fetch similar content from supported streaming providers.
+- **Discover mode**: use one or more seed items (tracks, artists, albums, or playlists) and fetch similar content from supported music sources.
 
 ## Rule model
 
-Smart playlists use include/exclude style rules:
+Smart playlists use include/exclude style rules. In **From my library** mode they are added with **Add a rule**, and in **Discover mode** with **Add a filter**:
 
 - **Genre**: is / is not (one or more genres)
 - **Artist**: is / is not (library mode, one or more artists)
@@ -95,7 +95,7 @@ In **Discover mode**, filters are applied to the provider result after similar c
 
 ## Discover mode
 
-Discover mode fetches similar content from your streaming providers based on seed items.
+Discover mode fetches similar content from your music sources based on seed items.
 
 :::note[Best Effort Service]
 Discover mode relies on external music provider APIs for content recommendations. Results depend on:
@@ -117,7 +117,7 @@ When using **Discover mode**:
 The dialog shows a live estimate while you edit rules:
 
 - **From my library mode**: live matching track count + duration estimate, updated as rules change.
-- **Discover mode**: no live matching-count calculation; the UI only shows guidance that up to 50 tracks are fetched from your streaming provider.
+- **Discover mode**: no live matching-count calculation; the UI only shows guidance that up to 50 tracks are fetched from your music sources.
 
 The screenshot below shows **From my library** mode (rule-based smart playlist).
 
@@ -129,7 +129,7 @@ The screenshot below shows the Track Count hint for **Discover mode**.
 
 ## Playlist detail
 
-After saving, open the smart playlist to view a current sample output based on your rules.
+After saving, open the smart playlist to view a current sample output based on your rules. The **Smart playlist rules** button on the playlist's page opens the rules again.
 
 ![Smart Playlist detail view](/assets/screenshots/smart_playlist/playlist_detail.png)
 
