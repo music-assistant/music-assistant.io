@@ -32,7 +32,7 @@ If you remove a source, the database is cleaned up afterwards, which takes a lit
 
 ## Settings
 
-All Music Sources have settings which can be configured. The settings page will look similar to the following. The icon in the top right is a hyperlink to the relevant page in this documentation. Specific help for a setting or configurable field is often available and is accessed by selecting this icon ![question mark](/assets/icons/question-mark.png). All sources can be given a custom name and disabled if necessary. The log level can be adjusted for all sources and this is found in the advanced settings. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). See the sources pages for source specific settings.
+All Music Sources have settings which can be configured. Each source has its own page in **Settings → Music sources**, with a **Documentation** button that opens its page in this documentation. Specific help for a setting or configurable field is often available and is accessed by selecting this icon ![question mark](/assets/icons/question-mark.png). All sources can be given a custom name and disabled if necessary. The log level can be adjusted for all sources and is shown with **Show advanced settings**. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). [Music Source Settings](/settings/music-provider-settings/) describes the page, and the sources pages cover source specific settings.
 
 ![image](/assets/screenshots/generic-settings.png)
 

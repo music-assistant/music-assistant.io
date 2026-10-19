@@ -27,6 +27,21 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 - If a pinned item is updated (for example renamed), the shortcut is updated automatically.
 - If a pinned item is deleted, it is removed from shortcuts automatically.
 
+## Settings
+
+The settings open on a list of sections, shown as cards or as a list (switch with the icon at the top). Which sections are listed depends on your role:
+
+- **[Music sources](/settings/music-provider-settings/)**, **[Player providers](/settings/player-provider/)**, **[Metadata providers](/settings/metadata-provider-settings/)**, **[Plugins](/plugins/)** and **Audio analysis**. The providers of each kind, and where more are added. Users whose role lets them have music sources see **Music sources** too, with their own sources and the ones shared with them
+- **[Players](/settings/individual-player/)**. The settings of each player, and where group players are created
+- **[Profile](/settings/profile/)** and **[User Interface](/settings/user-interface/)**. Your own account and how the app looks for you. Every user has these
+- **[User management](/settings/user-management/)** and **[Remote Access](/settings/remote-access/)**. For administrators
+- **[System](/settings/core/)**. The core server settings, and pages such as [Storage](/settings/storage/), Diagnostics and Genre Management. For administrators
+- **[About](/settings/about/)**. Version information, credits and more
+
+The settings pages all look alike. A header card names the page and has a **Documentation** button that opens the matching page here, followed by one **Options** card with all of the settings, grouped under headings. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user.
+
+At the bottom of the list, administrators find **Run the setup wizard again**, which also resumes a [paused setup](/first-run/#pausing-the-setup), and other users **Show the welcome again**.
+
 ## Global Search
 [![image](/assets/screenshots/global-search.png)](/assets/screenshots/global-search.png)
 
@@ -152,6 +167,14 @@ will bring up this menu
 ![image](/assets/screenshots/UI-actions-menu.png)
 
 The behavior described above will work on any view where you see the "x item(s) selected" text.
+
+## View - Playlist
+
+The top of the playlist page shows the artwork, the number of tracks and the total length in hours and minutes, with the play and shuffle buttons and the ⋮ menu. On a phone, a small bar with the back button, favorite and menu stays at the top of the screen once you scroll down.
+
+On wider screens the tracks are shown as a table. The title, duration and menu are always shown. The track number, album, year, **BPM** and **Key** columns can be switched on or off with the column icon at the right of the table header, and the choice is saved for your user. BPM and Key start switched off, because only tracks that have been through audio analysis, such as [Smart Fades](/audio-analysis/smart-fades/), have them. The key is shown in Camelot notation (for example `8A`), in its colour on the Camelot wheel. Columns drop out as the window narrows, and the column menu shows which ones are hidden at the current width. The artist and album names link to their pages.
+
+The tracks can be sorted from the toolbar, including by date added, and the play button plays them in the order shown. Below the tracks a **Featured artists** row lists the artists with the most tracks in the playlist. Like other rows, it can be hidden or moved in **Edit rows**.
 
 ## View - Individual Artist
 
