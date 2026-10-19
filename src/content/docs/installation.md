@@ -97,7 +97,7 @@ A [Local files](/music-providers/local-files/) source reads music from a folder 
 
 ### With the Home Assistant App
 
-Put your music in the Home Assistant media folder, or add the network share of your NAS in Music Assistant under **Settings → Storage** with **Add network share**. Home Assistant connects the share, and it shows up as a storage location. A network share added in Home Assistant under **Settings → System → Storage** with the usage **Media** shows up as well.
+Put your music in the Home Assistant media folder, or add the network share of your NAS in Music Assistant under **Settings → System → Storage** with **Add network share**. Home Assistant connects the share, and it shows up as a storage location. A network share added in Home Assistant under **Settings → System → Storage** with the usage **Media** shows up as well.
 
 ### With Docker
 

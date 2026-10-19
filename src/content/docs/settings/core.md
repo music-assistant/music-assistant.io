@@ -4,7 +4,7 @@ title: "System Settings"
 
 # MA System Settings <img src="/assets/icons/settings-core-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The core server settings are set with typical defaults that should work for most users. However, there are settings available for each of the core controllers and these are outlined below. All controllers have a setting for the log level in the advanced section. There may be slight differences in the settings between the Home Assistant App and docker versions of the servers.
+The core server settings are set with typical defaults that should work for most users. However, there are settings available for each of the core controllers and these are outlined below. Each one opens a page with a **Documentation** button, which links to its section below, and an **Options** card holding all of its settings. Some settings only show when the **Show advanced settings** toggle in the card's header is on, and the toggle is remembered for your user. All controllers have a setting for the log level among the advanced settings. There may be slight differences in the settings between the Home Assistant App and docker versions of the servers.
 
 ![image](/assets/screenshots/settings-core.png)
 

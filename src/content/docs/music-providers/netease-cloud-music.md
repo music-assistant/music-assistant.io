@@ -49,7 +49,7 @@ Home Assistant users can now install the companion App directly from the App sto
 
 ### QR Login Flow (NetEase App)
 
-1. Open **Settings → Music Sources → Add a music source → NetEase Cloud Music**
+1. Open **Settings → Music sources → Add a music source → NetEase Cloud Music**
 2. Set **API base URL** to your local API service
 3. Click **QR Login**. A new QR page will open
 4. Scan with the **NetEase Cloud Music app** and confirm login in the app
