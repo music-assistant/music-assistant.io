@@ -40,24 +40,28 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 6. Tap an upcoming song in the queue to boost it higher
 7. View the current queue and see when their songs will play
 
-![Guest View - Queue](../../../assets/screenshots/party/party-guest-view-queue.png)
-
 ## Configuration
 
 ### Basic Settings
 
 | Setting | Description |
 |---------|-------------|
+| **Party Mode** | `Venue (play on a real speaker) [default]` plays guests' requests on a player in the room. `Remote (guests listen on their own device)` has guests listen on their own devices instead, and needs guest access enabled. **Party Player** is only shown in Venue mode. |
 | **Party Player** | Select which player/queue receives guest requests. Set to "Auto" to automatically use the last active player. Players already assigned to another Party instance are not shown. |
 | **Party Name** | Custom name/title displayed on the party dashboard. Leave blank to hide. |
-| **Enable Guest Access** | Master toggle for the entire feature. When disabled, all active guest sessions are immediately destroyed and guests will need to re-scan the QR code when re-enabled. |
+| **Enable Guest Access via QR Code** | Master toggle for the entire feature. The Party Dashboard link in the sidebar only appears once this is enabled. When disabled, all active guest sessions are immediately destroyed and guests will need to re-scan the QR code when re-enabled. |
+| **Party Duration (hours)** | Advanced. How long the guest QR code and join link stay valid, from 1 to 168 hours. Default 8. |
 | **QR Code Text** | Custom text displayed alongside the QR code on the dashboard. Leave blank to hide. |
-| **Display Lyrics** | Show synchronized lyrics on the party dashboard alongside the QR code. When synced (LRC) lyrics are available, they scroll in time with the music. Hidden on mobile-sized screens in normal mode. |
-| **Karaoke Mode** | When enabled (requires Display Lyrics), lyrics are displayed prominently in the center of the screen with the track list minimized to the current and next song at the bottom. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. |
-| **Highlight Lyrics Ahead** | When enabled (requires Display Lyrics), the lyric line highlight transition finishes exactly when the line's timestamp arrives, giving a smooth anticipation effect. When disabled, the transition starts at the timestamp instead. Enabled by default. |
 | **Anti Burn-in** | Periodically swaps the position of UI elements every 10 minutes to prevent burn-in on OLED or plasma displays. In normal mode, the QR code and track list sides are swapped. With lyrics enabled, the QR code and lyrics swap positions. In karaoke mode, the QR code alternates between the top-left and top-right corners. Enabled by default. |
 | **Hide Back Button** | Hides navigation elements in fullscreen mode. You will need to use browser controls (e.g. Alt+Left) to navigate back. |
 | **Show Progress Bar** | Display a progress bar on the currently playing song in the track list. |
+
+### Karaoke
+
+| Setting | Description |
+|---------|-------------|
+| **Karaoke Mode** | When enabled, lyrics are displayed prominently in the center of the screen with the track list minimized to the current and next song at the bottom. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. When synced (LRC) lyrics are available, they scroll in time with the music. |
+| **Highlight Lyrics Ahead of Time** | When enabled, the lyric line highlight transition finishes exactly when the line's timestamp arrives, giving a smooth anticipation effect. When disabled, the transition starts at the timestamp instead. Enabled by default. |
 
 ### Rate Limiting (Advanced)
 
@@ -105,7 +109,7 @@ Customize the colors of badges shown on guest-requested songs in the queue:
 
 ### Party Dashboard
 
-Access via the Party link in the Music Assistant sidebar. If you have multiple Party instances, clicking the link shows a menu to choose which one to open. Each instance opens in a new tab. This view is designed for display on a TV or monitor at your party.
+Access via the Party link in the Music Assistant sidebar, which appears once **Enable Guest Access via QR Code** is on. If you have multiple Party instances, clicking the link shows a menu to choose which one to open. Each instance opens in a new tab. This view is designed for display on a TV or monitor at your party.
 
 **Features:**
 
@@ -171,4 +175,4 @@ The QR code (and the matching shareable link) issues the browser a **guest token
 3. **Adjust rate limits** - For smaller gatherings, you might disable rate limiting entirely
 4. **Use a dedicated player** - Configure a specific player for party to avoid conflicts with other rooms. With multiple instances, you can run separate parties in different rooms simultaneously
 5. **Enable remote access** - If some guests might be on cellular data, enable remote access so the QR code works for everyone
-6. **Enable Karaoke Mode** - For sing-along parties, turn on Display Lyrics and Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
+6. **Enable Karaoke Mode** - For sing-along parties, turn on Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
