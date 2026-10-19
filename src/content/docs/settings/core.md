@@ -143,13 +143,20 @@ These settings are only visible when the advanced toggle is on.
 
 ## Webserver
 
+### Music Assistant URL
+
+The card at the top of the page sets the addresses Music Assistant shares with devices and guests. It is always shown, whether or not advanced settings are on. Each switch can be changed back at any time, and what you typed is kept while the page is open.
+
+- <b>Internet.</b> The address used from outside your local network, for links shared with guests such as party and quiz QR codes and, when it uses HTTPS, for casting dashboards. With [remote access](/settings/remote-access/) on, administrators see a **Use remote access** switch. When it is on, guests' links open through remote access, and the card shows that link with a button to copy it. Switch it off to enter an **External URL**, for example the address of your reverse proxy. A set External URL always takes priority over remote access. When remote access is off, the card offers **Set up remote access**. Leave the External URL empty if your server isn't reachable from the internet
+- <b>Local network.</b> The address shared with devices and apps on your local network. **Automatic** is on by default and shows the address Music Assistant detected, with a button to copy it. Leave it on unless you have a reason not to. Switch it off to enter an **Internal URL** when the detected address does not work for your devices, for example behind a reverse proxy, with a custom hostname or on a server connected to more than one network. Enter the full address including the port, such as `https://music.example.com:443`. The TCP Port setting below is separate and still applies, as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Internal URL
+
+### Options
+
 - <b>Server Name.</b> The name of this Music Assistant instance, shown in the UI and announced on the network. Useful when you run more than one server. Clear the field to restore the default name
 - <b>Allow User Self-Registration.</b> Allows users to create accounts by logging in with Home Assistant. Only appears when the Home Assistant plugin is added in Music Assistant, since the login goes through your HA instance
 
 The settings below are advanced and only appear when advanced settings are enabled in the UI
 
-- <b>Internal URL.</b> The address Music Assistant shares with devices and apps on your local network. Leave this on `auto` unless you have a reason not to. Set it manually when the automatically detected address does not work for them, for example behind a reverse proxy, with a custom hostname or on a server connected to more than one network. In that case enter the full address including the port, such as `https://music.example.com:443`. The TCP Port field is separate and still applies, as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Internal URL
-- <b>External URL.</b> The address Music Assistant can be reached at from outside your local network, for example through a reverse proxy. It is used for links shared with guests, such as party and quiz QR codes, and, when it uses HTTPS, for casting dashboards. Leave empty if your server isn't reachable from the internet
 - <b>TCP Port.</b> The port the webserver runs on (default `8095`). If you change it, and you set the Internal URL manually, change the port there as well
 - <b> Enable SSL/TLS.</b> Serves the web UI and API over HTTPS. When enabled, two additional fields are revealed for the `SSL Certificate` and `SSL Private Key`. Both must be PEM format, and you can either paste the file contents or enter an absolute path (e.g. `/ssl/fullchain.pem`). RSA and ECDSA are both supported and the private key must be unencrypted. Use the `Verify SSL Certificate` button to check the certificate and key are valid and match. If the certificate can't be loaded, the webserver keeps running unencrypted and shows a warning
 - <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. The default `0.0.0.0` binds to all interfaces (IPv4 and IPv6). Change this only in setups such as binding to a docker-internal network behind a reverse proxy
