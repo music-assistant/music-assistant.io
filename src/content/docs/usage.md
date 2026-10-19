@@ -35,7 +35,12 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
-Sections such as **Top tracks** and **Similar artists** on an artist page have a source chip (for example **All sources**) to choose which source fills them.
+The artist page above shows how the library and your sources fit together:
+
+- <b>Albums</b> and <b>Singles & EPs</b> are marked **In your library** and show only what is in the MA library
+- <b>Appears on</b> lists albums where the artist is credited on a track but is not the album artist
+- <b>Discography</b> comes **From MusicBrainz** and lists all of the artist's releases. Those that are not in the library are marked **Not in your library**, so you can find and add them
+- <b>Top tracks</b> and <b>Similar artists</b> have a source chip, **All sources** by default, to pick which source fills them, for example Last.fm or a streaming service. **View N library tracks** next to Top tracks opens the artist's tracks that are in the library
 
 ### Favorites and dislikes
 
@@ -70,11 +75,17 @@ Announcements can be sent directly from the MA UI using the menu item shown abov
 
 When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the queue settings.
 
-Each queue has a number of options which affect various behaviours. The options can be set globally in the [player queues settings](/settings/core/#player-queues) or individually via the option in the ⋮ menu. The individual player queue settings are as follows:
+Each queue has a number of options which affect various behaviours. The defaults for all queues are set in the [player queues settings](/settings/core/#player-queues), and each queue can override them. To change them for one queue, open **Queue settings**, either from **Settings → Players →** *the player* **→ Queue settings**, or from the ⋮ menu in the [Now Playing view](/ui/#now-playing-view) under **Settings → Queue settings**. The **Open global queue settings** button at the top of the page goes to the defaults.
 
-[![Preview image](/assets/screenshots/queue-settings.png)](/assets/screenshots/queue-settings.png)
+Each setting starts at `Global [default]`, which uses the default for all queues:
 
-See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade. 
+- <b>Smart shuffle.</b> Whether the shuffle button uses Smart Shuffle for this queue
+- <b>Optimize order for Smart Fades.</b> Arranges the upcoming tracks so Smart Fades can make smoother transitions
+- <b>Autoplay source.</b> Where Autoplay gets more tracks from when the queue runs out. When `Tracks from a playlist` is chosen, the **Autoplay playlist** box sets the playlist
+- <b>Crossfade mode.</b> Standard crossfade or Smart crossfade for this queue
+- <b>Volume normalization (EBU-R128 based).</b> Turns volume normalization on or off for this queue
+
+Turning Autoplay and crossfade on or off is done from the player controls. These settings decide how they work. See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade.
 
 > [!NOTE]
 > If a queue is paused for more than 30 seconds its status will change to stopped
