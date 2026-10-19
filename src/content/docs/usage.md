@@ -35,7 +35,12 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
-Sections such as **Top tracks** and **Similar artists** on an artist page have a source chip (for example **All sources**) to choose which source fills them.
+The artist page above shows how the library and your sources fit together:
+
+- <b>Albums</b> and <b>Singles & EPs</b> are marked **In your library** and show only what is in the MA library
+- <b>Appears on</b> lists albums where the artist is credited on a track but is not the album artist
+- <b>Discography</b> comes **From MusicBrainz** and lists all of the artist's releases. Those that are not in the library are marked **Not in your library**, so you can find and add them
+- <b>Top tracks</b> and <b>Similar artists</b> have a source chip, **All sources** by default, to pick which source fills them, for example Last.fm or a streaming service. **View N library tracks** next to Top tracks opens the artist's tracks that are in the library
 
 ### Favorites and dislikes
 
