@@ -134,6 +134,8 @@ In any of the following views, Right click or long press on a track to get the f
 
 The **View ... endless mix** option will only be seen if there is a music source that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the source not MA. 
 
+Every item menu, for tracks, albums, artists, playlists and other items, has a **Dislike** entry between **Add to favourites** and **Add to playlist…**. See [Favorites and dislikes](/usage/#favorites-and-dislikes) for what a dislike does.
+
 ## View - Discover
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
