@@ -21,7 +21,21 @@ This plugin is experimental. Its settings and behaviour may change between Music
 - **Similar Tracks for your media server library.** Every track AudioMuse-AI has analysed gets a **Similar tracks** list on its details page, including tracks from servers that have no similar tracks of their own. Where the media server does have its own, AudioMuse-AI's suggestions are used first.
 - **Endless Mix and Autoplay.** The same results are used when [Endless Mix](/usage/#endless-mix) or Autoplay needs more tracks similar to what you started from.
 - **An "Inspired by recently played" row** on the [Discover page](/ui/#view---discover), built from the last five tracks you played.
-- **Free-text search.** Optional. Type a description such as *"calm acoustic guitar"* or a line about what a song is about into the [search pop-up](/ui/#global-search), and AudioMuse-AI returns matching tracks. It searches on sound (CLAP) and on lyrics at the same time.
+- **Free-text search.** Optional. Type a description such as *"dreamy ambient guitar"* or a line about what a song is about into the [search pop-up](/ui/#global-search), and AudioMuse-AI returns matching tracks. It searches on sound (CLAP) and on lyrics at the same time.
+
+## What you'll see in Music Assistant
+
+Every analysed track's details page shows a **Similar tracks** list from AudioMuse-AI:
+
+![Similar tracks on a track details page](/assets/screenshots/audiomuse-ai/track-details-similar.png)
+
+Unless it is turned off in the settings, an **Inspired by recently played** row appears on the Discover page:
+
+![Inspired by recently played row on the Discover page](/assets/screenshots/audiomuse-ai/discover-inspired-by.png)
+
+With free-text search on, a description typed into the search pop-up returns tracks that match it:
+
+![Free-text search returning matching tracks for "dreamy ambient guitar"](/assets/screenshots/audiomuse-ai/free-text-search.png)
 
 ## Requirements
 
@@ -32,27 +46,32 @@ This plugin is experimental. Its settings and behaviour may change between Music
 
 ## Configuration
 
-Add the plugin from **Settings → Plugins → Add a plugin**. A **Connect to AudioMuse-AI** form opens with three fields:
+Add the plugin from **Settings → Plugins → Add a plugin**. A **Set up AudioMuse-AI** dialog opens with three fields:
+
+![The Set up AudioMuse-AI dialog](/assets/screenshots/audiomuse-ai/setup-connect.png)
+
 
 | Setting | Description |
 |---|---|
 | **AudioMuse-AI server URL** | The root address of your AudioMuse-AI server, for example `http://192.168.1.10:8000`. |
-| **API token** | Only needed if you turned on authentication in AudioMuse-AI. Leave it empty otherwise. |
+| **API token** | The API token from AudioMuse-AI's setup page. Needed while authentication is on in AudioMuse-AI, which is its default. Leave it empty only if you turned authentication off. |
 | **Media provider to map against** | The Music Assistant music source that points at the same media server AudioMuse-AI analysed. Pick your Jellyfin, Open Subsonic (Navidrome) or Plex source here. |
 
 Music Assistant connects to the server before saving. If it cannot reach it, or AudioMuse-AI does not accept the token, the form stays open with the error so you can correct it.
 
-These three fields belong to the setup, so **Configure** does not show them later. To change the address, the token or the media provider, choose **Reconfigure** from the plugin's menu. The form opens again with your current values filled in.
+These three fields belong to the setup, so the plugin's settings page does not show them later. To change the address, the token or the media provider, click **Reconfigure** on that page. The form opens again with your current values filled in.
 
 ### Options
 
-**Configure** on the plugin shows these:
+The plugin's settings page has a **Generic** and a **Status** panel:
+
+![AudioMuse-AI options and status](/assets/screenshots/audiomuse-ai/setup-options.png)
 
 | Setting | Description |
 |---|---|
 | **Enable free-text search** | Adds AudioMuse-AI's sound and lyrics search to the search pop-up. Off by default. |
 | **Show 'Inspired by recently played' row** | Shows the row on the Discover page. On by default. Turn it off to hide the row and keep the rest of the plugin. |
-| **Status** | Shows whether Music Assistant can reach the server, for example *Connected to http://192.168.1.10:8000 · 48,210 CLAP embeddings*. The number is the size of AudioMuse-AI's sound search index. If the server is down it shows *Cannot reach AudioMuse-AI server at* followed by the address instead. |
+| **Status** | Shows whether Music Assistant can reach the server, for example *Connected to http://192.168.1.10:8000*. If the server is down it shows *Cannot reach AudioMuse-AI server at* followed by the address instead. |
 
 ## Known Issues / Notes
 
