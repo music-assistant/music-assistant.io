@@ -228,6 +228,7 @@ export default defineConfig({
                   label: "Ariacast Receiver",
                   slug: "plugins/ariacast-receiver",
                 },
+                { label: "AudioMuse-AI", slug: "plugins/audiomuse-ai" },
                 { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
                 { label: "Home Assistant", slug: "ha-plugin" },
                 {
