@@ -5,7 +5,7 @@ description: Features, Configuration, Issues and More for the File System Music 
 
 # Filesystem Sources <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has full support for reading local music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant.  Network support is limited to SMB/CIFS, NFS and WebDAV, plus the cloud storage services Google Drive and Microsoft OneDrive.
+Music Assistant has full support for reading music files on a disk, a NAS or another server and will catalog them into the library, allowing playback to all player providers supported by Music Assistant. The **Local files** source reads a folder on the server itself, on a drive or on an SMB or NFS network share. WebDAV and the cloud storage services Google Drive and Microsoft OneDrive each have a source of their own.
 
 When streaming sources are also available in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
 
@@ -31,33 +31,30 @@ When streaming sources are also available in MA linking will only occur when the
 - Local music is automatically included in the MA Library
 - Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
 - If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
-- On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
+- On playback, when tracks are linked across sources (or within the same source) Music Assistant picks which copy plays. See [Which Source Plays](/source-selection/)
 - It is possible to add multiple filesystem sources
 
 ## Configuration
 
 Separate sources must be added for Music, Audiobooks and Podcasts.
 
-**Audio files are on a disk/folder of the device running the Music Assistant Server**
+**Audio files are in a folder, on a drive or on a network share**
 
-If the files are stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, the Filesystem (local disk) source should be selected and then the path to the files provided. 
+Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**.
 
-> [!NOTE]
-> On Home Assistant OS only the /media folder can be accessed, and it is not possible to mount a folder from Home Assistant into that path. Docker users can mount their own folder paths.
+<img src="/assets/screenshots/local-files-folder-picker.png" alt="The setup of a Local files source with the list of storage locations" style="width: 560px;" loading="lazy" />
+
+Which locations are listed depends on how Music Assistant is installed:
+
+- <b>Home Assistant App.</b> The Home Assistant media folder and every network share added to it
+- <b>Docker.</b> Every folder or volume mapped into the container
+
+Music on a NAS? Make the share a storage location first, then pick it here. On the Home Assistant App, an administrator adds it with **Add network share** on the [Storage](/settings/storage/#adding-a-network-share) page. On Docker, mount the share on the host and map it into the container, as described under [Your music files](/installation/#your-music-files).
+
+Below the picker, administrators find **Manage storage**, which opens the Storage page. Users who are not administrators can add a Local files source of their own when their role allows it. They pick from the same storage locations. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
 
 > [!CAUTION]
-> Music Assistant assumes your NFS or SMB server is on your local network. It adds no encryption or access control of its own, so these shares should not be reached over the internet.
-
-**Audio files are on a remote share served via SMB/CIFS**
-
-Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS. Select the music source "Filesystem (remote share)" and configure the (fqdn) hostname (or alternatively the IP address) to the server, the name of the share and optionally any subfolder. Advanced options are:
-
-- <b>SMB Version.</b> The SMB protocol version to use. SMB 3.0 or higher is recommended for better performance and security. Use Auto to let the system negotiate. The options are `Auto`, `SMB 1.0`, `SMB 2.0`, `SMB 2.1`, `SMB 3.0 [default]`, and `SMB 3.1.1`
-- <b>Cache Mode.</b> Cache mode affects performance and consistency. 'Loose' provides better performance for read heavy workloads and is recommended for music libraries.. The options are `Strict`, `Loose (Recommended) [default]`, and `None`
-
-**Audio files are on a remote share served via NFS**
-
-Music Assistant has support for NFS shares. Select the music source "Filesystem (NFS share)" and configure the IP address (without leading `http://`) of the server, the absolute export path of the share (e.g. `/volume1/music`) and optionally any subfolder.
+> Music Assistant assumes your NAS is on your local network. It adds no encryption or access control of its own, so a network share should not be reached over the internet.
 
 **Audio files are on a remote share served via WebDAV**
 
@@ -152,7 +149,7 @@ Use the folder name(s) as they appear in OneDrive.
 In addition to the settings outlined above to configure this source, there are additional settings available (note certain options will be greyed out depending upon the content type selected):
 
 - <b>Content type in media folder(s).</b> This setting defines the content type of the source and is necessary for Music, Audiobooks and Podcasts to be correctly identified
-- <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
+- <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled when there is no tagged album artist or single album artist in a `album.nfo` file. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
 - <b>Ignore playlists with album tracks within album folders.</b> Some users have a playlist per album. For large collections this results in an unusable Playlist View. To avoid this situation, this setting, which is enabled by default, will result in playlists which are more than one level below the root folder of the source to be ignored
 - <b>Sync Library Artists/Albums from this source to Music Assistant.</b> Whether to synchronize all artists/albums from the local source. 
 - <b>Import tracks/files into the Music Assistant library.</b> Define if the import of tracks/files is desired. When not importing into the library, tracks can still be manually browsed using the Browse feature. Note that by adding a Track into the Music Assistant library, the track artists and album will always be imported as well
@@ -163,7 +160,8 @@ In addition to the settings outlined above to configure this source, there are a
 ## Known Issues / Notes
 
 - Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
-- When using the remote share connection, be aware that use of SMB1 (which is very old) is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB1 can be disabled
+- When a Local files source is on a storage location that is unavailable, for example a NAS that is switched off, the source is unavailable too. It returns by itself once the location is reachable again, and nothing is removed from the library while it is away
+- On an SMB network share, be aware that the very old SMB 1 is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB 1 can be disabled
 - WebDAV, Google Drive and OneDrive are reached over the internet rather than over your own network, so library sync is slower than local, SMB or NFS, particularly for large libraries. The first sync of a cloud source reads the tags of every file over the internet
 - Writing to WebDAV, Google Drive and OneDrive sources is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
 
@@ -177,6 +175,7 @@ In addition to the settings outlined above to configure this source, there are a
     - Folders commencing with an underscore will be ignored
     - Music Assistant requires all file and folder names to be valid UTF-8. Files with non-UTF-8 characters in their names will be skipped during library sync and a warning will be logged identifying the affected file. This most commonly affects files originally tagged or named on Windows using legacy encodings such as Windows-1252, where characters like curly quotes or accented letters may have been written as non-UTF-8 bytes
     - Emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
+- Podcast transcripts are not available
  
 ## Organising Your Files
 
@@ -196,9 +195,27 @@ How you name and arrange your folders decides how much Music Assistant can work 
 - Audiobooks in their own folder are always supported and is the preferred option. For untagged files this is mandatory, and filenames must sort alphabetically in chapter order
 - A single file with embedded chapters (e.g. `.m4b`) works in any folder
 - Multiple books can share a single folder if each file has an album tag (used as the book title to group chapters) and a track number tag. Multi-disc books also need a disc number tag. The title tag is used as the chapter name if present
-- Author is read from the writer, album artist, or artist tag (in that order). Optional but recommended
+- Authors and narrators are read from the file tags and become artists in Music Assistant, so the audiobooks view offers author and narrator tabs. Optional but recommended
+- The series tags map to a collection, which enables "collapse collections" in the audiobooks view
 - Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
 - A `.txt` file in the folder will be used as the book description
+
+#### Audiobook Tags
+
+| Value | Read from | Notes |
+|:--|:--|:--|
+| Author | `writers`, `writer`, then `albumartist`, then `artist` | For untagged files the name taken from the filename is not used as an author |
+| Narrator | `narrators`, `narrator`, `narratedby`, then `composer` | Many audiobooks name the narrator in the composer field, hence the fallback |
+| Series | `series` | Title of the collection the book belongs to |
+| Series part | `seriespart` | Position within the series |
+
+Tag names are matched regardless of case and separators, so `NARRATEDBY`, `Narrated By` and `narrated-by` all work. Multiple authors or narrators are separated like [multiple artists](#multi-artist-tracks). Names are used as written, so spelling one differently across books creates separate entries.
+
+> [!NOTE]
+> These are not part of the standard Picard tag set, so Picard will not fill them in for you. You can still add them in Picard yourself as custom tags, or use another tagger such as Mp3Tag.
+
+> [!NOTE]
+> A library that was indexed before author and narrator support existed is reparsed once, automatically, during the first sync after the upgrade. That sync takes longer than usual.
 
 ### Podcasts
 
@@ -314,12 +331,18 @@ The left column corresponds to the TAG NAME shown in the <a href="https://picard
 
 Loudness tags are read as well. If a file is tagged with ReplayGain or R128 loudness values, Music Assistant uses them for [volume normalization](/faq/tech-info/#volume-normalization) instead of measuring the track itself. Both track and album values are read, and album values are the only way to normalize an album as a whole. Tags added or changed after a track was scanned are picked up with **Refresh item** on the track.
 
+### Two Releases of the Same Album
+
+MusicBrainz counts a remaster as the same recording as the original. With Picard's tags, an album and its remaster, say the 1969 release and the 2009 remaster, are two albums in your library, while each of their tracks is merged into one library track that holds both files. Each album still plays its own tracks: from your files, those are the files in that album's folder, so the two releases are not mixed. A track of the album that is not in that folder plays from another copy, which can be the other release, and with **Which source plays** set to **Best quality for every track** each track plays its best copy. [Which Source Plays](/source-selection/) explains how the source of an album is chosen.
+
+To also have the remastered tracks as tracks of their own, there is no need to remove any tags. Turn on [Keep remastered versions apart](/source-selection/#keep-remastered-versions-apart) and name the remaster in the album title, for example `Abbey Road (2009 Remaster)`. Tracks that were merged before you turned it on stay merged.
+
 ### Manually Adjusting Tags
 
 > [!WARNING]
 > Manual tag editing is for users who deliberately want different behaviour from the MusicBrainz defaults. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between sources
 
-Normally it is best to leave the Picard tags unchanged. However, some people do not agree with Musicbrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> This technique can also be used for personally ripped albums or tracks that are not in the Musicbrainz database. To separate these out the tags can be edited as follows:
+Normally it is best to leave the Picard tags unchanged. However, some people do not agree with MusicBrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> For an album and its remaster, see [Two Releases of the Same Album](#two-releases-of-the-same-album) first, which needs no tags removed. The technique below is for other versions that should be kept apart, and can also be used for personally ripped albums or tracks that are not in the MusicBrainz database. To separate these out the tags can be edited as follows:
 
 - Remove MusicBrainz Release ID and Recording ID (Refer to the [Picard tag mapping documentation](https://picard-docs.musicbrainz.org/en/latest/appendices/tag_mapping.html#id39) for the exact tag name as it changes with the music file format)
 - Keep MusicBrainz Artist ID

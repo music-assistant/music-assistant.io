@@ -142,7 +142,7 @@ export default defineConfig({
           label: "First Run and Settings",
           collapsed: true,
           items: [
-            { label: "First Run (Authentication)", slug: "first-run" },
+            { label: "First Run", slug: "first-run" },
             {
               label: "Music Sources",
               slug: "settings/music-provider-settings",
@@ -153,6 +153,7 @@ export default defineConfig({
               slug: "settings/metadata-provider-settings",
             },
             { label: "Players", slug: "settings/individual-player" },
+            { label: "Storage", slug: "settings/storage" },
             { label: "Profile", slug: "settings/profile" },
             { label: "User Interface", slug: "settings/user-interface" },
             { label: "User Management", slug: "settings/user-management" },
@@ -193,8 +194,10 @@ export default defineConfig({
           items: [
             { label: "Overview", slug: "usage" },
             { label: "UI", slug: "ui" },
+            { label: "Dashboards", slug: "dashboards" },
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },
+            { label: "Which Source Plays", slug: "source-selection" },
           ],
         },
         {
@@ -245,6 +248,10 @@ export default defineConfig({
                   slug: "plugins/milkdrop-visualizer",
                 },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
+                {
+                  label: "NetEase Cloud Music Scrobbler",
+                  slug: "plugins/neteasecloudmusic_scrobble",
+                },
                 {
                   label: "OpenAI Compatible",
                   slug: "plugins/openai_compatible",

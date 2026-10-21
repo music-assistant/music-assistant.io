@@ -43,8 +43,7 @@ Pandora is officially available in the United States only. This source brings th
 
 ## Known Issues / Notes
 
-- This source is limited to Radio Stations only and does not support search or station creation. This constraint is due to Pandora's API structure
+- This source is limited to Radio Stations only. Search finds stations in your own account by name, but cannot find new stations or create them
 - Users must continue to create stations on the official Pandora app/website, and those stations will then automatically appear in MA after a sync
-- Stream metadata is provided although occassionally there is missing album art 
-- As with all radio stations in MA, tracks cannot be skipped
+- Each track shows its title, artist, album and album art, although occasionally the album art is missing 
 - Pandora only supports streaming to one device at a time per account. This provider will automatically take over the stream when initially starting the stream but it will not automatically take over the stream if it receives a concurrent-streaming error from pandora at any point other than the initial start of playback. A button in the provider configuration can be used to issue a takeover request if needed.

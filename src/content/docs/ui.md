@@ -5,6 +5,10 @@ description: A Walkthrough of the Music Assistant User Interface
 
 # User Interface
 
+## Take a tour
+
+A short tour points out the main parts of the app: the menu, search, the settings, your profile, the player bar, picking a player and grouping players. It is offered at the end of the setup wizard and of the welcome, and you can take it whenever you like by selecting your name at the bottom of the menu and choosing **Take a tour**. Stops for anything that is not on screen are skipped, so a phone shows fewer of them.
+
 ## Main Menu
 
 ![image](/assets/screenshots/UI-main-menu.png)
@@ -23,14 +27,29 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 - If a pinned item is updated (for example renamed), the shortcut is updated automatically.
 - If a pinned item is deleted, it is removed from shortcuts automatically.
 
+## Settings
+
+The settings open on a list of sections, shown as cards or as a list (switch with the icon at the top). Which sections are listed depends on your role:
+
+- **[Music sources](/settings/music-provider-settings/)**, **[Player providers](/settings/player-provider/)**, **[Metadata providers](/settings/metadata-provider-settings/)**, **[Plugins](/plugins/)** and **Audio analysis**. The providers of each kind, and where more are added. Users whose role lets them have music sources see **Music sources** too, with their own sources and the ones shared with them
+- **[Players](/settings/individual-player/)**. The settings of each player, and where group players are created
+- **[Profile](/settings/profile/)** and **[User Interface](/settings/user-interface/)**. Your own account and how the app looks for you. Every user has these
+- **[User management](/settings/user-management/)** and **[Remote Access](/settings/remote-access/)**. For administrators
+- **[System](/settings/core/)**. The core server settings, and pages such as [Storage](/settings/storage/), Diagnostics and Genre Management. For administrators
+- **[About](/settings/about/)**. Version information, credits and more
+
+The settings pages all look alike. A header card names the page and has a **Documentation** button that opens the matching page here, followed by one **Options** card with all of the settings, grouped under headings. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user.
+
+At the bottom of the list, administrators find **Run the setup wizard again**, which also resumes a [paused setup](/first-run/#pausing-the-setup), and other users **Show the welcome again**.
+
 ## Global Search
 [![image](/assets/screenshots/global-search.png)](/assets/screenshots/global-search.png)
 
 Searches can be done via any combination of words or partial words and also via a URL to a source such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
 
-Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. Which media types are shown can be selected with the filter. Similarly, the providers used for the search can also be filtered.
+Search opens as a pop-up in the middle of the screen, from **Search** in the sidebar or with Ctrl+K. Below the search box is a row of chips to choose what is searched: **All**, **Tracks**, **Artists**, **Albums**, **Playlists**, **Podcasts**, **Audiobooks**, **Radio**, **Genres** and **Pages**. The **Sources** button limits which music sources are searched.
 
-Selecting an individual media type will then show a maximum of 50 items per provider. Context sensitive menus are available for each. If the item desired is not found then narrow the search term.
+Results are shown as list rows, with up to 5 for each type and a **Show more** for each type to see the rest. Context sensitive menus are available for each. If the item desired is not found then narrow the search term.
 
 ## Player Bar
 [![image](/assets/screenshots/UI-playercontrols-bar.png)](/assets/screenshots/UI-playercontrols-bar.png)
@@ -42,17 +61,17 @@ The overflow menu holds a number of useful options. Of note, for podcasts and au
 ## Now Playing View
 [![image](/assets/screenshots/now-playing-view.png)](/assets/screenshots/now-playing-view.png)
 
-This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right. This view can be cast to compatible devices using the cast icon in the top right.
+This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right. This view can be cast to a TV or display as a [dashboard](/dashboards/), using the TV icon at the top.
 
 The [Audio Pipeline](/audiopipeline/) selectable label is described above in the [Player Bar](#player-bar) section.
 
 You can also access the [Now Playing view directly via URL](/faq/how-to/#open-the-ui-with-the-now-playing-view-showing)
 
-When the favorite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favorite status may not indicate correctly until playback of the track is restarted.
+The heart shows your own favorite state for the playing track: filled for a favorite, an outline for nothing, a thumbs-down for a dislike. Selecting it opens the same menu as everywhere else, to favorite or dislike the track or add it to a playlist. A change made from another view or device shows here straight away. See [Favorites and dislikes](/usage/#favorites-and-dislikes).
 
 When lyrics are available for the track being played then the LYRICS selectable label will be shown in white. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song. Adjustment to the lyric timing is available in the ⋮ menu.
 
-The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu.
+The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu. Autoplay will be turned off and disabled if Repeat One or Repeat All is selected.
 
 A sleep timer is also available in the ⋮ menu, which will stop playback after the selected period.
 
@@ -101,11 +120,9 @@ Clicking/touching the Play Button will either execute the default play action fo
 
 ## Multi Select ![image](/assets/icons/multiselect.png)
 
-When the Multi Select icon is selected the Select All icon will appear.  
+After you choose **Select multiple items**, a bar floats at the bottom of the screen reading **N selected · Select all · Actions · ✕**. **Select all** selects all of the items in the view (or section of the view as appropriate), **Actions** opens the menu of what can be done with the selection, and **✕** ends the selection. For large lists a confirmation dialog will appear, as selecting thousands of items can cause unresponsiveness depending on the resources of the host.
 
-Clicking/touching the Select All icon will select all of the items in the view (or section of the view as appropriate). For large lists a confirmation dialog will appear, as selecting thousands of items can cause unresponsiveness depending on the resources of the host.
-
-CTRL-A will also select all items unless the search box is in view in which case it will select all text in that box. Also CTRL-A won't work on views that have multiple sections (e.g. the artist view has albums and tracks) so the Multi Select icon must be used in that case. 
+CTRL-A will also select all items unless the search box is in view in which case it will select all text in that box. Also CTRL-A won't work on views that have multiple sections (e.g. the artist view has albums and tracks) so **Select multiple items** must be used in that case. 
 
 ## Track Menu
 
@@ -113,13 +130,15 @@ In any of the following views, Right click or long press on a track to get the f
 
 ![image](/assets/screenshots/UI-track-menu.png)
 
-The **View ... endless mix** option will only be seen if there is a provider that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the provider not MA. 
+The **View ... endless mix** option will only be seen if there is a music source that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the source not MA. 
+
+Every item menu, for tracks, albums, artists, playlists and other items, has a **Dislike** entry between **Add to favourites** and **Add to playlist…**. See [Favorites and dislikes](/usage/#favorites-and-dislikes) for what a dislike does.
 
 ## View - Discover
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
 
-The Discover view provides quick access to different media types and recommendations. Recommendation rows load independently, so content appears one row at a time as it becomes available. Each enabled music provider can supply its own rows.
+The Discover view provides quick access to different media types and recommendations. Recommendation rows load independently, so content appears one row at a time as it becomes available. Each enabled music source can supply its own rows.
 
 Select the pencil icon in the top right to enter edit mode. From there, show or hide rows and drag them into your preferred order. Some specialized or slower-loading rows are hidden by default to keep Discover fast; enable them in edit mode if you want to use them. Select `Leave edit mode` to return to the normal view.
 
@@ -131,15 +150,15 @@ Refer to the [Library Recommendations Plugin](/plugins/library-recommendations) 
 
 [![image](/assets/screenshots/UI-artist-view.png)](/assets/screenshots/UI-artist-view.png)
 
-Album, Track and Playlist Views look similar to the above except there is no album artist filter option and the track view has an [ADD VIA URL](/music-providers/builtin/) option. Playlists have a `Create new playlist on` option as well as a `Import playlist` option which allows the manual importation of plain text M3U and M3U8 playlist files. 
+The Album, Track and Playlist list views look similar to the above except there is no album artist filter option and the track view has an [ADD VIA URL](/music-providers/builtin/) option. Opening a single artist, album, track or playlist shows its detail page instead, with a large header (image, title, play button, **Shuffle** and endless mix) and, for albums and playlists, the tracks in a table below. The ⋮ menu on artist, album, track and playlist pages has **Edit rows**, which lets you choose which sections the page shows and in what order. Playlists have a `Create new playlist on` option as well as a `Import playlist` option which allows the manual importation of plain text M3U and M3U8 playlist files. 
 
 A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) ) indicates that the viewed results are subject to filtering.
 
-The provider filter option will only show when there are two or more music sources installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
+The source filter option will only show when there are two or more music sources installed that support the media type being viewed. Multiple sources can be selected as part of the filter.
 
 Items in all views can be "right-clicked" or "long-pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
 
-Multiple selections of albums / artists / tracks is possible by clicking the [multi-select icon](#multi-select-). Once one or more items are selected then clicking on the "ACTIONS" at the bottom
+Multiple selections of albums / artists / tracks is possible with [Select multiple items](#multi-select-). Once one or more items are selected then selecting **Actions** in the bar at the bottom
 
 ![image](/assets/screenshots/UI-actions.png)
 
@@ -147,36 +166,53 @@ will bring up this menu
 
 ![image](/assets/screenshots/UI-actions-menu.png)
 
-The behavior described above will work on any view where you see the "x item(s) selected" text.
+The behavior described above will work on any view where the **N selected** bar appears.
+
+## View - Playlist
+
+The top of the playlist page shows the artwork, the number of tracks and the total length in hours and minutes, with the play and shuffle buttons and the ⋮ menu. On a phone, a small bar with the back button, favorite and menu stays at the top of the screen once you scroll down.
+
+On wider screens the tracks are shown as a table with the columns **#**, **Title**, **Album**, **Year**, **Source** and the duration. The column picker icon at the end of the table header shows or hides **Album**, **Track number**, **Year**, **BPM**, **Key** and **Source**, and the choice is saved for your user. BPM and Key are off by default, because only tracks that have been through audio analysis, such as [Smart Fades](/audio-analysis/smart-fades/), have them. The key is shown in Camelot notation (for example `8A`), in its colour on the Camelot wheel. Columns drop out as the window narrows, and the column menu shows which ones are hidden at the current width. The artist and album names link to their pages.
+
+The tracks can be sorted from the toolbar, including by date added, and the play button plays them in the order shown. Below the tracks a **Featured artists** row lists the artists with the most tracks in the playlist. Like other rows, it can be hidden or moved in **Edit rows**.
+
+The playlist ⋮ menu also has **Migrate playlist**, which copies the playlist to another music source and matches its tracks there. Choose the destination, a name for the new playlist and how strictly tracks are matched: **Exact release**, **Same recording** (the same recording from a different release is accepted) or **Best effort** (the closest available match). With the first two, tracks that cannot be matched are skipped.
 
 ## View - Individual Artist
 
 [![image](/assets/screenshots/UI-individual-artist.png)](/assets/screenshots/UI-individual-artist.png)
 
-Each section is collapsible. The tracks section shows all tracks that are in the library. The Top tracks section can be filtered by provider when there is more that one available to provide that data.
+From the top, the artist page has:
 
-The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP, LIVE, SOUNDTRACK or UNKNOWN album types.
+- A large header image with the artist name and biography, a **Play on this device** split button (the arrow picks another player or play option), **Shuffle** and **Artist endless mix**, and chips for the artist's genres and sources
+- **Top tracks**, a numbered grid. The **All sources** chip chooses which source the top tracks come from, and a link opens the artist's tracks in your library
+- **Albums** and **Singles & EPs**, both from your library
+- **Discography**, the artist's releases according to MusicBrainz
+- **Similar artists**
+- **Source details** and **Images**, collapsible cards at the bottom of the page
 
 Expanding the IMAGES section (only visible to users with the Administrators role) allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select UPDATE METADATA. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
 
-### Provider Details
+### Source Details
 
-The PROVIDER DETAILS section (read only for other than users with the Administrator role) shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new provider does not trigger linking across existing library items.
+The SOURCE DETAILS section (read only for other than users with the Administrator role) shows what music sources are linked to the artist (albums and tracks have a similar section) across the available sources. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a music source and across music sources. Cross linking across and within music sources occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new music source does not trigger linking across existing library items.
 
-When an item is available from several providers, Music Assistant picks the highest quality one at playback time. See [Stream Selection](/faq/tech-info/#stream-selection) for how that choice is made.
+When an item is available from several sources, Music Assistant picks which one plays. See [Which Source Plays](/source-selection/) for how that choice is made.
 
-The creation of links within the MA library to other identical items in the MA library (within or across providers) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
+The creation of links within the MA library to other identical items in the MA library (within or across sources) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
 
 Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/local-files/#tagging-files).
 
-The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
+The ID shown against the streaming source may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming sources, is an external link which opens the page for the item on the source provider.
 
 ## View - Individual Track
 
 [![image](/assets/screenshots/UI-track-show-info.png)](/assets/screenshots/UI-track-show-info.png)
 
+The header has the **Play on this device** split button, **Track endless mix** and a quality badge such as `FLAC 16/44.1`. The favourite heart is at the top right, next to the ⋮ menu. A **Lyrics** section appears when lyrics are available for the track.
+
 > [!NOTE]
-> The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
+> The SOURCE DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the source and may differ during playback if transcoding is done before the audio data reaches MA.
 
 ## View - Audiobooks
 The audiobooks view shows available audiobooks in your library.
@@ -197,9 +233,9 @@ The author & narrator subview shows audiobooks belonging to the given artist. Fo
 
 The Radio view shows streaming radio stations that are available in the MA library. Stations can be added to the library in the following ways:
 
-* Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
+* Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by source, they will be shown as provided by "Music Assistant". 
 
-* Music providers that support Radio items will have those items shown here when they are added to the library
+* Music sources that support Radio items will have those items shown here when they are added to the library
 
 ## View - Browse
 

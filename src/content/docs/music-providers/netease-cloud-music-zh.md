@@ -37,7 +37,7 @@ Music Assistant 已支持 <a href="https://music.163.com/" target="_blank" rel="
 
 - 支持搜索：歌曲、歌手、专辑、歌单
 - 支持同步：喜欢/收藏内容与用户歌单
-- 动态推荐/电台条目包括：每日推荐歌曲、每日推荐歌单、私人 FM、心动模式
+- 个性化推荐集中在「个性化推荐 Personal Recommendations」一个栏目：每日推荐歌曲、私人 FM、私人雷达、时光雷达、心动模式
 - 库同步当前按单向（网易云音乐 -> Music Assistant）使用
 
 ## 配置

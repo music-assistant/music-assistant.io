@@ -15,7 +15,7 @@ Music Assistant has support for AirPlay devices. This includes Apple devices suc
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers** and check whether `AirPlay` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `AirPlay`.
+1. In Music Assistant, go to **Settings → Player providers** and check whether `AirPlay` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `AirPlay`.
 2. Your AirPlay devices will be discovered automatically and will appear in the player list, usually within a minute.
 3. Apple TVs additionally require pairing before they can be used; see [Protocol Settings](#protocol-settings) below.
 
@@ -29,7 +29,7 @@ Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired b
 
 Apple TVs offer two extra pairing steps after the main one. Both are optional and can be added later by running Setup again:
 
-- <b>Remote control.</b> Lets Music Assistant see whether the device is on, wake it before playback, and control what it is playing and its volume.
+- <b>Remote control.</b> Lets Music Assistant see whether the device is on, wake it before playback, and control what it is playing and its volume. It is also needed to show [dashboards](/dashboards/) on the Apple TV.
 - <b>Playback monitoring.</b> Shows the app and media playing on the device outside of Music Assistant.
 
 Music Assistant chooses how to stream to each device automatically, so under normal circumstances nothing here needs changing.

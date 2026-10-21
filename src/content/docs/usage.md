@@ -5,7 +5,7 @@ description: Information regarding various elements of Music Assistant
 
 # Overview
 
-Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These four pages are not a walkthrough of that.
+Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These pages are not a walkthrough of that.
 
 They cover the ideas the interface assumes you already understand, so that when something is not self-evident, the explanation is here.
 
@@ -13,6 +13,7 @@ They cover the ideas the interface assumes you already understand, so that when 
 - **[UI](/ui/)** — a tour of the interface itself, view by view
 - **[Groups](/faq/groups/)** — playing the same music on more than one speaker at once
 - **[Genres](/genres/)** — how Music Assistant categorises your library, and how to shape that
+- **[Which Source Plays](/source-selection/)** — which copy of a track plays when it is available from more than one source, and how to change that
 
 None of it needs reading end to end. Use the contents list to jump to whatever you are looking for.
 
@@ -30,15 +31,28 @@ What ends up in the library depends on the type of source:
 In each view there is a ⋮ menu in the top right corner. This menu has various library related functions. Two important ones are UPDATE METADATA and REFRESH ITEM. Update metadata only retrieves additional metadata for the item being viewed and does not alter any of the existing/base details, while refresh item completely re-adds the item into the database, overwriting all existing data. To update the images section or lyrics, UPDATE METADATA is all you need.
 
 > [!NOTE]
-> If identical items (e.g. an album or track) have not been matched across sources or within a source then navigate to the [Provider Details](/ui/#provider-details) section of the item and use the options there to link them.
+> If identical items (e.g. an album or track) have not been matched across sources or within a source then navigate to the [Source Details](/ui/#source-details) section of the item and use the options there to link them.
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
-In order to make all available content accessible in a digestible manner many of the expandable views are filtered by provider. The open box icon is shown when a section is expanded and indicates that multiple providers can populate the section. Note only one can be selected at any one time. In the screenshot above "All albums" is collapsed, so the provider selection icon is not shown. Immediately below is the "Top tracks" section which is expanded and does show the icon. In both cases the currently selected provider is shown on the left side. 
+The artist page above shows how the library and your sources fit together:
 
-**Favorites**
+- <b>Albums</b> and <b>Singles & EPs</b> are marked **In your library** and show only what is in the MA library
+- <b>Appears on</b> lists albums where the artist is credited on a track but is not the album artist
+- <b>Discography</b> comes **From MusicBrainz** and lists all of the artist's releases. Those that are not in the library are marked **Not in your library**, so you can find and add them
+- <b>Top tracks</b> and <b>Similar artists</b> have a source chip, **All sources** by default, to pick which source fills them, for example Last.fm or a streaming service. **View N library tracks** next to Top tracks opens the artist's tracks that are in the library
 
-As a further means of filtering the library, you can mark items as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favorited by default when imported from the music source is determined by the [source settings](/music-providers/). All items can be seen if the heart icon is deselected in the top menu.
+### Favorites and dislikes
+
+Favorites are personal. Every user has their own favorites and dislikes and only ever sees their own. The library itself is shared by everyone.
+
+The heart on an item, in a list, on its page or in the player bar, shows its state. Filled when the item is a favorite of yours, a thumbs-down when you dislike it, or an outline when you have indicated neither. Select the icon for a small menu with **Add to favorites** or **Remove from favorites**, **Dislike** or **Remove dislike**, and **Add to playlist**. The heart at the top of a library view narrows the view to your favorites. Deselect it to see everything.
+
+A track you dislike stays out of the music Music Assistant picks for you in [Endless Mix](#endless-mix), Autoplay, the Infinite Mixes and other dynamic playlists. You can still play it yourself, from an album, a playlist or the queue. A dislike on an artist or album is remembered but does not affect what is picked for you.
+
+A favorite adds the item to the library, and to your own streaming accounts when the service keeps a library of its own. A dislike adds nothing. An item that is not in the library yet stays out of it, and out of every account.
+
+Music Assistant writes your favorites and dislikes to your own accounts and to sources that have no owner, never to another user's personal source. Some services, such as Apple Music, Plex and Subsonic, take both the favorite and the dislike. What a streaming source marks as a favorite arrives as one for the owner of that source, or for everyone when the source has no owner.
 
 ## The Queue
 
@@ -61,11 +75,17 @@ Announcements can be sent directly from the MA UI using the menu item shown abov
 
 When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the queue settings.
 
-Each queue has a number of options which affect various behaviours. The options can be set globally in the [player queues settings](/settings/core/#player-queues) or individually via the option in the ⋮ menu. The individual player queue settings are as follows:
+Each queue has a number of options which affect various behaviours. The defaults for all queues are set in the [player queues settings](/settings/core/#player-queues), and each queue can override them. To change them for one queue, open **Queue settings**, either from **Settings → Players →** *the player* **→ Queue settings**, or from the ⋮ menu in the [Now Playing view](/ui/#now-playing-view) under **Settings → Queue settings**. The **Open global queue settings** button at the top of the page goes to the defaults.
 
-[![Preview image](/assets/screenshots/queue-settings.png)](/assets/screenshots/queue-settings.png)
+Each setting starts at `Global [default]`, which uses the default for all queues:
 
-See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade. 
+- <b>Smart shuffle.</b> Whether the shuffle button uses Smart Shuffle for this queue
+- <b>Optimize order for Smart Fades.</b> Arranges the upcoming tracks so Smart Fades can make smoother transitions
+- <b>Autoplay source.</b> Where Autoplay gets more tracks from when the queue runs out. When `Tracks from a playlist` is chosen, the **Autoplay playlist** box sets the playlist
+- <b>Crossfade mode.</b> Standard crossfade or Smart crossfade for this queue
+- <b>Volume normalization (EBU-R128 based).</b> Turns volume normalization on or off for this queue
+
+Turning Autoplay and crossfade on or off is done from the player controls. These settings decide how they work. See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade.
 
 > [!NOTE]
 > If a queue is paused for more than 30 seconds its status will change to stopped
@@ -85,7 +105,7 @@ Endless Mix keeps the music playing by adding tracks similar to what you started
 <summary>How Endless Mix picks tracks</summary>
 
 **Starting from a Track or Album:**
-Endless Mix retrieves similar tracks using the track's provider mappings (shown in the [Provider Details](/ui/#provider-details) section in the UI). When you start Endless Mix from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature. For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start Endless Mix with a track or album that is not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
+Endless Mix retrieves similar tracks using the track's provider mappings (shown in the [Source Details](/ui/#source-details) section in the UI). When you start Endless Mix from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature. For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start Endless Mix with a track or album that is not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
 
 **Starting from an Artist:**
 Endless Mix works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all sources where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own source for similar tracks. This means Endless Mix started from an artist typically produces a diverse mix of results from multiple sources, as each base track contributes similar tracks from its respective source (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that source's top tracks are used as the base.
@@ -110,7 +130,13 @@ Automatically generated playlists from streaming sources may be supported. See t
 
 MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in [**Settings → System → Background tasks**](/settings/core/#background-tasks) or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting **Refresh item**.
 
-There are also two pseudo-playlists, the Infinite Mixes (one based on the whole library and one on the favorites). Viewing these playlists shows no tracks; playing one results in an endless queue where 25 random tracks are added and refreshed as the queue comes to an end.
+There are also two pseudo-playlists, the Infinite Mixes (one based on the whole library and one on your favorites). Viewing these playlists shows no tracks; playing one results in an endless queue where 25 random tracks are added and refreshed as the queue comes to an end.
+
+### Sharing a playlist
+
+A playlist you create on Music Assistant itself, rather than on a music source, belongs to you, and at first only you can see it. To share it, open the playlist and select the share icon, or **Share playlist** in its ⋮ menu. You can share it with **Selected users**, **All users except guests** or **Everyone, including guests**. Turn on **Collaborative** to let them add and remove tracks too. Administrators can also change who owns a playlist.
+
+The page of a Music Assistant playlist shows who it belongs to and who it is shared with. A playlist that comes from a music source, such as one of your Spotify playlists, is visible to everyone who can use that source. **Add to Playlist** only offers the playlists you can edit.
 
 ### Playlist Artwork
 
@@ -130,7 +156,7 @@ Only playlists that live in the Music Assistant library can be exported; provide
 
 **Importing a playlist**
 
-On the Playlists page, there is an option in the toolbar menu to `Import playlist`, select it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
+On the Playlists page, the ⋮ menu in the top right has **Import playlist**. Select it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
 
 In the import dialog, you will see a `Search for tracks on` list with a checkbox for each installed music provider. These are the providers MA will search when a track in the file can't be played directly (for example, the file references a Spotify track but Spotify is no longer installed, or you are importing a M3U that someone else exported).
 

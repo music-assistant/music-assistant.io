@@ -22,12 +22,12 @@ This provider is added automatically and cannot be disabled or deleted.
 
 To manually add items follow these steps:
 
-1. In the main menu select 'Tracks', 'Radio' or 'Playlists'
-2. Then click on the icon in the top right corner (The playlist import icon looks different)
+1. In the main menu select **Tracks** or **Radio**. Playlists are added with **Import playlist** in the ⋮ menu of the Playlists view instead, see [Importing and Exporting](/usage/#importing-and-exporting)
+2. Open the ⋮ menu in the top right and select **Add item from URL**
 
     ![screenshot](/assets/screenshots/url.png)
 
-3. Add the full URL including http:// or https:// and optionally a custom name and image URL. For playlists, select the playlist file from the dialog box.
+3. Add the full URL including http:// or https:// and optionally a custom name and image URL, then select **Add** (or **Cancel** to close the dialog). For playlists, select the playlist file from the dialog box.
 
 After completing step 3 the track, station or playlist will become available in the respective view (A press of the refresh icon ![screenshot](/assets/icons//icon-refresh-plain.png) may be required).
 

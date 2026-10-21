@@ -67,7 +67,7 @@ librespot is preselected for a new setup, and stays selected for setups added be
 
 ### Basic setup
 
-1. Add the Spotify source via **Settings → Music Sources → Add a music source**.
+1. Add the Spotify source via **Settings → Music sources → Add a music source**.
 2. Follow the on screen instructions which should take you through the initial flow shown here
 <a href="/assets/screenshots/spotify-phase1.png"><img src="/assets/screenshots/spotify-phase1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
@@ -148,3 +148,4 @@ Crossfade is not set here — enable it for the player as usual, and it works th
 - When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
 - Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
 - Spotify does not tell Music Assistant what genre anything is
+- Podcast transcripts are not available
