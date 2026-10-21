@@ -11,6 +11,7 @@ With a large project like this, there is always plenty to do. Not only with actu
     - look at the [backlog](https://github.com/orgs/music-assistant/projects/2/views/1)
     - look at the [feature requests](https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas?discussions_q=is%3Aopen+category%3A%22Feature+requests+and+ideas%22+sort%3Atop)
 - Provide or update a [translation](/help/lokalise/)
+- Add and fix music data on MusicBrainz. See [Improve MusicBrainz Data](/help/musicbrainz/)
 - Help others out on discord or within the [discussions part of Github](https://github.com/orgs/music-assistant/discussions/categories/q-a)
 - Help out with writing documentation and HOWTO's
 - Help <a href="https://github.com/OzGav" target="_blank" rel="noopener noreferrer">OzGav</a> out as a moderator on Discord and GitHub with the load of incoming reports, requests and questions

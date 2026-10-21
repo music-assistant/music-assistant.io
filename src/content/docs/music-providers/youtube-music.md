@@ -77,6 +77,7 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 8. Find the section called 'Request Headers'.
 9. Find the item named 'Cookie' and copy the **value**. It is **VERY** important that you copy the exact value. Double check that you do not include any additional spaces or characters at the start/end of the value.
 [![Cookie value](/assets/screenshots/ytmusic-cookie-value.png)](/assets/screenshots/ytmusic-cookie-value.png)
+10. Close the incognito window right away. Do not log out first, as that ends the session the cookie belongs to. A window left open keeps rotating the cookie and makes the copy in MA stop working.
 
 > [!NOTE]
 > If your cookie still expires quickly, the yt-dlp project documents an <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">alternative export method</a> aimed at maximising cookie life. It is written for users of the yt-dlp tool, so expect a more technical walkthrough
