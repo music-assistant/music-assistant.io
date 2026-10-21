@@ -35,13 +35,13 @@ This source connects Music Assistant to the music library on your Plex server. E
 
 [![Preview image](/assets/screenshots/plex/plex-config-opts.png)](/assets/screenshots/plex/plex-config-opts.png)
 
-- Click the `Use Plex GDM to discover local servers` button, this **should** discover your local server and prefill the `local_server_ip` and `local_server_port` fields
-- If GDM discovery fails, the 2 fields mentioned above will be filled with **"Discovery failed.... "**. In this case, please add the IP address (without any http:// prefix) of your server, and the port (usually 32400) that you are exposing it on
-- Select the `SSL (HTTPS)` toggle if required. If this setting is enabled an option in the Advanced Settings will be activated which requires the certificate to be verified (default is on)
-- If you login to Plex via MYPLEX.TV, click the `Authenticate on MYPLEX.TV` button, this may trigger your browser `pop-up` detection, so watch out for that, authenticate as you normally would for Plex
-- If you have configured Plex to allow local connection without authentication (see below), click the `Authenticate Locally` button
-- Select the library and type (Music, Audiobook, or Podcast) that you would like to use; options will be auto-selected based on your existing configuration, but you can change as needed.
-- Save the settings
+Adding Plex is a step-by-step setup.
+
+1. <b>Plex server details.</b> Enter the **Local server IP** (without any http:// prefix) and the **port** (usually 32400) your server is exposed on. When Music Assistant finds a Plex server on your network, it offers it so you don't have to type the details. Switch on **SSL (HTTPS)** if your server needs it. **Verify certificate** (on by default) is shown with **Show advanced settings**. Select **Next**
+2. <b>Authentication.</b> Sign in with your Plex account (MYPLEX.TV) as you normally would for Plex, which may open a pop-up, so watch for your browser's pop-up blocker. If you have configured Plex to allow local connections without authentication (see [Plex Configuration](#plex-configuration) below), you can connect locally instead
+3. <b>Library.</b> Select the library and type (Music, Audiobook, or Podcast) that you would like to use, then finish the setup
+
+<!-- TODO(Gavin): only the "Plex server details" step was checked against the app. Confirm the names and order of the authentication and library steps. -->
 
 ### Advanced Settings
 

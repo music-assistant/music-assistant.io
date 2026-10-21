@@ -26,7 +26,7 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Teufel Raumfeld`.
+1. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider** and select `Teufel Raumfeld`.
 2. Check the host's **IP address**, which is filled in when the host is found on the network, or enter it.
 3. Your rooms appear in the player list within a few seconds of the host being reached.
 

@@ -19,7 +19,7 @@ Music Assistant has support for the <a href="https://www.amplipi.com/" target="_
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `AmpliPi`.
+1. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider** and select `AmpliPi`.
 2. Confirm the `Host` setting. Controllers on your local network are found automatically and the field is prefilled with the first one that is not set up yet; if yours was not found, enter its hostname or IP address. See Settings below for the details.
 
 ## Settings

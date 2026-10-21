@@ -31,7 +31,7 @@ This source adds Global Player's live stations to Music Assistant as radio stati
 
 ## Configuration
 
-No account or credentials are required. To add the provider, go to **Settings → Music Sources → Add a music source → Global Player** and click the save button.
+No account or credentials are required. To add the provider, go to **Settings → Music sources → Add a music source → Global Player** and click the save button.
 
 ## Usage
 
