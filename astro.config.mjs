@@ -341,6 +341,7 @@ export default defineConfig({
           items: [
             { label: "I Want to Help / Donate", slug: "help" },
             { label: "Translations", slug: "help/lokalise" },
+			{ label: "Improve MusicBrainz Data", slug: "help/musicbrainz" },
             {
               label: "Community Extensions",
               slug: "community-extensions",
