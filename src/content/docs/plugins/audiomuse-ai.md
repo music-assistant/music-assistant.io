@@ -80,6 +80,3 @@ The plugin's settings page has a **Generic** and a **Status** panel:
 - Only one AudioMuse-AI server can be connected at a time.
 - Install either this plugin or [Sonic Similarity](/plugins/sonic-similarity/), not both. With both installed, whichever answers first supplies the similar tracks, and you cannot choose which one that is.
 
-## Credits
-
-- <a href="https://github.com/NeptuneHub/AudioMuse-AI" target="_blank" rel="noopener noreferrer">AudioMuse-AI</a> does the analysis, similarity and search behind this plugin.
