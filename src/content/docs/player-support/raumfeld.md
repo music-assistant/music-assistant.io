@@ -24,6 +24,15 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 - Hi-res audio up to 192 kHz / 24 bit, chosen per room (up to 96 kHz by default, see Settings)
 - Rooms are matched to the same speaker's Chromecast or DLNA representation, so they do not show up twice
 
+## Playback started outside Music Assistant
+
+Music Assistant also shows what a room plays when the music was started somewhere else: Spotify Connect, or music and radio from the Raumfeld app. You see the source and the track, and get the controls the Raumfeld host allows for it. For an album or Spotify that is pause, next/previous and seek; for radio only stop.
+
+- A source you stop is shown as paused and can be resumed for about a minute. After that Music Assistant shows its own queue again
+- Playing something from Music Assistant takes over the room
+- Music from another app that plays through the speaker's built-in Chromecast, such as the Tidal app, is not shown
+- Pausing a track within the first few seconds restarts it when you resume. The Raumfeld app does the same
+
 ## Configuration
 
 1. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider** and select `Teufel Raumfeld`.
@@ -43,7 +52,7 @@ For information about the settings seen in the MA UI refer to the [Player Provid
 
 ## Known Issues / Notes
 
-- **Pause is handled as stop.** Resuming picks up where you paused, but the Raumfeld app shows the room as stopped rather than paused
+- **Pause is handled as stop for music played from Music Assistant.** Resuming picks up where you paused, but the Raumfeld app shows the room as stopped rather than paused
 - **With flow mode on, the Raumfeld app shows the track title but not its elapsed time or duration.** The time it shows runs on across the whole queue rather than starting again for each track. Music Assistant's own progress bar is correct. If you rely on the Raumfeld app's time display, switch flow mode off (see Settings)
 - **Only a room that was switched off is shown as off.** A room that went into standby by itself after a while without music is shown as on, because it wakes up by itself for the next play. Switching a room off removes it from its group
 - **Stopping the Line-in switches the room off**, along with any rooms grouped with it, because a Raumfeld Line-in would otherwise keep playing. The next play from Music Assistant wakes them again
