@@ -12,7 +12,7 @@ Unlike most providers, Raumfeld systems are not a collection of independent spea
 Music Assistant follows that model. Each Raumfeld **room** becomes a player, and each Raumfeld **zone** becomes a sync group. Grouping players in Music Assistant creates and changes zones on the host, so a group made here is a real Raumfeld group and shows up as one in the Raumfeld app.
 
 > [!NOTE]
-> This provider is not auto-discovered. You need the IP address of the device running the Raumfeld host service. The Raumfeld app shows which device that is.
+> Music Assistant looks for the device running the Raumfeld host service when you add the provider, and fills in its IP address. If it is not found, for example because it is on another network, enter the address yourself. The Raumfeld app shows which device is the host.
 
 ## Features
 
@@ -37,7 +37,7 @@ Music Assistant also shows what a room plays when the music was started somewher
 ## Configuration
 
 1. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider** and select `Teufel Raumfeld`.
-2. Enter the host's **IP address**.
+2. Check the host's **IP address**, which is filled in when the host is found on the network, or enter it.
 3. Your rooms appear in the player list within a few seconds of the host being reached.
 
 If the host is unreachable when you set it up, or goes away later, the provider keeps retrying rather than failing. Players are shown as unavailable until it returns.
