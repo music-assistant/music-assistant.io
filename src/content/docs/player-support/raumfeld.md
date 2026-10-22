@@ -19,6 +19,7 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 - Grouped rooms play in sync, handled by the Raumfeld host itself
 - Gapless playback between tracks, including across grouped rooms (with flow mode on, the default)
 - A room's analog **Line-in** input is offered as a selectable source, where the device has one
+- A speaker's **station buttons** are offered as sources too, each named after its number and the station, album or playlist it is set to in the Raumfeld app. A button pressed on the speaker itself shows as that button
 - Rooms can be switched off (standby) and on again from Music Assistant
 - Volume and mute are set per room, also for rooms in a group
 - Hi-res audio up to 192 kHz / 24 bit, chosen per room (up to 96 kHz by default, see Settings)
