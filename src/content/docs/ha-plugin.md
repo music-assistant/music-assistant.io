@@ -29,15 +29,16 @@ Once it is added, the only settings here are the three player control lists desc
 
 ## AI and text-to-speech engines
 
-Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only.
+Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only. [Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers) draws pictures as well, for its AI generated covers.
 
-This plugin does neither job itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine** and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
+This plugin does none of these jobs itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine**, an AI task entity that can generate images also becomes an **image engine**, and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
 
 Other plugins provide engines too. The [OpenAI Compatible plugin](/plugins/openai_compatible/) and the [OpenAI Text-to-speech](/plugins/openai_tts/) plugin provides AI engines with no Home Assistant involved at all.
 
 ### What you need in Home Assistant
 
 - For an **AI engine**, an <a href="https://www.home-assistant.io/integrations/ai_task/" target="_blank" rel="noopener noreferrer">AI Task</a> entity. These come from an AI integration you add, such as <a href="https://www.home-assistant.io/integrations/openai_conversation/" target="_blank" rel="noopener noreferrer">OpenAI Conversation</a>. Not all AI integrations offer one, so check the page for whichever you prefer
+- For an **image engine**, an AI Task entity that supports generating images. Not every AI Task entity does; the integration's page says whether it can
 - For a **text-to-speech engine**, a <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">text-to-speech</a> entity. Home Assistant lists the integrations that provide these. Test yours there first and make sure it will speak a short message
 
 The engines only decide which Home Assistant entity gets called. The model, the voice, the language, the speaking speed and the audio quality are all set in Home Assistant.
@@ -55,6 +56,7 @@ Home Assistant | Google Translate (tts.google_translate_en_com)
 | [AI Radio](/plugins/ai-radio/) | AI **and** text-to-speech | **Reconfigure** on the provider's menu, not its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later) |
 | [Music Quiz](/plugins/music-quiz/) | AI | Provider settings, under **Features** |
 | [Smart Playlists](/plugins/smart_playlist/) | AI | Provider settings, once **AI descriptions** is switched on |
+| [Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers) | Image for covers, AI for descriptions | Provider settings: **Image engine** appears once **Artwork template** is **AI generated**, and **Text engine** is under **AI covers and descriptions** |
 
 > [!TIP]
 > With only one engine of each kind there is nothing to do. A feature takes the only one available and remembers it. The picker matters when you have more than one.
