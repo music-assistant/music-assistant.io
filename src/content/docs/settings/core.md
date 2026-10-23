@@ -56,7 +56,7 @@ With either album order:
 - Singles are left out, as their songs are mostly on the albums.
 - Compilations in your library still play. Compilations found only on a provider are left out, as their songs are already on the albums.
 - <b>Artist top tracks only</b> still plays shuffled tracks.
-- An artist without albums plays shuffled tracks instead. For example, an artist with only singles, or one that only appears on another artist's albums.
+- An artist without albums plays shuffled tracks instead. For example, an artist with only singles, or one that only appears on another artist's albums. If the artist's albums can't be listed because a provider is offline or fails, and your library has none of them, nothing plays.
 
 An album order switches shuffle off for the queue, as when you play an album. An artist without albums keeps the queue's shuffle, and so does <b>Artist top tracks only</b>. Asking for shuffle when you start the artist still shuffles it. The setting does not apply to authors and narrators, as they play audiobooks.
 
