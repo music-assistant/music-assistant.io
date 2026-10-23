@@ -30,7 +30,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Google Cast provider has the following:
 
-- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to `Profile 3 - forced content length` on Cast devices. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
+- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to `Profile 2 - no content length` on Cast devices. Switch to `Profile 3 - forced content length` only for a device that needs it, for example one that will not start playback or will not let you skip within a track. Avoid Profile 3 on Android-based Cast devices such as the 2026 Google Home Speaker and Android TV devices, because they stop each stream after about 24 MiB of audio, which can be only a few minutes of playback. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
 - <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
 - <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit for a single player, and up to 96 kHz for a Cast group. Only 44.1 kHz / 16 bit and 48 kHz / 16 bit are selected by default, because the higher ones are unreliable on some devices despite being officially supported. Add them and test rather than assume
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
@@ -77,8 +77,9 @@ You may see any of these:
 
 In the individual player settings:
 
-1. Set **Output codec to use for streaming audio to the player** to `MP3`.
-2. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
+1. If **HTTP Profile used for sending audio** is set to `Profile 3 - forced content length`, set it back to `Profile 2 - no content length`.
+2. Set **Output codec to use for streaming audio to the player** to `MP3`.
+3. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
 
 Once playback is reliable you can try putting the output codec back to `FLAC`, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
 
