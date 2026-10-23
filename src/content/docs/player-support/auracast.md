@@ -18,7 +18,7 @@ Auracast sends one Bluetooth broadcast that nearby compatible receivers can join
 
 ## Configuration
 
-1. Connect an Auracast-capable Bluetooth controller to the Music Assistant server over UART. The controller must expose a serial HCI interface and support LE Periodic Advertising.
+1. To use Auracast, you need a supported Bluetooth LE Audio USB adapter plugged into the machine running Music Assistant. The computer’s built-in Bluetooth and ordinary Bluetooth dongles won’t work. See the list of tested adapters below.
 2. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider**, and select `Auracast`.
 3. Select the compatible controller found by setup, choose a broadcast name, then save.
 4. Start playback on the `Auracast` player. On each receiver, scan for the broadcast name and join it.
@@ -29,29 +29,33 @@ Setup checks available serial ports and offers controllers that pass the Bluetoo
 
 In addition to the [Player Provider Settings](/settings/player-provider/), Auracast has these settings:
 
-- <b>Serial port.</b> The UART device connected to the Bluetooth controller. Setup lists serial devices that support LE Periodic Advertising.
-- <b>Serial baud rate.</b> The UART speed used to communicate with the controller. The default is 1,000,000 baud; it must match the controller firmware.
-- <b>Broadcast name.</b> The name shown when receivers scan for Auracast broadcasts. The default is `Music Assistant Auracast`.
-- <b>Manufacturer data.</b> Optional Bluetooth manufacturer-specific data in `COMPANY_ID:HEX_DATA` format. Use a semicolon to separate multiple entries. The company identifier is a decimal number by default; prefix hexadecimal identifiers with `0x`.
+- <b>Serial port.</b> The Bluetooth adapter to use. Setup finds compatible adapters for you, so you only need to change this if you have more than one.
+- <b>Serial baud rate.</b> How fast Music Assistant talks to the adapter. Leave this at the default (1,000,000) unless your adapter’s instructions say otherwise.
+- <b>Broadcast name.</b> The name people see when they look for a broadcast on their headphones, speaker or phone. The default is `Music Assistant Auracast`.
+- <b>Manufacturer data.</b> Advanced, and most people can leave this blank. It adds custom data to the broadcast, which some receivers use. Enter it as `COMPANY_ID:HEX_DATA` and separate multiple entries with a semicolon. Company IDs are decimal unless you prefix them with `0x`.
 
-The player exposes the standard [Individual Player Settings](/settings/individual-player/), including software volume control. Volume is applied by Music Assistant before encoding the audio for the broadcast.
+The player exposes the standard [Individual Player Settings](/settings/individual-player/).
 
-The broadcast uses stereo LC3 audio at 48 kHz, with 10 ms frames and a fixed combined bitrate of 160,000 bits per second. The audio is lossy and does not support hi-res output.
+The volume you set in Music Assistant applies to everyone listening to the broadcast. Each listener can still adjust their own volume on their headphones or speaker.
+
+Audio quality is compressed (not lossless), 48 kHz stereo.
 
 ## Tested Controllers
 
 The following controller firmware has been tested with the Auracast provider:
 
-- [HCI UART Bumble (Zephyr)](https://github.com/Yagoor/hci_uart_bumble) running on the **Nordic nRF52840 Dongle**. The firmware exposes the controller to Bumble over USB as an H:4 HCI serial interface. Use the default 1,000,000 baud setting. The Music Assistant setup flow detected LE Periodic Advertising support on this controller.
+- **Nordic nRF52840 Dongle**, flashed with the [HCI UART Bumble firmware](https://github.com/Yagoor/hci_uart_bumble). The dongle doesn't work out of the box, so follow the firmware's instructions to flash it before plugging it into the Music Assistant machine.
 
-This is the only controller currently tested with Music Assistant. Other controllers may work if they expose a compatible UART HCI interface and support LE Periodic Advertising, but have not yet been verified.
+This is currently the only adapter tested with Music Assistant.
+
+**Using an adapter that isn't listed?** It must connect as a serial HCI device (H:4 over UART) and support LE Periodic Advertising and isochronous broadcast. Music Assistant only shows adapters that pass these checks during setup.
 
 ## Known Issues / Notes
 
-- The provider requires a compatible serial HCI interface. Direct USB HCI and Bluetooth adapters exposed only through the operating system's normal Bluetooth stack are not supported. USB devices that expose a compatible serial HCI interface may work.
-- Auracast receivers are not listed as separate Music Assistant players. Receivers discover and join the broadcast using their own controls.
-- Receivers must support Bluetooth LE Audio Auracast. The range and reliability depend on the controller, its antenna, and the environment.
-- The broadcast is not grouped with other Music Assistant players. Auracast receivers listening to the same broadcast share its timing.
+- The computer's built-in Bluetooth and ordinary Bluetooth dongles won't work, even if they support LE Audio. Music Assistant needs an adapter it can control directly, like the one listed above.
+- Headphones and speakers don't appear as players in Music Assistant. Join the broadcast from the device itself, or from its app or your phone's Bluetooth settings.
+- Your headphones or speaker must support Auracast. Range depends on the adapter and your surroundings. Walls reduce it.
+- Devices listening to the same broadcast are designed to play in sync, but the broadcast can’t be grouped with other Music Assistant players.
 
 ## Not Yet Supported
 
