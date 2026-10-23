@@ -27,7 +27,7 @@ As explained above you can show your appreciation in all kinds of ways. If you'd
 
 You can also support this project by purchasing <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">merchandise from the official Open Home Foundation merch store!</a> and officially branded <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant hardware</a>.
 
-If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a donation or sponsor-link (via Buy Me A Coffee and similar). There are also links to each of the the lead/main core developers GitHub page on the [Home Page.](/#the-core-team)
+If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a donation or sponsor-link (via Buy Me A Coffee and similar). There are also links to each of the lead/main core developers GitHub page on the [Home Page.](/#the-core-team)
 
 A really big thank you in advance from the whole team!
 
