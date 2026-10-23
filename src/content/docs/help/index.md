@@ -4,7 +4,11 @@ title: "I want to help"
 
 # I want to help <img src="/assets/icons/help-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by <a href="https://www.nabucasa.com" target="_blank" rel="noopener noreferrer">subscribing to Nabu Casa</a> but helping out can also be done in other ways:
+A project this size always has plenty to do, and not only in code. Documentation, support and testing all need help too.
+
+One way to support the project is to [subscribe to Home Assistant Link](https://www.nabucasa.com/link/). It's an optional service from Nabu Casa, the Open Home Foundation's commercial partner. The subscription funds the OHF and its projects, Music Assistant among them.
+
+There are plenty of other ways to help:
 
 - If you like to help with the development, e.g. implementing a new music source or fix a player specific quirk, please reach out on Discord. There hasn't been time to write extended development docs but once you get the grasp of the structure it is relatively straight forward. The current documentation can be found here <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">Music Assistant Developer</a>. There are also <a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">Example Providers</a>. For ideas of what to do you can:
     - look at the [issues](https://github.com/music-assistant/support/issues)
@@ -19,9 +23,11 @@ With a large project like this, there is always plenty to do. Not only with actu
 
 ## Donations
 
-As explained above you can show your appreciation in all kinds of ways. If you wanted to support the project financially then you should support the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation (OHF)</a> by subscribing to <a href="https://www.nabucasa.com/" target="_blank" rel="noopener noreferrer">Nabu Casa</a>. You can also support the OHF by purchasing <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant Hardware</a> or <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">merch!</a>
+As explained above you can show your appreciation in all kinds of ways. If you'd like to support the project financially, the best way is to subscribe to [Home Assistant Link](https://www.nabucasa.com/link/). This optional subscription helps fund the [Open Home Foundation (OHF)](https://www.openhomefoundation.org/) and all its projects, including Music Assistant.
 
-If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a Buy Me A Coffee or similar link. There are also links to the main devs GitHub page on the [Home Page.](/#the-core-team)
+You can also support this project by purchasing <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">merchandise from the official Open Home Foundation merch store!</a> and officially branded <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant hardware</a>.
+
+If you appreciate a particular component then go to the component's page in these docs and find the responsible dev and you can see if they have a donation or sponsor-link (via Buy Me A Coffee and similar). There are also links to each of the lead/main core developers GitHub page on the [Home Page.](/#the-core-team)
 
 A really big thank you in advance from the whole team!
 
