@@ -53,6 +53,7 @@ With either album order:
 - The artist selection picks the artist's own albums. The in-library selections play the albums in your library. <b>All tracks from all providers</b> also plays the albums found only on a provider.
 - Each album plays as it does on its own, following <b>Items to select when you play a (in-library) album</b>.
 - Each album plays once, even when your library and a provider both have it.
+- If one copy of an album can't play, another copy plays instead. With <b>Only in-library tracks</b> as the album selection, an album in your library plays only your saved tracks.
 - Singles are left out, as their songs are mostly on the albums.
 - Compilations in your library still play. Compilations found only on a provider are left out, as their songs are already on the albums.
 - <b>Artist top tracks only</b> still plays shuffled tracks.
