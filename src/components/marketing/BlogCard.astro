@@ -14,7 +14,11 @@ const isRelease = post.data.tags?.includes("release");
 
 <article class:list={["post", { featured }]}>
   <div class="cover">
-    {cover ? (
+    <!-- Shown until the cover loads, or instead of it when there is none. -->
+    <span class="placeholder" aria-hidden="true">
+      <Icon name="audio-lines" size={48} />
+    </span>
+    {cover && (
       <img
         src={cover.src}
         alt=""
@@ -23,10 +27,6 @@ const isRelease = post.data.tags?.includes("release");
         loading={featured ? "eager" : "lazy"}
         decoding="async"
       />
-    ) : (
-      <span class="placeholder" aria-hidden="true">
-        <Icon name="audio-lines" size={48} />
-      </span>
     )}
   </div>
   <div class="body">
@@ -36,7 +36,10 @@ const isRelease = post.data.tags?.includes("release");
         {formatDate(post.data.date)}
       </time>
       {post.data.crosspostSource && (
-        <span>· From {post.data.crosspostSource}</span>
+        <span class="source">
+          On {post.data.crosspostSource}
+          <Icon name="arrow-up-right" size={14} />
+        </span>
       )}
     </p>
     <h2>
@@ -64,11 +67,16 @@ const isRelease = post.data.tags?.includes("release");
     outline: 2px solid var(--accent);
     outline-offset: 2px;
   }
+  /* The placeholder and the image share one cell, image on top. */
   .cover {
+    display: grid;
     aspect-ratio: 1200 / 630;
     overflow: hidden;
     border-bottom: 1px solid var(--line);
     background: var(--page-alt);
+  }
+  .cover > * {
+    grid-area: 1 / 1;
   }
   .cover img {
     width: 100%;
@@ -94,6 +102,11 @@ const isRelease = post.data.tags?.includes("release");
     font-family: var(--font-mono);
     font-size: 0.75rem;
     text-transform: uppercase;
+  }
+  .source {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
   }
   .chip {
     padding: 0.125rem 0.5rem;

@@ -38,6 +38,7 @@ provider at it, as described under [Configuration](#configuration).
 - Progress reporting and acquiring
 - Populates libraries with podcasts
 - Updates playlog on regular provider syncs
+- Transcripts are shown for episodes where the podcast publisher provides one
 
 ## Configuration
 ### gpodder.net compatible webservice

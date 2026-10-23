@@ -32,7 +32,7 @@ Any Yandex Station that exposes the local Glagol API is supported, including Sta
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select Yandex Station.
+1. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider** and select Yandex Station.
 2. If you already have a Yandex Music provider set up, choose the <b>Yandex account source</b>. Borrow that provider's account to keep a single login shared between the two, or use this provider's own credentials and sign in as below.
 3. Choose a <b>Login method</b>, decide whether to keep the session with <b>Remember session</b>, then sign in with the Yandex account that owns the stations.
 4. Your stations will be discovered automatically and will appear in the player list.
@@ -61,7 +61,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 
 ### Voice control integration (experimental)
 
-When enabled in **Settings → Players → \<Your Station\> → Show advanced → Voice control integration**, the provider watches the Glagol state stream and reacts to Alice activity:
+When enabled in **Settings → Players → \<Your Station\> → Show advanced settings → Voice control integration**, the provider watches the Glagol state stream and reacts to Alice activity:
 
 | Voice command | Behaviour |
 |---|---|
@@ -84,8 +84,8 @@ Use it to keep Alice as a voice frontend while the audio plays on better speaker
 
 Both switches are off by default and **both must be on** for any intercept action to happen:
 
-1. Provider-level master switch, at **Settings → Player Providers → Yandex Station → Show advanced → Enable intercept feature**.
-2. Per-player switch, at **Settings → Players → \<Your Station\> → Show advanced → Intercept native Station playback** plus **Intercept target player**.
+1. Provider-level master switch, at **Settings → Player providers → Yandex Station → Show advanced settings → Enable intercept feature**.
+2. Per-player switch, at **Settings → Players → \<Your Station\> → Show advanced settings → Intercept native Station playback** plus **Intercept target player**.
 
 #### Requirements
 

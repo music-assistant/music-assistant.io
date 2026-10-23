@@ -13,10 +13,11 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 - When using Google cast groups then perfect sync across players in that group is possible
 - Any physical control buttons on the device should be supported as well as voice control
 - Cast speakers can be synchronised with other Sendspin clients. This is experimental and off by default, see [Sendspin on Cast devices](#sendspin-on-cast-devices)
+- Cast devices with a screen, such as a Chromecast, Google TV or Nest Hub, can show Music Assistant [dashboards](/dashboards/)
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `Google Cast`.
+1. In Music Assistant, go to **Settings → Player providers** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `Google Cast`.
 2. Your Cast devices, and any speaker groups created in the Google Home app, will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).

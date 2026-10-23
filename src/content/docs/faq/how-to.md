@@ -67,7 +67,7 @@ and this (file has an absolute path):
 and this (full uri):
 spotify://track/12345
 or
-filesystem_smb://track/blah
+filesystem_local://track/blah
 ```
 
 Relative paths to the playlist (e.g.` ../Mariah Carey/Merry Christmas/02 All I Want for Christmas Is You.flac` ) also work.
@@ -189,7 +189,7 @@ You can also use the `music_assistant.search` or `music_assistant.get_library` a
 > [!NOTE]
 > URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
 
-URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system source added to MA then `filesystem_smb` can be used.
+URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_local--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one Local files source added to MA then `filesystem_local` can be used.
 
 In general every MA item has a URI shaped like `provider://media_type/item_id`. More examples are:
 

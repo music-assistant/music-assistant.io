@@ -9,12 +9,15 @@ import "../styles/marketing.css";
 
 interface Props {
   title: string;
+  /** Title for link previews, without the site name. Defaults to `title`. */
+  socialTitle?: string;
   description: string;
   image?: string;
   article?: boolean;
 }
 const {
   title,
+  socialTitle = title,
   description,
   image = "/assets/website-social.png",
   article = false,
@@ -62,7 +65,7 @@ const isProduction =
       title="Music Assistant News"
       href="/blog/rss.xml"
     />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:type" content={article ? "article" : "website"} />

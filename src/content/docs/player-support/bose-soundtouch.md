@@ -21,7 +21,7 @@ Music Assistant has support for [Bose SoundTouch](https://www.bose.com/) speaker
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Bose SoundTouch`.
+1. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider** and select `Bose SoundTouch`.
 2. Your SoundTouch speakers will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).

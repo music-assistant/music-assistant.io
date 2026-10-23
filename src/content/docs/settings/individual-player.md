@@ -4,7 +4,7 @@ title: "Individual Player Settings"
 
 # Individual Player Settings <img src="/assets/icons/settings-individual-player-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. Some items are hidden unless the `Show advanced settings` toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
+Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. The **Documentation** button at the top of a player's settings opens this page. Some items are hidden unless the **Show advanced settings** toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
 
 ![image](/assets/screenshots/individual-player-settings.png)
 
@@ -48,9 +48,9 @@ Two things are true of all of them:
 - They are only visible when the `Show advanced settings` toggle is on
 - Changing one reloads the player, so anything currently playing stops briefly
 
-Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, its own page says so.
+Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no **Sample rates supported by this player** setting. Where a player differs from the defaults below, its own page says so.
 
-AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list.
+AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list. Sendspin players also have their own version of **Flow Mode sample rate**, called **Sample rate selection**. The [Sendspin](/player-support/sendspin/#settings) page describes it.
 
 #### Enable queue flow mode
 
@@ -164,7 +164,11 @@ Universal Groups default to `Profile 1 - chunked` for the HTTP Profile, rather t
 
 ## Announcements Configuration
 
-There are a number of configurable options for controlling the volume of [announcements](/integration/announcements/) sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
+There are a number of configurable options for controlling the volume of [announcements](/integration/announcements/) sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field.
+
+- <b>Volume strategy.</b> There are four options: `Absolute volume`, `Relative volume increase`, `Volume increase by fixed percentage [default]` and `Do not adjust volume`. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected
+- <b>Pre-announcement chime.</b> A checkbox that plays a chime before the announcement
+- <b>Custom (pre)announcement chime URL.</b> The address of a sound to play as the chime instead of the built-in one
 
 ![image](/assets/screenshots/announcements-settings.png)
 

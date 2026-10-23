@@ -40,21 +40,11 @@ document
     }
   });
 
-// Show the homepage navigation CTA after the hero CTA passes the sticky header.
-const header = document.querySelector<HTMLElement>(".site-header.is-homepage");
-const heroCta = document.querySelector<HTMLElement>(".hero-install");
-const updateScrolled = () => {
-  const showInstall =
-    !heroCta ||
-    !header ||
-    heroCta.getBoundingClientRect().bottom <= header.getBoundingClientRect().height;
+// Draw the header's bottom border once the page scrolls under it.
+const updateScrolled = () =>
   document.documentElement.classList.toggle("is-scrolled", scrollY > 8);
-  header?.classList.toggle("show-install", showInstall);
-};
 updateScrolled();
 addEventListener("scroll", updateScrolled, { passive: true });
-addEventListener("resize", updateScrolled);
-addEventListener("load", updateScrolled);
 
 // Reveal sections as they scroll into view.
 const revealed = document.querySelectorAll("[data-reveal]");
@@ -67,63 +57,13 @@ if ("IntersectionObserver" in window) {
         observer.unobserve(entry.target);
       }
     },
-    { rootMargin: "0px 0px -10% 0px" },
+    // Start before a section reaches the viewport, so a fast scroll rarely
+    // lands on content that is still invisible.
+    { rootMargin: "0px 0px 10% 0px" },
   );
   revealed.forEach((element) => observer.observe(element));
 } else {
   revealed.forEach((element) => element.classList.add("is-visible"));
-}
-
-// Installation method tabs on /get-started/. Links work without JavaScript;
-// with it, they behave as a tab list and keep the choice in the URL hash.
-const picker = document.querySelector<HTMLElement>("[data-install-picker]");
-if (picker) {
-  const tabs = [...picker.querySelectorAll<HTMLAnchorElement>("a")];
-  const panelFor = (tab: HTMLAnchorElement) =>
-    document.getElementById(tab.hash.slice(1));
-
-  function select(tab: HTMLAnchorElement, updateUrl = false) {
-    for (const item of tabs) {
-      const panel = panelFor(item);
-      const selected = item === tab;
-      item.setAttribute("aria-selected", String(selected));
-      item.tabIndex = selected ? 0 : -1;
-      if (panel) panel.hidden = !selected;
-    }
-    if (updateUrl) history.replaceState(null, "", tab.hash);
-  }
-
-  picker.setAttribute("role", "tablist");
-  tabs.forEach((tab, index) => {
-    const panel = panelFor(tab);
-    tab.setAttribute("role", "tab");
-    if (panel) {
-      tab.setAttribute("aria-controls", panel.id);
-      panel.setAttribute("role", "tabpanel");
-      panel.setAttribute("aria-labelledby", tab.id);
-    }
-    tab.addEventListener("click", (event) => {
-      event.preventDefault();
-      select(tab, true);
-    });
-    tab.addEventListener("keydown", (event) => {
-      const keys: Record<string, number> = {
-        ArrowRight: (index + 1) % tabs.length,
-        ArrowLeft: (index + tabs.length - 1) % tabs.length,
-        Home: 0,
-        End: tabs.length - 1,
-      };
-      const next = keys[event.key];
-      if (next === undefined) return;
-      event.preventDefault();
-      select(tabs[next], true);
-      tabs[next].focus();
-    });
-  });
-  const fromHash = () =>
-    select(tabs.find((tab) => tab.hash === location.hash) ?? tabs[0]);
-  fromHash();
-  addEventListener("hashchange", fromHash);
 }
 
 // Copy buttons on code blocks.

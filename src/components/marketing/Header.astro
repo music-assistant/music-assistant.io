@@ -22,7 +22,7 @@ const links = [
 ];
 ---
 
-<header class:list={["site-header", { "is-homepage": path === "/" }]}>
+<header class="site-header">
   <div class="container inner">
     <div class="brand">
       <a href="/" class="home" aria-label="Music Assistant home">
@@ -67,11 +67,31 @@ const links = [
             <Icon name="moon" />
           </span>
         </button>
-        <Button href="/get-started/" class="nav-install">
-          Get Music Assistant
-        </Button>
+        <a
+          class="icon-button"
+          href="https://github.com/music-assistant"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Music Assistant on GitHub"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 16 16"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill="currentColor"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+            />
+          </svg>
+        </a>
       </div>
     </nav>
+
+    <!-- Outside the navigation so it stays in the bar on small screens. -->
+    <Button href="/get-started/" class="nav-install">Get Music Assistant</Button>
 
     <button
       class="menu-toggle icon-button"
@@ -107,22 +127,31 @@ const links = [
   :global(.is-scrolled) .site-header {
     border-bottom-color: var(--line);
   }
+  /* One gap between every item on the right, links and icons alike. */
   .inner {
+    --item-gap: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--item-gap);
     height: var(--header-height);
   }
   .brand {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    min-width: 0;
     margin-inline-end: auto;
   }
   .home {
     display: block;
+    flex: none;
     height: 1.625rem;
+    overflow: hidden;
     color: var(--fg);
+  }
+  /* Let the logo keep its width when the link narrows to clip it. */
+  .home :global(.logo) {
+    max-width: none;
   }
   .version {
     padding: 0.125rem 0.5rem;
@@ -145,19 +174,16 @@ const links = [
   .nav-actions {
     display: flex;
     align-items: center;
-  }
-  .nav {
-    gap: 1.25rem;
+    gap: var(--item-gap);
   }
   .nav ul {
-    gap: 0.25rem;
     margin: 0;
     padding: 0;
     list-style: none;
   }
   .nav ul a {
     display: block;
-    padding: 0.5rem 0.75rem;
+    padding-block: 0.5rem;
     color: var(--muted);
     font-size: 0.9375rem;
     font-weight: 500;
@@ -168,18 +194,9 @@ const links = [
   .nav ul a[aria-current="page"] {
     color: var(--fg);
   }
-  .nav-actions {
-    gap: 0.25rem;
-  }
-  .nav-actions :global(.btn) {
-    margin-left: 0.5rem;
-  }
-  /* Reserve the button's space so the navigation stays still as it appears. */
-  :global(.js) .site-header.is-homepage:not(.show-install) :global(.nav-install) {
-    visibility: hidden;
-  }
   .icon-button {
     display: grid;
+    flex: none;
     place-items: center;
     width: 2.5rem;
     height: 2.5rem;
@@ -193,6 +210,10 @@ const links = [
   }
   .icon-button:hover {
     color: var(--fg);
+  }
+  /* The icons keep a full-size tap area, but are spaced by what you see. */
+  .nav-actions .icon-button {
+    margin-inline: -0.625rem;
   }
   /* Show the icon for the theme you would switch to. */
   .theme-toggle .to-dark,
@@ -222,8 +243,12 @@ const links = [
   }
 
   @media (max-width: 960px) {
+    .inner {
+      --item-gap: 0.75rem;
+    }
     .menu-toggle {
       display: grid;
+      margin-inline-end: -0.5rem;
       color: var(--fg);
     }
     .nav {
@@ -243,6 +268,7 @@ const links = [
     .nav ul {
       flex-direction: column;
       align-items: stretch;
+      gap: 0;
     }
     .nav ul a {
       padding: 0.625rem 0;
@@ -250,8 +276,22 @@ const links = [
       font-size: 1.25rem;
       font-weight: 500;
     }
-    .nav-actions :global(.btn) {
-      flex: 1;
+    .nav-actions {
+      gap: 0.5rem;
+    }
+    .nav-actions .icon-button {
+      margin-inline: 0;
+    }
+  }
+  /* On phones the button needs the room: keep the logo mark, drop the name. */
+  @media (max-width: 560px) {
+    .home {
+      width: 1.625rem;
+    }
+    .inner :global(.nav-install) {
+      height: 2.25rem;
+      padding-inline: 0.875rem;
+      font-size: 0.875rem;
     }
   }
 </style>

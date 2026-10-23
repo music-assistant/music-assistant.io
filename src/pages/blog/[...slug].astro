@@ -29,10 +29,18 @@ const byline = (
       : author?.name,
   )
   .join(", ");
+// Posts set these for the Open Home Foundation preview image (its headline,
+// author and category), so pass them through to the page head.
+const previewTags = (post.data.head ?? []).filter(
+  (tag) =>
+    tag.tag === "meta" &&
+    String(tag.attrs?.property ?? "").startsWith("og:image:"),
+);
 ---
 
 <MarketingLayout
   title={`${post.data.title} — Music Assistant`}
+  socialTitle={post.data.title}
   description={post.data.description ?? post.data.title}
   image={cover?.src}
   article
@@ -42,6 +50,9 @@ const byline = (
     property="article:published_time"
     content={post.data.date.toISOString()}
   />
+  {previewTags.map((tag) => (
+    <meta slot="head" {...tag.attrs} />
+  ))}
   <article class="container article">
     <a class="text-link back" href="/blog/">
       <Icon name="arrow-left" size={16} /> All posts
@@ -121,6 +132,59 @@ const byline = (
   }
   .prose :global(h3) {
     font-size: 1.375rem;
+  }
+
+  /*
+   * Heading anchor links (injected by Starlight's markdown pipeline). Starlight's own
+   * styles only apply inside .sl-markdown-content, so style them here: keep the heading
+   * inline with a little end padding and pull the icon back over it, so it sits right
+   * after the heading text and is only shown on hover or keyboard focus.
+   */
+  .prose :global(.sl-heading-wrapper) {
+    --anchor-icon-size: 0.8275em;
+    --anchor-icon-gap: 0.25em;
+    margin: 2.5rem 0 1rem;
+    line-height: 1.1;
+  }
+  .prose :global(.sl-heading-wrapper.level-h2) {
+    font-size: 1.75rem;
+  }
+  .prose :global(.sl-heading-wrapper.level-h3) {
+    font-size: 1.375rem;
+  }
+  .prose :global(.sl-heading-wrapper > :first-child) {
+    display: inline;
+    margin: 0;
+    padding-inline-end: calc(var(--anchor-icon-size) + var(--anchor-icon-gap));
+  }
+  .prose :global(.sl-anchor-link) {
+    position: relative;
+    display: inline-flex;
+    margin-inline-start: calc(-1 * var(--anchor-icon-size));
+    user-select: none;
+  }
+  .prose :global(.sl-anchor-link::after) {
+    content: "";
+    position: absolute;
+    inset: -0.25rem -0.5rem;
+  }
+  .prose :global(.sl-anchor-icon svg) {
+    display: inline;
+    width: var(--anchor-icon-size);
+    height: auto;
+    vertical-align: top;
+    transform: translateY(
+      calc((1.1em - var(--anchor-icon-size)) / 2)
+    );
+  }
+  @media (hover: hover) {
+    .prose :global(.sl-anchor-link) {
+      opacity: 0;
+    }
+    .prose :global(.sl-anchor-link:focus),
+    .prose :global(.sl-heading-wrapper:hover .sl-anchor-link) {
+      opacity: 1;
+    }
   }
   .prose :global(:where(p, ul, ol, blockquote, pre, table, figure)) {
     margin: 0 0 1.25rem;

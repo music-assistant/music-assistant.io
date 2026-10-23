@@ -55,9 +55,7 @@ The [**Settings → System → Streams → Queue Playback**](/settings/core/#que
 
 ## Stream Selection
 
-When the same track is available from more than one source — say a Spotify stream and a FLAC file on disk — Music Assistant picks one automatically when you press play. It always chooses the highest quality available.
-
-Quality is judged on **sample rate, bit depth and codec**, in that order. Where two sources are of equal quality, the local one is preferred over the cloud one.
+When the same track is available from more than one source — say a Spotify stream and a FLAC file on disk — Music Assistant picks one automatically when you press play. By default it plays the highest quality copy, but an album plays all of its tracks from one source, and a playlist or folder plays from the source it comes from. [Which Source Plays](/source-selection/) explains how the choice is made and the settings that change it.
 
 You can see which sources hold a given item, and how they are linked together, in the [Source Details](/ui/#source-details) section of the item.
 
