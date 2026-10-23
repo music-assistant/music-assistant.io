@@ -134,6 +134,25 @@ The **View ... endless mix** option will only be seen if there is a music source
 
 Every item menu, for tracks, albums, artists, playlists and other items, has a **Dislike** entry between **Add to favourites** and **Add to playlist…**. See [Favorites and dislikes](/usage/#favorites-and-dislikes) for what a dislike does.
 
+## Sharing
+
+Open an item's ⋮ menu and select `Share`. Sharing is also available from the
+current item's menu in Now Playing and from queue item menus.
+
+On desktop, Share copies the link to your clipboard. In supported mobile browsers,
+it opens your device's share sheet, where you can choose a messaging app or copy
+the link. If the item has links from more than one music source, choose which
+source's link to share.
+
+When no supported public link is available, Share uses the item's name and
+available artist and album information as plain text. This also works for local
+files and self-hosted libraries. For radio, Share identifies the station rather
+than the song currently playing.
+
+The recipient opens the link on the music service. Playback may require their
+own account or subscription. Sharing does not give them access to your Music
+Assistant server or local files.
+
 ## View - Discover
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
