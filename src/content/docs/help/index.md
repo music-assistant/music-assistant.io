@@ -22,7 +22,7 @@ There are plenty of other ways to help:
 
 ## Donations
 
-As explained above you can show your appreciation in all kinds of ways. If you wanted to support the project financially then you should support the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation (OHF)</a> by signing up to the optional to [Home Assistant Cloud / Home Assistant Link](https://www.home-assistant.io/cloud/) subscription service which helps to directly fund OHF and all its projects). 
+As explained above you can show your appreciation in all kinds of ways. If you'd like to support the project financially, the best way is to subscribe to [Home Assistant Link](https://www.nabucasa.com/link/). This optional subscription helps fund the [Open Home Foundation (OHF)](https://www.openhomefoundation.org/) and all its projects, including Music Assistant.
 
 You can also support this project by purchasing <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">merchandise from the official Open Home Foundation merch store!</a> and officially branded <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant hardware</a>.
 
