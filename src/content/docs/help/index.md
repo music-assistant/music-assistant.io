@@ -4,7 +4,11 @@ title: "I want to help"
 
 # I want to help <img src="/assets/icons/help-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-With a large project like this, there is always plenty to do. Not only with actual writing of code but also in documentation, providing support, testing etc. Of course you can help out greatly by [subscribing to Home Assistant Cloud](https://www.home-assistant.io/cloud/) (soon to be renamed to "Home Assistant Link", an optional subscription service provided via Open Home Foundation's commercial partner <a href="https://www.nabucasa.com/link/" target="_blank" rel="noopener noreferrer">Nabu Casa</a> where the funds to OHF and its projects, including Music Assistant), but you can also help out in many other ways as well:
+A project this size always has plenty to do, and not only in code. Documentation, support and testing all need help too.
+
+One way to support the project is to [subscribe to Home Assistant Link](https://www.nabucasa.com/link/). It's an optional service from Nabu Casa, the Open Home Foundation's commercial partner. The subscription funds the OHF and its projects, Music Assistant among them.
+
+There are plenty of other ways to help:
 
 - If you like to help with the development, e.g. implementing a new music source or fix a player specific quirk, please reach out on Discord. There hasn't been time to write extended development docs but once you get the grasp of the structure it is relatively straight forward. The current documentation can be found here <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">Music Assistant Developer</a>. There are also <a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">Example Providers</a>. For ideas of what to do you can:
     - look at the [issues](https://github.com/music-assistant/support/issues)
