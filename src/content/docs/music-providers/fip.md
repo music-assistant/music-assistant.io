@@ -42,5 +42,5 @@ While a station plays, the player shows the song or programme on air with its co
 
 ## Known Issues / Notes
 
-- The song details usually change with the music, but now and then up to 40 seconds after the next song has started
+- The song details usually change with the music, but occasionally a delay of up to 40 seconds will be seen
 - When a station has no song or programme to report, the station name and picture are shown instead
