@@ -42,7 +42,5 @@ While a station plays, the player shows the song or programme on air with its co
 
 ## Known Issues / Notes
 
-- Radio France's now playing service names a new song some 20 to 40 seconds after it started. Music Assistant moves on to the song the service announced as next once the previous one should have ended, so the details usually change with the music
-- The service reports a placeholder ("Le direct") for a moment every minute or so, and now and then goes back to the previous song. Both are ignored while a song is playing
+- The song details usually change with the music, but now and then up to 40 seconds after the next song has started
 - When a station has no song or programme to report, the station name and picture are shown instead
-- Station descriptions are FIP's own, in French
