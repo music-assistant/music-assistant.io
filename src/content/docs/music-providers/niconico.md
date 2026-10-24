@@ -24,7 +24,7 @@ This source lets you search that catalogue and play the audio through Music Assi
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                     | 
 | Maximum Stream Quality | AAC up to 576kbps |
-| Login Method | Cookie or Password+MFA |
+| Login Method | Cookie (user_session) |
 
 ### Other
 
@@ -40,9 +40,7 @@ This source lets you search that catalogue and play the audio through Music Assi
 Music Assistant supports login-free playback and search on Niconico.
 Logging in enables personal features such as recommendations, Mylist read/write, and watch history.
 
-Two authentication methods are available:
-- Cookie (user_session)
-- Email + Password (+ MFA)
+Login uses your Niconico `user_session` cookie. Email and password login is no longer supported, because Niconico now requires a verification step for it.
 
 ### Cookie Authentication (user_session)
 
@@ -55,14 +53,7 @@ Written for Chrome:
 4. Under Storage > Cookies, click "https://www.nicovideo.jp" and find the entry called "user_session"
  [![Preview image](/assets/screenshots/niconico-auth2.png)](/assets/screenshots/niconico-auth2.png)
 5. Click it and copy the cookie value and use this in Music Assistant as the 'User Session'
-    - Take note of the "Expires / Max-Age" column. The session will expire on that date and personal features will become unavailable. The above process must then be repeated to obtain a fresh session
-
-### Email + Password (+ MFA)
-
-Provide your Niconico account email and password (and MFA if required).
-
-- Automatically relogins every 30 days to refresh the session cookie
-- Email login may not be supported in some environments. In that case, please use cookie authentication
+    - Take note of the "Expires / Max-Age" column. The session will expire on that date and is not renewed automatically. Music Assistant will then report that the cookie is invalid or has expired, and personal features will be unavailable until you repeat the above process and enter the new `user_session` value in the provider settings
 
 ## Known Issues / Notes
 
