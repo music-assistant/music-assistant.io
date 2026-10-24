@@ -24,7 +24,7 @@ This source lets you search that catalogue and play the audio through Music Assi
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                     | 
 | Maximum Stream Quality | AAC up to 576kbps |
-| Login Method | Cookie (user_session) |
+| Login Method | Cookie |
 
 ### Other
 
