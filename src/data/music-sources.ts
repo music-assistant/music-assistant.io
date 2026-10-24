@@ -316,6 +316,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["own-files"],
   },
   {
+    name: "FIP",
+    slug: "music-providers/fip",
+    icon: "/assets/icons/fip-icon.svg",
+    categories: ["radio", "france"],
+  },
+  {
     name: "Global Player",
     slug: "music-providers/global-player",
     icon: "/assets/icons/global-player-icon.svg",
