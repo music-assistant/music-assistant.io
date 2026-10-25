@@ -58,7 +58,7 @@ The `artist.nfo` file uses the format Kodi describes on its [artist NFO page](ht
 - <b>genre.</b> One or more genres. Use a separate line for each genre
 - <b>style</b> and <b>mood.</b> One or more styles or moods
 - <b>type.</b> One of `Person`, `Group`, `Orchestra`, `Choir`, `Character` or `Other`
-- <b>born</b> or <b>formed</b>, and <b>died</b> or <b>disbanded.</b> Dates such as `1970-12-15`, `1970-12`, `1970`, `15/12/1970`, `1970/12/15`, `15 Dec 1970` or `December 15, 1970`. In a date with slashes or dashes the month is always the middle number, so `05/06/1970` is 5 June 1970
+- <b>born</b> or <b>formed</b>, and <b>died</b> or <b>disbanded.</b> A year (1970), a month and year (12/1970, 1970-12, Dec 1970) or a full date (15/12/1970, 1970.12.15, 15 Dec 1970, December 15, 1970). Numbers can be separated by slashes, dashes or dots, and month names must be in English. In a full date written in numbers the month is always the middle number, so 05/06/1970 is 5 June 1970
 - <b>musicBrainzArtistID.</b> The artist's MusicBrainz ID, see [Making sure the right artist is used](#making-sure-the-right-artist-is-used)
 
 The biography, style, mood, type and dates from your `artist.nfo` take the place of the same information found online. Information your file leaves out is still filled in from online sources.
