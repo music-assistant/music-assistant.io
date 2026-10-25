@@ -9,6 +9,14 @@ The Local Metadata provider reads artist information you keep yourself, in the s
 
 If you already use Kodi, you can point Music Assistant at the artist information folder Kodi created. You can also build the folder yourself.
 
+## When to use it
+
+If your music is in [Local files](/music-providers/local-files/), the artist folders in your music already hold the `artist.nfo` and artwork of your album artists, and Music Assistant reads them from there. This provider is for the artists that have no folder of their own in your music, such as:
+
+- Artists who only appear as a featured or supporting artist on a track
+- Artists who only appear on compilations
+- Artists from streaming services
+
 ## Setting it up
 
 1. Put the artist information folder somewhere Music Assistant can reach. It must be in one of the [storage locations](/settings/storage/), for example the Home Assistant media folder or a network share added on the Storage page.
@@ -44,30 +52,13 @@ When both the `artist.nfo` and the artist in Music Assistant have a MusicBrainz 
 
 ## The artist.nfo file
 
-The `artist.nfo` file is a small text file in the format Kodi uses. For example:
-
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<artist>
-    <name>Radiohead</name>
-    <musicBrainzArtistID>a74b1b7f-71a5-4011-9441-d0b5e4122711</musicBrainzArtistID>
-    <genre>Alternative Rock</genre>
-    <genre>Art Rock</genre>
-    <style>Experimental</style>
-    <mood>Melancholy</mood>
-    <type>Group</type>
-    <formed>1985</formed>
-    <biography>Radiohead are an English rock band formed in Abingdon in 1985.</biography>
-</artist>
-```
-
-Music Assistant uses these fields. All of them are optional.
+The `artist.nfo` file uses the format Kodi describes on its [artist NFO page](https://kodi.wiki/view/NFO_files/Artists). Music Assistant uses these fields. All of them are optional.
 
 - <b>biography.</b> The artist's biography. It is shown instead of a biography found online
 - <b>genre.</b> One or more genres. Use a separate line for each genre
 - <b>style</b> and <b>mood.</b> One or more styles or moods
 - <b>type.</b> One of `Person`, `Group`, `Orchestra`, `Choir`, `Character` or `Other`
-- <b>born</b> or <b>formed</b>, and <b>died</b> or <b>disbanded.</b> Dates such as `1970-12-15`, `1970-12`, `1970`, `15 Dec 1970` or `December 15, 1970`. Dates written only with numbers, such as `15/12/1970`, are ignored because the day and the month cannot be told apart
+- <b>born</b> or <b>formed</b>, and <b>died</b> or <b>disbanded.</b> Dates such as `1970-12-15`, `1970-12`, `1970`, `15/12/1970`, `1970/12/15`, `15 Dec 1970` or `December 15, 1970`. In a date with slashes the month is always the middle number, so `05/06/1970` is 5 June 1970
 - <b>musicBrainzArtistID.</b> The artist's MusicBrainz ID, see [Making sure the right artist is used](#making-sure-the-right-artist-is-used)
 
 The biography, style, mood, type and dates from your `artist.nfo` take the place of the same information found online. Information your file leaves out is still filled in from online sources.
