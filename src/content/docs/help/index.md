@@ -24,7 +24,7 @@ If you'd rather support the project financially, see [Donations](#donations) at 
 A new beta comes out most Fridays, and every stable release goes through a beta cycle first. Running it and reporting what breaks keeps bugs out of everyone else's home. The beta, nightly and stable apps keep separate data, so you can try the beta and switch back.
 
 - **You need:** an installation where a problem is an annoyance rather than a disaster, and a GitHub account to report what you find.
-- **Start here:** [Release Cycle](https://beta.music-assistant.io/release/#beta-releases), then [running versions side by side](https://beta.music-assistant.io/release/#running-parallel-server-versions). The beta has its own documentation at <a href="https://beta.music-assistant.io/" target="_blank" rel="noopener noreferrer">beta.music-assistant.io</a>.
+- **Start here:** [Release Cycle](https://music-assistant.io/release/#beta-releases), then [running versions side by side](https://beta.music-assistant.io/release/#running-parallel-server-versions). The beta has its own documentation at <a href="https://beta.music-assistant.io/" target="_blank" rel="noopener noreferrer">beta.music-assistant.io</a>.
 
 > [!CAUTION]
 > Removing an app deletes its data, and the data folder is not backwards compatible between channels. Take a backup first.
@@ -34,7 +34,7 @@ A new beta comes out most Fridays, and every stable release goes through a beta 
 A clear report with steps to reproduce saves the developers a lot of time, often more than the fix itself takes.
 
 - **You need:** a GitHub account.
-- **Start here:** read [Troubleshooting](https://beta.music-assistant.io/faq/troubleshooting/), search the <a href="https://github.com/music-assistant/support/issues?q=is%3Aissue" target="_blank" rel="noopener noreferrer">open and closed issues</a>, then open a new one in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>. Say which version and channel you run, which music source and player are involved, what you did, what you expected, and attach the log. [Support](https://beta.music-assistant.io/support/) has more on where to ask what.
+- **Start here:** read [Troubleshooting](https://music-assistant.io/faq/troubleshooting/), search the <a href="https://github.com/music-assistant/support/issues?q=is%3Aissue" target="_blank" rel="noopener noreferrer">open and closed issues</a>, then open a new one in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>. Say which version and channel you run, which music source and player are involved, what you did, what you expected, and attach the log. [Support](https://music-assistant.io/support/) has more on where to ask what.
 
 Already reported? Adding "same here, on version X with player Y" to an existing issue, or confirming that a fix works, is just as useful.
 
@@ -50,14 +50,14 @@ Found something that could put people's homes or accounts at risk? Don't open a 
 The Music Assistant interface is translated by the people who use it, in your browser, on Lokalise. If you're a native speaker you can start in a few minutes.
 
 - **You need:** a free Lokalise account, created when you join the project.
-- **Start here:** [Translations](https://beta.music-assistant.io/help/lokalise/).
+- **Start here:** [Translations](https://music-assistant.io/help/lokalise/).
 
 ### Improve music data
 
 Music Assistant uses MusicBrainz to match artists, albums and tracks across sources. Every release you add or correct there improves matching and artwork for everyone, not only Music Assistant users.
 
 - **You need:** a free MusicBrainz account.
-- **Start here:** [Improve MusicBrainz Data](https://beta.music-assistant.io/help/musicbrainz/).
+- **Start here:** [Improve MusicBrainz Data](https://music-assistant.io/help/musicbrainz/).
 
 ### Help other people
 
