@@ -63,6 +63,8 @@ The `artist.nfo` file uses the format Kodi describes on its [artist NFO page](ht
 
 The biography, style, mood, type and dates from your `artist.nfo` take the place of the same information found online. Information your file leaves out is still filled in from online sources.
 
+Genres from your `artist.nfo` are added to the ones found online. To use only your own genres when an artist has them, switch on Use local genre metadata only when available in the [metadata settings](/settings/core/#metadata).
+
 ## Artwork
 
 Put the artwork in the artist's folder as `.jpg`, `.jpeg`, `.png` or `.gif` files with these names:
