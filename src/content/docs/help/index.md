@@ -38,6 +38,8 @@ A clear report with steps to reproduce saves the developers a lot of time, often
 
 Already reported? Adding "same here, on version X with player Y" to an existing issue, or confirming that a fix works, is just as useful.
 
+Using AI to help write a report is fine, but read and check it before you post, and use the issue template rather than working around it. Reports that look like unreviewed AI output, or that were posted by an automated agent, will be closed. See the <a href="https://github.com/music-assistant/.github/blob/main/AI_POLICY.md" target="_blank" rel="noopener noreferrer">AI Policy</a>.
+
 ### Report a security problem
 
 Found something that could put people's homes or accounts at risk? Don't open a public issue. Report it privately, so it can be fixed before the details are out.
@@ -85,6 +87,8 @@ Give the <a href="https://github.com/music-assistant/server" target="_blank" rel
 ## With code
 
 The server is written in Python and relies heavily on asyncio. New music sources, player providers and plugins are each a self-contained folder in the server repository, so you can start without understanding the whole code base.
+
+AI tools are welcome, as long as there's a human in the loop. You need to understand every change in your pull request and be able to explain it in your own words, both in the description and when answering review questions. Pull requests that look like unreviewed AI output, or that come from autonomous agents, are closed without review. Read the <a href="https://github.com/music-assistant/.github/blob/main/AI_POLICY.md" target="_blank" rel="noopener noreferrer">AI Policy</a> before you start.
 
 ### Add a music source, player or plugin
 
