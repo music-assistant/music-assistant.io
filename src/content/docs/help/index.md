@@ -2,7 +2,7 @@
 title: "I want to help"
 ---
 
-# I want to help
+# I want to help <img src="/assets/icons/help-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant is built by the people who use it. Most of the ways to help don't involve writing code, so they come first on this page.
 
@@ -21,20 +21,20 @@ If you'd rather support the project financially, see [Donations](#donations) at 
 
 ### Test the beta
 
-A new beta comes out most Fridays, and every stable release goes through a beta cycle first. Running it and reporting what breaks keeps bugs out of everyone else's home. The beta, nightly and stable apps keep separate data, so you can try the beta and switch back.
+A new beta comes out most Fridays, and every stable release goes through a beta cycle first. Running it and reporting what breaks keeps bugs out of everyone else's home. The beta, nightly and stable apps each keep their own data, so you can run the beta alongside stable and go back to stable at any time.
 
 - **You need:** an installation where a problem is an annoyance rather than a disaster, and a GitHub account to report what you find.
-- **Start here:** [Release Cycle](https://music-assistant.io/release/#beta-releases), then [running versions side by side](https://beta.music-assistant.io/release/#running-parallel-server-versions). The beta has its own documentation at <a href="https://beta.music-assistant.io/" target="_blank" rel="noopener noreferrer">beta.music-assistant.io</a>.
+- **Start here:** [Release Cycle](/release/#beta-releases), then [running versions side by side](/release/#running-parallel-server-versions). The beta has its own documentation at <a href="https://beta.music-assistant.io/" target="_blank" rel="noopener noreferrer">beta.music-assistant.io</a>.
 
 > [!CAUTION]
-> Removing an app deletes its data, and the data folder is not backwards compatible between channels. Take a backup first.
+> Data from a newer channel can't be used by an older one, so beta data can't be carried back to stable. Removing an app also deletes its data. Take a backup first.
 
 ### Report a bug well
 
 A clear report with steps to reproduce saves the developers a lot of time, often more than the fix itself takes.
 
 - **You need:** a GitHub account.
-- **Start here:** read [Troubleshooting](https://music-assistant.io/faq/troubleshooting/), search the <a href="https://github.com/music-assistant/support/issues?q=is%3Aissue" target="_blank" rel="noopener noreferrer">open and closed issues</a>, then open a new one in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>. Say which version and channel you run, which music source and player are involved, what you did, what you expected, and attach the log. [Support](https://music-assistant.io/support/) has more on where to ask what.
+- **Start here:** read [Troubleshooting](/faq/troubleshooting/), search the <a href="https://github.com/music-assistant/support/issues?q=is%3Aissue" target="_blank" rel="noopener noreferrer">open and closed issues</a>, then open a new one in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>. Say which version and channel you run, which music source and player are involved, what you did, what you expected, and attach the log. [Support](/support/) has more on where to ask what.
 
 Already reported? Adding "same here, on version X with player Y" to an existing issue, or confirming that a fix works, is just as useful.
 
@@ -42,7 +42,6 @@ Already reported? Adding "same here, on version X with player Y" to an existing 
 
 Found something that could put people's homes or accounts at risk? Don't open a public issue. Report it privately, so it can be fixed before the details are out.
 
-<!-- TODO maintainers: confirm the preferred private channel (GitHub private vulnerability reporting on the server repository, or a named contact) before merging. -->
 - **Start here:** use **Report a vulnerability** on the <a href="https://github.com/music-assistant/server/security" target="_blank" rel="noopener noreferrer">Security tab of the server repository</a>.
 
 ### Translate
@@ -50,14 +49,14 @@ Found something that could put people's homes or accounts at risk? Don't open a 
 The Music Assistant interface is translated by the people who use it, in your browser, on Lokalise. If you're a native speaker you can start in a few minutes.
 
 - **You need:** a free Lokalise account, created when you join the project.
-- **Start here:** [Translations](https://music-assistant.io/help/lokalise/).
+- **Start here:** [Translations](/help/lokalise/).
 
 ### Improve music data
 
 Music Assistant uses MusicBrainz to match artists, albums and tracks across sources. Every release you add or correct there improves matching and artwork for everyone, not only Music Assistant users.
 
 - **You need:** a free MusicBrainz account.
-- **Start here:** [Improve MusicBrainz Data](https://music-assistant.io/help/musicbrainz/).
+- **Start here:** [Improve MusicBrainz Data](/help/musicbrainz/).
 
 ### Help other people
 
@@ -77,11 +76,11 @@ This site is written by the community. Fix a typo, correct an instruction that n
 
 Made a dashboard card, a script, a voice setup or another tool around Music Assistant that works well for you? It can help others too.
 
-- **Start here:** see [Community Extensions](https://beta.music-assistant.io/community-extensions/) for what is already out there, and share yours on Discord or in the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub discussions</a>.
+- **Start here:** see [Community Extensions](/community-extensions/) for what is already out there, and share yours on Discord or in the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub discussions</a>.
 
 ### Spread the word
 
-Give the <a href="https://github.com/music-assistant/server" target="_blank" rel="noopener noreferrer">music-assistant server repository</a> a star (⭐) on GitHub, tell others how you use Music Assistant, and post <a href="https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas?discussions_q=is%3Aopen+category%3A%22Feature+requests+and+ideas%22+sort%3Atop" target="_blank" rel="noopener noreferrer">feature requests</a> ideas with additional things you care about which are missing or can be improved.
+Give the <a href="https://github.com/music-assistant/server" target="_blank" rel="noopener noreferrer">music-assistant server repository</a> a star (⭐) on GitHub, tell others how you use Music Assistant, and add <a href="https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas?discussions_q=is%3Aopen+category%3A%22Feature+requests+and+ideas%22+sort%3Atop" target="_blank" rel="noopener noreferrer">feature requests</a> for things you'd like to see added or improved.
 
 ## With code
 
@@ -106,19 +105,10 @@ Music Assistant is maintained by a small team, and most of them review in their 
 
 ## Donations
 
-If you'd like to support the project financially, the best way is to subscribe to [Home Assistant Link](https://www.nabucasa.com/link/). It's an optional service from Nabu Casa, the [Open Home Foundation (OHF)](https://www.openhomefoundation.org/)'s commercial partner, and the subscription funds the OHF and all its projects, including Music Assistant.
+If you'd like to support the project financially, the best way is to subscribe to [Home Assistant Link](https://www.nabucasa.com/link/). It's an optional service from Nabu Casa, the commercial partner of the [Open Home Foundation (OHF)](https://www.openhomefoundation.org/), and the subscription funds the OHF and all its projects, including Music Assistant.
 
 You can also support the project by buying <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">merchandise from the official Open Home Foundation store</a> and officially branded <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant hardware</a>.
 
-Appreciate a particular source, player or plugin? Its page in these docs names the developer who contributed it, and many have a sponsor or donation link on their GitHub profile. The core team is listed on the [Home Page](https://beta.music-assistant.io/#the-core-team).
+Appreciate a particular source, player or plugin? Its page in these docs names the developer who contributed it, and many have a sponsor or donation link on their GitHub profile. The core team is listed on the [Home Page](/#the-core-team).
 
 A really big thank you in advance from the whole team!
-
-___________________________________________
-
-I hope you like my little pet project I've been working on since 2019.
-I'm sure that together with the really great HA community we can grow this project into something fantastic. Thanks!
-
-Kind regards,
-
-Marcel
