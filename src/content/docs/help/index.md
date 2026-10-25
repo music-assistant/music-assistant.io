@@ -92,7 +92,7 @@ AI tools are welcome, as long as there's a human in the loop. You need to unders
 
 ### Add a music source, player or plugin
 
-- **You need:** a GitHub account, and Python on macOS or Linux (On Windows use Linux in a VM sych as [VirtualBox](https://www.virtualbox.org/)).
+- **You need:** a GitHub account, and Python on macOS or Linux (On Windows use Linux in a VM such as [VirtualBox](https://www.virtualbox.org/)).
 - **Start here:** the <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">developer documentation</a> sets up your environment and explains each provider type. The <a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">existing providers</a>, including the demo music and player providers, are the best reference.
 - **Then:** add a documentation page for it. The <a href="https://github.com/music-assistant/music-assistant.io/blob/beta/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">documentation contribution guide</a> covers exactly what a new source or provider needs.
 
