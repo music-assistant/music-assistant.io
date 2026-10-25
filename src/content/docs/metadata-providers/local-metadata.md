@@ -88,3 +88,4 @@ The provider also works when the online metadata lookups are switched off in the
 - When the artist information folder cannot be reached, for example because the NAS is switched off, the information already in Music Assistant is kept and tried again later
 - Style, mood, type and dates are stored with the artist, but the artist page does not show them yet
 - If multiple tags are found when only one is allowed then the first will be taken and a warning logged that the others were skipped
+- Removing the Local metadata provider also removes the artwork it added. The biography and other information stay until the artist is updated from other sources
