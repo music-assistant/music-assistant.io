@@ -114,6 +114,7 @@ export const CAPABILITY_NOTES: string[] = [
   "When bridging other protocols",
   "FLAC streaming works on some TVs",
   "Audio is carried over DLNA, so the capabilities are DLNA's",
+  "Receivers listening to the same Auracast broadcast share its timing",
 ];
 
 // Providers with a page but no row, so the build does not demand one. Add a
@@ -155,6 +156,24 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
       deviceButton: false,
       deviceVoice: false,
       playerOptions: false,
+    },
+  },
+  {
+    slug: "player-support/auracast",
+    sampleRate: "48kHz/16 bits",
+    values: {
+      hiRes: false,
+      lossless: false,
+      perfectSync: true,
+      syncCorrection: false,
+      crossfade: true,
+      stereoPair: false,
+      deviceButton: false,
+      deviceVoice: false,
+      playerOptions: false,
+    },
+    notes: {
+      perfectSync: [10],
     },
   },
   {
