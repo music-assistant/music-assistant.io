@@ -166,6 +166,7 @@ The card at the top of the page sets the addresses Music Assistant shares with d
 
 - <b>Server Name.</b> The name of this Music Assistant instance, shown in the UI and announced on the network. Useful when you run more than one server. Clear the field to restore the default name
 - <b>Allow User Self-Registration.</b> Allows users to create accounts by logging in with Home Assistant. Only appears when the Home Assistant plugin is added in Music Assistant, since the login goes through your HA instance
+- <b>Enable OpenID Connect.</b> Adds sign-in through an identity provider such as Authentik. See [OpenID Connect sign-in](/settings/user-management/#openid-connect-sign-in) for setup, account creation and recovery
 
 The settings below are advanced and only appear when advanced settings are enabled in the UI
 
