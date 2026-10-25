@@ -36,7 +36,7 @@ A clear report with steps to reproduce saves the developers a lot of time, often
 - **You need:** a GitHub account.
 - **Start here:** read [Troubleshooting](/faq/troubleshooting/), search the <a href="https://github.com/music-assistant/support/issues?q=is%3Aissue" target="_blank" rel="noopener noreferrer">open and closed issues</a>, then open a new one in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>. Say which version and channel you run, which music source and player are involved, what you did, what you expected, and attach the log. [Support](/support/) has more on where to ask what.
 
-Already reported? Adding "same here, on version X with player Y" to an existing issue, or confirming that a fix works, is just as useful. Just don't overdo it as once a number of people have reported the issue then adding +1s just becomes noise.
+Already reported? Adding "same here, on version X with player Y" to an existing issue, or confirming that a fix works, is just as useful. Don’t overdo it, though: once several people have confirmed an issue, more +1s just add noise.
 
 Using AI to help write a report is fine, but read and check it before you post, and use the issue template rather than working around it. Reports that look like unreviewed AI output, or that were posted by an automated agent, will be closed. See the <a href="https://github.com/music-assistant/.github/blob/main/AI_POLICY.md" target="_blank" rel="noopener noreferrer">AI Policy</a>.
 
@@ -92,7 +92,7 @@ AI tools are welcome, as long as there's a human in the loop. You need to unders
 
 ### Add a music source, player or plugin
 
-- **You need:** a GitHub account, and Python on macOS or Linux (On Windows use Linux in a VM such as [VirtualBox](https://www.virtualbox.org/)).
+- **You need:** a GitHub account, and Python on macOS or Linux (on Windows, run Linux in a virtual machine such as <a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer">VirtualBox</a>)
 - **Start here:** the <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">developer documentation</a> sets up your environment and explains each provider type. The <a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">existing providers</a>, including the demo music and player providers, are the best reference.
 - **Then:** add a documentation page for it. The <a href="https://github.com/music-assistant/music-assistant.io/blob/beta/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">documentation contribution guide</a> covers exactly what a new source or provider needs.
 
