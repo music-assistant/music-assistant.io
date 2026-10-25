@@ -5,7 +5,7 @@ description: Use your own artist biographies, genres and artwork from a Kodi sty
 
 # Local Metadata Provider
 
-The Local Metadata provider reads artist information you keep yourself, in the same folder layout Kodi uses for its artist information folder. It gives your artists your own biography, genres, style, mood, type, dates and artwork. It works for every artist in your library, including artists that only come from a streaming service.
+The Local Metadata provider reads artist information you keep yourself, in the same folder layout Kodi uses for its [artist information folder](https://kodi.wiki/view/Artist_information_folder). It allows you to give your artists their own biography, genres, style, mood, type, dates and artwork. It works for every artist in your library, including artists that only come from a streaming service.
 
 If you already use Kodi, you can point Music Assistant at the artist information folder Kodi created. You can also build the folder yourself.
 
