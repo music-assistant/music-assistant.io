@@ -19,7 +19,7 @@ The provider only reads from the folder. It never changes or adds files.
 
 ## How the folder is organised
 
-The artist information folder holds one subfolder per artist. Each subfolder holds an `artist.nfo` file, artwork, or both.
+The artist information folder holds one subfolder per artist. Each subfolder holds an [`artist.nfo` file](https://kodi.wiki/view/NFO_files/Artists), artwork, or both.
 
 ```
 Artist information/
