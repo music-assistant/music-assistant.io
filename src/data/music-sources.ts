@@ -485,6 +485,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio"],
   },
   {
+    name: "Remote Radio Catalog",
+    slug: "music-providers/remote-radio-catalog",
+    icon: "/assets/icons/remote-radio-catalog.svg",
+    categories: ["radio"],
+  },
+  {
     name: "SiriusXM",
     slug: "music-providers/siriusxm",
     icon: "/assets/icons/siriusxm-logo.png",
