@@ -78,7 +78,7 @@ This site is written by the community. Fix a typo, correct an instruction that n
 
 Made a dashboard card, a script, a voice setup or another tool around Music Assistant that works well for you? It can help others too.
 
-- **Start here:** see [Community Extensions](/community-extensions/) for what is already out there, and share yours on Discord or in the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub discussions</a>.
+- **Start here:** see [Community Extensions](/community-extensions/) for what is already out there, and share yours on Discord or in the <a href="https://github.com/orgs/music-assistant/discussions/categories/show-and-tell" target="_blank" rel="noopener noreferrer">GitHub discussions Show and Tell category</a>.
 
 ### Spread the word
 
