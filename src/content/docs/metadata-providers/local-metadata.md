@@ -76,7 +76,7 @@ Your artwork is added to the artist's pictures next to the ones from your other 
 
 ## Getting changes into Music Assistant
 
-Music Assistant reads the folder whenever it updates an artist's information. It does this regularly by itself. To see a change straight away, open the artist and select **Update metadata** from the menu.
+Music Assistant reads the folder whenever it updates an artist's information. Artists already in your library pick up the folder, or a change to it, at their next scheduled update, which can take weeks. To see a change straight away, open the artist and select `Update metadata` from the menu.
 
 The provider also works when the online metadata lookups are switched off in the metadata settings.
 
