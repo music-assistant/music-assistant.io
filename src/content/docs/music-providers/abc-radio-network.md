@@ -45,4 +45,3 @@ Use the browse view or search to find stations to add to the library.
 - Track details are shown while music is playing. During talk programmes, live broadcasts and news there is no track to show, so the station name is displayed instead
 - Now playing information updates periodically so may lead or lag actual
 - The ABC's now playing service occasionally returns nothing for a moment. Playback carries on and the details are picked up at the next update
-- This does not use an official documented API to obtain the currently playing details, so may change / break in the future. API details obtained by examining the ABC Radio Listen website (https://www.abc.net.au/listen/radio).
