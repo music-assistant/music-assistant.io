@@ -168,6 +168,33 @@ curl --location 'http://192.168.1.1:8095/api' \
 ```
 </details>
 
+<details><summary>Get an item's share links or text</summary>
+
+`music/share_item` requires the `library.read` permission and server API schema 100
+or newer. Pass a Music Assistant item URI, not a website or audio URL. For a queue
+item, use its underlying media item's URI.
+
+```bash
+curl --location 'http://192.168.1.1:8095/api' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer YOUR_TOKEN' \
+--data '{
+  "message_id": "1",
+  "command": "music/share_item",
+  "args": {
+    "uri": "library://track/1"
+  }
+}'
+```
+
+The response contains `title`, `links` and `text`. Each link contains
+`provider_domain`, `provider_instance` and a public website `url`. Share the chosen
+URL on its own. If `links` is empty, share `text` instead; when links are available,
+`text` is `null`. Do not infer share links from provider mappings, which can contain
+private addresses or playback URLs.
+
+</details>
+
 <details><summary>Get Recently Played Items</summary>
 
 limit and media_types are optional
