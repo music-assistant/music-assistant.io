@@ -124,6 +124,8 @@ After you choose **Select multiple items**, a bar floats at the bottom of the sc
 
 CTRL-A will also select all items unless the search box is in view in which case it will select all text in that box. Also CTRL-A won't work on views that have multiple sections (e.g. the artist view has albums and tracks) so **Select multiple items** must be used in that case. 
 
+Shift-Click is also available to select a range of items.
+
 ## Track Menu
 
 In any of the following views, Right click or long press on a track to get the following menus
