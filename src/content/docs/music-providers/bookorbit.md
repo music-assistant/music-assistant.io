@@ -72,6 +72,7 @@ BookOrbit keeps listening progress separately for each of its own users, so each
 ## Known Issues / Notes
 
 - In the first instance of any problems ensure the server is running a recent <a href="https://github.com/bookorbit/bookorbit/releases" target="_blank" rel="noopener noreferrer">BookOrbit release</a>
+- Changes made to a book in BookOrbit after it has already been added to Music Assistant (for example a new title) may not come through on a normal sync. Refresh the item in Music Assistant to pull the latest details.
 
 ## Not Yet Supported
 
