@@ -209,7 +209,7 @@ The ID shown against the streaming source may be used in automations and scripts
 
 [![image](/assets/screenshots/UI-track-show-info.png)](/assets/screenshots/UI-track-show-info.png)
 
-The header has the **Play on this device** split button, **Track endless mix** and a quality badge such as `FLAC 16/44.1`. The favourite heart is at the top right, next to the ⋮ menu. A **Lyrics** section appears when lyrics are available for the track.
+The header has the **Play on this device** split button, **Track endless mix** and a quality badge such as `FLAC 16/44.1`. The in-library icon can be clicked to copy the track's URI to the clipboard. The favourite heart is at the top right, next to the ⋮ menu. A **Lyrics** section appears when lyrics are available for the track.
 
 > [!NOTE]
 > The SOURCE DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the source and may differ during playback if transcoding is done before the audio data reaches MA.
