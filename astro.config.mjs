@@ -197,6 +197,7 @@ export default defineConfig({
             { label: "Dashboards", slug: "dashboards" },
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },
+            { label: "Which Source Plays", slug: "source-selection" },
           ],
         },
         {
@@ -227,6 +228,7 @@ export default defineConfig({
                   label: "Ariacast Receiver",
                   slug: "plugins/ariacast-receiver",
                 },
+                { label: "AudioMuse-AI", slug: "plugins/audiomuse-ai" },
                 { label: "DLNA Receiver", slug: "plugins/dlna-receiver" },
                 { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
                 { label: "Home Assistant", slug: "ha-plugin" },
@@ -248,6 +250,10 @@ export default defineConfig({
                   slug: "plugins/milkdrop-visualizer",
                 },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
+                {
+                  label: "NetEase Cloud Music Scrobbler",
+                  slug: "plugins/neteasecloudmusic_scrobble",
+                },
                 {
                   label: "OpenAI Compatible",
                   slug: "plugins/openai_compatible",
@@ -344,6 +350,7 @@ export default defineConfig({
           items: [
             { label: "I Want to Help / Donate", slug: "help" },
             { label: "Translations", slug: "help/lokalise" },
+			{ label: "Improve MusicBrainz Data", slug: "help/musicbrainz" },
             {
               label: "Community Extensions",
               slug: "community-extensions",

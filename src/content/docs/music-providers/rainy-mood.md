@@ -37,7 +37,7 @@ This source offers the rain ambience from <a href="https://rainymood.com" target
 - Can be used as the audio overlay source for a queue, mixing the sound of rain underneath the music
 
 ## Configuration:
-- Go to **Settings → Music Sources → Add a music source** and select `Rainy Mood`
+- Go to **Settings → Music sources → Add a music source** and select `Rainy Mood`
 - There is nothing to configure, no account is needed
 
 ## Usage

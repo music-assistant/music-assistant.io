@@ -17,7 +17,7 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `Google Cast`.
+1. In Music Assistant, go to **Settings → Player providers** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `Google Cast`.
 2. Your Cast devices, and any speaker groups created in the Google Home app, will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
@@ -30,7 +30,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Google Cast provider has the following:
 
-- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to `Profile 3 - forced content length` on Cast devices. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
+- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> The default depends on the device. Most Cast devices default to `Profile 3 - forced content length`. This includes Google's own devices such as the Nest Mini, Nest Audio, Nest Hub, Google Home, Chromecast and Chromecast Audio, and speakers from other brands with Chromecast built-in, because without a content length some of them stop playback after 5 to 10 minutes. The 2026 Google Home Speaker and Android TV devices from other brands, such as the Nvidia Shield, default to `Profile 2 - no content length`, because they stop each stream after about 24 MiB of audio when a content length is sent, which can be only a few minutes of playback. Cast groups and stereo pairs default to `Profile 2 - no content length`. If you have changed this setting yourself, your choice is kept. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
 - <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
 - <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit for a single player, and up to 96 kHz for a Cast group. Only 44.1 kHz / 16 bit and 48 kHz / 16 bit are selected by default, because the higher ones are unreliable on some devices despite being officially supported. Add them and test rather than assume
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
@@ -77,13 +77,16 @@ You may see any of these:
 
 In the individual player settings:
 
-1. Set **Output codec to use for streaming audio to the player** to `MP3`.
-2. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
+1. Set **HTTP Profile used for sending audio** to suit the device:
+   - On the 2026 Google Home Speaker or a non-Google Android TV device, if playback stops after a few minutes (around 24 MiB of audio) on `Profile 3 - forced content length`, set it to `Profile 2 - no content length`.
+   - On any other Cast device, such as a Nest Mini, if playback stops after 5 to 10 minutes on `Profile 2 - no content length`, set it to `Profile 3 - forced content length`.
+2. Set **Output codec to use for streaming audio to the player** to `MP3`.
+3. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
 
 Once playback is reliable you can try putting the output codec back to `FLAC`, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
 
 > [!IMPORTANT]
-> **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Set the profile on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
+> **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Set the same profile on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
 
 ### Speakers not found, or dropping off at random
 

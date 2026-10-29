@@ -35,7 +35,7 @@ With VRT MAX you can stream the VRT radio stations live (Radio 1, Radio 2, Klara
 
 ## Usage
 
-Add the provider from Settings → Music Sources. Leave the username and password empty to use live radio only, or enter your VRT account credentials to unlock on-demand playback, favourites and resume.
+Add the provider from Settings → Music sources. Leave the username and password empty to use live radio only, or enter your VRT account credentials to unlock on-demand playback, favourites and resume.
 
 To connect more than one VRT account, add the provider again as a separate instance.
 

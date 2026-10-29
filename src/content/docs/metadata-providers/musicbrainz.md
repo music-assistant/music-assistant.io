@@ -26,7 +26,7 @@ The provider has one configurable setting:
 
 <img width="4512" height="1380" alt="Advanced configuration settings" src="/assets/screenshots/musicbrainz/config.png" loading="lazy" />
 
-- **Recommendation Days** (default: 3, range: 1-15) — How many days before and after today to include in the artist events recommendation row. For example, 3 days shows events from 3 days ago through 3 days ahead (7 days total window).
+- **Number of days to scan** (default: 3, range: 1-15, only shown with **Show advanced settings** on) — How many days before and after today to include in the artist events recommendation row. For example, 3 days shows events from 3 days ago through 3 days ahead (7 days total window).
 
 ### Choosing a window
 

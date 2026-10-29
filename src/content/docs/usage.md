@@ -5,7 +5,7 @@ description: Information regarding various elements of Music Assistant
 
 # Overview
 
-Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These four pages are not a walkthrough of that.
+Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These pages are not a walkthrough of that.
 
 They cover the ideas the interface assumes you already understand, so that when something is not self-evident, the explanation is here.
 
@@ -13,6 +13,7 @@ They cover the ideas the interface assumes you already understand, so that when 
 - **[UI](/ui/)** — a tour of the interface itself, view by view
 - **[Groups](/faq/groups/)** — playing the same music on more than one speaker at once
 - **[Genres](/genres/)** — how Music Assistant categorises your library, and how to shape that
+- **[Which Source Plays](/source-selection/)** — which copy of a track plays when it is available from more than one source, and how to change that
 
 None of it needs reading end to end. Use the contents list to jump to whatever you are looking for.
 
@@ -34,7 +35,12 @@ In each view there is a ⋮ menu in the top right corner. This menu has various 
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
-In order to make all available content accessible in a digestible manner many of the expandable views are filtered by provider. The open box icon is shown when a section is expanded and indicates that multiple providers can populate the section. Note only one can be selected at any one time. In the screenshot above "All albums" is collapsed, so the provider selection icon is not shown. Immediately below is the "Top tracks" section which is expanded and does show the icon. In both cases the currently selected provider is shown on the left side. 
+The artist page above shows how the library and your sources fit together:
+
+- <b>Albums</b> and <b>Singles & EPs</b> are marked **In your library** and show only what is in the MA library
+- <b>Appears on</b> lists albums where the artist is credited on a track but is not the album artist
+- <b>Discography</b> comes **From MusicBrainz** and lists all of the artist's releases. Those that are not in the library are marked **Not in your library**, so you can find and add them
+- <b>Top tracks</b> and <b>Similar artists</b> have a source chip, **All sources** by default, to pick which source fills them, for example Last.fm or a streaming service. **View N library tracks** next to Top tracks opens the artist's tracks that are in the library
 
 ### Favorites and dislikes
 
@@ -69,11 +75,17 @@ Announcements can be sent directly from the MA UI using the menu item shown abov
 
 When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the queue settings.
 
-Each queue has a number of options which affect various behaviours. The options can be set globally in the [player queues settings](/settings/core/#player-queues) or individually via the option in the ⋮ menu. The individual player queue settings are as follows:
+Each queue has a number of options which affect various behaviours. The defaults for all queues are set in the [player queues settings](/settings/core/#player-queues), and each queue can override them. To change them for one queue, open **Queue settings**, either from **Settings → Players →** *the player* **→ Queue settings**, or from the ⋮ menu in the [Now Playing view](/ui/#now-playing-view) under **Settings → Queue settings**. The **Open global queue settings** button at the top of the page goes to the defaults.
 
-[![Preview image](/assets/screenshots/queue-settings.png)](/assets/screenshots/queue-settings.png)
+Each setting starts at `Global [default]`, which uses the default for all queues:
 
-See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade. 
+- <b>Smart shuffle.</b> Whether the shuffle button uses Smart Shuffle for this queue
+- <b>Optimize order for Smart Fades.</b> Arranges the upcoming tracks so Smart Fades can make smoother transitions
+- <b>Autoplay source.</b> Where Autoplay gets more tracks from when the queue runs out. When `Tracks from a playlist` is chosen, the **Autoplay playlist** box sets the playlist
+- <b>Crossfade mode.</b> Standard crossfade or Smart crossfade for this queue
+- <b>Volume normalization (EBU-R128 based).</b> Turns volume normalization on or off for this queue
+
+Turning Autoplay and crossfade on or off is done from the player controls. These settings decide how they work. See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade.
 
 > [!NOTE]
 > If a queue is paused for more than 30 seconds its status will change to stopped
@@ -144,7 +156,7 @@ Only playlists that live in the Music Assistant library can be exported; provide
 
 **Importing a playlist**
 
-On the Playlists page, there is an option in the toolbar menu to `Import playlist`, select it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
+On the Playlists page, the ⋮ menu in the top right has **Import playlist**. Select it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
 
 In the import dialog, you will see a `Search for tracks on` list with a checkbox for each installed music provider. These are the providers MA will search when a track in the file can't be played directly (for example, the file references a Spotify track but Spotify is no longer installed, or you are importing a M3U that someone else exported).
 

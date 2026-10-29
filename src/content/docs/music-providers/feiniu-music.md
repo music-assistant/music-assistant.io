@@ -39,7 +39,7 @@ Before adding the source, make sure FeiNiu Music is running on your NAS and that
 
 The device running Music Assistant Server must also be able to reach the FeiNiu Music address directly.
 
-In **Settings → Music Sources**, add **FeiNiu Music** and provide:
+In **Settings → Music sources**, add **FeiNiu Music** and provide:
 
 - **Music web address.** The HTTP or HTTPS address of the FeiNiu Music web application. The default fnOS HTTP port is `5666`, so a typical local address is `http://192.168.1.10:5666/music/`. If you have changed the port or use HTTPS, enter the address you actually use.
 - **Music username.** A FeiNiu Music account with access to the library you want to use.
