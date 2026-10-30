@@ -17,7 +17,7 @@ Sign in and your Qobuz favourites appear in Music Assistant, along with the whol
 | Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
-| [Recommendations](/ui/#view---discover) Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            Yes                     |
@@ -32,6 +32,7 @@ Sign in and your Qobuz favourites appear in Music Assistant, along with the whol
 - Items in your Qobuz Favourites will be marked as "in library" in Music Assistant
 - Marking an item as "in library" from the Music Assistant interface will also mark it as a favorite in Qobuz
 - On playback, the highest quality is preferered automatically
+- Qobuz's editorial album lists appear as rows on the [Discover](/ui/#view---discover) page. New Releases and Editor's Picks are shown by default. Best Sellers, Most Streamed, Press Awards, Qobuzissime and Ideal Discography are hidden until you turn them on in edit mode. These lists are picked by Qobuz and are the same for everyone, not based on your listening
 
 ## Configuration
 
@@ -44,7 +45,3 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 ## Known Issues / Notes
 
 - Qobuz only fetches images for artists/albums that have been directly added to the library (eg not albums of artists) to prevent too many API calls
-
-## Not yet supported
-
-- Recommendations
