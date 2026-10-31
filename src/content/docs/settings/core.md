@@ -49,8 +49,20 @@ The behaviour when playing or enqueuing items is determined by the settings in t
 ### Items to select
 
 - <b>Items to select when you play a (in-library) artist.</b> The options are `All tracks from all providers [default]`, `Artist top tracks only`, `In-library tracks for the artist only` and `Prefer library, fall back to top`
-- <b>Order to play an artist in.</b> The options are `Shuffled tracks [default]`, `Albums in random order, each album in track order` and `Albums by release year, oldest first`. With an album order, the artist's own albums are played, each one as it would play on its own, and singles are left out. When only top tracks are selected, or the artist has no albums, shuffled tracks are played
+- <b>Order to play an artist in.</b> The options are `Shuffled tracks [default]`, `Albums in random order, each album in track order` and `Albums by release year, oldest first`. `Shuffled tracks` plays the tracks picked by the artist selection in random order. The album orders play the artist's albums one after another, either picked at random or from the oldest to the newest, with albums without a year last
 - <b>Items to select when you play a (in-library) album.</b> The options are `All tracks for album on (streaming) provider [default]` and `Only in-library tracks`
+
+With either album order:
+- The artist selection picks the artist's own albums. The in-library selections play the albums in your library. `All tracks from all providers` also plays the albums found only on a provider.
+- Each album plays as it does on its own, following <b>Items to select when you play a (in-library) album</b>.
+- Each album plays once, even when your library and a provider both have it.
+- If one copy of an album can't play, another copy plays instead. With `Only in-library tracks` as the album selection, an album in your library plays only your saved tracks.
+- Singles are left out, as their songs are mostly on the albums.
+- Compilations in your library still play. Compilations found only on a provider are left out, as their songs are already on the albums.
+- `Artist top tracks only` still plays shuffled tracks.
+- An artist without albums plays shuffled tracks instead. For example, an artist with only singles, or one that only appears on another artist's albums. If the artist's albums can't be listed because a provider is offline or fails, and your library has none of them, nothing plays.
+
+An album order switches shuffle off for the queue, as when you play an album. An artist without albums keeps the queue's shuffle, and so does `Artist top tracks only`. Asking for shuffle when you start the artist still shuffles it. The setting does not apply to authors and narrators, as they play audiobooks.
 
 ### Default enqueue options
 
