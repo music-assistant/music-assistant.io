@@ -59,13 +59,6 @@ Authorization = eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0In0.c2lnbmF
 Refresh token = Hx0eR4kq2N8wZpT6vLmY3s
 ```
 
-> [!NOTE]
-> Since SoundCloud's new login, the `oauth_token` cookie only lasts about a day. Without the **Refresh token**, Music Assistant loses access when it runs out, and every request fails with a `401` error until you copy in a fresh token. With it, Music Assistant renews the token before it runs out.
-
-> [!TIP]
-> Typing `OAuth ` in front of the Authorization value is no longer needed. Music Assistant adds it when it is missing.
-
-
 ## Known Issues / Notes
 
 - What SoundCloud calls an artist is really whoever holds the account, so that is what appears as the artist in Music Assistant. If someone else uploads a track by an artist, it will be filed under the uploader rather than under the artist
