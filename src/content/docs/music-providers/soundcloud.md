@@ -28,32 +28,44 @@ Connecting your account puts what you have liked and followed on SoundCloud into
 
 ## Configuration
 
-SoundCloud has no sign-in for outside apps, so two values have to be copied out of your browser while you log in. You need a **Client id** and an **Authorization**.
+SoundCloud has no sign-in for outside apps, so three values have to be copied out of your browser while you log in. You need a **Client id**, an **Authorization** and a **Refresh token**.
 
-1. Clear your SoundCloud cookies, so that logging in again produces the requests you need to see
-2. Go to <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">SoundCloud</a> but do not log in yet
-3. Press F12 to open your browser's developer tools, and go to the **Network** tab
-4. Now log in. A long list of entries will appear
-5. Type `auth` in the filter box to narrow the list down
-6. Look through those entries for `client_id`. It is a run of 32 letters and numbers. Copy it
-7. Now find the `oauth_token` cookie for soundcloud.com and copy its value. In Music Assistant this goes in the **Authorization** field with `OAuth ` typed in front of it, including the space
+Do this in a private (incognito) browser window, and close the window once you are done. Music Assistant takes over that sign-in session, and keeps it alive by itself from then on. A window you keep using would get in its way.
+
+1. Open a private browser window and go to <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">SoundCloud</a>, but do not log in yet
+2. Press F12 to open your browser's developer tools, and go to the **Network** tab
+3. Now log in. A long list of entries will appear
+4. Type `auth` in the filter box to narrow the list down
+5. Look through those entries for `client_id`. It is a run of 32 letters and numbers. Copy it into the **Client id** field
+6. Go to the **Application** tab (in Firefox: **Storage**), open **Cookies** and select `https://soundcloud.com`
+7. Type `oauth` in the filter box. Two cookies are left
+8. Copy the value of `oauth_token` into the **Authorization** field
+9. Copy the value of `oauth_refresh_token` into the **Refresh token** field
+10. Save, then close the private window
 
 The screenshots below show where each of these appears.
 
 ### Client id
 <img src="/assets/screenshots/soundcloud-clientid.jpg" alt="screenshot" style="width: 1005px; float: center;"  loading="lazy" />
 
-### OAuth token
-<img src="/assets/screenshots/soundcloud-token.jpg" alt="screenshot" style="width: 1005px; float: center;"  loading="lazy" />
+### Cookies
+<img src="/assets/screenshots/soundcloud-cookies.png" alt="screenshot" style="width: 1005px; float: center;"  loading="lazy" />
 
-Filled in, the two fields should look like this. These values are made up — use your own:
+Filled in, the fields should look like this. These values are made up — use your own:
 
 ```
-client_id = 5Hvc9wa0Ejf092wj3f3920w3F920asuL
-Authorization = OAuth 2-26432-21446-asdif2309fQ
+Client id = 5Hvc9wa0Ejf092wj3f3920w3F920asuL
+Authorization = eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0In0.c2lnbmF0dXJl
+Refresh token = Hx0eR4kq2N8wZpT6vLmY3s
 ```
-> [!IMPORTANT]
-> Ensure that `OAuth ` is added to the start of the token otherwise login will fail with `unexpected mimetype` errors
+
+> [!NOTE]
+> Since SoundCloud's new login, the `oauth_token` cookie only lasts about a day. Without the **Refresh token**, Music Assistant loses access when it runs out, and every request fails with a `401` error until you copy in a fresh token. With it, Music Assistant renews the token before it runs out.
+
+> [!TIP]
+> Typing `OAuth ` in front of the Authorization value is no longer needed. Music Assistant adds it when it is missing.
+
+
 ## Known Issues / Notes
 
 - What SoundCloud calls an artist is really whoever holds the account, so that is what appears as the artist in Music Assistant. If someone else uploads a track by an artist, it will be filed under the uploader rather than under the artist
