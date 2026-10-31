@@ -33,6 +33,7 @@ Sign in and your Qobuz favourites appear in Music Assistant, along with the whol
 - Marking an item as "in library" from the Music Assistant interface will also mark it as a favorite in Qobuz
 - On playback, the highest quality is preferered automatically
 - Qobuz's editorial album lists appear as rows on the [Discover](/ui/#view---discover) page. New Releases and Editor's Picks are shown by default. Best Sellers, Most Streamed, Press Awards, Qobuzissime and Ideal Discography are hidden until you turn them on in edit mode. These lists are picked by Qobuz and are the same for everyone, not based on your listening
+- A New From Your Artists row on the [Discover](/ui/#view---discover) page, shown by default, lists the latest releases of the artists you follow on Qobuz
 
 ## Configuration
 
