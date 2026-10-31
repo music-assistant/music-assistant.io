@@ -38,6 +38,16 @@ Music Assistant syncs your listening position with Audible's Whispersync service
 
 No configuration is needed — this works automatically once the Audible provider is set up.
 
+### Recently Played across devices
+
+Audiobooks you listen to in Audible's apps can appear in Music Assistant's Recently Played shelf, including books you have not finished. The book must already be in your Music Assistant library.
+
+Music Assistant checks for updates hourly, so changes may take up to an hour to appear once the source is running. Recent activity from the last 180 days is included when it has a listening date and a saved position. Books are ordered by when you listened, rather than when Music Assistant checked for updates.
+
+Activity is imported for the owner of the Audible source. If you use multiple accounts, make sure each source has the correct owner. A source without a valid owner does not import listening history.
+
+Newer progress saved in Music Assistant is preserved. Importing history does not start playback or send that imported position back to Audible. Listening in Music Assistant continues to use the Whispersync progress reporting described above.
+
 ### Other
 
 - The Audible library can be listed
@@ -58,7 +68,6 @@ Note: If you need to re-authenticate or change the marketplace, you will have to
 
 ## Known Issues / Notes
 
-- Last playback position is not currently reported back to Audible
 - Switching marketplaces requires re-authentication
 - The provider will be registered as a device on Audible. If you remove the provider, it will deregister the device
 - While there haven't been any issues with the number of registered devices during development, it's worth noting that Audible has various content license requirements. If a user has material with a device license restriction then having many registered devices might cause issues
