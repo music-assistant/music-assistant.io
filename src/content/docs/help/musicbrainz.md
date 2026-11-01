@@ -36,6 +36,8 @@ When Music Assistant cannot find something on MusicBrainz, it often writes a hin
 | `Titles "..." and "..." share <catalogue number> but name different keys, so they are kept as separate works; check which is right and link its recording to the correct work on MusicBrainz: ...` | Info | One of the two titles is probably wrong. Check the albums and [link the recording to the right work](#link-a-recording-to-its-work) |
 | `ISRC ... of "..." is not on MusicBrainz, add it to the track's recording: ...` | Debug | [Add the ISRC codes with MagicISRC](#add-isrc-codes-with-magicisrc) |
 | `ISRC ... of "..." is on MusicBrainz recording ..., which credits other artists, so it needs album "..." identified, add its streaming link or barcode to the release of that recording` | Debug | The code is used for more than one recording. [Add the streaming link](#add-streaming-links) or barcode to the album's MusicBrainz release |
+| `Album "..." has ISRCs MusicBrainz lacks, add them all at once with MagicISRC: ...` | Debug | The link opens MagicISRC with the release and your tracks' codes filled in. Check the codes line up with the tracks and submit. See [Add ISRC codes with MagicISRC](#add-isrc-codes-with-magicisrc) |
+| `MusicBrainz links album "..." on <service> to release ..., but the lengths of tracks ... (counted across discs) differ; if <service> plays another version, remove the link from the release` | Debug | The tracks are still matched, because the release links the album. Compare the listed tracks with the release. If the service has another version, such as a remaster, move the link to the right release, or [add that version with Harmony](#add-a-missing-album-with-harmony) |
 
 ## Add a missing album with Harmony
 
@@ -57,6 +59,9 @@ Music Assistant links artists and albums to your services through the links on t
 3. Under **External links**, paste the artist's or album's Spotify, Tidal, Qobuz, Deezer, Apple Music or YouTube Music link and select the type if necessary
 4. Submit the edit
 
+A link on a release also helps match the album's tracks. When the release links your album and the service has the same number of tracks, Music Assistant matches them to the release in order,
+even when their titles or some lengths differ.
+
 > [!TIP]
 > Harmony can also add the links for a release that already exists on MusicBrainz. Paste the release's streaming link in Harmony and follow its suggestions.
 
@@ -67,6 +72,9 @@ Music Assistant. It takes one edit per track, so ISRC codes are usually the quic
 ## Add ISRC codes with MagicISRC
 
 An ISRC is a code that identifies a recording. Music Assistant uses it to match streaming tracks to MusicBrainz. [MagicISRC](https://magicisrc.kepstin.ca) adds the codes for a whole release in one go.
+
+When the album is already in your library, turn on debug logging and look for the `has ISRCs MusicBrainz lacks` hint. Its link opens MagicISRC with the codes filled in, so you can go straight to
+step 5.
 
 1. Find your release: Open MagicISRC and paste your MusicBrainz release link or ID
 2. Log in: Connect your MusicBrainz account when prompted
