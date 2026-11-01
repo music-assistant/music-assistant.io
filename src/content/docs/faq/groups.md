@@ -81,7 +81,7 @@ Music Assistant has support for grouping dissimilar playback devices. Configurat
 ### Known Issues / Notes
 
 - This type of group should be avoided if a [Sync Group or Native Group](/ui/#grouping-players) can be used
-- Universal Groups can include sync groups but not other universal groups
+- Universal Groups cannot contain other groups
 - When adding a player to an already playing group, MA will try and join seamlessly but there may be a slight pause with some player types
 - The group will not power on if one of the child players is synced to another group
 - The group will power on even if one or more of the child players is unavailable
