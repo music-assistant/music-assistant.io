@@ -28,11 +28,13 @@ This source adds the nine ABC music stations to Music Assistant as radio station
 
 ### Stations
 
-triple j, triple j Hottest, Double J, triple j Unearthed, ABC Classic, ABC Classic 2, ABC Jazz, ABC Country and ABC Kids listen.
+Triple J, Triple J Hottest 100, Double J, Triple J Unearthed, ABC Classic FM, ABC Classic 2, ABC Jazz, ABC Country and ABC Kids listen.
+
+Triple J, Double J, ABC Classic FM, and ABC Kids have state specific streams.
 
 ## Configuration
 
-In the configuration, you only need to click the save button
+In the configuration, you will need to select the appropriate state, defaulting to New South Wales / ACT, then click the save button
 
 ## Usage
 
