@@ -50,9 +50,6 @@ Genius Lyrics is enabled from [**Settings → Metadata providers → Add a metad
 
 ## Replacing wrong or stale lyrics
 
-Once lyrics are stored on a track, the standard "Update metadata" action will not replace them as both LRCLIB and Genius skip tracks that already have lyrics.
+Use `Update Metadata` on the track's page. It reads the lyrics again, first from the track's own files (an embedded lyrics tag or a `.lrc` file next to the audio file), then from the online lyrics providers. If no lyrics are found, the existing ones are kept.
 
-Therefore, to replace the existing lyrics:
-
-- **For local files**: edit the embedded lyrics tag and then the next library scan will pick it up. If a `.lrc` file is edited, then either also touch the audio file or select `Refresh Item` on the track
-- **For all others**: use `Refresh Item` on the track as it re-fetches the track from its provider and re-runs the lyrics lookup
+For local files you can also wait for the next library scan after editing the embedded lyrics tag. A scan does not notice an edited `.lrc` file on its own, so use `Update Metadata` or `Refresh Item` for that.
