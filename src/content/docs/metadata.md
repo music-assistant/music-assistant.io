@@ -31,15 +31,16 @@ For each item, source metadata is collected first (sorted so local providers suc
 
 ### Filling gaps and replacing outdated information
 
-The daily background scan and the on-demand lookup only fill in information that is missing. They never change what is already stored.
+The daily background scan and the on-demand lookup only fill in information that is missing. The one exception is the [Local Metadata](/metadata-providers/local-metadata/) folder, whose artist information always replaces what is stored.
 
-"Update metadata" also replaces outdated information. Every field a source has information for is set to the latest value, so a corrected biography, label or release date reaches your library. When more than one source has a value, the first one in this order wins:
+"Update metadata" also replaces outdated information. **Refresh item** ends with the same update. Every field a source has information for is set to the latest value, so a corrected biography, label or release date reaches your library. When more than one source has a value, the first one in this order wins:
 
-1. Your own files: the [Local Metadata](/metadata-providers/local-metadata/) folder, then `.nfo` files and file tags
-2. Music providers
-3. Online metadata providers
+1. The [Local Metadata](/metadata-providers/local-metadata/) folder
+2. Your music library sources: `.nfo` files and file tags, Plex, Jellyfin, Subsonic and other non-streaming providers
+3. Streaming providers
+4. Online metadata providers
 
-A field that no source has information for keeps its stored value. Genres, images and links are only added to, never removed. Lyrics follow their own rules, see [Lyrics](./lyrics).
+A field that no source has information for keeps its stored value. When a source cannot be reached during the update, for example because the NAS holding your music is switched off, nothing is replaced and only missing information is filled in. Genres, images and links are only added to, never removed. Lyrics follow their own rules, see [Lyrics](./lyrics).
 
 The language used for descriptions and bios is set under [**Settings → System → Metadata**](/settings/core/#metadata) → "Preferred language". A bio or description in your preferred language wins, then one in English. A bio or description from your own files counts as your preferred language.
 
