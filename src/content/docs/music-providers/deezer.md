@@ -41,6 +41,7 @@ Connecting your account puts your Deezer favourites and playlists alongside the 
 - Personal (user-uploaded) songs are available via the "My Uploads" playlist
 - Recommendations: Made For You, Explore (charts, new releases, editorial playlists), Recently Played, Music Together and dynamic Flow/mood/genre mixes
 - Paste a Deezer share link into the search box and it will take you straight to that album, track or playlist
+- Explicit content can be hidden per source, following the setting on the Deezer account or profile, see [Explicit content](#explicit-content)
 - Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
 - Logging of played tracks in Deezer
 
@@ -73,6 +74,19 @@ For a profile, use the owner's ARL. Music Assistant then asks which profile the 
 
 Independent accounts have their own ARL and are not in that list. Log in on deezer.com with their credentials and copy that ARL as described above.
 
+### Explicit content
+
+Deezer lets each account and profile choose what happens to explicit content, under **Settings → Explicit content** on deezer.com. Deezer's own apps apply that choice, and so does Music Assistant. The **Explicit content** setting of the Deezer source decides how:
+
+- <b>Follow Deezer account setting.</b> The default. Uses whatever is chosen on deezer.com for the account or profile this source uses
+- <b>Hide explicit content.</b> Tracks, podcasts and audiobooks Deezer marks as explicit are left out everywhere: search, albums, playlists, artist pages, your library and recommendations. They are also refused when something tries to play them, so they cannot be played from a playlist someone else shares either
+- <b>Hide explicit content from recommendations.</b> Explicit items are left out of Flow, mixes, charts, recommendations and similar tracks, but still show in search, albums and your own playlists
+- <b>Show explicit content.</b> Nothing is hidden
+
+Deezer marks a whole album explicit when any of its tracks are. By default such an album still shows, without its explicit tracks. Switch on **Hide explicit albums too** to hide the entire album whenever it contains an explicit track. Many albums also exist as a separate clean version, which stays visible.
+
+A change takes effect as soon as the source settings are saved. If you change the setting on deezer.com instead, reload the source in Music Assistant to pick it up.
+
 ### Settings
 
 Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
@@ -80,3 +94,5 @@ Refer to the [Library Import Control](/music-providers/#library-import-control) 
 ## Known Issues / Notes
 
 - Podcast transcripts are not available
+- The explicit content filter can only hide what Deezer marks as explicit. Songs you uploaded yourself are never marked
+- Playback that is not started by a Music Assistant user, for example from a Home Assistant automation or a voice assistant, can use any Deezer source shared with everyone, including one that shows explicit content
