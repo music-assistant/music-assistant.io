@@ -193,13 +193,6 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
           "Music uploaded by the Nico Nico community, much of it found nowhere else.",
       },
       {
-        id: "france",
-        icon: "/assets/icons/listen/france.svg",
-        title: "France",
-        blurb:
-          "French streaming with a catalogue of major and independent labels.",
-      },
-      {
         id: "mexico",
         icon: "/assets/icons/listen/mexico.svg",
         title: "México / Mexico",
