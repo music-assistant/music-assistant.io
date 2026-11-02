@@ -18,7 +18,7 @@ Auracast sends one Bluetooth broadcast that nearby compatible receivers can join
 
 ## Configuration
 
-1. To use Auracast, you need a supported Bluetooth LE Audio USB adapter plugged into the machine running Music Assistant. The computer’s built-in Bluetooth and ordinary Bluetooth dongles won’t work. See the list of tested adapters below.
+1. To use Auracast, you need a supported Bluetooth LE Audio USB adapter plugged into the machine running Music Assistant. See the list of tested adapters below.
 2. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider**, and select `Auracast`.
 3. Select the compatible controller found by setup, choose a broadcast name, then save.
 4. Start playback on the `Auracast` player. On each receiver, scan for the broadcast name and join it.
