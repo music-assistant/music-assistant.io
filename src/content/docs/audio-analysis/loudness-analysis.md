@@ -24,7 +24,7 @@ Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or who
 
 ## Measuring a track again
 
-If a track's measured loudness is wrong, select `Refresh item` from the track's menu. This clears the measurement, and the track is measured again: a track from Local files by the background scan, any other track the next time it plays. Loudness from tags or a music provider is not affected.
+If a track's measured loudness is wrong, select `Refresh item` from the track's menu. This clears the measurement, and the track is measured again: a track from Local files by the background scan, any other track the next time it plays. Loudness from tags or a music provider is not affected. If the wrong value was already written to the file with the setting below, remove the `REPLAYGAIN_TRACK_GAIN` tag from the file first, as a tag always wins over a measurement.
 
 ## How the data is used
 
