@@ -296,6 +296,10 @@ export default defineConfig({
                   slug: "metadata-providers/lastfm-recommendations",
                 },
                 {
+                  label: "Local Metadata",
+                  slug: "metadata-providers/local-metadata",
+                },
+                {
                   label: "MusicBrainz",
                   slug: "metadata-providers/musicbrainz",
                 },
