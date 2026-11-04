@@ -38,15 +38,15 @@ Music Assistant syncs your listening position with Audible's Whispersync service
 
 No configuration is needed — this works automatically once the Audible provider is set up.
 
-### Recently Played across devices
+### Listening progress from Audible apps
 
-Audiobooks you listen to in Audible's apps can appear in Music Assistant's Recently Played shelf, including books you have not finished. The book must already be in your Music Assistant library.
+Music Assistant checks Audible for changed listening positions about once an hour. Audiobooks must already be in your Music Assistant library. Unfinished books with progress can appear in the **In Progress** recommendation row; this does not change the **Recently Played** row.
 
-Music Assistant checks for updates hourly, so changes may take up to an hour to appear once the source is running. Recent activity from the last 180 days is included when it has a listening date and a saved position. Books are ordered by when you listened, rather than when Music Assistant checked for updates.
+Only positions with a valid update date within the last 180 days are considered. A book is reported only when its listening position changes, not when Audible merely refreshes its timestamp. Completed books use Music Assistant's normal completion tracking.
 
-Activity is imported for the owner of the Audible source. If you use multiple accounts, make sure each source has the correct owner. A source without a valid owner does not import listening history.
+Progress is associated with the owner of the Audible source. If you use multiple accounts, configure the correct owner for each source. Without a valid owner, history is not imported.
 
-Newer progress saved in Music Assistant is preserved. Importing history does not start playback or send that imported position back to Audible. Listening in Music Assistant continues to use the Whispersync progress reporting described above.
+Importing a position does not start playback or report the imported position back to Audible. Playing in Music Assistant continues to use the Whispersync reporting described above.
 
 ### Other
 
