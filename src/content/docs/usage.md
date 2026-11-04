@@ -140,7 +140,7 @@ The page of a Music Assistant playlist shows who it belongs to and who it is sha
 
 ### Playlist Artwork
 
-MA will use the artwork supplied from the streaming providers. For local providers MA will create a collage based on the tracks in the playlist. Alternatively, for the local file system providers, an image which has the same prefix as the playlist will be used (eg. mix.m3u and mix.jpg)
+MA will use the artwork supplied from the streaming providers. For local providers, an image which has the same prefix as the playlist will be used (eg. mix.m3u and mix.jpg). Otherwise the built-in [Playlist Metadata provider](/metadata-providers/playlist-metadata/) creates a cover, either a collage from the artists and albums in the playlist, in one of several layout templates, or an [AI generated cover](/metadata-providers/playlist-metadata/#ai-generated-covers) drawn by an image engine you have connected. It can also write a short [AI description](/metadata-providers/playlist-metadata/#ai-descriptions) for a playlist. Artwork a playlist already has of its own is never replaced. The built-in dynamic playlists, such as Recently Played and the Infinite Mixes, keep their own fixed artwork.
 
 ### Importing and Exporting
 
