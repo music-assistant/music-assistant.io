@@ -138,6 +138,10 @@ A playlist you create on Music Assistant itself, rather than on a music source, 
 
 The page of a Music Assistant playlist shows who it belongs to and who it is shared with. A playlist that comes from a music source, such as one of your Spotify playlists, is visible to everyone who can use that source. **Add to Playlist** only offers the playlists you can edit.
 
+### Changing the order
+
+The tracks of a playlist can be put in a different order from its page, see [View - Playlist](/ui/#view---playlist). This works on playlists you can edit when their music source can store a new order. Today that is playlists stored by Music Assistant itself and [Tidal](/music-providers/tidal/) playlists. The new order is saved on the source straight away, so a reordered Tidal playlist shows it in the Tidal app too. Dynamic playlists, such as the ones Music Assistant generates, cannot be reordered.
+
 ### Playlist Artwork
 
 MA will use the artwork supplied from the streaming providers. For local providers, an image which has the same prefix as the playlist will be used (eg. mix.m3u and mix.jpg). Otherwise the built-in [Playlist Metadata provider](/metadata-providers/playlist-metadata/) creates a cover, either a collage from the artists and albums in the playlist, in one of several layout templates, or an [AI generated cover](/metadata-providers/playlist-metadata/#ai-generated-covers) drawn by an image engine you have connected. It can also write a short [AI description](/metadata-providers/playlist-metadata/#ai-descriptions) for a playlist. Artwork a playlist already has of its own is never replaced. The built-in dynamic playlists, such as Recently Played and the Infinite Mixes, keep their own fixed artwork.
