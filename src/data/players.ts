@@ -101,6 +101,12 @@ export const PLAYERS: TileItem[] = [
     categories: ["tvs"],
   },
   {
+    name: "Auracast",
+    slug: "player-support/auracast",
+    icon: "/assets/icons/auracast-icon.png",
+    categories: ["software"],
+  },
+  {
     name: "Bluesound",
     slug: "player-support/bluesound",
     icon: "/assets/icons/bluesound-logo.png",
@@ -315,6 +321,7 @@ export const PLAYER_PROVIDERS: PlayerProvider[] = [
   { name: "AirPlay", slug: "player-support/airplay", icon: "/assets/icons/airplay-logo.png" },
   { name: "Alexa", slug: "player-support/alexa", icon: "/assets/icons/alexa-icon.png" },
   { name: "Amplipi", slug: "player-support/amplipi", icon: "/assets/icons/amplipi-icon.svg" },
+  { name: "Auracast", slug: "player-support/auracast", icon: "/assets/icons/auracast-icon.png" },
   { name: "Bluesound", slug: "player-support/bluesound", icon: "/assets/icons/bluesound-logo.png" },
   { name: "Bose SoundTouch", slug: "player-support/bose-soundtouch", icon: "/assets/icons/bose-soundtouch-icon.png" },
   { name: "DLNA", slug: "player-support/dlna", icon: "/assets/icons/dlna-icon.svg" },
