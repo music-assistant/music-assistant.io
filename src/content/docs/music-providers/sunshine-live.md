@@ -34,11 +34,11 @@ In the configuration, you only need to click the save button.
 
 Browse the channels at *Browse > Sunshine Live*, or search for them by name. Channels can be added to your library from the station menu.
 
-The title and artwork of the current song show a few seconds after a channel starts.
+The title and artwork of the current song show a few seconds after a channel starts. During a live show you see the name of the show, which can take a minute or two to change.
 
 ## Known Issues / Notes
 
-- The artwork comes from a lookup by artist and title, so it can be missing or wrong for rare tracks and long live sets.
-- A seasonal channel like X-mas Beats can show only its name at times.
+- The artwork comes from the station when it has a cover for the song, otherwise from a lookup by artist and title. It can be missing or wrong for rare tracks and long live sets.
+- A seasonal channel like Xmasbeats can show only its name at times.
 
 Logo: <a href="https://mamapapacola.com/brand-assets/sunshine-live" target="_blank" rel="noopener noreferrer">© sunshine live</a>
