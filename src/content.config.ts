@@ -1,4 +1,5 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 import { docsLoader } from '@astrojs/starlight/loaders';
 import { docsSchema } from '@astrojs/starlight/schema';
 import { blogSchema } from 'starlight-blog/schema'
@@ -24,6 +25,15 @@ const pluginGroupIds = PLUGIN_GROUPS.map((group) => group.id) as unknown as [
 ];
 
 export const collections = {
+	/**
+	 * The link-in-bio page's data file, src/data/bio.yml. Its rules are
+	 * checked by src/utils/bio.mjs, which names the item at fault, so the
+	 * schema here accepts any map.
+	 */
+	bio: defineCollection({
+		loader: glob({ base: './src/data', pattern: 'bio.yml' }),
+		schema: z.object({}).passthrough(),
+	}),
 	docs: defineCollection({
 		loader: docsLoader(),
 		schema: docsSchema({
