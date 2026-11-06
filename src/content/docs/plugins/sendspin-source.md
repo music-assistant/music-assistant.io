@@ -43,13 +43,13 @@ Live Inputs play as 48 kHz, 16-bit stereo audio. Music Assistant adjusts for sma
 
 If your source device can detect an input signal, Music Assistant can start playing it on a chosen player as soon as the input becomes active. For example, lowering the needle onto a turntable can start playback in the room you selected.
 
-Choose the destination with the source device's **Automatically play line-in on** player setting. You can select any available player, stereo pair, or group. The destination does not need to use Sendspin. A device that is both a source and a player defaults to **This device**; a capture-only device defaults to **Off**.
+Choose the destination with the source device's **Automatically play line-in on** player setting. You can select any available player, stereo pair, or group. The destination does not need to use Sendspin. A device that is both a source and a player defaults to **This device**; a capture-only device defaults to **Off**. Setting up the device asks for the destination too.
 
 Playback starts after a short delay, which prevents brief signal changes from triggering it by accident. It stops after the signal has been absent for one minute.
 
 Restarting Music Assistant or reconnecting a device does not start an input that was already active. Automatic playback also does not move a source that is already playing somewhere else.
 
-Devices without signal detection remain available for manual playback and do not show this setting. The selected destination plays in its usual way; automatic playback does not make it switch to Sendspin.
+Devices without signal detection remain available for manual playback and show a note in place of this setting. The selected destination plays in its usual way; automatic playback does not make it switch to Sendspin.
 
 ## Latency
 

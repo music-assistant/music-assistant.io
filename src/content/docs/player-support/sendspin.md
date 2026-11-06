@@ -38,6 +38,8 @@ A device that allows guest access, which means connecting without pairing, is re
 - <b>Connect unpaired.</b> Only offered when the device allows guest access. Quick, but the connection is not verified. A device with an audio input offers <b>Connect unpaired with audio input</b> instead, and <b>Connect unpaired without audio input</b> if it can also play
 - <b>Pair device.</b> Sets up a permanent, verified connection using the pairing code the device gives you. A device without a pairing code gives you a pairing token instead
 
+When you pair a device or connect it with its audio input, and its line-in can report when a signal is present, setup then asks where that line-in should play automatically. This is the same choice as the <b>Automatically play line-in on</b> setting below.
+
 To pair a device you connected unpaired, use <b>Reconfigure player</b>. Bridged players and the built-in web player have nothing to set up.
 
 ## Settings
@@ -48,10 +50,10 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 Sendspin does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode**, plus their own version of the sample rate setting described below. In addition to the standard [Individual Player Settings](/settings/individual-player/), Sendspin players have the following:
 
-- <b>Security status.</b> The Sendspin settings of each device start with its security state: paired, connected through guest access, connected without encryption (see [Older Devices](#older-devices)), or pairing lost. A device that lost its pairing cannot play until you pair it again with <b>Reconfigure player</b> or remove the old pairing with <b>Unpair</b>
+- <b>Security status.</b> The Sendspin settings of each device start with its security state: paired, connected through guest access, connected without encryption (see [Older Devices](#older-devices)), or pairing lost. A device that lost its pairing cannot play until you pair it again with <b>Reconfigure player</b> or remove the old pairing with <b>Unpair</b>. A device you unpaired, or that stopped allowing guest access, stays disconnected until you set the player up again
 - <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential
 - <b>Turn on audio input / Turn off audio input.</b> Shown for a device with an audio input that is connected through guest access. Starts or stops sending its audio to Music Assistant through the [Sendspin Source plugin](/plugins/sendspin-source/)
-- <b>Automatically play line-in on.</b> Only shown for devices with a line-in that can report when a signal is present. Chooses where that line-in plays automatically, either This device, another player, or Off
+- <b>Automatically play line-in on.</b> Chooses where the line-in plays automatically: This device, another player, or Off. Only shown for devices with a line-in. A device that cannot report when a signal is present shows a note instead
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
 - <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (player's preferred codec) is the default, and the other options are read from the device itself. On Automatic the player keeps the codec it prefers, and <b>Sample rate selection</b> decides the sample rate. Choosing a specific format here sets both
 - <b>Sample rate selection.</b> Decides the sample rate of the audio sent to this player, and can only be changed while the preferred audio format is Automatic. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
