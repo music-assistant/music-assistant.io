@@ -12,7 +12,8 @@
     "prebuild": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
     "build": "astro build",
     "preview": "astro preview --host",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "node --test \"src/utils/*.test.mjs\""
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",
