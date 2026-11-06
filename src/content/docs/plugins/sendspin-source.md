@@ -8,15 +8,15 @@ pluginGroup: incoming
 
 The Sendspin Source plugin brings audio from compatible devices into Music Assistant as Live Inputs. A line-in or AUX connection, turntable preamp, or microphone can then play on any available Music Assistant player, stereo pair, or group.
 
-Sendspin calls incoming audio the `source` role. The built-in [Sendspin player provider](/player-support/sendspin/) handles audio sent from Music Assistant to devices, while the companion Sendspin Source plugin handles audio coming into Music Assistant. Both use the same secure, paired client connection.
+Sendspin calls incoming audio the `source` role. The built-in [Sendspin player provider](/player-support/sendspin/) handles audio sent from Music Assistant to devices, while the companion Sendspin Source plugin handles audio coming into Music Assistant. Both use the same client connection.
 
 > [!NOTE]
-> Sendspin Live Inputs require a paired device. Allowing unpaired access does not enable the Sendspin source role.
+> A device only sends its audio to Music Assistant once you allow it, by pairing it or by connecting it unpaired with its audio input.
 
 ## Features
 
 - Discovers connected Sendspin clients that support `source@v1`
-- Adds every paired source as a Live Input
+- Adds every source you allowed as a Live Input
 - Plays an input on any Music Assistant player, stereo pair, or group
 - Supports several different source devices streaming at the same time
 - Can start and stop a line-in automatically on devices that report signal detection
@@ -25,11 +25,15 @@ Sendspin calls incoming audio the `source` role. The built-in [Sendspin player p
 
 Sendspin Source is built in and starts automatically.
 
-Connect a compatible Sendspin source client to Music Assistant and complete the pairing request. Once paired, it appears as one Live Input.
+Connect a compatible Sendspin source client to Music Assistant. Set it up from its player settings with **Start setup**. Pair it, or choose **Connect unpaired with audio input** if the device allows connecting without pairing. Once set up, it appears as one Live Input. See [Setting up a device](/player-support/sendspin/#setting-up-a-device) for the steps.
+
+For a device connected unpaired, you can turn its audio input on or off later with **Turn on audio input** and **Turn off audio input** in its player settings.
 
 ## Playing a Live Input
 
 Select the player, stereo pair, or group where you want to hear the input, then open **Browse**. A single available Sendspin input appears directly in Browse; when several are available, open **Sendspin Source** and choose one. Press **Play** to start it on the selected playback target.
+
+A device that is both a player and a source also lists its own line-in among that player's sources.
 
 Each source can play on only one target at a time. Selecting the same source on another target moves it there. Different source clients can play on different targets concurrently.
 

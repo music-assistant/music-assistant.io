@@ -31,30 +31,45 @@ The Sendspin provider is **built-in and always enabled**. There are no configura
 
 Individual Sendspin players will appear automatically when clients connect
 
+## Setting Up a Device
+
+A device that allows guest access, which means connecting without pairing, is ready to play to as soon as it is found. A device that only accepts pairing, a device with an audio input, and a device that another server is using show <b>Setup required</b> until you set them up here. Select the player, or press <b>Start setup</b> in its settings:
+
+- <b>Connect unpaired.</b> Only offered when the device allows guest access. Quick, but the connection is not verified. A device with an audio input offers <b>Connect unpaired with audio input</b> instead, and <b>Connect unpaired without audio input</b> if it can also play
+- <b>Pair device.</b> Sets up a permanent, verified connection using the pairing code the device gives you. A device without a pairing code gives you a pairing token instead
+
+To pair a device you connected unpaired, use <b>Reconfigure player</b>. Bridged players and the built-in web player have nothing to set up.
+
 ## Settings
 
 In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example 192.168.1.50 or speaker.local. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
-- <b>Allow legacy clients.</b> On by default. Accepts older Sendspin devices that do not follow the current specification, including devices that connect without encryption, whose traffic can be read by anyone on your local network. Turn it off to accept only up to date devices. This option is temporary and will be removed in a future release
-- <b>Minimum PIN length.</b> The fewest digits a device may use for dynamic PIN pairing. The default is 4 and it can be set as high as 12
 
 Sendspin does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode**, plus their own version of the sample rate setting described below. In addition to the standard [Individual Player Settings](/settings/individual-player/), Sendspin players have the following:
 
-- <b>Pairing.</b> Each device shows its security state at the top of its settings, either paired, connected without pairing, or connected without encryption. Press <b>Setup</b> on the player to pair it by entering the PIN or pairing token the device gives you, or to allow it to play without pairing. Bridged players and the built in web player have nothing to pair
-- <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential and the device reconnects as unpaired
-- <b>Require pairing.</b> Shown for a device you allowed to connect without pairing. Stops it connecting that way
-- <b>Manage device settings.</b> Opens the device's own pairing settings, where unpaired access, static PIN pairing and dynamic PIN pairing can each be turned on or off. While this section is open the device refuses connections from other servers, so close it again with <b>Close device management</b> when you are finished
+- <b>Security status.</b> The Sendspin settings of each device start with its security state: paired, connected through guest access, connected without encryption (see [Older Devices](#older-devices)), or pairing lost. A device that lost its pairing cannot play until you pair it again with <b>Reconfigure player</b> or remove the old pairing with <b>Unpair</b>
+- <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential
+- <b>Turn on audio input / Turn off audio input.</b> Shown for a device with an audio input that is connected through guest access. Starts or stops sending its audio to Music Assistant through the [Sendspin Source plugin](/plugins/sendspin-source/)
 - <b>Automatically play line-in on.</b> Only shown for devices with a line-in that can report when a signal is present. Chooses where that line-in plays automatically, either This device, another player, or Off
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
-- <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (let client decide) is the default, and the other options are read from the device itself. On Automatic the player keeps the codec it prefers, and <b>Sample rate selection</b> decides the sample rate. Choosing a specific format here sets both
-- <b>Sample rate selection.</b> Only shown when <b>Show advanced settings</b> is on and the preferred audio format is Automatic. Decides the sample rate of the audio sent to this player. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
+- <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (player's preferred codec) is the default, and the other options are read from the device itself. On Automatic the player keeps the codec it prefers, and <b>Sample rate selection</b> decides the sample rate. Choosing a specific format here sets both
+- <b>Sample rate selection.</b> Decides the sample rate of the audio sent to this player, and can only be changed while the preferred audio format is Automatic. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
+
+Preferred audio format, Sample rate selection, and Unpair on a paired device only show while <b>Show advanced settings</b> is on.
+
+## Older Devices
+
+Sendspin is still evolving, and some players and clients still use an older development version of it. Future versions of Music Assistant will stop supporting these, so update them when an update is available:
+
+- <b>Devices without encryption.</b> Play straight away without any setup, but cannot be paired and cannot use an audio input. Their security status shows that they are connected without encryption
+- <b>Devices with an older pairing version.</b> Pair and play like current devices. Once paired, their settings include <b>Manage device settings</b>, which opens the device's own pairing settings, where you can turn pairing with a static or a dynamic pairing code on or off. These switches only show while <b>Show advanced settings</b> is on. While this section is open the device refuses connections from other servers, so close it again with <b>Close device management</b> when you are finished
 
 ## Known Issues / Notes
 
-- Many Sendspin devices ask for 16 bit audio, so higher resolution material is converted on the way out
+- Many Sendspin devices ask for 16 bit audio, so higher resolution material may be converted on the way out
 - Artwork clears briefly when you pause, seek, or move on to the next track
-- Only one Music Assistant server on a network can use Sendspin
+- A Sendspin device plays for one server at a time. Playing to a device moves it to this server, even while another server is playing on it. A device that another server is using can still be set up here, but pairing only works while the other server is not playing on it
 - Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Cloud gives the most reliable connection through a firewall
 - If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
 
@@ -73,17 +88,17 @@ Several client types can connect to Music Assistant via Sendspin:
 
 ## The Web Player
 
-The player built into the Music Assistant web interface is itself a Sendspin player. On your own network it connects straight to the server, which sounds best. From anywhere else it connects over the internet instead, which still works but at a lower quality.
+The player built into the Music Assistant web interface is itself a Sendspin player. It plays wherever the web interface works, at home or through [Remote Access](/settings/remote-access/).
 
-Like any other Sendspin player, the web player has a **Static playback delay (ms)** setting in its [Output Protocols settings](/settings/individual-player/#output-protocols). Music Assistant picks a value to suit your device, but it may need adjusting if the web player is heard out of step with your other speakers.
+Like any other Sendspin player, the web player has a **Static playback delay (ms)** setting in its [Output Protocols settings](/settings/individual-player/#output-protocols). It starts at 0 and may need adjusting if the web player is heard out of step with your other speakers.
 
-Audio quality in the web player depends on where you are listening from:
+The audio format the web player uses depends on the browser:
 
-- **On your own network**: lossless FLAC on desktop browsers and Android. iPhone, iPad and Safari use Opus
-- **From anywhere else**: every browser uses Opus
+- **Chrome, Edge and other Chromium based browsers, including on Android**: Opus when the web interface is opened over HTTPS, which includes Remote Access. Lossless FLAC when it is opened over plain HTTP, for example at `http://192.168.1.100:8095`
+- **Firefox, except on iPhone and iPad**: lossless FLAC
+- **Safari, and every browser on iPhone and iPad**: Opus
 
-> [!NOTE]
-> Firefox on Android cannot play from outside your own network.
+A Chromium based browser can play lossless FLAC over HTTPS too: pick one of the FLAC formats in the web player's advanced **Preferred audio format** setting.
 
 ## Connecting Other Sendspin Players
 
