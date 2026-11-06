@@ -8,15 +8,15 @@ pluginGroup: incoming
 
 The Sendspin Source plugin brings audio from compatible devices into Music Assistant as Live Inputs. A line-in or AUX connection, turntable preamp, or microphone can then play on any available Music Assistant player, stereo pair, or group.
 
-Sendspin calls incoming audio the `source` role. The built-in [Sendspin player provider](/player-support/sendspin/) handles audio sent from Music Assistant to devices, while the companion Sendspin Source plugin handles audio coming into Music Assistant. Both use the same secure, paired client connection.
+Sendspin calls incoming audio the `source` role. The built-in [Sendspin player provider](/player-support/sendspin/) handles audio sent from Music Assistant to devices, while the companion Sendspin Source plugin handles audio coming into Music Assistant. Both use the same client connection.
 
 > [!NOTE]
-> Sendspin Live Inputs require a paired device. Allowing unpaired access does not enable the Sendspin source role.
+> A device only sends its audio to Music Assistant once you allow it, by pairing it or by connecting it unpaired with its audio input.
 
 ## Features
 
 - Discovers connected Sendspin clients that support `source@v1`
-- Adds every paired source as a Live Input
+- Adds every source you allowed as a Live Input
 - Plays an input on any Music Assistant player, stereo pair, or group
 - Supports several different source devices streaming at the same time
 - Can start and stop a line-in automatically on devices that report signal detection
@@ -25,11 +25,15 @@ Sendspin calls incoming audio the `source` role. The built-in [Sendspin player p
 
 Sendspin Source is built in and starts automatically.
 
-Connect a compatible Sendspin source client to Music Assistant and complete the pairing request. Once paired, it appears as one Live Input.
+Connect a compatible Sendspin source client to Music Assistant. Set it up from its player settings with **Start setup**. Pair it, or choose **Connect unpaired with audio input** if the device allows connecting without pairing. Once set up, it appears as one Live Input. See [Setting up a device](/player-support/sendspin/#setting-up-a-device) for the steps.
+
+For a device connected unpaired, you can turn its audio input on or off later with **Turn on audio input** and **Turn off audio input** in its player settings.
 
 ## Playing a Live Input
 
 Select the player, stereo pair, or group where you want to hear the input, then open **Browse**. A single available Sendspin input appears directly in Browse; when several are available, open **Sendspin Source** and choose one. Press **Play** to start it on the selected playback target.
+
+A device that is both a player and a source also lists its own line-in among that player's sources.
 
 Each source can play on only one target at a time. Selecting the same source on another target moves it there. Different source clients can play on different targets concurrently.
 
@@ -39,13 +43,13 @@ Live Inputs play as 48 kHz, 16-bit stereo audio. Music Assistant adjusts for sma
 
 If your source device can detect an input signal, Music Assistant can start playing it on a chosen player as soon as the input becomes active. For example, lowering the needle onto a turntable can start playback in the room you selected.
 
-Choose the destination with the source device's **Automatically play line-in on** player setting. You can select any available player, stereo pair, or group. The destination does not need to use Sendspin. A device that is both a source and a player defaults to **This device**; a capture-only device defaults to **Off**.
+Choose the destination with the source device's **Automatically play line-in on** player setting. You can select any available player, stereo pair, or group. The destination does not need to use Sendspin. A device that is both a source and a player defaults to **This device**; a capture-only device defaults to **Off**. Setting up the device asks for the destination too.
 
 Playback starts after a short delay, which prevents brief signal changes from triggering it by accident. It stops after the signal has been absent for one minute.
 
 Restarting Music Assistant or reconnecting a device does not start an input that was already active. Automatic playback also does not move a source that is already playing somewhere else.
 
-Devices without signal detection remain available for manual playback and do not show this setting. The selected destination plays in its usual way; automatic playback does not make it switch to Sendspin.
+Devices without signal detection remain available for manual playback and show a note in place of this setting. The selected destination plays in its usual way; automatic playback does not make it switch to Sendspin.
 
 ## Latency
 
