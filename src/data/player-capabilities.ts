@@ -114,6 +114,8 @@ export const CAPABILITY_NOTES: string[] = [
   "When bridging other protocols",
   "FLAC streaming works on some TVs",
   "Audio is carried over DLNA, so the capabilities are DLNA's",
+  "Web Kiosk: experimental Sendspin mode only; HTML5 fallback is not synchronised",
+  "Web Kiosk: Sendspin client limit; HTML5 codec support depends on the browser",
 ];
 
 // Providers with a page but no row, so the build does not demand one. Add a
@@ -434,6 +436,26 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
       deviceButton: false,
       deviceVoice: false,
       playerOptions: false,
+    },
+  },
+  {
+    slug: "player-support/web-kiosk",
+    sampleRate: "48kHz/16 bits",
+    sampleRateNotes: [11],
+    values: {
+      hiRes: false,
+      lossless: true,
+      perfectSync: true,
+      syncCorrection: false,
+      crossfade: false,
+      stereoPair: false,
+      deviceButton: false,
+      deviceVoice: false,
+      playerOptions: false,
+    },
+    notes: {
+      perfectSync: [10],
+      lossless: [11],
     },
   },
   {
