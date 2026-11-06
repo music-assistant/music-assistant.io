@@ -17,12 +17,12 @@ Connecting your account puts your saved music and playlists into Music Assistant
 
 Spotify audio can be played through two different engines. You choose one while adding the provider and can switch later by re-running the setup.
 
-**Spotify Soloist (official)** — Spotify's own playback engine for devices without a screen. It works with **every** Premium account, including accounts created since December 2024, and can deliver lossless audio. Setting it up needs a personal API key from the Spotify developer website and a one-off pairing with your Spotify app; the setup guides you through both.
+**Spotify Soloist (official)** — Spotify's own playback engine for devices without a screen, and the default. It works with **every** Premium account, including accounts created since December 2024, and can deliver lossless audio. Setting it up needs a personal API key from the Spotify developer website and a one-off pairing with your Spotify app; the setup guides you through both.
 
 > [!NOTE]
-> Music Assistant may not distribute Soloist as part of its own installation, so it is downloaded from Spotify's servers on your behalf (after your consent in the setup) and updated automatically. Spotify's terms do not clearly allow using Soloist this way — using it through Music Assistant is at your own risk.
+> Music Assistant may not distribute Soloist as part of its own installation, so it is downloaded from Spotify's servers on your behalf (after your consent in the setup) and updated automatically.
 
-**librespot (community)** — a community-built, reverse-engineered engine, and the default. The setup is a bit easier and it starts playing quicker, but it is intended for Premium accounts created **before December 2024** and may stop working whenever Spotify changes things on their end.
+**librespot (community)** — a community-built, reverse-engineered engine. The setup is a bit easier and it starts playing quicker, but it is intended for Premium accounts created **before December 2024** and may stop working whenever Spotify changes things on their end.
 
 ### Which one should I pick?
 
@@ -30,13 +30,13 @@ Spotify audio can be played through two different engines. You choose one while 
 |:--|:--|:--|
 | Accounts created since December 2024 | Works | Usually will not play |
 | Best audio quality | Lossless, up to 24-bit/44.1 kHz | Ogg Vorbis 320kbps |
-| Setup | Terms, an API key and pairing | A one-time playback approval |
+| Setup | Download consent, an API key and pairing | A one-time playback approval |
 | Starting a queue, and seeking | Takes a little longer | Quick |
 | Playing on two players at once | One at a time, per Spotify account | Supported |
 
 With Soloist, the **first** song of a queue takes a little longer to start than with librespot, and so does seeking. Songs after it follow on without a break — though a podcast episode or an audiobook chapter start fresh.
 
-librespot is preselected for a new setup, and stays selected for setups added before this choice existed.
+Spotify Soloist is preselected for a new setup; setups added before this choice existed stay on librespot.
 
 ## Features
 
@@ -107,7 +107,7 @@ Spotify will now work, but consider the optional step further below or click `Fi
 
 Choosing Soloist replaces the playback approval above with three steps of its own:
 
-1. **Read and accept the terms.** Soloist is downloaded from Spotify's servers and run on your behalf, and Spotify's terms do not clearly allow this. You have to agree before the setup continues.
+1. **Allow the download.** Soloist is downloaded from Spotify's servers and run on your behalf. You have to agree to this before the setup continues.
 2. **Create your API key.** Open the <a href="https://developer.spotify.com/dashboard/soloist" target="_blank" rel="noopener noreferrer">Soloist API key page</a>, sign in, accept Spotify's terms if asked, choose `Generate API Key` and paste the key into Music Assistant. Creating the key needs a Premium account. Music Assistant stores it encrypted and only shares it with the Soloist app — your Spotify password is never asked for.
 3. **Pair with your Spotify app.** Music Assistant advertises itself as `Music Assistant Pairing`. In the Spotify app, start playing anything, tap the speaker icon and choose `Music Assistant Pairing`. The setup then continues by itself and you can switch back to your usual speaker straight away.
 
