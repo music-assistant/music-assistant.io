@@ -81,9 +81,6 @@ When an entity is selected it will then appear as an option in an individual pla
 
 A power entity can also cut the power to the player itself, for example a smart plug the player is plugged into. While that entity is off, the player shows as switched off instead of unavailable, in Music Assistant and in Home Assistant. Turning the player on, playing to it or sending an announcement to it switches the entity on and waits up to 90 seconds for the player to come online. If the player is not online by then, the request fails. After an announcement the player stays on. Stop, pause and volume changes do nothing while it is switched off.
 
-> [!NOTE]
-> This needs a player that stays in the player list while it is offline. Some players, such as [Squeezelite](/player-support/squeezelite/) players, disappear from the list when they lose their connection, so a power entity cannot turn them back on.
-
 ## Known Issues / Notes
 
 This plugin will be automatically installed (and cannot be disabled) if the MA server is running as a Home Assistant App.
