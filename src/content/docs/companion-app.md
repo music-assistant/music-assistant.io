@@ -44,7 +44,6 @@ Example of Discord Rich Presence:
 
 ![image](/assets/screenshots/companion-app-discord.png)
 
-Example of Discord Rich Presence</a>
 
 ## Installation
 
