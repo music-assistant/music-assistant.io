@@ -42,7 +42,8 @@ Like the Spotify app, the Music Assistant app can do Discord Rich Presence.
 
 Example of Discord Rich Presence:
 
-!<a href="https://github.com/music-assistant/tauri-companion-app/assets/74015378/8de18bac-b963-4aba-bb61-5730b41759a9" target="_blank" rel="noopener noreferrer">Example of Discord Rich Presence</a>
+![image](/assets/screenshots/companion-app-discord.png)
+Example of Discord Rich Presence</a>
 
 ## Installation
 
