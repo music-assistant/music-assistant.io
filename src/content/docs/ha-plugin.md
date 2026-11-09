@@ -79,7 +79,9 @@ When an entity is selected it will then appear as an option in an individual pla
 
 ### Switching the player itself on and off
 
-A power entity can also cut the power to the player itself, for example a smart plug the player is plugged into. While that entity is off, the player shows as switched off instead of unavailable, in Music Assistant and in Home Assistant. Turning the player on, playing to it or sending an announcement to it switches the entity on and waits up to 90 seconds for the player to come online. If the player is not online by then, the request fails. After an announcement the player stays on. Stop, pause and volume changes do nothing while it is switched off.
+A power entity can also cut the power to the player itself, for example a smart plug the player is plugged into. While that entity is off, the player shows as switched off instead of unavailable, in Music Assistant and in Home Assistant. Turning the player on, playing to it, selecting a source on it or sending an announcement to it switches the entity on and waits up to 90 seconds for the player to come online. If the player is not online by then, the request fails. After an announcement the player stays on. Stop, pause and volume changes do nothing while it is switched off.
+
+To switch the player off again once it has been stopped for a while, set [Power off when idle](/settings/individual-player/#player-controls) in its player settings.
 
 ## Known Issues / Notes
 
