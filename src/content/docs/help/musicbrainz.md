@@ -28,10 +28,10 @@ When Music Assistant cannot find something on MusicBrainz, it often writes a hin
 
 | Hint in the log | Log level | What to do |
 |:--|:--|:--|
-| `Album "..." (barcode ...) is not on MusicBrainz, add it for example with Harmony: ...` | Info | [Add the album with Harmony](#add-a-missing-album-with-harmony). The link opens Harmony with the barcode filled in |
-| `Album "..." is not on MusicBrainz, add it for example with Harmony: ...` | Info | The same, with the streaming link filled in |
+| `Album "..." (barcode ...) is not on MusicBrainz, add it for example with Harmony: ...` | Debug | [Add the album with Harmony](#add-a-missing-album-with-harmony). The link opens Harmony with the barcode filled in |
+| `Album "..." is not on MusicBrainz, add it for example with Harmony: ...` | Debug | The same, with the streaming link filled in |
 | `Composer "..." is not on MusicBrainz through <link>, add <link> to their MusicBrainz page: ...` | Info | [Add the streaming link](#add-streaming-links) to the composer's MusicBrainz page. The link goes to the composer, or to a search when there is more than one candidate |
-| `Artist "..." has no link to <service> on MusicBrainz, so it is not added ...; add one at ...` | Info | MusicBrainz names an artist, such as a performer on a recording, that has no link to your service. [Add the link](#add-streaming-links), then use **Update metadata** on the album |
+| `Artist "..." has no link to <service> on MusicBrainz, so it is not added ...; add one at ...` | Debug | MusicBrainz names an artist, such as a performer on a recording, that has no link to your service. [Add the link](#add-streaming-links), then use **Update metadata** on the album |
 | `Artist "..." is not on MusicBrainz through <link>, so it cannot be told apart from the other "..." on <service>; add <link> to their MusicBrainz page: ...` | Info | Your service has two different artists with the same name, and Music Assistant can only keep them apart when MusicBrainz knows both pages. [Add the streaming link](#add-streaming-links) to the correct artist's MusicBrainz page. The link goes to that artist when it is known, or to a search |
 | `Titles "..." and "..." share <catalogue number> but name different keys, so they are kept as separate works; check which is right and link its recording to the correct work on MusicBrainz: ...` | Info | One of the two titles is probably wrong. Check the albums and [link the recording to the right work](#link-a-recording-to-its-work) |
 | `ISRC ... of "..." is not on MusicBrainz, add it to the track's recording: ...` | Debug | [Add the ISRC codes with MagicISRC](#add-isrc-codes-with-magicisrc) |
