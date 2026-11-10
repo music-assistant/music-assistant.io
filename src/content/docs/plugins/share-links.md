@@ -23,16 +23,21 @@ Contributed and maintained by <a href="https://github.com/dmoo500" target="_blan
 ## Configuration
 
 1. Go to **Settings > Plugins > Add a plugin** and select **Share Links**.
-2. Leave the share-page base URL at its default unless you are using another deployment of the share page.
-3. Save the plugin configuration.
+2. Save the plugin configuration. No additional settings are needed for normal use.
 
-The default share-page address is `https://app.music-assistant.io/share`. If you change it, enter the base URL without a trailing slash.
+### Advanced: a different share page
+
+The share-page base URL is available under the plugin's **advanced settings**. Only change it if you are using another deployment of the share page. The default is `https://app.music-assistant.io/share`; enter a custom base URL without a trailing slash.
 
 ## Sharing and opening a link
 
 1. Open a track, album or artist context menu and select **Share**.
 2. Copy the link from the share dialog and send it to the recipient.
 3. The recipient opens the link to preview the item. They can follow a music-service link directly, or enter the URL of their own Music Assistant instance and select **Open in Music Assistant**.
+
+![Share action in an artist context menu](/assets/screenshots/share-links/artist-context-menu.png)
+
+![Track share dialog with public music-service links](/assets/screenshots/share-links/track-share-dialog.png)
 
 The share page remembers the recipient's instance URL in their browser. The recipient needs a Music Assistant version with share-link support and the Share Links plugin configured, and must be able to access and sign in to their instance.
 
