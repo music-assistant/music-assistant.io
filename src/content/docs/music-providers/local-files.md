@@ -283,9 +283,22 @@ Whether or not MBIDs are present, the artist names themselves need to be encoded
 4. ARTIST tag parsing - If none of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., presents, etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected
 
 > [!NOTE]
-> - If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database
+> - If artist tags are split undesirably then use the ARTISTS (or ALBUMARTISTS) tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database
 >
 > - The album artist tag is parsed the same way as ARTIST - same multi-value rules, same splitters (including featuring-style and MBID-guided), and the same MusicBrainz fallback when the parsed count doesn't match the MBID count
+
+**Album artists (ALBUMARTISTS tag)**
+
+MusicBrainz Picard 3.0 and later can also write a dedicated multi-value ALBUMARTISTS tag, the album artist counterpart of ARTISTS. Older Picard versions never write it to files. When present, MA uses it instead of the Album Artist tag, so the album artists are taken as listed and the Album Artist string (for example "Artist A & Artist B") is not split. This is the recommended way to get correct multiple album artists in formats that have no native multi-value album artist field:
+
+| Format | ALBUMARTISTS tag |
+|:--|:--|
+| FLAC/OGG/Opus (Vorbis) | `ALBUMARTISTS` fields (one per artist) |
+| ID3v2.3 and ID3v2.4 (MP3) | `TXXX:ALBUMARTISTS`. An older `TXXX:Album Artists` frame is also read (Picard renames it to `TXXX:ALBUMARTISTS` when it saves the file) |
+| MP4 (M4A/AAC/ALAC) | `----:com.apple.iTunes:ALBUMARTISTS` |
+| APEv2 (WavPack, Musepack, etc.) | `ALBUMARTISTS` (null-separated values) |
+
+For ID3v2.3 and MP4 this is the only way to store multiple album artists without relying on string splitting, because neither format can hold multiple values in its Album Artist field. Rescan your library after retagging so MA picks up the new tag.
 
 > [!NOTE]
 > As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
