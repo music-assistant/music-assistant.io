@@ -33,7 +33,6 @@ This source adds the live channels to Music Assistant as radio stations, and the
 
 - While a channel plays, the player shows the song and artist on air, or the programme when DR lists no song. For classical music the composers are shown as the artist
 - Podcasts can be browsed by latest episode or by title, and searched by title or description
-- Podcasts you add to your library are kept up to date by the library sync
 
 ## Configuration
 
@@ -41,14 +40,13 @@ No account or setup is needed. In the configuration, you only need to click the 
 
 ## Usage
 
-Open *Browse > DR LYD*. *Live radio* lists the channels, *Recently updated* the podcasts with the newest episodes, and *All podcasts* every podcast by title. Search finds channels by name and podcasts by title or description.
+Open *Browse > DR LYD*. *Radio* lists the channels, *Recently updated* the podcasts with the newest episodes, and *Podcasts* every podcast by title.
 
-There is no account to import a library from, so nothing is added to your library for you. Add the channels and podcasts you want from browse or search. The library sync only covers podcasts, so a radio channel is in your library only if you added it yourself.
+There is no account to import a library from, so nothing is added to your library for you. Add the channels and podcasts you want from browse or search.
 
 ## Known Issues / Notes
 
 - Seeking is not supported on live radio
 - Only the channels that play round the clock are listed, with P4 and P5 as their regional channels. Other channels, such as events and web feeds, are not listed
 - The song shown is matched to the stream by timing, so it can change a little before or after you hear it
-- A podcast that DR stops offering is removed from your library at the next sync
 - Podcast transcripts are not available
