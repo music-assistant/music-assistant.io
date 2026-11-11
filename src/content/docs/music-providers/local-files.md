@@ -287,7 +287,7 @@ Whether or not MBIDs are present, the artist names themselves need to be encoded
 >
 > - The album artist tag is parsed the same way as ARTIST - same multi-value rules, same splitters (including featuring-style and MBID-guided), and the same MusicBrainz fallback when the parsed count doesn't match the MBID count
 >
-> - For album artists, the ALBUMARTISTS tag plays the role of the ARTISTS tag. It is read from MP4 and Vorbis (FLAC, OGG, Opus) files and, when present, takes precedence over the Album Artist tag. MusicBrainz Picard writes this tag from version 3.0
+> - The ALBUMARTISTS tag works the same way for album artists as the ARTISTS tag does for track artists. It is read from MP4 and Vorbis (FLAC, OGG, Opus) files and, when present, is used instead of the Album Artist tag. MusicBrainz Picard writes this tag from version 3.0
 
 > [!NOTE]
 > As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
