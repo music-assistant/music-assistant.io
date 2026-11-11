@@ -277,10 +277,11 @@ For tracks with multiple artists, MA supports several approaches. The most relia
 
 Whether or not MBIDs are present, the artist names themselves need to be encoded in your tags using one of the following:
 
-1. ID3v2.3 and MP4: Use an ARTISTS tag - A dedicated multi-value field listing each artist delimited by a semi-colon. (It is not possible to have artists with a semi-colon in their name with this method). For album artists, MP4 files can use an ALBUMARTISTS tag in the same way
-2. FLAC/OGG/Opus: Use multiple ARTIST fields. The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note that taggers may add multiple ARTISTS or ALBUMARTISTS (plural) fields. This is not standard according to the Vorbis spec but MA will handle this case)
-3. ID3v2.4 and APEv2: Use a null separated list of names in the ARTIST tag
-4. ARTIST tag parsing - If none of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., presents, etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected
+1. ID3v2.3: Use an ARTISTS tag - A dedicated field listing each artist delimited by a semi-colon. (It is not possible to have artists with a semi-colon in their name with this method)
+2. MP4: Use an ARTISTS tag, and an ALBUMARTISTS tag for album artists. Picard stores each artist as a separate value within the one tag. A single value listing each artist delimited by a semi-colon also works
+3. FLAC/OGG/Opus: Use multiple ARTIST fields. The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note that taggers may add multiple ARTISTS or ALBUMARTISTS (plural) fields. This is not standard according to the Vorbis spec but MA will handle this case)
+4. ID3v2.4 and APEv2: Use a null separated list of names in the ARTIST tag
+5. ARTIST tag parsing - If none of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., presents, etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected
 
 > [!NOTE]
 > - If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database
@@ -293,6 +294,7 @@ Whether or not MBIDs are present, the artist names themselves need to be encoded
 > As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
 > - All formats: Single MusicBrainz Artist ID
 > - Vorbis (FLAC, OGG): Multiple (more than 1) ARTIST fields (one per artist)
+> - MP4: Multiple (more than 1) separate values in the ARTISTS tag
 > - ID3v2.4 (MP3): Multiple (more than 1) null-separated values in TPE1
 > - APEv2 (WavPack, Musepack, etc.): Multiple (more than 1) null-separated values in Artist field
 
