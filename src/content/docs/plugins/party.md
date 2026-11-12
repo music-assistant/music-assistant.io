@@ -97,6 +97,9 @@ Set "Enable Rate Limiting" to off to give guests unlimited requests. Individual 
 | **Allow Skip Song** | Off | Let guests skip the currently playing song |
 | **Skip Song Token Limit** | 1 | How many skips a guest can use before having to wait, from 1 to 5 |
 | **Skip Song Refill Rate (minutes)** | 60 min | How long until they earn another go, from 15 to 180 minutes |
+| **Votes Required to Skip** | 1 | How many different guests have to press Skip before the song is actually skipped, from 1 to 50. At 1, a single guest can skip a song on their own |
+
+With **Votes Required to Skip** set higher than 1, pressing Skip becomes a vote. Each guest's vote counts once per song, and the votes start again from zero when the next song begins. A vote uses up one of the guest's skips.
 
 ### Badge Colors (Advanced)
 
@@ -116,6 +119,7 @@ Access via the Party link in the Music Assistant sidebar, which appears once **E
 - Large QR code for easy scanning. Click it, or the **Copy link** button below it, to copy the join link. On devices that can share, the button is **Share invitation** instead, with **Copy link** in its menu
 - Animated track stack showing previous, current, and upcoming songs
 - Guest request badges visible on queue items
+- Skip vote progress (for example "Skip 1/3") on the current song while guests are voting to skip it
 - **Karaoke Mode** - A dedicated layout that puts synchronized lyrics front-and-center with the track stack minimized at the bottom and the QR code in the top-left corner. Great for sing-along parties!
 - **Anti Burn-in** - Automatically swaps UI element positions every 10 minutes to protect OLED and plasma displays
 - Access error display when the configured player is not available
@@ -138,7 +142,7 @@ Guests are automatically redirected here after scanning the QR code.
 - Tap an upcoming queue item, then tap "Boost" to move it higher in the queue
 - Token counters showing remaining requests
 - "Request" and "Boost" badges on songs they've added
-- **Skip button** - When enabled by the host, guests can skip the currently playing song. The button appears next to the "Current Queue" header with a token counter showing remaining skips. Once tokens are used, a countdown timer shows when the next skip becomes available
+- **Skip button** - When enabled by the host, guests can skip the currently playing song. The button appears next to the "Current Queue" header with a token counter showing remaining skips. Once tokens are used, a countdown timer shows when the next skip becomes available. When the host requires more than one vote to skip, the button shows how many votes the song has so far (for example "Skip 1/3"), and a guest can vote once per song
 
 ![Guest View - Search](../../../assets/screenshots/party/party-guest-view-search.png)
 
@@ -170,4 +174,5 @@ Guests find **Leave guest mode** in the same menu. When a guest session ends, fo
 3. **Adjust rate limits** - For smaller gatherings, you might disable rate limiting entirely
 4. **Use a dedicated player** - Configure a specific player for party to avoid conflicts with other rooms
 5. **Enable remote access** - If some guests might be on cellular data, enable remote access so the QR code works for everyone
-6. **Enable Karaoke Mode** - For sing-along parties, turn on Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
+6. **Let the crowd decide on skips** - Set "Votes Required to Skip" to 2 or more so one guest cannot skip a song everyone else is enjoying
+7. **Enable Karaoke Mode** - For sing-along parties, turn on Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
