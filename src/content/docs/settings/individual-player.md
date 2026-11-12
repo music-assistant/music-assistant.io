@@ -132,12 +132,6 @@ Sends live sources such as [Spotify Connect](/plugins/spotify-connect/) and the 
 
 Turn it off if those sources are unreliable on your player; Music Assistant will fall back to the output codec set above.
 
-#### Requires a fixed content length
-
-Makes Music Assistant tell the player up front roughly how much audio to expect, worked out from the length of the track, instead of sending a stream of unknown length. Only enable this if the player stops or loops during playback. Most players play fine without it.
-
-Only shown on DLNA renderers, where it starts off, and on Samsung WAM speakers, where it starts on. Other players do not have this setting.
-
 ## Group Player Settings
 
 For group players the following settings will be seen. **Group members** and **Allowed members** are both chosen from a drop down list of checkboxes, with the players you pick then shown as chips in the field.

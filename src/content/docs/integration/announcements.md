@@ -47,8 +47,6 @@ If a player does not support native announcements, MA will take care of it by st
 
 ESPHome can be unreliable with state updates so issues may occur with this player type. The same applies to some HA media players. Future updates of those platforms should improve performance.
 
-If a DLNA renderer does not resume after an announcement, or takes a very long time to, try turning on **Requires a fixed content length** in the player settings.
-
 ## Group Behaviour
 
 If an announcement is sent to a native Google Cast Group, Sync Group or a Universal Group, the announcement will always be played to ALL child players. The preference to (not) use a pre-announcement sound is defined on the group player in this case. The volume setting of the announcement is defined per player. If one of the child players was already playing, playback will be interrupted and NOT resumed. Bear that in mind with automations and target announcements to the individual players or just restart individual player playback if/when needed. Google Cast groups should play the announcement in sync.
