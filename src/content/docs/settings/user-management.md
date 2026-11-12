@@ -25,6 +25,23 @@ Each user can be restricted to a specific set of players. Restricted users autom
 
 What a user sees the first time they sign in is covered under [First Run](/first-run/#the-first-time-a-user-signs-in).
 
+### Explicit content
+
+The **Allow explicit content** switch decides whether a user can see and play what their music sources mark as explicit. It is on for every user unless you switch it off, both when creating a user and when editing one. Only an administrator can change it, so users cannot switch it back on for themselves. A user with the switch off has a **No explicit content** badge in the list of users.
+
+For a user with the switch off, Music Assistant leaves explicit content out everywhere it shows up:
+
+- <b>Browsing and search.</b> The library, its counts, search results, browsing a music source, recommendations and the home page, recently played and the items in progress
+- <b>Inside albums, playlists, artists and podcasts.</b> Their track and episode lists only show what the user may play
+- <b>Playing.</b> Playing an explicit track, album, podcast or audiobook is refused with a message saying why. Playing an album, playlist or artist that holds explicit tracks plays the other tracks
+- <b>Radio and autoplay.</b> Radio mode, autoplay and AI Radio do not add explicit tracks to the queue of a user with the switch off
+
+Tracks, albums, podcasts and audiobooks go by their own explicit mark. Podcast episodes go by the mark of their podcast. Artists and playlists have no mark of their own, so they still show, with only their allowed content.
+
+The switch is only as good as the marks your music sources give. Anything a source does not mark as explicit still shows, so a service that leaves out the mark, or a local file without it in its tags, is not filtered. Music that Home Assistant starts as its own account is not restricted.
+
+The switch takes effect straight away. The next search, browse or play in any app the user has open is already filtered, without signing out.
+
 ## Roles
 
 Every user has a role, and the role controls what they can do. A new user gets the User role unless you pick another. The **Roles** tab lists the built-in roles and, under **Custom roles**, any role you make yourself. The built-in roles are:
