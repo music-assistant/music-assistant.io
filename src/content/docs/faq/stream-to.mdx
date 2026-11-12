@@ -140,9 +140,15 @@ Play to the built-in Sendspin web player.
 ## Music Assistant
 
 <img src="/assets/label-easiest-noshadow.png" alt="easiest label" style="width: 64px;"  loading="lazy" />
+
 To bring a turntable, microphone or other line-in into Music Assistant, the native solution is [Sendspin Source](/plugins/sendspin-source/). Once a Sendspin device with an audio input is set up in Music Assistant, its input appears as a Live Input you can play on any player, stereo pair or group. If the device can tell when a signal is present, it can start playing automatically, for example when you lower the needle on a record.
 
-The recommended solution is [Apollo Automation's Cast-1-Pro](https://apolloautomation.com/products/cast-pro-1). Support in ESPHome is still being rolled out, so monitor that project for updates.
+The first off-the-shelf device built for this is [Apollo Automation's CAST PRO-1](https://apolloautomation.com/products/cast-pro-1). It needs firmware 26.11.3.2 or newer (3.3 recommended) and Music Assistant 2.10.7 or newer. Before buying, note that:
+
+- The input expects line level, so a turntable without a built-in phono preamp needs an external one
+- While the line-in is streaming, the CAST PRO-1's own output is optical only, even if set to analog
+
+The second off-the-shelf device is the Nabu Casa [Connect AUX-2](https://www.home-assistant.io/connect/aux-2/). It is output only so cannot be used for line-in.
 
 <img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
 Another way is you could use <a href="http://www.darkice.org/" target="_blank" rel="noopener noreferrer">DarkIce</a> to capture and <a href="https://www.icecast.org/" target="_blank" rel="noopener noreferrer">Icecast</a> to build a solution that will digitize and stream audio from your analog audio equipment like a vinyl record player (turntable/phonograph/gramophone) as a web radio stream (URL) that you could add as a radio station in Music Assistant.
@@ -183,6 +189,8 @@ The following table is a non-exhaustive list of possible solutions:
 
 | Device or Software	          | Price# | Supported Protocols              |+Amp^| Pros and Cons |
 |------------------------------------------------|--------|----------------------------------|------|---------------|
+| [Home Assistant Connect AUX-2](https://www.home-assistant.io/connect/aux-2/) | $ | Sendspin native (ESPHome) | Y | Pros: PoE, RS-232 serial control of a receiver's power and volume.<br />Cons: No Bluetooth audio, requires Home Assistant. |
+| [Apollo CAST PRO-1](https://apolloautomation.com/products/cast-pro-1) | $ | Sendspin native (ESPHome) | Y | Pros: Doubles as a line-in source, optical or analog output.<br />Cons: Analog output is unavailable while the line-in streams, no PoE. |
 |<a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">PiCorePlayer*</a> (DIY) |$	     |Squeezelite, AirPlay          	  |  Y	   |Pros: Cheap, Runs on RPi 1, Streams over Bluetooth<br />Cons: Requires some technical knowledge to install the free software|
 |<a href="https://www.wiimhome.com/wiimpro/overview" target="_blank" rel="noopener noreferrer">WiiM Pro</a>|$$      |Squeezelite, AirPlay, Google Cast Audio, DLNA| Y |Pros: Minimal setup, versatile<br />Cons: Cheaper options available, Cast requires app to have sync’ed group|
 |<a href="https://www.wiimhome.com/wiimmini/overview" target="_blank" rel="noopener noreferrer">WiiM Mini</a>|$	   |AirPlay, DLNA	                    | Y      | As per Wiim Pro |
