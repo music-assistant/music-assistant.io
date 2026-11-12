@@ -159,7 +159,7 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "canada",
         icon: "/assets/icons/listen/canada.svg",
         title: "Canada",
-        blurb: "Canadian radio stations.",
+        blurb: "Canadian public radio, podcasts, and local radio stations.",
       },
       {
         id: "china",
@@ -289,6 +289,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     slug: "music-providers/builtin",
     icon: "/assets/icon.png",
     categories: ["radio"],
+  },
+  {
+    name: "CBC Listen",
+    slug: "music-providers/cbc-listen",
+    icon: "/assets/icons/cbc-listen-icon.svg",
+    categories: ["radio", "podcasts", "classical", "canada"],
   },
   {
     name: "Deezer",
