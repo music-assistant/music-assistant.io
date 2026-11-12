@@ -245,6 +245,12 @@ export const PLAYERS: TileItem[] = [
     categories: ["speakers"],
   },
   {
+    name: "Web Kiosk",
+    slug: "player-support/web-kiosk",
+    icon: "/assets/icons/web-kiosk-icon.svg",
+    categories: ["software"],
+  },
+  {
     name: "WiiM",
     slug: "player-support/wiim",
     icon: "/assets/icons/wiim.svg",
@@ -332,6 +338,7 @@ export const PLAYER_PROVIDERS: PlayerProvider[] = [
   { name: "Sonos", slug: "player-support/sonos", icon: "/assets/icons/sonos-icon.svg" },
   { name: "Squeezelite", slug: "player-support/squeezelite", icon: "/assets/icons/slim-icon.svg" },
   { name: "Teufel Raumfeld", slug: "player-support/raumfeld", icon: "/assets/icons/raumfeld-icon.svg" },
+  { name: "Web Kiosk", slug: "player-support/web-kiosk", icon: "/assets/icons/web-kiosk-icon.svg" },
   { name: "WiiM", slug: "player-support/wiim", icon: "/assets/icons/wiim.svg" },
   { name: "Yandex Station", slug: "player-support/yandex-station", icon: "/assets/icons/yandex-station-icon.svg" },
 ];
