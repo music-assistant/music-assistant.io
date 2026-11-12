@@ -36,7 +36,7 @@ This source adds the live CBC Radio One and CBC Music regional feeds to Music As
 
 ## Configuration
 
-No account or setup is needed. In the configuration, you only need to click the save button
+No account or setup is needed. In the configuration, you only need to click the save button.
 
 ## Usage
 
