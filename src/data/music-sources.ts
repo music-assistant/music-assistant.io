@@ -530,6 +530,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["own-files", "podcasts"],
   },
   {
+    name: "Sunshine Live",
+    slug: "music-providers/sunshine-live",
+    icon: "/assets/icons/sunshine-live-icon.png",
+    categories: ["radio", "germany"],
+  },
+  {
     name: "Sveriges Radio",
     slug: "music-providers/sveriges-radio",
     icon: "/assets/icons/sverigesradio-icon.svg",
