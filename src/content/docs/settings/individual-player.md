@@ -178,7 +178,7 @@ Each player has a number of options available to control the behaviour of the po
 
 It is possible to map other HA entities to the MA player controls. in order for this to be an option the HA entities need to be first exposed to MA via the settings in the [HA Plugin](/ha-plugin/).
 
-**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Power controls assume the underlying device is in a standby mode and not physically powered off.
+**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Native power control assumes the underlying device is in a standby mode and not physically powered off. A Home Assistant entity chosen here, such as a smart plug, can switch the device off completely. Music Assistant switches it back on when you turn on or play to the player, see [Switching the player itself on and off](/ha-plugin/#switching-the-player-itself-on-and-off).
 
 **Volume** This allows the volume control to be defined or disabled.
 
@@ -187,3 +187,5 @@ It is possible to map other HA entities to the MA player controls. in order for 
 **Minimum and Maximum Volume** Two sliders allow the application of limits to the maximum and minimum values that are sent to the player. The volume sliders in the UI are rescaled so the full 0-100 range will still be seen. (Only shown when the advanced toggle is on)
 
 **Automatically play/resume on power on** If the player supports power control then this option will cause the player to immediately start playing any items in the queue on power on.
+
+**Power off when idle (minutes)** Turns the player off once it has been stopped for this many minutes. The default, 0, never turns it off. Only shown when Power is not set to NONE. Playing, an announcement or turning the player on starts the count over. Pausing does not count as stopped, but Music Assistant stops a paused queue after 30 seconds, so a forgotten pause still ends with the player turned off. A player in a group counts down on its own and leaves the group when it is turned off. Music Assistant can only tell a player is in use when the player reports that it is playing, so a TV or receiver used on another input can be turned off while you are using it.

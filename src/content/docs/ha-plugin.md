@@ -67,7 +67,7 @@ If an engine you chose later disappears, because the entity was removed or renam
 
 ## Linking Home Assistant entities to player controls
 
-The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function. A power entity might wake an amplifier from standby when playback starts, or switch on the active speakers a player feeds into; a volume or mute entity might drive an amplifier that the player has no direct control over. There are three drop down lists which contain a filtered list of HA entities:
+The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function. A power entity might wake an amplifier from standby when playback starts, switch on the active speakers a player feeds into, or switch the player itself through a smart plug; a volume or mute entity might drive an amplifier that the player has no direct control over. There are three drop down lists which contain a filtered list of HA entities:
 
 - For power controls, entities that can be turned on/off and have a boolean state will be shown. (i.e. switch, input_boolean and media_player)
 
@@ -77,8 +77,11 @@ The Home Assistant Plugin can expose HA entities to MA that can then be mapped t
 
 When an entity is selected it will then appear as an option in an individual player's [Player Controls](/settings/individual-player/#player-controls) settings.
 
-> [!NOTE]
-> For power controls, this cannot be used to switch the player itself on and off. If a player is switched off at the mains it drops off the network, Music Assistant marks it unavailable, and the power control is disabled along with everything else. Switch whatever the player feeds into, not the player.
+### Switching the player itself on and off
+
+A power entity can also cut the power to the player itself, for example a smart plug the player is plugged into. While that entity is off, the player shows as switched off instead of unavailable, in Music Assistant and in Home Assistant. Turning the player on, playing to it, selecting a source on it or sending an announcement to it switches the entity on and waits up to 90 seconds for the player to come online. If the player is not online by then, the request fails. After an announcement the player stays on. Stop, pause and volume changes do nothing while it is switched off.
+
+To switch the player off again once it has been stopped for a while, set [Power off when idle](/settings/individual-player/#player-controls) in its player settings.
 
 ## Known Issues / Notes
 
