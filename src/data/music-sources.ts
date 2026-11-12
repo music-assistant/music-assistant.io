@@ -392,6 +392,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["streaming", "france"],
   },
   {
+    name: "myNoise",
+    slug: "music-providers/mynoise",
+    icon: "/assets/icons/mynoise-icon.svg",
+    categories: ["radio"],
+  },
+  {
     name: "NetEase Cloud Music",
     slug: "music-providers/netease-cloud-music",
     icon: "/assets/icons/netease-cloud-music-icon.png",
