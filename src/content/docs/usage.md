@@ -48,7 +48,9 @@ Favorites are personal. Every user has their own favorites and dislikes and only
 
 The heart on an item, in a list, on its page or in the player bar, shows its state. Filled when the item is a favorite of yours, a thumbs-down when you dislike it, or an outline when you have indicated neither. Select the icon for a small menu with **Add to favorites** or **Remove from favorites**, **Dislike** or **Remove dislike**, and **Add to playlist**. The heart at the top of a library view narrows the view to your favorites. Deselect it to see everything.
 
-A track you dislike stays out of the music Music Assistant picks for you in [Endless Mix](#endless-mix), Autoplay, the Infinite Mixes and other dynamic playlists. You can still play it yourself, from an album, a playlist or the queue. A dislike on an artist or album is remembered but does not affect what is picked for you.
+A track you dislike stays out of the music Music Assistant picks for you in [Endless Mix](#endless-mix), Autoplay, the Infinite Mixes and other dynamic playlists, and so does every track on an album, by an artist or in a genre you dislike. You can still play them yourself, from an album, a playlist or the queue.
+
+A track is in a genre when it is linked to it, as listed on the [genre's page](/genres/#genre-detail-page). A track without genres of its own is in the genres of its albums. Genres come from the library, so a track that is not in the library is never left out because of its genre.
 
 A favorite adds the item to the library, and to your own streaming accounts when the service keeps a library of its own. A dislike adds nothing. An item that is not in the library yet stays out of it, and out of every account.
 
