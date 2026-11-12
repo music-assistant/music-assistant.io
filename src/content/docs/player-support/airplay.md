@@ -12,6 +12,7 @@ Music Assistant has support for AirPlay devices. This includes Apple devices suc
 - AirPlay devices will play in sync, even when there is a combination of AirPlay 1 (RAOP) and AirPlay 2 devices in the sync group
 - Audio quality is lossless 44.1 kHz/16bits PCM and optionally compressed as (lossless) ALAC
 - The player settings allow configuration of [stereo pairs](/faq/how-to/#create-a-stereo-pair) of speakers
+- Optionally, stereo pairs and Apple TV home theater groups set up in the Apple Home app play as one player, the way an iPhone shows them; see [Apple Home groupings](#apple-home-groupings)
 
 ## Configuration
 
@@ -45,7 +46,19 @@ Music Assistant chooses how to stream to each device automatically, so under nor
 
 ### AirPlay Provider Settings
 
+- <b>Follow Apple Home groupings.</b> Plays stereo pairs and Apple TV home theater groups the way an iPhone does. Off by default; see [Apple Home groupings](#apple-home-groupings).
 - <b>Verbose PTP daemon logging.</b> Adds detailed multi-room clock timing to the log. Only enable when asked to for troubleshooting sync problems — it writes around 10 lines per second.
+
+### Apple Home groupings
+
+With <b>Follow Apple Home groupings</b> enabled, Music Assistant groups AirPlay devices the way the Apple Home app has grouped them, using what the devices themselves advertise on the network. There is nothing to set up in Music Assistant.
+
+- <b>Stereo pairs.</b> Two speakers set up as a stereo pair show as one player, named after the pair. Both speakers get the full stereo stream and split the left and right channels themselves, so leave Output Channel Mode on stereo.
+- <b>Apple TV home theater groups.</b> An Apple TV with speakers (for example a HomePod stereo pair) set as its default audio output shows as one player, named after the Apple TV. The speakers play the audio. The Apple TV is never woken for music: when it is off, the speakers play on their own, and when it is turned on it joins the stream and shows what is playing, so its remote can pause, play and skip. Turning it off again leaves the music playing on the speakers.
+- The speakers in a group share one volume. The Apple TV's own volume level is not part of it.
+- The devices inside a group are hidden from the player list but stay available in the settings. Their own <b>Hide this player in the user interface</b> setting is shown disabled while the group exists, and applies again afterwards.
+- The groups are managed by the Home app, as in the AirPlay menu on an iPhone. In the settings a group shows as <b>AirPlay / HomePod Stereo Pair</b> or <b>AirPlay / Apple TV Home Theater</b>, and it can not be renamed, changed or removed in Music Assistant: rename or regroup it in the Home app instead. To play a group together with other speakers, group them for that session.
+- A group shows only while its devices can be found, and nothing about it is kept. A device that goes offline stays in its group and rejoins when it is back; a group none of whose devices can be found any more goes. Changing the grouping in the Home app (pairing, unpairing or linking to an Apple TV) replaces the group, and its queue, with the new one. Restarting Music Assistant, or turning the setting off, removes the groups; they are formed again as soon as the devices are found.
 
 ## Known Issues / Notes
 
