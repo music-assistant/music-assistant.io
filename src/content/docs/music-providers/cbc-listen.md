@@ -26,7 +26,7 @@ This source adds the live CBC Radio One and CBC Music regional feeds to Music As
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | Lossy variable bitrate |
+| Maximum Stream Quality | AAC 192kbps |
 | Login Method | None |
 
 ### Other

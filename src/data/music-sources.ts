@@ -159,7 +159,7 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "canada",
         icon: "/assets/icons/listen/canada.svg",
         title: "Canada",
-        blurb: "Canadian public radio, podcasts, and local radio stations.",
+        blurb: "Canadian radio stations.",
       },
       {
         id: "china",
