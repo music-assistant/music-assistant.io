@@ -132,24 +132,11 @@ Sends live sources such as [Spotify Connect](/plugins/spotify-connect/) and the 
 
 Turn it off if those sources are unreliable on your player; Music Assistant will fall back to the output codec set above.
 
-#### HTTP Profile used for sending audio
+#### Requires a fixed content length
 
-A low-level detail of how the audio is handed to the player. `Profile 2` by default, and correct for most players.
+Makes Music Assistant tell the player up front roughly how much audio to expect, worked out from the length of the track, instead of sending a stream of unknown length. Only enable this if the player stops or loops during playback. Most players play fine without it.
 
-The three differ in whether Music Assistant tells the player how much audio is coming before it starts sending any. Most players do not mind either way, but a few will not start, stop part way through, or refuse to skip within a track unless they are told in advance.
-
-Change it only to fix a problem. If the player behaves in any of those ways, work through the other profiles.
-
-<details>
-<summary>What each option does</summary>
-
-| Option | Behaviour |
-| --- | --- |
-| **Profile 1 - chunked** | Sends the audio in pieces as it is produced, without saying how much is coming |
-| **Profile 2 - no content length** *(default)* | Sends the audio as one continuous stream, without saying how much is coming. Right for most players |
-| **Profile 3 - forced content length** | Tells the player up front roughly how much audio to expect, worked out from the length of the track. Try this one first if the player will not start, cuts off early, or will not let you skip within a track |
-
-</details>
+Only shown on DLNA renderers, where it starts off, and on Samsung WAM speakers, where it starts on. Other players do not have this setting.
 
 ## Group Player Settings
 
@@ -159,8 +146,6 @@ For group players the following settings will be seen. **Group members** and **A
 - <b>Enable dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
 - <b>Allowed members</b>. Limit which players can join this group. Leave empty to allow any sync-compatible player. This can be used to reduce the list of players that show up for joining in case you have a lot of players. Only shown when the advanced toggle is on
 - <b>Allow crossfades between tracks of different sample rates</b>. Enable this option to allow crossfades between tracks that have different sample rates (e.g. 44.1kHz to 48kHz). Disable this option if you experience audio glitches during transitions between tracks. Only shown when the advanced toggle is on
-
-Universal Groups default to `Profile 1 - chunked` for the HTTP Profile, rather than Profile 2 as elsewhere.
 
 ## Announcements Configuration
 

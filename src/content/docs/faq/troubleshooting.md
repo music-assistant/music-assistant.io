@@ -91,7 +91,7 @@ Change one thing at a time, and give it a track or two before deciding it did no
 
 **A gap between tracks, or playback stopping on the track transition.** Turn on **Enable queue flow mode**, which sends the whole queue as one continuous stream instead of one track at a time. The trade-off is that most players then stop showing track information. [Track Queueing](/faq/tech-info/#track-queueing) explains the difference.
 
-**Playback stops part way through a track, will not start at all, or will not let you skip within a track.** Work through the **HTTP Profile** options, starting with Profile 3. This decides whether Music Assistant tells the player how much audio is coming before it starts sending, and a few players will not play properly unless they are told.
+**Playback stops part way through a track, will not start at all, or will not let you skip within a track.** On a DLNA renderer or Samsung WAM speaker, check **Requires a fixed content length** in the player settings, which tells the player how much audio is coming before it starts sending. Otherwise, try turning on **Enable queue flow mode**.
 
 **The player shows no track name or artist.** This happens in flow mode, because the player receives one long stream rather than separate tracks. Set **Try to inject metadata into stream (ICY)** to Profile 1, or to Profile 2 if you want album art as well. Some players mishandle Profile 2, so step back down if playback becomes unreliable.
 

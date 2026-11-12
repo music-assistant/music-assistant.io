@@ -40,7 +40,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Squeezelite. Turn it off if the player cannot play continuous WAV streams
 - <b>Allow crossfades between tracks of different sample rates.</b> Only enable this if the player supports it. It applies while flow mode is off, so it is greyed out once flow mode is enabled
 
-There is no sample rates setting for Squeezelite players, as each one reports the highest rate it can take and Music Assistant works from that. There is also no HTTP profile setting, as it is fixed at Profile 2 for slimproto.
+There is no sample rates setting for Squeezelite players, as each one reports the highest rate it can take and Music Assistant works from that.
 
 ## Known Issues / Notes
 

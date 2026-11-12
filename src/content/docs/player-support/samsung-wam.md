@@ -34,7 +34,7 @@ Samsung WAM players use the standard [Individual Player Settings](/settings/indi
 
 WAM speakers always play the queue as one continuous stream, because they cannot queue the next track themselves. The stream starts at the first track's sample rate and only resamples later tracks upward, and there is no setting to change that. There is also no sample rates setting, as WAM speakers report their own support of 44.1kHz through to 192kHz at 16 or 24 bits.
 
-The HTTP profile and metadata injection settings are set by the provider and hidden, so they do not appear on WAM players.
+WAM speakers get a fixed content length by default, so [Requires a fixed content length](/settings/individual-player/#requires-a-fixed-content-length) starts on and can be switched off. The metadata injection setting is set by Music Assistant and hidden, so it does not appear on WAM players.
 
 ## Known Issues / Notes
 

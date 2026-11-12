@@ -39,7 +39,7 @@ Flow mode streams audio as a continuous flow rather than individual tracks, whic
 
 ### ESPHome Media Players
 
-Newer ESPHome based players such as the Voice PE are configured from the capabilities they report, so several of the settings above are set for you and do not appear. The output codec is fixed to what the device asks for, the HTTP profile is fixed to Profile 2, metadata injection is switched off, and the sample rates come from the device rather than the list above. Output channel mode and the low latency WAV setting are still available.
+Newer ESPHome based players such as the Voice PE are configured from the capabilities they report, so several of the settings above are set for you and do not appear. The output codec is fixed to what the device asks for, metadata injection is switched off, and the sample rates come from the device rather than the list above. Output channel mode and the low latency WAV setting are still available.
 
 ### MA Natively Supported Media Players
 
@@ -51,5 +51,4 @@ If the player you imported also has a native Music Assistant provider, a notice 
 - Only players that support `play_media` can be used, other players will be filtered out
 - MA players will be filtered out
 - Synchronisation between this player type and any others is not possible
-- In order to support a greater number of players, different streaming profiles are available. If the player doesn't work, stops mid stream or has other playback issues then change the player setting `HTTP Profile used for sending audio` and try each option until the player works
 - There are regular reports of issues with the HA integrations `VLC Telnet` and `MPD`. If possible, avoid the use of players supplied by those integrations

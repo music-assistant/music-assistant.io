@@ -47,7 +47,7 @@ If a player does not support native announcements, MA will take care of it by st
 
 ESPHome can be unreliable with state updates so issues may occur with this player type. The same applies to some HA media players. Future updates of those platforms should improve performance.
 
-If a player does not resume after playing an announcement, or it takes a very long time, check the HTTP profile settings. `Fixed content length` may need to be used. For example, ESPHome devices may have this issue.
+If a DLNA renderer does not resume after an announcement, or takes a very long time to, try turning on **Requires a fixed content length** in the player settings.
 
 ## Group Behaviour
 
