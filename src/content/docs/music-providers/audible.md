@@ -38,6 +38,16 @@ Music Assistant syncs your listening position with Audible's Whispersync service
 
 No configuration is needed — this works automatically once the Audible provider is set up.
 
+### Listening progress from Audible apps
+
+Music Assistant checks Audible for changed listening positions about once an hour. Audiobooks must already be in your Music Assistant library. Unfinished books with progress can appear in the **In Progress** recommendation row; this does not change the **Recently Played** row.
+
+Only positions with a valid update date within the last 180 days are considered. A book is reported only when its listening position changes, not when Audible merely refreshes its timestamp. Completed books use Music Assistant's normal completion tracking.
+
+Progress is associated with the owner of the Audible source. If you use multiple accounts, configure the correct owner for each source. Without a valid owner, history is not imported.
+
+Importing a position does not start playback or report the imported position back to Audible. Playing in Music Assistant continues to use the Whispersync reporting described above.
+
 ### Other
 
 - The Audible library can be listed
@@ -58,7 +68,6 @@ Note: If you need to re-authenticate or change the marketplace, you will have to
 
 ## Known Issues / Notes
 
-- Last playback position is not currently reported back to Audible
 - Switching marketplaces requires re-authentication
 - The provider will be registered as a device on Audible. If you remove the provider, it will deregister the device
 - While there haven't been any issues with the number of registered devices during development, it's worth noting that Audible has various content license requirements. If a user has material with a device license restriction then having many registered devices might cause issues
