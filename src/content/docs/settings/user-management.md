@@ -31,7 +31,7 @@ The **Allow explicit content** switch decides whether a user can see and play wh
 
 For a user with the switch off, Music Assistant hides explicit content everywhere it appears:
 
-- <b>Browsing and search.</b> The library, its counts, search results, browsing a music source, recommendations and the home page, recently played and the items in progress
+- <b>Browsing and search.</b> Explicit items are hidden from the library, search results, provider browsing, recommendations, the home page, recently played and in-progress items, and aren’t included in library counts
 - <b>Inside albums, playlists, artists and podcasts.</b> Their track and episode lists only show what the user may play
 - <b>Playing.</b> Playing an explicit track, album, podcast or audiobook is refused with a message saying why. Playing an album, playlist or artist that holds explicit tracks plays the other tracks
 - <b>Radio and autoplay.</b> Radio mode, autoplay and AI Radio do not add explicit tracks to the queue of a user with the switch off
