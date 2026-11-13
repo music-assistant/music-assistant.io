@@ -36,7 +36,7 @@ For a user with the switch off, Music Assistant leaves explicit content out ever
 - <b>Playing.</b> Playing an explicit track, album, podcast or audiobook is refused with a message saying why. Playing an album, playlist or artist that holds explicit tracks plays the other tracks
 - <b>Radio and autoplay.</b> Radio mode, autoplay and AI Radio do not add explicit tracks to the queue of a user with the switch off
 
-Tracks, albums, podcasts and audiobooks go by their own explicit mark. Podcast episodes go by the mark of their podcast. Artists and playlists have no mark of their own, so they still show, with only their allowed content.
+Tracks, albums, podcasts and audiobooks are filtered by their own explicit flag. Podcast episodes use the flag of their podcast. Artists and playlists have no flag of their own, so they still appear, showing only their allowed content.
 
 The switch is only as good as the marks your music sources give. Anything a source does not mark as explicit still shows, so a service that leaves out the mark, or a local file without it in its tags, is not filtered. Music that Home Assistant starts as its own account is not restricted.
 
