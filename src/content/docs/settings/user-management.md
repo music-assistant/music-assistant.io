@@ -38,7 +38,8 @@ For a user with the switch off, Music Assistant leaves explicit content out ever
 
 Tracks, albums, podcasts and audiobooks are filtered by their own explicit flag. Podcast episodes use the flag of their podcast. Artists and playlists have no flag of their own, so they still appear, showing only their allowed content.
 
-The switch is only as good as the marks your music sources give. Anything a source does not mark as explicit still shows, so a service that leaves out the mark, or a local file without it in its tags, is not filtered. Music that Home Assistant starts as its own account is not restricted.
+> [!WARNING]
+> The filter is only as reliable as your music sources’ metadata. Anything not flagged as explicit still shows, so a service that doesn’t provide the flag, or a local file without it in its tags, won’t be filtered. Playback that Home Assistant starts under its own account isn’t restricted.
 
 The switch takes effect straight away. The next search, browse or play in any app the user has open is already filtered, without signing out.
 
