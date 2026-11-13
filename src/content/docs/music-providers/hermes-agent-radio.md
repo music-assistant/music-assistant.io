@@ -29,7 +29,7 @@ This source makes the live stations available in Music Assistant as radio.
 ### Other
 
 - New genre mounts appear automatically — the station list is synced from the station's open feed once an hour
-- The station detail page shows a live "On air / Up next" line from the station's now-playing feed
+- While a station plays, Music Assistant shows its live "on air / up next" item from the station's own now-playing feed
 
 ## Configuration
 
