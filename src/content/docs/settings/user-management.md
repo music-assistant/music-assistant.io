@@ -34,7 +34,7 @@ For a user with the switch off, Music Assistant hides explicit content everywher
 - <b>Browsing and search.</b> Explicit items are hidden from the library, search results, provider browsing, recommendations, the home page, recently played and in-progress items, and aren’t included in library counts
 - <b>Inside albums, playlists, artists and podcasts.</b> Track and episode lists only show what the user is allowed to play
 - <b>Playing.</b> Trying to play an explicit track, album, podcast or audiobook is refused with a message explaining why. Playing an album, playlist or artist that contains explicit tracks plays only the allowed ones
-- <b>Radio and autoplay.</b> Radio mode, autoplay and AI Radio do not add explicit tracks to the queue of a user with the switch off
+- <b>Radio and autoplay.</b> Radio mode, autoplay and AI Radio don’t add explicit tracks to the queue
 
 Tracks, albums, podcasts and audiobooks are filtered by their own explicit flag. Podcast episodes use the flag of their podcast. Artists and playlists have no flag of their own, so they still appear, showing only their allowed content.
 
