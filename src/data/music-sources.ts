@@ -333,6 +333,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["podcasts"],
   },
   {
+    name: "Hermes Agent Radio",
+    slug: "music-providers/hermes-agent-radio",
+    icon: "/assets/icons/hermes-agent-radio-icon.svg",
+    categories: ["radio"],
+  },
+  {
     name: "iBroadcast",
     slug: "music-providers/ibroadcast",
     icon: "/assets/icons/ibroadcast-logo.png",
