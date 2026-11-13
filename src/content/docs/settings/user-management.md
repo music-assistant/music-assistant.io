@@ -41,7 +41,7 @@ Tracks, albums, podcasts and audiobooks are filtered by their own explicit flag.
 > [!WARNING]
 > The filter is only as reliable as your music sources’ metadata. Anything not flagged as explicit still shows, so a service that doesn’t provide the flag, or a local file without it in its tags, won’t be filtered. Playback that Home Assistant starts under its own account isn’t restricted.
 
-The switch takes effect straight away. The next search, browse or play in any app the user has open is already filtered, without signing out.
+The change takes effect immediately. The user’s next search, browse or play in any open app is already filtered, with no need to sign out.
 
 ## Roles
 
