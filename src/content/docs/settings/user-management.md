@@ -27,7 +27,7 @@ What a user sees the first time they sign in is covered under [First Run](/first
 
 ### Explicit content
 
-The **Allow explicit content** switch decides whether a user can see and play what their music sources mark as explicit. It is on for every user unless you switch it off, both when creating a user and when editing one. Only an administrator can change it, so users cannot switch it back on for themselves. A user with the switch off has a **No explicit content** badge in the list of users.
+The **Allow explicit content** switch controls whether a user can see and play content their music sources flag as explicit. It’s on by default, and you can turn it off when creating or editing a user. Only administrators can change it, so users can’t turn it back on themselves. Users with the switch off show a No explicit content badge in the user list.
 
 For a user with the switch off, Music Assistant hides explicit content everywhere it appears:
 
