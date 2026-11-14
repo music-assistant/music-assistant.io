@@ -25,7 +25,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 AirPlay does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode**. The settings below are specific to AirPlay.
 
-Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired before Music Assistant can use them. These show a Setup button in the player settings — press it and follow the steps, entering the PIN shown on the device's screen. Devices protected with a password ask for the password instead.
+Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired before Music Assistant can use them. These show **Pairing required** in the player settings, with a **Start setup** button — press it and follow the steps, entering the PIN shown on the device's screen. Devices protected with a password show **Password required** and ask for the password instead.
 
 Apple TVs offer two extra pairing steps after the main one. Both are optional and can be added later by running Setup again:
 
@@ -61,7 +61,7 @@ Everything can appear to work (volume changes, song info shows, the device respo
 
 ### Other playback problems
 
-- Apple TVs will be discovered but require pairing. In the player settings there is a pair button which will display a code on the screen of the Apple TV
+- Apple TVs will be discovered but require pairing. In the player settings, **Start setup** displays a code on the screen of the Apple TV
 - If your player is going unavailable while still powered on then it may not be sending its keep alive message. A timeout can be configured for each player. Some users have reported they have needed to set it as long as one hour
 - If the AirPlay device incorrectly responds to change volume commands or randomly changes volume, try changing the `Volume Control` option in the `Player controls` section and set it to `None`
 

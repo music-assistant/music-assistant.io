@@ -27,7 +27,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Fully Kiosk players have the following settings:
 
-- <b>Password.</b> The password set for the Fully Kiosk REST API on that device. A player stays unavailable until it has one, so press <b>Setup</b> on the player and enter it
+- <b>Password.</b> The password set for the Fully Kiosk REST API on that device. A player shows <b>Password required</b> until it has one, so press <b>Start setup</b> on the player and enter it
 - <b>Use HTTPS when connecting to the Fully Kiosk API.</b> This is off by default
 - <b>Verify HTTPS certificates (recommended).</b> This is on by default. Turning it off trusts any certificate without validation
 - <b>TLS certificate fingerprint.</b> Optional SHA-256 hex fingerprint. When provided it must match the device certificate and overrides the Verify HTTPS certificates setting

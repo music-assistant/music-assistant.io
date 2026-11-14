@@ -8,9 +8,27 @@ Individual Player Settings are usually quite extensive. The typical headings of 
 
 ![image](/assets/screenshots/individual-player-settings.png)
 
-A powerful feature of Music Assistant is that it will combine all of the available protocols from a device into one player. The available protocols can be seen in the chips at the top of the page and in the Output Protocols section of the settings.
+Music Assistant makes one player of each device, however many ways it can reach it. A speaker that Music Assistant reaches through its own provider and also over AirPlay or Chromecast is one player, and each of those ways is a protocol of that player. The protocols show as chips at the top of the page and in the players list, and each has its own section under [Output Protocol(s)](#output-protocols). A chip is faded while its protocol can not be used.
 
-The `Reconfigure` button launches the configuration wizard for the player and for those with multiple protocols the one to be reconfigured will need to be selected from a drop down box. 
+The **Configure player** button, which reads **Reconfigure player** once the player is set up, starts the setup of a player, such as pairing it. When more than one of its protocols can be set up, you pick which one from a drop down box.
+
+## A player that is unavailable or needs setup
+
+A player stays in Music Assistant while its device is switched off or off the network, with its settings and its queue. It shows as unavailable until the device is back, and its queue then still holds what it was playing, ready to resume. Its settings can be opened and changed meanwhile.
+
+In **Settings → Players** an unavailable player has an hourglass ⧖ beside it. A player that can not play until you set something up says why, such as **Pairing required** or **Password required**, with a **Start setup** button that takes you through it. A player that can still play over another of its protocols stays available meanwhile, and the protocol that waits for setup shows as unavailable under [Output Protocol(s)](#output-protocols).
+
+## Disabling and deleting players
+
+The ⋮ menu of a player, in the players list or at the top right of its settings, has **Disable** and **Delete**.
+
+- <b>Disable.</b> Takes the player out of every player list in the app. Its settings and queue are kept, and the players list in the settings still shows it, marked as disabled. **Enable** brings it back as it was
+- <b>Delete.</b> Removes the player with its settings and its queue. Any player can be deleted. A device that is still on the network comes back as a new player with its default settings; a deleted group is gone for good
+
+The ⋮ menu at the top right of **Settings → Players** has two options for players whose device is gone:
+
+- <b>Hide unavailable players.</b> Leaves unavailable players out of the list. It is off to start with and remembered once you change it. While it is on, the ⋮ button shows a dot. Players that need setup and disabled players stay listed
+- <b>Remove unavailable players.</b> Deletes every player whose device can no longer be found, after asking you to confirm how many. It leaves alone the players that need setup, disabled players, and players whose provider is disabled or not running. Right after Music Assistant starts, or a player provider is added or reloaded, its players get a minute to be found again first; if nothing else can be removed meanwhile, the app asks you to try again in a few seconds. Only shown to users who may change player settings
 
 ## Queue Settings
 
@@ -35,9 +53,9 @@ Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control 
 
 ## Output Protocols
 
-- <b>Preferred Output Protocol.</b> Choose from the list of available protocols
+- <b>Preferred Output Protocol.</b> The protocol the player plays through when you play to it. Only shown when the player has more than one. The device's own protocol is marked *(native)*, and the setting starts on it when it can play; a player without one starts on **Auto-select**, which picks the protocol that suits the device best. A protocol that can not be used right now is greyed out with the reason, such as *This output must be set up before it can be used.* When the player is grouped with other speakers, Music Assistant may play through another protocol that the whole group can use, see [Streaming Protocols](/usage/#streaming-protocols)
 
-Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. A protocol whose toggle says *(experimental)* is switched off until you turn it on yourself, with a warning above the toggle explaining what to expect. The [Audio Pipeline](/audiopipeline/) view shows which protocol a player is actually using and what the audio quality is at each stage.
+Each protocol then has its own configuration section. Each one except the device's own protocol can be switched off for this player with **Enable this protocol on this player**. A protocol whose toggle says *(experimental)* is switched off until you turn it on yourself, with a warning above the toggle explaining what to expect. The [Audio Pipeline](/audiopipeline/) view shows which protocol a player is actually using and what the audio quality is at each stage.
 
 ### Settings shared by most protocols
 
