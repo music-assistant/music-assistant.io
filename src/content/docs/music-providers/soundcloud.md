@@ -30,7 +30,7 @@ Connecting your account puts what you have liked and followed on SoundCloud into
 
 Open a SoundCloud artist page to find the account's public playlists in the **Playlists** section. Select a playlist to see its tracks, then use the usual controls to play it, add it to the queue or add it to your library.
 
-Music Assistant currently lists up to 100 public playlists per artist. This counts the playlists shown on the artist page, not the tracks inside them. SoundCloud allows up to <a href="https://help.soundcloud.com/hc/en-us/articles/360005673974-Playlist-Limits" target="_blank" rel="noopener noreferrer">500 tracks in each playlist</a>.
+Music Assistant currently lists up to 100 public playlists per artist. This limit is for the playlists shown on the artist page, not the tracks inside them. SoundCloud allows up to <a href="https://help.soundcloud.com/hc/en-us/articles/360005673974-Playlist-Limits" target="_blank" rel="noopener noreferrer">500 tracks in each playlist</a>.
 
 Private playlists and albums are excluded. No additional profile URL or setting is needed.
 
