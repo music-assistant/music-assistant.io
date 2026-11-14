@@ -172,7 +172,7 @@ MA searches for the best available version on those providers, preferring exact 
 
 Music Assistant talks to your players using whichever streaming protocol suits them best; you do not normally need to think about this. Many devices can be reached in more than one way, for example through their own provider and over AirPlay. Such a device is one player, and every way Music Assistant reaches it is a protocol of that player. Playing to a player uses its preferred protocol, which is [selectable in the settings](/settings/individual-player/#output-protocols). When grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without you needing to do anything. In some cases there might be an interruption to playback if the stream must be restarted.
 
-An app from outside Music Assistant can also play on a speaker, for example music cast from a phone to the speaker's Chromecast receiver. While Music Assistant is not playing on that player and the player is not in a group, it shows what the app plays, and the player bar and the full-screen player name the app. The play, pause and skip buttons then control that app, as far as the app allows.
+An app from outside Music Assistant can also play on a speaker, for example music cast from a phone to the speaker's Chromecast receiver. While Music Assistant is not playing on that player and the player is not in a group, it shows what the app plays, and the player bar and the full-screen player name the app and the protocol it plays on, for example *YouTube • Chromecast*. The play, pause and skip buttons then control that app, as far as the app allows.
 
 ## Online Metadata Sources
 
