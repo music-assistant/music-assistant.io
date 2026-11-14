@@ -36,7 +36,7 @@ For a user with the switch off, Music Assistant hides explicit content everywher
 - <b>Playing.</b> Trying to play an explicit track, album, podcast or audiobook is refused with a message explaining why. Playing an album, playlist or artist that contains explicit tracks plays only the allowed ones
 - <b>Radio and autoplay.</b> Radio mode, autoplay and AI Radio don’t add explicit tracks to the queue
 
-Tracks, albums, podcasts and audiobooks are filtered by their own explicit flag. Podcast episodes use the flag of their podcast. Artists and playlists have no flag of their own, so they still appear, showing only their allowed content.
+Tracks, albums, podcasts and audiobooks are filtered by their own explicit flag. Podcast episodes use the flag of their podcast or a flag on the episode itself. Artists and playlists have no flag of their own, so they still appear, showing only their allowed content.
 
 > [!WARNING]
 > The filter is only as reliable as your music sources’ metadata. Anything not flagged as explicit still shows, so a service that doesn’t provide the flag, or a local file without it in its tags, won’t be filtered. Playback that Home Assistant starts under its own account isn’t restricted.
