@@ -291,6 +291,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio"],
   },
   {
+    name: "CBC Listen",
+    slug: "music-providers/cbc-listen",
+    icon: "/assets/icons/cbc-listen-icon.svg",
+    categories: ["radio", "podcasts", "classical", "canada"],
+  },
+  {
     name: "Deezer",
     slug: "music-providers/deezer",
     icon: "/assets/icons/deezer-icon.svg",
