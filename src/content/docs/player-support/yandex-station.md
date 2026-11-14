@@ -58,7 +58,6 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>Intercept target player.</b> The Music Assistant player that receives intercepted playback. Every registered player except this Station is listed, including ones that are currently offline so you can pick a target before it is switched on. Pause, volume and seek are mirrored where the target supports them and are quietly skipped where it does not
 - <b>Mirror Station volume to intercept target.</b> On by default. Copies volume changes made on the Station, from its buttons, the Yandex app or «Alice, turn up», to the intercept target player. Turn it off to set the target's volume in Music Assistant on its own; the Station is still silenced during intercept and its volume is restored afterwards. With it off, the Station's volume controls only change the Station itself
 - <b>Experimental: Voice control integration.</b> Off by default. Resumes the Music Assistant queue automatically after voice commands such as "Алиса, стоп" or "Алиса, дальше". Experimental, so it may behave unexpectedly
-- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to Profile 3 - forced content length here, because Yandex Stations need a content length and cannot handle chunked streams
 
 ### Voice control integration (experimental)
 
