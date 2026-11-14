@@ -26,7 +26,7 @@ Connecting your account puts your Deezer favourites and playlists alongside the 
 | Artist Top Tracks Support                       |            Yes                     |
 | Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                     | 
-| Maximum Stream Quality | FLAC 44.1kHz 16 bit |
+| Maximum Stream Quality | FLAC 192kHz 24 bit |
 | Login Method | Cookie (ARL) |
 
 ### Other
