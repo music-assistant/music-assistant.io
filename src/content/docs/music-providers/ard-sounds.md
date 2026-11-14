@@ -24,24 +24,28 @@ This source makes that content available inside Music Assistant. An ARD account 
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      | 
 | Maximum Stream Quality | Lossy variable bitrate |
-| Login Method | Password |
+| Login Method | Device Code |
 
 ### Other
 
-- Progress reporting and acquiring
-- Populates libraries with subscribed podcasts
-- Updates playlog on regular provider syncs
+- Podcasts you follow in ARD Sounds are added to the library
+- Adding or removing an ARD podcast in the Music Assistant library follows or unfollows it in your ARD account (requires the 2-way sync setting)
+- Listening progress is shared with the ARD Sounds website and apps in both directions. The most recent position wins, so you can stop on one and carry on in the other
+- Marking an episode as unplayed in Music Assistant removes it from your ARD Sounds listening history
 
 
 ## Configuration
 
-Login to the ARD Sounds app, if syncing is required
+An ARD account is optional. Without one you can still search and play everything, only following podcasts and listening progress are not shared with ARD Sounds.
+
+To link your account, tick <b>Sign in with an ARD account</b> during setup. Music Assistant then shows a short code and a button that opens <a href="https://accounts.ard.de/" target="_blank" rel="noopener noreferrer">accounts.ard.de</a> with the code filled in. Sign in there, confirm the code, and the setup continues by itself. The code is valid for a few minutes, a new one is shown if it runs out. Music Assistant does not store your password.
+
+If you set up ARD Sounds with an email address and password in an earlier version, open the provider settings and sign in again. ARD no longer accepts password logins from other apps.
 
 ### Settings
-- <b>E-Mail address of ARD account.</b>
-- <b>Password of ARD account.</b>
+- <b>Sign in with an ARD account</b> Link your ARD account as described above
 - <b>Maximum bitrate for streams (0 for unlimited)</b> Define the maximum stream bitrate
-- <b>Percentage required before podcast episode is marked as fully played</b> Configure how much of an episode playback must occur before the podcast is recorded as fully played (this is only used for visualization within Music Assistant) 
+- <b>Percentage required before podcast episode is marked as fully played</b> Configure how much of an episode playback must occur before the episode is marked as fully played, in Music Assistant and, when signed in, in your ARD account
 
 ## Known Issues / Notes
 
@@ -49,6 +53,5 @@ Login to the ARD Sounds app, if syncing is required
 
 ## Not Yet Supported
 
-- Subscription management is not supported
 - Podcast recommendations is not implemented
 - For radio streams: Current played song is not displayed
