@@ -37,7 +37,7 @@ A device that is both a player and a source also lists its own line-in among tha
 
 Each source can play on only one target at a time. Selecting the same source on another target moves it there. Different source clients can play on different targets concurrently.
 
-Live Inputs play as 48 kHz, 16-bit stereo audio. Music Assistant adjusts for small timing and network variations to keep playback stable.
+Live Inputs keep the sample rate and bit depth of the line-in, for example 96 kHz, 24-bit from a hi-res turntable preamp. Each player then converts the audio to a format it can play, if needed. Music Assistant adjusts for small timing and network variations to keep playback stable.
 
 ## Start playing automatically when a line-in becomes active
 
