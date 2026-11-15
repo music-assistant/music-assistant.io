@@ -311,7 +311,7 @@ export default defineConfig({
               ],
             },
             {
-              label: "Audio Analysis Providers",
+              label: "Audio Analysis",
               collapsed: true,
               items: [
                 { label: "AcoustID Lookup", slug: "audio-analysis/acoustid" },

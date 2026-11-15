@@ -9,11 +9,11 @@ description: What player support is, and what applies to all of it
 
 ## What player support is
 
-**Player support** is not one speaker. Each one is the part of Music Assistant that knows how to talk to a whole family of them: the AirPlay player support covers every AirPlay device in the house, the Sonos player support all your Sonos.
+**Player support** is not one speaker. It is the part of Music Assistant that knows how to talk to a whole family of them: player support for AirPlay covers every AirPlay device in the house, player support for Sonos covers all your Sonos.
 
-So you do not add speakers one at a time. You add the player support for the kind of device you own, and where it supports auto-discovery it finds them for you and keeps looking, so a speaker you plug in next month turns up on its own. Not every one can discover devices; some need an address entered by hand. The page for each one says which it is.
+So you do not add speakers one at a time. You add the player support for the kind of device you own. Where it can discover devices, it finds them for you and keeps looking, so a speaker you plug in next month turns up on its own. Not all of them can discover devices; some need an address entered by hand. The page of each says which it is.
 
-Some devices can be reached more than one way. Anything Home Assistant already knows about can be played to through [Home Assistant Media Players](/player-support/home-assistant/), but **if Music Assistant has player support of its own for a device, use it**. The Home Assistant route is a fallback for devices with no player support of their own, not an alternative to it. [Audio Quality](#audio-quality) below explains why.
+Some devices can be reached more than one way. Anything Home Assistant already knows about can be played to through [Home Assistant Media Players](/player-support/home-assistant/), but **if Music Assistant has its own player support for a device, use it**. The Home Assistant route is a fallback for devices that have none, not an alternative. [Audio Quality](#audio-quality) below explains why.
 
 ## Adding player support
 
