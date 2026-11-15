@@ -33,7 +33,7 @@ Under **Settings → Plugins → MilkDrop Visualizer**:
 
 - <b>Show on dashboards and cast displays.</b> Shows the visualizer on the party and now-playing dashboards of a cast or kiosk display. It does not change the visualizer in the regular web app. Off by default.
 
-A cast display follows the visualizer settings of the user who cast it, and picks up their changes live. If that user has turned the visualizer on or off for the player the dashboard shows, their choice wins over this setting.
+A cast display follows the visualizer settings of the user who cast it, and picks up their changes live. If that user has turned the visualizer on or off for the player the dashboard shows, their choice wins over this setting. Render quality is the exception: cast and kiosk displays always use a fixed quality, see the notes below.
 
 ### Visualizer settings
 
@@ -66,8 +66,8 @@ The droplet entry in the fullscreen player menu has quick controls for the playe
 ## Known Issues / Notes
 
 - If the normal background still shows after enabling this plugin, your browser is likely too old to run the visualizer; try a current one. (You can check yours at <a href="https://get.webgl.org/webgl2/" target="_blank" rel="noopener noreferrer">get.webgl.org/webgl2</a>.)
-- Cast devices and TV boxes have far weaker graphics hardware than a computer, so a cast [dashboard](/dashboards/) renders the visualizer at a fixed, reduced quality and frame rate. Heavier presets can still stutter on low-end devices
-- A Chromecast only loads a dashboard over HTTPS. With an HTTPS base URL or an HTTPS external URL, Music Assistant casts the dashboard directly. Without one, it falls back to a remote access link (app.music-assistant.io), and the visualizer does not render over remote access, so the display keeps the normal background
+- Cast devices and TV boxes have far weaker graphics hardware than a computer, so a [dashboard](/dashboards/) on a cast or kiosk display renders the visualizer at a fixed, reduced quality and frame rate. Heavier presets can still stutter on low-end devices
+- A Chromecast only loads a dashboard over HTTPS. With an HTTPS base URL or an HTTPS external URL, Music Assistant casts the dashboard directly. Without one, it falls back to a remote access link (app.music-assistant.io), and the visualizer does not render over remote access, so the display keeps the normal background. With neither HTTPS nor remote access set up, casting the dashboard fails
 - Kiosk displays such as Fully Kiosk Browser load the dashboard over your local network and need no HTTPS
 - Beat-driven preset switching uses the track's beat analysis from the [Smart Fades](/audio-analysis/smart-fades) provider when available; it may be unavailable until the analysis has been computed, or on lower-powered devices
 - Audio that a provider streams directly to the device (an external source) is not decoded by Music Assistant, so the visualizer has nothing to react to while such a source plays
