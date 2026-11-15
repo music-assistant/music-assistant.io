@@ -7,6 +7,8 @@ description: Explanation of the use and effect of the DSP Transpose filter
 
 Shifts the pitch of the music up or down without changing how fast it plays. Raising the pitch by twelve semitones moves the music up by a full octave, and lowering it by twelve moves it down an octave, while the performance still takes exactly as long as it did before.
 
+This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
+
 This is not the same as changing the playback speed. Playing a record at the wrong speed changes pitch and tempo together, whereas this filter separates the two and alters only the pitch. That separation is what makes it useful, but it is also why the filter is more demanding than the others: the audio has to be analysed and rebuilt rather than simply adjusted in level.
 
 ## Usage

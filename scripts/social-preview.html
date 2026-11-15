@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- Source for public/assets/website-social.png. Render in Chromium at
+     1200 × 630, device scale factor 1, after fonts and images finish loading. -->
+<html lang="en">
+  <meta charset="utf-8" />
+  <title>Music Assistant social preview</title>
+  <style>
+    @font-face {
+      font-family: Inter;
+      src: url("../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2");
+      font-weight: 100 900;
+    }
+    * { box-sizing: border-box; }
+    body {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 65% 95%, #9d4edd44, transparent 55%),
+        radial-gradient(ellipse at 95% 35%, #18bcf233, transparent 55%),
+        #0b0c0d;
+      color: #f2f4f9;
+      font-family: Inter, sans-serif;
+    }
+    .logo { position: absolute; top: 52px; left: 64px; width: 330px; }
+    h1 {
+      position: absolute;
+      top: 164px;
+      left: 64px;
+      margin: 0;
+      font-size: 76px;
+      font-weight: 650;
+      line-height: 1.06;
+      letter-spacing: -4px;
+    }
+    h1 span { display: block; color: #18bcf2; }
+    .description {
+      position: absolute;
+      top: 362px;
+      left: 64px;
+      width: 390px;
+      margin: 0;
+      color: #a3a9b1;
+      font-size: 25px;
+      line-height: 1.45;
+    }
+    .app {
+      position: absolute;
+      left: 540px;
+      top: 144px;
+      width: 830px;
+      border: 1px solid #ffffff26;
+      border-radius: 12px;
+      box-shadow: 0 24px 80px #0008;
+    }
+    .foundation {
+      position: absolute;
+      left: 64px;
+      bottom: 48px;
+      margin: 0;
+      color: #a3a9b1;
+      font-size: 19px;
+      line-height: 1.5;
+    }
+  </style>
+  <body>
+    <img class="logo" src="../src/assets/ma-logo--light.svg" alt="Music Assistant" />
+    <h1>Your music.<span>Your way.</span></h1>
+    <p class="description">All your music in one library.<br />Play it on your speakers.</p>
+    <img class="app" src="../public/assets/landing/discover-dark.webp" alt="Music Assistant’s Discover screen" />
+    <p class="foundation">A project of the<br />Open Home Foundation</p>
+  </body>
+</html>

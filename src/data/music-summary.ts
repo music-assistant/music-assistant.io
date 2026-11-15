@@ -124,12 +124,24 @@ export const EXCLUDED: string[] = [
 // The tier is worked out from the wording on the page. These are the ones the
 // wording cannot settle, decided by hand instead of guessed at. Keyed by slug.
 export const QUALITY_TIER_OVERRIDES: Record<string, QualityTier> = {
+  // "FLAC, Unlimited": local files are served at whatever resolution the file
+  // holds, with no cap, so the ceiling is Hi-Res.
+  "music-providers/local-files": "hi-res",
+  "music-providers/feiniu-music": "hi-res",
+  "music-providers/yandex-disk": "hi-res",
   // "192kHz 24 bit", with no codec named. Above 48kHz and above 16 bits, which
   // is what /player-support/#audio-quality calls Hi-Res.
   "music-providers/audiobookshelf": "hi-res",
+  "music-providers/bookorbit": "hi-res",
   // All three say "Lossless FLAC (with subscription)" without a resolution.
   // Recorded as Hi-Res, matching the summary this table replaced.
   "music-providers/kion-music": "hi-res",
   "music-providers/yandex-music": "hi-res",
   "music-providers/zvuk": "hi-res",
+  // Soloist can serve lossless, and the page says 24 bits because that is the
+  // ceiling Music Assistant reports for the tier (Soloist never says what it
+  // actually fetched). Spotify sells no hi-res tier, so this pins the chip to CD
+  // rather than letting that 24 be read as one - an editorial call, not a
+  // tie-break: the wording on its own would derive hi-res.
+  "music-providers/spotify": "cd",
 };

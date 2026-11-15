@@ -1,6 +1,7 @@
 ---
 title: FastMCP Server Plugin
-description: Features and Notes for the FastMCP Server Plugin
+description: Offer your library, queue and players over the Model Context Protocol, so an AI assistant can search and control them.
+pluginGroup: other-systems
 ---
 
 # FastMCP Server <img src="/assets/icons/fastmcp-server-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
@@ -23,7 +24,7 @@ Music Assistant has the ability to expose its library, queue, playback and playe
 
 ## Configuration
 
-Add the plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`. You only ever need one copy of it, however many AI clients you connect.
+Add the plugin via **Settings → Plugins → Add a plugin**. You only ever need one copy of it, however many AI clients you connect.
 
 ### Connecting an AI client
 

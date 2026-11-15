@@ -21,8 +21,6 @@ Music Assistant has support for streaming music to Smart TVs via the <a href="ht
 - **Browse on the TV**: albums, artists, playlists and tracks, on the screen
 - **Search**: search your whole Music Assistant library from the TV
 - **Control from either end**: play, pause, stop and skip work from Music Assistant or from the TV, and each keeps up with what the other is doing
-- **Player grouping** *(experimental)*: play the same track on several TVs at once
-- **In a browser too**: open `http://<ma-ip>:8099/web` on any computer
 - **Tidies up after itself**: a TV that has been left alone for a while drops off the player list, and comes back when you use it again
 - **Player removal**: Players can be manually removed from the MA UI
 
@@ -41,7 +39,6 @@ Music Assistant has support for streaming music to Smart TVs via the <a href="ht
 | Android TV | Google Play Store |
 | Apple TV | App Store |
 | Xbox | Microsoft Store |
-| Web Browser | Open `http://<ma-ip>:8099` |
 
 ## Configuration
 
@@ -54,14 +51,18 @@ Music Assistant has support for streaming music to Smart TVs via the <a href="ht
 
 ### Provider Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-- **HTTP Server Port**. The port for the MSX HTTP server. Default: `8099`
-- **Audio Output Format**. Audio format for streaming to the TV. Options: `MP3` (default), `AAC`, `FLAC`. Note: FLAC provides lossless quality but some TVs may not support it
-- **Player Idle Timeout (minutes)**. Automatically unregister MSX players after this many minutes of inactivity. Default: `30`
-- **Show notification before closing player**. Show a confirmation dialog on the TV when stopping playback from MA. Default: off
-- **Enable player grouping (experimental)**. Allow grouping multiple MSX TVs to play the same track simultaneously. Default: off
-- **Group Stream Mode**. How audio is sent to grouped TVs. `Independent` (default) sends each TV its own copy. `Shared Buffer` prepares the audio once and sends the same thing to all of them, which is easier on your server and keeps the TVs better in step
+- <b>HTTP Server Port.</b> The port for the MSX HTTP server. The default is 8099
+- <b>Audio Output Format.</b> The audio format used for streaming to the TV. Enter mp3 (the default), aac or flac. FLAC gives lossless quality but some TVs cannot play it
+- <b>Player Idle Timeout (minutes).</b> Unregisters an MSX player after this many minutes without activity. The default is 30
+- <b>Show playback stopped notification.</b> Shows an informational notice on the TV after playback is stopped from Music Assistant. Off by default
+- <b>Stream Delivery Mode.</b> How the audio reaches the TVs. MA Streamserver (the default and recommended) points each TV straight at the Music Assistant stream server. Independent sends each TV its own separate stream through a local proxy, for TVs that have trouble with the default. MA Streamserver falls back to Independent automatically when the address cannot be worked out
+
+MSX players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Two of those are worth knowing about on a TV:
+
+- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Set per TV, and defaults to MP3 here rather than FLAC
+- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> Turning this on stops the TV reporting track progress correctly, so leave it off unless you have a reason to change it
 
 ## How It Works
 
@@ -73,8 +74,8 @@ You can check on all of this at `http://<ma-ip>:8099/`.
 
 ## Known Issues / Notes
 
-- **Audio format**: MP3 works on every TV, which is why it is the default. AAC sounds slightly better for the same file size. FLAC is lossless, but Music Assistant cannot tell the TV in advance how long the audio will be, and some TVs do not cope with that
-- **Player grouping**: This is experimental. `Shared Buffer` keeps the TVs better in step, but every TV in the group has to be set to the same audio format
+- **Audio format**: MP3 works on every TV, which is why it is the default. AAC sounds slightly better for the same file size. FLAC is lossless, but with it Music Assistant cannot tell the TV up front how much audio is coming, and some TVs will not play without that
+- **Player grouping**: It is possible to group MSX players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - **Network**: The TV and Music Assistant have to be on the same network. There is no way to reach a TV from outside your home
 - **Idle timeout**: If a TV is switched off or the MSX app is closed, it disappears from the player list after the idle timeout, 30 minutes by default. It comes back as soon as the TV connects again
 - Crossfade is not supported, because the TV does its own playing and cannot fade one track into the next

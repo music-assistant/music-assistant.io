@@ -16,7 +16,7 @@ This source connects to any server that supports the Open Subsonic specification
 |:-----------------------|:---------------------:|
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | Yes |
-| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts |
+| Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Radio |
 | [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | Yes |
 | [Endless Mix](/ui/#track-menu) | Yes |
@@ -43,8 +43,8 @@ You will need to provide the following to Music Assistant:
 
 ### Settings
 
-- <b>Enable Podcasts.</b> This toggle controls podcast availability in Music Assistant
 - <b>Enable Legacy Auth.</b> Some Subsonic implementations require this to be enabled to authenticate
+- <b>Enable Radio Stations.</b> This toggle controls radio stations availability in Music Assistant
 - <b>Recommend Favorites.</b> Should favorited (starred) items be included as recommendations?
 - <b>Recommend New Albums.</b> Should new albums be included as recommendations?
 - <b>Recommend Most Played.</b> Should most played albums be included as recommendations?
@@ -53,6 +53,7 @@ You will need to provide the following to Music Assistant:
 
 ## Known Issues / Notes
 
+- Music Assistant 2.10 introduced finer grained controls for what is synchronized that include if podcasts should be done. This is independent from the provider specific settings above and needs to be disabled as well. This setting can be found at the bottom of the provider configuration page.
 - Searching with nothing typed in is allowed by the specification, but some servers refuse it. If search or the track list fails, that is worth raising with whoever makes your server
 - This source only works with servers that follow the Open Subsonic specification. If your server does not support the newer specification, Music Assistant cannot talk to it. Your server's own documentation should say which one it follows
 - If you find a mismatch between what is displayed by your Subsonic compatible server and Music Assistant then refer to and contribute <a href="https://github.com/music-assistant/support/issues/2192" target="_blank" rel="noopener noreferrer">here to help find a solution</a>
@@ -60,3 +61,4 @@ You will need to provide the following to Music Assistant:
 - Some files may not play at all, most often m4a and opus, and anything encoded at a variable bitrate. These formats can hold information part way through the file rather than all of it at the start, which Music Assistant cannot work with over a Subsonic connection. Your options are to avoid these formats, to set your server to convert them to something else before sending them, or to keep those files out of your Subsonic library and reach them another way
 - Autoplay (<a href="https://www.music-assistant.io/usage/#the-queue" target="_blank" rel="noopener noreferrer">described here</a>) needs your server to be able to suggest similar songs, which not every server does out of the box. Gonic and Navidrome both need a Last.fm API key added before they can. Check your server's documentation
 - To be clear, this will not work with the original Subsonic or with anything built on it, such as Airsonic or Airsonic-Advanced, unless that software has since moved over to the Open Subsonic specification.
+- Podcast transcripts are not available

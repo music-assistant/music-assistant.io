@@ -12,30 +12,40 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 - Music Assistant supports playing to cast groups which are created in the Google Home app
 - When using Google cast groups then perfect sync across players in that group is possible
 - Any physical control buttons on the device should be supported as well as voice control
-- Cast speakers can be synchronised with other Sendspin clients (experimental)
+- Cast speakers can be synchronised with other Sendspin clients. This is experimental and off by default, see [Sendspin on Cast devices](#sendspin-on-cast-devices)
+- Cast devices with a screen, such as a Chromecast, Google TV or Nest Hub, can show Music Assistant [dashboards](/dashboards/)
 
 ## Configuration
 
-1. In Music Assistant, go to `SETTINGS >> PLAYER PROVIDERS` and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click `ADD A NEW PROVIDER` and select `Google Cast`.
+1. In Music Assistant, go to **Settings → Player support** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `Google Cast`.
 2. Your Cast devices, and any speaker groups created in the Google Home app, will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available when the advanced toggle is enabled:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available when the advanced toggle is enabled:
 
 - <b>Manual IP addresses for discovery.</b> Normally Music Assistant will automatically discover all players on the network, using multicast discovery on the (L2) local network, such as mDNS or UPNP (see [Networking Basics](/faq/networking/) for what these terms mean). In the case of special network setups or when issues are encountered with one or more players not being discovered, IP addresses can be manually added. Note that this setting is not recommended for normal use and should only be used by those with advanced networking knowledge. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming. In that case, ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#streams)
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Google Cast provider also has some unique settings as follows:
+In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Google Cast provider has the following:
 
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`.
-- <b>HTTP Profile used for sending audio.</b> An advanced setting that changes how the audio is sent to the player. Cast devices use `Profile 3 - forced content length` by default. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
 - <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
-- <b>Sample rates supported by this player.</b> Defaults to 44.1 kHz and 48 kHz at 16 bit. This is a deliberately safe setting rather than something detected from your device, and higher rates are offered for you to try. Cast officially supports FLAC up to 96 kHz 24 bit, which works on most of Google's own hardware, but other brands vary and some handle it badly, so test rather than assume. Content above what is selected here is resampled
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting.
-- <b>Enforce gapless playback with queue flow mode streaming.</b> Enabling this option will send all tracks as a continuous audio stream. Use for players that do not natively support gapless or crossfading. Can also help with players that have difficulty transitioning between tracks. May have the side effect of losing metadata to the player
+- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit for a single player, and up to 96 kHz for a Cast group. Only 44.1 kHz / 16 bit and 48 kHz / 16 bit are selected by default, because the higher ones are unreliable on some devices despite being officially supported. Add them and test rather than assume
+- <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
+- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> On by default, as these devices handle one continuous stream more reliably than being fed tracks one at a time
+
+## Sendspin on Cast devices
+
+A Cast speaker can also be driven over [Sendspin](/player-support/sendspin/), which lets it play in sync alongside Sendspin, AirPlay and Sonos players in one group. This is experimental and switched off by default, so there is nothing to do here unless you want a Cast speaker in a mixed group. It also does not work on many Cast devices, especially newer ones, because Google's current Cast software no longer gives apps like Sendspin any control over audio timing, which they need to play in sync.
+
+To turn it on, open the player's settings, find Sendspin in the **Output Protocols** section and tick **Enable this protocol on this player (experimental)**.
+
+Speakers that also support AirPlay don't need this: they join mixed groups over AirPlay, which works better than Sendspin over Cast. AirPlay must be turned on in Music Assistant for that.
+
+Sendspin is also not offered on speaker groups made in the Google Home app (except stereo pairs), or on models known not to work.
+
+Expect to do some tuning afterwards. Playback is rarely in sync straight away, so you will probably have to set **Static playback delay (ms)** for that speaker by hand until it lines up with the others.
 
 ## Known Issues / Notes
 
@@ -45,8 +55,9 @@ In addition to the [Individual Player Settings](/settings/individual-player/) th
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - TV/Video devices (not the AV dongles) are disabled by default
 - Cast Groups containing only a stereo pair will not work
-- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length`, Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
-- MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work.
+- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
+- MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work
+- Google's current Cast software no longer gives apps like Sendspin any control over audio timing, which they need to play in sync. Devices that run it cannot use Sendspin, and a software update can stop Sendspin working on a speaker where it worked before. There is no way to tell in advance, so you find out the first time you play something: Music Assistant then says Sendspin does not work with the device and stops offering it for that speaker. There is nothing to do, playback continues over the standard Cast protocol
 
 ## Troubleshooting playback problems
 
@@ -70,12 +81,12 @@ You may see any of these:
 In the individual player settings:
 
 1. Set **Output codec to use for streaming audio to the player** to `MP3`.
-2. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
+2. If changing to MP3 makes playback last longer but it still fails eventually, make sure **Enable queue flow mode** is on.
 
 Once playback is reliable you can try putting the output codec back to `FLAC`, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
 
 > [!IMPORTANT]
-> **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Set the profile on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
+> **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Make the same change on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
 
 ### Speakers not found, or dropping off at random
 

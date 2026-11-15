@@ -42,6 +42,8 @@ npm run preview
 │   ├── content/docs/      # Markdown documentation files
 │   ├── styles/            # Custom CSS (branding)
 │   ├── components/        # Custom Astro components
+│   ├── pages/             # Homepage, getting started, and blog routes
+│   ├── layouts/           # Shared marketing page layout
 │   └── assets/            # Logo files
 ├── public/
 │   ├── assets/            # Static images
@@ -51,6 +53,36 @@ npm run preview
 ├── astro.config.mjs       # Astro configuration
 └── dist/                  # Build output
 ```
+
+The homepage, `/get-started/` and the blog use `MarketingLayout.astro`. The
+look is minimal and dark-first in the Open Home Foundation family (near-black,
+off-white and the logo blue as the one accent), with a music-scene feel from
+Inter throughout, mono track captions (IBM Plex Mono)
+and a little print grain. Colour comes from album art, as in the app:
+`Cover.astro` renders mesh-gradient stand-in covers from the genre palettes
+in `src/data/marketing.ts`, used for the genre shelf, plugin and setlist
+thumbnails and the closing section. Light mode follows the system setting or the header
+toggle. `src/styles/marketing.css` holds the tokens and base styles; sections
+pick a tone (`base`, `alt` or `inverse`) with `Section.astro`, and every
+component carries its own scoped styles. Screenshots come in dark and light
+pairs and switch with the theme.
+
+- `src/components/home/`: one component per homepage section
+- `src/components/get-started/`: the installation stepper
+- `src/components/marketing/`: header, footer and blog card
+- `src/components/marketing/ui/`: small building blocks (`Section`, `Button`,
+  `Icon` for lucide icons, `AppWindow` for screenshots, `SectionHeading`,
+  `CodeBlock`, …)
+- `src/data/marketing.ts`: the lists of sources, speakers, plugins and people
+  shown on the homepage
+- `src/scripts/marketing.ts`: menu, scroll reveal, install tabs and copy buttons
+
+The documentation overview is at `/documentation/`, and all other documentation
+URLs remain unchanged.
+
+The blog pages render the existing `src/content/docs/blog/` collection at its
+original URLs. Starlight Blog still provides RSS, tag/author pages, and crosspost
+redirects. The release badge uses the same build-time release data as the docs.
 
 ## Contributing
 

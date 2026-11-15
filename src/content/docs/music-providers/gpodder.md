@@ -9,7 +9,7 @@ Music Assistant has support for <a href="https://gpodder.github.io" target="_bla
 
 gPodder is a synchronisation service for podcast apps rather than a place to discover podcasts. It keeps a
 shared record of the podcasts you subscribe to and how far through each episode you are, so that several apps
-can stay in step with one another.
+can stay in sync with one another.
 
 This provider connects Music Assistant to that shared record. Your existing subscriptions turn up as podcasts
 you can play, and your listening progress is written back as you go, so an episode started elsewhere can be
@@ -38,6 +38,7 @@ provider at it, as described under [Configuration](#configuration).
 - Progress reporting and acquiring
 - Populates libraries with podcasts
 - Updates playlog on regular provider syncs
+- Transcripts are shown for episodes where the podcast publisher provides one
 
 ## Configuration
 ### gpodder.net compatible webservice
@@ -51,7 +52,7 @@ To setup this functionality you need:
 - <b>Device ID.</b>
 
 > [!NOTE]
-> The Device ID can be anything you like, as long as it is plain letters and numbers. What matters is that every app you want to keep in step uses exactly the same one.
+> The Device ID can be anything you like, as long as it is plain letters and numbers. What matters is that every app you want kept in sync uses exactly the same one.
 
 > [!NOTE]
 > `gpodder.net` is deliberately _not_ supported. This source checks in with the server often, and the service hosted there is known to be either slow or completely unresponsive, which would hold Music Assistant up. Run one of the alternatives yourself instead.
@@ -63,9 +64,7 @@ To setup this functionality, you need the `Nextcloud URL`, and then click the AU
 
 ### Multi-user environment
 
-The gpodder provider can be set up multiple times for individual users.
-To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
+gPodder keeps listening progress separately for each account, so each Music Assistant user needs a source of their own, signed in to their own gPodder account. A user can add one themselves, or an administrator can add it for them and set them as the owner. See [audiobook and podcast progress](/settings/user-management/#audiobook-and-podcast-progress).
 
 ### Settings
 

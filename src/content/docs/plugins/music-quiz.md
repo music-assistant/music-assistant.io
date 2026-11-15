@@ -1,6 +1,7 @@
 ---
 title: Music Quiz Plugin
 description: Host multiplayer music quiz games with QR-code guest access, shared or remote playback, and several game types.
+pluginGroup: shared
 ---
 
 # Music Quiz Plugin
@@ -44,7 +45,7 @@ Music Trivia is only shown in the game picker when a compatible AI plugin is loa
 
 ### For the host
 
-1. Go to **Settings → Plugins → Add a Plugin** and add **Music Quiz**.
+1. Go to **Settings → Plugins → Add a plugin** and add **Music Quiz**.
 2. Open **Music Quiz** from the Music Assistant sidebar.
 3. Select **New Game**, choose a game type, and configure playback, rounds, answer time, and music sources.
 4. Create the game and display the QR code. Use **Present mode** for a full-screen lobby and scoreboard.
@@ -208,6 +209,8 @@ Select **Present mode** from the host controls to open the TV-friendly full-scre
 ![The final Music Quiz leaderboard in Present mode](../../../assets/screenshots/music-quiz/music-quiz-final-leaderboard.png)
 
 Exiting browser full-screen also exits Present mode. Host controls remain in the regular dashboard, so keep another administrator device available if the presentation screen is not convenient to control.
+
+Instead of Present mode, you can [cast the game screen](/dashboards/) to a TV or tablet with the TV icon in the host dashboard header. The host controls then stay on the device you are using.
 
 ## Remote Access
 

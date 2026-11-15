@@ -58,8 +58,8 @@ When playing radio streams, Music Assistant can display album or artist images i
 
 ## Playlists
 
-MA will use the artwork supplied from the streaming providers. For local providers MA will create a collage based on the track's thumbnails in the playlist. For the local file system providers, local images will be used if found.
+MA will use the artwork supplied from the streaming providers. For the local file system providers, local images will be used if found. Other library playlists get a cover from the [Playlist Metadata provider](/metadata-providers/playlist-metadata/), either a collage in one of its layout templates or an [AI generated cover](/metadata-providers/playlist-metadata/#ai-generated-covers). The built-in dynamic playlists, such as Recently Played and the Infinite Mixes, keep their own fixed artwork.
 
 ## Caching
 
-Artwork is cached locally so the UI stays responsive and to keep API usage low. The on-disk thumbnail cache size is configurable under Settings → Metadata → "Maximum thumbnail cache size" (default 500 MB). Oldest thumbnails are evicted when the limit is reached.
+Artwork is cached locally so the UI stays responsive and to keep API usage low. The on-disk thumbnail cache size is configurable under [**Settings → System → Metadata**](/settings/core/#metadata) → "Maximum thumbnail cache size" (default 500 MB). Oldest thumbnails are evicted when the limit is reached.

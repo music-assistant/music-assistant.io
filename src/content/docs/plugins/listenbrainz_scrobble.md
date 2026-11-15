@@ -1,6 +1,7 @@
 ---
 title: Listenbrainz Scrobbler Plugin
-description: Features and Notes for the Listenbrainz Scrobbler Plugin
+description: Scrobble what you play to Listenbrainz.
+pluginGroup: scrobbling
 ---
 
 # Listenbrainz Scrobbler <img src="/assets/icons/listenbrainz-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />

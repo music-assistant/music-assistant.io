@@ -4,7 +4,7 @@ title: Media items
 
 # Media Item Metadata <img src="/assets/icons/metadata-mediaitem-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-This page lists what metadata is gathered for each kind of media item (artists, albums, tracks, playlists, audiobooks and podcasts) and where each field comes from. As [elsewhere](/metadata/), source metadata always takes priority and the online providers only fill in the gaps.
+This page lists what metadata is gathered for each kind of media item (artists, albums, tracks, playlists, audiobooks and podcasts) and where each field comes from. As [elsewhere](/metadata/), source metadata always takes priority over the online providers. See [Filling gaps and replacing outdated information](/metadata/#filling-gaps-and-replacing-outdated-information) for when stored information is replaced.
 
 ## Artists
 
@@ -27,6 +27,7 @@ Note that the embedded `genre` tag in audio files is applied to the track only, 
 | Metadata Type | Source(s) |
 | --- | --- |
 | Name, sort name, year, album type | File tags, `album.nfo`, music providers |
+| Album artist | File tags, `album.nfo` |
 | Genres | `album.nfo`, music providers, **The Audio DB**, derived from track tags when the filesystem provider's `Propagate track genres` option is enabled |
 | MusicBrainz Release Group / Album ID | File tags, `album.nfo`, music providers |
 | Description / review | `album.nfo` (`<review>`), music providers, **The Audio DB** |
@@ -43,7 +44,7 @@ Note that the embedded `genre` tag in audio files is applied to the track only, 
 | Genres, mood, style, description | File tags, music providers, **The Audio DB** |
 | Explicit flag, copyright, grouping, comment | File tags, music providers |
 | Lyrics | See [Lyrics](/metadata/lyrics) |
-| Volume normalization value | See [Loudness Analysis](/audio-analysis/loudness-analysis) |
+| Volume normalization value | File tags (`R128_*` and `REPLAYGAIN_*`, track and album), music providers (Plex, Subsonic, Tidal), otherwise measured by [Loudness Analysis](/audio-analysis/loudness-analysis) |
 
 ## Playlists
 

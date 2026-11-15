@@ -8,7 +8,7 @@ Music Assistant has support for <a href="https://www.deezer.com/" target="_blank
 
 Deezer is a French subscription streaming service with a catalogue of around 100 million tracks, plus podcasts and audiobooks. It is available in most countries and streams lossless on its higher tiers.
 
-Connecting your account puts your Deezer favourites and playlists alongside the rest of your music in Music Assistant, with the whole catalogue there to search. Podcasts and audiobooks come across as well, and your place in them is kept in step with Deezer's own apps.
+Connecting your account puts your Deezer favourites and playlists alongside the rest of your music in Music Assistant, with the whole catalogue there to search. Podcasts and audiobooks come across as well, and your place in them is kept in sync with Deezer's own apps.
 
 > [!NOTE]
 > Deezer's terms of service mean only HiFi, Premium and Family accounts can be used here. Free accounts will not work.
@@ -42,13 +42,13 @@ Connecting your account puts your Deezer favourites and playlists alongside the 
 - Recommendations: Made For You, Explore (charts, new releases, editorial playlists), Recently Played, Music Together and dynamic Flow/mood/genre mixes
 - Paste a Deezer share link into the search box and it will take you straight to that album, track or playlist
 - Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
-- Logging of played tracks in Deezer
+- Played tracks are logged in Deezer, so albums, artists and playlists you play in MA also show up under recently played in the Deezer app
 
 ## Configuration
 
 Deezer has no sign-in for outside apps, so a value called an ARL token has to be copied out of your browser. These instructions are for Chrome:
 
-1. In the MA SETTINGS select MUSIC SOURCES, then ADD A MUSIC SOURCE and then DEEZER.
+1. In Music Assistant, go to **Settings → Music sources → Add a music source** and select `Deezer`.
 2. Navigate in another browser tab to <a href="https://deezer.com/" target="_blank" rel="noopener noreferrer">https://deezer.com/</a> and log in.
 3. Right click on the browser window and select INSPECT. A new window will open
 4. Click the 'Application' tab. You might need to expand your window or click the `>>` button
@@ -63,7 +63,22 @@ Deezer has no sign-in for outside apps, so a value called an ARL token has to be
 - Have a Hifi/Premium/Family account
 - Are on the latest Music Assistant version
 - Try different browsers
+- Picked the right profile if you have Deezer Family, see [Deezer Family](#deezer-family)
+
+### Deezer Family
+
+Deezer Family members are either profiles, which log in with the owner's email and password, or independent accounts with their own login.
+
+For a profile, use the owner's ARL. Music Assistant then asks which profile the source should use. To use several profiles, add Deezer once for each of them. To switch a source to another profile later, open its settings again and leave the ARL field empty to keep the saved one.
+
+Independent accounts have their own ARL and are not in that list. Log in on deezer.com with their credentials and copy that ARL as described above.
 
 ### Settings
 
 Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+
+- **Continue in the Deezer app**: when you open a Deezer app, it continues where Music Assistant stopped. Off by default. If several people share one Deezer account, the app continues whatever played last.
+
+## Known Issues / Notes
+
+- Podcast transcripts are not available

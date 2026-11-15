@@ -70,7 +70,7 @@ export const CAPABILITY_COLUMNS: CapabilityColumn[] = [
     id: "syncCorrection",
     label: "Sync Adjust",
     help: "A per-player delay can be applied to pull a player that runs ahead of or behind the rest of its group back into line.",
-    href: "/player-support/airplay/#player-settings",
+    href: "/player-support/airplay/#protocol-settings",
   },
   {
     id: "crossfade",
@@ -120,10 +120,9 @@ export const CAPABILITY_NOTES: string[] = [
 // slug here only while its capabilities are genuinely unknown, and take it out
 // again once they are.
 export const KNOWN_UNCHARTED: string[] = [
-  // Alexa controls the device rather than streaming to it, and Local Audio Out
-  // is new; neither has published capability data.
+  // Alexa controls the device rather than streaming to it, so it has no
+  // published capability data.
   "player-support/alexa",
-  "player-support/local-audio",
 ];
 
 export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
@@ -418,6 +417,21 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
       crossfade: true,
       stereoPair: true,
       deviceButton: true,
+      deviceVoice: false,
+      playerOptions: false,
+    },
+  },
+  {
+    slug: "player-support/raumfeld",
+    sampleRate: "192kHz/24 bits",
+    values: {
+      hiRes: true,
+      lossless: true,
+      perfectSync: true,
+      syncCorrection: false,
+      crossfade: true,
+      stereoPair: false,
+      deviceButton: false,
       deviceVoice: false,
       playerOptions: false,
     },

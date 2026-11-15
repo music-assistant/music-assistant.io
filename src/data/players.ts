@@ -174,12 +174,6 @@ export const PLAYERS: TileItem[] = [
     categories: ["voice"],
   },
   {
-    name: "Local Audio Out",
-    slug: "player-support/local-audio",
-    icon: "/assets/icons/loudness-analysis-icon.svg",
-    categories: ["software"],
-  },
-  {
     name: "Marantz",
     nameHidden: true,
     via: { label: "HEOS", icon: "/assets/icons/heos-icon.svg" },
@@ -243,6 +237,12 @@ export const PLAYERS: TileItem[] = [
     slug: "player-support/squeezelite",
     icon: "/assets/icons/slim-icon.svg",
     categories: ["software"],
+  },
+  {
+    name: "Teufel Raumfeld",
+    slug: "player-support/raumfeld",
+    icon: "/assets/icons/raumfeld-icon.svg",
+    categories: ["speakers"],
   },
   {
     name: "WiiM",
@@ -322,7 +322,6 @@ export const PLAYER_PROVIDERS: PlayerProvider[] = [
   { name: "Google Cast", slug: "player-support/google-cast", icon: "/assets/icons/google-cast-logo.svg" },
   { name: "HEOS", slug: "player-support/heos", icon: "/assets/icons/heos-icon.svg" },
   { name: "Home Assistant", slug: "player-support/home-assistant", icon: "/assets/icons/ha-logo.png" },
-  { name: "Local Audio Out", slug: "player-support/local-audio", icon: "/assets/icons/loudness-analysis-icon.svg" },
   { name: "MSX Bridge", slug: "player-support/msx-bridge", icon: "/assets/icons/msx-bridge-icon.svg" },
   { name: "Music Player Daemon (MPD)", slug: "player-support/music-player-daemon", icon: "/assets/icons/mpd-icon.svg" },
   { name: "MusicCast", slug: "player-support/musiccast", icon: "/assets/icons/musiccast-icon.svg" },
@@ -332,6 +331,7 @@ export const PLAYER_PROVIDERS: PlayerProvider[] = [
   { name: "Snapcast", slug: "player-support/snapcast", icon: "/assets/icons/snapcast-icon.svg" },
   { name: "Sonos", slug: "player-support/sonos", icon: "/assets/icons/sonos-icon.svg" },
   { name: "Squeezelite", slug: "player-support/squeezelite", icon: "/assets/icons/slim-icon.svg" },
+  { name: "Teufel Raumfeld", slug: "player-support/raumfeld", icon: "/assets/icons/raumfeld-icon.svg" },
   { name: "WiiM", slug: "player-support/wiim", icon: "/assets/icons/wiim.svg" },
   { name: "Yandex Station", slug: "player-support/yandex-station", icon: "/assets/icons/yandex-station-icon.svg" },
 ];
@@ -350,6 +350,9 @@ export const PLAYERS_PAGE = {
   // Pages under player-support/ that intentionally have no tile.
   knownUnlisted: [
     "player-support", // the overview page
+    // Retired provider. The page stays because the server still points at it,
+    // but there is nothing left to stream to.
+    "player-support/local-audio",
   ],
   groups: PLAYER_GROUPS,
   items: PLAYERS,

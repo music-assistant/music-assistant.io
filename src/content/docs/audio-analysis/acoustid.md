@@ -31,12 +31,12 @@ For each analysed album, once enough of its tracks have been identified:
 
 ## When analysis runs
 
-- During the nightly audio-analysis scan, around local midnight. Local audio files only (including SMB, NFS, and WebDAV shares)
+- During the nightly audio-analysis scan, around local midnight. Tracks from [Local files](/music-providers/local-files/) sources only, including those on a network share
 - During playback of an eligible track. Local files are always eligible; streaming-provider tracks are eligible when *Analyse tracks from streaming providers* is enabled and the track is in the MA library
 
 Large libraries may take several nights to work through. A well tagged library will see almost nothing happen, because any track that already carries a MusicBrainz Recording Id or an ISRC is skipped. Tracks from streaming services are picked up gradually as you play them rather than all at once.
 
-The "stale" count shown against this provider is the number of tracks that AcoustID could not find. Those are tried again every 60 days, in case the database has caught up.
+The "stale" count shown on the [Audio analysis page](/settings/core/#audio-analysis) is the number of tracks that AcoustID could not find. Those are tried again every 60 days, in case the database has caught up.
 
 ## Limitations
 

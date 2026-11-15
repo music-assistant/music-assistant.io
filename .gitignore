@@ -170,5 +170,9 @@ node_modules/
 dist/
 .astro/
 
+# Generated at build time
+/src/data/allowed-referrers.json
+/src/data/latest-release.json
+
 # Blog post drafts
 /create-blog-post/

@@ -3,6 +3,7 @@
 # Netlify ignores trailing slashes when matching these paths.
 
 /music-providers/ard-audiothek   /music-providers/ard-sounds           301
+/music-providers/digitally-incorporated  /music-providers/digitally-imported   301
 /music-providers/filesystem      /music-providers/local-files          301
 /music-providers/radiothek       /music-providers/orf-radiothek        301
 /player-support/ha               /player-support/home-assistant        301

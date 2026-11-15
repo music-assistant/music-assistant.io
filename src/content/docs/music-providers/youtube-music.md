@@ -29,7 +29,7 @@ With your account connected, your library and playlists appear in Music Assistan
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
-| Similar Artists Support                         |            No                      |
+| Similar Artists Support                         |            Yes                     |
 | Similar Tracks Support                          |            Yes                      |
 | Maximum Stream Quality | AAC 256kbps |
 | Login Method | Token + Cookie |
@@ -77,13 +77,14 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 8. Find the section called 'Request Headers'.
 9. Find the item named 'Cookie' and copy the **value**. It is **VERY** important that you copy the exact value. Double check that you do not include any additional spaces or characters at the start/end of the value.
 [![Cookie value](/assets/screenshots/ytmusic-cookie-value.png)](/assets/screenshots/ytmusic-cookie-value.png)
+10. Close the incognito window right away. Do not log out first, as that ends the session the cookie belongs to. A window left open keeps rotating the cookie and makes the copy in MA stop working.
 
 > [!NOTE]
 > If your cookie still expires quickly, the yt-dlp project documents an <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">alternative export method</a> aimed at maximising cookie life. It is written for users of the yt-dlp tool, so expect a more technical walkthrough
 
 ### Step 3: Configure the source
 
-1. In Music Assistant, go to `SETTINGS >> MUSIC SOURCES >> ADD A MUSIC SOURCE` and select 'Youtube Music'.
+1. In Music Assistant, go to **Settings → Music sources → Add a music source** and select 'Youtube Music'.
 2. Fill out the fields in the Generic Settings section as follows:
     - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
     - <b>Login Cookie.</b> Paste the value you copied in Step 2
@@ -110,8 +111,10 @@ A brand account is a sub-account that lives under your main Google account. You 
 ## Known Issues / Notes
 
 - This source mimics YouTube Music. Do not expect to see the same search results as you see if using YouTube
+- It is not possible to have more than three concurrent streams
 - YouTube Music does not tell Music Assistant which disc a track is on, so tracks are simply numbered in the order they arrive. That is usually right, but a multi-disc album may come out in the wrong order
 - Whether music videos are selected for playback fully depends on what you are playing. If you have saved a specific album in your library, then that exact version will show up in MA and thus you will have the album version. However, if you start a radio on, for example, a playlist, then Youtube Music decides which songs will be played in a 'dynamic radio' playlist which could include videos
 - Uploaded Music should be able to be found when it is in a playlist. If it's just a single track being searched for then it may not be found, since often those uploaded songs don't have proper metadata. It will be hard to find them via the UI in MA
 - Expect some blurry artwork. YouTube Music sends low quality images when Music Assistant asks for a whole album or playlist, and only sends the good one when a single track is asked for. Music Assistant works around this where it can by fetching the artwork for the next track in advance, but some of it will still look poor
 - By default, only the liked music and 'episodes for later' playlists are added to the YTM library and thus will appear in MA. In order to see other personal playlists in the MA library, you have to go into the YT Music web app and add those personal playlists to your library
+- Podcast transcripts are not available

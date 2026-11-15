@@ -36,7 +36,7 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 
 - Search support for tracks, artists, albums, and playlists
 - Library sync for liked/favorited content and user playlists
-- Dynamic recommendation/radio entries include Daily songs, Daily playlists, Private FM, and Heart Mode
+- Personalized recommendations are grouped in a single **Personal Recommendations** row: Daily Recommendations, Private FM, Personal Radar, Time Radar, and Heart Mode
 - Library sync is currently one-way (NetEase Cloud Music -> Music Assistant)
 
 ## Configuration
@@ -45,12 +45,11 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 
 NetEase provides no proper way in for other apps, so this source talks to NetEase through a separate piece of software called NeteaseCloudMusicApi, which you run yourself. Music Assistant expects to find it at `http://127.0.0.1:3000` unless you tell it otherwise.
 
-If you run Music Assistant under Home Assistant, there is a companion add-on in progress:  
-<a href="https://github.com/music-assistant/home-assistant-addon/pull/16" target="_blank" rel="noopener noreferrer">home-assistant-addon#16</a>
+Home Assistant users can now install the companion App directly from the App store within Home Assistant by searching for `NetEase Cloud Music API`.
 
 ### QR Login Flow (NetEase App)
 
-1. Open **Settings -> Music Sources -> Add Music Source -> NetEase Cloud Music**
+1. Open **Settings → Music sources → Add a music source → NetEase Cloud Music**
 2. Set **API base URL** to your local API service
 3. Click **QR Login**. A new QR page will open
 4. Scan with the **NetEase Cloud Music app** and confirm login in the app

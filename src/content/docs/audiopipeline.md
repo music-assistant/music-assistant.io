@@ -18,11 +18,11 @@ This view shows the complete path that the audio takes.
 
 The view is broken into three sections, Input, Processing and Output. The colored dot on the section title indicates the quality as the audio leaves the section: orange (LQ, Low Quality) indicates a lossy codec below 256 kbps, light green (SQ, Standard Quality) a lossy codec at 256 kbps or higher, green (HQ, High Quality) a lossless codec, and cyan (HR, Hi-Res) a lossless codec where either the sample rate is above 48kHz or the bit depth is above 16.
 
-The Input section shows the origin of the stream and the codec, <a href="https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html" target="_blank" rel="noopener noreferrer">sample rate, bit depth</a> and <a href="https://nottinghamhifi.co.uk/blogs/blog/understanding-audio-bitrate" target="_blank" rel="noopener noreferrer">bit rate</a>. Even more details about the original file are available by hovering over the ⓘ.
+The Input section shows the origin of the stream and the codec, <a href="https://www.izotope.com/en/learn/digital-audio-basics-sample-rate-and-bit-depth.html" target="_blank" rel="noopener noreferrer">sample rate, bit depth</a> and <a href="https://nottinghamhifi.co.uk/blogs/blog/understanding-audio-bitrate" target="_blank" rel="noopener noreferrer">bit rate</a>. Even more details about the original file are available by hovering over the ⓘ. When the track was started from an album, a playlist, a folder or similar, a **Playing from** line under the source names it. See [Which Source Plays](/source-selection/#seeing-which-source-plays).
 
 The Processing section shows that all tracks are processed internally as raw <a href="https://www.origin-ic.com/blog/what-you-need-to-know-about-pcm-audio-explained/48067" target="_blank" rel="noopener noreferrer">PCM</a> by Music Assistant and are decoded to <a href="https://www.youtube.com/watch?v=4YRp-FIsNDA" target="_blank" rel="noopener noreferrer">32 bits floating point</a> in the sample rate of the source. 
 
-Next the Volume Normalization value is shown. Details about how Volume Normalization is applied can be found on the [Technical Information](/faq/tech-info/#volume-normalization) page.
+Next the Volume Normalization value is shown, along with where the loudness value came from: the track's own measurement, the album value, a live measurement made while playing, or the source itself when it delivers audio at a loudness target of its own. How it is applied is described on the [Technical Information](/faq/tech-info/#volume-normalization) page, and the settings that control it are under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback).
 
 The Output section is then shown which, in this example, is simple and just shows the Output Limiter, the output codec and quality and then finally the icon of the output protocol and the name of the player is shown.
 
@@ -33,7 +33,7 @@ The maximum sample rate that can be expected can be found in the [Player Provide
 > [!NOTE]
 > Radio streams will have their bit depth reduced to 16 due to incompatibilities with some players
 
-***************************************************************
+*********************************
 ## Digital Signal Processing
 <img src="/assets/screenshots/audiopipeline-dsp.png" alt="image" style="width: 500px;"  loading="lazy" />
 
@@ -42,7 +42,7 @@ In this example [DSP](/dsp/) has been enabled. High level information about the 
 > [!NOTE]
 > Filters will not be shown in the audio pipeline if they have no effect on the audio path. For example, if the Balance control is set to the middle position then it is not doing anything and will not be shown.
 
-***************************************************************
+*********************************
 ## Groups
 <img src="/assets/screenshots/audiopipeline-groups.png" alt="image" style="width: 500px;"  loading="lazy" />
 

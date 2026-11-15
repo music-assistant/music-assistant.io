@@ -9,6 +9,8 @@ description: Explanation of the use and effect of the DSP Convolution filter
 
 Unlike the other filters, convolution does not shape the sound according to controls that are set by hand. The correction is contained entirely within the impulse response file, which is typically produced by measurement software such as <a href="https://www.roomeqwizard.com/" target="_blank" rel="noopener noreferrer">Room EQ Wizard</a>, or downloaded from a project that publishes ready-made responses.
 
+This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
+
 ## Usage
 
 The filter has two controls: the impulse response to apply, and a gain adjustment.

@@ -33,6 +33,7 @@ Sign in and your Tidal favourites and playlists appear in Music Assistant, with 
 - Marking an item as a "Favourite" from the Music Assistant interface will also mark it as favourite in Tidal
 - On playback, the highest quality FLAC HiFi version will be selected
 - Multiple Tidal accounts can be added. 
+- The tracks of your own Tidal playlists can be [reordered](/usage/#changing-the-order) from Music Assistant, and the new order is saved in Tidal
 
 ## Configuration
 

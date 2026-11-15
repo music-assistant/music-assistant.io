@@ -34,7 +34,8 @@ This source signs Music Assistant in to your Apple Music account, so your saved 
 
 - Searching the Apple Music catalogue
 - Browsing playlists organised in folders
-- Artist radio stations available via Browse and the [Discover view](/ui/#view---discover); live broadcast stations are not supported
+- Artist radio stations available via Browse and the [Discover view](/ui/#view---discover)
+- Live stations such as Apple Music 1 and Apple Music Club available via Browse and search. A live station uses the one stream of the account for as long as it plays. To play something else in another room, add a second Apple Music account
 - Similar tracks are supported, shown in the track detail view and available for Endless Mix
 - Similar artists are supported and shown in the artist detail view
 

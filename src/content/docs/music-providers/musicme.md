@@ -31,7 +31,7 @@ This source signs Music Assistant in to your MusicMe account and makes the catal
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                     | 
 | Maximum Stream Quality | AAC 320kbps |
-| Login Method | Email + Password |
+| Login Method | Password |
 
 ### Other
 

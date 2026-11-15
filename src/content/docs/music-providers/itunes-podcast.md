@@ -29,6 +29,7 @@ This source lets you search that directory from Music Assistant and add anything
 ### Other
 
 - Search for podcasts via the iTunes API
+- Transcripts are shown for episodes where the podcast publisher provides one
 
 ## Configuration
 

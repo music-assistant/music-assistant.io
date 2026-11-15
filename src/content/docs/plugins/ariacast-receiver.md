@@ -1,6 +1,7 @@
 ---
 title: AriaCast Receiver Plugin
-description: Features and Notes for the AriaCast Receiver Plugin
+description: Send audio from an Android device to any of your players.
+pluginGroup: incoming
 ---
 
 # AriaCast Receiver <img src="/assets/icons/ariacast_icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
@@ -12,14 +13,12 @@ The **AriaCast Receiver** plugin allows for streaming of high-quality audio wire
 --- 
 
 ## Configuration
-1. Add the **AriaCast Receiver** plugin via `SETTINGS >> PLUGINS >> ADD A PLUGIN`.
-2. Configure the playback settings:
-   - **Connected Player**: Select a specific player or set to "Auto" to use the currently active player.
-   - **AriaCast Device Name**: The name shown to AriaCast senders when they discover this receiver on the network. Defaults to "Music Assistant" if left empty.
+1. Add the **AriaCast Receiver** plugin via **Settings → Plugins → Add a plugin**.
+2. Choose the **Connected Music Assistant Player** that AriaCast audio should play on. The receiver announces itself to AriaCast senders under this player's name.
 
 ## Usage
 1. Install the [AriaCast Android app](https://github.com/AriaCast/AriaCast-app/releases/latest).
-2. Open the app — it will automatically discover servers on the network that the Android device is connected to`
+2. Open the app. It will automatically discover servers on the network that the Android device is connected to
 3. Select the Music Assistant server desired and start playing content
 4. Audio will be streamed to the configured Music Assistant player.
 

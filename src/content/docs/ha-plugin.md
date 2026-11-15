@@ -1,6 +1,7 @@
 ---
 title: Home Assistant Plugin Provider
-description: The Home Assistant Plugin provides a connection from HA to MA
+description: Reach into Home Assistant to link entities to player controls, and to use its AI and text-to-speech services in Music Assistant.
+pluginGroup: other-systems
 ---
 # Home Assistant Plugin Provider <img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
@@ -18,9 +19,9 @@ If you are not sure how this fits with the Home Assistant integration, see [how 
  
 ## Configuration
 
-Before the Plugin can be added the HA Integration must be [installed](/integration/installation/). 
+The plugin connects directly to Home Assistant's own API and does not need the [Home Assistant integration](/integration/installation/) to be installed. The two are independent: the integration puts MA players into HA, the plugin lets MA reach into HA.
 
-- Navigate to MA SETTINGS >> PLUGINS and add the plug-in
+- Navigate to **Settings → Plugins** and add the plug-in
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 
@@ -28,15 +29,16 @@ Once it is added, the only settings here are the three player control lists desc
 
 ## AI and text-to-speech engines
 
-Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only.
+Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only. [Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers) draws pictures as well, for its AI generated covers.
 
-This plugin does neither job itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine** and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
+This plugin does none of these jobs itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine**, an AI task entity that can generate images also becomes an **image engine**, and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
 
-Other plugins provide engines too. The [OpenAI Compatible plugin](/plugins/openai_compatible/) provides AI engines with no Home Assistant involved at all.
+Other plugins provide engines too. The [OpenAI Compatible plugin](/plugins/openai_compatible/) and the [OpenAI Text-to-speech](/plugins/openai_tts/) plugin provides AI engines with no Home Assistant involved at all.
 
 ### What you need in Home Assistant
 
 - For an **AI engine**, an <a href="https://www.home-assistant.io/integrations/ai_task/" target="_blank" rel="noopener noreferrer">AI Task</a> entity. These come from an AI integration you add, such as <a href="https://www.home-assistant.io/integrations/openai_conversation/" target="_blank" rel="noopener noreferrer">OpenAI Conversation</a>. Not all AI integrations offer one, so check the page for whichever you prefer
+- For an **image engine**, an AI Task entity that supports generating images. Not every AI Task entity does; the integration's page says whether it can
 - For a **text-to-speech engine**, a <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">text-to-speech</a> entity. Home Assistant lists the integrations that provide these. Test yours there first and make sure it will speak a short message
 
 The engines only decide which Home Assistant entity gets called. The model, the voice, the language, the speaking speed and the audio quality are all set in Home Assistant.
@@ -54,6 +56,7 @@ Home Assistant | Google Translate (tts.google_translate_en_com)
 | [AI Radio](/plugins/ai-radio/) | AI **and** text-to-speech | **Reconfigure** on the provider's menu, not its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later) |
 | [Music Quiz](/plugins/music-quiz/) | AI | Provider settings, under **Features** |
 | [Smart Playlists](/plugins/smart_playlist/) | AI | Provider settings, once **AI descriptions** is switched on |
+| [Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers) | Image for covers, AI for descriptions | Provider settings: **Image engine** appears once **Artwork template** is **AI generated**, and **Text engine** is under **AI covers and descriptions** |
 
 > [!TIP]
 > With only one engine of each kind there is nothing to do. A feature takes the only one available and remembers it. The picker matters when you have more than one.
@@ -64,7 +67,7 @@ If an engine you chose later disappears, because the entity was removed or renam
 
 ## Linking Home Assistant entities to player controls
 
-The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function. A power entity might wake an amplifier from standby when playback starts, or switch on the active speakers a player feeds into; a volume or mute entity might drive an amplifier that the player has no direct control over. There are three drop down lists which contain a filtered list of HA entities:
+The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function. A power entity might wake an amplifier from standby when playback starts, switch on the active speakers a player feeds into, or switch the player itself through a smart plug; a volume or mute entity might drive an amplifier that the player has no direct control over. There are three drop down lists which contain a filtered list of HA entities:
 
 - For power controls, entities that can be turned on/off and have a boolean state will be shown. (i.e. switch, input_boolean and media_player)
 
@@ -74,8 +77,11 @@ The Home Assistant Plugin can expose HA entities to MA that can then be mapped t
 
 When an entity is selected it will then appear as an option in an individual player's [Player Controls](/settings/individual-player/#player-controls) settings.
 
-> [!NOTE]
-> For power controls, this cannot be used to switch the player itself on and off. If a player is switched off at the mains it drops off the network, Music Assistant marks it unavailable, and the power control is disabled along with everything else. Switch whatever the player feeds into, not the player.
+### Switching the player itself on and off
+
+A power entity can also cut the power to the player itself, for example a smart plug the player is plugged into. While that entity is off, the player shows as switched off instead of unavailable, in Music Assistant and in Home Assistant. Turning the player on, playing to it, selecting a source on it or sending an announcement to it switches the entity on and waits up to 90 seconds for the player to come online. If the player is not online by then, the request fails. After an announcement the player stays on. Stop, pause and volume changes do nothing while it is switched off.
+
+To switch the player off again once it has been stopped for a while, set [Power off when idle](/settings/individual-player/#player-controls) in its player settings.
 
 ## Known Issues / Notes
 

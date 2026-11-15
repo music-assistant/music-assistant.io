@@ -12,6 +12,9 @@ Amazon does not let anything play to an Echo the way it lets you play to a Chrom
 
 Getting there is a long way from adding a provider and clicking save. You need somewhere to run a second piece of software, a web address of your own with a valid certificate on it, and an Amazon developer account to create the skill in. Set aside an evening, and read the whole of this page before you start.
 
+> [!IMPORTANT]
+> All issues related to this provider need to be raised in the [maintainer’s repository](https://github.com/alams154/music-assistant-alexa-skill-prototype/issues)
+
 ## Features
 
 - Detects all Alexa devices linked to your Amazon account and registers them as players
@@ -73,7 +76,7 @@ Run with Docker Compose (recommended):
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>URL.</b> Amazon subdomain (region-specific) (e.g. amazon.com, amazon.co.uk)
 - <b>E-mail.</b> Amazon account linked to Echo devices
@@ -84,18 +87,13 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 - <b>API Basic Auth Password.</b> The password you put in `app_password.txt`
 - <b>Alexa Language.</b> Locale used for Alexa (e.g. en-US)
 
-In addition to the [Individual Player Settings](/settings/individual-player/) the Alexa players have the following settings:
-
-- <b>Output channel mode.</b> The default is `Stereo` but other options are `Left channel only`, `Right channel only` or `Mono (both channels)`
-- <b>Sample rates supported by this player.</b> This setting is automatically set upon player discovery but the sample rates and bit depths supported by the player can be manually set. Content with unsupported sample rates will be resampled
-- <b>Output codec to use for streaming audio to the player.</b> The default is `FLAC` but other options are `MP3`, `AAC` or `WAV`
-- <b>HTTP profile used for send audio.</b> This is considered to be a very advanced setting and should only be adjusted if needed. For example, try the different options if the player stops halfway through a stream or for other playback related issues
-- <b>Try to inject metadata into stream (ICY).</b> Enabling this option attempts to provide metadata to the player which can be used to show track info, even when flow mode is enabled. Not all players support this correctly, therefore, if there are issues with playback try disabling this setting
+Alexa players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
 
 ## Known Issues / Notes
 
 -	Commands sometimes fail in controlling devices if used too often (this is a limitation of the Alexa API)
--	State reporting is problematic therefore the playback status and volume shown in the MA UI may not reflect reality
+-	State reporting is problematic therefore the playback status shown in the MA UI may not reflect reality
+-	Volume changes made on the device show in MA within a few seconds while playing, and within 30 s otherwise
 -	Announcements and custom commands may have limited support depending on the device and region
 
 ## Not Yet Supported

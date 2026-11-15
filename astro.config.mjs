@@ -94,14 +94,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://www.music-assistant.io/assets/banner.png",
+            content: "https://www.music-assistant.io/assets/website-social.png",
           },
         },
         {
           tag: "meta",
           attrs: {
             name: "twitter:image",
-            content: "https://www.music-assistant.io/assets/banner.png",
+            content: "https://www.music-assistant.io/assets/website-social.png",
           },
         },
         {
@@ -116,7 +116,7 @@ export default defineConfig({
       routeMiddleware: "./src/starlightRouteData.ts",
       plugins: [
         starlightBlog({
-          title: "Blog",
+          title: "News",
           prefix: "blog",
           postCount: 10,
           recentPostCount: 5,
@@ -124,12 +124,16 @@ export default defineConfig({
         }),
       ],
       sidebar: [
-        { label: "Home", slug: "index" },
+        { label: "Home", link: "/" },
+        { label: "Documentation", slug: "documentation" },
         {
           label: "I Want To",
           items: [
             { label: "Install Music Assistant", slug: "installation" },
-            { label: "Install the HA Integration", slug: "integration/installation" },
+            {
+              label: "Install the HA Integration",
+              slug: "integration/installation",
+            },
             { label: "Listen To...", slug: "faq/listen-to" },
             { label: "Stream To...", slug: "faq/stream-to" },
           ],
@@ -138,17 +142,19 @@ export default defineConfig({
           label: "First Run and Settings",
           collapsed: true,
           items: [
-            { label: "First Run (Authentication)", slug: "first-run" },
+            { label: "First Run", slug: "first-run" },
+            { label: "Marketplace", slug: "settings/marketplace" },
             {
               label: "Music Sources",
               slug: "settings/music-provider-settings",
             },
-            { label: "Player Providers", slug: "settings/player-provider" },
+            { label: "Player Support", slug: "settings/player-provider" },
             {
-              label: "Metadata Providers",
+              label: "Metadata",
               slug: "settings/metadata-provider-settings",
             },
             { label: "Players", slug: "settings/individual-player" },
+            { label: "Storage", slug: "settings/storage" },
             { label: "Profile", slug: "settings/profile" },
             { label: "User Interface", slug: "settings/user-interface" },
             { label: "User Management", slug: "settings/user-management" },
@@ -179,7 +185,7 @@ export default defineConfig({
           autogenerate: { directory: "music-providers" },
         },
         {
-          label: "Player Providers",
+          label: "Player Support",
           collapsed: true,
           autogenerate: { directory: "player-support" },
         },
@@ -189,8 +195,10 @@ export default defineConfig({
           items: [
             { label: "Overview", slug: "usage" },
             { label: "UI", slug: "ui" },
+            { label: "Dashboards", slug: "dashboards" },
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },
+            { label: "Which Source Plays", slug: "source-selection" },
           ],
         },
         {
@@ -215,14 +223,24 @@ export default defineConfig({
               collapsed: true,
               items: [
                 { label: "Overview", slug: "plugins" },
-                { label: 'AI Radio', slug: 'plugins/ai-radio' },
+                { label: "AI Radio", slug: "plugins/ai-radio" },
                 { label: "AirPlay Receiver", slug: "plugins/airplay-receiver" },
-                { label: "Ariacast Receiver", slug: "plugins/ariacast-receiver" },
+                {
+                  label: "Ariacast Receiver",
+                  slug: "plugins/ariacast-receiver",
+                },
+                { label: "AudioMuse-AI", slug: "plugins/audiomuse-ai" },
                 { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
                 { label: "Home Assistant", slug: "ha-plugin" },
-                { label: "Hue Entertainment", slug: "plugins/hue-entertainment" },
+                {
+                  label: "Hue Entertainment",
+                  slug: "plugins/hue-entertainment",
+                },
                 { label: "LastFM Scrobbler", slug: "plugins/lastfm_scrobble" },
-                { label: "Library Recommendations", slug: "plugins/library-recommendations" },
+                {
+                  label: "Library Recommendations",
+                  slug: "plugins/library-recommendations",
+                },
                 {
                   label: "Listenbrainz Scrobbler",
                   slug: "plugins/listenbrainz_scrobble",
@@ -233,8 +251,16 @@ export default defineConfig({
                 },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
                 {
+                  label: "NetEase Cloud Music Scrobbler",
+                  slug: "plugins/neteasecloudmusic_scrobble",
+                },
+                {
                   label: "OpenAI Compatible",
                   slug: "plugins/openai_compatible",
+                },
+                {
+                  label: "OpenAI Text-to-speech",
+                  slug: "plugins/openai_tts",
                 },
                 { label: "Party", slug: "plugins/party" },
                 { label: "Plex Connect", slug: "plugins/plex-connect" },
@@ -242,8 +268,12 @@ export default defineConfig({
                 { label: "Smart Playlist", slug: "plugins/smart_playlist" },
                 { label: "Sonic Similarity", slug: "plugins/sonic-similarity" },
                 { label: "Spotify Connect", slug: "plugins/spotify-connect" },
-                { label: "Subsonic Scrobbler", slug: "plugins/subsonic_scrobble" },
+                {
+                  label: "Subsonic Scrobbler",
+                  slug: "plugins/subsonic_scrobble",
+                },
                 { label: "VBAN Receiver", slug: "plugins/vban-receiver" },
+                { label: "WLED Audio Sync", slug: "plugins/wled-audio-sync" },
                 {
                   label: "Yandex Music Connect (Ynison)",
                   slug: "plugins/yandex-ynison",
@@ -255,7 +285,7 @@ export default defineConfig({
               ],
             },
             {
-              label: "Metadata Providers",
+              label: "Metadata",
               collapsed: true,
               items: [
                 { label: "Overview", slug: "metadata" },
@@ -266,7 +296,14 @@ export default defineConfig({
                   label: "LastFM Recommendations",
                   slug: "metadata-providers/lastfm-recommendations",
                 },
-                { label: "MusicBrainz", slug: "metadata-providers/musicbrainz" },
+                {
+                  label: "Local Metadata",
+                  slug: "metadata-providers/local-metadata",
+                },
+                {
+                  label: "MusicBrainz",
+                  slug: "metadata-providers/musicbrainz",
+                },
                 {
                   label: "Playlist Metadata",
                   slug: "metadata-providers/playlist-metadata",
@@ -274,7 +311,7 @@ export default defineConfig({
               ],
             },
             {
-              label: "Audio Analysis Providers",
+              label: "Audio Analysis",
               collapsed: true,
               items: [
                 { label: "AcoustID Lookup", slug: "audio-analysis/acoustid" },
@@ -283,7 +320,10 @@ export default defineConfig({
                   slug: "audio-analysis/loudness-analysis",
                 },
                 { label: "Smart Fades", slug: "audio-analysis/smart-fades" },
-                { label: "Sonic Analysis", slug: "audio-analysis/sonic-analysis" },
+                {
+                  label: "Sonic Analysis",
+                  slug: "audio-analysis/sonic-analysis",
+                },
               ],
             },
           ],
@@ -315,13 +355,14 @@ export default defineConfig({
           items: [
             { label: "I Want to Help / Donate", slug: "help" },
             { label: "Translations", slug: "help/lokalise" },
+			{ label: "Improve MusicBrainz Data", slug: "help/musicbrainz" },
             {
               label: "Community Extensions",
               slug: "community-extensions",
             },
           ],
         },
-        { label: "Blog", link: "/blog/" },
+        { label: "News", link: "/blog/" },
       ],
       components: {
         Head: "./src/components/Head.astro",
@@ -329,6 +370,8 @@ export default defineConfig({
         Footer: "./src/components/Footer.astro",
         ThemeProvider: "./src/components/ThemeProvider.astro",
         ThemeSelect: "./src/components/ThemeSelect.astro",
+        SocialIcons: "./src/components/SocialIcons.astro",
+        SiteTitle: "./src/components/SiteTitle.astro",
       },
     }),
     mdx(),

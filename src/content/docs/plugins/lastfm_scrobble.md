@@ -1,6 +1,7 @@
 ---
 title: LastFM Scrobbler Plugin
-description: Features and Notes for the LastFM Scrobbler Plugin
+description: Scrobble what you play to LastFM or LibreFM.
+pluginGroup: scrobbling
 ---
 
 # LastFM Scrobbler <img src="/assets/icons/audioscrobbler-icon.svg" alt="Preview image" style="width: 126px; float: right;"  loading="lazy" />
@@ -21,7 +22,7 @@ For LastFM, Music Assistant includes the required API credentials. You do not ne
 - The UI will indicate a successful login. Ensure to click SAVE to complete the configuration
 
 > [!NOTE]
-> The LastFM authorization callback uses the Music Assistant Base URL from Settings > System > Webserver. If authorization does not return to Music Assistant, set the Base URL to the same URL that you use to open Music Assistant in your browser.
+> The LastFM authorization callback uses the Music Assistant Base URL from [**Settings → System → Webserver**](/settings/core/#webserver). If authorization does not return to Music Assistant, set the Base URL to the same URL that you use to open Music Assistant in your browser.
 
 For LibreFM, or to use your own LastFM API application, open the advanced settings and enter the API Key and Shared secret before authorizing. LibreFM always requires custom API credentials.
 

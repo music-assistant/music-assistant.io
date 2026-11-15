@@ -26,6 +26,8 @@ The functionality works with all players that are supported by Music Assistant.
 
 Each player has settings which allow for adjustment of certain aspects of the announcement playback. Groups only have a setting for the pre-announcement sound. See also [Announcements Configuration](/settings/individual-player/#announcements-configuration)
 
+Which engine turns the text into speech is chosen once for the whole server, with the **Announcement text to speech engine** setting under [**Settings → System → Players**](/settings/core/#players). The engines on offer there come from your plugins, and the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines) makes every Home Assistant text-to-speech entity available.
+
 ![image](/assets/screenshots/announcement-settings.png)
 
 ## Native Support
@@ -34,7 +36,7 @@ If an announcement is sent to a single player that supports native announcements
 
 Native announcement support usually means that the player can "overlay" the announcement on top of any music that is playing. It will "duck" the volume of the music (or silence it completely), play the announcement with a volume boost and then revert the music volume. Music keeps playing and the entire announcement will be handled by the player itself.
 
-Currently the only player types that support native announcements are Sonos S2 speakers, Snapcast, and Sendspin.
+Currently the only player types that support native announcements are Sonos S2 speakers and ESPHome-based Sendspin devices. For Sendspin, the device must also be added to Home Assistant, and Music Assistant must be connected to Home Assistant.
 
 ## MA Player Support
 
@@ -44,8 +46,6 @@ If a player does not support native announcements, MA will take care of it by st
 > The MA announcement feature will ONLY work reliably if the player reports the state (e.g. playing, paused, idle) and the progress report (elapsed time) correctly. If any of those are not updated correctly then announcements will work poorly.
 
 ESPHome can be unreliable with state updates so issues may occur with this player type. The same applies to some HA media players. Future updates of those platforms should improve performance.
-
-If a player does not resume after playing an announcement, or it takes a very long time, check the HTTP profile settings. `Fixed content length` may need to be used. For example, ESPHome devices may have this issue.
 
 ## Group Behaviour
 

@@ -37,7 +37,7 @@ Music Assistant 已支持 <a href="https://music.163.com/" target="_blank" rel="
 
 - 支持搜索：歌曲、歌手、专辑、歌单
 - 支持同步：喜欢/收藏内容与用户歌单
-- 动态推荐/电台条目包括：每日推荐歌曲、每日推荐歌单、私人 FM、心动模式
+- 个性化推荐集中在「个性化推荐 Personal Recommendations」一个栏目：每日推荐歌曲、私人 FM、私人雷达、时光雷达、心动模式
 - 库同步当前按单向（网易云音乐 -> Music Assistant）使用
 
 ## 配置
@@ -46,8 +46,7 @@ Music Assistant 已支持 <a href="https://music.163.com/" target="_blank" rel="
 
 该提供商需要可访问的 NeteaseCloudMusicApi 兼容 HTTP 服务（默认：`http://127.0.0.1:3000`）。
 
-Home Assistant 用户可参考配套 add-on PR：  
-<a href="https://github.com/music-assistant/home-assistant-addon/pull/16" target="_blank" rel="noopener noreferrer">home-assistant-addon#16</a>
+Home Assistant 用户现在可以直接在应用商店中搜索 `NetEase Cloud Music API` 并安装配套 App。
 
 ### 扫码登录流程（网易云 App）
 
