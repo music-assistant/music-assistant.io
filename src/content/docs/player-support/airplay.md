@@ -10,7 +10,7 @@ Music Assistant has support for AirPlay devices. This includes Apple devices suc
 
 - AirPlay devices are auto detected in Music Assistant, plug and play
 - AirPlay devices will play in sync, even when there is a combination of AirPlay 1 (RAOP) and AirPlay 2 devices in the sync group
-- Audio quality is lossless 44.1 kHz/16bits PCM and optionally compressed as (lossless) ALAC
+- Audio is lossless: up to 48 kHz/24-bit on AirPlay 2 devices and 44.1 kHz/16-bit on AirPlay 1 (RAOP) devices. See <b>24-bit audio (hi-res)</b> under [Protocol Settings](#protocol-settings)
 - The player settings allow configuration of [stereo pairs](/faq/how-to/#create-a-stereo-pair) of speakers
 
 ## Configuration
@@ -34,6 +34,7 @@ Apple TVs offer two extra pairing steps after the main one. Both are optional an
 
 Music Assistant chooses how to stream to each device automatically, so under normal circumstances nothing here needs changing.
 
+- <b>24-bit audio (hi-res).</b> Plays hi-res music at up to 48 kHz/24-bit. It starts out on for devices that report 24-bit support, except HomePods, where 24-bit can cause crackling over Wi-Fi. You can switch it on for other AirPlay 2 devices too, and off again if you hear crackling or static. Devices streaming with AirPlay 1 (RAOP) or AirPlay 2 - compatibility mode always play 44.1 kHz/16-bit and do not show this setting. Grouped speakers each follow their own setting, and a group that includes a 16-bit speaker plays at 44.1 kHz.
 - <b>Audio synchronization delay correction.</b> Shifts when audio is heard on this device compared to the other players it is synced with, up to ±500 ms. Negative values make it play earlier, positive values later. Use a negative value for a device connected to a TV, AV receiver or amplifier that adds its own delay — if it lags the group by about 100 ms, set it to -100.
 
 ### Advanced Protocol Settings
@@ -54,7 +55,6 @@ Music Assistant chooses how to stream to each device automatically, so under nor
 Everything can appear to work (volume changes, song info shows, the device responds) and yet no sound comes out. Try these in order:
 
 - Enable encryption in the advanced player settings. Some devices (such as Kodi or some 3rd party AirPlay receivers) require it
-- Try compression on and off in the advanced player settings
 - HomePod owners: check Apple HomeKit. In the HomeKit (iOS) preferences for `AirPlay (Speaker & TV)`, make sure `Only people in this home` is NOT selected; when it is, Music Assistant cannot play audio on the HomePod (without setting the proper password in the advanced settings of the provider). Select the option `Everyone on the same network` instead. More generally, Apple HomeKit has been reported to interfere with playback; if problems are encountered, try removing the devices from HomeKit
 - If the device requires a password, set it in the advanced settings
 - Samsung devices seem to have implemented AirPlay 1 in a way that isn't fully backwards compatible and produce exactly this symptom. Users of similar applications such as Roon and anything based on slimproto have the same problem
@@ -67,7 +67,7 @@ Everything can appear to work (volume changes, song info shows, the device respo
 
 ### Technical notes
 
-- Music Assistant implements <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> and <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay2</a>. Most devices will default to RAOP because AirPlay 2 devices should be backwards compatible by default. If a device has a bad implementation of AirPlay 1 and/or only supports AirPlay 2 without RAOP then select AirPlay2 as the protocol version.
+- Music Assistant implements <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> and <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay2</a>. Devices that support AirPlay 2 stream with it, older devices with RAOP. To pin a device to one of them, use [Streaming mode](#advanced-protocol-settings).
 - Shairport and AirPlay 2 are currently incompatible due to lack of NTP timing support for AirPlay 2 in Shairport. To resolve, navigate to the advanced settings of Shairport device in MA and change the Output Protocol to `Airplay 1 RAOP` or `Airplay 2 - compatibility mode`. Additionally, it is not possible to use Airplay 2 if Music Assistant and Shairport are on the same host. 
 - Playback to Macbooks is not possible due to removal of RAOP support
 - AirPlay 2 implementation is new and has not yet been extensively tested. It is known that Password-based pairing and PTP timing is not yet supported. There may be additional issues that are not yet known. The AirPlay 2 protocol takes longer to establish initial connection than AirPlay 1 (RAOP) due to more RTSP exchanges. This adds to the delay experienced for commencement of playback.

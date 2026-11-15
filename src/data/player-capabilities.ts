@@ -114,6 +114,7 @@ export const CAPABILITY_NOTES: string[] = [
   "When bridging other protocols",
   "FLAC streaming works on some TVs",
   "Audio is carried over DLNA, so the capabilities are DLNA's",
+  "AirPlay 2 devices only",
 ];
 
 // Providers with a page but no row, so the build does not demand one. Add a
@@ -128,9 +129,9 @@ export const KNOWN_UNCHARTED: string[] = [
 export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
   {
     slug: "player-support/airplay",
-    sampleRate: "44.1kHz/16 bits",
+    sampleRate: ["AirPlay 1: 44.1kHz/16 bits", "AirPlay 2: 48kHz/24 bits"],
     values: {
-      hiRes: false,
+      hiRes: true,
       lossless: true,
       perfectSync: true,
       syncCorrection: true,
@@ -139,6 +140,9 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
       deviceButton: true,
       deviceVoice: false,
       playerOptions: false,
+    },
+    notes: {
+      hiRes: [10],
     },
   },
   {
