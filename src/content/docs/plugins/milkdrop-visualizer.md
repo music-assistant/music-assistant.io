@@ -41,7 +41,7 @@ The `MilkDrop` page in the sidebar holds the visualizer settings. They are store
     - <b>Random from favourites</b> - picks only from presets you have starred.
     - <b>Fixed preset</b> - always shows the one you choose.
 - <b>Switch preset on downbeat.</b> Automatically change preset on a downbeat, using Music Assistant's beat analysis. Takes precedence over a fixed preset.
-- <b>Minimum time between switches.</b> How long a preset stays on screen before a downbeat may switch it. From 5 to 120 seconds. Default `30` seconds.
+- <b>Minimum time between switches.</b> Shown while switching on the downbeat is on. How long a preset stays on screen before a downbeat may switch it. From 5 to 120 seconds. Default `30` seconds.
 - <b>Favorite presets.</b> The presets you have starred, where you can also remove them.
 
 The two artwork options replace the colour tint setting of earlier versions. They are on for every user, including anyone who had turned the old setting off.
@@ -52,7 +52,7 @@ The droplet entry in the fullscreen player menu has quick controls for the playe
 
 - A switch that turns the visualizer on or off for this player only
 - Blur, opacity and recolour sliders, which change the same settings as the settings page
-- The preset currently showing, with a star to add it to your favourites, and a list to pick another preset
+- While the visualizer is on, the preset currently showing, with a star to add it to your favourites, and a list to pick another preset
 
 ## Known Issues / Notes
 
