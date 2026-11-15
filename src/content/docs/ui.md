@@ -31,8 +31,10 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 
 The settings open on a list of sections, shown as cards or as a list (switch with the icon at the top). Which sections are listed depends on your role:
 
-- **[Music sources](/settings/music-provider-settings/)**, **[Player providers](/settings/player-provider/)**, **[Metadata providers](/settings/metadata-provider-settings/)**, **[Plugins](/plugins/)** and **Audio analysis**. The providers of each kind, and where more are added. Users whose role lets them have music sources see **Music sources** too, with their own sources and the ones shared with them
+- **[Marketplace](/settings/marketplace/)**. Where music sources, player support, metadata, plugins and audio analysis are found and added. For administrators, and for users whose role lets them add music sources of their own
+- **[Music sources](/settings/music-provider-settings/)**, **[Player support](/settings/player-provider/)**, **[Metadata](/settings/metadata-provider-settings/)** and **[Plugins](/plugins/)**. What is set up of each kind. Their add buttons open the Marketplace. Users whose role lets them have music sources see **Music sources** too, with their own sources and the ones shared with them
 - **[Players](/settings/individual-player/)**. The settings of each player, and where group players are created
+- **Audio analysis**. What is set up to analyse the audio, such as [Smart Fades](/audio-analysis/smart-fades/)
 - **[Profile](/settings/profile/)** and **[User Interface](/settings/user-interface/)**. Your own account and how the app looks for you. Every user has these
 - **[User management](/settings/user-management/)** and **[Remote Access](/settings/remote-access/)**. For administrators
 - **[System](/settings/core/)**. The core server settings, and pages such as [Storage](/settings/storage/), Diagnostics and Genre Management. For administrators

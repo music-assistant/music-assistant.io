@@ -4,7 +4,7 @@ title: "Support"
 
 # Support <img src="/assets/icons/support-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Because this project originated out of a Home Assistant integration, all enduser support is maintained in a separate repository. Raise issues and discuss ideas <a href="https://github.com/music-assistant/support" target="_blank" rel="noopener noreferrer">here</a>
+Because this project originated out of a Home Assistant integration, support for Music Assistant itself is maintained in a separate repository. Raise issues and discuss ideas <a href="https://github.com/music-assistant/support" target="_blank" rel="noopener noreferrer">here</a>
 
 Direct links are:
 

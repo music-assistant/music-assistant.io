@@ -44,7 +44,7 @@ If the host is unreachable when you set it up, or goes away later, the provider 
 
 ## Settings
 
-For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages, including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Settings that differ or are specific to Raumfeld are:
+For information about the settings seen in the MA UI refer to the [Player Support Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages, including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Settings that differ or are specific to Raumfeld are:
 
 - <b>Raumfeld host.</b> The IP address of the device running the Raumfeld host service
 - <b>Raumfeld host port.</b> Only change this if the host runs on a non-default port

@@ -28,7 +28,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Manually defined IP addresses.</b> SoundTouch speakers are normally discovered automatically. Use this setting to add speakers by IP address when auto discovery does not work on your network
 - <b>Bose SoundTouch app key.</b> Optional. A Bose SoundTouch developer app key enables sending announcements to the speaker as an overlay that ducks the current music and resumes it afterwards. Leave this empty to disable native announcements (they then play through the linked playback protocol instead)

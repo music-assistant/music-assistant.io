@@ -30,7 +30,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Manual IP addresses for discovery.</b> Not recommended for normal use. Refer to the description in the MA UI
 

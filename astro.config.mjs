@@ -148,9 +148,9 @@ export default defineConfig({
               label: "Music Sources",
               slug: "settings/music-provider-settings",
             },
-            { label: "Player Providers", slug: "settings/player-provider" },
+            { label: "Player Support", slug: "settings/player-provider" },
             {
-              label: "Metadata Providers",
+              label: "Metadata",
               slug: "settings/metadata-provider-settings",
             },
             { label: "Players", slug: "settings/individual-player" },
@@ -185,7 +185,7 @@ export default defineConfig({
           autogenerate: { directory: "music-providers" },
         },
         {
-          label: "Player Providers",
+          label: "Player Support",
           collapsed: true,
           autogenerate: { directory: "player-support" },
         },
@@ -285,7 +285,7 @@ export default defineConfig({
               ],
             },
             {
-              label: "Metadata Providers",
+              label: "Metadata",
               collapsed: true,
               items: [
                 { label: "Overview", slug: "metadata" },

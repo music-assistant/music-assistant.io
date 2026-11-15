@@ -1,12 +1,12 @@
 ---
-title: "Metadata Provider Settings"
+title: "Metadata Settings"
 ---
 
-# Metadata Provider Settings <img src="/assets/icons/metadata-general-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Metadata Settings <img src="/assets/icons/metadata-general-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Metadata is everything Music Assistant shows around your music: artwork, artist biographies,
-genres, lyrics and more. There are a number of metadata providers available, and this is the page
-they are added and configured from, at **Settings → Metadata**.
+genres, lyrics and more. It comes from a number of services, which are added and configured on
+this page, at **Settings → Metadata**.
 
 Several arrive with Music Assistant and are already working before you touch anything:
 

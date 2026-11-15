@@ -19,7 +19,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 ## Settings
 
-Refer to the [Player Provider Settings](/settings/player-provider/) when setting up this provider as it has no unique settings at the provider level.
+Refer to the [Player Support Settings](/settings/player-provider/) when setting up this provider as it has no unique settings at the provider level.
 
 Bluesound players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on BluOS:
 

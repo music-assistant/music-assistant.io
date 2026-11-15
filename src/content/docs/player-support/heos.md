@@ -22,7 +22,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Main controller hostname or IP address.</b> This is the HEOS device that will be act as the main controller, it is not mandatory. This setting can be used to force MA to use a specific device as the controller
 - <b>Command timeout value.</b> How long Music Assistant waits for a HEOS device to answer a command, in seconds. The default is 25 and it can be set between 10 and 60. Increase it if you see command timeout messages in the log

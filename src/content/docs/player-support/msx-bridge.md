@@ -51,7 +51,7 @@ Music Assistant has support for streaming music to Smart TVs via the <a href="ht
 
 ### Provider Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>HTTP Server Port.</b> The port for the MSX HTTP server. The default is 8099
 - <b>Audio Output Format.</b> The audio format used for streaming to the TV. Enter mp3 (the default), aac or flac. FLAC gives lossless quality but some TVs cannot play it

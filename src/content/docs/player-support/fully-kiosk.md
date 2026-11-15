@@ -21,7 +21,7 @@ Music Assistant has support for streaming to devices running the Fully Kiosk Bro
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Fully Kiosk devices.</b> The devices to connect to, entered one per line as host or host:port. The port defaults to 2323 when it is left off. Each device becomes its own player. After saving, open each player's settings page to set its password and any HTTPS options
 

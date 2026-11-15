@@ -186,7 +186,7 @@ Four things, and the build will tell you if you miss either of the last two.
 1. **The page**, at `src/content/docs/player-support/<slug>.md`. Copy an existing provider page
    and work from that. Structure is covered under [House style](#house-style) below.
 
-   There is no sidebar entry to add. The `Player Providers` menu is generated from this folder,
+   There is no sidebar entry to add. The `Player Support` menu is generated from this folder,
    so the file lands in the menu on its own. Two things follow from that: **name the file after
    the provider**, because the menu is sorted by filename, and **set `title` to the name people
    know it by**, because that is the label they will see.

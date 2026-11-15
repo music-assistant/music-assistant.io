@@ -24,7 +24,7 @@ If a player does not appear, first check that it is not connected to a different
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Slimproto port.</b> The TCP and UDP port the slimproto server runs on. The default is 3483 and hardware Squeezebox players do not support anything else. Only change it if you want to run another slimproto server alongside this one for software players
 - <b>Classic Squeezebox CLI Port.</b> Some slimproto players use the telnet CLI to request extra information. It runs on port 9090 by default. Set it to 0 to switch it off, which is safe if no player of yours relies on it
