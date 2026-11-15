@@ -17,14 +17,14 @@ These players normally expect to talk to a Logitech Media Server, now known as <
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player providers**, click **Add a player provider** and select `Squeezelite`.
+1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `Squeezelite`.
 2. Your Squeezelite players will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a player does not appear, first check that it is not connected to a different server. These devices can often only connect to one server at a time, so a player bound to another server (for example an existing LMS/Lyrion installation) will not be seen by MA. Otherwise, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Slimproto port.</b> The TCP and UDP port the slimproto server runs on. The default is 3483 and hardware Squeezebox players do not support anything else. Only change it if you want to run another slimproto server alongside this one for software players
 - <b>Classic Squeezebox CLI Port.</b> Some slimproto players use the telnet CLI to request extra information. It runs on port 9090 by default. Set it to 0 to switch it off, which is safe if no player of yours relies on it

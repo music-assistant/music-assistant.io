@@ -26,7 +26,7 @@ Media Assistant is a utility that allows you to stream/play local and hosted med
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Allow automatic Roku discovery.</b> This is on by default and enables the automatic discovery of Roku devices
 - <b>Manual IP addresses for discovery.</b> Add Roku devices by IP address when automatic discovery does not find them on your network
