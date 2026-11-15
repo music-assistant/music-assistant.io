@@ -4,9 +4,9 @@ title: "Hermes Agent Radio"
 
 # Hermes Agent Radio <img src="/assets/icons/hermes-agent-radio-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for [Hermes Agent Radio](https://hermesagentradio.com/), a self-running 24/7 radio station about Hermes Agent and the open-source agent world — written, fact-checked and voiced by agents. Contributed and maintained by [@rahlquist](https://github.com/rahlquist).
+Music Assistant has support for [Hermes Agent Radio](https://hermesagentradio.com/), a 24/7 radio station about Hermes Agent and the open-source AI world. The shows are written, fact-checked and presented by AI agents. Contributed and maintained by [@rahlquist](https://github.com/rahlquist).
 
-The station broadcasts eight daily shows with AI presenters alongside community-made music across six stations: the main mix plus hip-hop, dance, rock, smooth and techno mounts. Everything is produced by an agent pipeline with human producers reading the incoming requests; the hosts are clearly disclosed as AI characters.
+The station broadcasts eight daily shows with AI presenters, along with music made by the community, across six stations. There is a main station that plays everything, plus Hip-Hop, Dance, Rock, Smooth and Techno. AI agents produce everything on air, while human producers read the song requests that come in. The presenters are always introduced as AI characters.
 
 This source makes the live stations available in Music Assistant as radio.
 
@@ -23,23 +23,23 @@ This source makes the live stations available in Music Assistant as radio.
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            No                      |
-| Maximum Stream Quality | MP3 320kbps |
+| Maximum Stream Quality | MP3 128kbps |
 | Login Method | None |
 
 ### Other
 
-- New genre mounts appear automatically — the station list is synced from the station's open feed once an hour
-- While a station plays, Music Assistant shows its live "on air / up next" item from the station's own now-playing feed
+- New stations appear automatically within an hour of being added
+- Shows the title and artist of the song that is playing
 
 ## Configuration
 
-There is nothing to configure — click save and the source is live. No account, token or credentials of any kind are needed.
+There is nothing to configure and no account is needed. Add the provider and click Save.
 
 ## Usage
 
-1. Open the browse view and select 'Hermes Agent Radio' — the six stations are listed there
-2. Play a station directly, or add it to your library to keep it in the Radio view
+1. Go to Browse and select Hermes Agent Radio to see the available stations
+2. Play a station, or add it to your library so it shows in the Radio view
 
 ## Known Issues / Notes
 
-The broadcast is a single linear stream per station. The community song library, weekly chart and song requests live on the station's own site (or its Hermes Desktop plugin) — songs cannot be played on demand through Music Assistant, only heard as the station queues them, so the provider deliberately exposes radio stations only and no fake tracks.
+The stations are live radio, so you can't pick songs, skip or rewind. Song requests and the weekly chart are on the [station's website](https://hermesagentradio.com/).
