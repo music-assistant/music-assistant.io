@@ -39,7 +39,7 @@ Music Assistant chooses how to stream to each device automatically, so under nor
 
 ### Advanced Protocol Settings
 
-- <b>Streaming mode.</b> Pins this device to one way of streaming. Leave on Automatic (recommended) unless the device misbehaves — only the modes the device actually supports are offered: AirPlay 2 - PTP timing, AirPlay 2 - NTP timing, AirPlay 2 - compatibility mode and AirPlay 1 (RAOP). Music Assistant also switches to a safer mode by itself after a device repeatedly fails; set it back to Automatic to try the original mode again.
+- <b>Streaming mode.</b> Pins this device to one way of streaming. Leave on Automatic (recommended) unless the device misbehaves — only the modes the device actually supports are offered: AirPlay 2 - PTP timing, AirPlay 2 - NTP timing, AirPlay 2 - compatibility mode and AirPlay 1 (RAOP). Music Assistant never changes it by itself: when the automatic choice keeps failing, a warning in the log points to this setting. Set it back to Automatic to try the original mode again.
 - <b>Audio buffer depth.</b> How much audio the speaker keeps queued ahead of playback. Increase this if the speaker stays silent or drops out while Music Assistant shows it playing — at the cost of slower skipping and pausing. Automatic picks a value suited to the device.
 - <b>Ignore volume reports sent by the device itself.</b> Some devices report their own volume level unreliably, which can cause unexpected volume changes. Enable this to ignore those reports.
 - <b>Enable encryption.</b> Only shown for devices streaming with AirPlay 1 (RAOP). Some third party players require this to be turned off.
@@ -55,19 +55,19 @@ Music Assistant chooses how to stream to each device automatically, so under nor
 Everything can appear to work (volume changes, song info shows, the device responds) and yet no sound comes out. Try these in order:
 
 - Enable encryption in the advanced player settings. Some devices (such as Kodi or some 3rd party AirPlay receivers) require it
-- HomePod owners: check Apple HomeKit. In the HomeKit (iOS) preferences for `AirPlay (Speaker & TV)`, make sure `Only people in this home` is NOT selected; when it is, Music Assistant cannot play audio on the HomePod (without setting the proper password in the advanced settings of the provider). Select the option `Everyone on the same network` instead. More generally, Apple HomeKit has been reported to interfere with playback; if problems are encountered, try removing the devices from HomeKit
-- If the device requires a password, set it in the advanced settings
+- HomePod owners: check Apple HomeKit. In the HomeKit (iOS) preferences for `AirPlay (Speaker & TV)`, make sure `Only people in this home` is NOT selected; when it is, Music Assistant cannot play audio on the HomePod. Select the option `Everyone on the same network` instead. More generally, Apple HomeKit has been reported to interfere with playback; if problems are encountered, try removing the devices from HomeKit
+- If the device requires a password, press Setup in the player settings and enter it
 - Samsung devices seem to have implemented AirPlay 1 in a way that isn't fully backwards compatible and produce exactly this symptom. Users of similar applications such as Roon and anything based on slimproto have the same problem
 
 ### Other playback problems
 
-- Apple TVs will be discovered but require pairing. In the player settings there is a pair button which will display a code on the screen of the Apple TV
+- Apple TVs will be discovered but require pairing. Press Setup in the player settings; it shows a code on the screen of the Apple TV
 - If your player is going unavailable while still powered on then it may not be sending its keep alive message. A timeout can be configured for each player. Some users have reported they have needed to set it as long as one hour
 - If the AirPlay device incorrectly responds to change volume commands or randomly changes volume, try changing the `Volume Control` option in the `Player controls` section and set it to `None`
 
 ### Technical notes
 
 - Music Assistant implements <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> and <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay2</a>. Devices that support AirPlay 2 stream with it, older devices with RAOP. To pin a device to one of them, use [Streaming mode](#advanced-protocol-settings).
-- Shairport and AirPlay 2 are currently incompatible due to lack of NTP timing support for AirPlay 2 in Shairport. To resolve, navigate to the advanced settings of Shairport device in MA and change the Output Protocol to `Airplay 1 RAOP` or `Airplay 2 - compatibility mode`. Additionally, it is not possible to use Airplay 2 if Music Assistant and Shairport are on the same host. 
+- Shairport Sync plays with AirPlay 2. When it runs on the same host as Music Assistant (for example as a Home Assistant add-on), set its [Streaming mode](#advanced-protocol-settings) to `AirPlay 2 - compatibility mode`, because both need the same network ports for AirPlay 2 timing.
 - Playback to Macbooks is not possible due to removal of RAOP support
-- AirPlay 2 implementation is new and has not yet been extensively tested. It is known that Password-based pairing and PTP timing is not yet supported. There may be additional issues that are not yet known. The AirPlay 2 protocol takes longer to establish initial connection than AirPlay 1 (RAOP) due to more RTSP exchanges. This adds to the delay experienced for commencement of playback.
+- The AirPlay 2 protocol needs more setup exchanges than AirPlay 1 (RAOP), so the first connection takes a little longer, which adds to the time before playback starts.
