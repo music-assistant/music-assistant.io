@@ -7,7 +7,7 @@ description: Find and add music sources, player support, metadata, plugins and a
 
 The **Marketplace** is where you find and add music sources, player support, metadata, plugins and audio analysis. It is the first entry in the settings. The add buttons on the settings pages, such as **Add a music source** under **Settings → Music sources**, open it too, on the tab of that kind.
 
-Administrators can add anything from it. Users see the Marketplace when their role lets them add music sources of their own, as the standard **User** role does, and it then only offers the music sources they can connect with their own account. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
+Administrators can add anything from it. Users see the Marketplace when their role lets them add music sources of their own, as the standard **User** role does, and it then only offers the music sources they can add for themselves, such as their own Spotify account or a folder of local files. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
 
 ## Discover
 
@@ -18,7 +18,7 @@ The **Discover** tab opens with a **Top pick for you**, followed by rows of sugg
 - <b>Found on your network.</b> Support for devices your server sees on your network that you have not set up yet, such as your speakers
 - <b>Goes well with what you have.</b> Something that pairs with what you already set up, such as Spotify Connect next to Spotify. The card says what it goes well with
 - <b>Popular.</b> Well-known music sources, player support and plugins, such as Spotify, Sonos and AirPlay
-- <b>New in</b> and your version of Music Assistant. What is new in this version
+- <b>New in</b> and the release of Music Assistant you run, such as 2.11. What is new in that release
 - <b>New in the community catalog</b> and <b>Recently updated</b>. What entered the [community catalog](#the-community-catalog), or got a new version, in the last 30 days. Only while the community catalog is enabled
 
 Only what you can still add is suggested, and a row without suggestions is left out. A suggestion found on your network, or one that goes well with what you have, can be turned down with **Don't suggest this**, or with the ✕ on its card. **Undo** in the message that follows brings it back. The choice is kept with your user, so it holds on every device.
@@ -61,7 +61,7 @@ Missing something altogether? **Request it** at the bottom of the page opens the
 
 ## Installed
 
-The **Installed** button at the top right shows everything that is set up, grouped by kind, and its number counts them. For an administrator that includes what comes with Music Assistant itself; a user sees the music sources they can use. Select something to open its settings, or the link next to a kind, such as **Manage your music sources**, to open its settings page. Select **Installed** again, or a tab, to go back.
+The **Installed** button at the top right shows everything that is set up, grouped by kind, and its number counts them. For an administrator that includes what comes with Music Assistant itself; a user sees the music sources they can use. Select something you manage to open its settings; a music source shared with you is listed, but its settings are not yours to open. The link next to a kind, such as **Manage your music sources**, opens its settings page. Select **Installed** again, or a tab, to go back.
 
 A second number on the button, in a coloured circle, counts the updates waiting in the community catalog.
 
@@ -95,13 +95,13 @@ It names its maintainers, says that it runs as part of your server, and links to
 
 ![The Installed view with two updates waiting](/assets/screenshots/marketplace/installed.png)
 
-Your server looks for new versions once a day and every time it starts. **Check for changes** in the ⋮ menu looks right away. A new version shows as **Version … is available.** in the **Community catalog** section of the Installed view, and on the details of the entry. **Update** installs it, also while music is playing. When more than one update waits, **Update all** installs them at once.
+Your server looks for new versions once a day and every time it starts. **Check for changes** in the ⋮ menu looks right away. A new version shows as **Version … is available.** in the **Community catalog** section of the Installed view, and on the details of the entry. **Update** installs it, also while music is playing: the entry, and what depends on it, stops and starts again, so music that plays through it stops. When more than one update waits, **Update all** installs them at once.
 
 ![The menu of the Marketplace page](/assets/screenshots/marketplace/community-menu.png)
 
 **Update automatically** in the ⋮ menu installs new versions by themselves. Nothing updates while something is playing: an update waits until playback has stopped.
 
-When a new version does not load on your server, Music Assistant puts the previous version back by itself and says so in the Installed view. **Try again** installs that version once more.
+When a new version fails to start because of a fault in that version, Music Assistant puts the version you had before back by itself and says so in the Installed view. Sometimes a restart of Music Assistant is needed to finish that. A failed login or a service that cannot be reached is not such a fault. While the version that failed is still the newest on offer, **Try again** installs it once more.
 
 Some updates need a restart. The entry is then marked **Restart needed**: the version you had keeps running until you restart Music Assistant.
 
@@ -119,11 +119,13 @@ In the Installed view, an entry can carry one of these labels:
 
 - <b>Blocked.</b> It was found to break the rules, so it no longer runs on your server. The reason is shown, with **Read more** where there is more to read. Its settings and your library stay. Remove it; when its maintainers fix the cause, the community catalog can list it again
 - <b>Withdrawn.</b> The community catalog no longer offers it. It keeps running until you remove it, but gets no more updates
-- <b>Not running.</b> It is installed, but your server does not run it. The text below it says why, for example that it is not available for this version of Music Assistant, and what you can do
+- <b>Not running.</b> It is installed, but your server does not run it. The text below it says why, for example that it is not available for this version of Music Assistant, and, where there is something you can do, what
 
 ### Something moved to the community catalog
 
-Now and then something that came with Music Assistant moves to the community catalog, where its own maintainers look after it. Music Assistant then installs it from the community catalog by itself, so it keeps working, also when you never enabled the community catalog. A note, **… moved to the community catalog**, says so at the top of the Marketplace and on the settings page of its kind. **Details** shows the entry, and **Dismiss** puts the note away.
+Now and then something that came with Music Assistant moves to the community catalog, where its own maintainers look after it. If you had it set up, Music Assistant installs it from the community catalog by itself, so it keeps working, also when you never enabled the community catalog. That happens as soon as your server can reach the community catalog and it offers a version for your release of Music Assistant. Until then, its settings say that it moved, or why it could not be installed, and Music Assistant tries again every time it starts and every time it checks the community catalog.
+
+Once it is installed, a note, **… moved to the community catalog**, says so at the top of the Marketplace and on the settings page of its kind. **Details** shows the entry, or the Installed view when it does not run, and **Dismiss** puts the note away.
 
 ### Safe mode
 
