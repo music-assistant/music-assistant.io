@@ -143,6 +143,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "First Run", slug: "first-run" },
+            { label: "Marketplace", slug: "settings/marketplace" },
             {
               label: "Music Sources",
               slug: "settings/music-provider-settings",
