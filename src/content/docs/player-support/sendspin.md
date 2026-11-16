@@ -106,7 +106,7 @@ A Chromium based browser can play lossless FLAC over HTTPS too: pick one of the 
 
 Sendspin players on your network are found automatically, so there is usually no address to enter anywhere.
 
-If a player does ask you for a server address, or you are building a client of your own, Music Assistant listens at `ws://192.168.1.100:8927/sendspin` — replace the IP address with that of your Music Assistant server. The specification is published at <a href="https://github.com/Sendspin/spec" target="_blank" rel="noopener noreferrer">github.com/Sendspin/spec</a>.
+If a player does ask you for a server address, or you are building a client of your own, Music Assistant listens at `ws://192.168.1.100:8927/sendspin` — replace the IP address with that of your Music Assistant server. If another program already uses port 8927, for example a second Music Assistant server on the same machine, Sendspin starts on the next free port from 8929 up, and the Music Assistant log says which one. The specification is published at <a href="https://github.com/Sendspin/spec" target="_blank" rel="noopener noreferrer">github.com/Sendspin/spec</a>.
 
 > [!NOTE]
 > The same `/sendspin` path exists on the main web interface port (8095), but that one is reserved for the built-in web player and will reject other clients.
