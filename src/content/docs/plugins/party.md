@@ -62,6 +62,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 |---------|-------------|
 | **Karaoke Mode** | When enabled, lyrics are displayed prominently in the center of the screen with the track list minimized to the current and next song at the bottom. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. When synced (LRC) lyrics are available, they scroll in time with the music. |
 | **Remove Vocals** | When enabled, tracks on the party player play without their vocals, so guests sing over the instrumental. Only available while Karaoke Mode is on. Disabled by default. See [Removing vocals](#removing-vocals). |
+| **Vocal Volume** | How much of the original vocals stays in the music, from 0 to 100 percent. Leave at 0 to remove them completely, or raise it to keep a quiet guide vocal that singers can follow. Only available while Remove Vocals is on. Defaults to 0. |
 | **Highlight Lyrics Ahead of Time** | When enabled, the lyric line highlight transition finishes exactly when the line's timestamp arrives, giving a smooth anticipation effect. When disabled, the transition starts at the timestamp instead. Enabled by default. |
 
 #### Removing vocals
@@ -70,7 +71,7 @@ Music Assistant separates the vocals from the rest of the music on the server wh
 
 - The model (about 80 MB) is downloaded the first time the setting is switched on. Tracks play with their vocals until it has loaded.
 - Only tracks on the party player are affected. Radio stations, podcasts and audiobooks, and music on other players, play as normal.
-- Switching the setting on or off also applies to the track that is playing: it restarts at the same position after a short pause.
+- Switching the setting on or off, or changing the Vocal Volume, also applies to the track that is playing: it restarts at the same position after a short pause.
 - How well the vocals are removed depends on the song. Expect faint traces of the voice on some tracks.
 
 :::caution[Needs a fast server]
