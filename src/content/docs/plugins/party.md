@@ -18,7 +18,7 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 - **Duplicate Prevention** - Tracks already in the queue are shown as "Already in queue" and cannot be re-added
 - **Configurable Rate Limiting** - Give each guest a set number of requests so nobody can take over the queue
 - **Party Dashboard** - Display the queue and QR code on a TV, monitor, or tablet
-- **Karaoke Mode** - Show synchronized lyrics front-and-center on the dashboard for a sing-along
+- **Karaoke Mode** - Show synchronized lyrics front-and-center on the dashboard for a sing-along, and optionally remove the vocals from the music
 - **Silent Disco** - Let every guest listen on their own phone instead of playing out loud on a speaker
 - **Remote Access Support** - Works with Music Assistant's remote access so guests don't even need to be connected to your local network or wifi
 
@@ -61,7 +61,21 @@ The Party plugin lets your guests add their favorite songs to the queue just by 
 | Setting | Description |
 |---------|-------------|
 | **Karaoke Mode** | When enabled, lyrics are displayed prominently in the center of the screen with the track list minimized to the current and next song at the bottom. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. When synced (LRC) lyrics are available, they scroll in time with the music. |
+| **Remove Vocals** | When enabled, tracks on the party player play without their vocals, so guests sing over the instrumental. Only available while Karaoke Mode is on. Disabled by default. See [Removing vocals](#removing-vocals). |
 | **Highlight Lyrics Ahead of Time** | When enabled, the lyric line highlight transition finishes exactly when the line's timestamp arrives, giving a smooth anticipation effect. When disabled, the transition starts at the timestamp instead. Enabled by default. |
+
+#### Removing vocals
+
+Music Assistant separates the vocals from the rest of the music on the server while a track plays, using the [Demucs](https://github.com/adefossez/demucs) model. Nothing is sent to an online service.
+
+- The model (about 80 MB) is downloaded the first time the setting is switched on. Tracks play with their vocals until it has loaded.
+- Only tracks on the party player are affected. Radio stations, podcasts and audiobooks, and music on other players, play as normal.
+- Switching the setting on or off also applies to the track that is playing: it restarts at the same position after a short pause.
+- How well the vocals are removed depends on the song. Expect faint traces of the voice on some tracks.
+
+:::caution[Needs a fast server]
+Separating the vocals is heavy work and has to run faster than the music plays. On a server with a slow processor or only a few cores, playback will pause to wait for it. When that happens the server log shows a warning that vocal removal is too slow for uninterrupted playback, and it is best to switch the setting off.
+:::
 
 ### Rate Limiting (Advanced)
 
@@ -170,4 +184,4 @@ Guests find **Leave guest mode** in the same menu. When a guest session ends, fo
 3. **Adjust rate limits** - For smaller gatherings, you might disable rate limiting entirely
 4. **Use a dedicated player** - Configure a specific player for party to avoid conflicts with other rooms
 5. **Enable remote access** - If some guests might be on cellular data, enable remote access so the QR code works for everyone
-6. **Enable Karaoke Mode** - For sing-along parties, turn on Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
+6. **Enable Karaoke Mode** - For sing-along parties, turn on Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics. Switch on Remove Vocals as well if your server is fast enough
