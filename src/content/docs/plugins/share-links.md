@@ -49,4 +49,3 @@ Your Music Assistant server does not need to be reachable by the recipient. Open
 - Links contain readable metadata, not audio. They do not include your Music Assistant instance URL or your service credentials.
 - Anyone with the link can read its metadata, including the title, artist and public artwork and music-service URLs. Compression is not encryption.
 - Loading artwork or opening music-service links contacts those external services.
-- Earlier unversioned development links are not supported.
