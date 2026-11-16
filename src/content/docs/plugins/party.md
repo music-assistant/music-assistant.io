@@ -75,7 +75,7 @@ Music Assistant separates the vocals from the rest of the music on the server wh
 - How well the vocals are removed depends on the song. Expect faint traces of the voice on some tracks.
 
 :::caution[Needs a fast server]
-Separating the vocals is heavy work and has to run faster than the music plays. On a server with a slow processor or only a few cores, playback will pause to wait for it. When that happens the server log shows a warning that vocal removal is too slow for uninterrupted playback, and it is best to switch the setting off.
+Separating the vocals is heavy work and has to run faster than the music plays. On a server with a slow processor or only a few cores, playback will pause to wait for it. When that happens the server log shows a warning that stem separation is too slow for uninterrupted playback, and it is best to switch the setting off.
 :::
 
 ### Rate Limiting (Advanced)
