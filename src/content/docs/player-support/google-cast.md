@@ -49,7 +49,7 @@ Expect to do some tuning afterwards. Playback is rarely in sync straight away, s
 
 ## Known Issues / Notes
 
-- Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- Cast speakers do not support gapless playback or crossfading of audio themselves. While crossfade is enabled, Music Assistant always sends a Cast speaker the queue as one continuous [flow mode](/faq/tech-info/#track-queueing) stream, regardless of the flow mode setting. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
 - After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
