@@ -31,8 +31,10 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 
 The settings open on a list of sections, shown as cards or as a list (switch with the icon at the top). Which sections are listed depends on your role:
 
-- **[Music sources](/settings/music-provider-settings/)**, **[Player providers](/settings/player-provider/)**, **[Metadata providers](/settings/metadata-provider-settings/)**, **[Plugins](/plugins/)** and **Audio analysis**. The providers of each kind, and where more are added. Users whose role lets them have music sources see **Music sources** too, with their own sources and the ones shared with them
+- **[Marketplace](/settings/marketplace/)**. Where music sources, player support, metadata, plugins and audio analysis are found and added. For administrators, and for users whose role lets them add music sources of their own
+- **[Music sources](/settings/music-provider-settings/)**, **[Player support](/settings/player-provider/)**, **[Metadata](/settings/metadata-provider-settings/)** and **[Plugins](/plugins/)**. What is set up of each kind. Their add buttons open the Marketplace. Users whose role lets them have music sources see **Music sources** too, with their own sources and the ones shared with them
 - **[Players](/settings/individual-player/)**. The settings of each player, and where group players are created
+- **Audio analysis**. What is set up to analyse the audio, such as [Smart Fades](/audio-analysis/smart-fades/)
 - **[Profile](/settings/profile/)** and **[User Interface](/settings/user-interface/)**. Your own account and how the app looks for you. Every user has these
 - **[User management](/settings/user-management/)** and **[Remote Access](/settings/remote-access/)**. For administrators
 - **[System](/settings/core/)**. The core server settings, and pages such as [Storage](/settings/storage/), Diagnostics and Genre Management. For administrators
@@ -122,6 +124,8 @@ Clicking/touching the Play Button will either execute the default play action fo
 
 After you choose **Select multiple items**, a bar floats at the bottom of the screen reading **N selected · Select all · Actions · ✕**. **Select all** selects all of the items in the view (or section of the view as appropriate), **Actions** opens the menu of what can be done with the selection, and **✕** ends the selection. For large lists a confirmation dialog will appear, as selecting thousands of items can cause unresponsiveness depending on the resources of the host.
 
+To select a run of items, tick the first one and then hold Shift while ticking the last one: everything in between is selected too. Holding Shift while unticking clears a run the same way.
+
 CTRL-A will also select all items unless the search box is in view in which case it will select all text in that box. Also CTRL-A won't work on views that have multiple sections (e.g. the artist view has albums and tracks) so **Select multiple items** must be used in that case. 
 
 Shift-Click is also available to select a range of items.
@@ -177,6 +181,8 @@ The top of the playlist page shows the artwork, the number of tracks and the tot
 On wider screens the tracks are shown as a table with the columns **#**, **Title**, **Album**, **Year**, **Source** and the duration. The column picker icon at the end of the table header shows or hides **Album**, **Track number**, **Year**, **BPM**, **Key** and **Source**, and the choice is saved for your user. BPM and Key are off by default, because only tracks that have been through audio analysis, such as [Smart Fades](/audio-analysis/smart-fades/), have them. The key is shown in Camelot notation (for example `8A`), in its colour on the Camelot wheel. Columns drop out as the window narrows, and the column menu shows which ones are hidden at the current width. The artist and album names link to their pages.
 
 The tracks can be sorted from the toolbar, including by date added, and the play button plays them in the order shown. Below the tracks a **Featured artists** row lists the artists with the most tracks in the playlist. Like other rows, it can be hidden or moved in **Edit rows**.
+
+The order of the tracks can be changed on playlists you can edit whose music source can store a new order (see [Changing the order](/usage/#changing-the-order)). The tracks must be sorted by position, first to last, with no search or filter active. Each row then has a drag handle at its start: drag it to move the track, or focus it and press the up and down arrow keys to move the track one place at a time. In selection mode, dragging one of the selected tracks moves all of them together as one block, keeping their playlist order. The track menu, and the **Actions** menu for a selection, also have **Move to top** and **Move to bottom**, which work whatever the sort or filter.
 
 The playlist ⋮ menu also has **Migrate playlist**, which copies the playlist to another music source and matches its tracks there. Choose the destination, a name for the new playlist and how strictly tracks are matched: **Exact release**, **Same recording** (the same recording from a different release is accepted) or **Best effort** (the closest available match). With the first two, tracks that cannot be matched are skipped.
 

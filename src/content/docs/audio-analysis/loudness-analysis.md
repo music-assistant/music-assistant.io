@@ -22,6 +22,10 @@ Album level values come only from those tags or from a music provider. This prov
 
 Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or whose measurement comes back near silence are skipped to avoid unreliable values.
 
+## Measuring a track again
+
+If a track's measured loudness is wrong, select `Refresh item` from the track's menu. This clears the measurement, and the track is measured again: a track from Local files by the background scan, any other track the next time it plays. Loudness from tags or a music provider is not affected. If the wrong value was already written to the file with the setting below, remove the `REPLAYGAIN_TRACK_GAIN` tag from the file first, as a tag always wins over a measurement.
+
 ## How the data is used
 
 - **[Volume normalization](/settings/core/#queue-playback)**. Keeps perceived loudness consistent when transitioning between tracks from different sources (a loudly-mastered modern album, a quiet jazz release, a podcast and a streaming track all play back at comparable loudness). How the measurement is used is chosen under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), and normalization is switched on or off per queue.

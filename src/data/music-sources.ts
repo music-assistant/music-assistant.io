@@ -171,7 +171,8 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "denmark",
         icon: "/assets/icons/listen/denmark.svg",
         title: "Danmark / Denmark",
-        blurb: "Danish music streaming, and audiobooks in Danish.",
+        blurb:
+          "Danish public radio and podcasts, music streaming, and audiobooks in Danish.",
       },
       {
         id: "france",
@@ -291,6 +292,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio"],
   },
   {
+    name: "CBC Listen",
+    slug: "music-providers/cbc-listen",
+    icon: "/assets/icons/cbc-listen-icon.svg",
+    categories: ["radio", "podcasts", "classical", "canada"],
+  },
+  {
     name: "Deezer",
     slug: "music-providers/deezer",
     icon: "/assets/icons/deezer-icon.svg",
@@ -301,6 +308,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     slug: "music-providers/digitally-imported",
     icon: "/assets/icons/difm-icon.svg",
     categories: ["radio", "classical"],
+  },
+  {
+    name: "DR LYD",
+    slug: "music-providers/dr-lyd",
+    icon: "/assets/icons/dr-lyd-icon.svg",
+    categories: ["radio", "podcasts", "classical", "denmark"],
   },
   {
     name: "Emby",
@@ -528,6 +541,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     slug: "music-providers/subsonic",
     icon: "/assets/icons/subsonic_icon.png",
     categories: ["own-files", "podcasts"],
+  },
+  {
+    name: "Sunshine Live",
+    slug: "music-providers/sunshine-live",
+    icon: "/assets/icons/sunshine-live-icon.png",
+    categories: ["radio", "germany"],
   },
   {
     name: "Sveriges Radio",

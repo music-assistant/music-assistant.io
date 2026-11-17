@@ -91,8 +91,6 @@ Change one thing at a time, and give it a track or two before deciding it did no
 
 **A gap between tracks, or playback stopping on the track transition.** Turn on **Enable queue flow mode**, which sends the whole queue as one continuous stream instead of one track at a time. The trade-off is that most players then stop showing track information. [Track Queueing](/faq/tech-info/#track-queueing) explains the difference.
 
-**Playback stops part way through a track, will not start at all, or will not let you skip within a track.** Work through the **HTTP Profile** options, starting with Profile 3. This decides whether Music Assistant tells the player how much audio is coming before it starts sending, and a few players will not play properly unless they are told.
-
 **The player shows no track name or artist.** This happens in flow mode, because the player receives one long stream rather than separate tracks. Set **Try to inject metadata into stream (ICY)** to Profile 1, or to Profile 2 if you want album art as well. Some players mishandle Profile 2, so step back down if playback becomes unreliable.
 
 **Silence, or a refusal to play higher quality files.** Remove the higher rates from **Sample rates supported by this player**. The rates selected by default are deliberately safe on most players, and anything above them is there for you to try rather than promised to work.
@@ -160,5 +158,5 @@ If the above is not the issue then start MA in safe mode:
 - With the HA app, select the toggle in the configuration
 - With Docker run the container with the environmental variable MASS_SAFE_MODE set to a boolean true value, e.g. "1" or "true"
 
-If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details.
+If MA now starts, you can start any of the providers by clicking "reload" in the settings (click the 3 dots). If one particular provider causes MA to crash then open an issue with the details. Nothing from the [community catalog](/settings/marketplace/#safe-mode) runs in safe mode.
 

@@ -5,6 +5,8 @@ description: A Collection of HA cards or dashboards
 
 # General <img src="/assets/icons/community-extensions-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 This is a collection of community developed HA cards or dashboards for Music Assistant. Review the linked repos (the repo title is linked) for instructions and status of these projects. The complexity of these projects varies.
+
+Looking for music sources, player support or plugins made by the community? Those are in the [community catalog](/settings/marketplace/#the-community-catalog) of the Marketplace.
 *********************************
 ## <a href="https://github.com/fastxl2024/mass-search-card" target="_blank" rel="noopener noreferrer">Music Assistant Search Card</a>
 

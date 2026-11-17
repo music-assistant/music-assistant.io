@@ -48,7 +48,7 @@ Smart playlists use include/exclude style rules. In **From my library** mode the
 - **Album**: is / is not (library mode, one or more albums)
 - **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
 - **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed; provider-dependent)
-- **Favorite**: yes (library mode)
+- **Favorite**: **Only favorites** (library mode) or **Exclude favorites** (library and Discover modes)
 - **Year**: between from/to (it is possible to use only `from` or only `to`)
 - **Duration**: between from/to in MM:SS format (filter tracks by length)
 - **Last played**: filter tracks by how recently they were played (e.g., "1 days ago", "2 weeks ago")
@@ -62,6 +62,20 @@ Album type examples:
 - **Album type is "Live"**: only live recordings/concerts
 
 Available album types: **Album**, **Single**, **EP**, **Compilation**, **Live**, **Soundtrack**, **Audiobook**, **Podcast**, **Unknown album type** (albums without a specific type classification or where the music provider does not provide type information).
+
+Favorite rule:
+
+- **Only favorites**: include only your liked tracks. Available in **From my library** mode.
+- **Exclude favorites**: leave out your liked tracks in either mode. Tracks you have disliked or not rated remain eligible.
+- Excluding favorites always takes priority, even with **Match any** selected and a liked track matching another rule.
+
+In **From my library** mode, add a **Favorite** rule and choose **Exclude favorites**:
+
+![Favorite rule with Only favorites and Exclude favorites options in From my library mode](/assets/screenshots/smart_playlist/exclude_favorites_library.png)
+
+In **Discover mode**, add a **Favorite** filter. It is set to **Exclude favorites**:
+
+![Exclude favorites filter in Discover mode](/assets/screenshots/smart_playlist/exclude_favorites_discover.png)
 
 Folder rule:
 

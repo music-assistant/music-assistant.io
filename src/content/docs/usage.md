@@ -48,7 +48,9 @@ Favorites are personal. Every user has their own favorites and dislikes and only
 
 The heart on an item, in a list, on its page or in the player bar, shows its state. Filled when the item is a favorite of yours, a thumbs-down when you dislike it, or an outline when you have indicated neither. Select the icon for a small menu with **Add to favorites** or **Remove from favorites**, **Dislike** or **Remove dislike**, and **Add to playlist**. The heart at the top of a library view narrows the view to your favorites. Deselect it to see everything.
 
-A track you dislike stays out of the music Music Assistant picks for you in [Endless Mix](#endless-mix), Autoplay, the Infinite Mixes and other dynamic playlists. You can still play it yourself, from an album, a playlist or the queue. A dislike on an artist or album is remembered but does not affect what is picked for you.
+A track you dislike stays out of the music Music Assistant picks for you in [Endless Mix](#endless-mix), Autoplay, the Infinite Mixes and other dynamic playlists, and so does every track on an album, by an artist or in a genre you dislike. You can still play them yourself, from an album, a playlist or the queue.
+
+A track is in a genre when it is linked to it, as listed on the [genre's page](/genres/#genre-detail-page). A track without genres of its own is in the genres of its albums. Genres come from the library, so a track that is not in the library is never left out because of its genre.
 
 A favorite adds the item to the library, and to your own streaming accounts when the service keeps a library of its own. A dislike adds nothing. An item that is not in the library yet stays out of it, and out of every account.
 
@@ -137,6 +139,10 @@ There are also two pseudo-playlists, the Infinite Mixes (one based on the whole 
 A playlist you create on Music Assistant itself, rather than on a music source, belongs to you, and at first only you can see it. To share it, open the playlist and select the share icon, or **Share playlist** in its ⋮ menu. You can share it with **Selected users**, **All users except guests** or **Everyone, including guests**. Turn on **Collaborative** to let them add and remove tracks too. Administrators can also change who owns a playlist.
 
 The page of a Music Assistant playlist shows who it belongs to and who it is shared with. A playlist that comes from a music source, such as one of your Spotify playlists, is visible to everyone who can use that source. **Add to Playlist** only offers the playlists you can edit.
+
+### Changing the order
+
+The tracks of a playlist can be put in a different order from its page, see [View - Playlist](/ui/#view---playlist). This works on playlists you can edit when their music source can store a new order. Today that is playlists stored by Music Assistant itself and [Tidal](/music-providers/tidal/) playlists. The new order is saved on the source straight away, so a reordered Tidal playlist shows it in the Tidal app too. Dynamic playlists, such as the ones Music Assistant generates, cannot be reordered.
 
 ### Playlist Artwork
 

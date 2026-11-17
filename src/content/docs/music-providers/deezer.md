@@ -42,7 +42,7 @@ Connecting your account puts your Deezer favourites and playlists alongside the 
 - Recommendations: Made For You, Explore (charts, new releases, editorial playlists), Recently Played, Music Together and dynamic Flow/mood/genre mixes
 - Paste a Deezer share link into the search box and it will take you straight to that album, track or playlist
 - Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
-- Logging of played tracks in Deezer
+- Played tracks are logged in Deezer, so albums, artists and playlists you play in MA also show up under recently played in the Deezer app
 
 ## Configuration
 
@@ -76,6 +76,8 @@ Independent accounts have their own ARL and are not in that list. Log in on deez
 ### Settings
 
 Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+
+- **Continue in the Deezer app**: when you open a Deezer app, it continues where Music Assistant stopped. Off by default. If several people share one Deezer account, the app continues whatever played last.
 
 ## Known Issues / Notes
 

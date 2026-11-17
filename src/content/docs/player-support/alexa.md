@@ -76,7 +76,7 @@ Run with Docker Compose (recommended):
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>URL.</b> Amazon subdomain (region-specific) (e.g. amazon.com, amazon.co.uk)
 - <b>E-mail.</b> Amazon account linked to Echo devices

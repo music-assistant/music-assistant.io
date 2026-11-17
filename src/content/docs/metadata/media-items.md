@@ -4,7 +4,7 @@ title: Media items
 
 # Media Item Metadata <img src="/assets/icons/metadata-mediaitem-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-This page lists what metadata is gathered for each kind of media item (artists, albums, tracks, playlists, audiobooks and podcasts) and where each field comes from. As [elsewhere](/metadata/), source metadata always takes priority and the online providers only fill in the gaps.
+This page lists what metadata is gathered for each kind of media item (artists, albums, tracks, playlists, audiobooks and podcasts) and where each field comes from. As [elsewhere](/metadata/), source metadata always takes priority over the online providers. See [Filling gaps and replacing outdated information](/metadata/#filling-gaps-and-replacing-outdated-information) for when stored information is replaced.
 
 ## Artists
 
