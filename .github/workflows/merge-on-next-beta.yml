@@ -1,8 +1,10 @@
 name: Merge on next beta
 
 on:
+  repository_dispatch:
+    types: [server-release]
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "37 5 * * *"
   workflow_dispatch:
     inputs:
       dry_run:

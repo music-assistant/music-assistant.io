@@ -1,15 +1,18 @@
 // Merges the open pull requests labelled LABEL into `beta` once a server
 // release that holds their feature is out. Run by
-// .github/workflows/merge-on-next-beta.yml. It only reads pull request
-// metadata and never checks out or runs code from a pull request.
+// .github/workflows/merge-on-next-beta.yml, which the server starts right
+// after it publishes a release, and once a day as a safety net. It only reads
+// pull request metadata and never checks out or runs code from a pull request.
 //
 // Needs GITHUB_TOKEN and GITHUB_REPOSITORY. With DRY_RUN=true it only prints
 // what it would merge and why the other pull requests wait.
 
+import { setTimeout as sleep } from "node:timers/promises";
 import { pathToFileURL } from "node:url";
 
 export const LABEL = "merge-on-next-beta";
 const BASE = "beta";
+const MERGEABLE_UNKNOWN = "GitHub has not worked out yet whether it can merge";
 const SERVER_RELEASES =
   "https://api.github.com/repos/music-assistant/server/releases?per_page=100";
 
@@ -56,7 +59,7 @@ export function blockers(pr, release) {
   if (checks !== "SUCCESS") reasons.push(`checks are ${checks?.toLowerCase() ?? "missing"}`);
 
   if (pr.mergeable === "CONFLICTING") reasons.push("has a merge conflict");
-  else if (pr.mergeable !== "MERGEABLE") reasons.push("GitHub has not worked out yet whether it can merge");
+  else if (pr.mergeable !== "MERGEABLE") reasons.push(MERGEABLE_UNKNOWN);
 
   const labelled = pr.timelineItems.nodes.filter((e) => e.label?.name === LABEL).at(-1);
   if (!release) {
@@ -100,11 +103,24 @@ async function main() {
   const release = latestServerRelease(await github("GET", SERVER_RELEASES));
   console.log(`Latest server release: ${release ? `${release.tag} (${release.publishedAt})` : "none"}`);
 
-  const { data } = await github("POST", "https://api.github.com/graphql", {
-    query: PULL_REQUESTS_QUERY,
-    variables: { owner, name, label: LABEL },
-  });
-  const pulls = data.repository.pullRequests.nodes;
+  const fetchPulls = async () => {
+    const { data } = await github("POST", "https://api.github.com/graphql", {
+      query: PULL_REQUESTS_QUERY,
+      variables: { owner, name, label: LABEL },
+    });
+    return data.repository.pullRequests.nodes;
+  };
+  // GitHub works out whether a pull request can merge only once it is asked,
+  // so the first answer is often unknown. Ask again for the pull requests
+  // that only wait on that.
+  let pulls = await fetchPulls();
+  for (let retry = 1; retry <= 3; retry++) {
+    const unknown = pulls.filter((pr) => blockers(pr, release).join() === MERGEABLE_UNKNOWN);
+    if (!unknown.length) break;
+    console.log(`Asking again in 20 seconds whether ${unknown.map((pr) => `#${pr.number}`).join(", ")} can merge.`);
+    await sleep(20_000);
+    pulls = await fetchPulls();
+  }
   if (!pulls.length) console.log(`No open pull requests labelled ${LABEL}.`);
 
   let failed = false;

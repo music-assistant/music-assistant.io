@@ -22,7 +22,7 @@ document something readers cannot use.
 waits. The beta site follows the server beta, so your pull request stays open, even once it is
 approved, until a server beta with the feature is out. A maintainer adds the
 `merge-on-next-beta` label once the server pull request is merged, and your pull request is then
-merged on its own a few hours after the next server beta is released. A commit pushed after the
+merged on its own shortly after the next server beta is released. A commit pushed after the
 approval needs a new approval before that can happen.
 
 If you are not sure, open it against `beta` and say so. Moving a pull request to the other branch
