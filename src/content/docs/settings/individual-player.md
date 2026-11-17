@@ -14,7 +14,7 @@ The **Configure player** button, which reads **Reconfigure player** once the pla
 
 ## A player that is unavailable or needs setup
 
-A player stays in Music Assistant while its device is switched off or off the network, with its settings and its queue. It shows as unavailable until the device is back, and its queue then still holds what it was playing, ready to resume. Its settings can be opened and changed meanwhile.
+A player stays in Music Assistant while its device is switched off or off the network, with its settings and its queue. It shows as unavailable until the device is back, and its queue then still holds what it was playing, ready to resume. A player whose Power control is set to cut its power, such as a smart plug, shows as switched off instead, see [Switching the player itself on and off](/ha-plugin/#switching-the-player-itself-on-and-off). Its settings can be opened and changed meanwhile.
 
 In **Settings → Players** an unavailable player has an hourglass ⧖ beside it. A player that can not play until you set something up says why, such as **Pairing required** or **Password required**, with a **Start setup** button that takes you through it. A player that can still play over another of its protocols stays available meanwhile, and the protocol that waits for setup shows as unavailable under [Output Protocol(s)](#output-protocols).
 
@@ -175,7 +175,11 @@ Each player has a number of options available to control the behaviour of the po
 
 It is possible to map other HA entities to the MA player controls. in order for this to be an option the HA entities need to be first exposed to MA via the settings in the [HA Plugin](/ha-plugin/).
 
-**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Native power control assumes the underlying device is in a standby mode and not physically powered off. A Home Assistant entity chosen here, such as a smart plug, can switch the device off completely. Music Assistant switches it back on when you turn on or play to the player, see [Switching the player itself on and off](/ha-plugin/#switching-the-player-itself-on-and-off).
+**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Native power control assumes the underlying device is in a standby mode and not physically powered off. A Home Assistant entity chosen here, such as a smart plug, is used to turn the player on and off, and playing to the player switches it on.
+
+**Power control cuts the power of this player** Shown when a Home Assistant entity is the Power control. Turn it on when that entity cuts the power of the player itself. It starts out off, and cutting the power of a smart speaker or streamer is not recommended. [Switching the player itself on and off](/ha-plugin/#switching-the-player-itself-on-and-off) explains what it does.
+
+**Start-up time (seconds)** How long the player needs after its power comes on before it can play, from 5 to 300 seconds. It starts at 30; raise it when playback fails right after the player was switched on. Only shown when the advanced toggle is on and **Power control cuts the power of this player** is on.
 
 **Volume** This allows the volume control to be defined or disabled.
 
