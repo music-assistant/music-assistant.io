@@ -24,6 +24,7 @@ Music Assistant follows that model. Each Raumfeld **room** becomes a player, and
 - Volume and mute are set per room, also for rooms in a group
 - Hi-res audio up to 192 kHz / 24 bit, chosen per room (up to 96 kHz by default, see Settings)
 - Rooms are matched to the same speaker's Chromecast or DLNA representation, so they do not show up twice
+- A room keeps its player and its settings when a speaker in it restarts or is replaced, and a speaker keeps its player when it moves to another room or its room is renamed
 
 ## Playback started outside Music Assistant
 
@@ -31,7 +32,7 @@ Music Assistant also shows what a room plays when the music was started somewher
 
 - A source you stop is shown as paused and can be resumed for about a minute. After that Music Assistant shows its own queue again
 - Playing something from Music Assistant takes over the room
-- Music from another app that plays through the speaker's built-in Chromecast, such as the Tidal app, is not shown
+- Music from an app cast to the speaker's built-in Chromecast, such as TuneIn, Tidal or Spotify on a phone, is shown on the room too, with pause, next/previous and seek. When it is stopped from the phone, the room shows Music Assistant's own queue again
 - Pausing a track within the first few seconds restarts it when you resume. The Raumfeld app does the same
 
 ## Configuration
@@ -41,6 +42,8 @@ Music Assistant also shows what a room plays when the music was started somewher
 3. Your rooms appear in the player list within a few seconds of the host being reached.
 
 If the host is unreachable when you set it up, or goes away later, the provider keeps retrying rather than failing. Players are shown as unavailable until it returns.
+
+If the host gets a new IP address, or another speaker takes over as host, Music Assistant finds it on the network again and remembers the new address. With more than one Raumfeld system on the same network it cannot tell which host is yours, so it keeps the address you entered.
 
 ## Settings
 
@@ -58,5 +61,6 @@ For information about the settings seen in the MA UI refer to the [Player Suppor
 - **With flow mode on, the Raumfeld app shows each track's title, artist, album and cover, but not its elapsed time or duration.** The time it shows runs on across the whole queue rather than starting again for each track. Music Assistant's own progress bar is correct. If you rely on the Raumfeld app's time display, switch flow mode off (see Settings)
 - **Only a room that was switched off is shown as off.** A room that went into standby by itself after a while without music is shown as on, because it wakes up by itself for the next play. Switching a room off removes it from its group
 - **Stopping the Line-in switches the room off**, along with any rooms grouped with it, because a Raumfeld Line-in would otherwise keep playing. The next play from Music Assistant wakes them again
+- **In a room with more than one speaker, only one of them is linked to the room's player.** The Chromecast and DLNA players of the room's other speakers still show up on their own. You can disable them in their player settings. After a speaker in a room is replaced, the old speaker's Chromecast and DLNA players stay linked to the room until Music Assistant restarts
 - **Raumfeld rooms only play in sync with other Raumfeld rooms.** They can be added to a universal group with speakers of another brand, but they won't play in sync with those
 - Using the Raumfeld integration in Home Assistant at the same time may result in both sending commands to the same speakers
