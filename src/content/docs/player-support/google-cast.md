@@ -29,7 +29,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) when s
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Google Cast provider has the following:
 
-- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> The default depends on the device. Most Cast devices default to `Profile 3 - forced content length`. This includes Google's own devices such as the Nest Mini, Nest Audio, Nest Hub, Google Home, Chromecast and Chromecast Audio, and speakers from other brands with Chromecast built-in, because without a content length some of them stop playback after 5 to 10 minutes. The 2026 Google Home Speaker and Android TV devices from other brands, such as the Nvidia Shield, default to `Profile 2 - no content length`, because they stop each stream after about 24 MiB of audio when a content length is sent, which can be only a few minutes of playback. Cast groups and stereo pairs default to `Profile 2 - no content length`. If you have changed this setting yourself, your choice is kept. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
+- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to `Profile 2 - no content length` on every Cast device, group and stereo pair, because several devices stop each stream after 10 to 24 MiB of audio when a content length is sent, which can be only a few minutes of playback. If you have changed this setting yourself, your choice is kept. If playback stops part way through a track, see [playback stops part way through a track](#playback-stops-part-way-through-a-track) below
 - <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
 - <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit for a single player, and up to 96 kHz for a Cast group. Only 44.1 kHz / 16 bit and 48 kHz / 16 bit are selected by default, because the higher ones are unreliable on some devices despite being officially supported. Add them and test rather than assume
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
@@ -49,7 +49,7 @@ Expect to do some tuning afterwards. Playback is rarely in sync straight away, s
 
 ## Known Issues / Notes
 
-- Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- Cast speakers do not support gapless playback or crossfading of audio themselves. While crossfade is enabled, Music Assistant always sends a Cast speaker the queue as one continuous [flow mode](/faq/tech-info/#track-queueing) stream, regardless of the flow mode setting. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
 - After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
@@ -80,9 +80,7 @@ You may see any of these:
 
 In the individual player settings:
 
-1. Set **HTTP Profile used for sending audio** to suit the device:
-   - On the 2026 Google Home Speaker or a non-Google Android TV device, if playback stops after a few minutes (around 24 MiB of audio) on `Profile 3 - forced content length`, set it to `Profile 2 - no content length`.
-   - On any other Cast device, such as a Nest Mini, if playback stops after 5 to 10 minutes on `Profile 2 - no content length`, set it to `Profile 3 - forced content length`.
+1. If **HTTP Profile used for sending audio** is set to `Profile 3 - forced content length` and playback stops after a few minutes, set it to `Profile 2 - no content length`.
 2. Set **Output codec to use for streaming audio to the player** to `MP3`.
 3. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
 
