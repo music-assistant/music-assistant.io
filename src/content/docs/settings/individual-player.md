@@ -177,9 +177,9 @@ It is possible to map other HA entities to the MA player controls. in order for 
 
 **Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Native power control assumes the underlying device is in a standby mode and not physically powered off. A Home Assistant entity chosen here, such as a smart plug, is used to turn the player on and off, and playing to the player switches it on.
 
-**Power control cuts the power of this player** Shown when a Home Assistant entity is the Power control. Turn it on when that entity cuts the power of the player itself. It starts out off, and cutting the power of a smart speaker or streamer is not recommended. [Switching the player itself on and off](/ha-plugin/#switching-the-player-itself-on-and-off) explains what it does.
+**Power control cuts the power of this player** Shown once a Home Assistant entity is saved as the Power control. Turn it on when that entity cuts the power of the player itself. It starts out off, and cutting the power of a smart speaker or streamer is not recommended. [Switching the player itself on and off](/ha-plugin/#switching-the-player-itself-on-and-off) explains what it does.
 
-**Start-up time (seconds)** How long the player needs after its power comes on before it can play, from 5 to 300 seconds. It starts at 30; raise it when playback fails right after the player was switched on. Only shown when the advanced toggle is on and **Power control cuts the power of this player** is on.
+**Start-up time (seconds)** How long the player needs after its power comes on before it can play, from 5 to 300 seconds. It starts at 30; raise it when playback fails right after the player was switched on. This is an advanced setting, and it can be changed once **Power control cuts the power of this player** is on.
 
 **Volume** This allows the volume control to be defined or disabled.
 

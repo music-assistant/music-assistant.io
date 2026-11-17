@@ -79,7 +79,7 @@ When an entity is selected it will then appear as an option in an individual pla
 
 ### Switching the player itself on and off
 
-A power entity can also cut the power of the player itself, for example a smart plug the player is plugged into. This is not recommended for a smart speaker or streamer: it can take long before the player is available again once its power is back, and it may not be good for the device. If you want it anyway, set the entity as the Power control in the [player settings](/settings/individual-player/#player-controls) and turn on **Power control cuts the power of this player**, which shows below it.
+A power entity can also cut the power of the player itself, for example a smart plug the player is plugged into. This is not recommended for a smart speaker or streamer: it can take long before the player is available again once its power is back, and it may not be good for the device. If you want it anyway, set the entity as the Power control in the [player settings](/settings/individual-player/#player-controls) and save; the setting **Power control cuts the power of this player** then appears below it: turn it on.
 
 While the entity is then off, the player shows as switched off instead of unavailable, in Music Assistant and in Home Assistant. Playing to it, selecting a source on it, turning it on, sending an announcement to it or starting a group it is in switches the entity on, waits for the start-up time and then plays. Stop, pause and volume changes do nothing while it is switched off.
 
