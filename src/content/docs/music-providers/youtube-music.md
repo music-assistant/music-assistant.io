@@ -57,7 +57,7 @@ Google will not let anything play until it has been given a 'Proof of Origin' to
 3. Install the app called 'YT Music PO Token Generator' and make sure it is started.
 
 > [!NOTE]
-> If you host Music Assistant yourself, download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a>. You must run the version currently supported by MA, which is 1.2.1. Install and run the correct version, then add its URL when configuring the YT Music source in Step 3.
+> If you host Music Assistant yourself, download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a>. Install and run its latest release, then add its URL when configuring the YT Music source in Step 3.
 
 ### Step 2: Obtain your login cookie
 
