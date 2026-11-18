@@ -8,7 +8,7 @@ title: "Sendspin"
 
 It is built into Music Assistant and switched on from the start, so there is nothing to install. The web player you use in your browser is a Sendspin player, and Sendspin speakers and apps appear on their own once they are on your network.
 
-AirPlay speakers and Squeezebox and squeezelite players get a Sendspin output, so they play in sync with Sendspin speakers in one group. Cast speakers can have one too, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices). A device that Music Assistant reaches in more than one of these ways gets one Sendspin output. The Squeezebox protocol carries it first, then AirPlay, then Cast; switch one of those off for the player and the next one carries it.
+AirPlay and Squeezelite players (including Squeezebox hardware) can be grouped with Sendspin speakers and play in sync. Cast speakers can join too, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices). If a device supports more than one of these, it gets one Sendspin output, and Music Assistant uses Squeezelite first, then AirPlay, then Cast for it. To make it use a different one, switch off the one you don't want in that player's [output protocol settings](/settings/individual-player/#output-protocols). When it moves, the output keeps its settings, but each of these protocols keeps its own sync delay. It does not move while the speaker is powered off or out of reach.
 
 Sendspin was developed by the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation</a> and is free for anyone to build on, so the range of devices and apps that support it is growing.
 
