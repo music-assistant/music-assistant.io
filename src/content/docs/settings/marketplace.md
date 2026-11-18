@@ -41,7 +41,7 @@ The card of an entry says who made it: **by the Music Assistant team**, or by it
 - <b>Beta.</b> It is complete, but not fully tested and may still have bugs
 - <b>Alpha.</b> It is early in its development and not ready for everyday use
 - <b>Experimental.</b> It may change at any time or break often, for example because the service it uses keeps changing. Not recommended for everyday use
-- <b>Unmaintained.</b> Nobody looks after it any more, so it gets no updates or support and may stop working. Its maintainers are looking for someone to take it over
+- <b>Unmaintained.</b> Nobody looks after it any more, so it gets no updates or support and may stop working. The Music Assistant team is looking for someone to take it over
 - <b>Added.</b> You have set it up already
 
 An entry without a stage badge is stable.
@@ -135,7 +135,7 @@ Nothing from the community catalog runs while Music Assistant is in [safe mode](
 
 Ask the maintainers of the entry, through **Get help** or **Source code** in its details, or the link in the note you read before you installed it. The Music Assistant team does not support what comes from the community catalog.
 
-Something in the community catalog that breaks the rules? Open an issue in the <a href="https://github.com/music-assistant/community-catalog/issues" target="_blank" rel="noopener noreferrer">community catalog on GitHub</a>, with which entry it is, what it does and how you noticed. When it puts its users at risk, do not post the details in public: use **Report a vulnerability** on the **Security** tab of that repository instead.
+Something in the community catalog that breaks the rules? Report it with the form <a href="https://github.com/music-assistant/community-catalog/issues/new?template=report-provider.yml" target="_blank" rel="noopener noreferrer">Report or change a provider</a> in the community catalog on GitHub: which entry it is, what it does and how you noticed. When it puts its users at risk, do not post the details in public: use **Report a vulnerability** on the **Security** tab of that repository instead.
 
 ### Making something for it
 
