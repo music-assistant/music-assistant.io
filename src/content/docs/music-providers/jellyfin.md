@@ -47,6 +47,14 @@ You will need to provide the following to Music Assistant:
 
 - <b>Advanced - Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. This is on by default
 
+## Playlists
+
+You can add tracks to an existing Jellyfin playlist from **Add to playlist** and remove tracks from its playlist view. Changes are saved to Jellyfin, so other Jellyfin clients see the same playlist after refreshing.
+
+Only playlists that the connected Jellyfin account owns or has permission to edit are editable. Other playlists remain available for listening. If the server cannot provide the account's edit permissions, Music Assistant keeps the playlist read-only.
+
+Creating Jellyfin playlists and reordering their tracks in Music Assistant are not supported yet. Create a playlist in Jellyfin or another compatible client first.
+
 ## Not Yet Supported:
 - Album types metadata
 
