@@ -11,6 +11,7 @@ Music Assistant has support for Sonos devices. There are two providers available
 - Sonos devices are auto detected by Music Assistant
 - Sonos devices from the same series (S1 or S2) will play in sync when grouped
 - Sonos devices can optionally be grouped with AirPlay devices
+- A stereo pair or a home theater set made in the Sonos app is one player. For S2 devices it is shown with the layout of its speakers. See [Create a Stereo Pair](/faq/how-to/#create-a-stereo-pair)
 
 ### AirPlay Functionality
 

@@ -101,7 +101,11 @@ Thanks to <a href="https://github.com/Aasikki" target="_blank" rel="noopener nor
 
 ## Create a Stereo Pair
 
-If a [Player Provider](/player-support/) supports stereo pairs natively, and these can be setup in the native app, and MA can detect these unique "players" then this should work. Otherwise, for the player providers that support perfect sync and show the `Output Channel Mode` in the Protocol Settings for the individual player then each player of the stereo pair can be assigned an individual channel and then the two players grouped as a [Sync Group](/faq/groups/#sync-groups).
+Make the pair in the app of your speakers. For brands such as Sonos and Google Cast, Music Assistant shows a stereo pair as one player, and does the same for a home theater set of a soundbar with surround speakers or a subwoofer. The speakers divide the channels among themselves. The settings page of such a player names it a multi-channel player and shows the layout of its speakers, for example `Stereo pair` or `5.1`.
+
+The other speakers of a set are not players of their own. A speaker that was a player before it joined a set loses that player together with its settings, and shows up as a new player when you take the set apart again.
+
+For other speakers that play in perfect sync and show the `Output Channel Mode` in the Protocol Settings of the individual player, give each of the two players its own channel and group them as a [Sync Group](/faq/groups/#sync-groups).
 
 ## Access my music on Nextcloud?
 
