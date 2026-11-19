@@ -19,7 +19,7 @@ How much of a source ends up in that library is up to you. Each one has its own 
 
 ## Adding a source
 
-Go to **Settings → Music sources → Add a music source**, which opens the [Marketplace](/settings/marketplace/) on its music sources, and pick the one you want. Each source has its own page in this section covering what it offers and how to set it up.
+Go to **Settings → Music → Add a music source**, which opens the [Marketplace](/settings/marketplace/) on its music sources, and pick the one you want. Each source has its own page in this section covering what it offers and how to set it up.
 
 When an administrator adds a source, it starts out shared with everyone. They can then make it their own or another user's and choose who else can use it. Users can also add their own account for a service that can be added more than once, which only they can use until they share it. See [Personal and shared music sources](/settings/user-management/#personal-and-shared-music-sources).
 
@@ -32,7 +32,7 @@ If you remove a source, the database is cleaned up afterwards, which takes a lit
 
 ## Settings
 
-All Music Sources have settings which can be configured. Each source has its own page in **Settings → Music sources**, with a **Documentation** button that opens its page in this documentation. Specific help for a setting or configurable field is often available and is accessed by selecting this icon ![question mark](/assets/icons/question-mark.png). All sources can be given a custom name and disabled if necessary. The log level can be adjusted for all sources and is shown with **Show advanced settings**. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). [Music Source Settings](/settings/music-provider-settings/) describes the page, and the sources pages cover source specific settings.
+All Music Sources have settings which can be configured. Each source has its own page in **Settings → Music**, with a **Documentation** button that opens its page in this documentation. Specific help for a setting or configurable field is often available and is accessed by selecting this icon ![question mark](/assets/icons/question-mark.png). All sources can be given a custom name and disabled if necessary. The log level can be adjusted for all sources and is shown with **Show advanced settings**. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). [A source's own page](/settings/music-provider-settings/#a-sources-own-page) describes the page, and the sources pages cover source specific settings.
 
 ![image](/assets/screenshots/generic-settings.png)
 
@@ -40,7 +40,7 @@ All Music Sources have settings which can be configured. Each source has its own
 
 All music sources have options to control the import of media items and this is shown in the image below. The image shows a typical streaming provider on the left and a typical filesytem provider on the right. Note that if an individual track is in the source's library (but not its associated album) and, for example, all of the import settings are set to sync then the individual track will be imported and the album will be created in the database but all of the other album tracks will not be added. This behaviour can be changed by using the `Import album tracks` toggle. Also it should be noted that when a track is added from a streaming provider then the associated artist and album are added to the database but are NOT marked as in library (unless those items are also in the streaming provider's library). Thus you will not see the artist or album in the artist or library views. You can however, navigate to the track and then click through to see the artist or album from there.
 
-Control of the synchronisation timing between the provider and MA is done in the [Background Tasks](/settings/core/#background-tasks) view in **Settings → System**. 
+Control of the synchronisation timing between the provider and MA is done in [**Settings → System → Background tasks**](/settings/core/#background-tasks). 
 
 There is a setting which controls whether additions to the MA library are also made to the source library. For clarity, adding an item to the MA library will only be reflected in the originating source of the item. So, for example, if you had the Deezer and Spotify sources installed and you searched for an artist you will likely see that artist listed twice, once from each source. If you add the artist to the MA library and you have sync back enabled, then the artist will only be added to the source that was associated with item selected. The list view is required to see the source's icons.
 

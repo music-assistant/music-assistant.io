@@ -4,6 +4,8 @@ title: "Individual Player Settings"
 
 # Individual Player Settings <img src="/assets/icons/settings-individual-player-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
+**Settings → Players** lists your players, with the lights, screens and audio inputs in sections of their own below them. **Add group player** creates a [group player](/faq/groups/). The tiles at the top lead to [Playback](/settings/playback/), the defaults every player follows, and to [Player support](/settings/player-provider/). Selecting a player opens its settings, described on this page.
+
 Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. The **Documentation** button at the top of a player's settings opens this page. Some items are hidden unless the **Show advanced settings** toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
 
 ![image](/assets/screenshots/individual-player-settings.png)
@@ -14,7 +16,7 @@ The `Reconfigure` button launches the configuration wizard for the player and fo
 
 ## Queue Settings
 
-This is a link to the respective [Queue Settings](/usage/#the-queue). It should be noted that these can be set globally in the [Player Queues Settings](/settings/core/#player-queues)
+This is a link to the respective [Queue Settings](/usage/#the-queue). It should be noted that the defaults for all players are set in the [Playback](/settings/playback/) settings
 
 ## DSP Settings
 

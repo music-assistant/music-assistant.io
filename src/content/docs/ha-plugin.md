@@ -21,11 +21,11 @@ If you are not sure how this fits with the Home Assistant integration, see [how 
 
 The plugin connects directly to Home Assistant's own API and does not need the [Home Assistant integration](/integration/installation/) to be installed. The two are independent: the integration puts MA players into HA, the plugin lets MA reach into HA.
 
-- Navigate to **Settings → Plugins** and add the plug-in
+- Navigate to **Settings → System → Home Assistant** and select **Connect**
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 
-Once it is added, the only settings here are the three player control lists described under [Linking Home Assistant entities to player controls](#linking-home-assistant-entities-to-player-controls).
+Once it is connected, the only settings on that page are the three player control lists under **Player controls**, described under [Linking Home Assistant entities to player controls](#linking-home-assistant-entities-to-player-controls). The page also shows the connection and what it brings, see [Home Assistant](/settings/core/#home-assistant).
 
 ## AI and text-to-speech engines
 

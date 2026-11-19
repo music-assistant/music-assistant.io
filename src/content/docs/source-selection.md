@@ -7,7 +7,7 @@ description: How Music Assistant chooses which copy of a track plays when it is 
 
 The same track is often available from more than one place: as a file in your own collection, on a streaming service, or on two services at once. Music Assistant links those copies into one track in the [library](/usage/#the-library), so you see it once, and chooses which copy plays when you press play.
 
-This page explains how that choice is made, and the settings under [**Settings → System → Streams → Source selection**](/settings/core/#source-selection) that change it.
+This page explains how that choice is made, and the settings under [**Settings → Music → Library settings**](/settings/music-provider-settings/#source-selection) that change it.
 
 ## How a copy is chosen
 
@@ -75,7 +75,7 @@ Every copy a track is linked to is listed in its [Source Details](/ui/#source-de
 
 Like MusicBrainz, Music Assistant treats a remaster as the same recording as the original, so a remastered track and the original are often merged into one track in your library, for example when your files are tagged with Picard. Playing an album is not affected by that: it plays its own tracks from one source, so the original and the remaster are not mixed. The exceptions are a track that source does not have, which plays from another copy that can be the other release, and **Best quality for every track**, where each track plays its best copy.
 
-If you would rather have remasters as tracks and albums of their own, turn on **Keep remastered versions apart** under [**Settings → System → Music**](/settings/core/#music). It is off by default and only visible when the advanced toggle is on. Before you turn it on:
+If you would rather have remasters as tracks and albums of their own, turn on **Keep remastered versions apart** under [**Settings → Music → Library settings**](/settings/music-provider-settings/#library-maintenance). It is off by default and only visible when the advanced toggle is on. Before you turn it on:
 
 - **The same song is listed more than once**, for example among an artist's tracks and in search results: once as the original and once for each remaster. An album and its remaster are listed as two albums
 - **Tracks and albums that were already merged stay merged.** The setting only applies to what is added or matched after you turn it on

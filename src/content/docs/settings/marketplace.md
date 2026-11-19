@@ -5,7 +5,7 @@ description: Find and add music sources, player support, metadata, plugins and a
 
 # Marketplace <img src="/assets/icons/marketplace-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The **Marketplace** is where you find and add music sources, player support, metadata, plugins and audio analysis. It is the first entry in the settings. The add buttons on the settings pages, such as **Add a music source** under **Settings → Music sources**, open it too, on the tab of that kind.
+The **Marketplace** is where you find and add music sources, player support, metadata, plugins and audio analysis. It is the first entry in the settings. The add buttons on the settings pages, such as **Add a music source** under **Settings → Music**, open it too, on the tab of that kind.
 
 Administrators can add anything from it. Users see the Marketplace when their role lets them add music sources of their own, as the standard **User** role does, and it then only offers the music sources they can add for themselves, such as their own Spotify account or a folder of local files. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
 
@@ -31,7 +31,7 @@ At the bottom of the tab, **Browse everything** leads to the tab of each kind.
 
 ![The Music sources tab with the Stage filter](/assets/screenshots/marketplace/list.png)
 
-Each kind has a tab of its own, with how many there are: **Music sources**, **Player support**, **Metadata**, **Plugins** and **Audio analysis**. A tab lists everything of that kind by name. **Stage** filters the list, and the link at the top right, such as **Manage your music sources**, opens the settings page of that kind.
+Each kind has a tab of its own, with how many there are: **Music sources**, **Player support**, **Metadata sources**, **Plugins** and **Audio analysis**. A tab lists everything of that kind by name. The live sources, such as Spotify Connect, are on the **Music sources** tab, where the same chips as on [**Settings → Music**](/settings/music-provider-settings/#music-sources) filter on what a source offers. **Stage** filters the list, and the link at the top right, such as **Manage your music sources**, opens the settings page of that kind.
 
 **Search the Marketplace** looks through the names and descriptions. On the Discover tab it searches every kind; on another tab, only that kind.
 
@@ -89,7 +89,7 @@ Add something from the community catalog as you would anything else. A note come
 
 ![The note before something from the community catalog is installed](/assets/screenshots/marketplace/community-note.png)
 
-It names its maintainers, says that it runs as part of your server, and links to where you ask for help. **Continue** installs it on your server and then sets it up as usual. Its settings are afterwards on the settings page of its kind, such as **Settings → Music sources**, like those of anything else.
+It names its maintainers, says that it runs as part of your server, and links to where you ask for help. **Continue** installs it on your server and then sets it up as usual. Its settings are afterwards on the settings page of its kind, such as **Settings → Music**, like those of anything else.
 
 ### Updates
 

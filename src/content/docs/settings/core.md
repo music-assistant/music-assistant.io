@@ -1,189 +1,68 @@
 ---
-title: "System Settings"
+title: "System"
 ---
 
-# MA System Settings <img src="/assets/icons/settings-core-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# System <img src="/assets/icons/settings-core-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The core server settings are set with typical defaults that should work for most users. However, there are settings available for each of the core controllers and these are outlined below. Each one opens a page with a **Documentation** button, which links to its section below, and an **Options** card holding all of its settings. Some settings only show when the **Show advanced settings** toggle in the card's header is on, and the toggle is remembered for your user. All controllers have a setting for the log level among the advanced settings. There may be slight differences in the settings between the Home Assistant App and docker versions of the servers.
+**Settings → System** holds the settings of the server itself, on the pages **Network**, **Storage**, **Home Assistant**, **Background tasks** and **Diagnostics**. Only administrators see it. The settings start out with values that work for most users.
 
-![image](/assets/screenshots/settings-core.png)
+A page with settings shows them in an **Options** card. Some settings only show when the **Show advanced settings** toggle in the card's header is on, and the toggle is remembered for your user. There may be slight differences in the settings between the Home Assistant App and docker versions of the servers.
 
-## Background Tasks (configuration)
+## Network
 
-- <b>Maximum number of concurrent background tasks.</b> Defaults to 2. This controls how many background tasks run simultaneously. Higher numbers mean higher demands on the system's resources and can slow the system down. Setting is only visible when the advanced toggle is on
-
-## Cache
-
-- A button is available to clear the cache used by Music Assistant. Do not routinely use this button as it increases [API usage](/usage/#online-metadata-sources) and slows down the MA experience
-
-## Discovery
-
-- <b>Allow network scan for UPnP discovery.</b> When enabled, MA uses an additional broadcast based discovery method ([SSDP](/faq/networking/#the-jargon-translated)). Turn this on if some UPnP/DLNA players are not being found by regular discovery (see the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered))
-- <b>MDNS/Zeroconf discovery interface(s).</b> Options are `Default interface [default]` and `All interfaces`. Used in custom network setups when multiple network interfaces are used. Setting is only visible when the advanced toggle is on
-
-## Metadata
-
-- <b>Preferred language.</b> Preferred language for metadata. If the selected language is unavailable then English will be used. This language is also used for text searches, so localised names such as genres and the built-in playlists can be found by the name shown in this language
-- <b>Enable metadata retrieval from online metadata providers.</b> Enables the lookup of information that is not available locally. MA does not modify any existing metadata but supplements it
-- <b>Advanced - Link items to your other music services through MusicBrainz.</b> On by default. Uses the links MusicBrainz keeps to find the artists, albums and tracks of your library on your other music sources, instead of searching each source for them. A background task works through the library in small batches after a library sync and once an hour, and items are also linked whenever their metadata is refreshed
-- <b>Use local genre metadata only when available.</b> Online metadata providers will not add genres to items that already have a genre from a local source such as a file tag or NFO file. Items with no local genre still receive genres from online providers as usual
-- <b>Enable artist/track artwork lookup for radio streams.</b> Enables the lookup of album or artist imagery when the station supplies `Artist - Track` metadata
-- <b>Maximum thumbnail cache size(MB).</b> When the cache exceeds this value the oldest thumbnails are automatically removed
-
-## Music
-
-- <b>Advanced - Keep remastered versions apart.</b> Off by default. Keeps a track or album that is named as a remaster, such as `Remastered 2009`, apart from the original in the library instead of merging the two. Tracks and albums that were already merged stay merged. Read [Keep remastered versions apart](/source-selection/#keep-remastered-versions-apart) before turning it on
-- <b>Advanced - Reset Library Database.</b> Selecting this button will erase the [MA library](/usage/#the-library) database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music sources will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
-
-## Players
-
-- <b>Volume step size.</b> Defaults to zero which enables an adapative mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
-- <b>Announcement text to speech engine.</b> Which engine is used to generate [announcements](/integration/announcements/) sent from within Music Assistant. The engines on offer come from your plugins, such as the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines)
-
-## Player Queues
-
-The behaviour when playing or enqueuing items is determined by the settings in this section.
-
-![image](/assets/screenshots/settings-player-queues.png)
-
-### Items to select
-
-- <b>Items to select when you play a (in-library) artist.</b> The options are `All tracks from all providers [default]`, `Artist top tracks only`, `In-library tracks for the artist only` and `Prefer library, fall back to top`
-- <b>Order to play an artist in.</b> The options are `Shuffled tracks [default]`, `Albums in random order, each album in track order` and `Albums by release year, oldest first`. `Shuffled tracks` plays the tracks picked by the artist selection in random order. The album orders play the artist's albums one after another, either picked at random or from the oldest to the newest, with albums without a year last
-- <b>Items to select when you play a (in-library) album.</b> The options are `All tracks for album on (streaming) provider [default]` and `Only in-library tracks`
-
-With either album order:
-- The artist selection picks the artist's own albums. The in-library selections play the albums in your library. `All tracks from all providers` also plays the albums found only on a provider.
-- Each album plays as it does on its own, following <b>Items to select when you play a (in-library) album</b>.
-- Each album plays once, even when your library and a provider both have it.
-- If one copy of an album can't play, another copy plays instead. With `Only in-library tracks` as the album selection, an album in your library plays only your saved tracks.
-- Singles are left out, as their songs are mostly on the albums.
-- Compilations in your library still play. Compilations found only on a provider are left out, as their songs are already on the albums.
-- `Artist top tracks only` still plays shuffled tracks.
-- An artist without albums plays shuffled tracks instead. For example, an artist with only singles, or one that only appears on another artist's albums. If the artist's albums can't be listed because a provider is offline or fails, and your library has none of them, nothing plays.
-
-An album order switches shuffle off for the queue, as when you play an album. An artist without albums keeps the queue's shuffle, and so does `Artist top tracks only`. Asking for shuffle when you start the artist still shuffles it. The setting does not apply to authors and narrators, as they play audiobooks.
-
-### Default enqueue options
-
-What happens to the queue when an item is played. There is one setting each for Artist, Album, Track, Genre, Playlist, and Radio and Live Input items (radio stations and plugin sources such as Spotify Connect and AirPlay Receiver). Each can be `Play (and replace queue)` or `Play (and keep queue)`. Tracks default to keeping the queue and everything else defaults to replacing it.
-
-### Click actions
-
-- <b>What clicking an artist / album / track / genre / radio / playlist does.</b> One setting per item type. `Open it [default]` opens the item, `Play it` starts playing it straight away
-- <b>What playing a track from an album does.</b> `Play from this track onwards [default]` continues with the rest of the album, `Play only this track` plays just the chosen track
-- <b>What playing a track from a playlist does.</b> The same two options, for tracks in a playlist
-
-### Smart Shuffle, Autoplay and Crossfade
-
-These options are set on a global level and can be overridden on a per queue basis.
-
-<a href="/assets/screenshots/settings-player-queues2.png"><img src="/assets/screenshots/settings-player-queues2.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
-
-Smart Shuffle enhances standard shuffle behavior by intelligently reducing repetition. Instead of selecting tracks purely at random, songs and artists that have been played recently are deprioritized, resulting in a more evenly distributed listening experience and reducing the likelihood of the same tracks being repeated when playlists are replayed. Smart Shuffle is always applied when playing a dynamic playlist, regardless of this setting.
-
-- <b>Smart shuffle.</b> `Disabled [default]` or `Enabled`. When enabled, the shuffle button uses Smart Shuffle instead of a plain random shuffle
-- <b>Avoid replaying the same song heard within.</b> How long a song that has already been heard is pushed toward the back of the queue. From `Off` to `4 weeks`, default `1 week`
-- <b>Avoid replaying the same artist heard within.</b> The same for artists. From `Off` to `2 hours`, default `30 minutes`
-- <b>Advanced - Minimum gap before repeating a deliberately-duplicated song.</b> When the same song is added to the queue more than once on purpose, this is the shortest time before it may play again. From `Off` to `24 hours`, default `3 hours`
-
-**Optimize order for Smart Fades** is an optional Smart Shuffle setting. When Smart crossfade is active, Music Assistant uses existing Smart Fades analysis to arrange upcoming tracks so Smart Fades has a better chance of creating a smooth transition between consecutive tracks. It considers tempo, musical key and how the energy changes from the end of one track to the start of the next. Songs and artists played recently are still deprioritized according to the Smart Shuffle settings. No new analysis is started for this, and tracks without analysis are neither preferred nor penalized. Smart Fades still decides how the actual transition is mixed when the tracks play.
-
-A setting is available to enable Autoplay by default on all queues. Each queue can still turn it on or off from the player controls, and Autoplay is always active when a dynamic playlist is playing. The **Autoplay source** setting has five options as follows:
-- <b>Automatic — similar tracks, falling back to your library (default).</b> New tracks similar to what was recently played are requested from the music providers. If no provider is able to supply similar-track recommendations (for example, when only local files are used), an endless mix drawn from the library is used instead, so playback will not stop
-
-- <b>Similar to what you played.</b> Tracks that resemble the most recently played items in the queue are fetched from the connected music providers and appended to the queue. This mode relies on a provider that offers similar-track recommendations; if none is available, no tracks are added
-
-- <b>Infinite mix from your library.</b> Tracks are selected from the local library, with preference given to those that have been played the least. The selection is biased towards the genres of the items that were played most recently; when too few matching tracks are found, the mix is topped up with random tracks from across the whole library.
-
-- <b>Tracks from a playlist.</b> Tracks are taken from the playlist chosen in the **Autoplay playlist** box, which appears when this option is selected
-
-- <b>Similar artists.</b> When the queue runs out, a similar artist of the last track's artist is added, one with no track in the queue yet. It is queued the same way as playing that artist. With an album order in <b>Order to play an artist in</b>, all its albums play whole, one after the other, if shuffle is off. Autoplay does not change the queue's shuffle. If no similar artist is left, no tracks are added. This option needs a music provider that supplies similar artists
-
-Crossfade can be enabled or disabled by default on all queues via a setting here and also can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/) is the default. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. The **Standard crossfade duration** (default 8 seconds) appears when Standard crossfade is selected, and this is the only place it can be set.
-
-<b>Volume normalization (EBU-R128 based).</b> [Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items and sources. The method and target level are set in the [Streams Queue Playback Settings](#queue-playback)
-
-## Streams
-
-All settings in this section should be considered advanced and will not need to be adjusted in the majority of cases. Users with complicated network setups will find settings in this section that will be useful. If MA appears to be setup correctly but no playback occurs then check the settings in this section.
-
-### Queue Playback
-
-<b>Audio buffer size.</b> Controls how much audio is buffered in memory. A larger buffer improves playback stability and seeking but uses more memory. The options are `Maximum [default]`, `Minimal` and `Balanced`. The options are filtered depending upon system RAM. Minimal (60s buffer) is always available, Balanced (300s) requires a nominal 4 GB of RAM, and Maximum (1200s) requires a nominal 8 GB of RAM. If total memory can't be determined then all three presets are offered although the default in that case is, conservatively, Minimal.
-
-This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual queue basis](/usage/#the-queue). There are two of these settings, one for tracks, one for radio, and you set them independently.
-
-The best result comes from a loudness measurement of the audio. Tracks tagged with ReplayGain or R128 loudness values supply one directly, and Music Assistant uses those in preference to measuring anything itself. Everything else it measures on its own: your local library automatically in a nightly background scan, and anything played, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before a value exists:
-
-- Fallback Dynamic (default) — use the measurement when there is one, otherwise adjust loudness on the fly. Always evens things out; the on-the-fly path is slightly less precise
-- Fallback Fixed Gain — use the measurement when there is one, otherwise apply the fixed adjustment below
-- Measurement Only — only adjust when a measurement exists. Anything not yet analysed plays at its original loudness
-- Dynamic — always adjust on the fly, ignoring measurements
-- Fixed Gain — never analyse; apply the same fixed adjustment to everything
-- Disabled — leave loudness untouched
-
-Once a measurement exists it is used, whichever of the two fallback options is selected. Two other things are worth knowing: live radio is rarely measured, so the radio setting in practice runs on whichever fallback you choose, and volume normalization also has to be switched on for the player itself. These settings control how it's done, not whether. How the value is chosen, and when album gain is used instead of track gain, is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
-
-<b>Fixed/fallback gain adjustment for tracks / radio streams.</b>
-
-How much to raise or lower the volume, in dB, whenever the fixed-gain path is used. That's either the Fixed Gain method, or Fallback Fixed Gain when no measurement is available. Negative values make things quieter. The range is −20 to +10 dB and the default is −6. Other methods ignore it. Again, separate values exist for tracks and radio.
-
-![image](/assets/screenshots/settings-streamserver-audio.png)
-
-- <b>Advanced - Target level for volume normalisation.</b> The loudness, in LUFS, that volume normalization aims for. The default is -14 LUFS and a value between -23 and -12 LUFS is recommended. See [Technical Information](/faq/tech-info/#volume-normalization)
-- <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
-
-### Source Selection
-
-These settings decide which copy of a track plays when it is available from more than one source. [Which Source Plays](/source-selection/) explains them with examples.
-
-- <b>Which source plays.</b> The options are `Best quality [default]`, `Prefer local` and `Best quality for every track`. With the first two, an album plays all of its tracks from one source, and a playlist or folder plays from the source it comes from. Prefer local plays from your local and self-hosted sources before streaming services
-- <b>Upgrade copies below.</b> The options are `Off [default]`, `High-bitrate lossy`, `Lossless` and `Hi-res`. When the copy that would play is below the chosen quality, a better copy of the track plays instead, when the track has one
-
-### Streamserver Advanced Settings 
-
-#### Generic
-
-These settings are only visible when the advanced toggle is on.
-
-- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically and set to `auto`. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
-- <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
-
-#### Audio Analysis Options
-
-- <b>Advanced - Smart Fades Log level.</b> Specific log level for the Smart Fades mixer and analyzer
-- <b>Background analysis concurrency.</b> Maximum number of tracks analysed concurrently during the nightly background scan. Default is 1 and should only be increased on more powerful systems
-
-## Webserver
+This page sets how Music Assistant is reached on your network. At the top, **Remote Access** shows whether [remote access](/settings/remote-access/) is on and opens its page.
 
 ### Music Assistant URL
 
-The card at the top of the page sets the addresses Music Assistant shares with devices and guests. It is always shown, whether or not advanced settings are on. Each switch can be changed back at any time, and what you typed is kept while the page is open.
+This card sets the addresses Music Assistant shares with devices and guests. It is always shown, whether or not advanced settings are on. Each switch can be changed back at any time, and what you typed is kept while the page is open.
 
 - <b>Internet.</b> The address used from outside your local network, for links shared with guests such as party and quiz QR codes and, when it uses HTTPS, for casting dashboards. With [remote access](/settings/remote-access/) on, administrators see a **Use remote access** switch. When it is on, guests' links open through remote access, and the card shows that link with a button to copy it. Switch it off to enter an **External URL**, for example the address of your reverse proxy. A set External URL always takes priority over remote access. When remote access is off, the card offers **Set up remote access**. Leave the External URL empty if your server isn't reachable from the internet
 - <b>Local network.</b> The address shared with devices and apps on your local network. **Automatic** is on by default and shows the address Music Assistant detected, with a button to copy it. Leave it on unless you have a reason not to. Switch it off to enter an **Internal URL** when the detected address does not work for your devices, for example behind a reverse proxy, with a custom hostname or on a server connected to more than one network. Enter the full address including the port, such as `https://music.example.com:443`. The TCP Port setting below is separate and still applies, as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Internal URL
 
 ### Options
 
-- <b>Server Name.</b> The name of this Music Assistant instance, shown in the UI and announced on the network. Useful when you run more than one server. Clear the field to restore the default name
-- <b>Allow User Self-Registration.</b> Allows users to create accounts by logging in with Home Assistant. Only appears when the Home Assistant plugin is added in Music Assistant, since the login goes through your HA instance
+The **Options** card holds the rest of the network settings, in three sections.
+
+#### Web interface and API
+
+- <b>Server name.</b> The name of this Music Assistant instance, shown in the UI and announced on the network. Useful when you run more than one server. Clear the field to restore the default name
 
 The settings below are advanced and only appear when advanced settings are enabled in the UI
 
 - <b>TCP Port.</b> The port the webserver runs on (default `8095`). If you change it, and you set the Internal URL manually, change the port there as well
-- <b> Enable SSL/TLS.</b> Serves the web UI and API over HTTPS. When enabled, two additional fields are revealed for the `SSL Certificate` and `SSL Private Key`. Both must be PEM format, and you can either paste the file contents or enter an absolute path (e.g. `/ssl/fullchain.pem`). RSA and ECDSA are both supported and the private key must be unencrypted. Use the `Verify SSL Certificate` button to check the certificate and key are valid and match. If the certificate can't be loaded, the webserver keeps running unencrypted and shows a warning
-- <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. The default `0.0.0.0` binds to all interfaces (IPv4 and IPv6). Change this only in setups such as binding to a docker-internal network behind a reverse proxy
+- <b>Enable SSL/TLS.</b> Serves the web UI and API over HTTPS. When enabled, two additional fields are revealed for the `SSL Certificate` and `SSL Private Key`. Both must be PEM format, and you can either paste the file contents or enter an absolute path (e.g. `/ssl/fullchain.pem`). RSA and ECDSA are both supported and the private key must be unencrypted. Use the `Verify SSL Certificate` button to check the certificate and key are valid and match. If the certificate can't be loaded, the webserver keeps running unencrypted and shows a warning
+- <b>Bind to IP/interface.</b> Start the webserver on this specific interface. The default `0.0.0.0` binds to all interfaces (IPv4 and IPv6). Change this only in setups such as binding to a docker-internal network behind a reverse proxy
+
+#### Audio streaming
+
+These settings are only visible when the advanced toggle is on. They will not need to be adjusted in the majority of cases, but users with complicated network setups will find them useful. If MA appears to be set up correctly but no playback occurs, check them.
+
+- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically and set to `auto`. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
+- <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
+
+#### Discovery
+
+- <b>Allow network scan for UPnP discovery.</b> When enabled, MA uses an additional broadcast based discovery method ([SSDP](/faq/networking/#the-jargon-translated)). Turn this on if some UPnP/DLNA players are not being found by regular discovery (see the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered))
+- <b>Mdns/Zeroconf discovery interface(s).</b> Options are `Default interface [default]` and `All interfaces`. Used in custom network setups when multiple network interfaces are used. A change takes effect after restarting Music Assistant. Setting is only visible when the advanced toggle is on
 
 ## Storage
 
 This opens the [Storage](/settings/storage/) page, which lists the folders, drives and network shares that [Local files](/music-providers/local-files/) sources can use. Only administrators see it.
 
-## Diagnostics
+## Home Assistant
 
-This opens a view where the 150 line tail of the Music Assistant log can be seen and the diagnostics report or full log can be downloaded.
+This page connects Music Assistant to Home Assistant through the [Home Assistant plugin](/ha-plugin/), and shows what the connection brings. Until it is connected, the page offers **Connect**. Once it is connected, it has these rows:
 
-## Background Tasks
+- <b>Connection.</b> Whether it is connected. Opens the settings of the connection, where it can be reconfigured, disabled or removed. When Music Assistant runs as a Home Assistant App, the app makes the connection by itself
+- <b>Home Assistant players.</b> How many players [Home Assistant Media Players](/player-support/home-assistant/) brings, or **Add** to set it up
+- <b>Sign in with Home Assistant.</b> Opens [User management](/settings/user-management/#account-access), where users can be allowed to create their own account by signing in with Home Assistant
+- <b>Remote Access.</b> Opens the [Remote Access](/settings/remote-access/) page. With Home Assistant Cloud, remote access works in any network
+
+Below the rows, **Player controls** holds the Home Assistant entities that can be linked to the power, volume and mute controls of a player. See [Linking Home Assistant entities to player controls](/ha-plugin/#linking-home-assistant-entities-to-player-controls).
+
+The [Home Assistant integration](/integration/), which puts your Music Assistant players in Home Assistant, is installed in Home Assistant itself. See [how the pieces fit together](/integration/#how-the-pieces-fit-together).
+
+## Background tasks
 
 This opens a view where the completed and upcoming background tasks can be seen. This is where the sync interval for the [automatically generated playlists](/usage/#playlists) is set. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task. There is a ⋮ menu on the right which allows for:
 - Viewing the task details
@@ -195,30 +74,20 @@ Administrators can see all tasks on the server whereas Users can only see tasks 
 
 ![image](/assets/screenshots/background-tasks.png)
 
-## Genre Management
+### Task settings
 
-Administrators can access the **Genre Management** page from the settings menu. This page provides tools for maintaining the genre database. The [Genres](/genres/#managing-genres) page describes these tools and the rest of the genre system in full.
+**Task settings**, at the top of the page, holds one setting:
 
-![image](/assets/screenshots/genres/genre-management-overview.png)
+- <b>Maximum number of concurrent background tasks.</b> Defaults to 2. This controls how many background tasks run simultaneously. Higher numbers mean higher demands on the system's resources and can slow the system down. Setting is only visible when the advanced toggle is on
 
-## Genre Library Administration 
+## Diagnostics
 
-Displays statistics about the genres in the library. Genres can be excluded from use via the ⋮ menu
+This opens a view where the 150 line tail of the Music Assistant log can be seen, kept up to date while **Auto-refresh** is on. **Download diagnostics** downloads the diagnostics report and **Download logfile** the full log.
 
-### Restore Missing Defaults
+### Log levels
 
-Checks for any built-in default genres that are missing from your library and restores them. This does not affect any existing genres or their mappings.
+One log level for each part of the server, such as **Streams** or **Webserver**. The options are **Global**, **Info**, **Warning**, **Error**, **Debug** and **Verbose**. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). A music source, player support or plugin has its own log level on its own page.
 
-### Full Restore
+### Cache
 
-A destructive operation that completely rebuilds the genre database from defaults. This removes all custom genres and restores the full set of built-in genres.
-
-> [!CAUTION]
-> Full restore deletes all custom genres, aliases, and media mappings. This action requires a two-step confirmation to prevent accidental data loss.
-
-## Audio Analysis
-
-Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers, namely [Loudness Analysis](/audio-analysis/loudness-analysis/), [Smart Fades](/audio-analysis/smart-fades/), [Sonic Analysis](/audio-analysis/sonic-analysis/) and [AcoustID Lookup](/audio-analysis/acoustid/). The stale number is the number of tracks that need to be re-analysed due to a version change. There is also a section which shows failures and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned.
-
-![image](/assets/screenshots/audio-analysis-view.png)
-
+**Clear cache** clears the cache used by Music Assistant. Do not routinely use this button as it increases [API usage](/usage/#online-metadata-sources) and slows down the MA experience

@@ -30,7 +30,7 @@ MA needs an integrated loudness value for a track, in LUFS, before it can work o
 
 Tags and provider values take priority over MA's own measurement, and a track that already carries one is not analysed at all. Tags are read when the track is scanned into the library. If you add or change them later, use **Refresh item** on the track to pick up the new values.
 
-Once a value exists from any of these sources it is used, whichever method is selected under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), unless that method is Dynamic, Fixed Gain or Disabled. The methods otherwise differ only in what happens while no value is available yet. Where no value exists and the method allows it, MA falls back to a dynamic normalizer, which is less accurate but will at least prevent a sudden drop or spike in the volume level.
+Once a value exists from any of these sources it is used, whichever method is selected under [**Settings → Players → Playback**](/settings/playback/#volume-normalization), unless that method is Dynamic, Fixed Gain or Disabled. The methods otherwise differ only in what happens while no value is available yet. Where no value exists and the method allows it, MA falls back to a dynamic normalizer, which is less accurate but will at least prevent a sudden drop or spike in the volume level.
 
 ### Track gain and album gain
 
@@ -51,7 +51,7 @@ All further processing in MA is done at PCM raw audio level, such as the DSP Set
 
 The final part in the chain is that MA needs to send the audio to the player. By default MA encodes the raw PCM into FLAC because it is lossless while still providing a descent amount of compression. For players that can not handle FLAC very well, or simply to save bandwidth, MA provides an option (per player) to encode to MP3 instead.
 
-The [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback) settings contain the normalization method and the target level, both of which apply to all playback. Turning normalization on and off is done under [**Settings → System → Player Queues**](/settings/core/#player-queues) and can be overridden on an [individual queue basis](/usage/#the-queue).
+The [**Settings → Players → Playback**](/settings/playback/#volume-normalization) settings contain the normalization method and the target level, both of which apply to all playback. Turning normalization on and off is done there too and can be overridden on an [individual queue basis](/usage/#the-queue).
 
 ## Stream Selection
 

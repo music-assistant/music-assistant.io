@@ -63,7 +63,7 @@ Each player has its own queue. View the queue by pressing the ![Preview image](/
 The queue order can be adjusted by selecting and dragging the six dot icon or via the options in the ⋮ menu.
 
 > [!NOTE]
-> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → System → Player Queues**](/settings/core/#player-queues)
+> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → Players → Playback**](/settings/playback/#default-enqueue-option)
     
 The options in the menu available in the top right is shown below. 
 
@@ -71,13 +71,13 @@ Transferring the queue will also transfer the shuffle and repeat setting to the 
 
 ![Preview image](/assets/screenshots/now_playing_menu.png)
 
-Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A TTS provider has to be selected in the [System Player Settings](/settings/core/#players)
+Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A TTS provider has to be selected in the [Playback settings](/settings/playback/#announcements)
 
 ![Preview image](/assets/screenshots/play_announcement.png)
 
 When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the queue settings.
 
-Each queue has a number of options which affect various behaviours. The defaults for all queues are set in the [player queues settings](/settings/core/#player-queues), and each queue can override them. To change them for one queue, open **Queue settings**, either from **Settings → Players →** *the player* **→ Queue settings**, or from the ⋮ menu in the [Now Playing view](/ui/#now-playing-view) under **Settings → Queue settings**. The **Open global queue settings** button at the top of the page goes to the defaults.
+Each queue has a number of options which affect various behaviours. The defaults for all queues are set in the [playback settings](/settings/playback/), and each queue can override them. To change them for one queue, open **Queue settings**, either from **Settings → Players →** *the player* **→ Queue settings**, or from the ⋮ menu in the [Now Playing view](/ui/#now-playing-view) under **Settings → Queue settings**. The **Open playback settings** button at the top of the page goes to the defaults.
 
 Each setting starts at `Global [default]`, which uses the default for all queues:
 
@@ -87,7 +87,7 @@ Each setting starts at `Global [default]`, which uses the default for all queues
 - <b>Crossfade mode.</b> Standard crossfade or Smart crossfade for this queue
 - <b>Volume normalization (EBU-R128 based).</b> Turns volume normalization on or off for this queue
 
-Turning Autoplay and crossfade on or off is done from the player controls. These settings decide how they work. See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade.
+Turning Autoplay and crossfade on or off is done from the player controls. These settings decide how they work. See the [playback settings](/settings/playback/) for more information about Smart Shuffle, Autoplay, and Smart Crossfade.
 
 > [!NOTE]
 > If a queue is paused for more than 30 seconds its status will change to stopped

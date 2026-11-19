@@ -15,7 +15,7 @@ A short tour points out the main parts of the app: the menu, search, the setting
 
 This menu's appearance can be configured by clicking on the ⋮ in the bottom right and selecting `Edit menu`. Items can then be re-ordered, shown or hidden and section titles renamed.
 
-In [**Settings → User Interface**](/settings/user-interface/#display) there are Display options which affect the UI. On a desktop, the menu can be placed vertically on the left or right or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. 
+In [**Settings → Profile → This device**](/settings/profile/#display) there are Display options which affect the UI. On a desktop, the menu can be placed vertically on the left or right or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. 
 
 ### Sidebar Shortcuts
 
@@ -32,15 +32,15 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 The settings open on a list of sections, shown as cards or as a list (switch with the icon at the top). Which sections are listed depends on your role:
 
 - **[Marketplace](/settings/marketplace/)**. Where music sources, player support, metadata, plugins and audio analysis are found and added. For administrators, and for users whose role lets them add music sources of their own
-- **[Music sources](/settings/music-provider-settings/)**, **[Player support](/settings/player-provider/)**, **[Metadata](/settings/metadata-provider-settings/)** and **[Plugins](/plugins/)**. What is set up of each kind. Their add buttons open the Marketplace. Users whose role lets them have music sources see **Music sources** too, with their own sources and the ones shared with them
-- **[Players](/settings/individual-player/)**. The settings of each player, and where group players are created
-- **Audio analysis**. What is set up to analyse the audio, such as [Smart Fades](/audio-analysis/smart-fades/)
-- **[Profile](/settings/profile/)** and **[User Interface](/settings/user-interface/)**. Your own account and how the app looks for you. Every user has these
-- **[User management](/settings/user-management/)** and **[Remote Access](/settings/remote-access/)**. For administrators
-- **[System](/settings/core/)**. The core server settings, and pages such as [Storage](/settings/storage/), Diagnostics and Genre Management. For administrators
+- **[Music](/settings/music-provider-settings/)**. Your music sources, and the settings of the library, genres, [metadata](/settings/metadata-provider-settings/) and audio analysis. Users whose role lets them have music sources see it too, with their own sources and the ones shared with them
+- **[Players](/settings/individual-player/)**. The settings of each player, where group players are created, and the [Playback](/settings/playback/) and [Player support](/settings/player-provider/) pages
+- **[Plugins](/plugins/)**. The plugins that are set up. Its add button opens the Marketplace. For administrators
+- **[Profile](/settings/profile/)**. Your own account, and how the app looks for you. Every user has it
+- **[User management](/settings/user-management/)**. For administrators
+- **[System](/settings/core/)**. The network, [Remote Access](/settings/remote-access/), [Storage](/settings/storage/), Home Assistant, background tasks and diagnostics. For administrators
 - **[About](/settings/about/)**. Version information, credits and more
 
-The settings pages all look alike. A header card names the page and has a **Documentation** button that opens the matching page here, followed by one **Options** card with all of the settings, grouped under headings. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user.
+The settings pages all look alike. A header names the page, with its buttons on the right and, on some pages, a ⋮ menu with options such as **Reset to defaults**. A page that leads to other pages shows them as tiles at the top. A page with settings has one **Options** card with all of the settings, grouped under headings, and a **Save** button below it. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user. The page of a music source, player support, plugin or player also has a **Documentation** button that opens the matching page here.
 
 At the bottom of the list, administrators find **Run the setup wizard again**, which also resumes a [paused setup](/first-run/#pausing-the-setup), and other users **Show the welcome again**.
 

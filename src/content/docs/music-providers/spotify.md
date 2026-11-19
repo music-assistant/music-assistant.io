@@ -67,7 +67,7 @@ Spotify Soloist is preselected for a new setup; setups added before this choice 
 
 ### Basic setup
 
-1. Add the Spotify source via **Settings → Music sources → Add a music source**.
+1. Add the Spotify source via **Settings → Music → Add a music source**.
 2. Follow the on screen instructions which should take you through the initial flow shown here
 <a href="/assets/screenshots/spotify-phase1.png"><img src="/assets/screenshots/spotify-phase1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
