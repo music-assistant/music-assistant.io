@@ -83,24 +83,7 @@
       // sign-in passes its own (session specific) callback URL along in `state`: forward
       // everything the provider returned - the authorization code, or an error - to it.
       const params = new URLSearchParams(window.location.search);
-      // `state` is base64url encoded (Cloudflare's WAF blocks URLs to internal ranges in
-      // query params); servers that predate this send the raw URL, which is still accepted.
-      function decodeState(state) {
-        if (/^https?:\/\//i.test(state)) {
-          return state;
-        }
-        try {
-          const base64 = state.replace(/-/g, '+').replace(/_/g, '/');
-          const bytes = Uint8Array.from(
-            atob(base64.padEnd(Math.ceil(base64.length / 4) * 4, '=')),
-            (char) => char.charCodeAt(0),
-          );
-          return new TextDecoder().decode(bytes);
-        } catch {
-          return state;
-        }
-      }
-      const returnUrl = decodeState(params.get('state') || '');
+      const returnUrl = params.get('state') || '';
       params.delete('state');
       const query = params.toString();
       const finalUrl = query ? returnUrl + '?' + query : returnUrl;
