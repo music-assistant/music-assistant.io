@@ -14,11 +14,11 @@ head:
   - tag: meta
     attrs:
       property: "og:image"
-      content: "https://www.openhomefoundation.org/assets/images/blog/community-day-2026-you-knocked-it-out-of-the-park/card.webp"
+      content: "https://www.music-assistant.io/images/blog/2026/11/19/community-day-2026-you-knocked-it-out-of-the-park/art.webp"
   - tag: meta
     attrs:
       name: "twitter:image"
-      content: "https://www.openhomefoundation.org/assets/images/blog/community-day-2026-you-knocked-it-out-of-the-park/card.webp"
+      content: "https://www.music-assistant.io/images/blog/2026/11/19/community-day-2026-you-knocked-it-out-of-the-park/art.webp"
   - tag: meta
     attrs:
       property: "og:image:alt"
@@ -36,7 +36,7 @@ title: "Community Day 2026: You knocked it out of the park!"
 description: "A big thank you to every host, guest, and partner who made Community Day 2026 our biggest yet. Dive into the stats, stories, and a sneak peek at 2027!"
 crosspostSource: "Open Home Foundation"
 cover:
-  image: "https://www.openhomefoundation.org/assets/images/blog/community-day-2026-you-knocked-it-out-of-the-park/card.webp"
+  image: "../../../../../../../public/images/blog/2026/11/19/community-day-2026-you-knocked-it-out-of-the-park/art.webp"
   alt: "Community Day 2026: You knocked it out of the park!"
 excerpt: "Congratulations! You made Community Day 2026 a huge success 🙌 Not only did the number of events around the world grow, almost every region saw average guest numbers almost double! Thank you to every host and guest who participated in this year’s Community Day, you knocked it out of the park!"
 date: 2026-11-19T00:00:00.000Z
