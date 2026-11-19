@@ -4,7 +4,7 @@ description: Make your LIFX lights change colour in time with whatever is playin
 pluginGroup: visuals
 ---
 
-# LIFX Lights Sync <img src="/assets/icons/lifx-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# LIFX Lights Sync <img src="/assets/icons/lifx-icon.png" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
 This plugin makes your <a href="https://www.lifx.com/" target="_blank" rel="noopener noreferrer">LIFX</a> lights react to whatever is playing, changing colour in time with the music. Contributed and maintained by <a href="https://github.com/sonic1200" target="_blank" rel="noopener noreferrer">sonic1200</a>
 
