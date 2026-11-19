@@ -7,7 +7,7 @@ description: A Walkthrough of the Music Assistant User Interface
 
 ## Take a tour
 
-A short tour points out the main parts of the app: the menu, search, the settings, your profile, the player bar, picking a player and grouping players. It is offered at the end of the setup wizard and of the welcome, and you can take it whenever you like by selecting your name at the bottom of the menu and choosing **Take a tour**. Stops for anything that is not on screen are skipped, so a phone shows fewer of them.
+A short tour points out the main parts of the app: the menu, search, the settings, your profile, the player bar, picking a player and grouping players. It is offered at the end of the welcome, and at the end of the setup wizard when you chose **The full Music Assistant experience**. You can take it whenever you like by selecting your name at the bottom of the menu and choosing **Take a tour**. Stops for anything that is not on screen are skipped, so a phone shows fewer of them.
 
 ## Main Menu
 
@@ -35,6 +35,7 @@ The settings open on a list of sections, shown as cards or as a list (switch wit
 - **[Music](/settings/music-provider-settings/)**. Your music sources, and the settings of the library, genres, [metadata](/settings/metadata-provider-settings/) and audio analysis. Users whose role lets them have music sources see it too, with their own sources and the ones shared with them
 - **[Players](/settings/individual-player/)**. The settings of each player, where group players are created, and the [Playback](/settings/playback/) and [Player support](/settings/player-provider/) pages
 - **[Plugins](/plugins/)**. The plugins that are set up. Its add button opens the Marketplace. For administrators
+- **[AI](/settings/ai/)**. The default AI engines, what uses AI, the AI services and access for AI assistants. For administrators
 - **[Profile](/settings/profile/)**. Your own account, and how the app looks for you. Every user has it
 - **[User management](/settings/user-management/)**. For administrators
 - **[System](/settings/core/)**. The network, [Remote Access](/settings/remote-access/), [Storage](/settings/storage/), Home Assistant, background tasks and diagnostics. For administrators
@@ -42,7 +43,7 @@ The settings open on a list of sections, shown as cards or as a list (switch wit
 
 The settings pages all look alike. A header names the page, with its buttons on the right and, on some pages, a ⋮ menu with options such as **Reset to defaults**. A page that leads to other pages shows them as tiles at the top. A page with settings has one **Options** card with all of the settings, grouped under headings, and a **Save** button below it. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user. The page of a music source, player support, plugin or player also has a **Documentation** button that opens the matching page here.
 
-At the bottom of the list, administrators find **Run the setup wizard again**, which also resumes a [paused setup](/first-run/#pausing-the-setup), and other users **Show the welcome again**.
+At the bottom of the list, administrators find **Run the setup wizard again**, which starts the wizard again at its first question, and other users **Show the welcome again**. A [paused setup](/first-run/#pausing-the-setup) continues where you left off with **Resume** on the **Setup paused** message.
 
 ## Global Search
 [![image](/assets/screenshots/global-search.png)](/assets/screenshots/global-search.png)

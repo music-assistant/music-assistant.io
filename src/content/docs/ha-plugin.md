@@ -31,9 +31,9 @@ Once it is connected, the only settings on that page are the three player contro
 
 Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only. [Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers) draws pictures as well, for its AI generated covers.
 
-This plugin does none of these jobs itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine**, an AI task entity that can generate images also becomes an **image engine**, and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
+This plugin does none of these jobs itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine**, an AI task entity that can generate images also becomes an **image engine**, and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here: [**Settings → AI**](/settings/ai/) holds one default engine of each kind, and every feature uses it unless it picks its own. **AI from Home Assistant** on [**Settings → System → Home Assistant**](/settings/core/#home-assistant) shows what your Home Assistant provides, such as `1 text · 2 speech`.
 
-Other plugins provide engines too. The [OpenAI Compatible plugin](/plugins/openai_compatible/) and the [OpenAI Text-to-speech](/plugins/openai_tts/) plugin provides AI engines with no Home Assistant involved at all.
+Other plugins provide engines too, with no Home Assistant involved at all. The [OpenAI Compatible plugin](/plugins/openai_compatible/) provides AI and image engines, and the [OpenAI Text-to-speech](/plugins/openai_tts/) plugin provides text-to-speech engines.
 
 ### What you need in Home Assistant
 
@@ -45,23 +45,16 @@ The engines only decide which Home Assistant entity gets called. The model, the 
 
 ### Choosing an engine for a feature
 
-Each feature has its own drop-down labelled **AI engine** or **Text-to-speech engine**. Options are named after the plugin and then the entity, so two similar engines can be told apart:
+The [**What uses AI**](/settings/ai/#what-uses-ai) list on **Settings → AI** shows which engine each feature uses, and opens the place where that feature picks its own. Engines from Home Assistant are named after the plugin and then the entity, so two similar engines can be told apart:
 
 ```text
 Home Assistant | Google Translate (tts.google_translate_en_com)
 ```
 
-| Feature | What it needs | Where to change it |
-|---|---|---|
-| [AI Radio](/plugins/ai-radio/) | AI **and** text-to-speech | **Reconfigure** on the provider's menu, not its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later) |
-| [Music Quiz](/plugins/music-quiz/) | AI | Provider settings, under **Features** |
-| [Smart Playlists](/plugins/smart_playlist/) | AI | Provider settings, once **AI descriptions** is switched on |
-| [Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers) | Image for covers, AI for descriptions | Provider settings: **Image engine** appears once **Artwork template** is **AI generated**, and **Text engine** is under **AI covers and descriptions** |
-
 > [!TIP]
-> With only one engine of each kind there is nothing to do. A feature takes the only one available and remembers it. The picker matters when you have more than one.
+> With only one engine of each kind there is nothing to do. The first engine of a kind becomes its default engine, and every feature follows the default until you pick another one.
 
-If a feature needs an engine you do not have, its drop-down is greyed out with a message telling you to set up a plugin that provides one. Some features will not finish setting up at all until it exists.
+If a feature needs an engine you do not have, its drop-down is hidden and a message tells you to set up a plugin that provides one. Some features will not finish setting up at all until it exists.
 
 If an engine you chose later disappears, because the entity was removed or renamed in Home Assistant for example, Music Assistant reports it as missing rather than quietly switching to a different one.
 

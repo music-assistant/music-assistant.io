@@ -9,7 +9,7 @@ Remote Access allows you to securely connect to your Music Assistant server from
 ## Configuration
 
 - Toggle the Remote Access Status to on. Setup is automatic and further instructions are shown in the MA UI
-- If you have a <a href="https://www.nabucasa.com/" target="_blank" rel="noopener noreferrer">Nabu Casa</a> (Home Assistant Cloud) subscription, ensure the option `WebRTC Connections` (in the Home Assistant Cloud settings) is ON
+- If you have a Home Assistant Link subscription from <a href="https://www.nabucasa.com/" target="_blank" rel="noopener noreferrer">Nabu Casa</a>, ensure the option `WebRTC Connections` (in the Home Assistant Link settings) is ON
 
 To connect from elsewhere, go to <a href="https://app.music-assistant.io" target="_blank" rel="noopener noreferrer">app.music-assistant.io</a> and enter **Your Remote Access ID** shown on this page, or scan the QR code shown below it.
 
@@ -24,6 +24,6 @@ Links that Music Assistant hands out to guests, such as the QR codes in party an
 
 ## Technical Details
 
-Remote access usually works without a Nabu Casa subscription. The exception is complex network environments, for example double NAT, mobile carriers, or corporate networks blocking standard <a href="https://medium.com/@jamesbordane57/what-is-a-stun-server-df3563dbf14a" target="_blank" rel="noopener noreferrer">STUN servers</a>. This is where TURN servers (which Nabu Casa provides) are useful as they relay the traffic.
+Remote access usually works without a Home Assistant Link subscription. The exception is complex network environments, for example double NAT, mobile carriers, or corporate networks blocking standard <a href="https://medium.com/@jamesbordane57/what-is-a-stun-server-df3563dbf14a" target="_blank" rel="noopener noreferrer">STUN servers</a>. This is where TURN servers (which Home Assistant Link provides) are useful as they relay the traffic.
 
 Further information is shown in the MA UI. For the network terms used elsewhere in this documentation, see [Networking Basics](/faq/networking/).

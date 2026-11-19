@@ -55,8 +55,9 @@ This page connects Music Assistant to Home Assistant through the [Home Assistant
 
 - <b>Connection.</b> Whether it is connected. Opens the settings of the connection, where it can be reconfigured, disabled or removed. When Music Assistant runs as a Home Assistant App, the app makes the connection by itself
 - <b>Home Assistant players.</b> How many players [Home Assistant Media Players](/player-support/home-assistant/) brings, or **Add** to set it up
+- <b>AI from Home Assistant.</b> What Home Assistant provides to the AI features, such as `1 text · 2 speech`, or **None**. Opens [Settings → AI](/settings/ai/). Only while Home Assistant is connected
 - <b>Sign in with Home Assistant.</b> Opens [User management](/settings/user-management/#account-access), where users can be allowed to create their own account by signing in with Home Assistant
-- <b>Remote Access.</b> Opens the [Remote Access](/settings/remote-access/) page. With Home Assistant Cloud, remote access works in any network
+- <b>Remote Access.</b> Opens the [Remote Access](/settings/remote-access/) page. With Home Assistant Link, remote access works in any network
 
 Below the rows, **Player controls** holds the Home Assistant entities that can be linked to the power, volume and mute controls of a player. See [Linking Home Assistant entities to player controls](/ha-plugin/#linking-home-assistant-entities-to-player-controls).
 

@@ -71,7 +71,7 @@ Transferring the queue will also transfer the shuffle and repeat setting to the 
 
 ![Preview image](/assets/screenshots/now_playing_menu.png)
 
-Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A TTS provider has to be selected in the [Playback settings](/settings/playback/#announcements)
+Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A typed message is spoken by the default text-to-speech engine from [**Settings → AI**](/settings/ai/), unless the [Playback settings](/settings/playback/#announcements) pick another one
 
 ![Preview image](/assets/screenshots/play_announcement.png)
 

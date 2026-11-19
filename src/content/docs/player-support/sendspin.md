@@ -29,7 +29,7 @@ To bring audio from a compatible Sendspin line-in, microphone, or other input in
 
 The Sendspin provider is **built-in and always enabled**. There are no configuration options required to get started.
 
-Individual Sendspin players will appear automatically when clients connect
+Individual Sendspin players will appear automatically when clients connect. A Sendspin device that only controls playback, such as a remote or a volume knob, is listed under **Controllers** on [Settings → Players](/settings/individual-player/), and is not something you play to.
 
 ## Setting Up a Device
 
@@ -72,7 +72,7 @@ Sendspin is still evolving, and some players and clients still use an older deve
 - Many Sendspin devices ask for 16 bit audio, so higher resolution material may be converted on the way out
 - Artwork clears briefly when you pause, seek, or move on to the next track
 - A Sendspin device plays for one server at a time. Playing to a device moves it to this server, even while another server is playing on it. A device that another server is using can still be set up here, but pairing only works while the other server is not playing on it
-- Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Cloud gives the most reliable connection through a firewall
+- Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Link gives the most reliable connection through a firewall
 - If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
 
 ## Supported Clients

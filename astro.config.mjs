@@ -152,6 +152,7 @@ export default defineConfig({
             { label: "Players", slug: "settings/individual-player" },
             { label: "Playback", slug: "settings/playback" },
             { label: "Player Support", slug: "settings/player-provider" },
+            { label: "AI", slug: "settings/ai" },
             { label: "Profile", slug: "settings/profile" },
             { label: "User Management", slug: "settings/user-management" },
             { label: "System", slug: "settings/core" },

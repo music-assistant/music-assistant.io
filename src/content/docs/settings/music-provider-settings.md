@@ -10,7 +10,7 @@ title: "Music"
 
 The **Music sources** list holds every [music source](/music-providers/) that is set up, including the live sources: plugins that let another app play into Music Assistant, such as [Spotify Connect](/plugins/spotify-connect/) and the [AirPlay Receiver](/plugins/airplay-receiver/). A source that needs attention is listed first.
 
-The labels on a source say what it offers: **Library**, **Radio**, **Podcasts**, **Audiobooks** or **Live sources**. When the list holds more than one kind, chips above it filter on these labels, and **All** shows every source again. A long list also has a search box.
+The labels on a source say what it offers: **Library**, **Radio**, **Podcasts**, **Audiobooks** or **Live sources**. They come from what each source declares, and some sources, such as [Local files](/music-providers/local-files/), show no label. When the list holds more than one kind, chips above it filter on these labels, and **All** shows every source again. A long list also has a search box.
 
 An administrator sees every source in one list. A user sees the sources they own under **Your sources**, and every other source they can use under **Shared with you**. See [Owner and sharing](#owner-and-sharing).
 

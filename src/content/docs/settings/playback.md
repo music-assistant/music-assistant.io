@@ -107,4 +107,4 @@ How much to raise or lower the volume, in dB, whenever the fixed-gain path is us
 
 ## Announcements
 
-- <b>Announcement text-to-speech engine.</b> Which engine is used to generate [announcements](/integration/announcements/) sent from within Music Assistant. The engines on offer come from your plugins, such as the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines)
+- <b>Announcement text-to-speech engine.</b> Which engine is used to generate [announcements](/integration/announcements/) sent from within Music Assistant. The engines on offer come from your plugins, such as the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines). Unless you pick one, it follows the default text-to-speech engine from [**Settings → AI**](/settings/ai/)
