@@ -1,0 +1,13 @@
+# Only what can't be set in public/_headers or public/_redirects. Build
+# settings stay in the Netlify UI.
+
+# Hosts whose images the image CDN (/.netlify/images) may resize, for
+# thumbnails on the bio page. Keep in step with REMOTE_IMAGE_HOSTS in
+# src/utils/images.mjs.
+[images]
+  remote_images = [
+    "https://assets\\.openhomefoundation\\.org/.*",
+    "https://www\\.openhomefoundation\\.org/.*",
+    "https://i\\.ytimg\\.com/.*",
+    "https://store\\.openhomefoundation\\.org/.*",
+  ]

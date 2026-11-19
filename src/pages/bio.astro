@@ -1,0 +1,440 @@
+---
+// The link-in-bio page, /bio/: what the link on our social profiles points
+// at. Everything on it comes from src/data/bio.yml (see src/utils/bio.mjs for
+// what it can say) and the site's blog posts.
+//
+// A standalone page on purpose: no site header or footer, which a page
+// opened from a social profile doesn't want. It keeps the site's head
+// (social tags, fonts, Plausible) and is kept out of search engines.
+//
+// The page is static, so it is built showing what is live at build time.
+// Items with `starts` or `ends` are also rendered, hidden, with their
+// times, and the script at the end shows and hides them as time passes
+// (see src/utils/bio-schedule.mjs). Without JavaScript the page stays as
+// it was built.
+import { getEntry } from "astro:content";
+import { Icon as BrandIcon } from "@astrojs/starlight/components";
+import Icon from "../components/marketing/ui/Icon.astro";
+import Logo from "../components/marketing/ui/Logo.astro";
+import MarketingLayout from "../layouts/MarketingLayout.astro";
+import { resolve, socialLinks, validate } from "../utils/bio.mjs";
+import { srcset } from "../utils/images.mjs";
+import { coverImage, getPosts } from "../utils/blog";
+
+const config = (await getEntry("bio", "bio"))?.data;
+validate(config);
+
+const now = new Date();
+const posts = (await getPosts()).map((post) => ({
+  title: post.data.title,
+  url: `/${post.id}/`,
+  date: post.data.date,
+  image: coverImage(post)?.src,
+  label: post.data.tags?.includes("release") ? "Release" : "News",
+}));
+const site = (Astro.site ?? new URL("https://www.music-assistant.io")).origin;
+const sections = resolve(config, posts, now, site);
+
+// Images come from Netlify's image CDN at the width each layout shows
+// them, so a row isn't sent a 550 KB social image to show at 104 px. The
+// CDN only exists on Netlify, so the dev server shows the original.
+// Images the CDN can't resize (see src/utils/images.mjs) stay as they are.
+const sizes = {
+  // Rows show images at 104 CSS px: 1x and 2x screens, then 3x.
+  row: { widths: [208, 312], sizes: "104px" },
+  // The large card is the column's width, at most 34rem less its padding.
+  hero: { widths: [400, 720, 1080], sizes: "(max-width: 34rem) calc(100vw - 2.75rem), 33rem" },
+};
+const responsive = (image: string | null | undefined, layout: "row" | "hero") =>
+  import.meta.env.PROD && image
+    ? { srcset: srcset(image, sizes[layout].widths), sizes: sizes[layout].sizes }
+    : {};
+const socials = socialLinks(config);
+
+const iso = (date?: Date | null) => (date ? date.toISOString() : undefined);
+// What the script needs to show or hide an entry later.
+const schedule = (entry: any) => ({
+  hidden: entry.hidden,
+  "data-key": entry.key,
+  "data-url": entry.url,
+  "data-variant": entry.variant,
+  "data-starts": iso(entry.starts),
+  "data-ends": iso(entry.ends),
+  "data-airs": iso(entry.airs),
+  "data-note-after": entry.noteAfter ?? undefined,
+});
+
+const isExternal = (url: string) => url.startsWith("http");
+const linkAttrs = (url: string) =>
+  isExternal(url) ? { rel: "noopener" } : {};
+const arrow = (url: string) =>
+  isExternal(url) ? "arrow-up-right" : "arrow-right";
+---
+
+<MarketingLayout
+  title="Music Assistant — Links"
+  socialTitle="Music Assistant"
+  description={config.description}
+  noindex
+  bare
+>
+  <div class="bio">
+    <header class="bio-header">
+      <h1><Logo /></h1>
+      <p>{config.tagline}</p>
+    </header>
+
+    {sections.map((section) =>
+      section.type === "feed" ? (
+        <section hidden={section.hidden}>
+          <h2>{section.title}</h2>
+          <ul data-schedule data-limit={section.limit}>
+            {section.entries.map((entry) => {
+              const card = entry.kind === "video" || entry.layout === "hero";
+              const eager = section.tiles.indexOf(entry) === 0;
+              return (
+                <li {...schedule(entry)}>
+                  <a
+                    href={entry.url}
+                    class:list={["bio-link", card ? "bio-card" : "bio-tile"]}
+                    {...linkAttrs(entry.url)}
+                  >
+                    <span class="bio-image">
+                      <span class="bio-placeholder" aria-hidden="true">
+                        <Icon name="audio-lines" size={card ? 48 : 24} />
+                      </span>
+                      {entry.image && (
+                        <img
+                          src={entry.image}
+                          {...responsive(entry.image, card ? "hero" : "row")}
+                          alt=""
+                          width="1200"
+                          height="630"
+                          loading={eager ? "eager" : "lazy"}
+                          decoding="async"
+                        />
+                      )}
+                      {entry.kind === "video" && (
+                        <svg class="bio-play" viewBox="0 0 68 48" width="68" height="48" aria-hidden="true">
+                          <path
+                            d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.6 8.6 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.6 8.6 0 0 0 6 6c5.3 1.4 26.5 1.4 26.5 1.4s21.2 0 26.5-1.4a8.6 8.6 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3Z"
+                            fill="#f00"
+                          />
+                          <path d="M45 24 27 14v20Z" fill="#fff" />
+                        </svg>
+                      )}
+                    </span>
+                    <span class="bio-text">
+                      <strong>{entry.title}</strong>
+                      {entry.note && <small class="bio-note">{entry.note}</small>}
+                    </span>
+                    {!card && <Icon name={arrow(entry.url)} size={18} />}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ) : (
+        <section hidden={section.hidden}>
+          <h2>{section.title}</h2>
+          <ul data-schedule>
+            {section.entries.map((entry) => (
+              <li {...schedule(entry)}>
+                <a
+                  href={entry.url}
+                  class:list={["bio-link", { "bio-featured": entry.featured }]}
+                  {...linkAttrs(entry.url)}
+                >
+                  <span class="bio-text">
+                    <strong>{entry.title}</strong>
+                  </span>
+                  <Icon name={arrow(entry.url)} size={18} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ),
+    )}
+
+    {socials.length > 0 && (
+      <nav class="bio-socials" aria-label="Music Assistant elsewhere">
+        {socials.map((social) => (
+          <a href={social.url} aria-label={social.label} title={social.label} rel="me noopener">
+            <BrandIcon name={social.icon} size="1.25rem" />
+          </a>
+        ))}
+      </nav>
+    )}
+
+    <p class="bio-footer">
+      <a href="/">music-assistant.io</a> · An
+      <a href="https://www.openhomefoundation.org/">Open Home Foundation</a>
+      project
+    </p>
+  </div>
+</MarketingLayout>
+
+<script>
+  // Shows and hides scheduled items by the same rule the build used, with
+  // the website's own time rather than the visitor's clock, which can be
+  // wrong or set on purpose. One HEAD request reads the server's time from
+  // the response's Date header; from there the page counts with
+  // performance.now(), which ignores the system clock and changes to it.
+  // If the request fails, nothing changes: the page stays as it was built.
+  // Runs on load and every minute after, so a page left open picks up a
+  // livestream as it starts.
+  //
+  // Unlike home-assistant.io, this leaves out the Age header. Cloudflare,
+  // in front of Netlify here, sets Date to the time of the response even
+  // for a cached copy, and Age to how long that copy has been cached, so
+  // adding Age would put the clock hours ahead.
+  import { isShowing, select } from "../utils/bio-schedule.mjs";
+
+  // The server's time, and the performance.now() it belongs to: the
+  // middle of the request, when the server most likely wrote the header.
+  async function serverTime(): Promise<{ time: number; at: number } | null> {
+    try {
+      const sent = performance.now();
+      const response = await fetch(location.pathname, { method: "HEAD", cache: "no-store" });
+      const received = performance.now();
+      const date = Date.parse(response.headers.get("Date") ?? "");
+      if (!response.ok || Number.isNaN(date)) return null;
+      return { time: date, at: (sent + received) / 2 };
+    } catch {
+      return null;
+    }
+  }
+
+  // The page's lists as the rule in bio-schedule.mjs reads them.
+  const lists = [...document.querySelectorAll<HTMLElement>("[data-schedule]")].map((list) => {
+    const items = [...list.children] as HTMLElement[];
+    return {
+      list,
+      items,
+      limit: Number(list.dataset.limit) || Infinity,
+      entries: items.map(({ dataset }) => ({
+        key: dataset.key,
+        url: dataset.url,
+        variant: dataset.variant,
+        starts: dataset.starts,
+        ends: dataset.ends,
+      })),
+    };
+  });
+
+  function update(now: number) {
+    const picks = select(lists, now);
+    lists.forEach(({ list, items, entries }, listIndex) => {
+      const keys = picks[listIndex];
+      items.forEach((item, index) => {
+        item.hidden = !isShowing(entries[index], keys);
+        // A video that has started says when it aired, not when it starts.
+        const { airs, noteAfter } = item.dataset;
+        const note = item.querySelector(".bio-note");
+        if (airs && noteAfter && note && Date.parse(airs) <= now) note.textContent = noteAfter;
+      });
+      const section = list.closest("section");
+      if (section) section.hidden = keys.length === 0;
+    });
+  }
+
+  // Most of the time nothing is scheduled, and there is nothing to check.
+  if (document.querySelector("[data-starts], [data-ends]")) {
+    serverTime().then((server) => {
+      if (server === null) return;
+      const now = () => server.time + (performance.now() - server.at);
+      update(now());
+      setInterval(() => update(now()), 60 * 1000);
+    });
+  }
+</script>
+
+<style>
+  .bio {
+    width: min(100% - 2rem, 34rem);
+    margin-inline: auto;
+    padding-block: 2.5rem 3rem;
+  }
+
+  .bio-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .bio-header h1 {
+    height: 2rem;
+    margin: 0 auto 0.75rem;
+    width: max-content;
+  }
+  .bio-header p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  section {
+    margin-top: 1.75rem;
+  }
+
+  /* Mono caption, like the eyebrow above the homepage headings. */
+  h2 {
+    margin: 0 0 0.625rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bio-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-height: 3.25rem;
+    padding: 0.625rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--card);
+    text-decoration: none;
+    transition:
+      border-color 0.15s,
+      background-color 0.15s;
+  }
+  .bio-link:hover {
+    border-color: color-mix(in srgb, var(--fg) 30%, transparent);
+  }
+  /* Icons are injected HTML, so they need :global to be styled here. */
+  .bio-link > :global(.icon) {
+    flex: none;
+    color: var(--muted);
+    transition: transform 0.15s;
+  }
+  .bio-link:hover > :global(.icon) {
+    transform: translateX(3px);
+  }
+
+  .bio-text {
+    flex: 1;
+    min-width: 0;
+  }
+  .bio-text strong {
+    display: block;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .bio-text small {
+    display: block;
+    margin-top: 0.125rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+    line-height: 1.35;
+  }
+
+  .bio-featured {
+    border-color: transparent;
+    color: var(--on-accent);
+    background: var(--accent);
+  }
+  .bio-featured:hover {
+    border-color: transparent;
+    background: color-mix(in srgb, var(--accent) 85%, white);
+  }
+  .bio-featured > :global(.icon) {
+    color: inherit;
+  }
+
+  /* Covers sit on a placeholder, shown until they load or when there's none. */
+  .bio-image {
+    position: relative;
+    display: block;
+    flex: none;
+    overflow: hidden;
+    aspect-ratio: 1200 / 630;
+    background: var(--bg);
+  }
+  .bio-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .bio-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3.5rem;
+    height: auto;
+    transform: translate(-50%, -50%);
+  }
+  .bio-placeholder {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    opacity: 0.4;
+  }
+
+  /* Latest: the first item is a large card, the rest are rows with a cover. */
+  .bio-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 0.375rem 0.375rem 0.875rem;
+  }
+  .bio-card .bio-image {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  .bio-card .bio-text {
+    padding-inline: 0.5rem;
+  }
+  .bio-card strong {
+    font-size: 1.125rem;
+  }
+
+  .bio-tile {
+    padding-left: 0.375rem;
+  }
+  .bio-tile .bio-image {
+    width: 6.5rem;
+    border-radius: 0.375rem;
+  }
+
+  .bio-socials {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+  }
+  .bio-socials a {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--fg);
+    transition: border-color 0.15s;
+  }
+  .bio-socials a:hover {
+    border-color: color-mix(in srgb, var(--fg) 30%, transparent);
+  }
+
+  .bio-footer {
+    margin: 1.5rem 0 0;
+    color: var(--muted);
+    font-size: 0.875rem;
+    text-align: center;
+  }
+</style>
