@@ -52,8 +52,8 @@ Music Assistant talks to the lights directly over your local network, so no LIFX
 
 - LIFX light players are virtual `LIGHT` players that use the Sendspin visualizer stream; they can only be joined to Sendspin players or groups
 - Beat effects use the track's beat analysis from the [Smart Fades](/audio-analysis/smart-fades) provider when available, otherwise the lights fall back to peak and onset detection. Beats may be unavailable when the analysis hasn't been computed yet, or on lower-powered devices that can't compute beats in time
-- The lights are chosen when the plugin is set up. To add a new light, or change how the lights are grouped, remove the plugin and add it again
+- To add or remove lights, or change how they are grouped, open the plugin's settings and run its setup again
 - A light that was offline when the plugin loaded does not join in until the plugin is reloaded
 - Wi-Fi bulbs react with a short delay. If the lights feel out of step, adjust the light latency
-- Matrix lights (Tile, Candle, Ceiling) currently react as a single colour
+- Matrix lights (Tile, Candle, Ceiling) have not been tested yet
 - The setup search needs the lights and Music Assistant on the same network segment. Networks that block broadcasts can enter the lights' IP addresses instead
