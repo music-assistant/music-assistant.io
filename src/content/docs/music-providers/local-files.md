@@ -40,7 +40,7 @@ Separate sources must be added for Music, Audiobooks and Podcasts.
 
 **Audio files are in a folder, on a drive or on a network share**
 
-Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list, browse to the folder you want and select **Use this folder**.
+Select the **Local files** music source. It asks what you want to add: music, audiobooks, podcasts or sound effects. It also asks for the folder. To choose the folder, open one of the [storage locations](/settings/storage/) in the list and browse to the folder you want. The folder you have open is the one used, including the folders inside it, so select **Finish** once you are there. **All locations** takes you back to the list.
 
 <img src="/assets/screenshots/local-files-folder-picker.png" alt="The setup of a Local files source with the list of storage locations" style="width: 560px;" loading="lazy" />
 
@@ -49,9 +49,9 @@ Which locations are listed depends on how Music Assistant is installed:
 - <b>Home Assistant App.</b> The Home Assistant media folder and every network share added to it
 - <b>Docker.</b> Every folder or volume mapped into the container
 
-Music on a NAS? Make the share a storage location first, then pick it here. On the Home Assistant App, an administrator adds it with **Add network share** on the [Storage](/settings/storage/#adding-a-network-share) page. On Docker, mount the share on the host and map it into the container, as described under [Your music files](/installation/#your-music-files).
+Music on a NAS? The share has to be a storage location. On the Home Assistant App, an administrator adds it with **Add network share**, right below the list or on the [Storage](/settings/storage/#adding-a-network-share) page, and the new share becomes the chosen folder. On Docker, mount the share on the host and map it into the container, as described under [Your music files](/installation/#your-music-files).
 
-Below the picker, administrators find **Manage storage**, which opens the Storage page. Users who are not administrators can add a Local files source of their own when their role allows it. They pick from the same storage locations. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
+With nothing to pick from yet, the picker says how to get a location. On a Home Assistant App that cannot connect network shares itself, it explains how to get one through Home Assistant, with **How to set this up**. Users who are not administrators can add a Local files source of their own when their role allows it. They pick from the same storage locations. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
 
 > [!CAUTION]
 > Music Assistant assumes your NAS is on your local network. It adds no encryption or access control of its own, so a network share should not be reached over the internet.
