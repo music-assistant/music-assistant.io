@@ -105,9 +105,7 @@ The following is needed to setup this provider:
 
 ### Multi-user environment
 
-The audiobookshelf provider can be set up multiple times for individual users.
-To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
+Audiobookshelf keeps listening progress separately for each of its own users, so each Music Assistant user needs a source of their own, signed in to their own Audiobookshelf account. A user can add one themselves, or an administrator can add it for them and set them as the owner. See [audiobook and podcast progress](/settings/user-management/#audiobook-and-podcast-progress).
 
 ### Advanced Settings
 
@@ -119,6 +117,7 @@ user please refer to [user management](/settings/user-management/#filter-progres
 - For audiobooks made up of several files, Music Assistant shows the format as PCM rather than the format the files are actually in. The audio itself is unaffected
 - Tested currently against ABS >= 2.19.0
 - In the first instance of any problems ensure the server is running the <a href="https://github.com/advplyr/audiobookshelf/releases" target="_blank" rel="noopener noreferrer">latest version of the audiobookshelf software</a>
+- Podcast transcripts are not available
 
 ## Not Yet Supported
 

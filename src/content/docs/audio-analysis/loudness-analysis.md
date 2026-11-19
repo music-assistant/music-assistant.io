@@ -6,7 +6,7 @@ title: Loudness Analysis
 
 The **Loudness Analysis** provider measures each track's loudness using FFmpeg's EBU R128 implementation, so Music Assistant can keep perceived volume consistent across tracks from very different sources.
 
-It is built in, always on, and cannot be disabled. Measurements run automatically on tracks that do not yet have a loudness value stored. Scanning is done as a background task for local file system (i.e. Local, SMB or NFS) provided tracks, and any track is measured while it plays.
+It is built in, always on, and cannot be disabled. Measurements run automatically on tracks that do not yet have a loudness value stored. Scanning is done as a background task for tracks from [Local files](/music-providers/local-files/) sources, including those on a network share, and any track is measured while it plays.
 
 ## What is measured
 
@@ -16,11 +16,15 @@ For each analysed track:
 - **Loudness range** — EBU R128 LU.
 - **True peak** — ITU-R BS.1770-4 dBTP.
 
-When a track already carries a loudness value from its tags or from the music provider, that value is used and the track is not analysed at all. The tags read are `R128_TRACK_GAIN` and `R128_ALBUM_GAIN`, then `REPLAYGAIN_TRACK_GAIN` and `REPLAYGAIN_ALBUM_GAIN`, with the R128 pair taking priority where both are present. Plex and Subsonic report the same data through their own APIs.
+When a track already carries a loudness value from its tags or from the music provider, that value is used and the track is not analysed at all. The tags read are `R128_TRACK_GAIN` and `R128_ALBUM_GAIN`, then `REPLAYGAIN_TRACK_GAIN` and `REPLAYGAIN_ALBUM_GAIN`, with the R128 pair taking priority where both are present. Plex, Subsonic and Tidal report the same data through their own APIs.
 
 Album level values come only from those tags or from a music provider. This provider measures the individual track, so unless a music provider supplies one, album gain is available only for tracks carrying an `R128_ALBUM_GAIN` or `REPLAYGAIN_ALBUM_GAIN` tag. The album tag is read alongside the track tag, so a file that carries an album value but no track value is treated as having no loudness value at all. How the values are chosen and applied is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 
 Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or whose measurement comes back near silence are skipped to avoid unreliable values.
+
+## Measuring a track again
+
+If a track's measured loudness is wrong, select `Refresh item` from the track's menu. This clears the measurement, and the track is measured again: a track from Local files by the background scan, any other track the next time it plays. Loudness from tags or a music provider is not affected. If the wrong value was already written to the file with the setting below, remove the `REPLAYGAIN_TRACK_GAIN` tag from the file first, as a tag always wins over a measurement.
 
 ## How the data is used
 

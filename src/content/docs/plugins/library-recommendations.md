@@ -16,26 +16,29 @@ Music Assistant surfaces recommendation rows based on what's in your library and
 Library Recommendations provides several discovery rows:
 
 ### Recently played
-- **Recently Added Tracks/Albums** — Your latest library additions
+- **Recently played** — Pick up where you left off
+
+### Recently added
+- **Recently added tracks** / **Recently added albums** — Your latest library additions
 
 ![Recently Added Tracks row on the Discover page](/assets/screenshots/library-recommendations/recently-added-tracks.png)
 
 ![Recently Added Albums row on the Discover page](/assets/screenshots/library-recommendations/recently-added-albums.png)
 
 ### Favorites and collections
-- **Recent Favorite Tracks** — Tracks you recently marked as favorites
-- **Favorite Playlists** — Your favorite playlists, ready to play
-- **Favorite Radio** — Quick access to your favorite radio stations
+- **Recently favourited tracks** — Tracks you recently marked as favourites
+- **Favourite playlists** — Your favourite playlists, ready to play
+- **Favourite Radio stations** — Quick access to your favourite radio stations
 
-![Recent Favorite Tracks row on the Discover page](/assets/screenshots/library-recommendations/recent-favorite-tracks.png)
+![Recently favourited tracks row on the Discover page](/assets/screenshots/library-recommendations/recent-favorite-tracks.png)
 
-![Favorite Playlists row on the Discover page](/assets/screenshots/library-recommendations/favorite_playlists.png)
+![Favourite playlists row on the Discover page](/assets/screenshots/library-recommendations/favorite_playlists.png)
 
-![Favorite Radio row on the Discover page](/assets/screenshots/library-recommendations/favorite-radio.png)
+![Favourite Radio stations row on the Discover page](/assets/screenshots/library-recommendations/favorite-radio.png)
 
 ### Discovery and variety
-- **Random Artists/Albums** — Discover something different from your library
-- **Recent Artists/Tracks** — Artists and tracks from your recent listening
+- **Random artists** / **Random albums** — Discover something different from your library
+- **Recent artists** / **Recent tracks** — Artists and tracks from your recent listening
 
 ![Random Albums row on the Discover page](/assets/screenshots/library-recommendations/random-albums.png)
 
@@ -69,14 +72,14 @@ Library Recommendations provides several discovery rows:
 All recommendation rows can be toggled on or off individually:
 
 1. Go to your **Discover** page
-2. Tap the settings icon (usually in the top right)
-3. Each row has a visibility toggle — turn on the ones you want to see
-4. The rows update automatically based on your listening
+2. Select the pencil (**Edit Home screen**) button at the top right
+3. Each row now shows a drag handle to reorder it, an eye to show or hide it, and a filter icon
+4. Select **Leave edit mode** when done. The rows update automatically based on your listening
 
 ## What you'll see
 
 The rows update automatically based on your listening:
-- "Recently Played" and similar rows refresh as you play new music
+- "Recently played" and similar rows refresh as you play new music
 - "Forgotten" rows resurface items you haven't heard in a while
 - "Random" rows give you variety from your library
 - "Most Played" shows your personal favorites over time

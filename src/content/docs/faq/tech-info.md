@@ -25,7 +25,7 @@ MA needs an integrated loudness value for a track, in LUFS, before it can work o
 
 1. `R128_TRACK_GAIN` and `R128_ALBUM_GAIN` tags on the file
 2. `REPLAYGAIN_TRACK_GAIN` and `REPLAYGAIN_ALBUM_GAIN` tags on the file
-3. A loudness value supplied by the music provider itself, which Plex and Subsonic both report
+3. A loudness value supplied by the music provider itself, which Plex, Subsonic and Tidal report
 4. MA's own measurement, produced by the [Loudness Analysis](/audio-analysis/loudness-analysis/) provider
 
 Tags and provider values take priority over MA's own measurement, and a track that already carries one is not analysed at all. Tags are read when the track is scanned into the library. If you add or change them later, use **Refresh item** on the track to pick up the new values.
@@ -55,11 +55,9 @@ The [**Settings → System → Streams → Queue Playback**](/settings/core/#que
 
 ## Stream Selection
 
-When the same track is available from more than one source — say a Spotify stream and a FLAC file on disk — Music Assistant picks one automatically when you press play. It always chooses the highest quality available.
+When the same track is available from more than one source — say a Spotify stream and a FLAC file on disk — Music Assistant picks one automatically when you press play. By default it plays the highest quality copy, but an album plays all of its tracks from one source, and a playlist or folder plays from the source it comes from. [Which Source Plays](/source-selection/) explains how the choice is made and the settings that change it.
 
-Quality is judged on **sample rate, bit depth and codec**, in that order. Where two sources are of equal quality, the local one is preferred over the cloud one.
-
-You can see which sources hold a given item, and how they are linked together, in the [Provider Details](/ui/#provider-details) section of the item.
+You can see which sources hold a given item, and how they are linked together, in the [Source Details](/ui/#source-details) section of the item.
 
 ## Track Queueing
 

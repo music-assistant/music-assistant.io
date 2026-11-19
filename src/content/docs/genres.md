@@ -17,32 +17,36 @@ Each section loads a batch of genres at a time. Select **Load more items** at th
 
 ### Sorting
 
-Each section has its own toolbar, so Music, Podcasts, and Audiobooks can be sorted, filtered, and searched independently. Genres can be sorted using the sort option in the toolbar:
+Each section (Music, Podcasts and Audiobooks) has its own sort, search and collapse buttons and its own ⋮ menu, so the sections can be sorted, filtered and searched independently. The sort button offers:
 
-- **Name** (ascending/descending)
-- **Sort Name** (ascending/descending)
-- **Date Added** (ascending/descending)
-- **Play Count** (ascending/descending)
+- **Sort name**
+- **Alphabetically**
+- **Date added**
+- **Date updated**
+- **Last played**
+- **Play count**
+- **Date favorited**
+- **Random**
+- **Random (least played first)**
+
+together with **Ascending** or **Descending**.
 
 ### Filtering
 
-The toolbar provides several filter options:
+Filters are in each section's ⋮ menu, for example:
 
-- **Favorites Only**: Show only genres marked as favorites
-- **Hide Empty Genres**: Cycles through three views each time you select it:
-  - **Hide empty genres**: Default. Hides genres with no linked media items
-  - **Show only default genres**: Hides any custom genres you've added, showing only the built-in ones
-  - **Show all genres**: Shows every genre, including empty and custom ones
+- **Only show favourites**: Show only genres marked as favorites
+- **Show only default genres**: Hides any custom genres you've added, showing only the built-in ones
 
 ![image](/assets/screenshots/genres/genre-toolbar.png)
 
 ### Search
 
-Use the search button in the toolbar to find genres by name. Genre names are matched against both the original name and any translated display names.
+Use the search button of a section to find genres by name. Genre names are matched against both the original name and any translated display names.
 
 ### Adding a Genre
 
-Administrators can add new genres manually using the **Add Genre** option in the toolbar menu. This opens a dialog where you can provide:
+Administrators can add new genres manually using **Add genre** in the page's ⋮ menu at the top right. This opens a dialog where you can provide:
 
 - **Genre name** (required)
 - **Sort name** (optional, used for custom sort ordering)
@@ -63,6 +67,7 @@ The header displays:
 
 - **Genre name**: Translated to the user's language for built-in genres
 - **Description**: Sourced from built-in genre descriptions or custom metadata. Clicking the description expands it to full length
+- **Play button**: Shows the player it plays on, for example **Play on this device**
 - **Favorite toggle**: Mark or unmark the genre as a favorite
 - **Provider icon**: Indicates where the genre is stored
 
@@ -87,7 +92,7 @@ Below the header, the detail page displays media items associated with the genre
 - Playlists
 - Radio Stations
 
-Each row can be expanded to browse the linked items.
+Artists, Albums and Tracks are collapsed sections rather than carousels. Expand a section to browse the linked items.
 
 ### Genre Aliases
 
@@ -191,6 +196,6 @@ CAUTION: Full Restore is permanent and cannot be undone. You'll be asked to conf
 
 ## Genres on Media Items
 
-When viewing an artist, album, or track detail page, the genres associated with that item are displayed as clickable chips below the description. Clicking a genre chip navigates to that genre's detail page.
+When viewing an artist, album, or track detail page, the genres associated with that item are shown as small text in the header image area, near the top of the page.
 
 ![image](/assets/screenshots/genres/mediaitem-infoheader-chips.png)

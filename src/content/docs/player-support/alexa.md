@@ -76,7 +76,7 @@ Run with Docker Compose (recommended):
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>URL.</b> Amazon subdomain (region-specific) (e.g. amazon.com, amazon.co.uk)
 - <b>E-mail.</b> Amazon account linked to Echo devices
@@ -92,7 +92,8 @@ Alexa players use the standard [Individual Player Settings](/settings/individual
 ## Known Issues / Notes
 
 -	Commands sometimes fail in controlling devices if used too often (this is a limitation of the Alexa API)
--	State reporting is problematic therefore the playback status and volume shown in the MA UI may not reflect reality
+-	State reporting is problematic therefore the playback status shown in the MA UI may not reflect reality
+-	Volume changes made on the device show in MA within a few seconds while playing, and within 30 s otherwise
 -	Announcements and custom commands may have limited support depending on the device and region
 
 ## Not Yet Supported

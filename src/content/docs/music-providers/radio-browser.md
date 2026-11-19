@@ -38,13 +38,12 @@ In the configuration, you only need to click the save button.
 
 The Radio provider doesn't add stations to the 'radiostation' tab by default.
 
-1. In the left hand menu you need to select 'browse'
-2. Then click 'RadioBrowser'
+1. In the left hand menu select **Browse → RadioBrowser**
 
     <img src="/assets/screenshots/IMG_1181.jpeg" alt="Preview image" style="width: 400px;"  loading="lazy" />
 
-3. Then navigate to the radio-station you want to listen to
-4. Click play now or add to library 
+2. Then navigate to the radio-station you want to listen to
+3. Click play now or add to library 
 
 After completing step 4 the station will become available in the Radio view
 

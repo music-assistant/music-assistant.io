@@ -17,14 +17,14 @@ These players normally expect to talk to a Logitech Media Server, now known as <
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Squeezelite`.
+1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `Squeezelite`.
 2. Your Squeezelite players will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a player does not appear, first check that it is not connected to a different server. These devices can often only connect to one server at a time, so a player bound to another server (for example an existing LMS/Lyrion installation) will not be seen by MA. Otherwise, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Slimproto port.</b> The TCP and UDP port the slimproto server runs on. The default is 3483 and hardware Squeezebox players do not support anything else. Only change it if you want to run another slimproto server alongside this one for software players
 - <b>Classic Squeezebox CLI Port.</b> Some slimproto players use the telnet CLI to request extra information. It runs on port 9090 by default. Set it to 0 to switch it off, which is safe if no player of yours relies on it
@@ -40,7 +40,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Squeezelite. Turn it off if the player cannot play continuous WAV streams
 - <b>Allow crossfades between tracks of different sample rates.</b> Only enable this if the player supports it. It applies while flow mode is off, so it is greyed out once flow mode is enabled
 
-There is no sample rates setting for Squeezelite players, as each one reports the highest rate it can take and Music Assistant works from that. There is also no HTTP profile setting, as it is fixed at Profile 2 for slimproto.
+There is no sample rates setting for Squeezelite players, as each one reports the highest rate it can take and Music Assistant works from that.
 
 ## Known Issues / Notes
 

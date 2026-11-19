@@ -12,14 +12,14 @@ Music Assistant has support for <a href="https://www.bluesound.com/" target="_bl
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Bluesound`.
+1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `Bluesound`.
 2. Your Bluesound devices will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
-Refer to the [Player Provider Settings](/settings/player-provider/) when setting up this provider as it has no unique settings at the provider level.
+Refer to the [Player Support Settings](/settings/player-provider/) when setting up this provider as it has no unique settings at the provider level.
 
 Bluesound players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on BluOS:
 

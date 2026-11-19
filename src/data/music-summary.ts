@@ -127,9 +127,12 @@ export const QUALITY_TIER_OVERRIDES: Record<string, QualityTier> = {
   // "FLAC, Unlimited": local files are served at whatever resolution the file
   // holds, with no cap, so the ceiling is Hi-Res.
   "music-providers/local-files": "hi-res",
+  "music-providers/feiniu-music": "hi-res",
+  "music-providers/yandex-disk": "hi-res",
   // "192kHz 24 bit", with no codec named. Above 48kHz and above 16 bits, which
   // is what /player-support/#audio-quality calls Hi-Res.
   "music-providers/audiobookshelf": "hi-res",
+  "music-providers/bookorbit": "hi-res",
   // All three say "Lossless FLAC (with subscription)" without a resolution.
   // Recorded as Hi-Res, matching the summary this table replaced.
   "music-providers/kion-music": "hi-res",

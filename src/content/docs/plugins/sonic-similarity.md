@@ -17,8 +17,8 @@ What it powers:
 
 No audio is sent anywhere; all similarity and search runs against local indexes stored under the Music Assistant data directory.
 
-:::caution[Experimental]
-This plugin is in early development. The configuration options and behaviour may change before the final release.
+:::caution[Beta]
+This plugin is currently marked as **BETA**. The configuration options and behaviour may change before the final release.
 :::
 
 ## Requirements
@@ -27,7 +27,7 @@ The plugin builds on top of the [Sonic Analysis](/audio-analysis/sonic-analysis)
 
 ## What you'll see in Music Assistant
 
-Once the plugin has built its index, a **Similar tracks** section appears on every track's details page:
+Once the plugin has built its index, every track's details page shows a **Similar tracks** list, with **View all** to see the full list. It sits alongside the **Appears on** and **Other versions** sections:
 
 ![Similar tracks on a track details page](/assets/screenshots/sonic-similarity/track-details-similar.png)
 
@@ -53,7 +53,7 @@ No extra downloads are required; the fingerprints are already on disk from Sonic
 
 ### Free-text search (opt-in)
 
-Turns a natural-language phrase like *"super dancy disco track"* into the same kind of fingerprint used for tracks, then returns the tracks whose sound is closest. Enabling this implicitly turns on the Character engine above, since both features share the same model.
+Turns a natural-language phrase like *"super dancy disco track"* into the same kind of fingerprint used for tracks, then returns the tracks whose sound is closest. Type the phrase into the [search pop-up](/ui/#global-search) like any other search. Enabling this implicitly turns on the Character engine above, since both features share the same model.
 
 The first time free-text search is loaded, about 500 MB of language model files download to the server. 
 

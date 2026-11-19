@@ -32,7 +32,7 @@ Any Yandex Station that exposes the local Glagol API is supported, including Sta
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select Yandex Station.
+1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select Yandex Station.
 2. If you already have a Yandex Music provider set up, choose the <b>Yandex account source</b>. Borrow that provider's account to keep a single login shared between the two, or use this provider's own credentials and sign in as below.
 3. Choose a <b>Login method</b>, decide whether to keep the session with <b>Remember session</b>, then sign in with the Yandex account that owns the stations.
 4. Your stations will be discovered automatically and will appear in the player list.
@@ -48,7 +48,7 @@ If a station does not appear, work through the [discovery checklist](/faq/networ
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Experimental: Enable intercept feature.</b> Off by default. The master switch for the intercept feature described below. While it is off, the per-player intercept settings have no effect. The yandex_music music provider must also be configured, as that is what resolves the tracks
 
@@ -56,12 +56,12 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 
 - <b>Experimental: Intercept native Station playback.</b> Off by default. When the Station starts playing Yandex Music on its own, usually from an Alice voice command but also from a touch on the Station itself, this silences the Station and plays the same track on the target player chosen below. The Station keeps its own queue running quietly in the background so Music Assistant can follow each next track. It needs the provider level switch above turned on
 - <b>Intercept target player.</b> The Music Assistant player that receives intercepted playback. Every registered player except this Station is listed, including ones that are currently offline so you can pick a target before it is switched on. Pause, volume and seek are mirrored where the target supports them and are quietly skipped where it does not
+- <b>Mirror Station volume to intercept target.</b> On by default. Copies volume changes made on the Station, from its buttons, the Yandex app or «Alice, turn up», to the intercept target player. Turn it off to set the target's volume in Music Assistant on its own; the Station is still silenced during intercept and its volume is restored afterwards. With it off, the Station's volume controls only change the Station itself
 - <b>Experimental: Voice control integration.</b> Off by default. Resumes the Music Assistant queue automatically after voice commands such as "Алиса, стоп" or "Алиса, дальше". Experimental, so it may behave unexpectedly
-- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Defaults to Profile 3 - forced content length here, because Yandex Stations need a content length and cannot handle chunked streams
 
 ### Voice control integration (experimental)
 
-When enabled in **Settings → Players → \<Your Station\> → Show advanced → Voice control integration**, the provider watches the Glagol state stream and reacts to Alice activity:
+When enabled in **Settings → Players → \<Your Station\> → Show advanced settings → Voice control integration**, the provider watches the Glagol state stream and reacts to Alice activity:
 
 | Voice command | Behaviour |
 |---|---|
@@ -76,7 +76,7 @@ When the Station starts native Yandex Music playback (typically via an Alice voi
 1. Resolve the track via the **`yandex_music`** Music Assistant music provider.
 2. Stop the Station's native player.
 3. Start the same track on the chosen **target player** (any MA player you pick — a Chromecast, an AirPlay receiver, another Station, etc.).
-4. Mirror volume / seek / pause / Alice-speech changes from the Station to the target while the intercept session is active.
+4. Mirror seek / pause / Alice-speech changes from the Station to the target while the intercept session is active. Volume changes are mirrored too, unless **Mirror Station volume to intercept target** is turned off.
 
 Use it to keep Alice as a voice frontend while the audio plays on better speakers managed by Music Assistant.
 
@@ -84,8 +84,8 @@ Use it to keep Alice as a voice frontend while the audio plays on better speaker
 
 Both switches are off by default and **both must be on** for any intercept action to happen:
 
-1. Provider-level master switch, at **Settings → Player Providers → Yandex Station → Show advanced → Enable intercept feature**.
-2. Per-player switch, at **Settings → Players → \<Your Station\> → Show advanced → Intercept native Station playback** plus **Intercept target player**.
+1. Provider-level master switch, at **Settings → Player support → Yandex Station → Show advanced settings → Enable intercept feature**.
+2. Per-player switch, at **Settings → Players → \<Your Station\> → Show advanced settings → Intercept native Station playback** plus **Intercept target player**.
 
 #### Requirements
 

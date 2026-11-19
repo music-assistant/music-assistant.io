@@ -142,17 +142,19 @@ export default defineConfig({
           label: "First Run and Settings",
           collapsed: true,
           items: [
-            { label: "First Run (Authentication)", slug: "first-run" },
+            { label: "First Run", slug: "first-run" },
+            { label: "Marketplace", slug: "settings/marketplace" },
             {
               label: "Music Sources",
               slug: "settings/music-provider-settings",
             },
-            { label: "Player Providers", slug: "settings/player-provider" },
+            { label: "Player Support", slug: "settings/player-provider" },
             {
-              label: "Metadata Providers",
+              label: "Metadata",
               slug: "settings/metadata-provider-settings",
             },
             { label: "Players", slug: "settings/individual-player" },
+            { label: "Storage", slug: "settings/storage" },
             { label: "Profile", slug: "settings/profile" },
             { label: "User Interface", slug: "settings/user-interface" },
             { label: "User Management", slug: "settings/user-management" },
@@ -183,7 +185,7 @@ export default defineConfig({
           autogenerate: { directory: "music-providers" },
         },
         {
-          label: "Player Providers",
+          label: "Player Support",
           collapsed: true,
           autogenerate: { directory: "player-support" },
         },
@@ -193,8 +195,10 @@ export default defineConfig({
           items: [
             { label: "Overview", slug: "usage" },
             { label: "UI", slug: "ui" },
+            { label: "Dashboards", slug: "dashboards" },
             { label: "Groups", slug: "faq/groups" },
             { label: "Genres", slug: "genres" },
+            { label: "Which Source Plays", slug: "source-selection" },
           ],
         },
         {
@@ -225,6 +229,7 @@ export default defineConfig({
                   label: "Ariacast Receiver",
                   slug: "plugins/ariacast-receiver",
                 },
+                { label: "AudioMuse-AI", slug: "plugins/audiomuse-ai" },
                 { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
                 { label: "Home Assistant", slug: "ha-plugin" },
                 {
@@ -246,6 +251,10 @@ export default defineConfig({
                 },
                 { label: "Music Quiz", slug: "plugins/music-quiz" },
                 {
+                  label: "NetEase Cloud Music Scrobbler",
+                  slug: "plugins/neteasecloudmusic_scrobble",
+                },
+                {
                   label: "OpenAI Compatible",
                   slug: "plugins/openai_compatible",
                 },
@@ -264,6 +273,7 @@ export default defineConfig({
                   slug: "plugins/subsonic_scrobble",
                 },
                 { label: "VBAN Receiver", slug: "plugins/vban-receiver" },
+                { label: "WLED Audio Sync", slug: "plugins/wled-audio-sync" },
                 {
                   label: "Yandex Music Connect (Ynison)",
                   slug: "plugins/yandex-ynison",
@@ -275,7 +285,7 @@ export default defineConfig({
               ],
             },
             {
-              label: "Metadata Providers",
+              label: "Metadata",
               collapsed: true,
               items: [
                 { label: "Overview", slug: "metadata" },
@@ -285,6 +295,10 @@ export default defineConfig({
                 {
                   label: "LastFM Recommendations",
                   slug: "metadata-providers/lastfm-recommendations",
+                },
+                {
+                  label: "Local Metadata",
+                  slug: "metadata-providers/local-metadata",
                 },
                 {
                   label: "MusicBrainz",
@@ -297,7 +311,7 @@ export default defineConfig({
               ],
             },
             {
-              label: "Audio Analysis Providers",
+              label: "Audio Analysis",
               collapsed: true,
               items: [
                 { label: "AcoustID Lookup", slug: "audio-analysis/acoustid" },

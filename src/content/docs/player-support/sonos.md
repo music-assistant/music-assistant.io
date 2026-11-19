@@ -23,15 +23,15 @@ If the Sonos device is grouped with an AirPlay device, or if the default [output
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers** and check whether `Sonos` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `Sonos`.
-2. If you have devices from the older S1 generation, the `Sonos S1` provider is never added automatically. Click **Add a player provider** and select `Sonos S1`.
+1. In Music Assistant, go to **Settings → Player support** and check whether `Sonos` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `Sonos`.
+2. If you have devices from the older S1 generation, the `Sonos S1` provider is never added automatically. Click **Add player support** and select `Sonos S1`.
 3. Your Sonos devices will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Manual IP addresses for discovery.</b> In normal circumstances Music Assistant will automatically discover all players on the network using multicast discovery (mDNS/UPnP, [explained here](/faq/networking/)). In the case of special network setups, or when issues are encountered with one or more players not being discovered, IP addresses can be manually added here. This setting is not recommended for normal use. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming; in that case ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#streams)
 

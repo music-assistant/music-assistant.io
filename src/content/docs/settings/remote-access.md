@@ -11,7 +11,16 @@ Remote Access allows you to securely connect to your Music Assistant server from
 - Toggle the Remote Access Status to on. Setup is automatic and further instructions are shown in the MA UI
 - If you have a <a href="https://www.nabucasa.com/" target="_blank" rel="noopener noreferrer">Nabu Casa</a> (Home Assistant Cloud) subscription, ensure the option `WebRTC Connections` (in the Home Assistant Cloud settings) is ON
 
+To connect from elsewhere, go to <a href="https://app.music-assistant.io" target="_blank" rel="noopener noreferrer">app.music-assistant.io</a> and enter **Your Remote Access ID** shown on this page, or scan the QR code shown below it.
+
 For most users this is all that is needed.
+
+## Links shared with guests
+
+Links that Music Assistant hands out to guests, such as the QR codes in party and quiz invitations, need an address that works from outside your home. The **Music Assistant URL** card at the top of [**Settings → System → Webserver**](/settings/core/#webserver) decides which one is used.
+
+- <b>Internet.</b> With remote access on, administrators see a **Use remote access** switch. When it is on, guests' links open through remote access, and the card shows the link with a button to copy it. Switch it off to enter an **External URL** instead, for example the address of your own reverse proxy. A set external URL always takes priority over remote access. When remote access is off, the card offers **Set up remote access**, which opens this page
+- <b>Local network.</b> **Automatic** is on by default and shows the address Music Assistant detected for devices in your home, with a button to copy it. Switch it off to enter an **Internal URL** yourself. See [Webserver](/settings/core/#webserver) for when that is needed
 
 ## Technical Details
 

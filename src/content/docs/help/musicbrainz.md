@@ -28,12 +28,17 @@ When Music Assistant cannot find something on MusicBrainz, it often writes a hin
 
 | Hint in the log | Log level | What to do |
 |:--|:--|:--|
-| `Album "..." (barcode ...) is not on MusicBrainz, add it for example with Harmony: ...` | Info | [Add the album with Harmony](#add-a-missing-album-with-harmony). The link opens Harmony with the barcode filled in |
-| `Album "..." is not on MusicBrainz, add it for example with Harmony: ...` | Info | The same, with the streaming link filled in |
+| `Album "..." (barcode ...) is not on MusicBrainz, add it for example with Harmony: ...` | Debug | [Add the album with Harmony](#add-a-missing-album-with-harmony). The link opens Harmony with the barcode filled in |
+| `Album "..." is not on MusicBrainz, add it for example with Harmony: ...` | Debug | The same, with the streaming link filled in |
 | `Composer "..." is not on MusicBrainz through <link>, add <link> to their MusicBrainz page: ...` | Info | [Add the streaming link](#add-streaming-links) to the composer's MusicBrainz page. The link goes to the composer, or to a search when there is more than one candidate |
-| `Artist "..." has no link to <service> on MusicBrainz, so it is not added ...; add one at ...` | Info | MusicBrainz names an artist, such as a performer on a recording, that has no link to your service. [Add the link](#add-streaming-links), then use **Update metadata** on the album |
+| `Artist "..." has no link to <service> on MusicBrainz, so it is not added ...; add one at ...` | Debug | MusicBrainz names an artist, such as a performer on a recording, that has no link to your service. [Add the link](#add-streaming-links), then use **Update metadata** on the album |
+| `Artist "..." is not on MusicBrainz through <link>, so it cannot be told apart from the other "..." on <service>; add <link> to their MusicBrainz page: ...` | Info | Your service has two artist pages with the same name, and Music Assistant can only keep them apart when MusicBrainz knows which artist each page belongs to. Check which artist this page belongs to, then [add the streaming link](#add-streaming-links) to that artist's MusicBrainz page. The hint links a MusicBrainz search for the name, and also the other artist's page when that one is already known |
+| `Artist "..." cannot be told apart from the other "..." on <service>, because <link> is linked to more than one MusicBrainz artist; remove it from the one it does not belong to: ...` | Info | The same streaming link is on more than one artist's MusicBrainz page. Open each page from the hint, select **Edit**, and remove the link under **External links** from the artist it does not belong to |
 | `ISRC ... of "..." is not on MusicBrainz, add it to the track's recording: ...` | Debug | [Add the ISRC codes with MagicISRC](#add-isrc-codes-with-magicisrc) |
 | `ISRC ... of "..." is on MusicBrainz recording ..., which credits other artists, so it needs album "..." identified, add its streaming link or barcode to the release of that recording` | Debug | The code is used for more than one recording. [Add the streaming link](#add-streaming-links) or barcode to the album's MusicBrainz release |
+| `Album "..." has ISRCs MusicBrainz lacks, add them all at once with MagicISRC: ...` | Debug | The link opens MagicISRC with the release and your tracks' codes filled in. Check the codes line up with the tracks and submit. See [Add ISRC codes with MagicISRC](#add-isrc-codes-with-magicisrc) |
+| `MusicBrainz links album "..." on <service> to release ..., but the lengths of tracks ... (counted across discs) differ; if <service> plays another version, remove the link from the release` | Debug | The tracks are still matched, because the release links the album. Compare the listed tracks with the release. If the service has another version, such as a remaster, move the link to the right release, or [add that version with Harmony](#add-a-missing-album-with-harmony) |
+| `Album "..." on <service> has the track count of MusicBrainz release ..., but the lengths of tracks ... (counted across discs) differ; it may be another edition on <service> or a wrong length on MusicBrainz, compare with another service` | Debug | Only the tracks whose title and length match are linked, because the release does not link the album. Compare the listed lengths with another service. If MusicBrainz has a wrong length, fix it. If the service has the same version, [add its streaming link](#add-streaming-links) to the release. If it has another version, [add that version with Harmony](#add-a-missing-album-with-harmony) |
 
 ## Add a missing album with Harmony
 
@@ -55,6 +60,9 @@ Music Assistant links artists and albums to your services through the links on t
 3. Under **External links**, paste the artist's or album's Spotify, Tidal, Qobuz, Deezer, Apple Music or YouTube Music link and select the type if necessary
 4. Submit the edit
 
+A link on a release also helps match the album's tracks. When the release links your album and the service has the same number of tracks, Music Assistant matches them to the release in order,
+even when their titles or some lengths differ.
+
 > [!TIP]
 > Harmony can also add the links for a release that already exists on MusicBrainz. Paste the release's streaming link in Harmony and follow its suggestions.
 
@@ -65,6 +73,9 @@ Music Assistant. It takes one edit per track, so ISRC codes are usually the quic
 ## Add ISRC codes with MagicISRC
 
 An ISRC is a code that identifies a recording. Music Assistant uses it to match streaming tracks to MusicBrainz. [MagicISRC](https://magicisrc.kepstin.ca) adds the codes for a whole release in one go.
+
+When the album is already in your library, turn on debug logging and look for the `has ISRCs MusicBrainz lacks` hint. Its link opens MagicISRC with the codes filled in, so you can go straight to
+step 5.
 
 1. Find your release: Open MagicISRC and paste your MusicBrainz release link or ID
 2. Log in: Connect your MusicBrainz account when prompted

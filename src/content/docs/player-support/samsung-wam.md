@@ -19,14 +19,14 @@ Music Assistant has support for Samsung's Wireless Audio Multiroom (WAM) speaker
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Samsung WAM`.
+1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `Samsung WAM`.
 2. Your Samsung WAM speakers will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
 ## Settings
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>Manual IP addresses for discovery.</b> Specify one or more IP addresses to add speakers that aren't discovered automatically. Only needed in non-standard network setups, for example, if your speakers are on a different subnet from the MA server.
 
@@ -34,7 +34,7 @@ Samsung WAM players use the standard [Individual Player Settings](/settings/indi
 
 WAM speakers always play the queue as one continuous stream, because they cannot queue the next track themselves. The stream starts at the first track's sample rate and only resamples later tracks upward, and there is no setting to change that. There is also no sample rates setting, as WAM speakers report their own support of 44.1kHz through to 192kHz at 16 or 24 bits.
 
-The HTTP profile and metadata injection settings are set by the provider and hidden, so they do not appear on WAM players.
+WAM speakers get a fixed content length by default, so **Requires a fixed content length** starts on and can be switched off. The metadata injection setting is set by Music Assistant and hidden, so it does not appear on WAM players.
 
 ## Known Issues / Notes
 

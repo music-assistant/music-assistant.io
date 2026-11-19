@@ -25,16 +25,20 @@ export type CategoryId =
   | "classical"
   | "children"
   // Music and radio from a particular country
-  | "germany"
-  | "austria"
-  | "sweden"
-  | "denmark"
-  | "russia"
-  | "china"
-  | "japan"
-  | "france"
-  | "uk"
   | "australia"
+  | "austria"
+  | "belgium"
+  | "canada"
+  | "china"
+  | "denmark"
+  | "france"
+  | "germany"
+  | "japan"
+  | "mexico"
+  | "new-zealand"
+  | "russia"
+  | "sweden"
+  | "uk"
   | "usa";
 
 export interface Category {
@@ -97,8 +101,7 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "podcasts",
         icon: "/assets/icons/listen/podcasts.png",
         title: "Podcasts",
-        blurb:
-          "Follow shows and pick up each episode where you left off.",
+        blurb: "Follow shows and pick up each episode where you left off.",
       },
       {
         id: "audiobooks",
@@ -110,7 +113,8 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         id: "live-concerts",
         icon: "/assets/icons/listen/live-concerts.png",
         title: "Live concert recordings",
-        blurb: "Soundboard and audience recordings of shows, often complete sets.",
+        blurb:
+          "Soundboard and audience recordings of shows, often complete sets.",
       },
       {
         id: "classical",
@@ -134,10 +138,10 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
       "These sources carry content from one country, or are only available there.",
     categories: [
       {
-        id: "germany",
-        icon: "/assets/icons/listen/germany.svg",
-        title: "Deutschland / Germany",
-        blurb: "Radio and podcasts from the German public broadcasters.",
+        id: "australia",
+        icon: "/assets/icons/listen/australia.svg",
+        title: "Australia",
+        blurb: "Australian public radio, from new music to classical and jazz.",
       },
       {
         id: "austria",
@@ -146,22 +150,16 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         blurb: "Austrian radio stations and podcasts.",
       },
       {
-        id: "sweden",
-        icon: "/assets/icons/listen/sweden.svg",
-        title: "Sverige / Sweden",
-        blurb: "Swedish public service radio, and audiobooks in Swedish.",
+        id: "belgium",
+        icon: "/assets/icons/listen/belgium.svg",
+        title: "België / Belgium",
+        blurb: "Radio and podcasts from the Belgian public broadcasters.",
       },
       {
-        id: "denmark",
-        icon: "/assets/icons/listen/denmark.svg",
-        title: "Danmark / Denmark",
-        blurb: "Danish music streaming, and audiobooks in Danish.",
-      },
-      {
-        id: "russia",
-        icon: "/assets/icons/listen/russia.svg",
-        title: "Россия / Russia",
-        blurb: "Streaming services with large Russian language catalogues.",
+        id: "canada",
+        icon: "/assets/icons/listen/canada.svg",
+        title: "Canada",
+        blurb: "Canadian radio stations.",
       },
       {
         id: "china",
@@ -170,10 +168,11 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         blurb: "The two large streaming platforms in Mainland China.",
       },
       {
-        id: "japan",
-        icon: "/assets/icons/listen/japan.svg",
-        title: "日本 / Japan",
-        blurb: "Music uploaded by the Nico Nico community, much of it found nowhere else.",
+        id: "denmark",
+        icon: "/assets/icons/listen/denmark.svg",
+        title: "Danmark / Denmark",
+        blurb:
+          "Danish public radio and podcasts, music streaming, and audiobooks in Danish.",
       },
       {
         id: "france",
@@ -182,22 +181,54 @@ export const CATEGORY_GROUPS: CategoryGroup[] = [
         blurb: "French streaming with a catalogue of major and independent labels.",
       },
       {
+        id: "germany",
+        icon: "/assets/icons/listen/germany.svg",
+        title: "Deutschland / Germany",
+        blurb: "Radio and podcasts from the German public broadcasters.",
+      },
+      {
+        id: "japan",
+        icon: "/assets/icons/listen/japan.svg",
+        title: "日本 / Japan",
+        blurb:
+          "Music uploaded by the Nico Nico community, much of it found nowhere else.",
+      },
+      {
+        id: "mexico",
+        icon: "/assets/icons/listen/mexico.svg",
+        title: "México / Mexico",
+        blurb: "Mexican radio stations in Spanish.",
+      },
+      {
+        id: "new-zealand",
+        icon: "/assets/icons/listen/new-zealand.svg",
+        title: "Aotearoa / New Zealand",
+        blurb: "New Zealand radio stations.",
+      },
+      {
+        id: "russia",
+        icon: "/assets/icons/listen/russia.svg",
+        title: "Россия / Russia",
+        blurb: "Streaming services with large Russian language catalogues.",
+      },
+      {
+        id: "sweden",
+        icon: "/assets/icons/listen/sweden.svg",
+        title: "Sverige / Sweden",
+        blurb: "Swedish public service radio, and audiobooks in Swedish.",
+      },
+      {
         id: "uk",
         icon: "/assets/icons/listen/uk.svg",
         title: "United Kingdom",
         blurb: "British radio, live and after broadcast.",
       },
       {
-        id: "australia",
-        icon: "/assets/icons/listen/australia.svg",
-        title: "Australia",
-        blurb: "Australian public radio, from new music to classical and jazz.",
-      },
-      {
         id: "usa",
         icon: "/assets/icons/listen/usa.svg",
         title: "United States",
-        blurb: "American radio, from satellite channels to personalised stations.",
+        blurb:
+          "American radio, from satellite channels to personalised stations.",
       },
     ],
   },
@@ -249,10 +280,22 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "podcasts", "classical", "uk"],
   },
   {
+    name: "BookOrbit",
+    slug: "music-providers/bookorbit",
+    icon: "/assets/icons/bookorbit-icon.png",
+    categories: ["own-files", "audiobooks"],
+  },
+  {
     name: "Builtin",
     slug: "music-providers/builtin",
     icon: "/assets/icon.png",
     categories: ["radio"],
+  },
+  {
+    name: "CBC Listen",
+    slug: "music-providers/cbc-listen",
+    icon: "/assets/icons/cbc-listen-icon.svg",
+    categories: ["radio", "podcasts", "classical", "canada"],
   },
   {
     name: "Deezer",
@@ -267,10 +310,34 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "classical"],
   },
   {
+    name: "DR LYD",
+    slug: "music-providers/dr-lyd",
+    icon: "/assets/icons/dr-lyd-icon.svg",
+    categories: ["radio", "podcasts", "classical", "denmark"],
+  },
+  {
     name: "Emby",
     slug: "music-providers/emby",
     icon: "/assets/icons/emby-icon.svg",
     categories: ["own-files"],
+  },
+  {
+    name: "FeiNiu Music",
+    slug: "music-providers/feiniu-music",
+    icon: "/assets/icons/feiniu-music-icon.svg",
+    categories: ["own-files"],
+  },
+  {
+    name: "FIP",
+    slug: "music-providers/fip",
+    icon: "/assets/icons/fip-icon.svg",
+    categories: ["radio", "france"],
+  },
+  {
+    name: "Global Player",
+    slug: "music-providers/global-player",
+    icon: "/assets/icons/global-player-icon.svg",
+    categories: ["radio", "classical", "uk"],
   },
   {
     name: "gPodder",
@@ -284,6 +351,13 @@ export const MUSIC_SOURCES: MusicSource[] = [
     icon: "/assets/icons/ibroadcast-logo.png",
     // Not self-hosted, but you upload your own collection to it.
     categories: ["own-files"],
+  },
+  {
+    name: "iHeartRadio",
+    slug: "music-providers/iheartradio",
+    icon: "/assets/icons/iheartradio-icon.svg",
+    // Tagged by the countries it runs a local station catalogue for.
+    categories: ["radio", "podcasts", "australia", "canada", "mexico", "new-zealand", "usa"],
   },
   {
     name: "Internet Archive",
@@ -469,6 +543,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["own-files", "podcasts"],
   },
   {
+    name: "Sunshine Live",
+    slug: "music-providers/sunshine-live",
+    icon: "/assets/icons/sunshine-live-icon.png",
+    categories: ["radio", "germany"],
+  },
+  {
     name: "Sveriges Radio",
     slug: "music-providers/sveriges-radio",
     icon: "/assets/icons/sverigesradio-icon.svg",
@@ -479,6 +559,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     slug: "music-providers/teddycloud",
     icon: "/assets/icons/teddycloud-icon.svg",
     categories: ["own-files", "audiobooks", "children"],
+  },
+  {
+    name: "Telmore Musik",
+    slug: "music-providers/telmore-musik",
+    icon: "/assets/icons/telmore.svg",
+    categories: ["streaming", "denmark"],
   },
   {
     name: "Tidal",
@@ -493,10 +579,28 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["radio", "classical"],
   },
   {
+    name: "VRT MAX",
+    slug: "music-providers/vrt-max",
+    icon: "/assets/icons/vrt_max-icon.svg",
+    categories: ["radio", "podcasts", "classical", "belgium"],
+  },
+  {
+    name: "Yandex Disk",
+    slug: "music-providers/yandex-disk",
+    icon: "/assets/icons/yandex-disk-icon.svg",
+    categories: ["own-files", "podcasts", "audiobooks"],
+  },
+  {
     name: "Yandex Music",
     slug: "music-providers/yandex-music",
     icon: "/assets/icons/yandex-music-icon.svg",
     categories: ["streaming", "podcasts", "audiobooks", "russia"],
+  },
+  {
+    name: "Yoto",
+    slug: "music-providers/yoto",
+    icon: "/assets/icons/yoto-icon.png",
+    categories: ["audiobooks", "children", "streaming", "podcasts", "radio"],
   },
   {
     name: "YouSee Musik",

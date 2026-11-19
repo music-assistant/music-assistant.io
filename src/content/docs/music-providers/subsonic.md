@@ -43,10 +43,8 @@ You will need to provide the following to Music Assistant:
 
 ### Settings
 
-- <b>Enable Podcasts.</b> This toggle controls podcast availability in Music Assistant (If you are still seeing Podcast sync related failures after disabling see below)
 - <b>Enable Legacy Auth.</b> Some Subsonic implementations require this to be enabled to authenticate
 - <b>Enable Radio Stations.</b> This toggle controls radio stations availability in Music Assistant
-- <b>Force Player Provider Seek.</b> Some Subsonic implementations advertise that seeking is supported when it isn't. If seeking does not work then enable this option
 - <b>Recommend Favorites.</b> Should favorited (starred) items be included as recommendations?
 - <b>Recommend New Albums.</b> Should new albums be included as recommendations?
 - <b>Recommend Most Played.</b> Should most played albums be included as recommendations?
@@ -63,3 +61,4 @@ You will need to provide the following to Music Assistant:
 - Some files may not play at all, most often m4a and opus, and anything encoded at a variable bitrate. These formats can hold information part way through the file rather than all of it at the start, which Music Assistant cannot work with over a Subsonic connection. Your options are to avoid these formats, to set your server to convert them to something else before sending them, or to keep those files out of your Subsonic library and reach them another way
 - Autoplay (<a href="https://www.music-assistant.io/usage/#the-queue" target="_blank" rel="noopener noreferrer">described here</a>) needs your server to be able to suggest similar songs, which not every server does out of the box. Gonic and Navidrome both need a Last.fm API key added before they can. Check your server's documentation
 - To be clear, this will not work with the original Subsonic or with anything built on it, such as Airsonic or Airsonic-Advanced, unless that software has since moved over to the Open Subsonic specification.
+- Podcast transcripts are not available

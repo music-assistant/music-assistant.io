@@ -4,7 +4,7 @@ title: "Individual Player Settings"
 
 # Individual Player Settings <img src="/assets/icons/settings-individual-player-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. Some items are hidden unless the `Show advanced settings` toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
+Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. The **Documentation** button at the top of a player's settings opens this page. Some items are hidden unless the **Show advanced settings** toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
 
 ![image](/assets/screenshots/individual-player-settings.png)
 
@@ -48,9 +48,9 @@ Two things are true of all of them:
 - They are only visible when the `Show advanced settings` toggle is on
 - Changing one reloads the player, so anything currently playing stops briefly
 
-Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, its own page says so.
+Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no **Sample rates supported by this player** setting. Where a player differs from the defaults below, its own page says so.
 
-AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list.
+AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list. Sendspin players also have their own version of **Flow Mode sample rate**, called **Sample rate selection**. The [Sendspin](/player-support/sendspin/#settings) page describes it.
 
 #### Enable queue flow mode
 
@@ -132,25 +132,6 @@ Sends live sources such as [Spotify Connect](/plugins/spotify-connect/) and the 
 
 Turn it off if those sources are unreliable on your player; Music Assistant will fall back to the output codec set above.
 
-#### HTTP Profile used for sending audio
-
-A low-level detail of how the audio is handed to the player. `Profile 2` by default, and correct for most players.
-
-The three differ in whether Music Assistant tells the player how much audio is coming before it starts sending any. Most players do not mind either way, but a few will not start, stop part way through, or refuse to skip within a track unless they are told in advance.
-
-Change it only to fix a problem. If the player behaves in any of those ways, work through the other profiles.
-
-<details>
-<summary>What each option does</summary>
-
-| Option | Behaviour |
-| --- | --- |
-| **Profile 1 - chunked** | Sends the audio in pieces as it is produced, without saying how much is coming |
-| **Profile 2 - no content length** *(default)* | Sends the audio as one continuous stream, without saying how much is coming. Right for most players |
-| **Profile 3 - forced content length** | Tells the player up front roughly how much audio to expect, worked out from the length of the track. Try this one first if the player will not start, cuts off early, or will not let you skip within a track |
-
-</details>
-
 ## Group Player Settings
 
 For group players the following settings will be seen. **Group members** and **Allowed members** are both chosen from a drop down list of checkboxes, with the players you pick then shown as chips in the field.
@@ -160,11 +141,13 @@ For group players the following settings will be seen. **Group members** and **A
 - <b>Allowed members</b>. Limit which players can join this group. Leave empty to allow any sync-compatible player. This can be used to reduce the list of players that show up for joining in case you have a lot of players. Only shown when the advanced toggle is on
 - <b>Allow crossfades between tracks of different sample rates</b>. Enable this option to allow crossfades between tracks that have different sample rates (e.g. 44.1kHz to 48kHz). Disable this option if you experience audio glitches during transitions between tracks. Only shown when the advanced toggle is on
 
-Universal Groups default to `Profile 1 - chunked` for the HTTP Profile, rather than Profile 2 as elsewhere.
-
 ## Announcements Configuration
 
-There are a number of configurable options for controlling the volume of [announcements](/integration/announcements/) sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
+There are a number of configurable options for controlling the volume of [announcements](/integration/announcements/) sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field.
+
+- <b>Volume strategy.</b> There are four options: `Absolute volume`, `Relative volume increase`, `Volume increase by fixed percentage [default]` and `Do not adjust volume`. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected
+- <b>Pre-announcement chime.</b> A checkbox that plays a chime before the announcement
+- <b>Custom (pre)announcement chime URL.</b> The address of a sound to play as the chime instead of the built-in one
 
 ![image](/assets/screenshots/announcements-settings.png)
 
@@ -174,7 +157,7 @@ Each player has a number of options available to control the behaviour of the po
 
 It is possible to map other HA entities to the MA player controls. in order for this to be an option the HA entities need to be first exposed to MA via the settings in the [HA Plugin](/ha-plugin/).
 
-**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Power controls assume the underlying device is in a standby mode and not physically powered off.
+**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Native power control assumes the underlying device is in a standby mode and not physically powered off. A Home Assistant entity chosen here, such as a smart plug, can switch the device off completely. Music Assistant switches it back on when you turn on or play to the player, see [Switching the player itself on and off](/ha-plugin/#switching-the-player-itself-on-and-off).
 
 **Volume** This allows the volume control to be defined or disabled.
 
@@ -183,3 +166,5 @@ It is possible to map other HA entities to the MA player controls. in order for 
 **Minimum and Maximum Volume** Two sliders allow the application of limits to the maximum and minimum values that are sent to the player. The volume sliders in the UI are rescaled so the full 0-100 range will still be seen. (Only shown when the advanced toggle is on)
 
 **Automatically play/resume on power on** If the player supports power control then this option will cause the player to immediately start playing any items in the queue on power on.
+
+**Power off when idle (minutes)** Turns the player off once it has been stopped for this many minutes. The default, 0, never turns it off. Only shown when Power is not set to NONE. Playing, an announcement or turning the player on starts the count over. Pausing does not count as stopped, but Music Assistant stops a paused queue after 30 seconds, so a forgotten pause still ends with the player turned off. A player in a group counts down on its own and leaves the group when it is turned off. Music Assistant can only tell a player is in use when the player reports that it is playing, so a TV or receiver used on another input can be turned off while you are using it.

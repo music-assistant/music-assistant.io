@@ -46,3 +46,4 @@ No configuration is required for most users as the default settings are typical.
 
 - Station logos are shown where available
 - Metadata is populated via the API when possible
+- Podcast transcripts are not available
