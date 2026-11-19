@@ -49,7 +49,7 @@ Which locations are listed depends on how Music Assistant is installed:
 - <b>Home Assistant App.</b> The Home Assistant media folder and every network share added to it
 - <b>Docker.</b> Every folder or volume mapped into the container
 
-Music on a NAS? The share has to be a storage location. On the Home Assistant App, an administrator adds it with **Add network share**, right below the list or on the [Storage](/settings/storage/#adding-a-network-share) page, and the new share becomes the chosen folder. On Docker, mount the share on the host and map it into the container, as described under [Your music files](/installation/#your-music-files).
+Music on a NAS? The share has to be a storage location. On the Home Assistant App, an administrator adds it with **Add network share** right below the list, and the new share becomes the chosen folder. A share added on the [Storage](/settings/storage/#adding-a-network-share) page shows up in the list, ready to pick. On Docker, mount the share on the host and map it into the container, as described under [Your music files](/installation/#your-music-files).
 
 With nothing to pick from yet, the picker says how to get a location. On a Home Assistant App that cannot connect network shares itself, it explains how to get one through Home Assistant, with **How to set this up**. Users who are not administrators can add a Local files source of their own when their role allows it. They pick from the same storage locations. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
 
