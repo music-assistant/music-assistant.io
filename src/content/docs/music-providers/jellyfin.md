@@ -28,7 +28,7 @@ This source connects Music Assistant to the music libraries on your Jellyfin ser
 | Similar Artists Support                         |            No                      |
 | Similar Tracks Support                          |            Yes                     |
 | Maximum Stream Quality | FLAC 192kHz 24 bit |
-| Login Method | Password |
+| Login Method | Password or Quick Connect |
 
 ### Other
 
@@ -38,8 +38,9 @@ This source connects Music Assistant to the music libraries on your Jellyfin ser
 You will need to provide the following to Music Assistant:
 
 - <b>Server.</b> For example, https://music.domain.tld/ or http://192.168.1.4:8096/ (for a local server)
-- <b>Username.</b> The username for the account to be used by Music Assistant to access the server
-- <b>Password.</b> The password for the account
+- <b>Authentication.</b> Choose either username and password or Jellyfin Quick Connect to authenticate Music Assistant with your Jellyfin account.
+- If using username and password, provide the username and password for the account Music Assistant should use to access the server.
+- If using Quick Connect, authenticate using Jellyfin Quick Connect.
 
 > [!NOTE]
 > It is recommended that IP address is used instead of the domain name to avoid problems if IPv6 name resolution fails
@@ -53,4 +54,3 @@ You will need to provide the following to Music Assistant:
 ## Known Issues / Notes
 - If something is not working, check first that the account you gave Music Assistant can reach your music through Jellyfin's own web interface. Problems there will show up here too
 - Lyrics from embedded tags in the local files is not passed through to Music Assistant
-
