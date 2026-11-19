@@ -128,7 +128,7 @@ Select **Edit** on a host card, or **Add host** to build one from scratch. You c
 |---|---|
 | **Host name** | The name shown wherever you pick a host |
 | **Voice** | The text-to-speech voice this host speaks with. **Default** uses the engine chosen during setup |
-| **Language** | The language the host speaks. **Follow server language** uses the **Preferred language** from [**Settings → Music → Metadata → Metadata settings**](/settings/metadata-provider-settings/#metadata-settings) |
+| **Language** | The language the host speaks. **Follow server language** uses the **Preferred language** from [**Settings → Music → Metadata**](/settings/metadata-provider-settings/#metadata-settings) |
 | **Host and Program Instructions** | The personality and writing style. This goes to the AI with every segment |
 
 ### Segments

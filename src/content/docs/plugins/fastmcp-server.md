@@ -8,7 +8,7 @@ pluginGroup: other-systems
 
 Music Assistant has the ability to expose its library, queue, playback and player controls as a <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP)</a> server, so AI assistants and agent frameworks like Claude, ChatGPT, Cursor, Codex, OpenClaw and Hermes can search your library, control playback and manage queues on your behalf using natural language.
 
-Music Assistant also has an MCP server built in, which is switched on and off with **Allow AI assistants** on [**Settings → AI**](/settings/ai/#access-for-ai-assistants). This plugin is the extended server maintained by the community, listed in the Marketplace as **MCP Server (Community)**.
+Music Assistant also has an MCP server built in, which is switched on and off with **Enable the built-in MCP server** on [**Settings → AI**](/settings/ai/#access-for-ai-assistants). This plugin is the extended server maintained by the community, listed in the Marketplace as **MCP Server (Community)**.
 
 > [!NOTE]
 > This plugin is still in an early stage of development. Bugs may occur.

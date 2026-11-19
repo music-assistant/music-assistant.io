@@ -51,15 +51,15 @@ This opens the [Storage](/settings/storage/) page, which lists the folders, driv
 
 ## Home Assistant
 
-This page connects Music Assistant to Home Assistant through the [Home Assistant plugin](/ha-plugin/), and shows what the connection brings. Until it is connected, the page offers **Connect**. Once it is connected, it has these rows:
+This page connects Music Assistant to Home Assistant through the [Home Assistant plugin](/ha-plugin/), and shows what the connection brings. Until the connection is set up, the page offers **Connect**. After that, it has these rows:
 
-- <b>Connection.</b> Whether it is connected. Opens the settings of the connection, where it can be reconfigured, disabled or removed. When Music Assistant runs as a Home Assistant App, the app makes the connection by itself
-- <b>Home Assistant players.</b> How many players [Home Assistant Media Players](/player-support/home-assistant/) brings, or **Add** to set it up
+- <b>Connection.</b> Whether it is connected, with **Reconfigure** to change the connection, or **Enable** while it is disabled. **Disable**, **Reload**, **Documentation** and **Remove** are in the page's ⋮ menu. When Music Assistant runs as a Home Assistant App, the app makes the connection by itself
+- <b>Home Assistant players.</b> How many players [Home Assistant Media Players](/player-support/home-assistant/) brings, with **Choose** to pick which media players of Home Assistant to use, or **Add** to set it up, after which that choice opens by itself
 - <b>AI from Home Assistant.</b> What Home Assistant provides to the AI features, such as `1 text · 2 speech`, or **None**. Opens [Settings → AI](/settings/ai/). Only while Home Assistant is connected
-- <b>Sign in with Home Assistant.</b> Opens [User management](/settings/user-management/#account-access), where users can be allowed to create their own account by signing in with Home Assistant
-- <b>Remote Access.</b> Opens the [Remote Access](/settings/remote-access/) page. With Home Assistant Link, remote access works in any network
+- <b>Sign in with Home Assistant.</b> A switch: Home Assistant users without an account get one when they first sign in. It is the same setting as **Allow User Self-Registration** in [User management](/settings/user-management/#account-access). Only while Home Assistant is connected
+- <b>Remote Access.</b> Switches [remote access](/settings/remote-access/) on and off. While it is on, the row says whether it uses **Home Assistant Link**, which makes it work in any network, and its arrow opens the remote ID and QR code
 
-Below the rows, **Player controls** holds the Home Assistant entities that can be linked to the power, volume and mute controls of a player. See [Linking Home Assistant entities to player controls](/ha-plugin/#linking-home-assistant-entities-to-player-controls).
+Below the rows, **Player controls** holds the Home Assistant entities that can be linked to the power, volume and mute controls of a player. A change applies right away. See [Linking Home Assistant entities to player controls](/ha-plugin/#linking-home-assistant-entities-to-player-controls).
 
 The [Home Assistant integration](/integration/), which puts your Music Assistant players in Home Assistant, is installed in Home Assistant itself. See [how the pieces fit together](/integration/#how-the-pieces-fit-together).
 

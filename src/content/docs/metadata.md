@@ -42,7 +42,7 @@ The daily background scan and the on-demand lookup only fill in information that
 
 A field that no source has information for keeps its stored value. When a source cannot be reached during the update, for example because the NAS holding your music is switched off, nothing is replaced and only missing information is filled in. Genres, images and links are only added to, never removed. Lyrics follow their own rules, see [Lyrics](./lyrics).
 
-The language used for descriptions and bios is set under [**Settings → Music → Metadata → Metadata settings**](/settings/metadata-provider-settings/#metadata-settings) → "Preferred language". A bio or description in your preferred language wins, then one in English. A bio or description from your own files counts as your preferred language.
+The language used for descriptions and bios is set under [**Settings → Music → Metadata**](/settings/metadata-provider-settings/#metadata-settings) → "Preferred language". A bio or description in your preferred language wins, then one in English. A bio or description from your own files counts as your preferred language.
 
 ## What Music Assistant reads from local file libraries
 

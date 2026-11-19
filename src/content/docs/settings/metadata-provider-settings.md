@@ -34,8 +34,7 @@ information that is missing, see the [Metadata overview](/metadata/).
 
 ## Metadata settings
 
-The **Metadata settings** tile at the top of the page holds the settings for metadata from every
-source. Only administrators see it.
+Below the list of metadata sources are the settings for metadata from every source.
 
 - <b>Preferred language.</b> Preferred language for metadata. If the selected language is unavailable then English will be used. This language is also used for text searches, so localised names such as genres and the built-in playlists can be found by the name shown in this language
 - <b>Enable metadata retrieval from online metadata sources.</b> Enables the lookup of information that is not available locally. MA does not modify any existing metadata but supplements it

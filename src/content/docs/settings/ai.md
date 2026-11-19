@@ -19,13 +19,13 @@ Only a kind that has engines gets a picker. A kind without one shows a message i
 
 Engines are named after the AI service and then the engine, as `<service> | <engine>`, so two similar engines can be told apart. If the engine of a default disappears, for example because its plugin was removed, Music Assistant reports it rather than switching to a different one. Choose another one, or bring back the plugin that provides it.
 
-With no engines at all, the page shows **No AI engines yet** instead, with **Add an AI service**, which opens the [Marketplace](/settings/marketplace/) on its plugins.
+With no engines at all, the page shows **No AI engines yet** instead, with **Add an AI service**, which lists the services that can provide engines, such as [OpenAI Compatible](/plugins/openai_compatible/) and Home Assistant, and sets up the one you pick right on the page.
 
 ## What uses AI
 
-This list shows every feature that is set up and uses an engine, with the kind of engine it needs and the engine it uses: **Default ·** followed by the engine's name when it follows the default, the engine it picked itself, or **Not available** when there is no engine for it. Select a row to open the place where that feature picks its own engine. For AI Radio, that starts its **Reconfigure**.
+This list shows every feature that is set up and uses an engine, with the kind of engine it needs. Pick the engine right on its row, with the same options as the feature's own picker, and the choice is saved straight away. A row shows **Not available** when there is no engine for it. AI Radio keeps its engines in its setup, so its rows show the engine it uses, with **Default ·** followed by the engine's name when it follows the default, and open its **Reconfigure**.
 
-| Feature | Kind | Where to change it |
+| Feature | Kind | Where else to change it |
 |---|---|---|
 | [Playback](/settings/playback/#announcements) | Text-to-speech, for announcements | **Announcement text-to-speech engine** on **Settings → Players → Playback** |
 | [AI Radio](/plugins/ai-radio/) | AI **and** text-to-speech | **Reconfigure** on the plugin's menu, not its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later) |
@@ -39,10 +39,10 @@ A feature's own picker starts on its first option, which follows the default eng
 
 This list holds the AI services that are set up, each with what it provides, such as `2 text · 1 image`. A service that provides nothing shows **Choose the models to use**, for example an [OpenAI Compatible](/plugins/openai_compatible/) plugin without models. The Home Assistant plugin is listed while Home Assistant has an AI task or text-to-speech entity.
 
-Select a service to open its settings, which for Home Assistant are on [**Settings → System → Home Assistant**](/settings/core/#home-assistant). **Add an AI service** opens the [Marketplace](/settings/marketplace/) on its plugins.
+Select a service to open its settings, which for Home Assistant are on [**Settings → System → Home Assistant**](/settings/core/#home-assistant). **Add an AI service** adds another one, right on this page.
 
 ## Access for AI assistants
 
-- <b>Allow AI assistants.</b> Switches the MCP server built into Music Assistant on or off. It is on by default. With it on, AI assistants such as Home Assistant Assist, Claude and ChatGPT can search your music and control playback through the <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP)</a>
+- <b>Enable the built-in MCP server.</b> Switches the MCP server built into Music Assistant on or off. It is on by default. With it on, AI assistants such as Home Assistant Assist, Claude and ChatGPT can search your music and control playback through the <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP)</a>
 
 For more control, such as a connect wizard for AI clients and token policies, see the community [MCP server plugin](/plugins/fastmcp-server/), listed in the Marketplace as **MCP Server (Community)**.

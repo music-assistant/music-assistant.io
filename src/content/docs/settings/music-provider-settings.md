@@ -70,7 +70,7 @@ This page lists what is set up to analyse your audio, such as [Loudness Analysis
 
 ### Analysis status
 
-The **Analysis status** tile at the top of the Audio analysis page opens this page. **Audio Analysis Coverage** shows the progress of each one. The stale number is the number of tracks that need to be re-analysed due to a version change. **Audio Analysis Failures** shows the tracks that failed and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned, and **Clear all** clears every failure.
+**Audio Analysis Coverage**, at the top of the page, shows the progress of each one. The stale number is the number of tracks that need to be re-analysed due to a version change. **Audio Analysis Failures** shows the tracks that failed and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned, and **Clear all** clears every failure.
 
 ![image](/assets/screenshots/audio-analysis-view.png)
 

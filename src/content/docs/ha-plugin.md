@@ -25,7 +25,7 @@ The plugin connects directly to Home Assistant's own API and does not need the [
 - If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
 - If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
 
-Once it is connected, the only settings on that page are the three player control lists under **Player controls**, described under [Linking Home Assistant entities to player controls](#linking-home-assistant-entities-to-player-controls). The page also shows the connection and what it brings, see [Home Assistant](/settings/core/#home-assistant).
+Once it is connected, the plugin's own settings on that page are the three player control lists under **Player controls**, described under [Linking Home Assistant entities to player controls](#linking-home-assistant-entities-to-player-controls). A change to them applies right away. The page also shows the connection and what it brings, see [Home Assistant](/settings/core/#home-assistant).
 
 ## AI and text-to-speech engines
 
@@ -45,7 +45,7 @@ The engines only decide which Home Assistant entity gets called. The model, the 
 
 ### Choosing an engine for a feature
 
-The [**What uses AI**](/settings/ai/#what-uses-ai) list on **Settings → AI** shows which engine each feature uses, and opens the place where that feature picks its own. Engines from Home Assistant are named after the plugin and then the entity, so two similar engines can be told apart:
+The [**What uses AI**](/settings/ai/#what-uses-ai) list on **Settings → AI** shows each feature that uses an engine, with a picker on its row to give that feature its own engine; the rows of AI Radio open its **Reconfigure** instead. Engines from Home Assistant are named after the plugin and then the entity, so two similar engines can be told apart:
 
 ```text
 Home Assistant | Google Translate (tts.google_translate_en_com)
