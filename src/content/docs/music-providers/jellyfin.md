@@ -53,4 +53,3 @@ You will need to provide the following to Music Assistant:
 
 ## Known Issues / Notes
 - If something is not working, check first that the account you gave Music Assistant can reach your music through Jellyfin's own web interface. Problems there will show up here too
-- Lyrics from embedded tags in the local files is not passed through to Music Assistant
