@@ -77,7 +77,7 @@ Administrators can see all tasks on the server whereas Users can only see tasks 
 
 ### Task settings
 
-**Task settings**, at the top of the page, holds one setting:
+**Task settings**, at the top of the page, opens in place and holds one setting:
 
 - <b>Maximum number of concurrent background tasks.</b> Defaults to 2. This controls how many background tasks run simultaneously. Higher numbers mean higher demands on the system's resources and can slow the system down. Setting is only visible when the advanced toggle is on
 

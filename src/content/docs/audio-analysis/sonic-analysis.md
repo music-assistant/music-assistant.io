@@ -39,7 +39,7 @@ Alongside these scores, a compact **audio fingerprint** is saved for every track
 
 ## Tracking progress
 
-Coverage for every analysis module is shown at the top of [**Settings → Music → Audio analysis**](/settings/music-provider-settings/#analysis-status).
+Coverage for every analysis module is shown under **Progress**, at the top of [**Settings → Music → Audio analysis**](/settings/music-provider-settings/#analysis-status).
 
 ![Audio analysis coverage page showing Loudness Analysis, Smart Fades and Sonic Analysis](/assets/screenshots/audio-analysis-view.png)
 

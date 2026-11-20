@@ -23,7 +23,7 @@ With no engines at all, the page shows **No AI engines yet** instead, with **Add
 
 ## What uses AI
 
-This list shows every feature that is set up and uses an engine, with the kind of engine it needs. Pick the engine right on its row, with the same options as the feature's own picker, and the choice is saved straight away. A row shows **Not available** when there is no engine for it. AI Radio keeps its engines in its setup, so its rows show the engine it uses, with **Default ·** followed by the engine's name when it follows the default, and open its **Reconfigure**.
+This list shows every feature that is set up and uses an engine, with the kind of engine it needs. Pick the engine right on its row, with the same options as the feature's own picker, and the choice is saved straight away. A row shows **Not available** when there is no engine for it, and **The selected engine is not available** under its picker when the engine it uses is gone. AI Radio keeps its engines in its setup, so its rows show the engine it uses, with **Default ·** followed by the engine's name when it follows the default, and open its **Reconfigure**.
 
 | Feature | Kind | Where else to change it |
 |---|---|---|

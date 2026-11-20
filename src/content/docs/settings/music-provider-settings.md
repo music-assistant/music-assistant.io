@@ -70,11 +70,15 @@ This page lists what is set up to analyse your audio, such as [Loudness Analysis
 
 ### Analysis status
 
-**Audio Analysis Coverage**, at the top of the page, shows the progress of each one. The stale number is the number of tracks that need to be re-analysed due to a version change. **Audio Analysis Failures** shows the tracks that failed and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned, and **Clear all** clears every failure.
+At the top of the page are three rows that open in place:
+
+- <b>Progress.</b> How far each analysis module has got. The row says **Up to date**, or how many modules are still busy. The stale number is the number of tracks that need to be re-analysed due to a version change
+- <b>Failed tracks.</b> The tracks that failed and the reason for the failure, with their number on the row. Each line can be individually deleted to unblock the file and allow it to be rescanned, and **Clear all** clears every failure
+- <b>Settings.</b> The settings of the analysis, listed below
 
 ![image](/assets/screenshots/audio-analysis-view.png)
 
-The page has two settings:
+**Settings** holds two settings:
 
 - <b>Background analysis concurrency.</b> Maximum number of tracks analysed concurrently during the nightly background scan. Starts at 1, or 2 on a server with 4 or more CPU cores, and should only be increased on more powerful systems
 - <b>Smart Fades Log level.</b> Specific log level for the Smart Fades mixer and analyzer. Setting is only visible when the advanced toggle is on
