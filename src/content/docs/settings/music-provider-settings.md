@@ -70,9 +70,10 @@ This page lists what is set up to analyse your audio, such as [Loudness Analysis
 
 ### Analysis status
 
-At the top of the page are three rows that open in place:
+Each module in the list shows how far its analysis has got: a progress bar with **Up to date**, or how many tracks are still waiting, including tracks to analyse again after the module was updated.
 
-- <b>Progress.</b> How far each analysis module has got. The row says **Up to date**, or how many modules are still busy. The stale number is the number of tracks that need to be re-analysed due to a version change
+At the top of the page are two rows that open in place:
+
 - <b>Failed tracks.</b> The tracks that failed and the reason for the failure, with their number on the row. Each line can be individually deleted to unblock the file and allow it to be rescanned, and **Clear all** clears every failure
 - <b>Settings.</b> The settings of the analysis, listed below
 
