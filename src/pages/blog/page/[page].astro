@@ -1,0 +1,15 @@
+---
+// /blog/page/<n>/ for n >= 2. Page 1 is /blog/ (index.astro).
+import type { InferGetStaticPropsType } from "astro";
+import BlogListing from "../../../components/marketing/blog/BlogListing.astro";
+import { getListings } from "../../../utils/blog";
+
+export async function getStaticPaths() {
+  return (await getListings("all"))
+    .filter(({ listing }) => listing.page > 1)
+    .map((props) => ({ params: { page: String(props.listing.page) }, props }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+---
+
+<BlogListing {...Astro.props} />

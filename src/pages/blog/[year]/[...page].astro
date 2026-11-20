@@ -1,0 +1,16 @@
+---
+// /blog/<year>/ and its /page/<n>/ pages.
+import type { InferGetStaticPropsType } from "astro";
+import BlogListing from "../../../components/marketing/blog/BlogListing.astro";
+import { getListings, pageParam } from "../../../utils/blog";
+
+export async function getStaticPaths() {
+  return (await getListings("year")).map((props) => ({
+    params: { year: props.listing.facet.slug, page: pageParam(props.listing.page) },
+    props,
+  }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+---
+
+<BlogListing {...Astro.props} />
