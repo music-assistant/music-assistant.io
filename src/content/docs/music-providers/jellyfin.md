@@ -22,7 +22,7 @@ This source connects Music Assistant to the music libraries on your Jellyfin ser
 | Self-Hosted Local Media | Yes |
 | Media Types Supported | Artists, Albums, Tracks, Playlists |
 | [Recommendations](/ui/#view---discover) Supported | No |
-| Lyrics Supported | No |
+| Lyrics Supported | Yes |
 | [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
 | Similar Artists Support                         |            No                      |
