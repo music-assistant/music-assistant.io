@@ -24,6 +24,7 @@ To bring audio from a compatible Sendspin line-in, microphone, or other input in
 - **Per-player audio settings**: each device gets its own equaliser and volume
 - **Control from the device**: play, pause and skip can be driven from the player as well as from Music Assistant
 - **Track information**: title, artwork and progress appear on every device
+- **Stereo pairs**: two Sendspin speakers can play as one player, see [Stereo Pairs](#stereo-pairs)
 
 ## Configuration
 
@@ -59,6 +60,31 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 - <b>Sample rate selection.</b> Decides the sample rate of the audio sent to this player, and can only be changed while the preferred audio format is Automatic. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
 
 Preferred audio format, Sample rate selection, and Unpair on a paired device only show while <b>Show advanced settings</b> is on.
+
+## Stereo Pairs
+
+Two speakers with Sendspin built in can play as one player, a stereo pair, with one speaker on the left channel and the other on the right. Both need to be set up and connected. The web player and bridged players, such as Google Cast devices in Sendspin mode, can't be part of a stereo pair.
+
+To make a stereo pair:
+
+1. Open the settings of one of the speakers and, in the [Output Protocols](/settings/individual-player/#output-protocols) section, open the ⋮ menu of its Sendspin output
+2. Select **Make multi-channel player…**
+3. Pick the other speaker
+4. Each speaker is shown next to its channel, **Left** or **Right**. The swap button swaps the two
+5. Give the stereo pair a **Name** and select **Create**
+
+The Sendspin output of each speaker moves to the new player. A player that has no other output disappears, together with its settings.
+
+The stereo pair works as one player:
+
+- It has one volume. Turning the volume up or down on one of the speakers changes the other one too
+- Its [DSP](/dsp/) settings apply to both speakers. A filter for one channel, such as a [Parametric Equalizer](/dsp/parametriceq/) band for the left channel only, changes only the speaker that plays that channel
+- In a group it takes part as one player
+- While one speaker is offline, the other plays both channels until it is back
+
+In the Output Protocols section of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps the channels of the two, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
+
+To take the stereo pair apart, select **Take apart** in the ⋮ menu at the top right of its settings. The stereo pair disappears with its settings, and its speakers come back as players of their own, with default settings. A speaker that is offline comes back once it is connected again.
 
 ## Older Devices
 
