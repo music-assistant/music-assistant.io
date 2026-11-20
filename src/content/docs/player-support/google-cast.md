@@ -50,6 +50,7 @@ Expect to do some tuning afterwards. Playback is rarely in sync straight away, s
 ## Known Issues / Notes
 
 - Cast speakers do not support gapless playback or crossfading of audio themselves. While crossfade is enabled, Music Assistant always sends a Cast speaker the queue as one continuous [flow mode](/faq/tech-info/#track-queueing) stream, regardless of the flow mode setting. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- Most Cast speakers get MP3 by default, because several models (such as Samsung's Music Frame and soundbars, the Google Nest Mini and the Nest Audio) stop playing a long FLAC stream after a while. The Chromecast Audio and Nest Hub play FLAC reliably and keep FLAC as their default. You can choose another codec per speaker with **Output codec to use for streaming audio to the player** in the advanced settings
 - If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
 - After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
@@ -81,10 +82,10 @@ You may see any of these:
 In the individual player settings:
 
 1. If **HTTP Profile used for sending audio** is set to `Profile 3 - forced content length` and playback stops after a few minutes, set it to `Profile 2 - no content length`.
-2. Set **Output codec to use for streaming audio to the player** to `MP3`.
+2. Set **Output codec to use for streaming audio to the player** to `MP3`, if it isn't already. MP3 is the default for most Cast speakers.
 3. If changing to MP3 makes playback last longer but it still fails eventually, set **HTTP Profile used for sending audio** to `Profile 1 - chunked`.
 
-Once playback is reliable you can try putting the output codec back to `FLAC`, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
+Once playback is reliable you can try `FLAC` as the output codec, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
 
 > [!IMPORTANT]
 > **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Set the same profile on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
