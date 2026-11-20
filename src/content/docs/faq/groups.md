@@ -12,12 +12,12 @@ Music Assistant uses four types of groups (these are outlined in the [Grouping P
 
 See also the section on Announcements [Group Behaviour](/integration/announcements/#group-behaviour).
 
-For temporary and permanent sync groups the [protocol linking](/usage/#streaming-protocols) feature and Sendspin bridges available to Music Assistant lead to powerful options for group creation. The Sendspin bridges create a link between the Sendspin protocol, and the AirPlay and Google Cast protocols which allows for creation of groups of different provider types which will all play in sync. For users with Sonos devices with [AirPlay functionality](/player-support/sonos/#airplay-functionality) then this will further allow Sonos devices to also be played in sync. Even more impressively, Sonos devices without AirPlay functionality can be grouped with a player that does and then that player grouped to an AirPlay group. All of this functionality is illustrated in the following diagram. On the left is the traditional model where each provider type is isolated (and this remains the case for many of the providers available in MA) and then on the right is shown the potential broad linking of disparate types that is available across the Sendspin, AirPlay, Google Cast and Sonos ecosystems.
+For temporary and permanent sync groups the [protocol linking](/usage/#streaming-protocols) feature and Sendspin bridges available to Music Assistant lead to powerful options for group creation. The Sendspin bridges create a link between the Sendspin protocol, and the AirPlay, Squeezelite and Google Cast protocols which allows for creation of groups of different provider types which will all play in sync. For users with Sonos devices with [AirPlay functionality](/player-support/sonos/#airplay-functionality) then this will further allow Sonos devices to also be played in sync. Even more impressively, Sonos devices without AirPlay functionality can be grouped with a player that does and then that player grouped to an AirPlay group. All of this functionality is illustrated in the following diagram. On the left is the traditional model where each provider type is isolated (and this remains the case for many of the providers available in MA) and then on the right is shown the potential broad linking of disparate types that is available across the Sendspin, AirPlay, Google Cast and Sonos ecosystems.
 
 <a href="/assets/group-diagram.png"><img src="/assets/group-diagram.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
 > [!NOTE]
-> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay - Sendspin bridges should always work. On Chromecast devices Sendspin is experimental and switched off by default, so it has to be turned on per speaker before that speaker can join a Sendspin group, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices)
+> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay and Squeezelite - Sendspin bridges should always work. On Chromecast devices Sendspin is experimental and switched off by default, so it has to be turned on per speaker before that speaker can join a Sendspin group, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices)
 
 ## Temporary Sync Group
 
@@ -63,7 +63,7 @@ After selecting ADD GROUP PLAYER as shown above, the group configuration screen 
 - The group will not power on if one of the child players is synced to another group
 - The group will power on even if one or more of the child players is unavailable
 - If, in the group settings, the player friendly name has been replaced by an unusual ID then likely the player was seen by the MA logic as unavailable. Check the individual player status
-- When adding a player to an already playing group, AirPlay, Snapcast and Sonos will keep playing but all other types will pause for a very brief period to resync
+- When adding a player to an already playing group, AirPlay, Snapcast, Sonos and Squeezelite will keep playing but all other types will pause for a very brief period to resync
 
 ## Universal Groups
 

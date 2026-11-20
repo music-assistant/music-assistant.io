@@ -46,7 +46,7 @@ Apple TVs offer two extra pairing steps after the main one. Both are optional an
 
 Music Assistant chooses how to stream to each device automatically, so under normal circumstances nothing here needs changing.
 
-- <b>Audio synchronization delay correction.</b> Shifts when audio is heard on this device compared to the other players it is synced with, up to ±500 ms. Negative values make it play earlier, positive values later. Use a negative value for a device connected to a TV, AV receiver or amplifier that adds its own delay — if it lags the group by about 100 ms, set it to -100.
+- <b>Audio synchronization delay correction.</b> Shifts when audio is heard on this device compared to the other players it is synced with, up to ±500 ms. Positive values make it play earlier, negative values later. Use a positive value for a device connected to a TV, AV receiver or amplifier that adds its own delay — if it lags the group by about 100 ms, set it to 100.
 
 ### Advanced Protocol Settings
 
