@@ -14,9 +14,9 @@ A powerful feature of Music Assistant is that it will combine all of the availab
 
 The `Reconfigure` button launches the configuration wizard for the player and for those with multiple protocols the one to be reconfigured will need to be selected from a drop down box. 
 
-## Queue Settings
+## Playback Settings
 
-This is a link to the respective [Queue Settings](/usage/#the-queue). It should be noted that the defaults for all players are set in the [Playback](/settings/playback/) settings
+This is a link to the player's own [playback settings](/usage/#the-queue). The defaults for all players are set in the [Playback](/settings/playback/) settings
 
 ## DSP Settings
 

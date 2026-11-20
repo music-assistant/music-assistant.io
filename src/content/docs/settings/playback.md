@@ -5,7 +5,7 @@ description: The defaults every player follows, from what playing an item does t
 
 # Playback <img src="/assets/icons/play-button.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-**Settings → Players → Playback** holds the defaults every player follows. The behaviour when playing or enqueuing items is determined by the settings on this page. Smart shuffle, autoplay, crossfade and volume normalization are set on a global level here and can be overridden on a per queue basis in the [queue settings](/usage/#the-queue). Only administrators see this page.
+**Settings → Players → Playback** holds the defaults every player follows. The behaviour when playing or enqueuing items is determined by the settings on this page. Smart shuffle, autoplay, crossfade and volume normalization are set on a global level here and can be overridden for each player in its own [playback settings](/usage/#the-queue). Only administrators see this page.
 
 Some settings are only shown when the **Show advanced settings** toggle in the header of the **Options** card is on, and the toggle is remembered for your user.
 
@@ -100,7 +100,7 @@ How much to raise or lower the volume, in dB, whenever the fixed-gain path is us
 
 - <b>Target level for volume normalization.</b> The loudness, in LUFS, that volume normalization aims for. The default is -14 LUFS and a value between -23 and -12 LUFS is recommended. See [Technical Information](/faq/tech-info/#volume-normalization). Setting is only visible when the advanced toggle is on
 
-## Queue Playback
+## Playback
 
 - <b>Stop a paused player after (seconds).</b> How long a player may stay paused before Music Assistant stops it to free the audio it holds. It starts at 30 seconds. Once stopped, the player shows as idle, and pressing play still continues where you paused. Not every player can stay paused for long. Setting is only visible when the advanced toggle is on
 - <b>Audio buffer size.</b> Controls how much audio is buffered in memory. A larger buffer improves playback stability and seeking but uses more memory. The options are `Maximum [default]`, `Minimal` and `Balanced`. The options are filtered depending upon system RAM. Minimal (60s buffer) is always available, Balanced (300s) requires a nominal 4 GB of RAM, and Maximum (1200s) requires a nominal 8 GB of RAM. If total memory can't be determined then all three presets are offered although the default in that case is, conservatively, Minimal.
