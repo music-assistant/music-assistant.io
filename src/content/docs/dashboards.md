@@ -35,7 +35,7 @@ A few things worth knowing:
 
 Chromecast, Google TV, Nest Hub and TVs with Chromecast built in all show up in the list, as long as the [Google Cast](/player-support/google-cast/) player provider is added. Speakers and speaker groups don't, since there is nothing to look at. A display still shows up if you have disabled it as a player.
 
-Google Cast devices need one extra thing: [Remote Access](/settings/remote-access/) switched on, or an [Internal URL or External URL](/settings/core/#webserver) that starts with `https://`. Without any of these you'll see "Remote access, an HTTPS base URL or an HTTPS external URL is required to cast dashboards".
+Google Cast devices need one extra thing: [Remote Access](/settings/remote-access/) switched on, or an [Internal URL or External URL](/settings/core/#music-assistant-url) that starts with `https://`. Without any of these you'll see "Remote access, an HTTPS base URL or an HTTPS external URL is required to cast dashboards".
 
 ### Fully Kiosk tablets
 

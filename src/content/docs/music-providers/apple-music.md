@@ -45,7 +45,7 @@ This source signs Music Assistant in to your Apple Music account, so your saved 
 Click the **Authenticate with Apple Music** button, then in the pop-up window sign in with your Apple ID and give Music Assistant access to your Apple Music library. Everything needed is collected for you.
 
 > [!IMPORTANT]
-> For Apple to hand you back to Music Assistant afterwards, you have to be on Music Assistant's own web address while you do this — that is `http://<YOUR_MA_IP>:8095`. If you have installed Music Assistant as an app, that port has to be opened first, as described in the [core settings](/settings/core/#webserver). You can close it again once Apple Music is working.
+> For Apple to hand you back to Music Assistant afterwards, you have to be on Music Assistant's own web address while you do this — that is `http://<YOUR_MA_IP>:8095`. If you have installed Music Assistant as an app, that port has to be opened first, as described in the [network settings](/settings/core/#web-interface-and-api). You can close it again once Apple Music is working.
 
 [![Preview image](/assets/screenshots/apple-music-auth-0.png)](/assets/screenshots/apple-music-auth-0.png)
 

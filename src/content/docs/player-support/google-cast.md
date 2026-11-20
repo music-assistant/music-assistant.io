@@ -17,7 +17,7 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player support** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `Google Cast`.
+1. In Music Assistant, go to **Settings → Players → Player support** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `Google Cast`.
 2. Your Cast devices, and any speaker groups created in the Google Home app, will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
@@ -26,7 +26,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available when the advanced toggle is enabled:
 
-- <b>Manual IP addresses for discovery.</b> Normally Music Assistant will automatically discover all players on the network, using multicast discovery on the (L2) local network, such as mDNS or UPNP (see [Networking Basics](/faq/networking/) for what these terms mean). In the case of special network setups or when issues are encountered with one or more players not being discovered, IP addresses can be manually added. Note that this setting is not recommended for normal use and should only be used by those with advanced networking knowledge. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming. In that case, ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#streams)
+- <b>Manual IP addresses for discovery.</b> Normally Music Assistant will automatically discover all players on the network, using multicast discovery on the (L2) local network, such as mDNS or UPNP (see [Networking Basics](/faq/networking/) for what these terms mean). In the case of special network setups or when issues are encountered with one or more players not being discovered, IP addresses can be manually added. Note that this setting is not recommended for normal use and should only be used by those with advanced networking knowledge. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming. In that case, ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#audio-streaming)
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Google Cast provider has the following:
 
@@ -97,7 +97,7 @@ That is a different problem. Work through the [discovery checklist](/faq/network
 If none of the above solves it, these are the settings that make a Cast problem diagnosable. Both are needed, and they are in different places.
 
 1. Set the Google Cast provider's log level to **verbose**. This records the conversation with the device, including any error it reports back.
-2. Set the Streams controller log level to **debug** in [System Settings](/settings/core/). This logs every request for audio along with which device asked, which is how you tell that a device has restarted the stream rather than simply stopped.
+2. Set the **Streams** log level to **debug** under **Log levels** in [**Settings → System → Diagnostics**](/settings/core/#log-levels). This logs every request for audio along with which device asked, which is how you tell that a device has restarted the stream rather than simply stopped.
 3. Restart Music Assistant, which starts a fresh log.
 4. Reproduce the problem, and note the time of day the audio stopped.
 5. Download the log from [Diagnostics](/settings/core/#diagnostics) before restarting again.

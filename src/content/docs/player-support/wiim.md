@@ -23,7 +23,7 @@ If the WiiM device is grouped with an AirPlay device, or if the default [output 
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `WiiM`.
+1. In Music Assistant, go to **Settings → Players → Player support**, click **Add player support** and select `WiiM`.
 2. Your WiiM devices will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).

@@ -42,7 +42,7 @@ The daily background scan and the on-demand lookup only fill in information that
 
 A field that no source has information for keeps its stored value. When a source cannot be reached during the update, for example because the NAS holding your music is switched off, nothing is replaced and only missing information is filled in. Genres, images and links are only added to, never removed. Lyrics follow their own rules, see [Lyrics](./lyrics).
 
-The language used for descriptions and bios is set under [**Settings → System → Metadata**](/settings/core/#metadata) → "Preferred language". A bio or description in your preferred language wins, then one in English. A bio or description from your own files counts as your preferred language.
+The language used for descriptions and bios is set under [**Settings → Music → Metadata**](/settings/metadata-provider-settings/#metadata-settings) → "Preferred language". A bio or description in your preferred language wins, then one in English. A bio or description from your own files counts as your preferred language.
 
 ## What Music Assistant reads from local file libraries
 
@@ -89,4 +89,4 @@ When write access is available the exceptions to this are:
 | **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
 | **Wikipedia** | Multi-lingual artist biographies, in your preferred language where available. | Artist MBID (used to resolve the Wikipedia article via Wikidata) |
 
-Individual metadata sources can be turned off in **Settings → Metadata**, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
+Individual metadata sources can be turned off in **Settings → Music → Metadata**, or all at once via the [Metadata settings](/settings/metadata-provider-settings/#metadata-settings) "Enable metadata retrieval from online metadata sources".

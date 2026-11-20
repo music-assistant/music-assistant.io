@@ -17,7 +17,7 @@ Some devices can be reached more than one way. Anything Home Assistant already k
 
 ## Adding player support
 
-Go to **Settings → Player support → Add player support**, which opens the [Marketplace](/settings/marketplace/) on its player support, and pick the one that matches your devices. Each one has its own page in this section covering what it supports and how to set it up.
+Go to **Settings → Players → Player support → Add player support**, which opens the [Marketplace](/settings/marketplace/) on its player support, and pick the one that matches your devices. Each one has its own page in this section covering what it supports and how to set it up.
 
 Settings that apply to all player support are described on the [Player Support Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages.
 

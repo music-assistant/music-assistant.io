@@ -37,7 +37,7 @@ Music Assistant also shows what a room plays when the music was started somewher
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `Teufel Raumfeld`.
+1. In Music Assistant, go to **Settings → Players → Player support**, click **Add player support** and select `Teufel Raumfeld`.
 2. Check the host's **IP address**, which is filled in when the host is found on the network, or enter it.
 3. Your rooms appear in the player list within a few seconds of the host being reached.
 
