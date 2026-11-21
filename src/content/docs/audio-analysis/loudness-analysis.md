@@ -28,7 +28,7 @@ If a track's measured loudness is wrong, select `Refresh item` from the track's 
 
 ## How the data is used
 
-- **[Volume normalization](/settings/core/#queue-playback)**. Keeps perceived loudness consistent when transitioning between tracks from different sources (a loudly-mastered modern album, a quiet jazz release, a podcast and a streaming track all play back at comparable loudness). How the measurement is used is chosen under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), and normalization is switched on or off per queue.
+- **[Volume normalization](/settings/playback/#volume-normalization)**. Keeps perceived loudness consistent when transitioning between tracks from different sources (a loudly-mastered modern album, a quiet jazz release, a podcast and a streaming track all play back at comparable loudness). How the measurement is used is chosen under [**Settings → Players → Playback**](/settings/playback/#volume-normalization), and normalization is switched on or off per queue.
 - When a track is played through a player that has volume normalization disabled, or from a source that delivers its audio at a loudness target of its own, the live loudness measurement is skipped, as no gain would be applied. However, a background job continues to measure local library tracks independently of playback, so a measurement is still produced over time.
 
 ## Settings

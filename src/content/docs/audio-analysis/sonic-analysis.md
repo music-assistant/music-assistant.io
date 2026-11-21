@@ -39,11 +39,11 @@ Alongside these scores, a compact **audio fingerprint** is saved for every track
 
 ## Tracking progress
 
-Coverage for every audio analysis provider is shown on a single page under [**Settings → System → Audio analysis**](/settings/core/#audio-analysis).
+How far every analysis module has got is shown on its entry in [**Settings → Music → Audio analysis**](/settings/music-provider-settings/#analysis-status).
 
 ![Audio analysis coverage page showing Loudness Analysis, Smart Fades and Sonic Analysis](/assets/screenshots/audio-analysis-view.png)
 
-Each row shows the provider's overall coverage, the count of analysed vs. total tracks, and how many are *pending* (waiting to be analysed) or *stale* (analysed by an older model version and due for refresh).
+Each module shows a progress bar with its percentage, and **Up to date** or how many tracks are still waiting, including tracks analysed by an older model version and due for refresh.
 
 ## How the data is used
 

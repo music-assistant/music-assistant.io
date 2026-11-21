@@ -19,12 +19,10 @@ This is the last of the three Home Assistant pieces; it needs the [Home Assistan
 
 ## Configuration
 
-Before the Player Provider can be added the [Plugin](/ha-plugin/) must be installed. The following image shows what a successful installation looks like
+Before the Player Provider can be added the [Plugin](/ha-plugin/) must be installed. Once it is, **Settings → System → Home Assistant** shows the connection as **Connected**.
 
-![screenshot](/assets/screenshots/plugin-provider.png)
-
-- In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `Home Assistant Media Players`
-- In the provider settings, select which players are desired to be utilised. These can be changed at any time.
+- In Music Assistant, go to **Settings → System → Home Assistant** and select **Add** on the **Home Assistant players** row, or go to **Settings → Players → Player support**, click **Add player support** and select `Home Assistant Media Players`
+- Choose which players to use under **Player entities**. After **Add** on the Home Assistant page this choice opens by itself, and **Choose** on the **Home Assistant players** row opens it again at any time.
 
 > [!CAUTION]
 > Features are most likely limited with these players. Always prefer a native player provider, if it exists in MA, as that is optimised

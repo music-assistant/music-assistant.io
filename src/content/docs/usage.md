@@ -63,7 +63,7 @@ Each player has its own queue. View the queue by pressing the ![Preview image](/
 The queue order can be adjusted by selecting and dragging the six dot icon or via the options in the ⋮ menu.
 
 > [!NOTE]
-> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → System → Player Queues**](/settings/core/#player-queues)
+> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → Players → Playback**](/settings/playback/#default-enqueue-option)
     
 The options in the menu available in the top right is shown below. 
 
@@ -71,23 +71,23 @@ Transferring the queue will also transfer the shuffle and repeat setting to the 
 
 ![Preview image](/assets/screenshots/now_playing_menu.png)
 
-Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A TTS provider has to be selected in the [System Player Settings](/settings/core/#players)
+Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A typed message is spoken by the default text-to-speech engine from [**Settings → AI**](/settings/ai/), unless the [Playback settings](/settings/playback/#announcements) pick another one
 
 ![Preview image](/assets/screenshots/play_announcement.png)
 
-When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the queue settings.
+When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the player's playback settings.
 
-Each queue has a number of options which affect various behaviours. The defaults for all queues are set in the [player queues settings](/settings/core/#player-queues), and each queue can override them. To change them for one queue, open **Queue settings**, either from **Settings → Players →** *the player* **→ Queue settings**, or from the ⋮ menu in the [Now Playing view](/ui/#now-playing-view) under **Settings → Queue settings**. The **Open global queue settings** button at the top of the page goes to the defaults.
+Each player has a number of playback options which affect various behaviours. The defaults for all players are set in the [playback settings](/settings/playback/), and each player can override them. To change them for one player, open **Playback**, either from **Settings → Players →** *the player* **→ Playback**, or from the ⋮ menu in the [Now Playing view](/ui/#now-playing-view) under **Settings → Playback settings**. The **Open the defaults** button at the top of the page goes to the defaults for all players.
 
-Each setting starts at `Global [default]`, which uses the default for all queues:
+Each setting starts at `Global [default]`, which uses the default for all players:
 
-- <b>Smart shuffle.</b> Whether the shuffle button uses Smart Shuffle for this queue
+- <b>Smart shuffle.</b> Whether the shuffle button uses Smart Shuffle for this player
 - <b>Optimize order for Smart Fades.</b> Arranges the upcoming tracks so Smart Fades can make smoother transitions
 - <b>Autoplay source.</b> Where Autoplay gets more tracks from when the queue runs out. When `Tracks from a playlist` is chosen, the **Autoplay playlist** box sets the playlist
-- <b>Crossfade mode.</b> Standard crossfade or Smart crossfade for this queue
-- <b>Volume normalization (EBU-R128 based).</b> Turns volume normalization on or off for this queue
+- <b>Crossfade mode.</b> Standard crossfade or Smart crossfade for this player
+- <b>Volume normalization (EBU-R128 based).</b> Turns volume normalization on or off for this player
 
-Turning Autoplay and crossfade on or off is done from the player controls. These settings decide how they work. See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade.
+Turning Autoplay and crossfade on or off is done from the player controls. These settings decide how they work. See the [playback settings](/settings/playback/) for more information about Smart Shuffle, Autoplay, and Smart Crossfade.
 
 > [!NOTE]
 > If a queue is paused for more than 30 seconds its status will change to stopped
@@ -176,7 +176,9 @@ MA searches for the best available version on those providers, preferring exact 
 
 ## Streaming Protocols
 
-Music Assistant talks to your players using whichever streaming protocol suits them best; you do not normally need to think about this. Many devices support more than one protocol and Music Assistant combines all of the different protocols that it discovers into one player. Each player has a default protocol which is [selectable in the settings](/settings/individual-player/#output-protocols) that will always be used when playback is initiated to the individual player. When grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without you needing to do anything. In some cases there might be an interruption to playback if the stream must be restarted.
+Music Assistant talks to your players using whichever streaming protocol suits them best; you do not normally need to think about this. Many devices can be reached in more than one way, for example through their own provider and over AirPlay. Such a device is one player, and every way Music Assistant reaches it is a protocol of that player. Playing to a player uses its preferred protocol, which is [selectable in the settings](/settings/individual-player/#output-protocols). When grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without you needing to do anything. In some cases there might be an interruption to playback if the stream must be restarted.
+
+An app from outside Music Assistant can also play on a speaker, for example music cast from a phone to the speaker's Chromecast receiver. While Music Assistant is not playing on that player and the player is not in a group, it shows what the app plays, and the player bar and the full-screen player name the app and the protocol it plays on, for example *YouTube • Chromecast*. The play, pause and skip buttons then control that app, as far as the app allows.
 
 ## Online Metadata Sources
 
