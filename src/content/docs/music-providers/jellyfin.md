@@ -35,6 +35,7 @@ This source connects Music Assistant to the music libraries on your Jellyfin ser
 - Search from 'Music' libraries on the Jellyfin server
 
 ## Configuration:
+
 You will need to provide the following to Music Assistant:
 
 - <b>Server.</b> For example, https://music.domain.tld/ or http://192.168.1.4:8096/ (for a local server)
@@ -44,9 +45,18 @@ You will need to provide the following to Music Assistant:
 
 > [!NOTE]
 > It is recommended that IP address is used instead of the domain name to avoid problems if IPv6 name resolution fails
+
 ### Settings
 
 - <b>Advanced - Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. This is on by default
+
+## Playlists
+
+You can add tracks to an existing Jellyfin playlist from **Add to playlist** and remove tracks from its playlist view. Changes are saved to Jellyfin, so other Jellyfin clients see the same playlist after refreshing.
+
+Only playlists that the connected Jellyfin account owns or has permission to edit are editable. Other playlists remain available for listening. If the server cannot provide the account's edit permissions, Music Assistant keeps the playlist read-only. Edit permissions are cached for five minutes; Jellyfin still checks permissions on every change.
+
+Creating Jellyfin playlists and reordering their tracks in Music Assistant are not supported yet. Create a playlist in Jellyfin or another compatible client first.
 
 ## Favorites
 
