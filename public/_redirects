@@ -12,3 +12,10 @@
 
 # The MPD provider has always pointed at a music-providers path that never existed.
 /music-providers/mpd             /player-support/music-player-daemon   301
+
+# Page 1 of every blog listing lives at the listing root (see src/utils/blog.ts),
+# so never serve a second URL for it.
+/blog/page/1                     /blog/                                301
+/blog/tags/:tag/page/1           /blog/tags/:tag/                      301
+/blog/authors/:author/page/1     /blog/authors/:author/                301
+/blog/:year/page/1               /blog/:year/                          301
