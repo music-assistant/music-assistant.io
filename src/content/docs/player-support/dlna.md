@@ -19,12 +19,13 @@ Music Assistant has support for uPnP/DLNA based devices. This is a (somewhat) un
 1. In Music Assistant, go to **Settings → Players → Player support** and check whether `DLNA` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `DLNA`.
 2. Your DLNA devices will be discovered automatically and will appear in the player list. Note it can take up to 5 minutes for some devices to be discovered.
 
-If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered). A device that is still not discovered can be added manually with the `Manual device addresses` advanced setting described below.
 
 ## Settings
 
 For information about the settings seen in the MA UI refer to the [Player Support Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages, including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Settings that differ or are specific to DLNA are:
 
+- <b>Manual device addresses (IP or description URL).</b> A [Player Support Setting](/settings/player-provider/) of DLNA, shown when the advanced toggle is enabled. If a device is not discovered automatically, add it manually using its IPv4 address, such as `192.168.1.50`. If the device does not respond to that, use the full description URL instead, such as `http://192.168.1.50:8080/description.xml` (this URL differs per device). A device that was switched off or unreachable is reconnected within about a minute. If players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming; in that case ensure the device can reach the server on the network and double check the [Stream server settings](/settings/core/#streams)
 - <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> On by default for DLNA, because most DLNA players cannot queue up the next track themselves
 - <b>Replace Pause with Stop.</b> Some older uPnP players are unable to pause streamed music and ignore the command. Enable this if that occurs and a stop command will be issued for both pause and stop
 - <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit
