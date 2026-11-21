@@ -5,7 +5,7 @@ description: Find and add music sources, player support, metadata, plugins and a
 
 # Marketplace <img src="/assets/icons/marketplace-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The **Marketplace** is where you find and add music sources, player support, metadata, plugins and audio analysis. It is the first entry in the settings. The add buttons on the settings pages, such as **Add a music source** under **Settings → Music sources**, open it too, on the tab of that kind.
+The **Marketplace** is where you find and add music sources, player support, metadata, plugins and audio analysis. It is the first entry in the settings. The add buttons on the settings pages, such as **Add a music source** under **Settings → Music**, open it too, on the tab of that kind.
 
 Administrators can add anything from it. Users see the Marketplace when their role lets them add music sources of their own, as the standard **User** role does, and it then only offers the music sources they can add for themselves, such as their own Spotify account or a folder of local files. See [Adding your own music sources](/settings/user-management/#adding-your-own-music-sources).
 
@@ -31,7 +31,7 @@ At the bottom of the tab, **Browse everything** leads to the tab of each kind.
 
 ![The Music sources tab with the Stage filter](/assets/screenshots/marketplace/list.png)
 
-Each kind has a tab of its own, with how many there are: **Music sources**, **Player support**, **Metadata**, **Plugins** and **Audio analysis**. A tab lists everything of that kind by name. **Stage** filters the list, and the link at the top right, such as **Manage your music sources**, opens the settings page of that kind.
+Each kind has a tab of its own, with how many there are: **Music sources**, **Player support**, **Metadata sources**, **Plugins** and **Audio analysis**. A tab lists everything of that kind by name. The live sources, such as Spotify Connect, are on the **Music sources** tab. The **Music sources** and **Plugins** tabs have chips that filter on what an entry offers, the same as on [**Settings → Music**](/settings/music-provider-settings/#music-sources) and [**Settings → Plugins**](/plugins/#adding-a-plugin). **Stage** filters the list, and the link at the top right, such as **Manage your music sources**, opens the settings page of that kind.
 
 **Search the Marketplace** looks through the names and descriptions. On the Discover tab it searches every kind; on another tab, only that kind.
 
@@ -41,10 +41,10 @@ The card of an entry says who made it: **by the Music Assistant team**, or by it
 - <b>Beta.</b> It is complete, but not fully tested and may still have bugs
 - <b>Alpha.</b> It is early in its development and not ready for everyday use
 - <b>Experimental.</b> It may change at any time or break often, for example because the service it uses keeps changing. Not recommended for everyday use
-- <b>Unmaintained.</b> Nobody looks after it any more, so it gets no updates or support and may stop working. Its maintainers are looking for someone to take it over
+- <b>Unmaintained.</b> Nobody looks after it any more, so it gets no updates or support and may stop working. The Music Assistant team is looking for someone to take it over
 - <b>Added.</b> You have set it up already
 
-An entry without a stage badge is stable.
+An entry without a stage badge is stable. A card also shows what the entry offers, such as **Library** or **Radio** for a music source and **Scrobbling** for a plugin.
 
 ### The details of an entry
 
@@ -89,7 +89,7 @@ Add something from the community catalog as you would anything else. A note come
 
 ![The note before something from the community catalog is installed](/assets/screenshots/marketplace/community-note.png)
 
-It names its maintainers, says that it runs as part of your server, and links to where you ask for help. **Continue** installs it on your server and then sets it up as usual. Its settings are afterwards on the settings page of its kind, such as **Settings → Music sources**, like those of anything else.
+It names its maintainers, says that it runs as part of your server, and links to where you ask for help. **Continue** installs it on your server and then sets it up as usual. Its settings are afterwards on the settings page of its kind, such as **Settings → Music**, like those of anything else.
 
 ### Updates
 
@@ -135,7 +135,7 @@ Nothing from the community catalog runs while Music Assistant is in [safe mode](
 
 Ask the maintainers of the entry, through **Get help** or **Source code** in its details, or the link in the note you read before you installed it. The Music Assistant team does not support what comes from the community catalog.
 
-Something in the community catalog that breaks the rules? Open an issue in the <a href="https://github.com/music-assistant/community-catalog/issues" target="_blank" rel="noopener noreferrer">community catalog on GitHub</a>, with which entry it is, what it does and how you noticed. When it puts its users at risk, do not post the details in public: use **Report a vulnerability** on the **Security** tab of that repository instead.
+Something in the community catalog that breaks the rules? Report it with the form <a href="https://github.com/music-assistant/community-catalog/issues/new?template=report-provider.yml" target="_blank" rel="noopener noreferrer">Report or change a provider</a> in the community catalog on GitHub: which entry it is, what it does and how you noticed. When it puts its users at risk, do not post the details in public: use **Report a vulnerability** on the **Security** tab of that repository instead.
 
 ### Making something for it
 

@@ -4,6 +4,8 @@ title: "Individual Player Settings"
 
 # Individual Player Settings <img src="/assets/icons/settings-individual-player-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
+**Settings → Players** lists your players, with the lights, screens, audio inputs and controllers, such as remotes and volume knobs, in sections of their own below them. **Add group player** creates a [group player](/faq/groups/). The tiles at the top lead to [Playback](/settings/playback/), the defaults every player follows, and to [Player support](/settings/player-provider/). Selecting a player opens its settings, described on this page.
+
 Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. The **Documentation** button at the top of a player's settings opens this page. Some items are hidden unless the **Show advanced settings** toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
 
 ![image](/assets/screenshots/individual-player-settings.png)
@@ -30,9 +32,9 @@ The ⋮ menu at the top right of **Settings → Players** has two options for pl
 - <b>Hide unavailable players.</b> Leaves unavailable players out of the list. It is off to start with and remembered once you change it. While it is on, the ⋮ button shows a dot. Players that need setup and disabled players stay listed
 - <b>Remove unavailable players.</b> Deletes every player whose device can no longer be found, after asking you to confirm how many. It leaves alone the players that need setup, disabled players, and players whose provider is disabled or not running. Right after Music Assistant starts, or a player provider is added or reloaded, its players get a minute to be found again first; if nothing else can be removed meanwhile, the app asks you to try again in a few seconds. Only shown to users who may change player settings
 
-## Queue Settings
+## Playback Settings
 
-This is a link to the respective [Queue Settings](/usage/#the-queue). It should be noted that these can be set globally in the [Player Queues Settings](/settings/core/#player-queues)
+This is a link to the player's own [playback settings](/usage/#the-queue). The defaults for all players are set in the [Playback](/settings/playback/) settings
 
 ## DSP Settings
 

@@ -40,7 +40,7 @@ Music Assistant can browse, sync, and play audio files stored in your personal Y
 
 ### Add Yandex Disk to Music Assistant
 
-1. In Music Assistant, open **Settings → Music sources → Add a music source → Yandex Disk**.
+1. In Music Assistant, open **Settings → Music → Add a music source → Yandex Disk**.
 2. Enter the Client ID and Client Secret from your OAuth application.
 3. Select whether this instance contains music, audiobooks, or podcasts.
 4. Keep **Root folder to scan** set to `root` for the complete disk, or enter a path such as `disk:/Music`.

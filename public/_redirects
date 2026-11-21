@@ -8,6 +8,7 @@
 /music-providers/radiothek       /music-providers/orf-radiothek        301
 /player-support/ha               /player-support/home-assistant        301
 /player-support/mpd              /player-support/music-player-daemon   301
+/settings/user-interface         /settings/profile/#interface          301
 
 # The MPD provider has always pointed at a music-providers path that never existed.
 /music-providers/mpd             /player-support/music-player-daemon   301

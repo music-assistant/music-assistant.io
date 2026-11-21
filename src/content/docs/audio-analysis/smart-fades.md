@@ -6,7 +6,7 @@ title: Smart Fades
 
 **Smart Fades** listens to each track to learn its tempo, where the beats fall, its musical key, its loud and quiet parts, where the kick drum plays and where someone sings. Music Assistant uses that information to choose a transition that suits each pair of tracks, instead of the same fade every time.
 
-Smart Fades is optional and lives in the settings under Audio analysis. Music Assistant adds and enables it automatically on a server with at least 6 GB of RAM and 4 CPU cores. On a smaller server that meets the [minimum requirements](#performance-notes), you can add it yourself.
+Smart Fades is optional and lives under **Settings → Music → Audio analysis**. Music Assistant adds and enables it automatically on a server with at least 6 GB of RAM and 4 CPU cores. On a smaller server that meets the [minimum requirements](#performance-notes), you can add it yourself.
 
 ## What it adds to playback
 
@@ -26,14 +26,14 @@ A transition uses the standard crossfade when a track has no analysis yet, or wh
 
 ## Choosing the crossfade mode
 
-Crossfade is a queue setting. Set it for all players in the [Player Queues settings](/settings/core/#player-queues), or for one player only in [that queue's own settings](/usage/#the-queue):
+Crossfade is a queue setting. Set it for all players in the [Playback settings](/settings/playback/#crossfade), or for one player only in [that queue's own settings](/usage/#the-queue):
 
 | Mode | Behaviour |
 | --- | --- |
 | **Standard Crossfade** | A simple time-based crossfade of a configurable duration. Used as a fallback when Smart Fades cannot run. |
 | **Smart Crossfade** | Uses the Smart Fades analysis to choose a transition that suits each pair of tracks, as described above. |
 
-The duration used for Standard Crossfade (and as a fallback for Smart Crossfade) is set with "Standard crossfade duration" in the Player Queues settings, which shows while Standard Crossfade is selected there.
+The duration used for Standard Crossfade (and as a fallback for Smart Crossfade) is set with "Standard crossfade duration" in the Playback settings, which shows while Standard Crossfade is selected there.
 
 Some players don't natively support gapless or crossfaded playback. For those, Music Assistant automatically switches into flow mode (one continuous stream) so the crossfade can still happen.
 
@@ -55,8 +55,8 @@ Smart Fades runs machine learning on the audio and is more CPU and memory intens
 - An [AVX2](https://en.wikipedia.org/wiki/Advanced_Vector_Extensions) capable CPU on x86 (or use an ARM64 cpu). In virtualized environments, if the host CPU supports AVX2, pass the host CPU model through to the VM
 - Minimum 4GB of RAM and 2 CPU cores
 
-If a server feels sluggish with Smart Fades, remove it in the settings under Audio analysis. Switching players to Standard Crossfade is not enough, because Smart Fades keeps analysing every track that plays for as long as it is installed. [Sonic Analysis](/audio-analysis/sonic-analysis/) also runs machine learning on the audio, so on a small server remove it as well.
+If a server feels sluggish with Smart Fades, remove it under **Settings → Music → Audio analysis**. Switching players to Standard Crossfade is not enough, because Smart Fades keeps analysing every track that plays for as long as it is installed. [Sonic Analysis](/audio-analysis/sonic-analysis/) also runs machine learning on the audio, so on a small server remove it as well.
 
 ## Same-album transitions
 
-Tracks from the same album are usually made to flow together, so by default Music Assistant skips crossfading between tracks of the same album. This applies to both Standard and Smart Crossfade. The behaviour can be overridden with the "[Allow crossfade between tracks from the same album"](/settings/core/#queue-playback) setting if cross-fading album-internal tracks is preferred.
+Tracks from the same album are usually made to flow together, so by default Music Assistant skips crossfading between tracks of the same album. This applies to both Standard and Smart Crossfade. The behaviour can be overridden with the "[Allow crossfade between tracks from the same album"](/settings/playback/#crossfade) setting if cross-fading album-internal tracks is preferred.

@@ -8,9 +8,9 @@ pluginGroup: other-systems
 
 Some Music Assistant features need to speak: **announcements** that are sent as a text message instead of an audio link, and the presenter in **AI Radio**. Both need a text-to-speech (TTS) engine to turn the text into audio.
 
-Those features used to need Home Assistant, because a TTS entity there was the only thing that could speak for them. This plugin lets Music Assistant talk to a speech service directly, so they work without Home Assistant as well.
+This plugin lets Music Assistant talk to a speech service directly, so those features work without Home Assistant as well.
 
-Each voice the plugin finds becomes a **TTS engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Each feature then chooses which engine it wants from its own settings.
+Each voice the plugin finds becomes a **TTS engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Features use the default text-to-speech engine from [**Settings → AI**](/settings/ai/) unless they pick their own.
 
 It works with the OpenAI speech API and any service that implements the same endpoint:
 
@@ -60,14 +60,14 @@ Each voice becomes its own TTS engine, listed as `OpenAI Text-to-speech | <voice
 
 ## Choosing a voice
 
-- **Announcements** use the engine set under **Announcement text-to-speech engine** in [**Settings → System → Players**](/settings/core/#players)
+- **Announcements** use the default text-to-speech engine from [**Settings → AI**](/settings/ai/), unless **Announcement text-to-speech engine** in [**Settings → Players → Playback**](/settings/playback/#announcements) picks another one
 - **AI Radio** picks its engine with **Reconfigure** on the provider's menu, not in its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later). This is where a natural-sounding voice is most noticeable, so it pays to try a few
 
-See [choosing an engine for a feature](/ha-plugin/#choosing-an-engine-for-a-feature) for how engines are picked across Music Assistant.
+See [**Settings → AI**](/settings/ai/) for how engines are picked across Music Assistant.
 
 ## Known Issues / Notes
 
 - **Language.** The speech API has no language setting. The server works out the language from the text itself, so pick a voice that suits the language of your announcements
 - **Costs.** The OpenAI cloud API bills you per character rendered. Repeated text is served from the cache for 24 hours instead of being rendered again, but AI Radio writes new text for every segment it announces, so keep an eye on your usage
 - **Speed.** A self-hosted server running without a graphics card can take a while to render longer text. Requests are given up on after two minutes
-- **Changing the audio format.** The format is part of the setup, so to change it later, run the plugin's setup again
+- **Changing the audio format.** The format is part of the setup, so to change it later, use **Reconfigure**

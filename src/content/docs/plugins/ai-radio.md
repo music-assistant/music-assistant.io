@@ -39,7 +39,7 @@ AI Radio is in alpha. The show and host editors, the bundled hosts and the gener
 
 1. Go to **Settings → Plugins → Add a plugin**.
 2. Add **AI Radio**.
-3. Setup opens at **Set up AI Radio**. Choose the AI engine that writes the host's lines and the text-to-speech engine that voices them.
+3. Setup opens at **Set up AI Radio**. Choose the AI engine that writes the host's lines and the text-to-speech engine that voices them. Both start on the default engine from [**Settings → AI**](/settings/ai/), shown by its name, so you can keep them as they are.
 4. If you want weather in your shows, fill in the weather city and country on the same screen. You can leave them empty and add them later.
 5. **AI Radio** then appears in the main navigation.
 
@@ -128,7 +128,7 @@ Select **Edit** on a host card, or **Add host** to build one from scratch. You c
 |---|---|
 | **Host name** | The name shown wherever you pick a host |
 | **Voice** | The text-to-speech voice this host speaks with. **Default** uses the engine chosen during setup |
-| **Language** | The language the host speaks. **Follow server language** uses the **Preferred language** from [**Settings → System → Metadata**](/settings/core/#metadata) |
+| **Language** | The language the host speaks. **Follow server language** uses the **Preferred language** from [**Settings → Music → Metadata**](/settings/metadata-provider-settings/#metadata-settings) |
 | **Host and Program Instructions** | The personality and writing style. This goes to the AI with every segment |
 
 ### Segments

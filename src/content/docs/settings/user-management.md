@@ -11,9 +11,15 @@ This page allows management of users, their roles and permissions.
 On the right side of each username is a ⋮ menu which has four menu items
 
 - <b>Edit User.</b> See the section below
-- <b>Manage access tokens.</b> Allows management of login sessions and long lived tokens the same as is shown on an individuals [profile settings](/settings/profile/)
+- <b>Manage access tokens.</b> Allows management of login sessions and long lived tokens the same as is shown on an individuals [profile settings](/settings/profile/#security)
 - <b>Disable User.</b> Prevents user access. Settings are preserved
 - <b>Delete User.</b> Completely removes a user and all of their settings. Music sources they owned lose their owner, and a source only they could use is then off limits to everyone until an administrator changes its access. Their Music Assistant playlists become visible to everyone
+
+## Account access
+
+Below the users, on the **Users** tab:
+
+- <b>Allow User Self-Registration.</b> Allows users to create accounts by logging in with Home Assistant. On by default. Only appears when Music Assistant is connected to Home Assistant under [**Settings → System → Home Assistant**](/settings/core/#home-assistant), since the login goes through your HA instance
 
 ## Editing Users
 
@@ -74,13 +80,13 @@ Who else can use a source depends on its sharing:
 - <b>All users except guests.</b> Everyone signed in with a role other than Guest
 - <b>Everyone, including guests.</b> Any user
 
-An administrator sets the owner and the sharing with **Access** in the source's ⋮ menu under [Settings → Music sources](/settings/music-provider-settings/#owner-and-sharing). A source an administrator adds starts out shared with everyone, including guests. To set one up for themselves or for a user, they add it, make that person its owner and choose who else can use it, for example **Only me**. The owner of a personal source changes who it is shared with through **Sharing** in the same menu. Only an administrator can change the owner.
+An administrator sets the owner and the sharing with **Access** in the source's ⋮ menu under [Settings → Music](/settings/music-provider-settings/#owner-and-sharing). A source an administrator adds starts out shared with everyone, including guests. To set one up for themselves or for a user, they add it, make that person its owner and choose who else can use it, for example **Only me**. The owner of a personal source changes who it is shared with through **Sharing** in the same menu. Only an administrator can change the owner.
 
 Users only see what comes from the music sources they can use, in the library, when browsing and in search. That includes administrators, although they see every source in the settings so they can manage it. When you play something, Music Assistant uses your own accounts first and never uses an account that is not shared with you.
 
 ### Adding your own music sources
 
-Users can add music sources of their own when their role allows it, which the standard User role does. They find **Music sources** in the settings, with the sources they own under **Your sources** and every other source they can use under **Shared with you**. There they can connect their own account for a service that can be added more than once, such as Spotify or Tidal, and reconfigure, share or remove it. A source a user adds starts out as **Only me**. Users whose role does not allow adding sources can still find the page, and see the sources shared with them.
+Users can add music sources of their own when their role allows it, which the standard User role does. They find their sources under **Settings → Music**, with the sources they own under **Your sources** and every other source they can use under **Shared with you**. There they can connect their own account for a service that can be added more than once, such as Spotify or Tidal, and reconfigure, share or remove it. A source a user adds starts out as **Only me**. Users whose role does not allow adding sources can still find the page, and see the sources shared with them.
 
 A user can also add a [Local files](/music-providers/local-files/) source of their own, on a folder in one of the storage locations. Only an administrator can add storage locations, on the [Storage](/settings/storage/) page.
 

@@ -18,7 +18,7 @@ Music Assistant has the ability to add <a href="https://www.apple.com/au/airplay
 
 ## Configuration
 
-1. Add the plugin via **Settings → Plugins → Add a plugin**. The plugin only needs to be added once.
+1. Add the plugin via **Settings → Music → Add a music source**. The plugin only needs to be added once.
 2. Under **Connected players**, select every player that should appear as an AirPlay device. Each selected player is advertised as its own AirPlay receiver, and the audio always plays on the player whose receiver you picked in the sending app. The selection can be changed later in the plugin settings.
 3. Optionally change **Advertised device name**, which controls how the receivers are named after their player: `Player name | Music Assistant` (the default), `Player name only`, or `Music Assistant | Player name`. Renaming a player renames its receiver.
 
