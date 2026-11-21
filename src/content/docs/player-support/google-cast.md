@@ -11,6 +11,7 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 - Cast speakers are auto detected by Music Assistant
 - Music Assistant supports playing to cast groups which are created in the Google Home app
 - When using Google cast groups then perfect sync across players in that group is possible
+- A stereo pair made in the Google Home app is one player. See [Create a Stereo Pair](/faq/how-to/#create-a-stereo-pair)
 - Any physical control buttons on the device should be supported as well as voice control
 - Cast speakers can be synchronised with other Sendspin clients. This is experimental and off by default, see [Sendspin on Cast devices](#sendspin-on-cast-devices)
 - Cast devices with a screen, such as a Chromecast, Google TV or Nest Hub, can show Music Assistant [dashboards](/dashboards/)
