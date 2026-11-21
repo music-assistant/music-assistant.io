@@ -75,7 +75,7 @@ This section contains settings which affect the [Volume Normalization](/faq/tech
 
 The best result comes from a loudness measurement of the audio. Tracks tagged with ReplayGain or R128 loudness values supply one directly, and Music Assistant uses those in preference to measuring anything itself. Everything else it measures on its own: your local library automatically in a nightly background scan, and anything played, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before a value exists:
 
-- Fallback Dynamic (default) — use the measurement when there is one, otherwise adjust loudness on the fly. Always evens things out; the on-the-fly path is slightly less precise
+- Fallback Dynamic (default) — use the measurement when there is one, otherwise adjust loudness on the fly. Always evens things out; the on-the-fly path is slightly less precise and can be heard as [the volume drifting during a track](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track) the first time it is played
 - Fallback Fixed Gain — use the measurement when there is one, otherwise apply the fixed adjustment below
 - Measurement Only — only adjust when a measurement exists. Anything not yet analysed plays at its original loudness
 - Dynamic — always adjust on the fly, ignoring measurements
