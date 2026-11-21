@@ -47,6 +47,12 @@ You will need to provide the following to Music Assistant:
 
 - <b>Advanced - Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. This is on by default
 
+## Favorites
+
+Marking a track as a Favorite in Music Assistant also marks it as a Favorite in the Jellyfin account connected to this source. Removing the Favorite removes it from that account too, so reopening a Jellyfin playlist keeps the updated status.
+
+Only track Favorite changes are written back to Jellyfin. Album and artist Favorite changes are not supported.
+
 ## Not Yet Supported:
 - Album types metadata
 
