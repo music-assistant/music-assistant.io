@@ -12,7 +12,7 @@ AirPlay and Squeezelite players (including Squeezebox hardware) can be grouped w
 
 Sendspin was developed by the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation</a> and is free for anyone to build on, so the range of devices and apps that support it is growing.
 
-To bring audio from a compatible Sendspin line-in, microphone, or other input into Music Assistant, see the [Sendspin Source plugin](/plugins/sendspin-source/).
+A Sendspin device with a line-in, a microphone or another audio input can also bring that audio into Music Assistant, see [Audio Inputs](#audio-inputs).
 
 > [!CAUTION]
 > **Technical Preview**
@@ -25,6 +25,7 @@ To bring audio from a compatible Sendspin line-in, microphone, or other input in
 - **Automatic discovery**: Sendspin devices on your network are found on their own
 - **Per-player audio settings**: each device gets its own equaliser and volume
 - **Control from the device**: play, pause and skip can be driven from the player as well as from Music Assistant
+- **Audio inputs**: a line-in, turntable or microphone on a Sendspin device can play on any player, see [Audio Inputs](#audio-inputs)
 - **Track information**: title, artwork and progress appear on every device
 - **Stereo pairs**: two Sendspin speakers can play as one player, see [Stereo Pairs](#stereo-pairs)
 
@@ -55,7 +56,7 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 
 - <b>Security status.</b> The Sendspin settings of each device start with its security state: paired, connected through guest access, connected without encryption (see [Older Devices](#older-devices)), or pairing lost. A device that lost its pairing cannot play until you pair it again with <b>Reconfigure player</b> or remove the old pairing with <b>Unpair</b>. A device you unpaired, or that stopped allowing guest access, stays disconnected until you set the player up again
 - <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential
-- <b>Turn on audio input / Turn off audio input.</b> Shown for a device with an audio input that is connected through guest access. Starts or stops sending its audio to Music Assistant through the [Sendspin Source plugin](/plugins/sendspin-source/)
+- <b>Turn on audio input / Turn off audio input.</b> Shown for a device with an audio input that is connected through guest access. Starts or stops sending its audio to Music Assistant, see [Audio Inputs](#audio-inputs)
 - <b>Automatically play line-in on.</b> Chooses where the line-in plays automatically: This device, another player, or Off. Only shown for devices with a line-in. A device that cannot report when a signal is present shows a note instead
 - <b>Name of the input.</b> The name of the audio input, such as Record player. It is Line-in until you change it. The source list of the player itself shows the name alone, while Browse and other players show it with the name of the player, such as Record player (Living Room). Only shown for a device that has an audio input and also plays; a device that only has an input is named by its player
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
@@ -63,6 +64,41 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 - <b>Sample rate selection.</b> Decides the sample rate of the audio sent to this player, and can only be changed while the preferred audio format is Automatic. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
 
 Preferred audio format, Sample rate selection, and Unpair on a paired device only show while <b>Show advanced settings</b> is on.
+
+## Audio Inputs
+
+A Sendspin device with a line-in or AUX connection, a turntable preamp, a microphone or another audio input can bring that audio into Music Assistant. The input can then play on any available player, stereo pair or group. This is part of Sendspin itself, so there is nothing to install or switch on.
+
+> [!NOTE]
+> A device only sends its audio to Music Assistant once you allow it, by pairing it or by connecting it unpaired with its audio input. See [Setting Up a Device](#setting-up-a-device).
+
+### Playing an Input
+
+Select the player, stereo pair or group where you want to hear the input, open **Browse** and then **Live sources**, and press **Play** on the input. A device that is also a player lists its own input among the sources of that player too.
+
+Each input can play on only one target at a time. Starting the same input on another target moves it there. The inputs of different devices can play on different targets at the same time.
+
+An input keeps the sample rate and bit depth of the line-in, for example 96 kHz, 24-bit from a hi-res turntable preamp. Each player then converts the audio to a format it can play, if needed. Music Assistant adjusts for small timing and network variations to keep playback stable.
+
+### Playing Automatically When a Line-In Becomes Active
+
+If the device can detect an input signal, Music Assistant can start playing the line-in on a chosen player as soon as it becomes active. For example, lowering the needle onto a turntable can start playback in the room you selected.
+
+Choose the destination with the **Automatically play line-in on** setting of the device. You can select any available player, stereo pair or group, and the destination does not need to use Sendspin. A device that also plays defaults to **This device**, and a device that only has an input defaults to **Off**. Setting up the device asks for the destination too.
+
+Playback starts after a short delay, which prevents brief signal changes from triggering it by accident. It stops after the signal has been absent for one minute.
+
+Restarting Music Assistant or reconnecting a device does not start an input that was already active. Automatic playback also does not move an input that is already playing somewhere else.
+
+A device without signal detection can still be played by hand, and shows a note in place of this setting.
+
+### Interruptions and Reconnecting
+
+Brief gaps in the audio do not stop playback right away. An input you started yourself waits for the audio to return and stops only when its device times out. An input that started automatically stops after one minute without a signal, as described above.
+
+If a device disconnects while its input plays, Music Assistant keeps playback open with silence. When the device reconnects before the timeout, the live audio resumes once its buffer has been rebuilt. Audio from the time the device was disconnected cannot be recovered.
+
+If a device only becomes unavailable and does not reconnect, its input does not start again by itself.
 
 ## Stereo Pairs
 
