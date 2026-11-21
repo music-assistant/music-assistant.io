@@ -103,7 +103,7 @@ If none of these help, check the [page for your player provider](/player-support
 
 This is [volume normalization](/faq/tech-info/#volume-normalization) working without a loudness measurement. It is expected the first time a track is played and it is not a bug, so please do not open an issue for it.
 
-Until Music Assistant has measured a track it adjusts the loudness on the fly, which can be heard as the volume drifting. Most often a quiet intro is lifted and then pulled back when the track gets loud. The track is measured during that first play, and once the measurement exists a single fixed adjustment is used for the whole track and the variation goes away. Local files are also measured in a nightly background scan, so this mostly affects tracks from streaming services that you have not played before.
+Until Music Assistant has measured a track it adjusts the loudness on the fly, which can be heard as the volume drifting. Most often a quiet intro is lifted and then pulled back when the track gets loud. The track is measured during that first play by the [Loudness Analysis](/audio-analysis/loudness-analysis/) provider, and once the measurement exists a single fixed adjustment is used for the whole track and the variation goes away. Local files are also measured in a nightly background scan, so this mostly affects tracks from streaming services that you have not played before.
 
 A few things follow from how the measurement is made:
 
@@ -115,11 +115,11 @@ The [Audio Pipeline](/audiopipeline/) view shows the normalization in use for th
 
 If it keeps happening on tracks you have already played through:
 
-**The method is set to Dynamic.** This always adjusts on the fly and ignores measurements. Change it to `Fallback Dynamic` under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback).
+**The method is set to Dynamic.** This always adjusts on the fly and ignores measurements. Change it to `Fallback dynamic` under [**Settings → Players → Playback**](/settings/playback/#volume-normalization).
 
 **It is a radio station.** Live radio is rarely measured, so it stays on whichever fallback the radio setting uses.
 
-**You would rather never hear it.** Set the method to `Fallback Fixed Gain`. Tracks without a measurement then play with the same fixed adjustment from start to finish, and measured tracks are handled as before. `Measurement Only` also removes the drift, but unmeasured tracks play at their original loudness, so the volume can jump from one track to the next.
+**You would rather never hear it.** Set the method to `Fallback fixed gain`. Tracks without a measurement then play with the same fixed adjustment from start to finish, and measured tracks are handled as before. `Measured loudness` also removes the drift, but unmeasured tracks play at their original loudness, so the volume can jump from one track to the next.
 
 Only report this if the Audio Pipeline view shows a measured loudness value in use for the track and the volume still varies during it.
 
