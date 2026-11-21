@@ -1,0 +1,80 @@
+---
+/**
+ * Numbered pagination for the blog listing pages. Every page is a real link,
+ * so crawlers reach every post through the listing, and page 1 always links to
+ * the listing root, never /page/1/.
+ */
+import {
+  getPageNumbers,
+  pageHref,
+  type ListingPage,
+} from "../../../utils/blog";
+
+interface Props {
+  listing: ListingPage;
+}
+
+const { facet, page, totalPages } = Astro.props.listing;
+---
+
+{totalPages > 1 && (
+  <nav class="pagination" aria-label="Blog pages">
+    <ol>
+      {getPageNumbers(page, totalPages).map((number) =>
+        number === null ? (
+          <li class="gap" aria-hidden="true">
+            …
+          </li>
+        ) : (
+          <li>
+            <a
+              href={pageHref(facet, number)}
+              aria-current={number === page ? "page" : undefined}
+              aria-label={`Page ${number}`}
+            >
+              {number}
+            </a>
+          </li>
+        ),
+      )}
+    </ol>
+  </nav>
+)}
+
+<style>
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  ol {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li a,
+  .gap {
+    display: grid;
+    place-items: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--radius);
+    color: var(--muted);
+    font-family: var(--font-mono);
+    text-decoration: none;
+  }
+  @media (hover: hover) {
+    li a:not([aria-current="page"]):hover {
+      background: var(--page-alt);
+      color: var(--fg);
+    }
+  }
+  li a[aria-current="page"] {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+</style>

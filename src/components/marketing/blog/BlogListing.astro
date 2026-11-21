@@ -1,0 +1,126 @@
+---
+/**
+ * A blog listing page: /blog/ and its tag, author and year views, each
+ * paginated. The route files in src/pages/blog/ pick which listings to build;
+ * see getListings() in src/utils/blog.ts for the URL scheme.
+ */
+import MarketingLayout from "../../../layouts/MarketingLayout.astro";
+import type { BlogFacets, ListingPage } from "../../../utils/blog";
+import BlogCard from "../BlogCard.astro";
+import FilterBar from "./FilterBar.astro";
+import Pagination from "./Pagination.astro";
+
+interface Props {
+  listing: ListingPage;
+  facets: BlogFacets;
+}
+
+const { listing, facets } = Astro.props;
+const { facet, page, totalPages, posts, featured, prevHref, nextHref } =
+  listing;
+
+const headings = {
+  all: {
+    title: "News",
+    description:
+      "Releases, project news and stories from the Music Assistant community.",
+  },
+  tag: {
+    title: facet.label,
+    description: `Music Assistant news tagged ${facet.label}.`,
+  },
+  author: {
+    title: `Posts by ${facet.label}`,
+    description: `Music Assistant news written by ${facet.label}.`,
+  },
+  year: {
+    title: `Posts from ${facet.label}`,
+    description: `Music Assistant news published in ${facet.label}.`,
+  },
+};
+const { title, description } = headings[facet.kind];
+
+// Every page gets its own <title> and description, so paginated and filtered
+// pages are not reported as duplicates of /blog/.
+const pageSuffix = page > 1 ? ` — Page ${page} of ${totalPages}` : "";
+const titleParts = facet.kind === "all" ? [title] : [title, "News"];
+const documentTitle = `${titleParts.join(" — ")}${pageSuffix} — Music Assistant`;
+const metaDescription =
+  page > 1 ? `${description} Page ${page} of ${totalPages}.` : description;
+
+const [first, ...rest] = posts;
+const gridPosts = featured ? rest : posts;
+---
+
+<MarketingLayout title={documentTitle} description={metaDescription}>
+  {prevHref && <link slot="head" rel="prev" href={prevHref} />}
+  {nextHref && <link slot="head" rel="next" href={nextHref} />}
+  <div class="container page">
+    <header class="heading">
+      <h1>{title}</h1>
+      <p>
+        {description}
+        {page > 1 && (
+          <span class="page-count">
+            Page {page} of {totalPages}
+          </span>
+        )}
+      </p>
+    </header>
+    <FilterBar facets={facets} current={{ kind: facet.kind, slug: facet.slug }} />
+    {featured && first && <BlogCard post={first} featured />}
+    <div class="grid">
+      {gridPosts.map((post) => (
+        <BlogCard post={post} />
+      ))}
+    </div>
+    <Pagination listing={listing} />
+  </div>
+</MarketingLayout>
+
+<style>
+  .page {
+    padding-block: clamp(3rem, 7vw, 5rem) var(--section);
+  }
+  .heading {
+    margin-bottom: 2rem;
+  }
+  .heading h1 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
+  }
+  .heading p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.125rem;
+  }
+  .page-count {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  /* A filtered page has no featured card, so the grid starts the content. */
+  :global(.toolbar) + .grid {
+    margin-top: 0;
+  }
+  @media (max-width: 1000px) {
+    .grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

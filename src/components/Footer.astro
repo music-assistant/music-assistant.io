@@ -2,17 +2,7 @@
 import EditLink from "virtual:starlight/components/EditLink";
 import LastUpdated from "virtual:starlight/components/LastUpdated";
 import Pagination from "virtual:starlight/components/Pagination";
-import CrosspostBadges from "./CrosspostBadges.astro";
-import ReadMoreLinks from "./ReadMoreLinks.astro";
-
-const isBlogPage = Astro.url.pathname.startsWith("/blog");
-
-const { id } = Astro.locals.starlightRoute;
-const isBlogPost = /^blog\/(?!(\d+\/?|tags\/.+|authors\/.+)$).+$/.test(id);
 ---
-
-{isBlogPage && <CrosspostBadges />}
-{isBlogPage && !isBlogPost && <ReadMoreLinks />}
 
 <footer class="sl-flex">
   <div class="meta sl-flex">
