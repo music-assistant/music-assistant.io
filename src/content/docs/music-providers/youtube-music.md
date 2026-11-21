@@ -108,6 +108,8 @@ A brand account is a sub-account that lives under your main Google account. You 
 - Look at the URL and copy the 21-digit number
 - Use this number in the 'Username' field when setting up the source
 
+A source keeps the account entered as its 'Username'. To change from your main account to a brand account, or back, remove the source and add it again with the other username.
+
 ## Known Issues / Notes
 
 - This source mimics YouTube Music. Do not expect to see the same search results as you see if using YouTube
