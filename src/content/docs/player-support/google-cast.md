@@ -11,13 +11,14 @@ Music Assistant has full support for Google Cast based devices. This includes Go
 - Cast speakers are auto detected by Music Assistant
 - Music Assistant supports playing to cast groups which are created in the Google Home app
 - When using Google cast groups then perfect sync across players in that group is possible
+- A stereo pair made in the Google Home app is one player. See [Create a Stereo Pair](/faq/how-to/#create-a-stereo-pair)
 - Any physical control buttons on the device should be supported as well as voice control
 - Cast speakers can be synchronised with other Sendspin clients. This is experimental and off by default, see [Sendspin on Cast devices](#sendspin-on-cast-devices)
 - Cast devices with a screen, such as a Chromecast, Google TV or Nest Hub, can show Music Assistant [dashboards](/dashboards/)
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player support** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `Google Cast`.
+1. In Music Assistant, go to **Settings → Players → Player support** and check whether `Google Cast` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `Google Cast`.
 2. Your Cast devices, and any speaker groups created in the Google Home app, will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
@@ -26,7 +27,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available when the advanced toggle is enabled:
 
-- <b>Manual IP addresses for discovery.</b> Normally Music Assistant will automatically discover all players on the network, using multicast discovery on the (L2) local network, such as mDNS or UPNP (see [Networking Basics](/faq/networking/) for what these terms mean). In the case of special network setups or when issues are encountered with one or more players not being discovered, IP addresses can be manually added. Note that this setting is not recommended for normal use and should only be used by those with advanced networking knowledge. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming. In that case, ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#streams)
+- <b>Manual IP addresses for discovery.</b> Normally Music Assistant will automatically discover all players on the network, using multicast discovery on the (L2) local network, such as mDNS or UPNP (see [Networking Basics](/faq/networking/) for what these terms mean). In the case of special network setups or when issues are encountered with one or more players not being discovered, IP addresses can be manually added. Note that this setting is not recommended for normal use and should only be used by those with advanced networking knowledge. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming. In that case, ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#audio-streaming)
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Google Cast provider has the following:
 
@@ -49,7 +50,8 @@ Expect to do some tuning afterwards. Playback is rarely in sync straight away, s
 
 ## Known Issues / Notes
 
-- Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- Cast speakers do not support gapless playback or crossfading of audio themselves. While crossfade is enabled, Music Assistant always sends a Cast speaker the queue as one continuous [flow mode](/faq/tech-info/#track-queueing) stream, regardless of the flow mode setting. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- Most Cast speakers get MP3 by default, because several models (such as Samsung's Music Frame and soundbars, the Google Nest Mini and the Nest Audio) stop playing a long FLAC stream after a while. The Chromecast Audio and Nest Hub play FLAC reliably and keep FLAC as their default. You can choose another codec per speaker with **Output codec to use for streaming audio to the player** in the advanced settings
 - If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
 - After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
@@ -80,10 +82,10 @@ You may see any of these:
 
 In the individual player settings:
 
-1. Set **Output codec to use for streaming audio to the player** to `MP3`.
+1. Set **Output codec to use for streaming audio to the player** to `MP3`, if it isn't already. MP3 is the default for most Cast speakers.
 2. If changing to MP3 makes playback last longer but it still fails eventually, make sure **Enable queue flow mode** is on.
 
-Once playback is reliable you can try putting the output codec back to `FLAC`, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
+Once playback is reliable you can try `FLAC` as the output codec, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
 
 > [!IMPORTANT]
 > **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Make the same change on the group and on every speaker in it. Changing only one looks like it worked until the next restart.
@@ -97,7 +99,7 @@ That is a different problem. Work through the [discovery checklist](/faq/network
 If none of the above solves it, these are the settings that make a Cast problem diagnosable. Both are needed, and they are in different places.
 
 1. Set the Google Cast provider's log level to **verbose**. This records the conversation with the device, including any error it reports back.
-2. Set the Streams controller log level to **debug** in [System Settings](/settings/core/). This logs every request for audio along with which device asked, which is how you tell that a device has restarted the stream rather than simply stopped.
+2. Set the **Streams** log level to **debug** under **Log levels** in [**Settings → System → Diagnostics**](/settings/core/#log-levels). This logs every request for audio along with which device asked, which is how you tell that a device has restarted the stream rather than simply stopped.
 3. Restart Music Assistant, which starts a fresh log.
 4. Reproduce the problem, and note the time of day the audio stopped.
 5. Download the log from [Diagnostics](/settings/core/#diagnostics) before restarting again.

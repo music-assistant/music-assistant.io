@@ -7,7 +7,7 @@ description: The folders, drives and network shares your music sources can use
 
 A storage location is a folder, a drive or a network share that Music Assistant can read files from. When you add a [Local files](/music-providers/local-files/) source, you pick its folder from these locations.
 
-The **Storage** page lists the storage locations and lets you add network shares. You find it in the settings under **System**. Only administrators see this page.
+The **Storage** page lists the storage locations and lets you add network shares. You find it under **Settings → System → Storage**. Only administrators see this page.
 
 ![The Storage page with the Home Assistant media folder and a network share](/assets/screenshots/settings-storage.png)
 

@@ -8,6 +8,8 @@ title: "Sendspin"
 
 It is built into Music Assistant and switched on from the start, so there is nothing to install. The web player you use in your browser is a Sendspin player, and Sendspin speakers and apps appear on their own once they are on your network.
 
+AirPlay and Squeezelite players (including Squeezebox hardware) can be grouped with Sendspin speakers and play in sync. Cast speakers can join too, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices). If a device supports more than one of these, it gets one Sendspin output, and Music Assistant uses Squeezelite first, then AirPlay, then Cast for it. To make it use a different one, switch off the one you don't want in that player's [output protocol settings](/settings/individual-player/#output-protocols). When it moves, the output keeps its settings, but each of these protocols keeps its own sync delay. When Cast takes it over, it is switched off until you turn it on in those settings, as Sendspin on Cast is experimental. It does not move while the speaker is powered off or out of reach.
+
 Sendspin was developed by the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation</a> and is free for anyone to build on, so the range of devices and apps that support it is growing.
 
 To bring audio from a compatible Sendspin line-in, microphone, or other input into Music Assistant, see the [Sendspin Source plugin](/plugins/sendspin-source/).
@@ -24,12 +26,13 @@ To bring audio from a compatible Sendspin line-in, microphone, or other input in
 - **Per-player audio settings**: each device gets its own equaliser and volume
 - **Control from the device**: play, pause and skip can be driven from the player as well as from Music Assistant
 - **Track information**: title, artwork and progress appear on every device
+- **Stereo pairs**: two Sendspin speakers can play as one player, see [Stereo Pairs](#stereo-pairs)
 
 ## Configuration
 
 The Sendspin provider is **built-in and always enabled**. There are no configuration options required to get started.
 
-Individual Sendspin players will appear automatically when clients connect
+Individual Sendspin players will appear automatically when clients connect. A Sendspin device that only controls playback, such as a remote or a volume knob, is listed under **Controllers** on [Settings → Players](/settings/individual-player/), and is not something you play to.
 
 ## Setting Up a Device
 
@@ -60,6 +63,31 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 
 Preferred audio format, Sample rate selection, and Unpair on a paired device only show while <b>Show advanced settings</b> is on.
 
+## Stereo Pairs
+
+Two speakers with Sendspin built in can play as one player, a stereo pair, with one speaker on the left channel and the other on the right. Both need to be set up and connected. The web player and bridged players, such as Google Cast devices in Sendspin mode, can't be part of a stereo pair.
+
+To make a stereo pair:
+
+1. Open the settings of one of the speakers and, in the [Output Protocols](/settings/individual-player/#output-protocols) section, open the ⋮ menu of its Sendspin output
+2. Select **Make multi-channel player…**
+3. Pick the other speaker
+4. Each speaker is shown next to its channel, **Left** or **Right**. The swap button swaps the two
+5. Give the stereo pair a **Name** and select **Create**
+
+The Sendspin output of each speaker moves to the new player. A player that has no other output disappears, together with its settings.
+
+The stereo pair works as one player:
+
+- It has one volume. Turning the volume up or down on one of the speakers changes the other one too
+- Its [DSP](/dsp/) settings apply to both speakers. A filter for one channel, such as a [Parametric Equalizer](/dsp/parametriceq/) band for the left channel only, changes only the speaker that plays that channel
+- In a group it takes part as one player
+- While one speaker is offline, the other plays both channels until it is back
+
+In the Output Protocols section of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps the channels of the two, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
+
+To take the stereo pair apart, select **Take apart** in the ⋮ menu at the top right of its settings. The stereo pair disappears with its settings, and its speakers come back as players of their own, with default settings. A speaker that is offline comes back once it is connected again.
+
 ## Older Devices
 
 Sendspin is still evolving, and some players and clients still use an older development version of it. Future versions of Music Assistant will stop supporting these, so update them when an update is available:
@@ -72,7 +100,7 @@ Sendspin is still evolving, and some players and clients still use an older deve
 - Many Sendspin devices ask for 16 bit audio, so higher resolution material may be converted on the way out
 - Artwork clears briefly when you pause, seek, or move on to the next track
 - A Sendspin device plays for one server at a time. Playing to a device moves it to this server, even while another server is playing on it. A device that another server is using can still be set up here, but pairing only works while the other server is not playing on it
-- Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Cloud gives the most reliable connection through a firewall
+- Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Link gives the most reliable connection through a firewall
 - If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
 
 ## Supported Clients

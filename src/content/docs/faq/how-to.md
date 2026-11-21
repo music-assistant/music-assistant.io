@@ -10,9 +10,9 @@ The first part of this page covers everyday questions about using Music Assistan
 
 After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. When a track is raised, a limiter catches the peaks that would otherwise clip. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -12 LUFS, and the default is -14 LUFS. **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
 
-The method, the target level and the fixed gain values are set under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback). Turning normalization on or off lives under [**Settings → System → Player Queues**](/settings/core/#player-queues) and can be overridden for [one queue](/usage/#the-queue).
+The method, the target level and the fixed gain values are set under [**Settings → Players → Playback**](/settings/playback/#volume-normalization). Turning normalization on or off lives there too and can be overridden for [one queue](/usage/#the-queue).
 
-More details [here](/faq/tech-info/#volume-normalization)
+More details [here](/faq/tech-info/#volume-normalization). If the volume rises and falls within a track the first time you play it, see [Troubleshooting](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track).
 
 ## Have my music continue if I change rooms
 
@@ -101,7 +101,13 @@ Thanks to <a href="https://github.com/Aasikki" target="_blank" rel="noopener nor
 
 ## Create a Stereo Pair
 
-If a [Player Provider](/player-support/) supports stereo pairs natively, and these can be setup in the native app, and MA can detect these unique "players" then this should work. Otherwise, for the player providers that support perfect sync and show the `Output Channel Mode` in the Protocol Settings for the individual player then each player of the stereo pair can be assigned an individual channel and then the two players grouped as a [Sync Group](/faq/groups/#sync-groups).
+Make the pair in the app of your speakers. For brands such as Sonos, Google Cast and [Apple HomePods](/player-support/airplay/#homepods-and-apple-tvs), Music Assistant shows a stereo pair as one player, and does the same for a home theater set of a soundbar with surround speakers or a subwoofer. The speakers divide the channels among themselves. The settings page of such a player names it a multi-channel player and shows the layout of its speakers, for example `Stereo pair` or `5.1`.
+
+The other speakers of a set are not players of their own. A speaker that was a player before it joined a set loses that player together with its settings, and shows up as a new player when you take the set apart again.
+
+Two Sendspin speakers are combined into a stereo pair in Music Assistant itself: in the settings of one of them, open the ⋮ menu of its Sendspin output, select `Make multi-channel player…` and pick the other speaker. See [Stereo Pairs](/player-support/sendspin/#stereo-pairs) on the Sendspin page.
+
+For other speakers that play in perfect sync and show the `Output Channel Mode` in the Protocol Settings of the individual player, give each of the two players its own channel and group them as a [Sync Group](/faq/groups/#sync-groups).
 
 ## Access my music on Nextcloud?
 
@@ -115,7 +121,7 @@ If you are using docker then you can use an <a href="https://www.home-assistant.
 
 ## Access the MA Views directly via URL
 
-If authentication becomes a blocker to some devices then create a long lived access token via [**Settings → Profile**](/settings/profile/#long-lived-access-tokens) and use the following format as the URL
+If authentication becomes a blocker to some devices then create a long lived access token via [**Settings → Profile → Security**](/settings/profile/#long-lived-access-tokens) and use the following format as the URL
 https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
 
 ## Open the UI with a Specific Player Selected

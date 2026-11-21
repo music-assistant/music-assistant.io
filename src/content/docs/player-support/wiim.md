@@ -11,6 +11,7 @@ Music Assistant has support for streaming music to [WiiM devices](https://www.wi
 - WiiM devices are auto detected by Music Assistant
 - WiiM devices can optionally be grouped with AirPlay devices
 - Up to 192khz / 24 bit support
+- WiiM devices connected using Squeezelite or AirPlay can be grouped with [Sendspin](/player-support/sendspin/) speakers and play in sync. Over Squeezelite, the WiiM app also shows the sample rate and bit depth of the stream Music Assistant sends it
 
 ### AirPlay Functionality
 
@@ -23,7 +24,7 @@ If the WiiM device is grouped with an AirPlay device, or if the default [output 
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `WiiM`.
+1. In Music Assistant, go to **Settings → Players → Player support**, click **Add player support** and select `WiiM`.
 2. Your WiiM devices will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).

@@ -161,11 +161,11 @@ The Music Quiz provider settings, under **Features**, contain the following:
 | Setting | Default | Description |
 |---|---:|---|
 | **Enhance the Experience with AI** | Off | Lets AI generate more convincing fake answers where supported. It currently enhances Hard Guess the Song distractors and Music Timeline multiple-choice bonuses. Built-in answer generation remains the fallback if AI is unavailable or returns an unusable response. |
-| **AI engine** | First available | Which AI engine Music Quiz uses. Change it here at any time, no reconfiguring needed. |
+| **AI engine** | Default AI engine | Which AI engine Music Quiz uses. Change it here at any time, no reconfiguring needed. |
 
 These two are separate. Music Trivia always needs an AI engine, whether or not **Enhance the Experience with AI** is switched on, so the engine picker stays available either way.
 
-Engines come from other plugins, and Music Quiz uses the only one available unless you pick a different one. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
+Engines come from other plugins. Music Quiz follows the default AI engine from [**Settings → AI**](/settings/ai/) unless you pick one.
 
 ## Game flow and host controls
 
