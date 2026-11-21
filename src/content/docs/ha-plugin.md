@@ -72,7 +72,13 @@ When an entity is selected it will then appear as an option in an individual pla
 
 ### Switching the player itself on and off
 
-A power entity can also cut the power to the player itself, for example a smart plug the player is plugged into. While that entity is off, the player shows as switched off instead of unavailable, in Music Assistant and in Home Assistant. Turning the player on, playing to it, selecting a source on it or sending an announcement to it switches the entity on and waits up to 90 seconds for the player to come online. If the player is not online by then, the request fails. After an announcement the player stays on. Stop, pause and volume changes do nothing while it is switched off.
+A power entity can also cut the power of the player itself, for example a smart plug the player is plugged into. This is not recommended for a smart speaker or streamer: it can take long before the player is available again once its power is back, and it may not be good for the device. If you want it anyway, set the entity as the Power control in the [player settings](/settings/individual-player/#player-controls) and save; the setting **Power control cuts the power of this player** then appears below it: turn it on.
+
+While the entity is then off, the player shows as switched off instead of unavailable, in Music Assistant and in Home Assistant. Playing to it, selecting a source on it, turning it on, sending an announcement to it or starting a group it is in switches the entity on, waits for the start-up time and then plays. Stop, pause and volume changes do nothing while it is switched off.
+
+The start-up time is the advanced setting **Start-up time (seconds)**, which starts at 30 seconds. Set it to how long the player needs after its power comes on before it can play: a Sonos speaker needs about 20 seconds, a smart display about 40, and an AirPlay speaker can need about 100. Raise it when playback fails right after the player was switched on; when the player can not be reached at all after the start-up time, the error says to raise it.
+
+Without that setting the power entity is a plain on/off switch, for example for an amplifier: playing switches it on and starts as soon as it reports on. A player whose power it cuts then drops off the network and shows as unavailable, and playing to it does not switch the entity back on.
 
 To switch the player off again once it has been stopped for a while, set [Power off when idle](/settings/individual-player/#player-controls) in its player settings.
 

@@ -13,7 +13,9 @@ description: What player support is, and what applies to all of it
 
 So you do not add speakers one at a time. You add the player support for the kind of device you own. Where it can discover devices, it finds them for you and keeps looking, so a speaker you plug in next month turns up on its own. Not all of them can discover devices; some need an address entered by hand. The page of each says which it is.
 
-Some devices can be reached more than one way. Anything Home Assistant already knows about can be played to through [Home Assistant Media Players](/player-support/home-assistant/), but **if Music Assistant has its own player support for a device, use it**. The Home Assistant route is a fallback for devices that have none, not an alternative. [Audio Quality](#audio-quality) below explains why.
+Some devices can be reached more than one way, for example through their own player support and over AirPlay or Chromecast. Music Assistant makes one player of such a device, and every way it can reach the device is a protocol of that player. [Streaming Protocols](/usage/#streaming-protocols) explains which one plays.
+
+Anything Home Assistant already knows about can be played to through [Home Assistant Media Players](/player-support/home-assistant/), but **if Music Assistant has its own player support for a device, use it**. The Home Assistant route is a fallback for devices that have none, not an alternative. [Audio Quality](#audio-quality) below explains why. When Music Assistant recognises a Home Assistant media player as a speaker it already reaches through its own player support, the two are one player, and Music Assistant plays through its own player support.
 
 ## Adding player support
 
@@ -23,7 +25,7 @@ Settings that apply to all player support are described on the [Player Support S
 
 If you know what you want to play on but not which player support drives it, start at [I Want To Stream To](/faq/stream-to/). It groups them by whether you buy the device ready to use or set it up yourself, and carries the summary table comparing them side by side.
 
-Only players provided by certain providers — that is, Home Assistant Players, Snapcast, and Universal Player — support deletion. Deleting a player can be useful to reset a problematic player’s configuration. For providers that support deletion, deleted players that are still on the network will be rediscovered automatically on the next Music Assistant restart or player provider reload.
+A player stays in Music Assistant while its device is switched off or away, and shows as unavailable until it is back. Any player can be deleted from its ⋮ menu in **Settings → Players**, which can be useful to reset a problematic player's configuration. A deleted player that is still on the network comes back as a new player with its default settings. [Disabling and deleting players](/settings/individual-player/#disabling-and-deleting-players) has the details, including how to remove every player whose device is gone.
 
 > [!NOTE]
 > If any player is not transitioning between songs then check if the player has the option [QUEUE FLOW MODE](/faq/tech-info/#track-queueing). Try enabling it if it does.
