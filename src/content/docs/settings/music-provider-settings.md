@@ -31,12 +31,11 @@ All [Music Sources](/music-providers/) have settings which can be configured. Se
 
 ## Owner and sharing
 
-In **Settings → Music sources**, an administrator sees who owns each source and who can use it, such as `Shared (no owner) · Everyone, including guests`, or the owner's name followed by who it is shared with. They can change both with **Access** in the source's ⋮ menu. Users see the sources they own under **Your sources**, who they are sharing them with, and can change that with **Sharing** in the same menu. Every other source they can use, shared by someone else or without an owner, is listed under **Shared with you** and cannot be changed there. [Personal and shared music sources](/settings/user-management/#personal-and-shared-music-sources) explains each option.
+In the **Music sources** list, an administrator sees who owns each source and who can use it, such as `Shared (no owner) · Everyone, including guests`, or the owner's name followed by who it is shared with. They can change both with **Access** in the source's ⋮ menu. Users see the sources they own under **Your sources**, who they are sharing them with, and can change that with **Sharing** in the same menu. Every other source they can use, shared by someone else or without an owner, is listed under **Shared with you** and cannot be changed there. [Personal and shared music sources](/settings/user-management/#personal-and-shared-music-sources) explains each option.
 
 ## Using another account
 
 A source stays on the account it was set up with. **Reconfigure** is for signing in to that same account again, for example when the login has expired. To use a different account, remove the source and add it again. Most services can be added more than once, so a second account gets a source of its own.
-In the **Music sources** list, an administrator sees who owns each source and who can use it, such as `Shared (no owner) · Everyone, including guests`, or the owner's name followed by who it is shared with. They can change both with **Access** in the source's ⋮ menu. Users see the sources they own under **Your sources**, who they are sharing them with, and can change that with **Sharing** in the same menu. Every other source they can use, shared by someone else or without an owner, is listed under **Shared with you** and cannot be changed there. [Personal and shared music sources](/settings/user-management/#personal-and-shared-music-sources) explains each option.
 
 ## Library settings
 
