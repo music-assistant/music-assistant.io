@@ -11,6 +11,7 @@ Music Assistant has support for Sonos devices. There are two providers available
 - Sonos devices are auto detected by Music Assistant
 - Sonos devices from the same series (S1 or S2) will play in sync when grouped
 - Sonos devices can optionally be grouped with AirPlay devices
+- A stereo pair or a home theater set made in the Sonos app is one player. For S2 devices it is shown with the layout of its speakers. See [Create a Stereo Pair](/faq/how-to/#create-a-stereo-pair)
 
 ### AirPlay Functionality
 
@@ -23,7 +24,7 @@ If the Sonos device is grouped with an AirPlay device, or if the default [output
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player support** and check whether `Sonos` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `Sonos`.
+1. In Music Assistant, go to **Settings → Players → Player support** and check whether `Sonos` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `Sonos`.
 2. If you have devices from the older S1 generation, the `Sonos S1` provider is never added automatically. Click **Add player support** and select `Sonos S1`.
 3. Your Sonos devices will be discovered automatically and will appear in the player list, usually within a minute.
 
@@ -33,7 +34,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
-- <b>Manual IP addresses for discovery.</b> In normal circumstances Music Assistant will automatically discover all players on the network using multicast discovery (mDNS/UPnP, [explained here](/faq/networking/)). In the case of special network setups, or when issues are encountered with one or more players not being discovered, IP addresses can be manually added here. This setting is not recommended for normal use. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming; in that case ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#streams)
+- <b>Manual IP addresses for discovery.</b> In normal circumstances Music Assistant will automatically discover all players on the network using multicast discovery (mDNS/UPnP, [explained here](/faq/networking/)). In the case of special network setups, or when issues are encountered with one or more players not being discovered, IP addresses can be manually added here. This setting is not recommended for normal use. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming; in that case ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#audio-streaming)
 
 The Sonos S1 provider has two further settings:
 

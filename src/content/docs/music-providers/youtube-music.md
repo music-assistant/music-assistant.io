@@ -84,7 +84,7 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 
 ### Step 3: Configure the source
 
-1. In Music Assistant, go to **Settings → Music sources → Add a music source** and select 'Youtube Music'.
+1. In Music Assistant, go to **Settings → Music → Add a music source** and select 'Youtube Music'.
 2. Fill out the fields in the Generic Settings section as follows:
     - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
     - <b>Login Cookie.</b> Paste the value you copied in Step 2
@@ -107,6 +107,8 @@ A brand account is a sub-account that lives under your main Google account. You 
 - From the top right menu, select your brand account
 - Look at the URL and copy the 21-digit number
 - Use this number in the 'Username' field when setting up the source
+
+A source keeps the account entered as its 'Username'. To change from your main account to a brand account, or back, remove the source and add it again with the other username.
 
 ## Known Issues / Notes
 

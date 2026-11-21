@@ -11,13 +11,14 @@ These players normally expect to talk to a Logitech Media Server, now known as <
 ## Features
 
 - Squeezelite client devices are automatically detected by Music Assistant
+- Squeezelite players (including Squeezebox hardware) can be [grouped](/faq/groups/) with each other and with [Sendspin](/player-support/sendspin/) speakers, and play in sync
 - Individual player [DSP settings](/dsp/) will be used for [group](/faq/groups/) playback
 - Squeezelite client device buttons support
   - Any physical control buttons on the device should be supported as long as [flow mode](/faq/tech-info/#track-queueing) is not enabled
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player support**, click **Add player support** and select `Squeezelite`.
+1. In Music Assistant, go to **Settings → Players → Player support**, click **Add player support** and select `Squeezelite`.
 2. Your Squeezelite players will be discovered automatically and will appear in the player list, usually within a minute.
 
 If a player does not appear, first check that it is not connected to a different server. These devices can often only connect to one server at a time, so a player bound to another server (for example an existing LMS/Lyrion installation) will not be seen by MA. Otherwise, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
@@ -34,7 +35,7 @@ In addition to the [Player Support Settings](/settings/player-provider/) when se
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Squeezelite provider has these settings of its own:
 
 - <b>Presets.</b> Real Squeezebox hardware or jive(lite) based emulators support presets. This section lets you assign a Playlist or Radio Station from your library to each of the ten presets
-- <b>Audio synchronization delay correction.</b> Shifts this player's audio by up to ±500 ms to keep it in sync with the others. Refer to the Player Summary Table to identify which types support sync correction
+- <b>Audio synchronization delay correction.</b> Shifts this player's audio by up to ±500 ms to keep it in sync with the others. Positive values make it play earlier, for example to make up for the delay of an amplifier or TV connected to it; negative values make it play later. Refer to the Player Summary Table to identify which types support sync correction
 - <b>Enable display support.</b> Some Squeezelite hardware has a display and this setting enables support for it
 - <b>Visualization type.</b> The visualisation shown on the display during playback. It only becomes available once display support is enabled
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Squeezelite. Turn it off if the player cannot play continuous WAV streams
@@ -44,9 +45,9 @@ There is no sample rates setting for Squeezelite players, as each one reports th
 
 ## Known Issues / Notes
 
-- The focus of this provider in MA is to support the use of software Squeezelite clients (e.g. <a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">piCorePlayer</a>). Old original Squeezebox hardware is reported to work although there are reported issues with grouping. The MA core team cannot afford to expend resources on making these devices work any better than they do now. PRs to enhance support, however, are welcomed to the <a href="https://github.com/home-assistant-libs/aioslimproto" target="_blank" rel="noopener noreferrer">aioslimproto library</a> and/or the squeezelite provider in MA
+- The focus of this provider in MA is to support the use of software Squeezelite clients (e.g. <a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">piCorePlayer</a>). Old original Squeezebox hardware is reported to work. The first-generation Squeezebox, SqueezeSlave, and players created by Lyrion plugins for AirPlay, Cast or UPnP speakers cannot be added to a sync group, only to a [Universal Group](/faq/groups/#universal-groups). The speaker itself can still join a sync group over its own AirPlay or Cast connection. The MA core team cannot afford to expend resources on making these devices work any better than they do now. PRs to enhance support, however, are welcomed to the <a href="https://github.com/home-assistant-libs/aioslimproto" target="_blank" rel="noopener noreferrer">aioslimproto library</a> and/or the squeezelite provider in MA
 - Running LMS on the same server as MA with the MA Squeezelite provider enabled can have undesired effects. The default setting for the port used by Slimproto is 3483. This can be changed in the settings for this provider, but non-default ports will not work with older hardware squeezebox players. 
 - Make sure that you do not have the "slimproto" (Squeezebox players) integration running in Home Assistant
 - Ordinarily do not use queue flow mode unless using older Squeezebox hardware player that has issues transitioning. Enabling queue flow mode may solve playback issues, however, it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - Squeezelite devices have no native mute functionality. If desired the "fake mute" control option can be used and this is found in the `Player Controls` section for each individual player
-- Squeezelite sync groups send a flow stream to all members. The master format is chosen from the leader player's Flow Mode sample rate setting (bounded by the leader's supported rates); each member then receives that rate, or its own maximum supported rate if lower
+- A sync group of Squeezelite players always uses Sendspin, even if every player in the group is a Squeezelite player. The players stay within about a millisecond of each other, and adding or removing a player does not interrupt the others. Each player gets the best audio quality it supports, up to its highest sample rate and bit depth, sent as FLAC, or as PCM when its [output codec](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player) is WAV or it cannot play FLAC. A player whose output codec is MP3 or AAC gets 16-bit PCM. Pausing a group stops the stream, and pressing play, also on a Squeezebox in the group, picks up where it left off. A player on its own, or in a [Universal Group](/faq/groups/#universal-groups), plays over Squeezelite

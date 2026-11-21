@@ -15,7 +15,7 @@ description: Common Problems and Fixes
 
 **Unsupported installs.** For clarity, running installation options other than HAOS (Home Assistant Operating System) or simple docker and/or more complex network setups is at your own risk and we do not have the capacity to provide direct support (e.g Kubernetes is not supported).
 
-**Stream settings.** There are settings available in [**Settings → System → Streams**](/settings/core/#streams) and then select the "Show advanced settings" toggle, that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
+**Stream settings.** There are settings available under **Audio streaming** in [**Settings → System → Network**](/settings/core/#audio-streaming) and then select the "Show advanced settings" toggle, that might help you if you have non-standard setups. If you are running MA in your own docker container then make sure you have the correct PUBLISHED IP ADDRESS and BIND TO IP/INTERFACE set. Ensure containers are in HOST networking mode and note the extra privileges in the [example docker command](/installation/#docker-image).
 
 **Player discovery.** Most players are discovered automatically. They announce themselves on the network and MA listens for those announcements (a technique called mDNS/multicast, [explained in plain language here](/faq/networking/)). If your players do not get discovered it means something on your network is blocking those announcements. Work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered); the most common causes are guest Wi-Fi networks, VPNs, and router settings that filter multicast traffic. Business-grade network equipment tends to block multicast traffic as much as possible as it hurts performance when there are many clients, but in a home setup it is mandatory because all home gear relies on it. Users of Ubiquiti devices must ensure the setting `Multicast to Unicast` is turned OFF.
 
@@ -28,6 +28,8 @@ description: Common Problems and Fixes
 **File tagging.** Ensure local files are [tagged properly](/music-providers/local-files/#tagging-files).
 
 **Playback.** If the player is found and starts, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, see [the player plays, but not properly](#the-player-plays-but-not-properly) below.
+
+**Volume drifting during a track.** If the volume rises and falls within a track the first time you play it, that is expected. See [the volume rises and falls during a track](#the-volume-rises-and-falls-during-a-track) below.
 
 **Authentication.** If it is a music source issue and the source requires authentication then clear the authentication and re-login.
 
@@ -69,11 +71,11 @@ Matching items between streaming sources is challenging as they do not all provi
 
 If the player is found and starts playing but then crackles, skips or stops after a while, that is a different problem and is covered by the [dropout checklist](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while). Start with the ping test there, which tells you within a few minutes whether your network is at fault. Note that a player can work perfectly in its manufacturer's own app and still drop out here, because those apps send audio a long way ahead and can hide network faults that Music Assistant cannot.
 
-If the player appears to start normally, with the progress bar advancing and the track details and artwork shown, but no sound comes out of it, check the <b>Published IP address</b> in the [Streams](/settings/core/#streams) settings under **Settings → System**. This is the address Music Assistant hands to players as the place to fetch audio from, so if it is set to something the player cannot reach on your network the player will sit there looking like it is playing while receiving nothing. The same symptom can come from anything else that blocks the audio connection back to the server, such as a firewall, separate VLANs, a guest network or "client isolation" on your Wi-Fi, or a VPN on the machine running Music Assistant. Even if discovery worked and the player appears normally in the list, that does not mean the audio can get through, so work through [Networking Basics](/faq/networking/) if any of those apply to you.
+If the player appears to start normally, with the progress bar advancing and the track details and artwork shown, but no sound comes out of it, check the <b>Published IP address</b> in the [Audio streaming](/settings/core/#audio-streaming) settings under **Settings → System → Network**. This is the address Music Assistant hands to players as the place to fetch audio from, so if it is set to something the player cannot reach on your network the player will sit there looking like it is playing while receiving nothing. The same symptom can come from anything else that blocks the audio connection back to the server, such as a firewall, separate VLANs, a guest network or "client isolation" on your Wi-Fi, or a VPN on the machine running Music Assistant. Even if discovery worked and the player appears normally in the list, that does not mean the audio can get through, so work through [Networking Basics](/faq/networking/) if any of those apply to you.
 
 For a player that is missing or will not start at all, read on.
 
-First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to [**Settings → Players**](/settings/individual-player/). If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. Also review the **Generic Settings** for the individual player to determine under what circumstances the player will be hidden in the UI.
+First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to [**Settings → Players**](/settings/individual-player/). If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. A reason such as **Pairing required** with a **Start setup** button means the player needs setting up first; [A player that is unavailable or needs setup](/settings/individual-player/#a-player-that-is-unavailable-or-needs-setup) explains both. Also review the **Generic Settings** for the individual player to determine under what circumstances the player will be hidden in the UI. If the player is not in the settings list either, open the ⋮ menu at the top right of that page and check that **Hide unavailable players** is not switched on.
 
 If the player is not shown in the list of players in the MA settings then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
 
@@ -96,6 +98,30 @@ Change one thing at a time, and give it a track or two before deciding it did no
 **Silence, or a refusal to play higher quality files.** Remove the higher rates from **Sample rates supported by this player**. The rates selected by default are deliberately safe on most players, and anything above them is there for you to try rather than promised to work.
 
 If none of these help, check the [page for your player provider](/player-support/). Each one has a Known Issues section, and some carry troubleshooting steps for problems particular to that device.
+
+## The volume rises and falls during a track
+
+This is [volume normalization](/faq/tech-info/#volume-normalization) working without a loudness measurement. It is expected the first time a track is played and it is not a bug, so please do not open an issue for it.
+
+Until Music Assistant has measured a track it adjusts the loudness on the fly, which can be heard as the volume drifting. Most often a quiet intro is lifted and then pulled back when the track gets loud. The track is measured during that first play by the [Loudness Analysis](/audio-analysis/loudness-analysis/) provider, and once the measurement exists a single fixed adjustment is used for the whole track and the variation goes away. Local files are also measured in a nightly background scan, so this mostly affects tracks from streaming services that you have not played before.
+
+A few things follow from how the measurement is made:
+
+- A track that is skipped shortly after it starts may not have been measured yet. It is measured on a later play instead
+- A track that is resumed part way through is not measured on that play
+- Seeking within a track on its first play can produce a single step in volume, as the track changes over from the on the fly adjustment to the measured one
+
+The [Audio Pipeline](/audiopipeline/) view shows the normalization in use for the current track and where the loudness value came from.
+
+If it keeps happening on tracks you have already played through:
+
+**The method is set to Dynamic.** This always adjusts on the fly and ignores measurements. Change it to `Fallback dynamic` under [**Settings → Players → Playback**](/settings/playback/#volume-normalization).
+
+**It is a radio station.** Live radio is rarely measured, so it stays on whichever fallback the radio setting uses.
+
+**You would rather never hear it.** Set the method to `Fallback fixed gain`. Tracks without a measurement then play with the same fixed adjustment from start to finish, and measured tracks are handled as before. `Measured loudness` also removes the drift, but unmeasured tracks play at their original loudness, so the volume can jump from one track to the next.
+
+Only report this if the Audio Pipeline view shows a measured loudness value in use for the track and the volume still varies during it.
 
 ## All my media is missing 
 
