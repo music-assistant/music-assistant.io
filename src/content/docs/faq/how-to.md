@@ -12,7 +12,7 @@ After a track has been played by MA once then data is retained for volumes to be
 
 The method, the target level and the fixed gain values are set under [**Settings → Players → Playback**](/settings/playback/#volume-normalization). Turning normalization on or off lives there too and can be overridden for [one queue](/usage/#the-queue).
 
-More details [here](/faq/tech-info/#volume-normalization)
+More details [here](/faq/tech-info/#volume-normalization). If the volume rises and falls within a track the first time you play it, see [Troubleshooting](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track).
 
 ## Have my music continue if I change rooms
 
