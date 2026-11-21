@@ -20,7 +20,9 @@ When a track already carries a loudness value from its tags or from the music pr
 
 Album level values come only from those tags or from a music provider. This provider measures the individual track, so unless a music provider supplies one, album gain is available only for tracks carrying an `R128_ALBUM_GAIN` or `REPLAYGAIN_ALBUM_GAIN` tag. The album tag is read alongside the track tag, so a file that carries an album value but no track value is treated as having no loudness value at all. How the values are chosen and applied is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 
-Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or whose measurement comes back near silence are skipped to avoid unreliable values.
+Tracks shorter than 10 seconds, or whose measurement comes back near silence, are skipped to avoid unreliable values. A track longer than 10 minutes is still measured, using its first 10 minutes.
+
+A track measured during playback gets its value once the whole track has been read, so one that is skipped shortly after it starts, or resumed part way through, is measured on a later play instead. Until then the fallback chosen in the normalization settings applies, and with the default that can be heard as [the volume rising and falling during the track](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track).
 
 ## How the data is used
 

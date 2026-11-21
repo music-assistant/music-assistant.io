@@ -30,7 +30,7 @@ MA needs an integrated loudness value for a track, in LUFS, before it can work o
 
 Tags and provider values take priority over MA's own measurement, and a track that already carries one is not analysed at all. Tags are read when the track is scanned into the library. If you add or change them later, use **Refresh item** on the track to pick up the new values.
 
-Once a value exists from any of these sources it is used, whichever method is selected under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), unless that method is Dynamic, Fixed Gain or Disabled. The methods otherwise differ only in what happens while no value is available yet. Where no value exists and the method allows it, MA falls back to a dynamic normalizer, which is less accurate but will at least prevent a sudden drop or spike in the volume level.
+Once a value exists from any of these sources it is used, whichever method is selected under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), unless that method is Dynamic, Fixed Gain or Disabled. The methods otherwise differ only in what happens while no value is available yet. Where no value exists and the method allows it, MA falls back to a dynamic normalizer, which is less accurate but will at least prevent a sudden drop or spike in the volume level. Because it adjusts the gain continuously, the volume can be heard to drift within a track until that track has been measured, which is covered under [the volume rises and falls during a track](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track).
 
 ### Track gain and album gain
 
