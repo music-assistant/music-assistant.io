@@ -11,6 +11,7 @@ Music Assistant has support for streaming music to [WiiM devices](https://www.wi
 - WiiM devices are auto detected by Music Assistant
 - WiiM devices can optionally be grouped with AirPlay devices
 - Up to 192khz / 24 bit support
+- A stereo pair made in the WiiM Home app is one player. See [Create a Stereo Pair](/faq/how-to/#create-a-stereo-pair)
 - WiiM devices connected using Squeezelite or AirPlay can be grouped with [Sendspin](/player-support/sendspin/) speakers and play in sync. Over Squeezelite, the WiiM app also shows the sample rate and bit depth of the stream Music Assistant sends it
 
 ### AirPlay Functionality
