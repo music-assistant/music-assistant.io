@@ -60,6 +60,7 @@ Expect to do some tuning afterwards. Playback is rarely in sync straight away, s
 - Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
 - MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work
 - Google's current Cast software no longer gives apps like Sendspin any control over audio timing, which they need to play in sync. Devices that run it cannot use Sendspin, and a software update can stop Sendspin working on a speaker where it worked before. There is no way to tell in advance, so you find out the first time you play something: Music Assistant then says Sendspin does not work with the device and stops offering it for that speaker. There is nothing to do, playback continues over the standard Cast protocol
+- Some televisions will show a blank progress bar during playback
 
 ## Troubleshooting playback problems
 
