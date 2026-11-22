@@ -21,7 +21,7 @@ Music Assistant talks to the lights directly over your local network, so no LIFX
 - LIFX lights on your network are found on their own, and followed when their IP address changes
 - Light strips (LIFX Z, Beam) are split into segments that each react on their own
 - Lights can be grouped by the rooms set up in the LIFX app, all together, or one player per light
-- Every light goes back to the colour and power it had before once the music stops
+- When the music stops, each light returns to its original colour and power
 
 ## Configuration
 
