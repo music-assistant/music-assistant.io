@@ -45,7 +45,7 @@ Spotify Soloist is preselected for a new setup; setups added before this choice 
 | Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks |
-| [Recommendations](/ui/#view---discover) Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | Yes (Recently played on Spotify) |
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
@@ -57,7 +57,8 @@ Spotify Soloist is preselected for a new setup; setups added before this choice 
 ### Other
 
 - Searching the Spotify catalogue is possible
-- "New Releases" and "Genres and Moods" folders are available in the Browse view
+- "New Releases", "Genres and Moods", and "Recently Played" folders are available in the Browse view
+- A **Recently played on Spotify** row is available on the Home/Discover view (and under Browse as **Recently Played**). This shows what has been played on Spotify from all sources, not just Music Assistant — if you only play Spotify from Music Assistant, it may appear to duplicate the existing **Recently played** row
 - Items in your Spotify library (including the Liked Songs playlist) will be added to the Library in Music Assistant
 - Adding an item from Spotify to the Music Assistant Library will also add it to "Your Library" in Spotify
 - Marking an item as a favourite in Music Assistant will also add it to the MA Library and "Your Library" in Spotify
@@ -155,6 +156,6 @@ Crossfade is not set here — enable it for the player as usual, and it works th
 - While Spotify Soloist is playing, Music Assistant shows up in your Spotify app as a device called `Music Assistant Playback`. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
 - With Spotify Soloist, starting a queue or seeking takes a little longer than with librespot
 - When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
-- Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
+- Spotify does not provide personalized recommendation mixes or radio stations; only **Recently played on Spotify** appears in Discover/Home
 - Spotify does not tell Music Assistant what genre anything is
 - Podcast transcripts are not available
