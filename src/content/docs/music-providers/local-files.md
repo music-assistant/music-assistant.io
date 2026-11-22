@@ -379,7 +379,7 @@ The sheet requires:
 
 - `FILE` - can be omitted if the CUE Sheet shares the audio file's stem (e.g. `album.cue` alongside `album.flac`).
 
-Only CUE Sheets that describe a single audio file are supported. A CUE Sheet with more than one `FILE` line (for example one left behind by a rip to one file per track) is ignored, and its audio files are imported as regular tracks using their own tags. If the file named by `FILE` cannot be found, the CUE Sheet is skipped and no audio file is hidden.
+Only CUE Sheets that describe a single audio file are supported. A CUE Sheet with more than one `FILE` line (for example one left behind by a rip to one file per track) is ignored, and its audio files are imported as regular tracks using their own tags.
 
 Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
 
