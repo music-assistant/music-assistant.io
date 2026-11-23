@@ -43,7 +43,7 @@ These settings are only visible when the advanced toggle is on. They will not ne
 #### Discovery
 
 - <b>Allow network scan for UPnP discovery.</b> When enabled, MA uses an additional broadcast based discovery method ([SSDP](/faq/networking/#the-jargon-translated)). Turn this on if some UPnP/DLNA players are not being found by regular discovery (see the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered))
-- <b>Mdns/Zeroconf discovery interface(s).</b> Options are `Default interface [default]` and `All interfaces`. Used in custom network setups when multiple network interfaces are used. A change takes effect after restarting Music Assistant. Setting is only visible when the advanced toggle is on
+- <b>Mdns/Zeroconf discovery interface(s).</b> Options are `Local network interfaces [default]` and `All interfaces`. By default MA uses every network interface of the local network(s) it is connected to, and leaves out the virtual interfaces of Docker, virtual machines, VPNs and Thread. Choose `All interfaces` to include those as well. A change takes effect after restarting Music Assistant. Setting is only visible when the advanced toggle is on
 
 ## Storage
 
