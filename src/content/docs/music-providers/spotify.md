@@ -45,7 +45,7 @@ Spotify Soloist is preselected for a new setup; setups added before this choice 
 | Subscription FREE | No |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Artists, Albums, Tracks, Playlists, Podcasts, Audiobooks |
-| [Recommendations](/ui/#view---discover) Supported | Yes (Recently played on Spotify) |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | Yes |
 | Artist Top Tracks Support                       |            Yes                     |
