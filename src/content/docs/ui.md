@@ -7,7 +7,7 @@ description: A Walkthrough of the Music Assistant User Interface
 
 ## Take a tour
 
-A short tour points out the main parts of the app: the menu, search, the settings, your profile, the player bar, picking a player and grouping players. It is offered at the end of the setup wizard and of the welcome, and you can take it whenever you like by selecting your name at the bottom of the menu and choosing **Take a tour**. Stops for anything that is not on screen are skipped, so a phone shows fewer of them.
+A short tour points out the main parts of the app: the menu, search, the settings, your profile, the player bar, picking a player and grouping players. It is offered at the end of the welcome, and at the end of the setup wizard when you chose **The full Music Assistant experience**. You can take it whenever you like by selecting your name at the bottom of the menu and choosing **Take a tour**. Stops for anything that is not on screen are skipped, so a phone shows fewer of them.
 
 ## Main Menu
 
@@ -15,7 +15,7 @@ A short tour points out the main parts of the app: the menu, search, the setting
 
 This menu's appearance can be configured by clicking on the ⋮ in the bottom right and selecting `Edit menu`. Items can then be re-ordered, shown or hidden and section titles renamed.
 
-In [**Settings → User Interface**](/settings/user-interface/#display) there are Display options which affect the UI. On a desktop, the menu can be placed vertically on the left or right or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. 
+In [**Settings → Profile → This device**](/settings/profile/#display) there are Display options which affect the UI. On a desktop, the menu can be placed vertically on the left or right or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. 
 
 ### Sidebar Shortcuts
 
@@ -32,17 +32,18 @@ Use shortcuts to pin frequently used library items to the main menu for quick ac
 The settings open on a list of sections, shown as cards or as a list (switch with the icon at the top). Which sections are listed depends on your role:
 
 - **[Marketplace](/settings/marketplace/)**. Where music sources, player support, metadata, plugins and audio analysis are found and added. For administrators, and for users whose role lets them add music sources of their own
-- **[Music sources](/settings/music-provider-settings/)**, **[Player support](/settings/player-provider/)**, **[Metadata](/settings/metadata-provider-settings/)** and **[Plugins](/plugins/)**. What is set up of each kind. Their add buttons open the Marketplace. Users whose role lets them have music sources see **Music sources** too, with their own sources and the ones shared with them
-- **[Players](/settings/individual-player/)**. The settings of each player, and where group players are created
-- **Audio analysis**. What is set up to analyse the audio, such as [Smart Fades](/audio-analysis/smart-fades/)
-- **[Profile](/settings/profile/)** and **[User Interface](/settings/user-interface/)**. Your own account and how the app looks for you. Every user has these
-- **[User management](/settings/user-management/)** and **[Remote Access](/settings/remote-access/)**. For administrators
-- **[System](/settings/core/)**. The core server settings, and pages such as [Storage](/settings/storage/), Diagnostics and Genre Management. For administrators
+- **[Music](/settings/music-provider-settings/)**. Your music sources, and the settings of the library, genres, [metadata](/settings/metadata-provider-settings/) and audio analysis. Users whose role lets them have music sources see it too, with their own sources and the ones shared with them
+- **[Players](/settings/individual-player/)**. The settings of each player, where group players are created, and the [Playback](/settings/playback/) and [Player support](/settings/player-provider/) pages
+- **[Plugins](/plugins/)**. The plugins that are set up. Its add button opens the Marketplace. For administrators
+- **[AI](/settings/ai/)**. The default AI engines, what uses AI, the AI services and access for AI assistants. For administrators
+- **[Profile](/settings/profile/)**. Your own account, and how the app looks for you. Every user has it
+- **[User management](/settings/user-management/)**. For administrators
+- **[System](/settings/core/)**. The network, [Remote Access](/settings/remote-access/), [Storage](/settings/storage/), Home Assistant, background tasks and diagnostics. For administrators
 - **[About](/settings/about/)**. Version information, credits and more
 
-The settings pages all look alike. A header card names the page and has a **Documentation** button that opens the matching page here, followed by one **Options** card with all of the settings, grouped under headings. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user.
+The settings pages all look alike. A header names the page, with its buttons on the right and, on some pages, a ⋮ menu with options such as **Reset to defaults**. A page that leads to other pages shows them as tiles at the top. A page with settings has one **Options** card with all of the settings, grouped under headings, and a **Save** button below it, unless every setting on it is saved the moment it changes. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user. Pages that also hold a list, such as Metadata, Audio analysis and Background tasks, put their settings and status in rows at the top that open in place, with the list below. The page of a music source, player support, plugin or player also has a **Documentation** button that opens the matching page here.
 
-At the bottom of the list, administrators find **Run the setup wizard again**, which also resumes a [paused setup](/first-run/#pausing-the-setup), and other users **Show the welcome again**.
+At the bottom of the list, administrators find **Run the setup wizard again**, which starts the wizard again at its first question, and other users **Show the welcome again**. A [paused setup](/first-run/#pausing-the-setup) continues where you left off with **Resume** on the **Setup paused** message.
 
 ## Global Search
 [![image](/assets/screenshots/global-search.png)](/assets/screenshots/global-search.png)
@@ -73,7 +74,7 @@ The heart shows your own favorite state for the playing track: filled for a favo
 
 When lyrics are available for the track being played then the LYRICS selectable label will be shown in white. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song. Adjustment to the lyric timing is available in the ⋮ menu.
 
-The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu. Autoplay will be turned off and disabled if Repeat One or Repeat All is selected.
+The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Playback settings for each player](/usage/#the-queue) are available in the ⋮ menu. Autoplay will be turned off and disabled if Repeat One or Repeat All is selected.
 
 A sleep timer is also available in the ⋮ menu, which will stop playback after the selected period.
 

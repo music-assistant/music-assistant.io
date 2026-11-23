@@ -8,6 +8,8 @@ title: "Sendspin"
 
 It is built into Music Assistant and switched on from the start, so there is nothing to install. The web player you use in your browser is a Sendspin player, and Sendspin speakers and apps appear on their own once they are on your network.
 
+AirPlay and Squeezelite players (including Squeezebox hardware) can be grouped with Sendspin speakers and play in sync. Cast speakers can join too, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices). If a device supports more than one of these, it gets one Sendspin output, and Music Assistant uses Squeezelite first, then AirPlay, then Cast for it. To make it use a different one, switch off the one you don't want in that player's [output protocol settings](/settings/individual-player/#output-protocols). When it moves, the output keeps its settings, but each of these protocols keeps its own sync delay. When Cast takes it over, it is switched off until you turn it on in those settings, as Sendspin on Cast is experimental. It does not move while the speaker is powered off or out of reach.
+
 Sendspin was developed by the <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation</a> and is free for anyone to build on, so the range of devices and apps that support it is growing.
 
 To bring audio from a compatible Sendspin line-in, microphone, or other input into Music Assistant, see the [Sendspin Source plugin](/plugins/sendspin-source/).
@@ -24,12 +26,13 @@ To bring audio from a compatible Sendspin line-in, microphone, or other input in
 - **Per-player audio settings**: each device gets its own equaliser and volume
 - **Control from the device**: play, pause and skip can be driven from the player as well as from Music Assistant
 - **Track information**: title, artwork and progress appear on every device
+- **Stereo pairs**: two Sendspin speakers can play as one player, see [Stereo Pairs](#stereo-pairs)
 
 ## Configuration
 
 The Sendspin provider is **built-in and always enabled**. There are no configuration options required to get started.
 
-Individual Sendspin players will appear automatically when clients connect
+Individual Sendspin players will appear automatically when clients connect. A Sendspin device that only controls playback, such as a remote or a volume knob, is listed under **Controllers** on [Settings → Players](/settings/individual-player/), and is not something you play to.
 
 ## Setting Up a Device
 
@@ -54,11 +57,37 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 - <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential
 - <b>Turn on audio input / Turn off audio input.</b> Shown for a device with an audio input that is connected through guest access. Starts or stops sending its audio to Music Assistant through the [Sendspin Source plugin](/plugins/sendspin-source/)
 - <b>Automatically play line-in on.</b> Chooses where the line-in plays automatically: This device, another player, or Off. Only shown for devices with a line-in. A device that cannot report when a signal is present shows a note instead
+- <b>Name of the input.</b> The name of the audio input, such as Record player. It is Line-in until you change it. The source list of the player itself shows the name alone, while Browse and other players show it with the name of the player, such as Record player (Living Room). Only shown for a device that has an audio input and also plays; a device that only has an input is named by its player
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
 - <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (player's preferred codec) is the default, and the other options are read from the device itself. On Automatic the player keeps the codec it prefers, and <b>Sample rate selection</b> decides the sample rate. Choosing a specific format here sets both
 - <b>Sample rate selection.</b> Decides the sample rate of the audio sent to this player, and can only be changed while the preferred audio format is Automatic. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
 
 Preferred audio format, Sample rate selection, and Unpair on a paired device only show while <b>Show advanced settings</b> is on.
+
+## Stereo Pairs
+
+Two speakers with Sendspin built in can play as one player, a stereo pair, with one speaker on the left channel and the other on the right. Both need to be set up and connected. The web player and bridged players, such as Google Cast devices in Sendspin mode, can't be part of a stereo pair.
+
+To make a stereo pair:
+
+1. Open the settings of one of the speakers and, in the [Output Protocols](/settings/individual-player/#output-protocols) section, open the ⋮ menu of its Sendspin output
+2. Select **Make multi-channel player…**
+3. Pick the other speaker
+4. Each speaker is shown next to its channel, **Left** or **Right**. The swap button swaps the two
+5. Give the stereo pair a **Name** and select **Create**
+
+The Sendspin output of each speaker moves to the new player. A player that has no other output disappears, together with its settings.
+
+The stereo pair works as one player:
+
+- It has one volume. Turning the volume up or down on one of the speakers changes the other one too
+- Its [DSP](/dsp/) settings apply to both speakers. A filter for one channel, such as a [Parametric Equalizer](/dsp/parametriceq/) band for the left channel only, changes only the speaker that plays that channel
+- In a group it takes part as one player
+- While one speaker is offline, the other plays both channels until it is back
+
+In the Output Protocols section of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps the channels of the two, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
+
+To take the stereo pair apart, select **Take apart** in the ⋮ menu at the top right of its settings. The stereo pair disappears with its settings, and its speakers come back as players of their own, with default settings. A speaker that is offline comes back once it is connected again.
 
 ## Older Devices
 
@@ -72,7 +101,7 @@ Sendspin is still evolving, and some players and clients still use an older deve
 - Many Sendspin devices ask for 16 bit audio, so higher resolution material may be converted on the way out
 - Artwork clears briefly when you pause, seek, or move on to the next track
 - A Sendspin device plays for one server at a time. Playing to a device moves it to this server, even while another server is playing on it. A device that another server is using can still be set up here, but pairing only works while the other server is not playing on it
-- Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Cloud gives the most reliable connection through a firewall
+- Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Link gives the most reliable connection through a firewall
 - If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
 
 ## Supported Clients
@@ -106,7 +135,7 @@ A Chromium based browser can play lossless FLAC over HTTPS too: pick one of the 
 
 Sendspin players on your network are found automatically, so there is usually no address to enter anywhere.
 
-If a player does ask you for a server address, or you are building a client of your own, Music Assistant listens at `ws://192.168.1.100:8927/sendspin` — replace the IP address with that of your Music Assistant server. The specification is published at <a href="https://github.com/Sendspin/spec" target="_blank" rel="noopener noreferrer">github.com/Sendspin/spec</a>.
+If a player does ask you for a server address, or you are building a client of your own, Music Assistant listens at `ws://192.168.1.100:8927/sendspin` — replace the IP address with that of your Music Assistant server. In the rare case that port 8927 is already in use, for example by a second Music Assistant server on the same machine, Sendspin uses the next free port starting at 8929, and the Music Assistant log shows which one. The specification is published at <a href="https://github.com/Sendspin/spec" target="_blank" rel="noopener noreferrer">github.com/Sendspin/spec</a>.
 
 > [!NOTE]
 > The same `/sendspin` path exists on the main web interface port (8095), but that one is reserved for the built-in web player and will reject other clients.

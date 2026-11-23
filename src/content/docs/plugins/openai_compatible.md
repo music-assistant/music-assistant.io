@@ -8,9 +8,9 @@ pluginGroup: other-systems
 
 Some Music Assistant features are powered by an AI model: **AI Radio**, the **Trivia** quiz type, the AI answer suggestions in **Music Quiz**, the AI-written descriptions for **Smart Playlists**, and the AI generated covers and descriptions of **Playlist Metadata**.
 
-Those features used to need Home Assistant, because an AI task entity there was the only thing that could answer them. This plugin lets Music Assistant talk to an AI service directly, so they work without Home Assistant as well.
+This plugin lets Music Assistant talk to an AI service directly, so those features work without Home Assistant as well.
 
-Each model you pick here becomes an **AI engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Each feature then chooses which engine it wants from its own settings. See [choosing an engine for a feature](/ha-plugin/#choosing-an-engine-for-a-feature).
+Each model you pick here becomes an **AI engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Features use the default engines from [**Settings → AI**](/settings/ai/) unless they pick their own.
 
 It works with any service that speaks the OpenAI API, which is nearly all of them:
 
@@ -29,7 +29,7 @@ This plugin is currently marked as **beta**. It works, but it has not been teste
 
 ## Installation
 
-Add the plugin in **Settings → Plugins → Add a plugin** and pick **OpenAI Compatible**.
+Add the plugin in **Settings → Plugins → Add a plugin**, or with **Add an AI service** on [**Settings → AI**](/settings/ai/), and pick **OpenAI Compatible**.
 
 ### Choose a service
 
@@ -38,23 +38,20 @@ Pick your service from the list and its address is filled in for you. Choose **S
 ### Connection details
 
 - **API base URL** — the address of the service, including the version path, for example `https://api.openai.com/v1`. Change this if the service does not run where it normally would, for example when Ollama runs on a different machine than Music Assistant, or when Music Assistant runs in a container and cannot reach `localhost`.
-- **API key** — the key from your service. Leave it empty for a local server that does not ask for one.
+- **API key** — the key from your service. Leave it empty for a local server that does not ask for one. With **Reconfigure** later, leave it empty to keep the saved key, or tick **Remove the saved API key** to clear it.
 
-Music Assistant checks the address and key before finishing, so a typo is caught here rather than later.
+Music Assistant checks the address and key when you continue, by reading the list of models from the service, so a typo is caught here rather than later.
 
-### Choose your models
+### Choose the models
 
-The plugin does not offer any models until you pick them. Open the plugin under **Settings → Plugins**, and select the models you want under **Models**.
+The last step asks for the models to use. The list is read from your service. If your service does not publish a list of its models, the fields let you type the model names yourself.
 
-The list is read from your service. If your service does not publish a list of its models, the field lets you type the model names yourself.
+- **Models** — the models for the AI features. Each model you select becomes its own AI engine, listed as `OpenAI Compatible | <model>` wherever an AI engine can be picked.
+- **Image models** — the models that draw pictures, for example `google/gemini-2.5-flash-image` on OpenRouter or `gpt-image-1` on OpenAI. Each one becomes an **image engine**, used by features that create artwork such as the [AI generated covers of Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers). Leave it empty if your service cannot generate images.
 
-Each model you select becomes its own AI engine, listed as `OpenAI Compatible | <model>` wherever an AI engine can be picked.
+Both are optional. Without any model the plugin offers no engines, and [**Settings → AI**](/settings/ai/#ai-services) lists it with **Choose the models to use**.
 
-### Choose image models
-
-Models that draw pictures are picked separately, under **Image models**, for example `google/gemini-2.5-flash-image` on OpenRouter or `gpt-image-1` on OpenAI. Each one becomes an **image engine**, used by features that create artwork such as the [AI generated covers of Playlist Metadata](/metadata-providers/playlist-metadata/#ai-generated-covers).
-
-Leave **Image models** empty if your service cannot generate images.
+To change the models later, open the plugin under **Settings → Plugins** and change **Models** or **Image models**, or go through the setup again with **Reconfigure**.
 
 ## Choosing a model
 

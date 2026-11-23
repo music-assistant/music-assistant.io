@@ -67,7 +67,7 @@ Spotify Soloist is preselected for a new setup; setups added before this choice 
 
 ### Basic setup
 
-1. Add the Spotify source via **Settings → Music sources → Add a music source**.
+1. Add the Spotify source via **Settings → Music → Add a music source**.
 2. Follow the on screen instructions which should take you through the initial flow shown here
 <a href="/assets/screenshots/spotify-phase1.png"><img src="/assets/screenshots/spotify-phase1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
@@ -119,7 +119,15 @@ Choosing Soloist replaces the playback approval above with three steps of its ow
 
 ### Optional: add a personal Client ID
 
-Music Assistant shares one allowance from Spotify with everybody else using it, and Spotify limits how fast that allowance can be used. Registering your own free Client ID gives you an allowance of your own, which may make everything quicker but it does have some potential problems detailed in the known issues section.
+Music Assistant shares one allowance from Spotify with everybody else using it, and Spotify limits how fast that allowance can be used. With a Client ID of your own, your library sync and most of your browsing count against an allowance of your own instead.
+
+Spotify has tightened its rules for personal apps, so weigh this before adding one:
+
+- The Spotify account that owns the app needs Premium, and at most 5 Spotify accounts can use the app.
+- Spotify gives a personal app a limited allowance, counted for all the apps of one developer account together. When it is used up, Spotify holds the app back, sometimes for hours. Music Assistant then uses the shared allowance for browsing and playback, and the library sync waits until the app is allowed again.
+- A personal app cannot read everything. Playlists you do not own, an artist's top tracks and the playlist search always use the shared allowance.
+
+Most people do not need a personal Client ID.
 
 1. Complete the basic setup above, then check `Use my own Spotify developer key (advanced, optional)` and click finish.
 2. A new dialog will open where you must add your own Client ID. 
@@ -140,6 +148,7 @@ Crossfade is not set here — enable it for the player as usual, and it works th
 ## Known Issues / Notes
 
 - Premium is required, including Duo and Family. Free accounts will not work
+- Spotify can hold a personal Client ID back for hours once its allowance is used up. See [Optional: add a personal Client ID](#optional-add-a-personal-client-id)
 - Accounts created around December 2024 and later generally cannot play through librespot, and some older accounts are affected too. If playback fails and you see `Key Error` messages in the log, that is the symptom — choose Spotify Soloist instead
 - Spotify Soloist cannot be used on hosts with Docker bridge networks  
 - Each Spotify Soloist account plays one thing at a time. Starting Spotify on a second player asks you to stop the first one; a second Spotify account added as its own source has a session of its own

@@ -1,5 +1,10 @@
 ---
-import { coverImage, formatDate, type BlogPost } from "../../utils/blog";
+import {
+  coverImage,
+  formatDate,
+  tagLabel,
+  type BlogPost,
+} from "../../utils/blog";
 import Icon from "./ui/Icon.astro";
 
 interface Props {
@@ -9,7 +14,7 @@ interface Props {
 const { post, featured = false } = Astro.props;
 const cover = coverImage(post);
 const url = `/${post.id}/`;
-const isRelease = post.data.tags?.includes("release");
+const tag = post.data.tags?.[0];
 ---
 
 <article class:list={["post", { featured }]}>
@@ -31,7 +36,7 @@ const isRelease = post.data.tags?.includes("release");
   </div>
   <div class="body">
     <p class="meta">
-      {isRelease && <span class="chip">Release</span>}
+      {tag && <span class="chip">{tagLabel(tag)}</span>}
       <time datetime={post.data.date.toISOString()}>
         {formatDate(post.data.date)}
       </time>

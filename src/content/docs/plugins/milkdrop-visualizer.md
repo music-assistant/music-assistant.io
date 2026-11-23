@@ -16,7 +16,7 @@ This plugin renders a <a href="https://github.com/jberg/butterchurn" target="_bl
 - A full-screen visualizer behind the fullscreen player, the now-playing dashboard, and the party screen
 - The complete Butterchurn preset library, with favourites and random or fixed preset selection
 - Optional preset switching on the beat, using Music Assistant's beat analysis
-- Per-user controls for blur, opacity and render quality
+- Per-user controls for render quality, opacity, blur and artwork colours
 - Reacts to the audio of whichever player you are viewing, in time with playback
 
 ## Configuration
@@ -26,18 +26,33 @@ This plugin renders a <a href="https://github.com/jberg/butterchurn" target="_bl
 - Once enabled, a `MilkDrop` entry appears in the sidebar leading to its settings page, and a droplet toggle appears in the fullscreen player menu
 - Turn the visualizer on from the player menu (or the party screen), play something, and the visuals appear behind the now-playing view
 
-### Settings
+### Visualizer settings
 
+The `MilkDrop` page in the sidebar holds the visualizer settings. They are stored per user, so everyone tunes their own.
+
+- <b>MilkDrop visualizer.</b> Shows the visualizer behind the fullscreen player. Each player can override this from its fullscreen menu. Off by default, unless you have Expert mode turned on.
 - <b>Render quality.</b> Low / Medium / High / Native. Higher tiers render sharper visuals at more GPU and CPU cost. Use a lower tier on tablets and TVs. Default `High`.
+- <b>Visualizer opacity.</b> From 10% to 100%. Lower values let the album colours show through. Above 50% the view switches to a dark look with light text. Default `40%`.
+- <b>Visualizer blur.</b> From 0 to 30 px, for a calmer background. Default `0`, no blur.
+- <b>Recolor everything to the artwork.</b> Remaps the whole picture into the current track's artwork colours while keeping the preset's own brightness, so motion and detail survive. From 0% (off) to 100%, in steps of 25. Default `75%`.
+- <b>Color elements from the artwork.</b> Colours the preset's waveform and borders with the artwork palette. Only presets that draw those elements are affected. Many presets fade their waveform with the loudness of the music, and some only show it during loud passages, so this effect can come and go within a track. On by default.
 - <b>Preset selection.</b> How the visualizer chooses a preset:
     - <b>Random from all presets</b> - picks from the whole library.
     - <b>Random from favourites</b> - picks only from presets you have starred.
     - <b>Fixed preset</b> - always shows the one you choose.
 - <b>Switch preset on downbeat.</b> Automatically change preset on a downbeat, using Music Assistant's beat analysis. Takes precedence over a fixed preset.
-- <b>Minimum time between switches.</b> How long a preset stays on screen before a downbeat may switch it.
-- <b>Blur</b> and <b>opacity</b> are adjusted per user from the visualizer menu in the fullscreen player.
+- <b>Minimum time between switches.</b> Shown while switching on the downbeat is on. How long a preset stays on screen before a downbeat may switch it. From 5 to 120 seconds. Default `30` seconds.
+- <b>Favorite presets.</b> The presets you have starred, where you can also remove them.
 
-Favourite the preset currently showing with the star next to the preset picker in the fullscreen player.
+The two artwork options replace the colour tint setting of earlier versions. They are on for every user, including anyone who had turned the old setting off.
+
+### Fullscreen player menu
+
+The droplet entry in the fullscreen player menu has quick controls for the player you are viewing:
+
+- A switch that turns the visualizer on or off for this player only
+- Blur, opacity and recolour sliders, which change the same settings as the settings page
+- While the visualizer is on, the preset currently showing, with a star to add it to your favourites, and a list to pick another preset
 
 ## Known Issues / Notes
 

@@ -8,6 +8,8 @@ pluginGroup: other-systems
 
 Music Assistant has the ability to expose its library, queue, playback and player controls as a <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer">Model Context Protocol (MCP)</a> server, so AI assistants and agent frameworks like Claude, ChatGPT, Cursor, Codex, OpenClaw and Hermes can search your library, control playback and manage queues on your behalf using natural language.
 
+Music Assistant also has an MCP server built in, which is switched on and off with **Enable the built-in MCP server** on [**Settings → AI**](/settings/ai/#access-for-ai-assistants). This plugin is the extended server maintained by the community, listed in the Marketplace as **MCP Server (Community)**.
+
 > [!NOTE]
 > This plugin is still in an early stage of development. Bugs may occur.
 
@@ -15,7 +17,7 @@ Music Assistant has the ability to expose its library, queue, playback and playe
 
 - Any MCP-aware AI client can connect to your Music Assistant library through a single URL
 - One-click Connect Wizard with ready-to-paste configuration for Claude Desktop, Claude Code, Cursor, Windsurf, VSCode, ChatGPT Connectors, Codex CLI, Gemini CLI, Cline, Zed, OpenClaw and Hermes
-- Each connected client gets its own access token, revocable individually under Profile → Long-lived access tokens
+- Each connected client gets its own access token, revocable individually under **Long-lived access tokens** in [**Settings → Profile → Security**](/settings/profile/#long-lived-access-tokens)
 - Detailed permission toggles let you decide what each connected AI client may do — browse the library, control playback, manage queues, edit playlists, remove favourites, and how much of your library it can see at all
 - Two optional, off-by-default capability namespaces for power users: a **debug** namespace (introspection for troubleshooting) and a **config** namespace (view and edit Music Assistant settings over MCP)
 - Optional confirmation prompt before destructive actions like clearing a queue or removing a track from the library
@@ -65,4 +67,4 @@ In the ADVANCED section:
 - The plugin is experimental and the Model Context Protocol itself is still evolving, so behaviour may change between Music Assistant releases.
 - AI clients vary in how strictly they implement MCP. Clients that do not support confirmation prompts will instead be gated entirely by the relevant permission toggle.
 - All write permissions are disabled by default, as are the Debug and Config namespaces. Enable only the actions you want each connected AI client to be able to perform.
-- Tokens minted by the Connect Wizard are long-lived. Revoke any client you no longer trust from Profile → Long-lived access tokens.
+- Tokens minted by the Connect Wizard are long-lived. Revoke any client you no longer trust under **Long-lived access tokens** in [**Settings → Profile → Security**](/settings/profile/#long-lived-access-tokens).

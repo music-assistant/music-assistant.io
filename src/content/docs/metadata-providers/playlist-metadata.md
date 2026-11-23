@@ -112,7 +112,7 @@ The same playlist will look different every time a cover is made, because the im
 - An **image engine** draws the covers. It is either a Home Assistant AI Task entity that can generate images, or an image model added to the [OpenAI Compatible plugin](/plugins/openai_compatible/)
 - An **AI engine** writes the [descriptions](#ai-descriptions) and, if you want, the visual concept of the covers. Any AI engine will do
 
-See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines) for how engines work.
+See [**Settings → AI**](/settings/ai/) for how engines work.
 
 ### AI Descriptions
 

@@ -20,7 +20,9 @@ When a track already carries a loudness value from its tags or from the music pr
 
 Album level values come only from those tags or from a music provider. This provider measures the individual track, so unless a music provider supplies one, album gain is available only for tracks carrying an `R128_ALBUM_GAIN` or `REPLAYGAIN_ALBUM_GAIN` tag. The album tag is read alongside the track tag, so a file that carries an album value but no track value is treated as having no loudness value at all. How the values are chosen and applied is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 
-Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or whose measurement comes back near silence are skipped to avoid unreliable values.
+Tracks shorter than 10 seconds, or whose measurement comes back near silence, are skipped to avoid unreliable values. A track longer than 10 minutes is still measured, using its first 10 minutes.
+
+A track measured during playback gets its value once the whole track has been read, so one that is skipped shortly after it starts, or resumed part way through, is measured on a later play instead. Until then the fallback chosen in the normalization settings applies, and with the default that can be heard as [the volume rising and falling during the track](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track).
 
 ## Measuring a track again
 
@@ -28,7 +30,7 @@ If a track's measured loudness is wrong, select `Refresh item` from the track's 
 
 ## How the data is used
 
-- **[Volume normalization](/settings/core/#queue-playback)**. Keeps perceived loudness consistent when transitioning between tracks from different sources (a loudly-mastered modern album, a quiet jazz release, a podcast and a streaming track all play back at comparable loudness). How the measurement is used is chosen under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), and normalization is switched on or off per queue.
+- **[Volume normalization](/settings/playback/#volume-normalization)**. Keeps perceived loudness consistent when transitioning between tracks from different sources (a loudly-mastered modern album, a quiet jazz release, a podcast and a streaming track all play back at comparable loudness). How the measurement is used is chosen under [**Settings → Players → Playback**](/settings/playback/#volume-normalization), and normalization is switched on or off per queue.
 - When a track is played through a player that has volume normalization disabled, or from a source that delivers its audio at a loudness target of its own, the live loudness measurement is skipped, as no gain would be applied. However, a background job continues to measure local library tracks independently of playback, so a measurement is still produced over time.
 
 ## Settings

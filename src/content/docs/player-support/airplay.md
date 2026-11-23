@@ -12,20 +12,32 @@ Music Assistant has support for AirPlay devices. This includes Apple devices suc
 - AirPlay devices will play in sync, even when there is a combination of AirPlay 1 (RAOP) and AirPlay 2 devices in the sync group
 - Audio quality is lossless 44.1 kHz/16bits PCM and optionally compressed as (lossless) ALAC
 - The player settings allow configuration of [stereo pairs](/faq/how-to/#create-a-stereo-pair) of speakers
+- A stereo pair of HomePods, and an Apple TV with HomePods as its speakers, play as one player; see [HomePods and Apple TVs](#homepods-and-apple-tvs)
 
 ## Configuration
 
-1. In Music Assistant, go to **Settings → Player support** and check whether `AirPlay` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `AirPlay`.
+1. In Music Assistant, go to **Settings → Players → Player support** and check whether `AirPlay` is already listed; it is added automatically on new installs. If it is missing, click **Add player support** and select `AirPlay`.
 2. Your AirPlay devices will be discovered automatically and will appear in the player list, usually within a minute.
 3. Apple TVs additionally require pairing before they can be used; see [Protocol Settings](#protocol-settings) below.
 
 If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
 
+## HomePods and Apple TVs
+
+Music Assistant follows how your HomePods are set up in the Apple Home app. There is nothing to set up for this in Music Assistant.
+
+- <b>Stereo pair.</b> Two HomePods set up as a stereo pair are one stereo player, named after the room. The second HomePod is not a player of its own.
+- <b>Apple TV with HomePods.</b> An Apple TV that uses one HomePod, or a stereo pair of them, as its default audio output is one player (a stereo player for a pair): the Apple TV's player, named after the room. The HomePods are not players of their own. The music plays on the HomePods, while the Apple TV shows what is playing and its remote controls the music. This needs the Apple TV to be paired. With remote control paired as well, the power control of the player switches the Apple TV and playing wakes it.
+- <b>Play on HomePods only.</b> A [player option](/player-support/#player-options) of an Apple TV with HomePods, off by default. When enabled, the music plays on the HomePods only: the Apple TV is not woken or used, it needs no pairing, and the player has no power control. Setup offers this choice while the Apple TV is not paired.
+- In a group with other players, the music plays on the HomePods and the Apple TV joins after them without sound.
+- When one HomePod of an Apple TV's stereo pair is not on the network, the player plays on the other one.
+- To use the HomePods of an Apple TV as players of their own, disable the Apple TV's player.
+
 ## Protocol Settings
 
 AirPlay does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode**. The settings below are specific to AirPlay.
 
-Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired before Music Assistant can use them. These show a Setup button in the player settings — press it and follow the steps, entering the PIN shown on the device's screen. Devices protected with a password ask for the password instead.
+Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired before Music Assistant can use them. These show **Pairing required** in the player settings, with a **Start setup** button — press it and follow the steps, entering the PIN shown on the device's screen. Devices protected with a password show **Password required** and ask for the password instead.
 
 Apple TVs offer two extra pairing steps after the main one. Both are optional and can be added later by running Setup again:
 
@@ -34,7 +46,7 @@ Apple TVs offer two extra pairing steps after the main one. Both are optional an
 
 Music Assistant chooses how to stream to each device automatically, so under normal circumstances nothing here needs changing.
 
-- <b>Audio synchronization delay correction.</b> Shifts when audio is heard on this device compared to the other players it is synced with, up to ±500 ms. Negative values make it play earlier, positive values later. Use a negative value for a device connected to a TV, AV receiver or amplifier that adds its own delay — if it lags the group by about 100 ms, set it to -100.
+- <b>Audio synchronization delay correction.</b> Shifts when audio is heard on this device compared to the other players it is synced with, up to ±500 ms. Positive values make it play earlier, negative values later. Use a positive value for a device connected to a TV, AV receiver or amplifier that adds its own delay — if it lags the group by about 100 ms, set it to 100.
 
 ### Advanced Protocol Settings
 
@@ -61,7 +73,7 @@ Everything can appear to work (volume changes, song info shows, the device respo
 
 ### Other playback problems
 
-- Apple TVs will be discovered but require pairing. In the player settings there is a pair button which will display a code on the screen of the Apple TV
+- Apple TVs will be discovered but require pairing. In the player settings, **Start setup** displays a code on the screen of the Apple TV
 - If your player is going unavailable while still powered on then it may not be sending its keep alive message. A timeout can be configured for each player. Some users have reported they have needed to set it as long as one hour
 - If the AirPlay device incorrectly responds to change volume commands or randomly changes volume, try changing the `Volume Control` option in the `Player controls` section and set it to `None`
 

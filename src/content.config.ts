@@ -29,8 +29,8 @@ export const collections = {
 		schema: docsSchema({
 			extend: (context) => blogSchema(context).extend({
 				/**
-				 * If set, the post is a crosspost and its blog grid card gets a
-				 * "shared from <crosspostSource>" badge. See CrosspostBadges.astro.
+				 * If set, the post is a crosspost and its blog card says where it
+				 * is shared from. See components/marketing/BlogCard.astro.
 				 */
 				crosspostSource: z.string().optional(),
 				/**

@@ -42,7 +42,7 @@ You can access the main Sounds menu by navigating to *Browse > BBC Sounds*. Rele
 
 To listen to the programme currently on air from its start, go to *Browse > BBC Sounds > Stations*, choose a station and open *Today*. The programme on air can be played from its beginning and you can seek anywhere up to the live broadcast; seeking past it takes you back to live. When the programme ends, the station's live stream is added to the queue next so playback carries on live.
 
-This uses the BBC's rewind window for the station, which covers roughly the last six hours, and always uses the HLS stream whatever the *Preferred Stream Format* setting.
+This uses the BBC's rewind window for the station, which covers roughly the last six hours.
 
 ## Configuration
 
@@ -50,8 +50,6 @@ The provider works without a login, but you will be restricted to a basic versio
 
 ### Settings
 - <b>Username and Password.</b> A BBC Sounds account is optional, but some UK-only content may not work without being logged in
-- <b>Advanced - Show local radio stations</b>. By default, only national radio stations are listed. Enabling this option will also show local stations.
-- <b>Advanced - Preferred Stream Format</b> Options are `HLS [default]` or `MPEG-DASH`
 
 ## Known Issues / Notes
 
@@ -63,6 +61,4 @@ The full functionality is enabled when you are a UK-based listener, and signed i
 
 - Pausing and seeking the live station stream itself (the programme on air can be rewound from the station's *Today* schedule, see [Rewinding the programme on air](#rewinding-the-programme-on-air))
 - International accounts may work, but are not currently supported
-- The international menu should show available podcasts, this has not been implemented yet
-- Showing the currently playing song for stations and catch-up is implemented but not yet released
-- For signed-in users, accessing your subscribed content through the library is not yet supported, but is planned
+
