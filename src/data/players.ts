@@ -245,6 +245,14 @@ export const PLAYERS: TileItem[] = [
     categories: ["speakers"],
   },
   {
+    // Anything that plays an internet radio station by its address: web radios,
+    // older hi-fi with a stream feature, VLC or a browser.
+    name: "Web Broadcast",
+    slug: "player-support/webbroadcast",
+    icon: "/assets/icons/web-broadcast-icon.svg",
+    categories: ["speakers", "software"],
+  },
+  {
     name: "WiiM",
     slug: "player-support/wiim",
     icon: "/assets/icons/wiim.svg",
@@ -332,6 +340,7 @@ export const PLAYER_PROVIDERS: PlayerProvider[] = [
   { name: "Sonos", slug: "player-support/sonos", icon: "/assets/icons/sonos-icon.svg" },
   { name: "Squeezelite", slug: "player-support/squeezelite", icon: "/assets/icons/slim-icon.svg" },
   { name: "Teufel Raumfeld", slug: "player-support/raumfeld", icon: "/assets/icons/raumfeld-icon.svg" },
+  { name: "Web Broadcast", slug: "player-support/webbroadcast", icon: "/assets/icons/web-broadcast-icon.svg" },
   { name: "WiiM", slug: "player-support/wiim", icon: "/assets/icons/wiim.svg" },
   { name: "Yandex Station", slug: "player-support/yandex-station", icon: "/assets/icons/yandex-station-icon.svg" },
 ];

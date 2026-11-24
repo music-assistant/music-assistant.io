@@ -123,6 +123,9 @@ Play to the built-in Sendspin web player.
 <img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
 Use a [Snapserver](/player-support/snapcast/) and the Snapweb option. If you enabled the Snapcast provider in MA then the built in server will be accessible on port 1780 on the IP address of your MA server or you can also use an external server which has been added to MA as a player provider.
 
+<img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
+Create a station with [Web Broadcast](/player-support/webbroadcast/) and open its address in the browser. Everyone who opens the address hears the same thing, though not in perfect time with each other.
+
 ## My Android Phone
 
 <img src="/assets/label-easiest-noshadow.png" alt="easiest label" style="width: 64px;"  loading="lazy" />
@@ -159,7 +162,11 @@ You can find a generic tutorial <a href="https://maker.pro/raspberry-pi/projects
 
 ## Web Radio
 
-You can indirectly stream to a device which only accepts a URL such as a Web Radio. In order to do so you will need to be running Home Assistant and do this:
+<img src="/assets/label-easiest-noshadow.png" alt="easiest label" style="width: 64px;"  loading="lazy" />
+Use [Web Broadcast](/player-support/webbroadcast/). It turns Music Assistant into your own radio station with a web address, which you then enter on the web radio as you would any other station. The same address works in VLC, a web browser, or anything else that can play an internet radio station, so it also suits older hi-fi and other devices that only accept a stream address.
+
+<img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
+If you run Home Assistant you can instead go through Music Player Daemon:
 
 - Install https://github.com/Poeschl-HomeAssistant-Addons/mpd (this will create an mpd media_player entity)
 - Enable httpd_output in the mpd app (which allows for web streaming)
