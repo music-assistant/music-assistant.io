@@ -20,7 +20,7 @@ Players will be powered on before the announcement and then off again if it was 
 
 Volume can be adjusted while playing the announcement.
 
-If a player type has native support for announcements (i.e. Sonos, Snapcast, Sendspin) then that will be used in preference to the MA functionality providing an even smoother experience.
+If a player type has native support for announcements (such as Sonos, AirPlay, Snapcast and Sendspin) then that will be used in preference to the MA functionality providing an even smoother experience.
 
 The functionality works with all players that are supported by Music Assistant.
 
@@ -36,7 +36,10 @@ If an announcement is sent to a single player that supports native announcements
 
 Native announcement support usually means that the player can "overlay" the announcement on top of any music that is playing. It will "duck" the volume of the music (or silence it completely), play the announcement with a volume boost and then revert the music volume. Music keeps playing and the entire announcement will be handled by the player itself.
 
-Currently the only player types that support native announcements are Sonos S2 speakers and ESPHome-based Sendspin devices. For Sendspin, the device must also be added to Home Assistant, and Music Assistant must be connected to Home Assistant.
+Player types that support native announcements include Sonos S2 speakers, AirPlay speakers and ESPHome-based Sendspin devices.
+
+- AirPlay speakers mix the announcement over the music while Music Assistant plays to them over AirPlay. With **Sendspin (over AirPlay)** as the preferred output protocol, MA handles the announcement as described below.
+- ESPHome-based Sendspin devices must also be added to Home Assistant, and Music Assistant must be connected to Home Assistant.
 
 ## MA Player Support
 
@@ -55,14 +58,14 @@ If an announcement is sent to a native Google Cast Group, Sync Group or a Univer
 
 If an announcement is sent to a group of players that are manually synced, the announcement will be played to all childplayers (in sync).
 
-If an announcement is sent to a Sync Group (temporary or permananent) of which ALL child players support native announcements, the native functionality will be used to playback the announcement and MA will ensure the announcement is started at (more or less) the same time so all players should play the announcement in sync.
+If an announcement is sent to a Sync Group (temporary or permanent) of which ALL child players support native announcements, the native functionality will be used to playback the announcement and MA will ensure the announcement is started at (more or less) the same time so all players should play the announcement in sync.
 
 If an announcement is sent to a player that is currently synced to another player (and does not support native announcements), it will be temporarily unsynced, the announcement played and then added back to the group.
 
 In all cases the playback should resume after the announcement.
 
 > [!NOTE]
-> If the announcement is sent to one player of a group, the playback needs to resume afterwards and for AirPlay and Squeezelite that will be noticeable
+> If the announcement is sent to one player of a group, the playback needs to resume afterwards and for Squeezelite that will be noticeable
 
 > [!NOTE]
 > If the announcement is sent to one player of a group, and that player is the sync leader of a permanent Sync Group, then this will be treated the same as sending the request to the whole Sync Group. All players will play the announcement and the whole group will resume afterwards.
