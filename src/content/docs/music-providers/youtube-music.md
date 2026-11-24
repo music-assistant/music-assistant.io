@@ -98,7 +98,9 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 
 ### Settings
 
-Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+- <b>Authenticate on search.</b> Off by default (advanced). Searches with your YouTube Music account instead of signed out. Turn it on if searches miss results, such as songs in regions where signed-out YouTube Music hides them. Your searches are then added to your YouTube search history.
+
+See also the [Library Import Control](/music-providers/#library-import-control) settings.
 
 ## Using brand accounts
 A brand account is a sub-account that lives under your main Google account. You need to find your brand account id if you want to login using your brand account.
