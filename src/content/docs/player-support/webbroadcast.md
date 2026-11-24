@@ -26,7 +26,7 @@ Each station also appears in Music Assistant as a player with its own queue. You
 ## Configuration
 
 1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Web Broadcast`
-2. In **Stations** type a name for each station you want, one per line, for example `Kitchen` or `Party Mix`. Click outside the box after each name so it is accepted, then save
+2. In **Stations** type a name for a station, for example `Kitchen` or `Party Mix`, and press Enter or click outside the box. The name appears as a pill in the box. Add as many as you like in the same way, then save
 3. Each station now appears in the player list. Open the station's player settings to find its **Stream URL**
 4. Enter that address on the device you want to listen on. On a web radio this is usually called something like "add station", "my stations" or "custom URL". In VLC use **Open Network Stream**, and in a browser just paste it into the address bar
 5. Pick the station as the player in Music Assistant and play something
@@ -39,7 +39,7 @@ The device must be on the same network as Music Assistant.
 
 In addition to the [Player Provider Settings](/settings/player-provider/) the following is available:
 
-- <b>Stations.</b> One station per line. Each one becomes a player with its own queue and its own address. The address is made from the station name, so renaming a station changes its address and any device using the old one will need the new one. If two names would end up with the same address, the second is given a number, for example `Kitchen (2)`
+- <b>Stations.</b> The names of your stations, each shown as a pill in the box. Click the cross on a pill to remove that station. Each one becomes a player with its own queue and its own address. The address is made from the station name, so renaming a station changes its address and any device using the old one will need the new one. If two names would end up with the same address, the second is given a number, for example `Kitchen (2)`
 
 ### Player
 
