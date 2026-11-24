@@ -119,7 +119,7 @@ In the Installed view, an entry can carry one of these labels:
 
 - <b>Blocked.</b> It was found to break the rules, so it no longer runs on your server. The reason is shown, with **Read more** where there is more to read. Its settings and your library stay. Remove it; when its maintainers fix the cause, the community catalog can list it again
 - <b>Withdrawn.</b> The community catalog no longer offers it. It keeps running until you remove it, but gets no more updates
-- <b>Not running.</b> It is installed, but your server does not run it. The text below it says why, for example that it is not available for this version of Music Assistant, and, where there is something you can do, what
+- <b>Not running.</b> It is installed, but your server does not run it. The text below it says why, for example that it is not available for this version of Music Assistant, and, where there is something you can do, what. When a newer version is on offer, **Update** installs it
 
 ### Something moved to the community catalog
 
