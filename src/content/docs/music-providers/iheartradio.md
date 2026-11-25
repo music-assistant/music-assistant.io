@@ -18,7 +18,7 @@ This source brings live stations, podcasts and artist radio into Music Assistant
 | Subscription FREE | Yes |
 | Self-Hosted Local Media | No |
 | Media Types Supported | Radio, Podcasts |
-| [Recommendations](/ui/#view---discover) Supported | No |
+| [Recommendations](/ui/#view---discover) Supported | Yes |
 | Lyrics Supported | No |
 | [Endless Mix](/ui/#track-menu) | No |
 | Artist Top Tracks Support                       |            No                      |
@@ -27,6 +27,10 @@ This source brings live stations, podcasts and artist radio into Music Assistant
 | Maximum Stream Quality | AAC 96kbps |
 | Login Method | Password (optional) |
 
+### Other
+- Two recommendation rows are provided, "Artist Radio For You" and live radio stations
+- Podcast episode progress is synced between iHeartRadio and Music Assistant in both directions
+ 
 ## Configuration:
 - Select the country whose stations and podcasts you want to listen to
 - Optionally enter the email address and password of your iHeartRadio account
@@ -54,4 +58,3 @@ This source brings live stations, podcasts and artist radio into Music Assistant
 
 - Playlists
 - The For You recommendations
-- Syncing podcast listening progress
