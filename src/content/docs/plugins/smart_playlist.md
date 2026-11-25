@@ -49,7 +49,8 @@ Smart playlists use include/exclude style rules. In **From my library** mode the
 - **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
 - **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed; provider-dependent)
 - **Favorite**: **Only favorites** (library mode) or **Exclude favorites** (library and Discover modes)
-- **Year**: between from/to (it is possible to use only `from` or only `to`)
+- **Year**: filter by the album's year, using `from`, `to`, or both
+- **Track release year**: filter by the track's release year, using `from`, `to`, or both
 - **Duration**: between from/to in MM:SS format (filter tracks by length)
 - **Last played**: filter tracks by how recently they were played (e.g., "1 days ago", "2 weeks ago")
 - **Folder**: is (library mode, one or more folders of a file-based music source, such as a local or network folder)
@@ -104,6 +105,11 @@ Year examples:
 
 - `from: 1969` means 1969 or newer.
 - `to: 1980` means 1980 or older.
+
+**Track release year** uses the date supplied for the track. Some music sources do not provide
+this date; tracks without it are excluded when this rule is used. For local files, Music Assistant
+prefers an original release date tag when available, otherwise it uses the regular date tag. The
+track date is not always the original release date and may reflect a reissue or compilation.
 
 Duration examples:
 
