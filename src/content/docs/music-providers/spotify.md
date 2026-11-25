@@ -115,7 +115,11 @@ Choosing Soloist replaces the playback approval above with three steps of its ow
 > Pair from a Spotify app signed in to the **same account** you connected in the first step, so your music library and the audio come from the same place. Music Assistant checks this and will ask you to pair again if the accounts do not match.
 
 > [!NOTE]
-> Not seeing `Music Assistant Pairing`? Make sure the device running the Spotify app is on the same network as the Music Assistant server.
+> Not seeing `Music Assistant Pairing`, or stuck on "Connecting"? Make sure the device running the Spotify app is on the same network as the Music Assistant server.
+>
+> If it is, the likely cause is Docker networking. Both the Home Assistant app and the Docker container share their host's networks, and these usually include internal Docker networks your phone or computer cannot reach. Soloist cannot be limited to one network, so it announces `Music Assistant Pairing` on all of them, and the Spotify app may try one of the unreachable addresses. The device then never appears, or it hangs on "Connecting" until the setup times out.
+>
+> Which address gets used varies, so it is worth another go. Run the setup again and pair from a different device: a phone instead of a computer, or the other way round. Keep trying until one connects. You only need to pair once.
 
 ### Optional: add a personal Client ID
 
@@ -150,7 +154,7 @@ Crossfade is not set here — enable it for the player as usual, and it works th
 - Premium is required, including Duo and Family. Free accounts will not work
 - Spotify can hold a personal Client ID back for hours once its allowance is used up. See [Optional: add a personal Client ID](#optional-add-a-personal-client-id)
 - Accounts created around December 2024 and later generally cannot play through librespot, and some older accounts are affected too. If playback fails and you see `Key Error` messages in the log, that is the symptom — choose Spotify Soloist instead
-- Spotify Soloist cannot be used on hosts with Docker bridge networks  
+- On Docker and Home Assistant installs, Soloist pairing can fail because `Music Assistant Pairing` is also announced on internal Docker networks. See the note under [Setting up Spotify Soloist](#setting-up-spotify-soloist)
 - Each Spotify Soloist account plays one thing at a time. Starting Spotify on a second player asks you to stop the first one; a second Spotify account added as its own source has a session of its own
 - While Spotify Soloist is playing, Music Assistant shows up in your Spotify app as a device called `Music Assistant Playback`. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
 - With Spotify Soloist, starting a queue or seeking takes a little longer than with librespot
