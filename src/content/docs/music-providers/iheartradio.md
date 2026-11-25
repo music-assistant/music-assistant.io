@@ -54,4 +54,3 @@ This source brings live stations, podcasts and artist radio into Music Assistant
 
 - Playlists
 - The For You recommendations
-- Syncing podcast listening progress
