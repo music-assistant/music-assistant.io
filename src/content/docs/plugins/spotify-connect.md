@@ -27,7 +27,7 @@ The plugin can run on two different playback engines. You choose one while addin
 - Stopping playback in Music Assistant releases the device in the Spotify app; moving playback to another device in the Spotify app stops the MA player
 - Crossfade and loudness normalization are configurable in the plugin settings
 - With the Soloist engine you can choose how volume behaves: `Player volume only` (default, the audio always arrives untouched) or syncing the Spotify app's volume slider with the player volume
-- With the Soloist engine you can keep the player connected while paused. Normally a pause stops the player, so a speaker with its own source (such as an Apple HomeView) switches back to it, and pressing play on the speaker no longer resumes Spotify. With this option on, the player is paused in place, and you can resume from the Spotify app or the speaker exactly where you left off
+- With the Soloist engine a pause keeps the player connected, so a speaker with its own source (such as an Apple HomeView) doesn't switch back to it, and you can resume from the Spotify app or the speaker. A player left paused is released after the pause timeout in the playback settings
 
 ## Configuration
 
@@ -35,7 +35,6 @@ The plugin can run on two different playback engines. You choose one while addin
 2. Choose the playback engine. For Soloist, the setup walks you through the download consent and creating the API key.
 3. When the setup has finished, open the plugin's settings. Under **Connected players**, select every player that should appear in the Spotify app. Each selected player is advertised as its own Spotify Connect device, and the audio always plays on the player whose device you picked in the app.
 4. Optionally change **Advertised device name**, which controls how the devices are named after their player: `Player name | Music Assistant` (the default), `Player name only`, or `Music Assistant | Player name`. Renaming a player renames its device.
-5. Optionally turn on **Keep the player connected while paused** (Soloist only). **Release the player after a pause of (minutes)** then stops a player that has stayed paused for that long, so a forgotten pause doesn't keep it connected. The default is 10 minutes, and 0 keeps it connected until playback resumes or the Spotify session ends.
 
 > [!NOTE]
 > Home Assistant players are supported but not recommended — your mileage may vary. Native Music Assistant players work best.
