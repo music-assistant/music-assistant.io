@@ -98,7 +98,9 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 
 ### Settings
 
-Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+- <b>Authenticate on search.</b> Off by default (advanced). Searches with your YouTube Music account instead of signed out. Turn it on if searches miss results, such as songs in regions where signed-out YouTube Music hides them. Your searches are then added to your YouTube search history.
+
+See also the [Library Import Control](/music-providers/#library-import-control) settings.
 
 ## Using brand accounts
 A brand account is a sub-account that lives under your main Google account. You need to find your brand account id if you want to login using your brand account.
@@ -116,7 +118,8 @@ A source keeps the account entered as its 'Username'. To change from your main a
 - It is not possible to have more than three concurrent streams
 - YouTube Music does not tell Music Assistant which disc a track is on, so tracks are simply numbered in the order they arrive. That is usually right, but a multi-disc album may come out in the wrong order
 - Whether music videos are selected for playback fully depends on what you are playing. If you have saved a specific album in your library, then that exact version will show up in MA and thus you will have the album version. However, if you start a radio on, for example, a playlist, then Youtube Music decides which songs will be played in a 'dynamic radio' playlist which could include videos
-- Uploaded Music should be able to be found when it is in a playlist. If it's just a single track being searched for then it may not be found, since often those uploaded songs don't have proper metadata. It will be hard to find them via the UI in MA
+- With <b>Authenticate on search</b> turned on, every search you do in Music Assistant shows up in the search history of your YouTube Music app, so it fills up with Music Assistant searches. Turn the option off if you do not need it
+- Music you uploaded to YouTube Music is added to the Music Assistant library on every library sync, together with its albums and artists. Uploads without tags show up without an artist. Searching YouTube Music does not include uploads, so look for them in your library instead
 - Expect some blurry artwork. YouTube Music sends low quality images when Music Assistant asks for a whole album or playlist, and only sends the good one when a single track is asked for. Music Assistant works around this where it can by fetching the artwork for the next track in advance, but some of it will still look poor
 - By default, only the liked music and 'episodes for later' playlists are added to the YTM library and thus will appear in MA. In order to see other personal playlists in the MA library, you have to go into the YT Music web app and add those personal playlists to your library
 - Podcast transcripts are not available
