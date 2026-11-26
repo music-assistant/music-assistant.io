@@ -42,7 +42,7 @@ A device that allows guest access, which means connecting without pairing, is re
 - <b>Connect unpaired.</b> Only offered when the device allows guest access. Quick, but the connection is not verified. A device with an audio input offers <b>Connect unpaired with audio input</b> instead, and <b>Connect unpaired without audio input</b> if it can also play
 - <b>Pair device.</b> Sets up a permanent, verified connection using the pairing code the device gives you. A device without a pairing code gives you a pairing token instead
 
-When you pair a device or connect it with its audio input, and its line-in can report when a signal is present, setup then asks where that line-in should play automatically. This is the same choice as the <b>Automatically play line-in on</b> setting below.
+When you pair a device or connect it with its audio input, setup then asks where its line-in should play automatically. This is the same choice as the <b>Automatically play line-in on</b> setting below.
 
 To pair a device you connected unpaired, use <b>Reconfigure player</b>. Bridged players and the built-in web player have nothing to set up.
 
@@ -57,7 +57,7 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 - <b>Security status.</b> The Sendspin settings of each device start with its security state: paired, connected through guest access, connected without encryption (see [Older Devices](#older-devices)), or pairing lost. A device that lost its pairing cannot play until you pair it again with <b>Reconfigure player</b> or remove the old pairing with <b>Unpair</b>. A device you unpaired, or that stopped allowing guest access, stays disconnected until you set the player up again
 - <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential
 - <b>Turn on audio input / Turn off audio input.</b> Shown for a device with an audio input that is connected through guest access. Starts or stops sending its audio to Music Assistant, see [Audio Inputs](#audio-inputs)
-- <b>Automatically play line-in on.</b> Chooses where the line-in plays automatically: This device, another player, or Off. Only shown for devices with a line-in. A device that cannot report when a signal is present shows a note instead
+- <b>Automatically play line-in on.</b> Chooses where the line-in plays automatically: This device, another player, or Off. Only shown for devices with a line-in
 - <b>Name of the input.</b> The name of the audio input, such as Record player. It is Line-in until you change it. The source list of the player itself shows the name alone, while Browse and other players show it with the name of the player, such as Record player (Living Room). Only shown for a device that has an audio input and also plays; a device that only has an input is named by its player
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
 - <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (player's preferred codec) is the default, and the other options are read from the device itself. On Automatic the player keeps the codec it prefers, and <b>Sample rate selection</b> decides the sample rate. Choosing a specific format here sets both
@@ -82,15 +82,13 @@ An input keeps the sample rate and bit depth of the line-in, for example 96 kHz,
 
 ### Playing Automatically When a Line-In Becomes Active
 
-If the device can detect an input signal, Music Assistant can start playing the line-in on a chosen player as soon as it becomes active. For example, lowering the needle onto a turntable can start playback in the room you selected.
+Music Assistant can start playing the line-in of a device on a chosen player as soon as it becomes active. For example, lowering the needle onto a turntable can start playback in the room you selected.
 
 Choose the destination with the **Automatically play line-in on** setting of the device. You can select any available player, stereo pair or group, and the destination does not need to use Sendspin. A device that also plays defaults to **This device**, and a device that only has an input defaults to **Off**. Setting up the device asks for the destination too.
 
 Playback starts after a short delay, which prevents brief signal changes from triggering it by accident. It stops after the signal has been absent for one minute.
 
 Restarting Music Assistant or reconnecting a device does not start an input that was already active. Automatic playback also does not move an input that is already playing somewhere else.
-
-A device without signal detection can still be played by hand, and shows a note in place of this setting.
 
 ### Interruptions and Reconnecting
 
