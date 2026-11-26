@@ -19,7 +19,8 @@ Each station also appears in Music Assistant as a player with its own queue. You
 - Play to any device that accepts a radio stream address
 - Create as many stations as you like, each with its own queue and its own address
 - Several devices can listen to the same station at once
-- Song titles appear on the listening device's display, and cover art too where the device can show it
+- Song titles appear on the listening device's display
+- Radio stations can be broadcast as well as your own music
 - Skip forwards and back from Music Assistant
 - Stations can be removed from the player list in Music Assistant
 
@@ -39,7 +40,7 @@ The device must be on the same network as Music Assistant.
 
 In addition to the [Player Provider Settings](/settings/player-provider/) the following is available:
 
-- <b>Stations.</b> The names of your stations, each shown as a pill in the box. Click the cross on a pill to remove that station. Each one becomes a player with its own queue and its own address. The address is made from the station name, so renaming a station changes its address and any device using the old one will need the new one. If two names would end up with the same address, the second is given a number, for example `Kitchen (2)`
+- <b>Stations.</b> The names of your stations, each shown as a pill in the box. Click the cross on a pill to remove that station. Each one becomes a player with its own queue and its own address. The address is made from the station name, so renaming a station changes its address and any device using the old one will need the new one. A renamed station is also a new player, so its player settings and queue start afresh. If two names would end up with the same address, the second is given a number, for example `Kitchen (2)`
 
 ### Player
 
@@ -47,8 +48,9 @@ Each station has its own settings page. Most of the standard [Individual Player 
 
 - <b>Stream URL.</b> The address to enter on your listening device. It is shown here for you to copy and cannot be changed directly
 - <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> MP3 (the default) or AAC. MP3 works on almost everything. AAC sounds a little better for the same amount of data, but older radios may not play it. The end of the address changes to match, so after changing this you will need to give your device the new address
-- <b>[Try to inject metadata into stream (ICY)](/settings/individual-player/#try-to-inject-metadata-into-stream-icy).</b> Sends the song title and artist to the listening device so it can show them on its display. On by default here, set to Profile 1. Profile 2 adds cover art, but it makes skipping feel slower, so only choose it if your device actually shows the artwork
-- <b>[HTTP Profile used for sending audio](/settings/individual-player/#http-profile-used-for-sending-audio).</b> Leave this alone unless a particular device will not play the station, then try the other profiles
+- <b>Requires a fixed content length.</b> Leave this off unless a particular device will not play the station or stops after a short while, then turn it on
+
+The song title and artist are always sent to a listening device that asks for them, so there is no setting for it.
 
 ## How It Works
 
@@ -57,6 +59,8 @@ A station behaves like a radio station that only switches its transmitter on whe
 When the last device stops listening, the station stays on the song it had reached but does not move on to the next one. The next device to tune in carries on with that song, part way through as if it had been playing all along, or from the start if it would already have finished.
 
 The broadcast ends when you press stop or when the queue runs out. A device that tries to tune in then will report that the station is unavailable, until you play something on it again.
+
+A station whose player is disabled in Music Assistant has no address until the player is enabled again.
 
 ## Known Issues / Notes
 
