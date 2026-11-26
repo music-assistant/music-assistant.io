@@ -8,7 +8,22 @@ title: AcoustID Lookup
 
 That matters because Music Assistant normally relies on the tags in your files to fetch artwork, descriptions and biographies. Where the tags are thin or missing, nothing can be found. Once AcoustID has identified a track, all of that becomes available, and the same track from different sources is matched up more reliably.
 
-You have to switch this provider on yourself. It comes ready to use, or you can supply a free key of your own from [acoustid.org](https://acoustid.org/my-applications).
+You have to switch this provider on yourself. It works straight away, and you can connect it to your own AcoustID account, which is free and uses a MusicBrainz or Google sign in. Connecting is optional for now, but AcoustID will require it later, so it is worth doing when you set the provider up.
+
+## Connecting your AcoustID account
+
+AcoustID asks everyone who uses its lookups to do so under their own account. Music Assistant connects to your account without you having to copy anything across.
+
+1. Add the `AcoustID Lookup` provider. Leave **Connect to my AcoustID account** switched on and continue. If the provider is already added, open it and choose **Reconfigure**
+2. Music Assistant shows a short code and a button that opens AcoustID with the code already filled in. If you would rather use another device, such as your phone, go to [acoustid.org/link](https://acoustid.org/link) on it and type the code in
+3. Sign in to AcoustID. It has no password of its own, so you use a MusicBrainz account, which AcoustID recommends, or a Google account. If you have neither, a MusicBrainz account is free to create at [musicbrainz.org](https://musicbrainz.org/register). Then approve Music Assistant. The page shows which application is asking and the name of your Music Assistant server
+4. Music Assistant notices the approval by itself and finishes within a few seconds
+
+The code only works for a short while. If it runs out before you approve, start again and you will be given a new one.
+
+To skip this for now, switch **Connect to my AcoustID account** off when adding the provider. A note on the provider's settings page reminds you that it is not connected, and you can connect at any time with **Reconfigure**.
+
+You can see the applications connected to your account, and remove Music Assistant from it, at [acoustid.org/my-keys](https://acoustid.org/my-keys). If you remove it there, Music Assistant carries on without the connection for as long as AcoustID allows that, and you can connect again with **Reconfigure**. Once AcoustID requires the connection, the provider stops and asks you to connect.
 
 ## Who should enable it
 
@@ -48,7 +63,6 @@ Tracks that AcoustID could not find are tried again every 60 days, in case the d
 
 ## Settings
 
-- <b>AcoustID API key.</b> Only visible when the advanced toggle is on. The provider comes with a builtin API key but if rate limits are hit or for any other reason a personal API key is desired then obtain one free of charge from [acoustid.org](https://acoustid.org/my-applications). Be careful to ensure the API key for uploading fingerprints is not used
 - <b>Minimum match score.</b> How sure AcoustID has to be before a match is accepted. The default of 0.85 balances identifying as much as possible against getting it wrong. Raising it means fewer mistakes but more tracks left unidentified (Only visible when advanced toggle is on)
 - <b>Analyse tracks from streaming providers.</b> When enabled, tracks played from streaming providers (Spotify, Tidal, Qobuz, YouTube Music, …) that are in the library and lack a MusicBrainz Recording Id are also fingerprinted and identified. Particularly useful for streaming providers like YouTube Music whose catalogues have thin metadata. Note that streaming-provider tracks are only analysed during playback, not in the nightly background scan
 - <b>Write AcoustID/MusicBrainz tags back to files.</b> When enabled, the Acoustid Id, MusicBrainz Recording Id, ISRC, and (where resolvable) MusicBrainz Artist Id tags are written back into the source audio file once identification succeeds. Useful when other applications on the network read these tags for their own metadata or to save re-scans if the MA library database is wiped. Write access to the file is required; read-only files are skipped. By default this is off, and identifiers are only stored in the Music Assistant library database
