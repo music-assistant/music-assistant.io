@@ -23,7 +23,7 @@ The code only works for a short while. If it runs out before you approve, start 
 
 To skip this for now, switch **Connect to my AcoustID account** off when adding the provider. A note on the provider's settings page reminds you that it is not connected, and you can connect at any time with **Reconfigure**.
 
-You can see the applications connected to your account, and remove Music Assistant from it, on acoustid.org. If you remove it there, Music Assistant carries on without the connection for as long as AcoustID allows that, and you can connect again with **Reconfigure**. Once AcoustID requires the connection, the provider stops and asks you to connect.
+You can see the applications connected to your account, and remove Music Assistant from it, at [acoustid.org/my-keys](https://acoustid.org/my-keys). If you remove it there, Music Assistant carries on without the connection for as long as AcoustID allows that, and you can connect again with **Reconfigure**. Once AcoustID requires the connection, the provider stops and asks you to connect.
 
 ## Who should enable it
 
