@@ -384,6 +384,12 @@ export const MUSIC_SOURCES: MusicSource[] = [
     categories: ["streaming", "russia"],
   },
   {
+    name: "Live Phish",
+    slug: "music-providers/live-phish",
+    icon: "/assets/icons/live-phish-icon.png",
+    categories: ["streaming", "live-concerts"],
+  },
+  {
     name: "Local Files",
     slug: "music-providers/local-files",
     icon: "/assets/icons/localfiles-icon.png",
