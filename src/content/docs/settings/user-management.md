@@ -82,7 +82,21 @@ Who else can use a source depends on its sharing:
 
 An administrator sets the owner and the sharing with **Access** in the source's ⋮ menu under [Settings → Music](/settings/music-provider-settings/#owner-and-sharing). A source an administrator adds starts out shared with everyone, including guests. To set one up for themselves or for a user, they add it, make that person its owner and choose who else can use it, for example **Only me**. The owner of a personal source changes who it is shared with through **Sharing** in the same menu. Only an administrator can change the owner.
 
-Users only see what comes from the music sources they can use, in the library, when browsing and in search. That includes administrators, although they see every source in the settings so they can manage it. When you play something, Music Assistant uses your own accounts first and never uses an account that is not shared with you.
+Users only see what comes from the music sources they can use, in the library, when browsing and in search. That includes administrators, although they see every source in the settings so they can manage it. When you play something, Music Assistant never uses an account that is not shared with you.
+
+### Which account plays
+
+When a streaming service is added with more than one account, Music Assistant plays from the account that is closest to you: your own account, else an account shared with you through **Selected users**, else an account shared with all users. So an account that is shared with everyone does not play for someone who has an account of that service themselves.
+
+The owner of an account decides when it plays for the users it is shared with, under **Playback by others** in the same **Sharing** or **Access** dialog:
+
+- <b>Only the owner.</b> Others can still browse its music, but never play from it
+- <b>Users without an account of their own [default].</b> It plays for users who have no account of the service themselves, nor one shared with them by name
+- <b>Also when their own account is busy.</b> It also steps in for users whose own account is busy or unavailable. It is only used when no other source can play the track
+
+Your listening history goes to your own account, also when another account stepped in.
+
+When the owner starts music on their account while someone else is playing from it, the owner goes first. The other playback carries on at the same place from another account it may use, or stops and keeps its place when there is none.
 
 ### Adding your own music sources
 
