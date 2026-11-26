@@ -277,8 +277,8 @@ For tracks with multiple artists, MA supports several approaches. The most relia
 
 Whether or not MBIDs are present, the artist names themselves need to be encoded in your tags using one of the following:
 
-1. ID3v2.3: Use an ARTISTS tag - A dedicated field listing each artist delimited by a semi-colon. (It is not possible to have artists with a semi-colon in their name with this method)
-2. MP4: Use an ARTISTS tag, and an ALBUMARTISTS tag for album artists. Picard stores each artist as a separate value within the one tag. A single value listing each artist delimited by a semi-colon also works
+1. ID3v2.3: Use an ARTISTS tag, and optionally an ALBUMARTISTS tag for album artists - A dedicated field listing each artist delimited by a semi-colon. (It is not possible to have artists with a semi-colon in their name with this method)
+2. MP4: Use an ARTISTS tag, and optionally an ALBUMARTISTS tag for album artists. Picard stores each artist as a separate value within the one tag. A single value listing each artist delimited by a semi-colon also works
 3. FLAC/OGG/Opus: Use multiple ARTIST fields. The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note that taggers may add multiple ARTISTS or ALBUMARTISTS (plural) fields. This is not standard according to the Vorbis spec but MA will handle this case)
 4. ID3v2.4 and APEv2: Use a null separated list of names in the ARTIST tag
 5. ARTIST tag parsing - If none of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., presents, etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected
@@ -288,7 +288,7 @@ Whether or not MBIDs are present, the artist names themselves need to be encoded
 >
 > - The album artist tag is parsed the same way as ARTIST - same multi-value rules, same splitters (including featuring-style and MBID-guided), and the same MusicBrainz fallback when the parsed count doesn't match the MBID count
 >
-> - The ALBUMARTISTS tag works the same way for album artists as the ARTISTS tag does for track artists. It is read from MP4 and Vorbis (FLAC, OGG, Opus) files and, when present, is used instead of the Album Artist tag. MusicBrainz Picard writes this tag from version 3.0
+> - The ALBUMARTISTS tag works the same way for album artists as the ARTISTS tag does for track artists. It is read from MP3 (ID3), MP4, Vorbis (FLAC, OGG, Opus) and APEv2 (WavPack, Musepack, etc.) files and, when present, is used instead of the Album Artist tag. MusicBrainz Picard writes this tag from version 3.0. The tag is optional: files without it (for example, files tagged with an older Picard) are read from the Album Artist tag as before
 
 > [!NOTE]
 > As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
