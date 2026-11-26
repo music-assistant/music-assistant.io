@@ -27,6 +27,10 @@ The plugin can run on two different playback engines. You choose one while addin
 - Stopping playback in Music Assistant releases the device in the Spotify app; moving playback to another device in the Spotify app stops the MA player
 - Crossfade and loudness normalization are configurable in the plugin settings
 - With the Soloist engine you can choose how volume behaves: `Player volume only` (default, the audio always arrives untouched) or syncing the Spotify app's volume slider with the player volume
+- With the Soloist engine a pause keeps the player connected, so a speaker with its own source (such as an Apple HomeView) doesn't switch back to it, and you can resume from the Spotify app or the speaker. A player left paused is released after 30 seconds by default (see the note below)
+
+> [!NOTE]
+> The stream of a paused player is released by Music Assistant's own pause timeout, not by a Spotify Connect setting. It can be changed with **Stop a paused player after (seconds)** in **Settings → Players → [Playback](/settings/playback/)**. Turn on **Show advanced settings** to see it.
 
 ## Configuration
 
