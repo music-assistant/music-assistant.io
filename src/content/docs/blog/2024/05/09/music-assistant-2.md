@@ -66,7 +66,7 @@ After many years of development and testing with the amazing community, we can f
 
 <p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/start-me-up.png'/></p>
 
-Even though Music Assistant is an HA Add-on, it can be installed from start to finish via [HACS](https://hacs.xyz/). You simply install the integration, which will automatically install and manage the add-on for you. The integration allows you to control your devices with automations and voice control.
+Even though Music Assistant is an HA Add-on, it can be installed from start to finish via HACS [now built into Home Assistant as the [Marketplace](https://www.home-assistant.io/blog/2026/11/04/release-202611/)]. You simply install the integration, which will automatically install and manage the add-on for you. The integration allows you to control your devices with automations and voice control.
 
 <a href="https://my.home-assistant.io/redirect/supervisor_addon?addon=d5369777_music_assistant&amp;repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon" class="my badge" target="_blank"><img src="https://my.home-assistant.io/badges/supervisor_addon.svg"></a>
 
@@ -132,7 +132,7 @@ Version 1.0 was not everything we hoped it would be. It had some structural bugs
 
 Six months after its initial version 1.0 launch, the project was beginning to look like it was going to die, so I decided to start over and go back to the drawing board. The engine of MA needed to be its own isolated component, responsible for giving you the best possible experience of streaming music (where audio quality and latency are very important), and the HA-side should be responsible for automating your house and music.
 
-So, the Music Assistant Server was born. It is a standalone application that you can run in docker (or Home Assistant add-on), all connected to HA via a HACS integration. The project was split up into multiple self-contained parts. 
+So, the Music Assistant Server was born. It is a standalone application that you can run in docker (or Home Assistant add-on), all connected to HA via a HACS [now the Marketplace] integration. The project was split up into multiple self-contained parts. 
 
 Music Assistant Server has its own web interface, a modern interface written in Vue. Thanks to HA's add-on system, this web interface can be securely accessed from HA. The web interface is a Progressive Web App (PWA), so you can also visit it directly and [install it on your device](https://support.google.com/chrome/answer/9658361?hl=en-GB&co=GENIE.Platform=Desktop). We also have an (experimental) [desktop app](https://music-assistant.io/companion-app/).
 
