@@ -8,7 +8,7 @@ title: AcoustID Lookup
 
 That matters because Music Assistant normally relies on the tags in your files to fetch artwork, descriptions and biographies. Where the tags are thin or missing, nothing can be found. Once AcoustID has identified a track, all of that becomes available, and the same track from different sources is matched up more reliably.
 
-You have to switch this provider on yourself. It works straight away, and you can connect it to your own free AcoustID account. Connecting is optional for now, but AcoustID will require it later, so it is worth doing when you set the provider up.
+You have to switch this provider on yourself. It works straight away, and you can connect it to your own AcoustID account, which is free and uses a MusicBrainz or Google sign in. Connecting is optional for now, but AcoustID will require it later, so it is worth doing when you set the provider up.
 
 ## Connecting your AcoustID account
 
@@ -16,7 +16,7 @@ AcoustID asks everyone who uses its lookups to do so under their own account. Mu
 
 1. Add the `AcoustID Lookup` provider. Leave **Connect to my AcoustID account** switched on and continue. If the provider is already added, open it and choose **Reconfigure**
 2. Music Assistant shows a short code and a button that opens AcoustID with the code already filled in. If you would rather use another device, such as your phone, go to [acoustid.org/link](https://acoustid.org/link) on it and type the code in
-3. Sign in to AcoustID, or create a free account, and approve Music Assistant. The page shows which application is asking and the name of your Music Assistant server
+3. Sign in to AcoustID. It has no password of its own, so you use a MusicBrainz account, which AcoustID recommends, or a Google account. If you have neither, a MusicBrainz account is free to create at [musicbrainz.org](https://musicbrainz.org/register). Then approve Music Assistant. The page shows which application is asking and the name of your Music Assistant server
 4. Music Assistant notices the approval by itself and finishes within a few seconds
 
 The code only works for a short while. If it runs out before you approve, start again and you will be given a new one.
