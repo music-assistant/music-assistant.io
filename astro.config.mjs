@@ -235,6 +235,7 @@ export default defineConfig({
                   slug: "plugins/hue-entertainment",
                 },
                 { label: "LastFM Scrobbler", slug: "plugins/lastfm_scrobble" },
+                { label: "LIFX Lights Sync", slug: "plugins/lifx-entertainment" },
                 {
                   label: "Library Recommendations",
                   slug: "plugins/library-recommendations",
