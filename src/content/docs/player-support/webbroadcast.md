@@ -68,6 +68,7 @@ A station whose player is disabled in Music Assistant has no address until the p
 - Volume is set on the listening device. Music Assistant has no volume control for a station
 - Devices listening to the same station are not kept in time with each other, so they may be a second or more apart. For speakers in the same room that need to play in step, use one of the other [player providers](/player-support/) instead
 - Stations cannot be grouped with other players
+- A station only broadcasts what is played from its Music Assistant queue. Sources that are selected on a player, such as [Spotify Connect](/plugins/spotify-connect/), and announcements are not supported
 - The sound is compressed (MP3 or AAC), so it is not lossless. Lossless formats are not offered because a device joining part way through could not play them
 - Skipping a song takes a few seconds to be heard, as the listening device holds a little music in reserve
 - If the address shown in the player settings uses the wrong IP address, check the [Stream server settings](/settings/core/#streams), as the address is built from those
