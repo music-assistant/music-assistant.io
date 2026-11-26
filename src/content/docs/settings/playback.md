@@ -17,19 +17,18 @@ Some settings are only shown when the **Show advanced settings** toggle in the h
 
 ## Items to select
 
-- <b>Items to select when you play a (in-library) artist.</b> The options are `All tracks from all providers [default]`, `Artist top tracks only`, `In-library tracks for the artist only` and `Prefer library, fall back to top`
-- <b>Order to play an artist in.</b> The options are `Shuffled tracks [default]`, `Albums in random order, each album in track order` and `Albums by release year, oldest first`. `Shuffled tracks` plays the tracks picked by the artist selection in random order. The album orders play the artist's albums one after another, either picked at random or from the oldest to the newest, with albums without a year last
+- <b>Items to select when you play a (in-library) artist.</b> The options are `Prefer library, fall back to top tracks [default]`, `Artist top tracks only`, `In-library tracks for the artist only` and `All tracks of the artist's albums in your library`. The last one plays every track of the artist's albums in your library, not only the tracks you saved. When it finds nothing it falls back like the default, first to the artist's in-library tracks and then to the top tracks. A server that used the old `All tracks from all providers` option moves to it by itself
+- <b>Order to play an artist in.</b> The options are `Shuffled tracks [default]`, `Albums in random order, each album in track order` and `Albums by release year, oldest first`. `Shuffled tracks` plays the tracks picked by the artist selection in random order. The album orders play the artist's albums in your library one after another, either picked at random or from the oldest to the newest, with albums without a year last
 - <b>Items to select when you play a (in-library) album.</b> The options are `All tracks for album on (streaming) provider [default]` and `Only in-library tracks`
 
 With either album order:
-- The artist selection picks the artist's own albums. The in-library selections play the albums in your library. `All tracks from all providers` also plays the albums found only on a provider.
+- The artist plays the albums in your library.
 - Each album plays as it does on its own, following <b>Items to select when you play a (in-library) album</b>.
-- Each album plays once, even when your library and a provider both have it.
-- If one copy of an album can't play, another copy plays instead. With `Only in-library tracks` as the album selection, an album in your library plays only your saved tracks.
-- Singles are left out, as their songs are mostly on the albums.
-- Compilations in your library still play. Compilations found only on a provider are left out, as their songs are already on the albums.
+- Each album plays once, even when more than one source has it.
+- If one copy of an album can't play, another copy plays instead. With `Only in-library tracks` as the album selection, an album plays only your saved tracks.
+- Singles are left out, as their songs are mostly on the albums. Compilations in your library still play.
 - `Artist top tracks only` still plays shuffled tracks.
-- An artist without albums plays shuffled tracks instead. For example, an artist with only singles, or one that only appears on another artist's albums. If the artist's albums can't be listed because a provider is offline or fails, and your library has none of them, nothing plays.
+- An artist without albums in your library plays shuffled tracks instead. For example, an artist with only singles, or one that only appears on another artist's albums.
 
 An album order switches shuffle off for the queue, as when you play an album. An artist without albums keeps the queue's shuffle, and so does `Artist top tracks only`. Asking for shuffle when you start the artist still shuffles it. The setting does not apply to authors and narrators, as they play audiobooks.
 
@@ -71,7 +70,7 @@ A setting is available to enable Autoplay by default on all queues. Each queue c
 
 ## Crossfade
 
-Crossfade can be enabled or disabled by default on all queues via a setting here and also can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/) is the default. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. The **Standard crossfade duration** (default 8 seconds) appears when Standard crossfade is selected, and this is the only place it can be set.
+Crossfade can be enabled or disabled by default on all queues via a setting here and also can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/) is the default. It needs the Smart Fades analysis provider and an **Audio buffer size** of `Balanced` or larger; without them the option is greyed out and Standard crossfade is used. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. The **Standard crossfade duration** (default 8 seconds) appears when Standard crossfade is selected, and this is the only place it can be set.
 
 - <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
 

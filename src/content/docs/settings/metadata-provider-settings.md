@@ -19,14 +19,14 @@ Several arrive with Music Assistant and are already working before you touch any
 | Cover Art Archive | Album front covers |
 | iTunes Artwork | High resolution album artwork |
 | LRCLIB | Synchronized and plain lyrics |
-| Genius Lyrics | Unsynchronized lyrics, as a fallback |
 | Wikipedia | Artist biographies in your preferred language |
 
 MusicBrainz and Playlist Metadata are built in and cannot be turned off. The rest can be disabled
 individually here, or all at once with **Enable metadata retrieval from online metadata sources**
 in the [Metadata settings](#metadata-settings).
 
-Others, such as [LastFM Recommendations](/metadata-providers/lastfm-recommendations/), are added
+Others, such as [LastFM Recommendations](/metadata-providers/lastfm-recommendations/) and
+[Genius Lyrics](/metadata/lyrics/#genius-lyrics), which adds unsynchronized lyrics as a fallback, are added
 from the [Marketplace](/settings/marketplace/), in the same way as a music source.
 
 For what each provider contributes, when lookups happen, and how to fix artwork or artist
