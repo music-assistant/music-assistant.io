@@ -22,7 +22,7 @@ Contributed and maintained by <a href="https://github.com/dmoo500" target="_blan
 
 ## Configuration
 
-1. Go to **Settings > Plugins > Add a plugin** and select **Share Links**.
+1. Go to **Settings → Plugins → Add a plugin** and select **Share Links**.
 2. Save the plugin configuration. No additional settings are needed for normal use.
 
 ### Advanced: a different share page

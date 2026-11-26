@@ -17,7 +17,7 @@ Music Assistant uses MusicBrainz to:
 - **identify** your artists, albums and tracks, so the same item from two sources becomes one item in your library
 - **link** items to your other music services, using the streaming links stored on MusicBrainz
 - **fill in details** such as life dates, countries and the year a recording was made
-- **organise classical music** by composer and work. See [Classical Music](/classical/)
+- **organise classical music** by composer and work
 
 Music Assistant finds items on MusicBrainz in this order: the MusicBrainz IDs in your file tags, the streaming links on MusicBrainz, barcodes and ISRC codes, and finally a search by name. The
 first three are reliable. A name search is not, so adding links and codes on MusicBrainz makes the biggest difference.
