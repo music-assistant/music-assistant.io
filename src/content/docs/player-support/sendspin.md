@@ -26,7 +26,7 @@ To bring audio from a compatible Sendspin line-in, microphone, or other input in
 - **Per-player audio settings**: each device gets its own equaliser and volume
 - **Control from the device**: play, pause and skip can be driven from the player as well as from Music Assistant
 - **Track information**: title, artwork and progress appear on every device
-- **Stereo pairs**: two Sendspin speakers can play as one player, see [Stereo Pairs](#stereo-pairs)
+- **Stereo pairs and subwoofers**: Sendspin speakers can play as one player, as a stereo pair or together with a subwoofer, see [Stereo Pairs](#stereo-pairs)
 
 ## Configuration
 
@@ -66,15 +66,16 @@ Preferred audio format, Sample rate selection, and Unpair on a paired device onl
 
 ## Stereo Pairs
 
-Two speakers with Sendspin built in can play as one player, a stereo pair, with one speaker on the left channel and the other on the right. Both need to be set up and connected. The web player and bridged players, such as Google Cast devices in Sendspin mode, can't be part of a stereo pair.
+Two speakers with Sendspin built in can play as one player, a stereo pair, with one speaker on the left channel and the other on the right. A third speaker can be their subwoofer, see [With a Subwoofer](#with-a-subwoofer). All speakers need to be set up and connected. The web player and bridged players, such as Google Cast devices in Sendspin mode, can't be part of a stereo pair.
 
 To make a stereo pair:
 
 1. Open the settings of one of the speakers and, in the [Output Protocols](/settings/individual-player/#output-protocols) section, open the ⋮ menu of its Sendspin output
 2. Select **Make multi-channel player…**
-3. Pick the other speaker
-4. Each speaker is shown next to its channel, **Left** or **Right**. The swap button swaps the two
-5. Give the stereo pair a **Name** and select **Create**
+3. Leave the **Layout** on **Stereo pair**
+4. Pick the other speaker
+5. Each speaker is shown next to its channel, **Left** or **Right**. The swap button swaps the two
+6. Give the stereo pair a **Name** and select **Create**
 
 The Sendspin output of each speaker moves to the new player. A player that has no other output disappears, together with its settings.
 
@@ -85,9 +86,29 @@ The stereo pair works as one player:
 - In a group it takes part as one player
 - While one speaker is offline, the other plays both channels until it is back
 
-In the Output Protocols section of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps the channels of the two, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
+In the Output Protocols section of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps it with the speaker that had that channel, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
 
 To take the stereo pair apart, select **Take apart** in the ⋮ menu at the top right of its settings. The stereo pair disappears with its settings, and its speakers come back as players of their own, with default settings. A speaker that is offline comes back once it is connected again.
+
+### With a Subwoofer
+
+A Sendspin speaker can be the subwoofer of a stereo pair, or of a single speaker. The subwoofer plays the bass of both channels, and the other speakers leave that bass to it.
+
+When you make the player, pick one of these under **Layout**:
+
+- **Stereo pair with subwoofer**: a left and a right speaker and a subwoofer
+- **Speaker with subwoofer**: one speaker that plays both channels, shown as **Center**, and a subwoofer
+
+To add a subwoofer to a stereo pair you already have, select **Add subwoofer…** in the ⋮ menu at the top right of its settings and pick the speaker. The stereo pair keeps its settings. **Remove subwoofer** in the same menu makes the subwoofer a player of its own again, with default settings. A speaker with a subwoofer has no **Remove subwoofer**: take it apart instead.
+
+A player with a subwoofer has these settings above its speakers:
+
+- <b>The subwoofer has its own crossover.</b> Turn this on when the subwoofer filters out the higher frequencies itself. It then gets the full range
+- <b>High-pass the main speakers at the crossover.</b> On by default. While the subwoofer plays, the other speakers leave the bass below the crossover to it. Turn this off to let them play the full range
+- <b>Crossover frequency.</b> Where the subwoofer hands over to the other speakers, from 40 to 200 Hz. The default is 80 Hz
+- <b>Subwoofer level (dB).</b> The level of the subwoofer next to the other speakers, from -12 to 0 dB
+
+While the subwoofer is offline, the other speakers play the full range. A subwoofer does not play on its own: while none of the other speakers is connected, the player is unavailable.
 
 ## Older Devices
 
