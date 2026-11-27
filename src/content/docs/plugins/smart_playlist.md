@@ -1,6 +1,6 @@
 ---
 title: Smart Playlists
-description: Create dynamic playlists from your library, selected sources, or music discovered from seed items.
+description: Create dynamic playlists based on rules from your library, from selected sources, or from music discovered via seed tracks, artists, albums, or playlists.
 pluginGroup: discover
 ---
 
