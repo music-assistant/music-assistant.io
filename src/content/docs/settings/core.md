@@ -29,21 +29,21 @@ The **Options** card holds the rest of the network settings, in three sections.
 
 The settings below are advanced and only appear when advanced settings are enabled in the UI
 
-- <b>TCP Port.</b> The port the webserver runs on (default `8095`). If you change it, and you set the Internal URL manually, change the port there as well
-- <b>Enable SSL/TLS.</b> Serves the web UI and API over HTTPS. When enabled, two additional fields are revealed for the `SSL Certificate` and `SSL Private Key`. Both must be PEM format, and you can either paste the file contents or enter an absolute path (e.g. `/ssl/fullchain.pem`). RSA and ECDSA are both supported and the private key must be unencrypted. Use the `Verify SSL Certificate` button to check the certificate and key are valid and match. If the certificate can't be loaded, the webserver keeps running unencrypted and shows a warning
+- <b>TCP port.</b> The port the webserver runs on (default `8095`). If you change it, and you set the Internal URL manually, change the port there as well
+- <b>Enable SSL/TLS.</b> Serves the web UI and API over HTTPS. When enabled, two additional fields are revealed for the `SSL certificate` and `SSL private key`. Both must be PEM format, and you can either paste the file contents or enter an absolute path (e.g. `/ssl/fullchain.pem`). RSA and ECDSA are both supported and the private key must be unencrypted. Use the `Verify SSL certificate` button to check the certificate and key are valid and match. If the certificate can't be loaded, the webserver keeps running unencrypted and shows a warning
 - <b>Bind to IP/interface.</b> Start the webserver on this specific interface. The default `0.0.0.0` binds to all interfaces (IPv4 and IPv6). Change this only in setups such as binding to a docker-internal network behind a reverse proxy
 
 #### Audio streaming
 
 These settings are only visible when the advanced toggle is on. They will not need to be adjusted in the majority of cases, but users with complicated network setups will find them useful. If MA appears to be set up correctly but no playback occurs, check them.
 
-- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically and set to `auto`. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
+- The <b>Published IP address</b> and <b>TCP port</b> are normally populated automatically and set to `auto`. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
 - <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
 
 #### Discovery
 
 - <b>Allow network scan for UPnP discovery.</b> When enabled, MA uses an additional broadcast based discovery method ([SSDP](/faq/networking/#the-jargon-translated)). Turn this on if some UPnP/DLNA players are not being found by regular discovery (see the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered))
-- <b>Mdns/Zeroconf discovery interface(s).</b> Options are `Local network interfaces [default]` and `All interfaces`. By default MA uses every network interface of the local network(s) it is connected to, and leaves out the virtual interfaces of Docker, virtual machines, VPNs and Thread. Choose `All interfaces` to include those as well. A change takes effect after restarting Music Assistant. Setting is only visible when the advanced toggle is on
+- <b>mDNS/Zeroconf discovery interface(s).</b> Options are `Local network interfaces [default]` and `All interfaces`. By default MA uses every network interface of the local network(s) it is connected to, and leaves out the virtual interfaces of Docker, virtual machines, VPNs and Thread. Choose `All interfaces` to include those as well. A change takes effect after restarting Music Assistant. Setting is only visible when the advanced toggle is on
 
 ## Storage
 
@@ -56,7 +56,7 @@ This page connects Music Assistant to Home Assistant through the [Home Assistant
 - <b>Connection.</b> Whether it is connected, with **Reconfigure** to change the connection, or **Enable** while it is disabled. **Disable**, **Reload**, **Documentation** and **Remove** are in the page's ⋮ menu. When Music Assistant runs as a Home Assistant App, the app makes the connection by itself
 - <b>Home Assistant players.</b> How many players [Home Assistant Media Players](/player-support/home-assistant/) brings, with **Choose** to pick which media players of Home Assistant to use, or **Add** to set it up, after which that choice opens by itself
 - <b>AI from Home Assistant.</b> What Home Assistant provides to the AI features, such as `1 text · 2 speech`, or **None**. Opens [Settings → AI](/settings/ai/). Only while Home Assistant is connected
-- <b>Sign in with Home Assistant.</b> A switch: Home Assistant users without an account get one when they first sign in. It is the same setting as **Allow User Self-Registration** in [User management](/settings/user-management/#account-access). Only while Home Assistant is connected
+- <b>Sign in with Home Assistant.</b> A switch: Home Assistant users without an account get one when they first sign in. It is the same setting as **Allow user self-registration** in [User management](/settings/user-management/#account-access). Only while Home Assistant is connected
 - <b>Remote Access.</b> Switches [remote access](/settings/remote-access/) on and off. While it is on, the row says whether it uses **Home Assistant Link**, which makes it work in any network, and its arrow opens the remote ID and QR code
 
 Below the rows, **Player controls** holds the Home Assistant entities that can be linked to the power, volume and mute controls of a player. A change applies right away. See [Linking Home Assistant entities to player controls](/ha-plugin/#linking-home-assistant-entities-to-player-controls).

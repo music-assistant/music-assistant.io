@@ -61,9 +61,9 @@ The first time free-text search is loaded, about 500 MB of language model files 
 
 ## Configuration
 
-The plugin is installed via **Settings → Plugins → Add a plugin**. All settings live on a single configuration page made up of four panels: **Generic**, **Similarity search**, **Discover**, and **Status**.
+The plugin is installed via **Settings → Plugins → Add a plugin**. All settings live on a single configuration page made up of four panels: **General**, **Similarity search**, **Discover**, and **Status**.
 
-### Generic
+### General
 
 ![Sonic Similarity Generic panel](/assets/screenshots/sonic-similarity/setup-screen-generic.png)
 

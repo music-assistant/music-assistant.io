@@ -107,7 +107,7 @@ The other speakers of a set are not players of their own. A speaker that was a p
 
 Two Sendspin speakers are combined into a stereo pair in Music Assistant itself: in the settings of one of them, open the ⋮ menu of its Sendspin output, select `Make multi-channel player…` and pick the other speaker. A third Sendspin speaker can be their subwoofer. See [Stereo Pairs](/player-support/sendspin/#stereo-pairs) on the Sendspin page.
 
-For other speakers that play in perfect sync and show the `Output Channel Mode` in the Protocol Settings of the individual player, give each of the two players its own channel and group them as a [Sync Group](/faq/groups/#sync-groups).
+For other speakers that play in perfect sync and show the `Output channel mode` in the Protocol Settings of the individual player, give each of the two players its own channel and group them as a [Sync Group](/faq/groups/#sync-groups).
 
 ## Access my music on Nextcloud?
 

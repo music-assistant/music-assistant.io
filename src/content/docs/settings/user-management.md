@@ -19,7 +19,7 @@ On the right side of each username is a ⋮ menu which has four menu items
 
 Below the users, on the **Users** tab:
 
-- <b>Allow User Self-Registration.</b> Allows users to create accounts by logging in with Home Assistant. On by default. Only appears when Music Assistant is connected to Home Assistant under [**Settings → System → Home Assistant**](/settings/core/#home-assistant), since the login goes through your HA instance
+- <b>Allow user self-registration.</b> Allows users to create accounts by logging in with Home Assistant. On by default. Only appears when Music Assistant is connected to Home Assistant under [**Settings → System → Home Assistant**](/settings/core/#home-assistant), since the login goes through your HA instance
 
 ## Editing Users
 

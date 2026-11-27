@@ -149,12 +149,12 @@ Use the folder name(s) as they appear in OneDrive.
 In addition to the settings outlined above to configure this source, there are additional settings available (note certain options will be greyed out depending upon the content type selected):
 
 - <b>Content type in media folder(s).</b> This setting defines the content type of the source and is necessary for Music, Audiobooks and Podcasts to be correctly identified
-- <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled when there is no tagged album artist or single album artist in a `album.nfo` file. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
+- <b>Action when a track has no album artist tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled when there is no tagged album artist or single album artist in a `album.nfo` file. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
 - <b>Ignore playlists with album tracks within album folders.</b> Some users have a playlist per album. For large collections this results in an unusable Playlist View. To avoid this situation, this setting, which is enabled by default, will result in playlists which are more than one level below the root folder of the source to be ignored
-- <b>Sync Library Artists/Albums from this source to Music Assistant.</b> Whether to synchronize all artists/albums from the local source. 
+- <b>Sync library artists/albums from this source to Music Assistant.</b> Whether to synchronize all artists/albums from the local source. 
 - <b>Import tracks/files into the Music Assistant library.</b> Define if the import of tracks/files is desired. When not importing into the library, tracks can still be manually browsed using the Browse feature. Note that by adding a Track into the Music Assistant library, the track artists and album will always be imported as well
 - <b>Import playlists (m3u files) into the Music Assistant library.</b> Define if the import of playlists (m3u files) is desired. When not importing into the library, they can still be manually browsed using the Browse feature.
-- <b>Import Podcasts/Audiobooks into the Music Assistant library.</b> Define if the import of Podcasts/Audiobooks is desired. When not importing into the library, items can still be manually browsed using the Browse feature.
+- <b>Import podcast/audiobook files into the Music Assistant library.</b> Define if the import of Podcasts/Audiobooks is desired. When not importing into the library, items can still be manually browsed using the Browse feature.
 - <b>Propagate track genres to albums and artists.</b> Derive albums and artist genres from their tracks when album/artist have no genre metadata of their own
 
 ## Known Issues / Notes
@@ -257,7 +257,7 @@ Artwork embedded in your audio files is supported and will be extracted. Artwork
     - For ID3v2.3 and MP4 tags, multiple items should be separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3.
     - For Vorbis (FLAC, OGG), use multiple fields per the [Vorbis spec](https://xiph.org/vorbis/doc/v-comment.html)
     - For ID3v2.4 and APEv2 tags, multiple artists and album artists can be separated by the null character
-- MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
+- MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the provider is scanned depends on the `Action when a track has no album artist tag` setting for the local provider
 - `.nfo` files with enhanced metadata are supported
 - For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
 - If there is nothing added to the disc tag then the disc number will not be shown in the display
@@ -369,7 +369,7 @@ Tags are always preferred. When a file has no `title`, `artist` or `track` tag a
 - The separator must be a hyphen with a space either side. `Artist-Title.mp3` is not split, and the whole name becomes the title with no artist
 - Everything before the first ` - ` is the artist and the next segment is the title. Further segments are discarded, so `Nirvana - Come As You Are - Live.mp3` imports as `Come As You Are` and the `Live` marker is lost
 - Do not put a track number in the filename. A leading number is read as the artist, so `01 - Come As You Are.mp3` gives the artist `01`, and `01 - Nirvana - Come As You Are.mp3` gives the artist `01` and the title `Nirvana`
-- There is no filename or folder fallback for the **album** name, so an untagged file is never grouped into an album. The `Action when a track is missing the Albumartist ID3 tag` setting covers the album *artist* only, and only once an album tag exists
+- There is no filename or folder fallback for the **album** name, so an untagged file is never grouped into an album. The `Action when a track has no album artist tag` setting covers the album *artist* only, and only once an album tag exists
 
 </details>
 

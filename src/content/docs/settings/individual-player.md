@@ -46,18 +46,18 @@ Full details of the DSP capabilities and the filters that are available can be f
 
 Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control features](/player-support/#player-options) which are fully described in the documentation for the relevant player provider 
 
-## Generic Settings
+## General Settings
 
 - <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the [Player List](/ui/#player-list) and other areas of the UI
 - <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
 - <b>Icon.</b> A material design icon is used in some parts of the UI and this can be configured on a per player basis
-- <b>Play Media overrides active group.</b> When this player is currently captured by an active group or sync session, an explicit Play Media command (e.g. starting a new playlist or track from Home Assistant) will release this player from the group/sync and play the new media directly on this player. Disable this to keep the legacy behaviour where Play Media is redirected to the group leader. Other commands (next/prev/pause/resume) are always forwarded to the group leader as they act on the existing playback
+- <b>Play media overrides active group.</b> When this player is currently captured by an active group or sync session, an explicit Play Media command (e.g. starting a new playlist or track from Home Assistant) will release this player from the group/sync and play the new media directly on this player. Disable this to keep the legacy behaviour where Play Media is redirected to the group leader. Other commands (next/prev/pause/resume) are always forwarded to the group leader as they act on the existing playback
 
 ## Output Protocols
 
 The **Output protocols** row opens a page with the protocols the player plays through and their settings.
 
-- <b>Preferred Output Protocol.</b> The protocol the player plays through when you play to it. Only shown when the player has more than one. The device's own protocol is marked *(native)*, and the setting starts on it when it can play; a player without one starts on **Auto-select**, which picks the protocol that suits the device best. A protocol that can not be used right now is greyed out with the reason, such as *This output must be set up before it can be used.* When the player is grouped with other speakers, Music Assistant may play through another protocol that the whole group can use, see [Streaming Protocols](/usage/#streaming-protocols)
+- <b>Preferred output protocol.</b> The protocol the player plays through when you play to it. Only shown when the player has more than one. The device's own protocol is marked *(native)*, and the setting starts on it when it can play; a player without one starts on **Auto-select**, which picks the protocol that suits the device best. A protocol that can not be used right now is greyed out with the reason, such as *This output must be set up before it can be used.* When the player is grouped with other speakers, Music Assistant may play through another protocol that the whole group can use, see [Streaming Protocols](/usage/#streaming-protocols)
 
 Each protocol then has its own configuration section. Each one except the device's own protocol can be switched off for this player with **Enable this protocol on this player**. A protocol whose toggle says *(experimental)* is switched off until you turn it on yourself, with a warning above the toggle explaining what to expect. The [Audio Pipeline](/audiopipeline/) view shows which protocol a player is actually using and what the audio quality is at each stage.
 
@@ -72,7 +72,7 @@ Two things are true of all of them:
 
 Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no **Sample rates supported by this player** setting. Where a player differs from the defaults below, its own page says so.
 
-AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list. Sendspin players also have their own version of **Flow Mode sample rate**, called **Sample rate selection**. The [Sendspin](/player-support/sendspin/#settings) page describes it.
+AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output channel mode** from this list. Sendspin players also have their own version of **Flow mode sample rate**, called **Sample rate selection**. The [Sendspin](/player-support/sendspin/#settings) page describes it.
 
 #### Enable queue flow mode
 
@@ -82,7 +82,7 @@ Turn it on if the player leaves a gap between tracks, fails to transition to the
 
 The trade-off is that most players stop showing track information on their own display, because they only ever receive one long "track". The ICY setting below can put some of it back. [Track Queueing](/faq/tech-info/#track-queueing) explains how this differs from letting the player queue the next track itself.
 
-#### Flow Mode sample rate
+#### Flow mode sample rate
 
 Only applies when flow mode is on. A flow stream uses a single sample rate from start to finish, and this decides which one. `Smart` is the default and the right choice for almost everyone.
 
@@ -142,7 +142,7 @@ You choose the rates from a drop down list of checkboxes, and the ones you pick 
 
 Rates go up to 384 kHz / 24 bit, though most providers narrow that list to what the device plausibly handles. On most players the selection is a safe starting point rather than something detected from the device, and the higher rates are there for you to try. If your player genuinely supports them, add them and you will get better quality. If playback breaks or the player falls silent, remove them again. Manufacturers vary, so test rather than assume. Some providers do detect the device's capabilities and set this for you, and those pages say so.
 
-#### Output Channel Mode
+#### Output channel mode
 
 Whether the player receives both channels, one channel, or a mono mix of the two. `Stereo` by default.
 

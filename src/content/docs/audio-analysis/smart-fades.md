@@ -33,7 +33,7 @@ Crossfade is a queue setting. Set it for all players in the [Playback settings](
 | **Standard Crossfade** | A simple time-based crossfade of a configurable duration. Used as a fallback when Smart Fades cannot run. |
 | **Smart Crossfade** | Uses the Smart Fades analysis to choose a transition that suits each pair of tracks, as described above. |
 
-The duration used for Standard Crossfade (and as a fallback for Smart Crossfade) is set with "Standard crossfade duration" in the Playback settings, which shows while Standard Crossfade is selected there.
+The duration used for Standard Crossfade (and as a fallback for Smart Crossfade) is set with "Standard crossfade duration (seconds)" in the Playback settings, which shows while Standard Crossfade is selected there.
 
 Some players don't natively support gapless or crossfaded playback. For those, Music Assistant automatically switches into flow mode (one continuous stream) so the crossfade can still happen.
 
