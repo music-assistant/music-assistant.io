@@ -15,7 +15,7 @@ Two more decide what playing a track from an album or from a playlist does. `Pla
 
 ## Keeping or replacing the queue
 
-What happens to the queue when you press play on an item. There is one setting each for artists, albums, tracks, genres, playlists, and radio stations and live sources such as Spotify Connect and the AirPlay Receiver. Each either replaces the queue with the item, or plays the item straight away and keeps the rest of the queue. Tracks start out keeping the queue and everything else replacing it.
+What happens to the queue when you press play on an item. There is one setting each for artists, albums, tracks, genres, playlists, and radio stations and live sources such as Spotify Connect and the AirPlay Receiver. Each either replaces the queue with the item, or plays the item straight away and keeps the rest of the queue. Tracks start out keeping the queue and everything else replacing it. These settings are only visible when the **Show advanced settings** toggle is on.
 
 The [play menu](/ui/#play-button-) also lets you play an item next or add it to the end of the queue.
 
@@ -24,6 +24,8 @@ The [play menu](/ui/#play-button-) also lets you play an item next or add it to 
 - <b>Artists.</b> Which tracks play for an artist. The options are `Prefer library, fall back to top tracks [default]`, `Artist top tracks only`, only the artist's tracks in your library, and `All tracks of the artist's albums in your library`. The last one plays every track of the artist's albums in your library, not only the tracks you saved. When it finds nothing it falls back like the default, first to the artist's tracks in your library and then to the top tracks
 - <b>Order to play an artist in.</b> The options are `Shuffled tracks [default]`, `Albums in random order, each album in track order` and `Albums by release year, oldest first`. `Shuffled tracks` plays the tracks picked for the artist above in random order. The album orders play the artist's albums in your library one after another, either picked at random or from the oldest to the newest, with albums without a year last
 - <b>Albums.</b> Which tracks play for an album: all tracks of the album, which is the default, or only the tracks in your library
+
+Which tracks play for an artist and for an album is only visible when the **Show advanced settings** toggle is on. The order to play an artist in is always shown.
 
 With either album order:
 - The artist plays the albums in your library.

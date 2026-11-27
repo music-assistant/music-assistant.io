@@ -22,11 +22,11 @@ Some settings are only shown when the **Show advanced settings** toggle in the h
 Smart Shuffle enhances standard shuffle behavior by intelligently reducing repetition. Instead of selecting tracks purely at random, songs and artists that have been played recently are deprioritized, resulting in a more evenly distributed listening experience and reducing the likelihood of the same tracks being repeated when playlists are replayed. Smart Shuffle is always applied when playing a dynamic playlist, regardless of this setting.
 
 - <b>Smart shuffle.</b> `Disabled [default]` or `Enabled`. When enabled, the shuffle button uses Smart Shuffle instead of a plain random shuffle
-- <b>Avoid replaying the same song heard within.</b> How long a song that has already been heard is pushed toward the back of the queue. From `Off` to `4 weeks`, default `1 week`
-- <b>Avoid replaying the same artist heard within.</b> The same for artists. From `Off` to `2 hours`, default `30 minutes`
+- <b>Avoid replaying the same song heard within.</b> How long a song that has already been heard is pushed toward the back of the queue. From `Off` to `4 weeks`, default `1 week`. Setting is only visible when the advanced toggle is on
+- <b>Avoid replaying the same artist heard within.</b> The same for artists. From `Off` to `2 hours`, default `30 minutes`. Setting is only visible when the advanced toggle is on
 - <b>Minimum gap before repeating a deliberately-duplicated song.</b> When the same song is added to the queue more than once on purpose, this is the shortest time before it may play again. From `Off` to `24 hours`, default `3 hours`. Setting is only visible when the advanced toggle is on
 
-**Optimize order for Smart Fades** is an optional Smart Shuffle setting. When Smart crossfade is active, Music Assistant uses existing Smart Fades analysis to arrange upcoming tracks so Smart Fades has a better chance of creating a smooth transition between consecutive tracks. It considers tempo, musical key and how the energy changes from the end of one track to the start of the next. Songs and artists played recently are still deprioritized according to the Smart Shuffle settings. No new analysis is started for this, and tracks without analysis are neither preferred nor penalized. Smart Fades still decides how the actual transition is mixed when the tracks play.
+**Optimize order for Smart Fades** is an optional Smart Shuffle setting, shown when the advanced toggle is on. When Smart crossfade is active, Music Assistant uses existing Smart Fades analysis to arrange upcoming tracks so Smart Fades has a better chance of creating a smooth transition between consecutive tracks. It considers tempo, musical key and how the energy changes from the end of one track to the start of the next. Songs and artists played recently are still deprioritized according to the Smart Shuffle settings. No new analysis is started for this, and tracks without analysis are neither preferred nor penalized. Smart Fades still decides how the actual transition is mixed when the tracks play.
 
 ## Autoplay
 
@@ -45,13 +45,13 @@ A setting is available to enable Autoplay by default on all queues. Each queue c
 
 Crossfade can be enabled or disabled by default on all queues via a setting here and also can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/) is the default. It needs the Smart Fades analysis provider and an **Audio buffer size** of `Balanced` or larger; without them the option is greyed out and Standard crossfade is used. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. The **Standard crossfade duration** (default 8 seconds) appears when Standard crossfade is selected, and this is the only place it can be set.
 
-- <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
+- <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums. Setting is only visible when the advanced toggle is on
 
 ## Volume normalization
 
-<b>Volume normalization (EBU-R128 based).</b> [Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items and sources. It can be overridden on an [individual queue basis](/usage/#the-queue).
+<b>Volume normalization.</b> [Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items and sources. It can be overridden on an [individual queue basis](/usage/#the-queue).
 
-How it is done is set with **Volume normalization method for tracks** and **Volume normalization method for radio streams**, which you set independently.
+How it is done is set with **Volume normalization method for tracks** and **Volume normalization method for radio streams**, which you set independently. Both are only visible when the advanced toggle is on.
 
 The best result comes from a loudness measurement of the audio. Tracks tagged with ReplayGain or R128 loudness values supply one directly, and Music Assistant uses those in preference to measuring anything itself. Everything else it measures on its own: your local library automatically in a nightly background scan, and anything played, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before a value exists:
 
@@ -64,13 +64,13 @@ The best result comes from a loudness measurement of the audio. Tracks tagged wi
 
 Once a measurement exists it is used, whichever of the two fallback options is selected. Two other things are worth knowing: live radio is rarely measured, so the radio setting in practice runs on whichever fallback you choose, and volume normalization also has to be switched on for the player itself. These settings control how it's done, not whether. How the value is chosen, and when album gain is used instead of track gain, is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
 
-<b>Fixed/fallback gain adjustment for tracks / radio streams.</b>
+<b>Fixed/fallback gain for tracks / radio streams (dB).</b>
 
-How much to raise or lower the volume, in dB, whenever the fixed-gain path is used. That's either the Fixed gain method, or Fallback fixed gain when no measurement is available. Negative values make things quieter. The range is −20 to +10 dB and the default is −6. Other methods ignore it. Again, separate values exist for tracks and radio.
+How much to raise or lower the volume, in dB, whenever the fixed-gain path is used. That's either the Fixed gain method, or Fallback fixed gain when no measurement is available. Negative values make things quieter. The range is −20 to +10 dB and the default is −6. Other methods ignore it. Again, separate values exist for tracks and radio. Both are only visible when the advanced toggle is on.
 
 ![image](/assets/screenshots/settings-streamserver-audio.png)
 
-- <b>Target level for volume normalization.</b> The loudness, in LUFS, that volume normalization aims for. The default is -14 LUFS and a value between -23 and -12 LUFS is recommended. See [Technical Information](/faq/tech-info/#volume-normalization). Setting is only visible when the advanced toggle is on
+- <b>Target level for volume normalization (LUFS).</b> The loudness, in LUFS, that volume normalization aims for. The default is -14 LUFS and a value between -23 and -12 LUFS is recommended. See [Technical Information](/faq/tech-info/#volume-normalization). Setting is only visible when the advanced toggle is on
 
 ## Playback
 
