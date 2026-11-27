@@ -132,6 +132,29 @@ Change it if the player cannot play FLAC, or to cut down network traffic on a we
 
 </details>
 
+On Sonos, DLNA and Google Cast players the codec also decides whether you can pause and seek on the player itself, see below.
+
+#### Pausing and seeking on the player itself
+
+This is not a setting of its own. It follows from the two settings above, and applies to Sonos (S2), DLNA and Google Cast players.
+
+Normally Music Assistant sends a track as a stream without a known length, which every player can play. A player cannot jump around in such a stream, so a seek made in the player's own app or on its display does nothing, and the player may not show how long the track is. Pausing, seeking and skipping from Music Assistant always work.
+
+With both of the following set, each track is sent as a file with a known length instead:
+
+- **Enable queue flow mode** is off
+- **Output codec to use for streaming audio to the player** is `WAV` or `MP3`
+
+The player then shows the real length of the track, and you can pause, resume and seek on the player itself: in the Sonos app, on the progress bar of a Cast display, or with the app, remote or buttons of a DLNA player. Music Assistant follows what the player does.
+
+`FLAC` and `AAC` are always sent as a stream, because their size is not known before the audio is encoded. So are radio stations, podcasts and audiobooks, a track played at another speed, and everything in flow mode.
+
+A few things to know:
+
+- A pause made on the player counts as a pause in Music Assistant. Once it lasts longer than **Stop a paused player after (seconds)** in the [playback settings](/settings/playback/), 30 seconds by default, the queue is stopped. Press play in Music Assistant to carry on
+- After five seeks or resumes within one track, the next one can take a little longer to start playing
+- A player that fails on a stream without a length may play fine this way. If a DLNA player stops, restarts or loops part way through a track, try it
+
 #### Sample rates supported by this player
 
 The sample rates and bit depths this player can be sent without resampling. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are selected by default.

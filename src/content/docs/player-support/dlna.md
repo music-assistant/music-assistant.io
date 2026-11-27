@@ -8,7 +8,7 @@ description: A description of the DLNA/UPnP Player Provider
 Music Assistant has support for uPnP/DLNA based devices. This is a (somewhat) universal standard for streaming audio to supported devices. Due to the very inconsistent implementation of this protocol by manufacturers, some players will work great and others will simply not work at all or need workarounds. Other than that, if you have a device that works, you can enjoy fast local control, lossless audio support and in many cases metadata of your playing media.
 
 > [!NOTE]
-> Due to the patchy implementation of the DLNA protocol among manufacturers the most likely working configuration is with the QUEUE FLOW MODE on. If you still have problems after ensuring this is enabled then try each of the different streaming profiles
+> Due to the patchy implementation of the DLNA protocol among manufacturers the most likely working configuration is with the QUEUE FLOW MODE on. If you still have problems after ensuring this is enabled then see the notes at the bottom of this page
 
 ## Features
 
@@ -38,5 +38,5 @@ For information about the settings seen in the MA UI refer to the [Player Suppor
 - DLNA speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, [queue flow mode](/faq/tech-info/#track-queueing) must be enabled in the player's settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
 - It is possible to group DLNA players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - Although Sonos devices are strictly also based on DLNA, they created their own extra layer on top of that such as crossfade support and many other goodies. It is therefore advised to use the Sonos Player provider with Music Assistant instead of the DLNA provider. MA disables any discovered Sonos DLNA devices by default
-- If the player stops or loops during playback, turn on `Requires a fixed content length` in the player settings
+- If the player stops, restarts or loops part way through a track, switch `Enable queue flow mode` off and set the output codec to `WAV` or `MP3`. Each track is then sent as a file with a known length, which is what such players expect. The player can then also pause, resume and seek by itself, see [Pausing and seeking on the player itself](/settings/individual-player/#pausing-and-seeking-on-the-player-itself)
 - Some players (e.g. JRiver Media Center, Naim NDX) do not support FLAC streams, or only support FLAC at certain quality settings (e.g. 44.1/16). If the play command fails, there is no sound, or you hear distortion, try changing `Output Codec to use for streaming audio to the player` (in the player settings under ADVANCED SETTINGS) to one of the other options
