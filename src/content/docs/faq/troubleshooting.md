@@ -91,6 +91,8 @@ Change one thing at a time, and give it a track or two before deciding it did no
 
 **Stuttering or dropouts, mainly on Wi-Fi.** Music Assistant sends lossless audio by default, which is the most demanding thing you can put on a weak wireless link. Set **Output codec** to MP3 or AAC, which need far less bandwidth. If a wired player on the same network is fine, the network is the cause rather than Music Assistant, so work through the [dropout checklist](/faq/networking/#checklist-my-players-drop-out-or-stop-after-a-while). Strong signal strength is not proof that the network is healthy. Where you have more than one access point, settings such as transmit power, band steering and channel width matter more than the signal bars, and the checklist covers them.
 
+**Pause or seek on the speaker itself does nothing.** On Sonos, DLNA and Google Cast players that needs flow mode off and `WAV` or `MP3` as output codec, see [Pausing and seeking on the player itself](/settings/individual-player/#pausing-and-seeking-on-the-player-itself). From Music Assistant they always work.
+
 **A gap between tracks, or playback stopping on the track transition.** Turn on **Enable queue flow mode**, which sends the whole queue as one continuous stream instead of one track at a time. The trade-off is that most players then stop showing track information. [Track Queueing](/faq/tech-info/#track-queueing) explains the difference.
 
 **The player shows no track name or artist.** This happens in flow mode, because the player receives one long stream rather than separate tracks. Set **Try to inject metadata into stream (ICY)** to Profile 1, or to Profile 2 if you want album art as well. Some players mishandle Profile 2, so step back down if playback becomes unreliable.

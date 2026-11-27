@@ -46,6 +46,8 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Sonos and Sonos S1. Turn it off if the speaker cannot play continuous WAV streams
 - <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. It applies while flow mode is off, so it is greyed out once flow mode is enabled
 
+To pause and seek from the Sonos app while Music Assistant plays, set the output codec to `WAV` or `MP3` and leave flow mode off. With `FLAC`, the default, pause and seek only work from Music Assistant. This is for the Sonos (S2) provider, see [Pausing and seeking on the player itself](/settings/individual-player/#pausing-and-seeking-on-the-player-itself).
+
 There is no sample rates setting for Sonos players, as each speaker's capability is known already. Current Sonos models take 44.1kHz and 48kHz at 16 or 24 bits, while older models are limited to 16 bits. Sonos S1 players are 44.1kHz and 48kHz at 16 bits.
 
 A Sonos speaker that Music Assistant can also reach another way, over AirPlay for example, shows a section for each protocol under Output Protocol(s). The settings above are the ones in the Sonos section, and the other protocol carries its own separate set, which is why the available settings can look different from one speaker to the next.

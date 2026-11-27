@@ -61,6 +61,8 @@ Expect to do some tuning afterwards. Playback is rarely in sync straight away, s
 - MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work
 - Google's current Cast software no longer gives apps like Sendspin any control over audio timing, which they need to play in sync. Devices that run it cannot use Sendspin, and a software update can stop Sendspin working on a speaker where it worked before. There is no way to tell in advance, so you find out the first time you play something: Music Assistant then says Sendspin does not work with the device and stops offering it for that speaker. There is nothing to do, playback continues over the standard Cast protocol
 - Some televisions will show a blank progress bar during playback
+- With flow mode switched off and `MP3` or `WAV` as output codec, a Cast device gets each track as a file. It then shows the length of the track, and a seek made on the device itself works, see [Pausing and seeking on the player itself](/settings/individual-player/#pausing-and-seeking-on-the-player-itself). While crossfade is enabled a Cast speaker always gets the flow stream, so this does not apply then
+- On a Samsung Music Frame playing MP3 that way, a seek to a spot just past what it has already loaded shows the new position but plays on from where it was. Seek a little further, or use `WAV`
 
 ## Troubleshooting playback problems
 
