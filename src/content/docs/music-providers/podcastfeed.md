@@ -33,7 +33,7 @@ This source follows one feed, which means one podcast. To follow several podcast
 
 ## Configuration
 
-In the Generic Settings add the full address of the podcast's RSS feed, including the `https://`.
+In the General Settings add the full address of the podcast's RSS feed, including the `https://`.
 
 Most podcasts publish their feed address somewhere on their own website, and podcast directories list it as well.
 

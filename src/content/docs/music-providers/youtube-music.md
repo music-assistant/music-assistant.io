@@ -85,7 +85,7 @@ YouTube rotates account cookies frequently on open YouTube browser tabs as a sec
 ### Step 3: Configure the source
 
 1. In Music Assistant, go to **Settings → Music → Add a music source** and select 'Youtube Music'.
-2. Fill out the fields in the Generic Settings section as follows:
+2. Fill out the fields in the General Settings section as follows:
     - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
     - <b>Login Cookie.</b> Paste the value you copied in Step 2
     - <b>PO Token Server URL.</b> Leave this setting as the default if you run the PO server as an App on the same host as the MA App. If you run the PO token server separately, adjust the IP address and port accordingly

@@ -35,4 +35,4 @@ This source connects Music Assistant to your TuneIn account, so those presets an
  
 ## Configuration
 
-In the Generic Settings, add a Username.
+In the General Settings, add a Username.
