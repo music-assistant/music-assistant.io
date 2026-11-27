@@ -48,7 +48,6 @@ Each station has its own settings page. Most of the standard [Individual Player 
 
 - <b>Stream URL.</b> The address to enter on your listening device. It is shown here for you to copy and cannot be changed directly
 - <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> MP3 (the default) or AAC. MP3 works on almost everything. AAC sounds a little better for the same amount of data, but older radios may not play it. The end of the address changes to match, so after changing this you will need to give your device the new address
-- <b>Requires a fixed content length.</b> Leave this off unless a particular device will not play the station or stops after a short while, then turn it on
 
 The song title and artist are always sent to a listening device that asks for them, so there is no setting for it.
 
