@@ -107,7 +107,7 @@ The other speakers of a set are not players of their own. A speaker that was a p
 
 Two Sendspin speakers are combined into a stereo pair in Music Assistant itself: in the settings of one of them, open the ⋮ menu of its Sendspin output, select `Make multi-channel player…` and pick the other speaker. A third Sendspin speaker can be their subwoofer. See [Stereo Pairs](/player-support/sendspin/#stereo-pairs) on the Sendspin page.
 
-For other speakers that play in perfect sync and show the `Output Channel Mode` in the Protocol Settings of the individual player, give each of the two players its own channel and group them as a [Sync Group](/faq/groups/#sync-groups).
+For other speakers that play in perfect sync and show the `Output channel mode` in the Protocol Settings of the individual player, give each of the two players its own channel and group them as a [Sync Group](/faq/groups/#sync-groups).
 
 ## Access my music on Nextcloud?
 
@@ -190,7 +190,7 @@ data:
 
 Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
 
-You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Source Details section](/ui/#source-details) at the bottom of the item views and can be copied to the clipboard using the chain link icon. You can also click on the in-library icon in the header row for the item and this will also copy the URI to the clipboard.
+You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. With [Expert mode](/settings/profile/#preferences) on, the URI is also shown in the [Source Details section](/ui/#source-details) at the bottom of the item views and can be copied to the clipboard using the chain link icon. You can also click on the in-library icon in the header row for the item and this will also copy the URI to the clipboard.
 
 > [!NOTE]
 > URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.

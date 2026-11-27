@@ -39,14 +39,19 @@ Temporary Sync Group players are configured via the [Player List](/ui/#player-li
 
 ## Sync Groups
 
-These are permanent group players. You create one from the players list in the settings, and once it exists its members are set in the group settings on the [player's own settings page](/settings/individual-player/). These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. Normally a player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
+These are permanent group players. You create one from the players list in the settings, and once it exists its members are set in the group settings on the [player's own settings page](/settings/individual-player/). These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. Without dynamic members a player cannot be removed from the group while the group is playing, although it can be muted (or volume reduced to 0). If there is a need to add or remove players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
 
 ![image](/assets/screenshots/syncgroup.png)
 
-After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. You need to specify a name for the group player. The order that the players are selected when the group is created will be the order that the players are shown when viewing the group in the [Player List](/ui/#player-list).
+To create one, select **Add group player** in **Settings → Players**. The **Add a group** dialog opens:
 
-> [!NOTE]
-> The ADD GROUP PLAYER button is only visible if a players which supports perfect sync or the Universal Group player provider, have been added
+1. When more than one kind of group can be made, pick one under **Kind of group**. **Sync Group Player** makes a sync group, **Universal Group Player** a [Universal Group](#universal-groups)
+2. Give the group a **Name**
+3. Tick the players under **Speakers in this group**. For a sync group, only players that can play in sync with the ones already ticked are listed. A player is only listed while it is switched on and connected
+4. Leave **Let speakers join and leave** on to add and remove players while the group plays, the same as **Enable dynamic members** in the group's settings. With it on, the group can also be created without any players
+5. Select **Create**
+
+The order that the players are selected when the group is created will be the order that the players are shown when viewing the group in the [Player List](/ui/#player-list).
 
 > [!TIP]
 > Remember Chromecast devices must be grouped in the Google Home app for perfect sync
@@ -67,7 +72,7 @@ After selecting ADD GROUP PLAYER as shown above, the group configuration screen 
 
 ## Universal Groups
 
-Music Assistant has support for grouping dissimilar playback devices. Configuration is done in the same manner as described in the Sync Groups section with UNIVERSAL GROUP PLAYER selected as the Group Type. These groups also support the dynamic member option. Universal Group functionality is not enabled by default, it must be first added as a provider.
+Music Assistant has support for grouping dissimilar playback devices. They are created in the same way as described in the [Sync Groups](#sync-groups) section, with **Universal Group Player** picked as the **Kind of group**. These groups also support the dynamic member option. Universal Group functionality is not enabled by default, it must be first added as a provider.
 
 ### Features
 

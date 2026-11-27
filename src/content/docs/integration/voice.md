@@ -11,7 +11,7 @@ Starting playback by voice is now built into Home Assistant. It arrived in HA 20
 The community blueprints described further down are still worth having, but they are no longer the starting point. Reach for them when you want something the built-in sentences cannot express.
 
 > [!NOTE]
-> Queue behaviour when adding items by Assist will follow the settings in [**Settings → Players → Playback**](/settings/playback/#default-enqueue-option).
+> Queue behaviour when adding items by Assist will follow the settings in [**Settings → Players → Tap & play**](/settings/tap-and-play/#keeping-or-replacing-the-queue).
 
 ## What you need
 

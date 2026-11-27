@@ -48,7 +48,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 
 There is no sample rates setting for Sonos players, as each speaker's capability is known already. Current Sonos models take 44.1kHz and 48kHz at 16 or 24 bits, while older models are limited to 16 bits. Sonos S1 players are 44.1kHz and 48kHz at 16 bits.
 
-A Sonos speaker that Music Assistant can also reach another way, over AirPlay for example, shows a section for each protocol under Output Protocol(s). The settings above are the ones in the Sonos section, and the other protocol carries its own separate set, which is why the available settings can look different from one speaker to the next.
+A Sonos speaker that Music Assistant can also reach another way, over AirPlay for example, shows a section for each protocol on its [Output protocols](/settings/individual-player/#output-protocols) page. The settings above are the ones in the Sonos section, and the other protocol carries its own separate set, which is why the available settings can look different from one speaker to the next.
 
 ## Known Issues / Notes
 

@@ -63,7 +63,7 @@ Each player has its own queue. View the queue by pressing the ![Preview image](/
 The queue order can be adjusted by selecting and dragging the six dot icon or via the options in the ⋮ menu.
 
 > [!NOTE]
-> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → Players → Playback**](/settings/playback/#default-enqueue-option)
+> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → Players → Tap & play**](/settings/tap-and-play/#keeping-or-replacing-the-queue)
     
 The options in the menu available in the top right is shown below. 
 
@@ -85,7 +85,7 @@ Each setting starts at `Global [default]`, which uses the default for all player
 - <b>Optimize order for Smart Fades.</b> Arranges the upcoming tracks so Smart Fades can make smoother transitions
 - <b>Autoplay source.</b> Where Autoplay gets more tracks from when the queue runs out. When `Tracks from a playlist` is chosen, the **Autoplay playlist** box sets the playlist
 - <b>Crossfade mode.</b> Standard crossfade or Smart crossfade for this player
-- <b>Volume normalization (EBU-R128 based).</b> Turns volume normalization on or off for this player
+- <b>Volume normalization.</b> Turns volume normalization on or off for this player
 
 Turning Autoplay and crossfade on or off is done from the player controls. These settings decide how they work. See the [playback settings](/settings/playback/) for more information about Smart Shuffle, Autoplay, and Smart Crossfade.
 

@@ -53,7 +53,7 @@ In addition to the [Player Support Settings](/settings/player-provider/) when se
 - <b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example 192.168.1.50 or speaker.local. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
 - <b>Allow legacy clients.</b> On by default. Lets devices and apps that use an older version of Sendspin connect, including ones without encryption (see [Older Devices](#older-devices)). Turned off, only devices and apps that follow the current version of the Sendspin specification connect, and most need an update first. A device or app that is not up to date may go silent for the rest of the current track when you change the track that plays next. Players then get the queue one track at a time, so a track can change the sample rate without restarting the stream, and title, artwork and progress change the moment the track starts. Only shown while <b>Show advanced settings</b> is on
 
-Sendspin does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode**, plus their own version of the sample rate setting described below. In addition to the standard [Individual Player Settings](/settings/individual-player/), Sendspin players have the following:
+Sendspin does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output channel mode**, plus their own version of the sample rate setting described below. In addition to the standard [Individual Player Settings](/settings/individual-player/), Sendspin players have the following:
 
 - <b>Security status.</b> The Sendspin settings of each device start with its security state: paired, connected through guest access, connected without encryption (see [Older Devices](#older-devices)), or pairing lost. A device that lost its pairing cannot play until you pair it again with <b>Reconfigure player</b> or remove the old pairing with <b>Unpair</b>. A device you unpaired, or that stopped allowing guest access, stays disconnected until you set the player up again
 - <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential
@@ -62,7 +62,7 @@ Sendspin does not stream over HTTP, so of the [settings shared by most protocols
 - <b>Name of the input.</b> The name of the audio input, such as Record player. It is Line-in until you change it. The source list of the player itself shows the name alone, while Browse and other players show it with the name of the player, such as Record player (Living Room). Only shown for a device that has an audio input and also plays; a device that only has an input is named by its player
 - <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
 - <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (player's preferred codec) is the default, and the other options are read from the device itself. On Automatic the player keeps the codec it prefers, and <b>Sample rate selection</b> decides the sample rate. Choosing a specific format here sets both
-- <b>Sample rate selection.</b> Decides the sample rate of the audio sent to this player, and can only be changed while the preferred audio format is Automatic. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). With <b>Allow legacy clients</b> off, the rate changes when the next track starts, without restarting the stream. Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
+- <b>Sample rate selection.</b> Decides the sample rate of the audio sent to this player, and can only be changed while the preferred audio format is Automatic. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow mode sample rate](/settings/individual-player/#flow-mode-sample-rate). With <b>Allow legacy clients</b> off, the rate changes when the next track starts, without restarting the stream. Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
 
 Preferred audio format, Sample rate selection, and Unpair on a paired device only show while <b>Show advanced settings</b> is on.
 
@@ -105,7 +105,7 @@ Two speakers with Sendspin built in can play as one player, a stereo pair, with 
 
 To make a stereo pair:
 
-1. Open the settings of one of the speakers and, in the [Output Protocols](/settings/individual-player/#output-protocols) section, open the ⋮ menu of its Sendspin output
+1. Open the settings of one of the speakers, then [Output protocols](/settings/individual-player/#output-protocols), and open the ⋮ menu of its Sendspin output
 2. Select **Make multi-channel player…**
 3. Leave the **Layout** on **Stereo pair**
 4. Pick the other speaker
@@ -121,7 +121,7 @@ The stereo pair works as one player:
 - In a group it takes part as one player
 - While one speaker is offline, the other plays both channels until it is back
 
-In the Output Protocols section of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps it with the speaker that had that channel, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
+On the **Output protocols** page of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps it with the speaker that had that channel, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
 
 To take the stereo pair apart, select **Take apart** in the ⋮ menu at the top right of its settings. The stereo pair disappears with its settings, and its speakers come back as players of their own, with default settings. A speaker that is offline comes back once it is connected again.
 
@@ -177,7 +177,7 @@ Several client types can connect to Music Assistant via Sendspin:
 
 The player built into the Music Assistant web interface is itself a Sendspin player. It plays wherever the web interface works, at home or through [Remote Access](/settings/remote-access/).
 
-Like any other Sendspin player, the web player has a **Static playback delay (ms)** setting in its [Output Protocols settings](/settings/individual-player/#output-protocols). It starts at 0 and may need adjusting if the web player is heard out of step with your other speakers.
+Like any other Sendspin player, the web player has a **Static playback delay (ms)** setting on its [Output protocols](/settings/individual-player/#output-protocols) page. It starts at 0 and may need adjusting if the web player is heard out of step with your other speakers.
 
 The audio format the web player uses depends on the browser:
 

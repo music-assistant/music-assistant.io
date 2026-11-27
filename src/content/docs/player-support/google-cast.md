@@ -40,7 +40,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 
 A Cast speaker can also be driven over [Sendspin](/player-support/sendspin/), which lets it play in sync alongside Sendspin, AirPlay and Sonos players in one group. This is experimental and switched off by default, so there is nothing to do here unless you want a Cast speaker in a mixed group. It also does not work on many Cast devices, especially newer ones, because Google's current Cast software no longer gives apps like Sendspin any control over audio timing, which they need to play in sync.
 
-To turn it on, open the player's settings, find Sendspin in the **Output Protocols** section and tick **Enable this protocol on this player (experimental)**.
+To turn it on, open the player's settings, then **Output protocols**, find Sendspin and tick **Enable this protocol on this player (experimental)**.
 
 Speakers that also support AirPlay don't need this: they join mixed groups over AirPlay, which works better than Sendspin over Cast. AirPlay must be turned on in Music Assistant for that.
 

@@ -63,7 +63,7 @@ These three fields belong to the setup, so the plugin's settings page does not s
 
 ### Options
 
-The plugin's settings page has a **Generic** and a **Status** panel:
+The plugin's settings page has a **General** and a **Status** panel:
 
 ![AudioMuse-AI options and status](/assets/screenshots/audiomuse-ai/setup-options.png)
 

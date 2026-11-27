@@ -75,7 +75,7 @@ If the player appears to start normally, with the progress bar advancing and the
 
 For a player that is missing or will not start at all, read on.
 
-First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to [**Settings → Players**](/settings/individual-player/). If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. A reason such as **Pairing required** with a **Start setup** button means the player needs setting up first; [A player that is unavailable or needs setup](/settings/individual-player/#a-player-that-is-unavailable-or-needs-setup) explains both. Also review the **Generic Settings** for the individual player to determine under what circumstances the player will be hidden in the UI. If the player is not in the settings list either, open the ⋮ menu at the top right of that page and check that **Hide unavailable players** is not switched on.
+First check if the player has been discovered but just isn't appearing in the [Player List](/ui/#player-list). Do this by navigating to [**Settings → Players**](/settings/individual-player/). If the player is there then look for an hourglass ⧖ beside the entry which indicates that, for some reason, the player is unavailable. A reason such as **Pairing required** with a **Start setup** button means the player needs setting up first; [A player that is unavailable or needs setup](/settings/individual-player/#a-player-that-is-unavailable-or-needs-setup) explains both. Also review the **General Settings** for the individual player to determine under what circumstances the player will be hidden in the UI. If the player is not in the settings list either, open the ⋮ menu at the top right of that page and check that **Hide unavailable players** is not switched on.
 
 If the player is not shown in the list of players in the MA settings then review the list of player providers. If your device doesn't support one of the listed protocols then it won't currently work. Review the <a href="https://github.com/orgs/music-assistant/discussions" target="_blank" rel="noopener noreferrer">GitHub Discussions</a> to see if others have requested support and join in the conversation.
 
@@ -85,7 +85,7 @@ If your device still doesn't work and you think it should then review the full l
 
 ## The player plays, but not properly
 
-A player that is found and starts playing, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, can usually be fixed with one of the protocol settings. They all live under [Output Protocols](/settings/individual-player/#output-protocols) in that player's settings and are only visible with the `Show advanced settings` toggle on. That page explains what each one does. The symptoms below say which one to reach for.
+A player that is found and starts playing, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, can usually be fixed with one of the protocol settings. They all live on the **Output protocols** page of that player's settings and are only visible with the `Show advanced settings` toggle on. [Output Protocols](/settings/individual-player/#output-protocols) explains what each one does. The symptoms below say which one to reach for.
 
 Change one thing at a time, and give it a track or two before deciding it did not help. Changing any of them reloads the player, so playback stops briefly each time.
 

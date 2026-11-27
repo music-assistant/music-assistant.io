@@ -25,7 +25,7 @@ If a device does not appear, work through the [discovery checklist](/faq/network
 
 ## Settings
 
-In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the MusicCast provider has some unique settings in the `Output Protocol(s)` section for the player:
+In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the MusicCast provider has some unique settings on the **Output protocols** page of the player:
 
 - <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should issues be encountered during playback then toggle this on, which makes the other two zone settings below inactive. This setting is only available on multi-zone players
 - <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It must be an input that does not need a network connection, and it is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching. This setting is only available on multi-zone players

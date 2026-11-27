@@ -86,4 +86,4 @@ At the top of the page are two rows that open in place:
 **Settings** holds two settings:
 
 - <b>Background analysis concurrency.</b> Maximum number of tracks analysed concurrently during the nightly background scan. Starts at 1, or 2 on a server with 4 or more CPU cores, and should only be increased on more powerful systems
-- <b>Smart Fades Log level.</b> Specific log level for the Smart Fades mixer and analyzer. Setting is only visible when the advanced toggle is on
+- <b>Smart Fades log level.</b> Specific log level for the Smart Fades mixer and analyzer. Setting is only visible when the advanced toggle is on
