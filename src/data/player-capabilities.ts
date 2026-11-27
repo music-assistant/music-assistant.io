@@ -437,6 +437,22 @@ export const PLAYER_CAPABILITIES: PlayerCapabilities[] = [
     },
   },
   {
+    // Sent as MP3 or AAC, so never lossless, and each listener buffers on its own.
+    slug: "player-support/webbroadcast",
+    sampleRate: "48kHz/16 bits",
+    values: {
+      hiRes: false,
+      lossless: false,
+      perfectSync: false,
+      syncCorrection: false,
+      crossfade: true,
+      stereoPair: false,
+      deviceButton: false,
+      deviceVoice: false,
+      playerOptions: false,
+    },
+  },
+  {
     slug: "player-support/wiim",
     sampleRate: "192kHz/24 bits",
     values: {
