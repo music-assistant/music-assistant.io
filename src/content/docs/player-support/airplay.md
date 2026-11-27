@@ -35,7 +35,7 @@ Music Assistant follows how your HomePods are set up in the Apple Home app. Ther
 
 ## Protocol Settings
 
-AirPlay does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode** and [Playback quality](/settings/individual-player/#playback-quality), where **Lossless, compressed** is the only level, as AirPlay always sends lossless compressed audio. The settings below are specific to AirPlay.
+AirPlay does not stream over HTTP, so of the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols) these players show only **Output Channel Mode** and [Playback quality](/settings/individual-player/#playback-quality), where only **Lossless, compressed** can be picked, as AirPlay always sends lossless compressed audio. The settings below are specific to AirPlay.
 
 Some devices (Apple TVs, HomePods and other AirPlay 2 speakers) must be paired before Music Assistant can use them. These show **Pairing required** in the player settings, with a **Start setup** button — press it and follow the steps, entering the PIN shown on the device's screen. Devices protected with a password show **Password required** and ask for the password instead.
 
