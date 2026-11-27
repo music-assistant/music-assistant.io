@@ -43,7 +43,7 @@ The Sonos S1 provider has two further settings:
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Sonos players have the following settings:
 
-- <b>[Playback quality](/settings/individual-player/#playback-quality).</b> Starts on **Lossless, uncompressed** on S2 devices
+- <b>[Playback quality](/settings/individual-player/#playback-quality).</b> Starts on **Lossless, uncompressed**
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Sonos and Sonos S1. Turn it off if the speaker cannot play continuous WAV streams
 - <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. It applies while flow mode is off, so it is greyed out once flow mode is enabled
 
