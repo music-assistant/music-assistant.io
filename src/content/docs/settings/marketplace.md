@@ -54,7 +54,7 @@ Select an entry to see its details: what it does, who created and maintains it, 
 
 - <b>Add.</b> Sets it up, the same way as on its card. Once it is set up, **Manage** opens its settings
 - <b>Documentation.</b> Its documentation
-- <b>Get help.</b> Where to ask questions and report problems: the maintainers' own page when they have one, otherwise the issue tracker of Music Assistant, or for something from the community catalog its repository on GitHub
+- <b>Get help.</b> Where to ask questions and report problems: the maintainers' own page when they have one, otherwise the issue tracker of Music Assistant, or for something from the community catalog the issue tracker of its repository on GitHub
 - <b>Request a change.</b> Asks the Music Assistant team for a change in the feature requests. Only on what the team looks after: a change to something from the community catalog is for its maintainers
 
 Missing something altogether? **Request it** at the bottom of the page opens the feature requests as well.

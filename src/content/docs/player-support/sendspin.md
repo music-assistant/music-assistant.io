@@ -105,7 +105,7 @@ Two speakers with Sendspin built in can play as one player, a stereo pair, with 
 
 To make a stereo pair:
 
-1. Open the settings of one of the speakers and, in the [Output Protocols](/settings/individual-player/#output-protocols) section, open the ⋮ menu of its Sendspin output
+1. Open the settings of one of the speakers, then [Output protocols](/settings/individual-player/#output-protocols), and open the ⋮ menu of its Sendspin output
 2. Select **Make multi-channel player…**
 3. Leave the **Layout** on **Stereo pair**
 4. Pick the other speaker
@@ -121,7 +121,7 @@ The stereo pair works as one player:
 - In a group it takes part as one player
 - While one speaker is offline, the other plays both channels until it is back
 
-In the Output Protocols section of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps it with the speaker that had that channel, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
+On the **Output protocols** page of its settings, each speaker has a row with its channel, its name and whether it is **Online** or **Offline**. Open a row to change the **Channel** of that speaker, which swaps it with the speaker that had that channel, or its **Output delay (ms)**. Increase the delay if the audio of that speaker plays too late.
 
 To take the stereo pair apart, select **Take apart** in the ⋮ menu at the top right of its settings. The stereo pair disappears with its settings, and its speakers come back as players of their own, with default settings. A speaker that is offline comes back once it is connected again.
 
@@ -177,7 +177,7 @@ Several client types can connect to Music Assistant via Sendspin:
 
 The player built into the Music Assistant web interface is itself a Sendspin player. It plays wherever the web interface works, at home or through [Remote Access](/settings/remote-access/).
 
-Like any other Sendspin player, the web player has a **Static playback delay (ms)** setting in its [Output Protocols settings](/settings/individual-player/#output-protocols). It starts at 0 and may need adjusting if the web player is heard out of step with your other speakers.
+Like any other Sendspin player, the web player has a **Static playback delay (ms)** setting on its [Output protocols](/settings/individual-player/#output-protocols) page. It starts at 0 and may need adjusting if the web player is heard out of step with your other speakers.
 
 The audio format the web player uses depends on the browser:
 

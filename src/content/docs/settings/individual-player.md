@@ -4,13 +4,13 @@ title: "Individual Player Settings"
 
 # Individual Player Settings <img src="/assets/icons/settings-individual-player-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-**Settings → Players** lists your players, with the lights, screens, audio inputs and controllers, such as remotes and volume knobs, in sections of their own below them. **Add group player** creates a [group player](/faq/groups/). The tiles at the top lead to [Playback](/settings/playback/), the defaults every player follows, and to [Player support](/settings/player-provider/). Selecting a player opens its settings, described on this page.
+**Settings → Players** lists your players, with the lights, screens, audio inputs and controllers, such as remotes and volume knobs, in sections of their own below them. **Add group player** creates a [group player](/faq/groups/). The tiles at the top lead to [Playback](/settings/playback/) and [Tap & play](/settings/tap-and-play/), the defaults every player follows, and to [Player support](/settings/player-provider/). Selecting a player opens its settings, described on this page.
 
-Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. The **Documentation** button at the top of a player's settings opens this page. Some items are hidden unless the **Show advanced settings** toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
+A player's settings start with rows that each open a page of their own: **Playback**, **DSP**, **Player options**, **Output protocols** and **Player controls**. Below them, the **Options** card holds the settings of the player itself, such as hiding it, exposing it to Home Assistant and announcements. A group player keeps the settings of the group, such as its members, in that card too, and has no **Output protocols** row. The sections below describe each of them. The **Documentation** button at the top of a player's settings opens this page. Some items are hidden unless the **Show advanced settings** toggle is on. Not all players have all the rows and settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
 
 ![image](/assets/screenshots/individual-player-settings.png)
 
-Music Assistant makes one player of each device, however many ways it can reach it. A speaker that Music Assistant reaches through its own provider and also over AirPlay or Chromecast is one player, and each of those ways is a protocol of that player. The protocols show as chips at the top of the page and in the players list, and each has its own section under [Output Protocol(s)](#output-protocols). A chip is faded while its protocol can not be used.
+Music Assistant makes one player of each device, however many ways it can reach it. A speaker that Music Assistant reaches through its own provider and also over AirPlay or Chromecast is one player, and each of those ways is a protocol of that player. The protocols show as chips at the top of the page and in the players list, and each has its own section on the [Output protocols](#output-protocols) page. A chip is faded while its protocol can not be used.
 
 The **Configure player** button, which reads **Reconfigure player** once the player is set up, starts the setup of a player, such as pairing it. When more than one of its protocols can be set up, you pick which one from a drop down box.
 
@@ -18,7 +18,7 @@ The **Configure player** button, which reads **Reconfigure player** once the pla
 
 A player stays in Music Assistant while its device is switched off or off the network, with its settings and its queue. It shows as unavailable until the device is back, and its queue then still holds what it was playing, ready to resume. A player whose Power control is set to cut its power, such as a smart plug, shows as switched off instead, see [Switching the player itself on and off](/ha-plugin/#switching-the-player-itself-on-and-off). Its settings can be opened and changed meanwhile.
 
-In **Settings → Players** an unavailable player has an hourglass ⧖ beside it. A player that can not play until you set something up says why, such as **Pairing required** or **Password required**, with a **Start setup** button that takes you through it. A player that can still play over another of its protocols stays available meanwhile, and the protocol that waits for setup shows as unavailable under [Output Protocol(s)](#output-protocols).
+In **Settings → Players** an unavailable player has an hourglass ⧖ beside it. A player that can not play until you set something up says why, such as **Pairing required** or **Password required**, with a **Start setup** button that takes you through it. A player that can still play over another of its protocols stays available meanwhile, and the protocol that waits for setup shows as unavailable on the [Output protocols](#output-protocols) page.
 
 ## Disabling and deleting players
 
@@ -54,6 +54,8 @@ Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control 
 - <b>Play Media overrides active group.</b> When this player is currently captured by an active group or sync session, an explicit Play Media command (e.g. starting a new playlist or track from Home Assistant) will release this player from the group/sync and play the new media directly on this player. Disable this to keep the legacy behaviour where Play Media is redirected to the group leader. Other commands (next/prev/pause/resume) are always forwarded to the group leader as they act on the existing playback
 
 ## Output Protocols
+
+The **Output protocols** row opens a page with the protocols the player plays through and their settings.
 
 - <b>Preferred Output Protocol.</b> The protocol the player plays through when you play to it. Only shown when the player has more than one. The device's own protocol is marked *(native)*, and the setting starts on it when it can play; a player without one starts on **Auto-select**, which picks the protocol that suits the device best. A protocol that can not be used right now is greyed out with the reason, such as *This output must be set up before it can be used.* When the player is grouped with other speakers, Music Assistant may play through another protocol that the whole group can use, see [Streaming Protocols](/usage/#streaming-protocols)
 
@@ -173,7 +175,7 @@ There are a number of configurable options for controlling the volume of [announ
 
 ## Player Controls
 
-Each player has a number of options available to control the behaviour of the power, volume and mute controls in the MA UI. By default, if a device supports these controls then that native behaviour will be used or if the control is not supported then it will be disabled in the UI (the setting will indicate NONE). It is also possible to manually disable the controls by changing the setting to NONE. Some of the options require the advanced toggle to be enabled before they can be seen.
+The **Player controls** row opens a page with these settings. Each player has a number of options available to control the behaviour of the power, volume and mute controls in the MA UI. By default, if a device supports these controls then that native behaviour will be used or if the control is not supported then it will be disabled in the UI (the setting will indicate NONE). It is also possible to manually disable the controls by changing the setting to NONE. Some of the options require the advanced toggle to be enabled before they can be seen.
 
 It is possible to map other HA entities to the MA player controls. in order for this to be an option the HA entities need to be first exposed to MA via the settings in the [HA Plugin](/ha-plugin/).
 

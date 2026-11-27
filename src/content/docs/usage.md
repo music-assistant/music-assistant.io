@@ -63,7 +63,7 @@ Each player has its own queue. View the queue by pressing the ![Preview image](/
 The queue order can be adjusted by selecting and dragging the six dot icon or via the options in the ⋮ menu.
 
 > [!NOTE]
-> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → Players → Playback**](/settings/playback/#default-enqueue-option)
+> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → Players → Tap & play**](/settings/tap-and-play/#keeping-or-replacing-the-queue)
     
 The options in the menu available in the top right is shown below. 
 

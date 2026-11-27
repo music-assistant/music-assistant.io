@@ -85,7 +85,7 @@ If your device still doesn't work and you think it should then review the full l
 
 ## The player plays, but not properly
 
-A player that is found and starts playing, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, can usually be fixed with one of the protocol settings. They all live under [Output Protocols](/settings/individual-player/#output-protocols) in that player's settings and are only visible with the `Show advanced settings` toggle on. That page explains what each one does. The symptoms below say which one to reach for.
+A player that is found and starts playing, but stutters, cuts out, leaves gaps between tracks or shows nothing on its display, can usually be fixed with one of the protocol settings. They all live on the **Output protocols** page of that player's settings and are only visible with the `Show advanced settings` toggle on. [Output Protocols](/settings/individual-player/#output-protocols) explains what each one does. The symptoms below say which one to reach for.
 
 Change one thing at a time, and give it a track or two before deciding it did not help. Changing any of them reloads the player, so playback stops briefly each time.
 

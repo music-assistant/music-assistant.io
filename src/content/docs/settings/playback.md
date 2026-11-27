@@ -1,11 +1,11 @@
 ---
 title: "Playback"
-description: The defaults every player follows, from what playing an item does to smart shuffle, autoplay, crossfade and volume normalization
+description: The defaults every player follows, such as smart shuffle, autoplay, crossfade and volume normalization
 ---
 
 # Playback <img src="/assets/icons/play-button.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-**Settings → Players → Playback** holds the defaults every player follows. The behaviour when playing or enqueuing items is determined by the settings on this page. Smart shuffle, autoplay, crossfade and volume normalization are set on a global level here and can be overridden for each player in its own [playback settings](/usage/#the-queue). Only administrators see this page.
+**Settings → Players → Playback** holds the defaults every player follows. What clicking or playing an item does is set on [Tap & play](/settings/tap-and-play/). Smart shuffle, autoplay, crossfade and volume normalization are set on a global level here and can be overridden for each player in its own [playback settings](/usage/#the-queue). Only administrators see this page.
 
 Some settings are only shown when the **Show advanced settings** toggle in the header of the **Options** card is on, and the toggle is remembered for your user.
 
@@ -14,33 +14,6 @@ Some settings are only shown when the **Show advanced settings** toggle in the h
 ## Generic
 
 - <b>Volume step size.</b> Defaults to zero which enables an adaptive mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
-
-## Items to select
-
-- <b>Items to select when you play a (in-library) artist.</b> The options are `Prefer library, fall back to top tracks [default]`, `Artist top tracks only`, `In-library tracks for the artist only` and `All tracks of the artist's albums in your library`. The last one plays every track of the artist's albums in your library, not only the tracks you saved. When it finds nothing it falls back like the default, first to the artist's in-library tracks and then to the top tracks. A server that used the old `All tracks from all providers` option moves to it by itself
-- <b>Order to play an artist in.</b> The options are `Shuffled tracks [default]`, `Albums in random order, each album in track order` and `Albums by release year, oldest first`. `Shuffled tracks` plays the tracks picked by the artist selection in random order. The album orders play the artist's albums in your library one after another, either picked at random or from the oldest to the newest, with albums without a year last
-- <b>Items to select when you play a (in-library) album.</b> The options are `All tracks for album on (streaming) provider [default]` and `Only in-library tracks`
-
-With either album order:
-- The artist plays the albums in your library.
-- Each album plays as it does on its own, following <b>Items to select when you play a (in-library) album</b>.
-- Each album plays once, even when more than one source has it.
-- If one copy of an album can't play, another copy plays instead. With `Only in-library tracks` as the album selection, an album plays only your saved tracks.
-- Singles are left out, as their songs are mostly on the albums. Compilations in your library still play.
-- `Artist top tracks only` still plays shuffled tracks.
-- An artist without albums in your library plays shuffled tracks instead. For example, an artist with only singles, or one that only appears on another artist's albums.
-
-An album order switches shuffle off for the queue, as when you play an album. An artist without albums keeps the queue's shuffle, and so does `Artist top tracks only`. Asking for shuffle when you start the artist still shuffles it. The setting does not apply to authors and narrators, as they play audiobooks.
-
-## Default enqueue option
-
-What happens to the queue when an item is played. There is one setting each for Artist, Album, Track, Genre, Playlist, and Radio and Live Input items (radio stations and live sources such as Spotify Connect and AirPlay Receiver). Each can be `Play (and replace queue)` or `Play (and keep queue)`. Tracks default to keeping the queue and everything else defaults to replacing it.
-
-## Click actions
-
-- <b>What clicking an artist / album / track / genre / radio / playlist does.</b> One setting per item type. `Open it [default]` opens the item, `Play it` starts playing it straight away
-- <b>What playing a track from an album does.</b> `Play from this track onwards [default]` continues with the rest of the album, `Play only this track` plays just the chosen track
-- <b>What playing a track from a playlist does.</b> The same two options, for tracks in a playlist
 
 ## Smart shuffle
 
@@ -66,7 +39,7 @@ A setting is available to enable Autoplay by default on all queues. Each queue c
 
 - <b>Tracks from a playlist.</b> Tracks are taken from the playlist chosen in the **Autoplay playlist** box, which appears when this option is selected
 
-- <b>Similar artists.</b> When the queue runs out, a similar artist of the last track's artist is added, one with no track in the queue yet. It is queued the same way as playing that artist. With an album order in <b>Order to play an artist in</b>, all its albums play whole, one after the other, if shuffle is off. Autoplay does not change the queue's shuffle. If no similar artist is left, no tracks are added. This option needs a music provider that supplies similar artists
+- <b>Similar artists.</b> When the queue runs out, a similar artist of the last track's artist is added, one with no track in the queue yet. It is queued the same way as playing that artist. With an album order in [<b>Order to play an artist in</b>](/settings/tap-and-play/#which-tracks-play), all its albums play whole, one after the other, if shuffle is off. Autoplay does not change the queue's shuffle. If no similar artist is left, no tracks are added. This option needs a music provider that supplies similar artists
 
 ## Crossfade
 

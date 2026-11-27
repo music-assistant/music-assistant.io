@@ -33,7 +33,7 @@ The settings open on a list of sections, shown as cards or as a list (switch wit
 
 - **[Marketplace](/settings/marketplace/)**. Where music sources, player support, metadata, plugins and audio analysis are found and added. For administrators, and for users whose role lets them add music sources of their own
 - **[Music](/settings/music-provider-settings/)**. Your music sources, and the settings of the library, genres, [metadata](/settings/metadata-provider-settings/) and audio analysis. Users whose role lets them have music sources see it too, with their own sources and the ones shared with them
-- **[Players](/settings/individual-player/)**. The settings of each player, where group players are created, and the [Playback](/settings/playback/) and [Player support](/settings/player-provider/) pages
+- **[Players](/settings/individual-player/)**. The settings of each player, where group players are created, and the [Playback](/settings/playback/), [Tap & play](/settings/tap-and-play/) and [Player support](/settings/player-provider/) pages
 - **[Plugins](/plugins/)**. The plugins that are set up. Its add button opens the Marketplace. For administrators
 - **[AI](/settings/ai/)**. The default AI engines, what uses AI, the AI services and access for AI assistants. For administrators
 - **[Profile](/settings/profile/)**. Your own account, and how the app looks for you. Every user has it
@@ -41,7 +41,7 @@ The settings open on a list of sections, shown as cards or as a list (switch wit
 - **[System](/settings/core/)**. The network, [Remote Access](/settings/remote-access/), [Storage](/settings/storage/), Home Assistant, background tasks and diagnostics. For administrators
 - **[About](/settings/about/)**. Version information, credits and more
 
-The settings pages all look alike. A header names the page, with its buttons on the right and, on some pages, a ⋮ menu with options such as **Reset to defaults**. A page that leads to other pages shows them as tiles at the top. A page with settings has one **Options** card with all of the settings, grouped under headings, and a **Save** button below it, unless every setting on it is saved the moment it changes. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user. Pages that also hold a list, such as Metadata, Audio analysis and Background tasks, put their settings and status in rows at the top that open in place, with the list below. The page of a music source, player support, plugin or player also has a **Documentation** button that opens the matching page here.
+The settings pages all look alike. A header names the page, with its buttons on the right and, on some pages, a ⋮ menu with options such as **Reset to defaults**. A page that leads to other pages shows them as tiles at the top. A page with settings has one **Options** card with all of the settings, grouped under headings. As soon as there is something to save, a bar with **Save** appears at the bottom of the page; settings in a dialog or in a row that opens in place have their **Save** below them. The **Show advanced settings** toggle in the header of the Options card reveals the settings most people never need, and the choice is remembered for your user. Until you choose, it follows [Expert mode](/settings/profile/#preferences). Pages that also hold a list, such as Metadata, Audio analysis and Background tasks, put their settings and status in rows at the top that open in place, with the list below. The page of a music source, player support, plugin or player also has a **Documentation** button that opens the matching page here.
 
 At the bottom of the list, administrators find **Run the setup wizard again**, which starts the wizard again at its first question, and other users **Show the welcome again**. A [paused setup](/first-run/#pausing-the-setup) continues where you left off with **Resume** on the **Setup paused** message.
 
@@ -117,6 +117,8 @@ Clicking/touching the Play Button will either execute the default play action fo
 
 - the first time the MA view is entered; or
 - if the player is not playing (or paused)
+
+The play menu offers three ways to play: **Play Now**, **Play Next** and **Add to the queue**. **Play Now** keeps or replaces the queue as set on [Tap & play](/settings/tap-and-play/#keeping-or-replacing-the-queue). With [Expert mode](/settings/profile/#preferences) on, the menu lists every way to play, such as **Play now (keep queue)** and **Play now (replace queue)**.
 
 > [!NOTE]
 > If there is ever uncertainty as to whether the item will immediately start playing use a right click or long press to bring up the menu.
@@ -212,7 +214,7 @@ The creation of links within the MA library to other identical items in the MA l
 
 Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/local-files/#tagging-files).
 
-The ID shown against the streaming source may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming sources, is an external link which opens the page for the item on the source provider.
+Each row shows the source, a **Library** badge when the item is in your library at that source, and the hi-res icon for hi-res audio. Without [Expert mode](/settings/profile/#preferences), selecting a row opens the item's page at the source, when the source has one. With it, a row also shows the audio format of a track and the item's ID at the source, with a button to play a sample. The ID may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming sources, is an external link which opens the page for the item on the source provider.
 
 ## View - Individual Track
 

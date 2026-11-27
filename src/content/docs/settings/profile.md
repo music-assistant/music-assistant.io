@@ -19,8 +19,9 @@ Preferences that follow your user on every device.
 
 ### Preferences
 
+- <b>Expert mode.</b> Shows every option and technical detail. With it off, the [play menu](/ui/#play-button-) offers **Play Now**, **Play Next** and **Add to the queue**, and the [source details](/ui/#source-details) of an item show each source without its technical line. With it on, the play menu has every way to play, and the source details also show the audio format, the item's link at the source and a button to play a sample. Until you change them yourself, **Show advanced settings** on the settings pages, the waveform progress bar and the [MilkDrop visualizer](/plugins/milkdrop-visualizer/) are on in Expert mode and off without it. An administrator starts in Expert mode, unless Music Assistant was set up with **Connect my music apps to my speakers**; everyone else starts with it off. The [welcome](/first-run/#the-first-time-a-user-signs-in) asks the same as **Standard** or **Expert**
 - <b>Customize menu.</b> This button enables the edit mode for the menu
-- <b>Prefer waveform progress bar</b> Show a waveform-style progress bar in the now playing view when audio analysis data is available for the playing track. The data comes from the [Sonic Analysis](/audio-analysis/sonic-analysis/) provider, so the bar only appears on tracks it has analysed
+- <b>Prefer waveform progress bar</b> Show a waveform-style progress bar in the now playing view when audio analysis data is available for the playing track. The data comes from the [Sonic Analysis](/audio-analysis/sonic-analysis/) provider, so the bar only appears on tracks it has analysed. On in Expert mode, off otherwise, until you change it
 - <b>Show A to Z index</b> Show the letters of the alphabet vertically on the right hand side of the artists, albums and tracks views which are used to quickly jump to that starting letter of the items in the list. The index is removed if a search query is entered
 
 ### Audiobooks

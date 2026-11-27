@@ -151,6 +151,7 @@ export default defineConfig({
             },
             { label: "Players", slug: "settings/individual-player" },
             { label: "Playback", slug: "settings/playback" },
+            { label: "Tap & play", slug: "settings/tap-and-play" },
             { label: "Player Support", slug: "settings/player-provider" },
             { label: "AI", slug: "settings/ai" },
             { label: "Profile", slug: "settings/profile" },
