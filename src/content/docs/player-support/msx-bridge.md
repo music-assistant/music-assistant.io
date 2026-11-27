@@ -54,14 +54,13 @@ Music Assistant has support for streaming music to Smart TVs via the <a href="ht
 In addition to the [Player Support Settings](/settings/player-provider/) when setting up this provider the following settings are available:
 
 - <b>HTTP Server Port.</b> The port for the MSX HTTP server. The default is 8099
-- <b>Audio Output Format.</b> The audio format used for streaming to the TV. Enter mp3 (the default), aac or flac. FLAC gives lossless quality but some TVs cannot play it
 - <b>Player Idle Timeout (minutes).</b> Unregisters an MSX player after this many minutes without activity. The default is 30
 - <b>Show playback stopped notification.</b> Shows an informational notice on the TV after playback is stopped from Music Assistant. Off by default
 - <b>Stream Delivery Mode.</b> How the audio reaches the TVs. MA Streamserver (the default and recommended) points each TV straight at the Music Assistant stream server. Independent sends each TV its own separate stream through a local proxy, for TVs that have trouble with the default. MA Streamserver falls back to Independent automatically when the address cannot be worked out
 
 MSX players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Two of those are worth knowing about on a TV:
 
-- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Set per TV, and defaults to MP3 here rather than FLAC
+- <b>[Playback quality](/settings/individual-player/#playback-quality).</b> Set per TV, and starts on **High quality, compressed** here. **Lossless, uncompressed** is not offered
 - <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> Turning this on stops the TV reporting track progress correctly, so leave it off unless you have a reason to change it
 
 ## How It Works
@@ -74,7 +73,7 @@ You can check on all of this at `http://<ma-ip>:8099/`.
 
 ## Known Issues / Notes
 
-- **Audio format**: MP3 works on every TV, which is why it is the default. AAC sounds slightly better for the same file size. FLAC is lossless, but with it Music Assistant cannot tell the TV up front how much audio is coming, and some TVs will not play without that
+- **Playback quality**: **High quality, compressed** (MP3) works on every TV, which is why it is the default. **Lossless, compressed** (FLAC) is lossless, but with it Music Assistant cannot tell the TV up front how much audio is coming, and some TVs will not play without that
 - **Player grouping**: It is possible to group MSX players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - **Network**: The TV and Music Assistant have to be on the same network. There is no way to reach a TV from outside your home
 - **Idle timeout**: If a TV is switched off or the MSX app is closed, it disappears from the player list after the idle timeout, 30 minutes by default. It comes back as soon as the TV connects again

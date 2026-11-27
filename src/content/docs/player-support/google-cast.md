@@ -34,7 +34,7 @@ In addition to the [Individual Player Settings](/settings/individual-player/) an
 - <b>Use Music Assistant Cast App.</b> On by default and enables the use of a special MA Cast Receiver app to play media on cast devices. It has been optimised to provide better metadata and for future expansion. If issues are experienced with playback then try disabling this option.
 - <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit for a single player, and up to 96 kHz for a Cast group. Only 44.1 kHz / 16 bit and 48 kHz / 16 bit are selected by default, because the higher ones are unreliable on some devices despite being officially supported. Add them and test rather than assume
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Cast devices. Turn it off if the device cannot play continuous WAV streams
-- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> On by default, as these devices handle one continuous stream more reliably than being fed tracks one at a time
+- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> Off by default. Together with **High quality, compressed**, where Cast speakers start, each track is then sent as a file of its own, so the device shows the progress of the track and you can pause and seek on it
 
 ## Sendspin on Cast devices
 
@@ -51,13 +51,13 @@ Expect to do some tuning afterwards. Playback is rarely in sync straight away, s
 ## Known Issues / Notes
 
 - Cast speakers do not support gapless playback or crossfading of audio themselves. While crossfade is enabled, Music Assistant always sends a Cast speaker the queue as one continuous [flow mode](/faq/tech-info/#track-queueing) stream, regardless of the flow mode setting. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
-- Most Cast speakers get MP3 by default, because several models (such as Samsung's Music Frame and soundbars, the Google Nest Mini and the Nest Audio) stop playing a long FLAC stream after a while. The Chromecast Audio and Nest Hub play FLAC reliably and keep FLAC as their default. You can choose another codec per speaker with **Output codec to use for streaming audio to the player** in the advanced settings
+- Cast speakers start on **High quality, compressed** as [Playback quality](/settings/individual-player/#playback-quality), because several models (such as Samsung's Music Frame and soundbars, the Google Nest Mini and the Nest Audio) stop playing a long lossless stream after a while. You can choose a lossless level per speaker
 - If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
 - After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
 - It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
 - TV/Video devices (not the AV dongles) are disabled by default
 - Cast Groups containing only a stereo pair will not work
-- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
+- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), **Playback quality** on **High quality, compressed**, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
 - MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work
 - Google's current Cast software no longer gives apps like Sendspin any control over audio timing, which they need to play in sync. Devices that run it cannot use Sendspin, and a software update can stop Sendspin working on a speaker where it worked before. There is no way to tell in advance, so you find out the first time you play something: Music Assistant then says Sendspin does not work with the device and stops offering it for that speaker. There is nothing to do, playback continues over the standard Cast protocol
 - Some televisions will show a blank progress bar during playback
@@ -83,10 +83,10 @@ You may see any of these:
 
 In the individual player settings:
 
-1. Set **Output codec to use for streaming audio to the player** to `MP3`, if it isn't already. MP3 is the default for most Cast speakers.
-2. If changing to MP3 makes playback last longer but it still fails eventually, make sure **Enable queue flow mode** is on.
+1. Set [Playback quality](/settings/individual-player/#playback-quality) to **High quality, compressed**, if it isn't already. Cast speakers start on it.
+2. If that makes playback last longer but it still fails eventually, make sure **Enable queue flow mode** is on.
 
-Once playback is reliable you can try `FLAC` as the output codec, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
+Once playback is reliable you can try a lossless level, and raising the sample rates again, if you want the higher quality. Change one at a time, as more than one setting may be contributing.
 
 > [!IMPORTANT]
 > **For Cast groups, change it everywhere.** One member of a group does the actual playing, the group picks which one, and that choice can change when devices are restarted. Make the same change on the group and on every speaker in it. Changing only one looks like it worked until the next restart.

@@ -63,14 +63,14 @@ Each protocol then has its own configuration section. Each one except the device
 
 The settings below appear under most protocols and mean the same thing wherever you see them. **Most people never need to change any of them.** The defaults are chosen to work on the widest range of hardware, and the usual reason to come here is that something is not playing properly.
 
-Two things are true of all of them:
+Two things to know about them:
 
-- They are only visible when the `Show advanced settings` toggle is on
+- Apart from **Playback quality**, they are only visible when the `Show advanced settings` toggle is on
 - Changing one reloads the player, so anything currently playing stops briefly
 
 Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no **Sample rates supported by this player** setting. Where a player differs from the defaults below, its own page says so.
 
-AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list. Sendspin players also have their own version of **Flow Mode sample rate**, called **Sample rate selection**. The [Sendspin](/player-support/sendspin/#settings) page describes it.
+AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list, and AirPlay players also **Playback quality**. Sendspin players also have their own version of **Flow Mode sample rate**, called **Sample rate selection**. The [Sendspin](/player-support/sendspin/#settings) page describes it.
 
 #### Enable queue flow mode
 
@@ -114,21 +114,20 @@ Turn it on if your player shows nothing useful while flow mode is running. Start
 
 </details>
 
-#### Output codec to use for streaming audio to the player
+#### Playback quality
 
-The format Music Assistant encodes the audio into before sending it. `FLAC` by default, which is lossless.
+How Music Assistant sends audio to this player, in one of three levels. Each kind of player starts on the level that works best for it, and a player you have not changed follows that level. A level the player cannot play is greyed out with the reason.
 
-Change it if the player cannot play FLAC, or to cut down network traffic on a weak Wi-Fi link. A lossy codec is a good first thing to try when playback stutters on wireless players.
+**Lossless, uncompressed** is the lossless level that works on the most players. **High quality, compressed** is the most reliable one when a player or the network struggles: pick it on weak Wi-Fi or when playback stutters or stops.
 
 <details>
-<summary>What each option does</summary>
+<summary>What each level does</summary>
 
-| Option | Behaviour |
+| Level | Behaviour |
 | --- | --- |
-| **FLAC (lossless, compressed)** *(default)* | Full quality at a moderate bitrate. The best choice for most players |
-| **MP3 (lossy)** | Smaller bitrate at some quality cost. Use for players that cannot play FLAC, or to save bandwidth |
-| **AAC (lossy)** | Comparable to MP3; pick it for players that prefer AAC |
-| **WAV (uncompressed PCM)** | Highest bandwidth of the four. Only needed for players that cannot handle FLAC |
+| **Lossless, uncompressed** | Full quality without compression, sent as WAV. Needs the most bandwidth, so best on a wired connection or good Wi-Fi |
+| **Lossless, compressed** | Full quality in a smaller size, sent as FLAC (ALAC on AirPlay). Easier on Wi-Fi, but not every player plays it reliably |
+| **High quality, compressed** | Much smaller, with a quality loss that is hard to hear, sent as MP3 (AAC on some players) |
 
 </details>
 
@@ -150,7 +149,7 @@ The usual reason to change it is building a stereo pair from two players. Set on
 
 Sends live sources such as [Spotify Connect](/plugins/spotify-connect/) and the [AirPlay Receiver](/plugins/airplay-receiver/) as uncompressed audio, so there is less delay before you hear them. Off by default on most players; providers that turn it on say so on their own page.
 
-Turn it off if those sources are unreliable on your player; Music Assistant will fall back to the output codec set above.
+Turn it off if those sources are unreliable on your player; they then follow the **Playback quality** set above.
 
 ## Group Player Settings
 

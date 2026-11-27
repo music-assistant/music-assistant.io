@@ -26,7 +26,7 @@ Next the Volume Normalization value is shown, along with where the loudness valu
 
 The Output section is then shown which, in this example, is simple and just shows the Output Limiter, the output codec and quality and then finally the icon of the output protocol and the name of the player is shown.
 
-MA, by default, sends lossless audio to the player. The exact codec, sample rate or bit depth that are sent to the player depends on the player / output protocol and is always shown. Changes to the original audio quality may occur if the MP3 option has been selected in the player settings (See the [Groups](#groups) example below) or if the audio is resampled to match the player's maximum or native sample rate or bit depth. PCM could be sent to the player, although typically FLAC is used to save some bandwidth.
+MA, by default, sends lossless audio to most players. The exact codec, sample rate or bit depth that are sent to the player depends on the player / output protocol and is always shown. Changes to the original audio quality may occur if the [Playback quality](/settings/individual-player/#playback-quality) of the player is **High quality, compressed** (See the [Groups](#groups) example below) or if the audio is resampled to match the player's maximum or native sample rate or bit depth.
 
 The maximum sample rate that can be expected can be found in the [Player Providers summary table](/faq/stream-to/#comparing-players-side-by-side). This can be further limited if changes were made to the default options for the player's `Sample Rates Supported by this Player` advanced setting.
 

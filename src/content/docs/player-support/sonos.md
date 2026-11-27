@@ -43,6 +43,7 @@ The Sonos S1 provider has two further settings:
 
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Sonos players have the following settings:
 
+- <b>[Playback quality](/settings/individual-player/#playback-quality).</b> Starts on **Lossless, uncompressed** on S2 devices
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Sonos and Sonos S1. Turn it off if the speaker cannot play continuous WAV streams
 - <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. It applies while flow mode is off, so it is greyed out once flow mode is enabled
 
@@ -56,4 +57,4 @@ A Sonos speaker that Music Assistant can also reach another way, over AirPlay fo
 - Issues have been reported with playback not starting on the `Sonos Connect Amp` and `Play:1`. If this is encountered then set `Enable Queue Flow Mode` to ON in the [individual player settings](/settings/individual-player/)
 - S1 and S2 devices cannot be grouped together in the same Sync Group. S1 and S2 devices can be grouped via a Universal Group but will not play in sync
 - Using the Sonos HA Integration at the same time as the MA Sonos S1 player provider may cause problems. It is not possible to run the HA provider and Sonos S1 provider on the same host and additionally these speakers do not like too many requests from too many sources. It is therefore recommended to only use the MA Sonos S1 player provider
-- Sonos firmware changes has resulted in crossfade not working when the output codec is lossless (i.e. FLAC or WAV). Users can either disable crossfade, switch to the MP3 codec or use AirPlay mode
+- Sonos firmware changes has resulted in crossfade not working with a lossless [Playback quality](/settings/individual-player/#playback-quality) level. Users can either disable crossfade, switch to **High quality, compressed** or use AirPlay mode
