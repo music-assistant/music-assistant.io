@@ -47,7 +47,7 @@ In addition to the [Player Provider Settings](/settings/player-provider/) the fo
 Each station has its own settings page. Most of the standard [Individual Player Settings](/settings/individual-player/) apply, and a few are worth knowing about here:
 
 - <b>Stream URL.</b> The address to enter on your listening device. It is shown here for you to copy and cannot be changed directly
-- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> MP3 (the default) or AAC. MP3 works on almost everything. AAC sounds a little better for the same amount of data, but older radios may not play it. The end of the address changes to match, so after changing this you will need to give your device the new address
+- <b>Playback quality.</b> Always "High quality, compressed". A station streams MP3, which plays on almost every device. The other levels are shown but cannot be picked
 
 The song title and artist are always sent to a listening device that asks for them, so there is no setting for it.
 
@@ -68,7 +68,7 @@ A station whose player is disabled in Music Assistant has no address until the p
 - Devices listening to the same station are not kept in time with each other, so they may be a second or more apart. For speakers in the same room that need to play in step, use one of the other [player providers](/player-support/) instead
 - Stations cannot be grouped with other players
 - A station only broadcasts what is played from its Music Assistant queue. Sources that are selected on a player, such as [Spotify Connect](/plugins/spotify-connect/), and announcements are not supported
-- The sound is compressed (MP3 or AAC), so it is not lossless. Lossless formats are not offered because a device joining part way through could not play them
+- The sound is compressed (MP3), so it is not lossless. Lossless formats are not offered because a device joining part way through could not play them
 - Skipping a song takes a few seconds to be heard, as the listening device holds a little music in reserve
 - If the address shown in the player settings uses the wrong IP address, check the [Stream server settings](/settings/core/#streams), as the address is built from those
 - Anyone on your network who knows a station's address can listen to it
