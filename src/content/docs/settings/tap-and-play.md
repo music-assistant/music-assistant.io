@@ -7,6 +7,8 @@ description: What clicking an item does, what pressing play does to the queue, a
 
 **Settings → Players → Tap & play** sets what happens when you click an item or press play on it, for every player. Only administrators see this page. The other defaults every player follows, such as crossfade and autoplay, are on [Playback](/settings/playback/).
 
+![image](/assets/screenshots/settings-tap-and-play.png)
+
 ## Click actions
 
 One setting each for artists, albums, tracks, genres, radio stations and playlists decides what clicking one does. `Open it [default]` opens the item, `Play it` starts playing it straight away.
