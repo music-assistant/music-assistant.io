@@ -143,6 +143,12 @@ If there is no local artwork then online providers will be queried very slowly i
 
 For local files, you can either fully tag your music (this is preferred and it is recommended to use <a href="https://picard.musicbrainz.org/" target="_blank" rel="noopener noreferrer">Picard</a>) or have an <a href="https://kodi.wiki/view/NFO_files" target="_blank" rel="noopener noreferrer">artist folder with the artist.nfo</a> in there (just like the images) and that will be preferred. Online metadata providers are only queried when there is no local data.
 
+## An artist shows the biography or photos of another artist
+
+Music Assistant has mixed up your artist with another one. The biography, life dates and most photos come from the artist's MusicBrainz ID, so a wrong one shows another artist's details. This can happen when a streaming link is on the wrong artist's page on MusicBrainz, or when the artist has no link there and Music Assistant had to match it by name alone. The log can point to the link involved, with a line starting with `MusicBrainz relates` or `Artist "..." is not on MusicBrainz through`. Follow [Fix an artist matched to the wrong artist](/help/musicbrainz/#fix-an-artist-matched-to-the-wrong-artist). For local files, check the MusicBrainz IDs in the file tags instead.
+
+Photos can also come from a music service the artist was matched to by name. If the artist page shows another service with the wrong artist, that match is the cause.
+
 ## Some of the playlists are missing
 
 For certain sources (Spotify is a known example) the authentication method used may impact visibility of playlists of certain type. For a Spotify source, see details [here](/music-providers/spotify/#known-issues--notes)

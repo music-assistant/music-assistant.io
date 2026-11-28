@@ -34,6 +34,7 @@ When Music Assistant cannot find something on MusicBrainz, it often writes a hin
 | `Artist "..." has no link to <service> on MusicBrainz, so it is not added ...; add one at ...` | Debug | MusicBrainz names an artist, such as a performer on a recording, that has no link to your service. [Add the link](#add-streaming-links), then use **Update metadata** on the album |
 | `Artist "..." is not on MusicBrainz through <link>, so it cannot be told apart from the other "..." on <service>; add <link> to their MusicBrainz page: ...` | Info | Your service has two artist pages with the same name, and Music Assistant can only keep them apart when MusicBrainz knows which artist each page belongs to. Check which artist this page belongs to, then [add the streaming link](#add-streaming-links) to that artist's MusicBrainz page. The hint links a MusicBrainz search for the name, and also the other artist's page when that one is already known |
 | `Artist "..." cannot be told apart from the other "..." on <service>, because <link> is linked to more than one MusicBrainz artist; remove it from the one it does not belong to: ...` | Info | The same streaming link is on more than one artist's MusicBrainz page. Open each page from the hint, select **Edit**, and remove the link under **External links** from the artist it does not belong to |
+| `MusicBrainz relates <link> to the artist '...' (...), whose name differs from '...'. The link may be wrong. If so, ...` | Info | Names often differ for a good reason, such as a band that changed its name or a name written in another script. If the MusicBrainz artist is a different act, [fix the match](#fix-an-artist-matched-to-the-wrong-artist) |
 | `ISRC ... of "..." is not on MusicBrainz, add it to the track's recording: ...` | Debug | [Add the ISRC codes with MagicISRC](#add-isrc-codes-with-magicisrc) |
 | `ISRC ... of "..." is on MusicBrainz recording ..., which credits other artists, so it needs album "..." identified, add its streaming link or barcode to the release of that recording` | Debug | The code is used for more than one recording. [Add the streaming link](#add-streaming-links) or barcode to the album's MusicBrainz release |
 | `Album "..." has ISRCs MusicBrainz lacks, add them all at once with MagicISRC: ...` | Debug | The link opens MagicISRC with the release and your tracks' codes filled in. Check the codes line up with the tracks and submit. See [Add ISRC codes with MagicISRC](#add-isrc-codes-with-magicisrc) |
@@ -69,6 +70,24 @@ even when their titles or some lengths differ.
 Single tracks can have a link too. Open the recording on MusicBrainz, select **Edit**, and add the track's link under **External links** (for example `https://open.spotify.com/track/...`). Music
 Assistant checks a track's links before its ISRC code, so this identifies the track even when its title differs from MusicBrainz. It is most useful for Spotify, which does not share ISRC codes with
 Music Assistant. It takes one edit per track, so ISRC codes are usually the quicker way for a whole album.
+
+## Fix an artist matched to the wrong artist
+
+When Music Assistant matches your artist to the wrong artist on MusicBrainz, your artist gets the details of that other artist, such as its biography, life dates and photos. There are two common causes.
+
+**The link is on the wrong artist.** A streaming link of your artist is on another artist's MusicBrainz page.
+
+1. Open the MusicBrainz artist named in the log, select **Edit**, and remove the link under **External links**
+2. Open the right artist on MusicBrainz, select **Edit**, and add the link under **External links**. If the artist is not on MusicBrainz yet, add it first
+
+**The link is missing.** Your artist has no streaming link on MusicBrainz, so Music Assistant matched it by name alone and picked another artist with the same name.
+
+1. Open the right artist on MusicBrainz, select **Edit**, and add your artist's links for the services you use under **External links**. If the artist is not on MusicBrainz yet, add it first
+
+In both cases, once Music Assistant can see your edit (see [When will Music Assistant see my edit?](#when-will-music-assistant-see-my-edit)), select **Refresh item** from the artist's ⋮ menu. **Refresh item** asks MusicBrainz which artist the link now belongs to. When that is a different artist, Music Assistant moves your artist to it and removes the links to your other services that came from the old artist. If the right artist is already in your library, the two are merged.
+
+> [!NOTE]
+> Move a wrong link to the right artist rather than only removing it. While a link is on no MusicBrainz artist, Music Assistant cannot tell that the stored artist is wrong, so it keeps it.
 
 ## Add ISRC codes with MagicISRC
 
@@ -122,6 +141,7 @@ Not right away.
 - Music Assistant reads MusicBrainz through its own copy of the database. This copy follows
   musicbrainz.org with a delay <!-- TODO how long -->
 - Answers from MusicBrainz are kept for up to 30 days
+- **Refresh item** on an artist asks MusicBrainz again which artist its link belongs to, without waiting for a kept answer to expire
 - Some edits go to a vote, which can take up to 7 days before the edit is applied
 - Items that were not found are looked up again later on their own. Use **Update metadata** on an
   album or artist to try again sooner
