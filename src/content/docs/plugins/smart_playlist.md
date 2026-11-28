@@ -1,6 +1,6 @@
 ---
 title: Smart Playlists
-description: Create dynamic playlists based on rules from your library or from music discovered via seed tracks, artists, albums, or playlists.
+description: Create dynamic playlists based on rules from your library, from selected sources, or from music discovered via seed tracks, artists, albums, or playlists.
 pluginGroup: discover
 ---
 
@@ -37,22 +37,24 @@ The screenshot above shows **From my library** mode (rule-based setup).
 Enter a name and choose a source mode:
 
 - **From my library**: build from tracks already in your MA library.
+- **From selected sources**: choose individual tracks, albums, and saved playlists. Tracks and albums
+  can also come directly from your music sources. The playlist draws from those items rather than finding similar music.
 - **Discover mode**: use one or more seed items (tracks, artists, albums, or playlists) and fetch similar content from supported music sources.
 
 ## Rule model
 
-Smart playlists use include/exclude style rules. In **From my library** mode they are added with **Add a rule**, and in **Discover mode** with **Add a filter**:
+Smart playlists use include/exclude style rules. In **From my library** and **From selected sources** modes they are added with **Add a rule**, and in **Discover mode** with **Add a filter**:
 
 - **Genre**: is / is not (one or more genres)
-- **Artist**: is / is not (library mode, one or more artists)
-- **Album**: is / is not (library mode, one or more albums)
+- **Artist**: is / is not (library and selected sources, one or more artists)
+- **Album**: is / is not (library and selected sources, one or more albums)
 - **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
 - **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed; provider-dependent)
-- **Favorite**: **Only favorites** (library mode) or **Exclude favorites** (library and Discover modes)
+- **Favorite**: **Only favorites** (library and selected sources) or **Exclude favorites** (all modes)
 - **Year**: between from/to (it is possible to use only `from` or only `to`)
 - **Duration**: between from/to in MM:SS format (filter tracks by length)
 - **Last played**: filter tracks by how recently they were played (e.g., "1 days ago", "2 weeks ago")
-- **Folder**: is (library mode, one or more folders of a file-based music source, such as a local or network folder)
+- **Folder**: is (library and selected sources, one or more folders of a file-based music source, such as a local or network folder)
 
 Album type examples:
 
@@ -65,8 +67,8 @@ Available album types: **Album**, **Single**, **EP**, **Compilation**, **Live**,
 
 Favorite rule:
 
-- **Only favorites**: include only your liked tracks. Available in **From my library** mode.
-- **Exclude favorites**: leave out your liked tracks in either mode. Tracks you have disliked or not rated remain eligible.
+- **Only favorites**: include only your liked tracks. Available in **From my library** and **From selected sources** modes.
+- **Exclude favorites**: leave out your liked tracks in any mode. Tracks you have disliked or not rated remain eligible.
 - Excluding favorites always takes priority, even with **Match any** selected and a liked track matching another rule.
 
 In **From my library** mode, add a **Favorite** rule and choose **Exclude favorites**:
@@ -117,11 +119,29 @@ Last played examples:
 - `7 days ago` means tracks played within the last week.
 - Use this to create "recently played" playlists or to exclude tracks played recently.
 
-In **From my library** mode you can choose whether tracks must match **all** rules or **any** rule.
+In **From my library** and **From selected sources** modes you can choose whether tracks must match **all** rules or **any** rule.
 
 In **Discover mode**, filters are applied to the provider result after similar content is fetched.
 
 ![Rule examples in From my library mode](/assets/screenshots/smart_playlist/rules_example.png)
+
+## Selected sources
+
+Choose any combination of tracks, albums, and saved playlists, then add the same filters available
+for your library. Tracks and albums do not have to be in your library, and selecting them does not add them to it.
+By default, the smart playlist presents a changing sample and continues to add tracks during playback.
+
+Some providers do not supply all the metadata needed for every filter. Where a rule cannot be
+checked, the track is kept. Playlists must be saved in your library before they can be used as
+sources; individual tracks and albums can also be chosen directly from providers. A dynamic source
+playlist supplies its own changing sample, rather than a complete list. Individual provider tracks
+are cached for up to three hours.
+
+Enable **Preserve album and playlist track order** to shuffle the sources each time while keeping
+each album and playlist in its own track order. Filters remove tracks without reshuffling the rest,
+and duplicates are kept only at their first occurrence. This mode prepares the full matching tracklist
+without the dynamic sample limit; audio is streamed as needed, and no endless mix is generated.
+Dynamic playlists cannot be used as sources in this mode. Queue shuffle can override the order.
 
 ## Discover mode
 
@@ -147,6 +167,7 @@ When using **Discover mode**:
 The dialog shows a live estimate while you edit rules:
 
 - **From my library mode**: live matching track count + duration estimate, updated as rules change.
+- **From selected sources**: no live matching count; tracks are selected when the playlist is played.
 - **Discover mode**: no live matching-count calculation; the UI only shows guidance that up to 50 tracks are fetched from your music sources.
 
 The screenshot below shows **From my library** mode (rule-based smart playlist).
