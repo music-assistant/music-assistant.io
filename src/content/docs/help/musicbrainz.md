@@ -84,7 +84,7 @@ When Music Assistant matches your artist to the wrong artist on MusicBrainz, you
 
 1. Open the right artist on MusicBrainz, select **Edit**, and add your artist's links for the services you use under **External links**. If the artist is not on MusicBrainz yet, add it first
 
-In both cases, once Music Assistant can see your edit (see [When will Music Assistant see my edit?](#when-will-music-assistant-see-my-edit)), select **Refresh item** from the artist's ⋮ menu. **Refresh item** asks MusicBrainz which artist the link now belongs to. When that is a different artist, Music Assistant removes the old MusicBrainz ID, and the links to your other services that came from the old artist, and then finds the artist again.
+In both cases, once Music Assistant can see your edit (see [When will Music Assistant see my edit?](#when-will-music-assistant-see-my-edit)), select **Refresh item** from the artist's ⋮ menu. **Refresh item** asks MusicBrainz which artist the link now belongs to. When that is a different artist, Music Assistant moves your artist to it and removes the links to your other services that came from the old artist. If the right artist is already in your library, the two are merged.
 
 > [!NOTE]
 > Move a wrong link to the right artist rather than only removing it. While a link is on no MusicBrainz artist, Music Assistant cannot tell that the stored artist is wrong, so it keeps it.
