@@ -17,7 +17,7 @@ Music Assistant can play music on <a href="https://station.yandex.ru/" target="_
 
 - Stations are auto-detected by Music Assistant once they are on the same network
 - Play, pause, stop, seek, next and previous, with volume control
-- Lossless FLAC playback, streamed from the Music Assistant server
+- Lossless playback, streamed from the Music Assistant server
 - Audio announcements
 - Power on and off, via Yandex scenarios
 - Playback state updates in real time

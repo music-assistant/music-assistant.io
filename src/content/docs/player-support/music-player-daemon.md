@@ -36,7 +36,7 @@ For full configuration options refer to the <a href="https://mpd.readthedocs.io/
 
 MPD players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on MPD:
 
-- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> MP3 is the default here, with AAC and WAV also available. FLAC is not offered for MPD
+- <b>[Playback quality](/settings/individual-player/#playback-quality).</b> Starts on **High quality, compressed** here, with **Lossless, uncompressed** also available. **Lossless, compressed** is not offered for MPD
 - <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for MPD. Turn it off if the server cannot play continuous WAV streams
 
 ## Known Issues / Notes
@@ -44,4 +44,4 @@ MPD players use the standard [Individual Player Settings](/settings/individual-p
 - FLAC cannot be used here. MPD needs to look through the whole file before it will play FLAC, which it cannot do with a continuous stream
 - Flow mode is always on for MPD players and cannot be turned off. It is the only way Music Assistant can feed audio to MPD
 - Volume control only appears if a mixer has been set up in MPD. Without one, there is nothing for Music Assistant to control
-- MPD passes on whatever it is given without limiting the quality, so what you get depends on your sound hardware and on the Output Codec chosen above. WAV sounds best but uses far more of your network
+- MPD passes on whatever it is given without limiting the quality, so what you get depends on your sound hardware and on the playback quality chosen above. **Lossless, uncompressed** sounds best but uses far more of your network

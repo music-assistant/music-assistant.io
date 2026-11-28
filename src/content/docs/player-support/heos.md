@@ -27,7 +27,7 @@ In addition to the [Player Support Settings](/settings/player-provider/) when se
 - <b>Main controller hostname or IP address.</b> This is the HEOS device that will be act as the main controller, it is not mandatory. This setting can be used to force MA to use a specific device as the controller
 - <b>Command timeout value.</b> How long Music Assistant waits for a HEOS device to answer a command, in seconds. The default is 25 and it can be set between 10 and 60. Increase it if you see command timeout messages in the log
 
-HEOS players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols).
+HEOS players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). [Playback quality](/settings/individual-player/#playback-quality) starts on **Lossless, uncompressed** for HEOS.
 
 HEOS players always play the queue as one continuous stream, so there is no flow mode setting to change. There is also no sample rates setting because HEOS players report their own capability. First generation HEOS hardware is limited to 48kHz / 16 bits, while HS2 and newer models handle up to 192kHz / 24 bits.
 

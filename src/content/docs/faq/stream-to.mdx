@@ -47,7 +47,6 @@ Some problems (listed individually below) may affect this solution and the follo
   * Enable “Show unused configuration options” on the SqueezeLite app, then set:
     * build: **pa** (PortAudio) or **alsa**
     * options: `-a 150ms` (target latency, experiment to find best value)
-  * Ensure that the *Output format* format in the Music Assistant *Advanced Settings* for the player is set to anything *other* than **WAV**.
 
 ### Audio too fast or slow on track change (wrong sampling rate)
 
@@ -87,7 +86,7 @@ The native solution for MA is to use [Sendspin](https://www.sendspin-audio.com/)
 
 If the hardware has at least 4MB of flash and 4MB of PSRAM it will be capable of running squeezelite directly. Use the <a href="https://github.com/sle118/squeezelite-esp32" target="_blank" rel="noopener noreferrer">Squeezelite ESP32 firmware</a>. A nice pre-made solution with speaker terminals is the <a href="https://www.tindie.com/products/sonocotta/louder-esp32/" target="_blank" rel="noopener noreferrer">Louder ESP32</a>
 
-If the ESP32 device has other firmware on it that has been discovered by Home Assistant then use the <a href="https://music-assistant.io/integration/installation/" target="_blank" rel="noopener noreferrer">Home Assistant Player Provider</a> to expose the HA media player entitiy to MA. If the exposed player is running ESPHOME then consider changing the Output Codec to `MP3 (lossy)` (if it isn't already the default) in the player settings as this may be all the player can handle.
+If the ESP32 device has other firmware on it that has been discovered by Home Assistant then use the <a href="https://music-assistant.io/integration/installation/" target="_blank" rel="noopener noreferrer">Home Assistant Player Provider</a> to expose the HA media player entitiy to MA. If the exposed player is running ESPHOME then consider setting [Playback quality](/settings/individual-player/#playback-quality) to **High quality, compressed** (if it isn't already the default) in the player settings as this may be all the player can handle.
 
 There is a <a href="https://github.com/jorgenkraghjakobsen/snapclient" target="_blank" rel="noopener noreferrer">Snapclient port</a> which could also be used.
 

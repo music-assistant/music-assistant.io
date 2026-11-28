@@ -37,7 +37,7 @@ In addition to the [Player Support Settings](/settings/player-provider/) when se
 In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the SoundTouch players have the following settings:
 
 - <b>Overwrite preset 1-6.</b> Press one of these buttons to hand that physical preset button on this speaker over to Music Assistant. Do this once per speaker for each button you want to use. The button's label tells you when the speaker already has something stored on that preset. What the button plays is set in the provider settings above
-- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Defaults to MP3 on SoundTouch speakers, which gives by far the most reliable playback. The other codecs are available but are more likely to cause problems here
+- <b>[Playback quality](/settings/individual-player/#playback-quality).</b> Starts on **High quality, compressed** on SoundTouch speakers, which gives by far the most reliable playback. The other levels are available but are more likely to cause problems here
 - <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit
 
 ## Known Issues / Notes
