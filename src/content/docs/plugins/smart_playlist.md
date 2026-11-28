@@ -37,7 +37,7 @@ The screenshot above shows **From my library** mode (rule-based setup).
 Enter a name and choose a source mode:
 
 - **From my library**: build from tracks already in your MA library.
-- **From selected sources**: choose saved playlists, albums, and individual tracks. Albums and tracks
+- **From selected sources**: choose individual tracks, albums, and saved playlists. Tracks and albums
   can also come directly from your music sources. The playlist draws from those items rather than finding similar music.
 - **Discover mode**: use one or more seed items (tracks, artists, albums, or playlists) and fetch similar content from supported music sources.
 
@@ -127,13 +127,13 @@ In **Discover mode**, filters are applied to the provider result after similar c
 
 ## Selected sources
 
-Choose any combination of saved playlists, albums, and tracks, then add the same filters available
-for your library. Albums and tracks do not have to be in your library, and selecting them does not add them to it.
+Choose any combination of tracks, albums, and saved playlists, then add the same filters available
+for your library. Tracks and albums do not have to be in your library, and selecting them does not add them to it.
 The smart playlist presents a changing sample and continues to add tracks during playback.
 
 Some providers do not supply all the metadata needed for every filter. Where a rule cannot be
 checked, the track is kept. Playlists must be saved in your library before they can be used as
-sources; albums and individual tracks can also be chosen directly from providers. A dynamic source
+sources; individual tracks and albums can also be chosen directly from providers. A dynamic source
 playlist supplies its own changing sample, rather than a complete list. Individual provider tracks
 are cached for up to three hours.
 
