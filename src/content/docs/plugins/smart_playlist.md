@@ -129,13 +129,19 @@ In **Discover mode**, filters are applied to the provider result after similar c
 
 Choose any combination of tracks, albums, and saved playlists, then add the same filters available
 for your library. Tracks and albums do not have to be in your library, and selecting them does not add them to it.
-The smart playlist presents a changing sample and continues to add tracks during playback.
+By default, the smart playlist presents a changing sample and continues to add tracks during playback.
 
 Some providers do not supply all the metadata needed for every filter. Where a rule cannot be
 checked, the track is kept. Playlists must be saved in your library before they can be used as
 sources; individual tracks and albums can also be chosen directly from providers. A dynamic source
 playlist supplies its own changing sample, rather than a complete list. Individual provider tracks
 are cached for up to three hours.
+
+Enable **Preserve album and playlist track order** to shuffle the sources each time while keeping
+each album and playlist in its own track order. Filters remove tracks without reshuffling the rest,
+and duplicates are kept only at their first occurrence. This mode prepares the full matching tracklist
+without the dynamic sample limit; audio is streamed as needed, and no endless mix is generated.
+Dynamic playlists cannot be used as sources in this mode. Queue shuffle can override the order.
 
 ## Discover mode
 
